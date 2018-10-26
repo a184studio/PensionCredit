@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Page 3
+{% endblock %}
+
+{% block header %}
+    {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  <form action="/form-example/check-answers" method="post" class="form">
+    {{ govukInput({
+      label: {
+        text: "Earnings"
+      },
+      hint: {
+        text: "Get this out of VEP"
+      },
+      classes: "govuk-input--width-20",
+      id: "earnings",
+      name: "earnings",
+      value: data['earnings']
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}

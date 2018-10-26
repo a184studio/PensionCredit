@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block header %}
+    {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <dl class="app-check-your-answers app-check-your-answers--short">
+      {# Full name #}
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Full name
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data['name'] }}
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="page-1">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      {# Full name #}
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Age
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data['age'] }}
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="page-2">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      {# Full name #}
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Earnings
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data['earnings'] }}
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="page-3">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Claimant declaration
+    </h2>
+
+    <p class="govuk-body">
+      By submitting this claim you agree that the information you’ve given is
+      complete and correct. While you’re receiving Pension Credit,
+      you’ll report changes to your circumstances straight away by calling
+      0345&nbsp;000&nbsp;000. If you give wrong or incomplete information, or
+      you don’t report changes, you may:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>be prosecuted</li>
+      <li>need to pay a financial penalty</li>
+      <li>have your Winter Fuel Payment reduced or stopped</li>
+      <li>be paid too much Winter Fuel Payment and have to pay the money back</li>
+    </ul>
+
+    <form action="success" method="post">
+      {{ govukButton({
+        text: 'Confirm'
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
