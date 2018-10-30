@@ -15,13 +15,11 @@
 
 
 
-<!------------ Start / X section ------------>
-<!------------ End / X section ------------>
+<!------------ ---- ------------>
 
 
    <main class="govuk-main-wrapper">
-
-<!------------ Start / Left column ------------>
+<!------------ ---- ------------>
      <div class="govuk-grid-row">
        <div class="govuk-grid-column-two-thirds">
          <h1 class="govuk-heading-xl">Pension Credit design development 1.1</h1>
@@ -29,72 +27,80 @@
      </div>
 <!------------ End / X section ------------>
 
-<!------------ Start / X section ------------>
      <div class="govuk-grid-row">
        <div class="govuk-grid-column-two-thirds">
-         <h2 class="govuk-heading-l">Versions and pages</h2>
-         <p class="govuk-body-l">This is appropriate dummy text that is being employed</p>
-         <p class="govuk-body">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
+         <p class="govuk-body-l">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
 
-<!------------ Start / Table ------------>
-         <ol class="app-task-list">
-           <li>
-             <h2 class="app-task-list__section">
-               <span class="app-task-list__section-number">1 </span> Sprint X / 00 November 2018 — 00 November 2018
-             </h2>
+<!------------ ---- ------------>
+<ol class="app-task-list">
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">1. </span> Development
+    </h2>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="eligibility-completed">
+          Pizza Italia flavour matrix
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Hold</strong>
+      </li>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="read-declaration-completed">
+          X
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">2. </span> End-to-end journeys
+    </h2>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="company-information-completed">
+          New claim
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">1.0</strong>
+      </li>
 
-             {% from "details/macro.njk" import govukDetails %}
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="contact-details-completed">
+          Change of circumanstances
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">X</strong>
+      </li>
 
-            {{ govukDetails({
-              summaryText: "Notes",
-              text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post."
-            }) }}
+    </ul>
+  </li>
 
-             <ul class="app-task-list__items">
-               <li class="app-task-list__item">
-                 <a class="app-task-list__task-name" href="/development/test/pizza_list.html" aria-describedby="eligibility-completed">
-                   Pizza Italia matrix
-                 </a>
-                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Hold</strong>
-               </li>
-               <li class="app-task-list__item">
-                 <a class="app-task-list__task-name" href="/development/find_a_claimant/find_a_claimant.html" aria-describedby="read-declaration-completed">
-                   Pension Credit 1.0
-                 </a>
-                 <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">In progress</strong>
-               </li>
-             </ul>
-           </li>
-           <li>
-             <h2 class="app-task-list__section">
-               <span class="app-task-list__section-number">2 </span> Sprint 1.0
-             </h2>
 
-             {% from "details/macro.njk" import govukDetails %}
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">3. </span> Module shortcuts
+    </h2>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/development/claimant_index/cliamantIndex.html" aria-describedby="contact-details-completed">
+          Claimant index
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
 
-            {{ govukDetails({
-              summaryText: "Notes",
-              text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post."
-            }) }}
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/development/find_a_claimant/find_a_claimant.html" aria-describedby="contact-details-completed">
+          Find a cliamant
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
 
-             <ul class="app-task-list__items">
-               <li class="app-task-list__item">
-                 <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="company-information-completed">
-                   X
-                 </a>
-                 <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">X</strong>
-               </li>
-               <li class="app-task-list__item">
-                 <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="contact-details-completed">
-                   X
-                 </a>
-                 <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">X</strong>
-               </li>
+    </ul>
+  </li>
 
-           </li>
-         </ol>
+</ol>
+          </div>
 
-       </div>
+
 
 
 <!------------ End / Left column ------------>
