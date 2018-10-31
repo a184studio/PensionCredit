@@ -1,0 +1,256 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Personal details - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">
+    About you
+  </h1>
+  <form action="/form-example/page-2" method="post" class="form">
+    {{ govukInput({
+      label: {
+        text: "What is your full name?"
+      },
+      id: "fullName",
+      name: "fullName",
+      classes: "govuk-input--width-20",
+      value: data['fullName']
+    }) }}
+
+    {{ govukDateInput({
+      id: "dob",
+      namePrefix: "dob",
+      fieldset: {
+        legend: {
+          text: "What is your date of birth?"
+        }
+      },
+      hint: {
+        text: "For example, 31 3 1980"
+      }
+    }) }}
+
+    {% call govukFieldset({
+      legend: {
+        text: "What is your home address?",
+        classes: "govuk-!-font-weight-bold"
+      }
+    }) %}
+      {{ govukInput({
+        label: {
+          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+        },
+        classes: "govuk-input--width-30",
+        id: "address-line-1",
+        name: "address-line-1"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+        },
+        classes: "govuk-input--width-30",
+        id: "address-line-2",
+        name: "address-line-2"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Town or city"
+        },
+        classes: "govuk-input--width-20",
+        id: "address-town",
+        name: "address-town"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "County"
+        },
+        classes: "govuk-input--width-20",
+        id: "address-county",
+        name: "address-county"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode"
+      }) }}
+    {% endcall %}
+
+    {{ govukInput({
+      label: {
+        text: "What is your daytime phone number?"
+      },
+      id: "dayphone",
+      name: "dayphone",
+      classes: "govuk-input--width-20",
+      value: data['dayphone']
+    }) }}
+
+    {% set textPhoneHtml %}
+      {{ govukInput({
+        id: "text-phone-number",
+        name: "text-phone-number",
+        classes: "govuk-input--width-20",
+        label: {
+          text: "What is your textphone number?"
+        },
+        hint: {
+          text: "if you have one, for people with speech or hearing difficulties"
+        }
+      }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "has-text-phone",
+      name: "has-text-phone",
+      fieldset: {
+        legend: {
+          text: "Do you have a textphone number?"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: textPhoneHtml
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "blind",
+      name: "blind",
+      fieldset: {
+        legend: {
+          text: "Are you blind or partially sighted?"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "large-print",
+      name: "large-print",
+      fieldset: {
+        legend: {
+          text: "Would you like us to use Braille or large print when we contact you?"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "deaf",
+      name: "deaf",
+      fieldset: {
+        legend: {
+          text: "Are you deaf or hearing impaired?"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "text-relay",
+      name: "text-relay",
+      fieldset: {
+        legend: {
+          text: "Would you like us to use Text Relay or British Sign Language when we contact you?"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {% set language %}
+      {{ govukInput({
+        id: "language",
+        name: "language",
+        classes: "govuk-input--width-20",
+        label: {
+          text: "Which language would you like us to use when we contact you?"
+        }
+      }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "in-english",
+      name: "in-english",
+      fieldset: {
+        legend: {
+          text: "Can we contact you in English?"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No",
+          conditional: {
+            html: language
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}
