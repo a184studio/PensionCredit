@@ -9,50 +9,54 @@
 {% endblock %}
 
 {% block content %}
-  <form action="care-home" method="post" class="form">
-    {{ govukCheckboxes({
-      idPrefix: "benefits",
-      name: "benefits",
-      fieldset: {
-        legend: {
-          text: "What benefits are they on?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      hint: {
-        text: "Select all that apply."
-      },
-      items: [
-        {
-          value: "sp",
-          text: "State Pension"
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="care-home" method="post" class="form">
+      {{ govukCheckboxes({
+        idPrefix: "benefits",
+        name: "benefits",
+        fieldset: {
+          legend: {
+            text: "What benefits are they on?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
         },
-        {
-          value: "ca",
-          text: "Carer's Allowance"
+        hint: {
+          text: "Select all that apply."
         },
-        {
-          value: "pip",
-          text: "Personal Independence Payment"
-        },
-        {
-          value: "aa",
-          text: "Attendance Allowance"
-        },
-        {
-          value: "jsa",
-          text: "Job Seeker's Allowance"
-        },
-        {
-          value: "wb",
-          text: "War Benefits"
-        }
-      ]
-    }) }}
+        items: [
+          {
+            value: "sp",
+            text: "State Pension"
+          },
+          {
+            value: "ca",
+            text: "Carer's Allowance"
+          },
+          {
+            value: "pip",
+            text: "Personal Independence Payment"
+          },
+          {
+            value: "aa",
+            text: "Attendance Allowance"
+          },
+          {
+            value: "jsa",
+            text: "Job Seeker's Allowance"
+          },
+          {
+            value: "wb",
+            text: "War Benefits"
+          }
+        ]
+      }) }}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-  </form>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
 {% endblock %}

@@ -9,44 +9,48 @@
 {% endblock %}
 
 {% block content %}
-  <form action="declaration" method="post" class="form">
-    <h1 class="govuk-heading-xl">
-      What are your contact details?
-    </h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="declaration" method="post" class="form">
+      <h1 class="govuk-heading-xl">
+        What are your contact details?
+      </h1>
 
-    {{ govukInput({
-      label: {
-        text: "Phone number"
-      },
-      id: "phone-number",
-      name: "phone-number",
-      classes: "govuk-input--width-20",
-      value: data['phone-number']
-    }) }}
-
-    {{ govukRadios({
-      idPrefix: "use-home-address",
-      name: "use-home-address",
-      fieldset: {
-        legend: {
-          text: "What address should we use to write to you?"
-        }
-      },
-      classes: "govuk-radios--inline",
-      items: [
-        {
-          value: "yes",
-          text: "Home address"
+      {{ govukInput({
+        label: {
+          text: "Phone number"
         },
-        {
-          value: "no",
-          text: "Different address"
-        }
-      ]
-    }) }}
+        id: "phone-number",
+        name: "phone-number",
+        classes: "govuk-input--width-20",
+        value: data['phone-number']
+      }) }}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-  </form>
+      {{ govukRadios({
+        idPrefix: "use-home-address",
+        name: "use-home-address",
+        fieldset: {
+          legend: {
+            text: "What address should we use to write to you?"
+          }
+        },
+        classes: "govuk-radios--inline",
+        items: [
+          {
+            value: "yes",
+            text: "Home address"
+          },
+          {
+            value: "no",
+            text: "Different address"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
 {% endblock %}

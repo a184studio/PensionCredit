@@ -9,19 +9,23 @@
 {% endblock %}
 
 {% block content %}
-  {% if data['has-partner'] == 'yes' %}
-    {% set legend = 'Does anyone else other than you and partner live in your household who is over 18 and not in full-time education?' %}
-  {% else %}
-    {% set legend = 'Does anyone else live in your household?' %}
-  {% endif %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['has-partner'] == 'yes' %}
+      {% set legend = 'Does anyone else other than you and partner live in your household who is over 18 and not in full-time education?' %}
+    {% else %}
+      {% set legend = 'Does anyone else live in your household?' %}
+    {% endif %}
 
-  <h1 class="govuk-heading-xl">
-    {{ legend }}
-  </h1>
+    <h1 class="govuk-heading-xl">
+      {{ legend }}
+    </h1>
 
-  <form action="money-you-have" method="post" class="form">
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-  </form>
+    <form action="money-you-have" method="post" class="form">
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
 {% endblock %}

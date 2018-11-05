@@ -9,31 +9,35 @@
 {% endblock %}
 
 {% block content %}
-  <form action="type-of-account-router" method="post" class="form">
-    {{ govukRadios({
-      idPrefix: "account-type",
-      name: "account-type",
-      fieldset: {
-        legend: {
-          text: "What type of account do you have?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      items: [
-        {
-          value: "uk",
-          text: "UK bank, building society or credit union account"
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="type-of-account-router" method="post" class="form">
+      {{ govukRadios({
+        idPrefix: "account-type",
+        name: "account-type",
+        fieldset: {
+          legend: {
+            text: "What type of account do you have?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
         },
-        {
-          value: "international",
-          text: "International bank account"
-        }
-      ]
-    }) }}
+        items: [
+          {
+            value: "uk",
+            text: "UK bank, building society or credit union account"
+          },
+          {
+            value: "international",
+            text: "International bank account"
+          }
+        ]
+      }) }}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-  </form>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
 {% endblock %}

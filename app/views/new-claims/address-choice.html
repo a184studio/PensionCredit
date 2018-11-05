@@ -9,43 +9,47 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">
-    {% if data['care-home-permanence'] == 'yes' %}
-      What is the address of the care home that you live in?
-    {% else %}
-      What is your home address?
-    {% endif %}
-  </h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {% if data['care-home-permanence'] == 'yes' %}
+        What is the address of the care home that you live in?
+      {% else %}
+        What is your home address?
+      {% endif %}
+    </h1>
 
-  <form action="address-choice-router" method="post" class="form">
-    {{ govukSelect({
-      id: "address",
-      name: "address",
-      label: {
-        text: "Select an address"
-      },
-      items: [
-        {
-          value: "address-count",
-          text: "3 addresses found"
+    <form action="address-choice-router" method="post" class="form">
+      {{ govukSelect({
+        id: "address",
+        name: "address",
+        label: {
+          text: "Select an address"
         },
-        {
-          value: "221a",
-          text: "221A Baker Street"
-        },
-        {
-          value: "221b",
-          text: "221B Baker Street"
-        },
-        {
-          value: "222",
-          text: "222 Baker Street"
-        }
-      ]
-    }) }}
+        items: [
+          {
+            value: "address-count",
+            text: "3 addresses found"
+          },
+          {
+            value: "221a",
+            text: "221A Baker Street"
+          },
+          {
+            value: "221b",
+            text: "221B Baker Street"
+          },
+          {
+            value: "222",
+            text: "222 Baker Street"
+          }
+        ]
+      }) }}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-  </form>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
 {% endblock %}

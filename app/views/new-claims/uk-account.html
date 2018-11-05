@@ -9,53 +9,57 @@
 {% endblock %}
 
 {% block content %}
-  <form action="future-contact" method="post" class="form">
-    <h1 class="govuk-heading-xl">
-      Which account do you want us to pay any Pension Credit into?
-    </h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="future-contact" method="post" class="form">
+      <h1 class="govuk-heading-xl">
+        Which account do you want us to pay any Pension Credit into?
+      </h1>
 
-    {{ govukInput({
-      label: {
-        text: "Name on account"
-      },
-      id: "name-on-account",
-      name: "name-on-account",
-      classes: "govuk-input--width-20",
-      value: data['name-on-account']
-    }) }}
+      {{ govukInput({
+        label: {
+          text: "Name on account"
+        },
+        id: "name-on-account",
+        name: "name-on-account",
+        classes: "govuk-input--width-20",
+        value: data['name-on-account']
+      }) }}
 
-    {{ govukInput({
-      label: {
-        text: "Sort code"
-      },
-      id: "sort-code",
-      name: "sort-code",
-      classes: "govuk-input--width-10",
-      value: data['sort-code']
-    }) }}
+      {{ govukInput({
+        label: {
+          text: "Sort code"
+        },
+        id: "sort-code",
+        name: "sort-code",
+        classes: "govuk-input--width-10",
+        value: data['sort-code']
+      }) }}
 
-    {{ govukInput({
-      label: {
-        text: "Account number"
-      },
-      id: "account-number",
-      name: "account-number",
-      classes: "govuk-input--width-20",
-      value: data['account-number']
-    }) }}
+      {{ govukInput({
+        label: {
+          text: "Account number"
+        },
+        id: "account-number",
+        name: "account-number",
+        classes: "govuk-input--width-20",
+        value: data['account-number']
+      }) }}
 
-    {{ govukInput({
-      label: {
-        text: "Roll number"
-      },
-      id: "roll-number",
-      name: "roll-number",
-      classes: "govuk-input--width-20",
-      value: data['roll-number']
-    }) }}
+      {{ govukInput({
+        label: {
+          text: "Roll number"
+        },
+        id: "roll-number",
+        name: "roll-number",
+        classes: "govuk-input--width-20",
+        value: data['roll-number']
+      }) }}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-  </form>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
 {% endblock %}

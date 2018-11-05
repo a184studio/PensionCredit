@@ -9,35 +9,39 @@
 {% endblock %}
 
 {% block content %}
-  <form action="home-ownership-router" method="post" class="form">
-    {{ govukRadios({
-      idPrefix: "home-ownership",
-      name: "home-ownership",
-      fieldset: {
-        legend: {
-          text: "Do you own the house or rent it?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      items: [
-        {
-          value: "own",
-          text: "Own"
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="home-ownership-router" method="post" class="form">
+      {{ govukRadios({
+        idPrefix: "home-ownership",
+        name: "home-ownership",
+        fieldset: {
+          legend: {
+            text: "Do you own the house or rent it?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
         },
-        {
-          value: "rent",
-          text: "Rent"
-        },
-        {
-          value: "neither",
-          text: "Neither"
-        }
-      ]
-    }) }}
+        items: [
+          {
+            value: "own",
+            text: "Own"
+          },
+          {
+            value: "rent",
+            text: "Rent"
+          },
+          {
+            value: "neither",
+            text: "Neither"
+          }
+        ]
+      }) }}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-  </form>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
 {% endblock %}

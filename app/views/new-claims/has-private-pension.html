@@ -9,35 +9,39 @@
 {% endblock %}
 
 {% block content %}
-  <form action="has-private-pension-router" method="post" class="form">
-    {{ govukRadios({
-      idPrefix: "has-private-pensions",
-      name: "has-private-pensions",
-      fieldset: {
-        legend: {
-          text: "Do you get a private, workplace or any other pension?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      hint: {
-        text: "Do not include your State Pension"
-      },
-      classes: "govuk-radios--inline",
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="has-private-pension-router" method="post" class="form">
+      {{ govukRadios({
+        idPrefix: "has-private-pensions",
+        name: "has-private-pensions",
+        fieldset: {
+          legend: {
+            text: "Do you get a private, workplace or any other pension?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
         },
-        {
-          value: "no",
-          text: "No"
-        }
-      ]
-    }) }}
+        hint: {
+          text: "Do not include your State Pension"
+        },
+        classes: "govuk-radios--inline",
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-  </form>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
 {% endblock %}

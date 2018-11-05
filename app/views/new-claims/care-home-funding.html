@@ -9,35 +9,39 @@
 {% endblock %}
 
 {% block content %}
-  <form action="postcode-lookup" method="post" class="form">
-    {{ govukRadios({
-      idPrefix: "care-home-funding",
-      name: "care-home-funding",
-      fieldset: {
-        legend: {
-          text: "Who pays for you to live in the care home?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      items: [
-        {
-          value: "la",
-          text: "Local authority"
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="postcode-lookup" method="post" class="form">
+      {{ govukRadios({
+        idPrefix: "care-home-funding",
+        name: "care-home-funding",
+        fieldset: {
+          legend: {
+            text: "Who pays for you to live in the care home?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
         },
-        {
-          value: "self",
-          text: "Self funded"
-        },
-        {
-          value: "partnpat",
-          text: "Part 'n' pat"
-        }
-      ]
-    }) }}
+        items: [
+          {
+            value: "la",
+            text: "Local authority"
+          },
+          {
+            value: "self",
+            text: "Self funded"
+          },
+          {
+            value: "partnpat",
+            text: "Part 'n' pat"
+          }
+        ]
+      }) }}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-  </form>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
 {% endblock %}
