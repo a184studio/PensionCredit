@@ -16,6 +16,17 @@
   {% endif %}
 
   <form action="money-you-have-router" method="post" class="form">
+    {% set cashAmount %}
+      {{ govukInput({
+        id: "total-amount",
+        name: "total-amount",
+        classes: "govuk-input--width-10",
+        label: {
+          text: "How much?"
+        }
+      }) }}
+    {% endset %}
+
     {{ govukRadios({
       idPrefix: "has-money",
       name: "has-money",
@@ -34,7 +45,10 @@
         },
         {
           value: "no",
-          text: "No"
+          text: "No",
+          conditional: {
+            html: cashAmount
+          }
         }
       ]
     }) }}

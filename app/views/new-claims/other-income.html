@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you have any other regular income? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  <form action="other-income-router" method="post" class="form">
+    {% set otherIncomeList %}
+      <ul class="govuk-list govuk-hint">
+        <li>Boarders and sub-tenants</li>
+        <li>Working Tax Credits</li>
+        <li>Foreign Pensions</li>
+        <li>Any other regular income except earnings</li>
+      </ul>
+    {% endset %}
+
+    {{ govukRadios({
+      idPrefix: "other-income",
+      name: "other-income",
+      fieldset: {
+        legend: {
+          text: "Do you have any other regular income?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      hint: {
+        html: otherIncomeList
+      },
+      classes: "govuk-radios--inline",
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}
