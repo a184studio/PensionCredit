@@ -1,0 +1,376 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      About you
+    </h2>
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Full name
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          Hammond Eggs
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="about-you">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Date of birth
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          10 April 1950
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="about-you">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          National Insurance number
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          QQ 12 34 56 A
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="about-you">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Blind
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          No
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="about-you">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Benefits
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          <ul class="govuk-list" style="margin-bottom: 0">
+            <li>State Pension</li>
+            <li>Carer’s Allowance</li>
+            <li>Attendance Allowance</li>
+          </ul>
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="benefits">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Address
+    </h2>
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Address
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          221b Baker St<br/>
+          Marylebone<br/>
+          London
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="address-choice">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Postcode
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          NW1 6XE
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="postcode-lookup">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Carehome
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          No
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="postcode-lookup">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Rented or owned
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          Owned
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="home-ownership">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Ground rent
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          £0
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="ground-rent">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Service charges
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          £0
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="service-charges">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Money
+    </h2>
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Cash
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          £0
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="cash">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Money in current, savings or investment accounts
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          £0
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="savings">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Shares
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          £0
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="shares">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Property
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          None
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="property">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Income
+    </h2>
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Pensions
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          No
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="has-private-pension">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Employed
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          No
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="has-work">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Self-employed
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          No
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="self-employed">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Bank details
+    </h2>
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Type of account
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          UK bank, building society or credit union account
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="type-of-account">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Name on account
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          Hammond Eggs
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="uk-account">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Sort code
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          11 22 33
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="uk-account">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Account number
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          12345678
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="uk-account">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Claimant declaration
+    </h2>
+
+    <p class="govuk-body">
+      By submitting this claim you agree that the information you’ve given is
+      complete and correct. While you’re receiving the Winter Fuel Payment,
+      you’ll report changes to your circumstances straight away by calling
+      0345&nbsp;000&nbsp;000. If you give wrong or incomplete information, or
+      you don’t report changes, you may:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>be prosecuted</li>
+      <li>need to pay a financial penalty</li>
+      <li>have your Winter Fuel Payment reduced or stopped</li>
+      <li>be paid too much Winter Fuel Payment and have to pay the money back</li>
+    </ul>
+
+    <form action="done" method="post">
+      <p>
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+      </p>
+    </form>
+
+  </div>
+</div>
+{% endblock %}
