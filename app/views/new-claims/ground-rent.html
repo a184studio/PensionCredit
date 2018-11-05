@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you pay any ground rent? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  <form action="service-charges" method="post" class="form">
+    {% set groundRent %}
+      {{ govukInput({
+        label: {
+          text: "How much do you pay anually?"
+        },
+        id: "ground-rent",
+        name: "ground-rent",
+        classes: "govuk-input--width-20",
+        value: data['ground-rent']
+      }) }}
+    {% endset %}
+
+    {{ govukRadios({
+      idPrefix: "have-any-ground-rent",
+      name: "have-any-ground-rent",
+      fieldset: {
+        legend: {
+          text: "Do you pay any ground rent?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      classes: "govuk-radios--inline",
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: groundRent
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}

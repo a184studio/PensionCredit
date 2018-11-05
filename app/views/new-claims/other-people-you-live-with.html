@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Does anyone else live in your household - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  {% if data['has-partner'] == 'yes' %}
+    {% set legend = 'Does anyone else other than you and partner live in your household who is over 18 and not in full-time education?' %}
+  {% else %}
+    {% set legend = 'Does anyone else live in your household?' %}
+  {% endif %}
+
+  <h1 class="govuk-heading-xl">
+    {{ legend }}
+  </h1>
+
+  <form action="money-you-have" method="post" class="form">
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}

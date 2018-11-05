@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  About you - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">
+    About you
+  </h1>
+
+  <form action="has-partner" method="post" class="form">
+    {{ govukInput({
+      label: {
+        text: "What is your full name?"
+      },
+      id: "fullName",
+      name: "fullName",
+      classes: "govuk-input--width-20",
+      value: data['fullName']
+    }) }}
+
+    {{ govukDateInput({
+      id: "dob",
+      namePrefix: "dob",
+      fieldset: {
+        legend: {
+          text: "What is your date of birth?"
+        }
+      },
+      hint: {
+        text: "For example, 31 3 1980"
+      }
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "What is your National Insurance number?"
+      },
+      id: "nino",
+      name: "nino",
+      classes: "govuk-input--width-20",
+      value: data['nino']
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "blind",
+      name: "blind",
+      fieldset: {
+        legend: {
+          text: "Are you registered blind or severely sight impaired?"
+        }
+      },
+      classes: "govuk-radios--inline",
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Money you have - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  {% if data['has-partner'] == 'yes' %}
+    {% set legend = 'Do you and your partner have money, savings or investments that add up to more than £10,000?' %}
+  {% else %}
+    {% set legend = 'Do you have money, savings or investments that add up to more than £10,000?' %}
+  {% endif %}
+
+  <form action="money-you-have-router" method="post" class="form">
+    {{ govukRadios({
+      idPrefix: "has-money",
+      name: "has-money",
+      fieldset: {
+        legend: {
+          text: legend,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      classes: "govuk-radios--inline",
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}

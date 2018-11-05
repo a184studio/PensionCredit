@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you own the house, rent it or neither? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  <form action="home-ownership-router" method="post" class="form">
+    {{ govukRadios({
+      idPrefix: "home-ownership",
+      name: "home-ownership",
+      fieldset: {
+        legend: {
+          text: "Do you own the house or rent it?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "own",
+          text: "Own"
+        },
+        {
+          value: "rent",
+          text: "Rent"
+        },
+        {
+          value: "neither",
+          text: "Neither"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}

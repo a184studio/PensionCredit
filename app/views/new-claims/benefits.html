@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Benefits - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  <form action="care-home" method="post" class="form">
+    {{ govukCheckboxes({
+      idPrefix: "benefits",
+      name: "benefits",
+      fieldset: {
+        legend: {
+          text: "What benefits are they on?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+        {
+          value: "sp",
+          text: "State Pension"
+        },
+        {
+          value: "ca",
+          text: "Carer's Allowance"
+        },
+        {
+          value: "pip",
+          text: "Personal Independence Payment"
+        },
+        {
+          value: "aa",
+          text: "Attendance Allowance"
+        },
+        {
+          value: "jsa",
+          text: "Job Seeker's Allowance"
+        },
+        {
+          value: "wb",
+          text: "War Benefits"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}

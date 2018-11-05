@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What's the postcode? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">
+    {% if data['care-home-permanence'] == 'yes' %}
+      What is the postcode of the care home that you live in?
+    {% else %}
+      What is your home postcode?
+    {% endif %}
+  </h1>
+
+  <form action="address-choice" method="post" class="form">
+    {{ govukInput({
+      id: "postcode",
+      name: "postcode",
+      value: data['postcode'],
+      classes: "govuk-input--width-10",
+      label: {
+        text: "Postcode"
+      },
+      casaErrors: formErrors
+    }) }}
+
+    {{ govukButton({
+      text: "Find address"
+    }) }}
+  </form>
+{% endblock %}

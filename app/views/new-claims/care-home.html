@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you live in a care home? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+  <form action="care-home-router" method="post" class="form">
+    {% set careHomeDate %}
+      {{ govukDateInput({
+        id: "care-home-date",
+        namePrefix: "care-home-date",
+        fieldset: {
+          legend: {
+            text: "What date did you go into the care home?"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        }
+      }) }}
+    {% endset %}
+
+    {{ govukRadios({
+      idPrefix: "care-home",
+      name: "care-home",
+      fieldset: {
+        legend: {
+          text: "Are you in a care home?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      classes: "govuk-radios--inline",
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: careHomeDate
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+{% endblock %}
