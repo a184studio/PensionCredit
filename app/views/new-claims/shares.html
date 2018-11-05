@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you have an share? - Pension Credit
+  Do you have any money in current, savings or investment accounts? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -11,45 +11,53 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="property" method="post" class="form">
-      {% set shareAmount %}
-        {{ govukInput({
-          id: "share-amount",
-          name: "share-amount",
-          classes: "govuk-input--width-10",
-          label: {
-            text: "How much?"
-          },
-          value: data["share-amount"]
-        }) }}
-      {% endset %}
+    <h1 class="govuk-heading-xl">
+      Shares
+    </h1>
+    <form action="/new-claims/shares-router" method="post" class="form">
+      {% set company = "share-company-" + shareNumber %}
+      {% set type = "share-type-" + shareNumber %}
+      {% set amount = "share-amount-" + shareNumber %}
+      {% set value = "share-value-" + shareNumber %}
 
-      {{ govukRadios({
-        idPrefix: "has-share",
-        name: "has-share",
-        fieldset: {
-          legend: {
-            text: "Do you have any shares?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
+      {{ govukInput({
+        label: {
+          text: "Company name"
         },
-        classes: "govuk-radios--inline",
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            conditional: {
-              html: shareAmount
-            },
-            checked: (data["has-share"] == "yes")
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: (data["has-share"] == "no")
-          }
-        ]
+        id: company,
+        name: company,
+        classes: "govuk-input--width-20",
+        value: data[company]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Type of shares"
+        },
+        id: type,
+        name: type,
+        classes: "govuk-input--width-20",
+        value: data[type]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Amount of shares"
+        },
+        id: amount,
+        name: amount,
+        classes: "govuk-input--width-10",
+        value: data[amount]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Value of shares"
+        },
+        id: value,
+        name: value,
+        classes: "govuk-input--width-10",
+        value: data[value]
       }) }}
 
       {{ govukButton({

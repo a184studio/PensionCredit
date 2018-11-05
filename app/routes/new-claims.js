@@ -114,4 +114,51 @@ router.post('/new-claims/type-of-account-router', (req, res) => {
   }
 })
 
+router.post('/new-claims/savings-router', (req, res) => {
+  const hasSavings = req.session.data['has-savings']
+
+  if (hasSavings === 'yes') {
+    const accountNumber = (req.session.data['number-of-accounts'] || 0)
+
+    res.redirect(`/new-claims/savings-account/${accountNumber}`)
+  } else {
+    res.redirect('/new-claims/has-shares')
+  }
+})
+
+router.get('/new-claims/savings-account/:number', (req, res, next) => {
+  const {number} = req.params
+  res.render('new-claims/savings-account.html', {
+    accountNumber: number
+  })
+})
+
+router.post('/new-claims/savings-account-router', (req, res) => {
+  req.session.data['number-of-accounts'] = Object.keys(req.session.data).filter(key => key.match(/^account-\d+$/)).length
+  res.redirect('/new-claims/savings-summary')
+})
+
+router.post('/new-claims/has-shares-router', (req, res) => {
+  const hasShares = req.session.data['has-shares']
+
+  if (hasShares === 'yes') {
+    const shareNumber = (req.session.data['number-of-shares'] || 0)
+    res.redirect(`/new-claims/shares/${shareNumber}`)
+  } else {
+    res.redirect('/new-claims/property')
+  }
+})
+
+router.get('/new-claims/shares/:number', (req, res, next) => {
+  const {number} = req.params
+  res.render('new-claims/shares.html', {
+    shareNumber: number
+  })
+})
+
+router.post('/new-claims/shares-router', (req, res) => {
+  req.session.data['number-of-shares'] = Object.keys(req.session.data).filter(key => key.match(/^share-company-\d+$/)).length
+  res.redirect('/new-claims/shares-summary')
+})
+
 module.exports = router;

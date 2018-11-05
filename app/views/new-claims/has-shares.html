@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you own any other property or land? - Pension Credit
+  Do you have an share? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -11,13 +11,13 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="property" method="post" class="form">
+    <form action="has-shares-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "has-property",
-        name: "has-property",
+        idPrefix: "has-shares",
+        name: "has-shares",
         fieldset: {
           legend: {
-            text: "Do you own any other property or land?",
+            text: "Do you have any shares?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -27,12 +27,12 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["has-property"] == "yes")
+            checked: (data["has-shares"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["has-property"] == "no")
+            checked: (data["has-shares"] == "no")
           }
         ]
       }) }}
