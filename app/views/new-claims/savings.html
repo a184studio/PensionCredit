@@ -19,7 +19,8 @@
           classes: "govuk-input--width-10",
           label: {
             text: "How much?"
-          }
+          },
+          value: data["savings-amount"]
         }) }}
       {% endset %}
 
@@ -40,11 +41,13 @@
             text: "Yes",
             conditional: {
               html: cashAmount
-            }
+            },
+            checked: (data["has-savings"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["has-savings"] == "no")
           }
         ]
       }) }}

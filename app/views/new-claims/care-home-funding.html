@@ -25,15 +25,18 @@
         items: [
           {
             value: "la",
-            text: "Local authority"
+            text: "Local authority",
+            checked: (data["care-home-funding"] == "yes")
           },
           {
             value: "self",
-            text: "Self funded"
+            text: "Self funded",
+            checked: (data["care-home-funding"] == "self")
           },
           {
             value: "partnpat",
-            text: "Part 'n' pat"
+            text: "Part ‘n’ pat",
+            checked: (data["care-home-funding"] == "partnpat")
           }
         ]
       }) }}

@@ -23,7 +23,24 @@
           },
           hint: {
             text: "For example, 31 3 1980"
-          }
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["care-home-date-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["care-home-date-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["care-home-date-year"]
+            }
+          ]
         }) }}
       {% endset %}
 
@@ -44,11 +61,13 @@
             text: "Yes",
             conditional: {
               html: careHomeDate
-            }
+            },
+            checked: (data["care-home"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["care-home"] == "no")
           }
         ]
       }) }}

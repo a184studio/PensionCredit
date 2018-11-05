@@ -29,11 +29,13 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: (data["has-partner"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["has-partner"] == "no")
           }
         ]
       }) }}

@@ -26,11 +26,13 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: (data["self-employed"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["self-employed"] == "no")
           }
         ]
       }) }}

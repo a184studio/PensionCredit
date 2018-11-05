@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What's the postcode? - Pension Credit
+  What is your home address? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -12,7 +12,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {% if data['care-home-permanence'] == 'yes' %}
+      {% if data["care-home-permanence"] == "yes" %}
         What is the address of the care home that you live in?
       {% else %}
         What is your home address?
@@ -29,19 +29,23 @@
         items: [
           {
             value: "address-count",
-            text: "3 addresses found"
+            text: "3 addresses found",
+            selected: (data["address"] == "address-count")
           },
           {
             value: "221a",
-            text: "221A Baker Street"
+            text: "221A Baker Street",
+            selected: (data["address"] == "221a")
           },
           {
             value: "221b",
-            text: "221B Baker Street"
+            text: "221B Baker Street",
+            selected: (data["address"] == "221b")
           },
           {
             value: "222",
-            text: "222 Baker Street"
+            text: "222 Baker Street",
+            selected: (data["address"] == "222")
           }
         ]
       }) }}

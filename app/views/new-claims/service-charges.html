@@ -21,7 +21,7 @@
           id: "service-charges",
           name: "service-charges",
           classes: "govuk-input--width-20",
-          value: data['service-charges']
+          value: data["service-charges"]
         }) }}
       {% endset %}
 
@@ -42,11 +42,13 @@
             text: "Yes",
             conditional: {
               html: serviceCharges
-            }
+            },
+            checked: (data["have-any-service-charges"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["have-any-service-charges"] == "no")
           }
         ]
       }) }}

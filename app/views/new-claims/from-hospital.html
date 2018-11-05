@@ -23,7 +23,24 @@
           },
           hint: {
             text: "For example, 31 3 1980"
-          }
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["hospital-entry-date-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["hospital-entry-date-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["hospital-entry-date-year"]
+            }
+          ]
         }) }}
       {% endset %}
 
@@ -44,11 +61,13 @@
             text: "Yes",
             conditional: {
               html: hospitalDate
-            }
+            },
+            checked: (data["from-hospital"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["from-hospital"] == "no")
           }
         ]
       }) }}

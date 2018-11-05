@@ -25,15 +25,18 @@
         items: [
           {
             value: "own",
-            text: "Own"
+            text: "Own",
+            checked: (data["home-ownership"] == "own")
           },
           {
             value: "rent",
-            text: "Rent"
+            text: "Rent",
+            checked: (data["home-ownership"] == "rent")
           },
           {
             value: "neither",
-            text: "Neither"
+            text: "Neither",
+            checked: (data["home-ownership"] == "neither")
           }
         ]
       }) }}

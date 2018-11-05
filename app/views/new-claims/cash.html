@@ -15,11 +15,12 @@
       {% set cashAmount %}
         {{ govukInput({
           id: "cash-amount",
-          name: "hospital-entry-date",
+          name: "cash-amount",
           classes: "govuk-input--width-10",
           label: {
             text: "How much?"
-          }
+          },
+          value: data["cash-amount"]
         }) }}
       {% endset %}
 
@@ -40,11 +41,13 @@
             text: "Yes",
             conditional: {
               html: cashAmount
-            }
+            },
+            checked: (data["has-cash"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["has-cash"] == "no")
           }
         ]
       }) }}

@@ -12,10 +12,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data['has-partner'] == 'yes' %}
-      {% set legend = 'Is anyone other than you and your partner named on the tenancy agreement?' %}
+    {% if data["has-partner"] == "yes" %}
+      {% set legend = "Is anyone other than you and your partner named on the tenancy agreement?" %}
     {% else %}
-      {% set legend = 'Is anyone other than you named on the tenancy agreement?' %}
+      {% set legend = "Is anyone other than you named on the tenancy agreement?" %}
     {% endif %}
 
     <form action="other-people-you-live-with" method="post" class="form">
@@ -33,11 +33,13 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: (data["shared-tenancy"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["shared-tenancy"] == "no")
           }
         ]
       }) }}

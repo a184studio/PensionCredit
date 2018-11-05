@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  ? - Pension Credit
+  Do you live in this care home permanently? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -26,11 +26,13 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: (data["care-home-permanence"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["care-home-permanence"] == "no")
           }
         ]
       }) }}

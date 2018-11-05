@@ -11,7 +11,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="declaration" method="post" class="form">
+    <form action="check-your-answers" method="post" class="form">
       <h1 class="govuk-heading-xl">
         What are your contact details?
       </h1>
@@ -23,7 +23,7 @@
         id: "phone-number",
         name: "phone-number",
         classes: "govuk-input--width-20",
-        value: data['phone-number']
+        value: data["phone-number"]
       }) }}
 
       {{ govukRadios({
@@ -37,12 +37,14 @@
         classes: "govuk-radios--inline",
         items: [
           {
-            value: "yes",
-            text: "Home address"
+            value: "home",
+            text: "Home address",
+            checked: (data["use-home-address"] == "home")
           },
           {
-            value: "no",
-            text: "Different address"
+            value: "other",
+            text: "Different address",
+            checked: (data["use-home-address"] == "other")
           }
         ]
       }) }}

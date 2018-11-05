@@ -38,11 +38,13 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: (data["other-income"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["other-income"] == "no")
           }
         ]
       }) }}

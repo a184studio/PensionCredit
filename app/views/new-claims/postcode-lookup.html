@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What's the postcode? - Pension Credit
+  What’s the postcode? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -12,7 +12,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {% if data['care-home-permanence'] == 'yes' %}
+      {% if data["care-home-permanence"] == "yes" %}
         What is the postcode of the care home that you live in?
       {% else %}
         What is your home postcode?
@@ -23,12 +23,11 @@
       {{ govukInput({
         id: "postcode",
         name: "postcode",
-        value: data['postcode'],
+        value: data["postcode"],
         classes: "govuk-input--width-10",
         label: {
           text: "Postcode"
-        },
-        casaErrors: formErrors
+        }
       }) }}
 
       {{ govukButton({

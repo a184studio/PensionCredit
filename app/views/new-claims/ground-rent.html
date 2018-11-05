@@ -20,7 +20,7 @@
           id: "ground-rent",
           name: "ground-rent",
           classes: "govuk-input--width-20",
-          value: data['ground-rent']
+          value: data["ground-rent"]
         }) }}
       {% endset %}
 
@@ -41,11 +41,13 @@
             text: "Yes",
             conditional: {
               html: groundRent
-            }
+            },
+            checked: (data["have-any-ground-rent"] == "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: (data["have-any-ground-rent"] == "no")
           }
         ]
       }) }}
