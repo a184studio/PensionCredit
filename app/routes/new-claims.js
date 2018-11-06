@@ -171,4 +171,14 @@ router.get('/new-claims/other-people-you-live-with-router', (req, res) => {
   }
 })
 
+router.post('/new-claims/property-router', (req, res) => {
+  const hasProperty = req.session.data['has-property']
+
+  if (hasProperty === 'yes') {
+    res.redirect('/new-claims/has-private-pension')
+  } else {
+    res.redirect('/new-claims/has-private-pension')
+  }
+})
+
 module.exports = router;
