@@ -183,6 +183,33 @@
     </dl>
 
     <h2 class="govuk-heading-m">
+      Household composition
+    </h2>
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Who else lives in your home?
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          <ul class="govuk-list" style="margin-bottom: 0">
+            {% if data['relationship-children'] %}<li>Children</li>{% endif %}
+            {% if data['relationship-landlord'] %}<li>Landlord</li>{% endif %}
+            {% if data['relationship-joint-tenant'] %}<li>Joint tenant</li>{% endif %}
+            {% if data['relationship-sub-tenant'] %}<li>Sub-tenant</li>{% endif %}
+            {% if data['relationship-co-owner'] %}<li>Co-owner</li>{% endif %}
+            {% if data['relationship-boarder'] %}<li>Boarder</li>{% endif %}
+          </ul>
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="address-choice">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
       Money
     </h2>
 

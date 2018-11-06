@@ -149,7 +149,7 @@ router.post('/new-claims/has-shares-router', (req, res) => {
   }
 })
 
-router.get('/new-claims/shares/:number', (req, res, next) => {
+router.get('/new-claims/shares/:number', (req, res) => {
   const {number} = req.params
   res.render('new-claims/shares.html', {
     shareNumber: number
@@ -159,6 +159,16 @@ router.get('/new-claims/shares/:number', (req, res, next) => {
 router.post('/new-claims/shares-router', (req, res) => {
   req.session.data['number-of-shares'] = Object.keys(req.session.data).filter(key => key.match(/^share-company-\d+$/)).length
   res.redirect('/new-claims/shares-summary')
+})
+
+router.get('/new-claims/other-people-you-live-with-router', (req, res) => {
+  const peopleInHome = req.session.data['people-in-home']
+
+  if (peopleInHome === 'yes') {
+    res.redirect('/new-claims/relationship-to-claimant')
+  } else {
+    res.redirect('/new-claims/money-you-have')
+  }
 })
 
 module.exports = router;

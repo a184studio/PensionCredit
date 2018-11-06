@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What are your contact details? - Pension Credit
+  What address should we use to write to you? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -12,26 +12,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="check-your-answers" method="post" class="form">
-      <h1 class="govuk-heading-xl">
-        What are your contact details?
-      </h1>
-
-      {{ govukInput({
-        label: {
-          text: "Phone number"
-        },
-        id: "phone-number",
-        name: "phone-number",
-        classes: "govuk-input--width-20",
-        value: data["phone-number"]
-      }) }}
-
       {{ govukRadios({
         idPrefix: "use-home-address",
         name: "use-home-address",
         fieldset: {
           legend: {
-            text: "What address should we use to write to you?"
+            text: "What address should we use to write to you?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
           }
         },
         classes: "govuk-radios--inline",
