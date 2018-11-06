@@ -12,7 +12,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {% if data["care-home-permanence"] == "yes" %}
+      {% if data["care-home"] == "yes" and data["care-home-permanence"] == "yes" %}
         What is the postcode of the care home that you live in?
       {% else %}
         What is your home postcode?
