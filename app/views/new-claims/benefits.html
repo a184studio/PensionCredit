@@ -30,7 +30,7 @@
           }
         },
         hint: {
-          text: "Select all that apply."
+          text: "Select all that apply, a total of 25 other benefits effect pension credit."
         },
         items: [
           {
@@ -68,6 +68,24 @@
             value: "yes",
             text: "War benefits",
             checked: (data["wb"] == "yes")
+          },
+          {
+            name: "ob1",
+            value: "yes",
+            text: "Other benefit 1",
+            checked: (data["ob1"] == "yes")
+          },
+        {
+            name: "ob2",
+            value: "yes",
+            text: "Other benefit 2",
+            checked: (data["ob2"] == "yes")
+          },
+          {
+            name: "ob3",
+            value: "yes",
+            text: "Other benefit",
+            checked: (data["ob3"] == "yes")
           }
         ]
       }) }}
