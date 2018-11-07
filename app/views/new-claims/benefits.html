@@ -23,44 +23,62 @@
           }
         },
         hint: {
-          text: "Select all that apply."
+          text: "Select all that apply, a total of 25 other benefits effect pension credit."
         },
         items: [
           {
             name: "sp",
             value: "yes",
-            text: "State Pension",
+            text: "State Pension (+ Value) / Source: SearchLight",
             checked: (data["sp"] == "yes")
           },
           {
             name: "ca",
             value: "yes",
-            text: "Carer’s Allowance",
+            text: "Carer’s Allowance (+ Value) / Source: SearchLight",
             checked: (data["ca"] == "yes")
           },
           {
             name: "pip",
             value: "yes",
-            text: "Personal Independence Payment",
+            text: "Personal Independence Payment (+ Value) / Source: SeachLight",
             checked: (data["pip"] == "yes")
           },
           {
             name: "aa",
             value: "yes",
-            text: "Attendance Allowance",
+            text: "Attendance Allowance (+ Value) / Source: SearchLight",
             checked: (data["aa"] == "yes")
           },
           {
             name: "jsa",
             value: "yes",
-            text: "Job Seeker’s Allowance",
+            text: "Job Seeker’s Allowance (+ Value) / Source: SearchLight",
             checked: (data["jsa"] == "yes")
           },
           {
             name: "wb",
             value: "yes",
-            text: "War benefits",
+            text: "War benefits (+ Value) / Source: Small system",
             checked: (data["wb"] == "yes")
+          },
+          {
+            name: "ob1",
+            value: "yes",
+            text: "Other benefit 1 (+ Value) / Source: SearchLight or other",
+            checked: (data["ob1"] == "yes")
+          },
+        {
+            name: "ob2",
+            value: "yes",
+            text: "Other benefit 2 (+ Value) / Source: SearchLight or other",
+            checked: (data["ob2"] == "yes")
+          },
+          {
+            name: "ob3",
+            value: "yes",
+            text: "Other benefit (+ Value) / Source: SearchLight or other",
+            checked: (data["ob3"] == "yes")
           }
         ]
       }) }}
