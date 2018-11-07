@@ -9,6 +9,19 @@
 {% endblock %}
 
 {% block content %}
+
+<p>
+  {% if data["has-savings"] == "yes" %}
+    {% set backLink = "savings-summary" %}
+  {% else %}
+    {% set backLink = "savings" %}
+  {% endif %}
+
+  {{ govukBackLink({
+    href: backLink
+  }) }}
+</p>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="has-shares-router" method="post" class="form">
