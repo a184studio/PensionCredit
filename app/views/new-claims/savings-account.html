@@ -4,8 +4,8 @@
   Do you have any money in current, savings or investment accounts? - Pension Credit
 {% endblock %}
 
-{% block header %}
-  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{{% block header %}
+  {% include "includes/internal-header.html" %}
 {% endblock %}
 
 {% block content %}
