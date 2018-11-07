@@ -34,74 +34,21 @@
       <span class="app-task-list__section-number">1. </span> Development
     </h2>
     <ul class="app-task-list__items">
+     <!------------ ---- ------------>
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="eligibility-completed">
           Pizza Italia flavour matrix
         </a>
         <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Hold</strong>
       </li>
+      <!------------ ---- ------------>
       <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="read-declaration-completed">
-          ..
+        <a class="app-task-list__task-name" href="/development/find_a_claimant/case-management.html" aria-describedby="contact-details-completed">
+          Case management
         </a>
         <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
       </li>
-    </ul>
-  </li>
-<!------------ Section ------------ ------------>
-  <li>
-    <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">2. </span> Pension credit / End-to-end journeys
-    </h2>
-    <ul class="app-task-list__items">
-<!------------ ---- ------------>
-      <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="/new-claims/about-you.html" aria-describedby="company-information-completed">
-          New claim
-        </a>
-        <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">X</strong>
-      </li>
-    </ul>
-  </li>
-
-<!------------ Section ------------ ------------>
-  <li>
-    <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">3. </span> Change of circumanstances
-    </h2>
-    <ul class="app-task-list__items">
-<!------------ ---- ------------>
-      <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="/development/claimant_index/cliamantIndex.html" aria-describedby="contact-details-completed">
-          (Claimant index) Change of circumanstances
-        </a>
-        <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">X</strong>
-      </li>
-<!------------ ---- ------------>
-      <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="company-information-completed">
-          ..
-        </a>
-        <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">X</strong>
-      </li>
-<!------------ ---- ------------>
-      <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="/development/claimant_index/cliamantIndex.html" aria-describedby="contact-details-completed">
-          ..
-        </a>
-        <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">X</strong>
-      </li>
-<!------------ ---- ------------>
-    </ul>
-  </li>
-
-  <!------------ Section ------------ ------------>
-
-  <li>
-    <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">4. </span> Module shortcuts
-    </h2>
-    <ul class="app-task-list__items">
+      <!------------ ---- ------------>
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="/development/claimant_index/cliamantIndex.html" aria-describedby="contact-details-completed">
           Claimant index
@@ -130,16 +77,162 @@
         <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
       </li>
       <!------------ ---- ------------>
+    </ul>
+  </li>
+<!------------ Section ------------ ------------>
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">2. </span> Pension credit / End-to-end journeys
+    </h2>
+    <ul class="app-task-list__items">
+<!------------ ---- ------------>
       <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="/development/find_a_claimant/case-management.html" aria-describedby="contact-details-completed">
-          Case management
+        <a class="app-task-list__task-name" href="/new-claims/about-you.html" aria-describedby="company-information-completed">
+          New claim
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">1.0</strong>
+
+
+      </li> <br>
+
+      {% from "details/macro.njk" import govukDetails %}
+
+     {{ govukDetails({
+       summaryText: "Notes",
+       text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post."
+     }) }}
+
+    </ul>
+  </li>
+
+
+
+<!------------ Section ------------ ------------>
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">. </span> .
+    </h2>
+    <ul class="app-task-list__items">
+<!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/#" aria-describedby="contact-details-completed">
+          ...
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">X</strong>
+      </li>
+<!------------ ---- ------------>
+
+    </ul>
+  </li>
+
+  <!------------ Section ------------ ------------>
+
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">3. </span> Prototype 1.0 Module shortcuts
+    </h2>
+    <ul class="app-task-list__items">
+
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/about-you" aria-describedby="contact-details-completed">
+          About you
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+      <!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/has-partner" aria-describedby="contact-details-completed">
+          Partner
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+      <!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/benefits" aria-describedby="contact-details-completed">
+          Benefits
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+      <!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/money-you-have" aria-describedby="contact-details-completed">
+          Money / Capital
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+      <!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/has-private-pension" aria-describedby="contact-details-completed">
+          Pensions
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+      <!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/has-work" aria-describedby="contact-details-completed">
+          Employment
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+      <!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/uk-account" aria-describedby="contact-details-completed">
+          Bank Details
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+      <!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/contact-preference" aria-describedby="contact-details-completed">
+          Future Contact / Contact preference
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+      <!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/done" aria-describedby="contact-details-completed">
+          Done
+        </a>
+        <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
+      </li>
+      <!------------ ---- ------------>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="/new-claims/check-your-answers" aria-describedby="contact-details-completed">
+          Check your answers
         </a>
         <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">X</strong>
       </li>
       <!------------ ---- ------------>
 
+
+
     </ul>
   </li>
+  <!------------ Section ------------ ------------>
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">4. </span> Change of circumanstances
+      </h2>
+      <ul class="app-task-list__items">
+  <!------------ ---- ------------>
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="/development/claimant_index/cliamantIndex.html" aria-describedby="contact-details-completed">
+            (Claimant index) Change of circumanstances
+          </a>
+          <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">X</strong>
+        </li>
+  <!------------ ---- ------------>
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list#" aria-describedby="company-information-completed">
+            ..
+          </a>
+          <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">X</strong>
+        </li>
+  <!------------ ---- ------------>
+
+      </ul>
+    </li>
+
 
 </ol>
           </div>
