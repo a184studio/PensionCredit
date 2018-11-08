@@ -5,10 +5,23 @@
 {% endblock %}
 
 {% block header %}
-  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+  {% include "includes/internal-header.html" %}
 {% endblock %}
 
 {% block content %}
+
+<p>
+  {% if data["has-shares"] == "yes" %}
+    {% set backLink = "shares-summary" %}
+  {% else %}
+    {% set backLink = "has-shares" %}
+  {% endif %}
+
+  {{ govukBackLink({
+    href: backLink
+  }) }}
+</p>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="property-router" method="post" class="form">

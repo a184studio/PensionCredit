@@ -5,10 +5,17 @@
 {% endblock %}
 
 {% block header %}
-  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+  {% include "includes/internal-header.html" %}
 {% endblock %}
 
 {% block content %}
+
+<p>
+  {{ govukBackLink({
+    href: "from-hospital"
+  }) }}
+</p>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="care-home-permanence-router" method="post" class="form">
