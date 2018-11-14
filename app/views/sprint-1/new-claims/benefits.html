@@ -1,21 +1,14 @@
-{% extends "layout.html" %}
+`<q cite=""></q>`{% extends "layout.html" %}
 
 {% block pageTitle %}
   Benefits - Pension Credit
 {% endblock %}
 
 {% block header %}
-  {% include "includes/internal-header.html" %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
 {% endblock %}
 
 {% block content %}
-
-<p>
-  {{ govukBackLink({
-    href: "has-partner"
-  }) }}
-</p>
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="care-home" method="post" class="form">
@@ -44,18 +37,6 @@
             value: "yes",
             text: "Carer’s Allowance",
             checked: (data["ca"] == "yes")
-          },
-          {
-            name: "dla",
-            value: "yes",
-            text: "Disability Living Allowance",
-            checked: (data["dla"] == "yes")
-          },
-          {
-            name: "iidb",
-            value: "yes",
-            text: "Industrial Injuries Disablement Benefit ",
-            checked: (data["iidb"] == "yes")
           },
           {
             name: "pip",
