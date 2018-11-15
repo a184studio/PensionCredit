@@ -44,17 +44,15 @@
       {% endset %}
 
       {% set hintText %}
-      <span id="changed-name-hint" class="govuk-hint">
-       This includes:
-           <ul>
-               <li>money in current, savings or deposit accounts with a bank, building society or the Post Office</li>
-               <li>National Savings and Investment products like Savings Certificates, Premium Bonds, Income Bonds and residual accounts</li>
-               <li>cash saved for something</li>
-               <li>investments like ISAs, PEPs and TOISAs</li>
-               <li>unit trust funds</li>
-               <li>any other money or investments in this country or abroad</li>
-           </ul>
-      </span>
+       <p>This includes:</p>
+       <ul class="govuk-list govuk-list--bullet">
+         <li>money in current, savings or deposit accounts with a bank, building society or the Post Office</li>
+         <li>National Savings and Investment products like Savings Certificates, Premium Bonds, Income Bonds and residual accounts</li>
+         <li>cash saved for something</li>
+         <li>investments like ISAs, PEPs and TOISAs</li>
+         <li>unit trust funds</li>
+         <li>any other money or investments in this country or abroad</li>
+       </ul>
       {% endset %}
 
       {{ govukRadios({
