@@ -1,3 +1,25 @@
+const months = [
+  'January',
+  'Feburary',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+const GBP = new Intl.NumberFormat('en-GB', {
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+  style: 'currency',
+  currency: 'GBP'
+});
+
 module.exports = function (env) {
   /**
    * Instantiate object used to store the methods registered as a
@@ -5,7 +27,18 @@ module.exports = function (env) {
    * gov.uk core filters by creating filter methods of the same name.
    * @type {Object}
    */
-  var filters = {}
+  var filters = {
+    upperCaseFirst(string) {
+      return string && string[0].toUpperCase() + string.slice(1);
+    },
+    getMonth(month) {
+      const monthIndex = parseInt(month, 10) - 1;
+      return months[monthIndex];
+    },
+    formatMoney(money) {
+      return GBP.format(money);
+    }
+  }
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
