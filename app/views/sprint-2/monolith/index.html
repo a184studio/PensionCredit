@@ -304,7 +304,7 @@
 
     {% for admission in data["admissions"] %}
       <h3 class="govuk-heading-m">Admission {{loop.index}}</h3>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+      <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Type
@@ -502,7 +502,7 @@
     <h3 class="govuk-heading-s">Other household members</h3>
     {% for member in data["members"] %}
       <h3 class="govuk-heading-m">Member {{loop.index}}</h3>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+      <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Name
@@ -540,7 +540,7 @@
     </h2>
     {% for benefit in data["benefits"] %}
       <h3 class="govuk-heading-m">Benefit {{loop.index}}</h3>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+      <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Name
@@ -605,7 +605,7 @@
 
     {% for employment in data["employments"] %}
       <h3 class="govuk-heading-m">Employment {{loop.index}}</h3>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+      <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Name
@@ -681,7 +681,7 @@
     <h3 class="govuk-heading-m" id="savings">Savings accounts</h3>
     {% for saving in data["savings"] %}
       <h4 class="govuk-heading-s">Savings account {{loop.index}}</h4>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+      <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Name
@@ -719,7 +719,7 @@
     <h3 class="govuk-heading-m" id="investments">Investments</h3>
     {% for investment in data["investments"] %}
       <h4 class="govuk-heading-s">Investment {{loop.index}}</h4>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+      <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Name
@@ -757,7 +757,7 @@
     <h3 class="govuk-heading-m" id="shares">Shares</h3>
     {% for share in data["shares"] %}
       <h4 class="govuk-heading-s">Share {{loop.index}}</h4>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+      <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Company
@@ -846,7 +846,7 @@
 
     {% for pension in data["pensions"] %}
       <h4 class="govuk-heading-s">Pension {{loop.index}}</h4>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+      <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Name
