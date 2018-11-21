@@ -14,7 +14,7 @@
 
       <p>
         {{ govukBackLink({
-          href: "/sprint-2/monolith/index"
+          href: "/sprint-2/monolith/index#employments"
         }) }}
       </p>
 
@@ -43,14 +43,36 @@
           value: employment["earnings"]
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Frequency"
+        {{ govukRadios({
+          idPrefix: "employment-frequency",
+          name: "employment-frequency",
+          fieldset: {
+            legend: {
+              text: "Payment frequency"
+            }
           },
-          id: "frequency",
-          name: "frequency",
-          classes: "govuk-input--width-20",
-          value: employment["frequency"]
+          items: [
+            {
+              value: "Every week",
+              text: "Every week",
+              checked: (employment['employment-frequency'] == "Every week")
+            },
+            {
+              value: "Every two weeks",
+              text: "Every two weeks",
+              checked: (employment['employment-frequency'] == "Every two weeks")
+            },
+            {
+              value: "Every four weeks",
+              text: "Every four weeks",
+              checked: (employment['employment-frequency'] == "Every four weeks")
+            },
+            {
+              value: "Every month",
+              text: "Every month",
+              checked: (employment['employment-frequency'] == "Every month")
+            }
+          ]
         }) }}
 
         {{ govukButton({

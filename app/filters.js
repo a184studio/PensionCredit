@@ -45,6 +45,9 @@ module.exports = function (env) {
     },
     dayDiff(arr) {
       return differenceInDays(...arr.map(v => new Date(v.reduce((a, b) => a + '-' + b))))
+    },
+    removeAlreadyPickedBenefits(benefitRadios, benefitsChosen = [], excluded) {
+      return benefitRadios.filter(benefit => !(excluded ? benefitsChosen.filter(b => b["benefit-type"] !== excluded) : benefitsChosen).some(b => b["benefit-type"] === benefit.value))
     }
   }
 

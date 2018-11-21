@@ -266,7 +266,7 @@
             Type
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ admission["admission-type"] | upperCaseFirst }}
+            {{ admission["admission-type"] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="change-admission/{{loop.index0}}">
@@ -478,49 +478,56 @@
     <h2 class="govuk-heading-l" id="benefits">
       Benefits
     </h2>
+    {% for benefit in data["benefits"] %}
+      <h3 class="govuk-heading-m">Benefit {{loop.index}}</h3>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ benefit["benefit-type"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-benefit/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Value
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ benefit["benefit-value"] | formatMoney }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-benefit/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Frequency
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ benefit["benefit-frequency"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-benefit/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+    {% else %}
+      <p class="govuk-body">None</p>
+    {% endfor %}
 
-    <h3 class="govuk-heading-m">Benefit 1</h3>
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Benefit
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Personal Independence Payment
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Award
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          £20
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Pay day
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Tuesday
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-    </dl>
+    <p>
+      <a class="govuk-link" href="add-benefit">Add benefit</a>
+    </p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
 
@@ -562,7 +569,7 @@
             Frequency
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ employment["frequency"] }}
+            {{ employment["employment-frequency"] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="change-employment/{{loop.index0}}">
@@ -787,7 +794,7 @@
             Frequency
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ pension["frequency"] }}
+            {{ pension["pension-frequency"] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="change-pension/{{loop.index0}}">

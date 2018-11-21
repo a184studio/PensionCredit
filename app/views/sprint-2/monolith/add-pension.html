@@ -14,7 +14,7 @@
 
       <p>
         {{ govukBackLink({
-          href: "/sprint-2/monolith/index"
+          href: "/sprint-2/monolith/index#pensions"
         }) }}
       </p>
 
@@ -43,14 +43,36 @@
           value: pension["income"]
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Frequency"
+        {{ govukRadios({
+          idPrefix: "pension-frequency",
+          name: "pension-frequency",
+          fieldset: {
+            legend: {
+              text: "Payment frequency"
+            }
           },
-          id: "frequency",
-          name: "frequency",
-          classes: "govuk-input--width-20",
-          value: pension["frequency"]
+          items: [
+            {
+              value: "Every week",
+              text: "Every week",
+              checked: (pension['pension-frequency'] == "Every week")
+            },
+            {
+              value: "Every two weeks",
+              text: "Every two weeks",
+              checked: (pension['pension-frequency'] == "Every two weeks")
+            },
+            {
+              value: "Every four weeks",
+              text: "Every four weeks",
+              checked: (pension['pension-frequency'] == "Every four weeks")
+            },
+            {
+              value: "Every month",
+              text: "Every month",
+              checked: (pension['pension-frequency'] == "Every month")
+            }
+          ]
         }) }}
 
         {{ govukButton({
