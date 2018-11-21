@@ -19,14 +19,26 @@
         margin: 0 0 0 25px;
         padding: 7.5px 25px 0 0;
       }
+
       .contents li::before {
         content: "— ";
         margin-left: -25px;
         padding-right: 5px;
       }
+
+      .section-end {
+        position: relative;
+      }
+
+      .section-end .app-c-back-to-top {
+        position: absolute;
+        top: -2.5em;
+        right: 0;
+        padding-left: 5px;
+      }
     </style>
-    <h2 class="govuk-body-s" style="margin-bottom:0">Contents</h2>
-    <ul class="govuk-list contents" id="contents">
+    <h2 class="govuk-body-s"  id="contents" style="margin-bottom:0">Contents</h2>
+    <ul class="govuk-list contents">
       <li>
         <a class="govuk-link" href="#claimant-details">Claimant details</a>
       </li>
@@ -141,7 +153,15 @@
       ]
     }) }}
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="contact">
       Contact
@@ -177,7 +197,15 @@
       value: data["email"]
     }) }}
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="address">
       Address
@@ -216,7 +244,15 @@
       ]
     }) }}
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="housing-costs">
       Housing costs
@@ -252,7 +288,15 @@
       value: data["email"]
     }) }}
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="admissions">
       Hospital admission or temporary care home
@@ -337,7 +381,15 @@
       <a href="add-admission">Add admission</a>
     </p>
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="members">
       Household composition
@@ -473,7 +525,15 @@
       <a href="add-member">Add household member</a>
     </p>
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="benefits">
       Benefits
@@ -529,7 +589,15 @@
       <a class="govuk-link" href="add-benefit">Add benefit</a>
     </p>
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="employments">
       Employment and earnings
@@ -586,7 +654,15 @@
       <a href="add-employment">Add employment</a>
     </p>
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="capital">
       Finance, capital, shares and investments
@@ -742,7 +818,15 @@
       <a href="add-share">Add shares</a>
     </p>
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="pensions">
       Pensions
@@ -811,7 +895,15 @@
       <a href="add-pension">Add non-state pension</a>
     </p>
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    <div class="section-end">
+      <a class="app-c-back-to-top dont-print" href="#contents">
+         <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+           <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+         </svg>
+         Contents
+      </a>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+    </div>
 
     <h2 class="govuk-heading-l" id="payment-details">
       Payment Details
@@ -922,14 +1014,6 @@
       text: "Continue"
     }) }}
 
-  </div>
-  <div class="govuk-grid-column-one-third">
-    {# <a class="app-c-back-to-top dont-print" href="#contents">
-       <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
-         <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-       </svg>
-       Contents
-    </a> #}
   </div>
 </div>
 {% endblock %}
