@@ -584,6 +584,17 @@
     <h2 class="govuk-heading-l" id="capital">
       Finance, capital, shares and investments
     </h2>
+
+    {{ govukInput({
+      label: {
+        text: "Cash"
+      },
+      id: "cash",
+      name: "cash",
+      classes: "govuk-input--width-10",
+      value: data["cash"]
+    }) }}
+
     <h3 class="govuk-heading-m" id="savings">Savings accounts</h3>
     {% for saving in data["savings"] %}
       <h4 class="govuk-heading-s">Savings account {{loop.index}}</h4>
@@ -618,9 +629,110 @@
     {% else %}
       <p class="govuk-body">None</p>
     {% endfor %}
-
     <p>
       <a href="add-saving">Add savings account</a>
+    </p>
+
+    <h3 class="govuk-heading-m" id="investments">Investments</h3>
+    {% for investment in data["investments"] %}
+      <h4 class="govuk-heading-s">Investment {{loop.index}}</h4>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ investment["investment-name"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-investment/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Value
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ investment["investment-value"] | formatMoney }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-investment/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+    {% else %}
+      <p class="govuk-body">None</p>
+    {% endfor %}
+    <p>
+      <a href="add-investment">Add investments</a>
+    </p>
+
+    <h3 class="govuk-heading-m" id="shares">Shares</h3>
+    {% for share in data["shares"] %}
+      <h4 class="govuk-heading-s">Share {{loop.index}}</h4>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Company
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ share["share-company-name"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-share/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Type
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ share["share-type"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-share/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ share["share-number"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-share/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Value
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ share["share-value"] | formatMoney }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-share/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+    {% else %}
+      <p class="govuk-body">None</p>
+    {% endfor %}
+    <p>
+      <a href="add-share">Add shares</a>
     </p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>

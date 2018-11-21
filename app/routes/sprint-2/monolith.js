@@ -40,5 +40,7 @@ router.use(manyThing(baseUrl, 'member'))
 router.use(manyThing(baseUrl, 'employment'))
 router.use(manyThing(baseUrl, 'pension'))
 router.use(manyThing(baseUrl, 'saving'))
+router.use(manyThing(baseUrl, 'investment'))
+router.use(manyThing(baseUrl, 'share'))
 
 module.exports = router
