@@ -1,3 +1,5 @@
+const differenceInDays = require('date-fns/difference_in_days')
+
 const months = [
   'January',
   'Feburary',
@@ -11,14 +13,14 @@ const months = [
   'October',
   'November',
   'December'
-];
+]
 
 const GBP = new Intl.NumberFormat('en-GB', {
   minimumFractionDigits: 0,
   maximumFractionDigits: 0,
   style: 'currency',
   currency: 'GBP'
-});
+})
 
 module.exports = function (env) {
   /**
@@ -29,14 +31,20 @@ module.exports = function (env) {
    */
   var filters = {
     upperCaseFirst(string) {
-      return string && string[0].toUpperCase() + string.slice(1);
+      return string && string[0].toUpperCase() + string.slice(1)
     },
     getMonth(month) {
-      const monthIndex = parseInt(month, 10) - 1;
-      return months[monthIndex];
+      const monthIndex = parseInt(month, 10) - 1
+      return months[monthIndex]
     },
     formatMoney(money) {
-      return GBP.format(money);
+      return GBP.format(money)
+    },
+    formatJSON(object) {
+      return JSON.stringify(object, null, '  ')
+    },
+    dayDiff(arr) {
+      return differenceInDays(...arr.map(v => new Date(v.reduce((a, b) => a + '-' + b))))
     }
   }
 

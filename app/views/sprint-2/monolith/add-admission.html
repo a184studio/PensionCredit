@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  🗼 Admissions - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p>
+        {{ govukBackLink({
+          href: "/sprint-2/monolith/index"
+        }) }}
+      </p>
+
+      <form method="post" class="form">
+        <h1 class="govuk-heading-xl">
+          Add admissions
+        </h1>
+
+        {{ govukRadios({
+          idPrefix: "admission-type",
+          name: "admission-type",
+          fieldset: {
+            legend: {
+              text: "Type of addmission"
+            }
+          },
+          classes: "govuk-radios--inline",
+          items: [
+            {
+              value: "hospital",
+              text: "Hospital",
+              checked: (admissionType == "hospital")
+            },
+            {
+              value: "temp-care-home",
+              text: "Temporary care home addmission",
+              checked: (admissionType == "temp-care-home")
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "date-in",
+          namePrefix: "date-in",
+          fieldset: {
+            legend: {
+              text: "Date in"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 2015"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: dateInDay
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: dateInMonth
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: dateInYear
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "date-out",
+          namePrefix: "date-out",
+          fieldset: {
+            legend: {
+              text: "Date out"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 2015"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: dateOutDay
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: dateOutMonth
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: dateOutYear
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
