@@ -36,12 +36,12 @@
             {
               value: "hospital",
               text: "Hospital",
-              checked: (admissionType == "hospital")
+              checked: (admission['admission-type'] == "hospital")
             },
             {
               value: "temp-care-home",
               text: "Temporary care home addmission",
-              checked: (admissionType == "temp-care-home")
+              checked: (admission['admission-type'] == "temp-care-home")
             }
           ]
         }) }}
@@ -61,17 +61,17 @@
             {
               name: "day",
               classes: "govuk-input--width-2",
-              value: dateInDay
+              value: admission['date-in-day']
             },
             {
               name: "month",
               classes: "govuk-input--width-2",
-              value: dateInMonth
+              value: admission['date-in-month']
             },
             {
               name: "year",
               classes: "govuk-input--width-4",
-              value: dateInYear
+              value: admission['date-in-year']
             }
           ]
         }) }}
@@ -91,17 +91,17 @@
             {
               name: "day",
               classes: "govuk-input--width-2",
-              value: dateOutDay
+              value: admission['date-out-day']
             },
             {
               name: "month",
               classes: "govuk-input--width-2",
-              value: dateOutMonth
+              value: admission['date-out-month']
             },
             {
               name: "year",
               classes: "govuk-input--width-4",
-              value: dateOutYear
+              value: admission['date-out-year']
             }
           ]
         }) }}

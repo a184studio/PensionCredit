@@ -12,6 +12,55 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Claim details</h1>
+    <style>
+      .contents li {
+        font-size: 16px;
+        margin: 0 0 0 25px;
+        padding: 7.5px 25px 0 0;
+      }
+      .contents li::before {
+        content: "— ";
+        margin-left: -25px;
+        padding-right: 5px;
+      }
+    </style>
+    <h2 class="govuk-body-s" style="margin-bottom:0">Contents</h2>
+    <ul class="govuk-list contents" id="contents">
+      <li>
+        <a class="govuk-link" href="#claimant-details">Claimant details</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#contact">Contact</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#address">Address</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#housing-costs">Housing costs</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#admissions">Hospital admission or temporary care home</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#members">Household composition</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#benefits">Benefits</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#employments">Employment and earnings</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#capital">Finance, capital, shares and investments</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#pensions">Pensions</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#payment-details">Payment details</a>
+      </li>
+    </ul>
     <h2 class="govuk-heading-l" id="claimant-details">
       Claimant details
     </h2>
@@ -274,15 +323,13 @@
           </dd>
         </div>
       </dl>
-    {% else %}
-      <p class="govuk-body">No admissions!</p>
     {% endfor %}
 
     <p>
       <a href="add-admission">Add admission</a>
     </p>
 
-    <h2 class="govuk-heading-l" id="household-composition">
+    <h2 class="govuk-heading-l" id="members">
       Household composition
     </h2>
 
@@ -391,51 +438,29 @@
     }) }}
 
     <h3 class="govuk-heading-s">Other household members</h3>
-    <h4 class="govuk-heading-s">Member 1</h4>
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Type
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Lodger
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Name
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Jim Bones
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          National Insurance number
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          QQ123456A
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-    </dl>
+    {% for member in data["members"] %}
+      <h3 class="govuk-heading-m">Member {{loop.index}}</h3>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ member["member-name"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-member/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+    {% else %}
+      <p class="govuk-body">None</p>
+    {% endfor %}
 
     <p>
-      <a href="postcode-lookup">Add another household member</a>
+      <a href="add-member">Add household member</a>
     </p>
 
     <h2 class="govuk-heading-l" id="benefits">
@@ -485,93 +510,101 @@
       </div>
     </dl>
 
-    <h2 class="govuk-heading-l" id="employment">
+    <h2 class="govuk-heading-l" id="employments">
       Employment and earnings
     </h2>
 
-    <h3 class="govuk-heading-m">Employer 1</h3>
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Name
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Woolworths
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Earnings
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          £20
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Frequency
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Weekly
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-    </dl>
+    {% for employment in data["employments"] %}
+      <h3 class="govuk-heading-m">Employment {{loop.index}}</h3>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ employment["name"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-employment/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Earnings
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ employment["earnings"] | formatMoney }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-employment/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Frequency
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ employment["frequency"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-employment/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+    {% else %}
+      <p class="govuk-body">None</p>
+    {% endfor %}
 
     <p>
-      <a href="postcode-lookup">Add employment</a>
+      <a href="add-employment">Add employment</a>
     </p>
 
     <h2 class="govuk-heading-l" id="capital">
       Finance, capital, shares and investments
     </h2>
-
-    <h3 class="govuk-heading-m">Bank Account 1</h3>
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Name
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Account
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Amount
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          £200
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-    </dl>
+    <h3 class="govuk-heading-m" id="savings">Savings accounts</h3>
+    {% for saving in data["savings"] %}
+      <h4 class="govuk-heading-s">Savings account {{loop.index}}</h4>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ saving["savings-name"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-saving/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Total value
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ saving["savings-total"] | formatMoney }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-saving/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+    {% else %}
+      <p class="govuk-body">None</p>
+    {% endfor %}
 
     <p>
-      <a href="postcode-lookup">Add thing</a>
+      <a href="add-saving">Add savings account</a>
     </p>
 
     <h2 class="govuk-heading-l" id="pensions">
@@ -588,38 +621,57 @@
       value: data["sp-amount"]
     }) }}
 
-    <h3 class="govuk-heading-m">Workplace pension</h3>
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Amount
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          £5
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Frequency
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Weekly
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="about-you">
-            Change
-          </a>
-        </dd>
-      </div>
-    </dl>
+    <h3 class="govuk-heading-m">Non state pensions</h3>
+
+    {% for pension in data["pensions"] %}
+      <h4 class="govuk-heading-s">Pension {{loop.index}}</h4>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ pension["name"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-pension/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Income
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ pension["income"] | formatMoney }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-pension/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Frequency
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ pension["frequency"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="change-pension/{{loop.index0}}">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+    {% else %}
+      <p class="govuk-body">None</p>
+    {% endfor %}
 
     <p>
-      <a href="postcode-lookup">Add non-state pension</a>
+      <a href="add-pension">Add non-state pension</a>
     </p>
 
     <h2 class="govuk-heading-l" id="payment-details">
@@ -732,49 +784,13 @@
     }) }}
 
   </div>
-  <div class="govuk-grid-column-third">
-    <ul class="govuk-list" id="contents">
-      <li>
-        <a class="govuk-link" href="#claimant-details">Claimant details</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#contact">Contact</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#address">Address</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#housing-costs">Housing costs</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#admissions">Hospital admission or temporary care home</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#household-composition">Household composition</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#benefits">Benefits</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#employment">Employment and earnings</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#capital">Finance, capital, shares and investments</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#pensions">Pensions</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#payment-details">Payment details</a>
-      </li>
-    </ul>
-
-    <a class="app-c-back-to-top dont-print" href="#contents">
+  <div class="govuk-grid-column-one-third">
+    {# <a class="app-c-back-to-top dont-print" href="#contents">
        <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
        </svg>
        Contents
-    </a>
+    </a> #}
   </div>
 </div>
 {% endblock %}

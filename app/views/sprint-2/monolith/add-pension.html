@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  🗼 Admissions - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p>
+        {{ govukBackLink({
+          href: "/sprint-2/monolith/index"
+        }) }}
+      </p>
+
+      <form method="post" class="form">
+        <h1 class="govuk-heading-xl">
+          Add pension
+        </h1>
+
+        {{ govukInput({
+          label: {
+            text: "Name"
+          },
+          id: "name",
+          name: "name",
+          classes: "govuk-input--width-20",
+          value: pension["name"]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Income"
+          },
+          id: "income",
+          name: "income",
+          classes: "govuk-input--width-20",
+          value: pension["income"]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Frequency"
+          },
+          id: "frequency",
+          name: "frequency",
+          classes: "govuk-input--width-20",
+          value: pension["frequency"]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

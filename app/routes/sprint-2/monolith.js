@@ -3,37 +3,42 @@ const express = require('express')
 const router = new express.Router()
 const baseUrl = '/sprint-2/monolith'
 
-router.post(`${baseUrl}/add-admission`, (req, res) => {
-  req.session.data.admissions = req.session.data.admissions || []
-  req.session.data.admissions.push(req.body)
-  res.redirect(`${baseUrl}/index#admissions`)
-})
+const manyThing = (baseUrl, thingName) => {
+  const router = new express.Router()
+  const pluralThing = thingName + 's'
 
-router.get(`${baseUrl}/change-admission/:admission`, (req, res) => {
-  req.session.data.admissions = req.session.data.admissions || []
-  const admissionIndex = parseInt(req.params.admission, 10)
-  const admission = req.session.data.admissions[admissionIndex]
-
-  if (!admission) {
-    return res.redirect(`${baseUrl}/index`)
-  }
-
-  res.render(`sprint-2/monolith/add-admission.html`, {
-    admissionType: admission['admission-type'],
-    dateInDay: admission['date-in-day'],
-    dateInMonth: admission['date-in-month'],
-    dateInYear: admission['date-in-year'],
-    dateOutDay: admission['date-out-day'],
-    dateOutMonth: admission['date-out-month'],
-    dateOutYear: admission['date-out-year']
+  router.post(`${baseUrl}/add-${thingName}`, (req, res) => {
+    req.session.data[pluralThing] = req.session.data[pluralThing] || []
+    req.session.data[pluralThing].push(req.body)
+    res.redirect(`${baseUrl}/index#${pluralThing}`)
   })
-})
 
-router.post(`${baseUrl}/change-admission/:admission`, (req, res) => {
-  const admissionIndex = parseInt(req.params.admission, 10)
-  req.session.data.admissions = req.session.data.admissions || []
-  req.session.data.admissions[admissionIndex] = req.body
-  res.redirect(`${baseUrl}/index#admissions`)
-})
+  router.get(`${baseUrl}/change-${thingName}/:${thingName}`, (req, res) => {
+    req.session.data[pluralThing] = req.session.data[pluralThing] || []
+    const thingIndex = parseInt(req.params[thingName], 10)
+    const thing = req.session.data[pluralThing][thingIndex]
+
+    if (!thing) {
+      return res.redirect(`${baseUrl}/index`)
+    }
+
+    res.render(`sprint-2/monolith/add-${thingName}.html`, {[thingName]: thing})
+  })
+
+  router.post(`${baseUrl}/change-${thingName}/:${thingName}`, (req, res) => {
+    const thingIndex = parseInt(req.params[thingName], 10)
+    req.session.data[pluralThing] = req.session.data[pluralThing] || []
+    req.session.data[pluralThing][thingIndex] = req.body
+    res.redirect(`${baseUrl}/index#${pluralThing}`)
+  })
+
+  return router
+}
+
+router.use(manyThing(baseUrl, 'admission'))
+router.use(manyThing(baseUrl, 'member'))
+router.use(manyThing(baseUrl, 'employment'))
+router.use(manyThing(baseUrl, 'pension'))
+router.use(manyThing(baseUrl, 'saving'))
 
 module.exports = router
