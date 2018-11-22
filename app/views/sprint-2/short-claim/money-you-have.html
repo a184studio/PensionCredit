@@ -18,9 +18,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     {% if data["has-partner"] == "yes" %}
-      {% set legend = "Do you and your partner have money, savings or investments that add up to more than £10,000?" %}
+      {% set legend = "Do you and your partner have money, savings or investments of more than £10,000?" %}
     {% else %}
-      {% set legend = "Do you have money, savings or investments that add up to more than £10,000?" %}
+      {% set legend = "Do you have money, savings or investments of more than £10,000?" %}
     {% endif %}
 
     <form action="money-you-have-router" method="post" class="form">
