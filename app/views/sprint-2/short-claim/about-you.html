@@ -16,7 +16,7 @@
       About you
     </h1>
 
-    <form action="home-ownership" method="post" class="form">
+    <form action="about-you-router" method="post" class="form">
       {{ govukInput({
         label: {
           text: "What is your full name?"
@@ -35,6 +35,62 @@
         name: "nino",
         classes: "govuk-input--width-20",
         value: data["nino"]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "What is your home telephone number?"
+        },
+        id: "nino",
+        name: "nino",
+        classes: "govuk-input--width-20",
+        value: data["telephone-number"]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "self-employed",
+        name: "self-employed",
+        fieldset: {
+          legend: {
+            text: "Are you self-employed?"
+          }
+        },
+        classes: "govuk-radios--inline",
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: (data["self-employed"] == "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: (data["self-employed"] == "no")
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "right-to-abode",
+        name: "right-to-abode",
+        fieldset: {
+          legend: {
+            text: "Are you allowed to live or work in the UK without any immigration restrictions?"
+          }
+        },
+        classes: "govuk-radios--inline",
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: (data["right-to-abode"] == "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: (data["right-to-abode"] == "no")
+          }
+        ]
       }) }}
 
       {{ govukButton({

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you self employed? - Pension Credit
+  Do you get a private, workplace or any other pension? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -11,41 +11,38 @@
 {% block content %}
 
 <p>
-  {% if data["has-partner"] == "yes" %}
-    {% set backLink = "about-partner" %}
-  {% else %}
-    {% set backLink = "has-partner" %}
-  {% endif %}
-
   {{ govukBackLink({
-    href: backLink
+    href: "property"
   }) }}
 </p>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="self-employed-router" method="post" class="form">
+    <form action="has-private-pensions-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "self-employed",
-        name: "self-employed",
+        idPrefix: "has-private-pensions",
+        name: "has-private-pensions",
         fieldset: {
           legend: {
-            text: "Are you self-employed?",
+            text: "Do you get a private, workplace or any other pension?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
+        },
+        hint: {
+          text: "This does not include your State Pension"
         },
         classes: "govuk-radios--inline",
         items: [
           {
             value: "yes",
             text: "Yes",
-            checked: (data["self-employed"] == "yes")
+            checked: (data["has-private-pensions"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["self-employed"] == "no")
+            checked: (data["has-private-pensions"] == "no")
           }
         ]
       }) }}

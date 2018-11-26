@@ -10,9 +10,15 @@
 
 {% block content %}
 
+{% if data["home-ownership"] == "Own" %}
+  {% set backLink = "service-charges" %}
+{% else %}
+  {% set backLink = "home-ownership" %}
+{% endif %}
+
 <p>
   {{ govukBackLink({
-    href: "about-you"
+    href: backLink
   }) }}
 </p>
 

@@ -9,9 +9,15 @@
 {% endblock %}
 
 {% block content %}
+{% if data["has-private-pensions"] == "yes" %}
+  {% set backLink = "about-pension" %}
+{% else %}
+  {% set backLink = "has-private-pensions" %}
+{% endif %}
+
 <p>
   {{ govukBackLink({
-    href: "right-to-abode"
+    href: backLink
   }) }}
 </p>
 

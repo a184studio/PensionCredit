@@ -10,9 +10,15 @@
 
 {% block content %}
 
+{% if data["has-partner"] == "yes" %}
+  {% set backLink = "about-partner" %}
+{% else %}
+  {% set backLink = "about-you" %}
+{% endif %}
+
 <p>
   {{ govukBackLink({
-    href: "self-employed"
+    href: backLink
   }) }}
 </p>
 
