@@ -23,6 +23,18 @@ router.post(`${baseUrl}/self-employed-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
+  const ownhome = req.session.data['home-ownership']
+
+  if (ownhome === 'own') {
+    res.redirect(`${baseUrl}/ground-rent`)
+  } else if (ownhome === 'rent') {
+    res.redirect(`${baseUrl}/has-partner`)
+  } else {
+    res.redirect(`${baseUrl}/has-partner`)
+  }
+})
+
 router.post(`${baseUrl}/right-to-abode-router`, (req, res) => {
   const rightToAbode = req.session.data['right-to-abode']
 
