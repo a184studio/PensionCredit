@@ -49,7 +49,7 @@
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Version: A.1.0 / Module shortcuts
+            Version notes: A.1.0 / Module shortcuts
           </span>
         </summary>
         <div class="govuk-details__text">
@@ -162,7 +162,7 @@
         <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Version: A.1.1 / Module shortcuts
+              Version notes: A.1.1 / Module shortcuts
             </span>
           </summary>
           <div class="govuk-details__text">
@@ -284,11 +284,11 @@
         <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Version: B.1.0 / Module shortcuts
+              Version notes: B.1.0 / Module shortcuts
             </span>
           </summary>
           <div class="govuk-details__text">
-          XXX.
+          Tested 19 November 2018 with Nick Valentine and David Armstrong. Internal Digital team, Longbenton. Tested approch of small under 10 question approch (Nick data collecton) and passed to David to process the claim using an A14 form. This presented what claims we were able to process and what was the outstanding information. The following steps would be to then make contact with the claimant, veryfiy and collect missing information.
           </div>
 
 
@@ -376,11 +376,11 @@
           <details class="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Version: C.1.0 / Module shortcuts
+                Version notes: C.1.0 / Module shortcuts
               </span>
             </summary>
             <div class="govuk-details__text">
-            XXX.
+            Tested: 27 November 2018 at Type View Park. Collection method with a pre populated scenario provided by the team.
             </div>
 
 
@@ -501,28 +501,35 @@
 
 <!------------ Start / Right column ------------>
        <div class="govuk-grid-column-one-third">
-         <h3 class="govuk-heading-m">Links </h3>
-         <p class="govuk-body">Design reference and other links</p>
+         <h3 class="govuk-heading-m">Introduction and methodology to each of the prototypes A,B,C & D</h3>
+         <p class="govuk-body">The test nature and the outcomes for each method.</p>
 
          {% from "details/macro.njk" import govukDetails %}
 
         {{ govukDetails({
-          summaryText: "Notes",
-          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post."
+          summaryText: "Prototype A",
+          text: "Bluk collection of information, this would mean that all information is up to date a the time of claim but still asking alot of questions."
         }) }}
 
         {% from "details/macro.njk" import govukDetails %}
 
         {{ govukDetails({
-          summaryText: "Notes B",
-          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post."
+          summaryText: "Prototype B",
+          text: "Shorter upfront collection (5 minutes*), only asking information GOV can not retieve via internal sources. Internal work is then done to collate all of the information that GOV has to build the claim (15 minutes*) The final state is to make contact with the cliamant for the second and final time to confirm the detials we have and then pay.(Time unavailable)"
         }) }}
 
         {% from "details/macro.njk" import govukDetails %}
 
         {{ govukDetails({
-          summaryText: "Notes C",
-          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post."
+          summaryText: "Prototype C",
+          text: "Bulk single page entry, the would be in conjunction with A and or B for example. This would be the place where the data would populate, calculate and payment."
+        }) }}
+
+        {% from "details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+          summaryText: "Prototype D",
+          text: "Further into the future, GOV data is loaded into a claiamnt profile, based on what we have we can add a benefit, or worse case veryfiy a few data items."
         }) }}
 <!------------ End / Right column ------------>
        </div>
