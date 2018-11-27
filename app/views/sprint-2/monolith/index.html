@@ -211,38 +211,42 @@
       Address
     </h2>
 
-    <p class="govuk-body">
-      123 Fake St.<br/>
-      London<br/>
-      LB123 123
-    </p>
-
-    <p>
-      <a href="postcode-lookup">Change address</a>
-    </p>
-
-    {{ govukRadios({
-      idPrefix: "is-carehome",
-      name: "is-carehome",
-      fieldset: {
-        legend: {
-          text: "Care home"
-        }
-      },
-      classes: "govuk-radios--inline",
-      items: [
-        {
-          value: "yes",
-          text: "Yes",
-          checked: (data["is-carehome"] == "yes")
+    {% if data["address"] %}
+      <p class="govuk-body">
+        123 Fake St.<br/>
+        London<br/>
+        LB123 123
+      </p>
+      {{ govukRadios({
+        idPrefix: "is-carehome",
+        name: "is-carehome",
+        fieldset: {
+          legend: {
+            text: "Is this a care home?"
+          }
         },
-        {
-          value: "no",
-          text: "No",
-          checked: (data["is-carehome"] == "no")
-        }
-      ]
-    }) }}
+        classes: "govuk-radios--inline",
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: (data["is-carehome"] == "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: (data["is-carehome"] == "no")
+          }
+        ]
+      }) }}
+      <p>
+        <a href="postcode-lookup">Change address</a>
+      </p>
+    {% else %}
+      <p>
+        <a href="postcode-lookup">Add address</a>
+      </p>
+    {% endif %}
 
     <div class="section-end">
       <a class="app-c-back-to-top dont-print" href="#contents">
