@@ -13,3 +13,15 @@ $govuk-global-styles: true;
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.govuk-tag--not-in-use {
+  background-color: #dee0e2;
+}
+
+.govuk-tag--in-progress {
+  background-color: #df3034;
+}
+
+.govuk-tag--hold {
+  background-color: #6f777b;
+}
