@@ -295,15 +295,36 @@
      <ul class="app-task-list__items">
 
        <li class="app-task-list__item">
-         <a class="app-task-list__task-name" href="/sprint-3/new-claims" aria-describedby="contact-details-completed">
-           XXXX
+         <a class="app-task-list__task-name" href="/sprint-3/new-claims/start.html" aria-describedby="contact-details-completed">
+           Start
          </a>
          <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-completed" id="read-declaration-completed">●</strong>
        </li>
        <!------------ ---- ------------>
        <li class="app-task-list__item">
-         <a class="app-task-list__task-name" href="/xxx" aria-describedby="contact-details-completed">
-           XXXX
+         <a class="app-task-list__task-name" href="/sprint-3/new-claims/who-is-caller" aria-describedby="contact-details-completed">
+           Eligibility
+         </a>
+         <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-completed" id="read-declaration-completed">●</strong>
+       </li>
+       <!------------ ---- ------------>
+       <li class="app-task-list__item">
+         <a class="app-task-list__task-name" href="/sprint-3/new-claims/eligibility-summary" aria-describedby="contact-details-completed">
+           Eligibility summary
+         </a>
+         <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-completed" id="read-declaration-completed">●</strong>
+       </li>
+       <!------------ ---- ------------>
+       <li class="app-task-list__item">
+         <a class="app-task-list__task-name" aria-describedby="contact-details-completed">
+          <!-- Break --->
+         </a>
+         <strong class="govuk-tag govuk-tag--break app-task-list__task-completed" id="read-declaration-completed">●</strong>
+       </li>
+       <!------------ ---- ------------>
+       <li class="app-task-list__item">
+         <a class="app-task-list__task-name" href="/x" aria-describedby="contact-details-completed">
+           Contact details
          </a>
          <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-completed" id="read-declaration-completed">●</strong>
        </li>
@@ -574,6 +595,13 @@
         {{ govukDetails({
           summaryText: "Prototype A",
           text: "Bluk collection of information, this would mean that all information is up to date a the time of claim but still asking alot of questions."
+        }) }}
+
+        {% from "details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+          summaryText: "Prototype A.2 (MVP)",
+          text: "MVP details in here."
         }) }}
 
         {% from "details/macro.njk" import govukDetails %}
