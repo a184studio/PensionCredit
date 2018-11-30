@@ -73,4 +73,30 @@ router.post(`${baseUrl}/security-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/can-contact-router`, (req, res) => {
+  const contactOptions = req.session.data['contact-options']
+
+  if (contactOptions.includes('Text') &&  contactOptions.includes('Phone call')) {
+    res.redirect(`${baseUrl}/mobile-call`)
+  } else if (contactOptions.includes('Text')) {
+    res.redirect(`${baseUrl}/mobile`)
+  } else if (contactOptions.includes('Phone call')) {
+    res.redirect(`${baseUrl}/landline`)
+  } else if (contactOptions.includes('Email')) {
+    res.redirect(`${baseUrl}/email`)
+  } else {
+    res.redirect(`${baseUrl}/disability`)
+  }
+})
+
+router.post(`${baseUrl}/mobile-call-router`, (req, res) => {
+  const contactOptions = req.session.data['contact-options']
+
+  if (contactOptions.includes('Email')) {
+    res.redirect(`${baseUrl}/email`)
+  } else {
+    res.redirect(`${baseUrl}/disability`)
+  }
+})
+
 module.exports = router
