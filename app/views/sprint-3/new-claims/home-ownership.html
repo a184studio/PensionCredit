@@ -24,33 +24,30 @@
         name: "home-ownership",
         fieldset: {
           legend: {
-            text: "Check home ownership type",
+            text: "Which best describes the place where you live?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
-        hint: {
-          text: "Please describe your living arrangements: @Pete"
-        },
         items: [
           {
             value: "Rented",
-            text: "Is this property rented?",
+            text: "You rent it",
             checked: (data["home-ownership"] == "Rented")
           },
           {
             value: "Owns",
-            text: "Do you own this property?",
+            text: "You own it",
             checked: (data["home-ownership"] == "Owns")
           },
           {
             value: "Care home",
-            text: "Is this a care home?",
+            text: "You live in a care home",
             checked: (data["home-ownership"] == "Care home")
           },
           {
             value: "Neither",
-            text: "Do you live with someone else? (For example a son or a daughter?)",
+            text: "You live in someone else's house without paying rent",
             checked: (data["home-ownership"] == "Neither")
           }
         ]
