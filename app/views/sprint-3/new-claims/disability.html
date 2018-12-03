@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Disability - Pension Credit
+  Benefits - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -9,11 +9,56 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Disability
-      </h1>
-    </div>
+
+<p>
+  {{ govukBackLink({
+    href: "XXX"
+  }) }}
+</p>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="care-home" method="post" class="form">
+      {{ govukCheckboxes({
+        idPrefix: "disabilities",
+        name: "disabilities",
+        fieldset: {
+          legend: {
+            text: "Check disabilities",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Please select any disabilities or impairments:"
+        },
+        items: [
+          {
+            name: "blind",
+            value: "yes",
+            text: "Are you registered blind",
+            checked: (data["sp"] == "yes")
+          },
+          {
+            name: "sight impaired",
+            value: "yes",
+            text: "Are you severely sight impaired",
+            checked: (data["sp"] == "yes")
+          },
+          {
+            name: "Other",
+            value: "yes",
+            text: "Other",
+            checked: (data["ob3"] == "yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
   </div>
+</div>
 {% endblock %}
