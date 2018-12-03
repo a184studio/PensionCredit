@@ -18,10 +18,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="care-home" method="post" class="form">
-      {{ govukCheckboxes({
+    <form action="home-ownership-router" method="post" class="form">
+      {{ govukRadios({
         idPrefix: "homeownership",
-        name: "homeownership",
+        name: "home-ownership",
         fieldset: {
           legend: {
             text: "Check home ownership type",
@@ -34,28 +34,24 @@
         },
         items: [
           {
-            name: "Rented",
-            value: "yes",
+            value: "Rented",
             text: "Is this property rented?",
-            checked: (data["sp"] == "yes")
+            checked: (data["home-ownership"] == "Rented")
           },
           {
-            name: "Owns",
-            value: "yes",
+            value: "Owns",
             text: "Do you own this property?",
-            checked: (data["sp"] == "yes")
+            checked: (data["home-ownership"] == "Owns")
           },
           {
-            name: "Care home",
-            value: "yes",
+            value: "Care home",
             text: "Is this a care home?",
-            checked: (data["ob3"] == "yes")
+            checked: (data["home-ownership"] == "Care home")
           },
           {
-            name: "Other",
-            value: "yes",
+            value: "Neither",
             text: "Do you live with someone else? (For example a son or a daughter?)",
-            checked: (data["ob3"] == "yes")
+            checked: (data["home-ownership"] == "Neither")
           }
         ]
       }) }}

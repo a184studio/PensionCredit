@@ -24,10 +24,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="has-partner-router" method="post" class="form">
+    <form action="mortgage-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "has-partner",
-        name: "has-partner",
+        idPrefix: "has-mortgage",
+        name: "has-mortgage",
         fieldset: {
           legend: {
             text: "Do you have a mortgage",
@@ -41,14 +41,14 @@
         classes: "govuk-radios--inline",
         items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
-            checked: (data["mortgage-yes"] == "yes")
+            checked: (data["has-mortgage"] == "Yes")
           },
           {
-            value: "no",
+            value: "No",
             text: "No",
-            checked: (data["address-summary"] == "no")
+            checked: (data["has-mortgage"] == "No")
           }
         ]
       }) }}

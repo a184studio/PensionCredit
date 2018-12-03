@@ -10,22 +10,12 @@
 
 {% block content %}
 
-<p>
-  {{ govukBackLink({
-    href: "second-property"
-  }) }}
-</p>
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Check your answers @Niall Looks like you have the service chages built in, just needs hooking up to show in the summary.
+      Check your answers.
     </h1>
-
-    <p class="govuk-body">
-      XXX
-    </p>
 
     <h2 class="govuk-heading-m">
       Address
@@ -73,7 +63,7 @@
           </a>
         </dd>
       </div>
-      {% if data["home-ownership"] == "Own" %}
+      {% if data["home-ownership"] == "Owns" %}
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Ground rent
@@ -100,58 +90,24 @@
             </a>
           </dd>
         </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Has mortgage
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["has-mortgage"] or "No "}}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="mortgage-yn">
+              Change
+            </a>
+          </dd>
+        </div>
       {% endif %}
     </dl>
 
-    {% if data["has-private-pensions"] %}
-      <h2 class="govuk-heading-m">
-        Non state pensions
-      </h2>
-      <dl class="app-check-your-answers app-check-your-answers--long">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Name
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            {{ data["pension-name"] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="about-pension">
-              Change
-            </a>
-          </dd>
-        </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Value
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            {{ data["pension-value"] | formatMoney }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="about-pension">
-              Change
-            </a>
-          </dd>
-        </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Payment frequency
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            {{ data["pension-frequency"] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="about-pension">
-              Change
-            </a>
-          </dd>
-        </div>
-      </dl>
-    {% endif %}
-
-
-    <form action="done" method="post">
+    <form action="task-list" method="post">
+      <input type="hidden" name="address-complete" value="true"/>
       <p>
         {{ govukButton({
           text: "Confirm"

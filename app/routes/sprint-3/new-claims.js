@@ -99,4 +99,24 @@ router.post(`${baseUrl}/mobile-call-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
+  const homeOwnership = req.session.data['home-ownership']
+
+  if (homeOwnership === 'Owns') {
+    res.redirect(`${baseUrl}/service-charges`)
+  } else {
+    res.redirect(`${baseUrl}/address-summary`)
+  }
+})
+
+router.post(`${baseUrl}/mortgage-router`, (req, res) => {
+  const hasMortgage = req.session.data['has-mortgage']
+
+  if (hasMortgage === 'Yes') {
+    res.redirect(`${baseUrl}/mortgage-yes`)
+  } else {
+    res.redirect(`${baseUrl}/address-summary`)
+  }
+})
+
 module.exports = router
