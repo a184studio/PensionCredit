@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Benefits - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+<p>
+  {{ govukBackLink({
+    href: "XXX"
+  }) }}
+</p>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="care-home" method="post" class="form">
+      {{ govukCheckboxes({
+        idPrefix: "homeownership",
+        name: "homeownership",
+        fieldset: {
+          legend: {
+            text: "Who else lives with you?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Please describe your arrangments: @Pete"
+        },
+        items: [
+          {
+            name: "child-under-16",
+            value: "yes",
+            text: "A child under 16",
+            checked: (data["sp"] == "yes")
+          },
+          {
+            name: "qualified-youth",
+            value: "yes",
+            text: "Qualified young person aged between 17-19",
+            checked: (data["sp"] == "yes")
+          },
+          {
+            name: "Boarders",
+            value: "yes",
+            text: "Boarders",
+            checked: (data["ob3"] == "yes")
+          },
+          {
+            name: "Lodger",
+            value: "yes",
+            text: "Lodger",
+            checked: (data["ob3"] == "yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
