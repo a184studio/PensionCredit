@@ -13,7 +13,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="over-spa-router" method="post">
         <h1 class="govuk-heading-xl">
-          Establish over SPA
+          Check your State Pension age
         </h1>
 
         {{ govukDateInput({
@@ -35,17 +35,17 @@
           name: "sex",
           fieldset: {
             legend: {
-              text: "What's your sex?"
+              text: "Are you a man or a woman?"
             }
           },
           items: [
             {
-              value: "Female",
-              text: "Female"
+              value: "Woman",
+              text: "Woman"
             },
             {
-              value: "Male",
-              text: "Male"
+              value: "Man",
+              text: "Man"
             }
           ]
         }) }}
