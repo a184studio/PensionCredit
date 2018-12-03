@@ -12,7 +12,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Alex Smith's Pension Credit application
+        Alex Smith’s Pension Credit application
       </h1>
 
       <ol class="app-task-list">
@@ -43,13 +43,21 @@
               <a class="app-task-list__task-name" href="/sprint-3/new-claims/can-contact.html" aria-describedby="eligibility-completed">
                 Landline, Mobile, & Email
               </a>
-              <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+              {% if data["contact-complete"] %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+              {% else %}
+                <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
-              <a class="app-task-list__task-name" href="/sprint-3/new-claims/disability.html" aria-describedby="read-declaration-completed">
+              <a class="app-task-list__task-name" href="/sprint-3/new-claims/disability" aria-describedby="read-declaration-completed">
                 Disabilities
               </a>
-              <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+              {% if data["contact-complete"] %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+              {% else %}
+                <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+              {% endif %}
             </li>
           </ul>
         </li>
