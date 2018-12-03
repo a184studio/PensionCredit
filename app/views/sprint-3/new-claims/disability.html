@@ -18,7 +18,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="care-home" method="post" class="form">
+    <form action="contact-summary" method="post" class="form">
       {{ govukCheckboxes({
         idPrefix: "disabilities",
         name: "disabilities",
@@ -34,22 +34,19 @@
         },
         items: [
           {
-            name: "blind",
-            value: "yes",
+            value: "Blind",
             text: "Are you registered blind",
-            checked: (data["sp"] == "yes")
+            checked: (data["disabilities"].includes("Blind"))
           },
           {
-            name: "sight impaired",
-            value: "yes",
+            value: "Severely sight impaired",
             text: "Are you severely sight impaired",
-            checked: (data["sp"] == "yes")
+            checked: (data["disabilities"].includes("Severely sight impaired"))
           },
           {
-            name: "Other",
-            value: "yes",
+            value: "Other",
             text: "Other",
-            checked: (data["ob3"] == "yes")
+            checked: (data["disabilities"].includes("Other"))
           }
         ]
       }) }}

@@ -17,155 +17,82 @@
       Check your answers
     </h1>
 
-
-    <h2 class="govuk-heading-m">
-      Contact preference
-    </h2>
-
-    <dl class="app-check-your-answers app-check-your-answers--short">
+    <dl class="app-check-your-answers app-check-your-answers--long">
       <div class="app-check-your-answers__contents">
         <dt class="app-check-your-answers__question">
-          Telephone
+          Can be contacted by
         </dt>
         <dd class="app-check-your-answers__answer">
-          Yes
+          {{ data["contact-options"].join(", ") }}
         </dd>
         <dd class="app-check-your-answers__change">
-          <a href="uk-national">
+          <a href="can-contact">
             Change
           </a>
         </dd>
       </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Residency
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          UK
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="reside-in-uk">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Lived abroad
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          No
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="lived-abroad">
-            Change
-          </a>
-        </dd>
-      </div>
-    </dl>
-
-    <h2 class="govuk-heading-m">
-      Claim date
-    </h2>
-
-    <dl class="app-check-your-answers app-check-your-answers--short">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Date
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          10 October 2018
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="claim-date">
-            Change
-          </a>
-        </dd>
-      </div>
-    </dl>
-
-
-    <h2 class="govuk-heading-m">
-      About claimant
-    </h2>
-
-    <dl class="app-check-your-answers app-check-your-answers--short">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Who is caller
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Claimant
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="who-is-caller">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Full name
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Alex Smith
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="name-and-nino">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Sex
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Male
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="over-spa">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Date of birth
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          20 October 1953
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="over-spa">
-            Change
-          </a>
-        </dd>
-      </div>
-    </dl>
-
-
-      <h2 class="govuk-heading-m">
-        Security
-      </h2>
-
-      <dl class="app-check-your-answers app-check-your-answers--short">
+      {% if data["mobile"] %}
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Passed security?
+            Mobile phone number
           </dt>
           <dd class="app-check-your-answers__answer">
-            Yes
+            {{ data["mobile"] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="security">
+            <a href="mobile">
               Change
             </a>
           </dd>
         </div>
-      </dl>
+      {% endif %}
+      {% if data["landline"] %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Home phone number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["landline"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="landline">
+              Change
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+      {% if data["email"]%}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            E-mail address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["email"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="email">
+              Change
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Disabilities
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data["disabilities"].join(", ") }}
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="disability">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
 
     <form action="task-list" method="post">
+      <input type="hidden" name="contact-complete" value="true"/>
       <p>
         {{ govukButton({
           text: "Confirm"
