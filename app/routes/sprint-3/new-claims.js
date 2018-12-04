@@ -90,7 +90,7 @@ router.post(`${baseUrl}/can-contact-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/mobile-call-router`, (req, res) => {
-  const contactOptions = req.session.data['contact-options']
+  const contactOptions = req.session.data['contact-options'] || []
 
   if (contactOptions.includes('Email')) {
     res.redirect(`${baseUrl}/email`)
