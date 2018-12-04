@@ -101,14 +101,20 @@
                   <a class="app-task-list__task-name" href="has-partner" aria-describedby="eligibility-completed">
                     Partner details
                   </a>
-                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
-                </li>
+                  {% if data["household-complete"] %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                  {% else %}
+                    <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+                  {% endif %}                  </li>
                 <li class="app-task-list__item">
-                  <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                  <a class="app-task-list__task-name" href="anyone-living-with-you" aria-describedby="read-declaration-completed">
                     Other
                   </a>
-                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
-                </li>
+                  {% if data["household-complete"] %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                  {% else %}
+                    <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+                  {% endif %}                </li>
               </ul>
             </li>
           </ol>
