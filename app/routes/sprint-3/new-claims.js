@@ -119,4 +119,47 @@ router.post(`${baseUrl}/mortgage-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/has-partner-router`, (req, res) => {
+  const hasPartner = req.session.data['has-partner']
+  const homeOwnership = req.session.data['home-ownership']
+
+  if (hasPartner === 'Yes') {
+    res.redirect(`${baseUrl}/about-partner`)
+  } else if (homeOwnership === 'Owns') {
+    res.redirect(`${baseUrl}/anyone-living-with-you`)
+  } else {
+    res.redirect(`${baseUrl}/household-summary`)
+  }
+})
+
+router.post(`${baseUrl}/about-partner-router`, (req, res) => {
+  const homeOwnership = req.session.data['home-ownership']
+
+  if (homeOwnership === 'Owns') {
+    res.redirect(`${baseUrl}/anyone-living-with-you`)
+  } else {
+    res.redirect(`${baseUrl}/household-summary`)
+  }
+})
+
+router.post(`${baseUrl}/anyone-living-with-you-router`, (req, res) => {
+  const homeOwnership = req.session.data['home-ownership']
+
+  if (homeOwnership === 'Owns') {
+    res.redirect(`${baseUrl}/other-people-who-live-with-you`)
+  } else {
+    res.redirect(`${baseUrl}/household-summary`)
+  }
+})
+
+router.post(`${baseUrl}/other-people-who-live-with-you-router`, (req, res) => {
+  const personType = req.session.data['person-type']
+
+  if (personType === 'Child under 16') {
+    res.redirect(`${baseUrl}/about-child`)
+  } else {
+    res.redirect(`${baseUrl}/household-summary`)
+  }
+})
+
 module.exports = router
