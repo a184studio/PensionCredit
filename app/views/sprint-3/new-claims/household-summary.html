@@ -65,10 +65,10 @@
       </div>
     </dl>
 
+    <h2 class="govuk-heading-m">
+      Children
+    </h2>
     {% if data["child-in-home"] == "true" %}
-      <h2 class="govuk-heading-m">
-        Children
-      </h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
@@ -110,11 +110,16 @@
           </dd>
         </div>
       </dl>
+    {% else %}
+      <p class="none">
+        None
+      </p>
     {% endif %}
+
+    <h2 class="govuk-heading-m">
+      Qualifying young person
+    </h2>
     {% if data["qyp-in-home"] == "true" %}
-      <h2 class="govuk-heading-m">
-        Qualifying young person
-      </h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
@@ -156,11 +161,16 @@
           </dd>
         </div>
       </dl>
+    {% else %}
+      <p class="none">
+        None
+      </p>
     {% endif %}
+
+    <h2 class="govuk-heading-m">
+      Boarders / Lodgers
+    </h2>
     {% if data["boarder-in-home"] == "true" %}
-      <h2 class="govuk-heading-m">
-        Boarders / Lodgers
-      </h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
@@ -215,6 +225,10 @@
           </dd>
         </div>
       </dl>
+    {% else %}
+      <p class="none">
+        None
+      </p>
     {% endif %}
 
     <h2 class="govuk-heading-m">
