@@ -17,7 +17,9 @@
       About Boarder/lodger
     </h1>
 
-    <form action="other-people-who-live-with-you" method="post" class="form">
+    <form action="household-summary" method="post" class="form">
+      <input type="hidden" name="boarder-in-home" value="true"/>
+
       {{ govukInput({
         label: {
           text: "Full name"
@@ -89,8 +91,8 @@
       }) }}
 
       {{ govukRadios({
-        idPrefix: "is-bodger-blind",
-        name: "is-bodger-blind",
+        idPrefix: "serve-dinner",
+        name: "serve-dinner",
         fieldset: {
           legend: {
             text: "Do you make them dinner?"
@@ -101,12 +103,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["is-bodger-blind"] == "yes")
+            checked: (data["serve-dinner"] == "yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["is-bodger-blind"] == "no")
+            checked: (data["serve-dinner"] == "no")
           }
         ]
       }) }}

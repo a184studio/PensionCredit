@@ -17,7 +17,9 @@
       About qualifying young person
     </h1>
 
-    <form action="other-people-who-live-with-you" method="post" class="form">
+    <form action="about-qyp-router" method="post" class="form">
+      <input type="hidden" name="qyp-in-home" value="true"/>
+
       {{ govukInput({
         label: {
           text: "Full name"

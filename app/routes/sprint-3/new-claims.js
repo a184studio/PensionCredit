@@ -143,9 +143,9 @@ router.post(`${baseUrl}/about-partner-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/anyone-living-with-you-router`, (req, res) => {
-  const homeOwnership = req.session.data['home-ownership']
+  const peopleInHome = req.session.data['people-in-home']
 
-  if (homeOwnership === 'Owns') {
+  if (peopleInHome === 'Yes') {
     res.redirect(`${baseUrl}/other-people-who-live-with-you`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
@@ -157,6 +157,52 @@ router.post(`${baseUrl}/other-people-who-live-with-you-router`, (req, res) => {
 
   if (personType === 'Child under 16') {
     res.redirect(`${baseUrl}/about-child`)
+  } else if (personType === 'Qualifying young person') {
+    res.redirect(`${baseUrl}/about-qyp`)
+  } else {
+    res.redirect(`${baseUrl}/boarders-and-lodgers`)
+  }
+})
+
+router.post(`${baseUrl}/about-child-router`, (req, res) => {
+  const childBenefits = req.session.data['child-benefits'] || []
+
+  if (childBenefits.includes("Personal Independance Payment (PIP)")) {
+    res.redirect(`${baseUrl}/child-pip`)
+  } else if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+    res.redirect(`${baseUrl}/child-dla`)
+  } else {
+    res.redirect(`${baseUrl}/household-summary`)
+  }
+})
+
+router.post(`${baseUrl}/child-pip-router`, (req, res) => {
+  const childBenefits = req.session.data['child-benefits'] || []
+
+  if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+    res.redirect(`${baseUrl}/child-dla`)
+  } else {
+    res.redirect(`${baseUrl}/household-summary`)
+  }
+})
+
+router.post(`${baseUrl}/about-qyp-router`, (req, res) => {
+  const childBenefits = req.session.data['qyp-benefits'] || []
+
+  if (childBenefits.includes("Personal Independance Payment (PIP)")) {
+    res.redirect(`${baseUrl}/qyp-pip`)
+  } else if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+    res.redirect(`${baseUrl}/qyp-dla`)
+  } else {
+    res.redirect(`${baseUrl}/household-summary`)
+  }
+})
+
+router.post(`${baseUrl}/qyp-pip-router`, (req, res) => {
+  const childBenefits = req.session.data['qyp-benefits'] || []
+
+  if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+    res.redirect(`${baseUrl}/qyp-dla`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
   }

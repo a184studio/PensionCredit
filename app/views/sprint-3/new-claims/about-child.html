@@ -17,7 +17,9 @@
       About child
     </h1>
 
-    <form action="other-people-who-live-with-you" method="post" class="form">
+    <form action="about-child-router" method="post" class="form">
+      <input type="hidden" name="child-in-home" value="true"/>
+
       {{ govukInput({
         label: {
           text: "Full name"

@@ -17,7 +17,7 @@
       About your partner
     </h1>
 
-    <form action="other-people-who-live-with-you" method="post" class="form">
+    <form action="anyone-living-with-you" method="post" class="form">
       {{ govukInput({
         label: {
           text: "What is your partner’s full name?"
@@ -36,6 +36,19 @@
         name: "partner-nino",
         classes: "govuk-input--width-20",
         value: data["partner-nino"]
+      }) }}
+
+      {{ govukDateInput({
+        id: "partner-dob",
+        namePrefix: "partner-dob",
+        fieldset: {
+          legend: {
+            text: "What is their date of birth?"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        }
       }) }}
 
       {{ govukButton({
