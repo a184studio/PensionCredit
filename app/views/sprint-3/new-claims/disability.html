@@ -10,15 +10,11 @@
 
 {% block content %}
 
-<p>
-  {{ govukBackLink({
-    href: "XXX"
-  }) }}
-</p>
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="contact-summary" method="post" class="form">
+      {% set disabilities = data["disabilities"] or [] %}
+
       {{ govukCheckboxes({
         idPrefix: "disabilities",
         name: "disabilities",
@@ -36,17 +32,17 @@
           {
             value: "Blind",
             text: "Are you registered blind",
-            checked: (data["disabilities"].includes("Blind"))
+            checked: (disabilities.includes("Blind"))
           },
           {
             value: "Severely sight impaired",
             text: "Are you severely sight impaired",
-            checked: (data["disabilities"].includes("Severely sight impaired"))
+            checked: (disabilities.includes("Severely sight impaired"))
           },
           {
             value: "Other",
             text: "Other",
-            checked: (data["disabilities"].includes("Other"))
+            checked: (disabilities.includes("Other"))
           }
         ]
       }) }}

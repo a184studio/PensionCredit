@@ -23,7 +23,11 @@
           Can be contacted by
         </dt>
         <dd class="app-check-your-answers__answer">
-          {{ data["contact-options"].join(", ") }}
+          {% if data["contact-options"] %}
+            {{ data["contact-options"].join(", ") }}
+          {% else %}
+            No means
+          {% endif %}
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="can-contact">
@@ -81,7 +85,11 @@
           Disabilities
         </dt>
         <dd class="app-check-your-answers__answer">
-          {{ data["disabilities"].join(", ") }}
+          {% if data["disabilities"] %}
+            {{ data["disabilities"].join(", ") }}
+          {% else %}
+            None
+          {% endif %}
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="disability">

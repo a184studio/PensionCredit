@@ -108,7 +108,9 @@
                   {% endif %}                  </li>
                 <li class="app-task-list__item">
                   <a class="app-task-list__task-name" href="anyone-living-with-you" aria-describedby="read-declaration-completed">
-                    Other
+                    x2..........Children aged under 16
+                    <br>x1..........Qualified young person aged 17-19
+                    <br>x1..........Logdee & boarders
                   </a>
                   {% if data["household-complete"] %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -131,8 +133,11 @@
                     <a class="app-task-list__task-name" href="#" aria-describedby="eligibility-completed">
                       Benefits
                     </a>
-                    <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
-                  </li>
+                    {% if data["benefits-complete"] %}
+                      <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                      <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+                    {% endif %}                  </li>
                 </ul>
               </li>
             </ol>
