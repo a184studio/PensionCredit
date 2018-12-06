@@ -32,7 +32,7 @@
 
       {{ govukInput({
         label: {
-          text: "Child benefit number"
+          text: "Child Benefit number"
         },
         id: "child-chb",
         name: "child-chb",
@@ -45,11 +45,11 @@
         namePrefix: "child-dob",
         fieldset: {
           legend: {
-            text: "What is their date of birth?"
+            text: "What is [Child name]'s date of birth?"
           }
         },
         hint: {
-          text: "For example, 31 3 1956"
+          text: "For example, 31 3 2008"
         },
         items: [
           {
@@ -75,7 +75,7 @@
         name: "is-child-blind",
         fieldset: {
           legend: {
-            text: "Is child blind?"
+            text: "Is [child name] registered blind or severely sight impaired?"
           }
         },
         classes: "govuk-radios--inline",
@@ -98,11 +98,11 @@
         name: "child-benefits",
         fieldset: {
           legend: {
-            text: "Benefits"
+            text: "Does [child name] get any of these benefits?"
           }
         },
         hint: {
-          text: "Please select any benefits:"
+          text: "Select all that apply"
         },
         items: [
           {
