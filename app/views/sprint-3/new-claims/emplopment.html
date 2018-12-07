@@ -20,17 +20,19 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="has-work-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "has-work",
-        name: "has-work",
+        idPrefix: "employment-fulltime",
+        name: "employment-fulltime",
         fieldset: {
           legend: {
-            text: "Are you in paid employment?",
+            text: "Where you employed on this date (TAM)",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        classes: "govuk-radios--inline",
-        items: [
+            }
+            },
+            hint: {
+            text: "Select what best discribles your status on the (TAM) date."
+            },
+            items: [
           {
             value: "yes",
             text: "Yes",

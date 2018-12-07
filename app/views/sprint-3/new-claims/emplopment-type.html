@@ -1,0 +1,62 @@
+`<q cite=""></q>`{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Benefits - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="care-home" method="post" class="form">
+      {{ govukCheckboxes({
+        idPrefix: "benefits",
+        name: "benefits",
+        fieldset: {
+          legend: {
+            text: "Where you employed on this date (TAM)",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Select what best discribles your status on the (TAM) date."
+        },
+        items: [
+          {
+            name: "FT",
+            value: "Yes",
+            text: "Full time employment",
+            checked: (data["sp"] == "yes")
+          },
+          {
+            name: "PT",
+            value: "yes",
+            text: "Part time employment",
+            checked: (data["ca"] == "yes")
+          },
+          {
+            name: "Both",
+            value: "yes",
+            text: "Employed and Self employed",
+            checked: (data["pip"] == "yes")
+          },
+          {
+            name: "Other",
+            value: "yes",
+            text: "Could be zero hours?",
+            checked: (data["aa"] == "yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
