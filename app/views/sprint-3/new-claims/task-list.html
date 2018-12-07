@@ -149,17 +149,23 @@
                   </h2>
                   <ul class="app-task-list__items">
                     <li class="app-task-list__item">
-                      <a class="app-task-list__task-name" href="#" aria-describedby="eligibility-completed">
+                      <a class="app-task-list__task-name" href="pensions" aria-describedby="eligibility-completed">
                         State pension
                       </a>
-                      <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
-                    </li>
+                      {% if data["pensions-complete"] %}
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                      {% else %}
+                        <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+                      {% endif %}                     </li>
                     <li class="app-task-list__item">
-                      <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                      <a class="app-task-list__task-name" href="pensions" aria-describedby="read-declaration-completed">
                         Non-state, private & workplace pensions
                       </a>
-                      <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
-                    </li>
+                      {% if data["pensions-complete"] %}
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                      {% else %}
+                        <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+                      {% endif %}                     </li>
                   </ul>
                 </li>
               </ol>
