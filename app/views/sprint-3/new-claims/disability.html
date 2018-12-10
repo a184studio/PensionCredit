@@ -20,24 +20,19 @@
         name: "disabilities",
         fieldset: {
           legend: {
-            text: "Check disabilities",
+            text: "Do you have any disabilities or impairments?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "Please select any disabilities or impairments:"
+          text: "Select all that apply:"
         },
         items: [
           {
             value: "Blind",
-            text: "Are you registered blind",
+            text: "Registered blind or severely sight impaired",
             checked: (disabilities.includes("Blind"))
-          },
-          {
-            value: "Severely sight impaired",
-            text: "Are you severely sight impaired",
-            checked: (disabilities.includes("Severely sight impaired"))
           },
           {
             value: "Other",
