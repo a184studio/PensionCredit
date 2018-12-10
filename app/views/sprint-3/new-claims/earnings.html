@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Earnings - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">
+    Earnings and employment summary
+  </h1>
+
+  <h2 class="govuk-heading-m">
+    Full time employment
+  </h2>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">
+        Employer: Santander
+      </h3>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Payroll ID
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            HMRC-0001X
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Start / End date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            01.01.2000 — 01.01.2018
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Pay date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            01.01.2018
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Taxable pay (gross)
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            £100.00
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Payment day / frequency
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Weekly
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Tax
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Value
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            National insurance contributions
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Value
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Pensions
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Value
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  {% if data["work-name"] %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">
+        {{ data["work-name"] }}
+      </h3>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Payroll ID
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["work-payroll"] }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Start / End date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["work-start-day"] }}
+            {{ data["work-start-month"] }}
+            {{ data["work-start-year"] }} —
+            {{ data["work-end-day"] }}
+            {{ data["work-end-month"] }}
+            {{ data["work-end-year"] }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Pay date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["work-pay-day"] }}
+            {{ data["work-pay-month"] }}
+            {{ data["work-pay-year"] }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Taxable pay (gross)
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["work-gross"] | formatMoney }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Payment day / frequency
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["work-frequency"] }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Tax
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["work-tax"] | formatMoney }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            National insurance contributions
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["work-ni"] | formatMoney }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Pensions
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["work-pensions"] | formatMoney }}
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+  {% endif %}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <h2 class="govuk-heading-m">Any other employment missing?</h2>
+  <p class="govuk-body">
+    <a href="add-earnings" class="govuk-link">
+      Add an employment
+    </a>
+  </p>
+
+  <form action="task-list" method="post">
+    <input type="hidden" name="earnings-complete" value="true"/>
+    <p>
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+    </p>
+  </form>
+{% endblock %}

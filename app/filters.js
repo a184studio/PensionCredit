@@ -38,7 +38,7 @@ module.exports = function (env) {
       return months[monthIndex]
     },
     formatMoney(money) {
-      const sanitised = money.replace(/[^0-9.]/g, '')
+      const sanitised = money ? money.replace(/[^0-9.]/g, '') : 0;
       return GBP.format(sanitised)
     },
     formatJSON(object) {
