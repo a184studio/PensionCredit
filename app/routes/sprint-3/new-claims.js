@@ -90,7 +90,7 @@ router.post(`${baseUrl}/can-contact-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/mobile-call-router`, (req, res) => {
-  const contactOptions = req.session.data['contact-options'] || []
+  const contactOptions = req.session.data['contact-options']
 
   if (contactOptions.includes('Email')) {
     res.redirect(`${baseUrl}/email`)
@@ -99,113 +99,7 @@ router.post(`${baseUrl}/mobile-call-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
-  const homeOwnership = req.session.data['home-ownership']
 
-  if (homeOwnership === 'Owns') {
-    res.redirect(`${baseUrl}/service-charges`)
-  } else {
-    res.redirect(`${baseUrl}/address-summary`)
-  }
-})
 
-router.post(`${baseUrl}/mortgage-router`, (req, res) => {
-  const hasMortgage = req.session.data['has-mortgage']
-
-  if (hasMortgage === 'Yes') {
-    res.redirect(`${baseUrl}/mortgage-yes`)
-  } else {
-    res.redirect(`${baseUrl}/address-summary`)
-  }
-})
-
-router.post(`${baseUrl}/has-partner-router`, (req, res) => {
-  const hasPartner = req.session.data['has-partner']
-  const homeOwnership = req.session.data['home-ownership']
-
-  if (hasPartner === 'Yes') {
-    res.redirect(`${baseUrl}/about-partner`)
-  } else if (homeOwnership === 'Owns') {
-    res.redirect(`${baseUrl}/anyone-living-with-you`)
-  } else {
-    res.redirect(`${baseUrl}/household-summary`)
-  }
-})
-
-router.post(`${baseUrl}/about-partner-router`, (req, res) => {
-  const homeOwnership = req.session.data['home-ownership']
-
-  if (homeOwnership === 'Owns') {
-    res.redirect(`${baseUrl}/anyone-living-with-you`)
-  } else {
-    res.redirect(`${baseUrl}/household-summary`)
-  }
-})
-
-router.post(`${baseUrl}/anyone-living-with-you-router`, (req, res) => {
-  const peopleInHome = req.session.data['people-in-home']
-
-  if (peopleInHome === 'Yes') {
-    res.redirect(`${baseUrl}/other-people-who-live-with-you`)
-  } else {
-    res.redirect(`${baseUrl}/household-summary`)
-  }
-})
-
-router.post(`${baseUrl}/other-people-who-live-with-you-router`, (req, res) => {
-  const personType = req.session.data['person-type']
-
-  if (personType === 'Child under 16') {
-    res.redirect(`${baseUrl}/about-child`)
-  } else if (personType === 'Qualifying young person') {
-    res.redirect(`${baseUrl}/about-qyp`)
-  } else {
-    res.redirect(`${baseUrl}/boarders-and-lodgers`)
-  }
-})
-
-router.post(`${baseUrl}/about-child-router`, (req, res) => {
-  const childBenefits = req.session.data['child-benefits'] || []
-
-  if (childBenefits.includes("Personal Independance Payment (PIP)")) {
-    res.redirect(`${baseUrl}/child-pip`)
-  } else if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
-    res.redirect(`${baseUrl}/child-dla`)
-  } else {
-    res.redirect(`${baseUrl}/household-summary`)
-  }
-})
-
-router.post(`${baseUrl}/child-pip-router`, (req, res) => {
-  const childBenefits = req.session.data['child-benefits'] || []
-
-  if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
-    res.redirect(`${baseUrl}/child-dla`)
-  } else {
-    res.redirect(`${baseUrl}/household-summary`)
-  }
-})
-
-router.post(`${baseUrl}/about-qyp-router`, (req, res) => {
-  const childBenefits = req.session.data['qyp-benefits'] || []
-
-  if (childBenefits.includes("Personal Independance Payment (PIP)")) {
-    res.redirect(`${baseUrl}/qyp-pip`)
-  } else if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
-    res.redirect(`${baseUrl}/qyp-dla`)
-  } else {
-    res.redirect(`${baseUrl}/household-summary`)
-  }
-})
-
-router.post(`${baseUrl}/qyp-pip-router`, (req, res) => {
-  const childBenefits = req.session.data['qyp-benefits'] || []
-
-  if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
-    res.redirect(`${baseUrl}/qyp-dla`)
-  } else {
-    res.redirect(`${baseUrl}/household-summary`)
-  }
-})
 
 module.exports = router
