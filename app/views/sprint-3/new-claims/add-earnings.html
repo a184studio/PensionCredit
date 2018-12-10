@@ -16,7 +16,7 @@
         About employment
       </h1>
 
-      <form action="benefits" method="post">
+      <form action="earnings" method="post">
         {{ govukInput({
           label: {
             text: "Employer's name"
@@ -25,16 +25,6 @@
           name: "work-name",
           classes: "govuk-input--width-20",
           value: data["work-name"]
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Payroll number"
-          },
-          id: "work-payroll",
-          name: "work-payroll",
-          classes: "govuk-input--width-20",
-          value: data["work-payroll"]
         }) }}
 
         {{ govukInput({
