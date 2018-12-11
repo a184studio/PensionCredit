@@ -1,0 +1,199 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Money - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">
+    Money, savings and investments
+  </h1>
+
+  {% if data['has-current-account'] %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">
+          Current account
+        </h3>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Name of bank
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['current-name'] }}
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Last 4 digits of account
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['current-last-digits'] }}
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Amount / value
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['current-value'] | formatMoney }}
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Who's is this account?
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['current-owner'] }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  {% endif %}
+
+  {% if data['has-savings-account'] %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">
+          Savings account
+        </h3>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Name of bank
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['savings-name'] }}
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Last 4 digits of account
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['savings-last-digits'] }}
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Amount / value
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['savings-value'] | formatMoney }}
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Who's is this account?
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['savings-owner'] }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  {% endif %}
+
+  {% if data['has-cash'] %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">
+          Cash
+        </h3>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Total
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["cash-amount"] | formatMoney }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  {% endif %}
+
+  {% if data["has-shares"] %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">
+          Shares
+        </h3>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Company name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["shares-name"] }}
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Type of shares
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["shares-type"] }}
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Amount of shares
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["shares-amount"] }}
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Value of shares
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["shares-value"]  | formatMoney }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  {% endif %}
+
+  <h2 class="govuk-heading-m">Any other accounts missing?</h2>
+  <p class="govuk-body">
+    <a href="#" class="govuk-link">
+      Add account
+    </a>
+  </p>
+
+  <form action="task-list" method="post">
+    <input type="hidden" name="money-complete" value="true"/>
+    <p>
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+    </p>
+  </form>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you have an share? - Pension Credit
+  Do you have any cash? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -12,13 +12,25 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="has-shares-router" method="post" class="form">
+    <form action="has-shares" method="post" class="form">
+      {% set cashAmount %}
+        {{ govukInput({
+          id: "cash-amount",
+          name: "cash-amount",
+          classes: "govuk-input--width-10",
+          label: {
+            text: "How much cash do you have?"
+          },
+          value: data["cash-amount"]
+        }) }}
+      {% endset %}
+
       {{ govukRadios({
-        idPrefix: "has-shares",
-        name: "has-shares",
+        idPrefix: "has-cash",
+        name: "has-cash",
         fieldset: {
           legend: {
-            text: "Do you have any shares?",
+            text: "  Do you have any cash?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -28,12 +40,15 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["has-shares"] == "yes")
+            conditional: {
+              html: cashAmount
+            },
+            checked: (data["has-cash"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["has-shares"] == "no")
+            checked: (data["has-cash"] == "no")
           }
         ]
       }) }}

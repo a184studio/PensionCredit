@@ -208,4 +208,44 @@ router.post(`${baseUrl}/qyp-pip-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
+  const hasOver10k = req.session.data['over-10k']
+
+  if (hasOver10k === 'yes') {
+    res.redirect(`${baseUrl}/has-current-account`)
+  } else {
+    res.redirect(`${baseUrl}/money-thing`)
+  }
+})
+
+router.post(`${baseUrl}/has-current-account-router`, (req, res) => {
+  const hasCurrentAccount = req.session.data['has-current-account']
+
+  if (hasCurrentAccount === 'yes') {
+    res.redirect(`${baseUrl}/current-account`)
+  } else {
+    res.redirect(`${baseUrl}/has-cash`)
+  }
+})
+
+router.post(`${baseUrl}/has-savings-account-router`, (req, res) => {
+  const hasSavingsAccount = req.session.data['has-savings-account']
+
+  if (hasSavingsAccount === 'yes') {
+    res.redirect(`${baseUrl}/savings-account`)
+  } else {
+    res.redirect(`${baseUrl}/has-cash`)
+  }
+})
+
+router.post(`${baseUrl}/has-shares-router`, (req, res) => {
+  const hasShares = req.session.data['has-shares']
+
+  if (hasShares === 'yes') {
+    res.redirect(`${baseUrl}/shares`)
+  } else {
+    res.redirect(`${baseUrl}/has-unit-trust`)
+  }
+})
+
 module.exports = router
