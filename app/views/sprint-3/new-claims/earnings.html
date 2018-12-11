@@ -12,7 +12,7 @@
   <h1 class="govuk-heading-xl">
     Earnings and employment summary
   </h1>
-
+<!--
   <h2 class="govuk-heading-m">
     Full time employment
   </h2>
@@ -91,9 +91,13 @@
         </div>
       </dl>
     </div>
-  </div>
+  </div> -->
 
   {% if data["work-name"] %}
+  <h2 class="govuk-heading-m">
+    {{ data["employment-type"] }}
+  </h2>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <h3 class="govuk-heading-s">
@@ -116,10 +120,10 @@
           </dt>
           <dd class="app-check-your-answers__answer">
             {{ data["work-start-day"] }}
-            {{ data["work-start-month"] }}
+            {{ data["work-start-month"] | getMonth }}
             {{ data["work-start-year"] }} —
             {{ data["work-end-day"] }}
-            {{ data["work-end-month"] }}
+            {{ data["work-end-month"] | getMonth }}
             {{ data["work-end-year"] }}
           </dd>
         </div>
@@ -166,6 +170,8 @@
       </dl>
     </div>
   </div>
+  {% else %}
+  <p>No employment?</p>
   {% endif %}
 
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">

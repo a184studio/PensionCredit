@@ -248,4 +248,24 @@ router.post(`${baseUrl}/has-shares-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/employment-router`, (req, res) => {
+  const employmentFulltime = req.session.data['employment-fulltime']
+
+  if (employmentFulltime === 'yes') {
+    res.redirect(`${baseUrl}/still-employed`)
+  } else {
+    res.redirect(`${baseUrl}/earnings`)
+  }
+})
+
+router.post(`${baseUrl}/still-employed-router`, (req, res) => {
+  const stillEmployed = req.session.data['still-employed']
+
+  if (stillEmployed === 'yes') {
+    res.redirect(`${baseUrl}/employment-type`)
+  } else {
+    res.redirect(`${baseUrl}/earnings`)
+  }
+})
+
 module.exports = router
