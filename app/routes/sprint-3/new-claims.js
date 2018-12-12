@@ -268,4 +268,25 @@ router.post(`${baseUrl}/still-employed-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/employment-type-router`, (req, res) => {
+  const employmentType = req.session.data['employment-type']
+
+  if (employmentType === 'Self employed') {
+    res.redirect(`${baseUrl}/add-self-employment`)
+  } else if (employmentType === 'Employed and Self employed') {
+    req.session.data.employedAndSelfEmployed = true
+    res.redirect(`${baseUrl}/add-employment`)
+  }
+})
+
+router.post(`${baseUrl}/type-of-account-router`, (req, res) => {
+  const accountType = req.session.data['account-type']
+
+  if (accountType === 'uk') {
+    res.redirect(`${baseUrl}/uk-account`)
+  } else {
+    res.redirect(`${baseUrl}/international-account`)
+  }
+})
+
 module.exports = router

@@ -16,7 +16,13 @@
         About employment
       </h1>
 
-      <form action="earnings" method="post">
+      {% if data.employedAndSelfEmployed %}
+        {% set nextPage = "add-self-employment" %}
+      {% else %}
+        {% set nextPage = "earnings" %}
+      {% endif %}
+
+      <form action="{{nextPage}}" method="post">
         {{ govukInput({
           label: {
             text: "Employer's name"
