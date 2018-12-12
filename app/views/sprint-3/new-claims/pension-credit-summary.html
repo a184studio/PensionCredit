@@ -358,26 +358,1000 @@
         Household composition
       </h2>
 
+      <h3 class="govuk-heading-m">
+        Partner
+      </h3>
+
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            National Insurance number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            QQ 12 34 56 A
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="about-partner">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Jo Smith
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="about-partner">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Date of birth
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            5 January 1953
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="about-partner">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h3 class="govuk-heading-m">
+        Children
+      </h3>
+      {% if data["child-in-home"] == "true" %}
+        <dl class="app-check-your-answers app-check-your-answers--long">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              National Insurance number
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              QQ 12 34 56 A
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="about-child">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              Child 1
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="about-child">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Date of birth
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              5 January 2003
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="about-child">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+      {% else %}
+        <p class="none">
+          None
+        </p>
+      {% endif %}
+
+      <h3 class="govuk-heading-m">
+        Qualifying young person
+      </h3>
+      {% if data["qyp-in-home"] == "true" %}
+        <dl class="app-check-your-answers app-check-your-answers--long">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              National Insurance number
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              QQ 12 34 56 A
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="about-child">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              QYP 1
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="about-child">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Date of birth
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              5 January 2000
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="about-child">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+      {% else %}
+        <p class="none">
+          None
+        </p>
+      {% endif %}
+
+      <h3 class="govuk-heading-m">
+        Boarders / Lodgers
+      </h3>
+      {% if data["boarder-in-home"] == "true" %}
+        <dl class="app-check-your-answers app-check-your-answers--long">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              Mr Boarder
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="boarders-and-loadgers">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Date of birth
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              5 January 2000
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="boarders-and-loadgers">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Move in date
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              5 January 2010
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="boarders-and-loadgers">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Rent
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              £100 a week
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="boarders-and-loadgers">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+      {% else %}
+        <p class="none">
+          None
+        </p>
+      {% endif %}
 
       <h2 class="govuk-heading-m">
         Benefits
       </h2>
 
+      {% if data["benefit-name"] %}
+        <h4 class="govuk-heading-s">
+          {{ data["benefit-name"] }}
+        </h4>
+
+        <dl class="app-check-your-answers app-check-your-answers--long">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Value
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["benefit-value"] | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-benefit">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Benefit rate
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              Lower
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-benefit">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Payment day / frequency
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["benefit-day"] }} / {{ data["benefit-frequency"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-benefit">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Start date / end date
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              01 01 2018 -
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-benefit">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+      {% endif %}
+
       <h2 class="govuk-heading-m">
         All pensions
       </h2>
+
+      <h3 class="govuk-heading-s">
+        State Pension
+      </h3>
+
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Current payment rate
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            £100.00
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="add-pension">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Rate start / end date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            01 01 2019 -
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="add-pension">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Projected rate
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            £100
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="add-pension">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Rate start
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            01 01 2019 -
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="add-pension">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      {% if data["pension-name"] %}
+        {% if data["pension-status"] == "In receipt" %}
+          <h2 class="govuk-heading-m">
+            Pensions that the claimant is in receipt of (1):
+          </h2>
+        {% elif data["pension-status"] == "Not claimed" %}
+          <h2 class="govuk-heading-m">
+            Pensions that the claimant is not currnetly claimed (1):
+          </h2>
+        {% elif data["pension-status"] == "Withdrawn / lump sum" %}
+          <h2 class="govuk-heading-m">
+            Lump sum pension payments (1):
+          </h2>
+        {% endif %}
+
+        <h3 class="govuk-heading-s">
+          Pension provider: {{ data["pension-name"] }}
+        </h3>
+
+        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-5">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Scheme name / Reference number
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["pension-ref"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-pension">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Amount / value
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ (data["pension-value"] or 0) | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-pension">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Rate of change / type
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["pension-rate"] }}% / Fixed
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-pension">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Frequency
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              Weekly
+            </dd>
+          </div>
+          <dd class="app-check-your-answers__change">
+            <a href="add-pension">
+              Change
+            </a>
+          </dd>
+        </dl>
+        {% set pensionDetails %}
+          <dl class="app-check-your-answers app-check-your-answers--long">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Company URL
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data["pension-url"] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="add-pension">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Telephone number
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data["pension-telephone"] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="add-pension">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                E-mail
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data["pension-email"] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="add-pension">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Address
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                Company name<br>First line of address<br>Second line<br>POST CODE
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="add-pension">
+                  Change
+                </a>
+              </dd>
+            </div>
+          </dl>
+        {% endset %}
+        {{ govukDetails({
+          summaryText: "Provider address and contact details",
+          html: pensionDetails
+        }) }}
+      {% endif %}
 
       <h2 class="govuk-heading-m">
         Capital and savings
       </h2>
 
+      {% if data['has-current-account'] %}
+        <h3 class="govuk-heading-s">
+          Current account
+        </h3>
+
+        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Name of bank
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['current-name'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="current-account">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Last 4 digits of account
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['current-last-digits'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="current-account">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Amount / value
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['current-value'] | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="current-account">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Who's is this account?
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['current-owner'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="current-account">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      {% endif %}
+
+      {% if data['has-savings-account'] %}
+        <h3 class="govuk-heading-s">
+          Savings account
+        </h3>
+
+        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Name of bank
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['savings-name'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="current-account">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Last 4 digits of account
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['savings-last-digits'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="current-account">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Amount / value
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['savings-value'] | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="current-account">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Who's is this account?
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['savings-owner'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="current-account">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      {% endif %}
+
+      {% if data['has-cash'] %}
+        <h3 class="govuk-heading-s">
+          Cash
+        </h3>
+
+        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Total
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["cash-amount"] | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="cash">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      {% endif %}
+
+      {% if data["has-shares"] %}
+        <h3 class="govuk-heading-s">
+          Shares
+        </h3>
+
+        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Company name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["shares-name"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="shares">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Type of shares
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["shares-type"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="shares">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Amount of shares
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["shares-amount"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="shares">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Value of shares
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["shares-value"]  | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="shares">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      {% endif %}
+
       <h2 class="govuk-heading-m">
-        Employment and earnigns
+        Employment and earnings
       </h2>
+
+      {% if data["work-name"] %}
+        <h2 class="govuk-heading-m">
+          {{ data["employment-type"] }}
+        </h2>
+
+        <h3 class="govuk-heading-s">
+          {{ data["work-name"] }}
+        </h3>
+
+        <dl class="app-check-your-answers app-check-your-answers--long">
+          {% if data["work-payroll"] %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Payroll ID
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["work-payroll"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-employment">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          {% if data["work-start-day"] %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Start / End date
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["work-start-day"] }}
+              {{ data["work-start-month"] | getMonth }}
+              {{ data["work-start-year"] }} —
+              {{ data["work-end-day"] }}
+              {{ data["work-end-month"] | getMonth }}
+              {{ data["work-end-year"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-employment">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          {% if data["work-gross"] %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Taxable pay (gross)
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["work-gross"] | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-employment">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          {% if data["work-frequency"] %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Payment day / frequency
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["work-frequency"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-employment">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          {% if data["work-tax"] %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Tax
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["work-tax"] | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-employment">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          {% if data["work-ni"] %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              National insurance contributions
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["work-ni"] | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-employment">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          {% if data["work-pensions"] %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Pensions
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["work-pensions"] | formatMoney }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="add-employment">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+        </dl>
+    {% endif %}
+    {% if data["self-name"] %}
+      <h2 class="govuk-heading-m">
+        Self employment
+      </h2>
+
+      <h3 class="govuk-heading-s">
+        {{ data["self-name"] }}
+      </h3>
+
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        {% if data["self-profit"] %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Profit
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["self-profit"] | formatMoney }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="add-self-employment">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+        {% if data["self-loss"] %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Loss
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["self-loss"] | formatMoney }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="add-self-employment">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+        {% if data["self-total"] %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Total amount in business account
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["self-total"] | formatMoney }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="add-self-employment">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+      </dl>
+    {% endif %}
 
       <h2 class="govuk-heading-m">
         Payment details
       </h2>
+
+      <h2 class="govuk-heading-m">
+        Bank details
+      </h2>
+      {% if data["type-of-account"] == "uk" %}
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Type of account
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            UK bank, building society or credit union account
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="type-of-account">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name on account
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["name-on-account"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="uk-account">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Sort code
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["sort-code"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="uk-account">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Account number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["account-number"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="uk-account">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+      {% else %}
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Type of account
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            International bank account
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="type-of-account">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name on account
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["name-on-account"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="uk-account">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            SWIFT code
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["swift-code"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="uk-account">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            IBAN number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["iban-number"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="uk-account">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+      {% endif %}
 
       <!------------ ---- ------------>
       <h2 class="govuk-heading-m">
@@ -398,9 +1372,6 @@
         <li>have your Pension Credit reduced or stopped</li>
         <li>be paid too much Pension Credit and have to pay the money back</li>
       </ul>
-
-
-
 
     <form action="task-list" method="post">
       <p>
