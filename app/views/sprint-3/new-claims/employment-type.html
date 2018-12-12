@@ -11,7 +11,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="add-employment" method="post" class="form">
+    <form action="employment-type-router" method="post" class="form">
       {% set tamDate =
         (data['claim-date-day'] or 11) + " " +
         (data['claim-date-month'] or 11 | getMonth) + " " +
@@ -41,6 +41,11 @@
             value: "Part time employment",
             text: "Part time employment",
             checked: (data["employment-type"] == "Part time employment")
+          },
+          {
+            value: "Self employed",
+            text: "Self employed",
+            checked: (data["employment-type"] == "Self employed")
           },
           {
             value: "Employed and Self employed",
