@@ -279,4 +279,14 @@ router.post(`${baseUrl}/employment-type-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/type-of-account-router`, (req, res) => {
+  const accountType = req.session.data['account-type']
+
+  if (accountType === 'uk') {
+    res.redirect(`${baseUrl}/uk-account`)
+  } else {
+    res.redirect(`${baseUrl}/international-account`)
+  }
+})
+
 module.exports = router

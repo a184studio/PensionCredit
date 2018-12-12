@@ -222,10 +222,14 @@
                       </h2>
                       <ul class="app-task-list__items">
                         <li class="app-task-list__item">
-                          <a class="app-task-list__task-name" href="#" aria-describedby="eligibility-completed">
+                          <a class="app-task-list__task-name" href="type-of-account" aria-describedby="eligibility-completed">
                             Bank account
                           </a>
-                          <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+                          {% if data["bank-complete"] %}
+                            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                          {% else %}
+                            <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+                          {% endif %}
                         </li>
                       </ul>
                     </li>
