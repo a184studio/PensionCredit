@@ -102,7 +102,7 @@ router.post(`${baseUrl}/mobile-call-router`, (req, res) => {
 router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   const homeOwnership = req.session.data['home-ownership']
 
-  if (homeOwnership === 'Owns') {
+  if (homeOwnership === 'Owned') {
     res.redirect(`${baseUrl}/service-charges`)
   } else {
     res.redirect(`${baseUrl}/address-summary`)
