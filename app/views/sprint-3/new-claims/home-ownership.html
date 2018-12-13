@@ -25,14 +25,14 @@
         },
         items: [
           {
-            value: "Rented",
-            text: "You rent it",
-            checked: (data["home-ownership"] == "Rented")
-          },
-          {
             value: "Owns",
             text: "You own it",
             checked: (data["home-ownership"] == "Owns")
+          },
+          {
+            value: "Rented",
+            text: "You rent it",
+            checked: (data["home-ownership"] == "Rented")
           },
           {
             value: "Care home",
@@ -40,9 +40,19 @@
             checked: (data["home-ownership"] == "Care home")
           },
           {
+            value: "Type A",
+            text: "You live in sheltered housing (accommodation), retirement home, supported living or granny flat",
+            checked: (data["home-ownership"] == "Sheltered accommodation")
+          },
+          {
             value: "Neither",
             text: "You live in someone else's house without paying rent",
             checked: (data["home-ownership"] == "Neither")
+          },
+          {
+            value: "Other",
+            text: "Other?",
+            checked: (data["home-ownership"] == "Other")
           }
         ]
       }) }}
