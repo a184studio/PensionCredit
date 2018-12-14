@@ -214,7 +214,7 @@ router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
   if (hasOver10k === 'yes') {
     res.redirect(`${baseUrl}/has-current-account`)
   } else {
-    res.redirect(`${baseUrl}/money-thing`)
+    res.redirect(`${baseUrl}/money-summary`)
   }
 })
 
