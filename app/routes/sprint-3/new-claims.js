@@ -248,6 +248,16 @@ router.post(`${baseUrl}/has-shares-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/has-unit-trust-router`, (req, res) => {
+  const hasUnitTrust = req.session.data['has-unit-trust']
+
+  if (hasUnitTrust === 'yes') {
+    res.redirect(`${baseUrl}/unittrust-account.html`)
+  } else {
+    res.redirect(`${baseUrl}/has-second-property`)
+  }
+})
+
 router.post(`${baseUrl}/employment-router`, (req, res) => {
   const employmentFulltime = req.session.data['employment-fulltime']
 
