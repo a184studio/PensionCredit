@@ -13,49 +13,37 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="who-is-caller-router" method="post">
         {{ govukRadios({
-          classes: "govuk-radios",
+          classes: "govuk-radios--inline",
           idPrefix: "claiming-for",
           name: "claiming-for",
           fieldset: {
             legend: {
-              text: "Which of these best describes your relationship with the claimant?",
+              text: "Who are you claiming pension credit for?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
-
-                items: [
-                  {
-                    value: "Power of attorney",
-                    text: "I have power of attorney to make decisions for the claimant"
-                  },
-                  {
-                    value: "Appointee",
-                    text: "I am an appointee of the claimant"
-                  },
-                  {
-                    value: "Charity",
-                    text: "I represent a charity that is helping the claimant"
-                  },
-                  {
-                    value: "Family member",
-                    text: "I am a family member of the claimant"
-                  },
-                  {
-                    value: "Friend",
-                    text: "I am a friend of the claimant"
-                  },
-                  {
-                    value: "Someone else",
-                    text: "Someone else / other"
-                  }
-                ]
-              }) }}
-
+          items: [
+            {
+              value: "Myself",
+              text: "Myself"
+            },
+            {
+              value: "Someone else",
+              text: "Someone else"
+            }
+          ]
+        }) }}
 
         {{ govukButton({
           text: "Continue"
         }) }}
+
+
+
+
+
+
       </form>
     </div>
   </div>
