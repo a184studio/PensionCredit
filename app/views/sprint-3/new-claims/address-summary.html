@@ -103,6 +103,95 @@
             </a>
           </dd>
         </div>
+      {% elif data["home-ownership"] == "Care home" %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Permanent address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["care-home-permanence"] or "No" }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="is-care-home-permanent">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Date they went in
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["care-home-date-day"] }}
+            {{ data["care-home-date-month"] | getMonth }}
+            {{ data["care-home-date-year"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="{% if data['care-home-permanence'] == 'Yes' %}permanent-care-home-date{% else %}care-home-date{% endif %}">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% if date["care-home-date-is-perm-date"] == "No" %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Date it became permanent
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["care-home-permanent-date-day"] }}
+              {{ data["care-home-permanent-date-month"] | getMonth }}
+              {{ data["care-home-permanent-date-year"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="permanent-care-home-date">
+                Change
+              </a>
+            </dd>
+          </div>
+        {% endif %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Care home funding
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["care-home-funding"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="care-home-funding">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Went into care home straight from hospital
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["from-hospital"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="from-hospital">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% if date["from-hospital"] == "Yes" %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Date they went in
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data["hospital-entry-date-day"] }}
+              {{ data["hospital-entry-date-month"] | getMonth }}
+              {{ data["hospital-entry-date-year"] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="from-hospital">
+                Change
+              </a>
+            </dd>
+          </div>
+        {% endif %}
       {% endif %}
     </dl>
 
