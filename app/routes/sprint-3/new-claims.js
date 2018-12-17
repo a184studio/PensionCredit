@@ -252,11 +252,34 @@ router.post(`${baseUrl}/has-unit-trust-router`, (req, res) => {
   const hasUnitTrust = req.session.data['has-unit-trust']
 
   if (hasUnitTrust === 'yes') {
-    res.redirect(`${baseUrl}/unittrust-account.html`)
+    res.redirect(`${baseUrl}/unittrust-account`)
   } else {
-    res.redirect(`${baseUrl}/has-second-property`)
+    res.redirect(`${baseUrl}/has-bonds`)
   }
 })
+
+router.post(`${baseUrl}/has-bonds-router`, (req, res) => {
+  const hasSecondProperty = req.session.data['has-bonds-router']
+
+  if (hasSecondProperty === 'yes') {
+    res.redirect(`${baseUrl}/bond-account`)
+  } else {
+    res.redirect(`${baseUrl}/has-second-property-router`)
+  }
+})
+
+router.post(`${baseUrl}/has-second-property-router`, (req, res) => {
+  const hasSecondProperty = req.session.data['has-second-property']
+
+  if (hasSecondProperty === 'yes') {
+    res.redirect(`${baseUrl}/second-property`)
+  } else {
+    res.redirect(`${baseUrl}/money-summary`)
+  }
+})
+
+
+
 
 router.post(`${baseUrl}/employment-router`, (req, res) => {
   const employmentFulltime = req.session.data['employment-fulltime']

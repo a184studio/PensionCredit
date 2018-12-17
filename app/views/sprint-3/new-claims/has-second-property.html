@@ -12,10 +12,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="money-summary" method="post" class="form">
+    <form action="has-second-property-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "second-property",
-        name: "second-property",
+        idPrefix: "has-second-property",
+        name: "has-second-property",
         fieldset: {
           legend: {
             text: "Do you own any other property or land?",
@@ -28,12 +28,12 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["second-property"] == "yes")
+            checked: (data["has-second-property"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["second-property"] == "no")
+            checked: (data["has-second-property"] == "no")
           }
         ]
       }) }}
