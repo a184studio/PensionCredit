@@ -10,9 +10,20 @@ router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   if (claimingFor === 'Myself') {
     res.redirect(`${baseUrl}/over-spa`)
   } else {
-    res.redirect(`${baseUrl}/who-are-you`)
+    res.redirect(`${baseUrl}/has-help`)
   }
 })
+
+router.post(`${baseUrl}/has-help-router`, (req, res) => {
+  const hasHelp = req.session.data['has-help']
+
+  if (hasHelp === 'Myself') {
+    res.redirect(`${baseUrl}/over-spa`)
+  } else {
+    res.redirect(`${baseUrl}/has-help`)
+  }
+})
+
 
 router.post(`${baseUrl}/over-spa-router`, (req, res) => {
   try {
