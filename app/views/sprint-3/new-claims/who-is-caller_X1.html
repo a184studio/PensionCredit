@@ -13,57 +13,37 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="who-is-caller-router" method="post">
         {{ govukRadios({
-          classes: "govuk-radios--inline",
+          classes: "govuk-radios",
           idPrefix: "claiming-for",
           name: "claiming-for",
           fieldset: {
             legend: {
-              text: "Who are you claiming pension credit for?",
+              text: "Which of these best describes your relationship with the claimant?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
-          items: [
-            {
-              value: "Myself",
-              text: "Myself"
-            }
-          ]
-        }) }}
 
-
-              <h2 class="govuk-heading-m">
-                Someone else
-              </h2>
-
-              {{ govukRadios({
-                idPrefix: "current-owner",
-                name: "current-owner",
-                fieldset: {
-                  legend: {
-                    text: ""
-                  }
-                },
                 items: [
                   {
                     value: "Power of attorney",
-                    text: "Power of attorney"
+                    text: "I have power of attorney to make decisions for the claimant"
                   },
                   {
                     value: "Appointee",
-                    text: "Appointee"
+                    text: "I am an appointee of the claimant"
                   },
                   {
                     value: "Charity",
-                    text: "Charity: Citizens Advice, Age UK etc"
+                    text: "I represent a charity that is helping the claimant"
                   },
                   {
                     value: "Family member",
-                    text: "Family member"
+                    text: "I am a family member of the claimant"
                   },
                   {
                     value: "Friend",
-                    text: "Friend"
+                    text: "I am a friend of the claimant"
                   },
                   {
                     value: "Someone else",
