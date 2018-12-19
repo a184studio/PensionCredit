@@ -319,6 +319,10 @@ router.post(`${baseUrl}/employment-type-router`, (req, res) => {
 
   if (employmentType === 'Self employed') {
     res.redirect(`${baseUrl}/add-self-employment`)
+  }
+    if (employmentType === 'Full time employment') {
+      res.redirect(`${baseUrl}/add-employment`)
+
   } else if (employmentType === 'Employed and Self employed') {
     req.session.data.employedAndSelfEmployed = true
     res.redirect(`${baseUrl}/add-employment`)
