@@ -277,7 +277,7 @@ router.post(`${baseUrl}/has-bonds-router`, (req, res) => {
   if (hasSecondProperty === 'yes') {
     res.redirect(`${baseUrl}/bond-account`)
   } else {
-    res.redirect(`${baseUrl}/has-second-property-router`)
+    res.redirect(`${baseUrl}/has-second-property`)
   }
 })
 
