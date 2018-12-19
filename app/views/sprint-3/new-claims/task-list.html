@@ -267,8 +267,10 @@
     </div>
   </div>
 
-  {{ govukButton({
-    text: "Continue"
-  }) }}
+  <form action="pension-credit-summary" method="post">
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
 
 {% endblock %}
