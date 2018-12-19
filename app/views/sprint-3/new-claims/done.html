@@ -5,54 +5,56 @@
 {% endblock %}
 
 {% block header %}
-  {{ govukHeader({ serviceName: "Pension Credit" }) }}
+  {% include "includes/internal-header.html" %}
 {% endblock %}
 
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
-{% from "panel/macro.njk" import govukPanel %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
+
       {{ govukPanel({
         titleText: "Application complete",
         html: "Your reference number is <strong>QQ112233C</strong>"
       }) }}
 
-      <p class="govuk-body">Based on the information you gave us, you are entitled to Pension Credit. Your first payment will be paid on the <strong>Monday 27 August 2018.</strong></p>
-      <h3 class="govuk-heading-l">£68.77 will be paid into your account each week. Your first payment will be on 27 August 2017.</h3>
+      <p class="govuk-body">
+        Based on the information you gave us, you are entitled to Pension Credit.
+        Your first payment will be paid on the <strong>Monday 27 August 2018.</strong>
+      </p>
+
+      <h3 class="govuk-heading-l">
+        £68.77 will be paid into your account each week. Your first payment will
+        be on 27 August 2017.
+      </h3>
 
       <h3 class="govuk-heading-m">What happens next</h3>
 
       <p class="govuk-body">
-              We are doing some final checks on your application. We will write to you by 13 December either to confirm your award or ask you for more information.
+        We are doing some final checks on your application. We will write to you
+        by 13 December either to confirm your award or ask you for more information.
       </p>
 
       <h3 class="govuk-heading-m">If anything changes</h3>
 
       <p class="govuk-body">
-        You should tell us straight away if anything changes that affects how much Pension Credit you are entitled to. This includes:</p>
+        You should tell us straight away if anything changes that affects how
+        much Pension Credit you are entitled to. This includes:
+      </p>
+
       <ul class="govuk-list govuk-list--bullet">
         <li>if you go abroad for longer than 4 weeks</li>
         <li>your address changes, or anyone moves in or out of your home</li>
         <li>your income changes, including any changes to employment or self employment</li>
         <li>changes to the value of your savings, investments or property</li>
         <li>if you go into hospital or a care home for more than 4 weeks</li>
-
       </ul>
-
-
-
-
-      <!------------ ------------ ------------>
 
       <p class="govuk-body">
         <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
       </p>
-
-      <li class="app-task-list__item">
 
       <details class="govuk-details">
         <summary class="govuk-details__summary">
@@ -63,26 +65,8 @@
         <div class="govuk-details__text">
           This space may be used to show the calculations, what are the deductibles etc.
         </div>
+      </details>
 
-     <li>
-       <ul class="app-task-list__items">
-
-         <li class="app-task-list__item">
-           <a class="app-task-list__task-name" href="/xxx" aria-describedby="contact-details-completed">
-             Details
-           </a>         </li>
-         <!------------ ---- ------------>
-         <li class="app-task-list__item">
-           <a class="app-task-list__task-name" href="/xxx" aria-describedby="contact-details-completed">
-             Details
-           </a>
-           <strong class="govuk-tag govuk-tag--not-in-use app-task-list__task-completed" id="read-declaration-completed"></strong>
-         </li>
-         <!------------ ---- ------------>
-
-  </ul>
-  </li>
-  </details>
-
-
+    </div>
+  </div>
 {% endblock %}
