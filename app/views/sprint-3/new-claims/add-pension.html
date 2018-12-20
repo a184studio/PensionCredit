@@ -117,36 +117,44 @@
           Pension rate details
         </h2>
 
-        {{ govukRadios({
-          idPrefix: "pension-frequency",
-          name: "pension-frequency",
-          fieldset: {
-            legend: {
-            }
-          },
+
+      {{ govukInput({
+        label: {
+          text: "What is the percent change year-on-year?"
+        },
+        id: "pension-rate",
+        name: "pension-rate",
+        classes: "govuk-input--width-5",
+        value: data["pension-rate"]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "percent-change-type",
+        name: "percent-change-type",
+        fieldset: {
+          legend: {
+            text: "What is the percent change type?"
+          }
+        },
           items: [
             {
-              value: "Every week",
-              text: "Every week",
-              checked: (data['pension-frequency'] == "Every week")
+              value: "Fixed",
+              text: "Fixed",
+              checked: (data['pension-frequency'] == "Fixed")
             },
             {
-              value: "Every two weeks",
-              text: "Every two weeks",
-              checked: (data['pension-frequency'] == "Every two weeks")
+              value: "CPI/RPI",
+              text: "CPI or RPI increase",
+              checked: (data['pension-frequency'] == "CPIorRPI")
+            },
+            {
+              value: "Unknown-change",
+              text: "Unknown % change",
+              checked: (data['pension-frequency'] == "Unknown-change")
             }
           ]
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Percent change year-on-year, %"
-          },
-          id: "pension-rate",
-          name: "pension-rate",
-          classes: "govuk-input--width-20",
-          value: data["pension-rate"]
-        }) }}
 
         <h2 class="govuk-heading-m">
           Contact details
