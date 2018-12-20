@@ -114,12 +114,33 @@
         }) }}
 
         <h2 class="govuk-heading-m">
-          Benefit rate details
+          Pension rate details
         </h2>
+
+        {{ govukRadios({
+          idPrefix: "pension-frequency",
+          name: "pension-frequency",
+          fieldset: {
+            legend: {
+            }
+          },
+          items: [
+            {
+              value: "Every week",
+              text: "Every week",
+              checked: (data['pension-frequency'] == "Every week")
+            },
+            {
+              value: "Every two weeks",
+              text: "Every two weeks",
+              checked: (data['pension-frequency'] == "Every two weeks")
+            }
+          ]
+        }) }}
 
         {{ govukInput({
           label: {
-            text: "Rate of change %"
+            text: "Percent change year-on-year, %"
           },
           id: "pension-rate",
           name: "pension-rate",
