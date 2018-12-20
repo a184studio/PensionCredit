@@ -48,7 +48,7 @@
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="about-partner">
-            Change
+            .
           </a>
         </dd>
       </div>
@@ -61,7 +61,7 @@
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="about-partner">
-            Change
+            .
           </a>
         </dd>
       </div>
@@ -170,20 +170,35 @@
     {% endif %}
 
     <h2 class="govuk-heading-m">
-      Boarders / Lodgers
+      Boarders and lodgers
     </h2>
     {% if data["boarder-in-home"] == "true" %}
       <dl class="app-check-your-answers app-check-your-answers--long">
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Boarder or lodger
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Boarder
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="boarders-and-loadgers">
+              Change
+            </a>
+          </dd>
+        </div>
+
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Name
           </dt>
           <dd class="app-check-your-answers__answer">
-            Mr Boarder
+            John Watson
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="boarders-and-loadgers">
-              Change
+              .
             </a>
           </dd>
         </div>
@@ -196,7 +211,7 @@
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="boarders-and-loadgers">
-              Change
+              .
             </a>
           </dd>
         </div>
@@ -209,7 +224,7 @@
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="boarders-and-loadgers">
-              Change
+              .
             </a>
           </dd>
         </div>
@@ -222,10 +237,25 @@
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="boarders-and-loadgers">
-              Change
+              .
             </a>
           </dd>
         </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Meals prepared
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Yes
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="boarders-and-loadgers">
+              .
+            </a>
+          </dd>
+        </div>
+
+
       </dl>
     {% else %}
       <p class="none">
