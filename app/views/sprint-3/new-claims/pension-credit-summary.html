@@ -16,7 +16,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Pension Credit calculation. Check your answers 
+      Pension Credit calculation. Check your answers
     </h1>
 
     <h2 class="govuk-heading-m">
@@ -1304,7 +1304,7 @@
             Type of account
           </dt>
           <dd class="app-check-your-answers__answer">
-            International bank account
+            UK Bank account
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="type-of-account">
@@ -1321,36 +1321,42 @@
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="uk-account">
-              Change
+              .
             </a>
           </dd>
         </div>
+
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            SWIFT code
+            Sort code
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ data["swift-code"] }}
+            00-00-00
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="uk-account">
-              Change
+            <a href="home-ownership">
+              .
             </a>
           </dd>
         </div>
+
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            IBAN number
+            Account number
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ data["iban-number"] }}
+            01020304
           </dd>
+
           <dd class="app-check-your-answers__change">
             <a href="uk-account">
-              Change
+              .
             </a>
           </dd>
         </div>
+
+
+
       </dl>
       {% endif %}
 

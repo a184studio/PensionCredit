@@ -21,7 +21,7 @@
       {% if data.employedAndSelfEmployed %}
         {% set nextPage = "add-self-employment" %}
       {% else %}
-        {% set nextPage = "earnings" %}
+        {% set nextPage = "earnings-summary" %}
       {% endif %}
 
       <form action="{{nextPage}}" method="post">
