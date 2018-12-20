@@ -141,7 +141,7 @@ router.post(`${baseUrl}/has-partner-router`, (req, res) => {
   } else if (homeOwnership === 'Owns') {
     res.redirect(`${baseUrl}/anyone-living-with-you`)
   } else {
-    res.redirect(`${baseUrl}/household-summary`)
+    res.redirect(`${baseUrl}/anyone-living-with-you`)
   }
 })
 
