@@ -29,7 +29,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#" aria-describedby="eligibility-completed">
-                Eligibility personal details
+                Eligibility questions and personal details
               </a>
               <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             </li>
@@ -47,7 +47,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="can-contact.html" aria-describedby="eligibility-completed">
-                Landline, Mobile, & Email
+                Landline, mobile, & email
               </a>
               {% if data["contact-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -57,7 +57,7 @@
             </li>
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="disability" aria-describedby="read-declaration-completed">
-                Disabilities
+                Disabilities and access needs
               </a>
               {% if data["contact-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -110,7 +110,7 @@
               {% endif %}                  </li>
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="anyone-living-with-you" aria-describedby="read-declaration-completed">
-                Household composition
+                Other people who live with you
               </a>
               {% if data["household-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -131,7 +131,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="benefits-summary" aria-describedby="eligibility-completed">
-                Benefits
+                Current benefits
               </a>
               {% if data["benefits-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -147,7 +147,7 @@
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">6. </span> State pension, private and work place pensons
+            <span class="app-task-list__section-number">6. </span> Pensions
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -161,7 +161,7 @@
               {% endif %}                     </li>
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="pensions" aria-describedby="read-declaration-completed">
-                Non-state, private & workplace pensions
+                Private and workplace pensons
               </a>
               {% if data["pensions-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
