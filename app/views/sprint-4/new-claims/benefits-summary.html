@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Benefits - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+  <h1 class="govuk-heading-xl">
+    Benefit details for Alex Smith
+  </h1>
+
+  <h2 class="govuk-heading-m">
+    In payment
+  </h2>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">
+        Attendance allowance
+      </h3>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Value
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            £100
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Benefit rate
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Lower
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Payment day / frequency
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Monday / weekly
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Start date / end date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            01 01 2018 -
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  {% if data["benefit-name"] %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">
+        {{ data["benefit-name"] }}
+      </h3>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Value
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["benefit-value"] | formatMoney }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Benefit rate
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Lower
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Payment day / frequency
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["benefit-day"] }} / {{ data["benefit-frequency"] }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Start date / end date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            01 01 2018 -
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+  {% endif %}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <h2 class="govuk-heading-m">Any other benefit missing?</h2>
+  <p class="govuk-body">
+    <a href="add-benefit" class="govuk-link">
+      Add benefit
+    </a>
+  </p>
+
+  <form action="task-list" method="post">
+    <input type="hidden" name="benefits-complete" value="true"/>
+    <p>
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+    </p>
+  </form>
+{% endblock %}
