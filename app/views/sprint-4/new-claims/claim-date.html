@@ -41,10 +41,26 @@
             },
             {
               value: "Alternative date",
-              text: "Alternative date (Drop down like 10k cash @Niall help.)"
+              text: "Alternative date (Drop down like 10k cash @Niall to add.)"
             }
           ]
         }) }}
+
+        {% from "date-input/macro.njk" import govukDateInput %}
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "Alternative date (Drop down like 10k cash @Niall to add.)"
+
+                        }
+          }
+        }) }}
+
+
+
 
         {{ govukButton({
           text: "Continue"
