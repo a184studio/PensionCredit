@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  When do you want to apply from? - Pension Credit
+  When can the claim start from? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -15,16 +15,35 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="name-and-nino" method="post">
-        {{ govukDateInput({
-          id: "claim-date",
-          namePrefix: "claim-date",
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "claim-date",
+          name: "claim-date",
           fieldset: {
             legend: {
               text: "When do you want your claim to start?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
-          }
+          },
+          items: [
+            {
+              value: "Today",
+              text: "Today (00.00.00)"
+            },
+            {
+              value: "SPA Entitlement",
+              text: " Backdated state to pension entitlement day (00.00.00)"
+            },
+            {
+              value: "Backdated three months",
+              text: "Backdated three months (00.00.00)"
+            },
+            {
+              value: "Alternative date",
+              text: "Alternative date (Drop down like 10k cash @Niall help.)"
+            }
+          ]
         }) }}
 
         {{ govukButton({
