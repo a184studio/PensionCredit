@@ -53,6 +53,35 @@
           ]
         }) }}  ---- ------------>
 
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "changed-name",
+          name: "changed-name",
+          fieldset: {
+            legend: {}
+          },
+          hint: {
+            text: "If age is after X date show gender"
+          },
+          items: [
+            {
+              value: "Female",
+              text: "Female"
+            },
+            {
+              value: "Male",
+              text: "Male"
+            }
+          ]
+        }) }}
+
+
+
         {{ govukButton({
           text: "Continue"
         }) }}
