@@ -1,5 +1,7 @@
 const express = require('express')
-const {getStatePensionDate} = require('get-uk-state-pension-date');
+const {getStatePensionDate} = require('get-uk-state-pension-date')
+const differenceInDays = require('date-fns/difference_in_days')
+const startOfDay = require('date-fns/start_of_day')
 
 const router = new express.Router()
 const baseUrl = '/sprint-4/new-claims'
@@ -26,17 +28,44 @@ router.post(`${baseUrl}/has-help-router`, (req, res) => {
   }
 })
 
-
 router.post(`${baseUrl}/over-spa-router`, (req, res) => {
   try {
-    const sex = req.session.data['sex']
     const dob = req.session.data['dob-year'] + '-' +
       req.session.data['dob-month'].padStart(2, '0') + '-' +
       req.session.data['dob-day'].padStart(2, '0')
 
-    const spaDate = getStatePensionDate(dob, sex);
+    const today = startOfDay(new Date())
+    const maleSpaDate = getStatePensionDate(dob, 'M')
+    const femaleSpaDate = getStatePensionDate(dob, 'F')
+    const daysSinceMaleSPA = differenceInDays(today, maleSpaDate)
+    const daysSinceFemaleSPA = differenceInDays(today, femaleSpaDate)
 
-    if (new Date(spaDate) <= new Date()) {
+    if (daysSinceMaleSPA >= 0 && daysSinceFemaleSPA >= 0) {
+      req.session.data['spa-date'] = maleSpaDate;
+      res.redirect(`${baseUrl}/reside-in-uk`)
+    } else if (daysSinceMaleSPA < 0 && daysSinceFemaleSPA < 0) {
+      res.redirect(`${baseUrl}/not-eligible`)
+    } else {
+      res.redirect(`${baseUrl}/sex`)
+    }
+  } catch (err) {
+    res.redirect(`${baseUrl}/reside-in-uk`)
+  }
+})
+
+router.post(`${baseUrl}/sex-router`, (req, res) => {
+  try {
+    const dob = req.session.data['dob-year'] + '-' +
+      req.session.data['dob-month'].padStart(2, '0') + '-' +
+      req.session.data['dob-day'].padStart(2, '0')
+
+    const sex = req.session.data['sex'] || 'M'
+    const today = startOfDay(new Date())
+    const spaDate = getStatePensionDate(dob, sex)
+    const daysSinceSPA = differenceInDays(today, spaDate)
+
+    if (daysSinceSPA >= 0) {
+      req.session.data['spa-date'] = spaDate;
       res.redirect(`${baseUrl}/reside-in-uk`)
     } else {
       res.redirect(`${baseUrl}/not-eligible`)
@@ -74,6 +103,12 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   } else {
     res.redirect(`${baseUrl}/hrt`)
   }
+})
+
+router.post(`${baseUrl}/claim-date`, (req, res, next) => {
+  res.locals.now = new Date()
+
+  next()
 })
 
 router.post(`${baseUrl}/security-router`, (req, res) => {
@@ -321,10 +356,8 @@ router.post(`${baseUrl}/employment-type-router`, (req, res) => {
 
   if (employmentType === 'Self employed') {
     res.redirect(`${baseUrl}/add-self-employment`)
-  }
-    if (employmentType === 'Full time employment') {
-      res.redirect(`${baseUrl}/add-employment`)
-
+  } else if (employmentType === 'Full time employment') {
+    res.redirect(`${baseUrl}/add-employment`)
   } else if (employmentType === 'Employed and Self employed') {
     req.session.data.employedAndSelfEmployed = true
     res.redirect(`${baseUrl}/add-employment`)
