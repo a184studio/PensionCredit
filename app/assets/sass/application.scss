@@ -45,3 +45,7 @@ $govuk-global-styles: true;
   padding-left: 10
   margin-left 0
 }
+
+.govuk-tag--last {
+  border-bottom: 0 !important;
+}
