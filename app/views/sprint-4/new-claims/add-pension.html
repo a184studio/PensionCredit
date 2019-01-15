@@ -20,15 +20,6 @@
       </h1>
 
       <form action="pensions" method="post">
-        {{ govukInput({
-          label: {
-            text: "Pension reference number (ECON / ASCNCON)"
-          },
-          id: "pension-ref",
-          name: "pension-ref",
-          classes: "govuk-input--width-20",
-          value: data["pension-ref"]
-        }) }}
 
         {{ govukInput({
           label: {
@@ -170,25 +161,6 @@
           value: data["pension-telephone"]
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Company URL"
-          },
-          id: "pension-url",
-          name: "pension-url",
-          classes: "govuk-input--width-20",
-          value: data["pension-url"]
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Company e-mail"
-          },
-          id: "pension-email",
-          name: "pension-email",
-          classes: "govuk-input--width-20",
-          value: data["pension-email"]
-        }) }}
 
         {{ govukButton({
           text: "Continue"
