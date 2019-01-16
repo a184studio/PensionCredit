@@ -20,54 +20,54 @@
       {% for i in range(0, numberOfShares) -%}
         <h2 class="govuk-heading-m">Shares {{i + 1}}</h2>
 
-        <dl class="app-check-your-answers app-check-your-answers--long">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Company
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{data['share-company-' + i]}}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="/new-claims/shares/{{i}}">
                 Change
               </a>
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Type
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{data['share-type-' + i]}}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="/new-claims/shares/{{i}}">
                 Change
               </a>
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Amount
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{data['share-amount-' + i]}}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="/new-claims/shares/{{i}}">
                 Change
               </a>
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Value
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{data['share-value-' + i]}}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="/new-claims/shares/{{i}}">
                 Change
               </a>

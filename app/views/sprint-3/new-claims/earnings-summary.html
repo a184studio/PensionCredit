@@ -28,23 +28,23 @@
         </h3>
       </div>
       <div class="govuk-grid-column-two-thirds">
-        <dl class="app-check-your-answers app-check-your-answers--long">
+        <dl class="govuk-summary-list govuk-summary-list--long">
           {% if data["work-payroll"] %}
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Payroll ID
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["work-payroll"] }}
             </dd>
           </div>
           {% endif %}
           {% if data["work-start-day"] %}
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Start / End date
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["work-start-day"] }}
               {{ data["work-start-month"] | getMonth }}
               {{ data["work-start-year"] }} —
@@ -55,51 +55,51 @@
           </div>
           {% endif %}
           {% if data["work-gross"] %}
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Taxable pay (gross)
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["work-gross"] | formatMoney }}
             </dd>
           </div>
           {% endif %}
           {% if data["work-frequency"] %}
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Payment day / frequency
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["work-frequency"] }}
             </dd>
           </div>
           {% endif %}
           {% if data["work-tax"] %}
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Tax
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["work-tax"] | formatMoney }}
             </dd>
           </div>
           {% endif %}
           {% if data["work-ni"] %}
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               National insurance contributions
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["work-ni"] | formatMoney }}
             </dd>
           </div>
           {% endif %}
           {% if data["work-pensions"] %}
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Pensions
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["work-pensions"] | formatMoney }}
             </dd>
           </div>
@@ -120,33 +120,33 @@
       </h3>
     </div>
     <div class="govuk-grid-column-two-thirds">
-      <dl class="app-check-your-answers app-check-your-answers--long">
+      <dl class="govuk-summary-list govuk-summary-list--long">
         {% if data["self-profit"] %}
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Profit
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["self-profit"] | formatMoney }}
           </dd>
         </div>
         {% endif %}
         {% if data["self-loss"] %}
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Loss
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["self-loss"] | formatMoney }}
           </dd>
         </div>
         {% endif %}
         {% if data["self-total"] %}
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Total amount in business account
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["self-total"] | formatMoney }}
           </dd>
         </div>

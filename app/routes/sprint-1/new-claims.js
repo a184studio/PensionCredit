@@ -128,7 +128,7 @@ router.post(`${baseUrl}/savings-router`, (req, res) => {
 })
 
 router.get(`${baseUrl}/savings-account/:number`, (req, res, next) => {
-  const {number} = req.params
+  const { number } = req.params
   res.render('new-claims/savings-account.html', {
     accountNumber: number
   })
@@ -151,7 +151,7 @@ router.post(`${baseUrl}/has-shares-router`, (req, res) => {
 })
 
 router.get(`${baseUrl}/shares/:number`, (req, res) => {
-  const {number} = req.params
+  const { number } = req.params
   res.render('new-claims/shares.html', {
     shareNumber: number
   })

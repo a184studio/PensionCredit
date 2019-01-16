@@ -23,36 +23,36 @@
       </h2>
     </div>
     <div class="govuk-grid-column-two-thirds">
-      <dl class="app-check-your-answers app-check-your-answers--long">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--long">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Current payment rate
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             £100.00
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Rate start / end date
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             01 01 2019 -
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Projected rate
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             £100
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Rate start
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             01 01 2019 -
           </dd>
         </div>
@@ -81,20 +81,20 @@
         </h3>
       </div>
       <div class="govuk-grid-column-two-thirds">
-        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-5">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long govuk-!-margin-bottom-5">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Scheme name / Reference number
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["pension-ref"] }}
             </dd>
           </div>
-          <!-- <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Start / End date
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["pension-start-day"] }}
               {{ data["pension-start-month"] }}
               {{ data["pension-start-year"] }} —
@@ -103,62 +103,62 @@
               {{ data["pension-end-year"] }}
             </dd>
           </div> -->
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Amount / value
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ (data["pension-value"] or 0) | formatMoney }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Rate of change / type
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["pension-rate"] }}% / Fixed
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Frequency
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               Weekly
             </dd>
           </div>
         </dl>
         {% set pensionDetails %}
-          <dl class="app-check-your-answers app-check-your-answers--long">
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+          <dl class="govuk-summary-list govuk-summary-list--long">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Company URL
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data["pension-url"] }}
               </dd>
             </div>
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Telephone number
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data["pension-telephone"] }}
               </dd>
             </div>
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 E-mail
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data["pension-email"] }}
               </dd>
             </div>
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Address
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 Company name<br>First line of address<br>Second line<br>POST CODE
               </dd>
             </div>

@@ -309,55 +309,55 @@
 
     {% for admission in data["admissions"] %}
       <h3 class="govuk-heading-m">Admission {{loop.index}}</h3>
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--short">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Type
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ admission["admission-type"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-admission/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Date they went in
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ admission["date-in-day"] }}
             {{ admission["date-in-month"] | getMonth }}
             {{ admission["date-in-year"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-admission/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Date they came out
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ admission["date-out-day"] }}
             {{ admission["date-out-month"] | getMonth }}
             {{ admission["date-out-year"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-admission/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Days in
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{
               [
                 [
@@ -373,7 +373,7 @@
               ] | dayDiff
             }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-admission/{{loop.index0}}">
               Change
             </a>
@@ -507,15 +507,15 @@
     <h3 class="govuk-heading-s">Other household members</h3>
     {% for member in data["members"] %}
       <h3 class="govuk-heading-m">Member {{loop.index}}</h3>
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--short">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ member["member-name"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-member/{{loop.index0}}">
               Change
             </a>
@@ -545,41 +545,41 @@
     </h2>
     {% for benefit in data["benefits"] %}
       <h3 class="govuk-heading-m">Benefit {{loop.index}}</h3>
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--short">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ benefit["benefit-type"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-benefit/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Value
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ benefit["benefit-value"] | formatMoney }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-benefit/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Frequency
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ benefit["benefit-frequency"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-benefit/{{loop.index0}}">
               Change
             </a>
@@ -610,41 +610,41 @@
 
     {% for employment in data["employments"] %}
       <h3 class="govuk-heading-m">Employment {{loop.index}}</h3>
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--short">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ employment["name"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-employment/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Earnings
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ employment["earnings"] | formatMoney }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-employment/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Frequency
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ employment["employment-frequency"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-employment/{{loop.index0}}">
               Change
             </a>
@@ -686,28 +686,28 @@
     <h3 class="govuk-heading-m" id="savings">Savings accounts</h3>
     {% for saving in data["savings"] %}
       <h4 class="govuk-heading-s">Savings account {{loop.index}}</h4>
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--short">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ saving["savings-name"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-saving/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Total value
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ saving["savings-total"] | formatMoney }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-saving/{{loop.index0}}">
               Change
             </a>
@@ -724,28 +724,28 @@
     <h3 class="govuk-heading-m" id="investments">Investments</h3>
     {% for investment in data["investments"] %}
       <h4 class="govuk-heading-s">Investment {{loop.index}}</h4>
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--short">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ investment["investment-name"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-investment/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Value
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ investment["investment-value"] | formatMoney }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-investment/{{loop.index0}}">
               Change
             </a>
@@ -762,54 +762,54 @@
     <h3 class="govuk-heading-m" id="shares">Shares</h3>
     {% for share in data["shares"] %}
       <h4 class="govuk-heading-s">Share {{loop.index}}</h4>
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--short">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Company
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ share["share-company-name"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-share/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Type
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ share["share-type"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-share/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Number
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ share["share-number"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-share/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Value
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ share["share-value"] | formatMoney }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-share/{{loop.index0}}">
               Change
             </a>
@@ -851,41 +851,41 @@
 
     {% for pension in data["pensions"] %}
       <h4 class="govuk-heading-s">Pension {{loop.index}}</h4>
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--short">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ pension["name"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-pension/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Income
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ pension["income"] | formatMoney }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-pension/{{loop.index0}}">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Frequency
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ pension["pension-frequency"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="change-pension/{{loop.index0}}">
               Change
             </a>
