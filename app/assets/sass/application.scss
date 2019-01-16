@@ -27,8 +27,14 @@ $govuk-global-styles: true;
 }
 
 .govuk-tag--incomplete {
-  background-color: #bfc1c3;
-}
+  background-color: #dee0e2;
+  color:#6f777b;
+  text-transform: capitalize;
+  }
+
+  .app-task-list__task-completed {
+    text-transform: capitalize;
+    }
 
 .govuk-tag--break {
   background-color: #f8f8f8;
