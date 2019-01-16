@@ -37,7 +37,14 @@ module.exports = function (env) {
       const monthIndex = parseInt(month, 10) - 1
       return months[monthIndex]
     },
-    formatMoney(money) {
+    formatDate(input) {
+      const date = input ? new Date(input) : new Date();
+      const day = date.getDate();
+      const month = date.getMonth();
+      const year = date.getFullYear();
+      return day + ' ' + months[month] + ' ' + year;
+    },
+    formatMonth(money) {
       const sanitised = money ? money.replace(/[^0-9.]/g, '') : 0;
       return GBP.format(sanitised)
     },

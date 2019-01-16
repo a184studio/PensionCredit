@@ -15,6 +15,40 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="name-and-nino" method="post">
+        {% set today = '' | formatDate %}
+
+        {% set altDate %}
+          {{ govukDateInput({
+            id: "alternate-date",
+            namePrefix: "alternate-date",
+            fieldset: {
+              legend: {
+                text: "Claim date"
+              }
+            },
+            hint: {
+              text: "For example, 31 12 2018"
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["alternate-date-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["alternate-date-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["alternate-date-year"]
+              }
+            ]
+          }) }}
+        {% endset %}
+
         {{ govukRadios({
           classes: "govuk-radios",
           idPrefix: "claim-date",
@@ -29,38 +63,24 @@
           items: [
             {
               value: "Today",
-              text: "Today (00.00.00)"
+              text: "Today (" + today + ")",
+              checked: (data["claim-date"] == "Today")
             },
             {
               value: "SPA Entitlement",
-              text: " Backdated state to pension entitlement day (00.00.00)"
-            },
-            {
-              value: "Backdated three months",
-              text: "Backdated three months (00.00.00)"
+              text: "Backdated state to pension entitlement day (" + (data['spa-date'] | formatDate) + ")",
+              checked: (data["claim-date"] == "SPA Entitlement")
             },
             {
               value: "Alternative date",
-              text: "Alternative date (Drop down like 10k cash @Niall to add.)"
+              text: "Alternative date",
+              checked: (data["claim-date"] == "Alternative date"),
+              conditional: {
+                html: altDate
+              }
             }
           ]
         }) }}
-
-        {% from "date-input/macro.njk" import govukDateInput %}
-
-        {{ govukDateInput({
-          id: "dob",
-          namePrefix: "dob",
-          fieldset: {
-            legend: {
-              text: "Alternative date (Drop down like 10k cash @Niall to add.)"
-
-                        }
-          }
-        }) }}
-
-
-
 
         {{ govukButton({
           text: "Continue"
