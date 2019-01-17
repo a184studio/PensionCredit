@@ -1,5 +1,5 @@
 const express = require('express')
-const {getStatePensionDate} = require('get-uk-state-pension-date')
+const { getStatePensionDate } = require('get-uk-state-pension-date')
 const differenceInDays = require('date-fns/difference_in_days')
 const startOfDay = require('date-fns/start_of_day')
 
@@ -15,8 +15,6 @@ router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
     res.redirect(`${baseUrl}/has-help`)
   }
 })
-
-
 
 router.post(`${baseUrl}/has-help-router`, (req, res) => {
   const hasHelp = req.session.data['has-help']
@@ -41,7 +39,7 @@ router.post(`${baseUrl}/over-spa-router`, (req, res) => {
     const daysSinceFemaleSPA = differenceInDays(today, femaleSpaDate)
 
     if (daysSinceMaleSPA >= 0 && daysSinceFemaleSPA >= 0) {
-      req.session.data['spa-date'] = maleSpaDate;
+      req.session.data['spa-date'] = maleSpaDate
       res.redirect(`${baseUrl}/reside-in-uk`)
     } else if (daysSinceMaleSPA < 0 && daysSinceFemaleSPA < 0) {
       res.redirect(`${baseUrl}/not-eligible`)
@@ -65,7 +63,7 @@ router.post(`${baseUrl}/sex-router`, (req, res) => {
     const daysSinceSPA = differenceInDays(today, spaDate)
 
     if (daysSinceSPA >= 0) {
-      req.session.data['spa-date'] = spaDate;
+      req.session.data['spa-date'] = spaDate
       res.redirect(`${baseUrl}/reside-in-uk`)
     } else {
       res.redirect(`${baseUrl}/not-eligible`)
@@ -124,7 +122,7 @@ router.post(`${baseUrl}/security-router`, (req, res) => {
 router.post(`${baseUrl}/can-contact-router`, (req, res) => {
   const contactOptions = req.session.data['contact-options']
 
-  if (contactOptions.includes('Text') &&  contactOptions.includes('Phone call')) {
+  if (contactOptions.includes('Text') && contactOptions.includes('Phone call')) {
     res.redirect(`${baseUrl}/mobile-call`)
   } else if (contactOptions.includes('Text')) {
     res.redirect(`${baseUrl}/mobile`)
@@ -217,9 +215,9 @@ router.post(`${baseUrl}/other-people-who-live-with-you-router`, (req, res) => {
 router.post(`${baseUrl}/about-child-router`, (req, res) => {
   const childBenefits = req.session.data['child-benefits'] || []
 
-  if (childBenefits.includes("Personal Independance Payment (PIP)")) {
+  if (childBenefits.includes('Personal Independance Payment (PIP)')) {
     res.redirect(`${baseUrl}/child-pip`)
-  } else if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+  } else if (childBenefits.includes('Disibility Living Allowance (DLA)')) {
     res.redirect(`${baseUrl}/child-dla`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
@@ -229,7 +227,7 @@ router.post(`${baseUrl}/about-child-router`, (req, res) => {
 router.post(`${baseUrl}/child-pip-router`, (req, res) => {
   const childBenefits = req.session.data['child-benefits'] || []
 
-  if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+  if (childBenefits.includes('Disibility Living Allowance (DLA)')) {
     res.redirect(`${baseUrl}/child-dla`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
@@ -239,9 +237,9 @@ router.post(`${baseUrl}/child-pip-router`, (req, res) => {
 router.post(`${baseUrl}/about-qyp-router`, (req, res) => {
   const childBenefits = req.session.data['qyp-benefits'] || []
 
-  if (childBenefits.includes("Personal Independance Payment (PIP)")) {
+  if (childBenefits.includes('Personal Independance Payment (PIP)')) {
     res.redirect(`${baseUrl}/qyp-pip`)
-  } else if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+  } else if (childBenefits.includes('Disibility Living Allowance (DLA)')) {
     res.redirect(`${baseUrl}/qyp-dla`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
@@ -251,7 +249,7 @@ router.post(`${baseUrl}/about-qyp-router`, (req, res) => {
 router.post(`${baseUrl}/qyp-pip-router`, (req, res) => {
   const childBenefits = req.session.data['qyp-benefits'] || []
 
-  if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+  if (childBenefits.includes('Disibility Living Allowance (DLA)')) {
     res.redirect(`${baseUrl}/qyp-dla`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
@@ -327,9 +325,6 @@ router.post(`${baseUrl}/has-second-property-router`, (req, res) => {
     res.redirect(`${baseUrl}/money-summary`)
   }
 })
-
-
-
 
 router.post(`${baseUrl}/employment-router`, (req, res) => {
   const employmentFulltime = req.session.data['employment-fulltime']

@@ -1,5 +1,5 @@
 const express = require('express')
-const {getStatePensionDate} = require('get-uk-state-pension-date');
+const { getStatePensionDate } = require('get-uk-state-pension-date')
 
 const router = new express.Router()
 const baseUrl = '/sprint-3/new-claims'
@@ -24,7 +24,6 @@ router.post(`${baseUrl}/has-help-router`, (req, res) => {
   }
 })
 
-
 router.post(`${baseUrl}/over-spa-router`, (req, res) => {
   try {
     const sex = req.session.data['sex']
@@ -32,7 +31,7 @@ router.post(`${baseUrl}/over-spa-router`, (req, res) => {
       req.session.data['dob-month'].padStart(2, '0') + '-' +
       req.session.data['dob-day'].padStart(2, '0')
 
-    const spaDate = getStatePensionDate(dob, sex);
+    const spaDate = getStatePensionDate(dob, sex)
 
     if (new Date(spaDate) <= new Date()) {
       res.redirect(`${baseUrl}/reside-in-uk`)
@@ -87,7 +86,7 @@ router.post(`${baseUrl}/security-router`, (req, res) => {
 router.post(`${baseUrl}/can-contact-router`, (req, res) => {
   const contactOptions = req.session.data['contact-options']
 
-  if (contactOptions.includes('Text') &&  contactOptions.includes('Phone call')) {
+  if (contactOptions.includes('Text') && contactOptions.includes('Phone call')) {
     res.redirect(`${baseUrl}/mobile-call`)
   } else if (contactOptions.includes('Text')) {
     res.redirect(`${baseUrl}/mobile`)
@@ -180,9 +179,9 @@ router.post(`${baseUrl}/other-people-who-live-with-you-router`, (req, res) => {
 router.post(`${baseUrl}/about-child-router`, (req, res) => {
   const childBenefits = req.session.data['child-benefits'] || []
 
-  if (childBenefits.includes("Personal Independance Payment (PIP)")) {
+  if (childBenefits.includes('Personal Independance Payment (PIP)')) {
     res.redirect(`${baseUrl}/child-pip`)
-  } else if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+  } else if (childBenefits.includes('Disibility Living Allowance (DLA)')) {
     res.redirect(`${baseUrl}/child-dla`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
@@ -192,7 +191,7 @@ router.post(`${baseUrl}/about-child-router`, (req, res) => {
 router.post(`${baseUrl}/child-pip-router`, (req, res) => {
   const childBenefits = req.session.data['child-benefits'] || []
 
-  if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+  if (childBenefits.includes('Disibility Living Allowance (DLA)')) {
     res.redirect(`${baseUrl}/child-dla`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
@@ -202,9 +201,9 @@ router.post(`${baseUrl}/child-pip-router`, (req, res) => {
 router.post(`${baseUrl}/about-qyp-router`, (req, res) => {
   const childBenefits = req.session.data['qyp-benefits'] || []
 
-  if (childBenefits.includes("Personal Independance Payment (PIP)")) {
+  if (childBenefits.includes('Personal Independance Payment (PIP)')) {
     res.redirect(`${baseUrl}/qyp-pip`)
-  } else if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+  } else if (childBenefits.includes('Disibility Living Allowance (DLA)')) {
     res.redirect(`${baseUrl}/qyp-dla`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
@@ -214,7 +213,7 @@ router.post(`${baseUrl}/about-qyp-router`, (req, res) => {
 router.post(`${baseUrl}/qyp-pip-router`, (req, res) => {
   const childBenefits = req.session.data['qyp-benefits'] || []
 
-  if (childBenefits.includes("Disibility Living Allowance (DLA)")) {
+  if (childBenefits.includes('Disibility Living Allowance (DLA)')) {
     res.redirect(`${baseUrl}/qyp-dla`)
   } else {
     res.redirect(`${baseUrl}/household-summary`)
@@ -291,9 +290,6 @@ router.post(`${baseUrl}/has-second-property-router`, (req, res) => {
   }
 })
 
-
-
-
 router.post(`${baseUrl}/employment-router`, (req, res) => {
   const employmentFulltime = req.session.data['employment-fulltime']
 
@@ -320,9 +316,8 @@ router.post(`${baseUrl}/employment-type-router`, (req, res) => {
   if (employmentType === 'Self employed') {
     res.redirect(`${baseUrl}/add-self-employment`)
   }
-    if (employmentType === 'Full time employment') {
-      res.redirect(`${baseUrl}/add-employment`)
-
+  if (employmentType === 'Full time employment') {
+    res.redirect(`${baseUrl}/add-employment`)
   } else if (employmentType === 'Employed and Self employed') {
     req.session.data.employedAndSelfEmployed = true
     res.redirect(`${baseUrl}/add-employment`)

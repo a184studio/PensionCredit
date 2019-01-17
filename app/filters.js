@@ -30,32 +30,32 @@ module.exports = function (env) {
    * @type {Object}
    */
   var filters = {
-    upperCaseFirst(string) {
+    upperCaseFirst (string) {
       return string && string[0].toUpperCase() + string.slice(1)
     },
-    getMonth(month) {
+    getMonth (month) {
       const monthIndex = parseInt(month, 10) - 1
       return months[monthIndex]
     },
-    formatDate(input) {
-      const date = input ? new Date(input) : new Date();
-      const day = date.getDate();
-      const month = date.getMonth();
-      const year = date.getFullYear();
-      return day + ' ' + months[month] + ' ' + year;
+    formatDate (input) {
+      const date = input ? new Date(input) : new Date()
+      const day = date.getDate()
+      const month = date.getMonth()
+      const year = date.getFullYear()
+      return day + ' ' + months[month] + ' ' + year
     },
-    formatMonth(money) {
-      const sanitised = money ? money.replace(/[^0-9.]/g, '') : 0;
+    formatMonth (money) {
+      const sanitised = money ? money.replace(/[^0-9.]/g, '') : 0
       return GBP.format(sanitised)
     },
-    formatJSON(object) {
+    formatJSON (object) {
       return JSON.stringify(object, null, '  ')
     },
-    dayDiff(arr) {
+    dayDiff (arr) {
       return differenceInDays(...arr.map(v => new Date(v.reduce((a, b) => a + '-' + b))))
     },
-    removeAlreadyPickedBenefits(benefitRadios, benefitsChosen = [], excluded) {
-      return benefitRadios.filter(benefit => !(excluded ? benefitsChosen.filter(b => b["benefit-type"] !== excluded) : benefitsChosen).some(b => b["benefit-type"] === benefit.value))
+    removeAlreadyPickedBenefits (benefitRadios, benefitsChosen = [], excluded) {
+      return benefitRadios.filter(benefit => !(excluded ? benefitsChosen.filter(b => b['benefit-type'] !== excluded) : benefitsChosen).some(b => b['benefit-type'] === benefit.value))
     }
   }
 

@@ -5,7 +5,7 @@ $govuk-global-styles: true;
 @import "node_modules/govuk-frontend/all";
 
 // Patterns that aren't in Frontend
-@import "patterns/check-your-answers";
+@import "patterns/step-by-step-navigation";
 @import "patterns/task-list";
 @import "patterns/related-items";
 
@@ -27,7 +27,13 @@ $govuk-global-styles: true;
 }
 
 .govuk-tag--incomplete {
-  background-color: #bfc1c3;
+  background-color: #dee0e2;
+  color: #6f777b;
+  text-transform: capitalize;
+}
+
+.app-task-list__task-completed {
+  text-transform: capitalize;
 }
 
 .govuk-tag--break {

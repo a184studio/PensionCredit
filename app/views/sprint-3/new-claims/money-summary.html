@@ -24,36 +24,36 @@
         </h3>
       </div>
       <div class="govuk-grid-column-two-thirds">
-        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Name of bank
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['current-name'] }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Last 4 digits of account
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['current-last-digits'] }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Amount / value
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['current-value'] | formatMoney }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Who's is this account?
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['current-owner'] }}
             </dd>
           </div>
@@ -72,36 +72,36 @@
         </h3>
       </div>
       <div class="govuk-grid-column-two-thirds">
-        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Name of bank
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['savings-name'] }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Last 4 digits of account
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['savings-last-digits'] }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Amount / value
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['savings-value'] | formatMoney }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Who's is this account?
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['savings-owner'] }}
             </dd>
           </div>
@@ -120,12 +120,12 @@
         </h3>
       </div>
       <div class="govuk-grid-column-two-thirds">
-        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Total
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["cash-amount"] | formatMoney }}
             </dd>
           </div>
@@ -144,36 +144,36 @@
         </h3>
       </div>
       <div class="govuk-grid-column-two-thirds">
-        <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Company name
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["shares-name"] }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Type of shares
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["shares-type"] }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Amount of shares
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["shares-amount"] }}
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Value of shares
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["shares-value"]  | formatMoney }}
             </dd>
           </div>

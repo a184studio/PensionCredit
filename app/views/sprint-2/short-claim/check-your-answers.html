@@ -33,81 +33,81 @@
       About you
     </h2>
 
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+    <dl class="govuk-summary-list govuk-summary-list--long">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Full name
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           {{ data["full-name"] }}
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="about-you">
             Change
           </a>
         </dd>
       </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           National Insurance number
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           {{ data["nino"] }}
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="about-you">
             Change
           </a>
         </dd>
       </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Telephone number
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           {{ data["telephone-number"] }}
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="about-you">
             Change
           </a>
         </dd>
       </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Self-employed
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           {{ data["self-employed"] | upperCaseFirst }}
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="about-you">
             Change
           </a>
         </dd>
       </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Right to abode
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           {{ data["right-to-abode"] | upperCaseFirst }}
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="about-you">
             Change
           </a>
         </dd>
       </div>
       {% if data["has-partner"] == "no" %}
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Have partner
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             No
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="has-partner">
               Change
             </a>
@@ -121,41 +121,41 @@
         About your partner
       </h2>
 
-      <dl class="app-check-your-answers app-check-your-answers--long">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--long">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Full name
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["partner-full-name"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="about-partner">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             National Insurance number
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["partner-nino"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="about-partner">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Self employed
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["partner-self-employed"] | upperCaseFirst }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="about-partner">
               Change
             </a>
@@ -168,70 +168,70 @@
       Address
     </h2>
 
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+    <dl class="govuk-summary-list govuk-summary-list--long">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Address
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           221B Baker Street<br>
           Marylebone<br>
           London<br>
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="address-choice">
             Change
           </a>
         </dd>
       </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Postcode
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           NW1 5RT
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="postcode-lookup">
             Change
           </a>
         </dd>
       </div>
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Home ownership
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           {{ data["home-ownership"] }}
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="home-ownership">
             Change
           </a>
         </dd>
       </div>
       {% if data["home-ownership"] == "Own" %}
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Ground rent
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["ground-rent"] or "None "}}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="ground-rent">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Service charges
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["service-charges"] or "None "}}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="service-charges">
               Change
             </a>
@@ -244,41 +244,41 @@
       <h2 class="govuk-heading-m">
         Non state pensions
       </h2>
-      <dl class="app-check-your-answers app-check-your-answers--long">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+      <dl class="govuk-summary-list govuk-summary-list--long">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["pension-name"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="about-pension">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Value
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["pension-value"] | formatMoney }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="about-pension">
               Change
             </a>
           </dd>
         </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Payment frequency
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["pension-frequency"] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="about-pension">
               Change
             </a>
@@ -290,43 +290,43 @@
     <h2 class="govuk-heading-m">
       Money you have
     </h2>
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+    <dl class="govuk-summary-list govuk-summary-list--long">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Money, savings or investments of more than £10,000
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           {{ data["over-10k"] | upperCaseFirst }}
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="money-you-have">
             Change
           </a>
         </dd>
       </div>
       {% if data["over-10k"] == "no" %}
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Total amount
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data["total-amount"] | formatMoney }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="money-you-have">
               Change
             </a>
           </dd>
         </div>
       {% endif %}
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Other property or land
         </dt>
-        <dd class="app-check-your-answers__answer">
+        <dd class="govuk-summary-list__value">
           {{ data["second-property"] | upperCaseFirst }}
         </dd>
-        <dd class="app-check-your-answers__change">
+        <dd class="govuk-summary-list__actions">
           <a href="second-property">
             Change
           </a>
@@ -339,43 +339,43 @@
         <h3 class="govuk-heading-s">
           Current, building society or savings account
         </h3>
-        <dl class="app-check-your-answers app-check-your-answers--long">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Last 4 digits of account number
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["account-number"] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Balance
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["balance"] | formatMoney }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Date of balance
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["date-of-balance-day"] }}
               {{ data["date-of-balance-month"] | getMonth }}
               {{ data["date-of-balance-year"] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
@@ -387,28 +387,28 @@
         <h3 class="govuk-heading-s">
           ISAs
         </h3>
-        <dl class="app-check-your-answers app-check-your-answers--long">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Total value of investments
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["isa-total"] | formatMoney }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Does this account have life insurance attached?
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["isa-life-insurance"] | upperCaseFirst }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
@@ -420,41 +420,41 @@
         <h3 class="govuk-heading-s">
           Shares
         </h3>
-        <dl class="app-check-your-answers app-check-your-answers--long">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Company
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["share-company"] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Type
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["share-type"] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Number of shares
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["number-of-sharess"] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
@@ -466,15 +466,15 @@
         <h3 class="govuk-heading-s">
           Investments
         </h3>
-        <dl class="app-check-your-answers app-check-your-answers--long">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Total value
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["investments-total"] | formatMoney }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
@@ -486,30 +486,30 @@
         <h3 class="govuk-heading-s">
           Bonds
         </h3>
-        <dl class="app-check-your-answers app-check-your-answers--long">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Account total
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["bonds-total"] | formatMoney }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
             </dd>
           </div>
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Start date
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["bond-start-date-day"] }}
               {{ data["bond-start-date-month"] | getMonth }}
               {{ data["bond-start-date-year"] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>
@@ -521,15 +521,15 @@
         <h3 class="govuk-heading-s">
           Cash
         </h3>
-        <dl class="app-check-your-answers app-check-your-answers--long">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+        <dl class="govuk-summary-list govuk-summary-list--long">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Total cash
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data["total-cash"] | formatMoney }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="capital">
                 Change
               </a>

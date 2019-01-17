@@ -22,7 +22,7 @@ const manyThing = (baseUrl, thingName) => {
       return res.redirect(`${baseUrl}/index`)
     }
 
-    res.render(`sprint-2/monolith/add-${thingName}.html`, {[thingName]: thing})
+    res.render(`sprint-2/monolith/add-${thingName}.html`, { [thingName]: thing })
   })
 
   router.post(`${baseUrl}/change-${thingName}/:${thingName}`, (req, res) => {
