@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you ringing or applying on your own behalf? - Pension Credit
+  Are you a UK national? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,28 +14,26 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="who-is-caller-router" method="post">
+      <form action="partner-under-spa" method="post">
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          idPrefix: "claiming-for",
-          name: "claiming-for",
+          idPrefix: "uk-national",
+          name: "uk-national",
           fieldset: {
             legend: {
-              text: "Who are you claiming pension credit for?",
+              text: "Are you a UK national?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
           items: [
             {
-              value: "Myself",
-              text: "Myself",
-              checked: data['claiming-for'] == "Myself"
+              value: "Yes",
+              text: "Yes"
             },
             {
-              value: "Someone else",
-              text: "Someone else",
-              checked: data['claiming-for'] == "Someone else"
+              value: "No",
+              text: "No"
             }
           ]
         }) }}
@@ -43,12 +41,6 @@
         {{ govukButton({
           text: "Continue"
         }) }}
-
-
-
-
-
-
       </form>
     </div>
   </div>

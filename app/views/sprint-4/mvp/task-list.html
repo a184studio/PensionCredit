@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Alex Smith’s Pension Credit application
+      </h1>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> About the claimant
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="who-is-caller" aria-describedby="eligibility-completed">
+                Eligibility questions and personal details
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="claim-date" aria-describedby="eligibility-completed">
+                When do you want your claim to start?
+              </a>
+              {% if data["claim-date-complete"] %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+              {% else %}
+                <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="post-code-lookup" aria-describedby="eligibility-completed">
+                About where you live
+              </a>
+              {% if data["address-complete"] %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+              {% else %}
+                <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <form action="pension-credit-summary" method="post">
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+
+{% endblock %}
