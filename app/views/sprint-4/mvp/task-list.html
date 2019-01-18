@@ -188,6 +188,16 @@
                 {% endif %}
               </li>
               <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="other-income" aria-describedby="eligibility-completed">
+                  Other regular income
+                </a>
+                {% if data["earnings-complete"] %}
+                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+                {% endif %}
+              </li>
+              <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="earnings-summary" aria-describedby="eligibility-completed">
                   Details
                 </a>
@@ -195,7 +205,8 @@
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
-                {% endif %}                         </li>
+                {% endif %}
+              </li>
             </ul>
           </li>
         </ol>
@@ -209,7 +220,7 @@
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="type-of-account" aria-describedby="eligibility-completed">
+                <a class="app-task-list__task-name" href="mvp-kickout-summary" aria-describedby="mvp-kickout-summary-completed">
                   Service kickout outcome
                 </a>
                 {% if data["bank-complete"] %}

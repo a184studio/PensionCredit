@@ -197,18 +197,18 @@
       {% endif %}
     </dl>
 
-
-    <p class="govuk-body">
-      <a href="add-benefit" class="govuk-link">
-        Download eligibility outcome (PDF)
-      </a>
-    </p>
-
-
-
     <form action="task-list" method="post">
       <input type="hidden" name="address-complete" value="true"/>
       <p>
+
+        <p class="govuk-body">
+          @pete, do we need any copy in here to explain the need?<br>
+          <a href="add-benefit" class="govuk-link">
+            Download eligibility outcome (PDF)
+          </a>
+        </p>
+
+
         {{ govukButton({
           text: "Confirm"
         }) }}
