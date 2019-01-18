@@ -116,7 +116,7 @@ router.post(`${baseUrl}/other-income-router`, (req, res) => {
   if (otherIncome === 'yes') {
     res.redirect(`${baseUrl}/about-your-other-income`)
   } else {
-    res.redirect(`${baseUrl}/type-of-account`)
+    res.redirect(`${baseUrl}/money-summary`)
   }
 })
 
@@ -137,6 +137,38 @@ router.post(`${baseUrl}/type-of-account-router`, (req, res) => {
     res.redirect(`${baseUrl}/uk-account`)
   } else {
     res.redirect(`${baseUrl}/international-account`)
+  }
+})
+
+router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
+  const homeOwnership = req.session.data['home-ownership']
+
+  if (homeOwnership === 'Owned') {
+    res.redirect(`${baseUrl}/service-charges`)
+  } else if (homeOwnership === 'Care home') {
+    res.redirect(`${baseUrl}/is-care-home-permanent`)
+  } else {
+    res.redirect(`${baseUrl}/address-summary`)
+  }
+})
+
+router.post(`${baseUrl}/mortgage-router`, (req, res) => {
+  const hasMortgage = req.session.data['has-mortgage']
+
+  if (hasMortgage === 'Yes') {
+    res.redirect(`${baseUrl}/mortgage-yes`)
+  } else {
+    res.redirect(`${baseUrl}/address-summary`)
+  }
+})
+
+router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
+  const hasOver10k = req.session.data['over-10k']
+
+  if (hasOver10k === 'yes') {
+    res.redirect(`${baseUrl}/has-current-account`)
+  } else {
+    res.redirect(`${baseUrl}/money-summary`)
   }
 })
 

@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you get housing benefit or council tax reduction - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="XXX" method="post" class="form">
+      {% set groundRent %}
+        {{ govukInput({
+          label: {
+            text: "XXX"
+          },
+          id: "rent-housing-council-tax",
+          name: "rent-housing-council-tax",
+          classes: "govuk-input--width-20",
+          value: data["ground-rent"]
+        }) }}
+      {% endset %}
+
+      {{ govukRadios({
+        idPrefix: "rent-housing-council-tax",
+        name: "rent-housing-council-tax",
+        fieldset: {
+          legend: {
+            text: "Are you in receipt housing benefit and council tax reduction?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "@pete: any thoughts on this?"
+        },
+        classes: "govuk-radios--inline",
+        items: [
+          {
+            value: "Housing benefit",
+            text: "Housing benefit",
+            conditional: {
+              html: groundRent
+            },
+            checked: (data["has-Housing benefit"] == "yes")
+          },
+          {
+            value: "Council tax reduction",
+            text: "Council tax reduction",
+            checked: (data["has-council-tax-reduction"] == "yes")
+          },
+          {
+            value: "both",
+            text: "In receipt tax and housing benefit",
+            checked: (data["has-both"] == "no")
+          },
+          {
+            value: "Apply",
+            text: "If not, would like to apply",
+            checked: (data["appy"] == "no")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
