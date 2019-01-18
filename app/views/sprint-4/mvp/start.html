@@ -8,18 +8,16 @@
   {% include "includes/internal-header.html" %}
 {% endblock %}
 
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <p class="govuk-body govuk--version-control">A.2.1</p>
-
+      <p class="govuk-body govuk--version-control">MVP.1.0</p>
 
       <h1 class="govuk-heading-xl">Apply for Pension Credit</h1>
 
-      <h2 class="govuk-heading-m">Use this service to start a Pension Credit application</h2>
-
+      <h2 class="govuk-heading-m">Use this service to start a Pension Credit application.</h2>
+      <h3 class="govuk-heading-m">@pete. <strong>This is a space that can be used to explain that we will use the information we have to aid the speed of the application.</h3>
       <p class="govuk-body">This part of your application should take around <strong>20 minutes</strong> depending on your circumstances.</p>
 
       <p class="govuk-body"><strong>You will need to tell us about:</strong></p>
@@ -31,22 +29,15 @@
         <li>any pensions you get</li>
         <li>any money, savings or investments you have, including balances, account and reference numbers</li>
         <li>any second properties or land you own</li>
-        <li>earnings from employment and any other income. You can find this on your P45, P60 or any pay slips</li>
-        <li>details of the bank account you want any Pension Credit paid into</li>
+        <li>earnings from employment and any other income. P45, P60 and your pay slips will help</li>
+        <li>bank details you wish us to pay you in</li>
       </ul>
-
-  <h3 class="govuk-heading-m">Personal information</h3>
-        <p class="govuk-body">We will treat your information carefully and only use it as allowed by data protection laws.</p>
-
-        <p class="govuk-body">To find out more about how we use information and your information rights, read our Personal Information Charter. You can get a copy of this at a jobcentre.</p>
 
       {{ govukButton({
         text: "Start now",
         href: "who-is-caller",
         classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
-
-
     </div>
 
     <div class="govuk-grid-column-one-third">
@@ -76,7 +67,7 @@
             </li>
           </ul>
         </nav>
-
+      </aside>
 
     </div>
   </div>

@@ -44,7 +44,7 @@ module.exports = function (env) {
       const year = date.getFullYear()
       return day + ' ' + months[month] + ' ' + year
     },
-    formatMonth (money) {
+    formatMoney (money) {
       const sanitised = money ? money.replace(/[^0-9.]/g, '') : 0
       return GBP.format(sanitised)
     },

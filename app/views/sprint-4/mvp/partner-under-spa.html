@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Have a partner under SPA? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="mvp-eligibility-summary" method="post" class="form">
+      {{ govukRadios({
+        idPrefix: "has-partner-under-spa",
+        name: "has-partner-under-spa",
+        fieldset: {
+          legend: {
+            text: "Do you live with a partner who is under state pension age?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "A partner is a husband, wife, civil partner or someone that you live with as a couple."
+        },
+        classes: "govuk-radios--inline",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["has-partner-under-spa"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["has-partner-under-spa"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
