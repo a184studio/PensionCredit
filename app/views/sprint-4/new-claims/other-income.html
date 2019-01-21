@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you live with a partner? - Pension Credit
+  Do you have any other regular income? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -10,35 +10,41 @@
 
 {% block content %}
 
-{% include "includes/js-back-link.html" %}
+<p>
+  {{ govukBackLink({
+    href: "self-employed"
+  }) }}
+</p>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hospital-time-router" method="post" class="form">
+    <form action="other-income-router" method="post" class="form">
+
+
       {{ govukRadios({
-        idPrefix: "hospital-yn",
-        name: "hospital-yn",
+        idPrefix: "other-income",
+        name: "other-income",
         fieldset: {
           legend: {
-            text: "Have you spent any time in hospital between (pull in date from claim-date)",
+            text: "Do you have any other regular income?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@pete: any thoughts on this?"
+          text: "Include income from renting out a room or any part of your property, Working Tax Credit, foreign pensions or any other income you have not told us about."
         },
-        classes: "govuk-radios",
+        classes: "govuk-radios--inline",
         items: [
           {
-            value: "Yes",
+            value: "yes",
             text: "Yes",
-            checked: (data["xxx"] == "Yes")
+            checked: (data["other-income"] == "yes")
           },
           {
-            value: "No",
+            value: "no",
             text: "No",
-            checked: (data["xxx"] == "No")
+            checked: (data["other-income"] == "no")
           }
         ]
       }) }}

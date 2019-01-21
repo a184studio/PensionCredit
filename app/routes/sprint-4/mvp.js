@@ -74,6 +74,8 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/service-charges`)
   } else if (homeOwnership === 'Care home') {
     res.redirect(`${baseUrl}/is-care-home-permanent`)
+  } else if (homeOwnership === 'Rented') {
+    res.redirect(`${baseUrl}/rent-housing-council-tax`)
   } else {
     res.redirect(`${baseUrl}/address-summary`)
   }
@@ -158,7 +160,7 @@ router.post(`${baseUrl}/mortgage-router`, (req, res) => {
   if (hasMortgage === 'Yes') {
     res.redirect(`${baseUrl}/mortgage-yes`)
   } else {
-    res.redirect(`${baseUrl}/address-summary`)
+    res.redirect(`${baseUrl}/owns-council-tax`)
   }
 })
 
@@ -171,6 +173,17 @@ router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
     res.redirect(`${baseUrl}/money-summary`)
   }
 })
+
+router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
+  const accountType = req.session.data['hospital-yn']
+
+  if (accountType === 'Yes') {
+    res.redirect(`${baseUrl}/add-hospital-dates`)
+  } else {
+    res.redirect(`${baseUrl}/address-summary`)
+  }
+})
+
 
 
 module.exports = router

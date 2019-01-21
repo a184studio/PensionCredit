@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you live with a partner? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="task-list" method="post" class="form">
+
+      <h1 class="govuk-heading-xl">
+        @pete: Understanding your hospital admisiions
+      </h1>
+
+        <p class="govuk-body">"@pete: add your thoughts please"</p>
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header my-custom-class" scope="col">Type of entry</th>
+            <th class="govuk-table__header my-custom-class" scope="col">Date in</th>
+            <th class="govuk-table__header my-custom-class" scope="col">Date out</th>
+            <th class="govuk-table__header my-custom-class" scope="col">Total number of days</th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Hospital</th>
+            <td class="govuk-table__cell">00.00.00</td>
+            <td class="govuk-table__cell">00.00.00</td>
+            <td class="govuk-table__cell">1</td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Hospital</th>
+            <td class="govuk-table__cell">00.00.00</td>
+            <td class="govuk-table__cell">00.00.00</td>
+            <td class="govuk-table__cell">1</td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Hospital</th>
+            <td class="govuk-table__cell">00.00.00</td>
+            <td class="govuk-table__cell">00.00.00</td>
+            <td class="govuk-table__cell">1</td>
+
+          </tr>
+        </tbody>
+      </table>
+
+
+      <p class="govuk-body">
+        @pete, do we need any copy in here to explain the need?<br>
+        <a href="add-hospital-dates" class="govuk-link">
+          Add another date range
+        </a>
+      </p>
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospital-yes-complete" value="true"/>
+      <input type="hidden" name="address-summary-complete" value="true"/>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}

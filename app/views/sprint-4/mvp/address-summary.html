@@ -13,7 +13,7 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
 
     <h1 class="govuk-heading-xl">
       Check your answers
@@ -195,19 +195,93 @@
           </div>
         {% endif %}
       {% endif %}
+
+      <br><br>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Periods in hospital
+        </dt>
+        <dd class="govuk-summary-list__value">
+          23.01.2018 — 26.01.2018 / 4 day(s)
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+          <a href="x">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          .
+        </dt>
+        <dd class="govuk-summary-list__value">
+          01.01.2018 — 03.01.2018 / 2 day(s)
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+          <a href="x">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          .
+        </dt>
+        <dd class="govuk-summary-list__value">
+          01.02.00 — 05.02.2019 / 4 day(s)
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+          <a href="x">
+            Change
+          </a>
+        </dd>
+      </div>
+
+<br><br>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Council tax reduction
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Would like to apply
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+          <a href="x">
+            Change
+          </a>
+        </dd>
+
+      </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Housing benefit
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Would like to apply
+      </dd>
+
+      <dd class="govuk-summary-list__actions">
+        <a href="x">
+          Change
+        </a>
+      </dd>
+    </div>
+
     </dl>
+
+
 
     <form action="task-list" method="post">
       <input type="hidden" name="address-complete" value="true"/>
       <p>
-
-        <p class="govuk-body">
-          @pete, do we need any copy in here to explain the need?<br>
-          <a href="add-benefit" class="govuk-link">
-            Download eligibility outcome (PDF)
-          </a>
-        </p>
-
 
         {{ govukButton({
           text: "Confirm"

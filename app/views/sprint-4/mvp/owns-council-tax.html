@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="XX" method="post" class="form">
+    <form action="hospital-yn" method="post" class="form">
       {{ govukRadios({
         classes: "govuk-radios",
         idPrefix: "owns-council-tax",
@@ -31,9 +31,9 @@
         },
         items: [
           {
-            value: "Housing benefit",
-            text: "Housing benefit",
-            checked: data['claiming-for'] == "Housing benefit"
+            value: "Gets council tax reduction",
+            text: "Gets council tax reduction",
+            checked: data['claiming-for'] == "CTA"
           },
           {
             value: "Apply",
