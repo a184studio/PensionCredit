@@ -10,7 +10,7 @@ router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['claiming-for']
 
   if (claimingFor === 'Myself') {
-    res.redirect(`${baseUrl}/over-spa`)
+    res.redirect(`${baseUrl}/name-and-nino`)
   } else {
     res.redirect(`${baseUrl}/has-help`)
   }
