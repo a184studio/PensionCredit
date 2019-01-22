@@ -31,6 +31,16 @@
           value: data["pension-name"]
         }) }}
 
+        {{ govukInput({
+          label: {
+            text: "Pension reference number (if has one)"
+          },
+          id: "pension-ref",
+          name: "pension-ref",
+          classes: "govuk-input--width-20",
+          value: data["pension-ref"]
+        }) }}
+
         <h2 class="govuk-heading-m">
           Payment details
         </h2>
@@ -108,18 +118,7 @@
           Pension rate details
         </h2>
 
-
-      {{ govukInput({
-        label: {
-          text: "What is the percent change year-on-year?"
-        },
-        id: "pension-rate",
-        name: "pension-rate",
-        classes: "govuk-input--width-5",
-        value: data["pension-rate"]
-      }) }}
-
-      {{ govukRadios({
+        {{ govukRadios({
         idPrefix: "percent-change-type",
         name: "percent-change-type",
         fieldset: {
@@ -144,6 +143,16 @@
               checked: (data['pension-frequency'] == "Unknown-change")
             }
           ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the percent change year-on-year?"
+          },
+          id: "pension-rate",
+          name: "pension-rate",
+          classes: "govuk-input--width-5",
+          value: data["pension-rate"]
         }) }}
 
 

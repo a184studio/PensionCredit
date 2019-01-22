@@ -113,6 +113,34 @@
           value: data["work-gross"]
         }) }}
 
+        {{ govukDateInput({
+          id: "work-end",
+          namePrefix: "work-end",
+          fieldset: {
+            legend: {
+              text: "Payment date"
+            }
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["payment-date-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["payment-date-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["payment-date-year"]
+            }
+          ]
+        }) }}
+
+
         {{ govukRadios({
           idPrefix: "work-frequency",
           name: "work-frequency",
@@ -141,9 +169,23 @@
               value: "Every month",
               text: "Every month",
               checked: (data['work-frequency'] == "Every month")
+            },
+            {
+              value: "Every six months",
+              text: "Every six months",
+              checked: (data['work-frequency'] == "Every six months")
+            },
+            {
+              value: "Annually",
+              text: "Annually",
+              checked: (data['work-frequency'] == "Annually")
             }
           ]
         }) }}
+
+        <h2 class="govuk-heading-m">
+          Decuctions
+        </h2>
 
         {{ govukInput({
           label: {
@@ -174,6 +216,13 @@
           classes: "govuk-input--width-20",
           value: data["work-pensions"]
         }) }}
+        <p>
+          Value: <strong>£50%</strong> of above is added added to the calculation
+        </p>
+
+        <p>
+          Based on what was entered above, this part would show you 50% of what you entred above, this amount it what is taken into the calculation
+        </p>
 
         {{ govukButton({
           text: "Continue"
