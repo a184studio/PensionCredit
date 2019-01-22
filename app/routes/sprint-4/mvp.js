@@ -214,7 +214,7 @@ router.post(`${baseUrl}/employment-router`, (req, res) => {
   if (employmentFulltime === 'yes') {
     res.redirect(`${baseUrl}/still-employed`)
   } else {
-    res.redirect(`${baseUrl}/earnings-summary`)
+    res.redirect(`${baseUrl}/other-income`)
   }
 })
 

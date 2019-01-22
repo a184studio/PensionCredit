@@ -194,7 +194,7 @@
                 <a class="app-task-list__task-name" href="employment" aria-describedby="eligibility-completed">
                   Check work status
                 </a>
-                {% if data["has-work"] %}
+                {% if data["employment"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
@@ -214,7 +214,7 @@
                 <a class="app-task-list__task-name" href="earnings-summary" aria-describedby="eligibility-completed">
                   Details
                 </a>
-                {% if data["money-summary"] %}
+                {% if data["earnings-summary"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>

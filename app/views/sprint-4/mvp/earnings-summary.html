@@ -158,6 +158,19 @@
 
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+  <form action="earnings-summary" method="post">
+    <input type="hidden" name="earnings-complete" value="true"/>
+    <p>
+
+Other income information in here
+Value: XXX
+
+    </p>
+  </form>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
   <h2 class="govuk-heading-m">Any other employment missing?</h2>
   <p class="govuk-body">
     <a href="add-employment" class="govuk-link">
@@ -165,8 +178,13 @@
     </a>
   </p>
 
-  <form action="other-income" method="post">
-    <input type="hidden" name="earnings-complete" value="true"/>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+  <form action="task-list" method="post">
+    <input type="hidden" name="employment" value="true"/>
+    <input type="hidden" name="earnings-summary" value="true"/>
     <p>
       {{ govukButton({
         text: "Confirm"
