@@ -208,4 +208,40 @@ router.post(`${baseUrl}/is-care-home-permanent-router`, (req, res) => {
 
 
 
+router.post(`${baseUrl}/employment-router`, (req, res) => {
+  const employmentFulltime = req.session.data['employment-fulltime']
+
+  if (employmentFulltime === 'yes') {
+    res.redirect(`${baseUrl}/still-employed`)
+  } else {
+    res.redirect(`${baseUrl}/earnings-summary`)
+  }
+})
+
+router.post(`${baseUrl}/still-employed-router`, (req, res) => {
+  const stillEmployed = req.session.data['still-employed']
+
+  if (stillEmployed === 'yes') {
+    res.redirect(`${baseUrl}/employment-type`)
+  } else {
+    res.redirect(`${baseUrl}/earnings-summary`)
+  }
+})
+
+router.post(`${baseUrl}/employment-type-router`, (req, res) => {
+  const employmentType = req.session.data['employment-type']
+
+  if (employmentType === 'Self employed') {
+    res.redirect(`${baseUrl}/add-self-employment`)
+  } else if (employmentType === 'Full time employment') {
+    res.redirect(`${baseUrl}/add-employment`)
+  } else if (employmentType === 'Employed and Self employed') {
+    req.session.data.employedAndSelfEmployed = true
+    res.redirect(`${baseUrl}/add-employment`)
+  }
+})
+
+
+
+
 module.exports = router
