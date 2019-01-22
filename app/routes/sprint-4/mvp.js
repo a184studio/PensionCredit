@@ -184,6 +184,28 @@ router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
+  const homeOwnership = req.session.data['home-ownership']
+
+  if (homeOwnership === 'Owned') {
+    res.redirect(`${baseUrl}/service-charges`)
+  } else if (homeOwnership === 'Care home') {
+    res.redirect(`${baseUrl}/is-care-home-permanent`)
+  } else {
+    res.redirect(`${baseUrl}/address-summary`)
+  }
+})
+
+router.post(`${baseUrl}/is-care-home-permanent-router`, (req, res) => {
+  const careHomePermanence = req.session.data['care-home-permanence']
+
+  if (careHomePermanence === 'Yes') {
+    res.redirect(`${baseUrl}/permanent-care-home-date`)
+  } else {
+    res.redirect(`${baseUrl}/care-home-date`)
+  }
+})
+
 
 
 module.exports = router
