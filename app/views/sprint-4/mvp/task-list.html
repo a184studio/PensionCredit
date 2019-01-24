@@ -40,7 +40,7 @@
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="claim-date" aria-describedby="eligibility-completed">
-                When do you want your claim to start?
+                Claim start date: 00.00.0000 <br><br> (@naill: Once a date is added please pull date into here)
               </a>
               {% if data["claim-date-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -62,7 +62,7 @@
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="can-contact.html" aria-describedby="eligibility-completed">
-                  Landline, mobile, & email
+                  Landline, mobile (text), & email
                 </a>
                 {% if data["contact-complete"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -72,7 +72,7 @@
               </li>
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="disability" aria-describedby="read-declaration-completed">
-                  Disabilities and access needs
+                  Accessibility
                 </a>
                 {% if data["contact-complete"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -94,7 +94,7 @@
             <ul class="app-task-list__items">
                             <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="post-code-lookup" aria-describedby="eligibility-completed">
-                  Address
+                  Address and home ownership type: (Type)
                 </a>
                 {% if data["address-complete"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -117,7 +117,7 @@
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="anyone-living-with-you" aria-describedby="read-declaration-completed">
-                  Other people who live with you
+                  Other people who live with you: (Alone or XX people)
                 </a>
                 {% if data["household-complete"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -139,7 +139,7 @@
 
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="hospital-yn" aria-describedby="eligibility-completed">
-                  Hospital
+                  Hospital (no addmissions or some)
                 </a>
                 {% if data["hospital-yes-complete"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -164,7 +164,7 @@
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="has-private-pension" aria-describedby="eligibility-completed">
-                  Private and workplace pensons
+                  Private and workplace pensons (has some or not)
                 </a>
                 {% if data["notepad-otherPensions"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -208,7 +208,7 @@
 
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="employment" aria-describedby="eligibility-completed">
-                  Check work status
+                  Check work status: (Not working)
                 </a>
                 {% if data["employment"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
