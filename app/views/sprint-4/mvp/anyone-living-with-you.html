@@ -1,12 +1,18 @@
 {% extends "layout.html" %}
 
+{% if data["has-partner"] == "yes" %}
+  {% set legend = "Other than you and your partner, does anyone else who is over 18 live in your home?" %}
+{% else %}
+  {% set legend = "Does anyone else live in your home?" %}
+{% endif %}
+
 {% block pageTitle %}
-  Do you live with a partner? - Pension Credit
+  {{legend}} - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
-{% endblock %}
+{% endblock %}}
 
 {% block content %}
 
@@ -14,38 +20,34 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="notepad-hospital-dates" method="post" class="form">
+    <form action="anyone-living-with-you-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "hospital-yn",
-        name: "hospital-yn",
+        idPrefix: "people-in-home",
+        name: "people-in-home",
         fieldset: {
           legend: {
-            text: "Have you spent any time in hospital between 00.00.00 - 00.00.00 (pull in date from claim-date page answer)",
+            text: legend,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@pete: any thoughts on this?"
+          text: "Do not include anyone who is in further education"
         },
-        classes: "govuk-radios",
+        classes: "govuk-radios--inline",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["xxx"] == "Yes")
+            checked: (data["people-in-home"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["xxx"] == "No")
+            checked: (data["people-in-home"] == "No")
           }
         ]
       }) }}
-
-      <!-- Hidden input to set task to complete on task-list -->
-      <input type="hidden" name="hospital-yes-complete" value="true"/>
-
 
       {{ govukButton({
         text: "Continue"

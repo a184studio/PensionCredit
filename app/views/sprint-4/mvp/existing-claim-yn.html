@@ -14,37 +14,37 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="notepad-hospital-dates" method="post" class="form">
+    <form action="existing-claim-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "hospital-yn",
-        name: "hospital-yn",
+        idPrefix: "existingClaim",
+        name: "existingClaim",
         fieldset: {
           legend: {
-            text: "Have you spent any time in hospital between 00.00.00 - 00.00.00 (pull in date from claim-date page answer)",
+            text: "System: Is this a new claim?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@pete: any thoughts on this?"
+          text: "This would be hidden, and the internets would work out and send you to the task list if part made."
         },
         classes: "govuk-radios",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["xxx"] == "Yes")
+            checked: (data["existing-claim-yes"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["xxx"] == "No")
+            checked: (data["existing-claim-no"] == "No")
           }
         ]
       }) }}
 
       <!-- Hidden input to set task to complete on task-list -->
-      <input type="hidden" name="hospital-yes-complete" value="true"/>
+      <input type="hidden" name="X" value="true"/>
 
 
       {{ govukButton({

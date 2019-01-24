@@ -89,7 +89,7 @@
         <ol class="app-task-list">
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">3. </span> About where you live & hospitals admissions
+              <span class="app-task-list__section-number">3. </span> About where you live
             </h2>
             <ul class="app-task-list__items">
                             <li class="app-task-list__item">
@@ -102,9 +102,44 @@
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
                 {% endif %}
               </li>
+
+            </ul>
+          </li>
+        </ol>
+
+        <!------------ ––– ------------>
+
+        <ol class="app-task-list">
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">4. </span> Who lives with you
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="anyone-living-with-you" aria-describedby="read-declaration-completed">
+                  Other people who live with you
+                </a>
+                {% if data["household-complete"] %}
+                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+                {% endif %}                </li>
+            </ul>
+          </li>
+        </ol>
+
+        <!------------ ––– ------------>
+
+        <ol class="app-task-list">
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">5. </span> Hospitals admissions
+            </h2>
+            <ul class="app-task-list__items">
+
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="hospital-yn" aria-describedby="eligibility-completed">
-                  Time in hospital
+                  Hospital
                 </a>
                 {% if data["hospital-yes-complete"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -121,50 +156,31 @@
 
         <!------------ ––– ------------>
 
-        <!------------ –––
         <ol class="app-task-list">
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">5. </span> Pensions
+              <span class="app-task-list__section-number">6. </span> Pensions
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="has-private-pension" aria-describedby="eligibility-completed">
-                  About your pensions
-                </a>
-                {% if data["pensions-complete"] %}
-                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-                {% else %}
-                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
-                {% endif %}                     </li>
-              <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="pensions" aria-describedby="eligibility-completed">
-                  State pension
-                </a>
-                {% if data["pensions-complete"] %}
-                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-                {% else %}
-                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
-                {% endif %}                     </li>
-              <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="pensions" aria-describedby="read-declaration-completed">
                   Private and workplace pensons
                 </a>
-                {% if data["pensions-complete"] %}
+                {% if data["notepad-otherPensions"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
                 {% endif %}                     </li>
+
             </ul>
           </li>
         </ol>
 
-         ------------>
 
         <ol class="app-task-list">
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">4. </span> Savings and capital
+              <span class="app-task-list__section-number">7. </span> Savings and capital
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
@@ -186,7 +202,7 @@
         <ol class="app-task-list">
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">5. </span> Employment and earnings
+              <span class="app-task-list__section-number">8. </span> Employment and earnings
             </h2>
             <ul class="app-task-list__items">
 
@@ -229,7 +245,7 @@
         <ol class="app-task-list">
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">6. </span> Service kickout
+              <span class="app-task-list__section-number">X </span> Service kickout
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
@@ -251,7 +267,7 @@
         <ol class="app-task-list">
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">7. </span> Payment details
+              <span class="app-task-list__section-number">9. </span> Payment details
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">

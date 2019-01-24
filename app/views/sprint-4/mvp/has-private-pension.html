@@ -18,7 +18,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="has-private-pension-router" method="post" class="form">
+    <form action="notepad-otherPensions" method="post" class="form">
       {{ govukRadios({
         idPrefix: "has-private-pensions",
         name: "has-private-pensions",
@@ -37,12 +37,12 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["has-private-pensions"] == "yes")
+            checked: (data["otherPensions"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["has-private-pensions"] == "no")
+            checked: (data["otherPensions"] == "no")
           }
         ]
       }) }}

@@ -73,9 +73,9 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   if (homeOwnership === 'Owned') {
     res.redirect(`${baseUrl}/service-charges`)
   } else if (homeOwnership === 'Care home') {
-    res.redirect(`${baseUrl}/is-care-home-permanent`)
+    res.redirect(`${baseUrl}/notepad-carehome`)
   } else if (homeOwnership === 'Rented') {
-    res.redirect(`${baseUrl}/rent-housing-council-tax`)
+    res.redirect(`${baseUrl}/notepad-carehome`)
   } else {
     res.redirect(`${baseUrl}/address-summary`)
   }
@@ -116,7 +116,7 @@ router.post(`${baseUrl}/other-income-router`, (req, res) => {
   const otherIncome = req.session.data['other-income']
 
   if (otherIncome === 'yes') {
-    res.redirect(`${baseUrl}/about-your-other-income`)
+    res.redirect(`${baseUrl}/notepad-otherIncome`)
   } else {
     res.redirect(`${baseUrl}/money-summary`)
   }
@@ -168,7 +168,7 @@ router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
   const hasOver10k = req.session.data['over-10k']
 
   if (hasOver10k === 'yes') {
-    res.redirect(`${baseUrl}/has-current-account`)
+    res.redirect(`${baseUrl}/notepad-MoneyOver10k`)
   } else {
     res.redirect(`${baseUrl}/money-summary`)
   }
@@ -189,20 +189,21 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
 
   if (homeOwnership === 'Owned') {
     res.redirect(`${baseUrl}/service-charges`)
-  } else if (homeOwnership === 'Care home') {
-    res.redirect(`${baseUrl}/is-care-home-permanent`)
-  } else {
-    res.redirect(`${baseUrl}/address-summary`)
   }
-})
-
-router.post(`${baseUrl}/is-care-home-permanent-router`, (req, res) => {
-  const careHomePermanence = req.session.data['care-home-permanence']
-
-  if (careHomePermanence === 'Yes') {
-    res.redirect(`${baseUrl}/permanent-care-home-date`)
-  } else {
-    res.redirect(`${baseUrl}/care-home-date`)
+  else if (homeOwnership === 'Rented') {
+    res.redirect(`${baseUrl}/rent-housing-council-tax`)
+  }
+  else if (homeOwnership === 'Care Home') {
+    res.redirect(`${baseUrl}/notepad-careHome`)
+  }
+  else if (homeOwnership === 'Sheltered Accommodation') {
+    res.redirect(`${baseUrl}/notepad-sheltered`)
+  }
+  else if (homeOwnership === 'Someone Else') {
+    res.redirect(`${baseUrl}/notepad-someoneElse`)
+  }
+  else if (homeOwnership === 'Other') {
+    res.redirect(`${baseUrl}/notepad-other`)
   }
 })
 
@@ -241,7 +242,36 @@ router.post(`${baseUrl}/employment-type-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/existing-claim-router`, (req, res) => {
+  const existingClaim = req.session.data['existing-claim-yn']
 
+  if (existingClaim === 'existing-claim-yes') {
+    res.redirect(`${baseUrl}/task-list`)
+  } else {
+    res.redirect(`${baseUrl}/over-spa`)
+  }
+})
+
+
+router.post(`${baseUrl}/anyone-living-with-you-router`, (req, res) => {
+  const peopleInHome = req.session.data['people-in-home']
+
+  if (peopleInHome === 'Yes') {
+    res.redirect(`${baseUrl}/notepad-household-composition`)
+  } else {
+    res.redirect(`${baseUrl}/household-summary`)
+  }
+})
+
+router.post(`${baseUrl}/has-private-pension-router`, (req, res) => {
+  const otherPensions = req.session.data['people-in-home']
+
+  if (otherPensions === 'Yes') {
+    res.redirect(`${baseUrl}/notepad-otherPensions`)
+  } else {
+    res.redirect(`${baseUrl}/task-list`)
+  }
+})
 
 
 module.exports = router
