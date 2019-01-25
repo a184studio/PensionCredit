@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="who-is-caller-router" method="post">
         {{ govukRadios({
-          classes: "govuk-radios--inline",
+          classes: "govuk-radios",
           idPrefix: "claiming-for",
           name: "claiming-for",
           fieldset: {
@@ -27,7 +27,12 @@
             }
           },
           items: [
-            {
+          {
+            value: "PC1",
+            text: "PC1",
+            checked: data['claiming-for'] == "PC1"
+          },
+          {
               value: "Myself",
               text: "Myself",
               checked: data['claiming-for'] == "Myself"
