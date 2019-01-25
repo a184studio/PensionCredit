@@ -46,8 +46,8 @@
                 {% if data["claim-date"] == "Today" %}
                   ({{ today }})
                 {% elif data["claim-date"] == "SPA Entitlement" %}
-                  ({{ data['spa-date'] | formatDate }})
-                {% else %}
+                  ({{ data['back-dating-date'] | formatDate }})
+                {% elif data["claim-date"] == "Alternative date" %}
                   ({{ data['alternate-date-day'] + ' ' + (data['alternate-date-month'] | getMonth) + ' ' + data['alternate-date-year'] }})
                 {% endif %}
               </a>

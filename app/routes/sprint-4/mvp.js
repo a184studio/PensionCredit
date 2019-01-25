@@ -2,6 +2,7 @@ const express = require('express')
 const { getStatePensionDate } = require('get-uk-state-pension-date')
 const differenceInDays = require('date-fns/difference_in_days')
 const startOfDay = require('date-fns/start_of_day')
+const subMonths = require('date-fns/sub_months')
 
 const router = new express.Router()
 const baseUrl = '/sprint-4/mvp'
@@ -49,7 +50,10 @@ router.post(`${baseUrl}/over-spa-router`, (req, res) => {
     const daysSinceFemaleSPA = differenceInDays(today, femaleSpaDate)
 
     if (daysSinceMaleSPA >= 0 && daysSinceFemaleSPA >= 0) {
+      const threeMonthsAgo = subMonths(today, 3);
+      req.session.data['back-dating-date'] = maleSpaDate < threeMonthsAgo ? threeMonthsAgo : maleSpaDate;
       req.session.data['spa-date'] = maleSpaDate
+
       res.redirect(`${baseUrl}/reside-in-uk`)
     } else if (daysSinceMaleSPA < 0 && daysSinceFemaleSPA < 0) {
       res.redirect(`${baseUrl}/reside-in-uk`)
@@ -258,6 +262,16 @@ router.post(`${baseUrl}/has-private-pension-router`, (req, res) => {
 
   if (otherPensions === 'Yes') {
     res.redirect(`${baseUrl}/notepad-otherPensions`)
+  } else {
+    res.redirect(`${baseUrl}/task-list`)
+  }
+})
+
+router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
+  const hospital = req.session.data['hospital-yn']
+
+  if (hospital === 'Yes') {
+    res.redirect(`${baseUrl}/notepad-hospital-dates`)
   } else {
     res.redirect(`${baseUrl}/task-list`)
   }

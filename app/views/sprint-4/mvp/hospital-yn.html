@@ -14,31 +14,30 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="notepad-hospital-dates" method="post" class="form">
+    <form action="hospital-yn-router" method="post" class="form">
+      {% set today = '' | formatDate %}
+
       {{ govukRadios({
         idPrefix: "hospital-yn",
         name: "hospital-yn",
         fieldset: {
           legend: {
-            text: "Have you spent any time in hospital between 00.00.00 - 00.00.00 (pull in date from claim-date page answer)",
+            text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
-        },
-        hint: {
-          text: "@pete: any thoughts on this?"
         },
         classes: "govuk-radios",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["xxx"] == "Yes")
+            checked: (data["hospital-yn"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["xxx"] == "No")
+            checked: (data["hospital-yn"] == "No")
           }
         ]
       }) }}

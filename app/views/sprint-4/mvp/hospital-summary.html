@@ -14,14 +14,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="address-summary" method="post" class="form">
+    <form action="task-list" method="post" class="form">
 
       <h1 class="govuk-heading-xl">
-        @pete: Understanding your hospital admisiions
+        Understanding your hospital admisiions
       </h1>
-
-        <p class="govuk-body">"@pete: add your thoughts please"</p>
-
+<!--
 
       <table class="govuk-table">
         <thead class="govuk-table__head">
@@ -56,14 +54,14 @@
 
           </tr>
         </tbody>
-      </table>
+      </table> -->
 
+      <h2 class="govuk-heading-m">
+        Hospital notes
+      </h2>
 
       <p class="govuk-body">
-        @pete, do we need any copy in here to explain the need?<br>
-        <a href="add-hospital-dates" class="govuk-link">
-          Add another date range
-        </a>
+        {{ data["hospital-more-detail"] }}
       </p>
 
       <!-- Hidden input to set task to complete on task-list -->
