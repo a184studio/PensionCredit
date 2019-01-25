@@ -69,19 +69,7 @@ router.post(`${baseUrl}/sex-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
-  const homeOwnership = req.session.data['home-ownership']
 
-  if (homeOwnership === 'Owned') {
-    res.redirect(`${baseUrl}/service-charges`)
-  } else if (homeOwnership === 'Care home') {
-    res.redirect(`${baseUrl}/notepad-carehome`)
-  } else if (homeOwnership === 'Rented') {
-    res.redirect(`${baseUrl}/notepad-carehome`)
-  } else {
-    res.redirect(`${baseUrl}/address-summary`)
-  }
-})
 
 router.post(`${baseUrl}/mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['has-mortgage']
@@ -144,18 +132,6 @@ router.post(`${baseUrl}/type-of-account-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
-  const homeOwnership = req.session.data['home-ownership']
-
-  if (homeOwnership === 'Owned') {
-    res.redirect(`${baseUrl}/service-charges`)
-  } else if (homeOwnership === 'Care home') {
-    res.redirect(`${baseUrl}/is-care-home-permanent`)
-  } else {
-    res.redirect(`${baseUrl}/address-summary`)
-  }
-})
-
 router.post(`${baseUrl}/mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['has-mortgage']
 
@@ -187,7 +163,7 @@ router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
-  const homeOwnership = req.session.data['home-ownership']
+  const homeOwnership = req.session.data['/home-ownership']
 
   if (homeOwnership === 'Owned') {
     res.redirect(`${baseUrl}/service-charges`)
@@ -208,6 +184,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/notepad-otherRes`)
   }
 })
+
 
 
 

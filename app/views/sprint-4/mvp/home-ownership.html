@@ -14,10 +14,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="home-ownership-router" method="post" class="form">
+    <form action="service-charges" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "homeownership",
-        name: "home-ownership",
+        idPrefix: "homeOwnership",
+        name: "homeOwnership",
         fieldset: {
           legend: {
             text: "Which best describes the place where you live?",
@@ -29,35 +29,43 @@
           {
             value: "Owned",
             text: "You own it",
-            checked: (data["home-ownership"] == "Owned")
+            checked: (data["homeOwnership"] == "Owned")
           },
           {
             value: "Rented",
             text: "You rent it",
-            checked: (data["home-ownership"] == "Rented")
+            checked: (data["homeOwnership"] == "Rented")
           },
           {
             value: "Care Home",
             text: "A care home or nursing home",
-            checked: (data["home-ownership"] == "Care Home")
+            checked: (data["homeOwnership"] == "Care Home")
           },
           {
             value: "Sheltered Accommodation",
             text: "Sheltered accommodation",
-            checked: (data["home-ownership"] == "Sheltered Accommodation")
+            checked: (data["homeOwnership"] == "Sheltered Accommodation")
           },
           {
             value: "Someone Else",
             text: "Do live in someone else's home without paying rent",
-            checked: (data["home-ownership"] == "Someone Else")
+            checked: (data["homeOwnership"] == "Someone Else")
           },
           {
             value: "Other",
             text: "Other?",
-            checked: (data["home-ownership"] == "Other")
+            checked: (data["homeOwnership"] == "Other")
           }
         ]
       }) }}
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="notepad-carehome">CH</a>
+        </li>
+      </ul>
+
+
 
       {{ govukButton({
         text: "Continue"
