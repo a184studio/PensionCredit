@@ -21,119 +21,23 @@
       London, NW1 5RT
     </h1>
 
-
-    <h2 class="govuk-heading-m">
-      Partner
-    </h2>
-<!------------ Partner hidden
-    <dl class="govuk-summary-list govuk-summary-list--long">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          National Insurance number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          QQ 12 34 56 A
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="about-partner">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Jo Smith
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="about-partner">
-            .
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="govuk-summary-list__value">
-          5 January 1953
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="about-partner">
-            .
-          </a>
-        </dd>
-      </div>
-    </dl>
-
-    <h2 class="govuk-heading-m">
-      Children
-    </h2>
-    {% if data["child-in-home"] == "true" %}
-      <dl class="govuk-summary-list govuk-summary-list--long">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            National Insurance number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            QQ 12 34 56 A
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="about-child">
-              Change
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Child 1
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="about-child">
-              Change
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            5 January 2003
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="about-child">
-              Change
-            </a>
-          </dd>
-        </div>
-      </dl>
-
-    {% else %}
-      <p class="none">
-        None
+    {% if data['has-partner'] %}
+      <h2 class="govuk-heading-m">
+        Partner
+      </h2>
+      <p class="govuk-body">
+        {{ data['partner-more-detail'] }}
+      </p>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    {% endif %}
+    {% if data['people-in-home'] %}
+      <h2 class="govuk-heading-m">
+        Household composition notes
+      </h2>
+      <p class="govuk-body">
+        {{ data['household-more-detail'] }}
       </p>
     {% endif %}
-
-    ------------>
-
-      <p class="none">
-        None        @niall: Help. Pull in from partner details from Partner notePad
-
-      </p>
-
-      <h2 class="govuk-heading-m">
-        @niall: Help. Pull in from Household-composition notepad regarding: Qualifying young person, children, Boarders and lodgers
-      </h2>
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
 
     <h2 class="govuk-heading-m">
       Anyone else missing from the household?

@@ -48,8 +48,8 @@
       {% endset %}
 
       {{ govukRadios({
-        idPrefix: "has-partner-under-spa",
-        name: "has-partner-under-spa",
+        idPrefix: "has-partner",
+        name: "has-partner",
         fieldset: {
           legend: {
             text: "Do you have a partner?",
@@ -65,12 +65,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["has-partner-under-spa"] == "Yes")
+            checked: (data["has-partner"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["has-partner-under-spa"] == "No")
+            checked: (data["has-partner"] == "No")
           }
         ]
       }) }}
