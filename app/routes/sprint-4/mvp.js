@@ -26,6 +26,16 @@ router.post(`${baseUrl}/security-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/patner-router`, (req, res) => {
+  const hasPartner = req.session.data['partner-under-spa']
+
+  if (hasPartner === 'Yes') {
+    res.redirect(`${baseUrl}/notepad-partner`)
+  } else {
+    res.redirect(`${baseUrl}/mvp-eligibility-summary`)
+  }
+})
+
 router.post(`${baseUrl}/over-spa-router`, (req, res) => {
   try {
     const dob = req.session.data['dob-year'] + '-' +
