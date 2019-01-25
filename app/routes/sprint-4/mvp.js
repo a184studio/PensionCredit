@@ -205,7 +205,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/notepad-someoneElse`)
   }
   else if (homeOwnership === 'Other') {
-    res.redirect(`${baseUrl}/notepad-other`)
+    res.redirect(`${baseUrl}/notepad-otherRes`)
   }
 })
 
