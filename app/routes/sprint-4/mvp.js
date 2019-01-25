@@ -26,8 +26,8 @@ router.post(`${baseUrl}/security-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/patner-router`, (req, res) => {
-  const hasPartner = req.session.data['partner-under-spa']
+router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
+  const hasPartner = req.session.data['has-partner-under-spa']
 
   if (hasPartner === 'Yes') {
     res.redirect(`${baseUrl}/notepad-partner`)

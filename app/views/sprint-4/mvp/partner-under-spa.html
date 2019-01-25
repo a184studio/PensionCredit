@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="mvp-eligibility-summary" method="post" class="form">
+    <form action="partner-under-spa-router" method="post" class="form">
       {% set partnerDob %}
         {{ govukDateInput({
           id: "partner-date-of-birth",
@@ -65,9 +65,6 @@
           {
             value: "Yes",
             text: "Yes",
-            conditional: {
-              html: partnerDob
-            },
             checked: (data["has-partner-under-spa"] == "Yes")
           },
           {
@@ -77,12 +74,6 @@
           }
         ]
       }) }}
-
-      <ul class="govuk-list">
-        <li>
-          <a class="govuk-link" href="notepad-partner">Yes, to go to here not drop down.</a>
-        </li>
-      </ul>
 
       {{ govukButton({
         text: "Continue"
