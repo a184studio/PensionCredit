@@ -42,14 +42,15 @@
 <br>
 
         {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
+          name: "someone-else-more-detail",
+          id: "someone-else-more-detail",
           label: {
             text: "Can you provide more detail?"
           },
           hint: {
             text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          }
+          },
+          value: data["someone-else-more-detail"]
         }) }}
 
 

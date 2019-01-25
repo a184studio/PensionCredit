@@ -14,19 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hospital-yn" method="post" class="form">
-      {% set groundRent %}
-        {{ govukInput({
-          label: {
-            text: "XXX"
-          },
-          id: "rent-housing-council-tax",
-          name: "rent-housing-council-tax",
-          classes: "govuk-input--width-20",
-          value: data["ground-rent"]
-        }) }}
-      {% endset %}
-
+    <form action="address-summary" method="post" class="form">
       {{ govukRadios({
         idPrefix: "rent-housing-council-tax",
         name: "rent-housing-council-tax",
@@ -40,30 +28,26 @@
         hint: {
           text: "@pete: any thoughts on this?"
         },
-        classes: "govuk-radios--inline",
         items: [
           {
             value: "Housing benefit",
             text: "Housing benefit",
-            conditional: {
-              html: groundRent
-            },
-            checked: (data["has-Housing benefit"] == "yes")
+            checked: (data["rent-housing-council-tax"] == "Housing benefit")
           },
           {
             value: "Council tax reduction",
             text: "Council tax reduction",
-            checked: (data["has-council-tax-reduction"] == "yes")
+            checked: (data["rent-housing-council-tax"] == "Council tax reduction")
           },
           {
-            value: "both",
+            value: "In receipt tax and housing benefit",
             text: "In receipt tax and housing benefit",
-            checked: (data["has-both"] == "no")
+            checked: (data["rent-housing-council-tax"] == "In receipt tax and housing benefit")
           },
           {
-            value: "Apply",
+            value: "If not, would like to apply",
             text: "If not, would like to apply",
-            checked: (data["appy"] == "no")
+            checked: (data["rent-housing-council-tax"] == "If not, would like to apply")
           }
         ]
       }) }}

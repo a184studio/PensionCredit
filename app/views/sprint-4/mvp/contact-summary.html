@@ -46,7 +46,22 @@
             {{ data["mobile"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="mobile">
+            <a href="can-contact">
+              Change
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+      {% if data["mobile"]%}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Can text the mobile
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["can-text"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="can-text">
               Change
             </a>
           </dd>
@@ -61,7 +76,7 @@
             {{ data["landline"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="landline">
+            <a href="can-contact">
               Change
             </a>
           </dd>
@@ -76,7 +91,7 @@
             {{ data["email"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="email">
+            <a href="can-contact">
               Change
             </a>
           </dd>

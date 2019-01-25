@@ -39,8 +39,17 @@
             </li>
 
             <li class="app-task-list__item">
+              {% set today = '' | formatDate %}
+
               <a class="app-task-list__task-name" href="claim-date" aria-describedby="eligibility-completed">
-                Claim start date: 00.00.0000 <br><br> (@naill: Once a date is added please pull date into here)
+                Claim start date
+                {% if data["claim-date"] == "Today" %}
+                  ({{ today }})
+                {% elif data["claim-date"] == "SPA Entitlement" %}
+                  ({{ data['spa-date'] | formatDate }})
+                {% else %}
+                  ({{ data['alternate-date-day'] + ' ' + (data['alternate-date-month'] | getMonth) + ' ' + data['alternate-date-year'] }})
+                {% endif %}
               </a>
               {% if data["claim-date-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -94,7 +103,8 @@
             <ul class="app-task-list__items">
                             <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="post-code-lookup" aria-describedby="eligibility-completed">
-                  Address and home ownership type: (Type)
+                  Address and home ownership
+                  {% if data["home-ownership"] %} type: {{data["home-ownership"]}} {% endif %}
                 </a>
                 {% if data["address-complete"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>

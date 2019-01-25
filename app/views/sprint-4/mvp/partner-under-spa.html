@@ -15,15 +15,35 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="mvp-eligibility-summary" method="post" class="form">
-      {% set groundRent %}
-        {{ govukInput({
-          label: {
-            text: "What is their date of birth? (@naill help)"
+      {% set partnerDob %}
+        {{ govukDateInput({
+          id: "partner-date-of-birth",
+          namePrefix: "partner-date-of-birth",
+          fieldset: {
+            legend: {
+              text: "Partner's date of birth"
+            }
           },
-          id: "rent-housing-council-tax",
-          name: "rent-housing-council-tax",
-          classes: "govuk-input--width-20",
-          value: data["ground-rent"]
+          hint: {
+            text: "For example, 31 12 1955"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["partner-date-of-birth-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["partner-date-of-birth-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["partner-date-of-birth-year"]
+            }
+          ]
         }) }}
       {% endset %}
 
@@ -46,7 +66,7 @@
             value: "Yes",
             text: "Yes",
             conditional: {
-              html: groundRent
+              html: partnerDob
             },
             checked: (data["has-partner-under-spa"] == "Yes")
           },

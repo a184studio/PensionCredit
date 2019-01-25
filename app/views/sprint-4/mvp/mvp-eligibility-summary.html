@@ -16,7 +16,7 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="task-list" method="post">
 
-            <h1 class="govuk-heading-xl">Eligibility summary</h1>
+      <h1 class="govuk-heading-xl">Eligibility summary</h1>
 
       {{ govukSummaryList({
         rows: [
@@ -67,6 +67,23 @@
                   href: "name-and-nino",
                   text: "Change",
                   visuallyHiddenText: "National Insurance number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Telephone number"
+            },
+            value: {
+              text: data["telephone-number"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "name-and-nino",
+                  text: "Change",
+                  visuallyHiddenText: "telephone number"
                 }
               ]
             }
@@ -141,7 +158,7 @@
           },
           {
             key: {
-              text: "Do you live with a partner who is under state pension age?"
+              text: "Do you have a partner?"
             },
             value: {
               text: data["has-partner-under-spa"]
@@ -155,17 +172,33 @@
                 }
               ]
             }
+          },
+          {
+            key: {
+              text: "Partner date of birth"
+            },
+            value: {
+              text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "partner-under-spa",
+                  text: "Change",
+                  visuallyHiddenText: "partner date of birth"
+                }
+              ]
+            }
           }
         ]
       }) }}
 
-
-          <p class="govuk-body">
-            @pete, do we need any copy in here to explain the need?<br>
-            <a href="add-benefit" class="govuk-link">
-              Download eligibility outcome (PDF)
-            </a>
-          </p>
+      <p class="govuk-body">
+        @pete, do we need any copy in here to explain the need?<br>
+        <a href="add-benefit" class="govuk-link">
+          Download eligibility outcome (PDF)
+        </a>
+      </p>
 
       {{ govukButton({
         text: "Continue"

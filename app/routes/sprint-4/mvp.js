@@ -9,14 +9,12 @@ const baseUrl = '/sprint-4/mvp'
 router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['claiming-for']
 
-  if (claimingFor === 'Myself') {
+  if (claimingFor === 'Myself' || claimingFor === 'PC1') {
     res.redirect(`${baseUrl}/name-and-nino`)
   } else {
     res.redirect(`${baseUrl}/has-help`)
   }
 })
-
-
 
 router.post(`${baseUrl}/security-router`, (req, res) => {
   const passedSecurity = req.session.data['passed-security']
@@ -69,8 +67,6 @@ router.post(`${baseUrl}/sex-router`, (req, res) => {
   }
 })
 
-
-
 router.post(`${baseUrl}/mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['has-mortgage']
 
@@ -80,7 +76,6 @@ router.post(`${baseUrl}/mortgage-router`, (req, res) => {
     res.redirect(`${baseUrl}/address-summary`)
   }
 })
-
 
 router.post(`${baseUrl}/has-work-router`, (req, res) => {
   const hasWork = req.session.data['has-work']
@@ -163,7 +158,7 @@ router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
-  const homeOwnership = req.session.data['/home-ownership']
+  const homeOwnership = req.session.data['home-ownership']
 
   if (homeOwnership === 'Owned') {
     res.redirect(`${baseUrl}/service-charges`)
@@ -184,9 +179,6 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/notepad-otherRes`)
   }
 })
-
-
-
 
 router.post(`${baseUrl}/employment-router`, (req, res) => {
   const employmentFulltime = req.session.data['employment-fulltime']
@@ -222,15 +214,24 @@ router.post(`${baseUrl}/employment-type-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/existing-claim-router`, (req, res) => {
-  const existingClaim = req.session.data['existing-claim-yn']
+  const existingClaim = req.session.data['existing-claim']
 
-  if (existingClaim === 'existing-claim-yes') {
+  if (existingClaim === 'Yes') {
     res.redirect(`${baseUrl}/task-list`)
   } else {
     res.redirect(`${baseUrl}/over-spa`)
   }
 })
 
+router.post(`${baseUrl}/can-contact-router`, (req, res) => {
+  const mobile = req.session.data['mobile']
+
+  if (mobile) {
+    res.redirect(`${baseUrl}/can-text`)
+  } else {
+    res.redirect(`${baseUrl}/disablity`)
+  }
+})
 
 router.post(`${baseUrl}/anyone-living-with-you-router`, (req, res) => {
   const peopleInHome = req.session.data['people-in-home']
@@ -251,6 +252,5 @@ router.post(`${baseUrl}/has-private-pension-router`, (req, res) => {
     res.redirect(`${baseUrl}/task-list`)
   }
 })
-
 
 module.exports = router

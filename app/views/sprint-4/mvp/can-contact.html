@@ -17,72 +17,38 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="disability" method="post" class="form">
+    <form action="can-contact-router" method="post" class="form">
 
-<h1 class="govuk-heading-xl">How can we contact you</h1>
-<p class="govuk-body">@Pete: Any thoughts on this. Letters? </p>
+      <h1 class="govuk-heading-xl">How can we contact you</h1>
+      <p class="govuk-body">@Pete: Any thoughts on this. Letters? </p>
 
-        {{ govukInput({
-          label: {
-            text: "Landline"
-          },
-          id: "Landline",
-          name: "Landline",
-          classes: "govuk-input--width-10",
-          value: data["Landline"]
-        }) }}
+      {{ govukInput({
+        label: {
+          text: "Landline"
+        },
+        name: "landline",
+        classes: "govuk-input--width-10",
+        value: data["landline"]
+      }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Mobile"
-          },
-          id: "telephone-number",
-          name: "telephone-number",
-          classes: "govuk-input--width-10",
-          value: data["telephone-number"]
-        }) }}
+      {{ govukInput({
+        label: {
+          text: "Mobile"
+        },
+        name: "mobile",
+        classes: "govuk-input--width-10",
+        value: data["mobile"]
+      }) }}
 
-
-        {{ govukCheckboxes({
-          idPrefix: "waste",
-          name: "waste",
-          fieldset: {
-            legend: {
-              text: "",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            text: "Can we text you on this number?. @Naill: Need your help with this one, do we do something dynamic"
-          },
-          items: [
-            {
-              value: "text-yes",
-              text: "Yes / Text"
-            },
-            {
-              value: "text-no",
-              text: "No / Text"
-            }
-          ]
-        }) }}
-
-
-        {{ govukInput({
-          label: {
-            text: "Email"
-          },
-          id: "email-address",
-          name: "email-address",
-          classes: "govuk-input--width-20",
-          value: data["email-address"]
-        }) }}
-
-
-
-
-
+      {{ govukInput({
+        label: {
+          text: "Email"
+        },
+        id: "email-address",
+        name: "email-address",
+        classes: "govuk-input--width-20",
+        value: data["email-address"]
+      }) }}
 
       {{ govukButton({
         text: "Continue"
