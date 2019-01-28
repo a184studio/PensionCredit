@@ -16,10 +16,11 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="contact-summary" method="post" class="form">
       {% set disabilities = data["disabilities"] or [] %}
+      {% set accessability = data["accessability"] or [] %}
 
       {{ govukCheckboxes({
-        idPrefix: "accessability",
-        name: "accessability",
+        idPrefix: "disabilities",
+        name: "disabilities",
         fieldset: {
           legend: {
             text: "Do you have disabilities, impairments or any accessability needs?",
@@ -90,21 +91,21 @@
         ]
       }) }}
 
-For @pete
+      <p class="govuk-body">
+        For @pete
 
-Braille
-Type Talk
-Type Talk/Minicom
-Textphone
-Large Print
-Audio
-Audio Forms
-Sign Language
-Induction Loop
-Local Service Contact
-Local Service Visit
-
-
+        Braille
+        Type Talk
+        Type Talk/Minicom
+        Textphone
+        Large Print
+        Audio
+        Audio Forms
+        Sign Language
+        Induction Loop
+        Local Service Contact
+        Local Service Visit
+      </p>
 
       {{ govukButton({
         text: "Continue"
