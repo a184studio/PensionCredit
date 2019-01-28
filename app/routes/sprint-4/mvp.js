@@ -243,7 +243,7 @@ router.post(`${baseUrl}/can-contact-router`, (req, res) => {
   if (mobile) {
     res.redirect(`${baseUrl}/can-text`)
   } else {
-    res.redirect(`${baseUrl}/disablity`)
+    res.redirect(`${baseUrl}/disability`)
   }
 })
 
