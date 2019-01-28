@@ -12,6 +12,9 @@
 
 {% include "includes/js-back-link.html" %}
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
   <h1 class="govuk-heading-xl">
     Benefit details for Alex Smith
   </h1>
@@ -20,98 +23,161 @@
     In payment
   </h2>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-s">
-        Attendance allowance (AA)
-      </h3>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Benefit type
+      </dt>
+      <dd class="govuk-summary-list__value">
+      Attendance allowance (AA)
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="add-benefit">
+          Change
+          <span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
     </div>
-    <div class="govuk-grid-column-two-thirds">
-      <dl class="govuk-summary-list govuk-summary-list--long">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Value
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £100
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Benefit rate
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Lower
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Payment day / frequency
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Monday / weekly
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Start date / end date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            01 01 2018 -
-          </dd>
-        </div>
-      </dl>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Rate
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Lower
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+
+          <span class="govuk-visually-hidden"> date of birth</span>
+        </a>
+      </dd>
     </div>
-  </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Value
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £100.00
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+
+          <span class="govuk-visually-hidden"> date of birth</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Payment day / frequency
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Monday / weekly
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+
+          <span class="govuk-visually-hidden"> contact information</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Start date / end date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">01 01 2018 -</p>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+
+          <span class="govuk-visually-hidden"> contact details</span>
+        </a>
+      </dd>
+    </div>
+  </dl>
+
 
   {% if data["benefit-name"] %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-s">
+
+  <h2 class="govuk-heading-m">
+    Manually added
+  </h2>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Benefit type
+      </dt>
+      <dd class="govuk-summary-list__value">
         {{ data["benefit-name"] }}
-      </h3>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="add-benefit">
+          Change
+          <span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
     </div>
-    <div class="govuk-grid-column-two-thirds">
-      <dl class="govuk-summary-list govuk-summary-list--long">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Value
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["benefit-value"] | formatMoney }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Benefit rate
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Lower
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Payment day / frequency
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["benefit-day"] }} / {{ data["benefit-frequency"] }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Start date / end date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            01 01 2018 -
-          </dd>
-        </div>
-      </dl>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Rate
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Lower {{ data["benefit-rate"] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="add-benefit">
+
+          <span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
     </div>
-  </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Value
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data["benefit-value"] | formatMoney }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+
+          <span class="govuk-visually-hidden"> date of birth</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Payment day / frequency
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data["benefit-day"] }} / {{ data["benefit-frequency"] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+
+          <span class="govuk-visually-hidden"> contact information</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Start date / end date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">01 01 2018 -</p>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+
+          <span class="govuk-visually-hidden"> contact details</span>
+        </a>
+      </dd>
+    </div>
+  </dl>
   {% endif %}
 
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
+<br>
   <h2 class="govuk-heading-m">Any other benefit missing?</h2>
   <p class="govuk-body">
     <a href="add-benefit" class="govuk-link">
@@ -122,9 +188,13 @@
   <form action="task-list" method="post">
     <input type="hidden" name="benefits-complete" value="true"/>
     <p>
+    </p>
+  </form>
+
       {{ govukButton({
         text: "Confirm"
       }) }}
-    </p>
-  </form>
+
 {% endblock %}
+</div>
+</div>
