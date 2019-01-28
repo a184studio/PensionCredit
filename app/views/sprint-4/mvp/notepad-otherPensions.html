@@ -17,8 +17,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="pensions" method="post">
+      <form action="notional-summary" method="post">
 
+        <span class="govuk-caption-m">Notepad</span>
         <h1 class="govuk-heading-xl">(Other pensions) This is a headline for a note pad page</h1>
 
         <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
@@ -42,8 +43,8 @@
 <br>
 
         {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
+          name: "otherPension-smore-detail",
+          id: "otherPension-smore-detail",
           label: {
             text: "Can you provide more detail?"
           },

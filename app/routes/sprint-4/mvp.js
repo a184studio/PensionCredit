@@ -263,7 +263,7 @@ router.post(`${baseUrl}/has-private-pension-router`, (req, res) => {
   if (otherPensions === 'Yes') {
     res.redirect(`${baseUrl}/notepad-otherPensions`)
   } else {
-    res.redirect(`${baseUrl}/task-list`)
+    res.redirect(`${baseUrl}/notional-summary`)
   }
 })
 
