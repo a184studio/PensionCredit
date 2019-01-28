@@ -63,11 +63,61 @@
     </tr>
   </tbody>
 </table>
+</div>
+
+</div></div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+</div></div>
+
+
+
+
 {% endif %}
+  <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
 
-    </div>
+<table class="govuk-table">
+<caption class="govuk-table__caption"> </caption>
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th class="govuk-table__header my-custom-class" scope="col">Attendance allowance (AA)</th>
+    <th class="govuk-table__header my-custom-class" scope="col"><strong></strong></th>
+    <th class="govuk-table__header my-custom-class" scope="col"><regular>Change</regular></th>
 
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </tr>
+</thead>
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <th class="govuk-table__header" scope="row">Value</th>
+    <td class="govuk-table__cell">{{ data["benefit-value"] | formatMoney }}</td>
+    <td class="govuk-table__cell"></td>
+
+  </tr>
+  <tr class="govuk-table__row">
+    <th class="govuk-table__header" scope="row">Rate</th>
+    <td class="govuk-table__cell">Lower</td>
+    <td class="govuk-table__cell"></td>
+
+  </tr>
+  <tr class="govuk-table__row">
+    <th class="govuk-table__header" scope="row">Payment day / frequency</th>
+    <td class="govuk-table__cell">{{ data["benefit-day"] }} / {{ data["benefit-frequency"] }}</td>
+    <td class="govuk-table__cell"></td>
+
+  </tr>
+  <tr class="govuk-table__row">
+    <th class="govuk-table__header" scope="row">Start date / end date</th>
+    <td class="govuk-table__cell">01 01 2018 -</td>
+    <td class="govuk-table__cell"></td>
+
+
+  </tr>
+</tbody>
+</table>
+
 
   <h2 class="govuk-heading-m">Any other benefit missing?</h2>
   <p class="govuk-body">
@@ -75,6 +125,7 @@
       Add benefit
     </a>
   </p>
+</div></div>
 
   <form action="task-list" method="post">
     <input type="hidden" name="benefits-complete" value="true"/>
