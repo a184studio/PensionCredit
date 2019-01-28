@@ -97,9 +97,10 @@
           </dd>
         </div>
       {% endif %}
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Disabilities
+          Accessability
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data["disabilities"] %}
@@ -114,6 +115,26 @@
           </a>
         </dd>
       </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Disabilities
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data["accessability"] %}
+            {{ data["accessability"].join(", ") }}
+          {% else %}
+            None
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="accessability">
+            Change
+          </a>
+        </dd>
+      </div>
+      
+
     </dl>
 
     <form action="task-list" method="post">

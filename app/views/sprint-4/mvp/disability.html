@@ -18,11 +18,11 @@
       {% set disabilities = data["disabilities"] or [] %}
 
       {{ govukCheckboxes({
-        idPrefix: "disabilities",
-        name: "disabilities",
+        idPrefix: "accessability",
+        name: "accessability",
         fieldset: {
           legend: {
-            text: "Do you have any disabilities or impairments?",
+            text: "Do you have disabilities, impairments or any accessability needs?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -37,12 +37,62 @@
             checked: (disabilities.includes("Blind"))
           },
           {
-            value: "Other",
-            text: "Comms?, paper, etc @pete, No no.",
-            checked: (disabilities.includes("Other"))
+            value: "Type A",
+            text: "Type A @pete",
+            checked: (disabilities.includes("Type A"))
+          },
+          {
+            value: "Type B",
+            text: "Type B",
+            checked: (disabilities.includes("Type B"))
+          },
+          {
+            value: "None",
+            text: "None",
+            checked: (disabilities.includes("None"))
           }
         ]
       }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      {{ govukCheckboxes({
+        idPrefix: "accessability",
+        name: "accessability",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Large print",
+            text: "Large print",
+            checked: (accessability.includes("Large print"))
+          },
+          {
+            value: "Access A",
+            text: "Access A",
+            checked: (accessability.includes("Access A"))
+          },
+          {
+            value: "Access B",
+            text: "Access B",
+            checked: (accessability.includes("Access B"))
+          },
+          {
+            value: "Braille",
+            text: "Braille",
+            checked: (accessability.includes("Braille"))
+          }
+        ]
+      }) }}
+
+
+
+
 
       {{ govukButton({
         text: "Continue"
