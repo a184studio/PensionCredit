@@ -11,112 +11,115 @@
 {% block content %}
 
 {% include "includes/js-back-link.html" %}
-{% if data["benefit-name"] %}
+
   <h1 class="govuk-heading-xl">
     Benefit details for Alex Smith
   </h1>
 
+  <h2 class="govuk-heading-m">
+    In payment
+  </h2>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-m">
-        In payment
+      <h3 class="govuk-heading-s">
+        Attendance allowance
       </h3>
     </div>
 
     <div class="govuk-grid-column-two-thirds">
+      <dl class="govuk-summary-list govuk-summary-list--long">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Value
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £100
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Benefit rate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Lower
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payment day / frequency
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monday / weekly
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Start date / end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            01 01 2018 -
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
 
-  <table class="govuk-table">
-  <caption class="govuk-table__caption"> </caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th class="govuk-table__header my-custom-class" scope="col">Attendance allowance (AA)</th>
-      <th class="govuk-table__header my-custom-class" scope="col"><strong></strong></th>
-      <th class="govuk-table__header my-custom-class" scope="col"><regular>Change</regular></th>
+  {% if data["benefit-name"] %}
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th class="govuk-table__header" scope="row">Value</th>
-      <td class="govuk-table__cell">{{ data["benefit-value"] | formatMoney }}</td>
-      <td class="govuk-table__cell"></td>
-
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__header" scope="row">Rate</th>
-      <td class="govuk-table__cell">Lower</td>
-      <td class="govuk-table__cell"></td>
-
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__header" scope="row">Payment day / frequency</th>
-      <td class="govuk-table__cell">{{ data["benefit-day"] }} / {{ data["benefit-frequency"] }}</td>
-      <td class="govuk-table__cell"></td>
-
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__header" scope="row">Start date / end date</th>
-      <td class="govuk-table__cell">01 01 2018 -</td>
-      <td class="govuk-table__cell"></td>
-
-
-    </tr>
-  </tbody>
-</table>
-</div>
-
-</div></div>
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-full">
-
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-</div></div>
-
-
-
-
-{% endif %}
   <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">
+        {{ data["benefit-name"] }}
+      </h3>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <dl class="govuk-summary-list govuk-summary-list--long">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Value
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["benefit-value"] | formatMoney }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Benefit rate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Lower
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payment day / frequency
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["benefit-day"] }} / {{ data["benefit-frequency"] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Start date / end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            01 01 2018 -
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+  {% endif %}
 
-<table class="govuk-table">
-<caption class="govuk-table__caption"> </caption>
-<thead class="govuk-table__head">
-  <tr class="govuk-table__row">
-    <th class="govuk-table__header my-custom-class" scope="col">Attendance allowance (AA)</th>
-    <th class="govuk-table__header my-custom-class" scope="col"><strong></strong></th>
-    <th class="govuk-table__header my-custom-class" scope="col"><regular>Change</regular></th>
-
-  </tr>
-</thead>
-<tbody class="govuk-table__body">
-  <tr class="govuk-table__row">
-    <th class="govuk-table__header" scope="row">Value</th>
-    <td class="govuk-table__cell">{{ data["benefit-value"] | formatMoney }}</td>
-    <td class="govuk-table__cell"></td>
-
-  </tr>
-  <tr class="govuk-table__row">
-    <th class="govuk-table__header" scope="row">Rate</th>
-    <td class="govuk-table__cell">Lower</td>
-    <td class="govuk-table__cell"></td>
-
-  </tr>
-  <tr class="govuk-table__row">
-    <th class="govuk-table__header" scope="row">Payment day / frequency</th>
-    <td class="govuk-table__cell">{{ data["benefit-day"] }} / {{ data["benefit-frequency"] }}</td>
-    <td class="govuk-table__cell"></td>
-
-  </tr>
-  <tr class="govuk-table__row">
-    <th class="govuk-table__header" scope="row">Start date / end date</th>
-    <td class="govuk-table__cell">01 01 2018 -</td>
-    <td class="govuk-table__cell"></td>
-
-
-  </tr>
-</tbody>
-</table>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <h2 class="govuk-heading-m">
+    Interest
+  </h2>
+  <p class="govuk-body">All benefits are in payment, no awaiting benefits
+  </p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
   <h2 class="govuk-heading-m">Any other benefit missing?</h2>
@@ -125,7 +128,7 @@
       Add benefit
     </a>
   </p>
-</div></div>
+
 
   <form action="task-list" method="post">
     <input type="hidden" name="benefits-complete" value="true"/>
@@ -135,4 +138,4 @@
       }) }}
     </p>
   </form>
-  {% endblock %}
+{% endblock %}
