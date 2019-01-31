@@ -59,3 +59,12 @@ $govuk-global-styles: true;
 .govuk--version-control {
   color: #dee0e2;
 }
+
+
+.govuk-table--no-border {
+  border-style: hidden !important;
+}
+
+.govuk-table__regular {
+  font-weight: normal !important;
+}
