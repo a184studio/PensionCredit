@@ -24,7 +24,50 @@
 
         <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
 
-      <strong</strong>
+
+      {{ govukTextarea({
+        name: "MoneyOver10k-more-detail",
+        id: "MoneyOver10k-more-detail",
+        label: {
+          text: "Money / Cash"
+        },
+        hint: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+      {{ govukTextarea({
+        name: "MoneyOver10k-savings-more-detail",
+        id: "MoneyOver10k-savings-more-detail",
+        label: {
+          text: "Savings"
+        },
+        hint: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+      {{ govukTextarea({
+        name: "MoneyOver10k-investments-more-detail",
+        id: "MoneyOver10k-investments-more-detail",
+        label: {
+          text: "Investments"
+        },
+        hint: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
       <p class="govuk-body">
               <strong>Savings and investments</strong>
 
@@ -62,17 +105,6 @@
 
 
 
-
-      {{ govukTextarea({
-        name: "MoneyOver10k-more-detail",
-        id: "MoneyOver10k-more-detail",
-        label: {
-          text: "Can you provide more detail?"
-        },
-        hint: {
-          text: "Tell us more information about money."
-        }
-      }) }}
 
 
 
