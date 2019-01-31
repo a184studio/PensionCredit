@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Earnings - Pension Credit
+  Earnings, self-employed and other income - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -12,134 +12,102 @@
 
 {% include "includes/js-back-link.html" %}
 
-  <h1 class="govuk-heading-xl">
-    Earnings and self-employment summary
-  </h1>
 
-  {% if data["work-name"] %}
-    <h2 class="govuk-heading-m">
-      {{ data["employment-type"] }}
-    </h2>
+<!----Headline---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">
-          {{ data["work-name"] }}
-        </h3>
-      </div>
-      <div class="govuk-grid-column-two-thirds">
-        <dl class="govuk-summary-list govuk-summary-list--long">
-          {% if data["work-payroll"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Payroll ID
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["work-payroll"] }}
-            </dd>
-          </div>
-          {% endif %}
-          {% if data["work-start-day"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Start / End date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["work-start-day"] }}
-              {{ data["work-start-month"] | getMonth }}
-              {{ data["work-start-year"] }} —
-              {{ data["work-end-day"] }}
-              {{ data["work-end-month"] | getMonth }}
-              {{ data["work-end-year"] }}
-            </dd>
-          </div>
-          {% endif %}
-          {% if data["work-gross"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Taxable pay (gross)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["work-gross"] | formatMoney }}
-            </dd>
-          </div>
-          {% endif %}
-          {% if data["work-frequency"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Payment day / frequency
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["work-frequency"] }}
-            </dd>
-          </div>
-          {% endif %}
-          {% if data["work-tax"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Tax
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["work-tax"] | formatMoney }}
-            </dd>
-          </div>
-          {% endif %}
-          {% if data["work-ni"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              National insurance contributions
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["work-ni"] | formatMoney }}
-            </dd>
-          </div>
-          {% endif %}
-          {% if data["work-pensions"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Pensions
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["work-pensions"] | formatMoney }}
-            </dd>
-          </div>
-          {% endif %}
-        </dl>
-      </div>
-    </div>
+    <h1 class="govuk-heading-xl">
+      Earnings and self-employment summary
+    </h1>
+
+  </div>
+</div>
+<!----Headline---->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      Self-employment information
+    </h3>
+    <p></p>
+  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table ">
+      <thead class="govuk-table__head govuk-table--no-border">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Note pad information:</th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-selfEmployment" class="govuk-link">Change</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
+
+  <p class="govuk-body">
+    {{ data["selfEmployment-more-detail"] }}
+  </p>
+
+
+<!----End 1/3 + 2/3 ----></div>
+</div>
+{% if data["otherIncome-more-detail"] %}
+
+
+<!----Break---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
+<!----Break---->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+
+    </h3>
+    <p></p>
+  </div>
+
+<!----End 1/3 + 2/3 ----></div>
 {% endif %}
-{% if data["self-name"] %}
-  <h2 class="govuk-heading-m">
-    Self employment
-  </h2>
-
-{% endif %}
+<!----Break---->
 
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-<h2 class="govuk-heading-m">Self-employment information</h2>
-<p class="govuk-body">
-  {{ data["selfEmployment-more-detail"] }}
-</p>
+<!----Add more
 
 
-<h2 class="govuk-heading-m">Any other information missing from earnings and employment?</h2>
-<p class="govuk-body">
-  <a href="notepad-selfEmployment" class="govuk-link">
-    Add more self-employed information
-  </a>
-</p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-  <form action="other-income" method="post">
-    <input type="hidden" name="employment" value="true"/>
-    <input type="hidden" name="earnings-summary" value="true"/>
-    <p>
-      {{ govukButton({
-        text: "Confirm"
-      }) }}
+    <h2 class="govuk-heading-m">Any other benefit missing?</h2>
+    <p class="govuk-body">
+      <a href="add-benefit" class="govuk-link">
+        Add benefit
+      </a>
     </p>
-  </form>
-{% endblock %}
+---->
+<br><br>
+
+    <form action="other-income" method="post">
+      <input type="hidden" name="employment" value="true"/>
+      <p>
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+      </p>
+    </form>
+
+
+  </div>
+</div>
+<!----Break---->
+  {% endblock %}
