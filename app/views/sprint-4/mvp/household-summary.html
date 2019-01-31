@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers - Pension Credit
+  Earnings, self-employed and other income - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -12,8 +12,10 @@
 
 {% include "includes/js-back-link.html" %}
 
+
+<!----Headline---->
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-xl">
       Household composition of:<br/>
@@ -21,38 +23,116 @@
       London, NW1 5RT
     </h1>
 
-    {% if data['has-partner'] %}
-      <h2 class="govuk-heading-m">
-        Partner
-      </h2>
-      <p class="govuk-body">
-        {{ data['partner-more-detail'] }}
-      </p>
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-    {% endif %}
-    {% if data['people-in-home'] %}
-      <h2 class="govuk-heading-m">
-        Household composition notes
-      </h2>
-      <p class="govuk-body">
-        {{ data['household-more-detail'] }}
-      </p>
-    {% endif %}
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  </div>
+</div>
+<!----Headline---->
 
 
-    <h2 class="govuk-heading-m">
-      Anyone else missing from the household?
-    </h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      Partner information
+    </h3>
+    <p></p>
+  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table ">
+      <thead class="govuk-table__head govuk-table--no-border">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Note pad information:</th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-partner" class="govuk-link">Change</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
+
+  <p class="govuk-body">
+    {{ data["partner-more-detail"] }}
+  </p>
+
+
+<!----End 1/3 + 2/3 ----></div>
+</div>
+{% if data["otherIncome-more-detail"] %}
+
+
+<!----Break---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
+<!----Break---->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+
+    </h3>
+    <p></p>
+  </div>
+
+<!----End 1/3 + 2/3 ----></div>
+{% endif %}
+<!----Break---->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      Others in the household
+    </h3>
+    <p></p>
+  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table ">
+      <thead class="govuk-table__head govuk-table--no-border">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Note pad information:</th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-household-composition" class="govuk-link">Change</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
+
+  <p class="govuk-body">
+    {{ data["household-more-detail"] }}
+  </p>
+
+
+
+  </div>
+
+<!----End 1/3 + 2/3 ----></div>
+
+<!----Add more
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Any other benefit missing?</h2>
     <p class="govuk-body">
-      <a class="govuk-link" href="notepad-household-composition">
-        Add another person
+      <a href="add-benefit" class="govuk-link">
+        Add benefit
       </a>
     </p>
+---->
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<br><br>
 
     <form action="task-list" method="post">
-      <input type="hidden" name="household-complete" value="true"/>
+      <input type="hidden" name="task-list" value="true"/>
       <p>
         {{ govukButton({
           text: "Confirm"
@@ -60,6 +140,8 @@
       </p>
     </form>
 
+
   </div>
 </div>
-{% endblock %}
+<!----Break---->
+  {% endblock %}

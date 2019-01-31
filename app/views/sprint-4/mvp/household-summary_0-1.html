@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Household composition of:<br/>
+      221B Baker Street, Marylebone,<br>
+      London, NW1 5RT
+    </h1>
+
+    {% if data['has-partner'] %}
+      <h2 class="govuk-heading-m">
+        Partner
+      </h2>
+      <p class="govuk-body">
+        {{ data['partner-more-detail'] }}
+      </p>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    {% endif %}
+    {% if data['people-in-home'] %}
+      <h2 class="govuk-heading-m">
+        Household composition notes
+      </h2>
+      <p class="govuk-body">
+        {{ data['household-more-detail'] }}
+      </p>
+    {% endif %}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+    <h2 class="govuk-heading-m">
+      Anyone else missing from the household?
+    </h2>
+    <p class="govuk-body">
+      <a class="govuk-link" href="notepad-household-composition">
+        Add another person
+      </a>
+    </p>
+
+    <form action="task-list" method="post">
+      <input type="hidden" name="household-complete" value="true"/>
+      <p>
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+      </p>
+    </form>
+
+  </div>
+</div>
+{% endblock %}
