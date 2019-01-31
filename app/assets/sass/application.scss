@@ -18,22 +18,33 @@ $govuk-global-styles: true;
   background-color: #dee0e2;
 }
 
-.govuk-tag--in-progress {
-  background-color: #df3034;
-}
-
 .govuk-tag--hold {
   background-color: #6f777b;
 }
 
 .govuk-tag--incomplete {
+  text-transform: capitalize;
+  color: #0b0c0c;
+  background-color: #f499be;
+
+.app-task-list__task-completed {
+  text-transform: capitalize;
+}
+
+.app-task-list__task-in-progress {
+  background-color: #df3034;
+  float: right;
+
+}
+
+.govuk-tag--in-progress {
   background-color: #dee0e2;
   color: #6f777b;
   text-transform: capitalize;
 }
 
-.app-task-list__task-completed {
-  text-transform: capitalize;
+.govuk-tag--inprogress {
+  float: right;
 }
 
 .govuk-tag--break {
