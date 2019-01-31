@@ -198,7 +198,7 @@ router.post(`${baseUrl}/employment-router`, (req, res) => {
   const employmentFulltime = req.session.data['employment-fulltime']
 
   if (employmentFulltime === 'yes') {
-    res.redirect(`${baseUrl}/still-employed`)
+    res.redirect(`${baseUrl}/notepad-selfEmployment`)
   } else {
     res.redirect(`${baseUrl}/earnings-summary`)
   }

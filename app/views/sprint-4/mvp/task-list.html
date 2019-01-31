@@ -218,7 +218,7 @@
 
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="employment" aria-describedby="eligibility-completed">
-                  Check work status: (Not working)
+                  Current work status
                 </a>
                 {% if data["employment"] %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
@@ -307,10 +307,10 @@
                 <a class="app-task-list__task-name" href="notepad-temporary" aria-describedby="eligibility-completed">
                   Capture if we have missed anything
                 </a>
-                {% if data["temp-notepad-complete"] %}
-                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+                {% if data["notepad-temporary"] %}
+                  <strong class="govuk-tag app-task-list__task-completed" id="notepad-temporary">Done</strong>
                 {% else %}
-                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="notepad-temporary">Not done</strong>
                 {% endif %}
               </li>
             </ul>

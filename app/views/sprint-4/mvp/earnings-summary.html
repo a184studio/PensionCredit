@@ -13,7 +13,7 @@
 {% include "includes/js-back-link.html" %}
 
   <h1 class="govuk-heading-xl">
-    Earnings and employment summary
+    Earnings and self-employment summary
   </h1>
 
   {% if data["work-name"] %}
@@ -113,74 +113,25 @@
     Self employment
   </h2>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-s">
-        {{ data["self-name"] }}
-      </h3>
-    </div>
-    <div class="govuk-grid-column-two-thirds">
-      <dl class="govuk-summary-list govuk-summary-list--long">
-        {% if data["self-profit"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Profit
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["self-profit"] | formatMoney }}
-          </dd>
-        </div>
-        {% endif %}
-        {% if data["self-loss"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Loss
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["self-loss"] | formatMoney }}
-          </dd>
-        </div>
-        {% endif %}
-        {% if data["self-total"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Total amount in business account
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["self-total"] | formatMoney }}
-          </dd>
-        </div>
-        {% endif %}
-      </dl>
-    </div>
-  </div>
 {% endif %}
 
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-
-<h2 class="govuk-heading-m">Self-employed information</h2>
+<h2 class="govuk-heading-m">Self-employment information</h2>
 <p class="govuk-body">
-  <a href="XXX" class="govuk-link">
-    XXX
+  {{ data["selfEmployment-more-detail"] }}
+</p>
+
+
+<h2 class="govuk-heading-m">Any other information missing from earnings and employment?</h2>
+<p class="govuk-body">
+  <a href="notepad-selfEmployment" class="govuk-link">
+    Add more self-employed information
   </a>
 </p>
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-<!--
-  <h2 class="govuk-heading-m">Any other employment missing?</h2>
-  <p class="govuk-body">
-    <a href="add-employment" class="govuk-link">
-      Add an employment
-    </a>
-  </p>
-
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
---->
-
 
   <form action="other-income" method="post">
     <input type="hidden" name="employment" value="true"/>
