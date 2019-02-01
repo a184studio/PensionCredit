@@ -16,14 +16,14 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="contact-summary" method="post" class="form">
       {% set disabilities = data["disabilities"] or [] %}
-      {% set accessability = data["accessability"] or [] %}
+      {% set accessability = data["accessibility"] or [] %}
 
       {{ govukCheckboxes({
         idPrefix: "disabilities",
         name: "disabilities",
         fieldset: {
           legend: {
-            text: "Do you have disabilities, impairments or any accessability needs?",
+            text: "Do you need us to contact you in any different formats?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -33,79 +33,55 @@
         },
         items: [
           {
-            value: "Blind",
-            text: "Registered blind or severely sight impaired",
-            checked: (disabilities.includes("Blind"))
+            value: "Braille",
+            text: "Braille",
+            checked: (disabilities.includes("Braille"))
           },
-          {
-            value: "Type A",
-            text: "Type A @pete",
-            checked: (disabilities.includes("Type A"))
-          },
-          {
-            value: "Type B",
-            text: "Type B",
-            checked: (disabilities.includes("Type B"))
-          },
-          {
-            value: "None",
-            text: "None",
-            checked: (disabilities.includes("None"))
-          }
-        ]
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-      {{ govukCheckboxes({
-        idPrefix: "accessability",
-        name: "accessability",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        items: [
           {
             value: "Large print",
             text: "Large print",
-            checked: (accessability.includes("LargePrint"))
+            checked: (disabilities.includes("Large print"))
           },
           {
-            value: "Access A",
-            text: "Access A",
-            checked: (accessability.includes("AccessA"))
+            value: "Welsh",
+            text: "Welsh",
+            checked: (disabilities.includes("Welsh"))
           },
           {
-            value: "Access B",
-            text: "Access B",
-            checked: (accessability.includes("AccessB"))
+            value: "Textphone",
+            text: "Textphone",
+            checked: (disabilities.includes("Textphone"))
+          },
+
+          {
+            value: "Audio forms",
+            text: "Audio forms",
+            checked: (accessability.includes("Audioforms"))
           },
           {
-            value: "Braille",
-            text: "Braille",
-            checked: (accessability.includes("Braille"))
+            value: "Sign language",
+            text: "Sign language",
+            checked: (accessability.includes("Signlanguage"))
+          },
+          {
+            value: "Induction loop",
+            text: "Induction loop",
+            checked: (accessability.includes("Inductionloop"))
+          },
+          {
+            value: "Local service contact",
+            text: "Local service contact",
+            checked: (accessability.includes("Localservicecontact"))
+          },
+          {
+            value: "Local service visit",
+            text: "Local service visit",
+            checked: (accessability.includes("Localservicevisit"))
           }
         ]
       }) }}
 
-      <p class="govuk-body">
-        For @pete
-        Welsh
-        Braille
-        Type Talk
-        Type Talk/Minicom
-        Textphone
-        Large Print
-        Audio
-        Audio Forms
-        Sign Language
-        Induction Loop
-        Local Service Contact
-        Local Service Visit
-      </p>
+    
 
       {{ govukButton({
         text: "Continue"

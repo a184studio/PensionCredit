@@ -16,27 +16,10 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Check your answers
+      Contact preferences summary
     </h1>
 
     <dl class="govuk-summary-list govuk-summary-list--long">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Contact preferences
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data["contact-options"] %}
-            {{ data["contact-options"].join(", ") }}
-          {% else %}
-            No means
-          {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="can-contact">
-            Change
-          </a>
-        </dd>
-      </div>
       {% if data["mobile"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -55,7 +38,7 @@
       {% if data["mobile"]%}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Can text the mobile
+            Can we text the mobile
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["can-text"] }}
@@ -100,7 +83,7 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Accessability
+          Alternative formats
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data["disabilities"] %}
@@ -116,24 +99,8 @@
         </dd>
       </div>
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Disabilities
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data["accessability"] %}
-            {{ data["accessability"].join(", ") }}
-          {% else %}
-            None
-          {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="accessability">
-            Change
-          </a>
-        </dd>
-      </div>
-      
+
+
 
     </dl>
 
