@@ -186,23 +186,6 @@
                   }
                 ]
               }
-            },
-            {
-              key: {
-                text: "Partner notes"
-              },
-              value: {
-                text: data["partner-more-detail"]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "partner-under-spa",
-                    text: "Change",
-                    visuallyHiddenText: "partner date of birth"
-                  }
-                ]
-              }
             }
           ]
         }) }}
@@ -800,6 +783,17 @@ Address
 
 
   <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table ">
+      <thead class="govuk-table__head govuk-table--no-border">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Note pad information:</th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-temporary" class="govuk-link">Change</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
 
   <p class="govuk-body">
     {{ data["otherPension-more-detail"] }}
