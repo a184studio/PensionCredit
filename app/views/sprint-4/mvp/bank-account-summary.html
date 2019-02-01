@@ -38,11 +38,11 @@
           Name on account
         </dt>
         <dd class="govuk-summary-list__value">
-          @Niall Alex Smith
+          {{ data["name-on-account"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="postcode-lookup">
-            .
+          <a href="uk-account">
+            Change
           </a>
         </dd>
       </div>
@@ -51,11 +51,11 @@
           Sort code
         </dt>
         <dd class="govuk-summary-list__value">
-          @Niall 00-00-00
+          {{ data["sort-code"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="home-ownership">
-            .
+          <a href="uk-account">
+            Change
           </a>
         </dd>
       </div>
@@ -65,15 +65,33 @@
           Account number
         </dt>
         <dd class="govuk-summary-list__value">
-          @Niall 01020304
+            {{ data["account-number"] }}
         </dd>
 
         <dd class="govuk-summary-list__actions">
           <a href="uk-account">
-            .
+            Change
           </a>
         </dd>
       </div>
+
+      {% if data["roll-number"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Roll number
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{ data["roll-number"] }}
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a href="uk-account">
+              Change
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+      </dl>
 
 <br>
 

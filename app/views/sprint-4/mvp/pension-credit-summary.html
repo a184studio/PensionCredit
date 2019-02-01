@@ -235,7 +235,14 @@
         Date
       </dt>
       <dd class="govuk-summary-list__value">
-        @Niall to pull in
+        {% if data["claim-date"] == "Today" %}
+          {% set today = '' | formatDate %}
+          {{ today }}
+        {% elif data["claim-date"] == "SPA Entitlement" %}
+          {{ data['back-dating-date'] | formatDate }}
+        {% elif data["claim-date"] == "Alternative date" %}
+          {{ data['alternate-date-day'] + ' ' + (data['alternate-date-month'] | getMonth) + ' ' + data['alternate-date-year'] }}
+        {% endif %}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="claim-date">
@@ -741,7 +748,7 @@ Address
       <thead class="govuk-table__head govuk-table--no-border">
         <tr class="govuk-table__row">
 
-          <th class="govuk-table__header" scope="col">@Niall: Have you spent any time in hospital since XXX : Yes/No</th>
+          <th class="govuk-table__header" scope="col">Have you spent any time in hospital since: {{ data["hospital-yn"] }}</th>
           <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-hospital-dates" class="govuk-link">Change</a></th>
         </tr>
       </thead>
@@ -1080,62 +1087,79 @@ Payment details
 
   <div class="govuk-grid-column-two-thirds">
 
+    <dl class="govuk-summary-list govuk-summary-list--long">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type of account
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Bank account
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="uk-account">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name on account
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["name-on-account"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="uk-account">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sort code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["sort-code"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="uk-account">
+            Change
+          </a>
+        </dd>
+      </div>
 
-        <dl class="govuk-summary-list govuk-summary-list--long">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Type of account
-            </dt>
-            <dd class="govuk-summary-list__value">
-              @niall Bank account type
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="uk-account">
-                Change
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name on account
-            </dt>
-            <dd class="govuk-summary-list__value">
-              @niall Alex Smith
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="postcode-lookup">
-                .
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Sort code
-            </dt>
-            <dd class="govuk-summary-list__value">
-              @niall 00-00-00
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="home-ownership">
-                .
-              </a>
-            </dd>
-          </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data["account-number"] }}
+        </dd>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Account number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              @niall 01020304
-            </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="uk-account">
+            Change
+          </a>
+        </dd>
+      </div>
 
-            <dd class="govuk-summary-list__actions">
-              <a href="uk-account">
-                .
-              </a>
-            </dd>
-          </div>
+      {% if data["roll-number"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Roll number
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{ data["roll-number"] }}
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a href="uk-account">
+              Change
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+      </dl>
 
   </div>
 </div>
