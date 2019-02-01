@@ -802,7 +802,7 @@ Address
   <div class="govuk-grid-column-two-thirds">
 
   <p class="govuk-body">
-    {{ data["otherPension-smore-detail"] }}
+    {{ data["otherPension-more-detail"] }}
   </p>
 
 </div></div>
@@ -821,10 +821,11 @@ Address
 
 <!----End 1/3 + 2/3 ---------------------------------------------------------------------------------->
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-m">
-Money, savings and investments
+      Money / Cash
     </h3>
     <p></p>
   </div>
@@ -836,7 +837,7 @@ Money, savings and investments
       <thead class="govuk-table__head govuk-table--no-border">
         <tr class="govuk-table__row">
           <th class="govuk-table__header" scope="col">Note pad information:</th>
-          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-otherIncome" class="govuk-link">Change</a></th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-MoneyOver10k" class="govuk-link">Change</a></th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -844,7 +845,119 @@ Money, savings and investments
     </table>
 
   <p class="govuk-body">
-XXXXXxx  </p>
+    {{ data["MoneyOver10k-more-detail"] }}
+  </p>
+
+
+<!----End 1/3 + 2/3 ----></div>
+</div>
+
+<!----Break---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
+<!----Break---->
+
+
+{% if data["MoneyOver10k-savings-more-detail"] %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+
+    </h3>
+    <p></p>
+  </div></div>
+
+<!----End 1/3 + 2/3 ---->
+{% endif %}
+<!----Break---->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      Savings
+    </h3>
+    <p></p>
+  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table ">
+      <thead class="govuk-table__head govuk-table--no-border">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Note pad information:</th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-MoneyOver10k" class="govuk-link">Change</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
+
+  <p class="govuk-body">
+    {{ data["MoneyOver10k-savings-more-detail"] }}
+  </p>
+
+  </div></div>
+
+
+<!----End 1/3 + 2/3 ---->
+
+<!----Break---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
+<!----Break---->
+
+
+{% if data["MoneyOver10k-investments-more-detail"] %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+
+    </h3>
+    <p></p>
+  </div>
+
+<!----End 1/3 + 2/3 ----></div>
+{% endif %}
+<!----Break---->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      Investments
+    </h3>
+    <p></p>
+  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table ">
+      <thead class="govuk-table__head govuk-table--no-border">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Note pad information:</th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-MoneyOver10k" class="govuk-link">Change</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
+
+  <p class="govuk-body">
+    {{ data["MoneyOver10k-investments-more-detail"] }}
+  </p>
 
   </div>
 </div>
@@ -863,10 +976,67 @@ XXXXXxx  </p>
 
 <!----End 1/3 + 2/3 ---------------------------------------------------------------------------------->
 
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-m">
-Self-employment and other income
+      Self-employment information
+    </h3>
+    <p></p>
+  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table ">
+      <thead class="govuk-table__head govuk-table--no-border">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Note pad information:</th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-selfEmployment" class="govuk-link">Change</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
+
+  <p class="govuk-body">
+    {{ data["selfEmployment-more-detail"] }}
+  </p>
+
+
+<!----End 1/3 + 2/3 ----></div>
+</div>
+
+<!----Break---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
+<!----Break---->
+
+
+{% if data["otherIncome-more-detail"] %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+
+    </h3>
+    <p></p>
+  </div>
+
+<!----End 1/3 + 2/3 ----></div>
+{% endif %}
+<!----Break---->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      Other income
     </h3>
     <p></p>
   </div>
@@ -886,10 +1056,10 @@ Self-employment and other income
     </table>
 
   <p class="govuk-body">
-XXXXXxx  </p>
+    {{ data["otherIncome-more-detail"] }}
+  </p>
 
-  </div>
-</div>
+  </div></div>
 <!----End 1/3 + 2/3 ---------------------------------------------------------------------------------->
 
 
@@ -916,19 +1086,62 @@ Payment details
 
   <div class="govuk-grid-column-two-thirds">
 
-    <table class="govuk-table ">
-      <thead class="govuk-table__head govuk-table--no-border">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Note pad information:</th>
-          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-otherIncome" class="govuk-link">Change</a></th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-      </tbody>
-    </table>
 
-  <p class="govuk-body">
-XXXXXxx  </p>
+        <dl class="govuk-summary-list govuk-summary-list--long">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type of account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              @niall Bank account type
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="uk-account">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name on account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              @niall Alex Smith
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="postcode-lookup">
+                .
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sort code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              @niall 00-00-00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="home-ownership">
+                .
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Account number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              @niall 01020304
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a href="uk-account">
+                .
+              </a>
+            </dd>
+          </div>
 
   </div>
 </div>
@@ -947,10 +1160,11 @@ XXXXXxx  </p>
 
 <!----End 1/3 + 2/3 ---------------------------------------------------------------------------------->
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-m">
-Temporary notepad
+      Temporary note pad details
     </h3>
     <p></p>
   </div>
@@ -962,7 +1176,7 @@ Temporary notepad
       <thead class="govuk-table__head govuk-table--no-border">
         <tr class="govuk-table__row">
           <th class="govuk-table__header" scope="col">Note pad information:</th>
-          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-otherIncome" class="govuk-link">Change</a></th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-temporary" class="govuk-link">Change</a></th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -970,10 +1184,10 @@ Temporary notepad
     </table>
 
   <p class="govuk-body">
-XXXXXxx  </p>
+    {{ data["temporary-more-detail"] }}
+  </p>
 
-  </div>
-</div>
+</div></div>
 
 <!----End 1/3 + 2/3 ---------------------------------------------------------------------------------->
 
