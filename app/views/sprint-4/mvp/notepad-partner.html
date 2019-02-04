@@ -19,24 +19,45 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="mvp-eligibility-summary" method="post">
 
-        <span class="govuk-caption-m">Notepad</span>
-        <h1 class="govuk-heading-xl">(Partner)This is a headline for a note pad page</h1>
+        <span class="govuk-caption-m">Agent notes page</span>
+        <h1 class="govuk-heading-xl">Information about the claimant's partner.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
+        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need, including:</p>
 
 
         <ul class="govuk-list">
           <li>
-            <p>Items to be aksed in this section</p>
+            whether their partner is in a care home and whether their stay is permanent
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+            their partner's name
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+            their partner's date of birth
+          </li>
+          <li>their partner's Nationality
+            </li>
+          <li>
+            their partner's National Insurance number
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+            whether their partner has agreed to this application
+          </li>
+          <li>
+            whether their partner is registered blind and the date they were registered
+          </li>
+          </ul>
+
+          <p class="govuk-body govuk-!-font-size-19">
+            If their partner was sponsored to come to UK in last 5 years ask for:
+          </p>
+
+          <ul class="govuk-list">
+          <li>the start and end dates of any periods their partner has spent abroad in the last 5 years
+          </li>
+          <li>their partner's reason for leaving the UK
+          </li>
+          <li>whether their partner's sponsor is still alive
           </li>
         </ul>
 
@@ -45,12 +66,7 @@
         {{ govukTextarea({
           name: "partner-more-detail",
           id: "partner-more-detail",
-          label: {
-            text: "Can you provide more detail?"
-          },
-          hint: {
-            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          },
+
           value: data["partner-more-detail"]
         }) }}
 
