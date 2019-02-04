@@ -20,23 +20,26 @@
       <form action="address-summary" method="post">
 
         <span class="govuk-caption-m">Notepad</span>
-        <h1 class="govuk-heading-xl">(Carehomes)This is a headline for a note pad page</h1>
+        <h1 class="govuk-heading-xl">Information about the care home or nursing home where the claimant lives.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
+        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need, including:</p>
 
 
         <ul class="govuk-list">
           <li>
-            <p>Items to be aksed in this section</p>
+            the date they were admitted
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+          whether their stay is temporary or permanent
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+            if the stay is temporary, the date they expect to be discharged
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+            whether their stay is funded by the local authority, self funded or both
+          </li>
+          <li>
+            whether they still own a property? (Mark: Can this be a separate check box to tailor the question in the capital section?)
           </li>
         </ul>
 
@@ -45,12 +48,7 @@
         {{ govukTextarea({
           name: "carehome-more-detail",
           id: "carehome-more-detail",
-          label: {
-            text: "Can you provide more detail?"
-          },
-          hint: {
-            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          },
+
           value: data["carehome-more-detail"]
         }) }}
 
