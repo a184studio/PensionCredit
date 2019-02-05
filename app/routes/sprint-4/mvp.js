@@ -10,8 +10,11 @@ const baseUrl = '/sprint-4/mvp'
 router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['claiming-for']
 
-  if (claimingFor === 'Yourself' || claimingFor === 'PC1') {
+  if (claimingFor === 'Yourself') {
     res.redirect(`${baseUrl}/name-and-nino`)
+  }
+  else if (claimingFor === 'PC1') {
+    res.redirect(`${baseUrl}/notepad-PC1`)
   } else {
     res.redirect(`${baseUrl}/has-help`)
   }

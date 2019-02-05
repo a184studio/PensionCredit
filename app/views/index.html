@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Pension Credit design development
 {% endblock %}
 
 {% block header %}
@@ -63,9 +63,83 @@
             </span>
           </summary>
           <div class="govuk-details__text">
-            Tested in Dundee 8.10.2018 / Five participants.
-            <br>Tested in Blaydon job centre 18.12.2018 / 5 participants.
-          </div>
+          <strong>Tested in Dundee 8.10.2018 / Five participants.</strong>
+          <br>
+          <br>
+          <strong>What we tested:</strong>
+          <br>
+          How would this work as a linear journey?
+          <br>
+          Does the order of the questions make sense?
+          <br>
+          What questions can we remove?
+          <br>
+          What other tools would an agent need to use to process a claim?
+          <br>
+          <br>
+          <strong>Outcome:</strong>
+          <br>
+          Agents were able to navigate through the prototype, although 2 thought they’d reached the end a step early due the label of the CTA on the page.
+          <br>
+          Agents commented that the order of the questions around where the user lives didn’t make sense as they weren’t all grouped together.
+          <br>
+          Agents mentioned being able to use a lot of other tools to double check information users provided, searchlight, CIS, RTI.
+          <br>
+          Agents were concerned users might not understand all the information we need, particularly financial.
+          <br>
+          <br>
+          <strong>Next steps:</strong>
+          <br>
+          Investigate how we could use data from other systems, instead of having to ask the user for the information.
+          <br>
+          Test the questions with users to see what they do / don’t understand.
+          <br>
+          Test alternative ways of grouping the questions.
+          <br>
+          <br>
+          <strong>Tested in Blaydon job centre 18.12.2018</strong>
+          <br>
+          <br>
+          <strong>What we tested:</strong>
+          <br>
+          What are users expectations of how they apply for Pension Credit and the process?
+          <br>
+          Would these users be more likely to use a digital service?
+          <br>
+          Test users understanding of the questions we are asking.
+          <br>
+          Understand what information users would know vs not know (What would they have to go away and check).
+          <br>
+          <br>
+          <strong>Outcome:</strong>
+          <br>
+          3 / 5 users not comfortable using the digital service to apply for Pension Credit, this was mostly due to the length of the form and the fear of completing it incorrectly.
+          <br>
+          Users liked being able to see the information in front of them, which was something they didn’t like about the applying on the phone.
+          <br>
+          Some of the terminology confused users, household composition, state, P60.
+          <br>
+          3 user answered the question ‘Have you lived outside the UK in the last 2 years’ incorrectly, ticking ‘yes’ when they should have selected ‘No’.
+          <br>
+          The question of ‘when do you want to claim’ confused users, they were unsure when they could claim from.
+          <br>
+          2 user did not realise the next step was to click on the text links, insteading expecting to click on the ‘continue’ button at the bottom of the page.
+          <br>
+          2 users expressed concern after reading the declaration. Worrying that if they’d made a mistake they might be prosecuted.
+          <br>
+          <br>
+          <strong>Next steps:</strong>
+          <br>
+          Revisit wording on residency ‘Q’
+          <br>
+          Reword content such as ‘Household composition’
+          <br>
+          Add some content / guidance to help users understand the date they need to enter.
+          <br>
+          Test with citizens and their ‘helpers’ as a lot of the users have said they’d normally have seeked help with this type of application
+          <br>
+           </div>
+
 
        <li>
          <ul class="app-task-list__items">
@@ -272,7 +346,8 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-         08 January 2019 / Tested in Seaham with five new claim users.<br>  <br>
+         <strong>08 January 2019 / Tested in Seaham with five new claim users.</strong>
+         <br><br>
     Single claim journey with routed questions, introduction of the task list. At present, A.2.0 has post summary screens for each sections, an assumption is that they are not needed for all sections. Benefits, Pensions, Savings Household compostion will need a for of playback, due to the complexity and the volume of information collected.<br><br>The suspition is that we could maybe remove these from 3/10 modules, excluding modules: household compostion, benefits, capital savings, earnings and employment will need a summary of the collected data due to the nature of the information collected, 'Add more' feature.<br><br>
       </div>
 
@@ -656,38 +731,14 @@
     </span>
   </summary>
   <div class="govuk-details__text">
-  Tested in Dundee 8.10.2018 / Five participants.
-  <br>
-  <br>
+  Tested in Sunderland 31.01.2018 / 3 participants.
+  <br><br>
   <strong>What we tested:</strong>
-  <br>
-  How would this work as a linear journey?
-  <br>
-  Does the order of the questions make sense?
-  <br>
-  What questions can we remove?
-  <br>
-  What other tools would an agent need to use to process a claim?
-  <br>
-  <br>
+  <br>XXX
   <strong>Outcome:</strong>
-  <br>
-  Agents were able to navigate through the prototype, although 2 thought they’d reached the end a step early due the label of the CTA on the page.
-  <br>
-  Agents commented that the order of the questions around where the user lives didn’t make sense as they weren’t all grouped together.
-  <br>
-  Agents mentioned being able to use a lot of other tools to double check information users provided, searchlight, CIS, RTI.
-  <br>
-  Agents were concerned users might not understand all the information we need, particularly financial.
-  <br>
-  <br>
+  <br>XXX
   <strong>Next steps:</strong>
-  <br>
-  Investigate how we could use data from other systems, instead of having to ask the user for the information.
-  <br>
-  Test the questions with users to see what they do / don’t understand.
-  <br>
-  Test alternative ways of grouping the questions.
+  <br>XXX
    </div>
 
 
@@ -1355,46 +1406,72 @@
   <h3 class="govuk-heading-m">Methodology</h3>
   <p class="govuk-body">In Alpha we explored 4 ways of capturing data. Our main exploration centered around looking at how the service would work if it was agent and citizen facing, and where else we could get data to increase accuracy. </p>
 
+
   {% from "details/macro.njk" import govukDetails %}
+
+  {% set detailsContentA %}
+    <p class="govuk-body">Explored alternative ordering of questions attempting to eliminate any questions that were not needed for a claim.</p>
+    <p class="govuk-body">Questions were asked in a completely linear fashion (one questions per page.)</p>
+    <p class="govuk-body">We designed with the assumption that this would work for both agents and citizens.</p>
+  {% endset %}
 
  {{ govukDetails({
    summaryText: "Prototype A",
-   text: "Bluk collection of information, this would mean that all information is up to date a the time of claim but still asking alot of questions."
+   html: detailsContentA
  }) }}
 
+ <!------------  ------------>
+
+
  {% from "details/macro.njk" import govukDetails %}
+
+ {% set detailsContentA2 %}
+   <p class="govuk-body">Explored how data could be pulled into a service from other systems. We needed to understand what systems these were and how it could be pulled in. <br><br>Explored what patterns could be used for long applications, something that would work for agents and citizens.<br>This option started to explore whether or not we would still ask the user information if we could get elsewhere.
+ {% endset %}
 
  {{ govukDetails({
    summaryText: "Prototype A.2",
-   text: "Full claim with information being pulled in from other legacy systems."
+   html: detailsContentA2
  }) }}
 
+ <!------------  ------------>
+
  {% from "details/macro.njk" import govukDetails %}
+
+ {% set detailsContentB %}
+   <p class="govuk-body">This design explored if we could only ask the user questions we couldn’t source elsewhere, which we found was 6 questions. The rest of the data would be after call work completed by an agent.<br><br>Our assumption was this process would reduce the amount of questions the user has to answer, and improve accuracy by not relying on the user providing the information.
+ {% endset %}
 
  {{ govukDetails({
    summaryText: "Prototype B",
-   text: "Shorter upfront collection (5 minutes*), only asking information GOV can not retieve via internal sources. Internal work is then done to collate all of the information that GOV has to build the claim (15 minutes*) The final state is to make contact with the cliamant for the second and final time to confirm the detials we have and then pay.(Time unavailable)"
+  html: detailsContentB
  }) }}
 
+ <!------------  ------------>
+
  {% from "details/macro.njk" import govukDetails %}
+
+ {% set detailsContentC %}
+   <p class="govuk-body">This option was created with the assumption it could work for both new claims and change of circumstances.
+     <br><br>The concerns about this was that it meant the form couldn’t be adaptive. It also might not work well as a citizen service as it would increase cognative load.
+ {% endset %}
 
  {{ govukDetails({
    summaryText: "Prototype C",
-   text: "Bulk single page entry, the would be in conjunction with A and or B for example. This would be the place where the data would populate, calculate and payment."
+   html: detailsContentC
  }) }}
+
+ <!------------  ------------>
 
  {% from "details/macro.njk" import govukDetails %}
 
- {{ govukDetails({
-   summaryText: "Prototype D",
-   text: "Further into the future, GOV data is loaded into a claiamnt profile, based on what we have we can add a benefit, or worse case veryfiy a few data items."
- }) }}
-
- {% from "details/macro.njk" import govukDetails %}
+ {% set detailsContentMVP %}
+   <p class="govuk-body">MVP TBC
+ {% endset %}
 
  {{ govukDetails({
    summaryText: "Prototype (M) MVP",
-   text: "MVP details, built using previously tested methods and content. In a sense this is a precursor to A."
+   html: detailsContentMVP
  }) }}
 
 
