@@ -19,24 +19,18 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="hospital-summary" method="post">
 
-        <span class="govuk-caption-m">Notepad</span>
-        <h1 class="govuk-heading-xl">(Hospital dates etc) This is a headline for a note pad page</h1>
+        <span class="govuk-caption-m">Agent notes pages</span>
+        <h1 class="govuk-heading-xl">Information about the claimant's time in hospital.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
+        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need, including:</p>
 
 
-        <ul class="govuk-list">
+        <ul class="govuk-list govuk-list--bullet">
           <li>
-            <p>Items to be aksed in this section</p>
+            the start and end date of each period they have spent in hospital
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
+            whether they were discharged to a care home after any period they spent in hospital
           </li>
         </ul>
 
@@ -45,12 +39,7 @@
         {{ govukTextarea({
           name: "hospital-more-detail",
           id: "hospital-more-detail",
-          label: {
-            text: "Can you provide more detail?"
-          },
-          hint: {
-            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          },
+
           value: data["hospital-more-detail"]
         }) }}
 
