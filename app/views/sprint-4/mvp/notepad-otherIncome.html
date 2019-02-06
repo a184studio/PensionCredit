@@ -19,24 +19,24 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="earnings-and-other-summary" method="post">
 
-        <span class="govuk-caption-m">Notepad</span>
-        <h1 class="govuk-heading-xl">(Other income) This is a headline for a note pad page</h1>
+        <span class="govuk-caption-m">Agent notes page</span>
+        <h1 class="govuk-heading-xl">Information about the claimant's other income.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
+        <p class="govuk-body govuk-!-font-size-19">Include income from renting out a room or any part of their property, Working Tax Credit, foreign pensions or any other income they have not told us about.
+</p>
+
+        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need, including:</p>
 
 
-        <ul class="govuk-list">
+        <ul class="govuk-list govuk-list--bullet">
           <li>
-            <p>Items to be aksed in this section</p>
+            what the income is
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+            how much the income is
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
+            often the income is paid
           </li>
         </ul>
 
@@ -45,12 +45,8 @@
         {{ govukTextarea({
           name: "otherIncome-more-detail",
           id: "otherIncome-more-detail",
-          label: {
-            text: "Can you provide more detail?"
-          },
-          hint: {
-            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          }
+          value: data["other-income-more-detail"]
+
         }) }}
 
 
