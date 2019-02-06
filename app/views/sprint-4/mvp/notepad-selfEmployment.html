@@ -19,24 +19,18 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="earnings-summary" method="post">
 
-        <span class="govuk-caption-m">Notepad</span>
-        <h1 class="govuk-heading-xl">(Self-employment) This is a headline for a note pad page</h1>
+        <span class="govuk-caption-m">Agent notes page</span>
+        <h1 class="govuk-heading-xl">Information about self&#8209;employment</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
+        <p class="govuk-body govuk-!-font-size-19">Have a conversation with the claimant to find out whether the claimant:</p>
 
 
-        <ul class="govuk-list">
+        <ul class="govuk-list govuk-list--bullet">
           <li>
-            <p>Items to be aksed in this section</p>
+            is self-employed now
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
+            was self-employed within 3 months of the claim date
           </li>
         </ul>
 
@@ -45,12 +39,8 @@
         {{ govukTextarea({
           name: "selfEmployment-more-detail",
           id: "selfEmployment-more-detail",
-          label: {
-            text: "Can you provide more detail?"
-          },
-          hint: {
-            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          }
+
+        value: data["self-employed-detail"]
         }) }}
 
 
