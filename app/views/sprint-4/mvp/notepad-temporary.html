@@ -19,38 +19,20 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="temporary-summary" method="post">
 
-        <span class="govuk-caption-m">Notepad</span>
-        <h1 class="govuk-heading-xl">(Temporary) This is a headline for a note pad page</h1>
+        <span class="govuk-caption-m">Agent notes page</span>
+        <h1 class="govuk-heading-xl">Other information about the claim.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
+        <p class="govuk-body govuk-!-font-size-19">Make a note of any other information that is relevant to the claim.</p>
 
 
-        <ul class="govuk-list">
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-        </ul>
+
 
 <br>
 
         {{ govukTextarea({
           name: "temporary-more-detail",
           id: "temporary-more-detail",
-          label: {
-            text: "Can you provide more detail?"
-          },
-          hint: {
-            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          }
+          value: data["other-res-more-detail"]
         }) }}
 
         <!-- Hidden input to set task to complete on task-list -->
