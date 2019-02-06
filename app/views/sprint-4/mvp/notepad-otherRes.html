@@ -19,38 +19,16 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="address-summary" method="post">
 
-        <span class="govuk-caption-m">Notepad</span>
-        <h1 class="govuk-heading-xl">(Other residency) This is a headline for a note pad page</h1>
+        <span class="govuk-caption-m">Agent notes page</span>
+        <h1 class="govuk-heading-xl">Information about the place the claimant lives.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
-
-
-        <ul class="govuk-list">
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-        </ul>
+        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need that is relevant to the claim.</p>
 
 <br>
 
         {{ govukTextarea({
           name: "other-res-more-detail",
           id: "other-res-more-detail",
-          label: {
-            text: "Can you provide more detail?"
-          },
-          hint: {
-            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          },
           value: data["other-res-more-detail"]
         }) }}
 
