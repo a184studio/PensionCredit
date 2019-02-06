@@ -22,86 +22,31 @@
         <span class="govuk-caption-m">Notepad</span>
         <h1 class="govuk-heading-l">Use the following list to help guide the agent through the acounts then need to ask about and find out if any other accounts missing?</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
+        <p class="govuk-body govuk-!-font-size-19">For each type of money, saving or investment, ask the user for all relevant details, including:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+        <li>the amount</li>
+        <li>the name of the account holder</li>
+        <li>the name on the bank or building society accounts</li>
+        <li>the name of the bank, building society or investment company</li>
+        <li>the last 4 digits of the account number</li>
+        <li>the start and end dates of any investment vehicles</li>
+        <li>any changes to amounts that the claimant expects during any backdating period</li>
+        <li>any land or property the claimant owns</li>
+        <li>any significant changes that the claimant expects over the next 12 months</li>
+
+      </ul>
 
 
       {{ govukTextarea({
         name: "MoneyOver10k-more-detail",
         id: "MoneyOver10k-more-detail",
-        label: {
-          text: "Money / Cash"
-        },
-        hint: {
-          text: "Can you provide more detail?"
-        }
+
+        value: data["money-more-detail"]
       }) }}
 
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
-      {{ govukTextarea({
-        name: "MoneyOver10k-savings-more-detail",
-        id: "MoneyOver10k-savings-more-detail",
-        label: {
-          text: "Savings"
-        },
-        hint: {
-          text: "Can you provide more detail?"
-        }
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
-      {{ govukTextarea({
-        name: "MoneyOver10k-investments-more-detail",
-        id: "MoneyOver10k-investments-more-detail",
-        label: {
-          text: "Investments"
-        },
-        hint: {
-          text: "Can you provide more detail?"
-        }
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
-      <p class="govuk-body">
-              <strong>Savings and investments</strong>
-
-              <ul class="govuk-list govuk-list--bullet">
-  <li>Current account,  </li>
-  <li>savings, deposit account,</li>
-  <li>bank, building society or POCA,</li>
-  <li>Cash held at home</li>
-  <li>Premium bonds granny bonds</li>
-  <li>ISAs, PEPs, TESSA only ISAs</li>
-  <li>Income, capital bonds</li>
-  <li>Unit trust, shares</li>
-  <li>Any other Monet help in this country or abroad</li>
-  <li>Are you expecting a lump sum</li>
-
-</ul></p>
-
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-<p class="govuk-body">
-        <strong>Other income</strong>
-
-        <ul class="govuk-list govuk-list--bullet">
-  <li>Money from a boarder, lodger, tenant and subtenants</li>
-  <li>Working tax credit</li>
-  <li>Royalties</li>
-  <li>Money paid from an ex-partner (spousal maintenance)</li>
-  <li>Sick pay</li>
-  <li>Payments from a trust</li>
-  <li>Money from an Equity Release</li>
-  <li>Money from Armed forces compensation scheme</li>
-  <li>Money from a personal injury payment</li>
-
-</ul></p>
+    
 
 
 
