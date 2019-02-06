@@ -19,23 +19,17 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="address-summary" method="post">
 
-        <span class="govuk-caption-m">Notepad</span>
-        <h1 class="govuk-heading-xl">(Sheltered) This is a headline for a note pad page</h1>
+        <span class="govuk-caption-m">Agent notes page</span>
+        <h1 class="govuk-heading-xl">Information about the sheltered accomodation the claimant lives in.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
+        <p class="govuk-body govuk-!-font-size-19">Collect all the information you need, including:</p>
 
-        <ul class="govuk-list">
+        <ul class="govuk-list govuk-list--bullet">
           <li>
-            <p>Items to be aksed in this section</p>
+            whether they own another property
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
-          </li>
-          <li>
-            <p>Items to be aksed in this section</p>
+            whether their stay is funded by the local authority, self-funded or both
           </li>
         </ul>
 
@@ -44,12 +38,7 @@
         {{ govukTextarea({
           name: "sheltered-more-detail",
           id: "sheltered-more-detail",
-          label: {
-            text: "Can you provide more detail?"
-          },
-          hint: {
-            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          },
+        
           value: data['sheltered-more-detail']
         }) }}
 
