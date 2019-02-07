@@ -19,24 +19,41 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="household-summary" method="post">
 
-        <span class="govuk-caption-m">Notepad</span>
-        <h1 class="govuk-heading-xl">(Household composition / Who lives with you) This is a headline for a note pad page</h1>
+        <span class="govuk-caption-m">Agent notes page</span>
+        <h1 class="govuk-heading-xl">Information about other people that live in your home.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">@pete: how do we set instructions for note pad pages?</p>
+        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need about people that live in their home, including:</p>
 
 
-        <ul class="govuk-list">
+        <ul class="govuk-list govuk-list--bullet">
           <li>
-            <p>Items to be aksed in this section</p>
+          their full names
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+            their National insurance number, or Child Benefit Number if they are under 16
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+            their Dates of birth
           </li>
           <li>
-            <p>Items to be aksed in this section</p>
+            whether they are registered blind or severely sight impaired
+          </li>
+          <li>
+            whether they claim DLA or PIP
+          </li>
+        </ul>
+
+<br>
+
+        <p class="govuk-body govuk-!-font-size-19">If the person they live with is a boarder or lodger, ask:</p>
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+          how much they pay the claimant and how often
+          </li>
+          <li>
+            whether the claimant provides cooked meals for them
           </li>
         </ul>
 
@@ -45,12 +62,7 @@
         {{ govukTextarea({
           name: "household-more-detail",
           id: "household-more-detail",
-          label: {
-            text: "Can you provide more detail?"
-          },
-          hint: {
-            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-          },
+        
           value: data["household-more-detail"]
         }) }}
 
