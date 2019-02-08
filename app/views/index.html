@@ -1276,7 +1276,12 @@
               </span>
             </summary>
             <div class="govuk-details__text">
-            Using what we have tested in the previous<br><br>XXX
+              Prototype of the first release for MVP. An initial eligibility gather, which would then dictate which tool would be used to complete the claim.
+              <br>
+              <br><strong>Claim via our tool</strong> Our tool would then gather all the information, minus the items we already know within the DWP.
+              <br>Following the completion of the claim a PDF will be generated and then entered into PTP Cam, all other internal data will be sourced and entered to enable the ability to calculate and pay.
+              <br><br>
+              <strong>PTP Cam / BAU</strong> Based on what was answered within our tool, an agent would only use PTP Cam to make the the full claim if the failed our initial screening.
             </div>
 
 
@@ -1466,7 +1471,12 @@
  {% from "details/macro.njk" import govukDetails %}
 
  {% set detailsContentMVP %}
-   <p class="govuk-body">MVP TBC
+   <p class="govuk-body">Prototype of the first release for MVP. An initial eligibility gather, which would then dictate which tool would be used to complete the claim.
+    <br><br><strong>Claim via our tool</strong> Our tool would then gather all the information, minus the items we already know within the DWP.<br>
+    <br>Following the completion of the claim a PDF will be generated and then entered into PTP Cam, all other internal data will be sourced and entered to enable the ability to calculate and pay.
+    <br><br>
+    <strong>PTP Cam / BAU</strong> Based on what was answered within our tool, an agent would only use PTP Cam to make the the full claim if the failed our initial screening.
+
  {% endset %}
 
  {{ govukDetails({

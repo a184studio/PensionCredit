@@ -34,7 +34,7 @@ router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
   const hasPartner = req.session.data['has-partner']
 
   if (hasPartner === 'Yes') {
-    res.redirect(`${baseUrl}/notepad-partner`)
+    res.redirect(`${baseUrl}/mvp-eligibility-summary`)
   } else {
     res.redirect(`${baseUrl}/mvp-eligibility-summary`)
   }
