@@ -34,23 +34,41 @@
 
         {{ govukSummaryList({
           rows: [
-            {
-              key: {
-                text: "Who are you claiming pension credit for?"
-              },
-              value: {
-                text: data['claiming-for']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "who-is-caller",
-                    text: "Change",
-                    visuallyHiddenText: "who the caller is"
-                  }
-                ]
-              }
+          {
+            key: {
+              text: "Who are you claiming pension credit for?"
             },
+            value: {
+              text: data['claiming-for']
+            },
+            actions: {
+              items: [
+                {
+                  href: "who-is-caller",
+                  text: "Change",
+                  visuallyHiddenText: "who the caller is"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "PC1 notepad"
+            },
+            value: {
+              text: data['pc1-more-detail']
+            },
+            actions: {
+              items: [
+                {
+                  href: "who-is-caller",
+                  text: "Change",
+                  visuallyHiddenText: "PC1 Detials"
+                }
+              ]
+            }
+          },
             {
               key: {
                 text: "Name"
