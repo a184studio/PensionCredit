@@ -96,8 +96,14 @@ text-transform: capitalize;
 .app-task-list-pc{
  padding-left: 0 !important;
  list-style: none;
+ border-bottom: 0 !important;
+padding-bottom:0;
 }
 
 .li-pc{
      list-style:none;
+}
+
+.govuk-section-break-hidden{
+ border-style: hidden !important;
 }
