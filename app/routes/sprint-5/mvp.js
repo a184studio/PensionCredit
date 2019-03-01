@@ -265,7 +265,7 @@ router.post(`${baseUrl}/anyone-living-with-you-router`, (req, res) => {
 router.post(`${baseUrl}/has-private-pension-router`, (req, res) => {
   const otherPensions = req.session.data['has-private-pension']
 
-  if (otherPensions === 'Yes') {
+  if (otherPensions === 'yes') {
     res.redirect(`${baseUrl}/notepad-otherPensions`)
   } else {
     res.redirect(`${baseUrl}/notional-summary`)
