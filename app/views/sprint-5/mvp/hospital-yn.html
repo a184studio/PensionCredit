@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you live with a partner? - Pension Credit
+  Have you spent any time in hospital recently? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -22,7 +22,7 @@
         name: "hospital-yn",
         fieldset: {
           legend: {
-            text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),
+            text: "Have you spent any time in hospital recently? <or> since " + (data['back-dating-date'] | formatDate),
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }

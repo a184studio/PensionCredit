@@ -263,7 +263,7 @@ router.post(`${baseUrl}/anyone-living-with-you-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/has-private-pension-router`, (req, res) => {
-  const otherPensions = req.session.data['people-in-home']
+  const otherPensions = req.session.data['has-private-pension']
 
   if (otherPensions === 'Yes') {
     res.redirect(`${baseUrl}/notepad-otherPensions`)

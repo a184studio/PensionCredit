@@ -18,19 +18,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="notepad-otherPensions" method="post" class="form">
+    <form action="has-private-pension-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "has-private-pensions",
-        name: "has-private-pensions",
+        idPrefix: "otherPensions",
+        name: "otherPensions",
         fieldset: {
           legend: {
-            text: "(Notional income??) (Have you paid into any occ, or private pensions scheme that you have not yet claimed) Do you get a private, workplace or any other pension? ",
+            text: "Have you paid into a private pension scheme which you are yet to receive any money from?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@nick/@pete: What are we trying to find out here. Is it anything that we have no visablity of within NIRS? How do we phrase this question. // This does not include your State Pension"
+          text: "Agent action: possibly have NIRS open and eyeball what the user is saying"
         },
         classes: "govuk-radios",
         items: [
