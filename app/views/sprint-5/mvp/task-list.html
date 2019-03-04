@@ -204,9 +204,15 @@
                 <a class="app-task-list__task-name" href="has-foreign-pension" aria-describedby="eligibility-completed">
                   Foreign pensions
                 </a>
+                {% if data["all-other-pensions-summary"] %}
+                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+                {% endif %}
+              </li>
               </li>
               <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="notional-summary" aria-describedby="eligibility-completed">
+                <a class="app-task-list__task-name" href="all-other-pensions-summary" aria-describedby="eligibility-completed">
                   (Hidden) Summary
                 </a>
               </li>

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Pre-declaration - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="pre-declaration-router" method="post" class="form">
+      {{ govukRadios({
+        idPrefix: "preDeclaration",
+        name: "preDeclaration",
+        fieldset: {
+          legend: {
+            text: "Pre-declaration",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "@pete."
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes, I agree",
+            checked: (data["preDeclaration"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No, I don't agree, leave",
+            checked: (data["preDeclaration"] == "No")
+          }
+        ]
+      }) }}
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="X" value="true"/>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
