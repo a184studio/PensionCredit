@@ -292,16 +292,18 @@ router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
   }
 })
 
-
 router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
-  const preDeclaration = req.session.data['pre-declaration']
+//name of information needed
+  const preDeclaration = req.session.data['pre-declaration']  // page name and id, name
 
-  if (preDeclaration === 'Yes') {
-    res.redirect(`${baseUrl}/who-is-calling`)
+  if (preDeclaration === 'Yes') { //id, name
+    res.redirect(`${baseUrl}/who-is-caller`)
   } else {
     res.redirect(`${baseUrl}/out-declaration`)
   }
 })
+
+
 
 
 

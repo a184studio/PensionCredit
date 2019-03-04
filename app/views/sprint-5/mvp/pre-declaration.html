@@ -16,28 +16,28 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="pre-declaration-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "preDeclaration",
-        name: "preDeclaration",
+        idPrefix: "pre-declaration",
+        name: "pre-declaration",
         fieldset: {
           legend: {
-            text: "Pre-declaration",
+            text: "Lets talk about the pre-declaration",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@pete."
+          text: "@pete lets add something in here."
         },
         classes: "govuk-radios",
         items: [
           {
             value: "Yes",
-            text: "Yes, I agree",
+            text: "Yes",
             checked: (data["preDeclaration"] == "Yes")
           },
           {
             value: "No",
-            text: "No, I don't agree, leave",
+            text: "No",
             checked: (data["preDeclaration"] == "No")
           }
         ]
