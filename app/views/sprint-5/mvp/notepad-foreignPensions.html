@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  NotePad - Area
+  NotePad - foreign Pension
 {% endblock %}
 
 {% block header %}
@@ -17,10 +17,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="unclaimed-pensions-summary" method="post">
+      <form action="all-other-pensions-summary" method="post">
 
         <span class="govuk-caption-m">Agent notes page</span>
-        <h1 class="govuk-heading-xl">Information about private pension scheme that the claimant has not claimed.</h1>
+        <h1 class="govuk-heading-xl">Information about foreign Pensions</h1>
 
         <p class="govuk-body govuk-!-font-size-19"><strong>Have a conversation with the claimant to:</strong></p>
 
@@ -65,8 +65,8 @@
 <br>
 
         {{ govukTextarea({
-          name: "otherPension-more-detail",
-          id: "otherPension-more-detail",
+          name: "foreignPension-more-detail",
+          id: "foreignPension-more-detail",
           label: {
             text: "Make notes about the outcome of this converation"
           }

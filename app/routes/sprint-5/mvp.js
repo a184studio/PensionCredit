@@ -268,7 +268,17 @@ router.post(`${baseUrl}/has-private-pension-router`, (req, res) => {
   if (otherPensions === 'yes') {
     res.redirect(`${baseUrl}/notepad-otherPensions`)
   } else {
-    res.redirect(`${baseUrl}/notional-summary`)
+    res.redirect(`${baseUrl}/has-foreign-pension`)
+  }
+})
+
+router.post(`${baseUrl}/has-foreign-pension-router`, (req, res) => {
+  const foreignPension = req.session.data['has-foreign-pension']
+
+  if (foreignPension === 'yes') {
+    res.redirect(`${baseUrl}/notepad-foreignPensions`)
+  } else {
+    res.redirect(`${baseUrl}/all-other-pensions-summary`)
   }
 })
 
