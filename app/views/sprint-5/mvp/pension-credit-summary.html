@@ -617,23 +617,38 @@ Address
                 </a>
               </dd>
             </div>
-          {% endif %}
-          {% if data["rent-housing-council-tax"] %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                In receipt housing benefit and council tax reduction
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data["rent-housing-council-tax"]}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="rent-housing-council-tax">
-                  Change
-                </a>
-              </dd>
-            </div>
-          {% endif %}
-        </dl>
+            {% endif %}
+            {% if data["rent-housing-council-tax"] %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Rent + Service charges
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data["rent-service-charges"]}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="rent-service-charges">
+                    Change
+                  </a>
+                </dd>
+              </div>
+              {% endif %}
+              {% if data["rent-housing-council-tax"] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    In receipt housing benefit and council tax reduction
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data["rent-housing-council-tax"]}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="rent-housing-council-tax">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+            </dl>
 
   </div>
 </div>

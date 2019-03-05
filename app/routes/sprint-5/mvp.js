@@ -183,7 +183,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/service-charges`)
   }
   else if (homeOwnership === 'Rented') {
-    res.redirect(`${baseUrl}/rent-housing-council-tax`)
+    res.redirect(`${baseUrl}/rent-service-charges`)
   }
   else if (homeOwnership === 'Care Home') {
     res.redirect(`${baseUrl}/notepad-careHome`)
@@ -300,6 +300,17 @@ router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
     res.redirect(`${baseUrl}/who-is-caller`)
   } else {
     res.redirect(`${baseUrl}/out-declaration`)
+  }
+})
+
+router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
+//name of information needed
+  const preDeclaration = req.session.data['rent-service-charges']  // page name and id, name
+
+  if (preDeclaration === 'Yes') { //id, name
+    res.redirect(`${baseUrl}/who-is-caller`)
+  } else {
+    res.redirect(`${baseUrl}/rent-housing-council-tax`)
   }
 })
 
