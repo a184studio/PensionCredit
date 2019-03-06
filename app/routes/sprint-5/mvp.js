@@ -315,9 +315,9 @@ router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/privacy-policy-router`, (req, res) => {
-  const privacypolicy = req.session.data['agrees-privacy']
+  const privacyPolicy = req.session.data['agrees-privacy']
 
-  if (privacypolicy === 'yes') {
+  if (privacyPolicy === 'yes') {
     res.redirect(`${baseUrl}/pre-declaration`)
   } else {
     res.redirect(`${baseUrl}/out-declaration`)
