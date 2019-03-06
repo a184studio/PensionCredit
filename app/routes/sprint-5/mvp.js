@@ -296,14 +296,14 @@ router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
 //name of information needed
   const preDeclaration = req.session.data['pre-declaration']  // page name and id, name
 
-  if (preDeclaration === 'Yes') { //id, name
+  if (preDeclaration === 'Agree') { //id, name
     res.redirect(`${baseUrl}/who-is-caller`)
   } else {
     res.redirect(`${baseUrl}/out-declaration`)
   }
 })
 
-router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
+router.post(`${baseUrl}/rent-charges-service-router`, (req, res) => {
 //name of information needed
   const rentServiceCharges = req.session.data['rent-service-charges']  // page name and id, name
 
@@ -317,7 +317,7 @@ router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
 router.post(`${baseUrl}/privacy-policy-router`, (req, res) => {
   const privacyPolicy = req.session.data['agrees-privacy']
 
-  if (privacyPolicy === 'yes') {
+  if (privacyPolicy === 'Agree') {
     res.redirect(`${baseUrl}/pre-declaration`)
   } else {
     res.redirect(`${baseUrl}/out-declaration`)
