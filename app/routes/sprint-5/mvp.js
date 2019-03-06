@@ -310,11 +310,19 @@ router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
   if (preDeclaration === 'Yes') { //id, name
     res.redirect(`${baseUrl}/who-is-caller`)
   } else {
-    res.redirect(`${baseUrl}/rent-housing-council-tax`)
+    res.redirect(`${baseUrl}/out-decaration`)
   }
 })
 
+router.post(`${baseUrl}/privacy-policy-router`, (req, res) => {
+  const privacypolicy = req.session.data['agrees-privacy']
 
+  if (privacypolicy === 'yes') {
+    res.redirect(`${baseUrl}/pre-declaration`)
+  } else {
+    res.redirect(`${baseUrl}/out-declaration`)
+  }
+})
 
 
 
