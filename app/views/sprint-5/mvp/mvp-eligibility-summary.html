@@ -20,7 +20,43 @@
 
       {{ govukSummaryList({
         rows: [
-          {
+        {
+          key: {
+            text: "Start teams agreement"
+          },
+          value: {
+            text: data['start-yn']
+          },
+          actions: {
+            items: [
+              {
+                href: "start",
+                text: "Change",
+                visuallyHiddenText: "Agreed to pre-declaration"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Pre-declaration decision"
+          },
+          value: {
+            text: data['pre-declaration']
+          },
+          actions: {
+            items: [
+              {
+                href: "pre-declaration",
+                text: "Change",
+                visuallyHiddenText: "Agreed to pre-declaration"
+              }
+            ]
+          }
+        },
+
+        {
             key: {
               text: "Who are you claiming pension credit for?"
             },
