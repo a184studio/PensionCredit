@@ -20,24 +20,24 @@
         name: "pre-declaration",
         fieldset: {
           legend: {
-            text: "Lets talk about the pre-declaration",
+            text: "Pre-declaration",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@pete lets add something in here."
+          text: "@pete Talk about what it is the caimant is agreeing to"
         },
         classes: "govuk-radios",
         items: [
           {
             value: "Yes",
-            text: "Yes",
+            text: "Agree",
             checked: (data["preDeclaration"] == "Yes")
           },
           {
             value: "No",
-            text: "No",
+            text: "Disagree (leave application)",
             checked: (data["preDeclaration"] == "No")
           }
         ]
