@@ -305,9 +305,9 @@ router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
 
 router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
 //name of information needed
-  const preDeclaration = req.session.data['rent-service-charges']  // page name and id, name
+  const rentServiceCharges = req.session.data['rent-service-charges']  // page name and id, name
 
-  if (preDeclaration === 'Yes') { //id, name
+  if (rentServiceCharges === 'Yes') { //id, name
     res.redirect(`${baseUrl}/who-is-caller`)
   } else {
     res.redirect(`${baseUrl}/out-decaration`)

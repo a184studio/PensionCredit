@@ -33,19 +33,16 @@
             classes: "govuk-fieldset__legend--m"
           }
         },
-        hint: {
-          text: "@pete Talk about what it is the claimant is agreeing too and that they understand the rules upfront"
-        },
         classes: "govuk-radios",
         items: [
           {
             value: "Yes",
-            text: "Agree",
+            text: "Yes",
             checked: (data["preDeclaration"] == "Yes")
           },
           {
             value: "No",
-            text: "Disagree (leave application)",
+            text: "No",
             checked: (data["preDeclaration"] == "No")
           }
         ]
