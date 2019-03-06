@@ -24,7 +24,7 @@
 
       <p class="govuk-body">
         We are doing some final checks on your application. We will write to you
-        by 15 January either to confirm your award or ask you for more information.
+        by <strong>DD / Month / Year (two weeks) </strong> either to confirm your award or ask you for more information.
       </p>
 
       <h3 class="govuk-heading-m">If anything changes</h3>
@@ -41,6 +41,21 @@
         <li>changes to the value of your savings, investments or property</li>
         <li>if you go into hospital or a care home for more than 4 weeks</li>
       </ul>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m">Agent: Next steps</h3>
+
+      <p class="govuk-body">
+        Once the call is ended and you have downloaded a copy of the PDF you can exit this page via the link below.
+      </p>
+
+      {{ govukButton({
+        text: "Finish and close",
+        href: "start"
+      }) }}
+
+
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
