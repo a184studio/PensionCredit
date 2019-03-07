@@ -42,6 +42,36 @@ router.get('/get-eligibility-pdf', async (req, res, next) => {
             value: `${formData['dob-day']} ${getMonth(formData['dob-month'])} ${formData['dob-year']}`
           }
         ]
+      },
+      {
+        heading: 'Partner',
+        fields: [
+          {
+            key: 'Do you have a partner?',
+            value: formData['has-partner']
+          },
+          {
+            key: 'Partner notes',
+            value: formData['partner-more-detail']
+          }
+        ]
+      },
+      {
+        heading: 'Residency',
+        fields: [
+          {
+            key: 'Do you live in the UK?',
+            value: formData['resides-in-uk']
+          },
+          {
+            key: 'Have you lived in UK for 2 years?',
+            value: formData['lived-abroad']
+          },
+          {
+            key: 'Are you a UK National?',
+            value: formData['uk-national']
+          }
+        ]
       }
     ]
   }

@@ -94,6 +94,7 @@ const template = data => html`
         .section-header, .field-name, .field-value, .action-required {
           float: left;
           padding: 8mm 0;
+          page-break-inside: avoid;
         }
 
         .section-header {
