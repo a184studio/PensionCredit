@@ -76,14 +76,12 @@ router.get('/get-eligibility-pdf', async (req, res, next) => {
     ]
   }
 
-  res.setHeader('Content-disposition', 'attachment; filename=eligibility.pdf')
-  res.setHeader('Content-type', 'application/pdf')
-
   try {
     const pdf = await getPdf(pdfData)
+    res.setHeader('Content-disposition', 'attachment; filename=eligibility.pdf')
+    res.setHeader('Content-type', 'application/pdf')
     res.send(pdf)
   } catch (error) {
-    console.error(error)
     next(error)
   }
 })
