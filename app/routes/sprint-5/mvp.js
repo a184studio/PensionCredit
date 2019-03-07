@@ -316,6 +316,16 @@ router.post(`${baseUrl}/privacy-policy-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/otherIncome-router`, (req, res) => {
+//name of information needed
+  const otherIncome = req.session.data['other-income']  // page name and id, name
+
+  if (otherIncome === 'Yes') { //id, name
+    res.redirect(`${baseUrl}/notepad-otherIncome`)
+  } else {
+    res.redirect(`${baseUrl}/earnings-and-other-summary`)
+  }
+})
 
 
 

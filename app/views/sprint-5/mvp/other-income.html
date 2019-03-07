@@ -18,7 +18,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="notepad-otherIncome" method="post" class="form">
+    <form action="otherIncome-router" method="post" class="form">
 
 
       {{ govukRadios({
@@ -37,14 +37,14 @@
         classes: "govuk-radios",
         items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
-            checked: (data["otherIncome"] == "yes")
+            checked: (data["otherIncome"] == "Yes")
           },
           {
-            value: "no",
+            value: "No",
             text: "No",
-            checked: (data["otherIncome"] == "no")
+            checked: (data["otherIncome"] == "No")
           }
         ]
       }) }}

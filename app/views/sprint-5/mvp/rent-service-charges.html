@@ -23,7 +23,7 @@
           id: "rent-service-charges",
           name: "rent-service-charges",
           classes: "govuk-input--width-20",
-          value: data["service-charges"]
+          value: data["rentServiceChargesdata"]
         }) }}
       {% endset %}
 
@@ -48,12 +48,12 @@
             conditional: {
               html: serviceCharges
             },
-            checked: (data["rent-service-charges"] == "yes")
+            checked: (data["rentServiceChargesYN"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["rent-service-charges"] == "no")
+            checked: (data["rentServiceChargesYN"] == "no")
           }
         ]
       }) }}
