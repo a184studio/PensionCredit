@@ -48,6 +48,10 @@ module.exports = function (env) {
       const sanitised = money ? money.replace(/[^0-9.]/g, '') : 0
       return GBP.format(sanitised)
     },
+    formatNINO (nino = '') {
+      const noSpacesUppercase = nino.replace(/\s+/g, '').toUpperCase()
+      return [...noSpacesUppercase].reduce((a, b, i) => i % 2 ? a + b : a + ' ' + b)
+    },
     formatJSON (object) {
       return JSON.stringify(object, null, '  ')
     },
