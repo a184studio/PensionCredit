@@ -22,8 +22,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "other-income",
-        name: "other-income",
+        idPrefix: "otherIncome",
+        name: "otherIncome",
         fieldset: {
           legend: {
             text: "Do you have any other regular income?",
@@ -39,12 +39,12 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["other-income"] == "yes")
+            checked: (data["otherIncome"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["other-income"] == "no")
+            checked: (data["otherIncome"] == "no")
           }
         ]
       }) }}

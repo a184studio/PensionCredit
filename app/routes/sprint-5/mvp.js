@@ -116,15 +116,6 @@ router.post(`${baseUrl}/self-employed-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/other-income-router`, (req, res) => {
-  const otherIncome = req.session.data['other-income']
-
-  if (otherIncome === 'yes') {
-    res.redirect(`${baseUrl}/notepad-otherIncome`)
-  } else {
-    res.redirect(`${baseUrl}/money-summary`)
-  }
-})
 
 router.post(`${baseUrl}/type-of-account-router`, (req, res) => {
   const accountType = req.session.data['account-type']
@@ -323,6 +314,11 @@ router.post(`${baseUrl}/privacy-policy-router`, (req, res) => {
     res.redirect(`${baseUrl}/out-declaration`)
   }
 })
+
+
+
+
+
 
 
 
