@@ -19,7 +19,7 @@ System check for exitsting claim: Yes / No - Pension Credit
         name: "existing-claim",
         fieldset: {
           legend: {
-            text: "System check for exitsting claim: Yes / No",
+            text: "System check for exitsting claim: Exitsting / New",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -31,12 +31,12 @@ System check for exitsting claim: Yes / No - Pension Credit
         items: [
           {
             value: "Yes",
-            text: "If yes (Task list)",
+            text: "Existing / Task list",
             checked: (data["existing-claim"] == "Yes")
           },
           {
             value: "No",
-            text: "If no (Continue)",
+            text: "New / Continue",
             checked: (data["existing-claim"] == "No")
           }
         ]
