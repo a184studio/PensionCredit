@@ -305,10 +305,10 @@ router.post(`${baseUrl}/rent-charges-service-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/privacy-policy-router`, (req, res) => {
-  const privacyPolicy = req.session.data['agrees-privacy']
+router.post(`${baseUrl}/privacy-policy-router`, (req, res) => { // router name
+  const privacyPolicy = req.session.data['agrees-privacy']  // name of data / id name
 
-  if (privacyPolicy === 'Agree') {
+  if (privacyPolicy === 'Agree') { // name of data / + answer
     res.redirect(`${baseUrl}/pre-declaration`)
   } else {
     res.redirect(`${baseUrl}/out-declaration`)
@@ -316,17 +316,16 @@ router.post(`${baseUrl}/privacy-policy-router`, (req, res) => {
 })
 
 
-router.post(`${baseUrl}/otherIncome-router`, (req, res) => {
-//name of information needed
-  const otherIncome = req.session.data['other-income']  // page name and id, name
+router.post(`${baseUrl}/otherIncome-router`, (req, res) => { // router name
 
-  if (otherIncome === 'Yes') { //id, name
+  const otherIncome = req.session.data['other-Income']  // name of data / id name
+
+  if (otherIncome === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/notepad-otherIncome`)
   } else {
     res.redirect(`${baseUrl}/earnings-and-other-summary`)
   }
 })
-
 
 
 
