@@ -177,7 +177,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/rent-service-charges`)
   }
   else if (homeOwnership === 'Care Home') {
-    res.redirect(`${baseUrl}/notepad-careHome`)
+    res.redirect(`${baseUrl}/notepad-carehome`)
   }
   else if (homeOwnership === 'Sheltered Accommodation') {
     res.redirect(`${baseUrl}/notepad-sheltered`)
