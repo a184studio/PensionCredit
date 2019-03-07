@@ -284,21 +284,19 @@ router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
-//name of information needed
-  const preDeclaration = req.session.data['pre-declaration']  // page name and id, name
+  const preDeclaration = req.session.data['pre-declaration']
 
-  if (preDeclaration === 'Agree') { //id, name
+  if (preDeclaration === 'Agree') {
     res.redirect(`${baseUrl}/who-is-caller`)
   } else {
     res.redirect(`${baseUrl}/out-declaration`)
   }
 })
 
-router.post(`${baseUrl}/rent-charges-service-router`, (req, res) => {
-//name of information needed
-  const rentServiceCharges = req.session.data['rent-service-charges']  // page name and id, name
+router.post(`${baseUrl}/rent-charges-service-router`, (req, res) => {// router name
+  const rentServiceCharges = req.session.data['rent-service-charges'] // name of data / id name
 
-  if (rentServiceCharges === 'Yes') { //id, name
+  if (rentServiceCharges === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/who-is-caller`)
   } else {
     res.redirect(`${baseUrl}/out-decaration`)
