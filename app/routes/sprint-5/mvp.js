@@ -117,26 +117,6 @@ router.post(`${baseUrl}/self-employed-router`, (req, res) => {
 })
 
 
-router.post(`${baseUrl}/type-of-account-router`, (req, res) => {
-  const accountType = req.session.data['account-type']
-
-  if (accountType === 'uk') {
-    res.redirect(`${baseUrl}/uk-account`)
-  } else {
-    res.redirect(`${baseUrl}/international-account`)
-  }
-})
-
-router.post(`${baseUrl}/type-of-account-router`, (req, res) => {
-  const accountType = req.session.data['account-type']
-
-  if (accountType === 'uk') {
-    res.redirect(`${baseUrl}/uk-account`)
-  } else {
-    res.redirect(`${baseUrl}/international-account`)
-  }
-})
-
 router.post(`${baseUrl}/mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['has-mortgage']
 
@@ -325,9 +305,20 @@ router.post(`${baseUrl}/otherIncome-router`, (req, res) => { // router name
   }
 })
 
+router.post(`${baseUrl}/type-of-account-router`, (req, res) => { // router name
 
+  const accountType = req.session.data['account-type']  // name of data / id name
 
-
+  if (accountType === 'uk') { // name of data / + answer
+    res.redirect(`${baseUrl}/uk-account`)
+  }
+  else if (accountType === 'SPA') {
+    res.redirect(`${baseUrl}/bank-account-summary`)
+  }
+  else if (accountType === 'International') {
+    res.redirect(`${baseUrl}/international-account`)
+  }
+})
 
 
 module.exports = router
