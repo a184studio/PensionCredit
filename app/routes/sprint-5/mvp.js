@@ -309,13 +309,13 @@ router.post(`${baseUrl}/type-of-account-router`, (req, res) => { // router name
 
   const accountType = req.session.data['account-type']  // name of data / id name
 
-  if (accountType === 'UK') { // name of data / + answer
-    res.redirect(`${baseUrl}/uk-account`)
+  if (accountType === 'UK bank account') { // name of data / + answer
+    res.redirect(`${baseUrl}/uk-account`) // forward page
   }
-  else if (accountType === 'SPA') {
+  else if (accountType === 'State Pension account (Via PTPCam)') {
     res.redirect(`${baseUrl}/bank-account-summary`)
   }
-  else if (accountType === 'International') {
+  else if (accountType === 'International bank account') {
     res.redirect(`${baseUrl}/international-account`)
   }
 })
