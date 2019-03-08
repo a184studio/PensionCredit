@@ -373,14 +373,7 @@
         Date
       </dt>
       <dd class="govuk-summary-list__value">
-        {% if data["claim-date"] == "Today" %}
-          {% set today = '' | formatDate %}
-          {{ today }}
-        {% elif data["claim-date"] == "SPA Entitlement" %}
-          {{ data['back-dating-date'] | formatDate }}
-        {% elif data["claim-date"] == "Alternative date" %}
-          {{ data['alternate-date-day'] + ' ' + (data['alternate-date-month'] | getMonth) + ' ' + data['alternate-date-year'] }}
-        {% endif %}
+        {{ data["claim-date"] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="claim-date">
@@ -1520,7 +1513,7 @@ Payment<br>details
 
 <p class="govuk-body">
   Remember to download this PDF and add it to PTP CAM<br>
-  <a href="/get-eligibility-pdf" class="govuk-link">
+  <a href="/get-summary-pdf" class="govuk-link">
     Download (PDF)
   </a>
 </p>

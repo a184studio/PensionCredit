@@ -12,23 +12,30 @@ const escapeHtml = string => {
     .replace(/'/g, '&#39;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
+    .replace(/\n+/g, '<br/>')
 }
 
 const renderSections = section => html`
   <div class="section">
-    <h2 class="section-header">${escapeHtml(section.heading)}</h2>
+    <h2 class="section-header">
+      ${escapeHtml(section.heading)}
+    </h2>
     ${section.fields.map(renderFields).join('')}
   </div>
 `
 
-const renderFields = field => html`
-  <h3 class="field-name">${escapeHtml(field.key)}</h3>
-  <p class="field-value">${escapeHtml(field.value)}</p>
+const renderFields = field => field.value ? html`
+  <h3 class="field-name">
+    ${escapeHtml(field.key)}
+  </h3>
+  <p class="field-value">
+    ${escapeHtml(Array.isArray(field.value) ? field.value.join(', ') : field.value || '—')}
+  </p>
   ${field.furtherAction && html`
     <p class="action-required circle"><span>Further action required</span></p>
   `}
   <hr/>
-`
+` : ''
 
 const template = data => html`
   <!DOCTYPE html>

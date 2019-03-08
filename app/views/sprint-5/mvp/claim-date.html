@@ -62,12 +62,12 @@
           },
           items: [
             {
-              value: "Today",
+              value: today,
               text: "Today (" + today + ")",
               checked: (data["claim-date"] == "Today")
             },
             {
-              value: "SPA Entitlement",
+              value: data['back-dating-date'] | formatDate,
               text: "Backdated to (" + (data['back-dating-date'] | formatDate) + ")",
               checked: (data["claim-date"] == "SPA Entitlement")
             },

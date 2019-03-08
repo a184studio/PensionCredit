@@ -39,17 +39,8 @@
             </li>
 
             <li class="app-task-list__item">
-              {% set today = '' | formatDate %}
-
               <a class="app-task-list__task-name" href="claim-date" aria-describedby="eligibility-completed">
-                Claim start date
-                {% if data["claim-date"] == "Today" %}
-                  ({{ today }})
-                {% elif data["claim-date"] == "SPA Entitlement" %}
-                  ({{ data['back-dating-date'] | formatDate }})
-                {% elif data["claim-date"] == "Alternative date" %}
-                  ({{ data['alternate-date-day'] + ' ' + (data['alternate-date-month'] | getMonth) + ' ' + data['alternate-date-year'] }})
-                {% endif %}
+                Claim start date {{ data["claim-date"] }}
               </a>
               {% if data["claim-date-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>

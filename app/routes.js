@@ -12,5 +12,6 @@ router.use(require('./routes/sprint-5/new-claims'))
 router.use(require('./routes/sprint-5/mvp'))
 router.use(require('./routes/declaration-test/dec'))
 router.use(require('./routes/pdf'))
+router.use(require('./routes/pdf-summary'))
 
 module.exports = router

@@ -5,6 +5,7 @@ const startOfDay = require('date-fns/start_of_day')
 const subMonths = require('date-fns/sub_months')
 const got = require('got')
 const fs = require('fs')
+const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
 const baseUrl = '/sprint-5/mvp'
@@ -325,9 +326,17 @@ router.post(`${baseUrl}/otherIncome-router`, (req, res) => { // router name
   }
 })
 
+router.post(`${baseUrl}/claim-date-router`, (req, res) => { // router name
+  const claimDate = req.session.data['claim-date'];
 
+  if (claimDate === 'Alternative date') {
+    req.session.data['claim-date'] =
+      data['alternate-date-day'] + ' ' +
+      getMonth(data['alternate-date-month']) + ' ' +
+      data['alternate-date-year']
+  }
 
-
-
+  res.redirect(`${baseUrl}/task-list`)
+})
 
 module.exports = router
