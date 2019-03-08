@@ -19,81 +19,179 @@
       Bank account detials
     </h1>
 
-    <dl class="govuk-summary-list govuk-summary-list--long">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Type of account
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Bank account
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="uk-account">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name on account
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data["name-on-account"] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="uk-account">
-            Change
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Sort code
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data["sort-code"] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="uk-account">
-            Change
-          </a>
-        </dd>
-      </div>
+    {% if data["account-type"] == "UK bank account" %}
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Type of account"
+            },
+            value: {
+              text: data["account-type"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "account-type",
+                  text: "Change",
+                  visuallyHiddenText: "type of account"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name on account"
+            },
+            value: {
+              text: data["name-on-account"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name on account"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Sort code"
+            },
+            value: {
+              text: data["sort-code"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "sort code"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Account number"
+            },
+            value: {
+              text: data["account-number"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "account number"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    {% endif %}
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Account number
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data["account-number"] }}
-        </dd>
+    {% if data["account-type"] == "State Pension account (Via PTPCam)" %}
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Type of account"
+            },
+            value: {
+              text: data["account-type"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "account-type",
+                  text: "Change",
+                  visuallyHiddenText: "type of account"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    {% endif %}
 
-        <dd class="govuk-summary-list__actions">
-          <a href="uk-account">
-            Change
-          </a>
-        </dd>
-      </div>
-
-      {% if data["roll-number"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Roll number
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{ data["roll-number"] }}
-          </dd>
-
-          <dd class="govuk-summary-list__actions">
-            <a href="uk-account">
-              Change
-            </a>
-          </dd>
-        </div>
-      {% endif %}
-      </dl>
-
-<br>
+    {% if data["account-type"] == "International bank account" %}
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Type of account"
+            },
+            value: {
+              text: data["account-type"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "account-type",
+                  text: "Change",
+                  visuallyHiddenText: "type of account"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name on account"
+            },
+            value: {
+              text: data["name-on-int-account"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name on account"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Swift code"
+            },
+            value: {
+              text: data["swift-code"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Swift code"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "IBAN"
+            },
+            value: {
+              text: data["iban-number"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "iban"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    {% endif %}
 
     <form action="task-list" method="post">
       <input type="hidden" name="bank-complete" value="true"/>

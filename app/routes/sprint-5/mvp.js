@@ -118,26 +118,6 @@ router.post(`${baseUrl}/self-employed-router`, (req, res) => {
 })
 
 
-router.post(`${baseUrl}/type-of-account-router`, (req, res) => {
-  const accountType = req.session.data['account-type']
-
-  if (accountType === 'uk') {
-    res.redirect(`${baseUrl}/uk-account`)
-  } else {
-    res.redirect(`${baseUrl}/international-account`)
-  }
-})
-
-router.post(`${baseUrl}/type-of-account-router`, (req, res) => {
-  const accountType = req.session.data['account-type']
-
-  if (accountType === 'uk') {
-    res.redirect(`${baseUrl}/uk-account`)
-  } else {
-    res.redirect(`${baseUrl}/international-account`)
-  }
-})
-
 router.post(`${baseUrl}/mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['has-mortgage']
 
@@ -314,7 +294,6 @@ router.post(`${baseUrl}/privacy-policy-router`, (req, res) => { // router name
   }
 })
 
-
 router.post(`${baseUrl}/otherIncome-router`, (req, res) => { // router name
 
   const otherIncome = req.session.data['other-Income']  // name of data / id name
@@ -323,6 +302,21 @@ router.post(`${baseUrl}/otherIncome-router`, (req, res) => { // router name
     res.redirect(`${baseUrl}/notepad-otherIncome`)
   } else {
     res.redirect(`${baseUrl}/earnings-and-other-summary`)
+  }
+})
+
+router.post(`${baseUrl}/type-of-account-router`, (req, res) => { // router name
+
+  const accountType = req.session.data['account-type']  // name of data / id name
+
+  if (accountType === 'UK bank account') { // name of data / + answer
+    res.redirect(`${baseUrl}/uk-account`) // forward page
+  }
+  else if (accountType === 'State Pension account (Via PTPCam)') {
+    res.redirect(`${baseUrl}/bank-account-summary`)
+  }
+  else if (accountType === 'International bank account') {
+    res.redirect(`${baseUrl}/international-account`)
   }
 })
 

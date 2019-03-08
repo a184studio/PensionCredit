@@ -14,7 +14,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="type-of-account-router" method="post" class="form">
+      <form action="type-of-account-router" method="post" class="form">
+
       {{ govukRadios({
         idPrefix: "account-type",
         name: "account-type",
@@ -27,19 +28,19 @@
         },
         items: [
           {
-            value: "uk",
+            value: "UK bank account",
             text: "UK bank, building society or credit union account",
-            checked: (data["account-type"] == "uk")
+            checked: (data["accountType"] == "UK bank account")
           },
           {
-            value: "spaa",
+            value: "State Pension account (Via PTPCam)",
             text: "Pay into same account as State Pension",
-            checked: (data["account-type"] == "SPA")
+            checked: (data["accountType"] == "State Pension account (Via PTPCam)")
           },
           {
-            value: "international",
+            value: "International bank account",
             text: "International bank account",
-            checked: (data["account-type"] == "international")
+            checked: (data["accountType"] == "International bank account")
           }
         ]
       }) }}
