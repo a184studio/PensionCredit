@@ -44,7 +44,7 @@ const template = data => html`
         }
 
         .header {
-          margin-bottom: 16mm;
+          margin-bottom: 8mm;
         }
 
         .header h1 {
@@ -93,7 +93,7 @@ const template = data => html`
 
         .section-header, .field-name, .field-value, .action-required {
           float: left;
-          padding: 8mm 0;
+          padding: 4mm 0;
           page-break-inside: avoid;
         }
 
@@ -149,7 +149,7 @@ const template = data => html`
 
         .section {
           clear: both;
-          margin: 0 0 16mm;
+          margin: 0 0 8mm;
         }
 
         .section:last-child {
