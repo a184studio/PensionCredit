@@ -309,7 +309,7 @@ router.post(`${baseUrl}/type-of-account-router`, (req, res) => { // router name
 
   const accountType = req.session.data['account-type']  // name of data / id name
 
-  if (accountType === 'uk') { // name of data / + answer
+  if (accountType === 'UK') { // name of data / + answer
     res.redirect(`${baseUrl}/uk-account`)
   }
   else if (accountType === 'SPA') {
