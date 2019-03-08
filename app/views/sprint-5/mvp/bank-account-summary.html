@@ -19,13 +19,17 @@
       Bank account detials
     </h1>
 
+    <h2 class="govuk-heading-m">
+      @Niall, can we make it so that it's hidden unless there is data
+    </h2>
+
     <dl class="govuk-summary-list govuk-summary-list--long">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Type of account
         </dt>
         <dd class="govuk-summary-list__value">
-          Bank account
+          {{ data["account-type"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="uk-account">
@@ -42,10 +46,11 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="uk-account">
-            Change
+            .
           </a>
         </dd>
       </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Sort code
@@ -55,7 +60,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="uk-account">
-            Change
+            .
           </a>
         </dd>
       </div>
@@ -70,7 +75,7 @@
 
         <dd class="govuk-summary-list__actions">
           <a href="uk-account">
-            Change
+            .
           </a>
         </dd>
       </div>
@@ -86,12 +91,109 @@
 
           <dd class="govuk-summary-list__actions">
             <a href="uk-account">
-              Change
+              .
             </a>
           </dd>
         </div>
-      {% endif %}
+            {% endif %}
       </dl>
+
+<br><br><br>
+
+      <!---- State Pension account ---->
+
+      <h2 class="govuk-heading-m">
+        State Pension detials (Hide)
+      </h2>
+
+          <dl class="govuk-summary-list govuk-summary-list--long">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Type of account
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["account-type"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="uk-account">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+            </dl>
+
+<br><br><br>
+
+            <h2 class="govuk-heading-m">
+              International account detials (Hide)
+            </h2>
+
+            <!---- International account ---->
+
+                <dl class="govuk-summary-list govuk-summary-list--long">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Type of account
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["account-type"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="uk-account">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Name on account
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["name-on-account"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="uk-account">
+                        .
+                      </a>
+                    </dd>
+                  </div>
+
+                    <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      SWIFT Code
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data["swift-code"] }}
+                    </dd>
+
+                    <dd class="govuk-summary-list__actions">
+                      <a href="uk-account">
+                        .
+                      </a>
+                    </dd>
+                  </div>
+
+                  {% if data["iban-number"] %}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        IBAN number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          {{ data["iban-number"] }}
+                      </dd>
+
+                      <dd class="govuk-summary-list__actions">
+                        <a href="uk-account">
+                          .
+                        </a>
+                      </dd>
+                    </div>
+                        {% endif %}
+                  </dl>
+
+
+
 
 <br>
 
