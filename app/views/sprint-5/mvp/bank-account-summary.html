@@ -19,17 +19,14 @@
       Bank account detials
     </h1>
 
-    <h2 class="govuk-heading-m">
-      @Niall, can we make it so that it's hidden unless there is data
-    </h2>
-
+    {% if data["sort-code"] %}
     <dl class="govuk-summary-list govuk-summary-list--long">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Type of account
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["accountType"] }}
+          {{ data["account-type"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="uk-account">
@@ -97,39 +94,35 @@
         </div>
             {% endif %}
       </dl>
-
-<br><br><br>
+      {% endif %}
+      <br><br>
 
       <!---- State Pension account ---->
 
-      <h2 class="govuk-heading-m">
-        State Pension detials (Hide)
-      </h2>
+          {% if data["account-type"] %}
 
           <dl class="govuk-summary-list govuk-summary-list--long">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Type of account
+                Type of account (@niall remove to only show with SP)
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data["accountType"] }}
+                {{ data["account-type"] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a href="uk-account">
+                <a href="type-of-account">
                   Change
                 </a>
               </dd>
             </div>
 
             </dl>
+{% endif %}
+<br><br>
 
-<br><br><br>
 
+            {% if data["swift-code"] %}
 
-
-            <h2 class="govuk-heading-m">
-              International account detials (Hide)
-            </h2>
 
             <!---- International account ---->
 
@@ -139,7 +132,7 @@
                       Type of account
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data["accountType"] }}
+                      {{ data["account-type"] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                       <a href="uk-account">
@@ -152,7 +145,7 @@
                       Name on account
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data["name-on-account"] }}
+                      {{ data["name-on-int-account"] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                       <a href="uk-account">
@@ -176,7 +169,7 @@
                     </dd>
                   </div>
 
-                  {% if data["iban-number"] %}
+
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         IBAN number
@@ -191,10 +184,9 @@
                         </a>
                       </dd>
                     </div>
-                        {% endif %}
                   </dl>
 
-
+{% endif %}
 
 
 <br>
