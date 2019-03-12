@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  NotePad - Area
+  Hospital admissions / NotePad - Area
 {% endblock %}
 
 {% block header %}
@@ -22,17 +22,47 @@
         <span class="govuk-caption-m">Agent notes pages</span>
         <h1 class="govuk-heading-xl">Information about the claimant's time in hospital.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need, including:</p>
+        <h3 class="govuk-heading-m">Adminssion and discharge dates</h3>
+        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need, including the start and end date of each period they have spent in hospital</p>
 
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-            the start and end date of each period they have spent in hospital
-          </li>
-          <li>
-            whether they were discharged to a care home after any period they spent in hospital
-          </li>
-        </ul>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Admission</th>
+              <th class="govuk-table__header govuk-table__header" scope="col">Discharge</th>
+              <th class="govuk-table__header govuk-table__header" scope="col">Total days</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="row">01.01.2000</th>
+              <td class="govuk-table__cell govuk-table__cell">01.02.2000</td>
+              <td class="govuk-table__cell govuk-table__cell">36</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="row">01.01.2000</th>
+              <td class="govuk-table__cell govuk-table__cell">01.02.2000</td>
+              <td class="govuk-table__cell govuk-table__cell">36</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="row">01.01.2000</th>
+              <td class="govuk-table__cell govuk-table__cell">01.02.2000</td>
+              <td class="govuk-table__cell govuk-table__cell">36</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="govuk-body govuk-!-font-size-19">Add another hospital entry</p>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        <h3 class="govuk-heading-m">What happened next</h3>
+        <p class="govuk-body govuk-!-font-size-19">Were they were discharged to a care home after any period they spent in hospital</p>
+
+
+
 
 <br>
 
