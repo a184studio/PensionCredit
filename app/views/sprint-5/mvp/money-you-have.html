@@ -15,6 +15,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="money-you-have-router" method="post" class="form">
+
+      <input type="hidden" name="money-you-have-complete" value="in-progress"/>
+
+
       {% set cashAmount %}
         {{ govukInput({
           id: "total-amount",
@@ -84,7 +88,6 @@
           }
         ]
       }) }}
-
 
       {{ govukButton({
         text: "Continue"

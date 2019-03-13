@@ -105,12 +105,16 @@
     </dl>
 
     <form action="task-list" method="post">
-      <input type="hidden" name="contact-complete" value="true"/>
+      <input type="hidden" name="can-contact-complete" value="true"/>
+
         {{ govukButton({
           text: "Confirm"
         }) }}
-    </form>
+      </form>
 
-  </div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
+
+    </div>
 </div>
 {% endblock %}
