@@ -15,6 +15,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="contact-summary" method="post" class="form">
+
+      <input type="hidden" name="disability-complete" value="in-progress"/>
+
       {% set disabilities = data["disabilities"] or [] %}
       {% set accessability = data["accessibility"] or [] %}
 
@@ -84,11 +87,6 @@
       {{ govukButton({
         text: "Continue"
       }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
-      <input type="hidden" name="disability-complete" value="true"/>
-
 
     </form>
 

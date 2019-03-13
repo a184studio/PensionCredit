@@ -15,6 +15,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="employment-router" method="post" class="form">
+
+      <input type="hidden" name="employment-complete" value="in-progress"/>
+
       {% set tamDate = (data['claim-date-day'] or 11) + " " +
         (data['claim-date-month'] or 11 | getMonth) + " " +
         (data['claim-date-year'] or 2018) %}
@@ -50,10 +53,6 @@
         text: "Continue"
       }) }}
     </form>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
-
   </div>
 </div>
 {% endblock %}

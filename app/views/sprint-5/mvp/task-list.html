@@ -64,9 +64,9 @@
                 <a class="app-task-list__task-name" href="can-contact.html" aria-describedby="eligibility-completed">
                   Landline, mobile, SMS, & email
                 </a>
-                {% if data["can-contact-complete"] == "true" %}
+                {% if data["contact-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["can-contact-complete"] == "in-progress" %}
+                {% elif data["contact-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else  %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
@@ -135,9 +135,9 @@
                 <a class="app-task-list__task-name" href="anyone-living-with-you" aria-describedby="read-declaration-completed">
                   Other people who live with you
                 </a>
-                {% if data["household-summary-complete"] == "true" %}
+                {% if data["household-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["household-summary-complete"] == "in-progress" %}
+                {% elif data["household-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else  %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
@@ -165,9 +165,9 @@
                 <a class="app-task-list__task-name" href="hospital-yn" aria-describedby="eligibility-completed">
                   Admission details
                 </a>
-                {% if data["hospital-yes-complete"] == "true" %}
+                {% if data["hospital-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["hospital-yes-complete"] == "in-progress" %}
+                {% elif data["hospital-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
@@ -265,9 +265,9 @@
                 <a class="app-task-list__task-name" href="employment" aria-describedby="eligibility-completed">
                   Current work status
                 </a>
-                {% if data["employment"] == "true" %}
+                {% if data["employment-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["employment"] == "in-progress" %}
+                {% elif data["employment-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
@@ -277,9 +277,9 @@
                 <a class="app-task-list__task-name" href="other-income" aria-describedby="eligibility-completed">
                   Other regular income
                 </a>
-                {% if data["other-income"] == "true" %}
+                {% if data["other-income-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["other-income"] == "in-progress" %}
+                {% elif data["other-income-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>

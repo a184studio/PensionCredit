@@ -19,6 +19,8 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="can-contact-router" method="post" class="form">
 
+      <input type="hidden" name="contact-complete" value="in-progress"/>
+
       <h1 class="govuk-heading-xl">How can we contact you?</h1>
       <p class="govuk-body">We will send some parts of your claim by post. We will use any other contact details you give us if we need to ask you for more information. </p>
       <p class="govuk-body">This is the number you are calling from <strong>data["telephone-number"]</strong>.</p>
@@ -54,10 +56,6 @@
         classes: "govuk-input--width-20",
         value: data["email-address"]
       }) }}
-
-      <input type="hidden" name="can-contact-complete" value="in-progress"/>
-      <input type="hidden" name="disability-complete" value="in-progress"/>
-
 
 
       {{ govukButton({

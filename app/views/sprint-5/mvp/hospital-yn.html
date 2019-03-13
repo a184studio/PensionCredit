@@ -15,6 +15,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="hospital-yn-router" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospital-complete" value="in-progress"/>
+
       {% set today = '' | formatDate %}
 
       {{ govukRadios({
@@ -42,8 +46,7 @@
         ]
       }) }}
 
-      <!-- Hidden input to set task to complete on task-list -->
-      <input type="hidden" name="hospital-yes-complete" value="in-progress"/>
+
 
       {{ govukButton({
         text: "Continue"
