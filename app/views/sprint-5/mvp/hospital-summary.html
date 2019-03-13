@@ -47,6 +47,31 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Admission</th>
+          <th class="govuk-table__header govuk-table__header" scope="col">Discharge</th>
+          <th class="govuk-table__header govuk-table__header" scope="col">Total days</th>
+          <td class="govuk-table__cell govuk-table__cell"></td>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header govuk-table-pc__header" scope="row"> {{ data["hospital-admission-day"] }} {{ data["hospital-admission-month"] | getMonth }} {{ data["hospital-admission-year"] }}</th>
+          <td class="govuk-table__cell ">{{ data["hospital-discharge-day"] }} {{ data["hospital-discharge-month"] | getMonth }} {{ data["hospital-discharge-year"] }}</td>
+          <td class="govuk-table__cell ">00</td>
+          <td class="govuk-table__cell"><a href="add-hospital-admission">Change</a>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
     <table class="govuk-table ">
       <thead class="govuk-table__head govuk-table--no-border">
         <tr class="govuk-table__row">
@@ -73,6 +98,9 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   </div>
 </div>
+
+
+
 <!----Break---->
 
 <!----Break---->
