@@ -379,4 +379,28 @@ router.post(`${baseUrl}/is-care-home-permanent-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/privacy-policy-router`, (req, res) => { // router name
+  const privacyPolicy = req.session.data['agrees-privacy']  // name of data / id name
+
+  if (privacyPolicy === 'Agree') { // name of data / + answer
+    res.redirect(`${baseUrl}/pre-declaration`)
+  } else {
+    res.redirect(`${baseUrl}/out-declaration`)
+  }
+})
+
+
+router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
+  const preDeclaration = req.session.data['pre-declaration']
+
+  if (preDeclaration === 'Agree') {
+    res.redirect(`${baseUrl}/who-is-caller`)
+  } else {
+    res.redirect(`${baseUrl}/out-declaration`)
+  }
+})
+
+
+
+
 module.exports = router
