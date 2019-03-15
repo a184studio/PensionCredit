@@ -130,24 +130,13 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="pensions" aria-describedby="eligibility-completed">
-                State pension
+                State pension, private and workplace pensons
               </a>
               {% if data["pensions-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
               {% else %}
                 <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
               {% endif %}                     </li>
-            <li class="app-task-list__item">
-              <a class="app-task-list__task-name" href="pensions" aria-describedby="read-declaration-completed">
-                Private and workplace pensons
-              </a>
-              {% if data["pensions-complete"] %}
-                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-              {% else %}
-                <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
-              {% endif %}                     </li>
-          </ul>
-        </li>
       </ol>
 
       <!------------ ––– ------------>
