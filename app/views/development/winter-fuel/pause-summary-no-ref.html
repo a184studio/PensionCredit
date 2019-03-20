@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Confirmation and submit
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Your details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-summary-list--short">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Alex Smith
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="who-is-caller">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        National Insurance number
+      </dt>
+      <dd class="govuk-summary-list__value">
+        QQ 11 22 33 c
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="name-and-nino">
+          Change
+        </a>
+      </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          221B Baker Street
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="who-is-caller">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Marylebone
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="who-is-caller">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+          London
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="who-is-caller">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+          NW1 SLH
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="who-is-caller">
+            Change
+          </a>
+        </dd>
+      </div>
+
+
+    </dl>
+
+      <h1 class="govuk-heading-m">What happens next</h1>
+      <p class="govuk-body">Once you have sumbmitted we will pause your payments. </p>
+      <p class="govuk-body">If for any reson in the future, for example stuggling, you can always un-pause the payment and continue as it was before.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h1 class="govuk-heading-m">How to start receiving Winter fuel payments again</h1>
+      <p class="govuk-body">Call <strong>0800 200 200</strong><br><br>if you would like to unpause your account.</p>
+
+    <p>
+
+
+    <form action="done" method="post">
+      <p>
+        {{ govukButton({
+          text: "Agree and submit"
+        }) }}
+      </p>
+    </form>
+
+  </div>
+</div>
+{% endblock %}
