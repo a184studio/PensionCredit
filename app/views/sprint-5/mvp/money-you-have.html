@@ -74,17 +74,17 @@
         classes: "govuk-radios--inline",
         items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
-            checked: (data["over-10k"] == "yes")
+            checked: (data["over-10k"] == "Yes")
           },
           {
-            value: "no",
+            value: "No",
             text: "No",
             conditional: {
               html: cashAmount
             },
-            checked: (data["over-10k"] == "no")
+            checked: (data["over-10k"] == "No")
           }
         ]
       }) }}

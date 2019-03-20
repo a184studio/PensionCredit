@@ -234,20 +234,21 @@ router.get('/get-summary-pdf', async (req, res, next) => {
   }
 
   // Money, savings and investments
-  pdfData.addSection('Money, savings and investments', [
-    {
-      key: 'Cash',
-      value: formData['MoneyOver10k-more-detail']
-    },
-    {
-      key: 'Savings',
-      value: formData['MoneyOver10k-savings-more-detail']
-    },
-    {
-      key: 'Investments',
-      value: formData['MoneyOver10k-investments-more-detail']
-    }
-  ])
+  if (formData["over-10k"] === 'Yes') {
+    pdfData.addSection('Money, savings and investments', [
+      {
+        key: 'Details',
+        value: formData['MoneyOver10k-more-detail']
+      }
+    ])
+  } else {
+    pdfData.addSection('Money, savings and investments', [
+      {
+        key: 'Total',
+        value: formatMoney(formData["total-amount"])
+      }
+    ])
+  }
 
   // Self-employment information
   if (formData['selfEmployment-more-detail']) {
