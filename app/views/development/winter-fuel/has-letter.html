@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Name and Winter fuel statement reference number - Pause my Winter Fuel Payment
+  Name and Winter fuel statement reference number - Cancel my Winter Fuel Payment
 {% endblock %}
 
 {% block header %}
@@ -34,10 +34,10 @@
 
         {{ govukInput({
           label: {
-            text: "Winter fuel statement reference number"
+            text: "Winter fuel letter reference number"
           },
           hint: {
-            text: "This can be found on your statement letter, it starts with WF-002019"
+            text: "You can find this on your Winter Fuel letter."
           },
           id: "wfpn",
           name: "wfpn",
