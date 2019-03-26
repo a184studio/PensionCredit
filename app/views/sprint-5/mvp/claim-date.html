@@ -60,6 +60,9 @@
               classes: "govuk-fieldset__legend--xl"
             }
           },
+          hint: {
+          text: "You can backdate your claim by up to 3 months, or claim up to 4 months before you reach State Pension age. Your claim will be based on your situation at the date your claim starts. "
+          },
           items: [
             {
               value: today,
@@ -68,17 +71,17 @@
             },
             {
               value: data['back-dating-date'] | formatDate,
-              text: "Backdated to (" + (data['back-dating-date'] | formatDate) + ")",
+              text: "Backdated by 3 months to (" + (data['back-dating-date'] | formatDate) + ")",
               checked: (data["claim-date"] == "SPA Entitlement")
             },
             {
               value: "Advanced claim",
-              text: "Advanced claim (+ four months)",
+              text: "In 4 months time on (+ four months)",
               checked: (data["claim-date"] == "Advanced claim")
             },
             {
               value: "Alternative date",
-              text: "Alternative date",
+              text: "A different date",
               checked: (data["claim-date"] == "Alternative date"),
               conditional: {
                 html: altDate
