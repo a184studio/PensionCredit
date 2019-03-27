@@ -10,6 +10,13 @@ const {getMonth} = require('../../filters')()
 const router = new express.Router()
 const baseUrl = '/sprint-5/mvp'
 
+function makeAStay(data) {
+  const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
+  const discharge = new Date(`${data['discharge-year']}-${data['discharge-month']}-${data['discharge-day']}`)
+  const totalDays = Math.max(differenceInDays(discharge, admission) - 1, 0)
+  return {admission, discharge, totalDays}
+}
+
 router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['claiming-for']
 
@@ -336,13 +343,9 @@ router.post(`${baseUrl}/claim-date-router`, (req, res) => { // router name
 
 router.post(`${baseUrl}/add-hospital-admission-router`, (req, res) => {
   const hostpitalStays = req.session.data['hospital-stays'] || []
+  const newStay = makeAStay(req.session.data)
 
-  const admission = new Date(`${req.session.data['admission-year']}-${req.session.data['admission-month']}-${req.session.data['admission-day']}`)
-  const discharge = new Date(`${req.session.data['discharge-year']}-${req.session.data['discharge-month']}-${req.session.data['discharge-day']}`)
-  const totalDays = differenceInDays(discharge, admission)
-
-  hostpitalStays.push({admission, discharge, totalDays})
-
+  hostpitalStays.push(newStay)
   req.session.data['hospital-stays'] = hostpitalStays
 
   res.redirect(`${baseUrl}/notepad-hospital-dates`)
@@ -369,13 +372,9 @@ router.get(`${baseUrl}/change-hospital-admission/:stayId`, (req, res) => {
 router.post(`${baseUrl}/change-hospital-admission/:stayId`, (req, res) => {
   const {stayId} = req.params
   const hostpitalStays = req.session.data['hospital-stays'] || []
+  const newStay = makeAStay(req.session.data)
 
-  const admission = new Date(`${req.session.data['admission-year']}-${req.session.data['admission-month']}-${req.session.data['admission-day']}`)
-  const discharge = new Date(`${req.session.data['discharge-year']}-${req.session.data['discharge-month']}-${req.session.data['discharge-day']}`)
-  const totalDays = differenceInDays(discharge, admission)
-
-  hostpitalStays[stayId] = {admission, discharge, totalDays}
-
+  hostpitalStays[stayId] = newStay
   req.session.data['hospital-stays'] = hostpitalStays
 
   res.redirect(`${baseUrl}/notepad-hospital-dates`)
