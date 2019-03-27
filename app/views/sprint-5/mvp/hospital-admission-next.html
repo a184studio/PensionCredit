@@ -18,13 +18,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hospital-summary" method="post" class="form">
+    <form action="hospital-to-carehome-router" method="post" class="form">
       {{ govukRadios({
         idPrefix: "hospital-next-yn",
         name: "hospital-next-yn",
         fieldset: {
           legend: {
-            text: "Were they were discharged to a care home after any period they spent in hospital",
+            text: "Were they were discharged to a care home after any period they spent in hospital?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
