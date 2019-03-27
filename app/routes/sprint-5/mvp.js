@@ -56,8 +56,8 @@ router.post(`${baseUrl}/over-spa-router`, (req, res) => {
     const daysSinceFemaleSPA = differenceInDays(today, femaleSpaDate)
 
     if (daysSinceMaleSPA >= 0 && daysSinceFemaleSPA >= 0) {
-      const threeMonthsAgo = subMonths(today, 3);
-      req.session.data['back-dating-date'] = maleSpaDate < threeMonthsAgo ? threeMonthsAgo : maleSpaDate;
+      const threeMonthsAgo = subMonths(today, 3)
+      req.session.data['back-dating-date'] = maleSpaDate < threeMonthsAgo ? threeMonthsAgo : maleSpaDate
       req.session.data['spa-date'] = maleSpaDate
 
       res.redirect(`${baseUrl}/reside-in-uk`)
@@ -322,7 +322,7 @@ router.post(`${baseUrl}/type-of-account-router`, (req, res) => { // router name
 })
 
 router.post(`${baseUrl}/claim-date-router`, (req, res) => { // router name
-  const claimDate = req.session.data['claim-date'];
+  const claimDate = req.session.data['claim-date']
 
   if (claimDate === 'Alternative date') {
     req.session.data['claim-date'] =
@@ -332,6 +332,53 @@ router.post(`${baseUrl}/claim-date-router`, (req, res) => { // router name
   }
 
   res.redirect(`${baseUrl}/task-list`)
+})
+
+router.post(`${baseUrl}/add-hospital-admission-router`, (req, res) => {
+  const hostpitalStays = req.session.data['hospital-stays'] || []
+
+  const admission = new Date(`${req.session.data['admission-year']}-${req.session.data['admission-month']}-${req.session.data['admission-day']}`)
+  const discharge = new Date(`${req.session.data['discharge-year']}-${req.session.data['discharge-month']}-${req.session.data['discharge-day']}`)
+  const totalDays = differenceInDays(discharge, admission)
+
+  hostpitalStays.push({admission, discharge, totalDays})
+
+  req.session.data['hospital-stays'] = hostpitalStays
+
+  res.redirect(`${baseUrl}/notepad-hospital-dates`)
+})
+
+router.get(`${baseUrl}/change-hospital-admission/:stayId`, (req, res) => {
+  const {stayId} = req.params
+  const stay = req.session.data['hospital-stays'][stayId]
+  const admissionDate = new Date(stay.admission)
+  const dischargeDate = new Date(stay.discharge)
+  const admission = {
+    day: admissionDate.getDate(),
+    month: admissionDate.getMonth() + 1,
+    year: admissionDate.getFullYear()
+  }
+  const discharge = {
+    day: dischargeDate.getDate(),
+    month: dischargeDate.getMonth() + 1,
+    year: dischargeDate.getFullYear()
+  }
+  res.render(`sprint-5/mvp/change-hospital-admission`, {stayId, admission, discharge})
+})
+
+router.post(`${baseUrl}/change-hospital-admission/:stayId`, (req, res) => {
+  const {stayId} = req.params
+  const hostpitalStays = req.session.data['hospital-stays'] || []
+
+  const admission = new Date(`${req.session.data['admission-year']}-${req.session.data['admission-month']}-${req.session.data['admission-day']}`)
+  const discharge = new Date(`${req.session.data['discharge-year']}-${req.session.data['discharge-month']}-${req.session.data['discharge-day']}`)
+  const totalDays = differenceInDays(discharge, admission)
+
+  hostpitalStays[stayId] = {admission, discharge, totalDays}
+
+  req.session.data['hospital-stays'] = hostpitalStays
+
+  res.redirect(`${baseUrl}/notepad-hospital-dates`)
 })
 
 module.exports = router

@@ -37,12 +37,14 @@
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header govuk-table-pc__header" scope="row"> {{ data["hospital-admission-day"] }} {{ data["hospital-admission-month"] | getMonth }} {{ data["hospital-admission-year"] }}</th>
-              <td class="govuk-table__cell ">{{ data["hospital-discharge-day"] }} {{ data["hospital-discharge-month"] | getMonth }} {{ data["hospital-discharge-year"] }}</td>
-              <td class="govuk-table__cell ">00</td>
-              <td class="govuk-table__cell"><a href="add-hospital-admission">Change</a>
-            </tr>
+            {% for stay in data['hospital-stays'] %}
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header govuk-table-pc__header" scope="row">{{ stay['admission'] | formatDate }}</th>
+                <td class="govuk-table__cell ">{{ stay['discharge'] | formatDate }}</td>
+                <td class="govuk-table__cell ">{{ stay['totalDays'] }}</td>
+                <td class="govuk-table__cell"><a href="change-hospital-admission/{{ loop.index0 }}">Change</a>
+              </tr>
+            {% endfor %}
           </tbody>
         </table>
 

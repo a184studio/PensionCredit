@@ -15,10 +15,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Add admission and discharge dates for hospital
+        Change admission and discharge dates for hospital
       </h1>
 
-      <form action="add-hospital-admission-router" method="post">
+      <form method="post">
 
         {{ govukDateInput({
           id: "admission",
@@ -31,15 +31,18 @@
           items: [
             {
               name: "day",
-              classes: "govuk-input--width-2"
+              classes: "govuk-input--width-2",
+              value: admission["day"]
             },
             {
               name: "month",
-              classes: "govuk-input--width-2"
+              classes: "govuk-input--width-2",
+              value: admission["month"]
             },
             {
               name: "year",
-              classes: "govuk-input--width-4"
+              classes: "govuk-input--width-4",
+              value: admission["year"]
             }
           ]
         }) }}
@@ -55,15 +58,18 @@
           items: [
             {
               name: "day",
-              classes: "govuk-input--width-2"
+              classes: "govuk-input--width-2",
+              value: discharge["day"]
             },
             {
               name: "month",
-              classes: "govuk-input--width-2"
+              classes: "govuk-input--width-2",
+              value: discharge["month"]
             },
             {
               name: "year",
-              classes: "govuk-input--width-4"
+              classes: "govuk-input--width-4",
+              value: discharge["year"]
             }
           ]
         }) }}
