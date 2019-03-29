@@ -20,8 +20,8 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="hospital-to-carehome-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "hospital-next-yn",
-        name: "hospital-next-yn",
+        idPrefix: "hospital-admission-next",
+        name: "hospital-admission-next",
         fieldset: {
           legend: {
             text: "Were they were discharged to a care home after any period they spent in hospital?",
@@ -35,12 +35,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["hospital-next-yn"] == "Yes")
+            checked: (data["hospital-admission-next"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["hospital-next-yn"] == "No")
+            checked: (data["hospital-admission-next"] == "No")
           }
         ]
       }) }}

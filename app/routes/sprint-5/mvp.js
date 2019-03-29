@@ -383,9 +383,9 @@ router.post(`${baseUrl}/change-hospital-admission/:stayId`, (req, res) => {
 
 router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router name
 
-  const otherIncome = req.session.data['hospital-admission-next']  // name of data / id name
+  const hospitalToCareHome = req.session.data['hospital-admission-next']  // name of data / id name
 
-  if (otherIncome === 'Yes') { // name of data / + answer
+  if (hospitalToCareHome === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/notepad-hospital-to-carehome`)
   } else {
     res.redirect(`${baseUrl}/hospital-summary`)
