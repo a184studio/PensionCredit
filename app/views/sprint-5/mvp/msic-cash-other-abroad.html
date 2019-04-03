@@ -14,10 +14,13 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="money-summary" method="post">
+      <form action="msic-cash-summary" method="post">
 
         <span class="govuk-caption-m">Agent notes page</span>
-        <h1 class="govuk-heading-l">Information about money the claimant has.</h1>
+        <h1 class="govuk-heading-l">Any other money held in this country or abroad @Pete / Talk to Dave</h1>
+
+
+<p class="govuk-body govuk-!-font-size-19">Treat as the type of account it is, though we also need to know the currency. These are converty by using XE Currency converter (https://www.xe.com/currencyconverter/)</p>
 
         <p class="govuk-body govuk-!-font-size-19">For each type of money, saving or investment, ask the user for all relevant details, including:</p>
 
@@ -34,9 +37,9 @@
         </ul>
 
         {{ govukTextarea({
-          name: "MoneyOver10k-more-detail",
-          id: "MoneyOver10k-more-detail",
-          value: data["MoneyOver10k-more-detail"]
+          name: "msic-cash-other-abroad-detail",
+          id: "msic-cash-other-abroad-detail",
+          value: data["msic-cash-other-abroad-detail"]
         }) }}
 
         {{ govukButton({
