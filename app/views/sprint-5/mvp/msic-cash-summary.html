@@ -16,14 +16,14 @@
   <!----Headline---->
   <span class="govuk-caption-m">Money, savings, investments and capital</span>
   <h1 class="govuk-heading-xl">
-    Current accounts summary<br>
+    Cash and lum sums<br>
   </h1>
   <!----Headline---->
   <form action="msic-all-money-accounts-summary" method="post">
 
 
     <h3 class="govuk-heading-m">
-      Bank current accounts (1)
+      Cash at home
     </h3>
 
     <div class="govuk-grid-row">
@@ -34,12 +34,12 @@
 
 
 <br><br>
-{% if data["msic-all-money-detail"] %}
+{% if data["msic-cash-at-home-amount"] %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <h3 class="govuk-heading-s">
-        <p class="govuk-body"><a href="msic-cash-summary" class="govuk-link">Remove</a></p>
+        <p class="govuk-body"><!--<a href="msic-cash-summary" class="govuk-link">Remove</a>--></p>
       </h3></div>
 
 
@@ -52,13 +52,13 @@
                 text: "Total"
               },
               value: {
-                text: data['msic-all-money-detail']
+                text: data['msic-cash-at-home-amount']
               },
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account",
-                    text: "Change",
+                    href: "msic-cash-at-home",
+                    text: "Change or Remove",
                     visuallyHiddenText: "XXX"
                   }
                 ]
@@ -97,7 +97,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-s">
-      {{ data["msic-cash-other-abroad-detail"] }}<p class="govuk-body"><a href="msic-cash-other-abroad" class="govuk-link">Remove</a></p>
+      {{ data["msic-cash-other-abroad-detail"] }}<p class="govuk-body"><!--<a href="msic-cash-other-abroad" class="govuk-link">Remove</a>--></p>
     </h3></div>
 
 
@@ -107,7 +107,7 @@
       rows: [
       {
         key: {
-          text: "Details"
+          text: "Total"
         },
         value: {
           text: data['msic-cash-other-abroad-detail']
@@ -115,8 +115,8 @@
         actions: {
           items: [
             {
-              href: "msic-cash-other-abroad-detail",
-              text: "Change",
+              href: "msic-cash-other-abroad",
+              text: "Change or Remove",
               visuallyHiddenText: "XXX"
             }
           ]
@@ -156,7 +156,7 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
   <h3 class="govuk-heading-s">
-    {{ data["msic-cash-lump-sum-detail"] }}<p class="govuk-body"><a href="msic-post-office-account" class="govuk-link">Remove</a></p>
+    {{ data["msic-cash-lump-sum-detail"] }}<p class="govuk-body"><!--<a href="msic-post-office-account" class="govuk-link">Remove</a>--></p>
   </h3></div>
 
 
@@ -168,7 +168,7 @@
     rows: [
     {
       key: {
-        text: "Details"
+        text: "Total"
       },
       value: {
         text: data['msic-cash-lump-sum-detail']
@@ -177,7 +177,7 @@
         items: [
           {
             href: "msic-cash-lump-sum",
-            text: "Change",
+            text: "Change or Remove",
             visuallyHiddenText: "XXX"
           }
         ]

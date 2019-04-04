@@ -38,8 +38,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-s">
-        {{ data["msic-bank-current-account-name"] }}<p class="govuk-body"><a href="msic-bank-current-account" class="govuk-link">Remove</a></p>
+    <!------>  <h3 class="govuk-heading-s">
+        {{ data["msic-bank-current-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
       </h3></div>
 
 
@@ -49,7 +49,7 @@
         rows: [
         {
           key: {
-            text: "Details"
+            text: "Last four digits"
           },
           value: {
             text: data['msic-bank-current-account-last-digits']
@@ -58,25 +58,7 @@
             items: [
               {
                 href: "msic-bank-current-account",
-                text: "Change",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "Details"
-          },
-          value: {
-            text: data['msic-bank-current-account-last-digits']
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-bank-current-account",
-                text: "",
+                text: "Change or Remove",
                 visuallyHiddenText: "XXX"
               }
             ]
@@ -135,7 +117,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <h3 class="govuk-heading-s">
-        {{ data["msic-bank-current-account-name"] }}<p class="govuk-body"><a href="msic-bank-current-account" class="govuk-link">Remove</a></p>
+        {{ data["msic-bank-current-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>--></p>
       </h3>
       </div>
 
@@ -146,7 +128,7 @@
         rows: [
         {
           key: {
-            text: "Details"
+            text: "Last four digits"
           },
           value: {
             text: data['msic-bank-current-account-last-digits']
@@ -155,25 +137,7 @@
             items: [
               {
                 href: "msic-bank-current-account",
-                text: "Change",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "Details"
-          },
-          value: {
-            text: data['msic-bank-current-account-last-digits']
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-bank-current-account",
-                text: "",
+                text: "Change or Remove",
                 visuallyHiddenText: "XXX"
               }
             ]
@@ -250,7 +214,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-s">
-      {{ data["msic-buildings-current-account-name"] }}<p class="govuk-body"><a href="msic-building-current-account" class="govuk-link">Remove</a></p>
+      {{ data["msic-buildings-current-account-name"] }}<p class="govuk-body"><!---<a href="msic-building-current-account" class="govuk-link">Remove</a>--></p>
     </h3></div>
 
 
@@ -260,7 +224,7 @@
       rows: [
       {
         key: {
-          text: "Details"
+          text: "Last four digits"
         },
         value: {
           text: data['msic-buildings-current-account-last-digits']
@@ -269,7 +233,7 @@
           items: [
             {
               href: "msic-building-current-account",
-              text: "Change",
+              text: "Change or Remove",
               visuallyHiddenText: "XXX"
             }
           ]
@@ -310,7 +274,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-s">
-      {{ data["msic-buildings-current-account-name"] }}<p class="govuk-body"><a href="msic-building-current-account" class="govuk-link">Remove</a></p>
+      {{ data["msic-buildings-current-account-name"] }}<p class="govuk-body"><!---<a href="msic-building-current-account" class="govuk-link">Remove</a>--></p>
     </h3></div>
 
 
@@ -329,7 +293,7 @@
           items: [
             {
               href: "msic-building-current-account",
-              text: "Change",
+              text: "Change or Remove",
               visuallyHiddenText: "XXX"
             }
           ]
@@ -386,7 +350,7 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
   <h3 class="govuk-heading-s">
-    Post Office Account<p class="govuk-body"><a href="msic-post-office-account" class="govuk-link">Remove</a></p>
+    Post Office Account<p class="govuk-body"><!---<a href="msic-post-office-account" class="govuk-link">Remove</a>--></p>
   </h3></div>
 
 
@@ -407,7 +371,7 @@
         items: [
           {
             href: "msic-post-office-account",
-            text: "Change",
+            text: "Change or Remove",
             visuallyHiddenText: "XXX"
           }
         ]
