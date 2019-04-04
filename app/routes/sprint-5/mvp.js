@@ -94,6 +94,37 @@ router.post(`${baseUrl}/sex-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
+  const residesInUk = req.session.data['resides-in-uk']
+
+  if (residesInUk === 'Yes') {
+    res.redirect(`${baseUrl}/lived-abroad`)
+  } else {
+    res.redirect(`${baseUrl}/not-eligible-from-uk`)
+  }
+})
+
+router.post(`${baseUrl}/lived-abroad-router`, (req, res) => {
+  const residesInUk = req.session.data['lived-abroad']
+
+  if (residesInUk === 'Yes') {
+    res.redirect(`${baseUrl}/uk-national`)
+  } else {
+    res.redirect(`${baseUrl}/not-eligible-hrt`)
+  }
+})
+
+router.post(`${baseUrl}/uk-national-router`, (req, res) => {
+  const residesInUk = req.session.data['uk-national']
+
+  if (residesInUk === 'Yes') {
+    res.redirect(`${baseUrl}/partner-under-spa`)
+  } else {
+    res.redirect(`${baseUrl}/not-eligible-hrt`)
+  }
+})
+
+
 router.post(`${baseUrl}/mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['has-mortgage']
 
