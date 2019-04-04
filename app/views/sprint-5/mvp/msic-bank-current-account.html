@@ -49,6 +49,29 @@
         classes: "govuk-input--width-20"
       }) }}
 
+      {{ govukRadios({
+        idPrefix: "current-owner",
+        name: "current-owner",
+        fieldset: {
+          legend: {
+            text: "Who's is this account?"
+          }
+        },
+        items: [
+          {
+            value: "my-account",
+            text: "My account"
+          },
+          {
+            value: "joint-account",
+            text: "Joint account (Drop down for % of account)"
+          }
+        ]
+      }) }}
+
+
+
+
       {{ govukButton({
         text: "Continue"
       }) }}

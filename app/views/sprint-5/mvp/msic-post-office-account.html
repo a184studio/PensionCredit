@@ -19,27 +19,6 @@
         Adding a Post Office card account
       </h1>
 
-      {{ govukInput({
-        label: {
-          text: "Name of Post Office card account"
-        },
-        id: "msic-post-office-account-name",
-        name: "msic-post-office-account-name",
-        classes: "govuk-input--width-20"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Last 4 digits of account"
-        },
-        id: "msic-post-office-account-last-digits",
-        name: "msic-post-office-account-last-digits",
-        classes: "govuk-input--width-4",
-        attributes: {
-          maxlength: 4
-        }
-      }) }}
-
           {{ govukInput({
         label: {
           text: "Total amount in this account"
