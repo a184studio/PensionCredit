@@ -45,63 +45,81 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-          {{ govukSummaryList({
-            rows: [
-            {
-              key: {
-                text: "Details"
-              },
-              value: {
-                text: data['msic-bank-current-account-last-digits']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-bank-current-account",
-                    text: "Change",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
+      {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Details"
+          },
+          value: {
+            text: data['msic-bank-current-account-last-digits']
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-bank-current-account",
+                text: "Change",
+                visuallyHiddenText: "XXX"
               }
-            },
-
-            {
-              key: {
-                text: "Details"
-              },
-              value: {
-                text: data['msic-bank-current-account-last-digits']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-bank-current-account",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
-                text: "Who's account?"
-              },
-              value: {
-                text: data['current-owner']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-bank-current-account",
-                    text: "",
-                    visuallyHiddenText: "XXXX"
-                  }
-                ]
-              }
-            }
             ]
-          }) }}
+          }
+        },
+
+        {
+          key: {
+            text: "Details"
+          },
+          value: {
+            text: data['msic-bank-current-account-last-digits']
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-bank-current-account",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Who's account?"
+          },
+          value: {
+            text: data['current-owner']
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-bank-current-account",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "% stake in joint account"
+          },
+          value: {
+            text: data['msic-bank-current-account-stake']
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-bank-current-account-stake",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
 
   </div></div>
 
@@ -178,9 +196,29 @@
               }
             ]
           }
+        },
+
+        {
+          key: {
+            text: "% stake in joint account"
+          },
+          value: {
+            text: data['msic-bank-current-account-stake']
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-bank-current-account-stake",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
         }
         ]
       }) }}
+
+
 
   </div></div>
 
