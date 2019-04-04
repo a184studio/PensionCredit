@@ -40,7 +40,7 @@
         }
       }) }}
 
-          {{ govukInput({
+      {{ govukInput({
         label: {
           text: "Total amount in this account"
         },
@@ -48,6 +48,17 @@
         name: "msic-bank-current-account-amount",
         classes: "govuk-input--width-20"
       }) }}
+
+      {% set percentageField %}
+        {{ govukInput({
+          label: {
+            text: "Percentage stake"
+          },
+          id: "msic-bank-current-account-stake",
+          name: "msic-bank-current-account-stake",
+          classes: "govuk-input--width-5"
+        }) }}
+      {% endset %}
 
       {{ govukRadios({
         idPrefix: "current-owner",
@@ -64,15 +75,13 @@
           },
           {
             value: "Joint account",
-            text: "Joint account (Drop down for % of account)"
+            text: "Joint account",
+            conditional: {
+              html: percentageField
+            }
           }
         ]
       }) }}
-
-
-
-
-
 
       {{ govukButton({
         text: "Continue"
