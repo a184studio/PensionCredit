@@ -146,15 +146,33 @@
 
         {
           key: {
-            text: "Amount"
+            text: "Details"
           },
           value: {
-            text: data['msic-bank-current-account-amount']
+            text: data['msic-bank-current-account-last-digits']
           },
           actions: {
             items: [
               {
-                href: "pre-declaration",
+                href: "msic-bank-current-account",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Who's account?"
+          },
+          value: {
+            text: data['current-owner']
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-bank-current-account",
                 text: "",
                 visuallyHiddenText: "XXXX"
               }
