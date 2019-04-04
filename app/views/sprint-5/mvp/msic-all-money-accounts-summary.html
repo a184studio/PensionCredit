@@ -23,7 +23,7 @@
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
-  <h3 class="govuk-heading-m">
+  <h3 class="govuk-heading-s">
     Accounts breakdown:
   </h3></div>
 
@@ -156,36 +156,41 @@
 <!----Break---->
 
 
-{% if data["MoneyOver10k-savings-more-detail"] %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-s">
-      Note pad information
+
     </h3>
     <p></p>
   </div>
-
 
   <div class="govuk-grid-column-two-thirds">
 
     <table class="govuk-table ">
       <thead class="govuk-table__head govuk-table--no-border">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Details:</th>
-          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-MoneyOver10k" class="govuk-link">Change</a></th>
+          <th class="govuk-table__header" scope="col"><p class="govuk-body"><a href="msic-notepad" class="govuk-link">Add money notes</a></p></th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="msic-notepad" class="govuk-link">Change</a></th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
       </tbody>
     </table>
+    {% if data["msic-all-money-detail"] %}
+
 
   <p class="govuk-body">
-    {{ data["MoneyOver10k-more-detail"] }}
+    {{ data["msic-all-money-detail"] }}
   </p>
-
-</div></div>
 {% endif %}
+</div></div>
+
+
+
+
+
+
 <!--------------------------------------------------------------------------------->
   <!----Break---->
   <div class="govuk-grid-row">

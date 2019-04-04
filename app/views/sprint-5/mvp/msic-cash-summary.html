@@ -19,7 +19,7 @@
     Current accounts summary<br>
   </h1>
   <!----Headline---->
-  <form action="msic-all-money-accounts" method="post">
+  <form action="msic-all-money-accounts-summary" method="post">
 
 
     <h3 class="govuk-heading-m">
@@ -34,12 +34,12 @@
 
 
 <br><br>
-{% if data["msic-cash-at-home-amount"] %}
+{% if data["msic-all-money-detail"] %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <h3 class="govuk-heading-s">
-        <p class="govuk-body"><a href="msic-cash-at-home" class="govuk-link">Remove</a></p>
+        <p class="govuk-body"><a href="msic-cash-summary" class="govuk-link">Remove</a></p>
       </h3></div>
 
 
@@ -52,7 +52,7 @@
                 text: "Total"
               },
               value: {
-                text: data['msic-cash-at-home-amount']
+                text: data['msic-all-money-detail']
               },
               actions: {
                 items: [
