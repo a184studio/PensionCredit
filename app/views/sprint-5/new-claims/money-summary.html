@@ -13,7 +13,7 @@
 {% include "includes/js-back-link.html" %}
 
   <h1 class="govuk-heading-xl">
-    Money, savings and investments
+    Money, savings and investments you've added
   </h1>
 
   {% if data['has-current-account'] %}
@@ -331,12 +331,41 @@
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-<h2 class="govuk-heading-m">Add more accounts</h2>
 <p class="govuk-body">
   <a href="add-savings-account" class="govuk-link">
-    Add account details
+    Do you wish to add another account?
   </a>
 </p>
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "changed-name",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
 
 
   <form action="msic-all-money-accounts-summary" method="post">

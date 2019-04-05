@@ -17,7 +17,7 @@
     <h1 class="govuk-heading-xl">
       Shares
     </h1>
-    <form action="has-bonds" method="post" class="form">
+    <form action="msic-shares-summary" method="post" class="form">
       {{ govukInput({
         label: {
           text: "Name of company"
@@ -36,15 +36,6 @@
         name: "msic-shares-account-amount",
         classes: "govuk-input--width-20"
       }) }}
-
-
-      <h2 class="govuk-heading-m">
-        Any other shares
-      </h2>
-
-      <p class="govuk-body">
-        <a href="">Add more shares</a>
-      </p>
 
       {{ govukButton({
         text: "Continue"
