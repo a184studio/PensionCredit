@@ -23,8 +23,8 @@
         label: {
           text: "Name of bank"
         },
-        id: "current-name",
-        name: "current-name",
+        id: "msic-bank-current-account-name",
+        name: "msic-bank-current-account-name",
         classes: "govuk-input--width-20"
       }) }}
 
@@ -32,26 +32,33 @@
         label: {
           text: "Last 4 digits of account"
         },
-        id: "current-last-digits",
-        name: "current-last-digits",
+        id: "msic-bank-current-account-last-digits",
+        name: "msic-bank-current-account-last-digits",
         classes: "govuk-input--width-4",
         attributes: {
           maxlength: 4
         }
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Money in the account?
-      </h2>
-
       {{ govukInput({
         label: {
-          text: "Total value"
+          text: "Total amount in this account"
         },
-        id: "current-value",
-        name: "current-value",
+        id: "msic-bank-current-account-amount",
+        name: "msic-bank-current-account-amount",
         classes: "govuk-input--width-20"
       }) }}
+
+      {% set percentageField %}
+        {{ govukInput({
+          label: {
+            text: "Percentage stake"
+          },
+          id: "msic-bank-current-account-stake",
+          name: "msic-bank-current-account-stake",
+          classes: "govuk-input--width-5"
+        }) }}
+      {% endset %}
 
       {{ govukRadios({
         idPrefix: "current-owner",
@@ -63,19 +70,26 @@
         },
         items: [
           {
-            value: "My Account",
-            text: "My Account"
-          },
-          {
-            value: "Partners",
-            text: "Partners"
+            value: "My account",
+            text: "My account"
           },
           {
             value: "Joint account",
-            text: "Joint account"
+            text: "Joint account",
+            conditional: {
+              html: percentageField
+            }
           }
         ]
       }) }}
+
+      <!----Break---->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        </div>
+      </div>
+      <!----Break---->
 
       <h2 class="govuk-heading-m">
         Any other current accounts

@@ -21,10 +21,10 @@
 
       {{ govukInput({
         label: {
-          text: "Name of bank"
+          text: "Name of building society"
         },
-        id: "savings-name",
-        name: "savings-name",
+        id: "msic-building-savings-account-name",
+        name: "msic-building-savings-account-name",
         classes: "govuk-input--width-20"
       }) }}
 
@@ -32,49 +32,21 @@
         label: {
           text: "Last 4 digits of account"
         },
-        id: "savings-last-digits",
-        name: "savings-last-digits",
+        id: "msic-building-savings-account-last-digits",
+        name: "msic-building-savings-account-last-digits",
         classes: "govuk-input--width-4",
         attributes: {
           maxlength: 4
         }
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Money in the account?
-      </h2>
-
-      {{ govukInput({
+          {{ govukInput({
         label: {
-          text: "Total value"
+          text: "Total amount in this account"
         },
-        id: "savings-value",
-        name: "savings-value",
+        id: "msic-building-savings-account-amount",
+        name: "msic-building-savings-account-amount",
         classes: "govuk-input--width-20"
-      }) }}
-
-      {{ govukRadios({
-        idPrefix: "savings-owner",
-        name: "savings-owner",
-        fieldset: {
-          legend: {
-            text: "Who's is this account?"
-          }
-        },
-        items: [
-          {
-            value: "My Account",
-            text: "My Account"
-          },
-          {
-            value: "Partners",
-            text: "Partners"
-          },
-          {
-            value: "Joint account",
-            text: "Joint account"
-          }
-        ]
       }) }}
 
       <h2 class="govuk-heading-m">

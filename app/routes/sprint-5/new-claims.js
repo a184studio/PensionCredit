@@ -272,7 +272,7 @@ router.post(`${baseUrl}/has-current-account-router`, (req, res) => {
   if (hasCurrentAccount === 'yes') {
     res.redirect(`${baseUrl}/current-account`)
   } else {
-    res.redirect(`${baseUrl}/has-cash`)
+    res.redirect(`${baseUrl}/has-savings-account`)
   }
 })
 

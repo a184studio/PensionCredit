@@ -21,25 +21,24 @@
 
       {{ govukInput({
         label: {
-          text: "Name of bond / Reference number"
+          text: "Name of capital bond"
         },
-        id: "current-name",
-        name: "current-name",
+        id: "msic-premium-bond-account-name",
+        name: "msic-premium-bond-account-name",
         classes: "govuk-input--width-20"
       }) }}
 
 
-      <h2 class="govuk-heading-m">
-      Value
-      </h2>
-
       {{ govukInput({
         label: {
-          text: "Total value of bond"
+          text: "Combined financial total of bonds"
         },
-        id: "current-value",
-        name: "current-value",
-        classes: "govuk-input--width-20"
+        id: "msic-premium-bond-account-total-bonds",
+        name: "msic-premium-bond-account-total-bonds",
+        classes: "govuk-input--width-20",
+        attributes: {
+          maxlength: 20
+        }
       }) }}
 
 

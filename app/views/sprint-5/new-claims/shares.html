@@ -20,43 +20,23 @@
     <form action="has-bonds" method="post" class="form">
       {{ govukInput({
         label: {
-          text: "Company name"
+          text: "Name of company"
         },
-        id: "shares-name",
-        name: "shares-name",
-        classes: "govuk-input--width-20",
-        value: data["shares-name"]
+        id: "msic-shares-account-name",
+        name: "msic-shares-account-name",
+        classes: "govuk-input--width-20"
       }) }}
 
-      {{ govukInput({
+
+          {{ govukInput({
         label: {
-          text: "Type of shares"
+          text: "Total number of shares held"
         },
-        id: "shares-type",
-        name: "shares-type",
-        classes: "govuk-input--width-20",
-        value: data["shares-type"]
+        id: "msic-shares-account-amount",
+        name: "msic-shares-account-amount",
+        classes: "govuk-input--width-20"
       }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Amount of shares"
-        },
-        id: "shares-amount",
-        name: "shares-amount",
-        classes: "govuk-input--width-10",
-        value: data["shares-amount"]
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Value of shares"
-        },
-        id: "shares-value",
-        name: "shares-value",
-        classes: "govuk-input--width-10",
-        value: data["shares-value"]
-      }) }}
 
       <h2 class="govuk-heading-m">
         Any other shares

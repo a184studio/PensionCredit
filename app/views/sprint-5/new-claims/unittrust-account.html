@@ -21,42 +21,31 @@
 
       {{ govukInput({
         label: {
-          text: "Unit trust name / Company"
+          text: "Name of company"
         },
-        id: "unittrust-name",
-        name: "unittrust-name",
+        id: "msic-trust-account-name",
+        name: "msic-trust-account-name",
+        classes: "govuk-input--width-20"
+      }) }}
+
+
+          {{ govukInput({
+        label: {
+          text: "Total number of units"
+        },
+        id: "msic-trust-account-units",
+        name: "msic-trust-account-units",
         classes: "govuk-input--width-20"
       }) }}
 
       {{ govukInput({
-        label: {
-          text: "Number of units"
-        },
-        id: "Number-of-units",
-        name: "Number-of-units",
-        classes: "govuk-input--width-10",
-        attributes: {
-          maxlength: 10
-        }
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Value per unit (bid price)"
-        },
-        id: "bid-price-value",
-        name: "bid-price-value",
-        classes: "govuk-input--width-10"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Total value"
-        },
-        id: "unit-trust-total-value",
-        name: "unit-trust-total-value",
-        classes: "govuk-input--width-10"
-      }) }}
+    label: {
+      text: "Unit value"
+    },
+    id: "msic-trust-account-value",
+    name: "msic-trust-account-value",
+    classes: "govuk-input--width-20"
+  }) }}
 
       <h2 class="govuk-heading-m">
         Any other unit trust account
