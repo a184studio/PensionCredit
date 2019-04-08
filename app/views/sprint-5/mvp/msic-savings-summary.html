@@ -23,7 +23,7 @@
 
 
     <h3 class="govuk-heading-m">
-      Bank current accounts (2)
+      Bank current accounts (1)
     </h3>
 
     <div class="govuk-grid-row">
@@ -70,7 +70,7 @@
                 text: "Amount"
               },
               value: {
-                text: data['msic-buildings-savings-account']
+                text: data['msic-bank-savings-account-amount']
               },
               actions: {
                 items: [
@@ -88,12 +88,12 @@
                 text: "Who's account?"
               },
               value: {
-                text: data['current-owner']
+                text: data['msic-bank-savings-account-owner']
               },
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account",
+                    href: "msic-bank-savings-account",
                     text: "",
                     visuallyHiddenText: "XXXX"
                   }
@@ -106,12 +106,12 @@
                 text: "% stake in joint account"
               },
               value: {
-                text: data['msic-buildings-savings-account-stake']
+                text: data['msic-bank-savings-account-stake']
               },
               actions: {
                 items: [
                   {
-                    href: "msic-buildings-savings-account-stake",
+                    href: "msic-bank-savings-account",
                     text: "",
                     visuallyHiddenText: "XXXX"
                   }
@@ -134,7 +134,7 @@
 
 
   <h3 class="govuk-heading-m">
-    Building society savings accounts (2)
+    Building society savings accounts (1)
   </h3>
 
   <div class="govuk-grid-row">
@@ -186,51 +186,9 @@
         actions: {
           items: [
             {
-              href: "pre-declaration",
+              href: "",
               text: "",
               visuallyHiddenText: "XXXX"
-            }
-          ]
-        }
-      }
-      ]
-    }) }}
-
-</div></div>
-
-
-<!----Break---->
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  </div>
-</div>
-<!----Break---->
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
-      {{ data["msic-building-savings-account-name"] }}<p class="govuk-body"><!--<a href="msic-building-savings-account" class="govuk-link">Remove</a>--></p>
-    </h3></div>
-
-
-  <div class="govuk-grid-column-two-thirds">
-
-    {{ govukSummaryList({
-      rows: [
-      {
-        key: {
-          text: "Last four digits"
-        },
-        value: {
-          text: data['msic-building-savings-account-last-digits']
-        },
-        actions: {
-          items: [
-            {
-              href: "msic-building-savings-account",
-              text: "Change Remove",
-              visuallyHiddenText: "XXX"
             }
           ]
         }
@@ -238,15 +196,33 @@
 
       {
         key: {
-          text: "Amount"
+          text: "Who's account?"
         },
         value: {
-          text: data['msic-building-savings-account-amount']
+          text: data['msic-buildings-savings-account-owner']
         },
         actions: {
           items: [
             {
-              href: "pre-declaration",
+              href: "",
+              text: "",
+              visuallyHiddenText: "XXXX"
+            }
+          ]
+        }
+      },
+
+      {
+        key: {
+          text: "% stake in joint account"
+        },
+        value: {
+          text: data['msic-buildings-savings-account-stake']
+        },
+        actions: {
+          items: [
+            {
+              href: "",
               text: "",
               visuallyHiddenText: "XXXX"
             }
@@ -255,6 +231,11 @@
       }
       ]
     }) }}
+
+
+
+
+
 
 </div></div>
 {% endif %}

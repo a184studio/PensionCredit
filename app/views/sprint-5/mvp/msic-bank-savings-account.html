@@ -33,8 +33,8 @@
           label: {
             text: "Percentage stake"
           },
-          id: "msic-buildings-savings-account-stake",
-          name: "msic-buildings-savings-account-stake",
+          id: "msic-bank-savings-account-stake",
+          name: "msic-bank-savings-account-stake",
           classes: "govuk-input--width-5"
         }) }}
       {% endset %}
@@ -56,14 +56,14 @@
         label: {
           text: "Total amount in this account"
         },
-        id: "msic-buildings-savings-account",
-        name: "msic-buildings-savings-account",
+        id: "msic-bank-savings-account-amount",
+        name: "msic-bank-savings-account-amount",
         classes: "govuk-input--width-20"
       }) }}
 
       {{ govukRadios({
-        idPrefix: "current-owner",
-        name: "current-owner",
+        idPrefix: "msic-bank-savings-account-owner",
+        name: "msic-bank-savings-account-owner",
         fieldset: {
           legend: {
             text: "Who's is this account?"
