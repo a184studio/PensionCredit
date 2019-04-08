@@ -28,6 +28,18 @@
         classes: "govuk-input--width-20"
       }) }}
 
+      {% set percentageField %}
+        {{ govukInput({
+          label: {
+            text: "Percentage stake"
+          },
+          id: "msic-buildings-savings-account-stake",
+          name: "msic-buildings-savings-account-stake",
+          classes: "govuk-input--width-5"
+        }) }}
+      {% endset %}
+
+
       {{ govukInput({
         label: {
           text: "Last 4 digits of account"
@@ -44,10 +56,35 @@
         label: {
           text: "Total amount in this account"
         },
-        id: "msic-bank-savings-account-amount",
-        name: "msic-bank-savings-account-amount",
+        id: "msic-buildings-savings-account",
+        name: "msic-buildings-savings-account",
         classes: "govuk-input--width-20"
       }) }}
+
+      {{ govukRadios({
+        idPrefix: "current-owner",
+        name: "current-owner",
+        fieldset: {
+          legend: {
+            text: "Who's is this account?"
+          }
+        },
+        items: [
+          {
+            value: "My account",
+            text: "My account"
+          },
+          {
+            value: "Joint account",
+            text: "Joint account",
+            conditional: {
+              html: percentageField
+            }
+          }
+        ]
+      }) }}
+
+
 
       {{ govukButton({
         text: "Continue"
