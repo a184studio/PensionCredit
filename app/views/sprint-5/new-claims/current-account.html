@@ -16,7 +16,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="msic-bank-current-accounts-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Adding a new current account
+        Add a current account
       </h1>
 
       {{ govukInput({
@@ -30,7 +30,7 @@
 
       {{ govukInput({
         label: {
-          text: "Last 4 digits of account"
+          text: "Last 4 digits of account number"
         },
         id: "msic-bank-current-account-last-digits",
         name: "msic-bank-current-account-last-digits",
@@ -65,13 +65,13 @@
         name: "current-owner",
         fieldset: {
           legend: {
-            text: "Who's is this account?"
+            text: "Who does account belong to?"
           }
         },
         items: [
           {
-            value: "My account",
-            text: "My account"
+            value: "Me",
+            text: "Me"
           },
           {
             value: "Joint account",

@@ -14,9 +14,9 @@
 
 
   <!----Headline---->
-  <span class="govuk-caption-m">Money, savings, investments and capital</span>
+  <span class="govuk-caption-m">Money, savings and investments</span>
   <h1 class="govuk-heading-xl">
-    Second property summary<br>
+    Property and land summary<br>
   </h1>
   <!----Headline---->
   <form action="money-summary" method="post">
@@ -38,7 +38,7 @@
           rows: [
           {
             key: {
-              text: "Household value"
+              text: "Value"
             },
             value: {
               text: data['property-value']
@@ -74,7 +74,7 @@
   name: "changed-name",
   fieldset: {
     legend: {
-      text: "Add another property",
+      text: "Do you want to add more property or land?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
