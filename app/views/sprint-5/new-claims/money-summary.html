@@ -13,14 +13,14 @@
 {% include "includes/js-back-link.html" %}
 
   <h1 class="govuk-heading-xl">
-    Money, savings and investments you've added
+    Money, savings and investments summary
   </h1>
 
   {% if data['has-current-account'] %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-s">
-          Current account
+          Current accounts
         </h3>
       </div>
       <div class="govuk-grid-column-two-thirds">
@@ -64,7 +64,7 @@
 
           {
             key: {
-              text: "Who's account?"
+              text: "Owner of account?"
             },
             value: {
               text: data['current-owner']
@@ -82,7 +82,7 @@
 
           {
             key: {
-              text: "% stake in joint account"
+              text: "Percentage stake in joint account"
             },
             value: {
               text: data['msic-bank-current-account-stake']
@@ -113,7 +113,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-s">
-          Building society savings account
+          Building society savings accounts
         </h3>
       </div>
       <div class="govuk-grid-column-two-thirds">
@@ -198,7 +198,7 @@
           {
 
             key: {
-              text: "Total amount of shares"
+              text: "Total number of shares"
             },
             value: {
               text: data['msic-shares-account-amount']
@@ -260,7 +260,7 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-third">
             <h3 class="govuk-heading-s">
-              Unit trust
+              Unit trusts
             </h3>
           </div>
           <div class="govuk-grid-column-two-thirds">
@@ -311,7 +311,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-s">
-          Second property
+          Property and land
         </h3>
       </div>
       <div class="govuk-grid-column-two-thirds">
