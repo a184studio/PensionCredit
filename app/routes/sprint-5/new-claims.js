@@ -260,21 +260,33 @@ router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
   const hasOver10k = req.session.data['over-10k']
 
   if (hasOver10k === 'yes') {
-    res.redirect(`${baseUrl}/has-current-account`)
+    res.redirect(`${baseUrl}/msic-has-bank-current-account-yn`)
   } else {
     res.redirect(`${baseUrl}/money-summary`)
   }
 })
 
-router.post(`${baseUrl}/has-current-account-router`, (req, res) => {
-  const hasCurrentAccount = req.session.data['has-current-account']
+router.post(`${baseUrl}/msic-has-bank-current-account-yn-router`, (req, res) => {
+  const hasCurrentAccount = req.session.data['msic-has-bank-current-account-yn']
 
   if (hasCurrentAccount === 'yes') {
     res.redirect(`${baseUrl}/current-account`)
   } else {
+    res.redirect(`${baseUrl}/msic-has-buildings-current-account-yn`)
+  }
+})
+
+router.post(`${baseUrl}/msic-has-buildings-current-account-yn-router`, (req, res) => {
+  const hasCurrentAccount = req.session.data['msic-has-buildings-current-account-yn']
+
+  if (hasCurrentAccount === 'yes') {
+    res.redirect(`${baseUrl}/msic-building-current-account`)
+  } else {
     res.redirect(`${baseUrl}/has-savings-account`)
   }
 })
+
+
 
 router.post(`${baseUrl}/has-savings-account-router`, (req, res) => {
   const hasSavingsAccount = req.session.data['has-savings-account']
