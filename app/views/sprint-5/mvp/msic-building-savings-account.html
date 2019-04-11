@@ -16,7 +16,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="msic-savings-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Add bulding society savings account
+        Add building society savings account
       </h1>
 
       {{ govukInput({
@@ -42,7 +42,7 @@
 
       {{ govukInput({
         label: {
-          text: "Last 4 digits of account"
+          text: "Last 4 digits of account number"
         },
         id: "msic-building-savings-account-last-digits",
         name: "msic-building-savings-account-last-digits",
@@ -66,13 +66,13 @@
         name: "msic-buildings-savings-account-owner",
         fieldset: {
           legend: {
-            text: "Who's is this account?"
+            text: "Who does this account belong to?"
           }
         },
         items: [
           {
-            value: "My account",
-            text: "My account"
+            value: "You",
+            text: "You"
           },
           {
             value: "Joint account",

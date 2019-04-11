@@ -30,7 +30,7 @@
 
       {{ govukInput({
         label: {
-          text: "Last 4 digits of account"
+          text: "Last 4 digits of account number"
         },
         id: "msic-bank-current-account-last-digits",
         name: "msic-bank-current-account-last-digits",
@@ -65,13 +65,13 @@
         name: "current-owner",
         fieldset: {
           legend: {
-            text: "Who's is this account?"
+            text: "Who does this account belong to?"
           }
         },
         items: [
           {
-            value: "My account",
-            text: "My account"
+            value: "You",
+            text: "You"
           },
           {
             value: "Joint account",
