@@ -17,16 +17,19 @@
       <form action="msic-cash-summary" method="post">
 
         <span class="govuk-caption-m">Agent notes page</span>
-        <h1 class="govuk-heading-l">Any other money held in this country or abroad @Pete / Talk to Dave</h1>
+        <h1 class="govuk-heading-l">Money held in other countries</h1>
 
 
-<p class="govuk-body govuk-!-font-size-19">Treat as the type of account it is, though we also need to know the currency. These are converty by using XE Currency converter (https://www.xe.com/currencyconverter/)</p>
-<p class="govuk-body govuk-!-font-size-19">@nick talked about "Do you transfer it to the UK or keep it in the currency. EG Euros @pete"</p>
+<p class="govuk-body govuk-!-font-size-19">Money held in other countries is treat as capital of its type in the UK. For example, a Spanish ISA is the same as a UK ISA for PC purposes.
+<br><br>To record the amount we need to know the currency of the money. The exchange rate is worked using the XE currency converter
+<br><br>Any capital spent to transfer the money to a UK account is disregarded.
 
-        <p class="govuk-body govuk-!-font-size-19">For each type of money, saving or investment, ask the user for all relevant details, including:</p>
+        <p class="govuk-body govuk-!-font-size-19">To record these accounts we would need:</p>
 
         <ul class="govuk-list govuk-list--bullet">
-          <li>any significant changes that the claimant expects over the next 12 months</li>
+          <li> The account type</li>
+          <li> Bank name and last 4 digits of the (foreign equivalent) account number. </li>
+          <li> Plus any additional details that the type of account requires in the spreadsheet. (Note for @Mark)</li>
         </ul>
 
         {{ govukTextarea({
