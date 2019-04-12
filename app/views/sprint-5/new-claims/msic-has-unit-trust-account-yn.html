@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you have any ISAs, TESSA, TOISAs and PEPs)? - Pension Credit
+  Do you have any Unit trusts? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,13 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="has-unit-trust" method="post" class="form">
+    <form action="msic-has-unit-trust-account-yn-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "msic-has-premium-bond-account-yn",
-        name: "msic-has-premium-bond-account-yn",
+        idPrefix: "msic-has-unit-trust-account-yn",
+        name: "msic-has-unit-trust-account-yn",
         fieldset: {
           legend: {
-            text: "Do you have any ISAs, TESSA, TOISAs and PEPs)?",
+            text: "Do you have any Unit trust accounts?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -30,12 +30,12 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["msic-has-premium-bond-account-yn"] == "yes")
+            checked: (data["msic-has-unit-trust-account-yn"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["msic-has-premium-bond-account-yn"] == "no")
+            checked: (data["msic-has-unit-trust-account-yn"] == "no")
           }
         ]
       }) }}

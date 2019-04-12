@@ -34,7 +34,7 @@
         rows: [
         {
           key: {
-            text: "Current accounts"
+            text: "Current accounts & PES"
           },
           value: {
             text: "3"
@@ -78,7 +78,7 @@
           actions: {
             items: [
               {
-                href: "msic-shares-summary",
+                href: "msic-shares-account-summary",
                 text: "Change",
                 visuallyHiddenText: "XXX"
               }
@@ -106,6 +106,24 @@
 
         {
           key: {
+            text: "Second property"
+          },
+          value: {
+            text: "0"
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-second-property-summary",
+                text: "Change",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
             text: ""
           },
           value: {
@@ -114,7 +132,7 @@
           actions: {
             items: [
               {
-                href: "@Niall add in total number of accouts?",
+                href: "",
                 text: "",
                 visuallyHiddenText: "XXX"
               }
@@ -127,7 +145,7 @@
             text: "Combined total"
           },
           value: {
-            text: data['msic-bank-current-account-amount']
+            text: "£6,000"
           },
           actions: {
             items: [

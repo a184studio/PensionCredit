@@ -256,6 +256,8 @@ router.post(`${baseUrl}/qyp-pip-router`, (req, res) => {
   }
 })
 
+// Money Savining and investement Routers
+
 router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
   const hasOver10k = req.session.data['over-10k']
 
@@ -270,7 +272,7 @@ router.post(`${baseUrl}/msic-has-bank-current-account-yn-router`, (req, res) => 
   const hasCurrentAccount = req.session.data['msic-has-bank-current-account-yn']
 
   if (hasCurrentAccount === 'yes') {
-    res.redirect(`${baseUrl}/current-account`)
+    res.redirect(`${baseUrl}/msic-bank-current-account`)
   } else {
     res.redirect(`${baseUrl}/msic-has-buildings-current-account-yn`)
   }
@@ -292,7 +294,7 @@ router.post(`${baseUrl}/msic-has-post-office-card-account-yn-router`, (req, res)
   if (hasPostOfficeCardAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-post-office-card-account`)
   } else {
-    res.redirect(`${baseUrl}/task-list`)
+    res.redirect(`${baseUrl}/msic-has-bank-savings-account-yn`)
   }
 })
 
@@ -303,11 +305,9 @@ router.post(`${baseUrl}/msic-has-bank-savings-account-yn-router`, (req, res) => 
   if (hasBankSavingsAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-bank-savings-account`)
   } else {
-    res.redirect(`${baseUrl}/task-list`)
+    res.redirect(`${baseUrl}/msic-has-buildings-savings-account-yn`)
   }
 })
-
-
 
 router.post(`${baseUrl}/msic-has-buildings-savings-account-yn-router`, (req, res) => {
   const hasBuildingsSavingsAccount = req.session.data['msic-has-buildings-current-account-yn']
@@ -320,69 +320,103 @@ router.post(`${baseUrl}/msic-has-buildings-savings-account-yn-router`, (req, res
 })
 
 
-
 router.post(`${baseUrl}/msic-has-premium-bond-account-yn-router`, (req, res) => {
-  const hasBuildingsSavingsAccount = req.session.data['msic-has-premium-bond-account-yn']
+  const hasPremiumBondAccount = req.session.data['msic-has-premium-bond-account-yn']
 
-  if (hasBuildingsSavingsAccount === 'yes') {
+  if (hasPremiumBondAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-premium-bond-account`)
   } else {
-    res.redirect(`${baseUrl}/task-list`)
+    res.redirect(`${baseUrl}/msic-has-capital-bond-account-yn`)
   }
 })
 
+router.post(`${baseUrl}/msic-has-isa-savings-account-yn-router`, (req, res) => {
+  const hasISASavingsAccount = req.session.data['msic-has-isa-savings-account-yn']
 
-
-
-router.post(`${baseUrl}/has-savings-account-router`, (req, res) => {
-  const hasSavingsAccount = req.session.data['has-savings-account']
-
-  if (hasSavingsAccount === 'yes') {
-    res.redirect(`${baseUrl}/savings-account`)
+  if (hasISASavingsAccount === 'yes') {
+    res.redirect(`${baseUrl}/msic-isa-savings-account`)
   } else {
-    res.redirect(`${baseUrl}/has-cash`)
+    res.redirect(`${baseUrl}/msic-capital-bond-account`)
   }
 })
 
-router.post(`${baseUrl}/has-shares-router`, (req, res) => {
-  const hasShares = req.session.data['has-shares']
+router.post(`${baseUrl}/msic-has-capital-bond-account-yn-router`, (req, res) => {
+  const hasCapitalBondAccount = req.session.data['msic-has-capital-bond-account-yn']
 
-  if (hasShares === 'yes') {
-    res.redirect(`${baseUrl}/shares`)
+  if (hasCapitalBondAccount === 'yes') {
+    res.redirect(`${baseUrl}/msic-capital-bond-account`)
   } else {
-    res.redirect(`${baseUrl}/has-unit-trust`)
+    res.redirect(`${baseUrl}/msic-has-shares-account-yn`)
   }
 })
 
-router.post(`${baseUrl}/has-unit-trust-router`, (req, res) => {
-  const hasUnitTrust = req.session.data['has-unit-trust']
+router.post(`${baseUrl}/msic-has-shares-account-yn-router`, (req, res) => {
+  const hasBuildingsSavingsAccount = req.session.data['msic-has-shares-account-yn']
 
-  if (hasUnitTrust === 'yes') {
-    res.redirect(`${baseUrl}/unittrust-account`)
+  if (hasBuildingsSavingsAccount === 'yes') {
+    res.redirect(`${baseUrl}/msic-shares-account`)
   } else {
-    res.redirect(`${baseUrl}/has-bonds`)
+    res.redirect(`${baseUrl}/msic-has-unit-trust-account-yn`)
   }
 })
 
-router.post(`${baseUrl}/has-bonds-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['has-bonds-router']
+router.post(`${baseUrl}/msic-has-unit-trust-account-yn-router`, (req, res) => {
+  const hasUnitTrustAccount = req.session.data['msic-has-unit-trust-account-yn']
+
+  if (hasUnitTrustAccount === 'yes') {
+    res.redirect(`${baseUrl}/msic-unit-trust-account`)
+  } else {
+    res.redirect(`${baseUrl}/msic-cash-at-home`)
+  }
+})
+
+
+router.post(`${baseUrl}/msic-has-cash-at-home-yn-router`, (req, res) => {
+  const hasCashAtHome = req.session.data['msic-has-cash-at-home-yn']
+
+  if (hasCashAtHome === 'yes') {
+    res.redirect(`${baseUrl}/msic-cash-at-home`)
+  } else {
+    res.redirect(`${baseUrl}/msic-has-cash-other-abroad-yn`)
+  }
+})
+
+router.post(`${baseUrl}/msic-cash-other-abroad-yn-router`, (req, res) => {
+  const hasCashAtHome = req.session.data['msic-cash-other-abroad-yn']
+
+  if (hasCashAtHome === 'yes') {
+    res.redirect(`${baseUrl}/msic-cash-other-abroad`)
+  } else {
+    res.redirect(`${baseUrl}/msic-has-cash-lump-sum-yn`)
+  }
+})
+
+router.post(`${baseUrl}/msic-has-cash-lump-sum-yn-router`, (req, res) => {
+  const hasCashLumpSum = req.session.data['msic-has-cash-lump-sum-yn']
+
+  if (hasCashLumpSum === 'yes') {
+    res.redirect(`${baseUrl}/msic-cash-lump-sum`)
+  } else {
+    res.redirect(`${baseUrl}/msic-has-second-property-yn`)
+  }
+})
+
+
+
+
+
+router.post(`${baseUrl}/msic-second-property-yn-router`, (req, res) => {
+  const hasSecondProperty = req.session.data['msic-second-property-yn']
 
   if (hasSecondProperty === 'yes') {
-    res.redirect(`${baseUrl}/bond-account`)
+    res.redirect(`${baseUrl}/msic-second-property`)
   } else {
-    res.redirect(`${baseUrl}/has-second-property`)
+    res.redirect(`${baseUrl}/msic-all-money-accounts-pre-summary`)
   }
 })
 
-router.post(`${baseUrl}/has-second-property-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['has-second-property']
+// XXXXX
 
-  if (hasSecondProperty === 'yes') {
-    res.redirect(`${baseUrl}/second-property`)
-  } else {
-    res.redirect(`${baseUrl}/money-summary`)
-  }
-})
 
 router.post(`${baseUrl}/employment-router`, (req, res) => {
   const employmentFulltime = req.session.data['employment-fulltime']
