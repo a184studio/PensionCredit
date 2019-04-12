@@ -315,7 +315,7 @@ router.post(`${baseUrl}/msic-has-buildings-savings-account-yn-router`, (req, res
   if (hasBuildingsSavingsAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-buildings-savings-account`)
   } else {
-    res.redirect(`${baseUrl}/task-list`)
+    res.redirect(`${baseUrl}/msic-has-premium-bond-account-yn`)
   }
 })
 
@@ -326,7 +326,7 @@ router.post(`${baseUrl}/msic-has-premium-bond-account-yn-router`, (req, res) => 
   if (hasPremiumBondAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-premium-bond-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-has-capital-bond-account-yn`)
+    res.redirect(`${baseUrl}/msic-has-isa-savings-account-yn`)
   }
 })
 
@@ -334,9 +334,9 @@ router.post(`${baseUrl}/msic-has-isa-savings-account-yn-router`, (req, res) => {
   const hasISASavingsAccount = req.session.data['msic-has-isa-savings-account-yn']
 
   if (hasISASavingsAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-isa-savings-account`)
+    res.redirect(`${baseUrl}/msic-has-isa-savings-account-yn`)
   } else {
-    res.redirect(`${baseUrl}/msic-capital-bond-account`)
+    res.redirect(`${baseUrl}/msic-has-capital-bond-account-yn`)
   }
 })
 
@@ -366,7 +366,7 @@ router.post(`${baseUrl}/msic-has-unit-trust-account-yn-router`, (req, res) => {
   if (hasUnitTrustAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-unit-trust-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-cash-at-home`)
+    res.redirect(`${baseUrl}/msic-has-cash-at-home-yn`)
   }
 })
 
