@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you have a buildings society current account? - Pension Credit
+  Do you have a current account? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,13 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="msic-has-buildings-current-account-yn-router" method="post" class="form">
+    <form action="msic-has-bank-savings-account-yn-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "msic-has-buildings-current-account-yn",
-        name: "msic-has-buildings-current-account-yn",
+        idPrefix: "msic-has-bank-savings-account-yn",
+        name: "msic-has-bank-savings-account-yn",
         fieldset: {
           legend: {
-            text: "Do you have any buldings society current accounts?",
+            text: "Do you have any bank savings accounts?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -30,12 +30,12 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["msic-has-buildings-current-account-yn"] == "yes")
+            checked: (data["msic-has-bank-savings-account-yn"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["msic-has-buildings-current-account-yn"] == "no")
+            checked: (data["msic-has-bank-savings-account-yn"] == "no")
           }
         ]
       }) }}

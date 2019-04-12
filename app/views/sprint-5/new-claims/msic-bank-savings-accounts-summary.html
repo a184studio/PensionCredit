@@ -16,23 +16,23 @@
   <!----Headline---->
   <span class="govuk-caption-m">Money, savings and investments</span>
   <h1 class="govuk-heading-xl">
-    Current accounts summary<br>
+    Bank savings accounts summary<br>
   </h1>
   <!----Headline---->
-  <form action="msic-has-buildings-current-account-yn" method="post">
+  <form action="msic-has-buildings-savings-account-yn" method="post">
 
 
     <h3 class="govuk-heading-m">
-      Current accounts (1)
+      Bank savings account (1)
     </h3>
 
 <br><br>
-{% if data["msic-bank-current-account-name"] %}
+{% if data["msic-bank-savings-account-name"] %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
     <!------>  <h3 class="govuk-heading-s">
-        {{ data["msic-bank-current-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+        {{ data["msic-bank-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
       </h3></div>
 
 
@@ -45,12 +45,12 @@
             text: "Last four digits"
           },
           value: {
-            text: data['msic-bank-current-account-last-digits']
+            text: data['msic-bank-savings-account-last-digits']
           },
           actions: {
             items: [
               {
-                href: "msic-bank-current-account",
+                href: "msic-bank-savings-account",
                 text: "Change Remove",
                 visuallyHiddenText: "XXX"
               }
@@ -63,12 +63,12 @@
             text: "Total"
           },
           value: {
-            text: data['msic-bank-current-account-amount | formatMoney ']
+            text: data['msic-bank-savings-account-amount']
           },
           actions: {
             items: [
               {
-                href: "msic-bank-current-account",
+                href: "",
                 text: "",
                 visuallyHiddenText: "XXX"
               }
@@ -86,7 +86,7 @@
           actions: {
             items: [
               {
-                href: "msic-bank-current-account",
+                href: "msic-bank-savings-account",
                 text: "",
                 visuallyHiddenText: "XXXX"
               }
@@ -99,12 +99,12 @@
             text: "% stake in joint account"
           },
           value: {
-            text: data['msic-bank-current-account-stake']
+            text: data['msic-bank-savings-account-stake']
           },
           actions: {
             items: [
               {
-                href: "msic-bank-current-account-stake",
+                href: "msic-bank-savings-account-stake",
                 text: "",
                 visuallyHiddenText: "XXXX"
               }

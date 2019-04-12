@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you have a buildings society current account? - Pension Credit
+  Do you have a buildings society savings account? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,13 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="msic-has-buildings-current-account-yn-router" method="post" class="form">
+    <form action="msic-has-buildings-savings-account-yn-router" method="post" class="form">
       {{ govukRadios({
         idPrefix: "msic-has-buildings-current-account-yn",
         name: "msic-has-buildings-current-account-yn",
         fieldset: {
           legend: {
-            text: "Do you have any buldings society current accounts?",
+            text: "Do you have any buldings savings current accounts?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }

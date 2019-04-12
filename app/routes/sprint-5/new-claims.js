@@ -277,14 +277,60 @@ router.post(`${baseUrl}/msic-has-bank-current-account-yn-router`, (req, res) => 
 })
 
 router.post(`${baseUrl}/msic-has-buildings-current-account-yn-router`, (req, res) => {
-  const hasCurrentAccount = req.session.data['msic-has-buildings-current-account-yn']
+  const hasBuildingsCurrentAccount = req.session.data['msic-has-buildings-current-account-yn']
 
-  if (hasCurrentAccount === 'yes') {
+  if (hasBuildingsCurrentAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-building-current-account`)
   } else {
-    res.redirect(`${baseUrl}/has-savings-account`)
+    res.redirect(`${baseUrl}/msic-has-post-office-card-account-yn`)
   }
 })
+
+router.post(`${baseUrl}/msic-has-post-office-card-account-yn-router`, (req, res) => {
+  const hasPostOfficeCardAccount = req.session.data['msic-has-post-office-card-account-yn']
+
+  if (hasPostOfficeCardAccount === 'yes') {
+    res.redirect(`${baseUrl}/msic-post-office-card-account`)
+  } else {
+    res.redirect(`${baseUrl}/task-list`)
+  }
+})
+
+
+router.post(`${baseUrl}/msic-has-bank-savings-account-yn-router`, (req, res) => {
+  const hasBankSavingsAccount = req.session.data['msic-has-bank-savings-account-yn']
+
+  if (hasBankSavingsAccount === 'yes') {
+    res.redirect(`${baseUrl}/msic-bank-savings-account`)
+  } else {
+    res.redirect(`${baseUrl}/task-list`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/msic-has-buildings-savings-account-yn-router`, (req, res) => {
+  const hasBuildingsSavingsAccount = req.session.data['msic-has-buildings-current-account-yn']
+
+  if (hasBuildingsSavingsAccount === 'yes') {
+    res.redirect(`${baseUrl}/msic-buildings-savings-account`)
+  } else {
+    res.redirect(`${baseUrl}/task-list`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/msic-has-premium-bond-account-yn-router`, (req, res) => {
+  const hasBuildingsSavingsAccount = req.session.data['msic-has-premium-bond-account-yn']
+
+  if (hasBuildingsSavingsAccount === 'yes') {
+    res.redirect(`${baseUrl}/msic-premium-bond-account`)
+  } else {
+    res.redirect(`${baseUrl}/task-list`)
+  }
+})
+
 
 
 
