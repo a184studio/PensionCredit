@@ -334,7 +334,7 @@ router.post(`${baseUrl}/msic-has-isa-savings-account-yn-router`, (req, res) => {
   const hasISASavingsAccount = req.session.data['msic-has-isa-savings-account-yn']
 
   if (hasISASavingsAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-has-isa-savings-account-yn`)
+    res.redirect(`${baseUrl}/msic-isa-savings-account`)
   } else {
     res.redirect(`${baseUrl}/msic-has-capital-bond-account-yn`)
   }
