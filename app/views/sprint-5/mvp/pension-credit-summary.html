@@ -13,6 +13,16 @@
 {% include "includes/js-back-link.html" %}
 
 
+<style>
+  .govuk-summary-list {
+    margin-bottom: 10;
+  }
+  .govuk-summary-list__row:last-child > * {
+    border: 0;
+  }
+</style>
+
+
 <!----Headline---->
 <h1 class="govuk-heading-xl">
   Pension Credit claim summary.<br>
@@ -1116,35 +1126,132 @@ Address
 <!----End 1/3 + 2/3 ---------------------------------------------------------------------------------->
 
 
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
-      Money / Cash
-    </h3>
-    <p></p>
-  </div>
+<div class="govuk-grid-column-one-third">
+  <h3 class="govuk-heading-s">
+    Accounts breakdown:
+  </h3></div>
 
 
-  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-column-two-thirds">
 
-    <table class="govuk-table ">
-      <thead class="govuk-table__head govuk-table--no-border">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Note pad information:</th>
-          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-MoneyOver10k" class="govuk-link">Change</a></th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-      </tbody>
-    </table>
+      {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Current accounts"
+          },
+          value: {
+            text: "3"
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-bank-current-accounts-summary",
+                text: "Change",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
 
-  <p class="govuk-body">
-    {{ data["MoneyOver10k-more-detail"] }}
-  </p>
+        {
+          key: {
+            text: "Savings accounts"
+          },
+          value: {
+            text: "3"
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-savings-summary",
+                text: "Change",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Shares and unit trusts"
+          },
+          value: {
+            text: "5"
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-shares-trusts-summary",
+                text: "Change",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Cash, pension lump sums"
+          },
+          value: {
+            text: "2"
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-cash-summary",
+                text: "Change",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: ""
+          },
+          value: {
+            text: "."
+          },
+          actions: {
+            items: [
+              {
+                href: "@Niall add in total number of accouts?",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Combined total"
+          },
+          value: {
+            text: data['msic-bank-current-account-amount']
+          },
+          actions: {
+            items: [
+              {
+                href: "money-you-have",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
 
 
-<!----End 1/3 + 2/3 ----></div>
-</div>
+
+</div></div>
+
 
 <!----Break---->
 <div class="govuk-grid-row">
@@ -1155,106 +1262,35 @@ Address
 <!----Break---->
 
 
-{% if data["MoneyOver10k-savings-more-detail"] %}
-
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-s">
-
-    </h3>
-    <p></p>
-  </div></div>
-
-<!----End 1/3 + 2/3 ---->
-{% endif %}
-<!----Break---->
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
-      Savings
+Notes
     </h3>
     <p></p>
   </div>
-
 
   <div class="govuk-grid-column-two-thirds">
 
     <table class="govuk-table ">
       <thead class="govuk-table__head govuk-table--no-border">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Note pad information:</th>
-          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-MoneyOver10k" class="govuk-link">Change</a></th>
+          <th class="govuk-table__header" scope="col"><p class="govuk-body"><a href="msic-notepad" class="govuk-link">Add money notes</a></p></th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="msic-notepad" class="govuk-link">Change</a></th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
       </tbody>
     </table>
+    {% if data["msic-all-money-detail"] %}
+
 
   <p class="govuk-body">
-    {{ data["MoneyOver10k-savings-more-detail"] }}
+    {{ data["msic-all-money-detail"] }}
   </p>
-
-  </div></div>
-
-
-<!----End 1/3 + 2/3 ---->
-
-<!----Break---->
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  </div>
-</div>
-<!----Break---->
-
-
-{% if data["MoneyOver10k-investments-more-detail"] %}
-
-
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
-
-    </h3>
-    <p></p>
-  </div>
-
-<!----End 1/3 + 2/3 ----></div>
 {% endif %}
-<!----Break---->
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
-      Investments
-    </h3>
-    <p></p>
-  </div>
-
-
-  <div class="govuk-grid-column-two-thirds">
-
-    <table class="govuk-table ">
-      <thead class="govuk-table__head govuk-table--no-border">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Note pad information:</th>
-          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="notepad-MoneyOver10k" class="govuk-link">Change</a></th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-      </tbody>
-    </table>
-
-  <p class="govuk-body">
-    {{ data["MoneyOver10k-investments-more-detail"] }}
-  </p>
-
-  </div>
-</div>
+</div></div>
 <!----End 1/3 + 2/3 ---------------------------------------------------------------------------------->
 
 
