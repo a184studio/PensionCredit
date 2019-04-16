@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add a shares account - Pension Credit
+  Do you have a current account? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,17 +14,38 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="msic-shares-trusts-summary" method="post" class="form">
+    <form action="msic-bank-current-accounts-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Adding a shares account
+        Add a current account
       </h1>
 
       {{ govukInput({
         label: {
-          text: "Name of company"
+          text: "Name of bank"
         },
-        id: "msic-shares-account-name",
-        name: "msic-shares-account-name",
+        id: "msic-bank-current-account-name",
+        name: "msic-bank-current-account-name",
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last 4 digits of account number"
+        },
+        id: "msic-bank-current-account-last-digits",
+        name: "msic-bank-current-account-last-digits",
+        classes: "govuk-input--width-4",
+        attributes: {
+          maxlength: 4
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Total amount in this account"
+        },
+        id: "msic-bank-current-account-amount",
+        name: "msic-bank-current-account-amount",
         classes: "govuk-input--width-20"
       }) }}
 
@@ -33,28 +54,18 @@
           label: {
             text: "Percentage stake"
           },
-          id: "msic-shares-account-stake",
-          name: "msic-shares-account-stake",
+          id: "msic-bank-current-account-stake",
+          name: "msic-bank-current-account-stake",
           classes: "govuk-input--width-5"
         }) }}
       {% endset %}
 
-
-          {{ govukInput({
-        label: {
-          text: "Total number of shares held"
-        },
-        id: "msic-shares-account-amount",
-        name: "msic-shares-account-amount",
-        classes: "govuk-input--width-20"
-      }) }}
-
       {{ govukRadios({
-        idPrefix: "msic-shares-account-owner",
-        name: "msic-shares-account-owner",
+        idPrefix: "current-owner",
+        name: "current-owner",
         fieldset: {
           legend: {
-            text: "Who does this account belong to?"
+            text: "Who does account belong to?"
           }
         },
         items: [
