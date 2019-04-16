@@ -35,16 +35,16 @@
           rows: [
           {
             key: {
-              text: "Last four digits"
+              text: "Current accounts"
             },
             value: {
-              text: data['msic-bank-current-account-last-digits']
+              text: "2"
             },
             actions: {
               items: [
                 {
-                  href: "msic-bank-current-account",
-                  text: "Change Remove",
+                  href: "msic-bank-current-accounts-summary",
+                  text: "Change",
                   visuallyHiddenText: "XXX"
                 }
               ]
@@ -53,15 +53,69 @@
 
           {
             key: {
-              text: "Total"
+              text: "Savings accounts"
             },
             value: {
-              text: data['msic-bank-current-account-amount']
+              text: "1"
             },
             actions: {
               items: [
                 {
-                  href: "msic-bank-current-account",
+                  href: "msic-savings-summary",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Shares and unit trusts"
+            },
+            value: {
+              text: "0"
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-shares-trusts-summary",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Cash, pension lump sums"
+            },
+            value: {
+              text: "1"
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-cash-summary",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: ""
+            },
+            value: {
+              text: "."
+            },
+            actions: {
+              items: [
+                {
+                  href: "@Niall add in total number of accouts?",
                   text: "",
                   visuallyHiddenText: "XXX"
                 }
@@ -71,33 +125,15 @@
 
           {
             key: {
-              text: "Who's account?"
+              text: "Combined total"
             },
             value: {
-              text: data['current-owner']
+              text: data['£5,000']
             },
             actions: {
               items: [
                 {
-                  href: "msic-bank-current-account",
-                  text: "",
-                  visuallyHiddenText: "XXXX"
-                }
-              ]
-            }
-          },
-
-          {
-            key: {
-              text: "% stake in joint account"
-            },
-            value: {
-              text: data['msic-bank-current-account-stake']
-            },
-            actions: {
-              items: [
-                {
-                  href: "msic-bank-current-account-stake",
+                  href: "money-you-have",
                   text: "",
                   visuallyHiddenText: "XXXX"
                 }
