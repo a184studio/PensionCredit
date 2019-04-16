@@ -30,136 +30,117 @@
 
 <div class="govuk-grid-column-two-thirds">
 
-      {{ govukSummaryList({
-        rows: [
-        {
-          key: {
-            text: "Current accounts & PES"
-          },
-          value: {
-            text: "3"
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-bank-current-accounts-summary",
-                text: "Change",
-                visuallyHiddenText: "XXX"
-              }
-            ]
+  {{ govukSummaryList({
+    rows: [
+    {
+      key: {
+        text: "Current accounts"
+      },
+      value: {
+        text: "2"
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-bank-current-accounts-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
           }
-        },
-
-        {
-          key: {
-            text: "Savings accounts"
-          },
-          value: {
-            text: "3"
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-savings-summary",
-                text: "Change",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "Shares and unit trusts"
-          },
-          value: {
-            text: "5"
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-shares-account-summary",
-                text: "Change",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "Cash, pension lump sums"
-          },
-          value: {
-            text: "2"
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-cash-summary",
-                text: "Change",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "Second property"
-          },
-          value: {
-            text: "0"
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-second-property-summary",
-                text: "Change",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: ""
-          },
-          value: {
-            text: "."
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "Combined total"
-          },
-          value: {
-            text: "£6,000"
-          },
-          actions: {
-            items: [
-              {
-                href: "money-you-have",
-                text: "",
-                visuallyHiddenText: "XXXX"
-              }
-            ]
-          }
-        }
         ]
-      }) }}
+      }
+    },
 
+    {
+      key: {
+        text: "Savings accounts"
+      },
+      value: {
+        text: "1"
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-savings-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Shares and unit trusts"
+      },
+      value: {
+        text: "0"
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-shares-trusts-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Cash, pension lump sums"
+      },
+      value: {
+        text: "1"
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-cash-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: ""
+      },
+      value: {
+        text: "."
+      },
+      actions: {
+        items: [
+          {
+            href: "@Niall add in total number of accouts?",
+            text: "",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Combined total"
+      },
+      value: {
+        text: data['£5,000']
+      },
+      actions: {
+        items: [
+          {
+            href: "money-you-have",
+            text: "",
+            visuallyHiddenText: "XXXX"
+          }
+        ]
+      }
+    }
+    ]
+  }) }}
 
 
 </div></div>
