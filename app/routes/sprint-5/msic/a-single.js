@@ -264,7 +264,7 @@ router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
   if (hasOver10k === 'yes') {
     res.redirect(`${baseUrl}/msic-has-bank-current-account-yn`)
   } else {
-    res.redirect(`${baseUrl}/money-summary`)
+    res.redirect(`${baseUrl}/msic-all-money-accounts-summary`)
   }
 })
 

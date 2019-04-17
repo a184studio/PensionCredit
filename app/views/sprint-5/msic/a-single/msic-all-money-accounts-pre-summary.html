@@ -16,11 +16,12 @@
     Money, savings and investments summary
   </h1>
 
+  {% if data["msic-bank-current-account-name"] %}
+
   <h3 class="govuk-heading-m">
     Bank current accounts (1)
   </h3>
 
-  {% if data["msic-bank-current-account-name"] %}
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
@@ -114,11 +115,12 @@
   {% endif %}
 <!----------------------------------------------------->
 
+{% if data["msic-buildings-current-account-name"] %}
+
 <h3 class="govuk-heading-m">
   Building society current accounts (1)
 </h3>
 
-{% if data["msic-buildings-current-account-name"] %}
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
@@ -211,12 +213,12 @@
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 {% endif %}
 <!----------------------------------------------------->
+{% if data["msic-post-office-account-amount"] %}
 
 <h3 class="govuk-heading-m">
   Post office accounts (1)
 </h3>
 
-{% if data["msic-post-office-account-amount"] %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
@@ -292,11 +294,12 @@
     {% endif %}
     <!----------------------------------------------------->
 
+    {% if data["msic-bank-savings-account-name"] %}
+
     <h3 class="govuk-heading-m">
       Bank savings account (1)
     </h3>
 
-    {% if data["msic-bank-savings-account-name"] %}
 
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
@@ -389,12 +392,12 @@
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     {% endif %}
     <!----------------------------------------------------->
+    {% if data["msic-buildings-current-account-name"] %}
 
     <h3 class="govuk-heading-m">
       Building society savinings accounts (1)
     </h3>
 
-  {% if data["msic-buildings-current-account-name"] %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
@@ -487,12 +490,12 @@
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     {% endif %}
     <!----------------------------------------------------->
+    {% if data["msic-premium-bond-account-name"] %}
 
     <h3 class="govuk-heading-m">
       Premium Bonds (1)
     </h3>
 
-  {% if data["msic-premium-bond-account-name"] %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
@@ -567,12 +570,12 @@
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     {% endif %}
     <!----------------------------------------------------->
+    {% if data["msic-isa-savings-account-name"] %}
 
     <h3 class="govuk-heading-m">
       ISAs, TESSAs, TOISA and PEPs accounts summary (1)
     </h3>
 
-{% if data["msic-isa-savings-account-name"] %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
@@ -629,12 +632,12 @@
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       {% endif %}
       <!----------------------------------------------------->
+      {% if data["msic-capital-bond-company-name"] %}
 
       <h3 class="govuk-heading-m">
         Capital bond accounts (1)
       </h3>
 
-  {% if data["msic-capital-bond-company-name"] %}
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
@@ -673,12 +676,12 @@
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       {% endif %}
       <!----------------------------------------------------->
+      {% if data["msic-shares-account-name"] %}
 
       <h3 class="govuk-heading-m">
         Shares Accounts (1)
       </h3>
 
-    {% if data["msic-shares-account-name"] %}
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
@@ -753,12 +756,12 @@
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       {% endif %}
       <!----------------------------------------------------->
+      {% if data["msic-trust-account-name"] %}
 
       <h3 class="govuk-heading-m">
         Unit trust accounts (1)
       </h3>
 
-      {% if data["msic-trust-account-name"] %}
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
@@ -815,12 +818,12 @@
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       {% endif %}
       <!----------------------------------------------------->
+      {% if data["msic-cash-at-home-amount"] %}
 
       <h3 class="govuk-heading-m">
         Cash at home, abroad and recived as a lump sum
       </h3>
 
-      {% if data["msic-cash-at-home-amount"] %}
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-third">
