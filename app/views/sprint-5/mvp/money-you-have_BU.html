@@ -15,6 +15,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="money-you-have-router" method="post" class="form">
+
+      <input type="hidden" name="msic-current-accounts-index" value="in-progress"/>
+
+
       {% set cashAmount %}
         {{ govukInput({
           id: "total-amount",
@@ -26,6 +30,9 @@
           value: data["total-amount"]
         }) }}
       {% endset %}
+
+
+
 
 
       <div class="govuk-grid-row">
@@ -47,7 +54,6 @@
 <br>
 
 
-
       {{ govukRadios({
         idPrefix: "over-10k",
         name: "over-10k",
@@ -57,21 +63,20 @@
         classes: "govuk-radios--inline",
         items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
-            checked: (data["over-10k"] == "yes")
+            checked: (data["over-10k"] == "Yes")
           },
           {
-            value: "no",
+            value: "No",
             text: "No",
             conditional: {
               html: cashAmount
             },
-            checked: (data["over-10k"] == "no")
+            checked: (data["over-10k"] == "No")
           }
         ]
       }) }}
-
 
       {{ govukButton({
         text: "Continue"
