@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Eligibility summary - Pension Credit
+  Out privacy policy - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -15,17 +15,16 @@
 
 <!----Headline---->
 <h1 class="govuk-heading-xl">
-  Pension Credit Eligibility summary.<br>
+  (out-hrt) Eligibility, check your answers.<br>
 </h1>
 <!----Headline---->
-<form action="task-list" method="post">
-
+<form action="done-hrt" method="post">
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-s">
-      Agreements
+      Agreements, How we use your personal information
     </h3>
     <p></p>
   </div>
@@ -308,23 +307,6 @@
                 }
               ]
             }
-          },
-          {
-            key: {
-              text: "Do you have a partner?"
-            },
-            value: {
-              text: data["has-partner"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "partner-under-spa",
-                  text: "Change",
-                  visuallyHiddenText: "the fact they have a partner under spa"
-                }
-              ]
-            }
           }
           ]
         }) }}
@@ -339,19 +321,6 @@
   </div>
 </div>
 <!----Break---->
-
-
-<br>
-<h2 class="govuk-heading-m">Eligibility outcome download</h2>
-
-<p class="govuk-body">
-  Based on the answers above, which tool do you need to use?<br>
-  Continue with MyPC or business as usual (PTP CAM)<br>
-  <a href="/get-eligibility-pdf" class="govuk-link">
-    Download (PDF)
-  </a>
-</p>
-<br>
 
 <br><br>
 

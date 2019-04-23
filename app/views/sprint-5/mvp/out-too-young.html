@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Eligibility summary - Pension Credit
+  Out privacy policy - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -12,20 +12,22 @@
 
 {% include "includes/js-back-link.html" %}
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
 
 <!----Headline---->
 <h1 class="govuk-heading-xl">
-  Pension Credit Eligibility summary.<br>
+  (out-too-young) Eligibility, check your answers.<br>
 </h1>
 <!----Headline---->
-<form action="task-list" method="post">
+<form action="done-too-young" method="post">
 
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <h3 class="govuk-heading-s">
-      Agreements
+      Agreements, How we use your personal information
     </h3>
     <p></p>
   </div>
@@ -237,100 +239,6 @@
 </div></div>
 
 
-<!----Break---->
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  </div>
-</div>
-<!----Break---->
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
-      Eligibility
-    </h3>
-    <p></p>
-  </div>
-
-
-  <div class="govuk-grid-column-two-thirds">
-
-        {{ govukSummaryList({
-          rows: [
-          {
-            key: {
-              text: "Do you live in the UK?"
-            },
-            value: {
-              text: data['resides-in-uk']
-            },
-            actions: {
-              items: [
-                {
-                  href: "reside-in-uk",
-                  text: "Change",
-                  visuallyHiddenText: "UK residence"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Have you lived permanently in the UK for the last 2 years?"
-            },
-            value: {
-              text: data['lived-abroad']
-            },
-            actions: {
-              items: [
-                {
-                  href: "lived-abroad",
-                  text: "Change",
-                  visuallyHiddenText: "abroad"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Are you a UK national?"
-            },
-            value: {
-              text: data['uk-national']
-            },
-            actions: {
-              items: [
-                {
-                  href: "uk-national",
-                  text: "Change",
-                  visuallyHiddenText: "uk national"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Do you have a partner?"
-            },
-            value: {
-              text: data["has-partner"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "partner-under-spa",
-                  text: "Change",
-                  visuallyHiddenText: "the fact they have a partner under spa"
-                }
-              ]
-            }
-          }
-          ]
-        }) }}
-
-</div></div>
-
 
 <!----Break---->
 <div class="govuk-grid-row">
@@ -339,19 +247,6 @@
   </div>
 </div>
 <!----Break---->
-
-
-<br>
-<h2 class="govuk-heading-m">Eligibility outcome download</h2>
-
-<p class="govuk-body">
-  Based on the answers above, which tool do you need to use?<br>
-  Continue with MyPC or business as usual (PTP CAM)<br>
-  <a href="/get-eligibility-pdf" class="govuk-link">
-    Download (PDF)
-  </a>
-</p>
-<br>
 
 <br><br>
 
@@ -365,3 +260,4 @@
 <!----Break---->
 
 {% endblock %}
+</div></div>

@@ -100,7 +100,7 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   if (residesInUk === 'Yes') {
     res.redirect(`${baseUrl}/lived-abroad`)
   } else {
-    res.redirect(`${baseUrl}/not-eligible-from-uk`)
+    res.redirect(`${baseUrl}/out-non-uk`)
   }
 })
 
@@ -110,7 +110,7 @@ router.post(`${baseUrl}/lived-abroad-router`, (req, res) => {
   if (residesInUk === 'Yes') {
     res.redirect(`${baseUrl}/uk-national`)
   } else {
-    res.redirect(`${baseUrl}/not-eligible-hrt`)
+    res.redirect(`${baseUrl}/out-hrt`)
   }
 })
 
@@ -120,7 +120,7 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   if (residesInUk === 'Yes') {
     res.redirect(`${baseUrl}/partner-under-spa`)
   } else {
-    res.redirect(`${baseUrl}/not-eligible-hrt`)
+    res.redirect(`${baseUrl}/out-hrt`)
   }
 })
 
@@ -329,7 +329,7 @@ router.post(`${baseUrl}/privacy-policy-router`, (req, res) => { // router name
   if (privacyPolicy === 'Agree') { // name of data / + answer
     res.redirect(`${baseUrl}/pre-declaration`)
   } else {
-    res.redirect(`${baseUrl}/out-declaration`)
+    res.redirect(`${baseUrl}/out-privacy-policy`)
   }
 })
 

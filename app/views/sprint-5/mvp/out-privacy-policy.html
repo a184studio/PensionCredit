@@ -17,10 +17,10 @@
 
 <!----Headline---->
 <h1 class="govuk-heading-xl">
-  (out-declaration) Eligibility, check your answers.<br>
+  (out-privacy-policy) Eligibility, check your answers.<br>
 </h1>
 <!----Headline---->
-<form action="done-declaration" method="post">
+<form action="done-privacy-policy" method="post">
 
 
 
@@ -35,45 +35,27 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukSummaryList({
-      rows: [
-      {
-        key: {
-          text: "Personal information consent"
-        },
-        value: {
-          text: data['agrees-privacy']
-        },
-        actions: {
-          items: [
-            {
-              href: "start",
-              text: "Change",
-              visuallyHiddenText: "Agreed to pre-declaration"
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Personal information consent"
+            },
+            value: {
+              text: data['agrees-privacy']
+            },
+            actions: {
+              items: [
+                {
+                  href: "start",
+                  text: "Change",
+                  visuallyHiddenText: "Agreed to pre-declaration"
+                }
+              ]
             }
+          }
           ]
-        }
-      },
-
-      {
-        key: {
-          text: "Pre-declaration"
-        },
-        value: {
-          text: data['pre-declaration']
-        },
-        actions: {
-          items: [
-            {
-              href: "pre-declaration",
-              text: "Change",
-              visuallyHiddenText: "Agreed to pre-declaration"
-            }
-          ]
-        }
-      }
-      ]
-    }) }}
+        }) }}
 
 </div></div>
 
