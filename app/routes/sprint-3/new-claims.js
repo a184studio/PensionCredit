@@ -1,5 +1,5 @@
 const express = require('express')
-const { getStatePensionDate } = require('get-uk-state-pension-date')
+const { getStatePensionDate } = require('get-state-pension-date')
 
 const router = new express.Router()
 const baseUrl = '/sprint-3/new-claims'
