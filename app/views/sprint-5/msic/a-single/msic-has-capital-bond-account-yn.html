@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you have any ISAs, TESSA, TOISAs and PEPs)? - Pension Credit
+  Do you have any capital bonds? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -24,7 +24,16 @@
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
-        },
+            },
+            hint: {
+              html: "<br><p class=\"hint\">
+                    Capital Investment bonds are designed to give capital growth and/or income over the medium to long term with access to your money by taking regular or one off withdrawals.
+                    <br><br>
+                    Most bonds are designed for investment over at least five years.
+                    <br><br>
+                    If you cash in your investment before that time, you are likely to be charged an early-surrender penalty.
+                    </p><br>"
+            },
         classes: "govuk-radios--inline",
         items: [
           {

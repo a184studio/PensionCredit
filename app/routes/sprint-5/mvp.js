@@ -17,6 +17,20 @@ function makeAStay(data) {
   return {admission, discharge, totalDays}
 }
 
+
+router.post(`${baseUrl}/clear-data-yn-router`, (req, res) => { // router name
+  const privacyPolicy = req.session.data['clear-data-yn']  // name of data / id name
+
+  if (privacyPolicy === 'Agree') { // name of data / + answer
+    res.redirect(`${baseUrl}/clear-data`)
+  } else {
+    res.redirect(`${baseUrl}/out-privacy-policy`)
+  }
+})
+
+
+
+
 router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['claiming-for']
 

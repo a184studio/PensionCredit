@@ -20,11 +20,15 @@
         name: "msic-has-cash-lump-sum-yn",
         fieldset: {
           legend: {
-            text: "Lump sum (From insurance payments eg.)",
+            text: "Cash lump sum from payments made to you",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
-        },
+            },
+            hint: {
+              html: "<br><p class=\"hint\">
+This means X (From insurance payments eg.)</p><br>"
+            },
         classes: "govuk-radios--inline",
         items: [
           {
