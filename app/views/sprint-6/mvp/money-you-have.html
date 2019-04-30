@@ -13,9 +13,9 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
     <form action="money-you-have-router" method="post" class="form">
-      <h1 class="govuk-heading-xl">Do you have a money, savings or investments?</h1>
+      <h1 class="govuk-heading-xl">How much money do you have? </h1>
 
       <p class="govuk-body">This includes:</p>
 
@@ -29,12 +29,13 @@
         <li>sums of money you keep at home in cash</li>
         <li>lump sums, such as insurance payouts, that you expect in the near future</li>
       </ul>
-
+<br>
       {{ govukInput({
         name: "total-money",
         label: {
-          text: "Money"
-        }
+          html: "<strong>Total money you have:</strong>"
+        },
+        classes: "govuk-input--width-10"
       }) }}
 
       {{ govukButton({
