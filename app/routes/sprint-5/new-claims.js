@@ -1,5 +1,5 @@
 const express = require('express')
-const { getStatePensionDate } = require('get-uk-state-pension-date')
+const { getStatePensionDate } = require('get-state-pension-date')
 const differenceInDays = require('date-fns/difference_in_days')
 const startOfDay = require('date-fns/start_of_day')
 
