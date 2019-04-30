@@ -431,9 +431,9 @@ router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router 
 // Money Savining and investement Routers
 
 router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
-  const hasOver10k = req.session.data['over-10k']
+  const money = parseInt(req.session.data['total-money'], 10)
 
-  if (hasOver10k === 'yes') {
+  if (money >= 10000) {
     res.redirect(`${baseUrl}/msic-has-bank-current-account-yn`)
   } else {
     res.redirect(`${baseUrl}/msic-all-money-accounts-summary`)
