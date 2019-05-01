@@ -19,12 +19,16 @@
         Add a current account
       </h1>
 
+      {% set count = (data["account-count"] or 0) | int %}
+
+      <input type="hidden" name="account-count" value="{{ count + 1 }}"/>
+
       {{ govukInput({
         label: {
           text: "Name of bank"
         },
         id: "msic-bank-current-account-name",
-        name: "msic-bank-current-account-name",
+        name: "msic-bank-current-account-name-" + count,
         classes: "govuk-input--width-20"
       }) }}
 
@@ -33,7 +37,7 @@
           text: "Last 4 digits of account number"
         },
         id: "msic-bank-current-account-last-digits",
-        name: "msic-bank-current-account-last-digits",
+        name: "msic-bank-current-account-last-digits-" + count,
         classes: "govuk-input--width-4",
         attributes: {
           maxlength: 4
@@ -45,7 +49,7 @@
           text: "Total amount in this account"
         },
         id: "msic-bank-current-account-amount",
-        name: "msic-bank-current-account-amount",
+        name: "msic-bank-current-account-amount-" + count,
         classes: "govuk-input--width-20"
       }) }}
 
@@ -55,14 +59,14 @@
             text: "Percentage stake"
           },
           id: "msic-bank-current-account-stake",
-          name: "msic-bank-current-account-stake",
+          name: "msic-bank-current-account-stake-" + count,
           classes: "govuk-input--width-5"
         }) }}
       {% endset %}
 
       {{ govukRadios({
         idPrefix: "current-owner",
-        name: "current-owner",
+        name: "current-owner-" + count,
         fieldset: {
           legend: {
             text: "Who does account belong to?"
@@ -82,7 +86,6 @@
           }
         ]
       }) }}
-
 
       {{ govukButton({
         text: "Continue"

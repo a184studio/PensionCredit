@@ -573,10 +573,6 @@ router.post(`${baseUrl}/msic-has-cash-lump-sum-yn-router`, (req, res) => {
   }
 })
 
-
-
-
-
 router.post(`${baseUrl}/msic-second-property-yn-router`, (req, res) => {
   const hasSecondProperty = req.session.data['msic-second-property-yn']
 
@@ -586,6 +582,16 @@ router.post(`${baseUrl}/msic-second-property-yn-router`, (req, res) => {
     res.redirect(`${baseUrl}/msic-all-money-accounts-pre-summary`)
   }
 })
+
+router.post(`${baseUrl}/msic-bank-current-accounts-summary-router`, (req, res) => {
+  const addAnother = req.session.data['add-another-current']
+
+  if (addAnother === 'yes') {
+    res.redirect(`${baseUrl}/msic-bank-current-account`)
+  } else {
+    res.redirect(`${baseUrl}/msic-has-buildings-current-account-yn`)
+  }
+});
 
 // MSIC END
 

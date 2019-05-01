@@ -14,110 +14,104 @@
 
 
   <!----Headline---->
-  <span class="govuk-caption-m">Money, savings and investments</span>
   <h1 class="govuk-heading-xl">
+    <span class="govuk-caption-m">Money, savings and investments</span>
     Bank current accounts summary<br>
   </h1>
   <!----Headline---->
-  <form action="msic-has-buildings-current-account-yn" method="post">
 
-
+  <form action="msic-bank-current-accounts-summary-router" method="post">
     <h3 class="govuk-heading-m">
-      Accounts (1)
+      Accounts
     </h3>
+    <br><br>
 
-<br><br>
-{% if data["msic-bank-current-account-name"] %}
+    {% set count = data["account-count"] or 0 %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
-        {{ data["msic-bank-current-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
-      </h3></div>
-
-
-    <div class="govuk-grid-column-two-thirds">
-
-      {{ govukSummaryList({
-        rows: [
-        {
-          key: {
-            text: "Last four digits"
-          },
-          value: {
-            text: data['msic-bank-current-account-last-digits']
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-bank-current-account",
-                text: "Change Remove",
-                visuallyHiddenText: "XXX"
+    {% for i in range(0, count) -%}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-s">
+          {{ data["msic-bank-current-account-name-" + i] }}
+          </h3>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukSummaryList({
+            rows: [
+            {
+              key: {
+                text: "Last four digits"
+              },
+              value: {
+                text: data['msic-bank-current-account-last-digits-' + i]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-bank-current-account",
+                    text: "Change Remove",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
               }
-            ]
-          }
-        },
+            },
 
-        {
-          key: {
-            text: "Total"
-          },
-          value: {
-            text: data['msic-bank-current-account-amount']
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-bank-current-account",
-                text: "",
-                visuallyHiddenText: "XXX"
+            {
+              key: {
+                text: "Total"
+              },
+              value: {
+                text: data['msic-bank-current-account-amount-' + i] | formatMoney
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-bank-current-account",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
               }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "Who's account?"
-          },
-          value: {
-            text: data['current-owner']
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-bank-current-account",
-                text: "",
-                visuallyHiddenText: "XXXX"
+            },
+            {
+              key: {
+                text: "Who's account?"
+              },
+              value: {
+                text: data['current-owner-' + i]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-bank-current-account",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
               }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "% stake in joint account"
-          },
-          value: {
-            text: data['msic-bank-current-account-stake']
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-bank-current-account-stake",
-                text: "",
-                visuallyHiddenText: "XXXX"
+            },
+            {
+              key: {
+                text: "% stake in joint account"
+              },
+              value: {
+                text: data['msic-bank-current-account-stake-' + i]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-bank-current-account-stake",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
               }
+            }
             ]
-          }
-        }
-        ]
-      }) }}
-
-  </div></div>
-{% endif %}
-
-
+          }) }}
+        </div>
+      </div>
+    {%- endfor %}
 
 <!--------------------------------------------------------------------------------->
 
@@ -133,8 +127,8 @@
 
   {{ govukRadios({
     classes: "govuk-radios--inline",
-    idPrefix: "changed-name",
-    name: "changed-name",
+    idPrefix: "add-another-current",
+    name: "add-another-current",
     fieldset: {
       legend: {
         text: "Do you want to add another account?",
