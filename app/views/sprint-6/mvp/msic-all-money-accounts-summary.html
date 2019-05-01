@@ -15,7 +15,7 @@
 
   <!----Headline---->
   <h1 class="govuk-heading-xl">
-    Combined money, savings and investments summary<br>
+    Combined money, savings <br>and investments summary<br>
   </h1>
   <!----Headline---->
   <form action="task-list" method="post">
@@ -24,7 +24,7 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
   <h3 class="govuk-heading-s">
-    Breakdown:
+    Overview:
   </h3></div>
 
 
@@ -40,7 +40,7 @@
         text: "Current accounts"
       },
       value: {
-        text: "2"
+        text: "3"
       },
       actions: {
         items: [
@@ -55,10 +55,10 @@
 
     {
       key: {
-        text: "Savings accounts"
+        text: "Savings & bonds"
       },
       value: {
-        text: "1"
+        text: "2"
       },
       actions: {
         items: [
@@ -73,10 +73,10 @@
 
     {
       key: {
-        text: "Shares and unit trusts"
+        text: "Shares & unit trusts"
       },
       value: {
-        text: "0"
+        text: "1"
       },
       actions: {
         items: [
@@ -91,10 +91,28 @@
 
     {
       key: {
-        text: "Cash at home or recived as a lump sum"
+        text: "Cash at home"
       },
       value: {
-        text: "1"
+        text: data["msic-cash-at-home-amount"] | formatMoney
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-cash-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Cash aboard or recived as a lump sum"
+      },
+      value: {
+        text: "Yes"
       },
       actions: {
         items: [
