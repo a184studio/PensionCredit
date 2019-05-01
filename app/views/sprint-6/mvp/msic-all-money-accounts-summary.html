@@ -129,8 +129,6 @@
 
 <br>
 
-{% endif %}
-
 {{ govukSummaryList({
   rows: [
   {
@@ -152,6 +150,36 @@
   }
   ]
 }) }}
+
+{% endif %}
+
+{% if data["total-money"] %}
+
+
+{{ govukSummaryList({
+  rows: [
+  {
+    key: {
+      text: "Combined total"
+    },
+    value: {
+      text: data["total-money"] | formatMoney
+    },
+    actions: {
+      items: [
+        {
+          href: "money-you-have",
+          text: "",
+          visuallyHiddenText: "XXXX"
+        }
+      ]
+    }
+  }
+  ]
+}) }}
+
+{% endif %}
+
 
 </div></div>
 
@@ -187,8 +215,9 @@ Notes
       <tbody class="govuk-table__body">
       </tbody>
     </table>
-    {% if data["msic-all-money-detail"] %}
 
+
+    {% if data["msic-all-money-detail"] %}
 
   <p class="govuk-body">
     {{ data["msic-all-money-detail"] }}
