@@ -17,6 +17,7 @@ router.use(require('./routes/pdf-summary'))
 router.use(require('./routes/sprint-5/msic/a-single'))
 router.use(require('./routes/sprint-5/msic/b-list'))
 router.use(require('./routes/sprint-6/mvp'))
+router.use(require('./routes/sprint-6/eligibility'))
 
 
 module.exports = router
