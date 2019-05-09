@@ -1,22 +1,33 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Out privacy policy - Pension Credit
+  Done, a habitual residence test needed - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
 {% endblock %}
 
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
 {% block content %}
+
+
+<!----Headline---->
 
 {% include "includes/js-back-link.html" %}
 
 
-<!----Headline---->
-<h1 class="govuk-heading-xl">
-  (out-hrt) Eligibility, check your answers.<br>
-</h1>
+{{ govukPanel({
+  titleText: "Switch to CAM. A habitual residence test (HRT) is needed",
+  html: ""
+}) }}
+
+<br><br>
+
+<h2 class="govuk-heading-l">
+  Ansers given<br>
+</h2>
 <!----Headline---->
 <form action="done-hrt" method="post">
 
@@ -99,7 +110,7 @@
 
           {
             key: {
-              text: "Who are you claiming pension credit for?"
+              text: "Claimant / Representative"
             },
             value: {
               text: data['claiming-for']
@@ -110,24 +121,6 @@
                   href: "who-is-caller",
                   text: "Change",
                   visuallyHiddenText: "who the caller is"
-                }
-              ]
-            }
-          },
-
-          {
-            key: {
-              text: "PC1 notepad"
-            },
-            value: {
-              text: data['pc1-more-detail']
-            },
-            actions: {
-              items: [
-                {
-                  href: "who-is-caller",
-                  text: "Change",
-                  visuallyHiddenText: "PC1 Detials"
                 }
               ]
             }
@@ -324,12 +317,22 @@
 
 <br><br>
 
+<h3 class="govuk-heading-m">Agent: Next steps what does an agent need to do</h3>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Switch to PTP CAM to contine this claim</li>
+  <li>Add this outcome to MyPC spread sheet</li>
+  <li>Tast item C</li>
+  <li>Tast item D</li>
+  <li>Tast item E</li>
+</ul>
+
+<br>
+
 {{ govukButton({
-  text: "Continue"
+  text: "Finish and close",
+  href: "start"
 }) }}
-
-
-
 
 <!----Break---->
 

@@ -114,7 +114,7 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   if (residesInUk === 'Yes') {
     res.redirect(`${baseUrl}/lived-abroad`)
   } else {
-    res.redirect(`${baseUrl}/out-non-uk`)
+    res.redirect(`${baseUrl}/done-none-uk`)
   }
 })
 
@@ -124,7 +124,7 @@ router.post(`${baseUrl}/lived-abroad-router`, (req, res) => {
   if (residesInUk === 'Yes') {
     res.redirect(`${baseUrl}/uk-national`)
   } else {
-    res.redirect(`${baseUrl}/out-hrt`)
+    res.redirect(`${baseUrl}/out-lived-abroad-hrt`)
   }
 })
 
@@ -134,7 +134,7 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   if (residesInUk === 'Yes') {
     res.redirect(`${baseUrl}/partner-under-spa`)
   } else {
-    res.redirect(`${baseUrl}/out-hrt`)
+    res.redirect(`${baseUrl}/done-uk-national-hrt`)
   }
 })
 
@@ -313,7 +313,7 @@ router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
   if (preDeclaration === 'Agree') {
     res.redirect(`${baseUrl}/who-is-caller`)
   } else {
-    res.redirect(`${baseUrl}/out-declaration`)
+    res.redirect(`${baseUrl}/done-declaration`)
   }
 })
 
@@ -333,7 +333,7 @@ router.post(`${baseUrl}/privacy-policy-router`, (req, res) => { // router name
   if (privacyPolicy === 'Agree') { // name of data / + answer
     res.redirect(`${baseUrl}/pre-declaration`)
   } else {
-    res.redirect(`${baseUrl}/out-privacy-policy`)
+    res.redirect(`${baseUrl}/done-privacy-policy`)
   }
 })
 
