@@ -58,7 +58,7 @@ router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
   const hasPartner = req.session.data['has-partner']
 
   if (hasPartner === 'Yes') {
-    res.redirect(`${baseUrl}/mvp-eligibility-summary`)
+    res.redirect(`${baseUrl}/done-has-partner`)
   } else {
     res.redirect(`${baseUrl}/mvp-eligibility-summary`)
   }
