@@ -40,7 +40,7 @@
         classes: "govuk-!-width-two-thirds",
         value: data["email-address"],
         label: {
-          text: "Email address"
+          text: "Address"
         },
         attributes: {
           spellcheck: "false"
@@ -56,7 +56,7 @@
         classes: "govuk-!-width-one-third",
         value: data["landline"],
         label: {
-          text: "Phone number"
+          text: "Number"
         }
       }) }}
       {% endset -%}
@@ -69,7 +69,7 @@
         classes: "govuk-!-width-one-third",
         value: data["mobile"],
         label: {
-          text: "Mobile phone number"
+          text: "Number"
         }
       }) }}
       {% endset -%}
@@ -104,7 +104,7 @@
           },
           {
             value: "email-address",
-            text: "Email address",
+            text: "Email ",
             conditional: {
               html: emailHtml
             }
