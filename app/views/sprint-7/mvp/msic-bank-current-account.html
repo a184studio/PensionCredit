@@ -8,6 +8,9 @@
   {% include "includes/internal-header.html" %}
 {% endblock %}
 
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+
 {% block content %}
 
 {% include "includes/js-back-link.html" %}
@@ -89,6 +92,29 @@
           }
         ]
       }) }}
+
+<br>
+
+{{ govukCheckboxes({
+  idPrefix: "msic-bank-current-account-need-evidence",
+  name: "msic-bank-current-account-need-evidence",
+  classes: "govuk-checkboxes",
+  fieldset: {
+    legend: {
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "need-evidence",
+      text: "Evidence is needed for this account"
+    }
+  ]
+}) }}
+
+
+
 
       {{ govukButton({
         text: "Continue"

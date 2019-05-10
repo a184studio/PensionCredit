@@ -10,6 +10,8 @@
 
 {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+{% from "input/macro.njk" import govukInput %}
 
 {% block content %}
 
@@ -27,10 +29,6 @@
 
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
-      {% from "checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "input/macro.njk" import govukInput %}
 
       {% set emailHtml %}
       {{ govukInput({
