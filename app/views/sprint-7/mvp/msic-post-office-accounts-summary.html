@@ -63,7 +63,7 @@
             text: "Who's account?"
           },
           value: {
-            text: data['current-owner']
+            text: data['msic-post-office-card-account-owner']
           },
           actions: {
             items: [
@@ -102,43 +102,6 @@
 
 
 <!--------------------------------------------------------------------------------->
-
-  <!----Break---->
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-  </div>
-  <!----Break---->
-
-  <br><br>
-
-  {{ govukRadios({
-    classes: "govuk-radios--inline",
-    idPrefix: "changed-name",
-    name: "changed-name",
-    fieldset: {
-      legend: {
-        text: "Do you want to add another account?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    hint: {
-      text: ""
-    },
-    items: [
-      {
-        value: "yes",
-        text: "Yes"
-      },
-      {
-        value: "no",
-        text: "No"
-      }
-    ]
-  }) }}
-
 
   {{ govukButton({
     text: "Continue"

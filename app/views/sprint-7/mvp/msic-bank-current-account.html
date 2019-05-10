@@ -44,9 +44,12 @@
         }
       }) }}
 
+      <br>
+      <p class="govuk-body">Total amount in this account, from <strong>Today</strong></p>
+
       {{ govukInput({
         label: {
-          text: "Total amount in this account"
+          text: ""
         },
         id: "msic-bank-current-account-amount",
         name: "msic-bank-current-account-amount-" + count,
@@ -79,7 +82,7 @@
           },
           {
             value: "Joint account",
-            text: "Joint account",
+            text: "Joint account (excluding partner who lives with you)",
             conditional: {
               html: percentageField
             }

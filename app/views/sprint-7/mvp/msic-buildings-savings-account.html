@@ -30,7 +30,7 @@
 
       {{ govukInput({
         label: {
-          text: "Last 4 digits of account number"
+          text: "Last 4 digits of the roll number or account number"
         },
         id: "msic-buildings-current-account-last-digits",
         name: "msic-buildings-current-account-last-digits",
@@ -40,9 +40,12 @@
         }
       }) }}
 
+            <br>
+            <p class="govuk-body">Total amount in this account, from <strong>Today</strong></p>
+
           {{ govukInput({
         label: {
-          text: "Total amount in this account"
+          text: ""
         },
         id: "msic-buildings-current-account-amount",
         name: "msic-buildings-current-account-amount",
@@ -75,7 +78,7 @@
           },
           {
             value: "Joint account",
-            text: "Joint account",
+            text: "Joint account (excluding partner who lives with you)",
             conditional: {
               html: percentageField
             }

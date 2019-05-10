@@ -14,10 +14,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="money-you-have-router" method="post" class="form">
+    <form action="msic-has-bank-current-account-yn" method="post" class="form">
       <h1 class="govuk-heading-xl">How much money do you have? </h1>
 
-      <p class="govuk-body">This includes:</p>
+      <p class="govuk-body">@pete this needs to be a nice oveview, agents are using this as a prompt to start taking down data. So maybe not a list? I'll leave in the list so you have context. This includes:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>money in current, saving or deposit accounts</li>
@@ -32,16 +32,8 @@
 
       <br>
 
-      {{ govukInput({
-        name: "total-money",
-        label: {
-          html: "<strong>Total money you have:</strong>"
-        },
-        classes: "govuk-input--width-10"
-      }) }}
-
       {{ govukButton({
-        text: "Continue"
+        text: "@pete, I got nothing...Start capital data gather is what needs to happen"
       }) }}
     </form>
   </div>
