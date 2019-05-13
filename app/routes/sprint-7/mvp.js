@@ -330,7 +330,7 @@ router.post(`${baseUrl}/rent-charges-service-router`, (req, res) => {// router n
 router.post(`${baseUrl}/privacy-policy-router`, (req, res) => { // router name
   const privacyPolicy = req.session.data['agrees-privacy']  // name of data / id name
 
-  if (privacyPolicy === 'Agree') { // name of data / + answer
+  if (privacyPolicy === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/pre-declaration`)
   } else {
     res.redirect(`${baseUrl}/done-privacy-policy`)
