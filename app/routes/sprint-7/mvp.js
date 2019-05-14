@@ -310,7 +310,7 @@ router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
 router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
   const preDeclaration = req.session.data['pre-declaration']
 
-  if (preDeclaration === 'Agree') {
+  if (preDeclaration === 'Yes') {
     res.redirect(`${baseUrl}/who-is-caller`)
   } else {
     res.redirect(`${baseUrl}/done-declaration`)
