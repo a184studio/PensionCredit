@@ -15,7 +15,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
   <h1 class="govuk-heading-xl">Declaration</h1>
-  <p class="govuk-body"><strong>Agent: Read this page to the caller</strong><br><br>We will use the information you give us to pay you the right amount of Pension Credit. If you give wrong or incomplete information we might pay you too much or too little. If we pay you too much, you will have to pay the money back.</p>
+  <p class="govuk-body"><strong>(Mark: Look for blue i icon) Agent: Read this page to the caller</strong><br><br>We will use the information you give us to pay you the right amount of Pension Credit. If you give wrong or incomplete information we might pay you too much or too little. If we pay you too much, you will have to pay the money back.</p>
   <p class="govuk-body">While you are receiving Pension Credit, you must tell us straight away about any changes to where you live, who you live with, your income or money you have. You can do this by calling 0800 731 7898.</p>
   <p class="govuk-body">If you do not report any changes, we might reduce or stop your Pension Credit.</p>
   <p class="govuk-body">You could be prosecuted or have to pay a financial penalty if you deliberately give us wrong or incomplete information or do not report changes.
@@ -29,7 +29,7 @@
         name: "pre-declaration",
         fieldset: {
           legend: {
-            text: "Do you want to agree with this declaration and continue with your claim?",
+            text: "Do you want to agree with this declaration and continue with your application?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -37,13 +37,13 @@
         classes: "govuk-radios",
         items: [
           {
-            value: "Agree",
-            text: "Agree",
+            value: "Yes",
+            text: "Yes",
             checked: (data["preDeclaration"] == "Agree")
           },
           {
-            value: "Disagree",
-            text: "Disagree",
+            value: "No",
+            text: "No",
             checked: (data["preDeclaration"] == "Disagree")
           }
         ]
