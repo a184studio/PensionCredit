@@ -28,10 +28,16 @@
 
       <!--<p class="govuk-body">(Mark - have a look for blue i icon) Agent: Use the back link to go back to the previous page if the claimant decides to continue the application. Finish and close to go back to the start page to take another application.</p>-->
 
-      {{ govukWarningText({
-        text: "Agent: Use the back link to go back to the previous page if the claimant decides to continue the application. Finish and close to go back to the start page to take another application.",
-        iconFallbackText: "Warning"
-      }) }}
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon app-warning-text--long-3" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Agent: Use the back link to go back to the previous page if the claimant decides to continue the application. Finish and close to go back to the start page to take another application.
+        </strong>
+      </div>
+
+
 
       {{ govukButton({
         text: "Finish and close",
