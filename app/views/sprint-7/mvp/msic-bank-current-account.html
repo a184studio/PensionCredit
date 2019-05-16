@@ -93,28 +93,27 @@
         ]
       }) }}
 
-<br>
-
-{{ govukCheckboxes({
-  idPrefix: "msic-bank-current-account-need-evidence",
-  name: "msic-bank-current-account-need-evidence",
-  classes: "govuk-checkboxes",
+{{ govukRadios({
+  idPrefix: "read-from-statement",
+  name: "read-from-statement",
   fieldset: {
     legend: {
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      text: "Were the details read from a statement?"
     }
   },
   items: [
     {
-      value: "need-evidence",
-      text: "Evidence is needed for this account"
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
     }
   ]
 }) }}
 
-
-
+<br>
 
       {{ govukButton({
         text: "Continue"
