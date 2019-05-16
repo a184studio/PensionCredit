@@ -21,7 +21,7 @@
           name: "claiming-for",
           fieldset: {
             legend: {
-              text: "Which of these best describes you? ",
+              text: "Who are you claiming Pension Credit for? ",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -29,7 +29,7 @@
           items: [
             {
               value: "Yourself",
-              text: "I am the claimant",
+              text: "Yourself",
               checked: data['claiming-for'] == "Myself"
             },
             {
@@ -37,23 +37,23 @@
             },
             {
             value: "Power of attorney",
-            text: "I have power of attorney to make decisions for the claimant"
+            text: "Someone you have power of attorney for"
           },
           {
             value: "Appointee",
-            text: "I am an appointee of the claimant"
+            text: "Someone you act as an appointee for"
           },
           {
             value: "Charity",
-            text: "I represent a charity that is helping the claimant"
+            text: "Someone who has asked your charity for help"
           },
           {
             value: "Family member",
-            text: "I am a family member of the claimant"
+            text: "A family member"
           },
           {
             value: "Friend",
-            text: "I am a friend of the claimant"
+            text: "A friend"
           },
           {
             value: "SomeoneElse",
