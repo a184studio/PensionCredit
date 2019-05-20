@@ -21,17 +21,15 @@
   <!----Headline---->
 
   <form action="msic-bank-current-accounts-summary-router" method="post">
-    <h3 class="govuk-heading-m">
-      Accounts
-    </h3>
-    <br><br>
 
     {% set count = data["account-count"] or 0 %}
 
     {% for i in range(0, count) -%}
-      <div class="govuk-grid-row">
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
         <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-s">
+          <h3 class="govuk-heading-s pc-row-head-10">
           {{ data["msic-bank-current-account-name-" + i] }}
           </h3>
         </div>
@@ -108,6 +106,8 @@
               }
             },
             {
+              classes: 'govuk-summary-list--no-border',
+
               key: {
                 text: "Evidence is needed for this account"
               },
