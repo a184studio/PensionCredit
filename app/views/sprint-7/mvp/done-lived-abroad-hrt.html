@@ -18,22 +18,19 @@
 
 <!----Headline---->
 
-<h1 class="govuk-heading-xl">Switch to CAM. A habitual residence test (HRT) is needed (out-lived-abroad-hrt)</h1>
+<h1 class="govuk-heading-xl">Check your answers and switch to CAM. A habitual residence test (HRT) is needed (out-lived-abroad-hrt)</h1>
 
 
 <br><br>
 
-<h2 class="govuk-heading-l">
-  Ansers given<br>
-</h2>
 <!----Headline---->
 <form action="done-hrt" method="post">
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
-      Agreements, How we use your personal information
+    <h3 class="govuk-heading-s pc-row-head-10">
+      How we use your personal information
     </h3>
     <p></p>
   </div>
@@ -62,6 +59,7 @@
           },
 
           {
+            classes: 'govuk-summary-list--no-border',
             key: {
               text: "Pre-declaration"
             },
@@ -94,7 +92,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
+    <h3 class="govuk-heading-s pc-row-head-10">
       Method of claim
     </h3>
     <p></p>
@@ -107,6 +105,7 @@
           rows: [
 
           {
+            classes: 'govuk-summary-list--no-border',
             key: {
               text: "Claimant / Representative"
             },
@@ -141,7 +140,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
+    <h3 class="govuk-heading-s pc-row-head-10">
       About the claimant
     </h3>
     <p></p>
@@ -150,7 +149,7 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-        {{ govukSummaryList({
+        {{ govukSummaryList ({
           rows: [
 
             {
@@ -205,6 +204,7 @@
               }
             },
             {
+              classes: 'govuk-summary-list--no-border',
               key: {
                 text: "Date of birth"
               },
@@ -237,7 +237,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-s">
+    <h3 class="govuk-heading-s pc-row-head-10">
       Eligibility
     </h3>
     <p></p>
@@ -266,6 +266,7 @@
             }
           },
           {
+            classes: 'govuk-summary-list--no-border',
             key: {
               text: "Have you lived permanently in the UK for the last 2 years?"
             },
@@ -278,23 +279,6 @@
                   href: "lived-abroad",
                   text: "Change",
                   visuallyHiddenText: "abroad"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Are you a UK national?"
-            },
-            value: {
-              text: data['uk-national']
-            },
-            actions: {
-              items: [
-                {
-                  href: "uk-national",
-                  text: "Change",
-                  visuallyHiddenText: "uk national"
                 }
               ]
             }

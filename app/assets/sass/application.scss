@@ -113,9 +113,16 @@ padding-bottom:0;
   font-weight: 200;
 }
 
+.govuk-summary-list
+{
+  margin-bottom: 0 !important;
+}
 
 .govuk-summary-list__key{
   width: 40% !important;
+}
+.govuk-summary-list__key-last{
+  border-bottom-width: 0px;
 }
 
 .govuk-summary-list__value{
@@ -135,6 +142,9 @@ padding-bottom:0;
   color: #6f777b;
 }
 
+.pc-row-head-10{
+  padding-top: 10px !important;
+}
 
 
 .app-warning-text--long-3 {
