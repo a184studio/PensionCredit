@@ -18,13 +18,21 @@
 
 <!----Headline---->
 
-<h1 class="govuk-heading-xl">Check your answers and switch to CAM. A habitual residence test (HRT) is needed (out-lived-abroad-hrt)</h1>
+<h1 class="govuk-heading-xl">We need to ask you some questions about your residency in the UK</h1>
 
-
+  <h3 class="govuk-heading-m">As you have live outside the UK in the last 2 years, we need to ask you some additional questions about your residency.</h3>
 <br><br>
 
 <!----Headline---->
 <form action="done-hrt" method="post">
+
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon app-warning-text--long-3" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      Agent: Use the back link to go back to the previous page if the claimant needs to correct their answer. Take the caller through the Habitual Residency test. Record the information on the page into PTP CAM. Finish and close to go back to the start page to take another application.
+    </strong>
+  </div>
 
 
 <div class="govuk-grid-row">
@@ -297,19 +305,9 @@
 </div>
 <!----Break---->
 
-<br><br>
 
-<h3 class="govuk-heading-m">Agent: Next steps what does an agent need to do</h3>
 
-<ul class="govuk-list govuk-list--bullet">
-  <li>Switch to PTP CAM to contine this claim</li>
-  <li>Add this outcome to MyPC spread sheet</li>
-  <li>Tast item C</li>
-  <li>Tast item D</li>
-  <li>Tast item E</li>
-</ul>
 
-<br>
 
 {{ govukButton({
   text: "Finish and close",
