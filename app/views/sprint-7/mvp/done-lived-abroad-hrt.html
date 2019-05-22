@@ -30,7 +30,7 @@
     <span class="govuk-warning-text__icon app-warning-text--long-3" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
       <span class="govuk-warning-text__assistive">Warning</span>
-      Agent: Use the back link to go back to the previous page if the claimant needs to correct their answer. Record the information on this page into PTP CAM. Take the caller through the Habitual Residency test. Finish and close to go back to the start page to take another application.
+      Agent: Check the claimant's answers and change any that are incorrect. Record the information on this page into PTP CAM. Take the caller through the Habitual Residency test. Finish and close to go back to the start page to take another application.
     </strong>
   </div>
 
@@ -54,8 +54,16 @@
             },
             value: {
               text: data['agrees-privacy']
+            },
+            actions: {
+              items: [
+                {
+                  href: "start",
+                  text: "Change",
+                  visuallyHiddenText: "Agreed to pre-declaration"
+                }
+              ]
             }
-
           },
 
           {
@@ -65,6 +73,15 @@
             },
             value: {
               text: data['pre-declaration']
+            },
+            actions: {
+              items: [
+                {
+                  href: "pre-declaration",
+                  text: "Change",
+                  visuallyHiddenText: "Agreed to pre-declaration"
+                }
+              ]
             }
           }
           ]
@@ -102,6 +119,15 @@
             },
             value: {
               text: data['claiming-for']
+            },
+            actions: {
+              items: [
+                {
+                  href: "who-is-caller",
+                  text: "Change",
+                  visuallyHiddenText: "who the caller is"
+                }
+              ]
             }
           }
           ]
@@ -140,6 +166,15 @@
               },
               value: {
                 text: data["full-name"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "name-and-nino",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
               }
             },
             {
@@ -148,6 +183,15 @@
               },
               value: {
                 text: data["nino"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "name-and-nino",
+                    text: "Change",
+                    visuallyHiddenText: "National Insurance number"
+                  }
+                ]
               }
             },
             {
@@ -156,6 +200,15 @@
               },
               value: {
                 text: data["telephone-number"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "name-and-nino",
+                    text: "Change",
+                    visuallyHiddenText: "telephone number"
+                  }
+                ]
               }
             },
             {
@@ -165,6 +218,15 @@
               },
               value: {
                 text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "over-spa",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
               }
             }
           ]
@@ -200,6 +262,15 @@
             },
             value: {
               text: data['resides-in-uk']
+            },
+            actions: {
+              items: [
+                {
+                  href: "reside-in-uk",
+                  text: "Change",
+                  visuallyHiddenText: "UK residence"
+                }
+              ]
             }
           },
           {
@@ -209,6 +280,15 @@
             },
             value: {
               text: data['lived-abroad']
+            },
+            actions: {
+              items: [
+                {
+                  href: "lived-abroad",
+                  text: "Change",
+                  visuallyHiddenText: "abroad"
+                }
+              ]
             }
           }
           ]
