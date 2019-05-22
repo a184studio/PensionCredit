@@ -134,7 +134,7 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   if (residesInUk === 'Yes') {
     res.redirect(`${baseUrl}/partner-under-spa`)
   } else {
-    res.redirect(`${baseUrl}/done-uk-national-hrt`)
+    res.redirect(`${baseUrl}/done-lived-abroad-hrt`)
   }
 })
 
