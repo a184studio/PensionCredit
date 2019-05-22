@@ -18,11 +18,16 @@
 
 <!----Headline---->
 
-<h1 class="govuk-heading-xl">Done/Out - Switch to CAM. (Has partner)</h1>
+<h1 class="govuk-heading-xl">We can now continue with your Pension Credit application</h1>
 
 
-
-<br><br>
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon app-warning-text--long-3" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Agent: Check the claimant's answers and change any that are incorrect. Record the information on this page into PTP CAM. Continue the claim by asking the caller about the claim date. Finish and close to go back to the start page to take another application.
+  </strong>
+</div>
 
 <!----Headline---->
 <form action="done-hrt" method="post">
@@ -315,19 +320,7 @@
 </div>
 <!----Break---->
 
-<br><br>
 
-<h3 class="govuk-heading-m">Agent: Next steps what does an agent need to do</h3>
-
-<ul class="govuk-list govuk-list--bullet">
-  <li>Switch to PTP CAM to contine this claim</li>
-  <li>Add this outcome to MyPC spread sheet</li>
-  <li>Tast item C</li>
-  <li>Tast item D</li>
-  <li>Tast item E</li>
-</ul>
-
-<br>
 
 {{ govukButton({
   text: "Finish and close",
