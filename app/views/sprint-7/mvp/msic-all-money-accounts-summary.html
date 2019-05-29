@@ -15,10 +15,11 @@
 
   <!----Headline---->
   <h1 class="govuk-heading-xl">
-    Combined money, savings <br>and investments summary<br>
+    Combined money, savings and <br> investments summary, notes <br>and evidence needed<br>
   </h1>
   <!----Headline---->
   <form action="task-list" method="post">
+
 
 
 <div class="govuk-grid-row">
@@ -31,7 +32,7 @@
 
 <div class="govuk-grid-column-two-thirds">
 
-{% if data["msic-bank-current-account-name"] %}
+{% if data["msic-bank-savings-account-name"] %}
 
   {{ govukSummaryList({
     rows: [
@@ -132,6 +133,7 @@
 {{ govukSummaryList({
   rows: [
   {
+    classes: 'govuk-summary-list--no-border',
     key: {
       text: "Combined total"
     },
@@ -225,6 +227,84 @@ Notes
 {% endif %}
 </div></div>
 
+<!----Break---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
+<!----Break---->
+
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+  <h3 class="govuk-heading-s">
+    Evidence needed to be <br>provided by claimant:
+  </h3></div>
+
+
+
+<div class="govuk-grid-column-two-thirds">
+
+  {% from "table/macro.njk" import govukTable %}
+
+  {{ govukTable({
+    firstCellIsHeader: true,
+    head: [
+      {
+        text: "Account",
+        classes: 'govuk-!-width-one-quarter'
+      },
+      {
+        text: "Last 4 digits",
+        classes: 'govuk-!-width-one-quarter'
+      },
+      {
+        text: "Date range",
+        classes: 'govuk-!-width-two-Quarters'
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "Halifax"
+        },
+        {
+          text: "0001"
+        },
+        {
+          text: "1 Jan 2019 — 1 Feb 2019"
+        }
+      ],
+      [
+        {
+          text: "Santander"
+        },
+        {
+          text: "0002"
+        },
+        {
+          text: "1 Jan 2019 — 1 Feb 2019"
+        }
+      ],
+      [
+        {
+          
+          text: "HSPC"
+        },
+        {
+          text: "0003"
+        },
+        {
+          text: "1 Jan 2019 — 1 Feb 2019"
+        }
+      ]
+    ]
+  }) }}
+
+
+</div></div>
 
 
 
