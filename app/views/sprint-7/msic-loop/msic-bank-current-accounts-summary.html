@@ -16,7 +16,7 @@
   <!----Headline---->
   <h1 class="govuk-heading-xl">
     <span class="govuk-caption-m">Money, savings and investments</span>
-    Bank current accounts summary<br>
+    Current, savings and post office account summary<br>
   </h1>
   <!----Headline---->
 
@@ -41,7 +41,7 @@
                 text: "Banking type"
               },
               value: {
-                text: data['who-is-account-with-' + i]
+                text: data['who-is-account-with']
               },
               actions: {
                 items: [
@@ -59,12 +59,12 @@
                 text: "Account type"
               },
               value: {
-                text: data['type-of-account-' + i]
+                text: data['type-of-account']
               },
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account",
+                    href: "",
                     text: "",
                     visuallyHiddenText: "XXX"
                   }
@@ -82,7 +82,7 @@
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account",
+                    href: "",
                     text: "",
                     visuallyHiddenText: "XXX"
                   }
@@ -183,7 +183,7 @@
     name: "add-another-current",
     fieldset: {
       legend: {
-        text: "Do you have any more bank current accounts?",
+        text: "Do you have any more current or savings account with a bank, buildings sociity or Post office account?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }

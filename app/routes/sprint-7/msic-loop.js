@@ -592,7 +592,7 @@ router.post(`${baseUrl}/msic-bank-current-accounts-summary-router`, (req, res) =
   if (addAnother === 'yes') {
     res.redirect(`${baseUrl}/msic-bank-current-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-has-buildings-current-account-yn`)
+    res.redirect(`${baseUrl}/msic-has-premium-bond-account-yn`)
   }
 });
 
