@@ -18,6 +18,10 @@
       What is your address?
     </h1>
 
+    <p class="govuk-body govuk-!-font-weight-regular"><strong>Post code: </strong>NE16 6QG<br><a class="govuk-link" href="post-code-lookup">Change</a></p>
+
+<br>
+
     <form action="home-ownership" method="post" class="form">
       {{ govukSelect({
         id: "address",
@@ -57,7 +61,7 @@
           (This should not be visable, in reality it would be a signle page that is only shown when the Post code is not found.)
         </li>
         <li>
-          <a class="govuk-link" href="address-missing">Enter address manually</a>
+          <a class="govuk-link" href="address-manual">My address is missing, enter manually</a>
         </li>
       </ul>
       <br>
