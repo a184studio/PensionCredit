@@ -38,7 +38,7 @@
             rows: [
             {
               key: {
-                text: "Banking type"
+                text: "Bank, Building society or Post Office?"
               },
               value: {
                 text: data['who-is-account-with']
@@ -47,7 +47,7 @@
                 items: [
                   {
                     href: "msic-bank-current-account",
-                    text: "Change / Remove",
+                    text: "Change or Remove",
                     visuallyHiddenText: "XXX"
                   }
                 ]
@@ -74,7 +74,7 @@
 
             {
               key: {
-                text: "Last four digits"
+                text: "Last four digits of account or roll number"
               },
               value: {
                 text: data['msic-bank-current-account-last-digits-' + i]
@@ -109,7 +109,7 @@
             },
             {
               key: {
-                text: "Who's account?"
+                text: "Whose is this account?"
               },
               value: {
                 text: data['current-owner-' + i]
@@ -126,7 +126,7 @@
             },
             {
               key: {
-                text: "% stake in joint account"
+                text: "Stake in joint account"
               },
               value: {
                 text: data['msic-bank-current-account-stake-' + i]
@@ -144,7 +144,7 @@
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Evidence is needed for this account"
+                text: "Is evidence needed for this account"
               },
               value: {
                 text: "Yes/No"
@@ -165,7 +165,7 @@
       </div>
     {%- endfor %}
 
-<!--------------------------------------------------------------------------------->
+<!---------------------------------s------------------------------------------------>
 
   <!----Break---->
   <div class="govuk-grid-row">
@@ -183,7 +183,7 @@
     name: "add-another-current",
     fieldset: {
       legend: {
-        text: "Do you have any more current or savings accounts with a bank, buildings society or Post office?",
+        text: "Do you have any more current or savings accounts with a bank, building society or the Post Office?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }

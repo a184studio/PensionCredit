@@ -19,7 +19,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="msic-bank-current-accounts-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Add an account
+        Account details
       </h1>
 
 
@@ -39,11 +39,11 @@
           },
           {
             value: "BuildingsSociity",
-            text: "Buildings sociity"
+            text: "Building sociity"
           },
           {
             value: "PostOffice",
-            text: "Post office"
+            text: "Post Office"
           }
         ]
       }) }}
@@ -63,16 +63,16 @@
               },
               items: [
                 {
-                  value: "SavingsAccount",
+                  value: "Savings account",
                   text: "Savings account"
                 },
                 {
-                  value: "Current",
+                  value: "Current account",
                   text: "Current account"
                 },
                 {
                   value: "Unsure",
-                  text: "Unsure"
+                  text: "Not known"
                 }
               ]
             }) }}
@@ -87,7 +87,7 @@
 
       {{ govukInput({
         label: {
-          text: "Name of bank"
+          text: "Name of bank, building society or Post Office"
         },
         id: "msic-bank-current-account-name",
         name: "msic-bank-current-account-name-" + count,
@@ -107,7 +107,7 @@
       }) }}
 
       <br>
-      <p class="govuk-body">Total amount in this account, from <strong>Today</strong></p>
+      <p class="govuk-body">Balance of this account <strong>today</strong></p>
 
       {{ govukInput({
         label: {
@@ -148,7 +148,7 @@
           },
           {
             value: "Joint account",
-            text: "Joint account (excluding partner who lives with you)",
+            text: "You and someone else (joint account)",
             conditional: {
               html: percentageField
             }
@@ -164,7 +164,7 @@
   name: "read-from-statement",
   fieldset: {
     legend: {
-      text: "Were the details read from a statement?",
+      text: "Did you read these details from a statement?",
       classes: "govuk-fieldset__legend--s"
     }
   },
