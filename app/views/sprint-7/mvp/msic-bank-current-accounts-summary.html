@@ -16,11 +16,11 @@
   <!----Headline---->
   <h1 class="govuk-heading-xl">
     <span class="govuk-caption-m">Money, savings and investments</span>
-    Bank current accounts summary<br>
+    Current, savings and post office <br>account summary (#)<br>
   </h1>
   <!----Headline---->
 
-  <form action="msic-bank-current-accounts-summary-router" method="post">
+  <form action="msic-group-account-summary-router" method="post">
 
     {% set count = data["account-count"] or 0 %}
 
@@ -29,19 +29,19 @@
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
         <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-s pc-row-head-10">
-          {{ data["msic-bank-current-account-name-" + i] }}
-          </h3>
+          <p class="pc-row-head-10">
+          Reference: <strong>{{ data["msic-bank-current-account-name-" + i] }}</strong>
+          </p>
         </div>
         <div class="govuk-grid-column-two-thirds">
           {{ govukSummaryList({
             rows: [
             {
               key: {
-                text: "Last four digits"
+                text: "Type of account"
               },
               value: {
-                text: data['msic-bank-current-account-last-digits-' + i]
+                text: data['who-is-account-with']
               },
               actions: {
                 items: [
@@ -53,6 +53,42 @@
                   {
                     href: "msic-remove",
                     html: "Remove",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: ""
+              },
+              value: {
+                text: data['type-of-account']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "Last four digits"
+              },
+              value: {
+                text: data['msic-bank-current-account-last-digits-' + i]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
                     visuallyHiddenText: "XXX"
                   }
                 ]
@@ -78,7 +114,7 @@
             },
             {
               key: {
-                text: "Who's account?"
+                text: "Whose is this account?"
               },
               value: {
                 text: data['current-owner-' + i]
@@ -95,7 +131,7 @@
             },
             {
               key: {
-                text: "% stake in joint account"
+                text: "Stake in joint account"
               },
               value: {
                 text: data['msic-bank-current-account-stake-' + i]
@@ -113,7 +149,7 @@
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Evidence is needed for this account"
+                text: "Evidence needed"
               },
               value: {
                 text: "Yes/No"
@@ -134,7 +170,7 @@
       </div>
     {%- endfor %}
 
-<!--------------------------------------------------------------------------------->
+<!---------------------------------s------------------------------------------------>
 
   <!----Break---->
   <div class="govuk-grid-row">
@@ -152,7 +188,7 @@
     name: "add-another-current",
     fieldset: {
       legend: {
-        text: "Do you have any more bank current accounts?",
+        html: "Do you have any more current or savings accounts <br>with a bank, building society or the Post Office?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
