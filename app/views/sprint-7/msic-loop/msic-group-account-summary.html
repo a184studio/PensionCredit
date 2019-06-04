@@ -16,7 +16,7 @@
   <!----Headline---->
   <h1 class="govuk-heading-xl">
     <span class="govuk-caption-m">Money, savings and investments</span>
-    Current, savings and post office account summary<br>
+    Current, savings and post office <br>account summary (#)<br>
   </h1>
   <!----Headline---->
 
@@ -29,16 +29,16 @@
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
         <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-s pc-row-head-10">
-          {{ data["msic-bank-current-account-name-" + i] }}
-          </h3>
+          <p class="pc-row-head-10">
+          Reference: <strong>{{ data["msic-bank-current-account-name-" + i] }}</strong>
+          </p>
         </div>
         <div class="govuk-grid-column-two-thirds">
           {{ govukSummaryList({
             rows: [
             {
               key: {
-                text: "Bank, Building society or Post Office?"
+                text: "Type of account"
               },
               value: {
                 text: data['who-is-account-with']
@@ -61,7 +61,7 @@
 
             {
               key: {
-                text: "Account type"
+                text: ""
               },
               value: {
                 text: data['type-of-account']
@@ -79,7 +79,7 @@
 
             {
               key: {
-                text: "Last four digits of account or roll number"
+                text: "Last four digits"
               },
               value: {
                 text: data['msic-bank-current-account-last-digits-' + i]
@@ -149,7 +149,7 @@
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Is evidence needed for this account"
+                text: "Evidence needed"
               },
               value: {
                 text: "Yes/No"
