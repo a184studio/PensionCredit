@@ -199,7 +199,6 @@
                 }
               },
               {
-                classes: 'govuk-summary-list--no-border',
                 key: {
                   text: "Date of birth"
                 },
@@ -218,28 +217,6 @@
               }
             ]
           }) }}
-
-  </div></div>
-
-
-  <!----Break---->
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-  </div>
-  <!----Break---->
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-s pc-row-head-10">
-        Eligibility
-      </h3>
-      <p></p>
-    </div>
-
-
-    <div class="govuk-grid-column-two-thirds">
 
           {{ govukSummaryList({
             rows: [
@@ -262,7 +239,7 @@
             },
             {
               key: {
-                text: "Have you lived permanently in the UK for the last 2 years?"
+                text: "Lived permanently in the UK for the last 2 years"
               },
               value: {
                 text: data['lived-abroad']
@@ -278,9 +255,8 @@
               }
             },
             {
-              classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Are you a UK national?"
+                text: "UK national"
               },
               value: {
                 text: data['uk-national']
@@ -294,11 +270,29 @@
                   }
                 ]
               }
+            },
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Has a partner"
+              },
+              value: {
+                text: data['has-partner']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "partner-under-spa",
+                    text: "Change",
+                    visuallyHiddenText: "partner"
+                  }
+                ]
+              }
             }
             ]
           }) }}
 
-  </div></div>
+  </div>
 
 
 <!----Break---->

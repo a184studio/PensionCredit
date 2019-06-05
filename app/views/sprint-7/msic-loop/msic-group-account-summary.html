@@ -16,11 +16,11 @@
   <!----Headline---->
   <h1 class="govuk-heading-xl">
     <span class="govuk-caption-m">Money, savings and investments</span>
-    Current, savings and post office account summary<br>
+    Current, savings and post office <br>account summary (#)<br>
   </h1>
   <!----Headline---->
 
-  <form action="msic-bank-current-accounts-summary-router" method="post">
+  <form action="msic-group-account-summary-router" method="post">
 
     {% set count = data["account-count"] or 0 %}
 
@@ -29,16 +29,16 @@
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
         <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-s pc-row-head-10">
-          {{ data["msic-bank-current-account-name-" + i] }}
-          </h3>
+          <p class="pc-row-head-10">
+          Reference: <strong>{{ data["msic-bank-current-account-name-" + i] }}</strong>
+          </p>
         </div>
         <div class="govuk-grid-column-two-thirds">
           {{ govukSummaryList({
             rows: [
             {
               key: {
-                text: "Bank, Building society or Post Office?"
+                text: "Type of account"
               },
               value: {
                 text: data['who-is-account-with']
@@ -46,8 +46,13 @@
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account",
-                    text: "Change or Remove",
+                    href: "msic-group-account",
+                    html: "Change",
+                    visuallyHiddenText: "XXX"
+                  },
+                  {
+                    href: "msic-remove",
+                    html: "Remove",
                     visuallyHiddenText: "XXX"
                   }
                 ]
@@ -56,7 +61,7 @@
 
             {
               key: {
-                text: "Account type"
+                text: ""
               },
               value: {
                 text: data['type-of-account']
@@ -74,7 +79,7 @@
 
             {
               key: {
-                text: "Last four digits of account or roll number"
+                text: "Last four digits"
               },
               value: {
                 text: data['msic-bank-current-account-last-digits-' + i]
@@ -144,7 +149,7 @@
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Is evidence needed for this account"
+                text: "Evidence needed"
               },
               value: {
                 text: "Yes/No"
@@ -183,7 +188,7 @@
     name: "add-another-current",
     fieldset: {
       legend: {
-        text: "Do you have any more current or savings accounts with a bank, building society or the Post Office?",
+        html: "Do you have any more current or savings accounts <br>with a bank, building society or the Post Office?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
