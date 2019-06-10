@@ -16,11 +16,11 @@
   <!----Headline---->
   <h1 class="govuk-heading-xl">
     <span class="govuk-caption-m">Money, savings and investments</span>
-    Current, savings and post office <br>account summary (#)<br>
+    Bank current account summary(#)<br>
   </h1>
   <!----Headline---->
 
-  <form action="msic-group-account-summary-router" method="post">
+  <form action="msic-bank-current-accounts-summary-router" method="post">
 
     {% set count = data["account-count"] or 0 %}
 
@@ -188,7 +188,7 @@
     name: "add-another-current",
     fieldset: {
       legend: {
-        html: "Do you have any more current or savings accounts <br>with a bank, building society or the Post Office?",
+        html: "Do you have any more bank current accounts?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
