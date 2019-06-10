@@ -38,10 +38,10 @@
             rows: [
             {
               key: {
-                text: "Type of account"
+                text: "Last four digits"
               },
               value: {
-                text: data['who-is-account-with']
+                text: data['msic-bank-current-account-last-digits-' + i]
               },
               actions: {
                 items: [
@@ -53,42 +53,6 @@
                   {
                     href: "msic-remove",
                     html: "Remove",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
-                text: ""
-              },
-              value: {
-                text: data['type-of-account']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
-                text: "Last four digits"
-              },
-              value: {
-                text: data['msic-bank-current-account-last-digits-' + i]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
                     visuallyHiddenText: "XXX"
                   }
                 ]
