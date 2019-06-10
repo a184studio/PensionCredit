@@ -108,7 +108,21 @@
             </a>
           </dd>
         </div>
-      {% elif data["home-ownership"] == "Care Home" %}
+        {% elif data["home-ownership"] == "Shared ownership" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Shared ownership
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["shared-ownership-more-detail"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="notepad-shared-ownership">
+                Change
+              </a>
+            </dd>
+          </div>
+        {% elif data["home-ownership"] == "Care Home" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Care home notes

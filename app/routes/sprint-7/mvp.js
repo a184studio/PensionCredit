@@ -199,6 +199,9 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   else if (homeOwnership === 'Rented') {
     res.redirect(`${baseUrl}/rent-service-charges`)
   }
+  else if (homeOwnership === 'Shared ownership') {
+    res.redirect(`${baseUrl}/notepad-shared-ownership`)
+  }
   else if (homeOwnership === 'Care Home') {
     res.redirect(`${baseUrl}/notepad-carehome`)
   }
@@ -212,6 +215,8 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/notepad-otherRes`)
   }
 })
+
+
 
 router.post(`${baseUrl}/employment-router`, (req, res) => {
   const employmentFulltime = req.session.data['employment-fulltime']
