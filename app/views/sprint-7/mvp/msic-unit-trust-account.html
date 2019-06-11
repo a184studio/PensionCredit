@@ -47,6 +47,26 @@
     classes: "govuk-input--width-20"
   }) }}
 
+  {{ govukRadios({
+    idPrefix: "msic-trust-account-read-from-statement",
+    name: "msic-trust-account-read-from-statement",
+    fieldset: {
+      legend: {
+        text: "Did you read these details from a statement?"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes"
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+
       {{ govukButton({
         text: "Continue"
       }) }}

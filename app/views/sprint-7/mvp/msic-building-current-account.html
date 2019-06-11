@@ -64,8 +64,8 @@
       {% endset %}
 
       {{ govukRadios({
-        idPrefix: "msic-buildings-savings-account-owner",
-        name: "msic-buildings-savings-account-owner",
+        idPrefix: "msic-buildings-current-account-owner",
+        name: "msic-buildings-current-account-owner",
         fieldset: {
           legend: {
             text: "Who does this account belong to?"
@@ -85,6 +85,27 @@
           }
         ]
       }) }}
+
+      {{ govukRadios({
+        idPrefix: "msic-buildings-current-account-read-from-statement",
+        name: "msic-buildings-current-account-read-from-statement",
+        fieldset: {
+          legend: {
+            text: "Did you read these details from a statement?"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
 
       {{ govukButton({
         text: "Continue"
