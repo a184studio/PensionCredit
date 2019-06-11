@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Money, savings and investments - Pension Credit
+  Capital bonds summary - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -16,10 +16,10 @@
   <!----Headline---->
   <span class="govuk-caption-m">Money, savings and investments</span>
   <h1 class="govuk-heading-xl">
-    ISAs, TESSAs, TOISA and PEPs accounts summary<br>
+    Capital bonds summary<br>
   </h1>
   <!----Headline---->
-  <form action="msic-has-capital-bond-account-yn" method="post">
+  <form action="msic-has-shares-account-yn" method="post">
 
 
     <h3 class="govuk-heading-m">
@@ -27,12 +27,12 @@
     </h3>
 
 <br><br>
-{% if data["msic-isa-savings-account-name"] %}
+{% if data["msic-capital-bond-company-name"] %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
     <!------>  <h3 class="govuk-heading-s">
-        {{ data["msic-isa-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+        {{ data["msic-capital-bond-company-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
       </h3></div>
 
 
@@ -42,55 +42,18 @@
         rows: [
         {
           key: {
-            text: "Last four digits"
+            text: "Value of capital bonds"
           },
           value: {
-            text: data['msic-isa-savings-account-last-digits']
+            text: data['msic-capital-bond-account-total-bonds']
           },
           actions: {
             items: [
-              {
-                href: "msic-isa-savings-account",
-                text: "Change / Remove",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "Total"
-          },
-          value: {
-            text: data['msic-isa-savings-account-amount']
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          classes: 'govuk-summary-list--no-border',
-          key: {
-            text: "Evidence needed:"
-          },
-          value: {
-            text: data['msic-premium-bond-account-read-from-statement']
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-premium-bond-account-read-from-statement",
-                text: "",
-                visuallyHiddenText: "XXXX"
-              }
+            {
+              href: "msic-capital-bond-account",
+              text: "Change / Remove",
+              visuallyHiddenText: "XXX"
+            }
             ]
           }
         }
@@ -120,7 +83,7 @@
     name: "changed-name",
     fieldset: {
       legend: {
-        text: "Do you want to add another account?",
+        text: "Do you have any more capital bond?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }

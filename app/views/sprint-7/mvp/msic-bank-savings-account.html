@@ -86,6 +86,26 @@
         ]
       }) }}
 
+      {{ govukRadios({
+        idPrefix: "read-from-statement",
+        name: "read-from-statement",
+        fieldset: {
+          legend: {
+            text: "Did you read these details from a statement?"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
 
       {{ govukButton({
         text: "Continue"
