@@ -194,13 +194,15 @@
           </dd>
         </div>
       {% endif %}
-      {% if data["rent-service-charges"] %}
+
+
+      {% if data["rent-council-tax"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Rent + Service charges
+            In receipt of council tax reduction
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data["rentServiceCharges"]}} @Niall / Value missing
+            {{data["rent-council-tax"]}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="rent-service-charges">
@@ -209,6 +211,46 @@
           </dd>
         </div>
         {% endif %}
+
+        {% if data["rent-council-tax"] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              In receipt of council tax reduction
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data["rent-council-tax"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="rent-service-charges">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+
+
+
+
+
+      {% if data["rent-service-charges"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Additional service charges on top of your rent
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["rent-service-charges"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="rent-service-charges">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+
+
         {% if data["rent-housing-council-tax"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">

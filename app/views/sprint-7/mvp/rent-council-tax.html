@@ -1,12 +1,15 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you pay any service charges? - Pension Credit
+  Do you get council tax reduction - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
 {% endblock %}
+
+{% from "radios/macro.njk" import govukRadios %}
+
 
 {% block content %}
 
@@ -14,49 +17,49 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="rent-council-tax" method="post" class="form">
-      {% set serviceCharges %}
-        {{ govukInput({
-          label: {
-            text: "How much do you pay each year?"
-          },
-          id: "rent-service-charges",
-          name: "rent-service-charges",
-          classes: "govuk-input--width-20",
-          value: data["rentServiceChargesdata"]
-        }) }}
-      {% endset %}
+    <form action="rent-housing-benefit" method="post" class="form">
 
       {{ govukRadios({
-        idPrefix: "rent-service-charges",
-        name: "rent-service-charges",
+        idPrefix: "rent-council-tax",
+        name: "rent-council-tax",
         fieldset: {
           legend: {
-            text: "Do you pay any additional service charges on top of your rent?",
+            text: "Are you in receipt of council tax reduction?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@pete: You might pay services charges on top of your rent."
+          text: "@pete: any thoughts on this?"
         },
-        classes: "govuk-radios--inline",
         items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
-            conditional: {
-              html: serviceCharges
-            },
-            checked: (data["rentServiceChargesYN"] == "Yes")
+            checked: (data["rent-housing-council-tax"] == "Yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["rentServiceChargesYN"] == "No")
+            checked: (data["rent-housing-council-tax"] == "No")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "apply-for-council-tax",
+            text: "No, would like to apply",
+            checked: (data["rent-housing-council-tax"] == "Would like to apply for council tax")
           }
         ]
       }) }}
+
+
+
+
+
+
+
 
       {{ govukButton({
         text: "Continue"

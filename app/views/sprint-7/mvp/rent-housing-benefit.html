@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you pay any service charges? - Pension Credit
+  Do you get housing benefit - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,46 +14,39 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="rent-council-tax" method="post" class="form">
-      {% set serviceCharges %}
-        {{ govukInput({
-          label: {
-            text: "How much do you pay each year?"
-          },
-          id: "rent-service-charges",
-          name: "rent-service-charges",
-          classes: "govuk-input--width-20",
-          value: data["rentServiceChargesdata"]
-        }) }}
-      {% endset %}
+    <form action="address-summary" method="post" class="form">
 
       {{ govukRadios({
-        idPrefix: "rent-service-charges",
-        name: "rent-service-charges",
+        idPrefix: "rent-housing-benefit",
+        name: "rent-housing-benefit",
         fieldset: {
           legend: {
-            text: "Do you pay any additional service charges on top of your rent?",
+            text: "Are you in receipt of housing benefit",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@pete: You might pay services charges on top of your rent."
+          text: "@pete: any thoughts on this?"
         },
-        classes: "govuk-radios--inline",
         items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
-            conditional: {
-              html: serviceCharges
-            },
-            checked: (data["rentServiceChargesYN"] == "Yes")
+            checked: (data["rent-housing-benefit"] == "Yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["rentServiceChargesYN"] == "No")
+            checked: (data["rent-housing-benefit"] == "No")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "apply-for-council-tax",
+            text: "No, would like to apply",
+            checked: (data["rent-housing-benefit"] == "Would like to apply for housing benefit")
           }
         ]
       }) }}
@@ -61,6 +54,8 @@
       {{ govukButton({
         text: "Continue"
       }) }}
+
+
     </form>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
