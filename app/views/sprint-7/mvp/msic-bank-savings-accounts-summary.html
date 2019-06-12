@@ -81,7 +81,7 @@
             text: "Who's account?"
           },
           value: {
-            text: data['current-owner']
+            text: data['msic-bank-savings-account-owner']
           },
           actions: {
             items: [
@@ -104,24 +104,28 @@
           actions: {
             items: [
               {
-                href: "",
+                href: "msic-bank-savings-account-stake",
                 text: "",
                 visuallyHiddenText: "XXXX"
-              },
+              }
+            ]
+          }
+        },
+
+        {
+          classes: 'govuk-summary-list--no-border',
+          key: {
+            text: "Evidence needed:"
+          },
+          value: {
+            text: data['msic-bank-savings-account-read-from-statement']
+          },
+          actions: {
+            items: [
               {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                  text: "Evidence needed:"
-                },
-                value: {
-                  text: "Yes/No"
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-bank-savings-account-need-evidence",
-                      text: "",
-                      visuallyHiddenText: "XXXX"
+                href: "msic-bank-savings-account",
+                text: "",
+                visuallyHiddenText: "XXXX"
               }
             ]
           }
