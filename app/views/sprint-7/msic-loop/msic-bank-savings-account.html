@@ -64,8 +64,8 @@
       {% endset %}
 
       {{ govukRadios({
-        idPrefix: "current-owner",
-        name: "current-owner",
+        idPrefix: "msic-bank-savings-account-owner",
+        name: "msic-bank-savings-account-owner",
         fieldset: {
           legend: {
             text: "Who does account belong to?"
@@ -82,6 +82,26 @@
             conditional: {
               html: percentageField
             }
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "msic-bank-savings-account-read-from-statement",
+        name: "msic-bank-savings-account-read-from-statement",
+        fieldset: {
+          legend: {
+            text: "Did you read these details from a statement?"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
           }
         ]
       }) }}
