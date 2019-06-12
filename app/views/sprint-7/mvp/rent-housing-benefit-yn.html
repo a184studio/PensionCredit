@@ -1,15 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you get council tax reduction - Pension Credit
+  Do you get housing benefit - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
 {% endblock %}
-
-{% from "radios/macro.njk" import govukRadios %}
-
 
 {% block content %}
 
@@ -17,14 +14,14 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="rent-housing-benefit" method="post" class="form">
+    <form action="rent-housing-benefit-yn-router" method="post" class="form">
 
       {{ govukRadios({
-        idPrefix: "rent-council-tax",
-        name: "rent-council-tax",
+        idPrefix: "rent-housing-benefit-yn",
+        name: "rent-housing-benefit-yn",
         fieldset: {
           legend: {
-            text: "Are you in receipt of council tax reduction?",
+            text: "Are you in receipt of housing benefit",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -36,34 +33,21 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["rent-housing-council-tax"] == "Yes")
+            checked: (data["rent-housing-benefit-yn"] == "Yes")
           },
           {
-            value: "no",
+            value: "No",
             text: "No",
-            checked: (data["rent-housing-council-tax"] == "No")
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "apply-for-council-tax",
-            text: "No, would like to apply",
-            checked: (data["rent-housing-council-tax"] == "Would like to apply for council tax")
+            checked: (data["rent-housing-benefit-yn"] == "No")
           }
         ]
       }) }}
 
-
-
-
-
-
-
-
       {{ govukButton({
         text: "Continue"
       }) }}
+
+
     </form>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">

@@ -16,12 +16,8 @@
   <div class="govuk-grid-column-three-quarters">
 
     <h1 class="govuk-heading-xl">
-      Check your answers
+      About where you live, <br>check your answers
     </h1>
-
-    <h2 class="govuk-heading-m">
-      Details collected via eligibility (@Pete is this needed, do we combine the headline?)
-    </h2>
 
     <dl class="govuk-summary-list govuk-summary-list--long">
       <div class="govuk-summary-list__row">
@@ -196,29 +192,46 @@
       {% endif %}
 
 
-      {% if data["rent-council-tax"] %}
+            {% if data["rent-service-charges"] %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Additional service charges on top of your rent
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data["rent-service-charges"]}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="rent-service-charges">
+                    Change
+                  </a>
+                </dd>
+              </div>
+              {% endif %}
+
+
+      {% if data["rent-council-tax-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             In receipt of council tax reduction
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data["rent-council-tax"]}}
+            {{data["rent-council-tax-yn"]}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="rent-service-charges">
+            <a href="rent-council-tax-yn">
               Change
             </a>
           </dd>
         </div>
         {% endif %}
 
-        {% if data["rent-housing-benefit"] %}
+        {% if data["rent-council-tax-apply"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              In receipt of housing benefit
+              Would like to apply for council tax
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data["rent-housing-benefit"]}}
+              {{data["rent-council-tax-apply"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="rent-service-charges">
@@ -229,43 +242,38 @@
           {% endif %}
 
 
-
-
-
-
-      {% if data["rent-service-charges"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Additional service charges on top of your rent
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data["rent-service-charges"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="rent-service-charges">
-              Change
-            </a>
-          </dd>
-        </div>
-        {% endif %}
-
-
-
-        {% if data["rent-housing-council-tax"] %}
+        {% if data["rent-housing-benefit-yn"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              In receipt housing benefit and council tax reduction
+              In receipt of housing benefit
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data["rent-housing-council-tax"]}}
+              {{data["rent-housing-benefit-yn"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="rent-housing-council-tax">
+              <a href="rent-service-charges">
                 Change
               </a>
             </dd>
           </div>
-        {% endif %}
+          {% endif %}
+
+          {% if data["rent-housing-benefit-apply"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Would like to apply for housing benefit
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data["rent-housing-benefit-apply"]}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="rent-service-charges">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
       </dl>
 
 <br><br>

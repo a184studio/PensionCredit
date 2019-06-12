@@ -138,17 +138,6 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   }
 })
 
-
-router.post(`${baseUrl}/mortgage-router`, (req, res) => {
-  const hasMortgage = req.session.data['has-mortgage']
-
-  if (hasMortgage === 'Yes') {
-    res.redirect(`${baseUrl}/mortgage-yes`)
-  } else {
-    res.redirect(`${baseUrl}/address-summary`)
-  }
-})
-
 router.post(`${baseUrl}/has-work-router`, (req, res) => {
   const hasWork = req.session.data['has-work']
 
@@ -169,16 +158,6 @@ router.post(`${baseUrl}/self-employed-router`, (req, res) => {
   }
 })
 
-
-router.post(`${baseUrl}/mortgage-router`, (req, res) => {
-  const hasMortgage = req.session.data['has-mortgage']
-
-  if (hasMortgage === 'Yes') {
-    res.redirect(`${baseUrl}/mortgage-yes`)
-  } else {
-    res.redirect(`${baseUrl}/owns-council-tax`)
-  }
-})
 
 router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
   const accountType = req.session.data['hospital-yn']
@@ -215,6 +194,54 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/notepad-otherRes`)
   }
 })
+
+
+
+router.post(`${baseUrl}/rent-council-tax-yn-router`, (req, res) => { // router name
+
+  const rentCouncilTaxApply = req.session.data['rent-council-tax-yn']  // name of data / id name
+
+  if (rentCouncilTaxApply === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/rent-housing-benefit-yn`)
+  } else {
+    res.redirect(`${baseUrl}/rent-council-tax-apply`)
+  }
+})
+
+router.post(`${baseUrl}/rent-housing-benefit-yn-router`, (req, res) => { // router name
+
+  const rentHousingBenefitApply = req.session.data['rent-housing-benefit-tax-yn']  // name of data / id name
+
+  if (rentHousingBenefitApply === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/address-summary`)
+  } else {
+    res.redirect(`${baseUrl}/rent-housing-benefit-apply`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/mortgage-yn-router`, (req, res) => {
+  const hasMortgage = req.session.data['has-mortgage']
+
+  if (hasMortgage === 'Yes') {
+    res.redirect(`${baseUrl}/mortgage-yes`)
+  } else {
+    res.redirect(`${baseUrl}/own-council-tax-yn`)
+  }
+})
+
+router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router name
+
+  const rentCouncilTaxApply = req.session.data['own-council-tax-yn']  // name of data / id name
+
+  if (rentCouncilTaxApply === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/address-summary`)
+  } else {
+    res.redirect(`${baseUrl}/own-council-tax-apply`)
+  }
+})
+
 
 
 

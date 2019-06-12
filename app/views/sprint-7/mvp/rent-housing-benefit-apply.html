@@ -17,11 +17,11 @@
     <form action="address-summary" method="post" class="form">
 
       {{ govukRadios({
-        idPrefix: "rent-housing-benefit",
-        name: "rent-housing-benefit",
+        idPrefix: "rent-housing-benefit-apply",
+        name: "rent-housing-benefit-apply",
         fieldset: {
           legend: {
-            text: "Are you in receipt of housing benefit",
+            text: "Would you like to apply for housing benefit",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -33,20 +33,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["rent-housing-benefit"] == "Yes")
+            checked: (data["rent-housing-benefit-apply"] == "Yes")
           },
           {
-            value: "no",
+            value: "No",
             text: "No",
-            checked: (data["rent-housing-benefit"] == "No")
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "apply-for-council-tax",
-            text: "No, would like to apply",
-            checked: (data["rent-housing-benefit"] == "Would like to apply for housing benefit")
+            checked: (data["rent-housing-benefit-apply"] == "No")
           }
         ]
       }) }}
