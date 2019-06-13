@@ -172,22 +172,22 @@ router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
 router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   const homeOwnership = req.session.data['home-ownership']
 
-  if (homeOwnership === 'Owned') {
+  if (homeOwnership === 'You own it') {
     res.redirect(`${baseUrl}/service-charges`)
   }
-  else if (homeOwnership === 'Rented') {
+  else if (homeOwnership === 'You rent it') {
     res.redirect(`${baseUrl}/rent-service-charges`)
   }
-  else if (homeOwnership === 'Shared ownership') {
+  else if (homeOwnership === 'You own and rent it (shared ownership)') {
     res.redirect(`${baseUrl}/notepad-shared-ownership`)
   }
-  else if (homeOwnership === 'Care Home') {
+  else if (homeOwnership === 'You live in a care home or nursing home') {
     res.redirect(`${baseUrl}/notepad-carehome`)
   }
-  else if (homeOwnership === 'Sheltered Accommodation') {
+  else if (homeOwnership === 'You live in sheltered accommodation') {
     res.redirect(`${baseUrl}/notepad-sheltered`)
   }
-  else if (homeOwnership === 'Someone Else') {
+  else if (homeOwnership === 'You live in someone else\'s home without paying rent') {
     res.redirect(`${baseUrl}/notepad-someoneElse`)
   }
   else if (homeOwnership === 'Other') {

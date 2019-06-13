@@ -16,7 +16,7 @@
   <div class="govuk-grid-column-three-quarters">
 
     <h1 class="govuk-heading-xl">
-      About where you live, <br>check your answers
+      About where you live summary
     </h1>
 
     <dl class="govuk-summary-list govuk-summary-list--long">
@@ -50,7 +50,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Home ownership
+          Description of where you live
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["home-ownership"] }}
@@ -212,7 +212,7 @@
       {% if data["rent-council-tax-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            In receipt of council tax reduction
+            Do you get Council Tax Reduction?
           </dt>
           <dd class="govuk-summary-list__value">
             {{data["rent-council-tax-yn"]}}
@@ -228,7 +228,7 @@
         {% if data["rent-council-tax-apply"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Would like to apply for council tax
+            Apply for Council Tax Reduction
             </dt>
             <dd class="govuk-summary-list__value">
               {{data["rent-council-tax-apply"]}}
@@ -245,7 +245,7 @@
         {% if data["rent-housing-benefit-yn"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              In receipt of housing benefit
+              Do you get Housing Benefit?
             </dt>
             <dd class="govuk-summary-list__value">
               {{data["rent-housing-benefit-yn"]}}
@@ -261,7 +261,7 @@
           {% if data["rent-housing-benefit-apply"] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Would like to apply for housing benefit
+                Apply for Housing Benefit
               </dt>
               <dd class="govuk-summary-list__value">
                 {{data["rent-housing-benefit-apply"]}}

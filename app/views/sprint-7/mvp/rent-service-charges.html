@@ -27,6 +27,17 @@
         }) }}
       {% endset %}
 
+      {% set radioHint %}
+
+      <p class= "govuk-body">Service charges can include:</p>
+        <ul class= "govuk-list govuk-list--bullet">
+          <li>warden services</li>
+          <li>caretaker services like gardening, maintenance and cleaning of communal areas</li>
+          <li>use of a laundry room </li>
+          <li>use of communal areas like a lounge or TV area </li>
+        </ul>
+      {% endset %}
+
       {{ govukRadios({
         idPrefix: "rent-service-charges",
         name: "rent-service-charges",
@@ -38,7 +49,7 @@
           }
         },
         hint: {
-          text: "@pete: You might pay services charges on top of your rent."
+          html: radioHint
         },
         classes: "govuk-radios--inline",
         items: [
