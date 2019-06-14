@@ -21,22 +21,22 @@
         name: "own-service-charges",
         fieldset: {
           legend: {
-            html: "Do you pay any service charges?",
+            html: "<h1 class=\"govuk-heading-xl\"><span class=\"govuk-caption-l\"></span>Do you pay any service charges?</h1>",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          html: "<br><p class=\"hint\">
-                <strong>Service charges can include: @pete sorry may need to bullets back in
+          html: "<p class=\"hint\">
+                <strong>Service charges can include:
                 </strong>
-                <br><br><strong>X</strong><br>warden services
-                <br><br><strong>X</strong><br>caretaker services like gardening, maintenance and cleaning of communal areas
-                <br><br><strong>X</strong><br>use of a laundry room
-                <br><br><strong>X</strong><br>use of communal areas like a lounge or TV area
 
-                <br><br>
-                </hint>"
+                <ul class=\"govuk-list hint govuk-list--bullet\">
+                  <li>warden services</li>
+                  <li>caretaker services like gardening, maintenance and cleaning of communal areas</li>
+                  <li>use of a laundry room</li>
+                  <li>use of communal areas like a lounge or TV area</li>
+                </ul></hint>"
         },
         items: [
           {
@@ -53,7 +53,13 @@
       }) }}
 
 
+
+
 <!-- old dropdown
+
+html: "<h1 class=\"govuk-heading-xl\"><span class=\"govuk-caption-l\">Own</span>Do you pay any service charges?</h1>",
+
+
       {% set serviceCharges %}
         {{ govukInput({
           label: {
