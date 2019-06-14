@@ -360,7 +360,7 @@ router.post(`${baseUrl}/rent-charges-service-router`, (req, res) => {// router n
     res.redirect(`${baseUrl}/out-decaration`)
   }
 })
-
+  
 router.post(`${baseUrl}/privacy-policy-router`, (req, res) => { // router name
   const privacyPolicy = req.session.data['agrees-privacy']  // name of data / id name
 
