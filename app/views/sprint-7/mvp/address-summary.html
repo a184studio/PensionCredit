@@ -70,13 +70,13 @@
 
       <!-- Owns ------------------------------------------------------>
 
-{% if data["service-charges"] %}
+{% if data["own-service-charges"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Service charges
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["service-charges"] or "None "}}
+            {{ data["own-service-charges"] or "None "}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="service-charges">
@@ -86,13 +86,13 @@
         </div>
 {% endif %}
 
-{% if data["ground-rent"] %}
+{% if data["own-ground-rent"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Ground rent
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["ground-rent"] or "None "}}
+            {{ data["own-ground-rent"] or "None "}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="ground-rent">
@@ -360,4 +360,4 @@
 
   </div>
 </div>
-{% endblock %} 
+{% endblock %}

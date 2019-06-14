@@ -14,14 +14,53 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="ground-rent" method="post" class="form">
+    <form action="own-ground-rent" method="post" class="form">
+
+      {{ govukRadios({
+        idPrefix: "own-service-charges",
+        name: "own-service-charges",
+        fieldset: {
+          legend: {
+            html: "Do you pay any service charges?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "<br><p class=\"hint\">
+                <strong>Service charges can include: @pete sorry may need to bullets back in
+                </strong>
+                <br><br><strong>X</strong><br>warden services
+                <br><br><strong>X</strong><br>caretaker services like gardening, maintenance and cleaning of communal areas
+                <br><br><strong>X</strong><br>use of a laundry room
+                <br><br><strong>X</strong><br>use of communal areas like a lounge or TV area
+
+                <br><br>
+                </hint>"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["own-service-charges"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["own-service-charges"] == "No")
+          }
+        ]
+      }) }}
+
+
+<!-- old dropdown
       {% set serviceCharges %}
         {{ govukInput({
           label: {
             text: "How much do you pay each year?"
           },
-          id: "service-charges",
-          name: "service-charges",
+          id: "own-service-charges",
+          name: "own-service-charges",
           classes: "govuk-input--width-20",
           value: data["service-charges"]
         }) }}
@@ -54,6 +93,8 @@
           }
         ]
       }) }}
+
+-->
 
       {{ govukButton({
         text: "Continue"

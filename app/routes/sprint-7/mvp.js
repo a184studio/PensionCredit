@@ -173,7 +173,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   const homeOwnership = req.session.data['home-ownership']
 
   if (homeOwnership === 'You own it') {
-    res.redirect(`${baseUrl}/service-charges`)
+    res.redirect(`${baseUrl}/own-service-charges`)
   }
   else if (homeOwnership === 'You rent it') {
     res.redirect(`${baseUrl}/rent-service-charges`)
@@ -194,7 +194,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   res.redirect(`${baseUrl}/notepad-otherRes`)
 })
 
- 
+
 
 router.post(`${baseUrl}/rent-council-tax-yn-router`, (req, res) => { // router name
 

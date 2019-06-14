@@ -15,6 +15,51 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="rent-council-tax-yn" method="post" class="form">
+
+
+      {{ govukRadios({
+        idPrefix: "rent-service-charges",
+        name: "rent-service-charges",
+        fieldset: {
+          legend: {
+            text: "Do you pay any additional service charges on top of your rent?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "<br><p class=\"hint\">
+                <strong>Service charges can include: @pete sorry may need to bullets back in
+                </strong>
+                <br><br><strong>X</strong><br>warden services
+                <br><br><strong>X</strong><br>caretaker services like gardening, maintenance and cleaning of communal areas
+                <br><br><strong>X</strong><br>use of a laundry room
+                <br><br><strong>X</strong><br>use of communal areas like a lounge or TV area
+
+                <br><br>
+                </hint>"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["rent-service-charges"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["rent-service-charges"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+
+
+
+<!-- Old with dropdown
+
       {% set serviceCharges %}
         {{ govukInput({
           label: {
@@ -68,6 +113,9 @@
           }
         ]
       }) }}
+
+-->
+
 
       {{ govukButton({
         text: "Continue"
