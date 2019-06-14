@@ -149,6 +149,97 @@
                 </div>
               {% endif %}
 
+<!-- Rent ------------------------------------------------------>
+
+
+              {% if data["rent-service-charges"] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Additional service charges on top of your rent
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data["rent-service-charges"]}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="rent-service-charges">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+                {% endif %}
+
+
+        {% if data["rent-council-tax-yn"] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you get Council Tax Reduction?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data["rent-council-tax-yn"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="rent-council-tax-yn">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data["rent-council-tax-apply"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Apply for Council Tax Reduction
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data["rent-council-tax-apply"]}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="rent-service-charges">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+
+          {% if data["rent-housing-benefit-yn"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you get Housing Benefit?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data["rent-housing-benefit-yn"]}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="rent-service-charges">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data["rent-housing-benefit-apply"] %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Apply for Housing Benefit
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data["rent-housing-benefit-apply"]}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="rent-service-charges">
+                    Change
+                  </a>
+                </dd>
+              </div>
+              {% endif %}
+
+
+
+
+
+
+
 
         <!-- Shared ownership ------------------------------------------------------>
 
@@ -243,98 +334,7 @@
       {% endif %}
 
 
-      <!--  ------------------------------------------------------>
-
-
-
-
-
-
-            {% if data["rent-service-charges"] %}
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Additional service charges on top of your rent
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data["rent-service-charges"]}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a href="rent-service-charges">
-                    Change
-                  </a>
-                </dd>
-              </div>
-              {% endif %}
-
-
-      {% if data["rent-council-tax-yn"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Do you get Council Tax Reduction?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data["rent-council-tax-yn"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="rent-council-tax-yn">
-              Change
-            </a>
-          </dd>
-        </div>
-        {% endif %}
-
-        {% if data["rent-council-tax-apply"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Apply for Council Tax Reduction
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data["rent-council-tax-apply"]}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="rent-service-charges">
-                Change
-              </a>
-            </dd>
-          </div>
-          {% endif %}
-
-
-        {% if data["rent-housing-benefit-yn"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Do you get Housing Benefit?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data["rent-housing-benefit-yn"]}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="rent-service-charges">
-                Change
-              </a>
-            </dd>
-          </div>
-          {% endif %}
-
-          {% if data["rent-housing-benefit-apply"] %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Apply for Housing Benefit
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data["rent-housing-benefit-apply"]}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="rent-service-charges">
-                  Change
-                </a>
-              </dd>
-            </div>
-            {% endif %}
-
-
-
-<!-- Owns ------------------------------------------------------>
+      <!-------------------------------------------------------->
 
 
       </dl>
