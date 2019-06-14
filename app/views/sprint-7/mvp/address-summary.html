@@ -48,6 +48,10 @@
           </a>
         </dd>
       </div>
+
+<!-- Type ------------------------------------------------------>
+
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Description of where you live
@@ -61,6 +65,10 @@
           </a>
         </dd>
       </div>
+
+      <!-- Owns ------------------------------------------------------>
+
+
       {% if data["home-ownership"] == "Owned" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -75,6 +83,8 @@
             </a>
           </dd>
         </div>
+
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Service charges
@@ -88,6 +98,7 @@
             </a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Mortgage
@@ -104,6 +115,44 @@
             </a>
           </dd>
         </div>
+
+              {% if data["own-home-loan-yn"] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Do you have a home loan
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data["own-home-loan-yn"]}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="owns-council-tax">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
+
+              {% if data["owns-council-tax"] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Council tax reduction
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data["owns-council-tax"]}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="owns-council-tax">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
+
+        <!-- Shared ownership ------------------------------------------------------>
+
+
         {% elif data["home-ownership"] == "Shared ownership" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -118,6 +167,10 @@
               </a>
             </dd>
           </div>
+
+          <!-- Care home ------------------------------------------------------>
+
+
         {% elif data["home-ownership"] == "Care Home" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -132,6 +185,11 @@
             </a>
           </dd>
         </div>
+
+        <!-- Sheltered accommodation ------------------------------------------------------>
+
+
+
       {% elif data["home-ownership"] == "Sheltered Accommodation" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -146,6 +204,10 @@
             </a>
           </dd>
         </div>
+
+        <!-- Someone else ------------------------------------------------------>
+
+
       {% elif data["home-ownership"] == "Someone Else" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -160,6 +222,10 @@
             </a>
           </dd>
         </div>
+
+        <!-- Other ------------------------------------------------------>
+
+
       {% elif data["home-ownership"] == "Other" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -175,21 +241,13 @@
           </dd>
         </div>
       {% endif %}
-      {% if data["owns-council-tax"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Council tax reduction
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data["owns-council-tax"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="owns-council-tax">
-              Change
-            </a>
-          </dd>
-        </div>
-      {% endif %}
+
+
+      <!--  ------------------------------------------------------>
+
+
+
+
 
 
             {% if data["rent-service-charges"] %}
@@ -273,6 +331,11 @@
               </dd>
             </div>
             {% endif %}
+
+
+
+<!-- Owns ------------------------------------------------------>
+
 
       </dl>
 

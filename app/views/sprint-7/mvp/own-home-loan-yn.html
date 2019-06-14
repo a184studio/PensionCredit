@@ -1,15 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you get council tax reduction - Pension Credit
+  Do you live with a partner? - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
 {% endblock %}
-
-{% from "radios/macro.njk" import govukRadios %}
-
 
 {% block content %}
 
@@ -17,41 +14,42 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="own-council-tax-yn-router" method="post" class="form">
-
+    <form action="own-home-loan-yn-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "rown-council-tax-yn",
-        name: "own-council-tax-yn",
+        idPrefix: "own-home-loan-yn",
+        name: "own-home-loan-yn",
         fieldset: {
           legend: {
-            text: "Are you in receipt of council tax reduction?",
+            text: "Do you have a home loan?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
-        },
-        hint: {
-          text: "@pete: any thoughts on this?"
-        },
+            },
+            hint: {
+              html: "<br><p class=\"hint\">
+                    <strong>@pete / What do you mean by home loan?
+                    </strong><br>For these types of things
+                    <br><br><strong>X</strong><br>For these types of things
+                    <br><br><strong>X</strong><br>For these types of things
+                    <br><br><strong>X</strong><br>For these types of things
+                    <br><br>
+                    </hint>"
+            },
+
+        classes: "govuk-radios",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["own-council-tax-yn"] == "Yes")
+            checked: (data["own-home-loan-yn"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["own-council-tax-yn"] == "No")
+            checked: (data["own-home-loan-yn"] == "No")
           }
         ]
       }) }}
-
-
-
-
-
-
-
 
       {{ govukButton({
         text: "Continue"
