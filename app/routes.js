@@ -20,6 +20,7 @@ router.use(require('./routes/sprint-6/mvp'))
 router.use(require('./routes/sprint-6/eligibility'))
 router.use(require('./routes/sprint-7/mvp'))
 router.use(require('./routes/sprint-7/msic-loop'))
+router.use(require('./routes/sprint-8/mvp'))
 
 
 module.exports = router
