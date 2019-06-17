@@ -16,11 +16,11 @@
   <!----Headline---->
   <h1 class="govuk-heading-xl">
     <span class="govuk-caption-m">Money, savings and investments</span>
-    Bank current account summary (#)<br>
+    Current account summary (#)<br>
   </h1>
   <!----Headline---->
 
-  <form action="msic-bank-current-accounts-summary-router" method="post">
+  <form action="msic-all-current-accounts-summary-router" method="post">
 
     {% set count = data["account-count"] or 0 %}
 
@@ -30,7 +30,7 @@
 
         <div class="govuk-grid-column-one-third">
           <p class="pc-row-head-10">
-          Reference: <strong>{{ data["msic-bank-current-account-name-" + i] }}</strong>
+          Reference: <strong>{{ data["msic-all-current-account-name-" + i] }}</strong>
           </p>
         </div>
         <div class="govuk-grid-column-two-thirds">
@@ -41,12 +41,12 @@
                 text: "Last four digits"
               },
               value: {
-                text: data['msic-bank-current-account-last-digits-' + i]
+                text: data['msic-all-current-account-last-digits-' + i]
               },
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account",
+                    href: "msic-all-current-account",
                     html: "Change",
                     visuallyHiddenText: "XXX"
                   },
@@ -64,12 +64,12 @@
                 text: "Total"
               },
               value: {
-                text: data['msic-bank-current-account-amount-' + i] | formatMoney
+                text: data['msic-all-current-account-amount-' + i] | formatMoney
               },
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account",
+                    href: "msic-all-current-account",
                     text: "",
                     visuallyHiddenText: "XXX"
                   }
@@ -86,7 +86,7 @@
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account",
+                    href: "msic-all-current-account",
                     text: "",
                     visuallyHiddenText: "XXXX"
                   }
@@ -98,12 +98,12 @@
                 text: "Stake in joint account"
               },
               value: {
-                text: data['msic-bank-current-account-stake-' + i]
+                text: data['msic-all-current-account-stake-' + i]
               },
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account-stake",
+                    href: "msic-all-current-account-stake",
                     text: "",
                     visuallyHiddenText: "XXXX"
                   }
@@ -121,7 +121,7 @@
               actions: {
                 items: [
                   {
-                    href: "msic-bank-current-account-need-evidence",
+                    href: "msic-all-current-account-need-evidence",
                     text: "",
                     visuallyHiddenText: "XXXX"
                   }
@@ -152,7 +152,7 @@
     name: "add-another-current",
     fieldset: {
       legend: {
-        html: "Do you have any more bank current accounts?",
+        html: "Do you have any more current accounts with a bank or building society?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }

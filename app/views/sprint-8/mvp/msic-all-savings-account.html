@@ -14,26 +14,26 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="msic-buildings-savings-accounts-summary" method="post" class="form">
+    <form action="msic-all-savings-accounts-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Add building society savings account
+        Add a savings accounts from a bank or building society
       </h1>
 
       {{ govukInput({
         label: {
-          text: "Name of building society"
+          text: "Name of bank or building society"
         },
-        id: "msic-buildings-savings-account-name",
-        name: "msic-buildings-savings-account-name",
+        id: "msic-all-savings-account-name",
+        name: "msic-all-savings-account-name",
         classes: "govuk-input--width-20"
       }) }}
 
       {{ govukInput({
         label: {
-          text: "Last 4 digits of the roll number"
+          text: "Last 4 digits of the account number or roll number"
         },
-        id: "msic-buildings-savings-account-last-digits",
-        name: "msic-buildings-savings-account-last-digits",
+        id: "msic-all-savings-account-last-digits",
+        name: "msic-all-savings-account-last-digits",
         classes: "govuk-input--width-4",
         attributes: {
           maxlength: 4
@@ -47,8 +47,8 @@
         label: {
           text: ""
         },
-        id: "msic-buildings-savings-account-amount",
-        name: "msic-buildings-savings-account-amount",
+        id: "msic-all-savings-account-amount",
+        name: "msic-all-savings-account-amount",
         classes: "govuk-input--width-20"
       }) }}
 
@@ -57,18 +57,19 @@
           label: {
             text: "Percentage stake"
           },
-          id: "msic-buildings-savings-account-stake",
-          name: "msic-buildings-savings-account-stake",
+          id: "msic-all-savings-account-stake",
+          name: "msic-all-savings-account-stake",
           classes: "govuk-input--width-5"
         }) }}
       {% endset %}
 
       {{ govukRadios({
-        idPrefix: "msic-buildings-savings-account-owner",
-        name: "msic-buildings-savings-account-owner",
+        idPrefix: "msic-all-savings-account-owner",
+        name: "msic-all-savings-account-owner",
         fieldset: {
           legend: {
-            text: "Who does this account belong to?"
+            text: "Who does this account belong to?",
+            classes: "govuk-fieldset__legend--s"
           }
         },
         items: [
@@ -78,7 +79,7 @@
           },
           {
             value: "Joint account",
-            text: "Joint account (excluding partner who lives with you)",
+            text: "Joint account (joint account)",
             conditional: {
               html: percentageField
             }
@@ -88,11 +89,12 @@
 
 
       {{ govukRadios({
-        idPrefix: "msic-buildings-savings-account-read-from-statement",
-        name: "msic-buildings-savings-account-read-from-statement",
+        idPrefix: "msic-all-savings-account-read-from-statement",
+        name: "msic-all-savings-account-read-from-statement",
         fieldset: {
           legend: {
-            text: "Did you read these details from a statement?"
+            text: "Did you read these details from a statement?",
+            classes: "govuk-fieldset__legend--s"
           }
         },
         items: [

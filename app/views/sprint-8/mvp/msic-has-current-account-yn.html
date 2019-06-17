@@ -14,28 +14,33 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="msic-has-bank-current-account-yn-router" method="post" class="form">
+    <form action="msic-has-current-account-yn-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "msic-has-bank-current-account-yn",
-        name: "msic-has-bank-current-account-yn",
+        idPrefix: "msic-has-current-account-yn",
+        name: "msic-has-current-account-yn",
         fieldset: {
           legend: {
-            text: "Do you have any bank current accounts?",
+            text: "Do you have any current accounts with a bank or buildings society?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
-        },
+            },
+            hint: {
+              html: "<br><p class=\"hint\">
+                      @pete, See Benwell insights, https://docs.google.com/document/d/1IeSQHte6HrsWN3ZN3naBPI56OyWQBCZQacSYviAtGT8/edit?usp=sharing <br><br>These are typically accounts you use everyday, Money goes in and out
+                      </p><br>"
+            },
         classes: "govuk-radios--inline",
         items: [
           {
             value: "yes",
             text: "Yes",
-            checked: (data["msic-has-bank-current-account-yn"] == "yes")
+            checked: (data["msic-has-current-account"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["msic-has-bank-current-account-yn"] == "no")
+            checked: (data["msic-has-current-account"] == "no")
           }
         ]
       }) }}

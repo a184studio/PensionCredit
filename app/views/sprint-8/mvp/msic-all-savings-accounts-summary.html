@@ -16,10 +16,10 @@
   <!----Headline---->
   <span class="govuk-caption-m">Money, savings and investments</span>
   <h1 class="govuk-heading-xl">
-    Buildings Sociery savings accounts summary<br>
+    Bank and buildings sociery <br> savings accounts summary<br>
   </h1>
   <!----Headline---->
-  <form action="msic-has-premium-bond-account-yn" method="post">
+  <form action="msic-has-post-office-card-account-yn" method="post">
 
 
     <h3 class="govuk-heading-m">
@@ -27,12 +27,12 @@
     </h3>
 
 <br><br>
-{% if data["msic-buildings-current-account-name"] %}
+{% if data["msic-all-savings-account-name"] %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
     <!------>  <h3 class="govuk-heading-s">
-        {{ data["msic-buildings-current-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+        {{ data["msic-all-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
       </h3></div>
 
 
@@ -45,12 +45,12 @@
             text: "Last four digits"
           },
           value: {
-            text: data['msic-buildings-savings-account-last-digits']
+            text: data['msic-all-savings-account-last-digits']
           },
           actions: {
             items: [
               {
-                href: "msic-buildings-savings-account",
+                href: "msic-all-savings-account",
                 text: "Change / Remove",
                 visuallyHiddenText: "XXX"
               }
@@ -63,7 +63,7 @@
             text: "Total"
           },
           value: {
-            text: data['msic-buildings-savings-account-amount']
+            text: data['msic-all-savings-account-amount']
           },
           actions: {
             items: [
@@ -81,12 +81,12 @@
             text: "% stake in joint account"
           },
           value: {
-            text: data['msic-buildings-savings-account-stake']
+            text: data['msic-all-savings-account-stake']
           },
           actions: {
             items: [
               {
-                href: "msic-buildings-savings-account-stake",
+                href: "msic-all-savings-account-stake",
                 text: "",
                 visuallyHiddenText: "XXXX"
               }
@@ -100,12 +100,12 @@
             text: "Evidence needed:"
           },
           value: {
-            text: data['msic-buildings-savings-account-read-from-statement']
+            text: data['msic-all-savings-account-read-from-statement']
           },
           actions: {
             items: [
               {
-                href: "msic-buildings-savings-account-stake",
+                href: "msic-all-savings-account-stake",
                 text: "",
                 visuallyHiddenText: "XXXX"
               }
@@ -138,7 +138,7 @@
     name: "changed-name",
     fieldset: {
       legend: {
-        text: "Do you have any more building society savings accounts?",
+        text: "Do you have any more savings accounts with a bank or building society?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }

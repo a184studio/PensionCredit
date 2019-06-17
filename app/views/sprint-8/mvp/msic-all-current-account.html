@@ -8,32 +8,39 @@
   {% include "includes/internal-header.html" %}
 {% endblock %}
 
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+
 {% block content %}
 
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="msic-bank-savings-accounts-summary" method="post" class="form">
+    <form action="msic-all-current-accounts-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Add a bank savings account
+        Add a current account from a bank or building society
       </h1>
+
+      {% set count = (data["account-count"] or 0) | int %}
+
+      <input type="hidden" name="account-count" value="{{ count + 1 }}"/>
 
       {{ govukInput({
         label: {
-          text: "Name of bank"
+          text: "Name of bank or building society"
         },
-        id: "msic-bank-savings-account-name",
-        name: "msic-bank-savings-account-name",
+        id: "msic-all-current-account-name",
+        name: "msic-all-current-account-name-" + count,
         classes: "govuk-input--width-20"
       }) }}
 
       {{ govukInput({
         label: {
-          text: "Last 4 digits of account number"
+          text: "Last 4 digits of the account number or roll number"
         },
-        id: "msic-bank-savings-account-last-digits",
-        name: "msic-bank-savings-account-last-digits",
+        id: "msic-all-current-account-last-digits",
+        name: "msic-all-current-account-last-digits-" + count,
         classes: "govuk-input--width-4",
         attributes: {
           maxlength: 4
@@ -47,8 +54,8 @@
         label: {
           text: ""
         },
-        id: "msic-bank-savings-account-amount",
-        name: "msic-bank-savings-account-amount",
+        id: "msic-all-current-account-amount",
+        name: "msic-all-current-account-amount-" + count,
         classes: "govuk-input--width-20"
       }) }}
 
@@ -57,18 +64,19 @@
           label: {
             text: "Percentage stake"
           },
-          id: "msic-bank-savings-account-stake",
-          name: "msic-bank-savings-account-stake",
+          id: "msic-all-current-account-stake",
+          name: "msic-all-current-account-stake-" + count,
           classes: "govuk-input--width-5"
         }) }}
       {% endset %}
 
       {{ govukRadios({
-        idPrefix: "msic-bank-savings-account-owner",
-        name: "msic-bank-savings-account-owner",
+        idPrefix: "current-owner",
+        name: "current-owner-" + count,
         fieldset: {
           legend: {
-            text: "Who does account belong to?"
+            text: "Who does account belong to?",
+            classes: "govuk-fieldset__legend--s"
           }
         },
         items: [
@@ -78,7 +86,7 @@
           },
           {
             value: "Joint account",
-            text: "Joint account (excluding partner who lives with you)",
+            text: "Joint account (joint account)",
             conditional: {
               html: percentageField
             }
@@ -86,26 +94,29 @@
         ]
       }) }}
 
-      {{ govukRadios({
-        idPrefix: "msic-bank-savings-account-read-from-statement",
-        name: "msic-bank-savings-account-read-from-statement",
-        fieldset: {
-          legend: {
-            text: "Did you read these details from a statement?"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
+{{ govukRadios({
+  idPrefix: "read-from-statement",
+  name: "read-from-statement",
+  fieldset: {
+    legend: {
+      text: "Did you read these details from a statement?",
+      classes: "govuk-fieldset__legend--s"
 
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+<br>
 
       {{ govukButton({
         text: "Continue"

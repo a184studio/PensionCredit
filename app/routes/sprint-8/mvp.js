@@ -462,31 +462,31 @@ router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router 
 
 // Money Savining and investement Routers
 
-router.post(`${baseUrl}/money-you-have-router`, (req, res) => {
-  const money = parseInt(req.session.data['total-money'], 10)
-
-  if (money >= 10000) {
-    res.redirect(`${baseUrl}/msic-has-bank-current-account-yn`)
-  } else {
-    res.redirect(`${baseUrl}/msic-all-money-accounts-summary`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-bank-current-account-yn-router`, (req, res) => {
-  const hasCurrentAccount = req.session.data['msic-has-bank-current-account-yn']
+router.post(`${baseUrl}/msic-has-current-account-yn-router`, (req, res) => {
+  const hasCurrentAccount = req.session.data['msic-has-current-account-yn']
 
   if (hasCurrentAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-bank-current-account`)
+    res.redirect(`${baseUrl}/msic-all-current-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-has-buildings-current-account-yn`)
+    res.redirect(`${baseUrl}/msic-has-savings-account-yn`)
   }
 })
 
-router.post(`${baseUrl}/msic-has-buildings-current-account-yn-router`, (req, res) => {
-  const hasBuildingsCurrentAccount = req.session.data['msic-has-buildings-current-account-yn']
+router.post(`${baseUrl}/msic-all-current-accounts-summary-router`, (req, res) => {
+  const addAnother = req.session.data['add-another-current']
+
+  if (addAnother === 'yes') {
+    res.redirect(`${baseUrl}/msic-all-current-account`)
+  } else {
+    res.redirect(`${baseUrl}/msic-has-savings-account-yn`)
+  }
+});
+
+router.post(`${baseUrl}/msic-has-savings-account-yn-router`, (req, res) => {
+  const hasBuildingsCurrentAccount = req.session.data['msic-has-savings-account-yn']
 
   if (hasBuildingsCurrentAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-building-current-account`)
+    res.redirect(`${baseUrl}/msic-all-savings-account`)
   } else {
     res.redirect(`${baseUrl}/msic-has-post-office-card-account-yn`)
   }
@@ -499,27 +499,6 @@ router.post(`${baseUrl}/msic-has-post-office-card-account-yn-router`, (req, res)
     res.redirect(`${baseUrl}/msic-post-office-card-account`)
   } else {
     res.redirect(`${baseUrl}/msic-has-bank-savings-account-yn`)
-  }
-})
-
-
-router.post(`${baseUrl}/msic-has-bank-savings-account-yn-router`, (req, res) => {
-  const hasBankSavingsAccount = req.session.data['msic-has-bank-savings-account-yn']
-
-  if (hasBankSavingsAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-bank-savings-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-buildings-savings-account-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-buildings-savings-account-yn-router`, (req, res) => {
-  const hasBuildingsSavingsAccount = req.session.data['msic-has-buildings-current-account-yn']
-
-  if (hasBuildingsSavingsAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-buildings-savings-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-premium-bond-account-yn`)
   }
 })
 
@@ -615,15 +594,6 @@ router.post(`${baseUrl}/msic-second-property-yn-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/msic-bank-current-accounts-summary-router`, (req, res) => {
-  const addAnother = req.session.data['add-another-current']
-
-  if (addAnother === 'yes') {
-    res.redirect(`${baseUrl}/msic-bank-current-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-buildings-current-account-yn`)
-  }
-});
 
 // MSIC END
 
