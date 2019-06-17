@@ -224,13 +224,11 @@ router.post(`${baseUrl}/own-home-loan-yn-router`, (req, res) => {
   const hasMortgage = req.session.data['own-home-loan-yn']
 
   if (hasMortgage === 'Yes') {
-    res.redirect(`${baseUrl}/own-council-tax-yn`)
+    res.redirect(`${baseUrl}/own-home-loan-yes`)
   } else {
     res.redirect(`${baseUrl}/own-council-tax-yn`)
   }
 })
-
-
 
 
 router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router name
@@ -360,7 +358,7 @@ router.post(`${baseUrl}/rent-charges-service-router`, (req, res) => {// router n
     res.redirect(`${baseUrl}/out-decaration`)
   }
 })
-  
+
 router.post(`${baseUrl}/privacy-policy-router`, (req, res) => { // router name
   const privacyPolicy = req.session.data['agrees-privacy']  // name of data / id name
 
