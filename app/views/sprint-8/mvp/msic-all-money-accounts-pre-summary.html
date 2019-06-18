@@ -18,16 +18,18 @@
 
   {% if data["account-count"] %}
 
-  <h3 class="govuk-heading-m">
-    Current accounts with a bank or building society (#)
-  </h3>
-
 
   {% set count = data["account-count"] or 0 %}
+
+
 
   {% for i in range(0, count) -%}
     <div class="govuk-grid-row govuk-!-margin-bottom-6">
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m">
+        Current accounts (#)
+      </h3>
 
       <div class="govuk-grid-column-one-third">
         <p class="pc-row-head-10">
@@ -140,17 +142,17 @@
   {% endif %}
 <!----------------------------------------------------->
 
-{% if data["msic-buildings-current-account-name"] %}
+{% if data["msic-all-savings-account-name"] %}
 
 <h3 class="govuk-heading-m">
-  Building society current accounts (1)
+  Savings accounts (1)
 </h3>
 
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
 <!------>  <h3 class="govuk-heading-s">
-    {{ data["msic-buildings-current-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+    {{ data["msic-all-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
   </h3></div>
 
 
@@ -163,12 +165,12 @@
         text: "Last four digits"
       },
       value: {
-        text: data['msic-buildings-current-account-last-digits']
+        text: data['msic-all-savings-account-last-digits']
       },
       actions: {
         items: [
           {
-            href: "msic-building-current-account",
+            href: "msic-all-savings-account",
             text: "Change / Remove",
             visuallyHiddenText: "XXX"
           }
@@ -181,7 +183,7 @@
         text: "Total"
       },
       value: {
-        text: data['msic-buildings-current-account-amount']
+        text: data['msic-all-savings-account-amount']
       },
       actions: {
         items: [
@@ -218,12 +220,12 @@
         text: "% stake in joint account"
       },
       value: {
-        text: data['msic-buildings-current-account-stake']
+        text: data['msic-all-savings-account-stake']
       },
       actions: {
         items: [
           {
-            href: "msic-buildings-current-account-stake",
+            href: "msic-all-savings-account-stake",
             text: "",
             visuallyHiddenText: "XXXX"
           }
@@ -1176,7 +1178,7 @@
 
 <div class="govuk-grid-column-two-thirds">
 
-{% if data["msic-bank-savings-account-name"] %}
+{% if data["msic-all-current-account-name"] %}
 
   {{ govukSummaryList({
     rows: [
