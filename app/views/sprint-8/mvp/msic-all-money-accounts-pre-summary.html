@@ -18,23 +18,23 @@
 
   {% if data["account-count"] %}
 
-  <h3 class="govuk-heading-m">
-    Bank current accounts (1)
-  </h3>
-
 
   {% set count = data["account-count"] or 0 %}
 
+
+
   {% for i in range(0, count) -%}
-
     <div class="govuk-grid-row govuk-!-margin-bottom-6">
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+      <h3 class="govuk-heading-m">
+        Current accounts (#)
+      </h3>
 
       <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">
-        {{ data["msic-bank-current-account-name-" + i] }}
-        </h3>
+        <p class="pc-row-head-10">
+        Account with: <strong>{{ data["msic-all-current-account-name-" + i] }}</strong>
+        </p>
       </div>
       <div class="govuk-grid-column-two-thirds">
         {{ govukSummaryList({
@@ -44,13 +44,18 @@
               text: "Last four digits"
             },
             value: {
-              text: data['msic-bank-current-account-last-digits-' + i]
+              text: data['msic-all-current-account-last-digits-' + i]
             },
             actions: {
               items: [
                 {
-                  href: "msic-bank-current-account",
-                  text: "Change Remove",
+                  href: "msic-all-current-account",
+                  html: "Change",
+                  visuallyHiddenText: "XXX"
+                },
+                {
+                  href: "msic-remove",
+                  html: "Remove",
                   visuallyHiddenText: "XXX"
                 }
               ]
@@ -62,12 +67,12 @@
               text: "Total"
             },
             value: {
-              text: data['msic-bank-current-account-amount-' + i] | formatMoney
+              text: data['msic-all-current-account-amount-' + i] | formatMoney
             },
             actions: {
               items: [
                 {
-                  href: "msic-bank-current-account",
+                  href: "msic-all-current-account",
                   text: "",
                   visuallyHiddenText: "XXX"
                 }
@@ -76,7 +81,7 @@
           },
           {
             key: {
-              text: "Who's account?"
+              text: "Whose is this account?"
             },
             value: {
               text: data['current-owner-' + i]
@@ -84,7 +89,24 @@
             actions: {
               items: [
                 {
-                  href: "msic-bank-current-account",
+                  href: "msic-all-current-account",
+                  text: "",
+                  visuallyHiddenText: "XXXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Stake in joint account"
+            },
+            value: {
+              text: data['msic-all-current-account-stake-' + i]
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-all-current-account-stake",
                   text: "",
                   visuallyHiddenText: "XXXX"
                 }
@@ -94,15 +116,15 @@
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-              text: "% stake in joint account"
+              text: "Evidence needed"
             },
             value: {
-              text: data['msic-bank-current-account-stake-' + i]
+              text: "Yes/No"
             },
             actions: {
               items: [
                 {
-                  href: "msic-bank-current-account-stake",
+                  href: "msic-all-current-account-need-evidence",
                   text: "",
                   visuallyHiddenText: "XXXX"
                 }
@@ -120,17 +142,17 @@
   {% endif %}
 <!----------------------------------------------------->
 
-{% if data["msic-buildings-current-account-name"] %}
+{% if data["msic-all-savings-account-name"] %}
 
 <h3 class="govuk-heading-m">
-  Building society current accounts (1)
+  Savings accounts (1)
 </h3>
 
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
 <!------>  <h3 class="govuk-heading-s">
-    {{ data["msic-buildings-current-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+    {{ data["msic-all-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
   </h3></div>
 
 
@@ -143,12 +165,12 @@
         text: "Last four digits"
       },
       value: {
-        text: data['msic-buildings-current-account-last-digits']
+        text: data['msic-all-savings-account-last-digits']
       },
       actions: {
         items: [
           {
-            href: "msic-building-current-account",
+            href: "msic-all-savings-account",
             text: "Change / Remove",
             visuallyHiddenText: "XXX"
           }
@@ -161,7 +183,7 @@
         text: "Total"
       },
       value: {
-        text: data['msic-buildings-current-account-amount']
+        text: data['msic-all-savings-account-amount']
       },
       actions: {
         items: [
@@ -198,12 +220,12 @@
         text: "% stake in joint account"
       },
       value: {
-        text: data['msic-buildings-current-account-stake']
+        text: data['msic-all-savings-account-stake']
       },
       actions: {
         items: [
           {
-            href: "msic-buildings-current-account-stake",
+            href: "msic-all-savings-account-stake",
             text: "",
             visuallyHiddenText: "XXXX"
           }
@@ -1131,6 +1153,356 @@
 }) }}
 
 -------------------------------->
+
+
+<!--------------------------SUMMARY OF NUMBER OF ACCOUNTS + FINANCIAL TOTAL ------------------------------------->
+
+
+
+  <!----Headline---->
+  <h1 class="govuk-heading-xl">
+    Combined money, savings and <br> investments summary, notes <br>and evidence needed<br>
+  </h1>
+  <!----Headline---->
+  <form action="task-list" method="post">
+
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+  <h3 class="govuk-heading-s">
+    Overview:
+  </h3></div>
+
+
+
+<div class="govuk-grid-column-two-thirds">
+
+{% if data["msic-all-current-account-name"] %}
+
+  {{ govukSummaryList({
+    rows: [
+    {
+      key: {
+        text: "Current accounts"
+      },
+      value: {
+        text: "2"
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-bank-current-accounts-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Savings & bonds"
+      },
+      value: {
+        text: "2"
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-savings-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Shares & unit trusts"
+      },
+      value: {
+        text: "0"
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-shares-trusts-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Cash at home"
+      },
+      value: {
+        text: data["msic-cash-at-home-amount"] | formatMoney
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-cash-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Cash aboard or recived as a lump sum"
+      },
+      value: {
+        text: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-cash-summary",
+            text: "Change",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    }
+    ]
+  }) }}
+
+<br>
+
+{{ govukSummaryList({
+  rows: [
+  {
+    classes: 'govuk-summary-list--no-border',
+    key: {
+      text: "Combined total"
+    },
+    value: {
+      text: "£9,553.50"
+    },
+    actions: {
+      items: [
+        {
+          href: "money-you-have",
+          text: "",
+          visuallyHiddenText: "XXXX"
+        }
+      ]
+    }
+  }
+  ]
+}) }}
+
+{% endif %}
+
+{% if data["total-money"] %}
+
+
+{{ govukSummaryList({
+  rows: [
+  {
+    key: {
+      text: "Combined total"
+    },
+    value: {
+      text: data["total-money"] | formatMoney
+    },
+    actions: {
+      items: [
+        {
+          href: "money-you-have",
+          text: "",
+          visuallyHiddenText: "XXXX"
+        }
+      ]
+    }
+  }
+  ]
+}) }}
+
+{% endif %}
+
+
+</div></div>
+
+<!----      Use this to pull through from Money you have Total page. text: data["total-money"] | formatMoney--->
+
+<!----Break---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
+<!----Break---->
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-s">
+Notes
+    </h3>
+    <p></p>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table ">
+      <thead class="govuk-table__head govuk-table--no-border">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col"><p class="govuk-body"><a href="msic-notepad" class="govuk-link">Add money notes</a></p></th>
+          <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="msic-notepad" class="govuk-link">Change</a></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
+
+
+    {% if data["msic-all-money-detail"] %}
+
+  <p class="govuk-body">
+    {{ data["msic-all-money-detail"] }}
+  </p>
+{% endif %}
+</div></div>
+
+<!----Break---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
+<!----Break---->
+
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+  <h3 class="govuk-heading-s">
+    Evidence:
+  </h3></div>
+
+
+
+<div class="govuk-grid-column-two-thirds">
+
+  <h3 class="govuk-heading-s">
+    You do not need to supply any evidence of your money, savings and investments
+  </h3></div></div>
+
+
+<!----Break---->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
+<!----Break---->
+
+
+
+<!--
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+  <h3 class="govuk-heading-s">
+    Evidence needed:
+  </h3></div>
+
+
+
+<div class="govuk-grid-column-two-thirds">
+
+  {% from "table/macro.njk" import govukTable %}
+
+  {{ govukTable({
+    firstCellIsHeader: true,
+    head: [
+      {
+        text: "Account",
+        classes: 'govuk-!-width-one-quarter'
+      },
+      {
+        text: "Last 4 digits",
+        classes: 'govuk-!-width-one-quarter'
+      },
+      {
+        text: "Date range",
+        classes: 'govuk-!-width-two-Quarters'
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "Halifax"
+        },
+        {
+          text: "0001"
+        },
+        {
+          text: "1 Jan 2019 — 1 Feb 2019"
+        }
+      ],
+      [
+        {
+          text: "Santander"
+        },
+        {
+          text: "0002"
+        },
+        {
+          text: "1 Jan 2019 — 1 Feb 2019"
+        }
+      ],
+      [
+        {
+
+          text: "HSBC"
+        },
+        {
+          text: "0003"
+        },
+        {
+          text: "1 Jan 2019 — 1 Feb 2019"
+        }
+      ]
+    ]
+  }) }}
+
+---->
+
+
+  <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
