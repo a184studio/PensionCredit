@@ -35,6 +35,7 @@
           {{ govukSummaryList({
             rows: [
             {
+              classes: 'govuk-summary-list--no-border',
               key: {
                 text: "Total"
               },
@@ -45,7 +46,12 @@
                 items: [
                   {
                     href: "msic-cash-at-home",
-                    text: "Change Remove",
+                    html: "Change",
+                    visuallyHiddenText: "XXX"
+                  },
+                  {
+                    href: "msic-remove",
+                    html: "Remove",
                     visuallyHiddenText: "XXX"
                   }
                 ]
@@ -75,6 +81,7 @@
       {{ govukSummaryList({
         rows: [
         {
+          classes: 'govuk-summary-list--no-border',
           key: {
             text: "Total"
           },
@@ -85,7 +92,12 @@
             items: [
               {
                 href: "msic-cash-other-abroad",
-                text: "Change Remove",
+                html: "Change",
+                visuallyHiddenText: "XXX"
+              },
+              {
+                href: "msic-remove",
+                html: "Remove",
                 visuallyHiddenText: "XXX"
               }
             ]
@@ -115,6 +127,7 @@
       {{ govukSummaryList({
         rows: [
         {
+          classes: 'govuk-summary-list--no-border',
           key: {
             text: "Total"
           },
@@ -125,7 +138,12 @@
             items: [
               {
                 href: "msic-cash-lump-sum",
-                text: "Change Remove",
+                html: "Change",
+                visuallyHiddenText: "XXX"
+              },
+              {
+                href: "msic-remove",
+                html: "Remove",
                 visuallyHiddenText: "XXX"
               }
             ]

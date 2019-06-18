@@ -51,7 +51,12 @@
             items: [
               {
                 href: "msic-all-savings-account",
-                text: "Change / Remove",
+                html: "Change",
+                visuallyHiddenText: "XXX"
+              },
+              {
+                href: "msic-remove",
+                html: "Remove",
                 visuallyHiddenText: "XXX"
               }
             ]
@@ -78,6 +83,24 @@
 
         {
           key: {
+            text: "Who's account?"
+          },
+          value: {
+            text: data['msic-all-savings-account-owner']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
             text: "% stake in joint account"
           },
           value: {
@@ -86,7 +109,7 @@
           actions: {
             items: [
               {
-                href: "msic-all-savings-account-stake",
+                href: "",
                 text: "",
                 visuallyHiddenText: "XXXX"
               }

@@ -46,8 +46,13 @@
             actions: {
               items: [
                 {
-                  href: "unittrust-account",
-                  text: "Change Remove",
+                  href: "msic-unit-trust-account",
+                  html: "Change",
+                  visuallyHiddenText: "XXX"
+                },
+                {
+                  href: "msic-remove",
+                  html: "Remove",
                   visuallyHiddenText: "XXX"
                 }
               ]
@@ -55,6 +60,7 @@
           },
 
           {
+            classes: 'govuk-summary-list--no-border',
             key: {
               text: "Amount"
             },
@@ -64,26 +70,7 @@
             actions: {
               items: [
                 {
-                  href: "msic-trust-account",
-                  text: "",
-                  visuallyHiddenText: "XXXX"
-                }
-              ]
-            }
-          },
-
-          {
-            classes: 'govuk-summary-list--no-border',
-            key: {
-              text: "Evidence needed:"
-            },
-            value: {
-              text: data['msic-trust-account-read-from-statement']
-            },
-            actions: {
-              items: [
-                {
-                  href: "msic-trust-account-read-from-statement",
+                  href: "",
                   text: "",
                   visuallyHiddenText: "XXXX"
                 }

@@ -51,7 +51,12 @@
             items: [
               {
                 href: "msic-isa-savings-account",
-                text: "Change / Remove",
+                html: "Change",
+                visuallyHiddenText: "XXX"
+              },
+              {
+                href: "msic-remove",
+                html: "Remove",
                 visuallyHiddenText: "XXX"
               }
             ]
@@ -82,12 +87,12 @@
             text: "Evidence needed:"
           },
           value: {
-            text: data['msic-premium-bond-account-read-from-statement']
+            text: data['msic-isa-savings-account-read-from-statement']
           },
           actions: {
             items: [
               {
-                href: "msic-premium-bond-account-read-from-statement",
+                href: "msic-isa-savings-account-stake",
                 text: "",
                 visuallyHiddenText: "XXXX"
               }
