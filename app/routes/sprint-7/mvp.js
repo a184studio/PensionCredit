@@ -219,6 +219,17 @@ router.post(`${baseUrl}/rent-housing-benefit-yn-router`, (req, res) => { // rout
 })
 
 
+router.post(`${baseUrl}/own-mortgage-yn-router`, (req, res) => {
+  const hasMortgage = req.session.data['own-mortgage-yn']
+
+  if (hasMortgage === 'Yes') {
+    res.redirect(`${baseUrl}/own-mortgage-yes`)
+  } else {
+    res.redirect(`${baseUrl}/own-home-loan-yn`)
+  }
+})
+
+
 
 router.post(`${baseUrl}/own-home-loan-yn-router`, (req, res) => {
   const hasMortgage = req.session.data['own-home-loan-yn']
@@ -229,7 +240,6 @@ router.post(`${baseUrl}/own-home-loan-yn-router`, (req, res) => {
     res.redirect(`${baseUrl}/own-council-tax-yn`)
   }
 })
-
 
 router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router name
 

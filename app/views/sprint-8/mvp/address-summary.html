@@ -90,14 +90,14 @@
         </div>
 {% endif %}
 
-{% if data["has-mortgage"] %}
+{% if data["own-mortgage-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Mortgage
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["has-mortgage"] or "No "}}
-            {% if data["has-mortgage"] === "Yes" %}
+            {{ data["own-mortgage-yn"] or "No "}}
+            {% if data["own-mortgage-yn"] === "Yes" %}
             <strong>Sign post to SMI ● </strong>
             {% endif %}
           </dd>
