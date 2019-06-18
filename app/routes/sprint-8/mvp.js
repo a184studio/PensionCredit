@@ -605,6 +605,18 @@ router.post(`${baseUrl}/msic-second-property-yn-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/msic-all-money-accounts-summary-route`, (req, res) => {
+  const hasSecondProperty = req.session.data['msic-has-missing-account-yn']
+
+  if (hasSecondProperty === 'yes') {
+    res.redirect(`${baseUrl}/msic-missing-account`)
+  } else {
+    res.redirect(`${baseUrl}/msic-all-money-accounts-summary`)
+  }
+})
+
+
+
 
 // MSIC END
 

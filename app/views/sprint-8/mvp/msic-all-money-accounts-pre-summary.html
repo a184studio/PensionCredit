@@ -16,7 +16,7 @@
     Money, savings and investments summary
   </h1>
 
-  <form action="msic-all-money-accounts-summary" method="post">
+  <form action="msic-all-money-accounts-summary-route" method="post">
 
 
   {% if data["account-count"] %}
@@ -1042,16 +1042,39 @@
 
 <!--------------------------SUMMARY OF NUMBER OF ACCOUNTS + FINANCIAL TOTAL ------------------------------------->
 
-<br><br>
+  <br><br>
 
+  {{ govukRadios({
+    idPrefix: "msic-has-missing-account-yn",
+    name: "msic-has-missing-account-yn",
+    fieldset: {
+      legend: {
+        text: "Add another account?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+        },
+    classes: "govuk-radios--inline",
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        checked: (data["msic-has-missing-account-yn"] == "yes")
+      },
+      {
+        value: "no",
+        text: "No",
+        checked: (data["msic-has-missing-account-yn"] == "no")
+      }
+    ]
+  }) }}
 
+  {{ govukButton({
+    text: "Continue"
+  }) }}
 
 
     <input type="hidden" name="money-complete" value="true"/>
-    <p>
-      {{ govukButton({
-        text: "Confirm"
-      }) }}
-    </p>
+
   </form>
 {% endblock %}
