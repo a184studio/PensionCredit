@@ -20,28 +20,87 @@
       <form action="address-summary" method="post">
 
         <span class="govuk-caption-m">Agent notes page</span>
-        <h1 class="govuk-heading-xl">Information about the sheltered accomodation the claimant lives in.</h1>
-
-        <p class="govuk-body govuk-!-font-size-19">Collect all the information you need, including:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-            whether they own another property
-          </li>
-          <li>
-            whether their stay is funded by the local authority, self-funded or both
-          </li>
-        </ul>
+        <h1 class="govuk-heading-xl">Sheltered accommodation: Details</h1>
 
 <br>
 
+{{ govukRadios({
+  idPrefix: "notepad-sheltered-funding",
+  name: "notepad-sheltered-funding",
+  fieldset: {
+    legend: {
+      text: "How is this residence funded?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "XXXX"
+  },
+  items: [
+    {
+      value: "Local authority",
+      text: "Local authority",
+      checked: (data["notepad-sheltered-funding"] == "Local authority")
+    },
+    {
+      value: "Self-funded",
+      text: "Self-funded",
+      checked: (data["notepad-sheltered-funding"] == "Self-funded")
+    },
+    {
+      value: "Part Local authority and Self-funded",
+      text: "Part Local authority and Self-funded",
+      checked: (data["notepad-sheltered-funding"] == "Part Local authority and Self-funded")
+    }
+  ]
+}) }}
+
+<br>
+
+{{ govukRadios({
+  idPrefix: "notepad-care-nursing-home-property",
+  name: "notepad-care-nursing-home-property",
+  fieldset: {
+    legend: {
+      text: "Do you still own a property?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Can this be a separate check box to tailor the question in the capital section?, @pete, yeah. Make a tag to say in property, "
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["notepad-care-nursing-home-property"] == "Yes")
+    },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["notepad-care-nursing-home-property"] == "No")
+    }
+  ]
+}) }}
+
+
+<br>
+
+<ul class="govuk-list">
+  <li>
+    Notes
+  </li>
+</ul>
+
+
         {{ govukTextarea({
-          name: "sheltered-more-detail",
-          id: "sheltered-more-detail",
+          name: "notepad-care-nursing-home-more-detail",
+          id: "carehome-more-detail",
 
-          value: data['sheltered-more-detail']
+          value: data["notepad-care-nursing-home-more-detail"]
         }) }}
-
 
 
         {{ govukButton({
@@ -55,3 +114,17 @@
     </div>
   </div>
 {% endblock %}
+
+<!--
+
+<p class="govuk-body govuk-!-font-size-19">Collect all the information you need, including:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>
+    whether they own another property
+  </li>
+  <li>
+    whether their stay is funded by the local authority, self-funded or both
+  </li>
+</ul>
+-->

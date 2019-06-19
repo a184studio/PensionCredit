@@ -20,30 +20,131 @@
       <form action="address-summary" method="post">
 
         <span class="govuk-caption-m">Agent notes page</span>
-        <h1 class="govuk-heading-xl">Information about the care home or nursing home where the claimant lives.</h1>
-
-        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need, including:</p>
-
-
-        <ul class="govuk-list">
-          <li>
-            the date they were admitted
-          </li>
-          <li>
-          whether their stay is temporary or permanent
-          </li>
-          <li>
-            if the stay is temporary, the date they expect to be discharged
-          </li>
-          <li>
-            whether their stay is funded by the local authority, self-funded or both
-          </li>
-          <li>
-            whether they still own a property? (Mark: Can this be a separate check box to tailor the question in the capital section?)
-          </li>
-        </ul>
+        <h1 class="govuk-heading-xl">Carehome or nursing home: Details</h1>
 
 <br>
+
+
+
+
+{% from "date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "notepad-care-nursing-home-date",
+  fieldset: {
+    legend: {
+      text: "What was the date they were admitted?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 12 11 2007"
+  }
+}) }}
+
+<br>
+
+{{ govukRadios({
+  idPrefix: "notepad-care-nursing-home-status",
+  name: "notepad-care-nursing-home-status",
+  fieldset: {
+    legend: {
+      text: "Is this your permanent or temporary residence?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "XXXX"
+  },
+  items: [
+    {
+      value: "Permanent",
+      text: "Permanent",
+      checked: (data["notepad-care-nursing-home-status"] == "Permanent")
+    },
+    {
+      value: "Temporary",
+      text: "Temporary (DROP DOWN: if the stay is temporary, the date they expect to be discharged)",
+      checked: (data["notepad-care-nursing-home-status"] == "Temporary")
+    }
+  ]
+}) }}
+
+<br>
+
+{{ govukRadios({
+  idPrefix: "notepad-care-nursing-home-funding",
+  name: "notepad-care-nursing-home-funding",
+  fieldset: {
+    legend: {
+      text: "How is this residence funded?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "XXXX"
+  },
+  items: [
+    {
+      value: "Local authority",
+      text: "Local authority",
+      checked: (data["notepad-care-nursing-home-funding"] == "Local authority")
+    },
+    {
+      value: "Self-funded",
+      text: "Self-funded",
+      checked: (data["notepad-care-nursing-home-funding"] == "Self-funded")
+    },
+    {
+      value: "Part Local authority and Self-funded",
+      text: "Part Local authority and Self-funded",
+      checked: (data["notepad-care-nursing-home-funding"] == "Part Local authority and Self-funded")
+    }
+  ]
+}) }}
+
+<br>
+
+{{ govukRadios({
+  idPrefix: "notepad-care-nursing-home-property",
+  name: "notepad-care-nursing-home-property",
+  fieldset: {
+    legend: {
+      text: "Do you still own a property?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Can this be a separate check box to tailor the question in the capital section?, @pete, yeah. Make a tag to say in property, "
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["notepad-care-nursing-home-property"] == "Yes")
+    },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["notepad-care-nursing-home-property"] == "No")
+    }
+  ]
+}) }}
+
+
+<br>
+
+<ul class="govuk-list">
+  <li>
+    Notes
+  </li>
+</ul>
+
 
         {{ govukTextarea({
           name: "notepad-care-nursing-home-more-detail",
@@ -64,3 +165,11 @@
     </div>
   </div>
 {% endblock %}
+
+<!-- Ask the claimant for all the information you need, including:
+
+the date they were admitted
+whether their stay is temporary or permanent
+if the stay is temporary, the date they expect to be discharged
+whether their stay is funded by the local authority, self-funded or both
+whether they still own a property? (Mark: Can this be a separate check box to tailor the question in the capital section?)-->
