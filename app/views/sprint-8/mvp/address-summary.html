@@ -267,7 +267,7 @@
         <!-- Shared ownership ------------------------------------------------------>
 
 
-        {% if data["You own and rent it (shared ownership)"] %}
+        {% if data["shared-ownership-more-detail)"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Shared ownership
@@ -285,13 +285,13 @@
           <!-- Care home ------------------------------------------------------>
 
 
-        {% if data["You live in a care home or nursing home"] %}
+        {% if data["notepad-care-nursing-home-more-detail"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Care home notes
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["carehome-more-detail"] }}
+            {{ data["notepad-care-nursing-home-more-detail"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="notepad-carehome">
@@ -304,7 +304,7 @@
 
 
 
-      {% if data["You live in sheltered accommodation"] %}
+      {% if data["sheltered-more-detail"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Sheleterd accomdation notes
@@ -322,7 +322,7 @@
         <!-- Someone else ------------------------------------------------------>
 
 
-      {% if data["You live in someone else\'s home without paying rent"] %}
+      {% if data["someone-else-more-detail"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Someone else notes
@@ -338,7 +338,21 @@
         </div>
       {% endif %}
         <!-- Other ------------------------------------------------------>
-
+        {% if data["other-res-more-detail"] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Someone else notes
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["other-res-more-detail"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="notepad-someoneelse">
+                Change
+              </a>
+            </dd>
+          </div>
+        {% endif %}
 
 
 
