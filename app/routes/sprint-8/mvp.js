@@ -222,7 +222,7 @@ router.post(`${baseUrl}/own-mortgage-yn-router`, (req, res) => {
   const hasMortgage = req.session.data['own-mortgage-yn']
 
   if (hasMortgage === 'Yes') {
-    res.redirect(`${baseUrl}/own-mortgage-yes`)
+    res.redirect(`${baseUrl}/own-mortgage-home-loan-yes`)
   } else {
     res.redirect(`${baseUrl}/own-home-loan-yn`)
   }
@@ -234,7 +234,7 @@ router.post(`${baseUrl}/own-home-loan-yn-router`, (req, res) => {
   const hasMortgage = req.session.data['own-home-loan-yn']
 
   if (hasMortgage === 'Yes') {
-    res.redirect(`${baseUrl}/own-home-loan-yes`)
+    res.redirect(`${baseUrl}/own-mortgage-home-loan-yes`)
   } else {
     res.redirect(`${baseUrl}/own-council-tax-yn`)
   }
