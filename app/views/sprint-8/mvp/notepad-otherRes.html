@@ -10,6 +10,8 @@
 
 {% from "textarea/macro.njk" import govukTextarea %}
 
+{% from "input/macro.njk" import govukInput %}
+{% from "fieldset/macro.njk" import govukFieldset %}
 
 {% block content %}
 
@@ -22,9 +24,29 @@
         <span class="govuk-caption-m">Agent notes page</span>
         <h1 class="govuk-heading-xl">Information about the place the claimant lives.</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need that is relevant to the claim.</p>
+        {% call govukFieldset({
+          legend: {
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: true
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              text: "What is this place?"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "other-res-where",
+            name: "other-res-where"
+          }) }}
+
+
+        {% endcall %}
 
 <br>
+
+
+        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need that is relevant to the claim.</p>
 
         {{ govukTextarea({
           name: "other-res-more-detail",

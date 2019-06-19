@@ -338,10 +338,27 @@
         </div>
       {% endif %}
         <!-- Other ------------------------------------------------------>
+
+        {% if data["other-res-where"] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["other-res-where"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="notepad-someoneelse">
+                Change
+              </a>
+            </dd>
+          </div>
+        {% endif %}
+
         {% if data["other-res-more-detail"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Someone else notes
+              Notes
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data["other-res-more-detail"] }}
