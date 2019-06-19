@@ -385,7 +385,7 @@
     {% if data["notepad-care-nursing-home-property"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Owns property:
+          Owns property
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["notepad-care-nursing-home-property"] }}
@@ -416,15 +416,45 @@
 
         <!-- Sheltered accommodation ------------------------------------------------------>
 
+        {% if data["notepad-sheltered-funding"] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Funding
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["notepad-sheltered-funding"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="notepad-shared-ownership">
+                Change
+              </a>
+            </dd>
+          </div>
+      {% endif %}
 
+      {% if data["notepad-sheltered-property"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Owns property:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["notepad-sheltered-property"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="notepad-shared-ownership">
+              Change
+            </a>
+          </dd>
+        </div>
+    {% endif %}
 
-      {% if data["sheltered-more-detail"] %}
+      {% if data["notepad-sheltered-detail"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Sheleterd accomdation notes
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["sheltered-more-detail"] }}
+            {{ data["notepad-sheltered-detail"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="notepad-sheltered">

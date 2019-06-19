@@ -59,8 +59,8 @@
 <br>
 
 {{ govukRadios({
-  idPrefix: "notepad-care-nursing-home-property",
-  name: "notepad-care-nursing-home-property",
+  idPrefix: "notepad-sheltered-property",
+  name: "notepad-sheltered-property",
   fieldset: {
     legend: {
       text: "Do you still own a property?",
@@ -75,12 +75,12 @@
     {
       value: "Yes",
       text: "Yes",
-      checked: (data["notepad-care-nursing-home-property"] == "Yes")
+      checked: (data["notepad-sheltered-property"] == "Yes")
     },
     {
       value: "No",
       text: "No",
-      checked: (data["notepad-care-nursing-home-property"] == "No")
+      checked: (data["notepad-sheltered-property"] == "No")
     }
   ]
 }) }}
@@ -96,10 +96,10 @@
 
 
         {{ govukTextarea({
-          name: "notepad-care-nursing-home-more-detail",
-          id: "carehome-more-detail",
+          name: "notepad-sheltered-detail",
+          id: "notepad-sheltered-detail",
 
-          value: data["notepad-care-nursing-home-more-detail"]
+          value: data["notepad-sheltered-detail"]
         }) }}
 
 
