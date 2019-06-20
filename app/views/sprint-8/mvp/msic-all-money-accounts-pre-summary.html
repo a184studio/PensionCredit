@@ -18,21 +18,20 @@
 
   <form action="msic-all-money-accounts-summary-route" method="post">
 
+<!--------------------- SUMMARY START -------------------------------->
+<h3 class="govuk-heading-l">
+  Current accounts (#)
+</h3>
 
   {% if data["account-count"] %}
-
-
   {% set count = data["account-count"] or 0 %}
 
-
-
   {% for i in range(0, count) -%}
-    <div class="govuk-grid-row govuk-!-margin-bottom-6">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      <h3 class="govuk-heading-m">
-        Current accounts (#)
-      </h3>
+
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-6">
+
 
       <div class="govuk-grid-column-one-third">
         <p class="pc-row-head-10">
@@ -83,7 +82,7 @@
           },
           {
             key: {
-              text: "Whose is this account?"
+              text: "Account owner"
             },
             value: {
               text: data['current-owner-' + i]
@@ -118,7 +117,7 @@
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-              text: "Evidence needed"
+              text: "Read from statement"
             },
             value: {
               text: "Yes/No"
@@ -137,16 +136,18 @@
         }) }}
       </div>
     </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
   {%- endfor %}
 
 <!----------------------------------------------------->
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
   {% endif %}
 <!----------------------------------------------------->
 
 {% if data["msic-all-savings-account-name"] %}
 
-<h3 class="govuk-heading-m">
+<h3 class="govuk-heading-l">
   Savings accounts (1)
 </h3>
 
@@ -205,7 +206,7 @@
 
     {
       key: {
-        text: "Who's account?"
+        text: "Account owner"
       },
       value: {
         text: data['msic-all-savings-account-owner']
@@ -242,7 +243,7 @@
     {
       classes: 'govuk-summary-list--no-border',
       key: {
-        text: "Evidence needed:"
+        text: "Read from statement:"
       },
       value: {
         text: data['msic-all-savings-account-read-from-statement']
@@ -268,7 +269,7 @@
 <!----------------------------------------------------->
 {% if data["msic-post-office-card-account-amount"] %}
 
-<h3 class="govuk-heading-m">
+<h3 class="govuk-heading-l">
   Post office accounts (1)
 </h3>
 
@@ -309,7 +310,7 @@
 
         {
           key: {
-            text: "Who's account?"
+            text: "Account owner"
           },
           value: {
             text: data['msic-post-office-card-account-owner']
@@ -346,7 +347,7 @@
         {
           classes: 'govuk-summary-list--no-border',
           key: {
-            text: "Evidence needed:"
+            text: "Read from statement:"
           },
           value: {
             text: data['msic-post-office-card-account-read-from-statement']
@@ -373,7 +374,7 @@
     <!----------------------------------------------------->
     {% if data["msic-premium-bond-account-name"] %}
 
-    <h3 class="govuk-heading-m">
+    <h3 class="govuk-heading-l">
       Premium Bonds (1)
     </h3>
 
@@ -415,7 +416,7 @@
         {
           classes: 'govuk-summary-list--no-border',
           key: {
-            text: "Evidence needed:"
+            text: "Read from statement:"
           },
           value: {
             text: data['msic-premium-bond-account-read-from-statement']
@@ -441,7 +442,7 @@
     <!----------------------------------------------------->
     {% if data["msic-isa-savings-account-name"] %}
 
-    <h3 class="govuk-heading-m">
+    <h3 class="govuk-heading-l">
       ISAs, TESSAs, TOISA and PEPs accounts summary (1)
     </h3>
 
@@ -501,7 +502,7 @@
         {
           classes: 'govuk-summary-list--no-border',
           key: {
-            text: "Evidence needed:"
+            text: "Read from statement:"
           },
           value: {
             text: data['msic-isa-savings-account-read-from-statement']
@@ -527,7 +528,7 @@
       <!----------------------------------------------------->
       {% if data["msic-capital-bond-company-name"] %}
 
-      <h3 class="govuk-heading-m">
+      <h3 class="govuk-heading-l">
         Capital bond accounts (1)
       </h3>
 
@@ -569,7 +570,7 @@
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-              text: "Evidence needed:"
+              text: "Read from statement:"
             },
             value: {
               text: data['msic-capital-bond-account-read-from-statement']
@@ -595,7 +596,7 @@
       <!----------------------------------------------------->
       {% if data["msic-shares-account-name"] %}
 
-      <h3 class="govuk-heading-m">
+      <h3 class="govuk-heading-l">
         Shares Accounts (1)
       </h3>
 
@@ -636,7 +637,7 @@
 
           {
             key: {
-              text: "Who's account?"
+              text: "Account owner"
             },
             value: {
               text: data['current-owner']
@@ -673,7 +674,7 @@
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-              text: "Evidence needed:"
+              text: "Read from statement:"
             },
             value: {
               text: data['msic-shares-account-read-from-statement']
@@ -699,7 +700,7 @@
       <!----------------------------------------------------->
       {% if data["msic-trust-account-name"] %}
 
-      <h3 class="govuk-heading-m">
+      <h3 class="govuk-heading-l">
         Unit trust accounts (1)
       </h3>
 
@@ -767,8 +768,8 @@
       <!----------------------------------------------------->
       {% if data["msic-cash-at-home-amount"] %}
 
-      <h3 class="govuk-heading-m">
-        Cash at home, abroad and recived as a lump sum
+      <h3 class="govuk-heading-l">
+        Money (Cash)
       </h3>
 
 
@@ -910,14 +911,14 @@
 
     {% if data["msic-second-property-value"] %}
 
-  <h3 class="govuk-heading-m">
+  <h3 class="govuk-heading-l">
     Second properties
   </h3>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <h3 class="govuk-heading-s">
-        Property Address<p class="govuk-body"><!--<a href="msic-trust-account" class="govuk-link">Remove</a>--></p>
+        Property 1<p class="govuk-body"><!--<a href="msic-trust-account" class="govuk-link">Remove</a>--></p>
       </h3></div>
 
 
@@ -926,23 +927,59 @@
       {{ govukSummaryList({
         rows: [
         {
-          classes: 'govuk-summary-list--no-border',
           key: {
-            text: "Property value"
+            text: "Address"
           },
           value: {
             text: "1007"
           },
           actions: {
+                        items: [
+                          {
+                            href: "msic-second-property-summary",
+                            html: "Change",
+                            visuallyHiddenText: "XXX"
+                          },
+                          {
+                            href: "msic-remove",
+                            html: "Remove",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+        },
+
+        {
+          key: {
+            text: ""
+          },
+          value: {
+            text: "New York State (US)"
+          },
+          actions: {
             items: [
               {
-                href: "msic-second-property",
-                html: "Change",
+                href: "",
+                text: "",
                 visuallyHiddenText: "XXX"
-              },
+              }
+            ]
+          }
+        },
+
+        {
+          classes: 'govuk-summary-list--no-border',
+          key: {
+            text: "Value"
+          },
+          value: {
+            text: data['msic-second-property-value']
+          },
+          actions: {
+            items: [
               {
-                href: "msic-remove",
-                html: "Remove",
+                href: "",
+                text: "",
                 visuallyHiddenText: "XXX"
               }
             ]
@@ -989,6 +1026,7 @@
     {% endif %}
     </div></div>
 
+
     <!----Break---->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
@@ -996,48 +1034,6 @@
       </div>
     </div>
     <!----Break---->
-
-
-
-
-
-<!---------------------
-
-        <h3 class="govuk-heading-m">
-          Add any additional account<a href="add-account-type" class="govuk-link">
-              (Link to all accounts)
-            </a>
-        </h3>
-
-
-
-{{ govukRadios({
-  classes: "govuk-radios--inline",
-  idPrefix: "changed-name",
-  name: "changed-name",
-  fieldset: {
-    legend: {
-      text: "",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: ""
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
-
--------------------------------->
 
 
 <!--------------------------SUMMARY OF NUMBER OF ACCOUNTS + FINANCIAL TOTAL ------------------------------------->
