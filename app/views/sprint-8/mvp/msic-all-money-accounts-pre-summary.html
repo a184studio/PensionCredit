@@ -154,7 +154,7 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
 <!------>  <h3 class="govuk-heading-s">
-    {{ data["msic-all-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+    Account with: {{ data["msic-all-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
   </h3></div>
 
 
@@ -276,7 +276,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
     <!------>  <h3 class="govuk-heading-s">
-        Post Office account<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+        Account with: Post Office<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
       </h3></div>
 
 
@@ -381,7 +381,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
     <!------>  <h3 class="govuk-heading-s">
-        {{ data["msic-premium-bond-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+        Account with: {{ data["msic-premium-bond-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
       </h3></div>
 
 
@@ -449,7 +449,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
     <!------>  <h3 class="govuk-heading-s">
-        {{ data["msic-isa-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+        Account with: {{ data["msic-isa-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
       </h3></div>
 
 
@@ -535,7 +535,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
       <!------>  <h3 class="govuk-heading-s">
-          {{ data["msic-capital-bond-company-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+          Account with: {{ data["msic-capital-bond-company-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
         </h3></div>
 
 
@@ -572,12 +572,12 @@
               text: "Evidence needed:"
             },
             value: {
-              text: data['msic-capital-bond-company-read-from-statement']
+              text: data['msic-capital-bond-account-read-from-statement']
             },
             actions: {
               items: [
                 {
-                  href: "msic-capital-bond-company-stake",
+                  href: "",
                   text: "",
                   visuallyHiddenText: "XXXX"
                 }
@@ -603,7 +603,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
       <!------>  <h3 class="govuk-heading-s">
-          {{ data["msic-shares-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+        Account with: {{ data["msic-shares-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
         </h3></div>
 
 
@@ -707,7 +707,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-s">
-          {{ data["msic-trust-account-name"] }}<p class="govuk-body"><!--<a href="msic-trust-account" class="govuk-link">Remove</a>--></p>
+          Account with: {{ data["msic-trust-account-name"] }}<p class="govuk-body"><!--<a href="msic-trust-account" class="govuk-link">Remove</a>--></p>
         </h3></div>
 
 
@@ -1049,7 +1049,7 @@
     name: "msic-has-missing-account-yn",
     fieldset: {
       legend: {
-        text: "Add another account?",
+        text: "Have you missed out any other type of account?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
