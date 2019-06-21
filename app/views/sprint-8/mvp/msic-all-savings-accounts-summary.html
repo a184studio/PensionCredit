@@ -23,7 +23,8 @@
   <h1 class="govuk-heading-xl">
     Bank and buildings sociery <br> savings accounts summary<br>
   </h1>
-  <!----Links---->
+
+  <!--------------------------SHARED SUMMARY + FINANCIAL TOTAL ------------------------------------->
 
       <h2 class="govuk-heading-l">
         Total so far: £0,000.00
@@ -290,10 +291,10 @@
     </div></div>
 
     <!----------------------------------------------------->
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     {% endif %}
     <!----------------------------------------------------->
     {% if data["msic-post-office-card-account-amount"] %}
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <h3 class="govuk-heading-l">
       Post office accounts (1)
@@ -1167,17 +1168,7 @@
               {% endif %}
             <!----------------------------------------------------->
 
-            <!----Break---->
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-full">
-                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-              </div>
-            </div>
-            <!----Break---->
-
-
-
-    <!--------------------------SUMMARY OF NUMBER OF ACCOUNTS + FINANCIAL TOTAL ------------------------------------->
+    <!--------------------------SHARED SUMMARY + FINANCIAL TOTAL ------------------------------------->
 
   <!----Break---->
   <div class="govuk-grid-row">
