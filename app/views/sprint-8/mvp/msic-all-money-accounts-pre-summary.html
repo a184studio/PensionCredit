@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+Account with: <br>{% extends "layout.html" %}
 
 {% block pageTitle %}
   Money - Pension Credit
@@ -13,20 +13,34 @@
 {% include "includes/js-back-link.html" %}
 
   <h1 class="govuk-heading-xl">
-    Check your answers: Money, savings, invetments, capital and property
+    Check your answers: <br> Money you have
   </h1>
+
+  <h2 class="govuk-heading-l">
+    Total so far: £0,000.00
+  </h2>
+
+  <!----Break---->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+  </div>
+  <!----Break---->
 
   <form action="msic-all-money-accounts-summary-route" method="post">
 
 <!--------------------- SUMMARY START -------------------------------->
-<h3 class="govuk-heading-l">
-  Current accounts (#)
-</h3>
-
   {% if data["account-count"] %}
+
+  <h3 class="govuk-heading-l">
+    Current accounts (#)
+  </h3>
+
   {% set count = data["account-count"] or 0 %}
 
   {% for i in range(0, count) -%}
+
 
 
 
@@ -35,7 +49,7 @@
 
       <div class="govuk-grid-column-one-third">
         <p class="pc-row-head-10">
-        Account with: <strong>{{ data["msic-all-current-account-name-" + i] }}</strong>
+        Account with: <br><strong>{{ data["msic-all-current-account-name-" + i] }}</strong>
         </p>
       </div>
       <div class="govuk-grid-column-two-thirds">
@@ -153,10 +167,13 @@
 
 
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-one-third">
-<!------>  <h3 class="govuk-heading-s">
-    Account with: {{ data["msic-all-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
-  </h3></div>
+  <div class="govuk-grid-column-one-third">
+    <p class="pc-row-head-10">
+    Account with: <br> <strong>{{ data["msic-all-savings-account-name"] }}</strong>
+    </p>
+  </div>
+
+
 
 
 <div class="govuk-grid-column-two-thirds">
@@ -274,11 +291,14 @@
 </h3>
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-    <!------>  <h3 class="govuk-heading-s">
-        Account with: Post Office<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
-      </h3></div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <p class="pc-row-head-10">
+          Account with: <br> <strong>Post Office</strong>
+          </p>
+        </div>
+
+
 
 
     <div class="govuk-grid-column-two-thirds">
@@ -379,11 +399,13 @@
     </h3>
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-    <!------>  <h3 class="govuk-heading-s">
-        Account with: {{ data["msic-premium-bond-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
-      </h3></div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <p class="pc-row-head-10">
+          Account with: <br> <strong>{{ data["msic-premium-bond-account-name"] }}</strong>
+          </p>
+        </div>
+
 
 
     <div class="govuk-grid-column-two-thirds">
@@ -447,11 +469,13 @@
     </h3>
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-    <!------>  <h3 class="govuk-heading-s">
-        Account with: {{ data["msic-isa-savings-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
-      </h3></div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <p class="pc-row-head-10">
+          Account with: <br> <strong>{{ data["msic-isa-savings-account-name"] }}</strong>
+          </p>
+        </div>
+
 
 
     <div class="govuk-grid-column-two-thirds">
@@ -532,13 +556,12 @@
         Capital bond accounts (1)
       </h3>
 
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-      <!------>  <h3 class="govuk-heading-s">
-          Account with: {{ data["msic-capital-bond-company-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
-        </h3></div>
-
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <p class="pc-row-head-10">
+          Account with: <br> <strong>{{ data["msic-capital-bond-company-name"] }}</strong>
+          </p>
+        </div>
 
       <div class="govuk-grid-column-two-thirds">
 
@@ -600,13 +623,12 @@
         Shares Accounts (1)
       </h3>
 
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-      <!------>  <h3 class="govuk-heading-s">
-        Account with: {{ data["msic-shares-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
-        </h3></div>
-
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <p class="pc-row-head-10">
+            Account with: <br> <strong>{{ data["msic-shares-account-name"] }}</strong>
+            </p>
+          </div>
 
       <div class="govuk-grid-column-two-thirds">
 
@@ -703,14 +725,13 @@
       <h3 class="govuk-heading-l">
         Unit trust accounts (1)
       </h3>
-
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">
-          Account with: {{ data["msic-trust-account-name"] }}<p class="govuk-body"><!--<a href="msic-trust-account" class="govuk-link">Remove</a>--></p>
-        </h3></div>
-
+    
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <p class="pc-row-head-10">
+            Account with: <br> <strong>{{ data["msic-trust-account-name"] }}</strong>
+            </p>
+          </div>
 
       <div class="govuk-grid-column-two-thirds">
 
@@ -1004,10 +1025,11 @@
 
 
     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-    <!------>  <h3 class="govuk-heading-s">
-        Account with: {{ data["msic-missing-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
-      </h3></div>
+      <div class="govuk-grid-column-one-third">
+        <p class="pc-row-head-10">
+        Account with: <br> <strong>{{ data["msic-missing-account-name"] }}</strong>
+        </p>
+      </div>
 
 
     <div class="govuk-grid-column-two-thirds">
