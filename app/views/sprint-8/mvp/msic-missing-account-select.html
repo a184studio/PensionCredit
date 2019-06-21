@@ -14,7 +14,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="msic-all-money-accounts-pre-summary" method="post">
+      <form action="msic-missing-account" method="post">
 
         {{ govukRadios({
           idPrefix: "msic-missing-account",
@@ -27,14 +27,22 @@
             }
           },
           items: [
-            {
+          {
+            value: "Other type of account",
+            text: "Other type of account",
+            checked: data['msic-missing-account'] == "Other type of account"
+          },
+          {
+            divider: "or"
+          },
+          {
               value: "Current account",
-              text: "Current account with a bank or building society",
+              text: "Current account",
               checked: data['msic-missing-account'] == "Current account"
             },
             {
             value: "Savings account",
-            text: "Savings account with a bank or building society",
+            text: "Savings account",
             checked: data['msic-missing-account'] == "Savings account"
           },
           {
@@ -85,12 +93,7 @@
           {
             value: "Property or land",
             text: "Property or land",
-            checked: data['msic-missing-account'] == "Property or land"
-          },
-          {
-            value: "Other type of account",
-            text: "Other type of account",
-            checked: data['msic-missing-account'] == "Other type of account"
+            checked: data['notepad-otherRes'] == "Property or land"
           }
           ]
         }) }}

@@ -996,44 +996,154 @@
     {% endif %}
     <!----------------------------------------------------->
 
+    {% if data["msic-missing-account-name"] %}
+
+    <h3 class="govuk-heading-l">
+      Additional account (1)
+    </h3>
+
+
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">
-    Notes
-        </h3>
-        <p></p>
-      </div>
-
-      <div class="govuk-grid-column-two-thirds">
-
-        <table class="govuk-table ">
-          <thead class="govuk-table__head govuk-table--no-border">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header" scope="col"><p class="govuk-body"><a href="msic-notepad" class="govuk-link">Add money notes</a></p></th>
-              <th class="govuk-table__header govuk-table__header--numeric govuk-table__regular" scope="col"><a href="msic-notepad" class="govuk-link">Change</a></th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-          </tbody>
-        </table>
+    <div class="govuk-grid-column-one-third">
+    <!------>  <h3 class="govuk-heading-s">
+        Account with: {{ data["msic-missing-account-name"] }}<p class="govuk-body"><!---<a href="msic-bank-current-account" class="govuk-link">Remove</a>---></p>
+      </h3></div>
 
 
-        {% if data["msic-all-money-detail"] %}
+    <div class="govuk-grid-column-two-thirds">
 
-      <p class="govuk-body">
-        {{ data["msic-all-money-detail"] }}
-      </p>
-    {% endif %}
+      {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Last four digits"
+          },
+          value: {
+            text: data['msic-missing-account-last-digits']
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-missing-account",
+                html: "Change",
+                visuallyHiddenText: "XXX"
+              },
+              {
+                href: "msic-remove",
+                html: "Remove",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Total"
+          },
+          value: {
+            text: data['msic-missing-account-amount']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Account owner"
+          },
+          value: {
+            text: data['msic-missing-account-owner']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "% stake in joint account"
+          },
+          value: {
+            text: data['msic-missing-account-stake']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Read from statement:"
+          },
+          value: {
+            text: data['msic-missing-account-read-from-statement']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        },
+
+        {
+          classes: 'govuk-summary-list--no-border',
+          key: {
+            text: "Additional notes"
+          },
+          value: {
+            text: data['msic-missing-account-money-detail']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
     </div></div>
 
+        <!----------------------------------------------------->
+          {% endif %}
+        <!----------------------------------------------------->
 
-    <!----Break---->
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      </div>
-    </div>
-    <!----Break---->
+        <!----Break---->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </div>
+        </div>
+        <!----Break---->
+
 
 
 <!--------------------------SUMMARY OF NUMBER OF ACCOUNTS + FINANCIAL TOTAL ------------------------------------->
