@@ -19,27 +19,66 @@
   <!----Headline---->
   <form action="msic-has-post-office-card-account-yn" method="post">
 
-  <span class="govuk-caption-m">Money, savings and investments</span>
-  <h1 class="govuk-heading-xl">
-    Check your answers<br>
-  </h1>
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "changed-name",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              html: "Do you have any more savings accounts <br>with a bank or building society?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
 
-  <!--------------------------SHARED SUMMARY + FINANCIAL TOTAL ------------------------------------->
 
-      <h2 class="govuk-heading-l">
-        Total: £0,000.00
-      </h2>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
 
-      <!----Break---->
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <!----Break---->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          </div>
         </div>
-      </div>
-      <!----Break---->
+        <!----Break---->
+
+        <!--------------------------SHARED SUMMARY + FINANCIAL TOTAL ------------------------------------->
+
+            <h2 class="govuk-heading-l">
+              Total so far: £0,000.00
+            </h2>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <!--------------------- SUMMARY START -------------------------------->
       {% if data["account-count"] %}
+
+
+
+
+
+
+
+
+
+
+
 
       <h3 class="govuk-heading-l">
         Current accounts (#)
@@ -1168,46 +1207,6 @@
 
     <!--------------------------SHARED SUMMARY + FINANCIAL TOTAL ------------------------------------->
 
-  <!----Break---->
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-  </div>
-  <!----Break---->
-
-  <br><br>
-
-  {{ govukRadios({
-    classes: "govuk-radios--inline",
-    idPrefix: "changed-name",
-    name: "changed-name",
-    fieldset: {
-      legend: {
-        text: "Do you have any more savings accounts with a bank or building society?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    hint: {
-      text: ""
-    },
-    items: [
-      {
-        value: "yes",
-        text: "Yes"
-      },
-      {
-        value: "no",
-        text: "No"
-      }
-    ]
-  }) }}
-
-
-  {{ govukButton({
-    text: "Continue"
-  }) }}
 
 
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">

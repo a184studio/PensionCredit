@@ -12,15 +12,28 @@
 
 {% include "includes/js-back-link.html" %}
 
+<form action="msic-all-current-accounts-summary-router" method="post">
 
   <!----Headline---->
+  <span class="govuk-caption-m">Money, savings and investments</span>
   <h1 class="govuk-heading-xl">
-    <span class="govuk-caption-m">Money, savings and investments</span>
-    Current account summary (#)<br>
+    Check your answers
   </h1>
-  <!----Headline---->
 
-  <form action="msic-all-current-accounts-summary-router" method="post">
+  <!--------------------------SHARED SUMMARY + FINANCIAL TOTAL ------------------------------------->
+
+      <h2 class="govuk-heading-l">
+        Total: £0,000.00
+      </h2>
+
+      <!----Break---->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        </div>
+      </div>
+      <!----Break---->
+
     <!--------------------- SUMMARY START -------------------------------->
       {% if data["account-count"] %}
 
@@ -1148,16 +1161,6 @@
             <!----------------------------------------------------->
               {% endif %}
             <!----------------------------------------------------->
-
-            <!----Break---->
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-full">
-                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-              </div>
-            </div>
-            <!----Break---->
-
-
 
     <!--------------------------SUMMARY OF NUMBER OF ACCOUNTS + FINANCIAL TOTAL ------------------------------------->
 
