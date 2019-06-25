@@ -12,6 +12,8 @@ Account with: <br>{% extends "layout.html" %}
 
 {% include "includes/js-back-link.html" %}
 
+<form action="msic-all-money-accounts-summary-route" method="post">
+
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -62,10 +64,8 @@ Account with: <br>{% extends "layout.html" %}
       </h2>
 
     <!----Headline---->
-    <form action="msic-has-post-office-card-account-yn" method="post">
+  {% if data["account-count"] %}<div class="govuk-accordion" data-module="accordion" id="accordion-default">{% endif %}
 
-
-      <div class="govuk-accordion" data-module="accordion" id="accordion-default">
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
   {% if data["msic-missing-account-name"] %}
@@ -1276,15 +1276,11 @@ Account with: <br>{% extends "layout.html" %}
             }) }}
           </div></div>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
         {%- endfor %}
 
-      <!----------------------------------------------------->
-        {% endif %}
-      <!----------------------------------------------------->
-
     </div>
-  </div>
+  </div>{% endif %}
+
 
   </div>
 

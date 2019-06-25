@@ -29,8 +29,6 @@ router.post(`${baseUrl}/clear-data-yn-router`, (req, res) => { // router name
 })
 
 
-
-
 router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['claiming-for']
 
@@ -612,14 +610,51 @@ router.post(`${baseUrl}/msic-all-money-accounts-summary-route`, (req, res) => {
   const hasSecondProperty = req.session.data['msic-has-missing-account-yn']
 
   if (hasSecondProperty === 'yes') {
-    res.redirect(`${baseUrl}/msic-missing-account-select`)
+    res.redirect(`${baseUrl}/msic-missing-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-all-money-accounts-summary`)
+    res.redirect(`${baseUrl}/msic-has-payments-yn`)
   }
 })
 
+router.post(`${baseUrl}/msic-has-payments-yn-router`, (req, res) => {
+  const hasSecondProperty = req.session.data['msic-has-payments-yn']
 
+  if (hasSecondProperty === 'yes') {
+    res.redirect(`${baseUrl}/msic-missing-account-state-pension-check-yn`)
+  } else {
+    res.redirect(`${baseUrl}/msic-missing-account-benfit-check-yn`)
+  }
+})
 
+router.post(`${baseUrl}/msic-missing-account-state-pension-check-yn-router`, (req, res) => {
+  const hasSecondProperty = req.session.data['msic-missing-account-state-pension-check-yn']
+
+  if (hasSecondProperty === 'yes') {
+    res.redirect(`${baseUrl}/msic-missing-account-benfit-check-yn`)
+  } else {
+    res.redirect(`${baseUrl}/msic-missing-account-select`)
+  }
+})
+
+router.post(`${baseUrl}/msic-missing-account-benfit-check-yn-router`, (req, res) => {
+  const hasSecondProperty = req.session.data['msic-missing-account-benfit-check-yn']
+
+  if (hasSecondProperty === 'yes') {
+    res.redirect(`${baseUrl}/msic-all-money-accounts-summary`)
+  } else {
+    res.redirect(`${baseUrl}/msic-missing-account-select`)
+  }
+})
+
+router.post(`${baseUrl}/msic-all-money-accounts-check-yn-router`, (req, res) => {
+  const hasSecondProperty = req.session.data['msic-all-money-accounts-check-yn']
+
+  if (hasSecondProperty === 'yes') {
+    res.redirect(`${baseUrl}/task-list`)
+  } else {
+    res.redirect(`${baseUrl}/msic-all-money-accounts-pre-summary`)
+  }
+})
 
 // MSIC END
 
