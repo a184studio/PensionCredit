@@ -174,12 +174,30 @@ Account with: {% extends "layout.html" %}
                 },
 
                 {
-                  classes: 'govuk-summary-list--no-border',
                   key: {
                     text: "Read from statement"
                   },
                   value: {
                     text: data['msic-missing-account-read-from-statement']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXXX"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  classes: 'govuk-summary-list--no-border',
+                  key: {
+                    text: "Notes"
+                  },
+                  value: {
+                    text: data['msic-missing-account-money-detail']
                   },
                   actions: {
                     items: [
