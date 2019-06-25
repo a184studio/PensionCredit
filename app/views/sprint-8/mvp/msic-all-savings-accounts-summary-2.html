@@ -232,7 +232,116 @@
     </h2>
   </div>
   <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
-    <p class='govuk-body'>This is the account details for How people read.</p>
+
+    {% set count = data["account-count"] or 0 %}
+    {% for i in range(0, count) -%}
+
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          {{ govukSummaryList({
+            rows: [
+            {
+              key: {
+                text: "Last four digits"
+              },
+              value: {
+                text: data['msic-all-current-account-last-digits-' + i]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-all-current-account",
+                    html: "Change",
+                    visuallyHiddenText: "XXX"
+                  },
+                  {
+                    href: "msic-remove",
+                    html: "Remove",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Total"
+              },
+              value: {
+                text: data['msic-all-current-account-amount-' + i] | formatMoney
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-all-current-account",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Account owner"
+              },
+              value: {
+                text: data['current-owner-' + i]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-all-current-account",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Stake in joint account"
+              },
+              value: {
+                text: data['msic-all-current-account-stake-' + i]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-all-current-account-stake",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            },
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Read from statement"
+              },
+              value: {
+                text: "Yes/No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-all-current-account-need-evidence",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+        </div></div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    {%- endfor %}
+
+
+
+
+
   </div>
 </div>
 
