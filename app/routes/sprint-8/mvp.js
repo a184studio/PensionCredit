@@ -546,9 +546,9 @@ router.post(`${baseUrl}/msic-has-capital-bond-account-yn-router`, (req, res) => 
 })
 
 router.post(`${baseUrl}/msic-has-shares-account-yn-router`, (req, res) => {
-  const hasBuildingsSavingsAccount = req.session.data['msic-has-shares-account-yn']
+  const hasSharesAccount = req.session.data['msic-has-shares-account-yn']
 
-  if (hasBuildingsSavingsAccount === 'yes') {
+  if (hasSharesAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-shares-account`)
   } else {
     res.redirect(`${baseUrl}/msic-has-unit-trust-account-yn`)

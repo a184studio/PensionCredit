@@ -1,4 +1,4 @@
-Account with: <br>{% extends "layout.html" %}
+Account with: {% extends "layout.html" %}
 
 {% block pageTitle %}
   Money - Pension Credit
@@ -66,25 +66,22 @@ Account with: <br>{% extends "layout.html" %}
     <!----Headline---->
   {% if data["account-count"] %}<div class="govuk-accordion" data-module="accordion" id="accordion-default">{% endif %}
 
-
-<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-  {% if data["msic-missing-account-name"] %}
-  <div class="govuk-accordion__section ">
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+      {% if data["msic-missing-account-name"] %}
+      <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-XXXX">
-                <strong>Other accounts </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
+                <strong>Other account type </strong><a class="govuk-accordion__link" href="msic-second-property"></a>
               </span>
             </h2>
           </div>
 
-          <div id="accordion-default-content-XXXX" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-XXXX">
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
 
 
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters">
-
-
 
               {{ govukSummaryList({
                 rows: [
@@ -110,7 +107,6 @@ Account with: <br>{% extends "layout.html" %}
                     ]
                   }
                 },
-
                 {
                   key: {
                     text: "Last four digits"
@@ -120,12 +116,7 @@ Account with: <br>{% extends "layout.html" %}
                   },
                   actions: {
                     items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
+                                ]
                   }
                 },
 
@@ -141,33 +132,32 @@ Account with: <br>{% extends "layout.html" %}
                       {
                         href: "",
                         text: "",
-                        visuallyHiddenText: "XXXX"
+                        visuallyHiddenText: "XXX"
                       }
                     ]
                   }
                 },
-
                 {
-                  key: {
-                    text: "Account owner"
-                  },
-                  value: {
-                    text: data['msic-missing-account-owner']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
+                key: {
+                  text: "Account owner, %"
                 },
+                value: {
+                  text: data['msic-missing-account-owner']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXXX"
+                    }
+                  ]
+                }
+              },
 
                 {
                   key: {
-                    text: "% stake in joint account"
+                    text: "Percent (%) state"
                   },
                   value: {
                     text: data['msic-missing-account-stake']
@@ -184,30 +174,12 @@ Account with: <br>{% extends "layout.html" %}
                 },
 
                 {
+                  classes: 'govuk-summary-list--no-border',
                   key: {
-                    text: "Read from statement:"
+                    text: "Read from statement"
                   },
                   value: {
                     text: data['msic-missing-account-read-from-statement']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
-                },
-
-                {
-                  classes: 'govuk-summary-list--no-border',
-                  key: {
-                    text: "Additional notes"
-                  },
-                  value: {
-                    text: data['msic-missing-account-money-detail']
                   },
                   actions: {
                     items: [
@@ -225,20 +197,20 @@ Account with: <br>{% extends "layout.html" %}
             <br></div></div>
 
               </div>
-  </div>{% endif %}
+      </div>{% endif %}
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
   {% if data["msic-second-property-value"] %}
   <div class="govuk-accordion__section ">
       <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-XXXX">
-            <strong>Second properties </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
+            <strong>Second properties </strong><a class="govuk-accordion__link" href="msic-second-property">Add another</a>
           </span>
         </h2>
       </div>
 
-      <div id="accordion-default-content-XXXX" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-XXXX">
+      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
 
 
         <div class="govuk-grid-row">
@@ -254,19 +226,55 @@ Account with: <br>{% extends "layout.html" %}
                 text: "1007"
               },
               actions: {
-                            items: [
-                              {
-                                href: "msic-second-property-summary",
-                                html: "Change",
-                                visuallyHiddenText: "XXX"
-                              },
-                              {
-                                href: "msic-remove",
-                                html: "Remove",
-                                visuallyHiddenText: "XXX"
-                              }
-                            ]
-                          }
+                items: [
+                  {
+                    href: "msic-second-property",
+                    html: "Change",
+                    visuallyHiddenText: "XXX"
+                  },
+                  {
+                    href: "msic-remove",
+                    html: "Remove",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: ""
+              },
+              value: {
+                text: "Mountain Drive"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: ""
+              },
+              value: {
+                text: "Gotham "
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
             },
 
             {
@@ -275,6 +283,24 @@ Account with: <br>{% extends "layout.html" %}
               },
               value: {
                 text: "New York State (US)"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: ""
+              },
+              value: {
+                text: "."
               },
               actions: {
                 items: [
@@ -318,13 +344,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
-                  <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-XXXX">
-                    <strong>Money: Lump sum </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+                  <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-2">
+                    <strong>Money: Lump sum </strong><a class="govuk-accordion__link" href="msic-cash-lump-sum">Add another</a>
                   </span>
                 </h2>
               </div>
 
-              <div id="accordion-default-content-XXXX" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-XXXX">
+              <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
 
 
                 <div class="govuk-grid-row">
@@ -368,13 +394,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
       <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-XXXX">
-            <strong>Money: held in this country or abroad </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-3">
+            <strong>Money: held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad">Add another</a>
           </span>
         </h2>
       </div>
 
-      <div id="accordion-default-content-XXXX" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-XXXX">
+      <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
 
 
         <div class="govuk-grid-row">
@@ -418,13 +444,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
       <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-XXXX">
-            <strong>Money: At home </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-4">
+            <strong>Money: At home </strong><a class="govuk-accordion__link" href="msic-cash-at-home">Add another</a>
           </span>
         </h2>
       </div>
 
-      <div id="accordion-default-content-XXXX" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-XXXX">
+      <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
 
 
         <div class="govuk-grid-row">
@@ -468,13 +494,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
       <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-XXXX">
-            <strong>Unit trusts </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-5">
+            <strong>Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account">Add another</a>
           </span>
         </h2>
       </div>
 
-      <div id="accordion-default-content-XXXX" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-XXXX">
+      <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
 
 
         <div class="govuk-grid-row">
@@ -536,13 +562,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
       <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-XXXX">
-            <strong>Shares </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+          <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-6">
+            <strong>Shares </strong><a class="govuk-accordion__link" href="msic-shares-account">Add another</a>
           </span>
         </h2>
       </div>
 
-      <div id="accordion-default-content-XXXX" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-XXXX">
+      <div id="accordion-default-content-6" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-6">
 
 
         <div class="govuk-grid-row">
@@ -658,13 +684,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-XXXX">
-          <strong>Capital bond account </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-7">
+          <strong>Capital bond account </strong><a class="govuk-accordion__link" href="msic-capital-bond-account">Add another</a>
         </span>
       </h2>
     </div>
 
-    <div id="accordion-default-content-XXXX" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-XXXX">
+    <div id="accordion-default-content-7" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-7">
 
 
       <div class="govuk-grid-row">
@@ -744,13 +770,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-2">
-          <strong>ISAs, TESSAs, TOISA and PEPs </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-8">
+          <strong>ISAs, TESSAs, TOISA and PEPs </strong><a class="govuk-accordion__link" href="msic-isa-savings-account">Add another</a>
         </span>
       </h2>
     </div>
 
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+    <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-8">
 
 
       <div class="govuk-grid-row">
@@ -848,13 +874,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-2">
-          <strong>Premium Bonds </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-9">
+          <strong>Premium Bonds </strong><a class="govuk-accordion__link" href="msic-premium-bond-account">Add another</a>
         </span>
       </h2>
     </div>
 
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+    <div id="accordion-default-content-9" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-9">
 
 
       <div class="govuk-grid-row">
@@ -916,13 +942,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-2">
-          <strong>Post Office accounts </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
+          <strong>Post Office accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account">Add another</a>
         </span>
       </h2>
     </div>
 
-  <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+  <div id="accordion-default-content-10" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-10">
 
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
@@ -1019,12 +1045,12 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-2">
-          <strong>Savings accounts </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
+          <strong>Savings accounts </strong><a class="govuk-accordion__link" href="msic-all-savings-account">Add another</a>
         </span>
       </h2>
     </div>
-    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+    <div id="accordion-default-content-11" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-11">
 
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
@@ -1149,13 +1175,13 @@ Account with: <br>{% extends "layout.html" %}
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-2">
-          <strong>Current accounts </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
+        <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-12">
+          <strong>Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account">Add another</a>
         </span>
       </h2>
     </div>
 
-    <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+    <div id="accordion-default-content-12" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-12">
 
       {% set count = data["account-count"] or 0 %}
       {% for i in range(0, count) -%}
