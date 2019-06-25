@@ -71,56 +71,6 @@ Do you have more cash at home - Pension Credit
 
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-      {% if data["msic-cash-at-home-amount"] %}
-      <div class="govuk-accordion__section ">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-4">
-                <strong>Money: At home </strong><a class="govuk-accordion__link" href="task-list"></a>
-              </span>
-            </h2>
-          </div>
-
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
-
-
-            <div class="govuk-grid-row">
-            <div class="govuk-grid-column-three-quarters">
-
-              {{ govukSummaryList({
-                rows: [
-                {
-                  classes: 'govuk-summary-list--no-border',
-                  key: {
-                    text: "Total"
-                  },
-                  value: {
-                    text: data['msic-cash-at-home-amount']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-cash-at-home",
-                        html: "Change",
-                        visuallyHiddenText: "XXX"
-                      },
-                      {
-                        href: "msic-remove",
-                        html: "Remove",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                }
-                ]
-              }) }}
-
-            <br></div></div>
-
-              </div>
-      </div>{% endif %}
-
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
       {% if data["msic-trust-account-name"] %}
       <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
