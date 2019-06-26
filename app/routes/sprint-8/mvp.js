@@ -640,7 +640,7 @@ router.post(`${baseUrl}/msic-missing-account-benfit-check-yn-router`, (req, res)
   const hasSecondProperty = req.session.data['msic-missing-account-benfit-check-yn']
 
   if (hasSecondProperty === 'yes') {
-    res.redirect(`${baseUrl}/msic-all-money-accounts-summary`)
+    res.redirect(`${baseUrl}/msic-pc-account`)
   } else {
     res.redirect(`${baseUrl}/msic-missing-account-select`)
   }
