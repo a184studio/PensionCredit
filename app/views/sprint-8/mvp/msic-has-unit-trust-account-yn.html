@@ -20,27 +20,26 @@ Do you have any Unit Trusts? - Pension Credit
   <span class="govuk-caption-m">Money, savings and investments</span>
 
   {{ govukRadios({
-    classes: "govuk-radios--inline",
-    idPrefix: "changed-name",
-    name: "changed-name",
+    idPrefix: "msic-has-unit-trust-account-yn",
+    name: "msic-has-unit-trust-account-yn",
     fieldset: {
       legend: {
-        text: "Do have any unit trusts?",
+        text: "Do you have any Unit Trusts?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
-    },
-    hint: {
-      text: ""
-    },
+        },
+    classes: "govuk-radios--inline",
     items: [
       {
         value: "yes",
-        text: "Yes"
+        text: "Yes",
+        checked: (data["msic-has-unit-trust-account-yn"] == "yes")
       },
       {
         value: "no",
-        text: "No"
+        text: "No",
+        checked: (data["msic-has-unit-trust-account-yn"] == "no")
       }
     ]
   }) }}
