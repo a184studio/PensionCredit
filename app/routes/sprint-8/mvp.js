@@ -177,7 +177,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/rent-service-charges`)
   }
   else if (homeOwnership === 'You live in someone else\'s home without paying rent') {
-    res.redirect(`${baseUrl}/notepad-someoneElse`)
+    res.redirect(`${baseUrl}/address-summary`)
   }
   else if (homeOwnership === 'You own and rent it (shared ownership)') {
     res.redirect(`${baseUrl}/notepad-shared-ownership`)
