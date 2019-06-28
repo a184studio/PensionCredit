@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="claim-date-options-router" method="post" class="form">
+    <form action="claim-date-options-backdating-outside-uk-yn-router" method="post" class="form">
       {{ govukRadios({
         idPrefix: "claim-date-options-backdating-outside-uk-yn",
         name: "claim-date-options-backdating-outside-uk-yn",
@@ -33,12 +33,12 @@
         classes: "govuk-radios--inline",
         items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
             checked: (data["claim-date-options-backdating-outside-uk-yn"] == "yes")
           },
           {
-            value: "no",
+            value: "No",
             text: "No",
             checked: (data["claim-date-options-backdating-outside-uk-yn"] == "no")
           }

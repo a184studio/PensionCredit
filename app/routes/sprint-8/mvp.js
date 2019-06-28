@@ -42,6 +42,17 @@ router.post(`${baseUrl}/claim-date-options-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/claim-date-options-backdating-outside-uk-yn-router`, (req, res) => {
+  const backdatingOutside = req.session.data['claim-date-options-backdating-dates']
+
+  if (backdatingOutside === 'Yes') {
+    res.redirect(`${baseUrl}/yes`)
+  } else {
+    res.redirect(`${baseUrl}/no`)
+  }
+})
+
+
 router.post(`${baseUrl}/security-router`, (req, res) => {
   const passedSecurity = req.session.data['passed-security']
 
