@@ -29,16 +29,16 @@ router.post(`${baseUrl}/clear-data-yn-router`, (req, res) => { // router name
 })
 
 
-router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
-  const claimingFor = req.session.data['claiming-for']
+router.post(`${baseUrl}/claim-date-options-router`, (req, res) => {
+  const claimDateOptions = req.session.data['claim-date-options']
 
-  if (claimingFor === 'Yourself') {
-    res.redirect(`${baseUrl}/name-and-nino`)
+  if (claimDateOptions === 'Advanced') {
+    res.redirect(`${baseUrl}/claim-date-options-advanced`)
   }
-  else if (claimingFor === 'PC1') {
-    res.redirect(`${baseUrl}/notepad-PC1`)
+  else if (claimDateOptions === 'Today') {
+    res.redirect(`${baseUrl}/claim-date-options-today`)
   } else {
-    res.redirect(`${baseUrl}/has-help`)
+    res.redirect(`${baseUrl}/claim-date-options-backdating`)
   }
 })
 
@@ -189,10 +189,10 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/notepad-sheltered`)
   }
   else if (homeOwnership === 'Other accommodation') {
-    res.redirect(`${baseUrl}/notepad-otherRes`)
+    res.redirect(`${baseUrl}/address-summary`)
   }
 
-  res.redirect(`${baseUrl}/notepad-otherRes`)
+  res.redirect(`${baseUrl}/address-summary`)
 })
 
 
