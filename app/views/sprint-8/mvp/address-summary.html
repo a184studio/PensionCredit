@@ -366,6 +366,25 @@
     </div>
   {% endif %}
 
+  {% if data["notepad-care-nursing-home-more-detail"] %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Discharge date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      DD / MM / YYYY {{ data[""] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="notepad-carehome">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
+
+
+
       {% if data["notepad-care-nursing-home-funding"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

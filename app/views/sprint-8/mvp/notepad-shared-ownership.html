@@ -25,42 +25,13 @@
 <br>
 
 {{ govukRadios({
-  idPrefix: "notepad-shared-ownership",
-  name: "notepad-shared-ownership",
-  fieldset: {
-    legend: {
-      text: "Do you part own and rent the property?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  hint: {
-    text: "XXXX"
-  },
-  items: [
-    {
-      value: "Part own",
-      text: "Part own",
-      checked: (data["notepad-shared-ownership"] == "Part own")
-    },
-    {
-      value: "Rent",
-      text: "Rent",
-      checked: (data["notepad-shared-ownership"] == "Rent")
-    }
-  ]
-}) }}
-
-<br>
-
-{{ govukRadios({
   idPrefix: "notepad-shared-ownership-property",
   name: "notepad-shared-ownership-property",
   fieldset: {
     legend: {
       text: "Is there equity release scheme?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
@@ -89,11 +60,11 @@
     legend: {
       text: "Is there a loan?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
-    text: "XXX"
+    text: "Notes from our chat before Is this a mortgate or home loan"
   },
   items: [
     {
@@ -113,7 +84,7 @@
 
 <ul class="govuk-list">
   <li>
-    Notes
+    Notes (@dan this is a non mandatory field)
   </li>
 </ul>
 

@@ -31,7 +31,7 @@
     legend: {
       text: "How is this residence funded?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
@@ -52,6 +52,11 @@
       value: "Part Local authority and Self-funded",
       text: "Part Local authority and Self-funded",
       checked: (data["notepad-sheltered-funding"] == "Part Local authority and Self-funded")
+    },
+    {
+      value: "Other",
+      text: "Other (Add details to notes)",
+      checked: (data["notepad-sheltered-funding"] == "Other")
     }
   ]
 }) }}
@@ -65,7 +70,7 @@
     legend: {
       text: "Do you still own a property?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
@@ -81,6 +86,11 @@
       value: "No",
       text: "No",
       checked: (data["notepad-sheltered-property"] == "No")
+    },
+    {
+      value: "Other",
+      text: "Other (Add details to notes)",
+      checked: (data["notepad-sheltered-property"] == "Other")
     }
   ]
 }) }}
@@ -90,7 +100,7 @@
 
 <ul class="govuk-list">
   <li>
-    Notes
+    Notes (Only mandatory if other is selected)
   </li>
 </ul>
 

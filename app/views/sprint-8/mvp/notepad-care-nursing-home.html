@@ -24,9 +24,6 @@
 
 <br>
 
-
-
-
 {% from "date-input/macro.njk" import govukDateInput %}
 
 {{ govukDateInput({
@@ -36,7 +33,7 @@
     legend: {
       text: "What was the date they were admitted?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
@@ -46,29 +43,72 @@
 
 <br>
 
+{% set today = '' | formatDate %}
+
+{% set altDate %}
+  {{ govukDateInput({
+    id: "discharge-date",
+    namePrefix: "discharge-date",
+    fieldset: {
+      legend: {
+        text: "Discharge date @pete"
+      }
+    },
+    hint: {
+      text: "For example, 31 12 2018."
+    },
+    items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["discharge-date-day"]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["discharge-date-month"]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["discharge-date-year"]
+      }
+    ]
+  }) }}
+{% endset %}
+
 {{ govukRadios({
+  classes: "govuk-radios",
   idPrefix: "notepad-care-nursing-home-status",
   name: "notepad-care-nursing-home-status",
   fieldset: {
     legend: {
-      text: "Is this your permanent or temporary residence?",
+      text: "When do you want your claim to start?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
-    text: "XXXX"
+  text: "You can backdate your claim by up to 3 months, or claim up to 4 months before you reach State Pension age. Your claim will be based on your situation at the date your claim starts. "
   },
   items: [
-    {
-      value: "Permanent",
-      text: "Permanent",
-      checked: (data["notepad-care-nursing-home-status"] == "Permanent")
-    },
+  {
+    value: "Permanent",
+    text: "Permanent",
+    checked: (data["notepad-care-nursing-home-status"] == "Permanent")
+  },
+  {
+    value: "Don't know",
+    text: "Don't know (Add detials to notes)",
+    checked: (data["notepad-care-nursing-home-status"] == "Dont know")
+  },
     {
       value: "Temporary",
-      text: "Temporary (DROP DOWN: if the stay is temporary, the date they expect to be discharged)",
-      checked: (data["notepad-care-nursing-home-status"] == "Temporary")
+      text: "Temporary (if the stay is temporary, the date they expect to be discharged)",
+      checked: (data["discharge-date"] == "Temporary"),
+      conditional: {
+        html: altDate
+      }
     }
   ]
 }) }}
@@ -82,7 +122,7 @@
     legend: {
       text: "How is this residence funded?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
@@ -103,6 +143,11 @@
       value: "Part Local authority and Self-funded",
       text: "Part Local authority and Self-funded",
       checked: (data["notepad-care-nursing-home-funding"] == "Part Local authority and Self-funded")
+    },
+    {
+      value: "Other",
+      text: "Other (Add details to notes)",
+      checked: (data["notepad-care-nursing-home-funding"] == "Other")
     }
   ]
 }) }}
@@ -116,7 +161,7 @@
     legend: {
       text: "Do you still own a property?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
@@ -132,6 +177,11 @@
       value: "No",
       text: "No",
       checked: (data["notepad-care-nursing-home-property"] == "No")
+    },
+    {
+      value: "Other",
+      text: "Other (Add details to notes)",
+      checked: (data["notepad-care-nursing-home-property"] == "Other")
     }
   ]
 }) }}
