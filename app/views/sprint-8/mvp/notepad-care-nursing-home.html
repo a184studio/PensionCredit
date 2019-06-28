@@ -27,18 +27,35 @@
 {% from "date-input/macro.njk" import govukDateInput %}
 
 {{ govukDateInput({
-  id: "passport-issued",
-  namePrefix: "notepad-care-nursing-home-date",
+  id: "notepad-care-nursing-home-admission-date",
+  namePrefix: "notepad-care-nursing-home-admission-date",
   fieldset: {
     legend: {
-      text: "What was the date they were admitted?",
+      text: "Admission for care home / nursing home",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
-    text: "For example, 12 11 2007"
-  }
+    text: "For example, 31 12 2018."
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data["admission-date-day"]
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: data["admission-date-month"]
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: data["admission-date-year"]
+    }
+  ]
 }) }}
 
 <br>
@@ -47,8 +64,8 @@
 
 {% set altDate %}
   {{ govukDateInput({
-    id: "discharge-date",
-    namePrefix: "discharge-date",
+    id: "dischargeDate",
+    namePrefix: "dischargeDate",
     fieldset: {
       legend: {
         text: "Discharge date @pete"
@@ -76,6 +93,9 @@
     ]
   }) }}
 {% endset %}
+
+
+
 
 {{ govukRadios({
   classes: "govuk-radios",
@@ -105,7 +125,7 @@
     {
       value: "Temporary",
       text: "Temporary (if the stay is temporary, the date they expect to be discharged)",
-      checked: (data["discharge-date"] == "Temporary"),
+      checked: (data["dischargeDate"] == "Temporary"),
       conditional: {
         html: altDate
       }

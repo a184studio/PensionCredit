@@ -334,13 +334,13 @@
 
           <!-- Care home ------------------------------------------------------>
 
-      {% if data["notepad-care-nursing-home-more-detail"] %}
+      {% if data["notepad-care-nursing-home-status"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Entry date
+          Admission date
         </dt>
         <dd class="govuk-summary-list__value">
-          DD / MM / YYYY {{ data[""] }}
+          {{ data["admission-date-day"] }}XX / {{ data["admission-date-month"] }}XX / {{ data["admission-date-year"] }}XX
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="notepad-carehome">
@@ -372,7 +372,7 @@
       Discharge date
     </dt>
     <dd class="govuk-summary-list__value">
-      DD / MM / YYYY {{ data[""] }}
+      {{ data["discharge-date-day"] }} / {{ data["discharge-date-month"] }} / {{ data["discharge-date-year"] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="notepad-carehome">
@@ -470,7 +470,7 @@
       {% if data["notepad-sheltered-detail"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Sheleterd accomdation notes
+            Notes
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["notepad-sheltered-detail"] }}
@@ -488,7 +488,7 @@
       {% if data["someone-else-more-detail"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Someone else notes
+            Notes
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["someone-else-more-detail"] }}
