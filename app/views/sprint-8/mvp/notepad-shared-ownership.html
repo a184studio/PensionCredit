@@ -19,52 +19,24 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="address-summary" method="post">
 
-        <span class="govuk-caption-m">Agent notes page</span>
-        <h1 class="govuk-heading-xl">Shared Ownership: Details</h1>
+
+        <h1 class="govuk-heading-xl">Shared Ownership details</h1>
 
 <br>
 
-{{ govukRadios({
-  idPrefix: "notepad-shared-ownership",
-  name: "notepad-shared-ownership",
-  fieldset: {
-    legend: {
-      text: "Do you part own and rent the property?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  hint: {
-    text: "XXXX"
-  },
-  items: [
-    {
-      value: "Part own",
-      text: "Part own",
-      checked: (data["notepad-shared-ownership"] == "Part own")
-    },
-    {
-      value: "Rent",
-      text: "Rent",
-      checked: (data["notepad-shared-ownership"] == "Rent")
-    }
-  ]
-}) }}
 
-<br>
+
+
 
 {{ govukRadios({
   idPrefix: "notepad-shared-ownership-property",
   name: "notepad-shared-ownership-property",
   fieldset: {
     legend: {
-      text: "Is there equity release scheme?",
+      text: "Have you taken any equity out of the property using an equity release scheme?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
-  },
-  hint: {
-    text: "XXX"
   },
   items: [
     {
@@ -87,14 +59,12 @@
   name: "notepad-shared-ownership-loan",
   fieldset: {
     legend: {
-      text: "Is there a loan?",
+      text: "Do you have a mortgage or other loan secured against the property?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
   },
-  hint: {
-    text: "XXX"
-  },
+
   items: [
     {
       value: "Yes",
@@ -113,7 +83,7 @@
 
 <ul class="govuk-list">
   <li>
-    Notes
+    Notes (optional)
   </li>
 </ul>
 

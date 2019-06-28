@@ -19,8 +19,8 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="address-summary" method="post">
 
-        <span class="govuk-caption-m">Agent notes page</span>
-        <h1 class="govuk-heading-xl">Carehome or nursing home: Details</h1>
+
+        <h1 class="govuk-heading-xl">Care home or nursing home details</h1>
 
 <br>
 
@@ -34,7 +34,7 @@
   namePrefix: "notepad-care-nursing-home-date",
   fieldset: {
     legend: {
-      text: "What was the date they were admitted?",
+      text: "What date were you admitted?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
@@ -51,14 +51,12 @@
   name: "notepad-care-nursing-home-status",
   fieldset: {
     legend: {
-      text: "Is this your permanent or temporary residence?",
+      text: "Do you live there permanently or temporarily?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
   },
-  hint: {
-    text: "XXXX"
-  },
+
   items: [
     {
       value: "Permanent",
@@ -114,14 +112,12 @@
   name: "notepad-care-nursing-home-property",
   fieldset: {
     legend: {
-      text: "Do you still own a property?",
+      text: "Do you own a residential property?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
   },
-  hint: {
-    text: "Can this be a separate check box to tailor the question in the capital section?, @pete, yeah. Make a tag to say in property, "
-  },
+
   items: [
     {
       value: "Yes",
