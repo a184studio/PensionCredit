@@ -19,8 +19,8 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="address-summary" method="post">
 
-        <span class="govuk-caption-m">Agent notes page</span>
-        <h1 class="govuk-heading-xl">Sheltered accommodation: Details</h1>
+
+        <h1 class="govuk-heading-xl">Sheltered accommodation details</h1>
 
 <br>
 
@@ -29,14 +29,12 @@
   name: "notepad-sheltered-funding",
   fieldset: {
     legend: {
-      text: "How is this residence funded?",
+      text: "How is your stay in sheltered accommodation paid for?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
-  hint: {
-    text: "XXXX"
-  },
+
   items: [
     {
       value: "Local authority",
@@ -50,7 +48,7 @@
     },
     {
       value: "Part Local authority and Self-funded",
-      text: "Part Local authority and Self-funded",
+      text: "Part Local authority and part self-funded",
       checked: (data["notepad-sheltered-funding"] == "Part Local authority and Self-funded")
     },
     {
@@ -68,14 +66,12 @@
   name: "notepad-sheltered-property",
   fieldset: {
     legend: {
-      text: "Do you still own a property?",
+      text: "Do you own a residential property?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
-  hint: {
-    text: "Can this be a separate check box to tailor the question in the capital section?, @pete, yeah. Make a tag to say in property, "
-  },
+
   items: [
     {
       value: "Yes",
