@@ -38,19 +38,20 @@ router.post(`${baseUrl}/claim-date-options-router`, (req, res) => {
   else if (claimDateOptions === 'Today') {
     res.redirect(`${baseUrl}/claim-date-options-today`)
   } else {
-    res.redirect(`${baseUrl}/claim-date-options-backdating`)
+    res.redirect(`${baseUrl}/claim-date-options-backdating-yn`)
   }
 })
 
-router.post(`${baseUrl}/claim-date-options-backdating-outside-uk-yn-router`, (req, res) => {
-  const backdatingOutside = req.session.data['claim-date-options-backdating-dates']
+router.post(`${baseUrl}/claim-date-test-router`, (req, res) => {
+  const claimDateTest = req.session.data['claim-date-options-backdating-yn']
 
-  if (backdatingOutside === 'Yes') {
-    res.redirect(`${baseUrl}/yes`)
+  if (claimDateTest === 'Yes') {
+    res.redirect(`${baseUrl}/claim-date-options-backdating-outside-yes`)
   } else {
-    res.redirect(`${baseUrl}/no`)
+    res.redirect(`${baseUrl}/claim-date-options-backdating-benefit-check`)
   }
 })
+
 
 
 router.post(`${baseUrl}/security-router`, (req, res) => {
@@ -472,7 +473,6 @@ router.post(`${baseUrl}/change-hospital-admission/:stayId`, (req, res) => {
 
 
 router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router name
-
   const hospitalToCareHome = req.session.data['hospital-admission-next']  // name of data / id name
 
   if (hospitalToCareHome === 'Yes') { // name of data / + answer
@@ -588,9 +588,9 @@ router.post(`${baseUrl}/msic-has-cash-at-home-yn-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/msic-cash-other-abroad-yn-router`, (req, res) => {
-  const hasCashAtHome = req.session.data['msic-cash-other-abroad-yn']
+  const hasOtherCashAboad = req.session.data['msic-cash-other-abroad-yn']
 
-  if (hasCashAtHome === 'yes') {
+  if (hasOtherCashAboad === 'yes') {
     res.redirect(`${baseUrl}/msic-cash-other-abroad`)
   } else {
     res.redirect(`${baseUrl}/msic-has-cash-lump-sum-yn`)
