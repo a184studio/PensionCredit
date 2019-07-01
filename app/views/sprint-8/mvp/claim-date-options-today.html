@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  System: Date router - Pension Credit
+  Check for previous Pension Credit cliam - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -16,12 +16,32 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-summary" method="post">
 
-    Your claim date is today because of X
 
-If no:       claim-date-options-backdating-alt-reason
-
-<br>
-
+                {{ govukRadios({
+                  classes: "govuk-radios",
+                  idPrefix: "uk-national",
+                  name: "uk-national",
+                  fieldset: {
+                    legend: {
+                      text: "Would you like to start your claim from XX/XX/XXXX?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--xl"
+                    }
+                  },
+                  hint: {
+                    text: "This date is calculated using your date of birth and Todays date and is currently the maximum backdating avable to you."
+                  },
+                  items: [
+                    {
+                      value: "Yes",
+                      text: "Yes"
+                    },
+                    {
+                      value: "No",
+                      text: "No"
+                    }
+                  ]
+                }) }}
 
         {{ govukButton({
           text: "Continue"
