@@ -53,6 +53,62 @@ router.post(`${baseUrl}/claim-date-test-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/claim-date-options-backdating-outside-yn-router`, (req, res) => {
+  const claimDateTest = req.session.data['claim-date-options-backdating-outside-yn']
+
+  if (claimDateTest === 'Yes') {
+    res.redirect(`${baseUrl}/claim-date-options-backdating-outside-out`)
+  } else {
+    res.redirect(`${baseUrl}/claim-date-options-backdating-changes-yn`)
+  }
+})
+
+router.post(`${baseUrl}/claim-date-options-backdating-changes-yn-router`, (req, res) => {
+  const claimDateTest = req.session.data['claim-date-options-backdating-changes-yn']
+
+  if (claimDateTest === 'Yes') {
+    res.redirect(`${baseUrl}/claim-date-options-backdating-outside-out`)
+  } else {
+    res.redirect(`${baseUrl}/claim-date-options-backdating-changes-yn`)
+  }
+})
+
+
+router.post(`${baseUrl}/claim-date-options-backdating-benefit-check-yn-router`, (req, res) => {
+  const claimDateTest = req.session.data['claim-date-options-backdating-benefit-check-yn']
+
+  if (claimDateTest === 'Yes') {
+    res.redirect(`${baseUrl}/claim-date-options-backdating-alt`)
+  } else {
+    res.redirect(`${baseUrl}/claim-date-options-backdating-alt`)
+  }
+})
+
+
+router.post(`${baseUrl}/claim-date-options-today-yn-router`, (req, res) => {
+  const claimDateTest = req.session.data['claim-date-options-today-yn']
+
+  if (claimDateTest === 'Yes') {
+    res.redirect(`${baseUrl}/claim-date-summary`)
+  } else {
+    res.redirect(`${baseUrl}/claim-date-options-today-out`)
+  }
+})
+
+
+
+
+router.post(`${baseUrl}/claim-date-options-advanced-yn-router`, (req, res) => {
+  const claimDateTest = req.session.data['claim-date-options-advanced-yn']
+
+  if (claimDateTest === 'Yes') {
+    res.redirect(`${baseUrl}/claim-date-summary`)
+  } else {
+    res.redirect(`${baseUrl}/claim-date-options-advanced-out`)
+  }
+})
+
+
 
 router.post(`${baseUrl}/security-router`, (req, res) => {
   const passedSecurity = req.session.data['passed-security']

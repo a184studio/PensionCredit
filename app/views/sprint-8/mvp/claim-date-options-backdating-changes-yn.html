@@ -14,15 +14,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="task-list" method="post" class="form">
-
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon app-warning-text--long-3" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            Agent: Check with USER regarding dates. Establish when their periods abroad, the reason and come to an agreement to the date within the backdating period.
-          </strong>
-        </div>
+      <form action="claim-date-summary" method="post" class="form">
 
         {{ govukRadios({
           classes: "govuk-radios",
@@ -30,13 +22,16 @@
           name: "uk-national",
           fieldset: {
             legend: {
-              text: "Has there been any changes between XX/XX/XXXX and XX/XX/XXXX?",
+              text: "Has there been any changes between 01 February 2019 and 01 March 2019?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
+          hint: {
+            text: "By changes we mean: XX Things are are interested in are, money in and out, people in and out."
+          },
           items: [
-            {
+          {
               value: "Yes",
               text: "Yes"
             },
