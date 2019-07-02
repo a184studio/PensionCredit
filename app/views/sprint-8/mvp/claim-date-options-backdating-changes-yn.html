@@ -14,12 +14,12 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="claim-date-summary" method="post" class="form">
+      <form action="claim-date-options-backdating-changes-yn-router" method="post" class="form">
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "uk-national",
-          name: "uk-national",
+          idPrefix: "claim-date-options-backdating-changes-yn",
+          name: "claim-date-options-backdating-changes-yn",
           fieldset: {
             legend: {
               text: "Has there been any changes between 01 February 2019 and 01 March 2019?",
@@ -33,11 +33,13 @@
           items: [
           {
               value: "Yes",
-              text: "Yes"
+              text: "Yes",
+              checked: (data["claim-date-options-backdating-changes-yn"] == "No")
             },
             {
               value: "No",
-              text: "No"
+              text: "No",
+              checked: (data["claim-date-options-backdating-changes-yn"] == "No")
             }
           ]
         }) }}
