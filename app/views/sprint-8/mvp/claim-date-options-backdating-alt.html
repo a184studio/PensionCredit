@@ -14,7 +14,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="claim-date-options-backdating-outside-yes" method="post">
+      <form action="claim-date-options-backdating-outside-yn" method="post">
 
         {% set altBackdatedDate %}
           {{ govukDateInput({
@@ -22,7 +22,7 @@
             namePrefix: "alternate-date",
             fieldset: {
               legend: {
-                text: "What is the differnt to xx/xx/xxxx?"
+                text: "Alternative date"
               }
             },
             hint: {
@@ -54,7 +54,7 @@
           name: "alt-backdated-date",
           fieldset: {
             legend: {
-              text: "Would you like to start your claim from 01/02/2019?",
+              text: "Would you like to start your claim from 01 February 2019?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
