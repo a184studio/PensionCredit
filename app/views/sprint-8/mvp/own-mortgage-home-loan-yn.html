@@ -14,13 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="own-mortgage-yn-router" method="post" class="form">
+    <form action="own-mortgage-home-loan-yn-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "own-mortgage-yn",
-        name: "own-mortgage-yn",
+        idPrefix: "own-mortgage-home-loan-yn",
+        name: "own-mortgage-home-loan-yn",
         fieldset: {
           legend: {
-            text: "Do you have a mortgage?",
+            text: "Do you have a mortgage or loan secured against your home?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -31,12 +31,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["own-mortgage-yn"] == "Yes")
+            checked: (data["own-mortgage-home-loan-yn"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["own-mortgage-yn"] == "No")
+            checked: (data["own-mortgage-home-loan-yn"] == "No")
           }
         ]
       }) }}
