@@ -19,7 +19,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="msic-all-current-accounts-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Add a current account from a bank or building society
+        Current account details
       </h1>
 
       {% set count = (data["account-count"] or 0) | int %}
@@ -48,7 +48,7 @@
       }) }}
 
       <br>
-      <p class="govuk-body">Total amount in this account, from <strong>Today</strong></p>
+      <p class="govuk-body">Total amount in this account <strong>today</strong></p>
 
       {{ govukInput({
         label: {
@@ -62,7 +62,7 @@
       {% set percentageField %}
         {{ govukInput({
           label: {
-            text: "Percentage stake"
+            text: "What percentage of the money in the account is yours?"
           },
           id: "msic-all-current-account-stake",
           name: "msic-all-current-account-stake-" + count,
@@ -82,11 +82,11 @@
         items: [
           {
             value: "You",
-            text: "You"
+            text: "Only you"
           },
           {
             value: "Joint account",
-            text: "Joint account (joint account)",
+            text: "Joint account",
             conditional: {
               html: percentageField
             }
