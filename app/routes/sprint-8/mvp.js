@@ -277,7 +277,7 @@ router.post(`${baseUrl}/rent-council-tax-yn-router`, (req, res) => { // router n
 
 router.post(`${baseUrl}/rent-housing-benefit-yn-router`, (req, res) => { // router name
 
-  const rentHousingBenefitApply = req.session.data['rent-housing-benefit-tax-yn']  // name of data / id name
+  const rentHousingBenefitApply = req.session.data['rent-housing-benefit-yn']  // name of data / id name
 
   if (rentHousingBenefitApply === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/address-summary`)
