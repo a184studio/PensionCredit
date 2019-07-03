@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Backdating: Outside of UK - Pension Credit
+  Check for previous Pension Credit cliam - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,20 +14,22 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="claim-date-options-backdating-outside-out" method="post" class="form">
+      <form action="claim-date-summary" method="post">
 
         <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon app-warning-text--long-3" aria-hidden="true">!</span>
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
             <span class="govuk-warning-text__assistive">Warning</span>
-            Agent: Move to cam, or go back.
+            Agent: This scinario is not currenlty avable, PTPCAM and continue, or go back.
           </strong>
         </div>
 
+<h1 class="govuk-heading-xl">Soz. You cannot contunue with this application within the MyPC Beta</h1>
 
+{
 
         {{ govukButton({
-          text: "Continue"
+          text: "View summary"
         }) }}
       </form>
     </div>
