@@ -20,7 +20,7 @@
       </h1>
 
             <br>
-            <p class="govuk-body">Total amount in this account, from <strong>Today</strong></p>
+            <p class="govuk-body">Total amount in this account <strong>today</strong></p>
 
           {{ govukInput({
         label: {
@@ -35,7 +35,7 @@
       {% set percentageField %}
         {{ govukInput({
           label: {
-            text: "Percentage stake"
+            text: "What percentage of the money in the account is yours?"
           },
           id: "msic-post-office-card-account-stake",
           name: "msic-post-office-card-account-stake",
@@ -54,11 +54,11 @@
         items: [
           {
             value: "You",
-            text: "You"
+            text: "Only you"
           },
           {
             value: "Joint account",
-            text: "Joint account ()",
+            text: "Joint account",
             conditional: {
               html: percentageField
             }
