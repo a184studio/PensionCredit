@@ -112,6 +112,20 @@ router.post(`${baseUrl}/claim-date-options-advanced-yn-router`, (req, res) => {
 
 
 
+router.post(`${baseUrl}/claim-date-manual-eed-daf-yn-router`, (req, res) => {
+  const claimDateTest = req.session.data['claim-date-manual-eed-daf-yn']
+
+  if (claimDateTest === 'Yes') {
+    res.redirect(`${baseUrl}/claim-date-options-backdating-outside-yn`)
+  } else {
+    res.redirect(`${baseUrl}/claim-date-manual-eed-daf-reason`)
+  }
+})
+
+
+
+
+
 router.post(`${baseUrl}/security-router`, (req, res) => {
   const passedSecurity = req.session.data['passed-security']
 
