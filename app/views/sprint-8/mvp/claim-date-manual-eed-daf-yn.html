@@ -1,13 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add start date - Pension Credit
+  Check for previous Pension Credit cliam - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
 {% endblock %}
-{% from "date-input/macro.njk" import govukDateInput %}
 
 {% block content %}
 
@@ -25,36 +24,66 @@
           </strong>
         </div>
 
+
+        {% set noDate %}
+          {{ govukDateInput({
+            id: "alternate-date",
+            namePrefix: "alternate-date",
+            fieldset: {
+              legend: {
+                text: "What is the new date?"
+              }
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["alternate-date-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["alternate-date-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["alternate-date-year"]
+              }
+            ]
+          }) }}
+        {% endset -%}
+
         {{ govukRadios({
-          idPrefix: "claim-date-options-backdating-yn",
-          name: "claim-date-options-backdating-yn",
+          classes: "govuk-radios",
+          idPrefix: "claim-date-idoc-yn",
+          name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              text: "Do XX/XX/XXXX and XX/XX/XXXX match?",
+              text: "Make date applying form?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
-              },
-              hint: {
-                html: "<br><p class=\"hint\">
-                        XXXX Details
-                        </p><br>"
-              },
-          classes: "govuk-radios--inline",
+          },
+          hint: {
+            text: "Select one option."
+          },
           items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: (data["claim-date-options-backdating-yn"] == "Yes")
-            },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["claim-date-idoc-yn"] == "Yes")
+          },
             {
               value: "No",
               text: "No",
-              checked: (data["claim-date-options-backdating-yn"] == "No")
+              checked: (data["claim-date-idoc-yn"] == "No"),
+              conditional: {
+                html: noDate
+              }
             }
           ]
         }) }}
-
 
         {{ govukButton({
           text: "Continue"
