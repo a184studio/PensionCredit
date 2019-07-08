@@ -317,13 +317,51 @@
       </div>
     {% endif %}
 
-    {% if data["notepad-care-nursing-home-status"] %}
+
+{% if data["notepad-care-nursing-home-status"] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Status
+  </dt>
+  <dd class="govuk-summary-list__value">
+     {{ data["notepad-care-nursing-home-status"] }}, {{ data["notepad-care-nursing-home-status-more-detail"] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="notepad-carehome">
+      Change
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data["discharge-date-day"] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Discharge date
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data["discharge-date-day"] }} / XX {{ data["discharge-date-month"] }} / XX {{ data["discharge-date-year"] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="notepad-carehome">
+      Change
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+
+
+
+
+
+    {% if data["notepad-care-nursing-home-funding"] %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Care home stay
+        Funding
       </dt>
       <dd class="govuk-summary-list__value">
-        {{ data["notepad-care-nursing-home-status"] }}
+        {{ data["notepad-care-nursing-home-funding"] }},  {{ data["notepad-care-nursing-home-funding-more-detail"] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="notepad-carehome">
@@ -333,40 +371,7 @@
     </div>
   {% endif %}
 
-  {% if data["notepad-care-nursing-home-more-detail"] %}
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Discharge date
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data["discharge-date-day"] }} / {{ data["discharge-date-month"] }} / {{ data["discharge-date-year"] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="notepad-carehome">
-        Change
-      </a>
-    </dd>
-  </div>
-{% endif %}
 
-
-
-
-      {% if data["notepad-care-nursing-home-funding"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Funding
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["notepad-care-nursing-home-funding"] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="notepad-shared-ownership">
-              Change
-            </a>
-          </dd>
-        </div>
-    {% endif %}
 
     {% if data["notepad-care-nursing-home-property"] %}
       <div class="govuk-summary-list__row">
@@ -374,7 +379,7 @@
           Owns property
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["notepad-care-nursing-home-property"] }}
+          {{ data["notepad-care-nursing-home-property"] }}, {{ data["notepad-care-nursing-home-property-more-details"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="notepad-shared-ownership">
@@ -384,21 +389,6 @@
       </div>
   {% endif %}
 
-  {% if data["notepad-care-nursing-home-more-detail"] %}
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Notes
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data["notepad-care-nursing-home-more-detail"] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="notepad-carehome">
-        Change
-      </a>
-    </dd>
-  </div>
-{% endif %}
 
         <!-- Sheltered accommodation ------------------------------------------------------>
 
