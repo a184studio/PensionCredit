@@ -9,7 +9,8 @@
 {% endblock %}
 
 {% from "textarea/macro.njk" import govukTextarea %}
-
+{% from "radios/macro.njk" import govukRadios %}
+{% from "input/macro.njk" import govukInput %}
 
 {% block content %}
 
@@ -24,6 +25,20 @@
 
 <br>
 
+
+{% set textHtml %}
+{{ govukTextarea({
+  name: "notepad-sheltered-funding-more-detail",
+  id: "notepad-sheltered-funding-more-detail",
+  label: {
+    text: "Can you provide more detail?"
+  },
+  hint: {
+    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+  }
+}) }}
+{% endset -%}
+
 {{ govukRadios({
   idPrefix: "notepad-sheltered-funding",
   name: "notepad-sheltered-funding",
@@ -34,80 +49,87 @@
       classes: "govuk-fieldset__legend--m"
     }
   },
-
+  hint: {
+    text: "Select one option."
+  },
   items: [
+  {
+    value: "Local authority",
+    text: "Local authority",
+    checked: (data["notepad-sheltered-funding"] == "Local authority")
+  },
+  {
+    value: "Self-funded",
+    text: "Self-funded",
+    checked: (data["notepad-sheltered-funding"] == "Self-funded")
+  },
+  {
+    value: "Part Local authority and Self-funded",
+    text: "Part Local authority and part self-funded",
+    checked: (data["notepad-sheltered-funding"] == "Part Local authority and Self-funded")
+  },
     {
-      value: "Local authority",
-      text: "Local authority",
-      checked: (data["notepad-sheltered-funding"] == "Local authority")
-    },
-    {
-      value: "Self-funded",
-      text: "Self-funded",
-      checked: (data["notepad-sheltered-funding"] == "Self-funded")
-    },
-    {
-      value: "Part Local authority and Self-funded",
-      text: "Part Local authority and part self-funded",
-      checked: (data["notepad-sheltered-funding"] == "Part Local authority and Self-funded")
-    },
-    {
-      value: "Other",
-      text: "Other (Add details to notes)",
-      checked: (data["notepad-sheltered-funding"] == "Other")
+      value: "other-funding",
+      text: "Other",
+      checked: (data["notepad-sheltered-funding"] == "Other"),
+      conditional: {
+        html: textHtml
+      }
     }
   ]
 }) }}
 
-<br>
+
+
+{% set textHtml %}
+{{ govukTextarea({
+  name: "notepad-sheltered-property-more-detail",
+  id: "notepad-sheltered-property-more-detail",
+  label: {
+    text: "Can you provide more detail?"
+  },
+  hint: {
+    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+  }
+}) }}
+{% endset -%}
 
 {{ govukRadios({
   idPrefix: "notepad-sheltered-property",
   name: "notepad-sheltered-property",
   fieldset: {
     legend: {
-      text: "Do you own a residential property?",
+      text: "Do you own a residential property?
+",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
-
+  hint: {
+    text: "Select one option."
+  },
   items: [
-    {
-      value: "Yes",
-      text: "Yes",
-      checked: (data["notepad-sheltered-property"] == "Yes")
-    },
-    {
-      value: "No",
-      text: "No",
-      checked: (data["notepad-sheltered-property"] == "No")
-    },
+  {
+    value: "Yes",
+    text: "Yes",
+    checked: (data["notepad-sheltered-property"] == "Yes")
+  },
+  {
+    value: "No",
+    text: "No",
+    checked: (data["notepad-sheltered-property"] == "No")
+  },
     {
       value: "Other",
-      text: "Other (Add details to notes)",
-      checked: (data["notepad-sheltered-property"] == "Other")
+      text: "Other",
+      checked: (data["notepad-sheltered-property"] == "Other"),
+      conditional: {
+        html: textHtml
+      }
     }
   ]
 }) }}
-
-
 <br>
-
-<ul class="govuk-list">
-  <li>
-    Notes (Only mandatory if other is selected)
-  </li>
-</ul>
-
-
-        {{ govukTextarea({
-          name: "notepad-sheltered-detail",
-          id: "notepad-sheltered-detail",
-
-          value: data["notepad-sheltered-detail"]
-        }) }}
-
 
         {{ govukButton({
           text: "Continue"

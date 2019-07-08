@@ -9,11 +9,18 @@
 {% endblock %}
 
 {% from "textarea/macro.njk" import govukTextarea %}
+{% from "date-input/macro.njk" import govukDateInput %}
+{% from "radios/macro.njk" import govukRadios %}
+{% from "input/macro.njk" import govukInput %}
+{% set today = '' | formatDate %}
+
 
 
 {% block content %}
 
 {% include "includes/js-back-link.html" %}
+
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -23,8 +30,6 @@
         <h1 class="govuk-heading-xl">Care home or nursing home details</h1>
 
 <br>
-
-{% from "date-input/macro.njk" import govukDateInput %}
 
 {{ govukDateInput({
   id: "notepad-care-nursing-home-admission-date",
@@ -58,11 +63,9 @@
   ]
 }) }}
 
-<br>
 
-{% set today = '' | formatDate %}
 
-{% set altDate %}
+{% set dischargeDate %}
   {{ govukDateInput({
     id: "dischargeDate",
     namePrefix: "dischargeDate",
@@ -94,11 +97,20 @@
   }) }}
 {% endset %}
 
-
-
+{% set altDateNote %}
+{{ govukTextarea({
+  name: "notepad-care-nursing-home-status-more-detail",
+  id: "notepad-care-nursing-home-status-more-detail",
+  label: {
+    text: "Can you provide more detail about?"
+  },
+  hint: {
+    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+  }
+}) }}
+{% endset -%}
 
 {{ govukRadios({
-  classes: "govuk-radios",
   idPrefix: "notepad-care-nursing-home-status",
   name: "notepad-care-nursing-home-status",
   fieldset: {
@@ -108,7 +120,9 @@
       classes: "govuk-fieldset__legend--m"
     }
   },
-
+  hint: {
+    text: "Select one option."
+  },
   items: [
   {
     value: "Permanent",
@@ -116,59 +130,94 @@
     checked: (data["notepad-care-nursing-home-status"] == "Permanent")
   },
   {
+    value: "Temporary",
+    text: "Temporarily",
+    checked: (data["dischargeDate"] == "Temporary"),
+    conditional: {
+      html: dischargeDate
+    }
+  },
+  {
     value: "Don't know",
-    text: "Do not know (Add details to notes)",
-    checked: (data["notepad-care-nursing-home-status"] == "Dont know")
-  },
-    {
-      value: "Temporary",
-      text: "Temporarily",
-      checked: (data["dischargeDate"] == "Temporary"),
-      conditional: {
-        html: altDate
+    text: "Do not know",
+    checked: (data["notepad-care-nursing-home-status"] == "Dont know"),
+    conditional: {
+      html: altDateNote
+    }
+  }
+  ]
+}) }}
+
+<br>
+
+    {% set careHomefunding %}
+    {{ govukTextarea({
+      name: "notepad-care-nursing-home-funding-more-detail",
+      id: "notepad-care-nursing-home-funding-more-detail",
+      label: {
+        text: "Can you provide more detail?"
+      },
+      hint: {
+        text: "Do not include personal or financial information, like your National Insurance number or credit card details."
       }
-    }
-  ]
-}) }}
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "notepad-care-nursing-home-funding",
+      name: "notepad-care-nursing-home-funding",
+      fieldset: {
+        legend: {
+          text: "How is your stay in sheltered accommodation paid for?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Select one option."
+      },
+      items: [
+      {
+        value: "Local authority",
+        text: "Local authority",
+        checked: (data["notepad-care-nursing-home-funding"] == "Local authority")
+      },
+      {
+        value: "Self-funded",
+        text: "Self-funded",
+        checked: (data["notepad-care-nursing-home-funding"] == "Self-funded")
+      },
+      {
+        value: "Part Local authority and Self-funded",
+        text: "Part Local authority and part self-funded",
+        checked: (data["notepad-care-nursing-home-funding"] == "Part Local authority and Self-funded")
+      },
+        {
+          value: "other-funding",
+          text: "Other",
+          checked: (data["notepad-care-nursing-home-funding"] == "Other"),
+          conditional: {
+            html: careHomefunding
+          }
+        }
+      ]
+    }) }}
 
 <br>
 
-{{ govukRadios({
-  idPrefix: "notepad-care-nursing-home-funding",
-  name: "notepad-care-nursing-home-funding",
-  fieldset: {
-    legend: {
-      text: "How is your stay paid for?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
+
+{% set careHomefunding %}
+{{ govukTextarea({
+  name: "notepad-care-nursing-home-property-more-details",
+  id: "notepad-care-nursing-home-property-more-details",
+  label: {
+    text: "Can you provide more detail?"
   },
-
-  items: [
-    {
-      value: "Local authority",
-      text: "Local authority",
-      checked: (data["notepad-care-nursing-home-funding"] == "Local authority")
-    },
-    {
-      value: "Self-funded",
-      text: "Self-funded",
-      checked: (data["notepad-care-nursing-home-funding"] == "Self-funded")
-    },
-    {
-      value: "Part Local authority and Self-funded",
-      text: "Part Local authority and Self-funded",
-      checked: (data["notepad-care-nursing-home-funding"] == "Part Local authority and part self-funded")
-    },
-    {
-      value: "Other",
-      text: "Other (Add details to notes)",
-      checked: (data["notepad-care-nursing-home-funding"] == "Other")
-    }
-  ]
+  hint: {
+    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+  }
 }) }}
-
-<br>
+{% endset -%}
 
 {{ govukRadios({
   idPrefix: "notepad-care-nursing-home-property",
@@ -180,42 +229,30 @@
       classes: "govuk-fieldset__legend--m"
     }
   },
-
+  hint: {
+    text: "Select one option."
+  },
   items: [
-    {
-      value: "Yes",
-      text: "Yes",
-      checked: (data["notepad-care-nursing-home-property"] == "Yes")
-    },
-    {
-      value: "No",
-      text: "No",
-      checked: (data["notepad-care-nursing-home-property"] == "No")
-    },
-    {
-      value: "Other",
-      text: "Other (Add details to notes)",
-      checked: (data["notepad-care-nursing-home-property"] == "Other")
+  {
+    value: "Yes",
+    text: "Yes",
+    checked: (data["notepad-care-nursing-home-property"] == "Yes")
+  },
+  {
+    value: "No",
+    text: "No",
+    checked: (data["notepad-care-nursing-home-property"] == "No")
+  },
+  {
+    value: "Other",
+    text: "Other (Add details to notes)",
+    checked: (data["notepad-care-nursing-home-property"] == "Other"),
+      conditional: {
+        html: careHomefunding
+      }
     }
   ]
 }) }}
-
-
-<br>
-
-<ul class="govuk-list">
-  <li>
-    Notes
-  </li>
-</ul>
-
-
-        {{ govukTextarea({
-          name: "notepad-care-nursing-home-more-detail",
-          id: "carehome-more-detail",
-
-          value: data["notepad-care-nursing-home-more-detail"]
-        }) }}
 
 
         {{ govukButton({
