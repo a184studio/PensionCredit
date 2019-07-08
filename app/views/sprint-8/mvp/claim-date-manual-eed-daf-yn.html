@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add start date - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+{% from "date-input/macro.njk" import govukDateInput %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="claim-date-manual-eed-daf-reason" method="post">
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Agent: Check SeachLight or PTP CAM
+          </strong>
+        </div>
+
+        {{ govukRadios({
+          idPrefix: "claim-date-options-backdating-yn",
+          name: "claim-date-options-backdating-yn",
+          fieldset: {
+            legend: {
+              text: "Do XX/XX/XXXX and XX/XX/XXXX match?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+              },
+              hint: {
+                html: "<br><p class=\"hint\">
+                        XXXX Details
+                        </p><br>"
+              },
+          classes: "govuk-radios--inline",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["claim-date-options-backdating-yn"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["claim-date-options-backdating-yn"] == "No")
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
