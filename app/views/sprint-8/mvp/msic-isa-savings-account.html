@@ -16,12 +16,12 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="msic-isa-savings-accounts-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Add an ISAs, TESSA, TOISA or PEP
+        ISA details
       </h1>
 
       {{ govukInput({
         label: {
-          text: "Name of ISA, TESSA, TOISA or PEP"
+          text: "Name of ISA"
         },
         id: "msic-isa-savings-account-name",
         name: "msic-isa-savings-account-name",
@@ -42,7 +42,7 @@
 
           {{ govukInput({
         label: {
-          text: "Total amount in this account"
+          text: "Total amount in this account today"
         },
         id: "msic-isa-savings-account-amount",
         name: "msic-isa-savings-account-amount",

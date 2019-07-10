@@ -16,12 +16,12 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="msic-unit-trust-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Adding a Unit Trust account
+        Unit trust details
       </h1>
 
       {{ govukInput({
         label: {
-          text: "Name of company"
+          text: "Name of trust"
         },
         id: "msic-trust-account-name",
         name: "msic-trust-account-name",
@@ -31,21 +31,12 @@
 
           {{ govukInput({
         label: {
-          text: "Current total number of units"
+          text: "Total amount invested in trust"
         },
         id: "msic-trust-account-units",
         name: "msic-trust-account-units",
         classes: "govuk-input--width-20"
       }) }}
-
-      {{ govukInput({
-    label: {
-      text: "Unit value"
-    },
-    id: "msic-trust-account-value",
-    name: "msic-trust-account-value",
-    classes: "govuk-input--width-20"
-  }) }}
 
   {{ govukRadios({
     idPrefix: "msic-trust-account-read-from-statement",
