@@ -307,7 +307,7 @@
           Admission date
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["admission-date-day"] }}XX / {{ data["admission-date-month"] }}XX / {{ data["admission-date-year"] }}XX
+          {{ data["admission-date-day"] }}Day {{ data["admission-date-month"] }}Month {{ data["admission-date-year"] }}Year
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="notepad-carehome">
@@ -321,10 +321,26 @@
 {% if data["notepad-care-nursing-home-status"] %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    Status
+    Do you live there permanently or temporarily?
   </dt>
   <dd class="govuk-summary-list__value">
-     {{ data["notepad-care-nursing-home-status"] }}, {{ data["notepad-care-nursing-home-status-more-detail"] }}
+     {{ data["notepad-care-nursing-home-status"] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="notepad-carehome">
+      Change
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data["notepad-care-nursing-home-status-more-detail"] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Permanently or temporarily notes
+  </dt>
+  <dd class="govuk-summary-list__value">
+     {{ data["notepad-care-nursing-home-status-more-detail"] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="notepad-carehome">
@@ -340,7 +356,7 @@
     Discharge date
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data["discharge-date-day"] }} / XX {{ data["discharge-date-month"] }} / XX {{ data["discharge-date-year"] }}
+    {{ data["discharge-date-day"] }} XX {{ data["discharge-date-month"] }} Month {{ data["discharge-date-year"] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="notepad-carehome">
@@ -352,16 +368,13 @@
 
 
 
-
-
-
     {% if data["notepad-care-nursing-home-funding"] %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Funding
+        How is your stay in the nursing home or care home paid for
       </dt>
       <dd class="govuk-summary-list__value">
-        {{ data["notepad-care-nursing-home-funding"] }},  {{ data["notepad-care-nursing-home-funding-more-detail"] }}
+        {{ data["notepad-care-nursing-home-funding"] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="notepad-carehome">
@@ -371,15 +384,31 @@
     </div>
   {% endif %}
 
+  {% if data["notepad-care-nursing-home-funding-more-detail"] %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      How is your stay in the nursing home or care home paid for, notes
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data["notepad-care-nursing-home-funding-more-detail"] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="notepad-carehome">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
 
 
     {% if data["notepad-care-nursing-home-property"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Owns property
+          Do you own a residential property?
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["notepad-care-nursing-home-property"] }}, {{ data["notepad-care-nursing-home-property-more-details"] }}
+          {{ data["notepad-care-nursing-home-property"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="notepad-shared-ownership">
@@ -388,6 +417,26 @@
         </dd>
       </div>
   {% endif %}
+
+  {% if data["notepad-care-nursing-home-property-more-details"] %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Do you own a residential property notes
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data["notepad-care-nursing-home-property-more-details"] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="notepad-shared-ownership">
+          Change
+        </a>
+      </dd>
+    </div>
+{% endif %}
+
+
+
+
 
 
         <!-- Sheltered accommodation ------------------------------------------------------>
