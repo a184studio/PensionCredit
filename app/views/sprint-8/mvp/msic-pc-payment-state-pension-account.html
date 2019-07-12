@@ -20,31 +20,6 @@
       </h1>
 
 
-{{ govukRadios({
-  idPrefix: "msic-pc-payment-alternative-account-bank-buildings",
-  name: "msic-pc-payment-alternative-account-bank-buildings",
-  fieldset: {
-    legend: {
-      text: "Bank account or building society?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-{
-    value: "Bank account",
-    text: "Bank account",
-    checked: (data["dischargeDate"] == "Bank account")
-  },
-  {
-    value: "Building Society",
-    text: "Building Society",
-    checked: (data["notepad-care-nursing-home-status"] == "Building Society")
-  }
-  ]
-}) }}
-
-
       {{ govukRadios({
         idPrefix: "msic-pc-payment-alternative-account-type",
         name: "msic-pc-payment-alternative-account-type",
