@@ -708,7 +708,7 @@ router.post(`${baseUrl}/msic-second-property-yn-router`, (req, res) => {
   if (hasSecondProperty === 'yes') {
     res.redirect(`${baseUrl}/msic-second-property`)
   } else {
-    res.redirect(`${baseUrl}/msic-all-money-accounts-pre-summary`)
+    res.redirect(`${baseUrl}/msic-missing-account-yn`)
   }
 })
 

@@ -10,14 +10,11 @@ Cash lump sum? - Pension Credit
 
 {% block content %}
 
-{% include "includes/js-back-link.html" %}
-
 
 <form action="msic-has-cash-lump-sum-yn-router" method="post" class="form">
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-  <span class="govuk-caption-m">Money, savings and investments</span>
 
   {{ govukRadios({
     idPrefix: "msic-has-cash-lump-sum-yn",

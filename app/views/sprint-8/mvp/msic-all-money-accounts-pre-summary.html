@@ -10,14 +10,12 @@ Account with: {% extends "layout.html" %}
 
 {% block content %}
 
-{% include "includes/js-back-link.html" %}
-
 <form action="msic-all-money-accounts-summary-route" method="post">
 
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-  <span class="govuk-caption-m">Money, savings and investments</span>
+    <span class="govuk-caption-m"></span>
 
   {{ govukRadios({
     idPrefix: "msic-has-missing-account-yn",
