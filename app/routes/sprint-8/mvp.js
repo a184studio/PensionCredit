@@ -758,7 +758,7 @@ router.post(`${baseUrl}/msic-all-money-accounts-check-yn-router`, (req, res) => 
   if (hasSecondProperty === 'yes') {
     res.redirect(`${baseUrl}/task-list`)
   } else {
-    res.redirect(`${baseUrl}/msic-all-money-accounts-pre-summary`)
+    res.redirect(`${baseUrl}/msic-missing-account-yn`)
   }
 })
 
