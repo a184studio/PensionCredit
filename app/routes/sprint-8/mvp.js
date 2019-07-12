@@ -574,7 +574,7 @@ router.post(`${baseUrl}/msic-pc-payment-router`, (req, res) => {
   const hasCurrentAccount = req.session.data['msic-pc-payment']
 
   if (hasCurrentAccount === 'Same account as State Pension') {
-    res.redirect(`${baseUrl}/msic-pc-payment-type-balance`)
+    res.redirect(`${baseUrl}/msic-pc-payment-state-pension-account`)
   } else {
     res.redirect(`${baseUrl}/msic-pc-payment-alternative-account`)
   }

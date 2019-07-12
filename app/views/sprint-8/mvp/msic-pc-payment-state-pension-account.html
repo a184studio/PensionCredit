@@ -16,66 +16,9 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="msic-pc-payment-frequency" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Which account do you want us to pay any Pension Credit into?
+        Extra details about State Pension payment method
       </h1>
 
-      {{ govukInput({
-        label: {
-          text: "Name on account"
-        },
-        id: "name-on-account",
-        name: "name-on-account",
-        classes: "govuk-input--width-20",
-        value: data["name-on-account"]
-      }) }}
-
-
-
-<br>
-
-{% set bankAccount %}
-{{ govukInput({
-  name: "sort-code",
-  id: "sort-code",
-  classes: "govuk-input--width-10",
-  value: data["sort-code"],
-  label: {
-    text: "Sort code"
-  }
-}) }}
-
-{{ govukInput({
-  name: "Account number",
-  id: "Account number",
-  classes: "govuk-input--width-10",
-  value: data["account number"],
-  label: {
-    text: "Account number"
-  }
-}) }}
-{% endset -%}
-
-{% set buildingSociety %}
-{{ govukInput({
-  name: "Roll number",
-  id: "Roll number",
-  classes: "govuk-input--width-20",
-  value: data["roll-number"],
-  label: {
-    text: "Roll number"
-  }
-}) }}
-
-{{ govukInput({
-  name: "Account number",
-  id: "Account number",
-  classes: "govuk-input--width-10",
-  value: data["account number"],
-  label: {
-    text: "Account number"
-  }
-}) }}
-{% endset -%}
 
 {{ govukRadios({
   idPrefix: "msic-pc-payment-alternative-account-bank-buildings",
@@ -91,18 +34,12 @@
 {
     value: "Bank account",
     text: "Bank account",
-    checked: (data["dischargeDate"] == "Bank account"),
-    conditional: {
-      html: bankAccount
-    }
+    checked: (data["dischargeDate"] == "Bank account")
   },
   {
     value: "Building Society",
     text: "Building Society",
-    checked: (data["notepad-care-nursing-home-status"] == "Building Society"),
-    conditional: {
-      html: buildingSociety
-    }
+    checked: (data["notepad-care-nursing-home-status"] == "Building Society")
   }
   ]
 }) }}
