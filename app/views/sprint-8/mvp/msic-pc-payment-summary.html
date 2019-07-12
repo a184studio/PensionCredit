@@ -24,7 +24,7 @@
 
 
 
-        {% if data["name-on-account"]%}
+        {% if data["msic-pc-payment"] == "An alternative account" %}
           {{ govukSummaryList({
             rows: [
 
@@ -139,6 +139,24 @@
 
               {
                 key: {
+                  text: "Account number"
+                },
+                value: {
+                  text: data["Account number"]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "msic-pc-payment-alternative-account",
+                      text: "Change",
+                      visuallyHiddenText: "account number"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
                   text: "Balance of account"
                 },
                 value: {
@@ -178,7 +196,7 @@
 
 <!------------------ Same as State Pension account------------------------->
 
-        {% if data["msic-pc-payment-alternative-account-balance"]%}
+        {% if data["msic-pc-payment"] == "Same account as State Pension" %}
           {{ govukSummaryList({
             rows: [
 
