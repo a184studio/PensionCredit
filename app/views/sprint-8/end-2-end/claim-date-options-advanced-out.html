@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check for previous Pension Credit cliam - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="claim-date-summary" method="post">
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Agent: XXX.
+          </strong>
+        </div>
+
+<h1 class="govuk-heading-xl">Why don't you agree with the XX/XX/XXXX</h1>
+
+{% from "textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "claim-date-options-advanced-out-more-detail",
+  id: "claim-date-options-advanced-out-more-detailmore-detail",
+  label: {
+    text: "Details?"
+  },
+  hint: {
+    text: "Details"
+  }
+}) }}
+
+
+        {{ govukButton({
+          text: "Finish and close"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

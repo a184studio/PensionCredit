@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers: Claim date
+    </h1>
+
+    <dl class="govuk-summary-list govuk-summary-list--long">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          221B Baker Street<br>
+          Marylebone<br>
+          London<br>
+          NW1 5RT
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="address-choice">
+            Change
+          </a>
+        </dd>
+      </div>
+
+<!-- Type ------------------------------------------------------>
+
+{% if data["home-ownership"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Description of where you live
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["home-ownership"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="home-ownership">
+            Change
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+
+      <!-- Owns ------------------------------------------------------>
+
+{% if data["own-service-charges"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Service charges
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["own-service-charges"] or "None "}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="service-charges">
+              Change
+            </a>
+          </dd>
+        </div>
+{% endif %}
+
+
+
+
+      <!-------------------------------------------------------->
+
+
+      </dl>
+
+<br><br>
+
+    <form action="task-list" method="post">
+      <input type="hidden" name="claim-date-complete" value="true"/>
+      <p>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </p>
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
+
+  </div>
+</div>
+{% endblock %}

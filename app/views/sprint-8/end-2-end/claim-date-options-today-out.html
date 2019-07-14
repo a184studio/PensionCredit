@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check for previous Pension Credit cliam - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="claim-date-summary" method="post">
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Agent: This scinario is not currenlty avable, PTPCAM and continue, or go back.
+          </strong>
+        </div>
+
+<h1 class="govuk-heading-xl">Soz. You cannot contunue with this application within the MyPC Beta</h1>
+
+{% from "textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "Why does the user wish to have an aturnitive date from what they are eleigible to?"
+  },
+  hint: {
+    text: "Details"
+  }
+}) }}
+
+
+        {{ govukButton({
+          text: "Finish and close"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
