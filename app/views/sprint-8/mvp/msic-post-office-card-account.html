@@ -44,29 +44,6 @@
       {% endset %}
 
       {{ govukRadios({
-        idPrefix: "msic-post-office-card-account-owner",
-        name: "msic-post-office-card-account-owner",
-        fieldset: {
-          legend: {
-            text: "Who does this account belong to?"
-          }
-        },
-        items: [
-          {
-            value: "You",
-            text: "Only you"
-          },
-          {
-            value: "Joint account",
-            text: "Joint account",
-            conditional: {
-              html: percentageField
-            }
-          }
-        ]
-      }) }}
-
-      {{ govukRadios({
         idPrefix: "msic-post-office-card-account-read-from-statement",
         name: "msic-post-office-card-account-read-from-statement",
         fieldset: {
