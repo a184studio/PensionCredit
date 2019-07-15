@@ -235,9 +235,9 @@
                 <a class="app-task-list__task-name" href="msic-pc-payment" aria-describedby="eligibility-completed">
                   All accounts
                 </a>
-                {% if data["money-you-have-complete"] == "true" %}
+                {% if data["money-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["money-you-have-complete"] == "in-progress" %}
+                {% elif data["money-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
