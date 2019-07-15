@@ -47,19 +47,7 @@
 
   </div></div><br><br>
 
-  <!----Break---->
-      <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
-  <!----Break---->
 
-  <!--------------------------SHARED SUMMARY + FINANCIAL TOTAL ------------------------------------->
-
-  <br>
-
-<!--
-      <h2 class="govuk-heading-l">
-        Total: £2,000.56
-      </h2>
--->
 
     <!----Headline---->
   {% if data["account-count"] %}<div class="govuk-accordion" data-module="accordion" id="accordion-default">{% endif %}
@@ -84,6 +72,7 @@
         {{ govukSummaryList({
           rows: [
           {
+            classes: 'govuk-summary-list--no-border',
             key: {
               text: "Total"
             },
@@ -101,44 +90,6 @@
                   href: "msic-remove",
                   html: "Remove",
                   visuallyHiddenText: ""
-                }
-              ]
-            }
-          },
-
-          {
-            key: {
-              text: "Account owner"
-            },
-            value: {
-              text: data['msic-post-office-card-account-owner']
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: ""
-                }
-              ]
-            }
-          },
-
-          {
-            classes: 'govuk-summary-list--no-border',
-
-            key: {
-              text: "% stake in joint account"
-            },
-            value: {
-              text: data['msic-post-office-card-account-stake']
-            },
-            actions: {
-              items: [
-                {
-                  href: "msic-post-office-card-account-stake",
-                  text: "",
-                  visuallyHiddenText: "XXXX"
                 }
               ]
             }
