@@ -189,7 +189,44 @@
                     }
                   ]
                 }
+              },
+              {
+              key: {
+                text: "Account owner, %"
+              },
+              value: {
+                text: data['msic-pc-payment-alternative-account-owner']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "Change",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
               }
+              },
+
+              {
+                key: {
+                  text: "Percent (%) state"
+                },
+                value: {
+                  text: data['msic-pc-payment-alternative-account-stake']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "Change",
+                      visuallyHiddenText: "XXXX"
+                    }
+                  ]
+                }
+              }
+
+
             ]
           }) }}
         {% endif %}

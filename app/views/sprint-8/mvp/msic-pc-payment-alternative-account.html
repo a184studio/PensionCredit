@@ -60,7 +60,7 @@
   name: "Roll number",
   id: "Roll number",
   classes: "govuk-input--width-20",
-  value: data["roll number"],
+  value: data["roll-number"],
   label: {
     text: "Roll number"
   }
@@ -157,17 +157,14 @@
   classes: "govuk-input--width-20"
 }) }}
 
-
 <br>
-
-
 {% set percentageField %}
 {{ govukInput({
   label: {
     text: "What percentage of the money in the account is yours?"
   },
-  id: "msic-pc-payment-alternative-account-owner",
-  name: "msic-pc-payment-alternative-account-owner",
+  id: "msic-pc-payment-alternative-account-stake",
+  name: "msic-pc-payment-alternative-account-stake",
   classes: "govuk-input--width-5"
 }) }}
 {% endset %}
@@ -196,6 +193,8 @@ items: [
 ]
 }) }}
 
+
+<br>
 
 <br>
 
