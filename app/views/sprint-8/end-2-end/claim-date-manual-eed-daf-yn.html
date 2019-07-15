@@ -16,15 +16,6 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-manual-eed-daf-yn-router" method="post">
 
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            Agent: Check SeachLight or PTP CAM
-          </strong>
-        </div>
-
-
         {% set noDate %}
           {{ govukDateInput({
             id: "claim-date-manual-eed-daf-yn-alternate-date",
@@ -60,7 +51,7 @@
           name: "claim-date-manual-eed-daf-yn",
           fieldset: {
             legend: {
-              text: "Are you happy to start claim from Monday, 15 April 2019",
+              text: "Are you happy to start claim from Monday, 16 April 2019",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
