@@ -56,13 +56,14 @@
 {% endset -%}
 
 {% set buildingSociety %}
+
 {{ govukInput({
-  name: "Roll number",
-  id: "Roll number",
-  classes: "govuk-input--width-20",
-  value: data["roll-number"],
+  name: "sort-code",
+  id: "sort-code",
+  classes: "govuk-input--width-10",
+  value: data["sort-code"],
   label: {
-    text: "Roll number"
+    text: "Sort code"
   }
 }) }}
 
@@ -73,6 +74,16 @@
   value: data["account number"],
   label: {
     text: "Account number"
+  }
+}) }}
+
+{{ govukInput({
+  name: "Roll number",
+  id: "Roll number",
+  classes: "govuk-input--width-20",
+  value: data["roll-number"],
+  label: {
+    text: "Roll number (Optional)"
   }
 }) }}
 {% endset -%}
