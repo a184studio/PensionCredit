@@ -19,33 +19,49 @@
       Check your answers: Claim date
     </h1>
 
+
     <dl class="govuk-summary-list govuk-summary-list--long">
+
+      {% if data["claim-date-idoc-yn"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                IDOC
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["claim-date-idoc-yn"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="home-ownership">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data["alternate-date"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Alternate date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["alternate-date"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="home-ownership">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+
+{% if data["claim-date-manual-eed-daf-yn"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Address
+          What is the earliest entitlement date?
         </dt>
         <dd class="govuk-summary-list__value">
-          221B Baker Street<br>
-          Marylebone<br>
-          London<br>
-          NW1 5RT
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="address-choice">
-            Change
-          </a>
-        </dd>
-      </div>
-
-<!-- Type ------------------------------------------------------>
-
-{% if data["home-ownership"] %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Description of where you live
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data["home-ownership"] }}
+          16 April 2019
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="home-ownership">
@@ -53,26 +69,113 @@
           </a>
         </dd>
       </div>
-      {% endif %}
+  {% endif %}
+
+{% if data["claim-date-manual-eed-daf-yn"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Happy to start on date discussed
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["claim-date-manual-eed-daf-yn"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="home-ownership">
+            Change
+          </a>
+        </dd>
+      </div>
+  {% endif %}
 
 
-      <!-- Owns ------------------------------------------------------>
-
-{% if data["own-service-charges"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Service charges
+            Date chosen
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["own-service-charges"] or "None "}}
+            Day / Month / Year
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="service-charges">
+            <a href="home-ownership">
               Change
             </a>
           </dd>
         </div>
-{% endif %}
+
+    {% if data["claim-date-manual-eed-daf-reason"] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reason for change
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["claim-date-manual-eed-daf-reason"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="home-ownership">
+                Change
+              </a>
+            </dd>
+          </div>
+      {% endif %}
+
+
+
+  {% if data["claim-date-manual-eed-daf-yn"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Agreed date of claim
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monday, 15 April 2019
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="home-ownership">
+              Change
+            </a>
+          </dd>
+        </div>
+    {% endif %}
+
+
+  {% if data["claim-date-options-backdating-outside-yn"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Outside the UK in backdating period?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["claim-date-options-backdating-outside-yn"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="home-ownership">
+              Change
+            </a>
+          </dd>
+        </div>
+    {% endif %}
+
+    {% if data["claim-date-options-backdating-changes-yn"] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Changes in the backdating period?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["claim-date-options-backdating-changes-yn"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="home-ownership">
+                Change
+              </a>
+            </dd>
+          </div>
+      {% endif %}
+
+
+
+
+
+
+
+
 
 
 
