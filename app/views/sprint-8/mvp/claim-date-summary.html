@@ -22,6 +22,36 @@
 
     <dl class="govuk-summary-list govuk-summary-list--long">
 
+      {% if data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year'] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="home-ownership">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+                  <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Todays date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Day / Month / Year / Todays date
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="home-ownership">
+                  Change
+                </a>
+              </dd>
+            </div>
+
       {% if data["claim-date-idoc-yn"] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -168,16 +198,6 @@
             </dd>
           </div>
       {% endif %}
-
-
-
-
-
-
-
-
-
-
 
 
       <!-------------------------------------------------------->
