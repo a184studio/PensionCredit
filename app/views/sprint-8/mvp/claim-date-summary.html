@@ -19,23 +19,49 @@
       Check your answers: Claim date
     </h1>
 
+
     <dl class="govuk-summary-list govuk-summary-list--long">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Address
-        </dt>
-        <dd class="govuk-summary-list__value">
-          221B Baker Street<br>
-          Marylebone<br>
-          London<br>
-          NW1 5RT
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="address-choice">
-            Change
-          </a>
-        </dd>
-      </div>
+
+      {% if data["claim-date-idoc-yn"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                IDOC
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["claim-date-idoc-yn"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="home-ownership">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data["alternate-date"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Alternate date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["alternate-date"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="home-ownership">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+
+
+
+
+
+
+
+
 
 <!-- Type ------------------------------------------------------>
 
