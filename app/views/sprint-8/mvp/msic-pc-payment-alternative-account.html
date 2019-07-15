@@ -160,6 +160,43 @@
 
 <br>
 
+
+{% set percentageField %}
+{{ govukInput({
+  label: {
+    text: "What percentage of the money in the account is yours?"
+  },
+  id: "msic-pc-payment-alternative-account-owner",
+  name: "msic-pc-payment-alternative-account-owner",
+  classes: "govuk-input--width-5"
+}) }}
+{% endset %}
+
+{{ govukRadios({
+idPrefix: "msic-pc-payment-alternative-account-owner",
+name: "msic-pc-payment-alternative-account-owner",
+fieldset: {
+  legend: {
+    text: "Who does this account belong to?",
+    classes: "govuk-fieldset__legend--s"
+  }
+},
+items: [
+  {
+    value: "You",
+    text: "Only you"
+  },
+  {
+    value: "Joint account",
+    text: "Joint account",
+    conditional: {
+      html: percentageField
+    }
+  }
+]
+}) }}
+
+
 <br>
 
 
