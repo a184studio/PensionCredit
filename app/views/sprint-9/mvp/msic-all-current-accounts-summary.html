@@ -50,18 +50,6 @@
 
   </div></div><br><br>
 
-  <!----Break---->
-      <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
-  <!----Break---->
-
-  <!--------------------------SHARED SUMMARY + FINANCIAL TOTAL ------------------------------------->
-
-  <br>
-
-      <h2 class="govuk-heading-l">
-        Total: £2,000.56
-      </h2>
-
     <!----Headline---->
   {% if data["account-count"] %}<div class="govuk-accordion" data-module="accordion" id="accordion-default">{% endif %}
 
@@ -109,23 +97,6 @@
                   },
                   {
                     key: {
-                      text: "Last four digits"
-                    },
-                    value: {
-                      text: data['msic-all-current-account-last-digits-' + i]
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "",
-                          visuallyHiddenText: "XXX"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    key: {
                       text: "Total"
                     },
                     value: {
@@ -143,7 +114,7 @@
                   },
                   {
                     key: {
-                      text: "Account owner"
+                      text: "Account belongs to"
                     },
                     value: {
                       text: data['current-owner-' + i]
@@ -159,8 +130,9 @@
                     }
                   },
                   {
+                    classes: 'govuk-summary-list--no-border',
                     key: {
-                      text: "Stake in joint account"
+                      text: "Percent of money that is yours"
                     },
                     value: {
                       text: data['msic-all-current-account-stake-' + i]
@@ -169,24 +141,6 @@
                       items: [
                         {
                           href: "msic-all-current-account-stake",
-                          text: "",
-                          visuallyHiddenText: "XXXX"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    classes: 'govuk-summary-list--no-border',
-                    key: {
-                      text: "Read from statement"
-                    },
-                    value: {
-                      text: "Yes/No"
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "msic-all-current-account-need-evidence",
                           text: "",
                           visuallyHiddenText: "XXXX"
                         }

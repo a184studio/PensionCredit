@@ -139,7 +139,7 @@
               },
               {
               key: {
-                text: "Account owner, %"
+                text: "Account belongs to, %"
               },
               value: {
                 text: data['msic-all-savings-account-owner']
@@ -242,23 +242,6 @@
                   },
                   {
                     key: {
-                      text: "Last four digits"
-                    },
-                    value: {
-                      text: data['msic-all-current-account-last-digits-' + i]
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "",
-                          visuallyHiddenText: "XXX"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    key: {
                       text: "Total"
                     },
                     value: {
@@ -292,8 +275,9 @@
                     }
                   },
                   {
+                    classes: 'govuk-summary-list--no-border',
                     key: {
-                      text: "Stake in joint account"
+                      text: "Percent of money that is yours"
                     },
                     value: {
                       text: data['msic-all-current-account-stake-' + i]
@@ -302,24 +286,6 @@
                       items: [
                         {
                           href: "msic-all-current-account-stake",
-                          text: "",
-                          visuallyHiddenText: "XXXX"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    classes: 'govuk-summary-list--no-border',
-                    key: {
-                      text: "Read from statement"
-                    },
-                    value: {
-                      text: "Yes/No"
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "msic-all-current-account-need-evidence",
                           text: "",
                           visuallyHiddenText: "XXXX"
                         }
