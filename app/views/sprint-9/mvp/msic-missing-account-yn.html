@@ -22,14 +22,17 @@ Account with: {% extends "layout.html" %}
   {{ govukRadios({
     idPrefix: "msic-has-missing-account-yn",
     name: "msic-has-missing-account-yn",
+    classes: "govuk-radios--inline",
     fieldset: {
       legend: {
-        text: "Have you missed out any other type of account?",
+        text: "Do you have any other money, savings or investments that you have not told us about?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
-        },
-    classes: "govuk-radios--inline",
+    },
+    hint: {
+      text: ""
+    },
     items: [
       {
         value: "yes",
@@ -372,6 +375,8 @@ Account with: {% extends "layout.html" %}
 
         <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
+
+
 
           {{ govukSummaryList({
             rows: [

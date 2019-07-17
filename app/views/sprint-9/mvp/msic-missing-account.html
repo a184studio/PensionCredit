@@ -16,12 +16,12 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="msic-missing-account-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Add an additional account
+        Other money, savings or investments that you have not told us about
       </h1>
 
       {{ govukInput({
         label: {
-          text: "Name or type of account"
+          text: "What is this money?"
         },
         id: "msic-missing-account-name",
         name: "msic-missing-account-name",
@@ -41,17 +41,15 @@
         }
       }) }}
 -->
-            <br>
-            <p class="govuk-body">Total amount in this account, from <strong>Today</strong></p>
 
-          {{ govukInput({
-        label: {
-          text: ""
-        },
-        id: "msic-missing-account-amount",
-        name: "msic-missing-account-amount",
-        classes: "govuk-input--width-20"
-      }) }}
+      {{ govukInput({
+    label: {
+      html: "Total amount <strong>today</strong>"
+    },
+    id: "msic-missing-account-amount",
+    name: "msic-missing-account-amount",
+    classes: "govuk-input--width-20"
+  }) }}
 
       {% set percentageField %}
         {{ govukInput({
@@ -63,6 +61,10 @@
           classes: "govuk-input--width-5"
         }) }}
       {% endset %}
+
+<!--
+      }) }}
+
 
       {{ govukRadios({
         idPrefix: "msic-missing-account-owner",
@@ -76,17 +78,19 @@
         items: [
           {
             value: "You",
-            text: "You"
+            text: "Only you"
           },
           {
             value: "Joint account",
-            text: "Joint account (joint account)",
+            text: "Joint account",
             conditional: {
               html: percentageField
             }
           }
         ]
       }) }}
+-->
+
 
 <!--
       {{ govukRadios({
@@ -111,7 +115,7 @@
       }) }}
 -->
       <br>
-
+<!--
       <p class="govuk-body">Because this wan't on our list give more details if possible</p>
 
       {{ govukTextarea({
@@ -120,6 +124,8 @@
 
         value: data["msic-missing-account-money-detail"]
       }) }}
+
+-->
 
       {{ govukButton({
         text: "Continue"
