@@ -22,6 +22,7 @@ router.use(require('./routes/sprint-7/mvp'))
 router.use(require('./routes/sprint-7/msic-loop'))
 router.use(require('./routes/sprint-8/mvp'))
 router.use(require('./routes/sprint-8/end-2-end'))
+router.use(require('./routes/sprint-9/mvp'))
 
 
 
