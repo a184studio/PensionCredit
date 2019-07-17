@@ -31,12 +31,21 @@
 
           {{ govukInput({
         label: {
-          html: "Total amount invested in trust <strong>today</strong>"
+          html: "Value of trust on day of purchase"
         },
-        id: "msic-trust-account-units",
-        name: "msic-trust-account-units",
+        id: "msic-trust-account-purchase-value",
+        name: "msic-trust-account-purchase-value",
         classes: "govuk-input--width-20"
       }) }}
+
+      {{ govukInput({
+    label: {
+      html: "Total amount invested in trust <strong>today</strong>"
+    },
+    id: "msic-trust-account-units",
+    name: "msic-trust-account-units",
+    classes: "govuk-input--width-20"
+  }) }}
 
 <!--
   {{ govukRadios({

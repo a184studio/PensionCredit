@@ -29,7 +29,6 @@
         classes: "govuk-input--width-20"
       }) }}
 
-
       {{ govukInput({
         label: {
           html: "Total value of bonds, from <strong>today</strong>"
@@ -40,6 +39,30 @@
         attributes: {
           maxlength: 20
         }
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "msic-capital-bond-account-life-assurance",
+        name: "msic-capital-bond-account-life-assurance",
+        fieldset: {
+          legend: {
+            text: "Does this capital bond have life assurance?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["msic-capital-bond-account-life-assurance"] == "Yes")
+          },
+          {
+            value: "No (CAS)",
+            text: "No (CAS)",
+            checked: (data["msic-capital-bond-account-life-assurance"] == "No (CAS)")
+          }
+        ]
       }) }}
 
 <!--

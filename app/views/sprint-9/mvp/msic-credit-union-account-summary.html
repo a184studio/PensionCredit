@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Do you have any more shares? - Pension Credit
+  Money, savings and investments - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -12,33 +12,36 @@ Do you have any more shares? - Pension Credit
 
 {% include "includes/js-back-link.html" %}
 
-<form action="msic-has-unit-trust-account-yn" method="post">
+<form action="msic-has-post-office-card-account-yn" method="post">
+
+
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
+
   {{ govukRadios({
-    classes: "govuk-radios--inline",
-    idPrefix: "changed-name",
-    name: "changed-name",
+    idPrefix: "msic-has-savings-account-yn",
+    name: "msic-has-savings-account-yn",
     fieldset: {
       legend: {
-        text: "Do you have any more shares?",
+        text: "Do you have any more credit union accounts",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
-    },
-    hint: {
-      text: ""
-    },
+        },
+
+    classes: "govuk-radios--inline",
     items: [
       {
-        value: "Yes",
-        text: "Yes"
+        value: "yes",
+        text: "Yes",
+        checked: (data["msic-has-savings-account-yn"] == "yes")
       },
       {
         value: "no",
-        text: "No"
+        text: "No",
+        checked: (data["msic-has-savings-account-yn"] == "no")
       }
     ]
   }) }}
@@ -48,7 +51,6 @@ Do you have any more shares? - Pension Credit
   }) }}
 
   </div></div><br><br>
-
 
     <!----Headline---->
   {% if data["account-count"] %}<div class="govuk-accordion" data-module="accordion" id="accordion-default">{% endif %}
@@ -180,7 +182,7 @@ Do you have any more shares? - Pension Credit
       <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
-            <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property">  </a>
+            <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property"> </a>
           </span>
         </h2>
       </div>
@@ -320,7 +322,7 @@ Do you have any more shares? - Pension Credit
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-2">
-                    <strong>Money: Lump sum </strong><a class="govuk-accordion__link" href="msic-cash-lump-sum">  </a>
+                    <strong>Money: Lump sum </strong><a class="govuk-accordion__link" href="msic-cash-lump-sum"> </a>
                   </span>
                 </h2>
               </div>
@@ -370,7 +372,7 @@ Do you have any more shares? - Pension Credit
       <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-3">
-            <strong>Money: held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad">  </a>
+            <strong>Money: held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad"> </a>
           </span>
         </h2>
       </div>
@@ -420,7 +422,7 @@ Do you have any more shares? - Pension Credit
       <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-4">
-            <strong>Money: At home </strong><a class="govuk-accordion__link" href="msic-cash-at-home">  </a>
+            <strong>Money: At home </strong><a class="govuk-accordion__link" href="msic-cash-at-home"> </a>
           </span>
         </h2>
       </div>
@@ -469,7 +471,7 @@ Do you have any more shares? - Pension Credit
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-5">
-              <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account">  </a>
+              <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account"> </a>
             </span>
           </h2>
         </div>
@@ -537,7 +539,7 @@ Do you have any more shares? - Pension Credit
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-6">
-                <strong>(#) Shares </strong><a class="govuk-accordion__link" href="msic-shares-account">  </a>
+                <strong>(#) Shares </strong><a class="govuk-accordion__link" href="msic-shares-account"> </a>
               </span>
             </h2>
           </div>
@@ -605,7 +607,7 @@ Do you have any more shares? - Pension Credit
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-7">
-                <strong>(#) Capital bonds </strong><a class="govuk-accordion__link" href="msic-capital-bond-account">  </a>
+                <strong>(#) Capital bonds </strong><a class="govuk-accordion__link" href="msic-capital-bond-account"> </a>
               </span>
             </h2>
           </div>
@@ -673,7 +675,7 @@ Do you have any more shares? - Pension Credit
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-8">
-        <strong>(#) ISAs </strong><a class="govuk-accordion__link" href="msic-isa-savings-account">  </a>
+        <strong>(#) ISAs </strong><a class="govuk-accordion__link" href="msic-isa-savings-account"> </a>
         </span>
         </h2>
         </div>
@@ -741,7 +743,7 @@ Do you have any more shares? - Pension Credit
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-9">
-        <strong>(#) Premium Bonds </strong><a class="govuk-accordion__link" href="msic-premium-bond-account">  </a>
+        <strong>(#) Premium Bonds </strong><a class="govuk-accordion__link" href="msic-premium-bond-account"> </a>
         </span>
         </h2>
         </div>
@@ -791,7 +793,7 @@ Do you have any more shares? - Pension Credit
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
-        <strong>(#) Post Office accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account">  </a>
+        <strong>(#) Post Office accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account"> </a>
         </span>
         </h2>
         </div>
@@ -840,7 +842,7 @@ Do you have any more shares? - Pension Credit
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
-        <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list">  </a>
+        <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> </a>
         </span>
         </h2>
         </div>
@@ -1095,7 +1097,7 @@ Do you have any more shares? - Pension Credit
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-12">
-          <strong>(#) Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account">  </a>
+          <strong>(#) Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account">Add another</a>
         </span>
         </h2>
         </div>
@@ -1193,8 +1195,6 @@ Do you have any more shares? - Pension Credit
         </div>
         </div>{% endif %}
       <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
 
 
       </div>
