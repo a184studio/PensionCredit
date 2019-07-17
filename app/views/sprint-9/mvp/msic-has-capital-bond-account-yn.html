@@ -57,86 +57,328 @@ Do you have any capital bonds? - Pension Credit
   {% if data["account-count"] %}<div class="govuk-accordion" data-module="accordion" id="accordion-default">{% endif %}
 
 
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-      {% if data["msic-isa-savings-account-name"] %}
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-8">
-              <strong>(#) ISAs </strong><a class="govuk-accordion__link" href="msic-isa-savings-account">Add another</a>
-            </span>
-          </h2>
-        </div>
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+          {% if data["msic-missing-account-name"] %}
+          <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
+                    <strong>(#) Other money, savings or investments </strong><a class="govuk-accordion__link" href="msic-second-property"></a>
+                  </span>
+                </h2>
+              </div>
 
-        <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-8">
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
 
 
-          <div class="govuk-grid-row">
-          <div class="govuk-grid-column-three-quarters">
+                <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
 
-            {{ govukSummaryList({
-              rows: [
-              {
-                key: {
-                  text: "Account with:"
-                },
-                value: {
-                  text: data['msic-isa-savings-account-name']
-                },
-                actions: {
-                  items: [
+                  {{ govukSummaryList({
+                    rows: [
                     {
-                      href: "msic-isa-savings-account",
-                      html: "Change",
-                      visuallyHiddenText: "XXX"
+                      key: {
+                        text: "Account with"
+                      },
+                      value: {
+                        text: data['msic-missing-account-name']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "msic-missing-account",
+                            html: "Change",
+                            visuallyHiddenText: "XXX"
+                          },
+                          {
+                            href: "msic-remove",
+                            html: "Remove",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
                     },
                     {
-                      href: "msic-remove",
-                      html: "Remove",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
-                }
-              },
-
-              {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                  text: "Total"
-                },
-                value: {
-                  text: data['msic-isa-savings-account-amount']
-                },
-                actions: {
-                  items: [
+                      key: {
+                        text: "Amount in account today"
+                      },
+                      value: {
+                        text: data['msic-missing-account-amount']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
                     {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "XXX"
+                    key: {
+                      text: "Account belongs to"
+                    },
+                    value: {
+                      text: data['msic-missing-account-owner']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXXX"
+                        }
+                      ]
                     }
-                  ]
-                }
-              }
-              ]
-            }) }}
+                  },
 
-          <br></div></div>
+                    {
+                      key: {
+                        text: "Percentage of money that is yours"
+                      },
+                      value: {
+                        text: data['msic-missing-account-stake']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXXX"
+                          }
+                        ]
+                      }
+                    },
 
-            </div>
-      </div>{% endif %}
+                    {
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                        text: "Notes"
+                      },
+                      value: {
+                        text: data['msic-missing-account-money-detail']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXXX"
+                          }
+                        ]
+                      }
+                    }
+                    ]
+                  }) }}
 
-      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        {% if data["msic-premium-bond-account-total-bonds"] %}
-        <div class="govuk-accordion__section ">
+                <br></div></div>
+
+                  </div>
+          </div>{% endif %}
+
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+      {% if data["msic-second-property-value"] %}
+      <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-9">
-                <strong>(#) Premium Bonds </strong><a class="govuk-accordion__link" href="msic-premium-bond-account">Add another</a>
+              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
+                <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property">  </a>
               </span>
             </h2>
           </div>
 
-          <div id="accordion-default-content-9" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-9">
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+
+            <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+
+              {{ govukSummaryList({
+                rows: [
+                {
+                  key: {
+                    text: "Address"
+                  },
+                  value: {
+                    text: "1007"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "msic-second-property",
+                        html: "Change",
+                        visuallyHiddenText: "XXX"
+                      },
+                      {
+                        href: "msic-remove",
+                        html: "Remove",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    text: ""
+                  },
+                  value: {
+                    text: "Mountain Drive"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    text: ""
+                  },
+                  value: {
+                    text: "Gotham "
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    text: ""
+                  },
+                  value: {
+                    text: "New York State (US)"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    text: ""
+                  },
+                  value: {
+                    text: "."
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  classes: 'govuk-summary-list--no-border',
+                  key: {
+                    text: "Value"
+                  },
+                  value: {
+                    text: data['msic-second-property-value']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                }
+                ]
+              }) }}
+
+            <br></div></div>
+
+              </div>
+      </div>{% endif %}
+
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+      {% if data["msic-cash-lump-sum-detail"] %}
+      <div class="govuk-accordion__section ">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-2">
+                        <strong>Cash Lump sum </strong><a class="govuk-accordion__link" href="msic-cash-lump-sum">  </a>
+                      </span>
+                    </h2>
+                  </div>
+
+                  <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+
+                    <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-three-quarters">
+
+                      {{ govukSummaryList({
+                        rows: [
+                        {
+                          classes: 'govuk-summary-list--no-border',
+                          key: {
+                            text: "Amount in account today"
+                          },
+                          value: {
+                            text: data['msic-cash-lump-sum-detail']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "msic-cash-lump-sum",
+                                html: "Change",
+                                visuallyHiddenText: "XXX"
+                              },
+                              {
+                                href: "msic-remove",
+                                html: "Remove",
+                                visuallyHiddenText: "XXX"
+                              }
+                            ]
+                          }
+                        }
+                        ]
+                      }) }}
+
+                    <br></div></div>
+
+                      </div>
+      </div>{% endif %}
+
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+      {% if data["msic-cash-other-abroad-detail"] %}
+      <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-3">
+                <strong>Cash held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad">  </a>
+              </span>
+            </h2>
+          </div>
+
+          <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
 
 
             <div class="govuk-grid-row">
@@ -147,15 +389,15 @@ Do you have any capital bonds? - Pension Credit
                 {
                   classes: 'govuk-summary-list--no-border',
                   key: {
-                    text: "Value of Premium Bonds"
+                    text: "Total"
                   },
                   value: {
-                    text: data['msic-premium-bond-account-total-bonds']
+                    text: data['msic-cash-other-abroad-detail']
                   },
                   actions: {
                     items: [
                       {
-                        href: "msic-premium-bond-account",
+                        href: "msic-cash-other-abroad",
                         html: "Change",
                         visuallyHiddenText: "XXX"
                       },
@@ -170,107 +412,24 @@ Do you have any capital bonds? - Pension Credit
                 ]
               }) }}
 
-        <br></div></div>
+            <br></div></div>
 
-          </div>
-        </div>{% endif %}
+              </div>
+      </div>{% endif %}
 
-        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-          {% if data["msic-post-office-card-account-amount"] %}
-          <div class="govuk-accordion__section ">
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+      {% if data["msic-cash-at-home-amount"] %}
+      <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
-                <strong>(#) Post Office accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account">Add another</a>
+              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-4">
+                <strong>Cash at home </strong><a class="govuk-accordion__link" href="msic-cash-at-home">  </a>
               </span>
             </h2>
           </div>
 
-          <div id="accordion-default-content-10" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-10">
+          <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
 
-          <div class="govuk-grid-row">
-          <div class="govuk-grid-column-three-quarters">
-
-          {{ govukSummaryList({
-            rows: [
-            {
-              key: {
-                text: "Total"
-              },
-              value: {
-                text: data['msic-post-office-card-account-amount']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-post-office-card-account",
-                    html: "Change",
-                    visuallyHiddenText: ""
-                  },
-                  {
-                    href: "msic-remove",
-                    html: "Remove",
-                    visuallyHiddenText: ""
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
-                text: "Account owner"
-              },
-              value: {
-                text: data['msic-post-office-card-account-owner']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: ""
-                  }
-                ]
-              }
-            },
-
-            {
-              classes: 'govuk-summary-list--no-border',
-              key: {
-                text: "% stake in joint account"
-              },
-              value: {
-                text: data['msic-post-office-card-account-stake']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-post-office-card-account-stake",
-                    text: "",
-                    visuallyHiddenText: "XXXX"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
-
-          <br></div></div>
-
-          </div>
-          </div>{% endif %}
-
-        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-          {% if data["msic-all-savings-account-name"] %}
-          <div class="govuk-accordion__section ">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
-                <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list">Add another</a>
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-11" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-11">
 
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters">
@@ -278,16 +437,423 @@ Do you have any capital bonds? - Pension Credit
               {{ govukSummaryList({
                 rows: [
                 {
+                  classes: 'govuk-summary-list--no-border',
                   key: {
-                    text: "Account with"
+                    text: "Amount"
                   },
                   value: {
-                    text: data['msic-all-savings-account-name']
+                    text: data['msic-cash-at-home-amount']
                   },
                   actions: {
                     items: [
                       {
-                        href: "msic-all-savings-account",
+                        href: "msic-cash-at-home",
+                        html: "Change",
+                        visuallyHiddenText: "XXX"
+                      },
+                      {
+                        href: "msic-remove",
+                        html: "Remove",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                }
+                ]
+              }) }}
+
+            <br></div></div>
+
+              </div>
+      </div>{% endif %}
+      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        {% if data["msic-trust-account-name"] %}
+        <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-5">
+                  <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account">  </a>
+                </span>
+              </h2>
+            </div>
+
+            <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+
+
+              <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+
+                {{ govukSummaryList({
+                  rows: [
+                  {
+                    key: {
+                      text: "Name of trust"
+                    },
+                    value: {
+                      text: data['msic-trust-account-name']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-unit-trust-account",
+                          html: "Change",
+                          visuallyHiddenText: "XXX"
+                        },
+                        {
+                          href: "msic-remove",
+                          html: "Remove",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+
+                  {
+                    key: {
+                      text: "Value of trust on day of purchase"
+                    },
+                    value: {
+                      text: data['msic-trust-account-purchase-value']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-unit-trust-account",
+                          html: "",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+
+                  {
+                    classes: 'govuk-summary-list--no-border',
+                    key: {
+                      text: "Total amount invested in trust today"
+                    },
+                    value: {
+                      text: data['msic-trust-account-units']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXXX"
+                        }
+                      ]
+                    }
+                  }
+                  ]
+                }) }}
+
+              <br></div></div>
+
+                </div>
+        </div>{% endif %}
+
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+          {% if data["msic-shares-account-name"] %}
+          <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-6">
+                    <strong>(#) Shares </strong><a class="govuk-accordion__link" href="msic-shares-account">  </a>
+                  </span>
+                </h2>
+              </div>
+
+              <div id="accordion-default-content-6" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-6">
+
+
+                <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+
+                  {{ govukSummaryList({
+                    rows: [
+                    {
+                      key: {
+                        text: "Company name"
+                      },
+                      value: {
+                        text: data['msic-shares-account-name']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "msic-shares-account",
+                            html: "Change",
+                            visuallyHiddenText: "XXX"
+                          },
+                          {
+                            href: "msic-remove",
+                            html: "Remove",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
+
+                    {
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                        text: "Total number shares held"
+                      },
+                      value: {
+                        text: data['msic-shares-account-amount']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXXX"
+                          }
+                        ]
+                      }
+                    }
+                    ]
+                  }) }}
+
+                <br></div></div>
+
+                  </div>
+          </div>{% endif %}
+
+          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            {% if data["msic-capital-bond-company-name"] %}
+            <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-7">
+                    <strong>(#) Capital bonds </strong><a class="govuk-accordion__link" href="msic-capital-bond-account">  </a>
+                  </span>
+                </h2>
+              </div>
+
+              <div id="accordion-default-content-7" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-7">
+
+
+                <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+
+                  {{ govukSummaryList({
+                    rows: [
+                    {
+                      key: {
+                        text: "Account with"
+                      },
+                      value: {
+                        text: data['msic-capital-bond-company-name']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "msic-capital-bond-account",
+                            html: "Change",
+                            visuallyHiddenText: "XXX"
+                          },
+                          {
+                            href: "msic-remove",
+                            html: "Remove",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      key: {
+                        text: "Value of capital bonds today"
+                      },
+                      value: {
+                        text: data['msic-capital-bond-account-total-bonds']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXXX"
+                          }
+                        ]
+                      }
+                    },
+
+
+
+                    {
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                        text: "Account has life assurance"
+                      },
+                      value: {
+                        text: data['msic-capital-bond-account-life-assurance']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXXX"
+                          }
+                        ]
+                      }
+                    }
+                    ]
+                  }) }}
+
+                <br></div></div>
+
+                  </div>
+            </div>{% endif %}
+
+          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            {% if data["msic-isa-savings-account-name"] %}
+            <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-8">
+            <strong>(#) ISAs </strong><a class="govuk-accordion__link" href="msic-isa-savings-account">  </a>
+            </span>
+            </h2>
+            </div>
+
+            <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-8">
+
+
+            <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+
+            {{ govukSummaryList({
+            rows: [
+            {
+            key: {
+              text: "Account with:"
+            },
+            value: {
+              text: data['msic-isa-savings-account-name']
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-isa-savings-account",
+                  html: "Change",
+                  visuallyHiddenText: "XXX"
+                },
+                {
+                  href: "msic-remove",
+                  html: "Remove",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+            },
+
+            {
+            classes: 'govuk-summary-list--no-border',
+            key: {
+              text: "Amount in account today"
+            },
+            value: {
+              text: data['msic-isa-savings-account-amount']
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+            }
+            ]
+            }) }}
+
+            <br></div></div>
+
+            </div>
+            </div>{% endif %}
+
+          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            {% if data["msic-premium-bond-account-total-bonds"] %}
+            <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-9">
+            <strong>(#) Premium Bonds </strong><a class="govuk-accordion__link" href="msic-premium-bond-account">  </a>
+            </span>
+            </h2>
+            </div>
+
+            <div id="accordion-default-content-9" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-9">
+
+
+            <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+
+            {{ govukSummaryList({
+            rows: [
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Value of Premium Bonds"
+              },
+              value: {
+                text: data['msic-premium-bond-account-total-bonds']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-premium-bond-account",
+                    html: "Change",
+                    visuallyHiddenText: "XXX"
+                  },
+                  {
+                    href: "msic-remove",
+                    html: "Remove",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+            ]
+            }) }}
+
+            <br></div></div>
+
+            </div>
+            </div>{% endif %}
+
+            <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+              {% if data["msic-credit-union-account-name"] %}
+              <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
+              <strong>(#) Credit union accounts </strong><a class="govuk-accordion__link" href="msic-credit-union-account">  </a>
+              </span>
+              </h2>
+              </div>
+
+              <div id="accordion-default-content-10" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-10">
+
+              <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+
+                {{ govukSummaryList({
+                rows: [
+                {
+                  key: {
+                    text: "Account with"
+                  },
+                  value: {
+                    text: data['msic-credit-union-account-name']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "msic-credit-union-account",
                         html: "Change",
                         visuallyHiddenText: "XXX"
                       },
@@ -302,10 +868,10 @@ Do you have any capital bonds? - Pension Credit
 
                 {
                   key: {
-                    text: "Total"
+                    text: "Amount in account today"
                   },
                   value: {
-                    text: data['msic-all-savings-account-amount']
+                    text: data['msic-credit-union-account-amount']
                   },
                   actions: {
                     items: [
@@ -319,10 +885,10 @@ Do you have any capital bonds? - Pension Credit
                 },
                 {
                 key: {
-                  text: "Account owner, %"
+                  text: "Account belongs to"
                 },
                 value: {
-                  text: data['msic-all-savings-account-owner']
+                  text: data['msic-credit-union-account-owner']
                 },
                 actions: {
                   items: [
@@ -333,15 +899,15 @@ Do you have any capital bonds? - Pension Credit
                     }
                   ]
                 }
-              },
+                },
 
                 {
                   classes: 'govuk-summary-list--no-border',
                   key: {
-                    text: "Percent (%) state"
+                    text: "Percentage of money that is yours"
                   },
                   value: {
-                    text: data['msic-all-savings-account-stake']
+                    text: data['msic-credit-union-account-stake']
                   },
                   actions: {
                     items: [
@@ -354,7 +920,157 @@ Do you have any capital bonds? - Pension Credit
                   }
                 }
                 ]
-              }) }}
+                }) }}
+
+              <br></div></div>
+
+              </div>
+              </div>{% endif %}
+
+            <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            {% if data["msic-post-office-card-account-amount"] %}
+            <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
+            <strong>(#) Post Office accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account">  </a>
+            </span>
+            </h2>
+            </div>
+
+            <div id="accordion-default-content-10" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-10">
+
+            <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+
+            {{ govukSummaryList({
+            rows: [
+            {
+              classes: 'govuk-summary-list--no-border',
+            key: {
+            text: "Amount in account today"
+            },
+            value: {
+            text: data['msic-post-office-card-account-amount']
+            },
+            actions: {
+            items: [
+              {
+                href: "msic-post-office-card-account",
+                html: "Change",
+                visuallyHiddenText: ""
+              },
+              {
+                href: "msic-remove",
+                html: "Remove",
+                visuallyHiddenText: ""
+              }
+            ]
+            }
+            }
+            ]
+            }) }}
+
+            <br></div></div>
+
+            </div>
+            </div>{% endif %}
+
+          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            {% if data["msic-all-savings-account-name"] %}
+            <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
+            <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list">  </a>
+            </span>
+            </h2>
+            </div>
+            <div id="accordion-default-content-11" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-11">
+
+            <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+
+            {{ govukSummaryList({
+            rows: [
+            {
+              key: {
+                text: "Account with"
+              },
+              value: {
+                text: data['msic-all-savings-account-name']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-all-savings-account",
+                    html: "Change",
+                    visuallyHiddenText: "XXX"
+                  },
+                  {
+                    href: "msic-remove",
+                    html: "Remove",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "Amount in account today"
+              },
+              value: {
+                text: data['msic-all-savings-account-amount']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+            key: {
+              text: "Account belongs to"
+            },
+            value: {
+              text: data['msic-all-savings-account-owner']
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "",
+                  visuallyHiddenText: "XXXX"
+                }
+              ]
+            }
+            },
+
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Percentage of money that is yours"
+              },
+              value: {
+                text: data['msic-all-savings-account-stake']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            }
+            ]
+            }) }}
 
             <br></div></div>
 
@@ -371,95 +1087,95 @@ Do you have any capital bonds? - Pension Credit
             rows: [
 
             {
-              key: {
-                text: "Pension Credit payment account"
-              },
-              value: {
-                text: ""
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-pc-payment",
-                    text: "Change",
-                    visuallyHiddenText: "type of account"
-                  }
-                ]
+            key: {
+            text: "Pension Credit payment account"
+            },
+            value: {
+            text: ""
+            },
+            actions: {
+            items: [
+              {
+                href: "msic-pc-payment",
+                text: "Change",
+                visuallyHiddenText: "type of account"
               }
+            ]
+            }
             },
 
-              {
-                key: {
-                  text: "Name on account"
-                },
-                value: {
-                  text: data["name-on-account"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "name on account"
-                    }
-                  ]
+            {
+            key: {
+              text: "Name on account"
+            },
+            value: {
+              text: data["name-on-account"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-pc-payment-alternative-account",
+                  text: "Change",
+                  visuallyHiddenText: "name on account"
                 }
-              },
+              ]
+            }
+            },
 
-              {
-                key: {
-                  text: "Sort code"
-                },
-                value: {
-                  text: data["sort-code"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
+            {
+            key: {
+              text: "Sort code"
+            },
+            value: {
+              text: data["sort-code"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-pc-payment-alternative-account",
+                  text: "Change",
+                  visuallyHiddenText: "sort code"
                 }
-              },
+              ]
+            }
+            },
 
-              {
-                key: {
-                  text: "Account number"
-                },
-                value: {
-                  text: data["Account number"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "account number"
-                    }
-                  ]
+            {
+            key: {
+              text: "Account number"
+            },
+            value: {
+              text: data["Account number"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-pc-payment-alternative-account",
+                  text: "Change",
+                  visuallyHiddenText: "account number"
                 }
-              },
+              ]
+            }
+            },
 
-              {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                  text: "Balance of account"
-                },
-                value: {
-                  text: data["msic-pc-payment-alternative-account-balance"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
+            {
+            classes: 'govuk-summary-list--no-border',
+            key: {
+              text: "Balance of account"
+            },
+            value: {
+              text: data["msic-pc-payment-alternative-account-balance"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-pc-payment-alternative-account",
+                  text: "Change",
+                  visuallyHiddenText: "sort code"
                 }
-              }
+              ]
+            }
+            }
             ]
             }) }}
             {% endif %}
@@ -470,156 +1186,155 @@ Do you have any capital bonds? - Pension Credit
             {{ govukSummaryList({
             rows: [
 
-              {
-                key: {
-                  text: "Same account as State Pension or alternate"
-                },
-                value: {
-                  text: data["msic-pc-payment"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment",
-                      text: "Change",
-                      visuallyHiddenText: "type of account"
-                    }
-                  ]
+            {
+            key: {
+              text: "Same account as State Pension or alternate"
+            },
+            value: {
+              text: data["msic-pc-payment"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-pc-payment",
+                  text: "Change",
+                  visuallyHiddenText: "type of account"
                 }
-              },
+              ]
+            }
+            },
 
             {
             classes: 'govuk-summary-list--no-border',
 
-                key: {
-                  text: "Balance of account"
-                },
-                value: {
-                  text: data["msic-pc-payment-alternative-account-balance"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-state-pension-account",
-                      text: "Change",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
+            key: {
+              text: "Amount in account today"
+            },
+            value: {
+              text: data["msic-pc-payment-alternative-account-balance"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-pc-payment-state-pension-account",
+                  text: "Change",
+                  visuallyHiddenText: "sort code"
                 }
-              }
+              ]
+            }
+            }
             ]
             }) }}
             {% endif %}
 
             <br></div></div>
 
-          </div></div>{% endif %}
+            </div></div>{% endif %}
 
-        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-          {% if data["account-count"] %}
-          <div class="govuk-accordion__section ">
+          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            {% if data["account-count"] %}
+            <div class="govuk-accordion__section ">
             <div class="govuk-accordion__section-header">
-              <h2 class="govuk-accordion__section-heading">
-                <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-12">
-                  <strong>(#) Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account">Add another</a>
-                </span>
-              </h2>
+            <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-12">
+              <strong>(#) Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account">  </a>
+            </span>
+            </h2>
             </div>
 
             <div id="accordion-default-content-12" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-12">
 
-              {% set count = data["account-count"] or 0 %}
-              {% for i in range(0, count) -%}
+            {% set count = data["account-count"] or 0 %}
+            {% for i in range(0, count) -%}
 
-                  <div class="govuk-grid-row">
-                  <div class="govuk-grid-column-three-quarters">
-                    {{ govukSummaryList({
-                      rows: [
-                      {
-                        key: {
-                          text: "Account with"
+              <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+                {{ govukSummaryList({
+                  rows: [
+                  {
+                    key: {
+                      text: "Account with"
+                    },
+                    value: {
+                      text: data['msic-all-current-account-name-' + i]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-all-current-account",
+                          html: "Change",
+                          visuallyHiddenText: "XXX"
                         },
-                        value: {
-                          text: data['msic-all-current-account-name-' + i]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "msic-all-current-account",
-                              html: "Change",
-                              visuallyHiddenText: "XXX"
-                            },
-                            {
-                              href: "msic-remove",
-                              html: "Remove",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
+                        {
+                          href: "msic-remove",
+                          html: "Remove",
+                          visuallyHiddenText: "XXX"
                         }
-                      },
-
-                      {
-                        key: {
-                          text: "Total"
-                        },
-                        value: {
-                          text: data['msic-all-current-account-amount-' + i] | formatMoney
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        key: {
-                          text: "Account owner"
-                        },
-                        value: {
-                          text: data['current-owner-' + i]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "msic-all-current-account",
-                              text: "",
-                              visuallyHiddenText: "XXXX"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        classes: 'govuk-summary-list--no-border',
-                        key: {
-                          text: "Stake in joint account"
-                        },
-                        value: {
-                          text: data['msic-all-current-account-stake-' + i]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "msic-all-current-account-stake",
-                              text: "",
-                              visuallyHiddenText: "XXXX"
-                            }
-                          ]
-                        }
-                      }
                       ]
-                    }) }}
-                  </div></div>
-                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-                {%- endfor %}
+                    }
+                  },
+
+                  {
+                    key: {
+                      text: "Amount in account today"
+                    },
+                    value: {
+                      text: data['msic-all-current-account-amount-' + i] | formatMoney
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Account belongs to"
+                    },
+                    value: {
+                      text: data['current-owner-' + i]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-all-current-account",
+                          text: "",
+                          visuallyHiddenText: "XXXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    classes: 'govuk-summary-list--no-border',
+                    key: {
+                      text: "Percentage of money that is yours"
+                    },
+                    value: {
+                      text: data['msic-all-current-account-stake-' + i]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-all-current-account-stake",
+                          text: "",
+                          visuallyHiddenText: "XXXX"
+                        }
+                      ]
+                    }
+                  }
+                  ]
+                }) }}
+              </div></div>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            {% endfor %}
 
             </div>
-          </div>{% endif %}
-        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
+            </div>{% endif %}
+          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
       </div>
