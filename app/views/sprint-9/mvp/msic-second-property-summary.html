@@ -60,7 +60,7 @@ Do you own any other property or land other than your home? - Pension Credit
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
-                    <strong>(#) Other money, savings or investments </strong><a class="govuk-accordion__link" href="msic-second-property"></a>
+                    <strong>(#) Other money, savings or investments </strong><a class="govuk-accordion__link" href="msic-missing-account"></a>
                   </span>
                 </h2>
               </div>
@@ -180,7 +180,7 @@ Do you own any other property or land other than your home? - Pension Credit
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
-                <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property">  </a>
+                <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property"></a>
               </span>
             </h2>
           </div>
@@ -231,7 +231,7 @@ Do you own any other property or land other than your home? - Pension Credit
                     <h2 class="govuk-accordion__section-heading">
                       <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-2">
                         <strong>Cash Lump sum </strong><a class="govuk-accordion__link" href="msic-cash-lump-sum">  </a>
-                      </span>
+                      </span>Cash
                     </h2>
                   </div>
 
@@ -241,90 +241,178 @@ Do you own any other property or land other than your home? - Pension Credit
                     <div class="govuk-grid-row">
                     <div class="govuk-grid-column-three-quarters">
 
-                      {{ govukSummaryList({
-                        rows: [
-                        {
-                          classes: 'govuk-summary-list--no-border',
-                          key: {
-                            text: "Amount in account today"
-                          },
-                          value: {
-                            text: data['msic-cash-lump-sum-detail']
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "msic-cash-lump-sum",
-                                html: "Change",
-                                visuallyHiddenText: "XXX"
-                              },
-                              {
-                                href: "msic-remove",
-                                html: "Remove",
-                                visuallyHiddenText: "XXX"
-                              }
-                            ]
+                        {{ govukSummaryList({
+                          rows: [
+                          {
+                            classes: 'govuk-summary-list--no-border',
+                            key: {
+                              text: "Amount in account today"
+                            },
+                            value: {
+                              text: data['msic-cash-lump-sum-detail']
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "msic-cash-lump-sum",
+                                  html: "Change",
+                                  visuallyHiddenText: "XXX"
+                                },
+                                {
+                                  href: "msic-remove",
+                                  html: "Remove",
+                                  visuallyHiddenText: "XXX"
+                                }
+                              ]
+                            }
                           }
-                        }
-                        ]
-                      }) }}
+                          ]
+                        }) }}
 
                     <br></div></div>
 
                       </div>
       </div>{% endif %}
 
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-      {% if data["msic-cash-other-abroad-detail"] %}
-      <div class="govuk-accordion__section ">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-3">
-                <strong>Cash held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad"> Add another</a>
-              </span>
-            </h2>
-          </div>
+      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        {% if data["msic-cash-other-abroad-name"] %}
+        <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-3">
+                  <strong>Cash held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad"> Add another</a>
+                </span>
+              </h2>
+            </div>
 
-          <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
 
 
-            <div class="govuk-grid-row">
-            <div class="govuk-grid-column-three-quarters">
+              <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
 
-              {{ govukSummaryList({
-                rows: [
-                {
-                  classes: 'govuk-summary-list--no-border',
+                {{ govukSummaryList({
+                  rows: [
+                  {
+                    key: {
+                      text: "Account with"
+                    },
+                    value: {
+                      text: data['msic-cash-other-abroad-name']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-cash-other-abroad",
+                          html: "Change",
+                          visuallyHiddenText: "XXX"
+                        },
+                        {
+                          href: "msic-remove",
+                          html: "Remove",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Currency"
+                    },
+                    value: {
+                      text: data['msic-cash-other-abroad-currency']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Amount in account today"
+                    },
+                    value: {
+                      text: data['msic-cash-other-abroad-amount']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+
+                  {
                   key: {
-                    text: "Total"
+                    text: "Account belongs to"
                   },
                   value: {
-                    text: data['msic-cash-other-abroad-detail']
+                    text: data['msic-cash-other-abroad-owner']
                   },
                   actions: {
                     items: [
                       {
-                        href: "msic-cash-other-abroad",
-                        html: "Change",
-                        visuallyHiddenText: "XXX"
-                      },
-                      {
-                        href: "msic-remove",
-                        html: "Remove",
-                        visuallyHiddenText: "XXX"
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXXX"
                       }
                     ]
                   }
-                }
-                ]
-              }) }}
+                },
 
-            <br></div></div>
+                  {
+                    key: {
+                      text: "Percentage of money that is yours"
+                    },
+                    value: {
+                      text: data['msic-cash-other-abroad-stake']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXXX"
+                        }
+                      ]
+                    }
+                  },
 
-              </div>
-      </div>{% endif %}
+                  {
+                    classes: 'govuk-summary-list--no-border',
+                    key: {
+                      text: "Notes"
+                    },
+                    value: {
+                      text: data['msic-cash-other-abroad-detail']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXXX"
+                        }
+                      ]
+                    }
+                  }
+                  ]
+                }) }}
 
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+              <br></div></div>
+
+                </div>
+        </div>{% endif %}
+
+      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
       {% if data["msic-cash-at-home-amount"] %}
       <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
@@ -379,11 +467,11 @@ Do you own any other property or land other than your home? - Pension Credit
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-5">
-                  <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account"> Add another</a>
+                  <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account">  </a>
                 </span>
               </h2>
             </div>
- 
+
             <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
 
 
@@ -840,7 +928,7 @@ Do you own any other property or land other than your home? - Pension Credit
             <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
-            <strong>(#) Post Office accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account"> Add another</a>
+            <strong>(#) Post Office card accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account"> Add another</a>
             </span>
             </h2>
             </div>
@@ -1242,7 +1330,6 @@ Do you own any other property or land other than your home? - Pension Credit
             </div>
             </div>{% endif %}
           <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
 
       </div>
 
