@@ -286,7 +286,7 @@ Do you own any property or land other than your home? - Pension Credit
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-3">
-                  <strong>Cash held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad"> Add another</a>
+                  <strong>Cash held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad"></a>
                 </span>
               </h2>
             </div>
@@ -339,6 +339,7 @@ Do you own any property or land other than your home? - Pension Credit
                     }
                   },
                   {
+                    classes: 'govuk-summary-list--no-border',
                     key: {
                       text: "Amount in account today"
                     },
@@ -354,61 +355,6 @@ Do you own any property or land other than your home? - Pension Credit
                         }
                       ]
                     }
-                  },
-
-                  {
-                  key: {
-                    text: "Account belongs to"
-                  },
-                  value: {
-                    text: data['msic-cash-other-abroad-owner']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
-                },
-
-                  {
-                    key: {
-                      text: "Percentage of money that is yours"
-                    },
-                    value: {
-                      text: data['msic-cash-other-abroad-stake']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "",
-                          visuallyHiddenText: "XXXX"
-                        }
-                      ]
-                    }
-                  },
-
-                  {
-                    classes: 'govuk-summary-list--no-border',
-                    key: {
-                      text: "Notes"
-                    },
-                    value: {
-                      text: data['msic-cash-other-abroad-detail']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "",
-                          visuallyHiddenText: "XXXX"
-                        }
-                      ]
-                    }
                   }
                   ]
                 }) }}
@@ -419,7 +365,7 @@ Do you own any property or land other than your home? - Pension Credit
         </div>{% endif %}
 
       <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-      {% if data["msic-cash-at-home-amount"] %}
+    {% if data["msic-cash-at-home-amount"] %}
       <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
