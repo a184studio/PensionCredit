@@ -295,12 +295,11 @@ Account with: {% extends "layout.html" %}
           {{ govukSummaryList({
             rows: [
             {
-              classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Total"
+                text: "Account with"
               },
               value: {
-                text: data['msic-cash-other-abroad-detail']
+                text: data['msic-cash-other-abroad-name']
               },
               actions: {
                 items: [
@@ -313,6 +312,95 @@ Account with: {% extends "layout.html" %}
                     href: "msic-remove",
                     html: "Remove",
                     visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Currency"
+              },
+              value: {
+                text: data['msic-cash-other-abroad-currency']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Amount in account today"
+              },
+              value: {
+                text: data['msic-cash-other-abroad-amount']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+            key: {
+              text: "Account belongs to"
+            },
+            value: {
+              text: data['msic-cash-other-abroad-owner']
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "",
+                  visuallyHiddenText: "XXXX"
+                }
+              ]
+            }
+          },
+
+            {
+              key: {
+                text: "Percentage of money that is yours"
+              },
+              value: {
+                text: data['msic-cash-other-abroad-stake']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Notes"
+              },
+              value: {
+                text: data['msic-cash-other-abroad-detail']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
                   }
                 ]
               }
