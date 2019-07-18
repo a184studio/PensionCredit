@@ -35,28 +35,14 @@
           </dd>
         </div>
       {% endif %}
-      {% if data["mobile"]%}
+
+        {% if data["contact-by-phone"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Can we text the mobile
+            Landline
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["can-text"] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="can-text">
-              Change
-            </a>
-          </dd>
-        </div>
-      {% endif %}
-      {% if data["landline"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Home phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["landline"] }}
+            {{ data["contact-by-phone"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="can-contact">
@@ -65,13 +51,44 @@
           </dd>
         </div>
       {% endif %}
-      {% if data["email"]%}
+
+      {% if data["contact-by-text"]%}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mobile
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["contact-by-text"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="can-text">
+            Change
+          </a>
+        </dd>
+      </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Text (SMS)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes / No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="can-text">
+              Change
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+
+      {% if data["email-address"]%}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["email"] }}
+            {{ data["email-address"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="can-contact">
@@ -100,6 +117,35 @@
       </div>
 
 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes / No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="can-contact">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes / No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="can-contact">
+              Change
+            </a>
+          </dd>
+        </div>
+
+
 
 
     </dl>
@@ -108,6 +154,7 @@
       <input type="hidden" name="contact-complete" value="true"/>
       <input type="hidden" name="disability-complete" value="true"/>
 
+<br><br>
 
         {{ govukButton({
           text: "Confirm"
