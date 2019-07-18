@@ -23,14 +23,12 @@
         name: "msic-pc-payment-frequency",
         fieldset: {
           legend: {
-            text: "How often would you like your Pension Credit to be paid to you",
+            text: "How often would you like us to pay your Pension Credit?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
             }
             },
-            hint: {
-              html: "<p class=\"hint\">We know about the account your State Pension is paid into."
-            },
+
         items: [
           {
             value: "Every week",
@@ -38,9 +36,9 @@
             checked: (data["msic-pc-payment-frequency"] == "Every week")
           },
           {
-            value: "Every two week",
-            text: "Every two week",
-            checked: (data["msic-pc-payment-frequency"] == "Every two week")
+            value: "Every two weeks",
+            text: "Every two weeks",
+            checked: (data["msic-pc-payment-frequency"] == "Every two weeks")
           },
           {
             value: "Every four weeks",
