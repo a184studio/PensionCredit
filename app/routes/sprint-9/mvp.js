@@ -616,7 +616,7 @@ router.post(`${baseUrl}/msic-has-post-office-card-account-yn-router`, (req, res)
   if (hasPostOfficeCardAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-post-office-card-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-has-premium-bond-account-yn`)
+    res.redirect(`${baseUrl}/msic-has-credit-union-account-yn`)
   }
 })
 
