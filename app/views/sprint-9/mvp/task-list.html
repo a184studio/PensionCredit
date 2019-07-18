@@ -89,6 +89,23 @@
                   (Hidden) Summary
                 </a>
               </li>
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="contact-correspondence-yn" aria-describedby="read-declaration-completed">
+                  Correspondence Address
+                </a>
+                {% if data["contact-correspondence-yn-complete"] == "true" %}
+                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+                {% elif data["contact-correspondence-yn-complete"] == "in-progress" %}
+                  <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
+                {% else  %}
+                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+                {% endif %}
+              </li>
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="contact-summary" aria-describedby="eligibility-completed">
+                  (Hidden) Summary
+                </a>
+              </li>
             </ul>
           </li>
         </ol>

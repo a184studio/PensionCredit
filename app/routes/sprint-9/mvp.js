@@ -149,16 +149,12 @@ router.post(`${baseUrl}/claim-date-manual-eed-daf-yn-router`, (req, res) => {
 router.post(`${baseUrl}/contact-correspondence-yn-router`, (req, res) => {
   const contactCorrespondenceYN = req.session.data['contact-correspondence-yn']
 
-  if (contactCorrespondenceYN === 'yes') {
+  if (contactCorrespondenceYN === 'Yes') {
     res.redirect(`${baseUrl}/contact-correspondence-address`)
   } else {
     res.redirect(`${baseUrl}/contact-summary`)
   }
 })
-
-
-
-
 
 
 
