@@ -981,7 +981,7 @@
             </div>{% endif %}
 
           <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            {% if data["msic-all-savings-account-name"] %}
+            {% if data["msic-pc-payment"] %}
             <div class="govuk-accordion__section ">
             <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
@@ -994,6 +994,8 @@
 
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters">
+
+              {% if data["msic-all-savings-account-name"] %}
 
             {{ govukSummaryList({
             rows: [
@@ -1076,6 +1078,7 @@
             ]
             }) }}
 
+{% endif %}
             <br></div></div>
 
 
@@ -1241,7 +1244,7 @@
             <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-12">
-              <strong>(#) Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account">  </a>
+              <strong>(#) Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account"> Add another</a>
             </span>
             </h2>
             </div>
