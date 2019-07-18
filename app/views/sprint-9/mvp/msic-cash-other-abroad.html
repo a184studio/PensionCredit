@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  NotePad - Money, savings and capital
+  Add bulding society current account - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -12,38 +12,94 @@
 
 {% include "includes/js-back-link.html" %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form action="msic-has-second-property-yn" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="msic-cash-other-abroad-summary" method="post" class="form">
+      <h1 class="govuk-heading-xl">
+        Money held in other countries
+      </h1>
 
-        <h1 class="govuk-heading-l">Money held in other countries</h1>
+      {{ govukInput({
+        label: {
+          text: "Name or type of account"
+        },
+        id: "msic-cash-other-abroad-name",
+        name: "msic-cash-other-abroad-name",
+        classes: "govuk-input--width-20"
+      }) }}
+
+
+          {{ govukInput({
+        label: {
+          html: "Total amount in this account, from <strong>Today</strong>"
+        },
+        id: "msic-cash-other-abroad-amount",
+        name: "msic-cash-other-abroad-amount",
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Currency of this"
+        },
+        id: "msic-cash-other-abroad-currency",
+        name: "msic-cash-other-abroad-currency",
+        classes: "govuk-input--width-20"
+      }) }}
 
 
 
-
-        <p class="govuk-body govuk-!-font-size-19">To record these accounts we need:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>the amount</li>
-          <li>the currency</li>
-          <li>the account type</li>
-          <li>the bank name</li>
-        </ul>
-
-        {{ govukTextarea({
-          name: "msic-cash-other-abroad-detail",
-          id: "msic-cash-other-abroad-detail",
-          value: data["msic-cash-other-abroad-detail"]
+      {% set percentageField %}
+        {{ govukInput({
+          label: {
+            text: "Percentage stake"
+          },
+          id: "msic-cash-other-abroad-stake",
+          name: "msic-cash-other-abroad-stake",
+          classes: "govuk-input--width-5"
         }) }}
+      {% endset %}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      </form>
+      {{ govukRadios({
+        idPrefix: "msic-cash-other-abroad-owner",
+        name: "msic-cash-other-abroad-owner",
+        fieldset: {
+          legend: {
+            text: "Who does this account belong to?",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "You",
+            text: "You"
+          },
+          {
+            value: "Joint account",
+            text: "Joint account (joint account)",
+            conditional: {
+              html: percentageField
+            }
+          }
+        ]
+      }) }}
 
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
+      <p class="govuk-body"></p>
 
-    </div>
+      {{ govukTextarea({
+        label: {
+        html: "Because this wan't on our list give more details if possible"
+        },
+        name: "msic-cash-other-abroad-detail",
+        id: "msic-cash-other-abroad-detail",
+
+        value: data["msic-cash-other-abroad-detail"]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
   </div>
+</div>
 {% endblock %}
