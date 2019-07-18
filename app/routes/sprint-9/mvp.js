@@ -703,7 +703,7 @@ router.post(`${baseUrl}/msic-cash-other-abroad-yn-router`, (req, res) => {
   if (hasOtherCashAboad === 'yes') {
     res.redirect(`${baseUrl}/msic-cash-other-abroad`)
   } else {
-    res.redirect(`${baseUrl}/msic-has-cash-lump-sum-yn`)
+    res.redirect(`${baseUrl}/msic-has-second-property-yn`)
   }
 })
 
