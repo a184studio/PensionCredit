@@ -18,6 +18,29 @@ function makeAStay(data) {
 }
 
 
+
+
+
+router.post(`${baseUrl}/security-router`, (req, res) => {
+  const passedSecurity = req.session.data['passed-security']
+
+  if (passedSecurity === 'Yes') {
+    res.redirect(`${baseUrl}/name-and-nino`)
+  } else {
+    res.redirect(`${baseUrl}/agent-action`)
+  }
+})
+
+router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
+  const hasPartner = req.session.data['has-partner']
+
+  if (hasPartner === 'Yes') {
+    res.redirect(`${baseUrl}/done-has-partner`)
+  } else {
+    res.redirect(`${baseUrl}/mvp-eligibility-summary`)
+  }
+})
+
 router.post(`${baseUrl}/clear-data-yn-router`, (req, res) => { // router name
   const privacyPolicy = req.session.data['clear-data-yn']  // name of data / id name
 
@@ -123,28 +146,21 @@ router.post(`${baseUrl}/claim-date-manual-eed-daf-yn-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/contact-correspondence-yn-router`, (req, res) => {
+  const contactCorrespondenceYN = req.session.data['contact-correspondence-yn']
 
-
-
-router.post(`${baseUrl}/security-router`, (req, res) => {
-  const passedSecurity = req.session.data['passed-security']
-
-  if (passedSecurity === 'Yes') {
-    res.redirect(`${baseUrl}/name-and-nino`)
+  if (contactCorrespondenceYN === 'yes') {
+    res.redirect(`${baseUrl}/contact-correspondence-address`)
   } else {
-    res.redirect(`${baseUrl}/agent-action`)
+    res.redirect(`${baseUrl}/contact-summary`)
   }
 })
 
-router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
-  const hasPartner = req.session.data['has-partner']
 
-  if (hasPartner === 'Yes') {
-    res.redirect(`${baseUrl}/done-has-partner`)
-  } else {
-    res.redirect(`${baseUrl}/mvp-eligibility-summary`)
-  }
-})
+
+
+
+
 
 router.post(`${baseUrl}/over-spa-router`, (req, res) => {
   try {
@@ -696,6 +712,7 @@ router.post(`${baseUrl}/msic-has-cash-at-home-yn-router`, (req, res) => {
     res.redirect(`${baseUrl}/msic-has-cash-other-abroad-yn`)
   }
 })
+
 
 router.post(`${baseUrl}/msic-cash-other-abroad-yn-router`, (req, res) => {
   const hasOtherCashAboad = req.session.data['msic-cash-other-abroad-yn']

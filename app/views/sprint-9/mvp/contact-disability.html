@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Benefits - Pension Credit
+  Contact formats - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="contact-summary" method="post" class="form">
+    <form action="contact-correspondence-yn" method="post" class="form">
 
       <input type="hidden" name="disability-complete" value="in-progress"/>
 
@@ -83,6 +83,35 @@
           }
         ]
       }) }}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "contact-welsh-yn",
+        name: "contact-welsh-yn",
+        fieldset: {
+          legend: {
+            text: "Do you want written communication in Welsh, can this not be part of the list??",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["contact-welsh-yn"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["contact-welsh-yn"] == "No")
+          }
+        ]
+      }) }}
+
+
+
 
       {{ govukButton({
         text: "Continue"
