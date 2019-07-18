@@ -16,12 +16,12 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="msic-cash-other-abroad-summary" method="post" class="form">
       <h1 class="govuk-heading-xl">
-        Money held in other countries
+        Details of money you have abroad
       </h1>
 
       {{ govukInput({
         label: {
-          text: "Name or type of account"
+          text: "What is this money?"
         },
         id: "msic-cash-other-abroad-name",
         name: "msic-cash-other-abroad-name",
@@ -31,7 +31,7 @@
 
           {{ govukInput({
         label: {
-          html: "Total amount in this account, from <strong>Today</strong>"
+          html: "Amount you have <strong>today</strong>"
         },
         id: "msic-cash-other-abroad-amount",
         name: "msic-cash-other-abroad-amount",
@@ -40,7 +40,7 @@
 
       {{ govukInput({
         label: {
-          text: "Currency of this"
+          text: "What currency is it?"
         },
         id: "msic-cash-other-abroad-currency",
         name: "msic-cash-other-abroad-currency",
@@ -49,52 +49,9 @@
 
 
 
-      {% set percentageField %}
-        {{ govukInput({
-          label: {
-            text: "Percentage stake"
-          },
-          id: "msic-cash-other-abroad-stake",
-          name: "msic-cash-other-abroad-stake",
-          classes: "govuk-input--width-5"
-        }) }}
-      {% endset %}
 
-      {{ govukRadios({
-        idPrefix: "msic-cash-other-abroad-owner",
-        name: "msic-cash-other-abroad-owner",
-        fieldset: {
-          legend: {
-            text: "Who does this account belong to?",
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "You",
-            text: "You"
-          },
-          {
-            value: "Joint account",
-            text: "Joint account (joint account)",
-            conditional: {
-              html: percentageField
-            }
-          }
-        ]
-      }) }}
 
-      <p class="govuk-body"></p>
 
-      {{ govukTextarea({
-        label: {
-        html: "Because this wan't on our list give more details if possible"
-        },
-        name: "msic-cash-other-abroad-detail",
-        id: "msic-cash-other-abroad-detail",
-
-        value: data["msic-cash-other-abroad-detail"]
-      }) }}
 
       {{ govukButton({
         text: "Continue"
