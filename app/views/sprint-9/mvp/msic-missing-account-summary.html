@@ -97,6 +97,7 @@ Account with: {% extends "layout.html" %}
                   }
                 },
                 {
+                  classes: 'govuk-summary-list--no-border',
                   key: {
                     text: "Amount in account today"
                   },
@@ -109,60 +110,6 @@ Account with: {% extends "layout.html" %}
                         href: "",
                         text: "",
                         visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                },
-                {
-                key: {
-                  text: "Account belongs to"
-                },
-                value: {
-                  text: data['msic-missing-account-owner']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "XXXX"
-                    }
-                  ]
-                }
-              },
-
-                {
-                  key: {
-                    text: "Percentage of money that is yours"
-                  },
-                  value: {
-                    text: data['msic-missing-account-stake']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
-                },
-
-                {
-                  classes: 'govuk-summary-list--no-border',
-                  key: {
-                    text: "Notes"
-                  },
-                  value: {
-                    text: data['msic-missing-account-money-detail']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
                       }
                     ]
                   }
@@ -276,7 +223,7 @@ Account with: {% extends "layout.html" %}
   </div>{% endif %}
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    {% if data["msic-cash-other-abroad-detail"] %}
+    {% if data["msic-cash-other-abroad-name"] %}
     <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
@@ -468,7 +415,7 @@ Account with: {% extends "layout.html" %}
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-5">
-              <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account">  </a>
+              <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account"> Add another  </a>
             </span>
           </h2>
         </div>
@@ -929,7 +876,7 @@ Account with: {% extends "layout.html" %}
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
-        <strong>(#) Post Office accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account"> Add another</a>
+        <strong>(#) Post Office card accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account"> Add another</a>
         </span>
         </h2>
         </div>
