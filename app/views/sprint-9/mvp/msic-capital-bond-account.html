@@ -65,6 +65,54 @@
         ]
       }) }}
 
+      {{ govukRadios({
+        idPrefix: "msic-capital-bond-account-transfer",
+        name: "msic-capital-bond-account-transfer",
+        fieldset: {
+          legend: {
+            text: "Can this be assigned or transfered to someone else?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["msic-capital-bond-account-transfer"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["msic-capital-bond-account-transfer"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "msic-capital-bond-account-cash-early",
+        name: "msic-capital-bond-account-cash-early",
+        fieldset: {
+          legend: {
+            text: "Can it be cashed in early?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["msic-capital-bond-account-cash-early"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["msic-capital-bond-account-cash-early"] == "No")
+          }
+        ]
+      }) }}
+
 <!--
       {{ govukRadios({
         idPrefix: "msic-capital-bond-account-read-from-statement",

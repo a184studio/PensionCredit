@@ -676,15 +676,47 @@ Do you have any more Capital Bonds? - Pension Credit
                       }
                     },
 
-
-
                     {
-                      classes: 'govuk-summary-list--no-border',
                       key: {
                         text: "Account has life assurance"
                       },
                       value: {
                         text: data['msic-capital-bond-account-life-assurance']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      key: {
+                        text: "Can this be assigned or transfered to someone else?"
+                      },
+                      value: {
+                        text: data['msic-capital-bond-account-transfer']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                        text: "Can it be cashed in early?"
+                      },
+                      value: {
+                        text: data['msic-capital-bond-account-cash-early']
                       },
                       actions: {
                         items: [
