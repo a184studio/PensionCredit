@@ -46,11 +46,6 @@
             checked: (disabilities.includes("Large print"))
           },
           {
-            value: "Welsh",
-            text: "Welsh",
-            checked: (disabilities.includes("Welsh"))
-          },
-          {
             value: "Textphone",
             text: "Textphone",
             checked: (disabilities.includes("Textphone"))
@@ -84,7 +79,29 @@
         ]
       }) }}
 
+      {{ govukCheckboxes({
+        idPrefix: "disabilities",
+        name: "disabilities",
+        fieldset: {
+          legend: {
+            text: "What about the Welsh?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "Welsh",
+            text: "Welsh",
+            checked: (disabilities.includes("Welsh"))
+          }
+        ]
+      }) }}
 
+<!--
       {{ govukRadios({
         classes: "govuk-radios",
         idPrefix: "contact-welsh-yn",
@@ -109,7 +126,7 @@
           }
         ]
       }) }}
-
+-->
 
 
 
