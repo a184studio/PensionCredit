@@ -31,9 +31,31 @@
 
 
 
-
-
 <br>
+
+{% set bankAccount %}
+{{ govukInput({
+  name: "sort-code",
+  id: "sort-code",
+  classes: "govuk-input--width-10",
+  value: data["sort-code"],
+  label: {
+    text: "Sort code"
+  }
+}) }}
+
+{{ govukInput({
+  name: "Account number",
+  id: "Account number",
+  classes: "govuk-input--width-10",
+  value: data["account number"],
+  label: {
+    text: "Account number"
+  }
+}) }}
+{% endset -%}
+
+{% set buildingSociety %}
 
 {{ govukInput({
   name: "sort-code",
@@ -55,17 +77,13 @@
   }
 }) }}
 
-
-
-{% set buildingSociety %}
-
 {{ govukInput({
   name: "Roll number",
   id: "Roll number",
   classes: "govuk-input--width-20",
   value: data["roll-number"],
   label: {
-    text: "Roll number"
+    text: "Roll number (Optional)"
   }
 }) }}
 {% endset -%}
@@ -75,24 +93,27 @@
   name: "msic-pc-payment-alternative-account-bank-buildings",
   fieldset: {
     legend: {
-      text: "Is this a building society account?",
+      text: "Bank account or building society?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
   },
   items: [
 {
-  value: "Building society",
-  text: "Yes",
-  checked: (data["notepad-care-nursing-home-status"] == "Building society"),
+    value: "Bank account",
+    text: "Bank account",
+    checked: (data["dischargeDate"] == "Bank account"),
     conditional: {
-      html: buildingSociety
+      html: bankAccount
     }
   },
   {
-      value: "Bank account",
-      text: "No",
-      checked: (data["dischargeDate"] == "Bank account")
+    value: "Building society",
+    text: "Building society",
+    checked: (data["notepad-care-nursing-home-status"] == "Building society"),
+    conditional: {
+      html: buildingSociety
+    }
   }
   ]
 }) }}
