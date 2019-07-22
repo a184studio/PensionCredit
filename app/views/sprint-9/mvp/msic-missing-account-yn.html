@@ -35,14 +35,14 @@ Account with: {% extends "layout.html" %}
     },
     items: [
       {
-        value: "yes",
+        value: "Yes",
         text: "Yes",
-        checked: (data["msic-has-missing-account-yn"] == "yes")
+        checked: (data["msic-has-missing-account-yn"] == "Yes")
       },
       {
-        value: "no",
+        value: "No",
         text: "No",
-        checked: (data["msic-has-missing-account-yn"] == "no")
+        checked: (data["msic-has-missing-account-yn"] == "No")
       }
     ]
   }) }}
@@ -127,12 +127,12 @@ Account with: {% extends "layout.html" %}
         </div>{% endif %}
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-          {% if data["msic-second-property-value"] %}
+          {% if data["msic-second-property-yn"] %}
           <div class="govuk-accordion__section ">
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
-                    <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property"> Add another</a>
+                    <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property"> ˙ </a>
                   </span>
                 </h2>
               </div>
@@ -150,12 +150,12 @@ Account with: {% extends "layout.html" %}
                         text: "Has second property"
                       },
                       value: {
-                        text: "● Yes = A64a"
+                        text: data["msic-second-property-yn"]
                       },
                       actions: {
                         items: [
                           {
-                            href: "msic-second-property",
+                            href: "msic-second-property-yn",
                             html: "Change",
                             visuallyHiddenText: "XXX"
                           },
@@ -170,10 +170,10 @@ Account with: {% extends "layout.html" %}
                     {
                       classes: 'govuk-summary-list--no-border',
                       key: {
-                        text: "Property reference 1"
+                        text: "Complete A64a"
                       },
                       value: {
-                        text: data['msic-second-property-reference']
+                        text: data["msic-second-property-yn"]
                       },
                       actions: {
                         items: [
