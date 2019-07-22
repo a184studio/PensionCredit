@@ -126,55 +126,72 @@ Account with: {% extends "layout.html" %}
                 </div>
         </div>{% endif %}
 
-  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    {% if data["msic-second-property-value"] %}
-    <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
-              <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property"> Add another</a>
-            </span>
-          </h2>
-        </div>
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+          {% if data["msic-second-property-value"] %}
+          <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
+                    <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property"> Add another</a>
+                  </span>
+                </h2>
+              </div>
 
-        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
 
 
-          <div class="govuk-grid-row">
-          <div class="govuk-grid-column-three-quarters">
+                <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
 
-            {{ govukSummaryList({
-              rows: [
-              {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                  text: "Has second property"
-                },
-                value: {
-                  text: "Yes / No (If yes, CAS"
-                },
-                actions: {
-                  items: [
+                  {{ govukSummaryList({
+                    rows: [
                     {
-                      href: "msic-cash-lump-sum",
-                      html: "Change",
-                      visuallyHiddenText: "XXX"
+                      key: {
+                        text: "Has second property"
+                      },
+                      value: {
+                        text: "● Yes = A64a"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "msic-second-property",
+                            html: "Change",
+                            visuallyHiddenText: "XXX"
+                          },
+                          {
+                            href: "msic-remove",
+                            html: "Remove",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
                     },
                     {
-                      href: "msic-remove",
-                      html: "Remove",
-                      visuallyHiddenText: "XXX"
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                        text: "Property reference 1"
+                      },
+                      value: {
+                        text: data['msic-second-property-reference']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
                     }
-                  ]
-                }
-              }
-              ]
-            }) }}
+                    ]
+                  }) }}
 
-          <br></div></div>
+                <br></div></div>
 
-            </div>
-    </div>{% endif %}
+                  </div>
+          </div>{% endif %}
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     {% if data["msic-cash-lump-sum-detail"] %}

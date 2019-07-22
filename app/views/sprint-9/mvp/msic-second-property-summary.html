@@ -194,23 +194,40 @@ Do you own any other property or land other than your home? - Pension Credit
               {{ govukSummaryList({
                 rows: [
                 {
-                  classes: 'govuk-summary-list--no-border',
                   key: {
                     text: "Has second property"
                   },
                   value: {
-                    text: "Yes / No (If yes, CAS"
+                    text: "● Yes = A64a"
                   },
                   actions: {
                     items: [
                       {
-                        href: "msic-cash-lump-sum",
+                        href: "msic-second-property",
                         html: "Change",
                         visuallyHiddenText: "XXX"
                       },
                       {
                         href: "msic-remove",
                         html: "Remove",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                },
+                {
+                  classes: 'govuk-summary-list--no-border',
+                  key: {
+                    text: "Property reference 1"
+                  },
+                  value: {
+                    text: data['msic-second-property-reference']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
                         visuallyHiddenText: "XXX"
                       }
                     ]
