@@ -16,20 +16,26 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-options-backdating-changes-yn-router" method="post" class="form">
 
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Agent: Have a conversation with the claimant about any changes that might affect the amount of their claim.
+          </strong>
+        </div>
+
         {{ govukRadios({
           classes: "govuk-radios",
           idPrefix: "claim-date-options-backdating-changes-yn",
           name: "claim-date-options-backdating-changes-yn",
           fieldset: {
             legend: {
-              text: "Has there been any changes between Monday, 16 April 2019 and Today?",
+              html: "Since 16 April 2019, have there been any changes that could affect your claim?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
-          hint: {
-            text: "By changes we mean: XX Things are are interested in are, money in and out, people in and out."
-          },
+
           items: [
           {
               value: "Yes",

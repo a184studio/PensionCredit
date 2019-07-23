@@ -17,13 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-options-backdating-outside-yn" method="post">
 
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            Agent: Check SeachLight or PTP CAM
-          </strong>
-        </div>
+
 
 
 {{ govukRadios({
@@ -32,14 +26,12 @@
   name: "claim-date-manual-eed-daf-reason",
   fieldset: {
     legend: {
-      text: "Add reason for why the USER wants to have a differnt date",
+      text: "Why do you want to start your claim from a different date?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
   },
-  hint: {
-    text: "XXX"
-  },
+
   items: [
     {
       value: "Customer stopped working",
