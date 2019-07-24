@@ -20,7 +20,7 @@
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
             <span class="govuk-warning-text__assistive">Warning</span>
-            Agent: Check SeachLight or PTP CAM for an initial date of claim (IDOC)
+            Agent: Check if there is an initial date of claim (IDOC) in PTP CAM.
           </strong>
         </div>
 
@@ -31,7 +31,7 @@
             namePrefix: "alternate-date",
             fieldset: {
               legend: {
-                text: "What date did you contact us?"
+                text: "Enter IDOC"
               }
             },
             items: [
@@ -60,7 +60,7 @@
           name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              text: "Have you contacted us about this claim before?",
+              text: "Agent: Check if there is an initial date of claim (IDOC) in PTP CAM.",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -71,7 +71,7 @@
           items: [
           {
             value: "yes-date",
-            text: "Yes",
+            text: "IDOC held",
             checked: (data["claim-date-idoc-yn"] == "Yes"),
             conditional: {
               html: yesDate
@@ -79,7 +79,7 @@
           },
             {
               value: "no-date",
-              text: "No",
+              text: "No IDOC – use today’s date",
               checked: (data["claim-date-idoc-yn"] == "No")
             }
           ]

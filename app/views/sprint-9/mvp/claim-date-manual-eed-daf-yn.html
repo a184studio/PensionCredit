@@ -51,21 +51,24 @@
           name: "claim-date-manual-eed-daf-yn",
           fieldset: {
             legend: {
-              text: "Do you want to start your claim from 16 April 2019?",
+              text: "Due to x,y and Z, 16 April 2019 is the miximum date we can go back to. Is there an alternative date when you would like your claim should start?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
+          },
+          hint: {
+            text: "Pete text: Do you want to start your claim from 16 April 2019?"
           },
 
           items: [
           {
             value: "Yes",
-            text: "Yes",
+            text: "No",
             checked: (data["claim-date-manual-eed-daf-yn"] == "Yes")
           },
             {
               value: "No",
-              text: "No",
+              text: "Yes",
               checked: (data["claim-date-manual-eed-daf-yn"] == "No"),
               conditional: {
                 html: noDate
