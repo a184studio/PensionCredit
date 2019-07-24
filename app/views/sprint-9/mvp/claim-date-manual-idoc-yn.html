@@ -66,21 +66,21 @@
             }
           },
           hint: {
-            text: "Select one option."
+            text: ""
           },
           items: [
           {
-            value: "no-date",
-            text: "No",
-            checked: (data["claim-date-idoc-yn"] == "No")
+            value: "yes-date",
+            text: "Yes",
+            checked: (data["claim-date-idoc-yn"] == "Yes"),
+            conditional: {
+              html: yesDate
+            }
           },
             {
-              value: "yes-date",
-              text: "Yes",
-              checked: (data["claim-date-idoc-yn"] == "Yes"),
-              conditional: {
-                html: yesDate
-              }
+              value: "no-date",
+              text: "No",
+              checked: (data["claim-date-idoc-yn"] == "No")
             }
           ]
         }) }}
