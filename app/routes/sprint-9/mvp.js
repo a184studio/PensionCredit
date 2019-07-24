@@ -94,7 +94,7 @@ router.post(`${baseUrl}/claim-date-options-backdating-changes-yn-router`, (req, 
   if (claimDateTest === 'Yes') {
     res.redirect(`${baseUrl}/claim-date-options-backdating-changes-out`)
   } else {
-    res.redirect(`${baseUrl}/claim-date-manual-eed-daf-yn`)
+    res.redirect(`${baseUrl}/claim-date-summary`)
   }
 })
 
@@ -139,7 +139,7 @@ router.post(`${baseUrl}/claim-date-manual-eed-daf-yn-router`, (req, res) => {
   const claimDateTest = req.session.data['claim-date-manual-eed-daf-yn']
 
   if (claimDateTest === 'Yes') {
-    res.redirect(`${baseUrl}/claim-date-summary`)
+    res.redirect(`${baseUrl}/claim-date-options-backdating-outside-yn`)
   } else {
     res.redirect(`${baseUrl}/claim-date-manual-eed-daf-reason`)
   }
