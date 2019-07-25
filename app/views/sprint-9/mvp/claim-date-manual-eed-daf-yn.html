@@ -16,13 +16,20 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-manual-eed-daf-yn-router" method="post">
 
+
+
+        <div class="govuk-panel--agent">
+          <h1 class="govuk-heading-m"><span class="agent-action">Agent: </span> The earliest date that this application can be considered is 16 April 2019 (X months ago). <br><br>Talk with the USER and discuss if they want to continue with this date and all the changes that may effect this date.</h1>
+
+<br>
+
         {% set noDate %}
           {{ govukDateInput({
             id: "claim-date-manual-eed-daf-yn-alternate-date",
             namePrefix: "claim-date-manual-eed-daf-yn-alternate-date",
             fieldset: {
               legend: {
-                text: "What date do you want to start your claim from?"
+                text: "What is the stable date?"
               }
             },
             items: [
@@ -51,31 +58,40 @@
           name: "claim-date-manual-eed-daf-yn",
           fieldset: {
             legend: {
-              text: "Due to x,y and Z, 16 April 2019 is the miximum date we can go back to. Is there an alternative date when you would like your claim should start?",
+              text: "What best describes this person's scenario?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
           hint: {
-            text: "Pete text: Do you want to start your claim from 16 April 2019?"
+            text: "The changes are, Previous PC claim, Who lives with you, where you live, income, savings and occupational pensions"
           },
-
           items: [
           {
-            value: "Yes",
-            text: "No",
-            checked: (data["claim-date-manual-eed-daf-yn"] == "Yes")
+            value: "multi-changes",
+            text: "Lots of changes (Do this is in CAM)",
+            checked: (data["claim-date-manual-eed-daf-yn"] == "multi-changes")
           },
             {
-              value: "No",
-              text: "Yes",
-              checked: (data["claim-date-manual-eed-daf-yn"] == "No"),
+              value: "stable-date",
+              text: "Changes may have happened but a date can be established",
+              checked: (data["claim-date-manual-eed-daf-yn"] == "stable-date"),
               conditional: {
                 html: noDate
               }
+            },
+            {
+              value: "no-changes",
+              text: "No changes, proceed with 16 April 2019 (Maxiumum backdating)",
+              checked: (data["claim-date-manual-eed-daf-yn"] == "no-changes")
             }
           ]
         }) }}
+
+      </div>
+
+
+
 
         {{ govukButton({
           text: "Continue"

@@ -18,16 +18,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-manual-eed-daf-yn" method="post">
 
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            Agent: Enter the earliest entitlement date
-          </strong>
-        </div>
-
-
-
+      <div class="govuk-panel--agent">
 
 <!--Enter the earliest entitlement date-->
 
@@ -36,7 +27,7 @@
           namePrefix: "claim-date-manual-eed-date",
           fieldset: {
             legend: {
-              text: "",
+              html: "<span class=\"agent-action\">Agent: </span>Enter the earliest entitlement date",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -50,6 +41,8 @@
         {{ govukButton({
           text: "Continue"
         }) }}
+</div>
+
       </form>
     </div>
   </div>
