@@ -16,6 +16,8 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-manual-eed" method="post">
 
+
+<!--
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
@@ -24,7 +26,9 @@
           </strong>
         </div>
 
+-->
 
+<div class="govuk-panel--agent">
         {% set yesDate %}
           {{ govukDateInput({
             id: "alternate-date",
@@ -60,7 +64,7 @@
           name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              text: "Agent: Check if there is an initial date of claim (IDOC) in PTP CAM.",
+              html: "<span class=\"agent-action\">Agent: </span>Check if there is an initial date of claim (IDOC) in PTP CAM",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -88,6 +92,12 @@
         {{ govukButton({
           text: "Continue"
         }) }}
+
+        </div>
+
+
+
+
       </form>
     </div>
   </div>
