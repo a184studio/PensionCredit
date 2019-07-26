@@ -52,6 +52,22 @@
               </dd>
             </div>
 
+            {% if data["claim-date-manual-eed-daf-yn"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      What is the earliest entitlement date?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      16 April 2019
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="home-ownership">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+              {% endif %}
+
       {% if data["claim-date-idoc-yn"] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -85,13 +101,15 @@
                   {% endif %}
 
 
-{% if data["claim-date-manual-eed-daf-yn"] %}
+
+
+{% if data["claim-date-options-backdating-outside-yn"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          What is the earliest entitlement date?
+          Have you spent longer than four weeks outside the UK?
         </dt>
         <dd class="govuk-summary-list__value">
-          16 April 2019
+          {{ data["claim-date-options-backdating-outside-yn"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="home-ownership">
@@ -101,10 +119,29 @@
       </div>
   {% endif %}
 
+  {% if data["claim-date-options-backdating-outside-yn"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reason for outside of UK
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["claim-date-options-backdating-outside-reason"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="home-ownership">
+              Change
+            </a>
+          </dd>
+        </div>
+    {% endif %}
+
+
+
+
 {% if data["claim-date-manual-eed-daf-yn"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Happy to start on date discussed
+          Take a claim from a different date to allow for simple changes
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["claim-date-manual-eed-daf-yn"] }}
@@ -116,21 +153,6 @@
         </dd>
       </div>
   {% endif %}
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date chosen
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Day / Month / Year
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="home-ownership">
-              Change
-            </a>
-          </dd>
-        </div>
 
     {% if data["claim-date-manual-eed-daf-reason"] %}
           <div class="govuk-summary-list__row">
@@ -153,7 +175,7 @@
   {% if data["claim-date-manual-eed-daf-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Agreed date of claim
+            Based on the conversation we have had, we will start your claim from
           </dt>
           <dd class="govuk-summary-list__value">
             Monday, 15 April 2019
@@ -167,37 +189,7 @@
     {% endif %}
 
 
-  {% if data["claim-date-options-backdating-outside-yn"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Outside the UK in backdating period?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["claim-date-options-backdating-outside-yn"] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="home-ownership">
-              Change
-            </a>
-          </dd>
-        </div>
-    {% endif %}
 
-    {% if data["claim-date-options-backdating-outside-yn"] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Reason for outside of UK
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["claim-date-options-backdating-outside-reason"] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="home-ownership">
-                Change
-              </a>
-            </dd>
-          </div>
-      {% endif %}
 
 
 
@@ -220,6 +212,37 @@
 
       <!-------------------------------------------------------->
 
+      {% if data["claim-date-options-today-yn"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Claim date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                XX / XX / 2019
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="home-ownership">
+                  Change
+                </a>
+              </dd>
+            </div>
+        {% endif %}
+
+        {% if data["claim-date-options-advanced-yn"] %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Claim date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  XX / XX / 2019
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="home-ownership">
+                    Change
+                  </a>
+                </dd>
+              </div>
+          {% endif %}
 
       </dl>
 
