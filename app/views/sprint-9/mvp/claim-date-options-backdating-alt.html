@@ -22,7 +22,7 @@
             namePrefix: "alternate-date",
             fieldset: {
               legend: {
-                text: "When do you want to claim from?"
+                text: "What date do you want to start your application from?"
               }
             },
             hint: {
@@ -54,14 +54,12 @@
           name: "alt-backdated-date",
           fieldset: {
             legend: {
-              text: "Would you like to start your claim from 1 February 2019?",
+              text: "The earliest date we can consider your claim from is 1 February 2019. Do you want to start your application using this date?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
-          hint: {
-            text: "This is the earliest date we can backdate your claim to."
-          },
+
           items: [
           {
             value: "alt-backdated-date-yes",
@@ -70,7 +68,7 @@
           },
             {
               value: "alt-backdated-date-no",
-              text: "No",
+              text: "No, use a different date",
               checked: (data["alt-backdated-date-yn"] == "No"),
               conditional: {
                 html: altBackdatedDate

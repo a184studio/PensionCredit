@@ -15,14 +15,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-options-backdating-benefit-check" method="post">
+<div class="govuk-panel--agent">
 
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            Agent: Check SeachLight or PTP CAM for an initial date of claim (IDOC)
-          </strong>
-        </div>
 
 
         {% set yesDate %}
@@ -31,7 +25,7 @@
             namePrefix: "alternate-date",
             fieldset: {
               legend: {
-                text: "What date did you contact us?"
+                text: "Enter the IDOC."
               }
             },
             items: [
@@ -60,7 +54,7 @@
           name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              text: "Have you contacted us about this claim before?",
+              text: "Agent: Check PTP CAM for an initial date of claim (IDOC)",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -69,12 +63,12 @@
           items: [
           {
             value: "no-date",
-            text: "No",
+            text: "No IDOC",
             checked: (data["claim-date-idoc-yn"] == "No")
           },
             {
               value: "yes-date",
-              text: "Yes",
+              text: "There is an IDOC",
               checked: (data["claim-date-idoc-yn"] == "Yes"),
               conditional: {
                 html: yesDate
@@ -86,6 +80,7 @@
         {{ govukButton({
           text: "Continue"
         }) }}
+        </div>
       </form>
     </div>
   </div>

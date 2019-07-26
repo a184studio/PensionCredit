@@ -19,7 +19,15 @@
 
 
         <div class="govuk-panel--agent">
-          <h1 class="govuk-heading-m"><span class="agent-action">Agent: </span> The earliest date that this application can be considered is 16 April 2019 (X months ago). <br><br>Talk with the USER and discuss if they want to continue with this date and all the changes that may effect this date.</h1>
+          <h1 class="govuk-heading-m"><span class="agent-action">Agent: </span> The earliest date that you can consider this application from is 16 April 2019. <br><br>Discuss how any changes since this date can affect the claim and ask whether they want to make a claim from this date or choose a different date. <br><br> Important changes to discuss are
+
+            <ul>
+              <li>previous Pension Credit claims</li>
+              <li>changes to who lives with the claimant </li>
+              <li>changes to where they live</li>
+              <li>changes to income</li>
+              <li>changes to money they have</li>
+              </ul></h1>
 
 <br>
 
@@ -29,7 +37,7 @@
             namePrefix: "claim-date-manual-eed-daf-yn-alternate-date",
             fieldset: {
               legend: {
-                text: "What is the stable date?"
+                text: "What date do you want to start the claim?"
               }
             },
             items: [
@@ -58,32 +66,31 @@
           name: "claim-date-manual-eed-daf-yn",
           fieldset: {
             legend: {
-              text: "What best describes this person's scenario?",
+              text: "What do you want to do next?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
-          hint: {
-            text: "The changes are, Previous PC claim, Who lives with you, where you live, income, savings and occupational pensions"
-          },
+
           items: [
           {
             value: "multi-changes",
-            text: "Lots of changes (Do this is in CAM)",
+            text: "Continue in PTP CAM as there have been complex changes",
             checked: (data["claim-date-manual-eed-daf-yn"] == "multi-changes")
           },
             {
+              value: "no-changes",
+              text: "Take a claim from 16 April 2019",
+              checked: (data["claim-date-manual-eed-daf-yn"] == "no-changes")
+            },
+            {
               value: "stable-date",
-              text: "Changes may have happened but a date can be established",
+              text: "Take a claim from a different date to allow for simple changes",
               checked: (data["claim-date-manual-eed-daf-yn"] == "stable-date"),
               conditional: {
                 html: noDate
               }
-            },
-            {
-              value: "no-changes",
-              text: "No changes, proceed with 16 April 2019 (Maximum backdating)",
-              checked: (data["claim-date-manual-eed-daf-yn"] == "no-changes")
+
             }
           ]
         }) }}

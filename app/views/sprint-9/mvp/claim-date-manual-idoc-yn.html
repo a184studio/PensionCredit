@@ -35,7 +35,7 @@
             namePrefix: "alternate-date",
             fieldset: {
               legend: {
-                text: "Enter IDOC"
+                text: "Enter the IDOC"
               }
             },
             items: [
@@ -64,7 +64,7 @@
           name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              html: "<span class=\"agent-action\">Agent: </span>Check if there is an initial date of claim (IDOC) in PTP CAM",
+              html: "<span class=\"agent-action\">Agent: </span>Check PTP CAM for an initial date of claim (IDOC)",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -75,7 +75,7 @@
           items: [
           {
             value: "yes-date",
-            text: "IDOC held",
+            text: "There is an IDOC",
             checked: (data["claim-date-idoc-yn"] == "Yes"),
             conditional: {
               html: yesDate
@@ -83,7 +83,7 @@
           },
             {
               value: "no-date",
-              text: "No IDOC – use today’s date",
+              text: "No IDOC",
               checked: (data["claim-date-idoc-yn"] == "No")
             }
           ]
