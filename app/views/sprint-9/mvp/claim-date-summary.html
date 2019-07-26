@@ -22,6 +22,7 @@
 
     <dl class="govuk-summary-list govuk-summary-list--long">
 
+<!--
       {% if data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year'] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -52,6 +53,7 @@
               </dd>
             </div>
 
+-->
             {% if data["claim-date-manual-eed-daf-yn"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -153,6 +155,22 @@
         </dd>
       </div>
   {% endif %}
+
+  {% if data["claim-date-manual-eed-daf-yn"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Stable date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XX / XX / 2019
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="home-ownership">
+              Change
+            </a>
+          </dd>
+        </div>
+    {% endif %}
 
     {% if data["claim-date-manual-eed-daf-reason"] %}
           <div class="govuk-summary-list__row">
