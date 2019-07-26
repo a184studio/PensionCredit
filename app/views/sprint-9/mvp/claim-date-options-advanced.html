@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-options-advanced-yn-router" method="post">
 
-        <h1 class="govuk-heading-xl">Your Pension Credit can only start from 01 July 2019, the date of your 68th birthday</h1>
+        <h1 class="govuk-heading-xl">Do you want to start your claim from 1 July 2019?</h1>
 
 
                 {{ govukRadios({
@@ -25,14 +25,12 @@
                   name: "claim-date-options-advanced-yn",
                   fieldset: {
                     legend: {
-                      text: "Do you agree with 01 July 2019 as your start date",
+                      text: "We can only start your claim from the day you reach your State Pension age, 1 July 2019",
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--m"
                     }
                   },
-                  hint: {
-                    text: "This is an advanced claim: This date is calculated using your date of birth and Todays date and is currently the the earliest you can apply from."
-                  },
+                
                   items: [
                     {
                       value: "Yes",
