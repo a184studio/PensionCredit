@@ -82,7 +82,7 @@ router.post(`${baseUrl}/claim-date-options-backdating-outside-yn-router`, (req, 
   const claimDateTest = req.session.data['claim-date-options-backdating-outside-yn']
 
   if (claimDateTest === 'Yes') {
-    res.redirect(`${baseUrl}/claim-date-options-backdating-outside-out`)
+    res.redirect(`${baseUrl}/claim-date-options-backdating-outside-reason`)
   } else {
     res.redirect(`${baseUrl}/claim-date-manual-eed-daf-yn`)
   }
@@ -106,6 +106,19 @@ router.post(`${baseUrl}/claim-date-options-backdating-benefit-check-yn-router`, 
     res.redirect(`${baseUrl}/claim-date-options-backdating-alt`)
   } else {
     res.redirect(`${baseUrl}/claim-date-options-backdating-alt`)
+  }
+})
+
+
+
+
+router.post(`${baseUrl}/claim-date-options-backdating-outside-reason-router`, (req, res) => {
+  const backdatingOutsideReason = req.session.data['claim-date-options-backdating-outside-reason']
+
+  if (backdatingOutsideReason === 'Something else') {
+    res.redirect(`${baseUrl}/claim-date-options-backdating-outside-out`)
+  } else {
+    res.redirect(`${baseUrl}/claim-date-manual-eed-daf-yn`)
   }
 })
 

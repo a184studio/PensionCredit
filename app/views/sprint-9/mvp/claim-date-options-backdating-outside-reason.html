@@ -1,107 +1,62 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Backdating: Outside of UK - Pension Credit
+  Why were you outside of the UK - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
 {% endblock %}
+{% from "date-input/macro.njk" import govukDateInput %}
 
 {% block content %}
-{% from "radios/macro.njk" import govukRadios %}
-
 
 {% include "includes/js-back-link.html" %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form action="claim-date-options-backdating-Benefit-check" method="post" class="form">
-
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon app-warning-text--long-2" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-warning-text__assistive">Warning</span>
-          Agent: You need to enter a reason in PTP CAM for the change in maximum backdating.
-        </strong>
-      </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="claim-date-options-backdating-outside-reason-router" method="post">
 
 
 
-      {{ govukRadios({
-        idPrefix: "where-do-you-live",
-        name: "where-do-you-live",
-        fieldset: {
-          legend: {
-            text: "Why do you want to claim from a different date?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        items: [
-          {
-            value: "customer-stopped-working",
-            text: "Customer stopped working"
-          },
-          {
-            value: "scotland",
-            text: "Bereavement"
-          },
-          {
-            value: "living-on-own-or-separated",
-            text: "Living on own or separated"
-          },
-          {
-            value: "customers-request",
-            text: "Customer’s request"
-          },
-          {
-            value: "arriving-returning-to-uk",
-            text: "Arriving/returning to UK"
-          },
-          {
-            value: "moved-into-care-home",
-            text: "Moved into care home"
-          },
-          {
-            value: "reduction-of-savings-income",
-            text: "Reduction of savings/income"
-          },
-          {
-            value: "carers-allowance-awarded",
-            text: "Carers Allowance awarded"
-          },
-          {
-            value: "change-of-address",
-            text: "Change of address"
-          },
-          {
-            value: "ee-applying-for-pension-credit",
-            text: "Re-applying for Pension Credit"
-          },
-          {
-            value: "hospital-admission-discharge",
-            text: "Hospital admission/discharge"
-          },
-          {
-            value: "backdated-claim",
-            text: "Backdated claim"
-          },
-          {
-            value: "released-from-hmp",
-            text: "Released from HMP"
-          },
-          {
-            value: "pip-claimed-awarded",
-            text: "PIP claimed/awarded"
-          }
-        ]
-      }) }}
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "claim-date-options-backdating-outside-reason",
+  name: "claim-date-options-backdating-outside-reason",
+  fieldset: {
+    legend: {
+      html: "Why were you outide of the UK?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
 
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-    </form>
+  items: [
+    {
+      value: "Medical treatment",
+      text: "Medical treatment"
+    },
+    {
+      value: "Bereavement / funeral",
+      text: "Bereavement / funeral"
+    },
+    {
+      value: "Religious ceremonies",
+      text: "Religious ceremonies"
+    },
+    {
+      value: "Something else",
+      text: "Something else"
+    }
+  ]
+}) }}
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
   </div>
-</div>
 {% endblock %}
