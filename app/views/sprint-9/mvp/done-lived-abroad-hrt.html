@@ -14,7 +14,8 @@
 
 {% include "includes/js-back-link.html" %}
 
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
 <!----Headline---->
 
@@ -26,14 +27,18 @@
 <!----Headline---->
 <form action="done-hrt" method="post">
 
-  <div class="govuk-warning-text">
-    <span class="govuk-warning-text__icon app-warning-text--long-3" aria-hidden="true">!</span>
-    <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive">Warning</span>
-      Agent: Check the claimant's answers and change any that are incorrect. Record the information on this page into PTP CAM. Take the caller through the Habitual Residency test. Finish and close to go back to the start page to take another application.
-    </strong>
+  <div class="govuk-panel--agent">
+    <h2 class="govuk-heading-s"><span class="agent-action">Agent: </span> Check the claimant's answers and change any that are incorrect. Record the information on this page into PTP CAM. Take the caller through the Habitual Residency test. </h2>
+
+
+    <p class="govuk-body">Finish and close to go back to the start page to take another application.</p>
+
   </div>
 
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <h1 class="govuk-heading-xl">Check answers</h1>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
@@ -306,13 +311,38 @@
 <!----Break---->
 
 
+<br>
 
+{{ govukButton({
+  text: "Download PDF",
+  classes: "govuk-button--secondary"
+}) }}
 
+{{ govukCheckboxes({
+idPrefix: "download-pdf-checkbox",
+name: "download-pdf-checkbox",
+fieldset: {
+legend: {
+text: "",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--s"
+}
+},
+items: [
+{
+value: "download-pdf",
+text: "Confirm that you have downloaded the PDF"
+}
+]
+}) }}
+
+<br>
 
 {{ govukButton({
   text: "Finish and close",
   href: "start"
 }) }}
+</form>
 
 <!----Break---->
 
