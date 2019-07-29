@@ -103,7 +103,7 @@ Account with: {% extends "layout.html" %}
                   {
                     classes: 'govuk-summary-list--no-border',
                     key: {
-                      text: "Amount in account today"
+                      text: "Amount in this account today"
                     },
                     value: {
                       text: data['msic-missing-account-amount']
@@ -215,7 +215,7 @@ Account with: {% extends "layout.html" %}
                         {
                           classes: 'govuk-summary-list--no-border',
                           key: {
-                            text: "Amount in account today"
+                            text: "Amount in this account today"
                           },
                           value: {
                             text: data['msic-cash-lump-sum-detail']
@@ -304,7 +304,7 @@ Account with: {% extends "layout.html" %}
                 {
                   classes: 'govuk-summary-list--no-border',
                   key: {
-                    text: "Amount in account today"
+                    text: "Amount in this account today"
                   },
                   value: {
                     text: data['msic-cash-other-abroad-amount']
@@ -469,7 +469,7 @@ Account with: {% extends "layout.html" %}
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-6">
-                  <strong>(#) Shares </strong><a class="govuk-accordion__link" href="msic-shares-account"> Add another</a>
+                  <strong>(#) Shares </strong><a class="govuk-accordion__link" href="msic-shares-account"> Add^</a>
                 </span>
               </h2>
             </div>
@@ -537,7 +537,7 @@ Account with: {% extends "layout.html" %}
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-7">
-                  <strong>(#) Capital bonds </strong><a class="govuk-accordion__link" href="msic-capital-bond-account"> Add another</a>
+                  <strong>(#) Capital bonds </strong><a class="govuk-accordion__link" href="msic-capital-bond-account"> Add^</a>
                 </span>
               </h2>
             </div>
@@ -624,7 +624,7 @@ Account with: {% extends "layout.html" %}
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-8">
-          <strong>(#) ISAs </strong><a class="govuk-accordion__link" href="msic-isa-savings-account"> Add another</a>
+          <strong>(#) ISAs </strong><a class="govuk-accordion__link" href="msic-isa-savings-account"> Add^</a>
           </span>
           </h2>
           </div>
@@ -663,7 +663,7 @@ Account with: {% extends "layout.html" %}
           {
           classes: 'govuk-summary-list--no-border',
           key: {
-            text: "Amount in account today"
+            text: "Amount in this account today"
           },
           value: {
             text: data['msic-isa-savings-account-amount']
@@ -742,7 +742,7 @@ Account with: {% extends "layout.html" %}
             <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
-            <strong>(#) Credit union accounts </strong><a class="govuk-accordion__link" href="msic-credit-union-account"> Add another</a>
+            <strong>(#) Credit union accounts </strong><a class="govuk-accordion__link" href="msic-credit-union-account"> Add^</a>
             </span>
             </h2>
             </div>
@@ -779,7 +779,7 @@ Account with: {% extends "layout.html" %}
 
               {
                 key: {
-                  text: "Amount in account today"
+                  text: "Amount in this account today"
                 },
                 value: {
                   text: data['msic-credit-union-account-amount']
@@ -796,7 +796,7 @@ Account with: {% extends "layout.html" %}
               },
               {
               key: {
-                text: "Account belongs to"
+                text: "Account owner"
               },
               value: {
                 text: data['msic-credit-union-account-owner']
@@ -815,7 +815,7 @@ Account with: {% extends "layout.html" %}
               {
                 classes: 'govuk-summary-list--no-border',
                 key: {
-                  text: "Percentage of money that is yours"
+                  text: "Amount in this account that is yours"
                 },
                 value: {
                   text: data['msic-credit-union-account-stake']
@@ -859,7 +859,7 @@ Account with: {% extends "layout.html" %}
           {
             classes: 'govuk-summary-list--no-border',
           key: {
-          text: "Amount in account today"
+          text: "Amount in this account today"
           },
           value: {
           text: data['msic-post-office-card-account-amount']
@@ -893,7 +893,7 @@ Account with: {% extends "layout.html" %}
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
-          <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> Add another</a>
+          <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> Add^</a>
           </span>
           </h2>
           </div>
@@ -929,7 +929,7 @@ Account with: {% extends "layout.html" %}
 
           {
             key: {
-              text: "Amount in account today"
+              text: "Amount in this account today"
             },
             value: {
               text: data['msic-all-savings-account-amount']
@@ -946,7 +946,7 @@ Account with: {% extends "layout.html" %}
           },
           {
           key: {
-            text: "Account belongs to"
+            text: "Account owner"
           },
           value: {
             text: data['msic-all-savings-account-owner']
@@ -965,7 +965,7 @@ Account with: {% extends "layout.html" %}
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-              text: "Percentage of money that is yours"
+              text: "Amount in this account that is yours"
             },
             value: {
               text: data['msic-all-savings-account-stake']
@@ -1072,7 +1072,7 @@ Account with: {% extends "layout.html" %}
           {
           classes: 'govuk-summary-list--no-border',
           key: {
-            text: "Balance of account"
+            text: "Amount in this account"
           },
           value: {
             text: data["msic-pc-payment-alternative-account-balance"]
@@ -1119,7 +1119,7 @@ Account with: {% extends "layout.html" %}
           classes: 'govuk-summary-list--no-border',
 
           key: {
-            text: "Amount in account today"
+            text: "Amount in this account today"
           },
           value: {
             text: data["msic-pc-payment-alternative-account-balance"]
@@ -1148,7 +1148,7 @@ Account with: {% extends "layout.html" %}
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-12">
-            <strong>(#) Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account"> Add another</a>
+            <strong>(#) Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account"> Add^</a>
           </span>
           </h2>
           </div>
@@ -1187,7 +1187,7 @@ Account with: {% extends "layout.html" %}
 
                 {
                   key: {
-                    text: "Amount in account today"
+                    text: "Amount in this account today"
                   },
                   value: {
                     text: data['msic-all-current-account-amount-' + i] | formatMoney
@@ -1204,7 +1204,7 @@ Account with: {% extends "layout.html" %}
                 },
                 {
                   key: {
-                    text: "Account belongs to"
+                    text: "Account owner"
                   },
                   value: {
                     text: data['current-owner-' + i]
@@ -1222,7 +1222,7 @@ Account with: {% extends "layout.html" %}
                 {
                   classes: 'govuk-summary-list--no-border',
                   key: {
-                    text: "Percentage of money that is yours"
+                    text: "Amount in this account that is yours"
                   },
                   value: {
                     text: data['msic-all-current-account-stake-' + i]

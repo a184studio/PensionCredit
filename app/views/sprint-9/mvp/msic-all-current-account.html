@@ -49,7 +49,7 @@
       }) }}
 -->
       <br>
-      <p class="govuk-body">Total amount in this account <strong>today</strong></p>
+      <p class="govuk-body">Amount in this account <strong>today</strong></p>
 
       {{ govukInput({
         label: {
@@ -63,11 +63,11 @@
       {% set percentageField %}
         {{ govukInput({
           label: {
-            text: "What percentage of the money in the account is yours?"
+            text: "Amount of money that is yours"
           },
           id: "msic-all-current-account-stake",
           name: "msic-all-current-account-stake-" + count,
-          classes: "govuk-input--width-5"
+          classes: "govuk-input--width-10"
         }) }}
       {% endset %}
 
@@ -76,7 +76,7 @@
         name: "current-owner-" + count,
         fieldset: {
           legend: {
-            text: "Who does this account belong to?",
+            text: "Account owner",
             classes: "govuk-fieldset__legend--s"
           }
         },
