@@ -64,7 +64,7 @@
           name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              html: "<span class=\"agent-action\">Agent: </span>Check with SearchLight etc for previous Pension Credit claim, IDOC and work out starting date",
+              html: "<span class=\"agent-action\">Agent: </span>Check PTP CAM for an initial date of claim (IDOC) or a previous Pension Credit claim and work out the date to consider this claim from",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -73,19 +73,21 @@
             text: ""
           },
           items: [
+
+          {
+            value: "no-date",
+            text: "Use the earliest entitlment date ",
+            checked: (data["claim-date-idoc-yn"] == "No")
+          },
           {
             value: "yes-date",
-            text: "Manual start date",
+            text: "Use a different start date",
             checked: (data["claim-date-idoc-yn"] == "Yes"),
             conditional: {
               html: yesDate
             }
-          },
-            {
-              value: "no-date",
-              text: "State Pension or system date",
-              checked: (data["claim-date-idoc-yn"] == "No")
-            }
+          }
+
           ]
         }) }}
 
