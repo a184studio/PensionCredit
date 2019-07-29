@@ -27,9 +27,14 @@
             }
           },
           items: [
-            {
+          {
+            value: "Backdating",
+            text: "Backdating (auto)",
+            checked: data['claim-date-options'] == "Backdating"
+          },
+          {
               value: "BackdatingManual",
-              text: "Backdating",
+              text: "Backdating (manual)",
               checked: data['claim-date-options'] == "BackdatingManual"
             },
             {

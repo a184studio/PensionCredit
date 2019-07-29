@@ -1,13 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add start date - Pension Credit
+  Check for previous Pension Credit cliam - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
 {% endblock %}
-{% from "date-input/macro.njk" import govukDateInput %}
 
 {% block content %}
 
@@ -17,117 +16,88 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-options-backdating-outside-yn" method="post">
 
+
+<!--
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
             <span class="govuk-warning-text__assistive">Warning</span>
-            Agent: Check SeachLight or PTP CAM
+            Agent: Check if there is an initial date of claim (IDOC) in PTP CAM.
           </strong>
         </div>
 
+-->
 
-        {{ govukDateInput({
-          id: "claim-date-manual-start-date",
-          namePrefix: "claim-date-manual-start-date",
+<div class="govuk-panel--agent">
+        {% set yesDate %}
+          {{ govukDateInput({
+            id: "alternate-date",
+            namePrefix: "alternate-date",
+            fieldset: {
+              legend: {
+                text: "Enter start date"
+              }
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["alternate-date-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["alternate-date-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["alternate-date-year"]
+              }
+            ]
+          }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "claim-date-idoc-yn",
+          name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              text: "Add new start date",
+              html: "<span class=\"agent-action\">Agent: </span>Check with SearchLight etc for previous Pension Credit claim, IDOC and work out starting date",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
           hint: {
-            text: "For example, 12 11 2007"
-          }
+            text: ""
+          },
+          items: [
+          {
+            value: "yes-date",
+            text: "Manual start date",
+            checked: (data["claim-date-idoc-yn"] == "Yes"),
+            conditional: {
+              html: yesDate
+            }
+          },
+            {
+              value: "no-date",
+              text: "State Pension or system date",
+              checked: (data["claim-date-idoc-yn"] == "No")
+            }
+          ]
         }) }}
-
-
-<br><br>
-
-{{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "changed-name",
-  name: "changed-name",
-  fieldset: {
-    legend: {
-      text: "Why is this differnt? (CAM)",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "XXX"
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Customer stopped working"
-    },
-    {
-      value: "yes",
-      text: "Bereavement"
-    },
-    {
-      value: "yes",
-      text: "Living on own or separated"
-    },
-    {
-      value: "yes",
-      text: "Customer’s request"
-    },
-    {
-      value: "yes",
-      text: "Arriving/returning to UK"
-    },
-    {
-      value: "yes",
-      text: "Moved into care home"
-    },
-    {
-      value: "yes",
-      text: "Reduction of savings/income"
-    },
-    {
-      value: "yes",
-      text: "Carers Allowance awarded"
-    },
-    {
-      value: "yes",
-      text: "AA/DLA claimed/awarded"
-    },
-    {
-      value: "yes",
-      text: "Change of address"
-    },
-    {
-      value: "yes",
-      text: "Re-applying for Pension Credit"
-    },
-    {
-      value: "yes",
-      text: "Hospital admission/discharge"
-    },
-    {
-      value: "no",
-      text: "Backdated claim"
-    },
-    {
-      value: "no",
-      text: "Released from HMP"
-    },
-    {
-      value: "no",
-      text: "PIP claimed/awarded"
-    }
-  ]
-}) }}
-
-
-
 
         {{ govukButton({
           text: "Continue"
         }) }}
+
+        </div>
+
+
+
+
       </form>
     </div>
   </div>
