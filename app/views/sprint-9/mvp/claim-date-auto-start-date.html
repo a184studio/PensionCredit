@@ -14,7 +14,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="claim-date-auto-start-date" method="post">
+      <form action="claim-date-options-backdating-outside-yn" method="post">
 
 
 <!--
@@ -35,7 +35,7 @@
             namePrefix: "alternate-date",
             fieldset: {
               legend: {
-                text: "Enter the IDOC"
+                text: "Enter start date"
               }
             },
             items: [
@@ -64,7 +64,7 @@
           name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              html: "<span class=\"agent-action\">Agent: </span>Check PTP CAM for an initial date of claim (IDOC)",
+              html: "<span class=\"agent-action\">Agent: </span>Use IDOC date (xx July 2019), check PTP CAM and previous Pension Credit claim to work out the date to consider this claim from",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -73,19 +73,21 @@
             text: ""
           },
           items: [
+
+          {
+            value: "no-date",
+            text: "Use the earliest entitlment date XX April 2019",
+            checked: (data["claim-date-idoc-yn"] == "No")
+          },
           {
             value: "yes-date",
-            text: "There is an IDOC",
+            text: "Use a different start date",
             checked: (data["claim-date-idoc-yn"] == "Yes"),
             conditional: {
               html: yesDate
             }
-          },
-            {
-              value: "no-date",
-              text: "No IDOC",
-              checked: (data["claim-date-idoc-yn"] == "No")
-            }
+          }
+
           ]
         }) }}
 
