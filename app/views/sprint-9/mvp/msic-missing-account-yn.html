@@ -12,8 +12,7 @@ Account with: {% extends "layout.html" %}
 
 {% include "includes/js-back-link.html" %}
 
-  <form action="msic-all-money-accounts-summary-router" method="post">
-
+<form action="msic-all-money-accounts-summary-router" method="post" class="form">
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -29,20 +28,18 @@ Account with: {% extends "layout.html" %}
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
-    },
-    hint: {
-      text: ""
-    },
+        },
+    classes: "govuk-radios--inline",
     items: [
       {
-        value: "Yes",
+        value: "yes",
         text: "Yes",
-        checked: (data["msic-has-missing-account-yn"] == "Yes")
+        checked: (data["msic-has-missing-account-yn"] == "yes")
       },
       {
-        value: "No",
+        value: "no",
         text: "No",
-        checked: (data["msic-has-missing-account-yn"] == "No")
+        checked: (data["msic-has-missing-account-yn"] == "no")
       }
     ]
   }) }}
