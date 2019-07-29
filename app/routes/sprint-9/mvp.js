@@ -62,7 +62,7 @@ router.post(`${baseUrl}/claim-date-options-router`, (req, res) => {
     res.redirect(`${baseUrl}/claim-date-options-today`)
   }
   else if (claimDateOptions === 'BackdatingManual') {
-    res.redirect(`${baseUrl}/claim-date-manual-start-date`)
+    res.redirect(`${baseUrl}/claim-date-manual-idoc-yn`)
   } else {
     res.redirect(`${baseUrl}/claim-date-idoc-yn`)
   }
