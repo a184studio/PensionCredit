@@ -158,7 +158,7 @@ router.post(`${baseUrl}/claim-date-manual-eed-daf-yn-router`, (req, res) => {
   else if (claimDateManualEedDaf === 'stable-date') {
     res.redirect(`${baseUrl}/claim-date-manual-eed-daf-reason`)
   } else {
-    res.redirect(`${baseUrl}/claim-date-summary`)
+    res.redirect(`${baseUrl}/claim-date-manual-eed-daf-reason-outcome`)
   }
 })
 
