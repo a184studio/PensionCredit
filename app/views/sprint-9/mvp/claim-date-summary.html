@@ -89,7 +89,7 @@
             {% if data["alternate-date"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Alternate date
+                      claim-date-manual-idoc-yn
                     </dt>
                     <dd class="govuk-summary-list__value">
                       {{ data["alternate-date"] }}
@@ -102,7 +102,21 @@
                   </div>
                   {% endif %}
 
-
+            {% if data["claim-date-manual-eed-date"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Earliest entitlement start (EDD)
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["claim-date-manual-eed-date"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="home-ownership">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
 
 
 {% if data["claim-date-options-backdating-outside-yn"] %}
@@ -121,10 +135,10 @@
       </div>
   {% endif %}
 
-  {% if data["claim-date-options-backdating-outside-yn"] %}
+  {% if data["claim-date-options-backdating-outside-reason"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Reason for outside of UK
+            Why were you outide of the UK?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["claim-date-options-backdating-outside-reason"] }}
@@ -136,8 +150,6 @@
           </dd>
         </div>
     {% endif %}
-
-
 
 
 {% if data["claim-date-manual-eed-daf-yn"] %}
@@ -156,13 +168,17 @@
       </div>
   {% endif %}
 
+
+
+
+
   {% if data["claim-date-manual-eed-daf-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Stable date
+            Date agreed
           </dt>
           <dd class="govuk-summary-list__value">
-            XX / XX / 2019
+            XX / Date / XXXX{{ data["claim-date-manual-eed-daf-yn-camDate-alternate-date"] or data["claim-date-manual-eed-daf-yn-alternate-date"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="home-ownership">
@@ -172,10 +188,13 @@
         </div>
     {% endif %}
 
+
+
+
     {% if data["claim-date-manual-eed-daf-reason"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Reason for change
+              Reason for change to EED
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data["claim-date-manual-eed-daf-reason"] }}
@@ -196,7 +215,7 @@
             Based on the conversation we have had, we will start your claim from
           </dt>
           <dd class="govuk-summary-list__value">
-            Monday, 15 April 2019
+            XX / Date / XXXX{{ data["claim-date-manual-eed-daf-yn-camDate-alternate-date"] or data["claim-date-manual-eed-daf-yn-alternate-date"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="home-ownership">

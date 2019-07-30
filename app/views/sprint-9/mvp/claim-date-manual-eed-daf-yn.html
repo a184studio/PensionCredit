@@ -66,8 +66,8 @@
 
         {% set camDate %}
           {{ govukDateInput({
-            id: "claim-date-manual-eed-daf-yn-camDate-alternate-date-day",
-            namePrefix: "claim-date-manual-eed-daf-yn-camDate-alternate-date-day",
+            id: "claim-date-manual-eed-daf-yn-camDate-alternate-date",
+            namePrefix: "claim-date-manual-eed-daf-yn-camDate-alternate-date",
             fieldset: {
               legend: {
                 text: "What date do you want to start the claim?"
@@ -113,7 +113,6 @@
             conditional: {
               html: camDate
             }
-
           },
             {
               value: "no-changes",
