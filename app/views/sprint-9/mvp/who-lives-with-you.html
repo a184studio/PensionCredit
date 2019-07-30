@@ -13,7 +13,7 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
     <form action="who-lives-with-you-router" method="post" class="form">
 
 
@@ -56,7 +56,7 @@
                   }
                 },
                 hint: {
-                  text: "For example, 31 12 1955"
+                  text: ""
                 },
                 items: [
                   {
@@ -68,27 +68,86 @@
                   value: "Partner",
                   text: "Partner",
                   checked: (data["who-lives-with-you"] == "Partner")
-                },
-                  {
-                    value: "Child under 16",
-                    text: "Child under 16",
-                    checked: (data["who-lives-with-you"] == "Child under 16"),
-                    conditional: {
-                      html: moreThanOneChild
-                    }
-                  },
-                  {
-                    value: "Someone else",
-                    text: "Someone else",
-                    checked: (data["who-lives-with-you"] == "Someone else"),
-                    conditional: {
-                      html: moreThanOneSomeoneElse
-                    }
-                  }
+                }
                 ]
               }) }}
 
 
+
+              {% set emailHtml %}
+              {{ govukInput({
+                id: "email-address",
+                name: "email-address",
+                type: "email",
+                classes: "govuk-!-width-two-thirds",
+                value: data["email-address"],
+                label: {
+                  text: "Address"
+                },
+                attributes: {
+                  spellcheck: "false"
+                }
+              }) }}
+              {% endset -%}
+
+              {% set phoneHtml %}
+              {{ govukInput({
+                id: "contact-by-phone",
+                name: "contact-by-phone",
+                type: "tel",
+                classes: "govuk-!-width-one-third",
+                value: data["landline"],
+                label: {
+                  text: "Number"
+                }
+              }) }}
+              {% endset -%}
+
+              {% set textHtml %}
+              {{ govukInput({
+                id: "contact-by-text",
+                name: "contact-by-text",
+                type: "tel",
+                classes: "govuk-!-width-one-third",
+                value: data["mobile"],
+                label: {
+                  text: "Number"
+                }
+              }) }}
+              {% endset -%}
+
+              {{ govukCheckboxes({
+                idPrefix: "citizenship-conditional",
+                name: "citizen",
+                fieldset: {
+                  legend: {
+                    text: "Who else lives with you?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: ""
+                },
+                items: [
+                {
+                  value: "Child under 16",
+                  text: "Child under 16",
+                  checked: (data["who-lives-with-you"] == "Child under 16"),
+                  conditional: {
+                    html: moreThanOneChild
+                  }
+                },
+                {
+                  value: "Someone else",
+                  text: "Someone else",
+                  checked: (data["who-lives-with-you"] == "Someone else"),
+                  conditional: {
+                    html: moreThanOneSomeoneElse
+                  }
+                  }
+                ]
+              }) }}
 
 
 
