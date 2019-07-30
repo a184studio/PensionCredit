@@ -65,9 +65,9 @@
                   checked: (data["who-lives-with-you"] == "Live alone")
                 },
                   {
-                  value: "Partner",
-                  text: "Partner",
-                  checked: (data["who-lives-with-you"] == "Partner")
+                  value: "Live with others",
+                  text: "Live with others",
+                  checked: (data["who-lives-with-you"] == "Live with others")
                 }
                 ]
               }) }}
@@ -121,16 +121,21 @@
                 name: "citizen",
                 fieldset: {
                   legend: {
-                    text: "Who else lives with you?",
+                    text: "",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--m"
                   }
                 },
                 hint: {
-                  text: ""
+                  text: "Others in the household"
                 },
                 items: [
-                {
+                  {
+                  value: "Partner",
+                  text: "Partner",
+                  checked: (data["who-lives-with-you"] == "Partner")
+                },
+                  {
                   value: "Child under 16",
                   text: "Child under 16",
                   checked: (data["who-lives-with-you"] == "Child under 16"),
