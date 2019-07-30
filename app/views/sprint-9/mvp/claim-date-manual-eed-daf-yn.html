@@ -64,6 +64,35 @@
           }) }}
         {% endset -%}
 
+        {% set camDate %}
+          {{ govukDateInput({
+            id: "claim-date-manual-eed-daf-yn-camDate-alternate-date-day",
+            namePrefix: "claim-date-manual-eed-daf-yn-camDate-alternate-date-day",
+            fieldset: {
+              legend: {
+                text: "What date do you want to start the claim?"
+              }
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["camDate-alternate-date-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["camDate-alternate-date-day"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["camDate-alternate-date-day"]
+              }
+            ]
+          }) }}
+        {% endset -%}
+
         {{ govukRadios({
           classes: "govuk-radios",
           idPrefix: "claim-date-manual-eed-daf-yn",
@@ -80,13 +109,16 @@
           {
             value: "multi-changes",
             text: "Continue in PTP CAM as there have been complex changes",
-            checked: (data["claim-date-manual-eed-daf-yn"] == "multi-changes")
+            checked: (data["claim-date-manual-eed-daf-yn"] == "multi-changes"),
+            conditional: {
+              html: camDate
+            }
+
           },
             {
               value: "no-changes",
               text: "Take a claim from 16 April 2019 as there have only been simple changes",
-              checked: (data["claim-date-manual-eed-daf-yn"] == "no-changes")
-            },
+              checked: (data["claim-date-manual-eed-daf-yn"] == "no-changes")},
             {
               value: "stable-date",
               text: "Take a claim from a different date as there have only been simple changes",
