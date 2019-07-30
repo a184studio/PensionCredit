@@ -27,8 +27,8 @@
                   text: "How many?"
                 },
                 classes: "govuk-input--width-10",
-                id: "who-lives-with-you",
-                name: "who-lives-with-you"
+                id: "who-lives-with-you-breakdown",
+                name: "who-lives-with-you-breakdown"
               }) }}
               {% endset -%}
 
@@ -38,16 +38,16 @@
                   text: "How many?"
                 },
                 classes: "govuk-input--width-10",
-                id: "who-lives-with-you",
-                name: "who-lives-with-you"
+                id: "who-lives-with-you-breakdown",
+                name: "who-lives-with-you-breakdown"
               }) }}
               {% endset -%}
 
 
               {{ govukRadios({
                 classes: "govuk-radios",
-                idPrefix: "who-lives-with-you",
-                name: "who-lives-with-you",
+                idPrefix: "who-lives-with-you-breakdown",
+                name: "who-lives-with-you-breakdown",
                 fieldset: {
                   legend: {
                     text: "Who lives with you?",
@@ -62,17 +62,17 @@
                   {
                   value: "Live alone",
                   text: "Live alone",
-                  checked: (data["who-lives-with-you"] == "Live alone")
+                  checked: (data["who-lives-with-you-breakdown"] == "Live alone")
                 },
                   {
                   value: "Partner",
                   text: "Partner",
-                  checked: (data["who-lives-with-you"] == "Partner")
+                  checked: (data["who-lives-with-you-breakdown"] == "Partner")
                 },
                   {
                     value: "Child under 16",
                     text: "Child under 16",
-                    checked: (data["who-lives-with-you"] == "Child under 16"),
+                    checked: (data["who-lives-with-you-breakdown"] == "Child under 16"),
                     conditional: {
                       html: moreThanOneChild
                     }
@@ -80,7 +80,7 @@
                   {
                     value: "Someone else",
                     text: "Someone else",
-                    checked: (data["claim-date-manual-eed-daf-yn"] == "Someone else"),
+                    checked: (data["who-lives-with-you-breakdown"] == "Someone else"),
                     conditional: {
                       html: moreThanOneSomeoneElse
                     }

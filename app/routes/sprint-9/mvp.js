@@ -41,8 +41,9 @@ router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
   }
 })
 
+
 router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
-  const whoLivesWithYou = req.session.data['who-lives-with-you']
+  const whoLivesWithYou = req.session.data['who-lives-with-you-breakdown']
 
   if (whoLivesWithYou === 'Live alone') {
     res.redirect(`${baseUrl}/mvp-eligibility-summary`)
@@ -50,6 +51,7 @@ router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
     res.redirect(`${baseUrl}/done-has-someone-else-living-with-them`)
   }
 })
+
 
 router.post(`${baseUrl}/clear-data-yn-router`, (req, res) => { // router name
   const privacyPolicy = req.session.data['clear-data-yn']  // name of data / id name
