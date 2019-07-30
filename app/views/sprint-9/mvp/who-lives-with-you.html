@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you get housing benefit or council tax reduction - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="who-lives-with-you-router" method="post" class="form">
+
+
+
+
+
+
+              {% set moreThanOneChild %}
+              {{ govukInput({
+                label: {
+                  text: "How many?"
+                },
+                classes: "govuk-input--width-10",
+                id: "who-lives-with-you",
+                name: "who-lives-with-you"
+              }) }}
+              {% endset -%}
+
+              {% set moreThanOneSomeoneElse %}
+              {{ govukInput({
+                label: {
+                  text: "How many?"
+                },
+                classes: "govuk-input--width-10",
+                id: "who-lives-with-you",
+                name: "who-lives-with-you"
+              }) }}
+              {% endset -%}
+
+
+              {{ govukRadios({
+                classes: "govuk-radios",
+                idPrefix: "who-lives-with-you",
+                name: "who-lives-with-you",
+                fieldset: {
+                  legend: {
+                    text: "Who lives with you?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                  }
+                },
+                hint: {
+                  text: "For example, 31 12 1955"
+                },
+                items: [
+                  {
+                  value: "Live alone",
+                  text: "Live alone",
+                  checked: (data["who-lives-with-you"] == "Live alone")
+                },
+                  {
+                  value: "Partner",
+                  text: "Partner",
+                  checked: (data["who-lives-with-you"] == "Partner")
+                },
+                  {
+                    value: "Child under 16",
+                    text: "Child under 16",
+                    checked: (data["who-lives-with-you"] == "Child under 16"),
+                    conditional: {
+                      html: moreThanOneChild
+                    }
+                  },
+                  {
+                    value: "Someone else",
+                    text: "Someone else",
+                    checked: (data["claim-date-manual-eed-daf-yn"] == "Someone else"),
+                    conditional: {
+                      html: moreThanOneSomeoneElse
+                    }
+                  }
+                ]
+              }) }}
+
+
+
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
