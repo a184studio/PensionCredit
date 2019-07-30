@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you get housing benefit or council tax reduction - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="done-has-someone-else-living-with-them" method="post" class="form">
+
+
+      {% set moreThanOneChild %}
+      {{ govukInput({
+        label: {
+          text: "How many?"
+        },
+        classes: "govuk-input--width-10",
+        id: "who-lives-with-you-child",
+        name: "who-lives-with-you-child"
+      }) }}
+      {% endset -%}
+
+      {% set moreThanOneSomeoneElse %}
+      {{ govukInput({
+        label: {
+          text: "How many?"
+        },
+        classes: "govuk-input--width-10",
+        id: "who-lives-with-you-someone-else",
+        name: "who-lives-with-you-someone-else"
+      }) }}
+      {% endset -%}
+
+              {% set emailHtml %}
+              {{ govukInput({
+                id: "email-address",
+                name: "email-address",
+                type: "email",
+                classes: "govuk-!-width-two-thirds",
+                value: data["email-address"],
+                label: {
+                  text: "Address"
+                },
+                attributes: {
+                  spellcheck: "false"
+                }
+              }) }}
+              {% endset -%}
+
+              {% set phoneHtml %}
+              {{ govukInput({
+                id: "contact-by-phone",
+                name: "contact-by-phone",
+                type: "tel",
+                classes: "govuk-!-width-one-third",
+                value: data["landline"],
+                label: {
+                  text: "Number"
+                }
+              }) }}
+              {% endset -%}
+
+              {% set textHtml %}
+              {{ govukInput({
+                id: "contact-by-text",
+                name: "contact-by-text",
+                type: "tel",
+                classes: "govuk-!-width-one-third",
+                value: data["mobile"],
+                label: {
+                  text: "Number"
+                }
+              }) }}
+              {% endset -%}
+
+              {{ govukCheckboxes({
+                idPrefix: "citizenship-conditional",
+                name: "citizen",
+                fieldset: {
+                  legend: {
+                    text: "Who are these people?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                  }
+                },
+                hint: {
+                  text: "Others in the household"
+                },
+                items: [
+                  {
+                  value: "Partner",
+                  text: "Partner",
+                  checked: (data["who-lives-with-you"] == "Partner")
+                },
+                {
+                  value: "Someone else",
+                  text: "Someone else",
+                  checked: (data["who-lives-with-you"] == "Someone else"),
+                  conditional: {
+                    html: moreThanOneSomeoneElse
+                  }
+                  },
+                  {
+                  value: "Child under 16",
+                  text: "Child under 16",
+                  checked: (data["who-lives-with-you"] == "Child under 16"),
+                  conditional: {
+                    html: moreThanOneChild
+                  }
+                }
+                ]
+              }) }}
+
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}

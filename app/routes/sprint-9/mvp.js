@@ -49,7 +49,7 @@ router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
   if (whoLivesWithYou === 'Live alone') {
     res.redirect(`${baseUrl}/mvp-eligibility-summary`)
   } else {
-    res.redirect(`${baseUrl}/done-has-someone-else-living-with-them`)
+    res.redirect(`${baseUrl}/who-lives-with-you-types`)
   }
 })
 
