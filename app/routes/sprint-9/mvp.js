@@ -44,6 +44,7 @@ router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
 
 router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
   const whoLivesWithYou = req.session.data['who-lives-with-you']
+  console.log(whoLivesWithYou);
 
   if (whoLivesWithYou === 'Live alone') {
     res.redirect(`${baseUrl}/mvp-eligibility-summary`)
