@@ -86,13 +86,13 @@
             </div>
             {% endif %}
 
-            {% if data["alternate-date"] %}
+            {% if data["claim-date-manual-eed-daf-yn"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      claim-date-manual-idoc-yn
+                      IDOC Date
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data["alternate-date"] }}
+                      00 Month year {{ data["alternate-date"] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                       <a href="home-ownership">
@@ -178,7 +178,7 @@
             Date agreed
           </dt>
           <dd class="govuk-summary-list__value">
-            XX / Date / XXXX{{ data["claim-date-manual-eed-daf-yn-camDate-alternate-date"] or data["claim-date-manual-eed-daf-yn-alternate-date"] }}
+            00 Month / year {{ data["claim-date-manual-eed-daf-yn-camDate-alternate-date"] or data["claim-date-manual-eed-daf-yn-alternate-date"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="home-ownership">
@@ -215,11 +215,11 @@
             Based on the conversation we have had, we will start your claim from
           </dt>
           <dd class="govuk-summary-list__value">
-            XX / Date / XXXX{{ data["claim-date-manual-eed-daf-yn-camDate-alternate-date"] or data["claim-date-manual-eed-daf-yn-alternate-date"] }}
+            00 Month / year {{ data["claim-date-manual-eed-daf-yn-camDate-alternate-date"] or data["claim-date-manual-eed-daf-yn-alternate-date"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="home-ownership">
-              Change
+
             </a>
           </dd>
         </div>
