@@ -76,6 +76,9 @@ router.post(`${baseUrl}/claim-date-options-router`, (req, res) => {
   }
   else if (claimDateOptions === 'BackdatingManual') {
     res.redirect(`${baseUrl}/claim-date-manual-idoc-yn`)
+  }
+  else if (claimDateOptions === 'CAMdate') {
+    res.redirect(`${baseUrl}/claim-date-cam-date`)
   } else {
     res.redirect(`${baseUrl}/claim-date-idoc-yn`)
   }
