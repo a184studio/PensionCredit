@@ -51,7 +51,7 @@ Do you have any other ISAs, TESSA, TOISAs and PEPs? - Pension Credit
 
 
     <!----Headline---->
-  {% if data["account-count"] %}<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">{% endif %}
+  {% if data["account-count"] or data["msic-pc-payment-alternative-account-type"] %}<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">{% endif %}
 
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
