@@ -59,8 +59,7 @@
 
 
     <!----Headline---->
-  {% if data["msic-pc-payment-alternative-account-type"] %}<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">{% endif %}
-
+{% if data["msic-pc-payment-alternative-account-type"] %}<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">{% endif %}
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
           {% if data["msic-missing-account-name"] %}
           <div class="govuk-accordion__section ">
@@ -1090,117 +1089,17 @@
             <div class="govuk-grid-column-three-quarters">
 
 
-            {{ govukSummaryList({
-            rows: [
+              {{ govukSummaryList({
+              rows: [
 
-            {
-            key: {
-            text: "Pension Credit payment account"
-            },
-            value: {
-            text: ""
-            },
-            actions: {
-            items: [
               {
-                href: "msic-pc-payment",
-                text: "Change",
-                visuallyHiddenText: "type of account"
-              }
-            ]
-            }
-            },
-
-            {
-            key: {
-              text: "Name on account"
-            },
-            value: {
-              text: data["name-on-account"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "msic-pc-payment-alternative-account",
-                  text: "Change",
-                  visuallyHiddenText: "name on account"
-                }
-              ]
-            }
-            },
-
-            {
-            key: {
-              text: "Sort code"
-            },
-            value: {
-              text: data["sort-code"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "msic-pc-payment-alternative-account",
-                  text: "Change",
-                  visuallyHiddenText: "sort code"
-                }
-              ]
-            }
-            },
-
-            {
-            key: {
-              text: "Account number"
-            },
-            value: {
-              text: data["Account number"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "msic-pc-payment-alternative-account",
-                  text: "Change",
-                  visuallyHiddenText: "account number"
-                }
-              ]
-            }
-            },
-
-            {
-            classes: 'govuk-summary-list--no-border',
-            key: {
-              text: "Amount in this account"
-            },
-            value: {
-              text: data["msic-pc-payment-alternative-account-balance"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "msic-pc-payment-alternative-account",
-                  text: "Change",
-                  visuallyHiddenText: "sort code"
-                }
-              ]
-            }
-            }
-            ]
-            }) }}
-            {% endif %}
-
-            <!------------------ Same as State Pension account------------------------->
-
-            {% if data["msic-pc-payment"] == "Same account as State Pension" %}
-            {{ govukSummaryList({
-            rows: [
-
-            {
-            key: {
-              text: "Same account as State Pension or alternate"
-            },
-            value: {
-              text: data["msic-pc-payment"]
-            },
-            actions: {
+              key: {
+              text: "Pension Credit payment account"
+              },
+              value: {
+              text: "Yes"
+              },
+              actions: {
               items: [
                 {
                   href: "msic-pc-payment",
@@ -1208,31 +1107,131 @@
                   visuallyHiddenText: "type of account"
                 }
               ]
-            }
-            },
+              }
+              },
 
-            {
-            classes: 'govuk-summary-list--no-border',
+              {
+              key: {
+                text: "Name on account"
+              },
+              value: {
+                text: data["name-on-account"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "name on account"
+                  }
+                ]
+              }
+              },
 
-            key: {
-              text: "Amount in this account today"
-            },
-            value: {
-              text: data["msic-pc-payment-alternative-account-balance"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "msic-pc-payment-state-pension-account",
-                  text: "Change",
-                  visuallyHiddenText: "sort code"
-                }
+              {
+              key: {
+                text: "Sort code"
+              },
+              value: {
+                text: data["sort-code"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "sort code"
+                  }
+                ]
+              }
+              },
+
+              {
+              key: {
+                text: "Account number"
+              },
+              value: {
+                text: data["Account number"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "account number"
+                  }
+                ]
+              }
+              },
+
+              {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Amount in this account"
+              },
+              value: {
+                text: data["msic-pc-payment-alternative-account-balance"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "sort code"
+                  }
+                ]
+              }
+              }
               ]
-            }
-            }
-            ]
-            }) }}
-            {% endif %}
+              }) }}
+              {% endif %}
+
+              <!------------------ Same as State Pension account------------------------->
+
+              {% if data["msic-pc-payment"] == "Same account as State Pension" %}
+              {{ govukSummaryList({
+              rows: [
+
+              {
+              key: {
+                text: "Same account as State Pension or alternate"
+              },
+              value: {
+                text: data["msic-pc-payment"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment",
+                    text: "Change",
+                    visuallyHiddenText: "type of account"
+                  }
+                ]
+              }
+              },
+
+              {
+              classes: 'govuk-summary-list--no-border',
+
+              key: {
+                text: "Amount in this account today"
+              },
+              value: {
+                text: data["msic-pc-payment-alternative-account-balance"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-state-pension-account",
+                    text: "Change",
+                    visuallyHiddenText: "sort code"
+                  }
+                ]
+              }
+              }
+              ]
+              }) }}
+              {% endif %}
 
             <br></div></div>
 

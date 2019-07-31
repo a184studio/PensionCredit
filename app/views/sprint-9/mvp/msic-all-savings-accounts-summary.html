@@ -936,7 +936,7 @@
 
 
 
-        {% if data["msic-pc-payment"] == "An alternative account" %}
+        {% if data["msic-pc-payment"] == "An alternative account" or data["msic-pc-payment"] == "Same account as State Pension" %}
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
         <div class="govuk-grid-row">
@@ -951,7 +951,7 @@
         text: "Pension Credit payment account"
         },
         value: {
-        text: ""
+        text: "Yes"
         },
         actions: {
         items: [
