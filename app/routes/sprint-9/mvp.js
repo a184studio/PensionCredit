@@ -166,7 +166,7 @@ router.post(`${baseUrl}/claim-date-manual-eed-daf-yn-router`, (req, res) => {
   const claimDateManualEedDaf = req.session.data['claim-date-manual-eed-daf-yn']
 
   if (claimDateManualEedDaf === 'multi-changes') {
-    res.redirect(`${baseUrl}/claim-date-options-backdating-changes-out`)
+    res.redirect(`${baseUrl}/claim-date-manual-enter-cam-reason`)
   }
   else if (claimDateManualEedDaf === 'stable-date') {
     res.redirect(`${baseUrl}/claim-date-manual-eed-daf-reason`)

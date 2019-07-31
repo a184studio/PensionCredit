@@ -31,8 +31,8 @@
 <div class="govuk-panel--agent">
         {% set yesDate %}
           {{ govukDateInput({
-            id: "alternate-date",
-            namePrefix: "alternate-date",
+            id: "claim-date-idoc-yn-date",
+            namePrefix: "claim-date-idoc-yn-date",
             fieldset: {
               legend: {
                 text: "Enter the IDOC"
@@ -42,17 +42,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["alternate-date-day"]
+                value: data["claim-date-idoc-yn-date-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["alternate-date-month"]
+                value: data["claim-date-idoc-yn-date-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["alternate-date-year"]
+                value: data["claim-date-idoc-yn-date-year"]
               }
             ]
           }) }}
