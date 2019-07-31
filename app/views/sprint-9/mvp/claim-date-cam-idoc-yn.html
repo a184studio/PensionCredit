@@ -64,7 +64,7 @@
           name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              html: "<span class=\"agent-action\">Agent: </span>Enter IDOC date if there is one otherwise it's Todays date",
+              html: "<span class=\"agent-action\">Agent: </span>Is there an initial date of claim in CAM?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -75,7 +75,7 @@
           items: [
           {
             value: "yes-date",
-            text: "There is an IDOC",
+            text: "Yes",
             checked: (data["claim-date-idoc-yn"] == "Yes"),
             conditional: {
               html: yesDate
@@ -83,7 +83,7 @@
           },
             {
               value: "no-date",
-              text: "No IDOC",
+              text: "No - use today's date",
               checked: (data["claim-date-idoc-yn"] == "No")
             }
           ]
