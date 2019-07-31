@@ -55,8 +55,18 @@
   }
 }) }}
 
+{{ govukInput({
+  name: "Roll number",
+  id: "Roll number",
+  classes: "govuk-input--width-20",
+  value: data["roll-number"],
+  label: {
+    html: "<strong>Building society roll or reference number</strong><br>If you building society uses a roll or reference number, you need to provide it. You will find it on your passbook"
+  }
+}) }}
 
 
+<!--
 {% set buildingSociety %}
 
 {{ govukInput({
@@ -96,7 +106,7 @@
   }
   ]
 }) }}
-
+-->
 
       {{ govukRadios({
         idPrefix: "msic-pc-payment-alternative-account-type",
