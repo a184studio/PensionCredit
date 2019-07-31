@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-summary" method="post">
 
-        <h1 class="govuk-heading-xl"> Based on the conversation we have had, we will start your claim from 16 April 2019</h1>
+        <h1 class="govuk-heading-xl"> Based on the conversation we have had, we will start your claim from {{data['claim-date-manual-eed-daf-yn-alternate-date-day'] + ' ' + (data['claim-date-manual-eed-daf-yn-alternate-date-month'] | getMonth) + ' ' + data['claim-date-manual-eed-daf-yn-alternate-date-year']}}</h1>
 
 <br>
 
