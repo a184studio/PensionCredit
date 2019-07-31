@@ -55,6 +55,24 @@
 
 -->
 
+{% if data["claim-date-cam-date-entry"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim date from CAM
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["claim-date-cam-date-entry"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="home-ownership">
+            Change
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+
+
       {% if data["claim-date-idoc-yn"] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
