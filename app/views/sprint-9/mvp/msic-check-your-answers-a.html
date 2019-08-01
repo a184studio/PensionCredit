@@ -26,31 +26,17 @@ Account with: {% extends "layout.html" %}
     name: "msic-has-missing-account-yn",
     fieldset: {
       legend: {
-        text: "Check your answers: Money you have",
+        html: "Check your answers: <br>Money you have",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
         },
     classes: "govuk-radios--inline",
     items: [
-      {
-        value: "yes",
-        text: "Yes",
-        checked: (data["msic-has-missing-account-yn"] == "yes")
-      },
-      {
-        value: "no",
-        text: "No",
-        checked: (data["msic-has-missing-account-yn"] == "no")
-      }
+
     ]
   }) }}
 
-
-
-            {{ govukButton({
-              text: "Continue"
-            }) }}
 
   </div></div><br><br>
 
@@ -842,7 +828,7 @@ Account with: {% extends "layout.html" %}
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
-          <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list">  </a>
+          <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> Add^</a>
           </span>
           </h2>
           </div>
@@ -1303,7 +1289,11 @@ Account with: {% extends "layout.html" %}
 
 
 
-  </div>
+  </div><br>
+
+  {{ govukButton({
+    text: "Continue"
+  }) }}
 
 
     <input type="hidden" name="money-you-have-complete" value="true"/>
