@@ -56,7 +56,7 @@
             </div>
 
 
--->
+
 
 {% if data["claim-date-idoc-yn"] %}
       <div class="govuk-summary-list__row">
@@ -73,10 +73,10 @@
         </dd>
       </div>
       {% endif %}
-
+-->
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                IDOC date
+                Initial date of claim (IDOC)
               </dt>
               <dd class="govuk-summary-list__value">
               {{ data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] }}
@@ -91,7 +91,7 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Date claim was made (if no idoc)
+                Initial date of claim (IDOC)
               </dt>
               <dd class="govuk-summary-list__value">
                 XX Month 2019
@@ -107,7 +107,7 @@
 {% if data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Use CAM to work out date
+          Claim start date
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}
@@ -214,7 +214,7 @@
     {% if data["claim-date-manual-eed-daf-reason"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Reason for change to EED
+              Reason for change to earliest entitlement date
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data["claim-date-manual-eed-daf-reason"] }}
