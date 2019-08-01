@@ -20,12 +20,12 @@ Account with: {% extends "layout.html" %}
   <div class="govuk-grid-column-full">
   <span class="govuk-caption-m"></span>
 
-  <h1 class="govuk-heading-xl">Check your answers: <br>Money you have</h1>
+  <h1 class="govuk-heading-xl ">Check your answers: <br>Money you have</h1>
 
   </div>
 </div>
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
     <!----Headline---->
@@ -36,7 +36,8 @@ Account with: {% extends "layout.html" %}
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <h2 class="govuk-heading-m">Pension Credit payment account </h2>
+      <h2 class="govuk-heading––extraMedium">Pension Credit payment account </h2>
+
 
         {% if data["msic-pc-payment"] == "An alternative account" %}
           {{ govukSummaryList({
@@ -304,7 +305,7 @@ Account with: {% extends "layout.html" %}
 
         {% if data["account-count"] %}
 
-        <h2 class="govuk-heading-m">(#) Current accounts </h2>
+        <h2 class="govuk-heading––extraMedium">(#) Current accounts </h2>
 
 
         {% set count = data["account-count"] or 0 %}
@@ -393,7 +394,7 @@ Account with: {% extends "layout.html" %}
               ]
             }) }}
           </div></div>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         {% endfor %}
 
         {% endif %}
@@ -407,7 +408,7 @@ Account with: {% extends "layout.html" %}
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <h2 class="govuk-heading-m">(#) Savings accounts </h2>
+      <h2 class="govuk-heading––extraMedium">(#) Savings accounts </h2>
 
 
     {{ govukSummaryList({
@@ -492,7 +493,7 @@ Account with: {% extends "layout.html" %}
     }) }}
 
     <br><br></div></div>{% endif %}
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -501,7 +502,7 @@ Account with: {% extends "layout.html" %}
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <h2 class="govuk-heading-m">(#) Post Office card accounts </h2>
+      <h2 class="govuk-heading––extraMedium">(#) Post Office card accounts </h2>
 
 
     {{ govukSummaryList({
@@ -533,7 +534,7 @@ Account with: {% extends "layout.html" %}
     }) }}
 
     <br><br></div></div>{% endif %}
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -542,7 +543,7 @@ Account with: {% extends "layout.html" %}
               <div class="govuk-grid-row">
               <div class="govuk-grid-column-three-quarters">
 
-                <h2 class="govuk-heading-m">(#) Credit union accounts </h2>
+                <h2 class="govuk-heading––extraMedium">(#) Credit union accounts </h2>
 
                 {{ govukSummaryList({
                 rows: [
@@ -626,7 +627,7 @@ Account with: {% extends "layout.html" %}
                 }) }}
 
                 <br><br></div></div>{% endif %}
-                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
                 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -635,7 +636,7 @@ Account with: {% extends "layout.html" %}
                   <div class="govuk-grid-row">
                   <div class="govuk-grid-column-three-quarters">
 
-                    <h2 class="govuk-heading-m">(#) Premium Bonds </h2>
+                    <h2 class="govuk-heading––extraMedium">(#) Premium Bonds </h2>
 
                   {{ govukSummaryList({
                   rows: [
@@ -666,7 +667,7 @@ Account with: {% extends "layout.html" %}
                   }) }}
 
                   <br><br></div></div>{% endif %}
-                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
       {% if data["msic-capital-bond-company-name"] %}
@@ -674,7 +675,7 @@ Account with: {% extends "layout.html" %}
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
 
-        <h2 class="govuk-heading-m">(#) Capital bonds </h2>
+        <h2 class="govuk-heading––extraMedium">(#) Capital bonds </h2>
 
             {{ govukSummaryList({
               rows: [
@@ -742,7 +743,7 @@ Account with: {% extends "layout.html" %}
             }) }}
 
             <br><br></div></div>{% endif %}
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -751,7 +752,7 @@ Account with: {% extends "layout.html" %}
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    <h2 class="govuk-heading-m">(#) Shares </h2>
+    <h2 class="govuk-heading––extraMedium">(#) Shares </h2>
 
 
           {{ govukSummaryList({
@@ -801,7 +802,7 @@ Account with: {% extends "layout.html" %}
           }) }}
 
           <br><br></div></div>{% endif %}
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -811,7 +812,7 @@ Account with: {% extends "layout.html" %}
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    <h2 class="govuk-heading-m">(#) Unit trusts </h2>
+    <h2 class="govuk-heading––extraMedium">(#) Unit trusts </h2>
 
           {{ govukSummaryList({
             rows: [
@@ -878,7 +879,7 @@ Account with: {% extends "layout.html" %}
           }) }}
 
           <br><br></div></div>{% endif %}
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -887,7 +888,7 @@ Account with: {% extends "layout.html" %}
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
 
-        <h2 class="govuk-heading-m">Cash at home </h2>
+        <h2 class="govuk-heading––extraMedium">Cash at home </h2>
 
               {{ govukSummaryList({
                 rows: [
@@ -918,7 +919,7 @@ Account with: {% extends "layout.html" %}
               }) }}
 
               <br><br></div></div>{% endif %}
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -927,7 +928,7 @@ Account with: {% extends "layout.html" %}
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    <h2 class="govuk-heading-m">Money Aboard </h2>
+    <h2 class="govuk-heading––extraMedium">Money Aboard </h2>
 
 
           {{ govukSummaryList({
@@ -993,7 +994,7 @@ Account with: {% extends "layout.html" %}
           }) }}
 
         <br><br></div></div>{% endif %}
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
 
@@ -1003,7 +1004,7 @@ Account with: {% extends "layout.html" %}
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <h2 class="govuk-heading-m">(#) Second properties </h2>
+      <h2 class="govuk-heading––extraMedium">(#) Second properties </h2>
 
 
             {{ govukSummaryList({
@@ -1052,7 +1053,7 @@ Account with: {% extends "layout.html" %}
             }) }}
 
             <br><br></div></div>{% endif %}
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1061,7 +1062,7 @@ Account with: {% extends "layout.html" %}
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters">
 
-              <h2 class="govuk-heading-m">(#) Other money, savings or investments</h2>
+              <h2 class="govuk-heading––extraMedium">(#) Other money, savings or investments</h2>
 
 
               {{ govukSummaryList({
@@ -1110,7 +1111,7 @@ Account with: {% extends "layout.html" %}
               }) }}
 
               <br><br></div></div>{% endif %}
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
               <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
