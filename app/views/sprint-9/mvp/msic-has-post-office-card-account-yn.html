@@ -927,8 +927,7 @@
               <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
-              <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> Add^</a>
-
+              <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list">  </a>
               </span>
               </h2>
               </div>
@@ -1125,6 +1124,7 @@
 
             </div>
             </div>{% endif %}
+
             <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
             {% if data["msic-pc-payment-alternative-account-balance"] %}
               <div class="govuk-accordion__section ">
@@ -1140,7 +1140,7 @@
               <div class="govuk-grid-row">
               <div class="govuk-grid-column-three-quarters">
 
-                {% if data["msic-pc-payment"] == "An alternative account" %}
+                {% if data["msic-pc-payment"] == "An alternative account" or data["msic-pc-payment"] == "Same account as State Pension" %}
                   {{ govukSummaryList({
                     rows: [
 
@@ -1356,9 +1356,10 @@
                     },
 
 
-                      {
-                        key: {
-                          text: "Amount in this account today	"
+                    {
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                          text: "Amount in this account today"
                         },
                         value: {
                           text: data["msic-pc-payment-alternative-account-balance"]
@@ -1372,25 +1373,8 @@
                             }
                           ]
                         }
-                      },
-
-                      {
-                        key: {
-                          text: "How often you want to be paid"
-                        },
-                        value: {
-                          text: data["msic-pc-payment-frequency"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "msic-pc-payment-state-pension-account",
-                              text: "Change",
-                              visuallyHiddenText: "type of account"
-                            }
-                          ]
-                        }
                       }
+
                     ]
                   }) }}
                 {% endif %}

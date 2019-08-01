@@ -302,13 +302,51 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-state-pension-account",
+                      href: "msic-pc-payment-frequency",
                       text: "Change",
-                      visuallyHiddenText: "type of account"
+                      visuallyHiddenText: "how often you want to be paid"
+                    }
+                  ]
+                }
+              },
+
+              {
+              key: {
+                text: "Account owner"
+              },
+              value: {
+                text: data['msic-pc-payment-alternative-account-owner']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "Change",
+                    visuallyHiddenText: "Account owner"
+                  }
+                ]
+              }
+              },
+
+              {
+                classes: 'govuk-summary-list--no-border',
+                key: {
+                  text: "Amount of money that is yours"
+                },
+                value: {
+                  text: data['msic-pc-payment-alternative-account-stake']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "Change",
+                      visuallyHiddenText: "Amount of money that is yours"
                     }
                   ]
                 }
               }
+
             ]
           }) }}
         {% endif %}

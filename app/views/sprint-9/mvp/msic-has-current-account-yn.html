@@ -66,7 +66,7 @@
           <div class="govuk-grid-row">
           <div class="govuk-grid-column-three-quarters">
 
-            {% if data["msic-pc-payment"] == "An alternative account" %}
+            {% if data["msic-pc-payment"] == "An alternative account" or data["msic-pc-payment"] == "Same account as State Pension" %}
               {{ govukSummaryList({
                 rows: [
 
@@ -282,9 +282,10 @@
                 },
 
 
-                  {
-                    key: {
-                      text: "Amount in this account today	"
+                {
+                  classes: 'govuk-summary-list--no-border',
+                  key: {
+                      text: "Amount in this account today"
                     },
                     value: {
                       text: data["msic-pc-payment-alternative-account-balance"]
@@ -298,25 +299,8 @@
                         }
                       ]
                     }
-                  },
-
-                  {
-                    key: {
-                      text: "How often you want to be paid"
-                    },
-                    value: {
-                      text: data["msic-pc-payment-frequency"]
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "msic-pc-payment-state-pension-account",
-                          text: "Change",
-                          visuallyHiddenText: "type of account"
-                        }
-                      ]
-                    }
                   }
+
                 ]
               }) }}
             {% endif %}
