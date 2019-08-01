@@ -29,11 +29,16 @@
         value: data["name-on-account"]
       }) }}
 
-
-
-
-
 <br>
+
+      {{ govukInput({
+        label: {
+          text: "Name of bank or building society"
+        },
+        id: "msic-pc-payment-alternative-account-name",
+        name: "msic-pc-payment-alternative-account-name",
+        classes: "govuk-input--width-20"
+      }) }}
 
 {{ govukInput({
   name: "sort-code",
@@ -55,6 +60,7 @@
   }
 }) }}
 
+<!--
 {{ govukInput({
   name: "Roll number",
   id: "Roll number",
@@ -67,9 +73,9 @@
     text: "If your account has a roll or reference number, you need to provide it. You will find it on your statement or passbook."
   }
 }) }}
+-->
 
 
-<!--
 {% set buildingSociety %}
 
 {{ govukInput({
@@ -78,7 +84,10 @@
   classes: "govuk-input--width-20",
   value: data["roll-number"],
   label: {
-    text: "Roll number"
+    html: "Roll or reference number"
+  },
+  hint: {
+    text: ""
   }
 }) }}
 {% endset -%}
@@ -88,7 +97,7 @@
   name: "msic-pc-payment-alternative-account-bank-buildings",
   fieldset: {
     legend: {
-      text: "Is this a building society account?",
+      text: "Does your account have a roll or reference number?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
@@ -109,7 +118,6 @@
   }
   ]
 }) }}
--->
 
       {{ govukRadios({
         idPrefix: "msic-pc-payment-alternative-account-type",
@@ -134,12 +142,12 @@
         },
         {
           value: "Post Office",
-          text: "Post Office card account",
+          text: "Post Office Card Account",
           checked: data['msic-pc-payment-alternative-account-type'] == "Post Office"
         },
         {
           value: "Credit Union account",
-          text: "Credit Union account",
+          text: "Credit union account",
           checked: data['msic-pc-payment-alternative-account-type'] == "Credit Union account"
         },
         {

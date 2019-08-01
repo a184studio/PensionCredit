@@ -372,7 +372,7 @@
           <div class="govuk-accordion__section-header">
             <h2 class="gCash cordion__section-heading">
               <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-3">
-                <strong>Cash held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad">  </a>
+                <strong>Money Aboard </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad">  </a>
               </span>
             </h2>
           </div>
@@ -471,7 +471,7 @@
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-5">
-                  <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account">  </a>
+                  <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account"> Add^</a>
                 </span>
               </h2>
             </div>
@@ -509,7 +509,7 @@
 
                   {
                     key: {
-                      text: "Value of trust on day of purchase"
+                      text: "Number of units"
                     },
                     value: {
                       text: data['msic-trust-account-purchase-value']
@@ -528,7 +528,7 @@
                   {
                     classes: 'govuk-summary-list--no-border',
                     key: {
-                      text: "Total amount invested in trust today"
+                      text: "Bid price of units today"
                     },
                     value: {
                       text: data['msic-trust-account-units']
@@ -1198,7 +1198,8 @@
                   {{ govukSummaryList({
                     rows: [
 
-                      {
+
+                    {
                         key: {
                           text: "Name on account"
                         },
@@ -1216,23 +1217,23 @@
                         }
                       },
 
-                    {
-                      key: {
-                        text: "Type of account"
+                      {
+                        key: {
+                          text: "Account with"
+                        },
+                        value: {
+                          text: data["msic-pc-payment-alternative-account-name"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-pc-payment",
+                              text: "Change",
+                              visuallyHiddenText: "type of account"
+                            }
+                          ]
+                        }
                       },
-                      value: {
-                        text: data["msic-pc-payment-alternative-account-type"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "msic-pc-payment-alternative-account",
-                            text: "Change",
-                            visuallyHiddenText: "Bank or buildings society account"
-                          }
-                        ]
-                      }
-                    },
 
                       {
                         key: {
@@ -1247,24 +1248,6 @@
                               href: "msic-pc-payment-alternative-account",
                               text: "Change",
                               visuallyHiddenText: "sort code"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Roll number"
-                        },
-                        value: {
-                          text: data["Roll number"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "msic-pc-payment-alternative-account",
-                              text: "Change",
-                              visuallyHiddenText: "roll number"
                             }
                           ]
                         }
@@ -1290,6 +1273,42 @@
 
                       {
                         key: {
+                          text: "Roll or reference number"
+                        },
+                        value: {
+                          text: data["Roll number"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-pc-payment-alternative-account",
+                              text: "Change",
+                              visuallyHiddenText: "roll number"
+                            }
+                          ]
+                        }
+                      },
+
+                      {
+                        key: {
+                          text: "Type of account"
+                        },
+                        value: {
+                          text: data["msic-pc-payment-alternative-account-type"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-pc-payment-alternative-account",
+                              text: "Change",
+                              visuallyHiddenText: "Bank or buildings society account"
+                            }
+                          ]
+                        }
+                      },
+
+                      {
+                        key: {
                           text: "Amount in this account today"
                         },
                         value: {
@@ -1304,6 +1323,24 @@
                             }
                           ]
                         }
+                      },
+
+                      {
+                      key: {
+                        text: "Account owner"
+                      },
+                      value: {
+                        text: data['msic-pc-payment-alternative-account-owner']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "Change",
+                            visuallyHiddenText: "Account owner"
+                          }
+                        ]
+                      }
                       },
 
                       {

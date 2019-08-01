@@ -30,7 +30,7 @@
 
               {
                 key: {
-                  text: "Account you want you Pension Credit paid into"
+                  text: "Account you want your Pension Credit paid into"
                 },
                 value: {
                   text: data["msic-pc-payment"]
@@ -46,7 +46,7 @@
                 }
               },
 
-              {
+            {
                 key: {
                   text: "Name on account"
                 },
@@ -66,40 +66,21 @@
 
               {
                 key: {
-                  text: "Bank or Building Society"
+                  text: "Account with"
                 },
                 value: {
-                  text: data["msic-pc-payment-alternative-account-bank-buildings"]
+                  text: data["msic-pc-payment-alternative-account-name"]
                 },
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-alternative-account",
+                      href: "msic-pc-payment",
                       text: "Change",
-                      visuallyHiddenText: "Bank or buildings society account"
+                      visuallyHiddenText: "type of account"
                     }
                   ]
                 }
               },
-
-
-            {
-              key: {
-                text: "Type of account"
-              },
-              value: {
-                text: data["msic-pc-payment-alternative-account-type"]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-pc-payment-alternative-account",
-                    text: "Change",
-                    visuallyHiddenText: "Bank or buildings society account"
-                  }
-                ]
-              }
-            },
 
               {
                 key: {
@@ -121,7 +102,25 @@
 
               {
                 key: {
-                  text: "Roll number"
+                  text: "Account number"
+                },
+                value: {
+                  text: data["Account number"]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "msic-pc-payment-alternative-account",
+                      text: "Change",
+                      visuallyHiddenText: "account number"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "Roll or reference number"
                 },
                 value: {
                   text: data["Roll number"]
@@ -139,17 +138,17 @@
 
               {
                 key: {
-                  text: "Account number"
+                  text: "Type of account"
                 },
                 value: {
-                  text: data["Account number"]
+                  text: data["msic-pc-payment-alternative-account-type"]
                 },
                 actions: {
                   items: [
                     {
                       href: "msic-pc-payment-alternative-account",
                       text: "Change",
-                      visuallyHiddenText: "account number"
+                      visuallyHiddenText: "Bank or buildings society account"
                     }
                   ]
                 }

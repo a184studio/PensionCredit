@@ -24,7 +24,7 @@ Account with: {% extends "layout.html" %}
     name: "msic-has-missing-account-yn",
     fieldset: {
       legend: {
-        text: "Do you have any more other money, savings or investments that you have not told us about?",
+        text: "Do you have any other money, savings or investments that you have not told us about?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
@@ -45,9 +45,10 @@ Account with: {% extends "layout.html" %}
   }) }}
 
 
-  {{ govukButton({
-    text: "Continue"
-  }) }}
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
 
   </div></div><br><br>
 
@@ -76,7 +77,7 @@ Account with: {% extends "layout.html" %}
                 rows: [
                 {
                   key: {
-                    text: "Account with"
+                    text: "This money is"
                   },
                   value: {
                     text: data['msic-missing-account-name']
@@ -99,7 +100,7 @@ Account with: {% extends "layout.html" %}
                 {
                   classes: 'govuk-summary-list--no-border',
                   key: {
-                    text: "Amount in this account today"
+                    text: "Amount today"
                   },
                   value: {
                     text: data['msic-missing-account-amount']
@@ -196,7 +197,7 @@ Account with: {% extends "layout.html" %}
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-3">
-              <strong>Cash held in this country or abroad </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad"> ˙ </a>
+              <strong>Money Aboard </strong><a class="govuk-accordion__link" href="msic-cash-other-abroad"> ˙ </a>
             </span>
           </h2>
         </div>
@@ -329,7 +330,7 @@ Account with: {% extends "layout.html" %}
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-5">
-              <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account"> Add^  </a>
+              <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account"> Add^</a>
             </span>
           </h2>
         </div>
@@ -367,7 +368,7 @@ Account with: {% extends "layout.html" %}
 
               {
                 key: {
-                  text: "Value of trust on day of purchase"
+                  text: "Number of units"
                 },
                 value: {
                   text: data['msic-trust-account-purchase-value']
@@ -386,7 +387,7 @@ Account with: {% extends "layout.html" %}
               {
                 classes: 'govuk-summary-list--no-border',
                 key: {
-                  text: "Total amount invested in trust today"
+                  text: "Bid price of units today"
                 },
                 value: {
                   text: data['msic-trust-account-units']
@@ -1056,7 +1057,8 @@ Account with: {% extends "layout.html" %}
               {{ govukSummaryList({
                 rows: [
 
-                  {
+
+                {
                     key: {
                       text: "Name on account"
                     },
@@ -1074,23 +1076,23 @@ Account with: {% extends "layout.html" %}
                     }
                   },
 
-                {
-                  key: {
-                    text: "Type of account"
+                  {
+                    key: {
+                      text: "Account with"
+                    },
+                    value: {
+                      text: data["msic-pc-payment-alternative-account-name"]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-pc-payment",
+                          text: "Change",
+                          visuallyHiddenText: "type of account"
+                        }
+                      ]
+                    }
                   },
-                  value: {
-                    text: data["msic-pc-payment-alternative-account-type"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-pc-payment-alternative-account",
-                        text: "Change",
-                        visuallyHiddenText: "Bank or buildings society account"
-                      }
-                    ]
-                  }
-                },
 
                   {
                     key: {
@@ -1105,24 +1107,6 @@ Account with: {% extends "layout.html" %}
                           href: "msic-pc-payment-alternative-account",
                           text: "Change",
                           visuallyHiddenText: "sort code"
-                        }
-                      ]
-                    }
-                  },
-
-                  {
-                    key: {
-                      text: "Roll number"
-                    },
-                    value: {
-                      text: data["Roll number"]
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "msic-pc-payment-alternative-account",
-                          text: "Change",
-                          visuallyHiddenText: "roll number"
                         }
                       ]
                     }
@@ -1148,6 +1132,42 @@ Account with: {% extends "layout.html" %}
 
                   {
                     key: {
+                      text: "Roll or reference number"
+                    },
+                    value: {
+                      text: data["Roll number"]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-pc-payment-alternative-account",
+                          text: "Change",
+                          visuallyHiddenText: "roll number"
+                        }
+                      ]
+                    }
+                  },
+
+                  {
+                    key: {
+                      text: "Type of account"
+                    },
+                    value: {
+                      text: data["msic-pc-payment-alternative-account-type"]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-pc-payment-alternative-account",
+                          text: "Change",
+                          visuallyHiddenText: "Bank or buildings society account"
+                        }
+                      ]
+                    }
+                  },
+
+                  {
+                    key: {
                       text: "Amount in this account today"
                     },
                     value: {
@@ -1162,6 +1182,24 @@ Account with: {% extends "layout.html" %}
                         }
                       ]
                     }
+                  },
+
+                  {
+                  key: {
+                    text: "Account owner"
+                  },
+                  value: {
+                    text: data['msic-pc-payment-alternative-account-owner']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "Change",
+                        visuallyHiddenText: "Account owner"
+                      }
+                    ]
+                  }
                   },
 
                   {
