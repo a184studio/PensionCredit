@@ -72,7 +72,7 @@ Do you have more cash at home - Pension Credit
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
-                <strong>(#) Other account type </strong><a class="govuk-accordion__link" href="msic-second-property"></a>
+                <strong>(#) Other money, savings or investments </strong><a class="govuk-accordion__link" href="msic-missing-account"></a>
               </span>
             </h2>
           </div>
@@ -87,7 +87,7 @@ Do you have more cash at home - Pension Credit
                 rows: [
                 {
                   key: {
-                    text: "Account with"
+                    text: "This money is"
                   },
                   value: {
                     text: data['msic-missing-account-name']
@@ -108,8 +108,9 @@ Do you have more cash at home - Pension Credit
                   }
                 },
                 {
+                  classes: 'govuk-summary-list--no-border',
                   key: {
-                    text: "Amount in this account today"
+                    text: "Amount today"
                   },
                   value: {
                     text: data['msic-missing-account-amount']
@@ -120,60 +121,6 @@ Do you have more cash at home - Pension Credit
                         href: "",
                         text: "",
                         visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                },
-                {
-                key: {
-                  text: "Account owner"
-                },
-                value: {
-                  text: data['msic-missing-account-owner']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "XXXX"
-                    }
-                  ]
-                }
-              },
-
-                {
-                  key: {
-                    text: "Amount of money that is yours"
-                  },
-                  value: {
-                    text: data['msic-missing-account-stake']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
-                },
-
-                {
-                  classes: 'govuk-summary-list--no-border',
-                  key: {
-                    text: "Notes"
-                  },
-                  value: {
-                    text: data['msic-missing-account-money-detail']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
                       }
                     ]
                   }
