@@ -22,6 +22,8 @@
 
     <dl class="govuk-summary-list govuk-summary-list--long">
 
+
+
 <!--
       {% if data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year'] %}
             <div class="govuk-summary-list__row">
@@ -55,10 +57,24 @@
 
 -->
 
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Date claim was made
+  </dt>
+  <dd class="govuk-summary-list__value">
+    XX Month 2019
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="home-ownership">
+      Change
+    </a>
+  </dd>
+</div>
+
 {% if data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Claim date from CAM
+          Claim date (PTP CAM)
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}
@@ -70,8 +86,6 @@
         </dd>
       </div>
       {% endif %}
-
-
 
       {% if data["claim-date-idoc-yn"] %}
             <div class="govuk-summary-list__row">
@@ -89,13 +103,13 @@
             </div>
             {% endif %}
 
-            {% if data["claim-date-manual-eed-daf-yn"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      IDOC Date
+                      IDOC date
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      00 Month year {{ data["alternate-date"] }}
+                    {{ data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] }}
+
                     </dd>
                     <dd class="govuk-summary-list__actions">
                       <a href="home-ownership">
@@ -103,7 +117,6 @@
                       </a>
                     </dd>
                   </div>
-                  {% endif %}
 
             {% if data["claim-date-manual-eed-date"] %}
                   <div class="govuk-summary-list__row">
