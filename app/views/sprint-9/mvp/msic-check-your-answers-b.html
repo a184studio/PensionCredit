@@ -39,202 +39,117 @@ Account with: {% extends "layout.html" %}
       <h2 class="govuk-heading––extraMedium">Pension Credit payment account </h2>
 
 
-        {% if data["msic-pc-payment"] == "An alternative account" %}
-          {{ govukSummaryList({
-            rows: [
-
+      {% if data["msic-pc-payment"] == "An alternative account" %}
+        {{ govukSummaryList({
+          rows: [
 
             {
-                key: {
-                  text: "Name on account"
-                },
-                value: {
-                  text: data["name-on-account"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "name on account"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Account with"
-                },
-                value: {
-                  text: data["msic-pc-payment-alternative-account-name"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment",
-                      text: "Change",
-                      visuallyHiddenText: "type of account"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Sort code"
-                },
-                value: {
-                  text: data["sort-code"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Account number"
-                },
-                value: {
-                  text: data["Account number"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "account number"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Roll or reference number"
-                },
-                value: {
-                  text: data["Roll number"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "roll number"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Type of account"
-                },
-                value: {
-                  text: data["msic-pc-payment-alternative-account-type"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "Bank or buildings society account"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Amount in this account today"
-                },
-                value: {
-                  text: data["msic-pc-payment-alternative-account-balance"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-alternative-account",
-                      text: "Change",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
-                }
-              },
-
-              {
               key: {
-                text: "Account owner"
+                text: "Account you want your Pension Credit paid into"
               },
               value: {
-                text: data['msic-pc-payment-alternative-account-owner']
+                text: data["msic-pc-payment"]
               },
               actions: {
                 items: [
                   {
-                    href: "",
+                    href: "msic-pc-payment",
                     text: "Change",
-                    visuallyHiddenText: "Account owner"
+                    visuallyHiddenText: "type of account"
                   }
                 ]
               }
-              },
+            },
 
-              {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                  text: "Amount of money that is yours"
-                },
-                value: {
-                  text: data['msic-pc-payment-alternative-account-stake']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "Change",
-                      visuallyHiddenText: "Amount of money that is yours"
-                    }
-                  ]
-                }
+          {
+              key: {
+                text: "Name on account"
+              },
+              value: {
+                text: data["name-on-account"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "name on account"
+                  }
+                ]
               }
+            },
 
-
-            ]
-          }) }}
-        {% endif %}
-
-<!------------------ Same as State Pension account------------------------->
-
-        {% if data["msic-pc-payment"] == "Same account as State Pension" %}
-          {{ govukSummaryList({
-            rows: [
-
-              {
-                key: {
-                  text: "Account you want you Pension Credit paid into"
-                },
-                value: {
-                  text: data["msic-pc-payment"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment",
-                      text: "Change",
-                      visuallyHiddenText: "type of account"
-                    }
-                  ]
-                }
+            {
+              key: {
+                text: "Account with"
               },
+              value: {
+                text: data["msic-pc-payment-alternative-account-name"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment",
+                    text: "Change",
+                    visuallyHiddenText: "type of account"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "Sort code"
+              },
+              value: {
+                text: data["sort-code"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "sort code"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "Account number"
+              },
+              value: {
+                text: data["Account number"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "account number"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "Roll or reference number"
+              },
+              value: {
+                text: data["Roll number"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "roll number"
+                  }
+                ]
+              }
+            },
 
             {
               key: {
@@ -246,7 +161,7 @@ Account with: {% extends "layout.html" %}
               actions: {
                 items: [
                   {
-                    href: "msic-pc-payment-state-pension-account",
+                    href: "msic-pc-payment-alternative-account",
                     text: "Change",
                     visuallyHiddenText: "Bank or buildings society account"
                   }
@@ -254,45 +169,203 @@ Account with: {% extends "layout.html" %}
               }
             },
 
-
-              {
-                key: {
-                  text: "Amount in this account today	"
-                },
-                value: {
-                  text: data["msic-pc-payment-alternative-account-balance"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-state-pension-account",
-                      text: "Change",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
-                }
+            {
+              key: {
+                text: "Amount in this account today"
               },
-
-              {
-                key: {
-                  text: "How often you want to be paid"
-                },
-                value: {
-                  text: data["msic-pc-payment-frequency"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-state-pension-account",
-                      text: "Change",
-                      visuallyHiddenText: "type of account"
-                    }
-                  ]
-                }
+              value: {
+                text: data["msic-pc-payment-alternative-account-balance"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "sort code"
+                  }
+                ]
               }
-            ]
-          }) }}
-        {% endif %}
+            },
+
+            {
+              key: {
+                text: "How often you want to be paid"
+              },
+              value: {
+                text: data["msic-pc-payment-frequency"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-frequency",
+                    text: "Change",
+                    visuallyHiddenText: "how often you want to be paid"
+                  }
+                ]
+              }
+            },
+            {
+            key: {
+              text: "Account owner"
+            },
+            value: {
+              text: data['msic-pc-payment-alternative-account-owner']
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "Account owner"
+                }
+              ]
+            }
+            },
+
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Amount of money that is yours"
+              },
+              value: {
+                text: data['msic-pc-payment-alternative-account-stake']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "Change",
+                    visuallyHiddenText: "Amount of money that is yours"
+                  }
+                ]
+              }
+            }
+
+
+          ]
+        }) }}
+      {% endif %}
+
+<!------------------ Same as State Pension account------------------------->
+
+      {% if data["msic-pc-payment"] == "Same account as State Pension" %}
+        {{ govukSummaryList({
+          rows: [
+
+            {
+              key: {
+                text: "Account you want you Pension Credit paid into"
+              },
+              value: {
+                text: data["msic-pc-payment"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment",
+                    text: "Change",
+                    visuallyHiddenText: "type of account"
+                  }
+                ]
+              }
+            },
+
+          {
+            key: {
+              text: "Type of account"
+            },
+            value: {
+              text: data["msic-pc-payment-alternative-account-type"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-pc-payment-state-pension-account",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or buildings society account"
+                }
+              ]
+            }
+          },
+
+
+            {
+              key: {
+                text: "Amount in this account today	"
+              },
+              value: {
+                text: data["msic-pc-payment-alternative-account-balance"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-state-pension-account",
+                    text: "Change",
+                    visuallyHiddenText: "sort code"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "How often you want to be paid"
+              },
+              value: {
+                text: data["msic-pc-payment-frequency"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-pc-payment-frequency",
+                    text: "Change",
+                    visuallyHiddenText: "how often you want to be paid"
+                  }
+                ]
+              }
+            },
+
+            {
+            key: {
+              text: "Account owner"
+            },
+            value: {
+              text: data['msic-pc-payment-alternative-account-owner']
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "Account owner"
+                }
+              ]
+            }
+            },
+
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Amount of money that is yours"
+              },
+              value: {
+                text: data['msic-pc-payment-alternative-account-stake']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "Change",
+                    visuallyHiddenText: "Amount of money that is yours"
+                  }
+                ]
+              }
+            }
+
+          ]
+        }) }}
+      {% endif %}
+
 
 
 
