@@ -55,22 +55,16 @@
         ]
       }) }}
 
-      <br>
 
-      <br>
-      <p class="govuk-body">Amount in this account <strong>today</strong></p>
-
-    {{ govukInput({
-  label: {
-    text: ""
-  },
-  id: "msic-pc-payment-alternative-account-balance",
-  name: "msic-pc-payment-alternative-account-balance",
-  classes: "govuk-input--width-20"
+{{ govukInput({
+label: {
+html: "Amount in this account <strong>today</strong>"
+},
+id: "msic-pc-payment-alternative-account-balance",
+name: "msic-pc-payment-alternative-account-balance",
+classes: "govuk-input--width-20"
 }) }}
 
-
-<br>
 
 {% set percentageField %}
 {{ govukInput({
