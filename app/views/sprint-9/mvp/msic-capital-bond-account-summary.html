@@ -958,7 +958,7 @@ Do you have any more Capital Bonds? - Pension Credit
               <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
-              <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> Add^</a>
+              <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list">  </a>
               </span>
               </h2>
               </div>
@@ -1155,6 +1155,7 @@ Do you have any more Capital Bonds? - Pension Credit
 
             </div>
             </div>{% endif %}
+
             <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
             {% if data["msic-pc-payment-alternative-account-balance"] %}
               <div class="govuk-accordion__section ">
@@ -1170,11 +1171,12 @@ Do you have any more Capital Bonds? - Pension Credit
               <div class="govuk-grid-row">
               <div class="govuk-grid-column-three-quarters">
 
-                {% if data["msic-pc-payment"] == "An alternative account" %}
+                {% if data["msic-pc-payment"] == "An alternative account" or data["msic-pc-payment"] == "Same account as State Pension" %}
                   {{ govukSummaryList({
                     rows: [
 
-                      {
+
+                    {
                         key: {
                           text: "Name on account"
                         },
@@ -1192,23 +1194,23 @@ Do you have any more Capital Bonds? - Pension Credit
                         }
                       },
 
-                    {
-                      key: {
-                        text: "Type of account"
+                      {
+                        key: {
+                          text: "Account with"
+                        },
+                        value: {
+                          text: data["msic-pc-payment-alternative-account-name"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-pc-payment",
+                              text: "Change",
+                              visuallyHiddenText: "type of account"
+                            }
+                          ]
+                        }
                       },
-                      value: {
-                        text: data["msic-pc-payment-alternative-account-type"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "msic-pc-payment-alternative-account",
-                            text: "Change",
-                            visuallyHiddenText: "Bank or buildings society account"
-                          }
-                        ]
-                      }
-                    },
 
                       {
                         key: {
@@ -1223,24 +1225,6 @@ Do you have any more Capital Bonds? - Pension Credit
                               href: "msic-pc-payment-alternative-account",
                               text: "Change",
                               visuallyHiddenText: "sort code"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Roll number"
-                        },
-                        value: {
-                          text: data["Roll number"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "msic-pc-payment-alternative-account",
-                              text: "Change",
-                              visuallyHiddenText: "roll number"
                             }
                           ]
                         }
@@ -1266,6 +1250,42 @@ Do you have any more Capital Bonds? - Pension Credit
 
                       {
                         key: {
+                          text: "Roll or reference number"
+                        },
+                        value: {
+                          text: data["Roll number"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-pc-payment-alternative-account",
+                              text: "Change",
+                              visuallyHiddenText: "roll number"
+                            }
+                          ]
+                        }
+                      },
+
+                      {
+                        key: {
+                          text: "Type of account"
+                        },
+                        value: {
+                          text: data["msic-pc-payment-alternative-account-type"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-pc-payment-alternative-account",
+                              text: "Change",
+                              visuallyHiddenText: "Bank or buildings society account"
+                            }
+                          ]
+                        }
+                      },
+
+                      {
+                        key: {
                           text: "Amount in this account today"
                         },
                         value: {
@@ -1280,6 +1300,24 @@ Do you have any more Capital Bonds? - Pension Credit
                             }
                           ]
                         }
+                      },
+
+                      {
+                      key: {
+                        text: "Account owner"
+                      },
+                      value: {
+                        text: data['msic-pc-payment-alternative-account-owner']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "Change",
+                            visuallyHiddenText: "Account owner"
+                          }
+                        ]
+                      }
                       },
 
                       {
@@ -1349,9 +1387,10 @@ Do you have any more Capital Bonds? - Pension Credit
                     },
 
 
-                      {
-                        key: {
-                          text: "Amount in this account today	"
+                    {
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                          text: "Amount in this account today"
                         },
                         value: {
                           text: data["msic-pc-payment-alternative-account-balance"]
@@ -1365,25 +1404,8 @@ Do you have any more Capital Bonds? - Pension Credit
                             }
                           ]
                         }
-                      },
-
-                      {
-                        key: {
-                          text: "How often you want to be paid"
-                        },
-                        value: {
-                          text: data["msic-pc-payment-frequency"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "msic-pc-payment-state-pension-account",
-                              text: "Change",
-                              visuallyHiddenText: "type of account"
-                            }
-                          ]
-                        }
                       }
+
                     ]
                   }) }}
                 {% endif %}
