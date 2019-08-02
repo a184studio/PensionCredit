@@ -361,13 +361,13 @@ Do you have more Cash at home - Pension Credit
               </div>
       </div>{% endif %}
 
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
       {% if data["msic-cash-at-home-amount"] %}
       <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-4">
-                <strong>Cash at home </strong><a class="govuk-accordion__link" href="msic-cash-at-home">  </a>
+                <strong>Cash at home </strong><a class="govuk-accordion__link" href="msic-cash-at-home"> ˙ </a>
               </span>
             </h2>
           </div>
@@ -394,11 +394,6 @@ Do you have more Cash at home - Pension Credit
                         href: "msic-cash-at-home",
                         html: "Change",
                         visuallyHiddenText: "XXX"
-                      },
-                      {
-                        href: "msic-remove",
-                        html: "Remove",
-                        visuallyHiddenText: "XXX"
                       }
                     ]
                   }
@@ -410,6 +405,7 @@ Do you have more Cash at home - Pension Credit
 
               </div>
       </div>{% endif %}
+
       <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         {% if data["msic-trust-account-name"] %}
         <div class="govuk-accordion__section ">
