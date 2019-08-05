@@ -50,24 +50,25 @@
                 name: "who-lives-with-you",
                 fieldset: {
                   legend: {
-                    text: "Who lives with you?",
+                    text: "Does anyone else live with you?",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--xl"
                   }
                 },
                 hint: {
-                  text: "XXX"
+                  text: ""
                 },
                 items: [
                   {
-                  value: "Live alone",
-                  text: "Live alone",
-                  checked: (data["who-lives-with-you"] == "Live alone")
+                    value: "Live with others",
+                    text: "Yes",
+                    checked: (data["who-lives-with-you"] == "Live with others")
+
                 },
                   {
-                  value: "Live with others",
-                  text: "Live with others",
-                  checked: (data["who-lives-with-you"] == "Live with others")
+                    value: "Live alone",
+                    text: "No",
+                    checked: (data["who-lives-with-you"] == "Live alone")
                 }
                 ]
               }) }}
