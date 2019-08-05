@@ -297,9 +297,8 @@
               }
             },
             {
-              classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Are you a UK national?"
+                text: "UK national"
               },
               value: {
                 text: data['uk-national']
@@ -310,6 +309,75 @@
                     href: "uk-national",
                     text: "Change",
                     visuallyHiddenText: "uk national"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Who lives with you"
+              },
+              value: {
+                text: data['who-lives-with-you']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "partner-under-spa",
+                    text: "Change",
+                    visuallyHiddenText: "partner"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Partner"
+              },
+              value: {
+                text: "Yes/No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "who-lives-with-you-types",
+                    text: "Change",
+                    visuallyHiddenText: "partner"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Someone else"
+              },
+              value: {
+                text: data['who-lives-with-you-someone-else']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "who-lives-with-you-types",
+                    text: "Change",
+                    visuallyHiddenText: "partner"
+                  }
+                ]
+              }
+            },
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Child under 16"
+              },
+              value: {
+                text: data['who-lives-with-you-child']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "who-lives-with-you-types",
+                    text: "Change",
+                    visuallyHiddenText: "partner"
                   }
                 ]
               }

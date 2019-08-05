@@ -39,49 +39,7 @@
       }) }}
       {% endset -%}
 
-              {% set emailHtml %}
-              {{ govukInput({
-                id: "email-address",
-                name: "email-address",
-                type: "email",
-                classes: "govuk-!-width-two-thirds",
-                value: data["email-address"],
-                label: {
-                  text: "Address"
-                },
-                attributes: {
-                  spellcheck: "false"
-                }
-              }) }}
-              {% endset -%}
-
-              {% set phoneHtml %}
-              {{ govukInput({
-                id: "contact-by-phone",
-                name: "contact-by-phone",
-                type: "tel",
-                classes: "govuk-!-width-one-third",
-                value: data["landline"],
-                label: {
-                  text: "Number"
-                }
-              }) }}
-              {% endset -%}
-
-              {% set textHtml %}
-              {{ govukInput({
-                id: "contact-by-text",
-                name: "contact-by-text",
-                type: "tel",
-                classes: "govuk-!-width-one-third",
-                value: data["mobile"],
-                label: {
-                  text: "Number"
-                }
-              }) }}
-              {% endset -%}
-
-              {{ govukCheckboxes({
+                  {{ govukCheckboxes({
                 idPrefix: "citizenship-conditional",
                 name: "citizen",
                 fieldset: {
