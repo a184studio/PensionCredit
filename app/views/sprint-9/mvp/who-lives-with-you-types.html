@@ -40,8 +40,8 @@
       {% endset -%}
 
                   {{ govukCheckboxes({
-                idPrefix: "citizenship-conditional",
-                name: "citizen",
+                idPrefix: "who-lives-with-you-type",
+                name: "who-lives-with-you-type",
                 fieldset: {
                   legend: {
                     text: "Who lives with you?",
@@ -54,32 +54,28 @@
                 },
                 items: [
                   {
-                  value: "Partner",
-                  text: "My partner",
+                    value: "Partner",
+                    text: "My partner",
                   checked: (data["who-lives-with-you"] == "Partner")
                 },
                 {
                   value: "Child under 16",
                   text: "Children under 16",
-                  checked: (data["who-lives-with-you"] == "Child under 16"),
-                  conditional: {
-                    html: moreThanOneChild
-
-                  }
-                  },
-                  {
-                    value: "Someone else",
-                    text: "Someone else",
-                    checked: (data["who-lives-with-you"] == "Someone else"),
-                    conditional: {
-                      html: moreThanOneSomeoneElse
-                  }
+                checked: (data["who-lives-with-you"] == "Child under 16"),
+                conditional: {
+                  html: moreThanOneChild
                 }
+              },
+                {
+                  value: "Someone else",
+                  text: "Someone else",
+                  checked: (data["who-lives-with-you"] == "Someone else"),
+                  conditional: {
+                    html: moreThanOneSomeoneElse
+                  }
+}
                 ]
               }) }}
-
-
-
 
 
 
