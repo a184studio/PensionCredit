@@ -92,9 +92,9 @@
                 <a class="app-task-list__task-name" href="Contact-post-code-lookup" aria-describedby="read-declaration-completed">
                   Correspondence Address
                 </a>
-                {% if data["contact-correspondence-yn-complete"] == "true" %}
+                {% if data["contact-address-choice-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["contact-correspondence-yn-complete"] == "in-progress" %}
+                {% elif data["contact-address-choice-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else  %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
@@ -104,9 +104,9 @@
                 <a class="app-task-list__task-name" href="contact-formats" aria-describedby="read-declaration-completed">
                   Contact formats
                 </a>
-                {% if data["disability-complete"] == "true" %}
+                {% if data["contact-formats-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["disability-complete"] == "in-progress" %}
+                {% elif data["contact-formats-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else  %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
