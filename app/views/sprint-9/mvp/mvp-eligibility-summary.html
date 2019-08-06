@@ -15,7 +15,7 @@
 
 <!----Headline---->
 <h1 class="govuk-heading-xl">
-  Pension Credit Eligibility summary.<br>
+  Pension Credit eligibility summary<br>
 </h1>
 <!----Headline---->
 <form action="task-list" method="post">
@@ -25,7 +25,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <h3 class="govuk-heading-s pc-row-head-10">
-        How we use your personal information
+        Personal information and declaration
       </h3>
       <p></p>
     </div>
@@ -37,7 +37,7 @@
             rows: [
             {
               key: {
-                text: "Personal information consent"
+                text: "Do you agree to how we use your personal information?"
               },
               value: {
                 text: data['agrees-privacy']
@@ -47,7 +47,7 @@
                   {
                     href: "start",
                     text: "Change",
-                    visuallyHiddenText: "Agreed to pre-declaration"
+                    visuallyHiddenText: "Change agreement to privacy policy"
                   }
                 ]
               }
@@ -56,7 +56,7 @@
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Pre-declaration"
+                text: "Do you agree to the declaration?"
               },
               value: {
                 text: data['pre-declaration']
@@ -66,7 +66,7 @@
                   {
                     href: "pre-declaration",
                     text: "Change",
-                    visuallyHiddenText: "Agreed to pre-declaration"
+                    visuallyHiddenText: "Change agreement to declaration"
                   }
                 ]
               }
@@ -88,7 +88,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <h3 class="govuk-heading-s pc-row-head-10">
-        Method of claim
+        Claimant or representative
       </h3>
       <p></p>
     </div>
@@ -102,7 +102,7 @@
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Claimant / Representative"
+                text: "Who you are claiming for"
               },
               value: {
                 text: data['claiming-for']
@@ -112,7 +112,7 @@
                   {
                     href: "who-is-caller",
                     text: "Change",
-                    visuallyHiddenText: "who the caller is"
+                    visuallyHiddenText: "Change who you are claiming for"
                   }
                 ]
               }
@@ -159,7 +159,7 @@
                     {
                       href: "name-and-nino",
                       text: "Change",
-                      visuallyHiddenText: "name"
+                      visuallyHiddenText: "Change name"
                     }
                   ]
                 }
@@ -176,14 +176,14 @@
                     {
                       href: "name-and-nino",
                       text: "Change",
-                      visuallyHiddenText: "National Insurance number"
+                      visuallyHiddenText: "Change National Insurance number"
                     }
                   ]
                 }
               },
               {
                 key: {
-                  text: "Telephone number"
+                  text: "Number you are calling from"
                 },
                 value: {
                   text: data["telephone-number"]
@@ -193,7 +193,7 @@
                     {
                       href: "name-and-nino",
                       text: "Change",
-                      visuallyHiddenText: "telephone number"
+                      visuallyHiddenText: "Change number you are calling from"
                     }
                   ]
                 }
@@ -210,7 +210,7 @@
                     {
                       href: "over-spa",
                       text: "Change",
-                      visuallyHiddenText: "date of birth"
+                      visuallyHiddenText: "Change date of birth"
                     }
                   ]
                 }
@@ -232,14 +232,14 @@
                   {
                     href: "reside-in-uk",
                     text: "Change",
-                    visuallyHiddenText: "UK residence"
+                    visuallyHiddenText: "Change whetehr you live in the UK"
                   }
                 ]
               }
             },
             {
               key: {
-                text: "Lived permanently in the UK for the last 2 years"
+                text: "Have you lived permanently in the UK for the last 2 years?"
               },
               value: {
                 text: data['lived-abroad']
@@ -249,14 +249,14 @@
                   {
                     href: "lived-abroad",
                     text: "Change",
-                    visuallyHiddenText: "abroad"
+                    visuallyHiddenText: "Change whether you have lived permanently in the UK for the last 2 years"
                   }
                 ]
               }
             },
             {
               key: {
-                text: "UK national"
+                text: "Are you a UK national?"
               },
               value: {
                 text: data['uk-national']
@@ -266,7 +266,7 @@
                   {
                     href: "uk-national",
                     text: "Change",
-                    visuallyHiddenText: "uk national"
+                    visuallyHiddenText: "Change whether you are a UK national"
                   }
                 ]
               }
@@ -274,7 +274,7 @@
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Who lives with you"
+                text: "Who else live with you?"
               },
               value: {
                 text: data['who-lives-with-you']
@@ -284,7 +284,7 @@
                   {
                     href: "who-lives-with-you",
                     text: "Change",
-                    visuallyHiddenText: "partner"
+                    visuallyHiddenText: "Change who else lives with you"
                   }
                 ]
               }
