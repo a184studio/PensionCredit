@@ -35,6 +35,15 @@
           text: "Select all that apply:"
         },
         items: [
+        {
+          hint: {
+            text: "CDs, cassettes, MP3 audio, minidisc, limited edition vinyl (signed)"
+          },
+          value: "Audio forms",
+          text: "Audio forms",
+          checked: (accessability.includes("Audioforms"))
+        },
+
           {
             value: "Braille",
             text: "Braille",
@@ -51,35 +60,14 @@
             checked: (disabilities.includes("Textphone"))
           },
           {
-            hint: {
-              text: "CDs, cassettes, MP3 audio, minidisc, limited edition vinyl (signed)"
-            },
-            value: "Audio forms",
-            text: "Audio forms",
-            checked: (accessability.includes("Audioforms"))
+            value: "TextBox",
+            text: "TextBox",
+            checked: (disabilities.includes("TextBox"))
           },
           {
-            value: "Sign language",
-            text: "Sign language",
-            checked: (accessability.includes("Signlanguage"))
-          },
-          {
-            value: "Induction loop",
-            text: "Induction loop",
-            checked: (accessability.includes("Inductionloop"))
-          },
-          {
-            hint: {
-              text: "XXX"
-            },
-            value: "Local service contact",
-            text: "Local service contact",
-            checked: (accessability.includes("Localservicecontact"))
-          },
-          {
-            value: "Local service visit",
-            text: "Local service visit",
-            checked: (accessability.includes("Localservicevisit"))
+            value: "TypeTalk",
+            text: "TypeTalk",
+            checked: (disabilities.includes("TypeTalk"))
           }
         ]
       }) }}
