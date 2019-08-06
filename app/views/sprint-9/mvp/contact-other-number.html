@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How would you prefer to be contacted? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="contact-other-number-router" method="post" class="form">
+
+      <input type="hidden" name="contact-complete" value="in-progress"/>
+
+      <div class="govuk-panel--agent">
+        <h2 class="govuk-heading-m"><span class="agent-action">Agent: </span>The number the claimant is calling from <strong>{{ data["telephone-number"] }}</strong>.</h2>
+      </div>
+
+
+      {% set otherNumberLandline %}
+      {{ govukInput({
+        label: {
+          text: "What is this number?"
+        },
+        id: "contact-other-number-landline",
+        name: "contact-other-number-landline",
+        classes: "govuk-input--width-20",
+        attributes: {
+          maxlength: 20
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "contact-other-number-landline",
+        name: "contact-other-number-landline",
+        fieldset: {
+          legend: {
+            html: "What number can we call you on?",
+
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "@pete what are we going to do with this number"
+        },
+
+        items: [
+        {
+            value: "Add number",
+            text: "Add number",
+            checked: (data["contact-other-number-landline"] == "Add number"),
+            conditional: {
+              html: otherNumberLandline
+            }
+            },
+          {
+            value: "Opt out of telephone",
+            text: "Opt out of telephone",
+            checked: (data["contact-other-number-landline"] == "Opt out of telephone")
+          }
+        ]
+      }) }}
+
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}

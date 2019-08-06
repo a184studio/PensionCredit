@@ -194,6 +194,46 @@ router.post(`${baseUrl}/contact-correspondence-yn-router`, (req, res) => {
 })
 
 
+// Contact
+
+
+router.post(`${baseUrl}/contact-text-yn-router`, (req, res) => {
+  const canText = req.session.data['contact-text-yn']
+
+  if (canText === 'Mobile') {
+    res.redirect(`${baseUrl}/contact-mobile-can-call`)
+  } else {
+    res.redirect(`${baseUrl}/contact-other-number`)
+  }
+})
+
+
+router.post(`${baseUrl}/contact-mobile-can-call-router`, (req, res) => {
+  const canText = req.session.data['contact-text-yn']
+
+  if (canText === 'Yes') {
+    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+  } else {
+    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+  }
+})
+
+router.post(`${baseUrl}/contact-other-number-router`, (req, res) => {
+  const canText = req.session.data['contact-text-yn']
+
+  if (canText === 'Yes') {
+    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+  } else {
+    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+  }
+})
+
+
+
+
+
+// Contact end
+
 
 router.post(`${baseUrl}/over-spa-router`, (req, res) => {
   try {
@@ -828,7 +868,6 @@ router.post(`${baseUrl}/msic-all-money-accounts-check-yn-router`, (req, res) => 
 })
 
 // MSIC END
-
 
 
 

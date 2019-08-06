@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="contact-correspondence-yn" method="post" class="form">
+    <form action="contact-summary" method="post" class="form">
 
       <input type="hidden" name="disability-complete" value="in-progress"/>
 
@@ -50,8 +50,10 @@
             text: "Textphone",
             checked: (disabilities.includes("Textphone"))
           },
-
           {
+            hint: {
+              text: "CDs, cassettes, MP3 audio, minidisc, limited edition vinyl (signed)"
+            },
             value: "Audio forms",
             text: "Audio forms",
             checked: (accessability.includes("Audioforms"))
@@ -67,6 +69,9 @@
             checked: (accessability.includes("Inductionloop"))
           },
           {
+            hint: {
+              text: "XXX"
+            },
             value: "Local service contact",
             text: "Local service contact",
             checked: (accessability.includes("Localservicecontact"))
@@ -90,12 +95,34 @@
           }
         },
         hint: {
-          text: ""
+          text: "Paperwork only"
         },
         items: [
           {
             value: "Welsh",
             text: "Welsh",
+            checked: (disabilities.includes("Welsh"))
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "email",
+        name: "email",
+        fieldset: {
+          legend: {
+            text: "What about the email?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "We can do email if there is need, X,Y and Z"
+        },
+        items: [
+          {
+            value: "Email",
+            text: "Email",
             checked: (disabilities.includes("Welsh"))
           }
         ]
