@@ -19,19 +19,20 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="address-correspondence-yn-router" method="post" class="form">
+    <form action="disregards-capital-total-yn-router" method="post" class="form">
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
+      <div class="govuk-panel--agent">
 
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "address-correspondence-yn",
-        name: "address-correspondence-yn",
+        idPrefix: "disregards-capital-total-yn",
+        name: "disregards-capital-total-yn",
         fieldset: {
           legend: {
-            html: "Is 221b Baker Street your home address?",
+            html: "Does the person have more than X?",
 
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
@@ -45,15 +46,17 @@
         {
             value: "Yes",
             text: "Yes",
-            checked: (data["address-correspondence-yn"] == "Yes")
+            checked: (data["disregards-capital-total-yn"] == "Yes")
           },
           {
-            value: "differnt address",
-            text: "No - I live at a different address",
-            checked: (data["address-correspondence-yn"] == "differnt address")
+            value: "No",
+            text: "No",
+            checked: (data["disregards-capital-total-yn"] == "No")
           }
         ]
       }) }}
+
+      </div>
 
       {{ govukButton({
         text: "Continue"

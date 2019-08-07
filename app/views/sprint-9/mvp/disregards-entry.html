@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How would you prefer to be contacted? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="disregards-type-more-yn" method="post" class="form">
+
+      <input type="hidden" name="contact-complete" value="in-progress"/>
+
+
+
+      <h1 class="govuk-heading-xl">Discribe what this thing</h1>
+
+
+
+            {{ govukSelect({
+              id: "sort",
+              name: "sort",
+              label: {
+                text: "Sort by"
+              },
+              items: [
+                {
+                  value: "published",
+                  text: "Recently published"
+                },
+                {
+                  value: "updated",
+                  text: "Recently updated",
+                  selected: true
+                },
+                {
+                  value: "views",
+                  text: "Most views"
+                },
+                {
+                  value: "comments",
+                  text: "Most comments"
+                }
+              ]
+            }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Name of payment"
+        },
+        id: "disregards-entry-name",
+        name: "disregards-entry-name",
+        classes: "govuk-input--width-20"
+      }) }}
+
+  <!--
+      {{ govukInput({
+        label: {
+          text: "Last 4 digits of the account number or roll number"
+        },
+        id: "msic-all-savings-account-last-digits",
+        name: "msic-all-savings-account-last-digits",
+        classes: "govuk-input--width-4",
+        attributes: {
+          maxlength: 4
+        }
+      }) }}
+  -->
+
+  {{ govukInput({
+label: {
+  html: "Amount received"
+},
+id: "disregards-entry-date",
+name: "disregards-entry-date",
+classes: "govuk-input--width-20"
+}) }}
+
+          {{ govukInput({
+        label: {
+          html: "Amount received"
+        },
+        id: "disregards-entry-amount",
+        name: "disregards-entry-amount",
+        classes: "govuk-input--width-20"
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
