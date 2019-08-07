@@ -53,6 +53,15 @@ router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/address-correspondence-yn-router`, (req, res) => { // router name
+  const privacyPolicy = req.session.data['clear-data-yn']  // name of data / id name
+
+  if (privacyPolicy === 'No') { // name of data / + answer
+    res.redirect(`${baseUrl}/post-code-lookup`)
+  } else {
+    res.redirect(`${baseUrl}/home-ownership`)
+  }
+})
 
 router.post(`${baseUrl}/clear-data-yn-router`, (req, res) => { // router name
   const privacyPolicy = req.session.data['clear-data-yn']  // name of data / id name

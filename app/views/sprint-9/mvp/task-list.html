@@ -129,9 +129,10 @@
               <span class="app-task-list__section-number">4. </span> About where you live
             </h2>
             <ul class="app-task-list__items">
-                            <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="post-code-lookup" aria-describedby="eligibility-completed">
-                  Address and home ownership
+
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="address-correspondence-yn" aria-describedby="eligibility-completed">
+                  Address
                   {% if data["home-ownership"] %} type: {{data["home-ownership"]}} {% endif %}
                 </a>
                 {% if data["address-complete"] == "true" %}
@@ -142,6 +143,21 @@
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
                 {% endif %}
               </li>
+
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="home-ownership" aria-describedby="eligibility-completed">
+                  Home ownership
+                  {% if data["home-ownership"] %} type: {{data["home-ownership"]}} {% endif %}
+                </a>
+                {% if data["address-complete"] == "true" %}
+                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+                {% elif data["address-complete"] == "in-progress" %}
+                  <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
+                {% else  %}
+                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+                {% endif %}
+              </li>
+
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="address-summary" aria-describedby="eligibility-completed">
                   (Hidden) Summary
