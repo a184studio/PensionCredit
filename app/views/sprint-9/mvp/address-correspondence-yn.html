@@ -31,14 +31,14 @@
         name: "address-correspondence-yn",
         fieldset: {
           legend: {
-            html: "Your letters will be going to 221b Baker Street, is this the same as where you live?",
+            html: "Is 221b Baker Street your home address?",
 
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "The whole address of the place is: 221b Baker street, Marylebone, London, NW1 5RT  "
+          text: " "
         },
 
         items: [
@@ -49,7 +49,7 @@
           },
           {
             value: "differnt address",
-            text: "No - I live in a different accress",
+            text: "No - I live at a different accress",
             checked: (data["address-correspondence-yn"] == "differnt address")
           }
         ]
