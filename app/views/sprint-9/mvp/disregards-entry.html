@@ -80,14 +80,36 @@
       }) }}
   -->
 
-  {{ govukInput({
-label: {
-  html: "Amount received"
-},
-id: "disregards-entry-date",
-name: "disregards-entry-date",
-classes: "govuk-input--width-20"
+
+{{ govukDateInput({
+  id: "disregards-entry-date",
+  namePrefix: "disregards-entry-date",
+  fieldset: {
+    legend: {
+      text: "Enter the IDOC"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data["disregards-entry-date-day"]
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: data["disregards-entry-date-month"]
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: data["disregards-entry-date-year"]
+    }
+  ]
 }) }}
+
+
+
 
           {{ govukInput({
         label: {

@@ -111,6 +111,50 @@
         ]
       }) }}
 
+
+              {% set altLanguage %}
+              {{ govukInput({
+            label: {
+              html: "What is the language?"
+            },
+            id: "contact-formats-altLanguage",
+            name: "contact-formats-altLanguage",
+            classes: "govuk-input--width-20"
+          }) }}
+              {% endset -%}
+
+              {{ govukRadios({
+                classes: "govuk-radios",
+                idPrefix: "contact-formats-altLanguage-yn",
+                name: "contact-formats-altLanguage-yn",
+                fieldset: {
+                  legend: {
+                    html: "Do you have an alternate first language?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: ""
+                },
+                items: [
+                {
+                  value: "No",
+                  text: "No",
+                  checked: (data["contact-formats-altLanguage-yn"] == "No")
+                },
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: (data["contact-formats-altLanguage-yn"] == "Yes"),
+                    conditional: {
+                      html: altLanguage
+                    }
+                  }
+                ]
+              }) }}
+
+
 <!--
       {{ govukRadios({
         classes: "govuk-radios",

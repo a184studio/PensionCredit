@@ -112,7 +112,7 @@
         </dd>
       </div>
 
-      <div class="govuk-summary-list__row govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Email (Exception)
         </dt>
@@ -125,6 +125,37 @@
           </a>
         </dd>
       </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Alternative first language
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["contact-formats-altLanguage-yn"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="contact-text-yn">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row govuk-summary-list--no-border">
+        <dt class="govuk-summary-list__key">
+          Language
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["contact-formats-altLanguage"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="contact-text-yn">
+            Change
+          </a>
+        </dd>
+      </div>
+
+
+
 
 
 
