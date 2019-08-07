@@ -23,114 +23,7 @@
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
-
-
-
-
-
-<h1 class="govuk-heading-xl">Have you received any money from any of the following?</h1>
-
-<ul class="govuk-list govuk-list--bullet">
-  <li>
-    <p><strong></strong>Local authority payments for council tax reduction or welfare</p>
-  </li>
-
-  <li>
-    <p><strong></strong>Have you received money from a personal injury insurance payment</p>
-  </li>
-
-  <li>
-    <p><strong></strong>Payment from a home insurance policy to covered lost of damage personal possessions.</p>
-  </li>
-
-    <li>
-      <p><strong></strong>Payment made to you by a local authority</p>
-    </li>
-
-    <li>
-      <p><strong></strong>Money paid to you to maintain the home you live in</p>
-    </li>
-
-    <li>
-      <p><strong></strong>Have you had and payments made to you from a charitable trust?</p>
-    </li>
-
-    <li>
-      <p><strong></strong>Any other lump sums than are like the above</p>
-    </li>
-
-</ul>
-
-<!--
-{{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "address-correspondence-yn",
-  name: "address-correspondence-yn",
-  fieldset: {
-    legend: {
-      html: "Have you recived any of the following?",
-
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
-    }
-  },
-  hint: {
-    text: " "
-  },
-
-  items: [
-  {
-      value: "Yes",
-      text: "Yes",
-      checked: (data["address-correspondence-yn"] == "Yes")
-    },
-    {
-      value: "differnt address",
-      text: "No - I live at a different address",
-      checked: (data["address-correspondence-yn"] == "differnt address")
-    }
-  ]
-}) }}
-
--->
-
-<br><br>
-          {{ govukRadios({
-            idPrefix: "disregards-type-more-yn",
-            name: "disregards-type-more-yn",
-            fieldset: {
-              legend: {
-                text: "",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
-              }
-                },
-
-            classes: "govuk-radios--inline",
-            items: [
-              {
-                value: "Yes",
-                text: "Yes",
-                checked: (data["disregards-type-more-yn"] == "Yes")
-              },
-              {
-                value: "No",
-                text: "No",
-                checked: (data["disregards-type-more-yn"] == "No")
-              }
-            ]
-          }) }}
-
-<br>
-          {{ govukButton({
-            text: "Continue"
-          }) }}
-
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
-
-          <h2 class="govuk-heading-l">Summary</h2>
+          <h1 class="govuk-heading-xl">Summary</h1>
 
 
                   {{ govukSummaryList({
@@ -262,6 +155,108 @@
               }
               ]
               }) }}
+
+              <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+              <h2 class="govuk-heading-l">Have you received any money from any of the following?</h2>
+
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>
+    <p><strong></strong>Local authority payments for council tax reduction or welfare</p>
+  </li>
+
+  <li>
+    <p><strong></strong>Have you received money from a personal injury insurance payment</p>
+  </li>
+
+  <li>
+    <p><strong></strong>Payment from a home insurance policy to covered lost of damage personal possessions.</p>
+  </li>
+
+    <li>
+      <p><strong></strong>Payment made to you by a local authority</p>
+    </li>
+
+    <li>
+      <p><strong></strong>Money paid to you to maintain the home you live in</p>
+    </li>
+
+    <li>
+      <p><strong></strong>Have you had and payments made to you from a charitable trust?</p>
+    </li>
+
+    <li>
+      <p><strong></strong>Any other lump sums than are like the above</p>
+    </li>
+
+</ul>
+
+<!--
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "address-correspondence-yn",
+  name: "address-correspondence-yn",
+  fieldset: {
+    legend: {
+      html: "Have you recived any of the following?",
+
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: " "
+  },
+
+  items: [
+  {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["address-correspondence-yn"] == "Yes")
+    },
+    {
+      value: "differnt address",
+      text: "No - I live at a different address",
+      checked: (data["address-correspondence-yn"] == "differnt address")
+    }
+  ]
+}) }}
+
+-->
+
+<br><br>
+          {{ govukRadios({
+            idPrefix: "disregards-type-more-yn",
+            name: "disregards-type-more-yn",
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+                },
+
+            classes: "govuk-radios--inline",
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: (data["disregards-type-more-yn"] == "Yes")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["disregards-type-more-yn"] == "No")
+              }
+            ]
+          }) }}
+
+<br>
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
 
 
 

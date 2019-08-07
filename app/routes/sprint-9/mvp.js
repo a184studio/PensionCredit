@@ -900,6 +900,15 @@ router.post(`${baseUrl}/disregards-type-more-yn-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/disregards-types-yn-router`, (req, res) => {
+  const hasSecondProperty = req.session.data['disregards-types-yn']
+
+  if (hasSecondProperty === 'Yes') {
+    res.redirect(`${baseUrl}/disregards-entry`)
+  } else {
+    res.redirect(`${baseUrl}/task-list`)
+  }
+})
 
 
 

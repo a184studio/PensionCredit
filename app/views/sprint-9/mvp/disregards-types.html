@@ -19,7 +19,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="disregards-entry" method="post" class="form">
+    <form action="disregards-types-yn-router" method="post" class="form">
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
@@ -27,36 +27,63 @@
 
       <h1 class="govuk-heading-xl">Have you received any money from any of the following?</h1>
 
-      <ul class="govuk-list">
+      <ul class="govuk-list govuk-list--bullet">
         <li>
-          <p><strong>One</strong><br>Local authority payments for council tax reduction or welfare</p>
+          <p><strong></strong>Local authority payments for council tax reduction or welfare</p>
         </li>
 
         <li>
-          <p><strong>Two</strong><br>Have you received money from a personal injury insurance payment</p>
+          <p><strong></strong>Have you received money from a personal injury insurance payment</p>
         </li>
 
         <li>
-          <p><strong>Three</strong><br>Payment from a home insurance policy to covered lost of damage personal possessions.</p>
+          <p><strong></strong>Payment from a home insurance policy to covered lost of damage personal possessions.</p>
         </li>
 
           <li>
-            <p><strong>Four</strong><br>Payment made to you by a local authority</p>
+            <p><strong></strong>Payment made to you by a local authority</p>
           </li>
 
           <li>
-            <p><strong>Five</strong><br>Money paid to you to maintain the home you live in</p>
+            <p><strong></strong>Money paid to you to maintain the home you live in</p>
           </li>
 
           <li>
-            <p><strong>Six</strong><br>Have you had and payments made to you from a charitable trust?</p>
+            <p><strong></strong>Have you had and payments made to you from a charitable trust?</p>
           </li>
 
           <li>
-            <p><strong>Seven</strong><br>Any other lump sums than are like the above</p>
+            <p><strong></strong>Any other lump sums than are like the above</p>
           </li>
 
       </ul>
+
+      <br><br>
+                {{ govukRadios({
+                  idPrefix: "disregards-types-yn",
+                  name: "disregards-types-yn",
+                  fieldset: {
+                    legend: {
+                      text: "",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--xl"
+                    }
+                      },
+
+                  classes: "govuk-radios--inline",
+                  items: [
+                    {
+                      value: "Yes",
+                      text: "Yes",
+                      checked: (data["disregards-types-yn"] == "Yes")
+                    },
+                    {
+                      value: "No",
+                      text: "No",
+                      checked: (data["disregards-types-yn"] == "No")
+                    }
+                  ]
+                }) }}
 
 <!--
       {{ govukRadios({
@@ -91,33 +118,7 @@
 
       -->
 
-      {{ govukSelect({
-        id: "sort",
-        name: "sort",
-        label: {
-          text: "Sort by"
-        },
-        items: [
-          {
-            value: "published",
-            text: "Recently published"
-          },
-          {
-            value: "updated",
-            text: "Recently updated",
-            selected: true
-          },
-          {
-            value: "views",
-            text: "Most views"
-          },
-          {
-            value: "comments",
-            text: "Most comments"
-          }
-        ]
-      }) }}
-
+<br>
 
 
       {{ govukButton({
