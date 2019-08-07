@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How would you prefer to be contacted? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="address-correspondence-yn-router" method="post" class="form">
+
+      <input type="hidden" name="contact-complete" value="in-progress"/>
+
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "address-correspondence-yn",
+        name: "address-correspondence-yn",
+        fieldset: {
+          legend: {
+            html: "Is 221b Baker Street your home address?",
+
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: " "
+        },
+
+        items: [
+        {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["address-correspondence-yn"] == "Yes")
+          },
+          {
+            value: "differnt address",
+            text: "No - I live at a different address",
+            checked: (data["address-correspondence-yn"] == "differnt address")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
