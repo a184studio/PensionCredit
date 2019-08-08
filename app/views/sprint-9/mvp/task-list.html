@@ -306,9 +306,9 @@
                 <a class="app-task-list__task-name" href="disregards-capital-total-yn" aria-describedby="eligibility-completed">
                   Disregards
                 </a>
-                {% if data["money-you-have-complete"] == "true" %}
+                {% if data["disregards-summary-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["money-you-have-complete"] == "in-progress" %}
+                {% elif data["disregards-summary-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>

@@ -168,7 +168,7 @@
                                         </dd>
                                       </div>
 
-                                      <div class="govuk-summary-list__row govuk-summary-list--no-border">
+                                      <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">
                                           Set cam task for
                                         </dt>
@@ -185,7 +185,7 @@
 
 
                               {% if data["disregards-entry-amount"] %}
-                                      <div class="govuk-summary-list__row govuk-summary-list--no-border">
+                                      <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">
                                           Amount
                                         </dt>
@@ -208,7 +208,7 @@
 <br><br>
 
     <form action="task-list" method="post">
-      <input type="hidden" name="address-complete" value="true"/>
+      <input type="hidden" name="disregards-summary-complete" value="true"/>
       <p>
         {{ govukButton({
           text: "Confirm"
