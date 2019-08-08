@@ -89,24 +89,44 @@
         ]
       }) }}
 
-      {{ govukCheckboxes({
-        idPrefix: "email",
-        name: "email",
+      {% set hasEmail %}
+      {{ govukInput({
+    label: {
+      html: "Email address"
+    },
+    id: "contact-formats-email",
+    name: "contact-formats-email",
+    classes: "govuk-input--width-20"
+  }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "contact-formats-email-yn",
+        name: "contact-formats-email-yn",
         fieldset: {
           legend: {
-            text: "What about the email?",
+            html: "What is your email address?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
         },
         hint: {
-          text: "We can do email if there are exceptional cases"
+          text: "In special circumstances such as Reasonable Adjustment we can offer email. This is when a disability has been identified"
         },
         items: [
+        {
+          value: "No",
+          text: "No",
+          checked: (data["contact-formats-email-yn"] == "No")
+        },
           {
-            value: "Email",
-            text: "Email",
-            checked: (disabilities.includes("Welsh"))
+            value: "Yes",
+            text: "Yes",
+            checked: (data["contact-formats-email-yn"] == "Yes"),
+            conditional: {
+              html: hasEmail
+            }
           }
         ]
       }) }}
