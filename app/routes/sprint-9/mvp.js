@@ -886,7 +886,7 @@ router.post(`${baseUrl}/disregards-capital-total-yn-router`, (req, res) => {
   if (hasSecondProperty === 'Yes') {
     res.redirect(`${baseUrl}/disregards-types`)
   } else {
-    res.redirect(`${baseUrl}/task-list`)
+    res.redirect(`${baseUrl}/disregards-summary`)
   }
 })
 
@@ -896,7 +896,7 @@ router.post(`${baseUrl}/disregards-type-more-yn-router`, (req, res) => {
   if (hasSecondProperty === 'Yes') {
     res.redirect(`${baseUrl}/disregards-entry`)
   } else {
-    res.redirect(`${baseUrl}/task-list`)
+    res.redirect(`${baseUrl}/disregards-summary`)
   }
 })
 
@@ -906,7 +906,7 @@ router.post(`${baseUrl}/disregards-types-yn-router`, (req, res) => {
   if (hasSecondProperty === 'Yes') {
     res.redirect(`${baseUrl}/disregards-entry`)
   } else {
-    res.redirect(`${baseUrl}/task-list`)
+    res.redirect(`${baseUrl}/disregards-summary`)
   }
 })
 

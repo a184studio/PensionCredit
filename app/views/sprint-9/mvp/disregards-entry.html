@@ -38,24 +38,24 @@
               items: [
                 {
                   value: "Payment type A",
-                  text: "Payment type A",
+                  text: "Payment type A / XX weeks",
                   selected: true
                 },
                 {
                   value: "Charity A",
-                  text: "Charity A"
+                  text: "Charity A / XX weeks"
                 },
                 {
                   value: "Charity B",
-                  text: "Charity B"
+                  text: "Charity B / XX weeks"
                 },
                 {
                   value: "Charity C",
-                  text: "Charity C"
+                  text: "Charity C / XX weeks"
                 },
                 {
                   value: "Local athority: Home maintainance",
-                  text: "Local athority: Home maintainance"
+                  text: "Local athority: Home maintainance / XX weeks"
                 },
                 {
                   value: "Other payment",
@@ -64,7 +64,7 @@
               ]
             }) }}
 
-
+<!--
       {{ govukInput({
         label: {
           text: "Name of payment"
@@ -74,7 +74,7 @@
         classes: "govuk-input--width-20"
       }) }}
 
-  <!--
+
       {{ govukInput({
         label: {
           text: "Last 4 digits of the account number or roll number"
@@ -87,16 +87,6 @@
         }
       }) }}
   -->
-
-
-        {{ govukInput({
-        label: {
-          html: "Amount"
-        },
-        id: "disregards-entry-amount",
-        name: "disregards-entry-amount",
-        classes: "govuk-input--width-20"
-      }) }}
 
       {{ govukDateInput({
         id: "disregards-entry-date",
@@ -125,7 +115,14 @@
         ]
       }) }}
 
-
+      {{ govukInput({
+      label: {
+        html: "Amount"
+      },
+      id: "disregards-entry-amount",
+      name: "disregards-entry-amount",
+      classes: "govuk-input--width-20"
+    }) }}
 
       {{ govukButton({
         text: "Continue"
