@@ -30,28 +30,36 @@
 
 
             {{ govukSelect({
-              id: "sort",
-              name: "sort",
+              id: "Select-a-payment-type",
+              name: "Select-a-payment-type",
               label: {
-                text: "Sort by"
+                text: "Select a payment type"
               },
               items: [
                 {
-                  value: "published",
-                  text: "Recently published"
-                },
-                {
-                  value: "updated",
-                  text: "Recently updated",
+                  value: "Payment type A",
+                  text: "Payment type A",
                   selected: true
                 },
                 {
-                  value: "views",
-                  text: "Most views"
+                  value: "Charity A",
+                  text: "Charity A"
                 },
                 {
-                  value: "comments",
-                  text: "Most comments"
+                  value: "Charity B",
+                  text: "Charity B"
+                },
+                {
+                  value: "Charity C",
+                  text: "Charity C"
+                },
+                {
+                  value: "Local athority: Home maintainance",
+                  text: "Local athority: Home maintainance"
+                },
+                {
+                  value: "Other payment",
+                  text: "Other payment"
                 }
               ]
             }) }}
@@ -81,43 +89,40 @@
   -->
 
 
-{{ govukDateInput({
-  id: "disregards-entry-date",
-  namePrefix: "disregards-entry-date",
-  fieldset: {
-    legend: {
-      text: "Enter money was received"
-    }
-  },
-  items: [
-    {
-      name: "day",
-      classes: "govuk-input--width-2",
-      value: data["disregards-entry-date-day"]
-    },
-    {
-      name: "month",
-      classes: "govuk-input--width-2",
-      value: data["disregards-entry-date-month"]
-    },
-    {
-      name: "year",
-      classes: "govuk-input--width-4",
-      value: data["disregards-entry-date-year"]
-    }
-  ]
-}) }}
-
-
-
-
-          {{ govukInput({
+        {{ govukInput({
         label: {
           html: "Amount"
         },
         id: "disregards-entry-amount",
         name: "disregards-entry-amount",
         classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukDateInput({
+        id: "disregards-entry-date",
+        namePrefix: "disregards-entry-date",
+        fieldset: {
+          legend: {
+            text: "Enter money was received"
+          }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["disregards-entry-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["disregards-entry-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["disregards-entry-date-year"]
+          }
+        ]
       }) }}
 
 
