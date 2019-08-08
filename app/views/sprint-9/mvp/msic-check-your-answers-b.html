@@ -14,6 +14,8 @@ Account with: {% extends "layout.html" %}
 {% include "includes/js-back-link.html" %}
 
   <form action="task-list" method="post" class="form">
+    <input type="hidden" name="money-you-have-complete" value="in-progress"/>
+
 
 
 <div class="govuk-grid-row">
@@ -1196,8 +1198,9 @@ Account with: {% extends "layout.html" %}
       text: "Continue"
     }) }}
 
-
-    <input type="hidden" name="money-you-have-complete" value="true"/>
-
   </form>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
+
 {% endblock %}

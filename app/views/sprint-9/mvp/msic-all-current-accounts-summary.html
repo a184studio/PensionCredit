@@ -11,6 +11,8 @@
 {% block content %}
 
 <form action="msic-all-current-accounts-summary-router" method="post">
+  <input type="hidden" name="money-you-have-complete" value="in-progress"/>
+
 
 
   <div class="govuk-grid-row">
@@ -1392,8 +1394,8 @@
 
   </form>
 
-  <br><p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
-
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
 
 
 {% endblock %}

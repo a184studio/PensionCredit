@@ -280,9 +280,9 @@
                   <a class="app-task-list__task-name" href="msic-pc-payment" aria-describedby="eligibility-completed">
                     Pension Credit payment account
                   </a>
-                  {% if data["msic-pc-payment-summary-complete"] == "true" %}
+                  {% if data["msic-pc-payment-complete"] == "true" %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                  {% elif data["msic-pc-payment-summary-complete"] == "in-progress" %}
+                  {% elif data["msic-pc-payment-complete"] == "in-progress" %}
                     <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                   {% else %}
                     <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>

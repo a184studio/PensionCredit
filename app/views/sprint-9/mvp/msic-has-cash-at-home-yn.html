@@ -13,6 +13,8 @@ Do you have more Cash at home - Pension Credit
 {% include "includes/js-back-link.html" %}
 
 <form action="msic-has-cash-at-home-yn-router" method="post" class="form">
+  <input type="hidden" name="money-you-have-complete" value="in-progress"/>
+
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -1387,8 +1389,7 @@ Do you have more Cash at home - Pension Credit
 
   </form>
 
-  <br><p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
-
-
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
 
 {% endblock %}
