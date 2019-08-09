@@ -23,7 +23,7 @@
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-          <h1 class="govuk-heading-xl">Summary</h1>
+          <h1 class="govuk-heading-xl">Summary of money that should not be part of your Pension Credit claim</h1>
 
 
           <dl class="govuk-summary-list govuk-summary-list--long">
@@ -31,7 +31,7 @@
         {% if data["Select-a-payment-type"] %}
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Payment type
+                    What is this money for?
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{ data["Select-a-payment-type"] or "None "}}
@@ -60,7 +60,7 @@
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Date received
+                    When did you get this money?
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{data['disregards-entry-date-day'] + ' ' + (data['disregards-entry-date-month'] | getMonth) + ' ' + data['disregards-entry-date-year']}}
@@ -190,33 +190,36 @@
 
               <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-              <h2 class="govuk-heading-l">Have you received any money from any of the following?</h2>
+              <h2 class="govuk-heading-l">Do you have any more money that should not be part of you Pension Credit claim?</h2>
 
 
               <ul class="govuk-list">
 
                 <li>
-                  <p><strong>Charities or Trusts</strong><br>Payments made to you from a charitable trust</p>
+                  <p><strong>Charity payments</strong><br>Ex-gratia or compensation payments from charities or trusts.</p>
                 </li>
 
                 <li>
-                  <p><strong>Home insurance</strong><br>Payments to covered lost of damage personal possessions</p>
+                  <p><strong>Home insurance</strong><br>Payments to cover loss or damage to personal possessions</p>
                 </li>
 
                   <li>
-                    <p><strong>Home maintainance</strong><br>Payments made to you to maintain the home you live in</p>
+                    <p><strong>Money for home repairs</strong><br>Money for essential repairs to the home you live in, like roof repairs.</p>
                   </li>
 
+                  <li>
+                    <p><strong>Money to help you live independently in your own home</strong><br>Money to adapt your home with things like stair lifts, ramps or accessible bathrooms.</p>
+                  </li>
                 <li>
-                  <p><strong>Local authority payments</strong><br>Payments made to you for welfare assistance, which is money when you return from prision, care home, (Each LA is different @dan to source a list) + X, Y and Z.<br>Payments made for things like stair lifts<br>Money paid to you to maintain the home you live in, roof repairs etc</p>
+                  <p><strong>Local authority payments</strong><br>Payments made to you for welfare assistance, which is money when you return from prision or a care home. (Each LA is different @dan to source a list) + X, Y and Z.</p>
                 </li>
 
                 <li>
-                  <p><strong>Money to buy main home</strong><br>Payments made to you to buy the home you live</p>
+                  <p><strong>Money to buy your main home</strong><br>Money that you intend to use to buy the home you live in.</p>
                 </li>
 
                 <li>
-                  <p><strong>Personal injury insurance</strong><br>Payments made to you if you have been hurt in a car accident or X, Y or Z</p>
+                  <p><strong>Personal injury insurance claims</strong><br>Payments made to you if you have been injured in an accident.</p>
                 </li>
 
                   <li>
@@ -224,7 +227,6 @@
                   </li>
 
               </ul>
-
 <!--
 {{ govukRadios({
   classes: "govuk-radios",
