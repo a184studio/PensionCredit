@@ -24,14 +24,14 @@
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h2 class="govuk-heading-m"><span class="agent-action">Agent: </span>The number the claimant is calling from <strong>{{ data["telephone-number"] }}</strong>.</h2>
+        <h2 class="govuk-heading-m"><span class="agent-action">Agent: </span>The number the claimant is calling from is 0<strong>{{ data["telephone-number"] }}</strong></h2>
       </div>
 
 
       {% set otherNumberLandline %}
       {{ govukInput({
         label: {
-          text: "What is this number?"
+          text: "Telephone number"
         },
         id: "contact-other-number-landline",
         name: "contact-other-number-landline",
@@ -48,28 +48,28 @@
         name: "contact-other-number-landline",
         fieldset: {
           legend: {
-            html: "What number can we call you on?",
+            html: "Can we call you to give you updates on your claim or to ask for more information?",
 
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@pete what are we going to do with this number"
+          text: ""
         },
 
         items: [
         {
-            value: "Add number",
-            text: "Add number",
+            value: "Yes",
+            text: "Yes",
             checked: (data["contact-other-number-landline"] == "Add number"),
             conditional: {
               html: otherNumberLandline
             }
             },
           {
-            value: "Opt out of telephone",
-            text: "Opt out of telephone",
+            value: "No",
+            text: "No",
             checked: (data["contact-other-number-landline"] == "Opt out of telephone")
           }
         ]

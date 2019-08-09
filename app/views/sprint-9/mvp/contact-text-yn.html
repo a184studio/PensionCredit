@@ -24,14 +24,14 @@
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h2 class="govuk-heading-m"><span class="agent-action">Agent: </span>The number the claimant is calling from <strong>{{ data["telephone-number"] }}</strong>.</h2>
+        <h2 class="govuk-heading-m"><span class="agent-action">Agent: </span>The number the claimant is calling from is 0<strong>{{ data["telephone-number"] }}</strong></h2>
       </div>
 
 
       {% set yesMobile %}
       {{ govukInput({
         label: {
-          text: "What is you mobile telephone number"
+          text: "Mobile number"
         },
         id: "contact-text-yn-number",
         name: "contact-text-yn-number",
@@ -42,34 +42,36 @@
       }) }}
       {% endset -%}
 
+<br>
+
       {{ govukRadios({
         classes: "govuk-radios",
         idPrefix: "contact-text-yn",
         name: "contact-text-yn",
         fieldset: {
           legend: {
-            html: "What number can we send you SMS (Text) messages on?",
+            html: "Can we send you text messages with updates about your claim or to ask you to contact us?",
 
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "We will send you text messages regarding the status of your claim and if you need to send us anymore information"
+          text: "This helps us process your claim as quickly as possible."
         },
 
         items: [
         {
-            value: "Mobile",
-            text: "Mobile",
+            value: "Yes",
+            text: "Yes",
             checked: (data["contact-text-yn"] == "Mobile"),
             conditional: {
               html: yesMobile
             }
           },
           {
-            value: "I don't have a mobile",
-            text: "I don't have a mobile",
+            value: "No",
+            text: "No",
             checked: (data["contact-text-yn"] == "I don't have a mobile")
           }
         ]

@@ -36,14 +36,12 @@
         },
         items: [
 {
-          value: "Audio",
-          text: "Audio",
+          value: "Audio CD",
+          text: "Audio CD",
           checked: (disabilities.includes("Audio"))
         },
         {
-          hint: {
-            text: "CDs, cassettes, MP3, MiniDisc & limited edition vinyl (signed)"
-          },
+
           value: "Audio form",
           text: "Audio form",
           checked: (accessability.includes("Audioform"))
@@ -59,11 +57,7 @@
             text: "Large print",
             checked: (disabilities.includes("Large print"))
           },
-          {
-            value: "TextBox",
-            text: "TextBox",
-            checked: (disabilities.includes("TextBox"))
-          },
+
           {
             value: "TypeTalk",
             text: "TypeTalk",
@@ -77,18 +71,18 @@
         name: "disabilities",
         fieldset: {
           legend: {
-            text: "What about the Welsh?",
+            text: "Do you need letters in Welsh?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
         },
         hint: {
-          text: "Paperwork only"
+          text: ""
         },
         items: [
           {
-            value: "Welsh",
-            text: "Welsh",
+            value: "Yes",
+            text: "Yes",
             checked: (disabilities.includes("Welsh"))
           }
         ]
@@ -111,28 +105,29 @@
         name: "contact-formats-email-yn",
         fieldset: {
           legend: {
-            html: "What is your email address?",
+            html: "Do you need us to send letters by email?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
         },
         hint: {
-          text: "In special circumstances such as Reasonable Adjustment we can offer email. This is when a disability has been identified"
+          text: "We can only use email if a disability means that you can't read letters."
         },
         items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["contact-formats-email-yn"] == "Yes"),
+          conditional: {
+            html: hasEmail
+          }
+        },
         {
           value: "No",
           text: "No",
           checked: (data["contact-formats-email-yn"] == "No")
-        },
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["contact-formats-email-yn"] == "Yes"),
-            conditional: {
-              html: hasEmail
-            }
-          }
+        }
+
         ]
       }) }}
 
@@ -140,7 +135,7 @@
               {% set altLanguage %}
               {{ govukInput({
             label: {
-              html: "What is the language?"
+              html: "What is your first language?"
             },
             id: "contact-formats-altLanguage",
             name: "contact-formats-altLanguage",
@@ -154,7 +149,7 @@
                 name: "contact-formats-altLanguage-yn",
                 fieldset: {
                   legend: {
-                    html: "Do you have an alternate first language?",
+                    html: "Is English your first language?",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--s"
                   }
@@ -164,14 +159,14 @@
                 },
                 items: [
                 {
-                  value: "No",
-                  text: "No",
-                  checked: (data["contact-formats-altLanguage-yn"] == "No")
+                  value: "Yes",
+                  text: "Yes",
+                  checked: (data["contact-formats-altLanguage-yn"] == "Yes")
                 },
                   {
-                    value: "Yes",
-                    text: "Yes",
-                    checked: (data["contact-formats-altLanguage-yn"] == "Yes"),
+                    value: "No",
+                    text: "No",
+                    checked: (data["contact-formats-altLanguage-yn"] == "No"),
                     conditional: {
                       html: altLanguage
                     }
