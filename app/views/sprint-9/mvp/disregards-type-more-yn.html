@@ -23,8 +23,119 @@
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-          <h1 class="govuk-heading-xl">Summary of money that should not be part of your Pension Credit claim</h1>
 
+              <h2 class="govuk-heading-xl">Do you have any more money that should not be part of you Pension Credit claim?</h2>
+
+
+              <ul class="govuk-list">
+
+                <li>
+                  <p><strong>Charity payments</strong><br>Ex-gratia or compensation payments from charities or trusts.</p>
+                </li>
+
+                <li>
+                  <p><strong>Home insurance</strong><br>Payments to cover loss or damage to personal possessions</p>
+                </li>
+
+                  <li>
+                    <p><strong>Money for home repairs</strong><br>Money for essential repairs to the home you live in, like roof repairs.</p>
+                  </li>
+
+                  <li>
+                    <p><strong>Money to help you live independently in your own home</strong><br>Money to adapt your home with things like stair lifts, ramps or accessible bathrooms.</p>
+                  </li>
+                <li>
+                  <p><strong>Local authority payments</strong><br>Payments made to you for welfare assistance, which is money when you return from prision or a care home. (Each LA is different @dan to source a list) + X, Y and Z.</p>
+                </li>
+
+                <li>
+                  <p><strong>Money to buy your main home</strong><br>Money that you intend to use to buy the home you live in.</p>
+                </li>
+
+                <li>
+                  <p><strong>Personal injury insurance claims</strong><br>Payments made to you if you have been injured in an accident.</p>
+                </li>
+
+                  <li>
+                    <p><strong>Other payments, grants or bursaries</strong></p>
+                  </li>
+
+              </ul>
+
+
+
+
+
+
+<!--
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "address-correspondence-yn",
+  name: "address-correspondence-yn",
+  fieldset: {
+    legend: {
+      html: "Have you recived any of the following?",
+
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: " "
+  },
+
+  items: [
+  {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["address-correspondence-yn"] == "Yes")
+    },
+    {
+      value: "differnt address",
+      text: "No - I live at a different address",
+      checked: (data["address-correspondence-yn"] == "differnt address")
+    }
+  ]
+}) }}
+
+-->
+
+<br><br>
+          {{ govukRadios({
+            idPrefix: "disregards-type-more-yn",
+            name: "disregards-type-more-yn",
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+                },
+
+            classes: "govuk-radios--inline",
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: (data["disregards-type-more-yn"] == "Yes")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["disregards-type-more-yn"] == "No")
+              }
+            ]
+          }) }}
+
+<br>
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+          <h1 class="govuk-heading-l">Summary of money that should not be part of your Pension Credit claim</h1>
 
           <dl class="govuk-summary-list govuk-summary-list--long">
 
@@ -187,111 +298,6 @@
 
 
             </dl>
-
-              <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-              <h2 class="govuk-heading-l">Do you have any more money that should not be part of you Pension Credit claim?</h2>
-
-
-              <ul class="govuk-list">
-
-                <li>
-                  <p><strong>Charity payments</strong><br>Ex-gratia or compensation payments from charities or trusts.</p>
-                </li>
-
-                <li>
-                  <p><strong>Home insurance</strong><br>Payments to cover loss or damage to personal possessions</p>
-                </li>
-
-                  <li>
-                    <p><strong>Money for home repairs</strong><br>Money for essential repairs to the home you live in, like roof repairs.</p>
-                  </li>
-
-                  <li>
-                    <p><strong>Money to help you live independently in your own home</strong><br>Money to adapt your home with things like stair lifts, ramps or accessible bathrooms.</p>
-                  </li>
-                <li>
-                  <p><strong>Local authority payments</strong><br>Payments made to you for welfare assistance, which is money when you return from prision or a care home. (Each LA is different @dan to source a list) + X, Y and Z.</p>
-                </li>
-
-                <li>
-                  <p><strong>Money to buy your main home</strong><br>Money that you intend to use to buy the home you live in.</p>
-                </li>
-
-                <li>
-                  <p><strong>Personal injury insurance claims</strong><br>Payments made to you if you have been injured in an accident.</p>
-                </li>
-
-                  <li>
-                    <p><strong>Other payments, grants or bursaries</strong></p>
-                  </li>
-
-              </ul>
-<!--
-{{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "address-correspondence-yn",
-  name: "address-correspondence-yn",
-  fieldset: {
-    legend: {
-      html: "Have you recived any of the following?",
-
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
-    }
-  },
-  hint: {
-    text: " "
-  },
-
-  items: [
-  {
-      value: "Yes",
-      text: "Yes",
-      checked: (data["address-correspondence-yn"] == "Yes")
-    },
-    {
-      value: "differnt address",
-      text: "No - I live at a different address",
-      checked: (data["address-correspondence-yn"] == "differnt address")
-    }
-  ]
-}) }}
-
--->
-
-<br><br>
-          {{ govukRadios({
-            idPrefix: "disregards-type-more-yn",
-            name: "disregards-type-more-yn",
-            fieldset: {
-              legend: {
-                text: "",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
-              }
-                },
-
-            classes: "govuk-radios--inline",
-            items: [
-              {
-                value: "Yes",
-                text: "Yes",
-                checked: (data["disregards-type-more-yn"] == "Yes")
-              },
-              {
-                value: "No",
-                text: "No",
-                checked: (data["disregards-type-more-yn"] == "No")
-              }
-            ]
-          }) }}
-
-<br>
-          {{ govukButton({
-            text: "Continue"
-          }) }}
-
 
 
 
