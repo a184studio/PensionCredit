@@ -235,6 +235,20 @@
               <span class="app-task-list__section-number">7. </span> Pensions
             </h2>
             <ul class="app-task-list__items">
+
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+                  What we know and what we don't
+                </a>
+                {% if data["pensions-complete"] == "true" %}
+                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+                {% elif data["pensions-complete"] == "in-progress" %}
+                  <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+                {% endif %}
+              </li>
+
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="has-private-pension" aria-describedby="eligibility-completed">
                   Unclaimed pensions
@@ -268,11 +282,40 @@
           </li>
         </ol>
 
+        <!------------ ––– ------------>
 
         <ol class="app-task-list">
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">8. </span> Money, savings and investments
+              <span class="app-task-list__section-number">8. </span> Benefits
+            </h2>
+            <ul class="app-task-list__items">
+
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="benefit-overview" aria-describedby="eligibility-completed">
+                  What we know and what we don't
+                </a>
+                {% if data["pensions-complete"] == "true" %}
+                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+                {% elif data["pensions-complete"] == "in-progress" %}
+                  <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+                {% endif %}
+              </li>
+
+            </ul>
+          </li>
+        </ol>
+
+        <!------------ ––– ------------>
+
+
+
+        <ol class="app-task-list">
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">9. </span> Money, savings and investments
             </h2>
             <ul class="app-task-list__items">
 
@@ -328,7 +371,7 @@
         <ol class="app-task-list">
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">9. </span> Self-employment and other income
+              <span class="app-task-list__section-number">10. </span> Self-employment and other income
             </h2>
             <ul class="app-task-list__items">
 
