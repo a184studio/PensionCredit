@@ -209,7 +209,7 @@ router.post(`${baseUrl}/contact-correspondence-yn-router`, (req, res) => {
 router.post(`${baseUrl}/contact-text-yn-router`, (req, res) => {
   const canText = req.session.data['contact-text-yn']
 
-  if (canText === 'Mobile') {
+  if (canText === 'Yes') {
     res.redirect(`${baseUrl}/contact-mobile-can-call`)
   } else {
     res.redirect(`${baseUrl}/contact-other-number`)
