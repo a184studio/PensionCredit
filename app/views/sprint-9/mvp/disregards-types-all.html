@@ -25,7 +25,7 @@
                   name: "sign-in",
                   fieldset: {
                     legend: {
-                      text: "Do you have any money that should not be part of you Pension Credit claim?",
+                      text: "This is a sum list?",
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--xl"
                     }
@@ -34,14 +34,27 @@
                     text: "XXXX."
                   },
                   items: [
+                  {
+                    value: "govuk-verify",
+                    text: "XXXX",
+                    label: {
+                      classes: "govuk-label--s"
+                    },
+                    hint: {
+                      text: "XXXX."
+                    },
+                    checked: (data["disregards-types-yn"] == "Yes")
+                  },
+
+
                     {
-                      value: "government-gateway",
-                      text: "Charity payments",
+                      value: "govuk-verify",
+                      text: "XXXX",
                       label: {
                         classes: "govuk-label--s"
                       },
                       hint: {
-                        text: "Ex-gratia or compensation payments from charities or trusts."
+                        text: "XXXX."
                       },
                       checked: (data["disregards-types-yn"] == "Yes")
                     },
@@ -49,97 +62,84 @@
 
                     {
                       value: "govuk-verify",
-                      text: "Home insurance",
+                      text: "XXXX",
                       label: {
                         classes: "govuk-label--s"
                       },
                       hint: {
-                        text: "Payments to cover loss or damage to personal possessions."
-                      },
-                      checked: (data["disregards-types-yn"] == "Yes")
-                    },
-
-
-                    {
-                      value: "govuk-verify",
-                      text: "Money to help you live independently in your own home",
-                      label: {
-                        classes: "govuk-label--s"
-                      },
-                      hint: {
-                        text: "Money to adapt your home with things like stair lifts, ramps or accessible bathrooms."
+                        text: "XXXX."
                       },
                       checked: (data["disregards-types-yn"] == "Yes")
                     },
 
                     {
                       value: "govuk-verify",
-                      text: "Local authority payments",
+                      text: "XXXX",
                       label: {
                         classes: "govuk-label--s"
                       },
                       hint: {
-                        text: "Payments made to you for welfare assistance, which is money when you return from prision or a care home. (Each LA is different @dan to source a list) + X, Y and Z."
+                        text: "XXXX."
                       },
                       checked: (data["disregards-types-yn"] == "Yes")
                     },
 
                     {
                       value: "govuk-verify",
-                      text: "Money to buy your main home",
+                      text: "XXXX",
                       label: {
                         classes: "govuk-label--s"
                       },
                       hint: {
-                        text: "Money that you intend to use to buy the home you live in."
+                        text: "XXXX."
                       },
                       checked: (data["disregards-types-yn"] == "Yes")
                     },
 
                     {
                       value: "govuk-verify",
-                      text: "Personal injury insurance claims",
+                      text: "XXXX",
                       label: {
                         classes: "govuk-label--s"
                       },
                       hint: {
-                        text: "Payments made to you if you have been injured in an accident."
+                        text: "XXXX."
                       },
                       checked: (data["disregards-types-yn"] == "Yes")
                     },
 
                     {
                       value: "govuk-verify",
-                      text: "Other payments, grants or bursaries",
+                      text: "XXXX",
                       label: {
                         classes: "govuk-label--s"
                       },
                       hint: {
-                        text: "XXX."
+                        text: "XXXX."
                       },
                       checked: (data["disregards-types-yn"] == "Yes")
                     },
 
                     {
                       value: "govuk-verify",
-                      text: "XXX",
+                      text: "XXXX",
                       label: {
                         classes: "govuk-label--s"
                       },
                       hint: {
-                        text: "XXX."
+                        text: "XXXX."
                       },
                       checked: (data["disregards-types-yn"] == "Yes")
                     },
 
                     {
                       value: "govuk-verify",
-                      text: "None",
+                      text: "XXXX",
                       label: {
                         classes: "govuk-label--s"
                       },
                       hint: {
-                        text: "XXX."
+                        text: "XXXX."
                       },
                       checked: (data["disregards-types-yn"] == "Yes")
                     }
