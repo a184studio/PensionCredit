@@ -71,7 +71,12 @@
             conditional: {
               html: yesOtherNumber
             }
-          }
+            },
+          {
+          value: "No",
+          text: "Opt out of telephone",
+          checked: (data["contact-other-number-landline"] == "Opt out of telephone")
+        }
         ]
       }) }}
 
