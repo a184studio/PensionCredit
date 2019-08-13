@@ -21,13 +21,13 @@
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
                 {{ govukRadios({
-                  idPrefix: "sign-in",
-                  name: "sign-in",
+                  idPrefix: "disregards-type-select",
+                  name: "disregards-type-select",
                   fieldset: {
                     legend: {
                       text: "Have you received payments from a charity, money from compensation payment or money you have set aside for household maintenance?",
                       isPageHeading: true,
-                      classes: "govuk-fieldset__legend--l"
+                      classes: "govuk-fieldset__legend--xl"
                     }
                   },
                   hint: {
@@ -36,14 +36,14 @@
                   items: [
                     {
                       value: "government-gateway",
-                      text: "Charity payments",
+                      text: "Payments made to you by a charty",
                       label: {
                         classes: "govuk-label--s"
                       },
                       hint: {
                         text: "Ex-gratia or compensation payments from charities or trusts."
                       },
-                      checked: (data["disregards-types-yn"] == "Yes")
+                      checked: (data["disregards-type-select"] == "Yes")
                     },
 
 
@@ -56,7 +56,7 @@
                       hint: {
                         text: "Payments to cover loss or damage to personal possessions."
                       },
-                      checked: (data["disregards-types-yn"] == "Yes")
+                      checked: (data["disregards-type-select"] == "Yes")
                     },
 
 
@@ -69,7 +69,7 @@
                       hint: {
                         text: "Money to adapt your home with things like stair lifts, ramps or accessible bathrooms."
                       },
-                      checked: (data["disregards-types-yn"] == "Yes")
+                      checked: (data["disregards-type-select"] == "Yes")
                     },
 
                     {
@@ -81,7 +81,7 @@
                       hint: {
                         text: "Payments made to you for welfare assistance, which is money when you return from prision or a care home. (Each LA is different @dan to source a list) + X, Y and Z."
                       },
-                      checked: (data["disregards-types-yn"] == "Yes")
+                      checked: (data["disregards-type-select"] == "Yes")
                     },
 
                     {
@@ -93,7 +93,7 @@
                       hint: {
                         text: "Money that you intend to use to buy the home you live in."
                       },
-                      checked: (data["disregards-types-yn"] == "Yes")
+                      checked: (data["disregards-type-select"] == "Yes")
                     },
 
                     {
@@ -105,7 +105,7 @@
                       hint: {
                         text: "Payments made to you if you have been injured in an accident."
                       },
-                      checked: (data["disregards-types-yn"] == "Yes")
+                      checked: (data["disregards-type-select"] == "Yes")
                     },
 
                     {
@@ -117,7 +117,7 @@
                       hint: {
                         text: "XXX."
                       },
-                      checked: (data["disregards-types-yn"] == "Yes")
+                      checked: (data["disregards-type-select"] == "Yes")
                     },
 
                     {
@@ -129,7 +129,7 @@
                       hint: {
                         text: "XXX."
                       },
-                      checked: (data["disregards-types-yn"] == "Yes")
+                      checked: (data["disregards-type-select"] == "Yes")
                     },
 
                     {
@@ -141,7 +141,7 @@
                       hint: {
                         text: "XXX."
                       },
-                      checked: (data["disregards-types-yn"] == "Yes")
+                      checked: (data["disregards-type-select"] == "Yes")
                     }
 
                   ]
