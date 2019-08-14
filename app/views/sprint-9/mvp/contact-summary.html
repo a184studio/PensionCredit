@@ -53,7 +53,7 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Can we call you on text message number?
+          Can we call you on the same number we text you on?
         </dt>
         <dd class="govuk-summary-list__value">
           Yes / No
@@ -68,7 +68,7 @@
       {% if data["contact-number-using-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Use other number to call me
+            Can we call you on a different number?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["contact-text-yn-number"] }}
@@ -81,35 +81,6 @@
         </div>
       {% endif %}
 
-        {% if data["contact-number-using-yn"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Other contact number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["contact-number-using-yn"] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="contact-text-yn">
-              Change
-            </a>
-          </dd>
-        </div>
-      {% endif %}
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Other contact number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          +44 (0) 207 000 000
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="contact-mobile-can-call">
-            Change
-          </a>
-        </dd>
-      </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -130,7 +101,7 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Alternative formats
+          Different formats
         </dt>
         <dd class="govuk-summary-list__value">
           Braille<br>
@@ -147,7 +118,7 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Welsh
+          Do you need letters in Welsh?
         </dt>
         <dd class="govuk-summary-list__value">
           Yes / No
@@ -162,7 +133,7 @@
       {% if data["contact-formats-email-yn"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Email for extreme
+          Do you need letters by email?
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["contact-formats-email-yn"] }}
@@ -192,25 +163,11 @@
 {% endif %}
 
 
-      {% if data["contact-number-using-yn"] %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Other contact number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data["contact-number-using-yn"] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="contact-text-yn">
-            Change
-          </a>
-        </dd>
-      </div>
-    {% endif %}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Alternative first language
+          Does the claimant need a translator?
+
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["contact-formats-altLanguage-yn"] }}
@@ -224,7 +181,8 @@
 
       <div class="govuk-summary-list__row govuk-summary-list--no-border">
         <dt class="govuk-summary-list__key">
-          Language
+          What language translation does the claimant need?
+
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["contact-formats-altLanguage"] }}
