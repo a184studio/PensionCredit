@@ -136,6 +136,8 @@
         ]
       }) }}
 
+      <div class="govuk-panel--agent">
+
 
               {% set altLanguage %}
               {{ govukInput({
@@ -154,7 +156,7 @@
                 name: "contact-formats-altLanguage-yn",
                 fieldset: {
                   legend: {
-                    html: "Is English your first language?",
+                    html: "Agent: Is English their first language? @pete",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--s"
                   }
@@ -179,6 +181,7 @@
                 ]
               }) }}
 
+</div>
 
 <!--
       {{ govukRadios({
