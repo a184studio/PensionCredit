@@ -65,13 +65,31 @@
         </dd>
       </div>
 
-      {% if data["contact-mobile-can-call-other-number"] %}
+
+
+      {% if data["contact-other-number-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Can we call you on a different number?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["contact-mobile-can-call-other-number"] }}
+            {{ data["contact-other-number-yn"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="contact-text-yn">
+              Change
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+
+      {% if data["contact-other-number-yn"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Telephone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["contact-other-number"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="contact-text-yn">
