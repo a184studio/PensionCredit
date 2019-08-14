@@ -51,13 +51,43 @@
         </div>
       {% endif %}
 
-        {% if data["contact-by-phone"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Can we call you on text message number?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes / No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="contact-text-yn">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      {% if data["contact-number-using-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Landline
+            Use other number to call me
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["contact-by-phone"] }}
+            {{ data["contact-text-yn-number"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="contact-text-yn">
+              Change
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+
+        {% if data["contact-number-using-yn"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other contact number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["contact-number-using-yn"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="contact-text-yn">
@@ -80,6 +110,23 @@
           </a>
         </dd>
       </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            221B Baker Street<br>
+            Marylebone<br>
+            London<br>
+            NW1 5RT
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="address-choice">
+              Change
+            </a>
+          </dd>
+        </div>
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -112,12 +159,13 @@
         </dd>
       </div>
 
+      {% if data["contact-formats-email-yn"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Email
+          Email for extreme
         </dt>
         <dd class="govuk-summary-list__value">
-          Yes / No
+          {{ data["contact-formats-email-yn"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="contact-formats">
@@ -125,6 +173,40 @@
           </a>
         </dd>
       </div>
+      {% endif %}
+
+      {% if data["contact-formats-email"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["contact-formats-email"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="contact-formats">
+            Change
+          </a>
+        </dd>
+      </div>
+{% endif %}
+
+
+      {% if data["contact-number-using-yn"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Other contact number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["contact-number-using-yn"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="contact-text-yn">
+            Change
+          </a>
+        </dd>
+      </div>
+    {% endif %}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
