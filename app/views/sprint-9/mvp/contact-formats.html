@@ -142,7 +142,7 @@
               {% set altLanguage %}
               {{ govukInput({
             label: {
-              html: "What is your first language?"
+              html: "What language translation does the claimant need?"
             },
             id: "contact-formats-altLanguage",
             name: "contact-formats-altLanguage",
@@ -156,7 +156,7 @@
                 name: "contact-formats-altLanguage-yn",
                 fieldset: {
                   legend: {
-                    html: "Agent: Is English their first language? @pete",
+                    html: "Agent: Does the claimant need a translator?",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--s"
                   }
@@ -168,15 +168,16 @@
                 {
                   value: "Yes",
                   text: "Yes",
-                  checked: (data["contact-formats-altLanguage-yn"] == "Yes")
+                  checked: (data["contact-formats-altLanguage-yn"] == "Yes"),
+                  conditional: {
+                    html: altLanguage
+                  }
+
                 },
                   {
                     value: "No",
                     text: "No",
-                    checked: (data["contact-formats-altLanguage-yn"] == "No"),
-                    conditional: {
-                      html: altLanguage
-                    }
+                    checked: (data["contact-formats-altLanguage-yn"] == "No")
                   }
                 ]
               }) }}
