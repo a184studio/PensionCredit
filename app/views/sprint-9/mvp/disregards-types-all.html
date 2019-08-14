@@ -21,7 +21,6 @@
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-      {% if data["disregards-type-1"] %}
 
                 {{ govukRadios({
                   idPrefix: "disregards-types-all",
@@ -101,7 +100,7 @@
                   ]
                 }) }}
 
-            {% endif %}
+
 <!------------------------------------>
       {% if data["disregards-type-2"] %}
 
@@ -679,7 +678,7 @@
                       }) }}
 
                       {% endif %}
-                      
+
 <br>
 
 
