@@ -906,10 +906,10 @@ router.post(`${baseUrl}/disregards-capital-total-yn-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/disregards-type-more-yn-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['disregards-type-more-yn']
+  const hasSecondProperty = req.session.data['disregards-type-select']
 
-  if (hasSecondProperty === 'Yes') {
-    res.redirect(`${baseUrl}/disregards-entry`)
+  if (disregardsSelect === 'None') {
+    res.redirect(`${baseUrl}/disregards-type-more-yn`)
   } else {
     res.redirect(`${baseUrl}/disregards-summary`)
   }
