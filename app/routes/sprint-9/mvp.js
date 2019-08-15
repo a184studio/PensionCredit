@@ -895,6 +895,59 @@ router.post(`${baseUrl}/disregards-types-router`, (req, res) => {
 
 
 
+router.post(`${baseUrl}/benefit-war-disablement-yn-router`, (req, res) => {
+  const warDisablement = req.session.data['benefit-war-disablement-yn']
+
+  if (warDisablement === 'Yes') {
+    res.redirect(`${baseUrl}/benefit-war-disablement-yes`)
+  } else {
+    res.redirect(`${baseUrl}/benefits-war-widows-pensions-yn`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/benefits-war-widows-pensions-yn-router`, (req, res) => {
+  const iidbYes = req.session.data['benefits-war-widows-pensions-yn']
+
+  if (iidbYes === 'Yes') {
+    res.redirect(`${baseUrl}/benefits-war-widows-pensions-yes`)
+  } else {
+    res.redirect(`${baseUrl}/benefit-IIDB-yn`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/benefit-IIDB-yn-router`, (req, res) => {
+  const iidbYes = req.session.data['benefit-IIDB-yn']
+
+  if (iidbYes === 'Yes') {
+    res.redirect(`${baseUrl}/benefit-IIDB-yes`)
+  } else {
+    res.redirect(`${baseUrl}/benefit-industrial-death-benefit-yn`)
+  }
+})
+
+router.post(`${baseUrl}/benefit-industrial-death-benefit-yn-router`, (req, res) => {
+  const iidbYes = req.session.data['benefit-industrial-death-benefit-yn']
+
+  if (iidbYes === 'Yes') {
+    res.redirect(`${baseUrl}/benefit-industrial-death-benefit-yes`)
+  } else {
+    res.redirect(`${baseUrl}/benefits-summary`)
+  }
+})
+
+
+
+
+
+
+// benefits END
+
+
+
 router.post(`${baseUrl}/disregards-capital-total-yn-router`, (req, res) => {
   const hasSecondProperty = req.session.data['disregards-capital-total-yn']
 
