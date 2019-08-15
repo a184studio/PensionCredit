@@ -27,7 +27,7 @@
             {% if data["disregards-capital-total-yn"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      More than £X
+                      Has more than £10,000
                     </dt>
                     <dd class="govuk-summary-list__value">
                       {{ data["disregards-capital-total-yn"] }}
@@ -42,187 +42,298 @@
 
                   <br>
 
-              {% if data["disregards-type-select"] %}
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          Payment type
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          {{ data["disregards-type-select"] or "None "}}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a href="service-charges">
-                            Change
-                          </a>
-                        </dd>
-                      </div>
-              {% endif %}
+
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Yes / No
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a href="home-ownership">
+                              Change
+                            </a>
+                          </dd>
+                        </div>
 
 
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          Date received
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          {{data['disregards-entry-date-day'] + ' ' + (data['disregards-entry-date-month'] | getMonth) + ' ' + data['disregards-entry-date-year']}}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a href="rent-council-tax-yn">
-                            Change
-                          </a>
-                        </dd>
-                      </div>
-
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          Date allowable
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          52 or 26 weeks
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a href="ground-rent">
-                            Change
-                          </a>
-                        </dd>
-                      </div>
-
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          Set cam task for
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          Day Month Year
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a href="rent-council-tax-yn">
-                            Change
-                          </a>
-                        </dd>
-                      </div>
-
-
-
-              {% if data["disregards-entry-amount"] %}
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          Amount
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          {{ data["disregards-entry-amount"] or "None "}}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a href="ground-rent">
-                            Change
-                          </a>
-                        </dd>
-                      </div>
-              {% endif %}
-
-
-
-                              <br>
-
-
-                              {% if data["disregards-type-select"] %}
-                                      <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">
-                                          Payment type
-                                        </dt>
-                                        <dd class="govuk-summary-list__value">
-                                          {{ data["disregards-type-select"] or "None "}}
-                                        </dd>
-                                        <dd class="govuk-summary-list__actions">
-                                          <a href="service-charges">
-                                            Change
-                                          </a>
-                                        </dd>
-                                      </div>
+                        {% if data["disregards-arrers-yes"] %}
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Details
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  {{ data["disregards-arrers-yes"] }}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="home-ownership">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
                               {% endif %}
 
-                                      <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">
-                                          Date received
-                                        </dt>
-                                        <dd class="govuk-summary-list__value">
-                                          {{data['disregards-entry-date-day'] + ' ' + (data['disregards-entry-date-month'] | getMonth) + ' ' + data['disregards-entry-date-year']}}
-                                        </dd>
-                                        <dd class="govuk-summary-list__actions">
-                                          <a href="rent-council-tax-yn">
-                                            Change
-                                          </a>
-                                        </dd>
-                                      </div>
-
-                                      <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">
-                                          Date allowable
-                                        </dt>
-                                        <dd class="govuk-summary-list__value">
-                                          52 or 26 weeks
-                                        </dd>
-                                        <dd class="govuk-summary-list__actions">
-                                          <a href="ground-rent">
-                                            Change
-                                          </a>
-                                        </dd>
-                                      </div>
-
-                                      <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">
-                                          Set cam task for
-                                        </dt>
-                                        <dd class="govuk-summary-list__value">
-                                          Day Month Year
-                                        </dd>
-                                        <dd class="govuk-summary-list__actions">
-                                          <a href="rent-council-tax-yn">
-                                            Change
-                                          </a>
-                                        </dd>
-                                      </div>
+                  <br>
 
 
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Compensation payments related to the second world war or service in the armed forces
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Yes / No
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a href="home-ownership">
+                              Change
+                            </a>
+                          </dd>
+                        </div>
 
-                              {% if data["disregards-entry-amount"] %}
-                                      <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">
-                                          Amount
-                                        </dt>
-                                        <dd class="govuk-summary-list__value">
-                                          {{ data["disregards-entry-amount"] or "None "}}
-                                        </dd>
-                                        <dd class="govuk-summary-list__actions">
-                                          <a href="ground-rent">
-                                            Change
-                                          </a>
-                                        </dd>
-                                      </div>
+
+                        {% if data["disregards-warpayment-yes"] %}
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Details
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  {{ data["disregards-warpayment-yes"] }}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="home-ownership">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
                               {% endif %}
 
-
-                              {% if data["disregards-type-select"] == "No" %}
-                                      <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">
-                                          No disregards
-                                        </dt>
-                                        <dd class="govuk-summary-list__value">
-                                          {{ data["disregards-type-select"] or "None "}}
-                                        </dd>
-                                        <dd class="govuk-summary-list__actions">
-                                          <a href="ground-rent">
-                                            Change
-                                          </a>
-                                        </dd>
-                                      </div>
-                              {% endif %}
+<br>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Personal injury claim payments
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Yes / No
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="home-ownership">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
 
 
-                  </dl>
+                              {% if data["disregards-compensation-for-injury-yes"] %}
+                                    <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                                        Details
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                                        {{ data["disregards-compensation-for-injury-yes"] }}
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                        <a href="home-ownership">
+                                          Change
+                                        </a>
+                                      </dd>
+                                    </div>
+                                    {% endif %}
 
-</dl>
+<br>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Payments from a home insurance policy to covered lost or damaged personal possessions
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Yes / No
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="home-ownership">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
 
-<br><br>
+
+                              {% if data["disregards-contents-insurance-yes"] %}
+                                    <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                                        Details
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                                        {{ data["disregards-contents-insurance-yes"] }}
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                        <a href="home-ownership">
+                                          Change
+                                        </a>
+                                      </dd>
+                                    </div>
+                                    {% endif %}
+
+<br>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Money that you intend to use to buy or make essential repairs to your main home
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Yes / No
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="home-ownership">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
+
+
+                              {% if data["disregards-money-for-property-yes"] %}
+                                    <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                                        Details
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                                        {{ data["disregards-money-for-property-yes"] }}
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                        <a href="home-ownership">
+                                          Change
+                                        </a>
+                                      </dd>
+                                    </div>
+                                    {% endif %}
+
+<br>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Payments made to you to help you live independently in your own home or the community
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Yes / No
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="home-ownership">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
+
+
+                              {% if data["disregards-independently-living-yes"] %}
+                                    <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                                        Details
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                                        {{ data["disregards-independently-living-yes"] }}
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                        <a href="home-ownership">
+                                          Change
+                                        </a>
+                                      </dd>
+                                    </div>
+                                    {% endif %}
+
+
+<br>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Payments made to you by a trust or discretionary fund follwing an incident or emergency
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Yes / No
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="home-ownership">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
+
+
+                              {% if data["disregards-incident-payment-yes"] %}
+                                    <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                                        Details
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                                        {{ data["disregards-incident-payment-yes"] }}
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                        <a href="home-ownership">
+                                          Change
+                                        </a>
+                                      </dd>
+                                    </div>
+                                    {% endif %}
+
+<br>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Windrush child compensation
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Yes / No
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="home-ownership">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
+
+
+                              {% if data["disregards-windrush-yes"] %}
+                                    <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                                        Details
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                                        {{ data["disregards-windrush-yes"] }}
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                        <a href="home-ownership">
+                                          Change
+                                        </a>
+                                      </dd>
+                                    </div>
+                                    {% endif %}
+
+<br>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Money paid to you to support you with the effects of a blood infection or vCJD
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Yes / No
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a href="home-ownership">
+                                  Change
+                                </a>
+                              </dd>
+                            </div>
+
+
+                            {% if data["disregards-blood-yes"] %}
+                                  <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                      Details
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                      {{ data["disregards-blood-yes"] }}
+                                    </dd>
+                                    <dd class="govuk-summary-list__actions">
+                                      <a href="home-ownership">
+                                        Change
+                                      </a>
+                                    </dd>
+                                  </div>
+                                  {% endif %}
+
+<br></dl></dl><br><br>
 
     <form action="task-list" method="post">
       <input type="hidden" name="disregards-summary-complete" value="true"/>
