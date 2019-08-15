@@ -926,14 +926,13 @@ router.post(`${baseUrl}/disregards-types-yn-router`, (req, res) => {
 })
 
 
-
 router.post(`${baseUrl}/disregards-type-select-router`, (req, res) => {
   const disregardsSelect = req.session.data['disregards-types-all']
 
   if (disregardsSelect === 'None') {
     res.redirect(`${baseUrl}/disregards-type-more-yn`)
   } else {
-    res.redirect(`${baseUrl}/disregards-summary`)
+    res.redirect(`${baseUrl}/disregards-entry`)
   }
 })
 
