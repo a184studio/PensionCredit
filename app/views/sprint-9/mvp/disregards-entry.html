@@ -25,9 +25,27 @@
 
 
 
-      <h1 class="govuk-heading-xl">Disregards entry page</h1>
+      <h1 class="govuk-heading-xl">Selected details</h1>
 
       <h3 class="govuk-heading-m"></h3>
+
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "Can you provide more detail?"
+        },
+        hint: {
+          text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+        }
+      }) }}
+
+
+
+
+
+
 
 <!--
             {{ govukSelect({
@@ -88,35 +106,60 @@
       }) }}
   -->
 
-  <h3 class="govuk-heading-m">Entry one</h3>
+  <h3 class="govuk-heading-m">Selected Radio one</h3>
 
 
-      {{ govukDateInput({
-        id: "disregards-entry-date",
-        namePrefix: "disregards-entry-date",
-        fieldset: {
-          legend: {
-            text: "When did you get this money?"
-          }
-        },
-        items: [
-          {
-            name: "day",
-            classes: "govuk-input--width-2",
-            value: data["disregards-entry-date-day"]
-          },
-          {
-            name: "month",
-            classes: "govuk-input--width-2",
-            value: data["disregards-entry-date-month"]
-          },
-          {
-            name: "year",
-            classes: "govuk-input--width-4",
-            value: data["disregards-entry-date-year"]
-          }
-        ]
-      }) }}
+  {% set yesOtherNumber %}
+  {{ govukInput({
+    label: {
+      text: "What is this other number?"
+    },
+    id: "contact-other-number",
+    name: "contact-other-number",
+    classes: "govuk-input--width-20",
+    attributes: {
+      maxlength: 20
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    classes: "govuk-radios",
+    idPrefix: "contact-mobile-can-call",
+    name: "contact-mobile-can-call",
+    fieldset: {
+      legend: {
+        html: "Date needed?",
+
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+
+
+    items: [
+    {
+        value: "Yes",
+        text: "No – indef",
+        checked: (data["contact-mobile-can-call"] == "Yes")
+      },
+      {
+        value: "No different number",
+        text: "Yes",
+        checked: (data["contact-mobile-can-call"] == "No different number"),
+        conditional: {
+          html: yesOtherNumber
+        }
+        }
+    ]
+  }) }}
+
+
+
+
+
+
+
 
       {{ govukInput({
       label: {
@@ -131,7 +174,7 @@
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-    <h3 class="govuk-heading-m">Entry two</h3>
+    <h3 class="govuk-heading-m">Selected Radiotwo</h3>
 
 
         {{ govukDateInput({
@@ -139,7 +182,7 @@
           namePrefix: "disregards-entry-date",
           fieldset: {
             legend: {
-              text: "When did you get this money?"
+              text: "Date for money XXX?"
             }
           },
           items: [
@@ -174,7 +217,7 @@
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-      <h3 class="govuk-heading-m">Entry three</h3>
+      <h3 class="govuk-heading-m">Selected Radiothree</h3>
 
 
           {{ govukDateInput({
@@ -182,7 +225,7 @@
             namePrefix: "disregards-entry-date",
             fieldset: {
               legend: {
-                text: "When did you get this money?"
+                text: "Date for money XXX?"
               }
             },
             items: [
@@ -216,7 +259,7 @@
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-        <h3 class="govuk-heading-m">Entry four</h3>
+        <h3 class="govuk-heading-m">Selected Radiofour</h3>
 
 
             {{ govukDateInput({
@@ -224,7 +267,7 @@
               namePrefix: "disregards-entry-date",
               fieldset: {
                 legend: {
-                  text: "When did you get this money?"
+                  text: "Date for money XXX?"
                 }
               },
               items: [
@@ -258,7 +301,7 @@
 
           <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-          <h3 class="govuk-heading-m">Entry five</h3>
+          <h3 class="govuk-heading-m">Selected Radiofive</h3>
 
 
               {{ govukDateInput({
@@ -266,7 +309,7 @@
                 namePrefix: "disregards-entry-date",
                 fieldset: {
                   legend: {
-                    text: "When did you get this money?"
+                    text: "Date for money XXX?"
                   }
                 },
                 items: [
