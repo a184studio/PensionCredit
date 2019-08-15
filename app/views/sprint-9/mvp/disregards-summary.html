@@ -24,10 +24,13 @@
 
                 <dl class="govuk-summary-list govuk-summary-list--long">
 
+
+
+
             {% if data["disregards-capital-total-yn"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Less than £X
+                      More than £X
                     </dt>
                     <dd class="govuk-summary-list__value">
                       {{ data["disregards-capital-total-yn"] }}
@@ -42,14 +45,13 @@
 
                   <br>
 
-
-              {% if data["Select-a-payment-type"] %}
+              {% if data["disregards-type-select"] %}
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                           Payment type
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          {{ data["Select-a-payment-type"] or "None "}}
+                          {{ data["disregards-type-select"] or "None "}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a href="service-charges">
@@ -59,19 +61,6 @@
                       </div>
               {% endif %}
 
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          Date allowable
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          52 or 26 weeks
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a href="ground-rent">
-                            Change
-                          </a>
-                        </dd>
-                      </div>
 
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
@@ -82,6 +71,20 @@
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a href="rent-council-tax-yn">
+                            Change
+                          </a>
+                        </dd>
+                      </div>
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Date allowable
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          52 or 26 weeks
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a href="ground-rent">
                             Change
                           </a>
                         </dd>
@@ -124,13 +127,13 @@
                               <br>
 
 
-                              {% if data["Select-a-payment-type"] %}
+                              {% if data["disregards-type-select"] %}
                                       <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">
                                           Payment type
                                         </dt>
                                         <dd class="govuk-summary-list__value">
-                                          {{ data["Select-a-payment-type"] or "None "}}
+                                          {{ data["disregards-type-select"] or "None "}}
                                         </dd>
                                         <dd class="govuk-summary-list__actions">
                                           <a href="service-charges">
@@ -142,20 +145,6 @@
 
                                       <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">
-                                          Date allowable
-                                        </dt>
-                                        <dd class="govuk-summary-list__value">
-                                          52 or 26 weeks
-                                        </dd>
-                                        <dd class="govuk-summary-list__actions">
-                                          <a href="ground-rent">
-                                            Change
-                                          </a>
-                                        </dd>
-                                      </div>
-
-                                      <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">
                                           Date received
                                         </dt>
                                         <dd class="govuk-summary-list__value">
@@ -163,6 +152,20 @@
                                         </dd>
                                         <dd class="govuk-summary-list__actions">
                                           <a href="rent-council-tax-yn">
+                                            Change
+                                          </a>
+                                        </dd>
+                                      </div>
+
+                                      <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                          Date allowable
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                          52 or 26 weeks
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                          <a href="ground-rent">
                                             Change
                                           </a>
                                         </dd>
@@ -191,6 +194,23 @@
                                         </dt>
                                         <dd class="govuk-summary-list__value">
                                           {{ data["disregards-entry-amount"] or "None "}}
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                          <a href="ground-rent">
+                                            Change
+                                          </a>
+                                        </dd>
+                                      </div>
+                              {% endif %}
+
+
+                              {% if data["disregards-type-select"] == "No" %}
+                                      <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                          No disregards
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                          {{ data["disregards-type-select"] or "None "}}
                                         </dd>
                                         <dd class="govuk-summary-list__actions">
                                           <a href="ground-rent">

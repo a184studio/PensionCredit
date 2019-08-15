@@ -876,6 +876,21 @@ router.post(`${baseUrl}/msic-all-money-accounts-check-yn-router`, (req, res) => 
   }
 })
 
+
+
+
+router.post(`${baseUrl}/disregards-types-router`, (req, res) => {
+  const disregardsRouter = req.session.data['disregards-type-select']
+
+  if (disregardsRouter === 'No') {
+    res.redirect(`${baseUrl}/disregards-summary`)
+  } else {
+    res.redirect(`${baseUrl}/disregards-types-all`)
+  }
+})
+
+
+
 // disregards END
 
 

@@ -21,6 +21,7 @@
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
+      {% if data["disregards-type-select"] == "disregards-type-1" %}
 
                 {{ govukRadios({
                   idPrefix: "disregards-types-all",
@@ -99,10 +100,94 @@
 
                   ]
                 }) }}
-
+                {% endif %}
 
 <!------------------------------------>
-      {% if data["disregards-type-2"] %}
+{% if data["disregards-type-select"] == "disregards-type-2" %}
+
+
+{{ govukRadios({
+  idPrefix: "disregards-types-all",
+  name: "disregards-types-all",
+  fieldset: {
+    legend: {
+      text: "War and military compensation",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "XXXX."
+  },
+  items: [
+  {
+    value: "govuk-verify",
+    text: "Arrears of benefits over £5,000",
+    label: {
+      classes: "govuk-label--s"
+    },
+    hint: {
+      text: "XXXX."
+    },
+    checked: (data["disregards-types-all"] == "Yes")
+  },
+
+    {
+      value: "govuk-verify",
+      text: "Arrears of benefits under £5,000",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "XXXX."
+      },
+      checked: (data["disregards-types-all"] == "Yes")
+    },
+
+
+    {
+      value: "govuk-verify",
+      text: "Payments of £5,000 or more to rectify of compensate for official error on payment of benefits",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "XXXX."
+      },
+      checked: (data["disregards-types-all"] == "Yes")
+    },
+
+    {
+      value: "govuk-verify",
+      text: "4",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "XXXX."
+      },
+      checked: (data["disregards-types-all"] == "Yes")
+    },
+
+    {
+      value: "govuk-verify",
+      text: "5",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "XXXX."
+      },
+      checked: (data["disregards-types-all"] == "Yes")
+    }
+
+  ]
+}) }}
+{% endif %}
+
+<!------------------------------------>
+
+{% if data["disregards-type-select"] == "disregards-type-3" %}
 
                 {{ govukRadios({
                   idPrefix: "disregards-types-all",
@@ -184,7 +269,7 @@
 
                 {% endif %}
     <!------------------------------------>
-          {% if data["disregards-type-3"] %}
+    {% if data["disregards-type-select"] == "disregards-type-4" %}
 
                 {{ govukRadios({
                   idPrefix: "disregards-types-all",
@@ -266,7 +351,7 @@
 
                 {% endif %}
     <!------------------------------------>
-          {% if data["disregards-type-4"] %}
+    {% if data["disregards-type-select"] == "disregards-type-5" %}
 
                 {{ govukRadios({
                   idPrefix: "disregards-types-all",
@@ -348,7 +433,7 @@
 
                 {% endif %}
     <!------------------------------------>
-          {% if data["disregards-type-5"] %}
+    {% if data["disregards-type-select"] == "disregards-type-6" %}
 
                   {{ govukRadios({
                     idPrefix: "disregards-types-all",
@@ -431,7 +516,7 @@
 
                   {% endif %}
       <!------------------------------------>
-            {% if data["disregards-type-6"] %}
+      {% if data["disregards-type-select"] == "disregards-type-7" %}
 
                         {{ govukRadios({
                           idPrefix: "disregards-types-all",
@@ -514,7 +599,7 @@
 
                         {% endif %}
             <!------------------------------------>
-                  {% if data["disregards-type-7"] %}
+            {% if data["disregards-type-select"] == "disregards-type-8" %}
 
                       {{ govukRadios({
                         idPrefix: "disregards-types-all",
@@ -597,7 +682,89 @@
 
                       {% endif %}
           <!------------------------------------>
-                {% if data["disregards-type-8"] %}
+          {% if data["disregards-type-select"] == "disregards-type-9" %}
+
+                      {{ govukRadios({
+                        idPrefix: "disregards-types-all",
+                        name: "disregards-types-all",
+                        fieldset: {
+                          legend: {
+                            text: "Money paid to you for blood infection or CJD",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--xl"
+                          }
+                        },
+                        hint: {
+                          text: "XXXX."
+                        },
+                        items: [
+                        {
+                          value: "govuk-verify",
+                          text: "1",
+                          label: {
+                            classes: "govuk-label--s"
+                          },
+                          hint: {
+                            text: "XXXX."
+                          },
+                          checked: (data["disregards-types-all"] == "Yes")
+                        },
+
+                          {
+                            value: "govuk-verify",
+                            text: "2",
+                            label: {
+                              classes: "govuk-label--s"
+                            },
+                            hint: {
+                              text: "XXXX."
+                            },
+                            checked: (data["disregards-types-all"] == "Yes")
+                          },
+
+
+                          {
+                            value: "govuk-verify",
+                            text: "3",
+                            label: {
+                              classes: "govuk-label--s"
+                            },
+                            hint: {
+                              text: "XXXX."
+                            },
+                            checked: (data["disregards-types-all"] == "Yes")
+                          },
+
+                          {
+                            value: "govuk-verify",
+                            text: "4",
+                            label: {
+                              classes: "govuk-label--s"
+                            },
+                            hint: {
+                              text: "XXXX."
+                            },
+                            checked: (data["disregards-types-all"] == "Yes")
+                          },
+
+                          {
+                            value: "govuk-verify",
+                            text: "5",
+                            label: {
+                              classes: "govuk-label--s"
+                            },
+                            hint: {
+                              text: "XXXX."
+                            },
+                            checked: (data["disregards-types-all"] == "Yes")
+                          }
+
+                        ]
+                      }) }}
+
+                      {% endif %}
+          <!------------------------------------>
+          {% if data["disregards-type-select"] == "disregards-type-10" %}
 
                       {{ govukRadios({
                         idPrefix: "disregards-types-all",

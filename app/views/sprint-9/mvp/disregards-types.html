@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="disregards-types-all" method="post" class="form">
+    <form action="disregards-types-router" method="post" class="form">
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
@@ -35,7 +35,7 @@
                   },
                   items: [
                     {
-                      value: "disregards-type-a",
+                      value: "disregards-type-1",
                       text: "Benefits and council tax",
                       label: {
                         classes: "govuk-label--s"
@@ -43,12 +43,12 @@
                       hint: {
                         text: "XXXX"
                       },
-                      checked: (data["disregards-type-select"] == "disregards-type-a")
+                      checked: (data["disregards-type-select"] == "disregards-type-1")
                     },
 
 
                     {
-                      value: "XXXX",
+                      value: "disregards-type-2",
                       text: "War and military compensation",
                       label: {
                         classes: "govuk-label--s"
@@ -61,7 +61,7 @@
 
 
                     {
-                      value: "XXXX",
+                      value: "disregards-type-3",
                       text: "Compensation and insurance",
                       label: {
                         classes: "govuk-label--s"
@@ -74,7 +74,7 @@
 
 
                     {
-                      value: "XXXX",
+                      value: "disregards-type-4",
                       text: "Contents insurance",
                       label: {
                         classes: "govuk-label--s"
@@ -86,7 +86,7 @@
                     },
 
                     {
-                        value: "XXXX",
+                        value: "disregards-type-5",
                         text: "Money for buying or imprvoing property",
                         label: {
                           classes: "govuk-label--s"
@@ -99,7 +99,7 @@
 
 
                       {
-                        value: "XXXX",
+                        value: "disregards-type-6",
                         text: "Living independently",
                         label: {
                           classes: "govuk-label--s"
@@ -112,7 +112,7 @@
 
 
                     {
-                        value: "XXXX",
+                        value: "disregards-type-7",
                         text: "Emergencies and incidents",
                         label: {
                           classes: "govuk-label--s"
@@ -124,7 +124,7 @@
                       },
 
                       {
-                        value: "XXXX",
+                        value: "disregards-type-8",
                         text: "Windrush",
                         label: {
                           classes: "govuk-label--s"
@@ -137,7 +137,7 @@
 
 
                     {
-                        value: "XXXX",
+                        value: "disregards-type-9",
                         text: "CJD and blood",
                         label: {
                           classes: "govuk-label--s"
@@ -150,7 +150,7 @@
 
 
                     {
-                        value: "XXXX",
+                        value: "No",
                         text: "(TBC) Not asked currently",
                         label: {
                           classes: "govuk-label--s"
@@ -158,12 +158,12 @@
                         hint: {
                           text: "XXXX"
                         },
-                        checked: (data["disregards-type-select"] == "disregards-type-10")
+                        checked: (data["disregards-type-select"] == "No")
                     },
 
 
                     {
-                        value: "XXXX",
+                        value: "No",
                         text: "None of these",
                         label: {
                           classes: "govuk-label--s"
@@ -171,7 +171,7 @@
                         hint: {
                           text: "XXXX"
                         },
-                        checked: (data["disregards-type-select"] == "Yes")
+                        checked: (data["disregards-type-select"] == "No")
                       }
 
                   ]
