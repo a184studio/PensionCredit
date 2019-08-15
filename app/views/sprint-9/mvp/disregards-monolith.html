@@ -17,7 +17,7 @@
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-        <h1 class="govuk-heading-xl">Benefits and council tax</h1>
+        <h1 class="govuk-heading-xl">Not this, Benefits and council tax</h1>
 
         {% if data["disregards-type-select"] == "disregards-type-1" %}
 
@@ -27,7 +27,7 @@
           {% set arrearsOver %}
             {{ govukTextarea({
               label: {
-                text: "Enter details for this disregard, the details we need for this are X"
+                html: "Arrears of benefits over £5,000<br>Hint is this: XXX<br><br>Arrears of benefits under £5,000<br><br>Payments of £5,000 or more to correct or compensate for official errors on benefit payments<br><br>Arrears of benefit, compensation for late payment of benefit or payment in lieu of benefit<br><br>Local Authority payments related to Council Tax Reduction"
               },
               hint: {
                 text: "This is disregsarded for X amount of months."
@@ -45,7 +45,7 @@
             name: "arrearsOver-set",
             fieldset: {
               legend: {
-                html: "Arrears of benefits over £5,000",
+                html: "Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--s"
               }
@@ -92,7 +92,7 @@
             name: "arrearsUnder-set",
             fieldset: {
               legend: {
-                html: "Arrears of benefits under £5,000",
+                html: "Compensation payments related to the second world war or service in the armed forces",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--s"
               }
@@ -139,7 +139,7 @@
             name: "compensatePayment-set",
             fieldset: {
               legend: {
-                html: "Payments of £5,000 or more to correct or compensate for official errors on benefit payments",
+                html: "Personal injury claim payments",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--s"
               }
@@ -186,7 +186,7 @@
             name: "latePayment-set",
             fieldset: {
               legend: {
-                html: "Arrears of benefit, compensation for late payment of benefit or payment in lieu of benefit",
+                html: "Payments from a home insurance policy to covered lost or damaged personal possessions",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--s"
               }
@@ -233,7 +233,7 @@
             name: "localAuthority-set",
             fieldset: {
               legend: {
-                html: "Local Authority payments related to Council Tax Reduction",
+                html: "Money that you intend to use to buy or make essential repairs to your main home",
 
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--s"
