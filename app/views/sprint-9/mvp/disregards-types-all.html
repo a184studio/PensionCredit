@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="disregards-entry" method="post" class="form">
+    <form action="disregards-type-select-router" method="post" class="form">
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
@@ -96,6 +96,17 @@
                         text: "XXXX."
                       },
                       checked: (data["disregards-types-all"] == "Yes")
+                    },
+                    {
+                      value: "None",
+                      text: "None",
+                      label: {
+                        classes: "govuk-label--s"
+                      },
+                      hint: {
+                        text: "XXXX."
+                      },
+                      checked: (data["disregards-types-all"] == "None")
                     }
 
                   ]
@@ -179,6 +190,17 @@
         text: "XXXX."
       },
       checked: (data["disregards-types-all"] == "Yes")
+    },
+    {
+      value: "None",
+      text: "None",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "XXXX."
+      },
+      checked: (data["disregards-types-all"] == "None")
     }
 
   ]
@@ -262,6 +284,17 @@
                         text: "XXXX."
                       },
                       checked: (data["disregards-types-all"] == "Yes")
+                    },
+                    {
+                      value: "None",
+                      text: "None",
+                      label: {
+                        classes: "govuk-label--s"
+                      },
+                      hint: {
+                        text: "XXXX."
+                      },
+                      checked: (data["disregards-types-all"] == "None")
                     }
 
                   ]
@@ -344,6 +377,17 @@
                         text: "XXXX."
                       },
                       checked: (data["disregards-types-all"] == "Yes")
+                    },
+                    {
+                      value: "None",
+                      text: "None",
+                      label: {
+                        classes: "govuk-label--s"
+                      },
+                      hint: {
+                        text: "XXXX."
+                      },
+                      checked: (data["disregards-types-all"] == "None")
                     }
 
                   ]
@@ -426,6 +470,17 @@
                         text: "XXXX."
                       },
                       checked: (data["disregards-types-all"] == "Yes")
+                    },
+                    {
+                      value: "None",
+                      text: "None",
+                      label: {
+                        classes: "govuk-label--s"
+                      },
+                      hint: {
+                        text: "XXXX."
+                      },
+                      checked: (data["disregards-types-all"] == "None")
                     }
 
                   ]
@@ -508,6 +563,17 @@
                           text: "XXXX."
                         },
                         checked: (data["disregards-types-all"] == "Yes")
+                      },
+                      {
+                        value: "None",
+                        text: "None",
+                        label: {
+                          classes: "govuk-label--s"
+                        },
+                        hint: {
+                          text: "XXXX."
+                        },
+                        checked: (data["disregards-types-all"] == "None")
                       }
 
                     ]
@@ -591,6 +657,17 @@
                                 text: "XXXX."
                               },
                               checked: (data["disregards-types-all"] == "Yes")
+                            },
+                            {
+                              value: "None",
+                              text: "None",
+                              label: {
+                                classes: "govuk-label--s"
+                              },
+                              hint: {
+                                text: "XXXX."
+                              },
+                              checked: (data["disregards-types-all"] == "None")
                             }
 
                           ]
@@ -674,6 +751,17 @@
                               text: "XXXX."
                             },
                             checked: (data["disregards-types-all"] == "Yes")
+                          },
+                          {
+                            value: "None",
+                            text: "None",
+                            label: {
+                              classes: "govuk-label--s"
+                            },
+                            hint: {
+                              text: "XXXX."
+                            },
+                            checked: (data["disregards-types-all"] == "None")
                           }
 
                         ]
@@ -757,6 +845,17 @@
                               text: "XXXX."
                             },
                             checked: (data["disregards-types-all"] == "Yes")
+                          },
+                          {
+                            value: "None",
+                            text: "None",
+                            label: {
+                              classes: "govuk-label--s"
+                            },
+                            hint: {
+                              text: "XXXX."
+                            },
+                            checked: (data["disregards-types-all"] == "None")
                           }
 
                         ]
@@ -839,12 +938,26 @@
                               text: "XXXX."
                             },
                             checked: (data["disregards-types-all"] == "Yes")
+                          },
+                          {
+                            value: "None",
+                            text: "None",
+                            label: {
+                              classes: "govuk-label--s"
+                            },
+                            hint: {
+                              text: "XXXX."
+                            },
+                            checked: (data["disregards-types-all"] == "None")
                           }
 
                         ]
                       }) }}
 
                       {% endif %}
+
+      <!------------------------------------>
+
 
 <br>
 

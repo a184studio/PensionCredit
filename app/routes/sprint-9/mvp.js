@@ -916,15 +916,26 @@ router.post(`${baseUrl}/disregards-type-more-yn-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/disregards-types-yn-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['disregards-types-yn']
+  const disregardsTypes = req.session.data['disregards-types-yn']
 
-  if (hasSecondProperty === 'Yes') {
+  if (disregardsTypes === 'Yes') {
     res.redirect(`${baseUrl}/disregards-entry`)
   } else {
     res.redirect(`${baseUrl}/disregards-summary`)
   }
 })
 
+
+
+router.post(`${baseUrl}/disregards-type-select-router`, (req, res) => {
+  const disregardsSelect = req.session.data['disregards-types-all']
+
+  if (disregardsSelect === 'None') {
+    res.redirect(`${baseUrl}/disregards-type-more-yn`)
+  } else {
+    res.redirect(`${baseUrl}/disregards-summary`)
+  }
+})
 
 
 
