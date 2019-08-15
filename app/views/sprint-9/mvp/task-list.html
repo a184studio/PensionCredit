@@ -240,9 +240,9 @@
                 <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
                   What we know and what we don't
                 </a>
-                {% if data["pensions-complete"] == "true" %}
+                {% if data["pensions-summary"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["pensions-complete"] == "in-progress" %}
+                {% elif data["pensions-summary"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
@@ -253,9 +253,9 @@
                 <a class="app-task-list__task-name" href="has-private-pension" aria-describedby="eligibility-completed">
                   Unclaimed pensions
                 </a>
-                {% if data["has-private-pension-complete"] == "true" %}
+                {% if data["pensions-summary"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["has-private-pension-complete"] == "in-progress" %}
+                {% elif data["pensions-summary"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
@@ -265,9 +265,9 @@
                 <a class="app-task-list__task-name" href="has-foreign-pension" aria-describedby="eligibility-completed">
                   Foreign pensions
                 </a>
-                {% if data["has-foreign-pension-complete"] == "true" %}
+                {% if data["pensions-summary"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["has-foreign-pension-complete"] == "in-progress" %}
+                {% elif data["pensions-summary"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
@@ -295,9 +295,9 @@
                 <a class="app-task-list__task-name" href="benefit-overview" aria-describedby="eligibility-completed">
                   What we know and what we don't
                 </a>
-                {% if data["pensions-complete"] == "true" %}
+                {% if data["benefits-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["pensions-complete"] == "in-progress" %}
+                {% elif data["benefits-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>

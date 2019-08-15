@@ -22,12 +22,16 @@
         (data['claim-date-month'] or 11 | getMonth) + " " +
         (data['claim-date-year'] or 2018) %}
 
+
+<h1 class="govuk-heading-xl"> Based on the conversation we have had, we will start your claim from {{data['claim-date-manual-eed-daf-yn-alternate-date-day'] + ' ' + (data['claim-date-manual-eed-daf-yn-alternate-date-month'] | getMonth) + ' ' + data['claim-date-manual-eed-daf-yn-alternate-date-year']}}</h1>
+
+
       {{ govukRadios({
         idPrefix: "employment-fulltime",
         name: "employment-fulltime",
         fieldset: {
           legend: {
-            text: "Were you self-employed between Monday, 15 April 2019 and Today?",
+            html: "",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
             }
