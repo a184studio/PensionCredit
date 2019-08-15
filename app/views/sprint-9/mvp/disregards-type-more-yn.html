@@ -20,162 +20,162 @@
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-                {{ govukRadios({
-                  idPrefix: "disregards-type-select",
-                  name: "disregards-type-select",
-                  fieldset: {
-                    legend: {
-                      text: "Any more disregards? Read this list?",
-                      isPageHeading: true,
-                      classes: "govuk-fieldset__legend--xl"
-                    }
-                  },
-                  hint: {
-                    text: "XXXX."
-                  },
-                  items: [
-                    {
-                      value: "disregards-type-1",
-                      text: "Benefits and council tax",
-                      label: {
-                        classes: "govuk-label--s"
-                      },
-                      hint: {
-                        text: "XXXX"
-                      },
-                      checked: (data["disregards-type-select"] == "disregards-type-1")
-                    },
+      {{ govukRadios({
+        idPrefix: "disregards-type-select",
+        name: "disregards-type-select",
+        fieldset: {
+          legend: {
+            text: "Read this list?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "XXXX."
+        },
+        items: [
+          {
+            value: "disregards-type-1",
+            text: "Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error",
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+              text: ""
+            },
+            checked: (data["disregards-type-select"] == "disregards-type-1")
+          },
 
 
-                    {
-                      value: "disregards-type-2",
-                      text: "War and military compensation",
-                      label: {
-                        classes: "govuk-label--s"
-                      },
-                      hint: {
-                        text: "XXXX"
-                      },
-                      checked: (data["disregards-type-select"] == "disregards-type-2")
-                    },
+          {
+            value: "disregards-type-2",
+            text: "Compensation payments related to the second world war or service in the armed forces",
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+              text: ""
+            },
+            checked: (data["disregards-type-select"] == "disregards-type-2")
+          },
 
 
-                    {
-                      value: "disregards-type-3",
-                      text: "Compensation and insurance",
-                      label: {
-                        classes: "govuk-label--s"
-                      },
-                      hint: {
-                        text: "XXXX"
-                      },
-                      checked: (data["disregards-type-select"] == "disregards-type-3")
-                    },
+          {
+            value: "disregards-type-3",
+            text: "Personal injury claim payments",
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+              text: ""
+            },
+            checked: (data["disregards-type-select"] == "disregards-type-3")
+          },
 
 
-                    {
-                      value: "disregards-type-4",
-                      text: "Contents insurance",
-                      label: {
-                        classes: "govuk-label--s"
-                      },
-                      hint: {
-                        text: "XXXX"
-                      },
-                      checked: (data["disregards-type-select"] == "disregards-type-4")
-                    },
+          {
+            value: "disregards-type-4",
+            text: "Payments from a home insurance policy to covered lost or damaged personal possessions",
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+              text: ""
+            },
+            checked: (data["disregards-type-select"] == "disregards-type-4")
+          },
 
-                    {
-                        value: "disregards-type-5",
-                        text: "Money for buying or imprvoing property",
-                        label: {
-                          classes: "govuk-label--s"
-                        },
-                        hint: {
-                          text: "XXXX"
-                        },
-                        checked: (data["disregards-type-select"] == "disregards-type-5")
-                    },
-
-
-                      {
-                        value: "disregards-type-6",
-                        text: "Living independently",
-                        label: {
-                          classes: "govuk-label--s"
-                        },
-                        hint: {
-                          text: "XXXX"
-                        },
-                        checked: (data["disregards-type-select"] == "disregards-type-6")
-                    },
+          {
+              value: "disregards-type-5",
+              text: "Money that you intend to use to buy or make essential repairs to your main home",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: ""
+              },
+              checked: (data["disregards-type-select"] == "disregards-type-5")
+          },
 
 
-                    {
-                        value: "disregards-type-7",
-                        text: "Emergencies and incidents",
-                        label: {
-                          classes: "govuk-label--s"
-                        },
-                        hint: {
-                          text: "XXXX"
-                        },
-                        checked: (data["disregards-type-select"] == "disregards-type-7")
-                      },
-
-                      {
-                        value: "disregards-type-8",
-                        text: "Windrush",
-                        label: {
-                          classes: "govuk-label--s"
-                        },
-                        hint: {
-                          text: "XXXX"
-                        },
-                        checked: (data["disregards-type-select"] == "disregards-type-8")
-                    },
+            {
+              value: "disregards-type-6",
+              text: "Payments made to you to help you live independently in your own home or the community",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: ""
+              },
+              checked: (data["disregards-type-select"] == "disregards-type-6")
+          },
 
 
-                    {
-                        value: "disregards-type-9",
-                        text: "CJD and blood",
-                        label: {
-                          classes: "govuk-label--s"
-                        },
-                        hint: {
-                          text: "XXXX"
-                        },
-                        checked: (data["disregards-type-select"] == "disregards-type-9")
-                    },
+          {
+              value: "disregards-type-7",
+              text: "Payments made to you by a trust or discretionary fund follwing an incident or emergency",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: ""
+              },
+              checked: (data["disregards-type-select"] == "disregards-type-7")
+            },
+
+            {
+              value: "disregards-type-8",
+              text: "Windrush child compensation",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: ""
+              },
+              checked: (data["disregards-type-select"] == "disregards-type-8")
+          },
 
 
-                    {
-                        value: "No",
-                        text: "(TBC) Not asked currently",
-                        label: {
-                          classes: "govuk-label--s"
-                        },
-                        hint: {
-                          text: "XXXX"
-                        },
-                        checked: (data["disregards-type-select"] == "No")
-                    },
+          {
+              value: "disregards-type-9",
+              text: "Money paid to you to support you with the effects of a blood infection or vCJD",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: ""
+              },
+              checked: (data["disregards-type-select"] == "disregards-type-9")
+          },
 
 
-                    {
-                        value: "No",
-                        text: "None of these",
-                        label: {
-                          classes: "govuk-label--s"
-                        },
-                        hint: {
-                          text: "XXXX"
-                        },
-                        checked: (data["disregards-type-select"] == "No")
-                      }
+          {
+              value: "No",
+              text: "(TBC) Not asked currently",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: "XXXX"
+              },
+              checked: (data["disregards-type-select"] == "No")
+          },
 
-                  ]
-                }) }}
+
+          {
+              value: "No",
+              text: "None of these",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: "XXXX"
+              },
+              checked: (data["disregards-type-select"] == "No")
+            }
+
+        ]
+      }) }}
 
 
 
