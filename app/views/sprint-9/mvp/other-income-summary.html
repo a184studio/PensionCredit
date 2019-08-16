@@ -24,50 +24,31 @@
 
                 <dl class="govuk-summary-list govuk-summary-list--long">
 
-            {% if data["disregards-capital-total-yn"] %}
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Has more than £10,000
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{ data["disregards-capital-total-yn"] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a href="home-ownership">
-                        Change
-                      </a>
-                    </dd>
-                  </div>
-                  {% endif %}
-
-                  <br>
-
-
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error
+                            other-income-spousal-maintenance-yn
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            Yes / No
+                            {{ data["other-income-spousal-maintenance-yn"] }}
                           </dd>
                           <dd class="govuk-summary-list__actions">
-                            <a href="home-ownership">
+                            <a href="other-income-spousal-maintenance-yes">
                               Change
                             </a>
                           </dd>
                         </div>
 
 
-                        {% if data["disregards-arrers-yes"] %}
+                        {% if data["other-income-spousal-maintenance-yn"] %}
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                   Details
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  {{ data["disregards-arrers-yes"] }}
+                                  details{{ data["XXX"] }}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
-                                  <a href="home-ownership">
+                                  <a href="other-income-spousal-maintenance-yes">
                                     Change
                                   </a>
                                 </dd>
@@ -79,29 +60,29 @@
 
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            Compensation payments related to the second world war or service in the armed forces
+                            other-income-working-tax-credits-yn
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            Yes / No
+                            {{ data["other-income-working-tax-credits-yn"] }}
                           </dd>
                           <dd class="govuk-summary-list__actions">
-                            <a href="home-ownership">
+                            <a href="other-income-working-tax-credits-yn">
                               Change
                             </a>
                           </dd>
                         </div>
 
 
-                        {% if data["disregards-warpayment-yes"] %}
+                        {% if data["other-income-working-tax-credits-yn"] %}
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                   Details
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  {{ data["disregards-warpayment-yes"] }}
+                                  Details, {{ data["other-income-working-tax-credits-yn"] }}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
-                                  <a href="home-ownership">
+                                  <a href="other-income-working-tax-credits-yes">
                                     Change
                                   </a>
                                 </dd>
@@ -111,29 +92,29 @@
 <br>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Personal injury claim payments
+                                  other-income-benefits-aboard-yn
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  Yes / No
+                                  {{ data["other-income-benefits-aboard-yn"] }}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
-                                  <a href="home-ownership">
+                                  <a href="other-income-benefits-aboard-yn">
                                     Change
                                   </a>
                                 </dd>
                               </div>
 
 
-                              {% if data["disregards-compensation-for-injury-yes"] %}
+                              {% if data["other-income-benefits-aboard-yn"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
                                         Details
                                       </dt>
                                       <dd class="govuk-summary-list__value">
-                                        {{ data["disregards-compensation-for-injury-yes"] }}
+                                        Details, {{ data["other-income-benefits-aboard-yn"] }}
                                       </dd>
                                       <dd class="govuk-summary-list__actions">
-                                        <a href="home-ownership">
+                                        <a href="other-income-benefits-aboard-yes">
                                           Change
                                         </a>
                                       </dd>
@@ -143,29 +124,29 @@
 <br>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Payments from a home insurance policy to covered lost or damaged personal possessions
+                                  other-income-sick-pay-yn
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  Yes / No
+                                  {{ data["other-income-sick-pay-yn"] }}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
-                                  <a href="home-ownership">
+                                  <a href="other-income-sick-pay-yn">
                                     Change
                                   </a>
                                 </dd>
                               </div>
 
 
-                              {% if data["disregards-contents-insurance-yes"] %}
+                              {% if data["other-income-sick-pay-yn"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
                                         Details
                                       </dt>
                                       <dd class="govuk-summary-list__value">
-                                        {{ data["disregards-contents-insurance-yes"] }}
+                                        Details, {{ data["other-income-sick-pay-yn"] }}
                                       </dd>
                                       <dd class="govuk-summary-list__actions">
-                                        <a href="home-ownership">
+                                        <a href="other-income-sick-pay-yes">
                                           Change
                                         </a>
                                       </dd>
@@ -175,29 +156,29 @@
 <br>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Money that you intend to use to buy or make essential repairs to your main home
+                                  other-income-royalties-yn
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  Yes / No
+                                  {{ data["other-income-royalties-yn"] }}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
-                                  <a href="home-ownership">
+                                  <a href="other-income-royalties-yn">
                                     Change
                                   </a>
                                 </dd>
                               </div>
 
 
-                              {% if data["disregards-money-for-property-yes"] %}
+                              {% if data["other-income-royalties-yn"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
                                         Details
                                       </dt>
                                       <dd class="govuk-summary-list__value">
-                                        {{ data["disregards-money-for-property-yes"] }}
+                                        Details, {{ data["other-income-royalties-yn"] }}
                                       </dd>
                                       <dd class="govuk-summary-list__actions">
-                                        <a href="home-ownership">
+                                        <a href="other-income-royalties-yes">
                                           Change
                                         </a>
                                       </dd>
@@ -207,29 +188,29 @@
 <br>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Payments made to you to help you live independently in your own home or the community
+                                  other-income-everything-else-yn
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  Yes / No
+                                  {{ data["other-income-everything-else-yn"] }}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
-                                  <a href="home-ownership">
+                                  <a href="other-income-everything-else-yn">
                                     Change
                                   </a>
                                 </dd>
                               </div>
 
 
-                              {% if data["disregards-independently-living-yes"] %}
+                              {% if data["other-income-everything-else-yn"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
                                         Details
                                       </dt>
                                       <dd class="govuk-summary-list__value">
-                                        {{ data["disregards-independently-living-yes"] }}
+                                        Details, {{ data["other-income-everything-else-yn"] }}
                                       </dd>
                                       <dd class="govuk-summary-list__actions">
-                                        <a href="home-ownership">
+                                        <a href="other-income-everything-else-yes">
                                           Change
                                         </a>
                                       </dd>
@@ -237,101 +218,6 @@
                                     {% endif %}
 
 
-<br>
-                              <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                  Payments made to you by a trust or discretionary fund follwing an incident or emergency
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                  Yes / No
-                                </dd>
-                                <dd class="govuk-summary-list__actions">
-                                  <a href="home-ownership">
-                                    Change
-                                  </a>
-                                </dd>
-                              </div>
-
-
-                              {% if data["disregards-incident-payment-yes"] %}
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Details
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        {{ data["disregards-incident-payment-yes"] }}
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                        <a href="home-ownership">
-                                          Change
-                                        </a>
-                                      </dd>
-                                    </div>
-                                    {% endif %}
-
-<br>
-                              <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                  Windrush child compensation
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                  Yes / No
-                                </dd>
-                                <dd class="govuk-summary-list__actions">
-                                  <a href="home-ownership">
-                                    Change
-                                  </a>
-                                </dd>
-                              </div>
-
-
-                              {% if data["disregards-windrush-yes"] %}
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Details
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        {{ data["disregards-windrush-yes"] }}
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                        <a href="home-ownership">
-                                          Change
-                                        </a>
-                                      </dd>
-                                    </div>
-                                    {% endif %}
-
-<br>
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                Money paid to you to support you with the effects of a blood infection or vCJD
-                              </dt>
-                              <dd class="govuk-summary-list__value">
-                                Yes / No
-                              </dd>
-                              <dd class="govuk-summary-list__actions">
-                                <a href="home-ownership">
-                                  Change
-                                </a>
-                              </dd>
-                            </div>
-
-
-                            {% if data["disregards-blood-yes"] %}
-                                  <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                      Details
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                      {{ data["disregards-blood-yes"] }}
-                                    </dd>
-                                    <dd class="govuk-summary-list__actions">
-                                      <a href="home-ownership">
-                                        Change
-                                      </a>
-                                    </dd>
-                                  </div>
-                                  {% endif %}
 
 <br></dl></dl><br><br>
 
