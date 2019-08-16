@@ -17,17 +17,17 @@
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-        <h1 class="govuk-heading-xl">The list @niall checkbox spacing to wide</h1>
+        <h1 class="govuk-heading-xl">Money that will not be considered in your Pension Credit claim</h1>
 
-        {% set arrearsOver %}
+        {% set council %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"            },
+              html: "<strong>Payments from the local authority related to Council Tax Reduction, other that the 25 percent single occupier reduction</strong><br> Disregard for 52 weeks<br><br>"            },
             hint: {
-              text: ""
+              text: "Enter a description of the payment, the date it was paid and amount."
             },
-            id: "disregards-arrers-yes",
-            name: "disregards-arrers-yes",
+            id: "disregards-council-yes",
+            name: "disregards-council-yes",
             classes: "govuk-input--width-30",
             attributes: {
               maxlength: 200
@@ -36,11 +36,23 @@
         {% endset %}
 
         {% set warPaymentYes %}
+          {% set label %}
+            <p><strong>Payments (other than War Disablement Pension or War Widow(er)'s Pension) to compensate for the fact that during the second world war you:</strong></p>
+            <ul>
+              <li><strong>were a slave labourer or forced labourer</strong></li>
+              <li><strong>suffered property loss or personal injury</strong></li>
+              <li><strong>were a parent of a child who died</strong></li>
+                </ul>
+            <br><strong>Payments made to Far East Prisoners of War or their partners
+            <br><br>Armed Forces Independence Payment<br><br>
+            </strong> Disregard indefinitely<br><br>
+          {% endset %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"              },
+              html: label
+            },
             hint: {
-              text: ""
+              text: "Enter a description of the payment, the date it was paid and amount."
             },
             id: "disregards-warpayment-yes",
             name: "disregards-warpayment-yes",
@@ -54,9 +66,9 @@
         {% set compensationInjury %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                },
+              html: "Disregard indefinitely<br><br>"                },
             hint: {
-              text: ""
+              text: "Enter a description of the payment, the date it was paid and amount."
             },
             id: "disregards-compensation-for-injury-yes",
             name: "disregards-compensation-for-injury-yes",
@@ -70,10 +82,10 @@
         {% set ContentsInsurance %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"
+              html: "Disregard for 52 weeks<br><br>"
             },
             hint: {
-              text: ""
+              text: "Enter a description of the payment, the date it was paid and amount."
             },
             id: "disregards-contents-insurance-yes",
             name: "disregards-contents-insurance-yes",
@@ -87,9 +99,9 @@
         {% set moneyForProperty %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                    },
+              html: "Disregard for 52 weeks<br><br>"                    },
             hint: {
-              text: ""
+              text: "Enter a description of the money, the date to consider it from and amount."
             },
             id: "disregards-money-for-property-yes",
             name: "disregards-money-for-property-yes",
@@ -103,9 +115,9 @@
         {% set independentlyLiving %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                      },
+                html: "<strong>Payments from The Independent Living Fund</strong><br> Disregard indefinitely<br><br><strong>Local Authority payments to help you to continue to live independently in your own home</strong><br> Disregard for 52 weeks<br><br><strong>Welfare Assistance grants from the Local Authority</strong><br> Disregard for 52 weeks<br><br>"                      },
             hint: {
-              text: ""
+              text: "Enter a description of the payment, the date it was paid and amount."
             },
             id: "disregards-independently-living-yes",
             name: "disregards-independently-living-yes",
@@ -119,9 +131,9 @@
         {% set incidentPayment %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                        },
+              html: "<strong>London emergency trust</strong><br><strong>The We Love Manchester Emergency Fund</strong> <br><strong>The London bombing charitable trust</strong><br><strong>The Rugby Portobello trust</strong><br><strong>The Grenfell residents discretionary fund</strong><br><br>Disregard indefinitely<br><br>"                        },
             hint: {
-              text: ""
+              text: "Enter a description of the payment, the date it was paid and amount."
             },
             id: "disregards-incident-payment-yes",
             name: "disregards-incident-payment-yes",
@@ -135,9 +147,9 @@
         {% set windrushYes %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                          },
+              html: "Disregard indefinitely<br><br>"                          },
             hint: {
-              text: ""
+              text: "Enter a description of the payment, the date it was paid and amount."
             },
             id: "disregards-windrush-yes",
             name: "disregards-windrush-yes",
@@ -151,9 +163,10 @@
         {% set infectedBlood %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                            },
+              html: "<strong>The McFarlane Trust</strong><br><strong>McFarlane (Special Payments) Trust</strong><br><strong>Trust MFET Limited </strong><br><strong>The Skipton Fund </strong><br><strong>The Caxton Foundation </strong><br><strong>The Scottish Infected Blood Support Scheme or an approved blood scheme</strong><br><br>Disregard indefinitely<br><br>"
+             },
             hint: {
-              text: ""
+              text: "Enter a description of the payment, the date it was paid and amount."
             },
             id: "disregards-blood-yes",
             name: "disregards-blood-yes",
@@ -177,14 +190,14 @@
             text: ""
           },
           items: [
-            {
-              name: 'arrears',
-              value: "Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error",
-              html: "Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error",
-              conditional: {
-                html: arrearsOver
-              }
-            },
+          {
+            name: 'council',
+            value: "Payments related to Council Tax Reduction",
+            html: "Payments related to Council Tax Reduction",
+            conditional: {
+              html: council
+            }
+          },
             {
               name: 'warpayment',
               value: "Compensation payments related to the second world war or service in the armed forces",
@@ -219,10 +232,18 @@
             },
             {
               name: 'independently-living',
-              value: "Payments made to you to help you live independently in your own home or the community",
-              html: "Payments made to you to help you live independently in your own home or the community",
+              value: "Money to help you live independently in your own home or the community",
+              html: "Money to help you live independently in your own home or the community",
               conditional: {
                 html: independentlyLiving
+              }
+            },
+            {
+              name: 'incident-payments',
+              value: "Payments to help you if you have been involved in an incident or emergency",
+              html: "Payments to help you if you have been involved in an incident or emergency",
+              conditional: {
+                html: incidentPayment
               }
             },
             {

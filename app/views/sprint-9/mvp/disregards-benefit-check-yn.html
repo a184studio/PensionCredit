@@ -22,9 +22,11 @@
         {% set arrearsOver %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"},
+              html: "<strong>Arrears of benefits up to £5,000
+</strong> Disregard for 52 weeks<br><br><strong>Arrears of benefits of £5,000 or over</strong> Disregard indefinitely<br><br><strong>Payments of £5,000 or more to correct or compensate for official errors or late payment of benefit
+</strong> Disregard for 52 weeks<br><br>"},
             hint: {
-              text: "This is disregsarded for X amount of months."
+              text: "Enter a description of the payment, the date it was paid and the amount."
             },
             id: "disregards-benefit-check-yes",
             name: "disregards-benefit-check-yes",
@@ -39,14 +41,12 @@
           name: "disregards-benefit-check-yn",
           fieldset: {
             legend: {
-              html: "Agent: Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error",
+              html: "Agent: Has the claimant had any payments for arrears of benefits, or any payments to correct or compensate for an official error?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
-          hint: {
-            text: "XXX"
-          },
+
           items: [
             {
               value: "Yes",
