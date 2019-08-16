@@ -30,7 +30,7 @@
 
   <p class="govuk-body">Finish and close to go back to the start page to take another application.</p>
 
-</div></div></div>
+</div>
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -43,280 +43,214 @@
 <form action="done-hrt" method="post">
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-s pc-row-head-10">
-        Personal information and declaration
-      </h3>
-      <p></p>
-    </div>
+  <h2 class="govuk-heading-m">Application details</h2>
 
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
+    {
+      key: {
+        text: "Do you agree to how we use your personal information?"
+      },
+      value: {
+        text: data['agrees-privacy']
+      },
+      actions: {
+        items: [
+          {
+            href: "start",
+            text: "Change",
+            visuallyHiddenText: "Change agreement to privacy policy"
+          }
+        ]
+      }
+    },
 
-    <div class="govuk-grid-column-two-thirds">
-
-          {{ govukSummaryList({
-            rows: [
-            {
-              key: {
-                text: "Do you agree to how we use your personal information?"
-              },
-              value: {
-                text: data['agrees-privacy']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "start",
-                    text: "Change",
-                    visuallyHiddenText: "Change agreement to privacy policy"
-                  }
-                ]
-              }
-            },
-
-            {
-              classes: 'govuk-summary-list--no-border',
-              key: {
-                text: "Do you agree to the declaration?"
-              },
-              value: {
-                text: data['pre-declaration']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "pre-declaration",
-                    text: "Change",
-                    visuallyHiddenText: "Change agreement to declaration"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
-
-  </div></div>
-
-
-  <!----Break---->
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-  </div>
-  <!----Break---->
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-s pc-row-head-10">
-        Claimant or representative
-      </h3>
-      <p></p>
-    </div>
-
-
-    <div class="govuk-grid-column-two-thirds">
-
-          {{ govukSummaryList({
-            rows: [
-
-            {
-              classes: 'govuk-summary-list--no-border',
-              key: {
-                text: "Who you are claiming for"
-              },
-              value: {
-                text: data['claiming-for']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "who-is-caller",
-                    text: "Change",
-                    visuallyHiddenText: "Change who you are claiming for"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
-
-  </div></div>
-
-
-  <!----Break---->
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-  </div>
-  <!----Break---->
+    {
+      classes: 'govuk-summary-list',
+      key: {
+        text: "Do you agree to the declaration?"
+      },
+      value: {
+        text: data['pre-declaration']
+      },
+      actions: {
+        items: [
+          {
+            href: "pre-declaration",
+            text: "Change",
+            visuallyHiddenText: "Change agreement to declaration"
+          }
+        ]
+      }
+    }
+    ]
+  }) }}
 
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-s pc-row-head-10">
-        About you
-      </h3>
-      <p></p>
-    </div>
+  <br><br><h2 class="govuk-heading-m">Claimant or representative</h2>
 
 
-    <div class="govuk-grid-column-two-thirds">
-
-          {{ govukSummaryList ({
-            rows: [
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
 
               {
+                classes: 'govuk-summary-list',
                 key: {
-                  text: "Name"
+                  text: "Who you are claiming for"
                 },
                 value: {
-                  text: data["full-name"]
+                  text: data['claiming-for']
                 },
                 actions: {
                   items: [
                     {
-                      href: "name-and-nino",
+                      href: "who-is-caller",
                       text: "Change",
-                      visuallyHiddenText: "Change name"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "National Insurance number"
-                },
-                value: {
-                  text: data["nino"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "name-and-nino",
-                      text: "Change",
-                      visuallyHiddenText: "Change National Insurance number"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Number you are calling from"
-                },
-                value: {
-                  text: data["telephone-number"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "name-and-nino",
-                      text: "Change",
-                      visuallyHiddenText: "Change number you are calling from"
-                    }
-                  ]
-                }
-              },
-              {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                  text: "Date of birth"
-                },
-                value: {
-                  text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "over-spa",
-                      text: "Change",
-                      visuallyHiddenText: "Change date of birth"
+                      visuallyHiddenText: "Change who you are claiming for"
                     }
                   ]
                 }
               }
-            ]
-          }) }}
+              ]
+            }) }}
 
-  </div></div>
-
-
-  <!----Break---->
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-  </div>
-  <!----Break---->
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-s pc-row-head-10">
-        Eligibility
-      </h3>
-      <p></p>
-    </div>
+            <br><br><h2 class="govuk-heading-m">About you</h2>
 
 
-    <div class="govuk-grid-column-two-thirds">
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
 
-          {{ govukSummaryList({
-            rows: [
-            {
-              key: {
-                text: "Do you live in the UK?"
-              },
-              value: {
-                text: data['resides-in-uk']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "reside-in-uk",
-                    text: "Change",
-                    visuallyHiddenText: "Change whether you live in the UK"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Have you lived permanently in the UK for the last 2 years?"
-              },
-              value: {
-                text: data['lived-abroad']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "lived-abroad",
-                    text: "Change",
-                    visuallyHiddenText: "Change whether you have lived permanently in the UK for the last 2 years"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Are you a UK national?"
-              },
-              value: {
-                text: data['uk-national']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "uk-national",
-                    text: "Change",
-                    visuallyHiddenText: "Change whether you are a UK national"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
+                          {
+                            key: {
+                              text: "Name"
+                            },
+                            value: {
+                              text: data["full-name"]
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "name-and-nino",
+                                  text: "Change",
+                                  visuallyHiddenText: "Change name"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            key: {
+                              text: "National Insurance number"
+                            },
+                            value: {
+                              text: data["nino"]
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "name-and-nino",
+                                  text: "Change",
+                                  visuallyHiddenText: "Change National Insurance number"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            key: {
+                              text: "Number you are calling from"
+                            },
+                            value: {
+                              text: data["telephone-number"]
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "name-and-nino",
+                                  text: "Change",
+                                  visuallyHiddenText: "Change number you are calling from"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            key: {
+                              text: "Date of birth"
+                            },
+                            value: {
+                              text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "over-spa",
+                                  text: "Change",
+                                  visuallyHiddenText: "Change date of birth"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }) }}
+
+                      {{ govukSummaryList({
+                        rows: [
+                        {
+                          key: {
+                            text: "Do you live in the UK?"
+                          },
+                          value: {
+                            text: data['resides-in-uk']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "reside-in-uk",
+                                text: "Change",
+                                visuallyHiddenText: "Change whetehr you live in the UK"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          key: {
+                            text: "Have you lived permanently in the UK for the last 2 years?"
+                          },
+                          value: {
+                            text: data['lived-abroad']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "lived-abroad",
+                                text: "Change",
+                                visuallyHiddenText: "Change whether you have lived permanently in the UK for the last 2 years"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          key: {
+                            text: "Are you a UK national?"
+                          },
+                          value: {
+                            text: data['uk-national']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "uk-national",
+                                text: "Change",
+                                visuallyHiddenText: "Change whether you are a UK national"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          classes: 'govuk-summary-list',
+                          key: {
                 text: "Who else live with you?"
               },
               value: {
@@ -387,7 +321,6 @@
             ]
           }) }}
 
-  </div></div>
 
 
 <!----Break---->
@@ -425,13 +358,16 @@ text: "Confirm that you have downloaded the PDF"
 ]
 }) }}
 
+
+
 <br>
 
 {{ govukButton({
   text: "Finish and close",
   href: "start"
 }) }}
-</form>
+
+</div></div>
 
 <!----Break---->
 
