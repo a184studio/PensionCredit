@@ -216,6 +216,21 @@ padding-bottom:0;
   margin-bottom:0;
 }
 
+.govuk-panel--agent-single {
+  background-color:#fff;
+  border: 20px;
+  border-color: govuk-colour("blue");
+  border-style: solid;
+  border-width: 0px 0px 0px 10px;
+  padding-left: 30px;
+  padding-top: 12px;
+  padding-bottom:1px;
+  margin-bottom:15px;
+}
+
+
+
+
 .agent-action{
     color: govuk-colour("black");
 }

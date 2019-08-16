@@ -948,6 +948,74 @@ router.post(`${baseUrl}/benefit-industrial-death-benefit-yn-router`, (req, res) 
 
 
 
+router.post(`${baseUrl}/other-income-spousal-maintenance-yn-router`, (req, res) => {
+  const otherIncomespousalMaintenanceYN = req.session.data['other-income-spousal-maintenance-yn']
+
+  if (otherIncomespousalMaintenanceYN === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-spousal-maintenance-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-working-tax-credits-yn`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/other-income-working-tax-credits-yn-router`, (req, res) => {
+  const otherIncomeworkingTaxCreditsYN = req.session.data['other-income-working-tax-credits-yn']
+
+  if (otherIncomeworkingTaxCreditsYN === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-working-tax-credits-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-benefits-aboard-yn`)
+  }
+})
+
+
+router.post(`${baseUrl}/other-income-benefits-aboard-yn-router`, (req, res) => {
+  const otherIncomesickPayYN = req.session.data['other-income-benefits-aboard-yn']
+
+  if (otherIncomesickPayYN === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-benefits-aboard-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-sick-pay-yn`)
+  }
+})
+
+router.post(`${baseUrl}/other-income-sick-pay-yn-router`, (req, res) => {
+  const otherIncomesickPayYN = req.session.data['other-income-sick-pay-yn']
+
+  if (otherIncomesickPayYN === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-sick-pay-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-royalties-yn`)
+  }
+})
+
+router.post(`${baseUrl}/other-income-equity-release-yn-router`, (req, res) => {
+  const otherIncomeequityReleaseYN = req.session.data['other-income-equity-release-yn']
+
+  if (otherIncomeequityReleaseYN === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-equity-release-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-everything-else-yn`)
+  }
+})
+
+router.post(`${baseUrl}/other-income-everything-else-yn-router`, (req, res) => {
+  const otherIncomeEverythingElse = req.session.data['other-income-everything-else-yn']
+
+  if (otherIncomeEverythingElse === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-everything-else-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-summary`)
+  }
+})
+
+
+
+// Other Income END
+
+
 router.post(`${baseUrl}/disregards-capital-total-yn-router`, (req, res) => {
   const hasSecondProperty = req.session.data['disregards-capital-total-yn']
 
