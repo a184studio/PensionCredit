@@ -1020,7 +1020,7 @@ router.post(`${baseUrl}/disregards-capital-total-yn-router`, (req, res) => {
   const hasSecondProperty = req.session.data['disregards-capital-total-yn']
 
   if (hasSecondProperty === 'Yes') {
-    res.redirect(`${baseUrl}/disregards-monolith-2`)
+    res.redirect(`${baseUrl}/disregards-benefit-check-yn`)
   } else {
     res.redirect(`${baseUrl}/disregards-summary`)
   }

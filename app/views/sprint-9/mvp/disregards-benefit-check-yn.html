@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Disregard types - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="disregards-monolith-2" method="post" class="form">
+
+        <input type="hidden" name="disregards-complete" value="in-progress"/>
+
+      <div class="govuk-panel--agent">
+
+        {% set arrearsOver %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"},
+            hint: {
+              text: "This is disregsarded for X amount of months."
+            },
+            id: "disregards-benefit-check-yes",
+            name: "disregards-benefit-check-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        {{ govukRadios({
+          name: "disregards-benefit-check-yn",
+          fieldset: {
+            legend: {
+              html: "Agent: Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "XXX"
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["disregards-benefit-check-yn"] == "Yes"),
+              conditional: {
+                html: arrearsOver
+              }
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["disregards-benefit-check-yn"] == "No")
+            }
+          ]
+        }) }}
+
+
+
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
+
+    </div>
+  </div>
+{% endblock %}
