@@ -185,7 +185,40 @@
                                     </div>
                                     {% endif %}
 
-<br>
+
+                                    <br>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    other-income-equity-release-yn
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    {{ data["other-income-equity-release-yn"] }}
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                    <a href="other-income-royalties-yn">
+                                      Change
+                                    </a>
+                                  </dd>
+                                </div>
+
+
+                                {% if data["other-income-equity-release-yn"] %}
+                                      <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                          Details
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                          Details, {{ data["other-income-equity-release-yn"] }}
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                          <a href="other-income-royalties-yes">
+                                            Change
+                                          </a>
+                                        </dd>
+                                      </div>
+                                      {% endif %}
+
+                                    <br>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                   other-income-everything-else-yn

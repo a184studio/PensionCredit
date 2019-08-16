@@ -991,6 +991,18 @@ router.post(`${baseUrl}/other-income-sick-pay-yn-router`, (req, res) => {
   }
 })
 
+
+
+router.post(`${baseUrl}/other-income-royalties-yn-router`, (req, res) => {
+  const otherIncomeequityReleaseYN = req.session.data['other-income-royalties-yn']
+
+  if (otherIncomeequityReleaseYN === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-royalties-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-equity-release-yn`)
+  }
+})
+
 router.post(`${baseUrl}/other-income-equity-release-yn-router`, (req, res) => {
   const otherIncomeequityReleaseYN = req.session.data['other-income-equity-release-yn']
 

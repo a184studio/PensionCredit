@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="other-income-equity-release-yn-router" method="post" class="form">
+    <form action="other-income-royalties-yn-router" method="post" class="form">
 
       <input type="hidden" name="employment-complete" value="in-progress"/>
 
@@ -38,14 +38,14 @@
             },
             items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
-            checked: (data["other-income-royalties-yn"] == "yes")
+            checked: (data["other-income-royalties-yn"] == "Yes")
           },
           {
-            value: "no",
+            value: "No",
             text: "No",
-            checked: (data["other-income-royalties-yn"] == "no")
+            checked: (data["other-income-royalties-yn"] == "No")
           }
         ]
       }) }}
