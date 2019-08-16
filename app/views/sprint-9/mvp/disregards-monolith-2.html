@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  disregards-types - Pension Credit
+  Disregard types - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -19,12 +19,6 @@
 
         <h1 class="govuk-heading-xl">The list @niall checkbox spacing to wide</h1>
 
-
-
-        <div class="govuk-panel--agent">
-          <h2 class="govuk-heading-m"><span class="agent-action">Agent: </span>Check in digital</h2>
-
-
         {% set arrearsOver %}
           {{ govukTextarea({
             label: {
@@ -41,10 +35,137 @@
           }) }}
         {% endset %}
 
+        {% set warPaymentYes %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"              },
+            hint: {
+              text: ""
+            },
+            id: "disregards-warpayment-yes",
+            name: "disregards-warpayment-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        {% set compensationInjury %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                },
+            hint: {
+              text: ""
+            },
+            id: "disregards-compensation-for-injury-yes",
+            name: "disregards-compensation-for-injury-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        {% set ContentsInsurance %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"
+            },
+            hint: {
+              text: ""
+            },
+            id: "disregards-contents-insurance-yes",
+            name: "disregards-contents-insurance-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        {% set moneyForProperty %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                    },
+            hint: {
+              text: ""
+            },
+            id: "disregards-money-for-property-yes",
+            name: "disregards-money-for-property-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        {% set independentlyLiving %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                      },
+            hint: {
+              text: ""
+            },
+            id: "disregards-independently-living-yes",
+            name: "disregards-independently-living-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        {% set incidentPayment %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                        },
+            hint: {
+              text: ""
+            },
+            id: "disregards-incident-payment-yes",
+            name: "disregards-incident-payment-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        {% set windrushYes %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                          },
+            hint: {
+              text: ""
+            },
+            id: "disregards-windrush-yes",
+            name: "disregards-windrush-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        {% set infectedBlood %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                            },
+            hint: {
+              text: ""
+            },
+            id: "disregards-blood-yes",
+            name: "disregards-blood-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
 
         {{ govukCheckboxes({
-          idPrefix: "disregards-arrers-yn",
-          name: "disregards-arrers-yn",
+          name: "disregards",
           fieldset: {
             legend: {
               text: "",
@@ -55,386 +176,73 @@
           hint: {
             text: ""
           },
-
           items: [
             {
+              name: 'arrears',
               value: "Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error",
               html: "Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error",
               conditional: {
                 html: arrearsOver
               }
+            },
+            {
+              name: 'warpayment',
+              value: "Compensation payments related to the second world war or service in the armed forces",
+              html: "Compensation payments related to the second world war or service in the armed forces",
+              conditional: {
+                html: warPaymentYes
+              }
+            },
+            {
+              name: 'compensation-for-injury',
+              value: "Personal injury claim payments",
+              html: "Personal injury claim payments",
+              conditional: {
+                html: compensationInjury
+              }
+            },
+            {
+              name: "contents-insurance",
+              value: "Payments from a home insurance policy to covered lost or damaged personal possessions",
+              html: "Payments from a home insurance policy to covered lost or damaged personal possessions",
+              conditional: {
+                html: ContentsInsurance
+              }
+            },
+            {
+              name: 'money-for-property',
+              value: "Money that you intend to use to buy or make essential repairs to your main home",
+              html: "Money that you intend to use to buy or make essential repairs to your main home",
+              conditional: {
+                html: moneyForProperty
+              }
+            },
+            {
+              name: 'independently-living',
+              value: "Payments made to you to help you live independently in your own home or the community",
+              html: "Payments made to you to help you live independently in your own home or the community",
+              conditional: {
+                html: independentlyLiving
+              }
+            },
+            {
+              name: 'windrush',
+              value: "Windrush child compensation",
+              html: "Windrush child compensation",
+              conditional: {
+                html: windrushYes
+              }
+            },
+            {
+              name: 'blood',
+              value: "Money paid to you to support you with the effects of a blood infection or vCJD",
+              html: "Money paid to you to support you with the effects of a blood infection or vCJD",
+              conditional: {
+                html: infectedBlood
+              }
             }
           ]
         }) }}
-
-                </div>
-
-  <!-------------- Check ---------------------->
-
-          {% set warPaymentYes %}
-            {{ govukTextarea({
-              label: {
-                html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"              },
-              hint: {
-                text: ""
-              },
-              id: "disregards-warpayment-yes",
-              name: "disregards-warpayment-yes",
-              classes: "govuk-input--width-30",
-              attributes: {
-                maxlength: 200
-              }
-            }) }}
-          {% endset %}
-
-
-          {{ govukCheckboxes({
-            idPrefix: "disregards-warpayment-yn",
-            name: "disregards-warpayment-yn",
-            fieldset: {
-              legend: {
-                text: "",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            hint: {
-              text: ""
-            },
-
-            items: [
-              {
-                value: "Compensation payments related to the second world war or service in the armed forces",
-                html: "Compensation payments related to the second world war or service in the armed forces",
-                conditional: {
-                  html: warPaymentYes
-                }
-              }
-            ]
-          }) }}
-
-
-
-    <!-------------- Check ---------------------->
-
-            {% set compensationInjury %}
-              {{ govukTextarea({
-                label: {
-                  html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                },
-                hint: {
-                  text: ""
-                },
-                id: "disregards-compensation-for-injury-yes",
-                name: "disregards-compensation-for-injury-yes",
-                classes: "govuk-input--width-30",
-                attributes: {
-                  maxlength: 200
-                }
-              }) }}
-            {% endset %}
-
-
-            {{ govukCheckboxes({
-              idPrefix: "disregards-compensation-for-injury-yn",
-              name: "disregards-compensation-for-injury-yn",
-              fieldset: {
-                legend: {
-                  text: "",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--s"
-                }
-              },
-              hint: {
-                text: ""
-              },
-
-              items: [
-                {
-                  value: "Personal injury claim payments",
-                  html: "Personal injury claim payments",
-                  conditional: {
-                    html: compensationInjury
-                  }
-                }
-              ]
-            }) }}
-
-      <!-------------- Check ---------------------->
-
-              {% set ContentsInsurance %}
-                {{ govukTextarea({
-                  label: {
-                    html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"
-                  },
-                  hint: {
-                    text: ""
-                  },
-                  id: "disregards-contents-insurance-yes",
-                  name: "disregards-contents-insurance-yes",
-                  classes: "govuk-input--width-30",
-                  attributes: {
-                    maxlength: 200
-                  }
-                }) }}
-              {% endset %}
-
-
-              {{ govukCheckboxes({
-                idPrefix: "disregards-contents-insurance-yn",
-                name: "disregards-contents-insurance-yn",
-                fieldset: {
-                  legend: {
-                    text: "",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--s"
-                  }
-                },
-                hint: {
-                  text: ""
-                },
-
-                items: [
-                  {
-                    value: "Payments from a home insurance policy to covered lost or damaged personal possessions",
-                    html: "Payments from a home insurance policy to covered lost or damaged personal possessions",
-                    conditional: {
-                      html: ContentsInsurance
-                    }
-                  }
-                ]
-              }) }}
-
-        <!-------------- Check ---------------------->
-
-                {% set moneyForProperty %}
-                  {{ govukTextarea({
-                    label: {
-                      html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                    },
-                    hint: {
-                      text: ""
-                    },
-                    id: "disregards-money-for-property-yes",
-                    name: "disregards-money-for-property-yes",
-                    classes: "govuk-input--width-30",
-                    attributes: {
-                      maxlength: 200
-                    }
-                  }) }}
-                {% endset %}
-
-
-                {{ govukCheckboxes({
-                  idPrefix: "disregards-money-for-property-yn",
-                  name: "disregards-money-for-property-yn",
-                  fieldset: {
-                    legend: {
-                      text: "",
-                      isPageHeading: true,
-                      classes: "govuk-fieldset__legend--s"
-                    }
-                  },
-                  hint: {
-                    text: ""
-                  },
-
-                  items: [
-                    {
-                      value: "Money that you intend to use to buy or make essential repairs to your main home",
-                      html: "Money that you intend to use to buy or make essential repairs to your main home",
-                      conditional: {
-                        html: moneyForProperty
-                      }
-                    }
-                  ]
-                }) }}
-
-          <!-------------- Check ---------------------->
-
-                  {% set independentlyLiving %}
-                    {{ govukTextarea({
-                      label: {
-                        html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                      },
-                      hint: {
-                        text: ""
-                      },
-                      id: "disregards-independently-living-yes",
-                      name: "disregards-independently-living-yes",
-                      classes: "govuk-input--width-30",
-                      attributes: {
-                        maxlength: 200
-                      }
-                    }) }}
-                  {% endset %}
-
-
-                  {{ govukCheckboxes({
-                    idPrefix: "disregards-independently-living-yn",
-                    name: "disregards-independently-living-yn",
-                    fieldset: {
-                      legend: {
-                        text: "",
-                        isPageHeading: true,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    hint: {
-                      text: ""
-                    },
-
-                    items: [
-                      {
-                        value: "Payments made to you to help you live independently in your own home or the community",
-                        html: "Payments made to you to help you live independently in your own home or the community",
-                        conditional: {
-                          html: independentlyLiving
-                        }
-                      }
-                    ]
-                  }) }}
-
-            <!-------------- Check ---------------------->
-
-
-                    {% set incidentPayment %}
-                      {{ govukTextarea({
-                        label: {
-                          html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                        },
-                        hint: {
-                          text: ""
-                        },
-                        id: "disregards-incident-payment-yes",
-                        name: "disregards-incident-payment-yes",
-                        classes: "govuk-input--width-30",
-                        attributes: {
-                          maxlength: 200
-                        }
-                      }) }}
-                    {% endset %}
-
-
-                    {{ govukCheckboxes({
-                      idPrefix: "disregards-incident-payment-yn",
-                      name: "disregards-incident-payment-yn",
-                      fieldset: {
-                        legend: {
-                          text: "",
-                          isPageHeading: true,
-                          classes: "govuk-fieldset__legend--s"
-                        }
-                      },
-                      hint: {
-                        text: ""
-                      },
-
-                      items: [
-                        {
-                          value: "Payments made to you by a trust or discretionary fund follwing an incident or emergency",
-                          html: "Payments made to you by a trust or discretionary fund follwing an incident or emergency",
-                          conditional: {
-                            html: incidentPayment
-                          }
-                        }
-                      ]
-                    }) }}
-
-              <!-------------- Check ---------------------->
-
-
-                      {% set windrushYes %}
-                        {{ govukTextarea({
-                          label: {
-                            html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                          },
-                          hint: {
-                            text: ""
-                          },
-                          id: "disregards-windrush-yes",
-                          name: "disregards-windrush-yes",
-                          classes: "govuk-input--width-30",
-                          attributes: {
-                            maxlength: 200
-                          }
-                        }) }}
-                      {% endset %}
-
-
-                      {{ govukCheckboxes({
-                        idPrefix: "disregards-windrush-yn",
-                        name: "disregards-windrush-yn",
-                        fieldset: {
-                          legend: {
-                            text: "",
-                            isPageHeading: true,
-                            classes: "govuk-fieldset__legend--s"
-                          }
-                        },
-                        hint: {
-                          text: ""
-                        },
-
-                        items: [
-                          {
-                            value: "Windrush child compensation",
-                            html: "Windrush child compensation",
-                            conditional: {
-                              html: windrushYes
-                            }
-                          }
-                        ]
-                      }) }}
-
-                <!-------------- Check ---------------------->
-
-
-                        {% set infectedBlood %}
-                          {{ govukTextarea({
-                            label: {
-                              html: "<strong>Item 1</strong> Allowable for X weeks<br><br><strong>Item 2</strong> Allowable for X weeks<br><br><strong>Item 3</strong> Allowable for X weeks<br><br><strong>Item 4</strong> Allowable for X weeks"                            },
-                            hint: {
-                              text: ""
-                            },
-                            id: "disregards-blood-yes",
-                            name: "disregards-blood-yes",
-                            classes: "govuk-input--width-30",
-                            attributes: {
-                              maxlength: 200
-                            }
-                          }) }}
-                        {% endset %}
-
-
-                        {{ govukCheckboxes({
-                          idPrefix: "disregards-blood-yn",
-                          name: "disregards-blood-yn",
-                          fieldset: {
-                            legend: {
-                              text: "",
-                              isPageHeading: true,
-                              classes: "govuk-fieldset__legend--s"
-                            }
-                          },
-                          hint: {
-                            text: ""
-                          },
-
-                          items: [
-                            {
-                              value: "Money paid to you to support you with the effects of a blood infection or vCJD",
-                              html: "Money paid to you to support you with the effects of a blood infection or vCJD",
-                              conditional: {
-                                html: infectedBlood
-                              }
-                            }
-                          ]
-                        }) }}
-
-                  <!-------------- Check ---------------------->
-
-
-        <!------------------------------------>
-
-
-  <br>
-
 
         {{ govukButton({
           text: "Continue"
