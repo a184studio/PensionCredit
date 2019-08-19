@@ -24,13 +24,48 @@
 
                 <dl class="govuk-summary-list govuk-summary-list--long">
 
+
+                  {% if data["disregards-benefit-check-yn"] %}
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Has more than £10,000
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            {{ data["disregards-benefit-check-yn"] }}
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a href="home-ownership">
+                              Change
+                            </a>
+                          </dd>
+                        </div>
+                        {% endif %}
+
+                        <br>
+
+
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Agent: Has the claimant had any payments for arrears of benefits, or any payments to correct or compensate for an official error?
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  {{ data["disregards-benefit-check-yn"] }}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="home-ownership">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
+
+
             {% if data["disregards-capital-total-yn"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Has more than £10,000
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data["disregards-capital-total-yn"] }}
+                      {{ data["disregards-benefit-check-yes"] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                       <a href="home-ownership">
@@ -45,7 +80,7 @@
 
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            Payments for arrears of benefits or Council Tax Reduction, or any payments to correct or compensate you for an official error
+                            Payments related to Council Tax Reduction
                           </dt>
                           <dd class="govuk-summary-list__value">
                             Yes / No
@@ -58,13 +93,13 @@
                         </div>
 
 
-                        {% if data["disregards-arrers-yes"] %}
+                        {% if data["disregards-council-yes"] %}
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                   Details
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  {{ data["disregards-arrers-yes"] }}
+                                  {{ data["disregards-council-yes"] }}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                   <a href="home-ownership">
@@ -332,6 +367,7 @@
                                     </dd>
                                   </div>
                                   {% endif %}
+
 
 <br></dl></dl><br><br>
 
