@@ -69,7 +69,7 @@
       {% if data["contact-mobile-can-call"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Can we call you on a different number? (This number is for when they say yes to text and no to call on mobile)
+            Can we call you on a different number to give you updates on your claim or to ask for more information?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["contact-other-number"] }}
@@ -86,7 +86,7 @@
       {% if data["contact-other-number-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            No to text: Telephone number
+            Can we call you to give you updates on your claim or to ask for more information?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["contact-other-number-yn"] }}
@@ -102,7 +102,7 @@
       {% if data["contact-other-number-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            This telephone number is for when they say no to text telephone: Telephone number
+            Can we call you to give you updates on your claim or to ask for more information?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["contact-other-number"] }}
@@ -167,7 +167,7 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Do you need letters by email?
+          Do you need us to send letters by email?
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["contact-formats-email-yn"] }}
