@@ -66,13 +66,13 @@
       </div>
 
 
-      {% if data["contact-mobile-can-call"] %}
+      {% if data["contact-mobile-can-call-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Can we call you on a different number to give you updates on your claim or to ask for more information?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["contact-other-number"] }}
+            {{ data["contact-mobile-can-call-number"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="contact-text-yn">
@@ -83,13 +83,13 @@
       {% endif %}
 
 
-      {% if data["contact-other-number-yn"] %}
+      {% if data["contact-mobile-can-call-number"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Can we call you to give you updates on your claim or to ask for more information?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["contact-other-number-yn"] }}
+            {{ data["contact-mobile-can-call-number"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="contact-text-yn">
