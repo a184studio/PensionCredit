@@ -66,44 +66,10 @@
       </div>
 
 
-
       {% if data["contact-mobile-can-call"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Can we call you on a different number?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["contact-mobile-can-call"] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="contact-text-yn">
-              Change
-            </a>
-          </dd>
-        </div>
-      {% endif %}
-
-{% if data["contact-mobile-can-call"] %}
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-    Number 2 number yn
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data["contact-other-number"] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="contact-text-yn">
-        Change
-      </a>
-    </dd>
-  </div>
-{% endif %}
-
-
-      {% if data["contact-other-number-yn"] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Number 2 number
+            Can we call you on a different number? (This number is for when they say yes to text and no to call on mobile)
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["contact-other-number"] }}
@@ -116,10 +82,27 @@
         </div>
       {% endif %}
 
+
       {% if data["contact-other-number-yn"] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Telephone number
+            No to text: Telephone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["contact-other-number-yn"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="contact-text-yn">
+              Change
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+
+      {% if data["contact-other-number-yn"] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            This telephone number is for when they say no to text telephone: Telephone number
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data["contact-other-number"] }}
