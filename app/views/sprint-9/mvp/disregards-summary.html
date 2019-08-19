@@ -28,7 +28,7 @@
                   {% if data["disregards-benefit-check-yn"] %}
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            Has more than £10,000
+                            Claimant has more than £10,000?
                           </dt>
                           <dd class="govuk-summary-list__value">
                             {{ data["disregards-benefit-check-yn"] }}
@@ -46,7 +46,7 @@
 
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Agent: Has the claimant had any payments for arrears of benefits, or any payments to correct or compensate for an official error?
+                                  Payments for arrears of benefits, or any payments to correct or compensate for an official error?
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["disregards-benefit-check-yn"] }}
@@ -62,7 +62,7 @@
             {% if data["disregards-capital-total-yn"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Details
+                      Details of benefit arrears, correction or compensation payments
                     </dt>
                     <dd class="govuk-summary-list__value">
                       {{ data["disregards-benefit-check-yes"] }}
@@ -96,7 +96,7 @@
                         {% if data["disregards-council-yes"] %}
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Details
+                                  Details of payments related to Council Tax Reduction
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["disregards-council-yes"] }}
@@ -130,7 +130,7 @@
                         {% if data["disregards-warpayment-yes"] %}
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Details
+                                  Details of compensation payments related to the second world war or service in the armed forces
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["disregards-warpayment-yes"] }}
@@ -162,7 +162,7 @@
                               {% if data["disregards-compensation-for-injury-yes"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        Details
+                                        Details of personal injury claim payments
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["disregards-compensation-for-injury-yes"] }}
@@ -194,7 +194,7 @@
                               {% if data["disregards-contents-insurance-yes"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        Details
+                                        Details of payments from a home insurance policy to covered lost or damaged personal possessions
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["disregards-contents-insurance-yes"] }}
@@ -226,7 +226,7 @@
                               {% if data["disregards-money-for-property-yes"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        Details
+                                        Details of money that you intend to use to buy or make essential repairs to your main home
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["disregards-money-for-property-yes"] }}
@@ -258,7 +258,7 @@
                               {% if data["disregards-independently-living-yes"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        Details
+                                        Details of payments made to you to help you live independently in your own home or the community
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["disregards-independently-living-yes"] }}
@@ -291,7 +291,7 @@
                               {% if data["disregards-incident-payment-yes"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        Details
+                                        Details of payyments made to you by a trust or discretionary fund follwing an incident or emergency
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["disregards-incident-payment-yes"] }}
@@ -323,7 +323,7 @@
                               {% if data["disregards-windrush-yes"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        Details
+                                        Details of Windrush child compensation
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["disregards-windrush-yes"] }}
@@ -355,7 +355,7 @@
                             {% if data["disregards-blood-yes"] %}
                                   <div class="govuk-summary-list__row">
                                     <dt class="govuk-summary-list__key">
-                                      Details
+                                      Details of money paid to you to support you with the effects of a blood infection or vCJD
                                     </dt>
                                     <dd class="govuk-summary-list__value">
                                       {{ data["disregards-blood-yes"] }}
