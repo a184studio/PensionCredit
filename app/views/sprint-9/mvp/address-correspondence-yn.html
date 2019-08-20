@@ -23,7 +23,9 @@
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
-
+      <div class="govuk-panel--agent">
+        <h2 class="govuk-heading-s">Agent: <span class="agent-action">Address for letters: </span><br><br>221B BAKER STREET<br>MARYLEBONE<br>LONDON<br>NW1 5RT</h2>
+      </div>
 
       {{ govukRadios({
         classes: "govuk-radios",
@@ -31,14 +33,14 @@
         name: "address-correspondence-yn",
         fieldset: {
           legend: {
-            html: "Is 221b Baker Street your home address?",
+            html: "Is your home address the same as the address your letters go to?",
 
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: " "
+          text: ""
         },
 
         items: [
