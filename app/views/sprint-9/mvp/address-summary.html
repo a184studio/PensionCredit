@@ -20,9 +20,25 @@
     </h1>
 
     <dl class="govuk-summary-list govuk-summary-list--long">
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Is 221b Baker Street your home address?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data["address-correspondence-yn"] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="address-correspondence-yn">
+          Change
+        </a>
+      </dd>
+    </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Address
+          Home address
         </dt>
         <dd class="govuk-summary-list__value">
           221B Baker Street<br>
