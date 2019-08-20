@@ -26,6 +26,16 @@
       <h1 class="govuk-heading-xl"><span class="agent-action">Add benefit details</h1>
 
 
+
+
+
+
+
+
+
+
+
+
         {% set benefitWarDisablementDateYes %}
           {{ govukDateInput({
             id: "benefits-war-widows-pensions-yes-date",
@@ -80,7 +90,7 @@
           },
             {
               value: "no-date",
-              text: "Unknown",
+              text: "Unsure",
               checked: (data["benefits-war-widows-pensions-date-yn"] == "No")
             }
           ]
@@ -123,14 +133,58 @@
           ]
         }) }}
 
-        {{ govukInput({
-        label: {
-          html: "<strong>How much money do you get?</strong>"
+
+        <!------------------------->
+
+
+
+
+
+
+      <!------------------------->
+
+      {% set benefitsWarWidowsPensionsAmountYes %}
+      {{ govukInput({
+      label: {
+        html: "How much money do you get?"
+      },
+      id: "benefits-war-widows-pensions-amount",
+      name: "benefits-war-widows-pensions-amount",
+      classes: "govuk-input--width-20"
+    }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "benefits-war-widows-pensions-amount-yn",
+        name: "benefits-war-widows-pensions-amount-yn",
+        fieldset: {
+          legend: {
+            html: "Do you know how much it was for?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
         },
-        id: "benefits-war-widows-pensions-amount",
-        name: "benefits-war-widows-pensions-amount",
-        classes: "govuk-input--width-20"
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "yes-date",
+          text: "Yes",
+          checked: (data["benefits-war-widows-pensions-amount-yn"] == "Yes"),
+          conditional: {
+            html: benefitsWarWidowsPensionsAmountYes
+          }
+        },
+          {
+            value: "no-date",
+            text: "Unsure",
+            checked: (data["benefits-war-widows-pensions-amount-yn"] == "No")
+          }
+        ]
       }) }}
+
 
 
       {{ govukButton({
