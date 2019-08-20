@@ -56,7 +56,7 @@ router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
 router.post(`${baseUrl}/address-correspondence-yn-router`, (req, res) => { // router name
   const correspondenceYN = req.session.data['address-correspondence-yn']  // name of data / id name
 
-  if (correspondenceYN === 'differnt address') { // name of data / + answer
+  if (correspondenceYN === 'No - I live at a different address') { // name of data / + answer
     res.redirect(`${baseUrl}/post-code-lookup`)
   } else {
     res.redirect(`${baseUrl}/home-ownership`)
