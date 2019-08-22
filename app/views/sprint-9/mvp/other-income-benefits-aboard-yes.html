@@ -18,7 +18,7 @@
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-      <h1 class="govuk-heading-xl"><span class="agent-action">Details</h1>
+      <h1 class="govuk-heading-xl"><span class="agent-action">Entry details</h1>
 
         {% set howOften %}
           {{ govukDateInput({
@@ -184,6 +184,65 @@
         classes: "govuk-input--width-20"
       }) }}
 
+        <!------------------------->
+
+      {{ govukRadios({
+        idPrefix: "other-income-benefits-aboard-pension-yn",
+        name: "other-income-benefits-aboard-pension-yn",
+        fieldset: {
+          legend: {
+          html: "Payment if for a pension",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "XXXX"
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["other-income-benefits-aboard-pension-yn"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["other-income-benefits-aboard-pension-yn"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "other-income-benefits-aboard-disability-yn",
+        name: "other-income-benefits-aboard-disability-yn",
+        fieldset: {
+          legend: {
+          html: "Payment if for a disability",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "XXXX"
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["other-income-benefits-aboard-disability-yn"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["other-income-benefits-aboard-disability-yn"] == "No")
+          }
+        ]
+      }) }}
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
       <!------------------------->
 
       {% set otherIncomeSpousalMaintenanceYes %}
@@ -211,7 +270,7 @@
           }
         },
         hint: {
-          text: ""
+          text: "Type of payment, LumpSum, frequency, currency, amount, pension and disability "
         },
         items: [
         {
@@ -230,36 +289,35 @@
           ]
         }) }}
 
-        <!------------------------->
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      {{ govukRadios({
-        idPrefix: "other-income-benefits-aboard-yes-evidence-yn",
-        name: "other-income-benefits-aboard-yes-evidence-yn",
-        fieldset: {
-          legend: {
-          html: "@phil: Evidence needed?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
+
+        {{ govukRadios({
+          idPrefix: "other-income-benefits-aboard-yes-evidence-yn",
+          name: "other-income-benefits-aboard-yes-evidence-yn",
+          fieldset: {
+            legend: {
+            html: "@phil: Evidence needed?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "I think we need a better understanding of this"
+            },
+            items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "no")
             }
-          },
-          hint: {
-            text: "I think we need a better understanding of this"
-          },
-          items: [
-          {
-            value: "yes",
-            text: "Yes",
-            checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "yes")
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "no")
-          }
-        ]
-      }) }}
-
-
+          ]
+        }) }}
 
 
 

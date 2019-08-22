@@ -92,6 +92,9 @@
         }) }}
         {% endset %}
 
+        <!-------------- Check ---------------------->
+
+
         {% set personalInjuryYes %}
         {{ govukTextarea({
           label: {
@@ -107,6 +110,28 @@
           }
         }) }}
         {% endset %}
+
+        <!-------------- Check ---------------------->
+
+
+        {% set otherCncomeCharitablePaymentsYes %}
+        {{ govukTextarea({
+          label: {
+            html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+          hint: {
+            text: ""
+          },
+          id: "other-income-charitable-payments-yes",
+          name: "other-income-charitable-payments-yes",
+          classes: "govuk-input--width-30",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+        {% endset %}
+
+        <!-------------- Check ---------------------->
+
 
         {% set otherYes %}
         {{ govukTextarea({
@@ -124,6 +149,7 @@
         }) }}
         {% endset %}
 
+        <!------------------------------------>
 
 
         {{ govukCheckboxes({
@@ -185,6 +211,15 @@
               }
             },
             {
+              idPrefix: "other-income-charitable-payments-yn",
+              name: "other-income-charitable-payments-yn",
+              value: "Regular charitable payments",
+              html: "Regular charitable payments",
+              conditional: {
+                html: otherCncomeCharitablePaymentsYes
+              }
+            },
+            {
               idPrefix: "other-income-other-yn",
               name: "other-income-other-yn",
               value: "Other money",
@@ -195,6 +230,8 @@
             }
           ]
         }) }}
+
+
 
 
 
