@@ -20,202 +20,248 @@
 
       <h1 class="govuk-heading-xl"><span class="agent-action">Details for X</h1>
 
+                {% set howOften %}
+                  {{ govukDateInput({
+                    id: "other-income-spousal-maintenance-yes-yes-date",
+                    namePrefix: "other-income-spousal-maintenance-yes-yes-date",
+                    fieldset: {
+                      legend: {
+                        text: "Enter the received"
+                      }
+                    },
+                    items: [
+                      {
+                        name: "day",
+                        classes: "govuk-input--width-2",
+                        value: data["other-income-spousal-maintenance-yes-yes-date-day"]
+                      },
+                      {
+                        name: "month",
+                        classes: "govuk-input--width-2",
+                        value: data["other-income-spousal-maintenance-yes-yes-date-month"]
+                      },
+                      {
+                        name: "year",
+                        classes: "govuk-input--width-4",
+                        value: data["other-income-spousal-maintenance-yes-yes-date-year"]
+                      }
+                    ]
+                  }) }}
+                {% endset -%}
 
-        {% set benefitIndustrialDeathBenefitYes %}
-          {{ govukDateInput({
-            id: "other-income-spousal-maintenance-yes-date",
-            namePrefix: "other-income-spousal-maintenance-yes-date",
-            fieldset: {
-              legend: {
-                text: "Enter the received"
-              }
-            },
-            items: [
-              {
-                name: "day",
-                classes: "govuk-input--width-2",
-                value: data["other-income-spousal-maintenance-yes-date-day"]
-              },
-              {
-                name: "month",
-                classes: "govuk-input--width-2",
-                value: data["other-income-spousal-maintenance-yes-date-month"]
-              },
-              {
-                name: "year",
-                classes: "govuk-input--width-4",
-                value: data["other-income-spousal-maintenance-yes-date-year"]
-              }
-            ]
-          }) }}
-        {% endset -%}
+                {{ govukRadios({
+                  classes: "govuk-radios",
+                  idPrefix: "other-income-spousal-maintenance-yes-date-yn",
+                  name: "other-income-spousal-maintenance-yes-date-yn",
+                  fieldset: {
+                    legend: {
+                      html: "Was this payment made as a lump sum?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  hint: {
+                    text: ""
+                  },
+                  items: [
+                  {
+                      value: "no-date",
+                      text: "Yes",
+                      checked: (data["other-income-spousal-maintenance-yes-date-yn"] == "Yes"),
+                      conditional: {
+                        html: howOften
+                      }
+                    },
+                      {
+                        value: "No",
+                        text: "No",
+                        checked: (data["other-income-spousal-maintenance-yes-date-yn"] == "No")
+                      }
+                    ]
+                  }) }}
 
-
-        {% set howOften %}
-
-        {{ govukRadios({
-          idPrefix: "other-income-spousal-maintenance-payment-frequency-yes",
-          name: "other-income-spousal-maintenance-payment-frequency-yes",
-          fieldset: {
-            legend: {
-              text: "How often do get this?",
-              isPageHeading: true,
-              classes: "<!--govuk-fieldset__legend--s-->"
-              }
-              },
-
-          items: [
-            {
-              value: "Every week",
-              text: "Every week",
-              checked: (data["other-income-spousal-maintenance-payment-frequency-yes"] == "Every week")
-            },
-            {
-              value: "Every two weeks",
-              text: "Every two weeks",
-              checked: (data["other-income-spousal-maintenance-payment-frequency-yes"] == "Every two weeks")
-            },
-            {
-              value: "Every four weeks",
-              text: "Every four weeks",
-              checked: (data["other-income-spousal-maintenance-payment-frequency-yes"] == "Every four weeks")
-            },
-            {
-              value: "Unsure",
-              text: "Unsure",
-              checked: (data["other-income-spousal-maintenance-payment-frequency-yes"] == "Unsure")
-            }
-          ]
-        }) }}
-        {% endset -%}
+              <!------------------------->
 
 
 
+                {% set howOften %}
 
-        {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "other-income-spousal-maintenance-date-yn",
-          name: "other-income-spousal-maintenance-date-yn",
-          fieldset: {
-            legend: {
-              html: "Date of payment",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: ""
-          },
-          items: [
-          {
-            value: "yes-date",
-            text: "Date of lump sum payment",
-            checked: (data["other-income-spousal-maintenance-date-yn"] == "Yes"),
-            conditional: {
-              html: benefitIndustrialDeathBenefitYes
-            }
-          },
-            {
-              value: "no-date",
-              text: "Frequency payment",
-              checked: (data["other-income-spousal-maintenance-date-yn"] == "No"),
-              conditional: {
-                html: howOften
-              }
-            },
-              {
-                value: "no-date",
-                text: "Unknown",
-                checked: (data["other-income-spousal-maintenance-date-yn"] == "No")
-              }
-            ]
-          }) }}
+                {{ govukRadios({
+                  idPrefix: "other-income-spousal-maintenance-yes-payment-frequency-yes",
+                  name: "other-income-spousal-maintenance-yes-payment-frequency-yes",
+                  fieldset: {
+                    legend: {
+                      text: "How often do get this?",
+                      isPageHeading: true,
+                      classes: "<!--govuk-fieldset__legend--s-->"
+                      }
+                      },
 
-      <!------------------------->
+                  items: [
+                    {
+                      value: "Every week",
+                      text: "Every week",
+                      checked: (data["other-income-spousal-maintenance-yes-payment-frequency-yes"] == "Every week")
+                    },
+                    {
+                      value: "Every two weeks",
+                      text: "Every two weeks",
+                      checked: (data["other-income-spousal-maintenance-yes-payment-frequency-yes"] == "Every two weeks")
+                    },
+                    {
+                      value: "Every four weeks",
+                      text: "Every four weeks",
+                      checked: (data["other-income-spousal-maintenance-yes-payment-frequency-yes"] == "Every four weeks")
+                    }
+                  ]
+                }) }}
 
+                {{ govukInput({
+                label: {
+                  html: "Other payment frequency<strong></strong>"
+                },
+                id: "other-income-spousal-maintenance-yes-payment-frequency-yes-other",
+                name: "other-income-spousal-maintenance-yes-payment-frequency-yes-other",
+                classes: "govuk-input--width-20"
+              }) }}
+                {% endset -%}
 
-        {{ govukInput({
-        label: {
-          html: "<strong>How much money do you get?</strong>"
-        },
-        id: "other-income-spousal-maintenance-amount",
-        name: "other-income-spousal-maintenance-amount",
-        classes: "govuk-input--width-20"
-      }) }}
-
-      <!------------------------->
+                {% endset -%}
 
 
 
-      {% set otherIncomeSpousalMaintenanceYes %}
-      {{ govukTextarea({
-        name: "other-income-spousal-maintenance-yes-more-detail",
-        id: "other-income-spousal-maintenance-yes-more-detail",
-        label: {
-          text: "Add same details as above if there is more payments?"
-        },
-        hint: {
-          text: "XXX"
-        }
-      }) }}
-      {% endset -%}
 
-      {{ govukRadios({
-        classes: "govuk-radios",
-        idPrefix: "other-income-spousal-maintenance-more-yn",
-        name: "other-income-spousal-maintenance-more-yn",
-        fieldset: {
-          legend: {
-            html: "Do you need to add more of these?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-        {
-          value: "yes-date",
-          text: "Yes",
-          checked: (data["other-income-spousal-maintenance-more-yn"] == "Yes"),
-          conditional: {
-            html: otherIncomeSpousalMaintenanceYes
-          }
-        },
-          {
-            value: "no-date",
-            text: "No",
-            checked: (data["other-income-spousal-maintenance-more-yn"] == "No")
-          }
-          ]
-        }) }}
+                {{ govukRadios({
+                  classes: "govuk-radios",
+                  idPrefix: "other-income-spousal-maintenance-Frequency-date-yes",
+                  name: "other-income-spousal-maintenance-Frequency-date-yes",
+                  fieldset: {
+                    legend: {
+                      html: "Is this a frequency payment",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  hint: {
+                    text: ""
+                  },
+                  items: [
+                    {
+                      value: "Yes",
+                      text: "Yes",
+                      checked: (data["other-income-spousal-maintenance-Frequency-date-yes"] == "Yes"),
+                      conditional: {
+                        html: howOften
+                      }
+                    },
+                      {
+                        value: "No",
+                        text: "No",
+                        checked: (data["other-income-spousal-maintenance-Frequency-date-yes"] == "No")
+                      }
+                    ]
+                  }) }}
 
-        <!------------------------->
+                  <!------------------------->
 
-      {{ govukRadios({
-        idPrefix: "other-income-spousal-maintenance-evidence-yn",
-        name: "other-income-spousal-maintenance-evidence-yn",
-        fieldset: {
-          legend: {
-          html: "@phil: Evidence needed?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-            }
-            },
-            items: [
-          {
-            value: "yes",
-            text: "Yes",
-            checked: (data["other-income-spousal-maintenance-evidence-yn"] == "yes")
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: (data["other-income-spousal-maintenance-evidence-yn"] == "no")
-          }
-        ]
-      }) }}
+
+                    {{ govukInput({
+                    label: {
+                      html: "<strong>What is the currency of this money?</strong>"
+                    },
+                    id: "other-income-spousal-maintenance-currency-amount",
+                    name: "other-income-spousal-maintenance-currency-amount",
+                    classes: "govuk-input--width-20"
+                  }) }}
+
+                  <!------------------------->
+
+
+                {{ govukInput({
+                label: {
+                  html: "<strong>How much money do you get?</strong>"
+                },
+                id: "other-income-spousal-maintenance-yes-amount",
+                name: "other-income-spousal-maintenance-yes-amount",
+                classes: "govuk-input--width-20"
+              }) }}
+
+              <!------------------------->
+
+              {% set otherIncomeSpousalMaintenanceYes %}
+              {{ govukTextarea({
+                name: "other-income-spousal-maintenance-yes-yes-more-detail",
+                id: "other-income-spousal-maintenance-yes-yes-more-detail",
+                label: {
+                  text: "Add same details as above if there is more payments?"
+                },
+                hint: {
+                  text: "XXX"
+                }
+              }) }}
+              {% endset -%}
+
+              {{ govukRadios({
+                classes: "govuk-radios",
+                idPrefix: "other-income-spousal-maintenance-yes-more-yn",
+                name: "other-income-spousal-maintenance-yes-more-yn",
+                fieldset: {
+                  legend: {
+                    html: "Add another entry",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: ""
+                },
+                items: [
+                {
+                  value: "yes-date",
+                  text: "Yes",
+                  checked: (data["other-income-spousal-maintenance-yes-more-yn"] == "Yes"),
+                  conditional: {
+                    html: otherIncomeSpousalMaintenanceYes
+                  }
+                },
+                  {
+                    value: "no-date",
+                    text: "No",
+                    checked: (data["other-income-spousal-maintenance-yes-more-yn"] == "No")
+                  }
+                  ]
+                }) }}
+
+                <!------------------------->
+
+              {{ govukRadios({
+                idPrefix: "other-income-spousal-maintenance-yes-evidence-yn",
+                name: "other-income-spousal-maintenance-yes-evidence-yn",
+                fieldset: {
+                  legend: {
+                  html: "@phil: Evidence needed?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  hint: {
+                    text: "I think we need a better understanding of this"
+                  },
+                  items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: (data["other-income-spousal-maintenance-yes-evidence-yn"] == "yes")
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: (data["other-income-spousal-maintenance-yes-evidence-yn"] == "no")
+                  }
+                ]
+              }) }}
+
+
 
 
       {{ govukButton({

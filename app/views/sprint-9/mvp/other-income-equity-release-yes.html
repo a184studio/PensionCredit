@@ -21,10 +21,10 @@
       <h1 class="govuk-heading-xl"><span class="agent-action">Details</h1>
 
 
-        {% set benefitIndustrialDeathBenefitYes %}
+        {% set howOften %}
           {{ govukDateInput({
-            id: "other-income-equity-release-yes-date",
-            namePrefix: "other-income-equity-release-yes-date",
+            id: "other-income-equity-release-yes-yes-date",
+            namePrefix: "other-income-equity-release-yes-yes-date",
             fieldset: {
               legend: {
                 text: "Enter the received"
@@ -34,28 +34,62 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["other-income-equity-release-yes-date-day"]
+                value: data["other-income-equity-release-yes-yes-date-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["other-income-equity-release-yes-date-month"]
+                value: data["other-income-equity-release-yes-yes-date-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["other-income-equity-release-yes-date-year"]
+                value: data["other-income-equity-release-yes-yes-date-year"]
               }
             ]
           }) }}
         {% endset -%}
 
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "other-income-equity-release-yes-date-yn",
+          name: "other-income-equity-release-yes-date-yn",
+          fieldset: {
+            legend: {
+              html: "Was this payment made as a lump sum?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+          {
+              value: "no-date",
+              text: "Yes",
+              checked: (data["other-income-equity-release-yes-date-yn"] == "Yes"),
+              conditional: {
+                html: howOften
+              }
+            },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["other-income-equity-release-yes-date-yn"] == "No")
+              }
+            ]
+          }) }}
+
+      <!------------------------->
+
+
 
         {% set howOften %}
 
         {{ govukRadios({
-          idPrefix: "other-income-equity-release-payment-frequency-yes",
-          name: "other-income-equity-release-payment-frequency-yes",
+          idPrefix: "other-income-equity-release-yes-payment-frequency-yes",
+          name: "other-income-equity-release-yes-payment-frequency-yes",
           fieldset: {
             legend: {
               text: "How often do get this?",
@@ -68,25 +102,31 @@
             {
               value: "Every week",
               text: "Every week",
-              checked: (data["other-income-equity-release-payment-frequency-yes"] == "Every week")
+              checked: (data["other-income-equity-release-yes-payment-frequency-yes"] == "Every week")
             },
             {
               value: "Every two weeks",
               text: "Every two weeks",
-              checked: (data["other-income-equity-release-payment-frequency-yes"] == "Every two weeks")
+              checked: (data["other-income-equity-release-yes-payment-frequency-yes"] == "Every two weeks")
             },
             {
               value: "Every four weeks",
               text: "Every four weeks",
-              checked: (data["other-income-equity-release-payment-frequency-yes"] == "Every four weeks")
-            },
-            {
-              value: "Unsure",
-              text: "Unsure",
-              checked: (data["other-income-equity-release-payment-frequency-yes"] == "Unsure")
+              checked: (data["other-income-equity-release-yes-payment-frequency-yes"] == "Every four weeks")
             }
           ]
         }) }}
+
+        {{ govukInput({
+        label: {
+          html: "Other payment frequency<strong></strong>"
+        },
+        id: "other-income-equity-release-yes-payment-frequency-yes-other",
+        name: "other-income-equity-release-yes-payment-frequency-yes-other",
+        classes: "govuk-input--width-20"
+      }) }}
+        {% endset -%}
+
         {% endset -%}
 
 
@@ -94,11 +134,11 @@
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "other-income-equity-release-date-yn",
-          name: "other-income-equity-release-date-yn",
+          idPrefix: "other-income-equity-release-Frequency-date-yes",
+          name: "other-income-equity-release-Frequency-date-yes",
           fieldset: {
             legend: {
-              html: "Date of payment",
+              html: "Is this a frequency payment",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -107,50 +147,52 @@
             text: ""
           },
           items: [
-          {
-            value: "yes-date",
-            text: "Date of lump sum payment",
-            checked: (data["other-income-equity-release-date-yn"] == "Yes"),
-            conditional: {
-              html: benefitIndustrialDeathBenefitYes
-            }
-          },
             {
-              value: "no-date",
-              text: "Frequency payment",
-              checked: (data["other-income-equity-release-date-yn"] == "No"),
+              value: "Yes",
+              text: "Yes",
+              checked: (data["other-income-equity-release-Frequency-date-yes"] == "Yes"),
               conditional: {
                 html: howOften
               }
             },
               {
-                value: "no-date",
-                text: "Unknown",
-                checked: (data["other-income-equity-release-date-yn"] == "No")
+                value: "No",
+                text: "No",
+                checked: (data["other-income-equity-release-Frequency-date-yes"] == "No")
               }
             ]
           }) }}
 
-      <!------------------------->
+          <!------------------------->
+
+
+            {{ govukInput({
+            label: {
+              html: "<strong>What is the currency of this money?</strong>"
+            },
+            id: "other-income-equity-release-currency-amount",
+            name: "other-income-equity-release-currency-amount",
+            classes: "govuk-input--width-20"
+          }) }}
+
+          <!------------------------->
 
 
         {{ govukInput({
         label: {
           html: "<strong>How much money do you get?</strong>"
         },
-        id: "other-income-equity-release-amount",
-        name: "other-income-equity-release-amount",
+        id: "other-income-equity-release-yes-amount",
+        name: "other-income-equity-release-yes-amount",
         classes: "govuk-input--width-20"
       }) }}
 
       <!------------------------->
 
-
-
       {% set otherIncomeSpousalMaintenanceYes %}
       {{ govukTextarea({
-        name: "other-income-equity-release-yes-more-detail",
-        id: "other-income-equity-release-yes-more-detail",
+        name: "other-income-equity-release-yes-yes-more-detail",
+        id: "other-income-equity-release-yes-yes-more-detail",
         label: {
           text: "Add same details as above if there is more payments?"
         },
@@ -162,11 +204,11 @@
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "other-income-equity-release-more-yn",
-        name: "other-income-equity-release-more-yn",
+        idPrefix: "other-income-equity-release-yes-more-yn",
+        name: "other-income-equity-release-yes-more-yn",
         fieldset: {
           legend: {
-            html: "Do you need to add more of these?",
+            html: "Add another entry",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -178,7 +220,7 @@
         {
           value: "yes-date",
           text: "Yes",
-          checked: (data["other-income-equity-release-more-yn"] == "Yes"),
+          checked: (data["other-income-equity-release-yes-more-yn"] == "Yes"),
           conditional: {
             html: otherIncomeSpousalMaintenanceYes
           }
@@ -186,7 +228,7 @@
           {
             value: "no-date",
             text: "No",
-            checked: (data["other-income-equity-release-more-yn"] == "No")
+            checked: (data["other-income-equity-release-yes-more-yn"] == "No")
           }
           ]
         }) }}
@@ -194,25 +236,28 @@
         <!------------------------->
 
       {{ govukRadios({
-        idPrefix: "other-income-equity-release-evidence-yn",
-        name: "other-income-equity-release-evidence-yn",
+        idPrefix: "other-income-equity-release-yes-evidence-yn",
+        name: "other-income-equity-release-yes-evidence-yn",
         fieldset: {
           legend: {
           html: "@phil: Evidence needed?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
             }
-            },
-            items: [
+          },
+          hint: {
+            text: "I think we need a better understanding of this"
+          },
+          items: [
           {
             value: "yes",
             text: "Yes",
-            checked: (data["other-income-equity-release-evidence-yn"] == "yes")
+            checked: (data["other-income-equity-release-yes-evidence-yn"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["other-income-equity-release-evidence-yn"] == "no")
+            checked: (data["other-income-equity-release-yes-evidence-yn"] == "no")
           }
         ]
       }) }}

@@ -112,14 +112,18 @@
               value: "Every four weeks",
               text: "Every four weeks",
               checked: (data["other-income-benefits-aboard-yes-payment-frequency-yes"] == "Every four weeks")
-            },
-            {
-              value: "Unsure",
-              text: "Unsure",
-              checked: (data["other-income-benefits-aboard-yes-payment-frequency-yes"] == "Unsure")
             }
           ]
         }) }}
+
+        {{ govukInput({
+        label: {
+          html: "Other payment frequency<strong></strong>"
+        },
+        id: "other-income-benefits-aboard-yes-payment-frequency-yes-other",
+        name: "other-income-benefits-aboard-yes-payment-frequency-yes-other",
+        classes: "govuk-input--width-20"
+      }) }}
         {% endset -%}
 
 
@@ -156,7 +160,19 @@
             ]
           }) }}
 
-      <!------------------------->
+          <!------------------------->
+
+
+            {{ govukInput({
+            label: {
+              html: "<strong>What is the currency of this money?</strong>"
+            },
+            id: "other-income-benefits-aboard-currency-amount",
+            name: "other-income-benefits-aboard-currency-amount",
+            classes: "govuk-input--width-20"
+          }) }}
+
+          <!------------------------->
 
 
         {{ govukInput({
@@ -169,8 +185,6 @@
       }) }}
 
       <!------------------------->
-
-
 
       {% set otherIncomeSpousalMaintenanceYes %}
       {{ govukTextarea({
