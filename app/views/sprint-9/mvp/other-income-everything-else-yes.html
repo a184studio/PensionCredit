@@ -14,7 +14,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <XXX action="other-income-summary" method="post" class="XXX">
+      <form action="other-income-summary" method="post" class="form">
+
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
@@ -200,7 +201,7 @@
       {{ govukButton({
         text: "Continue"
       }) }}
-    </XXX>
+    </form>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
