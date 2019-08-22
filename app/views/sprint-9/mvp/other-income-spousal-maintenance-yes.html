@@ -14,17 +14,17 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="other-income-working-tax-credits-yn" method="post" class="form">
+    <form action="other-income-equity-release-yn" method="post" class="form">
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-      <h1 class="govuk-heading-xl"><span class="agent-action">Details</h1>
+      <h1 class="govuk-heading-xl"><span class="agent-action">Details for X</h1>
 
 
         {% set benefitIndustrialDeathBenefitYes %}
           {{ govukDateInput({
-            id: "benefit-industrial-death-benefit-yes-date",
-            namePrefix: "benefit-industrial-death-benefit-yes-date",
+            id: "other-income-spousal-maintenance-yes-date",
+            namePrefix: "other-income-spousal-maintenance-yes-date",
             fieldset: {
               legend: {
                 text: "Enter the received"
@@ -34,17 +34,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["benefit-industrial-death-benefit-yes-date-day"]
+                value: data["other-income-spousal-maintenance-yes-date-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["benefit-industrial-death-benefit-yes-date-month"]
+                value: data["other-income-spousal-maintenance-yes-date-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["benefit-industrial-death-benefit-yes-date-year"]
+                value: data["other-income-spousal-maintenance-yes-date-year"]
               }
             ]
           }) }}
@@ -54,13 +54,13 @@
         {% set howOften %}
 
         {{ govukRadios({
-          idPrefix: "benefit-industrial-death-benefit-payment-frequency",
-          name: "benefit-industrial-death-benefit-payment-frequency",
+          idPrefix: "other-income-spousal-maintenance-payment-frequency-yes",
+          name: "other-income-spousal-maintenance-payment-frequency-yes",
           fieldset: {
             legend: {
               text: "How often do get this?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
+              classes: "<!--govuk-fieldset__legend--s-->"
               }
               },
 
@@ -68,22 +68,22 @@
             {
               value: "Every week",
               text: "Every week",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Every week")
+              checked: (data["other-income-spousal-maintenance-payment-frequency-yes"] == "Every week")
             },
             {
               value: "Every two weeks",
               text: "Every two weeks",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Every two weeks")
+              checked: (data["other-income-spousal-maintenance-payment-frequency-yes"] == "Every two weeks")
             },
             {
               value: "Every four weeks",
               text: "Every four weeks",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Every four weeks")
+              checked: (data["other-income-spousal-maintenance-payment-frequency-yes"] == "Every four weeks")
             },
             {
               value: "Unsure",
               text: "Unsure",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Unsure")
+              checked: (data["other-income-spousal-maintenance-payment-frequency-yes"] == "Unsure")
             }
           ]
         }) }}
@@ -94,8 +94,8 @@
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "benefit-industrial-death-benefit-date-yn",
-          name: "benefit-industrial-death-benefit-date-yn",
+          idPrefix: "other-income-spousal-maintenance-date-yn",
+          name: "other-income-spousal-maintenance-date-yn",
           fieldset: {
             legend: {
               html: "Date of payment",
@@ -110,7 +110,7 @@
           {
             value: "yes-date",
             text: "Date of lump sum payment",
-            checked: (data["benefit-industrial-death-benefit-date-yn"] == "Yes"),
+            checked: (data["other-income-spousal-maintenance-date-yn"] == "Yes"),
             conditional: {
               html: benefitIndustrialDeathBenefitYes
             }
@@ -118,7 +118,7 @@
             {
               value: "no-date",
               text: "Frequency payment",
-              checked: (data["benefit-industrial-death-benefit-date-yn"] == "No"),
+              checked: (data["other-income-spousal-maintenance-date-yn"] == "No"),
               conditional: {
                 html: howOften
               }
@@ -126,31 +126,79 @@
               {
                 value: "no-date",
                 text: "Unknown",
-                checked: (data["benefit-industrial-death-benefit-date-yn"] == "No")
+                checked: (data["other-income-spousal-maintenance-date-yn"] == "No")
               }
             ]
           }) }}
 
-        <!------------------------->
-
+      <!------------------------->
 
 
         {{ govukInput({
         label: {
           html: "<strong>How much money do you get?</strong>"
         },
-        id: "benefit-industrial-death-benefit-amount",
-        name: "benefit-industrial-death-benefit-amount",
+        id: "other-income-spousal-maintenance-amount",
+        name: "other-income-spousal-maintenance-amount",
         classes: "govuk-input--width-20"
       }) }}
 
+      <!------------------------->
+
+
+
+      {% set otherIncomeSpousalMaintenanceYes %}
+      {{ govukTextarea({
+        name: "other-income-spousal-maintenance-yes-more-detail",
+        id: "other-income-spousal-maintenance-yes-more-detail",
+        label: {
+          text: "Add same details as above if there is more payments?"
+        },
+        hint: {
+          text: "XXX"
+        }
+      }) }}
+      {% endset -%}
 
       {{ govukRadios({
-        idPrefix: "other-income-benefits-aboard-yn",
-        name: "other-income-benefits-aboard-yn",
+        classes: "govuk-radios",
+        idPrefix: "other-income-spousal-maintenance-more-yn",
+        name: "other-income-spousal-maintenance-more-yn",
         fieldset: {
           legend: {
-          html: "Evidence Yes / No",
+            html: "Do you need to add more of these?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "yes-date",
+          text: "Yes",
+          checked: (data["other-income-spousal-maintenance-more-yn"] == "Yes"),
+          conditional: {
+            html: otherIncomeSpousalMaintenanceYes
+          }
+        },
+          {
+            value: "no-date",
+            text: "No",
+            checked: (data["other-income-spousal-maintenance-more-yn"] == "No")
+          }
+          ]
+        }) }}
+
+        <!------------------------->
+
+      {{ govukRadios({
+        idPrefix: "other-income-spousal-maintenance-evidence-yn",
+        name: "other-income-spousal-maintenance-evidence-yn",
+        fieldset: {
+          legend: {
+          html: "@phil: Evidence needed?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
             }
@@ -159,19 +207,15 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["other-income-benefits-aboard-yn"] == "yes")
+            checked: (data["other-income-spousal-maintenance-evidence-yn"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["other-income-benefits-aboard-yn"] == "no")
+            checked: (data["other-income-spousal-maintenance-evidence-yn"] == "no")
           }
         ]
       }) }}
-
-
-
-
 
 
       {{ govukButton({
