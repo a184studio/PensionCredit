@@ -20,8 +20,7 @@
 
       <h1 class="govuk-heading-xl"><span class="agent-action">Details</h1>
 
-
-        {% set benefitIndustrialDeathBenefitYes %}
+        {% set howOften %}
           {{ govukDateInput({
             id: "other-income-benefits-aboard-yes-yes-date",
             namePrefix: "other-income-benefits-aboard-yes-yes-date",
@@ -49,6 +48,40 @@
             ]
           }) }}
         {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "other-income-benefits-aboard-yes-date-yn",
+          name: "other-income-benefits-aboard-yes-date-yn",
+          fieldset: {
+            legend: {
+              html: "Was this payment made as a lump sum?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+          {
+              value: "no-date",
+              text: "Yes",
+              checked: (data["other-income-benefits-aboard-yes-date-yn"] == "Yes"),
+              conditional: {
+                html: howOften
+              }
+            },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["other-income-benefits-aboard-yes-date-yn"] == "No")
+              }
+            ]
+          }) }}
+
+      <!------------------------->
+
 
 
         {% set howOften %}
@@ -94,11 +127,11 @@
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "other-income-benefits-aboard-yes-date-yn",
-          name: "other-income-benefits-aboard-yes-date-yn",
+          idPrefix: "other-income-benefits-aboard-Frequency-date-yes",
+          name: "other-income-benefits-aboard-Frequency-date-yes",
           fieldset: {
             legend: {
-              html: "Date of payment",
+              html: "Is this a frequency payment",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -107,26 +140,18 @@
             text: ""
           },
           items: [
-          {
-            value: "yes-date",
-            text: "Date of lump sum payment",
-            checked: (data["other-income-benefits-aboard-yes-date-yn"] == "Yes"),
-            conditional: {
-              html: benefitIndustrialDeathBenefitYes
-            }
-          },
             {
-              value: "no-date",
-              text: "Frequency payment",
-              checked: (data["other-income-benefits-aboard-yes-date-yn"] == "No"),
+              value: "Yes",
+              text: "Yes",
+              checked: (data["other-income-benefits-aboard-Frequency-date-yes"] == "Yes"),
               conditional: {
                 html: howOften
               }
             },
               {
-                value: "no-date",
-                text: "Unknown",
-                checked: (data["other-income-benefits-aboard-yes-date-yn"] == "No")
+                value: "No",
+                text: "No",
+                checked: (data["other-income-benefits-aboard-Frequency-date-yes"] == "No")
               }
             ]
           }) }}
@@ -166,7 +191,7 @@
         name: "other-income-benefits-aboard-yes-more-yn",
         fieldset: {
           legend: {
-            html: "Do you need to add more of these?",
+            html: "Add another entry",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -202,8 +227,11 @@
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
             }
-            },
-            items: [
+          },
+          hint: {
+            text: "I think we need a better understanding of this"
+          },
+          items: [
           {
             value: "yes",
             text: "Yes",
