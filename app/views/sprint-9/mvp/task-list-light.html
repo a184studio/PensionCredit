@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Alex Smith’s Pension Credit application
+      </h1>
+
+      <h2 class="govuk-body">Complete in order
+      </h2>
+
+      <h2 class="">
+        <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+          1. About the claimant / Eligibility
+        </a>
+      </h2>
+
+      <br><br>
+
+      <h2 class="">
+        <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+          2. Date of claim
+        </a>
+      </h2>
+
+      <br><br>
+
+      <h2 class="">
+        <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+          3. How we contact you
+        </a>
+      </h2>
+
+      <br><br>
+
+      <h2 class="">
+        <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+          4. About where you live
+        </a>
+      </h2>
+
+      <br><br>
+
+      <h2 class="">
+        <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+          5. Who lives with you
+        </a>
+      </h2>
+
+      <br><br>
+
+      <h2 class="">
+        <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+          6. Pensions
+        </a>
+      </h2>
+
+      <br><br>
+
+      <h2 class="">
+        <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+          7. Benefits
+        </a>
+      </h2>
+
+      <br><br>
+
+      <h2 class="">
+        <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+          8. Money, savings and investments
+        </a>
+      </h2>
+
+      <br><br>
+
+      <h2 class="">
+        <a class="app-task-list__task-name" href="pensions-overview" aria-describedby="eligibility-completed">
+          9. Earnings and other regular income
+        </a>
+      </h2>
+
+      <br><br><br><br>
+
+
+    </div>
+  </div>
+
+  <form action="pension-credit-summary" method="post">
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+
+{% endblock %}
