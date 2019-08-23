@@ -162,19 +162,6 @@
 
                   <!------------------------->
 
-
-                    {{ govukInput({
-                    label: {
-                      html: "<strong>What is the currency of this money?</strong>"
-                    },
-                    id: "other-income-spousal-maintenance-currency-amount",
-                    name: "other-income-spousal-maintenance-currency-amount",
-                    classes: "govuk-input--width-20"
-                  }) }}
-
-                  <!------------------------->
-
-
                 {{ govukInput({
                 label: {
                   html: "<strong>How much money do you get?</strong>"
@@ -232,32 +219,6 @@
 
                 <!------------------------->
 
-              {{ govukRadios({
-                idPrefix: "other-income-spousal-maintenance-yes-evidence-yn",
-                name: "other-income-spousal-maintenance-yes-evidence-yn",
-                fieldset: {
-                  legend: {
-                  html: "@phil: Evidence needed?",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--s"
-                    }
-                  },
-                  hint: {
-                    text: "I think we need a better understanding of this"
-                  },
-                  items: [
-                  {
-                    value: "yes",
-                    text: "Yes",
-                    checked: (data["other-income-spousal-maintenance-yes-evidence-yn"] == "yes")
-                  },
-                  {
-                    value: "no",
-                    text: "No",
-                    checked: (data["other-income-spousal-maintenance-yes-evidence-yn"] == "no")
-                  }
-                ]
-              }) }}
 
 
 

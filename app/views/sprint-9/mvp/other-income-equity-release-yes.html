@@ -163,17 +163,65 @@
 
           <!------------------------->
 
+          {{ govukRadios({
+            idPrefix: "other-income-equity-release-incomeplan-yn",
+            name: "other-income-equity-release-incomeplan-yn",
+            fieldset: {
+              legend: {
+              html: "Was this a home income plan?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "I think we need a better understanding of this"
+              },
+              items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: (data["other-income-equity-release-incomeplan-yn"] == "Yes")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["other-income-equity-release-incomeplan-yn"] == "No")
+              }
+            ]
+          }) }}
 
-            {{ govukInput({
-            label: {
-              html: "<strong>What is the currency of this money?</strong>"
-            },
-            id: "other-income-equity-release-currency-amount",
-            name: "other-income-equity-release-currency-amount",
-            classes: "govuk-input--width-20"
+
+          <!------------------------->
+
+          {{ govukRadios({
+            idPrefix: "other-income-equity-release-annuity-yn",
+            name: "other-income-equity-release-annuity-yn",
+            fieldset: {
+              legend: {
+              html: "Used to buy annuity?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "I think we need a better understanding of this"
+              },
+              items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: (data["other-income-equity-release-annuity-yn"] == "Yes")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["other-income-equity-release-annuity-yn"] == "No")
+              }
+            ]
           }) }}
 
           <!------------------------->
+
 
 
         {{ govukInput({
