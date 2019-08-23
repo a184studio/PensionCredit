@@ -457,7 +457,7 @@ router.post(`${baseUrl}/employment-router`, (req, res) => {
   if (employmentFulltime === 'yes') {
     res.redirect(`${baseUrl}/notepad-selfEmployment`)
   } else {
-    res.redirect(`${baseUrl}/earnings-summary`)
+    res.redirect(`${baseUrl}/other-income-benefits-aboard-yn`)
   }
 })
 

@@ -27,8 +27,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "employment-fulltime",
-        name: "employment-fulltime",
+        idPrefix: "employment-yn",
+        name: "employment-yn",
         fieldset: {
           legend: {
             html: "",
@@ -38,14 +38,14 @@
             },
             items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
-            checked: (data["employment-fulltime"] == "yes")
+            checked: (data["employment-yn"] == "Yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["employment-fulltime"] == "no")
+            checked: (data["employment-yn"] == "No")
           }
         ]
       }) }}

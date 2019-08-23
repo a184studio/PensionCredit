@@ -24,6 +24,41 @@
 
                 <dl class="govuk-summary-list govuk-summary-list--long">
 
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Were you employed or self employed between Today and undefined undefined undefined
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["employment-yn"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="employment-yn">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+
+
+                  {% if data["employment-yes-more-detail"] %}
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Details
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            details{{ data["employment-yes-more-detail"] }}
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a href="notepad-selfEmployment">
+                              Change
+                            </a>
+                          </dd>
+                        </div>
+                        {% endif %}
+
+            <br>
+
+
+
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
                             other-income-benefits-aboard-yn
@@ -286,6 +321,41 @@
                                     {% endif %}
 
 <br>
+
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  other-income-charitable-payments-yn
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  {{ data["other-income-charitable-payments-yn"] }}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a href="other-income-everything-else-yn">
+                                    Change
+                                  </a>
+                                </dd>
+                              </div>
+
+
+                              {% if data["other-income-charitable-payments-yn"] %}
+                                    <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                                        Details
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                                        Details, {{ data["other-income-charitable-payments-yn"] }}
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                        <a href="other-income-everything-else-yes">
+                                          Change
+                                        </a>
+                                      </dd>
+                                    </div>
+                                    {% endif %}
+
+                                    <br>
+
+
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                   other-income-other-yn

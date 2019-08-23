@@ -17,7 +17,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="earnings-summary" method="post">
+      <form action="other-income-benefits-aboard-yn" method="post">
 
         <span class="govuk-caption-m">Agent notes page</span>
         <h1 class="govuk-heading-xl">Information about empoyment and self&#8209;employment</h1>
@@ -37,10 +37,10 @@
 <br>
 
         {{ govukTextarea({
-          name: "selfEmployment-more-detail",
-          id: "selfEmployment-more-detail",
+          name: "employment-yes-more-detail",
+          id: "employment-yes-more-detail",
 
-        value: data["self-employed-detail"]
+        value: data["employment-yes-more-detail"]
         }) }}
 
 
