@@ -14,17 +14,16 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="other-income-sick-pay-yn" method="post" class="form">
+    <form action="other-income-spousal-maintenance-yn" method="post" class="form">
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-      <h1 class="govuk-heading-xl"><span class="agent-action">Details</h1>
+      <h1 class="govuk-heading-xl"><span class="agent-action">Entry details</h1>
 
-
-        {% set benefitIndustrialDeathBenefitYes %}
+        {% set howOften %}
           {{ govukDateInput({
-            id: "benefit-industrial-death-benefit-yes-date",
-            namePrefix: "benefit-industrial-death-benefit-yes-date",
+            id: "other-income-benefits-aboard-yes-yes-date",
+            namePrefix: "other-income-benefits-aboard-yes-yes-date",
             fieldset: {
               legend: {
                 text: "Enter the received"
@@ -34,71 +33,29 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["benefit-industrial-death-benefit-yes-date-day"]
+                value: data["other-income-benefits-aboard-yes-yes-date-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["benefit-industrial-death-benefit-yes-date-month"]
+                value: data["other-income-benefits-aboard-yes-yes-date-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["benefit-industrial-death-benefit-yes-date-year"]
+                value: data["other-income-benefits-aboard-yes-yes-date-year"]
               }
             ]
           }) }}
         {% endset -%}
 
-
-        {% set howOften %}
-
-        {{ govukRadios({
-          idPrefix: "benefit-industrial-death-benefit-payment-frequency",
-          name: "benefit-industrial-death-benefit-payment-frequency",
-          fieldset: {
-            legend: {
-              text: "How often do get this?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-              }
-              },
-
-          items: [
-            {
-              value: "Every week",
-              text: "Every week",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Every week")
-            },
-            {
-              value: "Every two weeks",
-              text: "Every two weeks",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Every two weeks")
-            },
-            {
-              value: "Every four weeks",
-              text: "Every four weeks",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Every four weeks")
-            },
-            {
-              value: "Unsure",
-              text: "Unsure",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Unsure")
-            }
-          ]
-        }) }}
-        {% endset -%}
-
-
-
-
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "benefit-industrial-death-benefit-date-yn",
-          name: "benefit-industrial-death-benefit-date-yn",
+          idPrefix: "other-income-benefits-aboard-yes-date-yn",
+          name: "other-income-benefits-aboard-yes-date-yn",
           fieldset: {
             legend: {
-              html: "Date of payment",
+              html: "Was this payment made as a lump sum?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -108,68 +65,259 @@
           },
           items: [
           {
-            value: "yes-date",
-            text: "Date of lump sum payment",
-            checked: (data["benefit-industrial-death-benefit-date-yn"] == "Yes"),
-            conditional: {
-              html: benefitIndustrialDeathBenefitYes
-            }
-          },
-            {
               value: "no-date",
-              text: "Frequency payment",
-              checked: (data["benefit-industrial-death-benefit-date-yn"] == "No"),
+              text: "Yes",
+              checked: (data["other-income-benefits-aboard-yes-date-yn"] == "Yes"),
               conditional: {
                 html: howOften
               }
             },
               {
-                value: "no-date",
-                text: "Unknown",
-                checked: (data["benefit-industrial-death-benefit-date-yn"] == "No")
+                value: "No",
+                text: "No",
+                checked: (data["other-income-benefits-aboard-yes-date-yn"] == "No")
               }
             ]
           }) }}
 
-        <!------------------------->
+      <!------------------------->
 
+
+
+        {% set howOften %}
+
+        {{ govukRadios({
+          idPrefix: "other-income-benefits-aboard-yes-payment-frequency-yes",
+          name: "other-income-benefits-aboard-yes-payment-frequency-yes",
+          fieldset: {
+            legend: {
+              text: "How often do get this?",
+              isPageHeading: true,
+              classes: "<!--govuk-fieldset__legend--s-->"
+              }
+              },
+
+          items: [
+            {
+              value: "Every week",
+              text: "Every week",
+              checked: (data["other-income-benefits-aboard-yes-payment-frequency-yes"] == "Every week")
+            },
+            {
+              value: "Every two weeks",
+              text: "Every two weeks",
+              checked: (data["other-income-benefits-aboard-yes-payment-frequency-yes"] == "Every two weeks")
+            },
+            {
+              value: "Every four weeks",
+              text: "Every four weeks",
+              checked: (data["other-income-benefits-aboard-yes-payment-frequency-yes"] == "Every four weeks")
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+        label: {
+          html: "Other payment frequency<strong></strong>"
+        },
+        id: "other-income-benefits-aboard-yes-payment-frequency-yes-other",
+        name: "other-income-benefits-aboard-yes-payment-frequency-yes-other",
+        classes: "govuk-input--width-20"
+      }) }}
+        {% endset -%}
+
+
+
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "other-income-benefits-aboard-Frequency-date-yes",
+          name: "other-income-benefits-aboard-Frequency-date-yes",
+          fieldset: {
+            legend: {
+              html: "Is this a frequency payment",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["other-income-benefits-aboard-Frequency-date-yes"] == "Yes"),
+              conditional: {
+                html: howOften
+              }
+            },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["other-income-benefits-aboard-Frequency-date-yes"] == "No")
+              }
+            ]
+          }) }}
+
+          <!------------------------->
+
+
+            {{ govukInput({
+            label: {
+              html: "<strong>What is the currency of this money?</strong>"
+            },
+            id: "other-income-benefits-aboard-currency-amount",
+            name: "other-income-benefits-aboard-currency-amount",
+            classes: "govuk-input--width-20"
+          }) }}
+
+          <!------------------------->
 
 
         {{ govukInput({
         label: {
           html: "<strong>How much money do you get?</strong>"
         },
-        id: "benefit-industrial-death-benefit-amount",
-        name: "benefit-industrial-death-benefit-amount",
+        id: "other-income-benefits-aboard-yes-amount",
+        name: "other-income-benefits-aboard-yes-amount",
         classes: "govuk-input--width-20"
       }) }}
 
+        <!------------------------->
 
       {{ govukRadios({
-        idPrefix: "other-income-benefits-aboard-yn",
-        name: "other-income-benefits-aboard-yn",
+        idPrefix: "other-income-benefits-aboard-pension-yn",
+        name: "other-income-benefits-aboard-pension-yn",
         fieldset: {
           legend: {
-          html: "Evidence Yes / No",
+          html: "Payment if for a pension",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
             }
-            },
-            items: [
+          },
+          hint: {
+            text: "XXXX"
+          },
+          items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes",
-            checked: (data["other-income-benefits-aboard-yn"] == "yes")
+            checked: (data["other-income-benefits-aboard-pension-yn"] == "Yes")
           },
           {
-            value: "no",
+            value: "No",
             text: "No",
-            checked: (data["other-income-benefits-aboard-yn"] == "no")
+            checked: (data["other-income-benefits-aboard-pension-yn"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "other-income-benefits-aboard-disability-yn",
+        name: "other-income-benefits-aboard-disability-yn",
+        fieldset: {
+          legend: {
+          html: "Payment if for a disability",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "XXXX"
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["other-income-benefits-aboard-disability-yn"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["other-income-benefits-aboard-disability-yn"] == "No")
           }
         ]
       }) }}
 
 
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <!------------------------->
+
+      {% set otherIncomeSpousalMaintenanceYes %}
+      {{ govukTextarea({
+        name: "other-income-benefits-aboard-yes-yes-more-detail",
+        id: "other-income-benefits-aboard-yes-yes-more-detail",
+        label: {
+          text: "Add same details as above if there is more payments?"
+        },
+        hint: {
+          text: "XXX"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "other-income-benefits-aboard-yes-more-yn",
+        name: "other-income-benefits-aboard-yes-more-yn",
+        fieldset: {
+          legend: {
+            html: "Add another entry",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "Type of payment, LumpSum, frequency, currency, amount, pension and disability "
+        },
+        items: [
+        {
+          value: "yes-date",
+          text: "Yes",
+          checked: (data["other-income-benefits-aboard-yes-more-yn"] == "Yes"),
+          conditional: {
+            html: otherIncomeSpousalMaintenanceYes
+          }
+        },
+          {
+            value: "no-date",
+            text: "No",
+            checked: (data["other-income-benefits-aboard-yes-more-yn"] == "No")
+          }
+          ]
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        {{ govukRadios({
+          idPrefix: "other-income-benefits-aboard-yes-evidence-yn",
+          name: "other-income-benefits-aboard-yes-evidence-yn",
+          fieldset: {
+            legend: {
+            html: "@phil: Evidence needed?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "I think we need a better understanding of this"
+            },
+            items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "no")
+            }
+          ]
+        }) }}
 
 
 

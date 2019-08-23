@@ -947,6 +947,15 @@ router.post(`${baseUrl}/benefit-industrial-death-benefit-yn-router`, (req, res) 
 // benefits END
 
 
+router.post(`${baseUrl}/other-income-benefits-aboard-yn-router`, (req, res) => {
+  const otherIncomesickPayYN = req.session.data['other-income-benefits-aboard-yn']
+
+  if (otherIncomesickPayYN === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-benefits-aboard-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-spousal-maintenance-yn`)
+  }
+})
 
 router.post(`${baseUrl}/other-income-spousal-maintenance-yn-router`, (req, res) => {
   const otherIncomespousalMaintenanceYN = req.session.data['other-income-spousal-maintenance-yn']
@@ -954,7 +963,17 @@ router.post(`${baseUrl}/other-income-spousal-maintenance-yn-router`, (req, res) 
   if (otherIncomespousalMaintenanceYN === 'Yes') {
     res.redirect(`${baseUrl}/other-income-spousal-maintenance-yes`)
   } else {
-    res.redirect(`${baseUrl}/other-income-working-tax-credits-yn`)
+    res.redirect(`${baseUrl}/other-income-equity-release-yn`)
+  }
+})
+
+router.post(`${baseUrl}/other-income-equity-release-yn-router`, (req, res) => {
+  const otherIncomeequityReleaseYN = req.session.data['other-income-equity-release-yn']
+
+  if (otherIncomeequityReleaseYN === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-equity-release-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-everything-else-yes`)
   }
 })
 
@@ -970,16 +989,6 @@ router.post(`${baseUrl}/other-income-working-tax-credits-yn-router`, (req, res) 
   }
 })
 
-
-router.post(`${baseUrl}/other-income-benefits-aboard-yn-router`, (req, res) => {
-  const otherIncomesickPayYN = req.session.data['other-income-benefits-aboard-yn']
-
-  if (otherIncomesickPayYN === 'Yes') {
-    res.redirect(`${baseUrl}/other-income-benefits-aboard-yes`)
-  } else {
-    res.redirect(`${baseUrl}/other-income-sick-pay-yn`)
-  }
-})
 
 router.post(`${baseUrl}/other-income-sick-pay-yn-router`, (req, res) => {
   const otherIncomesickPayYN = req.session.data['other-income-sick-pay-yn']
@@ -1003,15 +1012,7 @@ router.post(`${baseUrl}/other-income-royalties-yn-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/other-income-equity-release-yn-router`, (req, res) => {
-  const otherIncomeequityReleaseYN = req.session.data['other-income-equity-release-yn']
 
-  if (otherIncomeequityReleaseYN === 'Yes') {
-    res.redirect(`${baseUrl}/other-income-equity-release-yes`)
-  } else {
-    res.redirect(`${baseUrl}/other-income-everything-else-yn`)
-  }
-})
 
 router.post(`${baseUrl}/other-income-everything-else-yn-router`, (req, res) => {
   const otherIncomeEverythingElse = req.session.data['other-income-everything-else-yn']

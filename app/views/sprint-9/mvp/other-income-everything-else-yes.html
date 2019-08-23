@@ -14,91 +14,149 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="other-income-summary" method="post" class="form">
+      <form action="other-income-summary" method="post" class="form">
+
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-      <h1 class="govuk-heading-xl"><span class="agent-action">Details</h1>
+      <h1 class="govuk-heading-xl"><span class="agent-action">Money from the following:</h1>
 
 
-        {% set benefitIndustrialDeathBenefitYes %}
-          {{ govukDateInput({
-            id: "benefit-industrial-death-benefit-yes-date",
-            namePrefix: "benefit-industrial-death-benefit-yes-date",
-            fieldset: {
-              legend: {
-                text: "Enter the received"
-              }
+        {% set sickPayYes %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+            hint: {
+              text: ""
             },
-            items: [
-              {
-                name: "day",
-                classes: "govuk-input--width-2",
-                value: data["benefit-industrial-death-benefit-yes-date-day"]
-              },
-              {
-                name: "month",
-                classes: "govuk-input--width-2",
-                value: data["benefit-industrial-death-benefit-yes-date-month"]
-              },
-              {
-                name: "year",
-                classes: "govuk-input--width-4",
-                value: data["benefit-industrial-death-benefit-yes-date-year"]
-              }
-            ]
-          }) }}
-        {% endset -%}
-
-
-        {% set howOften %}
-
-        {{ govukRadios({
-          idPrefix: "benefit-industrial-death-benefit-payment-frequency",
-          name: "benefit-industrial-death-benefit-payment-frequency",
-          fieldset: {
-            legend: {
-              text: "How often do get this?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-              }
-              },
-
-          items: [
-            {
-              value: "Every week",
-              text: "Every week",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Every week")
-            },
-            {
-              value: "Every two weeks",
-              text: "Every two weeks",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Every two weeks")
-            },
-            {
-              value: "Every four weeks",
-              text: "Every four weeks",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Every four weeks")
-            },
-            {
-              value: "Unsure",
-              text: "Unsure",
-              checked: (data["benefit-industrial-death-benefit-payment-frequency"] == "Unsure")
+            id: "pensions-foreign-yes",
+            name: "pensions-foreign-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
             }
-          ]
+          }) }}
+        {% endset %}
+
+          <!-------------- Check ---------------------->
+          {% set royaltiesYes %}
+          {{ govukTextarea({
+            label: {
+              html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+            hint: {
+              text: ""
+            },
+            id: "pensions-foreign-yes",
+            name: "pensions-foreign-yes",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+          {% endset %}
+
+      <!-------------- Check ---------------------->
+
+
+                  {% set trustPaymentYes %}
+                  {{ govukTextarea({
+                    label: {
+                      html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+                    hint: {
+                      text: ""
+                    },
+                    id: "pensions-foreign-yes",
+                    name: "pensions-foreign-yes",
+                    classes: "govuk-input--width-30",
+                    attributes: {
+                      maxlength: 200
+                    }
+                  }) }}
+                  {% endset %}
+
+        <!------------------------------------>
+
+        {% set armedForcesYes %}
+        {{ govukTextarea({
+          label: {
+            html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+          hint: {
+            text: ""
+          },
+          id: "pensions-foreign-yes",
+          name: "pensions-foreign-yes",
+          classes: "govuk-input--width-30",
+          attributes: {
+            maxlength: 200
+          }
         }) }}
-        {% endset -%}
+        {% endset %}
+
+        <!-------------- Check ---------------------->
 
 
+        {% set personalInjuryYes %}
+        {{ govukTextarea({
+          label: {
+            html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+          hint: {
+            text: ""
+          },
+          id: "pensions-foreign-yes",
+          name: "pensions-foreign-yes",
+          classes: "govuk-input--width-30",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+        {% endset %}
+
+        <!-------------- Check ---------------------->
 
 
-        {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "benefit-industrial-death-benefit-date-yn",
-          name: "benefit-industrial-death-benefit-date-yn",
+        {% set otherCncomeCharitablePaymentsYes %}
+        {{ govukTextarea({
+          label: {
+            html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+          hint: {
+            text: ""
+          },
+          id: "other-income-charitable-payments-yes",
+          name: "other-income-charitable-payments-yes",
+          classes: "govuk-input--width-30",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+        {% endset %}
+
+        <!-------------- Check ---------------------->
+
+
+        {% set otherYes %}
+        {{ govukTextarea({
+          label: {
+            html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+          hint: {
+            text: ""
+          },
+          id: "pensions-foreign-yes",
+          name: "pensions-foreign-yes",
+          classes: "govuk-input--width-30",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+        {% endset %}
+
+        <!------------------------------------>
+
+
+        {{ govukCheckboxes({
+          name: "disregards",
           fieldset: {
             legend: {
-              html: "Date of payment",
+              text: "Order TBC",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -108,79 +166,70 @@
           },
           items: [
           {
-            value: "yes-date",
-            text: "Date of lump sum payment",
-            checked: (data["benefit-industrial-death-benefit-date-yn"] == "Yes"),
-            conditional: {
-              html: benefitIndustrialDeathBenefitYes
-            }
-          },
-            {
-              value: "no-date",
-              text: "Frequency payment",
-              checked: (data["benefit-industrial-death-benefit-date-yn"] == "No"),
+              id: "other-income-sick-pay-yn",
+              name: "other-income-sick-pay-yn",
+              value: "Money from sick pay",
+              html: "Money from sick pay",
               conditional: {
-                html: howOften
+                html: sickPayYes
               }
             },
-              {
-                value: "no-date",
-                text: "Unknown",
-                checked: (data["benefit-industrial-death-benefit-date-yn"] == "No")
+            {
+              idPrefix: "other-income-royalties-yn",
+              name: "other-income-royalties-yn",
+              value: "Money from royalties",
+              html: "Money from royalties",
+              conditional: {
+                html: royaltiesYes
               }
-            ]
-          }) }}
-
-        <!------------------------->
-
-
-
-        {{ govukInput({
-        label: {
-          html: "<strong>How much money do you get?</strong>"
-        },
-        id: "benefit-industrial-death-benefit-amount",
-        name: "benefit-industrial-death-benefit-amount",
-        classes: "govuk-input--width-20"
-      }) }}
-
-
-      {{ govukRadios({
-        idPrefix: "other-income-benefits-aboard-yn",
-        name: "other-income-benefits-aboard-yn",
-        fieldset: {
-          legend: {
-          html: "Evidence Yes / No",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
+            },
+            {
+              idPrefix: "other-income-trust-payment-yn",
+              name: "other-income-trust-payment-yn",
+              value: "Money from a trust payment",
+              html: "Money from a trust payment",
+              conditional: {
+                html: trustPaymentYes
+              }
+            },
+            {
+              idPrefix: "other-income-armed-forces-yn",
+              name: "other-income-armed-forces-yn",
+              value: "Armed Forces Compensation Scheme",
+              html: "Armed Forces Compensation Scheme	",
+              conditional: {
+                html: armedForcesYes
+              }
+            },
+            {
+              idPrefix: "other-income-injury-yn",
+              name: "other-income-injury-yn",
+              value: "Money from injury",
+              html: "Money from injury",
+              conditional: {
+                html: personalInjuryYes
+              }
+            },
+            {
+              idPrefix: "other-income-charitable-payments-yn",
+              name: "other-income-charitable-payments-yn",
+              value: "Regular charitable payments",
+              html: "Regular charitable payments",
+              conditional: {
+                html: otherCncomeCharitablePaymentsYes
+              }
+            },
+            {
+              idPrefix: "other-income-other-yn",
+              name: "other-income-other-yn",
+              value: "Other money",
+              html: "Other money",
+              conditional: {
+                html: otherYes
+              }
             }
-            },
-            items: [
-          {
-            value: "yes",
-            text: "Yes",
-            checked: (data["other-income-benefits-aboard-yn"] == "yes")
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: (data["other-income-benefits-aboard-yn"] == "no")
-          }
-        ]
-      }) }}
-
-
-      {{ govukTextarea({
-  name: "more-detail",
-  id: "more-detail",
-  label: {
-    html: "<strong>If more than one</strong>"
-  },
-  hint: {
-    text: "Same details as above but in here."
-  }
-}) }}
-
+          ]
+        }) }}
 
 
 
