@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  other-income-spousal-maintenance-yes - Pension Credit
+  other-income-aboard--yes - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -20,10 +20,18 @@
 
       <h1 class="govuk-heading-xl"><span class="agent-action">Details for X</h1>
 
+
+        {{ govukTextarea({
+          name: "other-income-aboard-yes-detail",
+          id: "eother-income-aboard-yes-detail",
+
+        value: data["employment-yes-more-detail"]
+        }) }}
+
                 {% set howOften %}
                   {{ govukDateInput({
-                    id: "other-income-spousal-maintenance-yes-yes-date",
-                    namePrefix: "other-income-spousal-maintenance-yes-yes-date",
+                    id: "other-income-aboard-yes-date",
+                    namePrefix: "other-income-aboard-yes-date",
                     fieldset: {
                       legend: {
                         text: "Enter the received"
@@ -33,17 +41,17 @@
                       {
                         name: "day",
                         classes: "govuk-input--width-2",
-                        value: data["other-income-spousal-maintenance-yes-yes-date-day"]
+                        value: data["other-income-aboard-yes-date-day"]
                       },
                       {
                         name: "month",
                         classes: "govuk-input--width-2",
-                        value: data["other-income-spousal-maintenance-yes-yes-date-month"]
+                        value: data["other-income-aboard-yes-date-month"]
                       },
                       {
                         name: "year",
                         classes: "govuk-input--width-4",
-                        value: data["other-income-spousal-maintenance-yes-yes-date-year"]
+                        value: data["other-income-aboard-yes-date-year"]
                       }
                     ]
                   }) }}
@@ -51,8 +59,8 @@
 
                 {{ govukRadios({
                   classes: "govuk-radios",
-                  idPrefix: "other-income-spousal-maintenance-yes-date-yn",
-                  name: "other-income-spousal-maintenance-yes-date-yn",
+                  idPrefix: "other-income-aboard-lump-yes",
+                  name: "other-income-aboard-lump-yes",
                   fieldset: {
                     legend: {
                       html: "Was this payment made as a lump sum?",
@@ -67,7 +75,7 @@
                   {
                       value: "no-date",
                       text: "Yes",
-                      checked: (data["other-income-spousal-maintenance-yes-date-yn"] == "Yes"),
+                      checked: (data["other-income-aboard-yes-date-yn"] == "Yes"),
                       conditional: {
                         html: howOften
                       }
@@ -75,7 +83,7 @@
                       {
                         value: "No",
                         text: "No",
-                        checked: (data["other-income-spousal-maintenance-yes-date-yn"] == "No")
+                        checked: (data["other-income-aboard-yes-"] == "No")
                       }
                     ]
                   }) }}
@@ -87,8 +95,8 @@
                 {% set howOften %}
 
                 {{ govukRadios({
-                  idPrefix: "other-income-spousal-maintenance-yes-payment-frequency-yes",
-                  name: "other-income-spousal-maintenance-yes-payment-frequency-yes",
+                  idPrefix: "other-income-aboard-payment-frequency-yes",
+                  name: "other-income-aboard-payment-frequency-yes",
                   fieldset: {
                     legend: {
                       text: "How often do get this?",
@@ -101,17 +109,17 @@
                     {
                       value: "Every week",
                       text: "Every week",
-                      checked: (data["other-income-spousal-maintenance-yes-payment-frequency-yes"] == "Every week")
+                      checked: (data["other-income-aboard-payment-frequency-yes-period"] == "Every week")
                     },
                     {
                       value: "Every two weeks",
                       text: "Every two weeks",
-                      checked: (data["other-income-spousal-maintenance-yes-payment-frequency-yes"] == "Every two weeks")
+                      checked: (data["other-income-aboard-payment-frequency-yes-period"] == "Every two weeks")
                     },
                     {
                       value: "Every four weeks",
                       text: "Every four weeks",
-                      checked: (data["other-income-spousal-maintenance-yes-payment-frequency-yes"] == "Every four weeks")
+                      checked: (data["other-income-aboard-payment-frequency-yes-period"] == "Every four weeks")
                     }
                   ]
                 }) }}
@@ -120,8 +128,8 @@
                 label: {
                   html: "Other payment frequency<strong></strong>"
                 },
-                id: "other-income-spousal-maintenance-yes-payment-frequency-yes-other",
-                name: "other-income-spousal-maintenance-yes-payment-frequency-yes-other",
+                id: "other-income-aboard-payment-frequency-yes-other",
+                name: "other-income-aboard-payment-frequency-yes-other",
                 classes: "govuk-input--width-20"
               }) }}
                 {% endset -%}
@@ -131,8 +139,8 @@
 
                 {{ govukRadios({
                   classes: "govuk-radios",
-                  idPrefix: "other-income-spousal-maintenance-Frequency-date-yes",
-                  name: "other-income-spousal-maintenance-Frequency-date-yes",
+                  idPrefix: "other-income-aboard-frequency-date-yes",
+                  name: "other-income-aboard-frequency-date-yes",
                   fieldset: {
                     legend: {
                       html: "Is this a frequency payment",
@@ -147,7 +155,7 @@
                     {
                       value: "Yes",
                       text: "Yes",
-                      checked: (data["other-income-spousal-maintenance-Frequency-date-yes"] == "Yes"),
+                      checked: (data["other-income-aboard-frequency-date-yes"] == "Yes"),
                       conditional: {
                         html: howOften
                       }
@@ -155,7 +163,7 @@
                       {
                         value: "No",
                         text: "No",
-                        checked: (data["other-income-spousal-maintenance-Frequency-date-yes"] == "No")
+                        checked: (data["other-income-aboard-frequency-date-yes"] == "No")
                       }
                     ]
                   }) }}
@@ -166,8 +174,8 @@
                 label: {
                   html: "<strong>How much money do you get?</strong>"
                 },
-                id: "other-income-spousal-maintenance-yes-amount",
-                name: "other-income-spousal-maintenance-yes-amount",
+                id: "other-income-aboard-yes-amount",
+                name: "other-income-aboard-yes-amount",
                 classes: "govuk-input--width-20"
               }) }}
 
@@ -175,8 +183,8 @@
 
               {% set otherIncomeSpousalMaintenanceYes %}
               {{ govukTextarea({
-                name: "other-income-spousal-maintenance-yes-yes-more-detail",
-                id: "other-income-spousal-maintenance-yes-yes-more-detail",
+                name: "other-income-aboard-yes-more-detail",
+                id: "other-income-aboard-yes-more-detail",
                 label: {
                   text: "Add same details as above if there is more payments?"
                 },
@@ -188,8 +196,8 @@
 
               {{ govukRadios({
                 classes: "govuk-radios",
-                idPrefix: "other-income-spousal-maintenance-yes-more-yn",
-                name: "other-income-spousal-maintenance-yes-more-yn",
+                idPrefix: "other-income-aboard-yes-more-yn",
+                name: "other-income-aboard-yes-more-yn",
                 fieldset: {
                   legend: {
                     html: "Add another entry",
@@ -204,7 +212,7 @@
                 {
                   value: "yes-date",
                   text: "Yes",
-                  checked: (data["other-income-spousal-maintenance-yes-more-yn"] == "Yes"),
+                  checked: (data["other-income-aboard-yes-more-yn"] == "Yes"),
                   conditional: {
                     html: otherIncomeSpousalMaintenanceYes
                   }
@@ -212,7 +220,7 @@
                   {
                     value: "no-date",
                     text: "No",
-                    checked: (data["other-income-spousal-maintenance-yes-more-yn"] == "No")
+                    checked: (data["other-income-aboard-yes-more-yn"] == "No")
                   }
                   ]
                 }) }}
