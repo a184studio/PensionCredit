@@ -281,32 +281,27 @@
 
         <!------------------------->
 
-      {{ govukRadios({
-        idPrefix: "other-income-equity-release-yes-evidence-yn",
-        name: "other-income-equity-release-yes-evidence-yn",
-        fieldset: {
-          legend: {
-          html: "@phil: Evidence needed?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "I think we need a better understanding of this"
-          },
-          items: [
-          {
-            value: "yes",
-            text: "Yes",
-            checked: (data["other-income-equity-release-yes-evidence-yn"] == "yes")
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: (data["other-income-equity-release-yes-evidence-yn"] == "no")
-          }
-        ]
-      }) }}
+
+      {{ govukCheckboxes({
+  idPrefix: "other-income-equity-release-evidence-check",
+  name: "other-income-equity-release-evidence-check",
+  fieldset: {
+    legend: {
+      text: "Add evidence marker to PDF",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "You will need to remind them to send in the evidence"
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    }
+  ]
+}) }}
 
 
 
