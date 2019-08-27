@@ -451,15 +451,7 @@ router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router na
 
 
 
-router.post(`${baseUrl}/employment-yn-router`, (req, res) => {
-  const employmentFulltime = req.session.data['employment-yn']
 
-  if (employmentFulltime === 'Yes') {
-    res.redirect(`${baseUrl}/notepad-selfEmployment`)
-  } else {
-    res.redirect(`${baseUrl}/other-income-benefits-aboard-yn`)
-  }
-})
 
 
 
@@ -952,21 +944,31 @@ router.post(`${baseUrl}/benefit-industrial-death-benefit-yn-router`, (req, res) 
 // benefits END
 
 
+router.post(`${baseUrl}/employment-yn-router`, (req, res) => {
+  const employmentFulltime = req.session.data['employment-yn']
+
+  if (employmentFulltime === 'Yes') {
+    res.redirect(`${baseUrl}/notepad-selfEmployment`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-aboard-yn`)
+  }
+})
+
 router.post(`${baseUrl}/other-income-benefits-aboard-yn-router`, (req, res) => {
   const otherIncomesickPayYN = req.session.data['other-income-benefits-aboard-yn']
 
   if (otherIncomesickPayYN === 'Yes') {
     res.redirect(`${baseUrl}/other-income-benefits-aboard-yes`)
   } else {
-    res.redirect(`${baseUrl}/other-income-spousal-maintenance-yn`)
+    res.redirect(`${baseUrl}/other-income-aboard-yn`)
   }
 })
 
-router.post(`${baseUrl}/other-income-spousal-maintenance-yn-router`, (req, res) => {
-  const otherIncomespousalMaintenanceYN = req.session.data['other-income-spousal-maintenance-yn']
+router.post(`${baseUrl}/other-income-aboard-yn-router`, (req, res) => {
+  const otherIncomeAboardYN = req.session.data['other-income-aboard-yn']
 
-  if (otherIncomespousalMaintenanceYN === 'Yes') {
-    res.redirect(`${baseUrl}/other-income-spousal-maintenance-yes`)
+  if (otherIncomeAboardYN === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-aboard-yes`)
   } else {
     res.redirect(`${baseUrl}/other-income-equity-release-yn`)
   }
