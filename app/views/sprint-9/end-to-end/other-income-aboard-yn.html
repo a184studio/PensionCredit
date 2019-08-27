@@ -23,12 +23,12 @@
         (data['claim-date-year'] or 2018) %}
 
 
-<h1 class="govuk-heading-xl">Do you get money for spousal maintenance?</h1>
+<h1 class="govuk-heading-xl">Do you get earnings or income from aboard?</h1>
 
 
       {{ govukRadios({
-        idPrefix: "other-income-spousal-maintenance-yn",
-        name: "other-income-spousal-maintenance-yn",
+        idPrefix: "other-income-aboard-yn",
+        name: "other-income-aboard-yn",
         fieldset: {
           legend: {
             html: "",
@@ -40,12 +40,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["other-income-spousal-maintenance-yn"] == "Yes")
+            checked: (data["other-income-aboard-yn"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["other-income-spousal-maintenance-yn"] == "No")
+            checked: (data["other-income-aboard-yn"] == "No")
           }
         ]
       }) }}
