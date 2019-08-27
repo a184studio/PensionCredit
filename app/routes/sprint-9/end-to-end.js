@@ -943,16 +943,37 @@ router.post(`${baseUrl}/benefit-industrial-death-benefit-yn-router`, (req, res) 
 
 // benefits END
 
-
-router.post(`${baseUrl}/employment-yn-router`, (req, res) => {
-  const employmentFulltime = req.session.data['employment-yn']
+router.post(`${baseUrl}/other-income-employment-yn-router`, (req, res) => {
+  const employmentFulltime = req.session.data['other-income-employment-yn']
 
   if (employmentFulltime === 'Yes') {
-    res.redirect(`${baseUrl}/notepad-selfEmployment`)
+    res.redirect(`${baseUrl}/other-income-employment-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-self-employment-yn`)
+  }
+})
+
+router.post(`${baseUrl}/other-income-self-employment-yn-router`, (req, res) => {
+  const employmentFulltime = req.session.data['other-income-self-employment-yn']
+
+  if (employmentFulltime === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-self-employment-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-equity-release-yn`)
+  }
+})
+
+router.post(`${baseUrl}/other-income-employment-yn-router`, (req, res) => {
+  const otherIncomeEmployment = req.session.data['other-income-employment-yn']
+
+  if (otherIncomeEmployment === 'Yes') {
+    res.redirect(`${baseUrl}/other-income-employment-yes`)
   } else {
     res.redirect(`${baseUrl}/other-income-aboard-yn`)
   }
 })
+
+
 
 router.post(`${baseUrl}/other-income-benefits-aboard-yn-router`, (req, res) => {
   const otherIncomesickPayYN = req.session.data['other-income-benefits-aboard-yn']
@@ -964,15 +985,8 @@ router.post(`${baseUrl}/other-income-benefits-aboard-yn-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/other-income-aboard-yn-router`, (req, res) => {
-  const otherIncomeAboardYN = req.session.data['other-income-aboard-yn']
 
-  if (otherIncomeAboardYN === 'Yes') {
-    res.redirect(`${baseUrl}/other-income-aboard-yes`)
-  } else {
-    res.redirect(`${baseUrl}/other-income-equity-release-yn`)
-  }
-})
+
 
 router.post(`${baseUrl}/other-income-equity-release-yn-router`, (req, res) => {
   const otherIncomeequityReleaseYN = req.session.data['other-income-equity-release-yn']
