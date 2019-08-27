@@ -17,12 +17,48 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="other-income-benefits-aboard-yn" method="post">
+      <form action="other-income-self-employment-yn" method="post">
 
         <span class="govuk-caption-m"></span>
-        <h1 class="govuk-heading-xl">Employment and self employment</h1>
+        <h1 class="govuk-heading-xl">Employment details</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">Lets talk about employment</p>
+
+        {{ govukRadios({
+          idPrefix: "other-income-benefits-aboard-yes-evidence-yn",
+          name: "other-income-benefits-aboard-yes-evidence-yn",
+          fieldset: {
+            legend: {
+            html: "Is this income from a employer outside of the UK?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "XXX"
+            },
+            items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "no")
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+        label: {
+          html: "<strong>What is this money for?</strong>"
+        },
+        id: "other-income-benefits-aboard-yes-amount",
+        name: "other-income-benefits-aboard-yes-amount",
+        classes: "govuk-input--width-20"
+      }) }}
+
 
 
                         {% set howOften %}
@@ -60,7 +96,7 @@
                           name: "other-income-benefits-aboard-lump-yes",
                           fieldset: {
                             legend: {
-                              html: "Was this payment made as a lump sum?",
+                              html: "Was a payment made as a lump sum?",
                               isPageHeading: true,
                               classes: "govuk-fieldset__legend--s"
                             }
@@ -191,13 +227,17 @@
                       }) }}
                       {% endset -%}
 
+                      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                      <h1 class="govuk-heading-l">Details for more than one entry</h1>
+
+
                       {{ govukRadios({
                         classes: "govuk-radios",
                         idPrefix: "other-income-benefits-aboard-yes-more-yn",
                         name: "other-income-benefits-aboard-yes-more-yn",
                         fieldset: {
                           legend: {
-                            html: "Add another entry",
+                            html: "Do you need to add another entry?",
                             isPageHeading: true,
                             classes: "govuk-fieldset__legend--s"
                           }
