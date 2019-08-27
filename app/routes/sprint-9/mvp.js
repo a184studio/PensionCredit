@@ -451,7 +451,7 @@ router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router na
 
 
 
-router.post(`${baseUrl}/employment-router`, (req, res) => {
+router.post(`${baseUrl}/employment-yn-router`, (req, res) => {
   const employmentFulltime = req.session.data['employment-yn']
 
   if (employmentFulltime === 'Yes') {
@@ -460,6 +460,11 @@ router.post(`${baseUrl}/employment-router`, (req, res) => {
     res.redirect(`${baseUrl}/other-income-benefits-aboard-yn`)
   }
 })
+
+
+
+
+
 
 router.post(`${baseUrl}/still-employed-router`, (req, res) => {
   const stillEmployed = req.session.data['still-employed']
