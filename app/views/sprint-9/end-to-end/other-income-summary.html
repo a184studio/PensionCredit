@@ -26,7 +26,7 @@
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Were you employed or self-employed between Today and undefined undefined undefined
+                      Employment
                     </dt>
                     <dd class="govuk-summary-list__value">
                       {{ data["employment-yn"] }}
@@ -57,11 +57,44 @@
 
             <br>
 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Self - Employment
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["employment-yn"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="employment-yn">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+
+            {% if data["employment-yes-more-detail"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Details
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      details{{ data["employment-yes-more-detail"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="notepad-selfEmployment">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+      <br>
+
 
 
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            other-income-benefits-aboard-yn
+                            Item
                           </dt>
                           <dd class="govuk-summary-list__value">
                             {{ data["other-income-benefits-aboard-yn"] }}
@@ -95,7 +128,7 @@
 
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            other-income-spousal-maintenance-yn
+                            Item
                           </dt>
                           <dd class="govuk-summary-list__value">
                             {{ data["other-income-spousal-maintenance-yn"] }}
@@ -159,7 +192,7 @@
 <br>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  other-income-sick-pay-yn
+                                  Item
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["other-income-sick-pay-yn"] }}
@@ -191,7 +224,7 @@
 <br>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  other-income-royalties-yn
+                                  Item
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["other-income-royalties-yn"] }}
@@ -225,7 +258,7 @@
 
                                 <div class="govuk-summary-list__row">
                                   <dt class="govuk-summary-list__key">
-                                    other-income-trust-payment-yn
+                                    Item
                                   </dt>
                                   <dd class="govuk-summary-list__value">
                                     {{ data["other-income-trust-payment-yn"] }}
@@ -257,7 +290,7 @@
 <br>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  other-income-armed-forces-yn
+                                  Item
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["other-income-armed-forces-yn"] }}
@@ -291,7 +324,7 @@
 <br>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  other-income-injury-yn
+                                  Item
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["other-income-injury-yn"] }}
@@ -324,7 +357,7 @@
 
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  other-income-charitable-payments-yn
+                                  Item
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["other-income-charitable-payments-yn"] }}
@@ -358,7 +391,7 @@
 
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  other-income-other-yn
+                                  Item
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["other-income-other-yn"] }}
