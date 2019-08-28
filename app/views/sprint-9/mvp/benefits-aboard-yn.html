@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="other-income-benefits-aboard-yn-router" method="post" class="form">
+    <form action="benefits-aboard-yn-router" method="post" class="form">
 
       <input type="hidden" name="employment-complete" value="in-progress"/>
 
@@ -27,8 +27,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "other-income-benefits-aboard-yn",
-        name: "other-income-benefits-aboard-yn",
+        idPrefix: "benefits-aboard-yn",
+        name: "benefits-aboard-yn",
         fieldset: {
           legend: {
             html: "",
@@ -40,12 +40,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["other-income-benefits-aboard-yn"] == "Yes")
+            checked: (data["benefits-aboard-yn"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["other-income-benefits-aboard-yn"] == "No")
+            checked: (data["benefits-aboard-yn"] == "No")
           }
         ]
       }) }}

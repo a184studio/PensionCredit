@@ -932,9 +932,23 @@ router.post(`${baseUrl}/benefit-industrial-death-benefit-yn-router`, (req, res) 
   if (iidbYes === 'Yes') {
     res.redirect(`${baseUrl}/benefit-industrial-death-benefit-yes`)
   } else {
+    res.redirect(`${baseUrl}/benefits-aboard-yn`)
+  }
+})
+
+router.post(`${baseUrl}/benefits-aboard-yn-router`, (req, res) => {
+  const benefitsAboard = req.session.data['benefits-aboard-yn']
+
+  if (benefitsAboard === 'Yes') {
+    res.redirect(`${baseUrl}/benefits-aboard-yes`)
+  } else {
     res.redirect(`${baseUrl}/benefits-summary`)
   }
 })
+
+
+
+
 
 
 
