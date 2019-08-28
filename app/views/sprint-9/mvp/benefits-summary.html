@@ -287,6 +287,41 @@
                                           {% endif %}
 
 
+      <br>
+                                    <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                                        Do you get any benefit payments from an foreign government?
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                                        {{ data["benefits-aboard-yn"] }}
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                        <a href="benefit-industrial-death-benefit-yn">
+                                          Change
+                                        </a>
+                                      </dd>
+                                    </div>
+
+
+                                    {% if data["benefits-aboard-yn"] %}
+                                      <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                          Details
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                          {{ data["benefits-aboard-yn"] }}
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                          <a href="benefit-industrial-death-benefit-yes">
+                                            Change
+                                          </a>
+                                        </dd>
+                                      </div>
+                                      {% endif %}
+
+
+
+
 <br></dl></dl><br><br>
 
     <form action="task-list" method="post">
