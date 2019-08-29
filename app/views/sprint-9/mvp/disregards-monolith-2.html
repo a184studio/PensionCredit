@@ -23,7 +23,9 @@
         {% set council %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Description of the payment related to Council Tax Reduction, the date it was paid and amount.</strong><br>"            },
+              classes: "govuk-label--s",
+              html: "Description of the payment related to Council Tax Reduction, the date it was paid and amount"
+            },
             hint: {
               text: "Disregard payments from the local authority related to Council Tax Reduction, other that the 25 percent single occupier reduction, for one year."
             },
@@ -38,20 +40,24 @@
 
         {% set warPaymentYes %}
           {% set warHint %}
-            <p class=govuk-hint>Disregard indefinitley:</p>
-            <p class=govuk-hint>Payments (other than War Disablement Pension or War Widow(er)'s Pension) to compensate for the fact that during the second world war you:</p>
-            <ul>
-              <li>were a slave labourer or forced labourer</li>
-              <li>suffered property loss or personal injury</li>
-              <li>were a parent of a child who died</li>
+            <p class="govuk-hint">Disregard indefinitley:</p>
+            <ul class="govuk-hint govuk-list govuk-list--bullet">
+              <li>
+                Payments (other than War Disablement Pension or War Widow(er)'s Pension) to compensate for the fact that during the second world war you:
+                <ul class="govuk-hint govuk-list">
+                  <li>were a slave labourer or forced labourer</li>
+                  <li>suffered property loss or personal injury</li>
+                  <li>were a parent of a child who died</li>
                 </ul>
-            <br>Payments made to Far East Prisoners of War or their partners.
-            <br><br>Armed Forces Independence Payment.<br><br>
-
+              </li>
+              <li>Payments made to Far East Prisoners of War or their partners.</li>
+              <li>Armed Forces Independence Payment.</li>
+            </ul>
           {% endset %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Description of compensation payments related to the second world war or service in the armed forces.</strong>"
+              classes: "govuk-label--s",
+              html: "Description of compensation payments related to the second world war or service in the armed forces"
             },
             hint: {
               html: warHint
@@ -68,7 +74,9 @@
         {% set compensationInjury %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Description of personal injury payment, the date it was paid and amount.</strong><br>"                },
+              classes: "govuk-label--s",
+              html: "Description of personal injury payment, the date it was paid and amount"
+            },
             hint: {
               text: "Disregard personal injury payments indefinitely."
             },
@@ -84,7 +92,8 @@
         {% set ContentsInsurance %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Description of payment from home insurance, the date it was paid and amount.</strong><br>"
+              classes: "govuk-label--s",
+              html: "Description of payment from home insurance, the date it was paid and amount"
             },
             hint: {
               text: "Disregard home insurance payments for one year."
@@ -101,7 +110,9 @@
         {% set moneyForProperty %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Description of the money to buy or make essential repairs to a home, the date to consider it from and amount.</strong><br>"                    },
+              classes: "govuk-label--s",
+              html: "Description of the money to buy or make essential repairs to a home, the date to consider it from and amount"
+            },
             hint: {
               text: "Disregard money to buy or make essential repairs to a home for one year."
             },
@@ -116,13 +127,15 @@
 
         {% set independentlyLiving %}
         {% set indyHint %}
-        <p class=govuk-hint>Disregard payments from The Independent Living Fund indefinitely.</p>
-        <p class=govuk-hint>Disregard local authority payments to help you to continue to live independently in your own home for one year.</p>
-        <p class=govuk-hint>Disregard welfare assistance grants from the local authority for one year.</p>
+          <p class=govuk-hint>Disregard payments from The Independent Living Fund indefinitely.</p>
+          <p class=govuk-hint>Disregard local authority payments to help you to continue to live independently in your own home for one year.</p>
+          <p class=govuk-hint>Disregard welfare assistance grants from the local authority for one year.</p>
         {% endset %}
           {{ govukTextarea({
             label: {
-                html: "<strong>Description of the payments to help you live independently, the date they were paid and amount.</strong>"                      },
+              classes: "govuk-label--s",
+              html: "Description of the payments to help you live independently, the date they were paid and amount"
+            },
             hint: {
               html: indyHint            },
             id: "disregards-independently-living-yes",
@@ -136,18 +149,20 @@
 
         {% set incidentPayment %}
         {% set emergHint %}
-        <p class=govuk-hint>Disregard indefinitely payments from:</p>
-          <ul class=govuk-hint>
-            <li class=govuk-hint>London emergency trust</li>
-            <li class=govuk-hint>The We Love Manchester Emergency Fund</li>
-            <li class=govuk-hint>The London bombing charitable trust</li>
-            <li class=govuk-hint>The Rugby Portobello trust</li>
-            <li class=govuk-hint>The Grenfell residents discretionary fund</li>
-            </ul>
+          <p class=govuk-hint>Disregard indefinitely payments from:</p>
+          <ul class="govuk-hint govuk-list govuk-list--bullet">
+            <li>London emergency trust</li>
+            <li>The We Love Manchester Emergency Fund</li>
+            <li>The London bombing charitable trust</li>
+            <li>The Rugby Portobello trust</li>
+            <li>The Grenfell residents discretionary fund</li>
+          </ul>
         {% endset %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Description of the payment to help you after an incident or emergency, the date it was paid and amount.</strong>"                        },
+              classes: "govuk-label--s",
+              html: "Description of the payment to help you after an incident or emergency, the date it was paid and amount"
+            },
             hint: {
               html: emergHint
             },
@@ -163,7 +178,8 @@
         {% set windrushYes %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Description of Windrush child compensation payment, the date it was paid and amount.</strong>"                          },
+              classes: "govuk-label--s",
+              html: "Description of Windrush child compensation payment, the date it was paid and amount"                          },
             hint: {
               text: "Disregard Windrush child compensation indefinitely."
             },
@@ -177,20 +193,21 @@
         {% endset %}
 
         {% set infectedBlood %}
-        {% set bloodHint %}
-        <p class=govuk-hint>Disregard indefinitely payments from:</p>
-        <ul class=govuk-hint>
-          <li class=govuk-hint>The McFarlane Trust</li>
-          <li class=govuk-hint>McFarlane (Special Payments) Trust</li>
-          <li class=govuk-hint>Trust MFET Limited</li>
-          <li class=govuk-hint>The Skipton Fund</li>
-          <li class=govuk-hint>The Caxton Foundation</li>
-          <li class=govuk-hint>The Scottish Infected Blood Support Scheme or an approved blood scheme</li>
-        </ul>
-        {% endset %}
+          {% set bloodHint %}
+            <p class=govuk-hint>Disregard indefinitely payments from:</p>
+            <ul class="govuk-hint govuk-list govuk-list--bullet">
+              <li>The McFarlane Trust</li>
+              <li>McFarlane (Special Payments) Trust</li>
+              <li>Trust MFET Limited</li>
+              <li>The Skipton Fund</li>
+              <li>The Caxton Foundation</li>
+              <li>The Scottish Infected Blood Support Scheme or an approved blood scheme</li>
+            </ul>
+          {% endset %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Enter a description of the payment, the date it was paid and amount.</strong>"
+              classes: "govuk-label--s",
+              text: "Enter a description of the payment, the date it was paid and amount"
              },
             hint: {
               html: bloodHint
