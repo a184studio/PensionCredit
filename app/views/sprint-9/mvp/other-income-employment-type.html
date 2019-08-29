@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you in paid employment? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="other-income-employment-type-yn-router" method="post" class="form">
+
+      <input type="hidden" name="employment-complete" value="in-progress"/>
+
+
+        <div class="govuk-panel--agent">
+          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in SearchLight for any signs of earnings</h1>
+          </div>
+
+      {{ govukRadios({
+        idPrefix: "other-income-employment-type-yn",
+        name: "other-income-employment-type-yn",
+        fieldset: {
+          legend: {
+            html: "What type of work is this?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+            }
+            },
+            items: [
+            {
+            value: "Employed",
+            text: "Employed",
+            checked: (data["other-income-employment-type-yn"] == "Employed")
+          },
+          {
+            value: "Self-employed",
+            text: "Self-employed",
+            checked: (data["other-income-employment-type-yn"] == "Self-employed")
+          },
+          {
+            value: "Other type of employment",
+            text: "Other type of employment",
+            checked: (data["other-income-employment-type-yn"] == "Other type of employment")
+          }
+        ]
+      }) }}
+<!--            text: "Were you self-employed between Monday, 15 April 2019 and Today? " + tamDate,-->
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
