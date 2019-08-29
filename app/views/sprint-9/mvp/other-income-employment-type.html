@@ -14,13 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="other-income-employment-type-yn-router" method="post" class="form">
+    <form action="other-income-employment-type-router" method="post" class="form">
 
       <input type="hidden" name="employment-complete" value="in-progress"/>
 
 
         <div class="govuk-panel--agent">
-          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in SearchLight for any signs of earnings</h1>
+          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in SearchLight and give an overview of their earnings</h1>
           </div>
 
       {{ govukRadios({
@@ -45,9 +45,14 @@
             checked: (data["other-income-employment-type-yn"] == "Self-employed")
           },
           {
-            value: "Other type of employment",
-            text: "Other type of employment",
-            checked: (data["other-income-employment-type-yn"] == "Other type of employment")
+            value: "Both employed and self-employed",
+            text: "Both employed and self-employed",
+            checked: (data["other-income-employment-type-yn"] == "Both employed and self-employed")
+          },
+          {
+            value: "Not employed within this period",
+            text: "Not employed within this period",
+            checked: (data["other-income-employment-type-yn"] == "Not employed within this period")
           }
         ]
       }) }}
