@@ -23,9 +23,9 @@
         {% set council %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Payments from the local authority related to Council Tax Reduction, other that the 25 percent single occupier reduction</strong><br> Disregard for 52 weeks<br><br>"            },
+              html: "<strong>Description of the payment related to Council Tax Reduction, the date it was paid and amount.</strong><br>"            },
             hint: {
-              text: "Enter a description of the payment, the date it was paid and amount."
+              text: "Disregard payments from the local authority related to Council Tax Reduction, other that the 25 percent single occupier reduction, for one year."
             },
             id: "disregards-council-yes",
             name: "disregards-council-yes",
@@ -37,23 +37,24 @@
         {% endset %}
 
         {% set warPaymentYes %}
-          {% set label %}
-            <p><strong>Payments (other than War Disablement Pension or War Widow(er)'s Pension) to compensate for the fact that during the second world war you:</strong></p>
+          {% set warHint %}
+            <p class=govuk-hint>Disregard indefinitley:</p>
+            <p class=govuk-hint>Payments (other than War Disablement Pension or War Widow(er)'s Pension) to compensate for the fact that during the second world war you:</p>
             <ul>
-              <li><strong>were a slave labourer or forced labourer</strong></li>
-              <li><strong>suffered property loss or personal injury</strong></li>
-              <li><strong>were a parent of a child who died</strong></li>
+              <li>were a slave labourer or forced labourer</li>
+              <li>suffered property loss or personal injury</li>
+              <li>were a parent of a child who died</li>
                 </ul>
-            <br><strong>Payments made to Far East Prisoners of War or their partners
-            <br><br>Armed Forces Independence Payment<br><br>
-            </strong> Disregard indefinitely<br><br>
+            <br>Payments made to Far East Prisoners of War or their partners.
+            <br><br>Armed Forces Independence Payment.<br><br>
+
           {% endset %}
           {{ govukTextarea({
             label: {
-              html: label
+              html: "<strong>Description of compensation payments related to the second world war or service in the armed forces.</strong>"
             },
             hint: {
-              text: "Enter a description of the payment, the date it was paid and amount."
+              html: warHint
             },
             id: "disregards-warpayment-yes",
             name: "disregards-warpayment-yes",
@@ -67,9 +68,9 @@
         {% set compensationInjury %}
           {{ govukTextarea({
             label: {
-              html: "Disregard indefinitely<br><br>"                },
+              html: "<strong>Description of personal injury payment, the date it was paid and amount.</strong><br>"                },
             hint: {
-              text: "Enter a description of the payment, the date it was paid and amount."
+              text: "Disregard personal injury payments indefinitely."
             },
             id: "disregards-compensation-for-injury-yes",
             name: "disregards-compensation-for-injury-yes",
@@ -83,10 +84,10 @@
         {% set ContentsInsurance %}
           {{ govukTextarea({
             label: {
-              html: "Disregard for 52 weeks<br><br>"
+              html: "<strong>Description of payment from home insurance, the date it was paid and amount.</strong><br>"
             },
             hint: {
-              text: "Enter a description of the payment, the date it was paid and amount."
+              text: "Disregard home insurance payments for one year."
             },
             id: "disregards-contents-insurance-yes",
             name: "disregards-contents-insurance-yes",
@@ -100,9 +101,9 @@
         {% set moneyForProperty %}
           {{ govukTextarea({
             label: {
-              html: "Disregard for 52 weeks<br><br>"                    },
+              html: "<strong>Description of the money to buy or make essential repairs to a home, the date to consider it from and amount.</strong><br>"                    },
             hint: {
-              text: "Enter a description of the money, the date to consider it from and amount."
+              text: "Disregard money to buy or make essential repairs to a home for one year."
             },
             id: "disregards-money-for-property-yes",
             name: "disregards-money-for-property-yes",
@@ -114,12 +115,16 @@
         {% endset %}
 
         {% set independentlyLiving %}
+        {% set indyHint %}
+        <p class=govuk-hint>Disregard payments from The Independent Living Fund indefinitely.</p>
+        <p class=govuk-hint>Disregard local authority payments to help you to continue to live independently in your own home for one year.</p>
+        <p class=govuk-hint>Disregard welfare assistance grants from the local authority for one year.</p>
+        {% endset %}
           {{ govukTextarea({
             label: {
-                html: "<strong>Payments from The Independent Living Fund</strong><br> Disregard indefinitely<br><br><strong>Local Authority payments to help you to continue to live independently in your own home</strong><br> Disregard for 52 weeks<br><br><strong>Welfare Assistance grants from the Local Authority</strong><br> Disregard for 52 weeks<br><br>"                      },
+                html: "<strong>Description of the payments to help you live independently, the date they were paid and amount.</strong>"                      },
             hint: {
-              text: "Enter a description of the payment, the date it was paid and amount."
-            },
+              html: indyHint            },
             id: "disregards-independently-living-yes",
             name: "disregards-independently-living-yes",
             classes: "govuk-input--width-100",
@@ -130,11 +135,21 @@
         {% endset %}
 
         {% set incidentPayment %}
+        {% set emergHint %}
+        <p class=govuk-hint>Disregard indefinitely payments from:</p>
+          <ul class=govuk-hint>
+            <li class=govuk-hint>London emergency trust</li>
+            <li class=govuk-hint>The We Love Manchester Emergency Fund</li>
+            <li class=govuk-hint>The London bombing charitable trust</li>
+            <li class=govuk-hint>The Rugby Portobello trust</li>
+            <li class=govuk-hint>The Grenfell residents discretionary fund</li>
+            </ul>
+        {% endset %}
           {{ govukTextarea({
             label: {
-              html: "<strong>London emergency trust</strong><br><strong>The We Love Manchester Emergency Fund</strong> <br><strong>The London bombing charitable trust</strong><br><strong>The Rugby Portobello trust</strong><br><strong>The Grenfell residents discretionary fund</strong><br><br>Disregard indefinitely<br><br>"                        },
+              html: "<strong>Description of the payment to help you after an incident or emergency, the date it was paid and amount.</strong>"                        },
             hint: {
-              text: "Enter a description of the payment, the date it was paid and amount."
+              html: emergHint
             },
             id: "disregards-incident-payment-yes",
             name: "disregards-incident-payment-yes",
@@ -148,9 +163,9 @@
         {% set windrushYes %}
           {{ govukTextarea({
             label: {
-              html: "Disregard indefinitely<br><br>"                          },
+              html: "<strong>Description of Windrush child compensation payment, the date it was paid and amount.</strong>"                          },
             hint: {
-              text: "Enter a description of the payment, the date it was paid and amount."
+              text: "Disregard Windrush child compensation indefinitely."
             },
             id: "disregards-windrush-yes",
             name: "disregards-windrush-yes",
@@ -162,12 +177,23 @@
         {% endset %}
 
         {% set infectedBlood %}
+        {% set bloodHint %}
+        <p class=govuk-hint>Disregard indefinitely paymenst from:</p>
+        <ul class=govuk-hint>
+          <li class=govuk-hint>The McFarlane Trust</li>
+          <li class=govuk-hint>McFarlane (Special Payments) Trust</li>
+          <li class=govuk-hint>Trust MFET Limited</li>
+          <li class=govuk-hint>The Skipton Fund</li>
+          <li class=govuk-hint>The Caxton Foundation</li>
+          <li class=govuk-hint>The Scottish Infected Blood Support Scheme or an approved blood scheme</li>
+        </ul>
+        {% endset %}
           {{ govukTextarea({
             label: {
-              html: "<strong>The McFarlane Trust</strong><br><strong>McFarlane (Special Payments) Trust</strong><br><strong>Trust MFET Limited </strong><br><strong>The Skipton Fund </strong><br><strong>The Caxton Foundation </strong><br><strong>The Scottish Infected Blood Support Scheme or an approved blood scheme</strong><br><br>Disregard indefinitely<br><br>"
+              html: "<strong>Enter a description of the payment, the date it was paid and amount.</strong>"
              },
             hint: {
-              text: "Enter a description of the payment, the date it was paid and amount."
+              html: bloodHint
             },
             id: "disregards-blood-yes",
             name: "disregards-blood-yes",
