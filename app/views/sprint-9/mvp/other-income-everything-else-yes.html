@@ -25,7 +25,7 @@
         {% set AAYes %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+              html: "Description of income from the Armed Forces Compensation Scheme, the start date, how often it is paid, how much it is and the end date if there is one"            },
             hint: {
               text: ""
             },
@@ -42,7 +42,7 @@
           {% set BBYes %}
           {{ govukTextarea({
             label: {
-              html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+              html: "Description of discretionary payments from a trust, the start date, how often it is paid, how much it is and the end date if there is one"            },
             hint: {
               text: ""
             },
@@ -61,7 +61,7 @@
                   {% set CCYes %}
                   {{ govukTextarea({
                     label: {
-                      html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+                      html: "Description of income, the start date, how often it is paid, how much it is, whether it is a structured settlement and the end date if there is one"            },
                     hint: {
                       text: ""
                     },
@@ -79,7 +79,7 @@
         {% set DDYes %}
         {{ govukTextarea({
           label: {
-            html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+            html: "Description of maintenance, the start date, how often it is paid, how much it is and the end date if there is one"            },
           hint: {
             text: ""
           },
@@ -95,21 +95,7 @@
         <!-------------- Check ---------------------->
 
 
-        {% set EEYes %}
-        {{ govukTextarea({
-          label: {
-            html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
-          hint: {
-            text: ""
-          },
-          id: "other-income-EEYes",
-          name: "other-income-EEYes",
-          classes: "govuk-input--width-30",
-          attributes: {
-            maxlength: 200
-          }
-        }) }}
-        {% endset %}
+
 
         <!-------------- Check ---------------------->
 
@@ -117,7 +103,7 @@
         {% set FFYes %}
         {{ govukTextarea({
           label: {
-            html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+            html: "Description of strike pay, the start date, how often it is paid, how much it is and the end date if there is one"            },
           hint: {
             text: ""
           },
@@ -136,7 +122,7 @@
         {% set otherYes %}
         {{ govukTextarea({
           label: {
-            html: "<strong>Name</strong> XXX<br><br><strong>LumpSum or regular</strong> XXX<br><br><strong>Date of payment</strong> XXX<br><br><strong>Value</strong> XXX<br><br><strong>XXX XXX may be needed</strong> XXX<br><br><strong>Evidence may be needed</strong> XXX"            },
+            html: "Description of other income, the start date, how often it is paid, how much it is and the end date if there is one"            },
           hint: {
             text: ""
           },
@@ -156,7 +142,7 @@
           name: "disregards",
           fieldset: {
             legend: {
-              text: "Order TBC",
+              text: "Select all that apply",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -169,7 +155,7 @@
               id: "other-income-sick-pay-yn",
               name: "other-income-sick-pay-yn",
               value: "A",
-              html: "A",
+              html: "Armed forces compensation scheme",
               conditional: {
                 html: AAYes
               }
@@ -178,7 +164,7 @@
               idPrefix: "other-income-royalties-yn",
               name: "other-income-royalties-yn",
               value: "BB",
-              html: "BB",
+              html: "Discretionary payments from a trust",
               conditional: {
                 html: BBYes
               }
@@ -186,8 +172,8 @@
             {
               idPrefix: "other-income-trust-payment-yn",
               name: "other-income-trust-payment-yn",
-              value: "CC",
-              html: "CC",
+              value: "Income from creditors/redundancy or disability insurance",
+              html: "Personal injury awards or payments from a trust relating to an award for a personal injury.",
               conditional: {
                 html: CCYes
               }
@@ -196,25 +182,18 @@
               idPrefix: "other-income-armed-forces-yn",
               name: "other-income-armed-forces-yn",
               value: "DD",
-              html: "DD",
+              html: "Maintenance from a spouse or civil partner or former spouse or civil partner",
               conditional: {
                 html: DDYes
               }
             },
-            {
-              idPrefix: "other-income-injury-yn",
-              name: "other-income-injury-yn",
-              value: "EE",
-              html: "EE",
-              conditional: {
-                html: EEYes
-              }
-            },
+
+
             {
               idPrefix: "other-income-charitable-payments-yn",
               name: "other-income-charitable-payments-yn",
               value: "FF",
-              html: "FF",
+              html: "Strike pay",
               conditional: {
                 html: FFYes
               }
@@ -223,7 +202,7 @@
               idPrefix: "other-income-other-yn",
               name: "other-income-other-yn",
               value: "Other money",
-              html: "Other money",
+              html: "Any other income",
               conditional: {
                 html: otherYes
               }
