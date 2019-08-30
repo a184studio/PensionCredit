@@ -35,7 +35,7 @@
       }) }}
 
 
-
+<!--
                         {% set howOften %}
                           {{ govukDateInput({
                             id: "other-income-benefits-aboard-yes-date",
@@ -95,86 +95,48 @@
                               }
                             ]
                           }) }}
-
+-->
                       <!------------------------->
 
 
-
-                        {% set howOften %}
-
-                        {{ govukRadios({
-                          idPrefix: "other-income-benefits-aboard-payment-frequency-yes",
-                          name: "other-income-benefits-aboard-payment-frequency-yes",
-                          fieldset: {
-                            legend: {
-                              text: "How often do get this?",
-                              isPageHeading: true,
-                              classes: "<!--govuk-fieldset__legend--s-->"
-                              }
-                              },
-
-                          items: [
-                            {
-                              value: "Every week",
-                              text: "Every week",
-                              checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Every week")
-                            },
-                            {
-                              value: "Every two weeks",
-                              text: "Every two weeks",
-                              checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Every two weeks")
-                            },
-                            {
-                              value: "Monthly",
-                              text: "Monthly",
-                              checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Monthly")
+                      {{ govukRadios({
+                        idPrefix: "other-income-benefits-aboard-payment-frequency-yes",
+                        name: "other-income-benefits-aboard-payment-frequency-yes",
+                        fieldset: {
+                          legend: {
+                            text: "How often do get this?",
+                            isPageHeading: true,
+                            classes: "<!--govuk-fieldset__legend--s-->"
                             }
-                          ]
-                        }) }}
+                            },
 
-                        {{ govukInput({
-                        label: {
-                          html: "Other payment frequency<strong></strong>"
-                        },
-                        id: "other-income-benefits-aboard-payment-frequency-yes-other",
-                        name: "other-income-benefits-aboard-payment-frequency-yes-other",
-                        classes: "govuk-input--width-20"
+                        items: [
+                          {
+                            value: "Every week",
+                            text: "Every week",
+                            checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Every week")
+                          },
+                          {
+                            value: "Every two weeks",
+                            text: "Every two weeks",
+                            checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Every two weeks")
+                          },
+                          {
+                            value: "Monthly",
+                            text: "Monthly",
+                            checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Monthly")
+                          }
+                        ]
                       }) }}
-                        {% endset -%}
 
-
-
-
-                        {{ govukRadios({
-                          classes: "govuk-radios",
-                          idPrefix: "other-income-benefits-aboard-frequency-date-yes",
-                          name: "other-income-benefits-aboard-frequency-date-yes",
-                          fieldset: {
-                            legend: {
-                              html: "Is this a frequency payment",
-                              isPageHeading: true,
-                              classes: "govuk-fieldset__legend--s"
-                            }
-                          },
-                          hint: {
-                            text: ""
-                          },
-                          items: [
-                            {
-                              value: "Yes",
-                              text: "Yes",
-                              checked: (data["other-income-benefits-aboard-frequency-date-yes"] == "Yes"),
-                              conditional: {
-                                html: howOften
-                              }
-                            },
-                              {
-                                value: "No",
-                                text: "No",
-                                checked: (data["other-income-benefits-aboard-frequency-date-yes"] == "No")
-                              }
-                            ]
-                          }) }}
+                      {{ govukInput({
+                      label: {
+                        html: "Other payment frequency<strong></strong>"
+                      },
+                      id: "other-income-benefits-aboard-payment-frequency-yes-other",
+                      name: "other-income-benefits-aboard-payment-frequency-yes-other",
+                      classes: "govuk-input--width-20"
+                    }) }}
 
                           <!------------------------->
 
