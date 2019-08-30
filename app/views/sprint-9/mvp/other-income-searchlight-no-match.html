@@ -20,13 +20,13 @@
       <form action="other-income-equity-release-yn" method="post">
 
         <span class="govuk-caption-m"></span>
-        <h1 class="govuk-heading-xl">Searchlight not matching</h1>
+    <div class="govuk-panel--agent">
+        <h1 class="govuk-heading-xl">Agent: Changes you need to make to income shown in searchlight</h1>
 
 
       {{ govukTextarea({
       label: {
-        html: "Details
-+ Sick pay<strong></strong>"
+        html: "Details of income that is shown incorrectly in searchlight and the reason you need to use a different income figure in the calculation"
       },
       id: "other-income-searchlight-no-match-details",
       name: "other-income-searchlight-no-match-details",
@@ -38,7 +38,7 @@
     }) }}
 
 
-
+      </div>
 
         {{ govukButton({
           text: "Continue"
@@ -46,6 +46,7 @@
       </form>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
       <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
 
     </div>
