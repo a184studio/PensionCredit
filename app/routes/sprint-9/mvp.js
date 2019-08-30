@@ -1027,7 +1027,17 @@ router.post(`${baseUrl}/other-income-equity-release-yn-router`, (req, res) => {
   if (otherIncomeequityReleaseYN === 'Yes') {
     res.redirect(`${baseUrl}/other-income-home-income-yn`)
   } else {
+    res.redirect(`${baseUrl}/other-income-home-income-yes`)
+  }
+})
+
+router.post(`${baseUrl}/other-income-home-income-yn-router`, (req, res) => {
+  const otherIncomeEverythingElse = req.session.data['other-income-home-income-yn']
+
+  if (otherIncomeEverythingElse === 'Yes') {
     res.redirect(`${baseUrl}/other-income-everything-else-yes`)
+  } else {
+    res.redirect(`${baseUrl}/other-income-equity-release-yes`)
   }
 })
 
@@ -1080,15 +1090,7 @@ router.post(`${baseUrl}/other-income-everything-else-yn-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/other-income-home-income-yn-router`, (req, res) => {
-  const otherIncomeEverythingElse = req.session.data['other-income-home-income-yn']
 
-  if (otherIncomeEverythingElse === 'Yes') {
-    res.redirect(`${baseUrl}/other-income-equity-release-yes`)
-  } else {
-    res.redirect(`${baseUrl}/other-income-everything-else-yes`)
-  }
-})
 
 
 // Other Income END
