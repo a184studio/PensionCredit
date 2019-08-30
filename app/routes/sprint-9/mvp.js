@@ -975,7 +975,7 @@ router.post(`${baseUrl}/other-income-employment-type-router`, (req, res) => {
   if (employmentType === 'Self-employed') {
     res.redirect(`${baseUrl}/other-income-self-employment-yes`)
   }
-  else if (employmentType === 'Both employed and self-employed') {
+  else if (employmentType === 'Both Other paid work and self-employed') {
     res.redirect(`${baseUrl}/other-income-employment-yes`)
   }
   else if (employmentType === 'Other paid work') {
@@ -1027,7 +1027,7 @@ router.post(`${baseUrl}/other-income-equity-release-yn-router`, (req, res) => {
   if (otherIncomeequityReleaseYN === 'Yes') {
     res.redirect(`${baseUrl}/other-income-home-income-yn`)
   } else {
-    res.redirect(`${baseUrl}/other-income-home-income-yes`)
+    res.redirect(`${baseUrl}/other-income-everything-else-yes`)
   }
 })
 
