@@ -20,14 +20,14 @@
       <form action="other-income-self-employment-yes" method="post">
 
         <span class="govuk-caption-m"></span>
-        <h1 class="govuk-heading-xl">"Employment" 😉details</h1>
+        <h1 class="govuk-heading-xl">Income from employment</h1>
 
-        <h2 class="govuk-body-m">Could be cash in hand, in this country aboard</h2>
+
 
 
         {{ govukInput({
         label: {
-          html: "<strong>What is this money for?</strong>"
+          html: "<strong>What is this income?</strong>"
         },
         id: "other-income-benefits-aboard-yes-amount",
         name: "other-income-benefits-aboard-yes-amount",
@@ -104,7 +104,7 @@
                         name: "other-income-benefits-aboard-payment-frequency-yes",
                         fieldset: {
                           legend: {
-                            text: "How often do get this?",
+                            text: "How often is this income paid?",
                             isPageHeading: true,
                             classes: "<!--govuk-fieldset__legend--s-->"
                             }
@@ -123,7 +123,7 @@
                           },
                           {
                             value: "Monthly",
-                            text: "Monthly",
+                            text: "Every month",
                             checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Monthly")
                           }
                         ]
@@ -142,7 +142,7 @@
 
                         {{ govukInput({
                         label: {
-                          html: "<strong>How much money do you get?</strong>"
+                          html: "<strong>How much is this income?</strong>"
                         },
                         id: "other-income-benefits-aboard-yes-amount",
                         name: "other-income-benefits-aboard-yes-amount",
@@ -152,17 +152,17 @@
                       <!------------------------->
 
                       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-                      <h1 class="govuk-heading-l">Details for more than one entry</h1>
+
 
                       {% set otherIncomeSpousalMaintenanceYes %}
                       {{ govukTextarea({
                         name: "other-income-benefits-aboard-yes-more-detail",
                         id: "other-income-benefits-aboard-yes-more-detail",
                         label: {
-                          text: "Add same details as above if there is more payments?"
+                          text: "Description of income, how often it is paid and how much it is"
                         },
                         hint: {
-                          text: "XXX"
+                          text: ""
                         }
                       }) }}
                       {% endset -%}
@@ -173,7 +173,7 @@
                         name: "other-income-benefits-aboard-yes-more-yn",
                         fieldset: {
                           legend: {
-                            html: "Do you need to add another entry?",
+                            html: "Do you have any other income from employment?",
                             isPageHeading: true,
                             classes: "govuk-fieldset__legend--s"
                           }
