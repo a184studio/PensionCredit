@@ -100,7 +100,7 @@
                       {% set otherPaymentFrequency %}
                       {{ govukInput({
                       label: {
-                        html: "X<strong></strong>"
+                        html: "How often is this paid?"
                       },
                       id: "other-income-benefits-aboard-payment-frequency-yes-other",
                       name: "other-income-benefits-aboard-payment-frequency-yes-other",
@@ -139,7 +139,7 @@
                           },
                           {
                             value: "Other payment frequency",
-                            text: "Other payment frequency",
+                            text: "Other",
                             checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Other payment frequency")                      ,
                                   conditional: {
                                     html: otherPaymentFrequency

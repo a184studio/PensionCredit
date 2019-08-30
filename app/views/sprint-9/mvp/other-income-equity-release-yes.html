@@ -26,7 +26,7 @@
             namePrefix: "other-income-equity-release-yes-yes-date",
             fieldset: {
               legend: {
-                text: "Enter the received"
+                text: "Enter the date this income started"
               }
             },
             items: [
@@ -54,7 +54,7 @@
     {% set otherPaymentFrequency %}
     {{ govukInput({
     label: {
-      html: "Other payment frequency<strong></strong>"
+      html: "How often is this paid?"
     },
     id: "other-income-equity-release-yes-payment-frequency-yes-other",
     name: "other-income-equity-release-yes-payment-frequency-yes-other",
@@ -68,7 +68,7 @@
           name: "other-income-equity-release-yes-payment-frequency-yes",
           fieldset: {
             legend: {
-              text: "How often do get this?",
+              text: "How often is this income paid?",
               isPageHeading: true,
               classes: "<!--govuk-fieldset__legend--s-->"
               }
@@ -87,12 +87,12 @@
             },
             {
               value: "Monthly",
-              text: "Monthly",
+              text: "Every month",
               checked: (data["other-income-equity-release-yes-payment-frequency-yes"] == "Monthly")
             },
             {
               value: "Other payment frequency",
-              text: "Other payment frequency",
+              text: "Other",
               checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Other payment frequency")                      ,
                     conditional: {
                       html: otherPaymentFrequency
@@ -109,7 +109,7 @@
 
         {{ govukInput({
         label: {
-          html: "<strong>How much money do you get?</strong>"
+          html: "<strong>How much is this income?</strong>"
         },
         id: "other-income-equity-release-yes-amount",
         name: "other-income-equity-release-yes-amount",
@@ -121,17 +121,17 @@
       <!------------------------->
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-      <h1 class="govuk-heading-l">Add another entry</h1>
+
 
       {% set otherIncomeSpousalMaintenanceYes %}
       {{ govukTextarea({
         name: "other-income-benefits-aboard-yes-more-detail",
         id: "other-income-benefits-aboard-yes-more-detail",
         label: {
-          text: "Add same details as above if there is more payments?"
+          text: "Description of this income, how much it is and how often it is paid"
         },
         hint: {
-          text: "XXX"
+          text: ""
         }
       }) }}
       {% endset -%}
@@ -142,7 +142,7 @@
         name: "other-income-benefits-aboard-yes-more-yn",
         fieldset: {
           legend: {
-            html: "Do you need to add another entry?",
+            html: "Do you have any other income from an equity release scheme?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
