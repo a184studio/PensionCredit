@@ -189,6 +189,9 @@
 
                       <!------------------------->
 
+                      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                      <h1 class="govuk-heading-l">Details for more than one entry</h1>
+
                       {% set otherIncomeSpousalMaintenanceYes %}
                       {{ govukTextarea({
                         name: "other-income-benefits-aboard-yes-more-detail",
@@ -201,10 +204,6 @@
                         }
                       }) }}
                       {% endset -%}
-
-                      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-                      <h1 class="govuk-heading-l">Details for more than one entry</h1>
-
 
                       {{ govukRadios({
                         classes: "govuk-radios",

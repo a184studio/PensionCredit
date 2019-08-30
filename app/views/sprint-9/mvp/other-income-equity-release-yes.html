@@ -163,62 +163,67 @@
 
           <!------------------------->
 
+          {% set homeIncomePlanYes %}
+
           {{ govukRadios({
-            idPrefix: "other-income-equity-release-incomeplan-yn",
-            name: "other-income-equity-release-incomeplan-yn",
+            idPrefix: "other-income-home-income-plan-yes",
+            name: "other-income-home-income-plan-yes",
             fieldset: {
               legend: {
-              html: "Was this a home income plan?",
+                html: "<strong>Used to buy annuity?</strong>",
                 isPageHeading: true,
-                classes: "govuk-fieldset__legend--s"
-                }
-              },
-              hint: {
-                text: "I think we need a better understanding of this"
-              },
-              items: [
+                classes: "<!--govuk-fieldset__legend--s-->"
+              }
+            },
+            hint: {
+              text: "XXX"
+            },
+            items: [
               {
                 value: "Yes",
                 text: "Yes",
-                checked: (data["other-income-equity-release-incomeplan-yn"] == "Yes")
+                checked: (data["other-income-home-income-plan-yes"] == "Yes")
               },
               {
                 value: "No",
                 text: "No",
-                checked: (data["other-income-equity-release-incomeplan-yn"] == "No")
+                checked: (data["other-income-home-income-plan-yes"] == "No")
               }
             ]
           }) }}
+          {% endset -%}
 
-
-          <!------------------------->
 
           {{ govukRadios({
-            idPrefix: "other-income-equity-release-annuity-yn",
-            name: "other-income-equity-release-annuity-yn",
+            classes: "govuk-radios",
+            idPrefix: "other-income-home-income-plan-yn",
+            name: "other-income-home-income-plan-yn",
             fieldset: {
               legend: {
-              html: "Used to buy annuity?",
+                html: "Was this a home income plan?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--s"
-                }
-              },
-              hint: {
-                text: "I think we need a better understanding of this"
-              },
-              items: [
+              }
+            },
+            hint: {
+              text: ""
+            },
+            items: [
               {
                 value: "Yes",
                 text: "Yes",
-                checked: (data["other-income-equity-release-annuity-yn"] == "Yes")
+                checked: (data["other-income-home-income-plan-yn"] == "Yes"),
+                conditional: {
+                  html: homeIncomePlanYes
+                }
               },
-              {
-                value: "No",
-                text: "No",
-                checked: (data["other-income-equity-release-annuity-yn"] == "No")
-              }
-            ]
-          }) }}
+                {
+                  value: "No",
+                  text: "No",
+                  checked: (data["other-income-home-income-plan-yn"] == "No")
+                }
+              ]
+            }) }}
 
           <!------------------------->
 
@@ -238,7 +243,7 @@
       <!------------------------->
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-      <h1 class="govuk-heading-l">Details for more than one entry</h1>
+      <h1 class="govuk-heading-l">Add another entry</h1>
 
       {% set otherIncomeSpousalMaintenanceYes %}
       {{ govukTextarea({
@@ -284,7 +289,7 @@
           ]
         }) }}
 
-        <!------------------------->
+        <!--
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -310,10 +315,18 @@
   ]
 }) }}
 
+-->
 
 
 
 
+
+
+
+
+
+
+<br>
 
       {{ govukButton({
         text: "Continue"
