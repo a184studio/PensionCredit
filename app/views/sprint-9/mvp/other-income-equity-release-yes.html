@@ -110,9 +110,9 @@
               checked: (data["other-income-equity-release-yes-payment-frequency-yes"] == "Every two weeks")
             },
             {
-              value: "Every four weeks",
-              text: "Every four weeks",
-              checked: (data["other-income-equity-release-yes-payment-frequency-yes"] == "Every four weeks")
+              value: "Monthly",
+              text: "Monthly",
+              checked: (data["other-income-equity-release-yes-payment-frequency-yes"] == "Monthly")
             }
           ]
         }) }}
@@ -235,10 +235,15 @@
 
       <!------------------------->
 
+      <!------------------------->
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <h1 class="govuk-heading-l">Details for more than one entry</h1>
+
       {% set otherIncomeSpousalMaintenanceYes %}
       {{ govukTextarea({
-        name: "other-income-equity-release-yes-yes-more-detail",
-        id: "other-income-equity-release-yes-yes-more-detail",
+        name: "other-income-benefits-aboard-yes-more-detail",
+        id: "other-income-benefits-aboard-yes-more-detail",
         label: {
           text: "Add same details as above if there is more payments?"
         },
@@ -250,11 +255,11 @@
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "other-income-equity-release-yes-more-yn",
-        name: "other-income-equity-release-yes-more-yn",
+        idPrefix: "other-income-benefits-aboard-yes-more-yn",
+        name: "other-income-benefits-aboard-yes-more-yn",
         fieldset: {
           legend: {
-            html: "Add another entry",
+            html: "Do you need to add another entry?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -266,7 +271,7 @@
         {
           value: "yes-date",
           text: "Yes",
-          checked: (data["other-income-equity-release-yes-more-yn"] == "Yes"),
+          checked: (data["other-income-benefits-aboard-yes-more-yn"] == "Yes"),
           conditional: {
             html: otherIncomeSpousalMaintenanceYes
           }
@@ -274,12 +279,14 @@
           {
             value: "no-date",
             text: "No",
-            checked: (data["other-income-equity-release-yes-more-yn"] == "No")
+            checked: (data["other-income-benefits-aboard-yes-more-yn"] == "No")
           }
           ]
         }) }}
 
         <!------------------------->
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
       {{ govukCheckboxes({
