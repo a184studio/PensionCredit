@@ -20,7 +20,7 @@
 
 
         <div class="govuk-panel--agent">
-          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in searchlight and discuss the earnings and income shown. Establish whether searchlight shows the correct position between {{data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']}} and today.</h1>
+          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in Searchlight and discuss the earnings and income shown. Establish whether Searchlight shows the correct position between {{data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']}} and today.</h1>
 
 
       {{ govukRadios({
@@ -28,7 +28,7 @@
         name: "other-income-employment-type-yn",
         fieldset: {
           legend: {
-            html: "Do you need to make any changes to the income shown on searchlight?",
+            html: "Do you need to make any changes to the income shown on Searchlight?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -39,7 +39,7 @@
         items: [
         {
             value: "All employment visible SeachLight & other systems",
-            text: "No - searchlight matches the claimant's understanding",
+            text: "No - Searchlight matches the claimant's understanding",
             checked: (data["other-income-employment-type-yn"] == "All employment visible SeachLight & other systems")
           },
           {
@@ -62,7 +62,7 @@
           },
           {
             value: "SearchLight doesnt match",
-            text: "Income shown in searchlight is incorrect",
+            text: "Income shown in Searchlight is incorrect",
             checked: (data["other-income-employment-type-yn"] == "SearchLight doesnt match")
           }
         ]

@@ -29,8 +29,8 @@
         label: {
           html: "<strong>What is this income?</strong>"
         },
-        id: "other-income-benefits-aboard-yes-amount",
-        name: "other-income-benefits-aboard-yes-amount",
+        id: "other-income-employment-what-is-this-money",
+        name: "other-income-employment-what-is-this-money",
         classes: "govuk-input--width-20"
       }) }}
 
@@ -102,8 +102,8 @@
                       label: {
                         html: "How often is this paid?"
                       },
-                      id: "other-income-benefits-aboard-payment-frequency-yes-other",
-                      name: "other-income-benefits-aboard-payment-frequency-yes-other",
+                      id: "other-income-employment-frequency-yes-other",
+                      name: "other-income-employment-frequency-yes-other",
                       classes: "govuk-input--width-20"
                       }) }}
                       {% endset -%}
@@ -111,8 +111,8 @@
 
 
                       {{ govukRadios({
-                        idPrefix: "other-income-benefits-aboard-payment-frequency-yes",
-                        name: "other-income-benefits-aboard-payment-frequency-yes",
+                        idPrefix: "other-income-employment-frequency-yes",
+                        name: "other-income-employment-frequency-yes",
                         fieldset: {
                           legend: {
                             text: "How often is this income paid?",
@@ -125,22 +125,22 @@
                           {
                             value: "Every week",
                             text: "Every week",
-                            checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Every week")
+                            checked: (data["other-income-employment-frequency-yes"] == "Every week")
                           },
                           {
                             value: "Every two weeks",
                             text: "Every two weeks",
-                            checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Every two weeks")
+                            checked: (data["other-income-employment-frequency-yes"] == "Every two weeks")
                           },
                           {
                             value: "Monthly",
                             text: "Every month",
-                            checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Monthly")
+                            checked: (data["other-income-employment-frequency-yes"] == "Monthly")
                           },
                           {
                             value: "Other payment frequency",
                             text: "Other",
-                            checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Other payment frequency")                      ,
+                            checked: (data["other-income-employment-frequency-yes"] == "Other payment frequency")                      ,
                                   conditional: {
                                     html: otherPaymentFrequency
                                   }
@@ -155,8 +155,8 @@
                         label: {
                           html: "<strong>How much is this income?</strong>"
                         },
-                        id: "other-income-benefits-aboard-yes-amount",
-                        name: "other-income-benefits-aboard-yes-amount",
+                        id: "other-income-employment-amount",
+                        name: "other-income-employment-amount",
                         classes: "govuk-input--width-20"
                       }) }}
 
@@ -167,8 +167,8 @@
 
                       {% set otherIncomeSpousalMaintenanceYes %}
                       {{ govukTextarea({
-                        name: "other-income-benefits-aboard-yes-more-detail",
-                        id: "other-income-benefits-aboard-yes-more-detail",
+                        name: "other-income-employment-more-yes-detail",
+                        id: "other-income-employment-more-yes-detail",
                         label: {
                           text: "Description of income, how often it is paid and how much it is"
                         },
@@ -180,8 +180,8 @@
 
                       {{ govukRadios({
                         classes: "govuk-radios",
-                        idPrefix: "other-income-benefits-aboard-yes-more-yn",
-                        name: "other-income-benefits-aboard-yes-more-yn",
+                        idPrefix: "other-income-employment-more-yn",
+                        name: "other-income-employment-more-yn",
                         fieldset: {
                           legend: {
                             html: "Do you have any other income from employment?",
@@ -196,7 +196,7 @@
                         {
                           value: "yes-date",
                           text: "Yes",
-                          checked: (data["other-income-benefits-aboard-yes-more-yn"] == "Yes"),
+                          checked: (data["other-income-employment-more-yn"] == "Yes"),
                           conditional: {
                             html: otherIncomeSpousalMaintenanceYes
                           }
@@ -204,7 +204,7 @@
                           {
                             value: "no-date",
                             text: "No",
-                            checked: (data["other-income-benefits-aboard-yes-more-yn"] == "No")
+                            checked: (data["other-income-employment-more-yn"] == "No")
                           }
                           ]
                         }) }}
