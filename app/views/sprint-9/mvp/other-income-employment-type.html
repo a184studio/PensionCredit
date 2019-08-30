@@ -21,7 +21,7 @@
 
         <div class="govuk-panel--agent">
           <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in SearchLight and give an overview of their earnings and income</h1>
-          </div>
+
 
       {{ govukRadios({
         idPrefix: "other-income-employment-type-yn",
@@ -56,15 +56,11 @@
             value: "Other paid work",
             text: "Other paid work",
             checked: (data["other-income-employment-type-yn"] == "Other paid work")
-          },
-
-          {
-            value: "Not employed within this period",
-            text: "Not employed within this period",
-            checked: (data["other-income-employment-type-yn"] == "Not employed within this period")
           }
         ]
       }) }}
+
+                </div>
 <!--            text: "Were you self-employed between Monday, 15 April 2019 and Today? " + tamDate,-->
 
       {{ govukButton({

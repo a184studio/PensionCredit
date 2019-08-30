@@ -21,7 +21,6 @@
       <h1 class="govuk-heading-xl"><span class="agent-action">Details of income from an equity release scheme</h1>
 
 
-        {% set howOften %}
           {{ govukDateInput({
             id: "other-income-equity-release-yes-yes-date",
             namePrefix: "other-income-equity-release-yes-yes-date",
@@ -48,44 +47,12 @@
               }
             ]
           }) }}
-        {% endset -%}
 
-        {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "other-income-equity-release-yes-date-yn",
-          name: "other-income-equity-release-yes-date-yn",
-          fieldset: {
-            legend: {
-              html: "Was this payment made as a lump sum?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: ""
-          },
-          items: [
-          {
-              value: "no-date",
-              text: "Yes",
-              checked: (data["other-income-equity-release-yes-date-yn"] == "Yes"),
-              conditional: {
-                html: howOften
-              }
-            },
-              {
-                value: "No",
-                text: "No",
-                checked: (data["other-income-equity-release-yes-date-yn"] == "No")
-              }
-            ]
-          }) }}
 
-      <!------------------------->
+    <!------------------------->
 
 
 
-        {% set howOften %}
 
         {{ govukRadios({
           idPrefix: "other-income-equity-release-yes-payment-frequency-yes",
@@ -125,105 +92,9 @@
         name: "other-income-equity-release-yes-payment-frequency-yes-other",
         classes: "govuk-input--width-20"
       }) }}
-        {% endset -%}
 
 
 
-
-        {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "other-income-equity-release-Frequency-date-yes",
-          name: "other-income-equity-release-Frequency-date-yes",
-          fieldset: {
-            legend: {
-              html: "Is this a frequency payment",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: ""
-          },
-          items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: (data["other-income-equity-release-Frequency-date-yes"] == "Yes"),
-              conditional: {
-                html: howOften
-              }
-            },
-              {
-                value: "No",
-                text: "No",
-                checked: (data["other-income-equity-release-Frequency-date-yes"] == "No")
-              }
-            ]
-          }) }}
-
-          <!------------------------->
-
-          {% set homeIncomePlanYes %}
-
-          {{ govukRadios({
-            idPrefix: "other-income-home-income-plan-yes",
-            name: "other-income-home-income-plan-yes",
-            fieldset: {
-              legend: {
-                html: "<strong>Used to buy annuity?</strong>",
-                isPageHeading: true,
-                classes: "<!--govuk-fieldset__legend--s-->"
-              }
-            },
-            hint: {
-              text: "XXX"
-            },
-            items: [
-              {
-                value: "Yes",
-                text: "Yes",
-                checked: (data["other-income-home-income-plan-yes"] == "Yes")
-              },
-              {
-                value: "No",
-                text: "No",
-                checked: (data["other-income-home-income-plan-yes"] == "No")
-              }
-            ]
-          }) }}
-          {% endset -%}
-
-
-          {{ govukRadios({
-            classes: "govuk-radios",
-            idPrefix: "other-income-home-income-plan-yn",
-            name: "other-income-home-income-plan-yn",
-            fieldset: {
-              legend: {
-                html: "Was this a home income plan?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            hint: {
-              text: ""
-            },
-            items: [
-              {
-                value: "Yes",
-                text: "Yes",
-                checked: (data["other-income-home-income-plan-yn"] == "Yes"),
-                conditional: {
-                  html: homeIncomePlanYes
-                }
-              },
-                {
-                  value: "No",
-                  text: "No",
-                  checked: (data["other-income-home-income-plan-yn"] == "No")
-                }
-              ]
-            }) }}
 
           <!------------------------->
 
