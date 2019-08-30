@@ -23,49 +23,17 @@
         <h1 class="govuk-heading-xl">Self employment details</h1>
 
 
-        {{ govukRadios({
-          idPrefix: "other-income-benefits-aboard-yes-evidence-yn",
-          name: "other-income-benefits-aboard-yes-evidence-yn",
-          fieldset: {
-            legend: {
-            html: "Is this income from a employer outside of the UK?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-              }
-            },
-            hint: {
-              text: "XXX"
-            },
-            items: [
-            {
-              value: "yes",
-              text: "Yes",
-              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "yes")
-            },
-            {
-              value: "no",
-              text: "No",
-              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "no")
-            }
-          ]
-        }) }}
-
-        {{ govukInput({
-        label: {
-          html: "Reference<strong></strong>"
-        },
-        id: "other-income-benefits-aboard-yes-amount",
-        name: "other-income-benefits-aboard-yes-amount",
-        classes: "govuk-input--width-20"
-      }) }}
-
       {{ govukTextarea({
       label: {
-        html: "Self empoyment detials<strong></strong>"
+        html: "Details, reference to the job, money, frequency etc<strong></strong>"
       },
       id: "other-income-benefits-aboard-payment-frequency-yes-other",
       name: "other-income-benefits-aboard-payment-frequency-yes-other",
       classes: "govuk-input--width-100"
+    ,
+  hint: {
+    text: "This coutry or board"
+  }
     }) }}
 
 

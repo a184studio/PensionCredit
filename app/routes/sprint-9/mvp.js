@@ -972,13 +972,13 @@ router.post(`${baseUrl}/other-income-employment-yn-router`, (req, res) => {
 router.post(`${baseUrl}/other-income-employment-type-router`, (req, res) => {
   const employmentType = req.session.data['other-income-employment-type-yn']
 
-  if (employmentType === 'Employed') {
-    res.redirect(`${baseUrl}/other-income-equity-release-yn`)
-  }
-  else if (employmentType === 'Self-employed') {
+  if (employmentType === 'Self-employed') {
     res.redirect(`${baseUrl}/other-income-self-employment-yes`)
   }
   else if (employmentType === 'Both employed and self-employed') {
+    res.redirect(`${baseUrl}/other-income-employment-yes`)
+  }
+  else if (employmentType === 'Other paid work') {
     res.redirect(`${baseUrl}/other-income-employment-yes`)
   } else {
     res.redirect(`${baseUrl}/other-income-equity-release-yn`)

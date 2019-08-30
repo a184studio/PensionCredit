@@ -20,10 +20,38 @@
       <form action="other-income-self-employment-yes" method="post">
 
         <span class="govuk-caption-m"></span>
-        <h1 class="govuk-heading-xl">"Employment" 😉details</h1>
+        <h1 class="govuk-heading-xl">Other paid work 😉details</h1>
 
-        <h2 class="govuk-body-m">Could be cash in hand, in this country aboard</h2>
+        <h1 class="govuk-heading-m">Could be cash in hand</h1>
 
+
+
+        {{ govukRadios({
+          idPrefix: "other-income-benefits-aboard-yes-evidence-yn",
+          name: "other-income-benefits-aboard-yes-evidence-yn",
+          fieldset: {
+            legend: {
+            html: "Is this income from a employer outside of the UK?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "XXX"
+            },
+            items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: (data["other-income-benefits-aboard-yes-evidence-yn"] == "no")
+            }
+          ]
+        }) }}
 
         {{ govukInput({
         label: {
@@ -125,9 +153,9 @@
                               checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Every two weeks")
                             },
                             {
-                              value: "Monthly",
-                              text: "Monthly",
-                              checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Monthly")
+                              value: "Every four weeks",
+                              text: "Every four weeks",
+                              checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Every four weeks")
                             }
                           ]
                         }) }}

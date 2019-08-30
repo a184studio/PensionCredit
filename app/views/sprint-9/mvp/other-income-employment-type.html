@@ -28,16 +28,19 @@
         name: "other-income-employment-type-yn",
         fieldset: {
           legend: {
-            html: "What type of work is this?",
+            html: "Where you doing any paid work between Day Month Year and today in this country or aboard?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
-            }
-            },
-            items: [
-            {
-            value: "Employed",
-            text: "Employed",
-            checked: (data["other-income-employment-type-yn"] == "Employed")
+          }
+        },
+        hint: {
+          text: "This country or aboard"
+        },
+        items: [
+        {
+            value: "All employment visabile SeachLight & other systems",
+            text: "All employment visabile SeachLight & other systems",
+            checked: (data["other-income-employment-type-yn"] == "All employment visabile SeachLight & other systems")
           },
           {
             value: "Self-employed",
@@ -49,6 +52,12 @@
             text: "Both employed and self-employed",
             checked: (data["other-income-employment-type-yn"] == "Both employed and self-employed")
           },
+          {
+            value: "Other paid work",
+            text: "Other paid work",
+            checked: (data["other-income-employment-type-yn"] == "Other paid work")
+          },
+
           {
             value: "Not employed within this period",
             text: "Not employed within this period",
