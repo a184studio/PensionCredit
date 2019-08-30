@@ -20,7 +20,7 @@
 
 
         <div class="govuk-panel--agent">
-          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in SearchLight and give an overview of their earnings and income. Where you doing any paid work between Day Month Year and today in this country or aboard?</h1>
+          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in searchlight and discuss the earnings and income shown. Establish whether searchlight shows the correct position between Date Month Year and today.</h1>
 
 
       {{ govukRadios({
@@ -28,33 +28,33 @@
         name: "other-income-employment-type-yn",
         fieldset: {
           legend: {
-            html: "What best describes their situation",
+            html: "Do you need to make any changes to the income shown on searchlight?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "This country or aboard"
+          text: ""
         },
         items: [
         {
             value: "All employment visible SeachLight & other systems",
-            text: "All employment visible SeachLight & other systems",
+            text: "No - searchlight matches the claimant's understanding",
             checked: (data["other-income-employment-type-yn"] == "All employment visible SeachLight & other systems")
           },
           {
             value: "Self-employed",
-            text: "Self-employed (Including royalties)",
+            text: "Add income from self-employment or royalties",
             checked: (data["other-income-employment-type-yn"] == "Self-employed")
           },
           {
             value: "Both Other paid work and self-employed",
-            text: "Both Other paid work and self-employed",
+            text: "Add income from both employment and self-employment",
             checked: (data["other-income-employment-type-yn"] == "Both Other paid work and self-employed")
           },
           {
             value: "Other paid work",
-            text: "Other paid work",
+            text: "Add income from employment",
             checked: (data["other-income-employment-type-yn"] == "Other paid work")
           },
           {
@@ -62,7 +62,7 @@
           },
           {
             value: "SearchLight doesn't match",
-            text: "SearchLight doesn't match",
+            text: "Income shown in searchlight is incorrect",
             checked: (data["other-income-employment-type-yn"] == "SearchLight doesn't match")
           }
         ]
