@@ -978,12 +978,17 @@ router.post(`${baseUrl}/other-income-employment-type-router`, (req, res) => {
   else if (employmentType === 'Both Other paid work and self-employed') {
     res.redirect(`${baseUrl}/other-income-employment-yes`)
   }
+  else if (employmentType === 'SearchLight doesnt match') {
+    res.redirect(`${baseUrl}/other-income-searchlight-no-match`)
+  }
   else if (employmentType === 'Other paid work') {
     res.redirect(`${baseUrl}/other-income-employment-yes`)
   } else {
     res.redirect(`${baseUrl}/other-income-equity-release-yn`)
   }
 })
+
+
 
 
 router.post(`${baseUrl}/other-income-self-employment-yn-router`, (req, res) => {
