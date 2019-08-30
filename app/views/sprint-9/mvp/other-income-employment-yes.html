@@ -97,6 +97,17 @@
                           }) }}
 -->
                       <!------------------------->
+                      {% set otherPaymentFrequency %}
+                      {{ govukInput({
+                      label: {
+                        html: "X<strong></strong>"
+                      },
+                      id: "other-income-benefits-aboard-payment-frequency-yes-other",
+                      name: "other-income-benefits-aboard-payment-frequency-yes-other",
+                      classes: "govuk-input--width-20"
+                      }) }}
+                      {% endset -%}
+
 
 
                       {{ govukRadios({
@@ -125,18 +136,30 @@
                             value: "Monthly",
                             text: "Every month",
                             checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Monthly")
-                          }
-                        ]
-                      }) }}
+                          },
+                          {
+                            value: "Other payment frequency",
+                            text: "Other payment frequency",
+                            checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Other payment frequency")                      ,
+                                  conditional: {
+                                    html: otherPaymentFrequency
+                                  }
+                                }
+                              ]
+                            }) }}
 
-                      {{ govukInput({
-                      label: {
-                        html: "Other payment frequency<strong></strong>"
-                      },
-                      id: "other-income-benefits-aboard-payment-frequency-yes-other",
-                      name: "other-income-benefits-aboard-payment-frequency-yes-other",
-                      classes: "govuk-input--width-20"
-                    }) }}
+
+
+
+
+
+
+
+
+
+
+
+
 
                           <!------------------------->
 

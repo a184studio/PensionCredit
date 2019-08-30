@@ -51,7 +51,16 @@
 
     <!------------------------->
 
-
+    {% set otherPaymentFrequency %}
+    {{ govukInput({
+    label: {
+      html: "Other payment frequency<strong></strong>"
+    },
+    id: "other-income-equity-release-yes-payment-frequency-yes-other",
+    name: "other-income-equity-release-yes-payment-frequency-yes-other",
+    classes: "govuk-input--width-20"
+  }) }}
+    {% endset -%}
 
 
         {{ govukRadios({
@@ -80,19 +89,17 @@
               value: "Monthly",
               text: "Monthly",
               checked: (data["other-income-equity-release-yes-payment-frequency-yes"] == "Monthly")
-            }
-          ]
-        }) }}
-
-        {{ govukInput({
-        label: {
-          html: "Other payment frequency<strong></strong>"
-        },
-        id: "other-income-equity-release-yes-payment-frequency-yes-other",
-        name: "other-income-equity-release-yes-payment-frequency-yes-other",
-        classes: "govuk-input--width-20"
-      }) }}
-
+            },
+            {
+              value: "Other payment frequency",
+              text: "Other payment frequency",
+              checked: (data["other-income-benefits-aboard-payment-frequency-yes-period"] == "Other payment frequency")                      ,
+                    conditional: {
+                      html: otherPaymentFrequency
+                    }
+                  }
+                ]
+              }) }}
 
 
 
