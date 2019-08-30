@@ -20,7 +20,7 @@
 
 
         <div class="govuk-panel--agent">
-          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in searchlight and discuss the earnings and income shown. Establish whether searchlight shows the correct position between Date Month Year and today.</h1>
+          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in searchlight and discuss the earnings and income shown. Establish whether searchlight shows the correct position between {{data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']}} and today.</h1>
 
 
       {{ govukRadios({
