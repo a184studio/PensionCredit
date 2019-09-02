@@ -1989,8 +1989,705 @@ Discharge date
   <br><br><br><h2 class="govuk-heading-l">Money, savings and investments</h2>
 
 
+  <h2 class="govuk-heading––extraMedium">(#) Other money, savings or investments</h2>
 
 
+  {{ govukSummaryList({
+    rows: [
+    {
+      key: {
+        text: "This money is"
+      },
+      value: {
+        text: data['msic-missing-account-name']
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-missing-account",
+            html: "Change",
+            visuallyHiddenText: "XXX"
+          },
+          {
+            href: "msic-remove",
+            html: "Remove",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+    {
+      classes: 'govuk-summary-list--no-border',
+      key: {
+        text: "Amount today"
+      },
+      value: {
+        text: data['msic-missing-account-amount']
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    }
+    ]
+  }) }}
+
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <h2 class="govuk-heading––extraMedium">(#) Second properties </h2>
+
+
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Has second property"
+            },
+            value: {
+              text: data["msic-second-property-yn"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "msic-second-property-yn",
+                  html: "Change",
+                  visuallyHiddenText: "XXX"
+                },
+                {
+                  href: "msic-remove",
+                  html: "Remove",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            classes: 'govuk-summary-list--no-border',
+            key: {
+              text: "Complete A64a"
+            },
+            value: {
+              text: data["msic-second-property-yn"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+
+        <br><br>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+            <h2 class="govuk-heading––extraMedium">Money abroad </h2>
+
+
+                  {{ govukSummaryList({
+                    rows: [
+                    {
+                      key: {
+                        text: "Account with"
+                      },
+                      value: {
+                        text: data['msic-cash-other-abroad-name']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "msic-cash-other-abroad",
+                            html: "Change",
+                            visuallyHiddenText: "XXX"
+                          },
+                          {
+                            href: "msic-remove",
+                            html: "Remove",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      key: {
+                        text: "Currency"
+                      },
+                      value: {
+                        text: data['msic-cash-other-abroad-currency']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                        text: "Amount in this account today"
+                      },
+                      value: {
+                        text: data['msic-cash-other-abroad-amount']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    }
+                    ]
+                  }) }}
+
+                <br><br>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+            <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+                    <h2 class="govuk-heading––extraMedium">Cash at home </h2>
+
+                          {{ govukSummaryList({
+                            rows: [
+                            {
+                              classes: 'govuk-summary-list--no-border',
+                              key: {
+                                text: "Amount"
+                              },
+                              value: {
+                                text: data['msic-cash-at-home-amount']
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "msic-cash-at-home",
+                                    html: "Change",
+                                    visuallyHiddenText: "XXX"
+                                  },
+                                  {
+                                    href: "msic-remove",
+                                    html: "Remove",
+                                    visuallyHiddenText: "XXX"
+                                  }
+                                ]
+                              }
+                            }
+                            ]
+                          }) }}
+
+                          <br><br>
+                          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+                              <h2 class="govuk-heading––extraMedium">(#) Unit trusts </h2>
+
+                                    {{ govukSummaryList({
+                                      rows: [
+                                      {
+                                        key: {
+                                          text: "Name of trust"
+                                        },
+                                        value: {
+                                          text: data['msic-trust-account-name']
+                                        },
+                                        actions: {
+                                          items: [
+                                            {
+                                              href: "msic-unit-trust-account",
+                                              html: "Change",
+                                              visuallyHiddenText: "XXX"
+                                            },
+                                            {
+                                              href: "msic-remove",
+                                              html: "Remove",
+                                              visuallyHiddenText: "XXX"
+                                            }
+                                          ]
+                                        }
+                                      },
+
+                                      {
+                                        key: {
+                                          text: "Number of units"
+                                        },
+                                        value: {
+                                          text: data['msic-trust-account-purchase-value']
+                                        },
+                                        actions: {
+                                          items: [
+                                            {
+                                              href: "msic-unit-trust-account",
+                                              html: "",
+                                              visuallyHiddenText: "XXX"
+                                            }
+                                          ]
+                                        }
+                                      },
+
+                                      {
+                                        classes: 'govuk-summary-list--no-border',
+                                        key: {
+                                          text: "Bid price of units today"
+                                        },
+                                        value: {
+                                          text: data['msic-trust-account-units']
+                                        },
+                                        actions: {
+                                          items: [
+                                            {
+                                              href: "",
+                                              text: "",
+                                              visuallyHiddenText: "XXXX"
+                                            }
+                                          ]
+                                        }
+                                      }
+                                      ]
+                                    }) }}
+
+                                    <br><br>
+                                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                                    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+              <h2 class="govuk-heading––extraMedium">(#) Shares </h2>
+
+
+                    {{ govukSummaryList({
+                      rows: [
+                      {
+                        key: {
+                          text: "Company name"
+                        },
+                        value: {
+                          text: data['msic-shares-account-name']
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-shares-account",
+                              html: "Change",
+                              visuallyHiddenText: "XXX"
+                            },
+                            {
+                              href: "msic-remove",
+                              html: "Remove",
+                              visuallyHiddenText: "XXX"
+                            }
+                          ]
+                        }
+                      },
+
+                      {
+                        classes: 'govuk-summary-list--no-border',
+                        key: {
+                          text: "Total number shares held"
+                        },
+                        value: {
+                          text: data['msic-shares-account-amount']
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "",
+                              text: "",
+                              visuallyHiddenText: "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                      ]
+                    }) }}
+
+                    <br><br>
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+
+      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+          <h2 class="govuk-heading––extraMedium">(#) Capital bonds </h2>
+
+              {{ govukSummaryList({
+                rows: [
+                {
+                  key: {
+                    text: "Account with"
+                  },
+                  value: {
+                    text: data['msic-capital-bond-company-name']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "msic-capital-bond-account",
+                        html: "Change",
+                        visuallyHiddenText: "XXX"
+                      },
+                      {
+                        href: "msic-remove",
+                        html: "Remove",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Value of capital bonds today"
+                  },
+                  value: {
+                    text: data['msic-capital-bond-account-total-bonds']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXXX"
+                      }
+                    ]
+                  }
+                },
+
+
+
+                {
+                  classes: 'govuk-summary-list--no-border',
+                  key: {
+                    text: "Account has life assurance"
+                  },
+                  value: {
+                    text: data['msic-capital-bond-account-life-assurance']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXXX"
+                      }
+                    ]
+                  }
+                }
+                ]
+              }) }}
+
+              <br><br>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+              <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+                  <h2 class="govuk-heading––extraMedium">(#) Premium Bonds </h2>
+
+                {{ govukSummaryList({
+                rows: [
+                {
+                  classes: 'govuk-summary-list--no-border',
+                  key: {
+                    text: "Value of Premium Bonds"
+                  },
+                  value: {
+                    text: data['msic-premium-bond-account-total-bonds']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "msic-premium-bond-account",
+                        html: "Change",
+                        visuallyHiddenText: "XXX"
+                      },
+                      {
+                        href: "msic-remove",
+                        html: "Remove",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                }
+                ]
+                }) }}
+
+                <br><br>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+                  <h2 class="govuk-heading––extraMedium">(#) Credit union accounts </h2>
+
+                  {{ govukSummaryList({
+                  rows: [
+                  {
+                    key: {
+                      text: "Account with"
+                    },
+                    value: {
+                      text: data['msic-credit-union-account-name']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-credit-union-account",
+                          html: "Change",
+                          visuallyHiddenText: "XXX"
+                        },
+                        {
+                          href: "msic-remove",
+                          html: "Remove",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+
+                  {
+                    key: {
+                      text: "Amount in this account today"
+                    },
+                    value: {
+                      text: data['msic-credit-union-account-amount']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                  key: {
+                    text: "Account owner"
+                  },
+                  value: {
+                    text: data['msic-credit-union-account-owner']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXXX"
+                      }
+                    ]
+                  }
+                  },
+
+                  {
+                    classes: 'govuk-summary-list--no-border',
+                    key: {
+                      text: "Amount of money that is yours"
+                    },
+                    value: {
+                      text: data['msic-credit-union-account-stake']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXXX"
+                        }
+                      ]
+                    }
+                  }
+                  ]
+                  }) }}
+
+                  <br><br>
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+                  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+                    <h2 class="govuk-heading––extraMedium">(#) Post Office Card Accounts</h2>
+
+
+                  {{ govukSummaryList({
+                  rows: [
+                  {
+                    classes: 'govuk-summary-list--no-border',
+                  key: {
+                  text: "Amount in this account today"
+                  },
+                  value: {
+                  text: data['msic-post-office-card-account-amount']
+                  },
+                  actions: {
+                  items: [
+                    {
+                      visuallyHiddenText: "",
+                      href: "msic-post-office-card-account",
+                      html: "Change"
+                    },
+                    {
+                      href: "msic-remove",
+                      html: "Remove",
+                      visuallyHiddenText: ""
+                    }
+                  ]
+                  }
+                  }
+                  ]
+                  }) }}
+
+                  <br><br>
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+                  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+                <h2 class="govuk-heading––extraMedium">(#) Savings accounts </h2>
+
+
+              {{ govukSummaryList({
+              rows: [
+              {
+                key: {
+                  text: "Account with"
+                },
+                value: {
+                  text: data['msic-all-savings-account-name']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "msic-all-savings-account",
+                      html: "Change",
+                      visuallyHiddenText: "XXX"
+                    },
+                    {
+                      href: "msic-remove",
+                      html: "Remove",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "Amount in this account today"
+                },
+                value: {
+                  text: data['msic-all-savings-account-amount']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+              key: {
+                text: "Account owner"
+              },
+              value: {
+                text: data['msic-all-savings-account-owner']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+              },
+
+              {
+                classes: 'govuk-summary-list--no-border',
+                key: {
+                  text: "Amount of money that is yours"
+                },
+                value: {
+                  text: data['msic-all-savings-account-stake']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXXX"
+                    }
+                  ]
+                }
+              }
+              ]
+              }) }}
+
+              <br><br>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
           <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -2088,722 +2785,6 @@ Discharge date
 
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           {% endfor %}
-
-
-
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-
-        <h2 class="govuk-heading––extraMedium">(#) Savings accounts </h2>
-
-
-      {{ govukSummaryList({
-      rows: [
-      {
-        key: {
-          text: "Account with"
-        },
-        value: {
-          text: data['msic-all-savings-account-name']
-        },
-        actions: {
-          items: [
-            {
-              href: "msic-all-savings-account",
-              html: "Change",
-              visuallyHiddenText: "XXX"
-            },
-            {
-              href: "msic-remove",
-              html: "Remove",
-              visuallyHiddenText: "XXX"
-            }
-          ]
-        }
-      },
-
-      {
-        key: {
-          text: "Amount in this account today"
-        },
-        value: {
-          text: data['msic-all-savings-account-amount']
-        },
-        actions: {
-          items: [
-            {
-              href: "",
-              text: "",
-              visuallyHiddenText: "XXX"
-            }
-          ]
-        }
-      },
-      {
-      key: {
-        text: "Account owner"
-      },
-      value: {
-        text: data['msic-all-savings-account-owner']
-      },
-      actions: {
-        items: [
-          {
-            href: "",
-            text: "",
-            visuallyHiddenText: "XXXX"
-          }
-        ]
-      }
-      },
-
-      {
-        classes: 'govuk-summary-list--no-border',
-        key: {
-          text: "Amount of money that is yours"
-        },
-        value: {
-          text: data['msic-all-savings-account-stake']
-        },
-        actions: {
-          items: [
-            {
-              href: "",
-              text: "",
-              visuallyHiddenText: "XXXX"
-            }
-          ]
-        }
-      }
-      ]
-      }) }}
-
-      <br><br>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-        <h2 class="govuk-heading––extraMedium">(#) Post Office Card Accounts</h2>
-
-
-      {{ govukSummaryList({
-      rows: [
-      {
-        classes: 'govuk-summary-list--no-border',
-      key: {
-      text: "Amount in this account today"
-      },
-      value: {
-      text: data['msic-post-office-card-account-amount']
-      },
-      actions: {
-      items: [
-        {
-          visuallyHiddenText: "",
-          href: "msic-post-office-card-account",
-          html: "Change"
-        },
-        {
-          href: "msic-remove",
-          html: "Remove",
-          visuallyHiddenText: ""
-        }
-      ]
-      }
-      }
-      ]
-      }) }}
-
-      <br><br>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-                  <h2 class="govuk-heading––extraMedium">(#) Credit union accounts </h2>
-
-                  {{ govukSummaryList({
-                  rows: [
-                  {
-                    key: {
-                      text: "Account with"
-                    },
-                    value: {
-                      text: data['msic-credit-union-account-name']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "msic-credit-union-account",
-                          html: "Change",
-                          visuallyHiddenText: "XXX"
-                        },
-                        {
-                          href: "msic-remove",
-                          html: "Remove",
-                          visuallyHiddenText: "XXX"
-                        }
-                      ]
-                    }
-                  },
-
-                  {
-                    key: {
-                      text: "Amount in this account today"
-                    },
-                    value: {
-                      text: data['msic-credit-union-account-amount']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "",
-                          visuallyHiddenText: "XXX"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                  key: {
-                    text: "Account owner"
-                  },
-                  value: {
-                    text: data['msic-credit-union-account-owner']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
-                  },
-
-                  {
-                    classes: 'govuk-summary-list--no-border',
-                    key: {
-                      text: "Amount of money that is yours"
-                    },
-                    value: {
-                      text: data['msic-credit-union-account-stake']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "",
-                          visuallyHiddenText: "XXXX"
-                        }
-                      ]
-                    }
-                  }
-                  ]
-                  }) }}
-
-                  <br><br>
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-                  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-                      <h2 class="govuk-heading––extraMedium">(#) Premium Bonds </h2>
-
-                    {{ govukSummaryList({
-                    rows: [
-                    {
-                      classes: 'govuk-summary-list--no-border',
-                      key: {
-                        text: "Value of Premium Bonds"
-                      },
-                      value: {
-                        text: data['msic-premium-bond-account-total-bonds']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "msic-premium-bond-account",
-                            html: "Change",
-                            visuallyHiddenText: "XXX"
-                          },
-                          {
-                            href: "msic-remove",
-                            html: "Remove",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
-                    }
-                    ]
-                    }) }}
-
-                    <br><br>
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-          <h2 class="govuk-heading––extraMedium">(#) Capital bonds </h2>
-
-              {{ govukSummaryList({
-                rows: [
-                {
-                  key: {
-                    text: "Account with"
-                  },
-                  value: {
-                    text: data['msic-capital-bond-company-name']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-capital-bond-account",
-                        html: "Change",
-                        visuallyHiddenText: "XXX"
-                      },
-                      {
-                        href: "msic-remove",
-                        html: "Remove",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                },
-                {
-                  key: {
-                    text: "Value of capital bonds today"
-                  },
-                  value: {
-                    text: data['msic-capital-bond-account-total-bonds']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
-                },
-
-
-
-                {
-                  classes: 'govuk-summary-list--no-border',
-                  key: {
-                    text: "Account has life assurance"
-                  },
-                  value: {
-                    text: data['msic-capital-bond-account-life-assurance']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
-                }
-                ]
-              }) }}
-
-              <br><br>
-              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-      <h2 class="govuk-heading––extraMedium">(#) Shares </h2>
-
-
-            {{ govukSummaryList({
-              rows: [
-              {
-                key: {
-                  text: "Company name"
-                },
-                value: {
-                  text: data['msic-shares-account-name']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-shares-account",
-                      html: "Change",
-                      visuallyHiddenText: "XXX"
-                    },
-                    {
-                      href: "msic-remove",
-                      html: "Remove",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
-                }
-              },
-
-              {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                  text: "Total number shares held"
-                },
-                value: {
-                  text: data['msic-shares-account-amount']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "XXXX"
-                    }
-                  ]
-                }
-              }
-              ]
-            }) }}
-
-            <br><br>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-
-      <h2 class="govuk-heading––extraMedium">(#) Unit trusts </h2>
-
-            {{ govukSummaryList({
-              rows: [
-              {
-                key: {
-                  text: "Name of trust"
-                },
-                value: {
-                  text: data['msic-trust-account-name']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-unit-trust-account",
-                      html: "Change",
-                      visuallyHiddenText: "XXX"
-                    },
-                    {
-                      href: "msic-remove",
-                      html: "Remove",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Number of units"
-                },
-                value: {
-                  text: data['msic-trust-account-purchase-value']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-unit-trust-account",
-                      html: "",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
-                }
-              },
-
-              {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                  text: "Bid price of units today"
-                },
-                value: {
-                  text: data['msic-trust-account-units']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "XXXX"
-                    }
-                  ]
-                }
-              }
-              ]
-            }) }}
-
-            <br><br>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-          <h2 class="govuk-heading––extraMedium">Cash at home </h2>
-
-                {{ govukSummaryList({
-                  rows: [
-                  {
-                    classes: 'govuk-summary-list--no-border',
-                    key: {
-                      text: "Amount"
-                    },
-                    value: {
-                      text: data['msic-cash-at-home-amount']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "msic-cash-at-home",
-                          html: "Change",
-                          visuallyHiddenText: "XXX"
-                        },
-                        {
-                          href: "msic-remove",
-                          html: "Remove",
-                          visuallyHiddenText: "XXX"
-                        }
-                      ]
-                    }
-                  }
-                  ]
-                }) }}
-
-                <br><br>
-                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-      <h2 class="govuk-heading––extraMedium">Money abroad </h2>
-
-
-            {{ govukSummaryList({
-              rows: [
-              {
-                key: {
-                  text: "Account with"
-                },
-                value: {
-                  text: data['msic-cash-other-abroad-name']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-cash-other-abroad",
-                      html: "Change",
-                      visuallyHiddenText: "XXX"
-                    },
-                    {
-                      href: "msic-remove",
-                      html: "Remove",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Currency"
-                },
-                value: {
-                  text: data['msic-cash-other-abroad-currency']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
-                }
-              },
-              {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                  text: "Amount in this account today"
-                },
-                value: {
-                  text: data['msic-cash-other-abroad-amount']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
-                }
-              }
-              ]
-            }) }}
-
-          <br><br>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-
-      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-        <h2 class="govuk-heading––extraMedium">(#) Second properties </h2>
-
-
-              {{ govukSummaryList({
-                rows: [
-                {
-                  key: {
-                    text: "Has second property"
-                  },
-                  value: {
-                    text: data["msic-second-property-yn"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-second-property-yn",
-                        html: "Change",
-                        visuallyHiddenText: "XXX"
-                      },
-                      {
-                        href: "msic-remove",
-                        html: "Remove",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                },
-                {
-                  classes: 'govuk-summary-list--no-border',
-                  key: {
-                    text: "Complete A64a"
-                  },
-                  value: {
-                    text: data["msic-second-property-yn"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                }
-                ]
-              }) }}
-
-              <br><br>
-              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-                <h2 class="govuk-heading––extraMedium">(#) Other money, savings or investments</h2>
-
-
-                {{ govukSummaryList({
-                  rows: [
-                  {
-                    key: {
-                      text: "This money is"
-                    },
-                    value: {
-                      text: data['msic-missing-account-name']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "msic-missing-account",
-                          html: "Change",
-                          visuallyHiddenText: "XXX"
-                        },
-                        {
-                          href: "msic-remove",
-                          html: "Remove",
-                          visuallyHiddenText: "XXX"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    classes: 'govuk-summary-list--no-border',
-                    key: {
-                      text: "Amount today"
-                    },
-                    value: {
-                      text: data['msic-missing-account-amount']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "",
-                          visuallyHiddenText: "XXX"
-                        }
-                      ]
-                    }
-                  }
-                  ]
-                }) }}
-
-                <br><br>
-
-
-
-
-
-
 
 
 
