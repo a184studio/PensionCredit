@@ -64,9 +64,18 @@
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
                 {% endif %}
               </li>
+
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="claim-date-summary" aria-describedby="eligibility-completed">
+                  (Hidden) Summary
+                </a>
+              </li>
+
             </ul>
           </li>
         </ol>
+
+
 
         <!------------ ––– ------------>
 
@@ -168,7 +177,7 @@
         </ol>
 
         <!------------ ––– ------------>
-
+    <!---
         <ol class="app-task-list">
           <li>
             <h2 class="app-task-list__section">
@@ -195,7 +204,7 @@
             </ul>
           </li>
         </ol>
-
+--->
         <!------------ ––– ------------>
   <!----
         <ol class="app-task-list">
@@ -250,10 +259,11 @@
               </li>
 
               <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="all-other-pensions-summary" aria-describedby="eligibility-completed">
+                <a class="app-task-list__task-name" href="pensions-summary" aria-describedby="eligibility-completed">
                   (Hidden) Summary
                 </a>
               </li>
+
             </ul>
           </li>
         </ol>
@@ -278,6 +288,12 @@
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
                 {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="benefits-summary" aria-describedby="eligibility-completed">
+                  (Hidden) Summary
+                </a>
               </li>
 
             </ul>
@@ -308,6 +324,12 @@
                   {% endif %}
                 </li>
 
+                <li class="app-task-list__item">
+                  <a class="app-task-list__task-name" href="msic-pc-payment-summary" aria-describedby="eligibility-completed">
+                    (Hidden) Pension Credit Payment account summary
+                  </a>
+                </li>
+
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="msic-has-current-account-yn" aria-describedby="eligibility-completed">
                   All accounts
@@ -322,6 +344,12 @@
               </li>
 
               <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="msic-check-your-answers-a" aria-describedby="eligibility-completed">
+                  (Hidden) Money you have summary
+                </a>
+              </li>
+
+              <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="disregards-capital-total-yn" aria-describedby="eligibility-completed">
                   Capital disregards
                 </a>
@@ -333,11 +361,13 @@
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
                 {% endif %}
               </li>
-            <!--  <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="msic-all-money-accounts" aria-describedby="eligibility-completed">
-                  (Hidden) Summary
+
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="disregards-summary" aria-describedby="eligibility-completed">
+                  (Hidden) Disregards summary
                 </a>
-              </li>-->
+              </li>
+
             </ul>
           </li>
         </ol>
@@ -367,16 +397,9 @@
               </li>
 
               <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="other-income-benefits-aboard-yn" aria-describedby="eligibility-completed">
-                  Earnings and other regular income
+                <a class="app-task-list__task-name" href="other-income-summary" aria-describedby="eligibility-completed">
+                  (Hidden) Summary
                 </a>
-                {% if data["other-income-complete"] == "true" %}
-                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["other-income-complete"] == "in-progress" %}
-                  <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
-                {% else %}
-                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
-                {% endif %}
               </li>
 
             </ul>
