@@ -140,7 +140,7 @@
                               {% if data["other-income-employment-more-yes-detail"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        (Employment) Details of other incoe from employment
+                                        (Employment) Details of other income from employment
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["other-income-employment-more-yes-detail"] }}
@@ -160,7 +160,7 @@
 {% if data["other-income-self-employment-yes-details"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          (Self - employment) Description of income from self-employment, how much it is and how often it is paid
+          (Self - employment) Details of income from self-employment, how much it is and how often it is paid
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["other-income-self-employment-yes-details"] }}
@@ -203,7 +203,7 @@
             {% if data["other-income-equity-release-yn"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      other-income-equity-release-yn
+                      Do you get any income from an equity release scheme?
                     </dt>
                     <dd class="govuk-summary-list__value">
                       {{ data["other-income-equity-release-yn"] }}
@@ -239,7 +239,7 @@
 {% if data["other-income-equity-release-yes-date-day"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Enter the date this income started
+        Date this income from an equity release scheme started
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['other-income-equity-release-yes-date-day'] + ' ' + (data['other-income-equity-release-yes-date-month'] | getMonth) + ' ' + data['other-income-equity-release-yes-date-year'] }}
@@ -257,7 +257,7 @@
 {% if data["other-income-equity-release-yes-payment-frequency-yes"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          How often is this income paid?
+          How often is this income from an equity release scheme paid?
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["other-income-equity-release-yes-payment-frequency-yes"] }}
@@ -273,7 +273,7 @@
       {% if data["other-income-equity-release-yes-payment-frequency-yes"] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                How often is this income paid?
+                How often is this income from an equity release scheme paid?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data["other-income-equity-release-yes-payment-frequency-yes-other"] }}
@@ -291,7 +291,7 @@
 {% if data["other-income-equity-release-yes-amount"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          How much is this income?
+          How much is this income from an equity release scheme?
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["other-income-equity-release-yes-amount"] }}
@@ -325,7 +325,7 @@
       {% if data["other-income-benefits-aboard-yes-more-yn"] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Details
+                Details of other income from an equity release scheme
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data["other-income-benefits-aboard-yes-more-detail"] }}
