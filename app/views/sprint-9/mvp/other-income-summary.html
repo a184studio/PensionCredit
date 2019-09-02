@@ -197,6 +197,149 @@
 
             <br>
 
+            <!------------------------------------------------>
+
+
+            {% if data["other-income-equity-release-yn"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      other-income-equity-release-yn
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["other-income-equity-release-yn"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="other-income-equity-release-yn">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+      <br>
+
+      {% if data["other-income-home-income-yn"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Is this equity release part of a home income scheme?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["other-income-home-income-yn"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="other-income-home-income-yn">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+<br>
+
+{% if data["other-income-equity-release-yes-date-day"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Enter the date this income started
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['other-income-equity-release-yes-date-day'] + ' ' + (data['other-income-equity-release-yes-date-month'] | getMonth) + ' ' + data['other-income-equity-release-yes-date-year'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="other-income-searchlight-no-match">
+            Change
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+<br>
+
+{% if data["other-income-equity-release-yes-payment-frequency-yes"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How often is this income paid?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["other-income-equity-release-yes-payment-frequency-yes"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="other-income-searchlight-no-match">
+            Change
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if data["other-income-equity-release-yes-payment-frequency-yes"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                How often is this income paid?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["other-income-equity-release-yes-payment-frequency-yes-other"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="other-income-searchlight-no-match">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+<br>
+
+{% if data["other-income-equity-release-yes-amount"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How much is this income?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["other-income-equity-release-yes-amount"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="other-income-searchlight-no-match">
+            Change
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+<br>
+
+{% if data["other-income-benefits-aboard-yes-more-yn"] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you have any other income from an equity release scheme?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["other-income-benefits-aboard-yes-more-yn"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="other-income-searchlight-no-match">
+            Change
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if data["other-income-benefits-aboard-yes-more-yn"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["other-income-benefits-aboard-yes-more-detail"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="other-income-searchlight-no-match">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+<br>
+
 
 <!------------------------------------------------>
 
