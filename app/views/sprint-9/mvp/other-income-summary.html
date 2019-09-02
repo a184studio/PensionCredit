@@ -26,7 +26,7 @@
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Do you need to make any changes to the income shown on Searchlight?
+                      Changes to income shown on DWP systems
                     </dt>
                     <dd class="govuk-summary-list__value">
                       {{ data["other-income-employment-type-yn"] }}
@@ -44,7 +44,7 @@
                   {% if data["other-income-employment-what-is-this-money"] %}
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            (Employment) What is this income?
+                            (Employment) What is this income from employment?
                           </dt>
                           <dd class="govuk-summary-list__value">
                             {{ data["other-income-employment-what-is-this-money"] }}
@@ -60,7 +60,7 @@
                   {% if data["other-income-employment-frequency-yes"] %}
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            (Employment) How often is this income paid?
+                            (Employment) How often is this income from employment paid?
                           </dt>
                           <dd class="govuk-summary-list__value">
                             {{ data["other-income-employment-frequency-yes"] }}
@@ -76,7 +76,7 @@
                         {% if data["other-income-employment-frequency-yes-other"] %}
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  (Employment) How often is this paid?
+                                  (Employment) How often is this income from employment paid?
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["other-income-employment-frequency-yes-other"] }}
@@ -92,7 +92,7 @@
                               {% if data["other-income-frequency-yes-other"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        (Employment) Do you have any other income from employment?
+                                        (Employment) How often is this income from employment paid?
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["other-income-frequency-yes-other"] }}
@@ -108,7 +108,7 @@
                                   {% if data["other-income-employment-amount"] %}
                                         <div class="govuk-summary-list__row">
                                           <dt class="govuk-summary-list__key">
-                                            (Employment) other-income-employment-amount
+                                            (Employment) Amount of income from employment
                                           </dt>
                                           <dd class="govuk-summary-list__value">
                                             {{ data["other-income-employment-amount"] }}
@@ -124,7 +124,7 @@
                             {% if data["other-income-employment-more-yn"] %}
                                   <div class="govuk-summary-list__row">
                                     <dt class="govuk-summary-list__key">
-                                      (Employment) other-income-employment-more-yn
+                                      (Employment) Do you get any more income from employment?
                                     </dt>
                                     <dd class="govuk-summary-list__value">
                                       {{ data["other-income-employment-more-yn"] }}
@@ -140,7 +140,7 @@
                               {% if data["other-income-employment-more-yes-detail"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        (Employment) other-income-employment-more-yes-detail
+                                        (Employment) Details of other incoe from employment
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["other-income-employment-more-yes-detail"] }}
@@ -160,7 +160,7 @@
 {% if data["other-income-self-employment-yes-details"] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          (Self - employment) Description of income, how much it is and how often it is paid
+          (Self - employment) Description of income from self-employment, how much it is and how often it is paid
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["other-income-self-employment-yes-details"] }}
@@ -182,7 +182,7 @@
                   {% if data["other-income-searchlight-no-match-details"] %}
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            (SearchLIght no match) Details incorrect data
+                            (SearchLIght no match) Income shown on DWP systems is incorrect
                           </dt>
                           <dd class="govuk-summary-list__value">
                             {{ data["other-income-searchlight-no-match-details"] }}
