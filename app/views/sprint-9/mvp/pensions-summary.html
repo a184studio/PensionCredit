@@ -27,10 +27,10 @@
 
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            Other pensions
+                            foreign-pensions-yn
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            Yes / No
+                            Y/N {{ data["foreign-pensions-yn"] }}
                           </dd>
                           <dd class="govuk-summary-list__actions">
                             <a href="pensions-monolith">
@@ -40,13 +40,13 @@
                         </div>
 
 
-                        {% if data["pensions-foreign-yes"] %}
+                        {% if data["foreign-pensions-yes"] %}
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                   Details
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  {{ data["pensions-foreign-yes"] }}
+                                  {{ data["foreign-pensions-yes"] }}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                   <a href="pensions-monolith">
@@ -59,12 +59,28 @@
                   <br>
 
 
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      XXX
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Y/N
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="pensions-monolith">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+
+
+                  {% if data["XXX"] %}
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            Foreign Pensions
+                            Details
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            Yes / No
+                            {{ data["XXX"] }}
                           </dd>
                           <dd class="govuk-summary-list__actions">
                             <a href="pensions-monolith">
@@ -72,31 +88,85 @@
                             </a>
                           </dd>
                         </div>
-
-
-                        {% if data["pensions-foreign-yes"] %}
-                              <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                  Details
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                  {{ data["pensions-foreign-yes"] }}
-                                </dd>
-                                <dd class="govuk-summary-list__actions">
-                                  <a href="pensions-monolith">
-                                    Change
-                                  </a>
-                                </dd>
-                              </div>
-                              {% endif %}
+                        {% endif %}
 
 <br>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          XXX
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Y/N
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="pensions-monolith">
+            Change
+          </a>
+        </dd>
+      </div>
+
+
+      {% if data["XXX"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["XXX"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="pensions-monolith">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+<br>
+
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Y/N
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      XXX
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="pensions-monolith">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+
+
+                  {% if data["XXX"] %}
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Details
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            {{ data["XXX"] }}
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a href="pensions-monolith">
+                              Change
+                            </a>
+                          </dd>
+                        </div>
+                        {% endif %}
+
+<br>
+
+
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Anuities
+                                  XXX
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  Yes / No
+                                  Y/N
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                   <a href="pensions-monolith">
@@ -106,13 +176,13 @@
                               </div>
 
 
-                              {% if data["pensions-anuities-yes"] %}
+                              {% if data["XXX"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
                                         Details
                                       </dt>
                                       <dd class="govuk-summary-list__value">
-                                        {{ data["pensions-anuities-yes"] }}
+                                        {{ data["XXX"] }}
                                       </dd>
                                       <dd class="govuk-summary-list__actions">
                                         <a href="pensions-monolith">
@@ -121,6 +191,43 @@
                                       </dd>
                                     </div>
                                     {% endif %}
+
+<br>
+
+
+                                          <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                              XXX
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                              Y/N
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                              <a href="pensions-monolith">
+                                                Change
+                                              </a>
+                                            </dd>
+                                          </div>
+
+
+                                          {% if data["XXX"] %}
+                                                <div class="govuk-summary-list__row">
+                                                  <dt class="govuk-summary-list__key">
+                                                    Details
+                                                  </dt>
+                                                  <dd class="govuk-summary-list__value">
+                                                    {{ data["XXX"] }}
+                                                  </dd>
+                                                  <dd class="govuk-summary-list__actions">
+                                                    <a href="pensions-monolith">
+                                                      Change
+                                                    </a>
+                                                  </dd>
+                                                </div>
+                                                {% endif %}
+
+                                    <br>
+
 
 
 <br></dl></dl><br><br>
