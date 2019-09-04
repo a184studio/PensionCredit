@@ -24,13 +24,16 @@
         name: "other-income-employment-yn",
         fieldset: {
           legend: {
-            html: "Do you have any other income apart from what we have mentioned?",
+              html: "Have you earned any other income in this country or overseas since "
+              + data['claim-date-cam-date-entry-day'] + ' '
+              + (data['claim-date-cam-date-entry-month'] | getMonth) + ' '
+              + data['claim-date-cam-date-entry-year'] + "?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "This can be from X, Y and Z painting fences etc. (Don't need to talk about royalties or anyrhinf from the checkboxes yet)"
+          text: "This can be from employment, self-employment or casual work."
         },
         items: [
         {

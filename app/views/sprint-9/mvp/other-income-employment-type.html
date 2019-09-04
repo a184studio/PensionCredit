@@ -26,18 +26,18 @@
         name: "other-income-employment-type-yn",
         fieldset: {
           legend: {
-            html: "What type of employment is this?",
+            html: "How did you earn this income?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "This can be from X, Y and Z, maybe some form of High level extract from the checkboxes pages. I think there might have some insights from UR"
+          text: ""
         },
         items: [
         {
             value: "Employed",
-            text: "Employed",
+            text: "Employment",
             checked: (data["other-income-employment-type-yn"] == "Employed")
           },
           {
@@ -47,7 +47,7 @@
             },
             {
                 value: "Both employed and self-employment",
-                text: "Both employed and self-employment",
+                text: "Both employment and self-employment",
                 checked: (data["other-income-employment-type-yn"] == "Both employed and self-employment")
               }
         ]
