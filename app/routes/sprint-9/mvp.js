@@ -535,9 +535,9 @@ router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
   const hospital = req.session.data['hospital-yn']
 
   if (hospital === 'Yes') {
-    res.redirect(`${baseUrl}/notepad-hospital-dates`)
+    res.redirect(`${baseUrl}/hospital-details`)
   } else {
-    req.session.data['hospital-yes-complete'] = 'true'
+    req.session.data['hospital-summary'] = 'true'
     res.redirect(`${baseUrl}/task-list`)
   }
 })

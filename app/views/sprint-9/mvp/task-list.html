@@ -218,9 +218,9 @@
                 <a class="app-task-list__task-name" href="hospital-yn" aria-describedby="eligibility-completed">
                   Admission details
                 </a>
-                {% if data["hospital-complete"] == "true" %}
+                {% if data["hospitals-complete"] == "true" %}
                   <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["hospital-complete"] == "in-progress" %}
+                {% elif data["hospitals-complete"] == "in-progress" %}
                   <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
