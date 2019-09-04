@@ -20,7 +20,7 @@
 
 
         <div class="govuk-panel--agent">
-          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in Searchlight and discuss the earnings and income shown. Establish whether Searchlight shows the correct position between {{data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']}} and today.</h1>
+          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check Searchlight and discuss the earnings and income shown. Establish whether Searchlight shows the correct income and earnings from this country and overseas since  {{data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']}}.</h1>
 
 
       {{ govukRadios({
@@ -28,7 +28,7 @@
         name: "other-income-employment-type-yn",
         fieldset: {
           legend: {
-            html: "Do you need to make any changes to the income shown on Searchlight?",
+            html: "Can you use the income shown on Searchlight in the claimant’s Pension Credit calculation?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -39,22 +39,22 @@
         items: [
         {
             value: "All employment visible SeachLight & other systems",
-            text: "No - Searchlight matches the claimant's understanding",
+            text: "Yes - Searchlight matches the claimant's understanding",
             checked: (data["other-income-employment-type-yn"] == "All employment visible SeachLight & other systems")
           },
           {
             value: "Self-employed",
-            text: "Add income from self-employment or royalties",
+            text: "No - The claimant has more income from self-employment or royalties",
             checked: (data["other-income-employment-type-yn"] == "Self-employed")
           },
           {
             value: "Both Other paid work and self-employed",
-            text: "Add income from both employment and self-employment",
+            text: "No - The claimant has more income from both employment and self-employment",
             checked: (data["other-income-employment-type-yn"] == "Both Other paid work and self-employed")
           },
           {
             value: "Other paid work",
-            text: "Add income from employment",
+            text: "No – The claimant has income from employment",
             checked: (data["other-income-employment-type-yn"] == "Other paid work")
           },
           {
@@ -62,7 +62,7 @@
           },
           {
             value: "SearchLight doesnt match",
-            text: "Income shown in Searchlight is incorrect",
+            text: "No – The income Searchlight shows is wrong",
             checked: (data["other-income-employment-type-yn"] == "SearchLight doesnt match")
           }
         ]
