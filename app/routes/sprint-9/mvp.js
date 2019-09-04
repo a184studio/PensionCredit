@@ -963,7 +963,7 @@ router.post(`${baseUrl}/other-income-employment-yn-router`, (req, res) => {
   if (employmentFulltime === 'Yes') {
     res.redirect(`${baseUrl}/other-income-employment-type`)
   } else {
-    res.redirect(`${baseUrl}/other-income-self-employment-yn`)
+    res.redirect(`${baseUrl}/other-income-equity-release-yn`)
   }
 })
 
@@ -972,19 +972,13 @@ router.post(`${baseUrl}/other-income-employment-yn-router`, (req, res) => {
 router.post(`${baseUrl}/other-income-employment-type-router`, (req, res) => {
   const employmentType = req.session.data['other-income-employment-type-yn']
 
-  if (employmentType === 'Self-employed') {
+  if (employmentType === 'Self-employment') {
     res.redirect(`${baseUrl}/other-income-self-employment-yes`)
   }
-  else if (employmentType === 'Both Other paid work and self-employed') {
-    res.redirect(`${baseUrl}/other-income-employment-yes`)
-  }
-  else if (employmentType === 'SearchLight doesnt match') {
-    res.redirect(`${baseUrl}/other-income-searchlight-no-match`)
-  }
-  else if (employmentType === 'Other paid work') {
+  else if (employmentType === 'Employed') {
     res.redirect(`${baseUrl}/other-income-employment-yes`)
   } else {
-    res.redirect(`${baseUrl}/other-income-equity-release-yn`)
+    res.redirect(`${baseUrl}/other-income-self-employment-yes`)
   }
 })
 

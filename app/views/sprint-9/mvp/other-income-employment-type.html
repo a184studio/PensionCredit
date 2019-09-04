@@ -19,8 +19,6 @@
       <input type="hidden" name="employment-complete" value="in-progress"/>
 
 
-        <div class="govuk-panel--agent">
-          <h1 class="govuk-heading-m"><span class="agent-action">Agent: Check in Searchlight and discuss the earnings and income shown. Establish whether Searchlight shows the correct position between {{data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']}} and today.</h1>
 
 
       {{ govukRadios({
@@ -28,47 +26,33 @@
         name: "other-income-employment-type-yn",
         fieldset: {
           legend: {
-            html: "Do you need to make any changes to the income shown on Searchlight?",
+            html: "What type of employment is this?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: ""
+          text: "This can be from X, Y and Z, maybe some form of High level extract from the checkboxes pages. I think there might have some insights from UR"
         },
         items: [
         {
-            value: "All employment visible SeachLight & other systems",
-            text: "No - Searchlight matches the claimant's understanding",
-            checked: (data["other-income-employment-type-yn"] == "All employment visible SeachLight & other systems")
+            value: "Employed",
+            text: "Employed",
+            checked: (data["other-income-employment-type-yn"] == "Employed")
           },
           {
-            value: "Self-employed",
-            text: "Add income from self-employment or royalties",
-            checked: (data["other-income-employment-type-yn"] == "Self-employed")
-          },
-          {
-            value: "Both Other paid work and self-employed",
-            text: "Add income from both employment and self-employment",
-            checked: (data["other-income-employment-type-yn"] == "Both Other paid work and self-employed")
-          },
-          {
-            value: "Other paid work",
-            text: "Add income from employment",
-            checked: (data["other-income-employment-type-yn"] == "Other paid work")
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "SearchLight doesnt match",
-            text: "Income shown in Searchlight is incorrect",
-            checked: (data["other-income-employment-type-yn"] == "SearchLight doesnt match")
-          }
+              value: "Self-employment",
+              text: "Self-employment",
+              checked: (data["other-income-employment-type-yn"] == "Self-employment")
+            },
+            {
+                value: "Both employed and self-employment",
+                text: "Both employed and self-employment",
+                checked: (data["other-income-employment-type-yn"] == "Both employed and self-employment")
+              }
         ]
       }) }}
 
-                </div>
 <!--            text: "Were you self-employed between Monday, 15 April 2019 and Today? " + tamDate,-->
 
       {{ govukButton({
