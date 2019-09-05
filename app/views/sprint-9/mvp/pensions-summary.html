@@ -16,7 +16,7 @@
   <div class="govuk-grid-column-three-quarters">
 
     <h1 class="govuk-heading-xl">
-      Check your answers: Pension
+      Check your answers: Pensions and annuities
     </h1>
 
     <dl class="govuk-summary-list govuk-summary-list--long">
@@ -27,7 +27,7 @@
 
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            Pensions from employers in another country
+                            Do you have any pensions from employers in another country?
                           </dt>
                           <dd class="govuk-summary-list__value">
                             Yes / No
@@ -43,7 +43,7 @@
                         {% if data["foreign-pensions-yes"] %}
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Details
+                                  Details of pensions from employers in another country
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   {{ data["foreign-pensions-yes"] }}
@@ -61,7 +61,7 @@
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Private pensions from another country
+                      Do you have any private pensions from another country?
                     </dt>
                     <dd class="govuk-summary-list__value">
                       Yes / No
@@ -77,7 +77,7 @@
                   {% if data["foreign-private-pension-yes"] %}
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            Details
+                            Details of private pensions from another country
                           </dt>
                           <dd class="govuk-summary-list__value">
                             {{ data["foreign-private-pension-yes"] }}
@@ -95,7 +95,7 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          State pensions from another country
+          Do you have any state pensions from another country?
         </dt>
         <dd class="govuk-summary-list__value">
           Yes / No
@@ -111,7 +111,7 @@
       {% if data["foreign-state-pension-yes"] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Details
+                Details of state pensions from another country
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data["foreign-state-pension-yes"] }}
@@ -129,7 +129,7 @@
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Pensions that you have not claimed yet
+                      Do you have any pensions that you have not claimed yet?
                     </dt>
                     <dd class="govuk-summary-list__value">
                       Yes / No
@@ -145,7 +145,7 @@
                   {% if data["pension-not-claimed-yes"] %}
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            Details
+                            Details of pensions that you have not claimed yet
                           </dt>
                           <dd class="govuk-summary-list__value">
                             {{ data["pension-not-claimed-yes"] }}
@@ -163,7 +163,7 @@
 
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  Income from annuities
+                                  Do you have any income from annuities?
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                   Yes / No
@@ -179,7 +179,7 @@
                               {% if data["annuities-yes"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
-                                        Details
+                                        Details of income from annuities
                                       </dt>
                                       <dd class="govuk-summary-list__value">
                                         {{ data["annuities-yes"] }}
@@ -197,7 +197,7 @@
 
                                           <div class="govuk-summary-list__row">
                                             <dt class="govuk-summary-list__key">
-                                              Any other pensions
+                                              Do you have any other pensions?
                                             </dt>
                                             <dd class="govuk-summary-list__value">
                                               Yes / No
@@ -213,7 +213,7 @@
                                           {% if data["other-pension-yes"] %}
                                                 <div class="govuk-summary-list__row">
                                                   <dt class="govuk-summary-list__key">
-                                                    Details
+                                                    Details of any other pensions
                                                   </dt>
                                                   <dd class="govuk-summary-list__value">
                                                     {{ data["other-pension-yes"] }}
