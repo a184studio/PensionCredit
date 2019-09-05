@@ -27,10 +27,10 @@
 
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
-                            foreign-pensions-yn
+                            Pensions from employers in another country
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            Y/N {{ data["foreign-pensions-yn"] }}
+                            Yes / No
                           </dd>
                           <dd class="govuk-summary-list__actions">
                             <a href="pensions-monolith">
@@ -61,10 +61,10 @@
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      XXX
+                      Private pensions from another country
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      Y/N
+                      Yes / No
                     </dd>
                     <dd class="govuk-summary-list__actions">
                       <a href="pensions-monolith">
@@ -74,13 +74,13 @@
                   </div>
 
 
-                  {% if data["XXX"] %}
+                  {% if data["foreign-private-pension-yes"] %}
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
                             Details
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            {{ data["XXX"] }}
+                            {{ data["foreign-private-pension-yes"] }}
                           </dd>
                           <dd class="govuk-summary-list__actions">
                             <a href="pensions-monolith">
@@ -95,10 +95,10 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          XXX
+          State pensions from another country
         </dt>
         <dd class="govuk-summary-list__value">
-          Y/N
+          Yes / No
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="pensions-monolith">
@@ -108,13 +108,13 @@
       </div>
 
 
-      {% if data["XXX"] %}
+      {% if data["foreign-state-pension-yes"] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Details
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data["XXX"] }}
+                {{ data["foreign-state-pension-yes"] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a href="pensions-monolith">
@@ -129,10 +129,10 @@
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Y/N
+                      Pensions that you have not claimed yet
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      XXX
+                      Yes / No
                     </dd>
                     <dd class="govuk-summary-list__actions">
                       <a href="pensions-monolith">
@@ -142,13 +142,13 @@
                   </div>
 
 
-                  {% if data["XXX"] %}
+                  {% if data["pension-not-claimed-yes"] %}
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
                             Details
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            {{ data["XXX"] }}
+                            {{ data["pension-not-claimed-yes"] }}
                           </dd>
                           <dd class="govuk-summary-list__actions">
                             <a href="pensions-monolith">
@@ -163,10 +163,10 @@
 
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  XXX
+                                  Income from annuities
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  Y/N
+                                  Yes / No
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                   <a href="pensions-monolith">
@@ -176,13 +176,13 @@
                               </div>
 
 
-                              {% if data["XXX"] %}
+                              {% if data["annuities-yes"] %}
                                     <div class="govuk-summary-list__row">
                                       <dt class="govuk-summary-list__key">
                                         Details
                                       </dt>
                                       <dd class="govuk-summary-list__value">
-                                        {{ data["XXX"] }}
+                                        {{ data["annuities-yes"] }}
                                       </dd>
                                       <dd class="govuk-summary-list__actions">
                                         <a href="pensions-monolith">
@@ -197,10 +197,10 @@
 
                                           <div class="govuk-summary-list__row">
                                             <dt class="govuk-summary-list__key">
-                                              XXX
+                                              Any other pensions
                                             </dt>
                                             <dd class="govuk-summary-list__value">
-                                              Y/N
+                                              Yes / No
                                             </dd>
                                             <dd class="govuk-summary-list__actions">
                                               <a href="pensions-monolith">
@@ -210,13 +210,13 @@
                                           </div>
 
 
-                                          {% if data["XXX"] %}
+                                          {% if data["other-pension-yes"] %}
                                                 <div class="govuk-summary-list__row">
                                                   <dt class="govuk-summary-list__key">
                                                     Details
                                                   </dt>
                                                   <dd class="govuk-summary-list__value">
-                                                    {{ data["XXX"] }}
+                                                    {{ data["other-pension-yes"] }}
                                                   </dd>
                                                   <dd class="govuk-summary-list__actions">
                                                     <a href="pensions-monolith">
