@@ -21,6 +21,18 @@
 
       <h1 class="govuk-heading-xl"><span class="agent-action">Do you get any other income that you have not told us about?</h1>
 
+        <!--{
+            id: "other-income-armed-forces-yn",
+            name: "other-income-armed-forces-yn",
+            value: "A",
+            html: "Armed forces compensation scheme",
+            conditional: {
+              html: AAYes
+            }
+          },
+
+-->
+
 
         {% set AAYes %}
           {{ govukTextarea({
@@ -114,7 +126,6 @@
 
         <!-------------- Check ---------------------->
 
-
         {% set otherYes %}
         {{ govukTextarea({
           label: {
@@ -147,18 +158,9 @@
             text: ""
           },
           items: [
-          {
-              id: "other-income-sick-pay-yn",
-              name: "other-income-sick-pay-yn",
-              value: "A",
-              html: "Armed forces compensation scheme",
-              conditional: {
-                html: AAYes
-              }
-            },
             {
-              idPrefix: "other-income-royalties-yn",
-              name: "other-income-royalties-yn",
+              idPrefix: "other-income-trusts-yn",
+              name: "other-income-trusts-yn",
               value: "BB",
               html: "Discretionary payments from a trust",
               conditional: {
@@ -166,8 +168,8 @@
               }
             },
             {
-              idPrefix: "other-income-trust-payment-yn",
-              name: "other-income-trust-payment-yn",
+              idPrefix: "other-income-redundancy-yn",
+              name: "other-income-redundancy-yn",
               value: "Income from creditors/redundancy or disability insurance",
               html: "Personal injury awards or payments from a trust relating to an award for a personal injury",
               conditional: {
@@ -175,8 +177,8 @@
               }
             },
             {
-              idPrefix: "other-income-armed-forces-yn",
-              name: "other-income-armed-forces-yn",
+              idPrefix: "other-income-spouse-yn",
+              name: "other-income-spouse-yn",
               value: "DD",
               html: "Maintenance from a spouse or civil partner or former spouse or civil partner",
               conditional: {
@@ -186,8 +188,8 @@
 
 
             {
-              idPrefix: "other-income-charitable-payments-yn",
-              name: "other-income-charitable-payments-yn",
+              idPrefix: "other-income-strike-yn",
+              name: "other-income-strike-yn",
               value: "FF",
               html: "Strike pay",
               conditional: {
