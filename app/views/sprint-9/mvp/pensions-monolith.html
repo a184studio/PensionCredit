@@ -17,30 +17,29 @@
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-      <div class="govuk-panel--agent">
-         <h1 class="govuk-heading-xl">Agent: Ask the claimant about these </h1>
-       </div>
+
+      
+{% set pensionHint %}
+<p class=govuk-hint>Include:</p>
+<ul class="govuk-hint govuk-list govuk-list--bullet">
+  <li>whether it is in payment</li>
+  <li>the name of the provider</li>
+  <li>the amount after tax</li>
+  <li>the start date</li>
+  <li>how often it is paid</li>
+  <li>how it is increased each year ( RPI, fixed or other)</li>
+</ul>
+{% endset %}
 
         {% set foreignPensionsYes %}
-        {% set foreignPensionsHint %}
-        <p class=govuk-hint>XXXX:</p>
-        <ul class="govuk-hint govuk-list govuk-list--bullet">
-          <li>In payment ( Y / N )</li>
-          <li>Provider name</li>
-          <li>Type of NSP ( private / works / annuity / other)</li>
-          <li>Net amount</li>
-          <li>Start date</li>
-          <li>Frequency of payment</li>
-          <li>Type of increase ( RPI / Fixed / Other)</li>
-        </ul>
-      {% endset %}
+
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
-              html: "XX XX XX"
+              html: "Details of pensions from employers in another country"
             },
             hint: {
-              html: foreignPensionsHint},
+              html: pensionHint},
             id: "foreign-pensions-yes",
             name: "foreign-pensions-yes",
             classes: "govuk-input--width-100",
@@ -53,28 +52,18 @@
         <!-------------------------------------->
 
         {% set foreignPrivatePensionYes %}
-        {% set foreignPensionsHint %}
-        <p class=govuk-hint>XXXX:</p>
-        <ul class="govuk-hint govuk-list govuk-list--bullet">
-          <li>In payment ( Y / N )</li>
-          <li>Provider name</li>
-          <li>Type of NSP ( private / works / annuity / other)</li>
-          <li>Net amount</li>
-          <li>Start date</li>
-          <li>Frequency of payment</li>
-          <li>Type of increase ( RPI / Fixed / Other)</li>
-        </ul>
-      {% endset %}
+
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
-              html: "XX XX XX"
+              html: "Details of private pensions from another country"
             },
-            hint: {
-              html: foreignPensionsHint},
+            hint:{
+              html: pensionHint
+            },
             id: "foreign-private-pension-yes",
             name: "foreign-private-pension-yes",
-            classes: "govuk-input--width-100",
+            classes: "govuk-input--width-1}00",
             attributes: {
               maxlength: 200
             }
@@ -84,25 +73,14 @@
         <!-------------------------------------->
 
         {% set foreignStatePensionYes %}
-        {% set foreignStatePensionHint %}
-        <p class=govuk-hint>XXXX:</p>
-        <ul class="govuk-hint govuk-list govuk-list--bullet">
-          <li>In payment ( Y / N )</li>
-          <li>Provider name</li>
-          <li>Type of NSP ( private / works / annuity / other)</li>
-          <li>Net amount</li>
-          <li>Start date</li>
-          <li>Frequency of payment</li>
-          <li>Type of increase ( RPI / Fixed / Other)</li>
-        </ul>
-      {% endset %}
+
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
-              html: "XX XX XX"
+              html: "Details of state pensions from another country"
             },
             hint: {
-              html: foreignStatePensionHint},
+              html: pensionHint},
             id: "foreign-state-pension-yes",
             name: "foreign-state-pension-yes",
             classes: "govuk-input--width-100",
@@ -115,25 +93,14 @@
         <!-------------------------------------->
 
         {% set pensionNotClaimedYes %}
-        {% set pensionNotClaimedHint %}
-        <p class=govuk-hint>XXXX:</p>
-        <ul class="govuk-hint govuk-list govuk-list--bullet">
-          <li>In payment ( Y / N )</li>
-          <li>Provider name</li>
-          <li>Type of NSP ( private / works / annuity / other)</li>
-          <li>Net amount</li>
-          <li>Start date</li>
-          <li>Frequency of payment</li>
-          <li>Type of increase ( RPI / Fixed / Other)</li>
-        </ul>
-      {% endset %}
+
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
-              html: "XX XX XX"
+              html: "Detals of pensions you have not claimed yet"
             },
             hint: {
-              html: pensionNotClaimedHint},
+              html: pensionHint},
             id: "pension-not-claimed-yes",
             name: "pension-not-claimed-yes",
             classes: "govuk-input--width-100",
@@ -146,25 +113,14 @@
         <!-------------------------------------->
 
         {% set otherPensionYes %}
-        {% set otherPensionHint %}
-        <p class=govuk-hint>XXXX:</p>
-        <ul class="govuk-hint govuk-list govuk-list--bullet">
-          <li>In payment ( Y / N )</li>
-          <li>Provider name</li>
-          <li>Type of NSP ( private / works / annuity / other)</li>
-          <li>Net amount</li>
-          <li>Start date</li>
-          <li>Frequency of payment</li>
-          <li>Type of increase ( RPI / Fixed / Other)</li>
-        </ul>
-      {% endset %}
+
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
-              html: "XX XX XX"
+              html: "Details of other any other pensions"
             },
             hint: {
-              html: foreignPensionsHint},
+              html: pensionHint},
             id: "other-pension-yes",
             name: "other-pension-yes",
             classes: "govuk-input--width-100",
@@ -177,26 +133,14 @@
         <!-------------------------------------->
 
         {% set annuitiesYes %}
-        {% set annuitiesHint %}
-        <p class=govuk-hint>@Pete this one is TBC / (Only collect if it's not part of a Home Income Plan) Dan Metcalfe Nick Valentine Can we clarify this please:</p>
-        <ul class="govuk-hint govuk-list govuk-list--bullet">
-          <li>In payment ( Y / N )</li>
-          <li>Provider name</li>
-          <li>Type of NSP ( private / works / annuity / other)</li>
-          <li>Net amount</li>
-          <li>Start date</li>
-          <li>Frequency of payment</li>
-          <li>Type of increase ( RPI / Fixed / Other)</li>
-          <li>Type of increase ( RPI / Fixed / Other)</li>
-        </ul>
-      {% endset %}
+
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
-              html: "XX XX XX"
+              html: "Details of income from annuities"
             },
             hint: {
-              html: annuitiesHint},
+              html: pensionHint},
             id: "annuities-yes",
             name: "annuities-yes",
             classes: "govuk-input--width-100",
@@ -213,19 +157,19 @@
           name: "pensions-monolith",
           fieldset: {
             legend: {
-              text: "This is some stufff",
+              text: "Do you have any other pensions or annuities that are not in payment or that have taken a lump sum from?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
+              classes: "govuk-fieldset__legend--xl"
             }
           },
           hint: {
-            text: ""
+            text: "Select all that apply"
           },
           items: [
           {
               name: 'foreign-pensions-yn',
               value: "foreign-pensions-yn",
-              html: "foreign-pensions-yn",
+              html: "Pensions from employers in another country",
               conditional: {
                 html: foreignPensionsYes
               }
@@ -233,7 +177,7 @@
             {
                 name: 'foreign-private-pension-yn',
                 value: "foreign-private-pension-yn",
-                html: "foreign-private-pension-yn",
+                html: "Private pensions from another country",
                 conditional: {
                   html: foreignPrivatePensionYes
                 }
@@ -241,7 +185,7 @@
               {
                   name: 'foreign-state-pension-yn',
                   value: "foreign-state-pension-yn",
-                  html: "foreign-state-pension-yn",
+                  html: "State pensions from another country",
                   conditional: {
                     html: foreignStatePensionYes
                   }
@@ -249,25 +193,25 @@
                 {
                     name: 'pension-not-claimed-yn',
                     value: "pension-not-claimed-yn",
-                    html: "pension-not-claimed-yn",
+                    html: "Pensions that you have not claimed yet",
                     conditional: {
                       html: pensionNotClaimedYes
                     }
                   },
                   {
-                      name: 'other-pension-yn',
-                      value: "other-pension-yn",
-                      html: "other-pension-yn",
-                      conditional: {
-                        html: otherPensionYes
+                    name: 'annuities-yn',
+                    value: "annuities-yn",
+                    html: "Income from annuities",
+                    conditional: {
+                      html: annuitiesYes
                       }
                     },
               {
-                  name: 'annuities-yn',
-                  value: "annuities-yn",
-                  html: "annuities-yn",
-                  conditional: {
-                    html: annuitiesYes
+                name: 'other-pension-yn',
+              value: "other-pension-yn",
+              html: "Any other pensions",
+              conditional: {
+                html: otherPensionYes
                   }
             }
           ]
