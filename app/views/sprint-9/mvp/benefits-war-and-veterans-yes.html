@@ -80,8 +80,8 @@
             hint:{
               html: benefitsWarParentHint
             },
-            id: "foreign-private-pension-yes",
-            name: "foreign-private-pension-yes",
+            id: "benefits-war-parent-yes",
+            name: "benefits-war-parent-yes",
             classes: "govuk-input--width-1}00",
             attributes: {
               maxlength: 200
@@ -91,7 +91,7 @@
 
         <!-------------------------------------->
 
-        {% set warOrphansPensionHint %}
+        {% set benefitsWarOrphansPensionHint %}
         <p class=govuk-hint>Include:</p>
         <ul class="govuk-hint govuk-list govuk-list--bullet">
           <li>whether it is in payment (If claiming it (not yet awarded) or getting it (in payment))</li>
@@ -102,7 +102,7 @@
         </ul>
         {% endset %}
 
-        {% set warOrphansPensionYes %}
+        {% set benefitsWarOrphansPensionYes %}
 
           {{ govukTextarea({
             label: {
@@ -110,10 +110,10 @@
               html: "3"
             },
             hint:{
-              html: warOrphansPensionHint
+              html: benefitsWarOrphansPensionHint
             },
-            id: "foreign-private-pension-yes",
-            name: "foreign-private-pension-yes",
+            id: "benefits-war-orphans-pension-yes",
+            name: "benefits-war-orphans-pension-yes",
             classes: "govuk-input--width-1}00",
             attributes: {
               maxlength: 200
@@ -123,7 +123,7 @@
 
         <!-------------------------------------->
 
-        {% set guaranteedIncomePaymentsHint %}
+        {% set benefitsGuaranteedIncomePaymentsHint %}
         <p class=govuk-hint>Include:</p>
         <ul class="govuk-hint govuk-list govuk-list--bullet">
           <li>whether it is in payment (If claiming it (not yet awarded) or getting it (in payment))</li>
@@ -134,7 +134,7 @@
         </ul>
         {% endset %}
 
-        {% set guaranteedIncomePaymentsYes %}
+        {% set benefitsGuaranteedIncomePaymentsYes %}
 
           {{ govukTextarea({
             label: {
@@ -142,10 +142,10 @@
               html: "4"
             },
             hint:{
-              html: guaranteedIncomePaymentsHint
+              html: benefitsGuaranteedIncomePaymentsHint
             },
-            id: "foreign-private-pension-yes",
-            name: "foreign-private-pension-yes",
+            id: "benefits-guaranteed-income-payments-yes",
+            name: "benefits-guaranteed-income-payments-yes",
             classes: "govuk-input--width-1}00",
             attributes: {
               maxlength: 200
@@ -188,19 +188,19 @@
                 }
               },
               {
-                  name: 'war-orphans-pension-yn',
-                  value: "war-orphans-pension-yn",
+                  name: 'benefits-war-orphans-pension-yn',
+                  value: "benefits-war-orphans-pension-yn",
                   html: "War Orphan's Pension (Veterans Agency)",
                   conditional: {
-                    html: warOrphansPensionYes
+                    html: benefitsWarOrphansPensionYes
                   }
                 },
                 {
-                  name: 'guaranteed-income-payments-yn',
-                  value: "guaranteed-income-payments-yn",
+                  name: 'benefits-guaranteed-income-payments-yn',
+                  value: "benefits-guaranteed-income-payments-yn",
                   html: "Guaranteed Income Payments from the Armed Forces Comp Scheme (Veterans Agency)",
                   conditional: {
-                    html: guaranteedIncomePaymentsYes
+                    html: benefitsGuaranteedIncomePaymentsYes
                   }
                 }
           ]
