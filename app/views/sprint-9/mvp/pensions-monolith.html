@@ -18,7 +18,7 @@
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-      
+
 {% set pensionHint %}
 <p class=govuk-hint>Include:</p>
 <ul class="govuk-hint govuk-list govuk-list--bullet">
@@ -27,7 +27,7 @@
   <li>the amount after tax</li>
   <li>the start date</li>
   <li>how often it is paid</li>
-  <li>how it is increased each year ( RPI, fixed or other)</li>
+  <li>how it is increased each year (RPI, fixed or other)</li>
 </ul>
 {% endset %}
 
@@ -97,7 +97,7 @@
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
-              html: "Detals of pensions you have not claimed yet"
+              html: "Details of pensions you have not claimed yet"
             },
             hint: {
               html: pensionHint},
@@ -157,7 +157,7 @@
           name: "pensions-monolith",
           fieldset: {
             legend: {
-              text: "Do you have any other pensions or annuities that are not in payment or that have taken a lump sum from?",
+              text: "Do you have any other pensions or annuities that are not in payment or that you have taken a lump sum from?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
