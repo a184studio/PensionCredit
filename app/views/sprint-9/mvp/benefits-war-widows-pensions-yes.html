@@ -1,17 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  benefit-overview? - Pension Credit
+  other-income-working-tax-credits-yes - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
 {% endblock %}
-
-
-
-
-
 
 {% block content %}
 
@@ -19,93 +14,91 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="benefit-IIDB-yn" method="post" class="form">
+    <form action="benefits-war-and-veterans-yn" method="post" class="form">
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-      <h1 class="govuk-heading-xl"><span class="agent-action">Add benefit details</h1>
+      <h1 class="govuk-heading-xl"><span class="agent-action">benefits-war-widows-pensions-yes / Add benefit details</h1>
 
-
-
-
-
-
-
-
-
-
-
-
-        {% set benefitWarDisablementDateYes %}
-          {{ govukDateInput({
-            id: "benefits-war-widows-pensions-yes-date",
-            namePrefix: "benefits-war-widows-pensions-yes-date",
-            fieldset: {
-              legend: {
-                text: "Enter the received"
-              }
-            },
-            items: [
-              {
-                name: "day",
-                classes: "govuk-input--width-2",
-                value: data["benefits-war-widows-pensions-yes-date-day"]
-              },
-              {
-                name: "month",
-                classes: "govuk-input--width-2",
-                value: data["benefits-war-widows-pensions-yes-date-month"]
-              },
-              {
-                name: "year",
-                classes: "govuk-input--width-4",
-                value: data["benefits-war-widows-pensions-yes-date-year"]
-              }
-            ]
-          }) }}
-        {% endset -%}
 
         {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "benefits-war-widows-pensions-date-yn",
-          name: "benefits-war-widows-pensions-date-yn",
+          idPrefix: "AA-type-yn",
+          name: "AA-type-yn",
           fieldset: {
             legend: {
-              html: "Date of payment",
+            html: "Temporary Allowance for War Widows (Veterans Agency)",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: ""
-          },
-          items: [
-          {
-            value: "yes-date",
-            text: "Enter date",
-            checked: (data["benefits-war-widows-pensions-date-yn"] == "Yes"),
-            conditional: {
-              html: benefitWarDisablementDateYes
-            }
-          },
+              }
+              },
+              items: [
             {
-              value: "no-date",
-              text: "Unsure",
-              checked: (data["benefits-war-widows-pensions-date-yn"] == "No")
+              value: "yes",
+              text: "Yes",
+              checked: (data["AA-type-yn"] == "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: (data["AA-type-yn"] == "no")
             }
           ]
         }) }}
 
-        <!------------------------->
 
-        {{ govukRadios({
-          idPrefix: "benefits-war-widows-pensions-payment-frequency",
-          name: "benefits-war-widows-pensions-payment-frequency",
+        <!---------------------------->
+
+        {{ govukDateInput({
+          id: "BB-date",
+          namePrefix: "BB-date",
           fieldset: {
             legend: {
-              text: "How often do get this?",
+              html: "<strong>The date the benefit was awarded</strong>"
+            }
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["BB-date-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["BB-date-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["BB-date-year"]
+            }
+          ]
+        }) }}
+
+
+        <!------------------------->
+
+        {% set ccFrequencyOther %}
+        {{ govukInput({
+        label: {
+          html: "How often is this paid?"
+        },
+        id: "cc-frequency-other",
+        name: "cc-frequency-other",
+        classes: "govuk-input--width-20"
+        }) }}
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          idPrefix: "cc-frequency-yes",
+          name: "cc-frequency-yes",
+          fieldset: {
+            legend: {
+              html: "<strong>How often is this paid?</strong>",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
+              classes: "<!--govuk-fieldset__legend--s-->"
               }
               },
 
@@ -113,79 +106,89 @@
             {
               value: "Every week",
               text: "Every week",
-              checked: (data["benefits-war-widows-pensions-payment-frequency"] == "Every week")
+              checked: (data["cc-frequency-yes"] == "Every week")
             },
             {
               value: "Every two weeks",
               text: "Every two weeks",
-              checked: (data["benefits-war-widows-pensions-frequency"] == "Every two weeks")
+              checked: (data["cc-frequency-yes"] == "Every two weeks")
             },
             {
-              value: "Every four weeks",
-              text: "Every four weeks",
-              checked: (data["benefits-war-widows-pensions-frequency"] == "Every four weeks")
+              value: "Monthly",
+              text: "Every month",
+              checked: (data["cc-frequency-yes"] == "Monthly")
             },
             {
-              value: "Unsure",
-              text: "Unsure",
-              checked: (data["benefits-war-widows-pensions-frequency"] == "Unsure")
-            }
-          ]
-        }) }}
-
-
-        <!------------------------->
-
-
-
+              value: "Other payment frequency",
+              text: "Other",
+              checked: (data["cc-frequency-yes"] == "Other payment frequency")                      ,
+                    conditional: {
+                      html: ccFrequencyOther
+                    }
+                  }
+                ]
+              }) }}
 
 
 
-      <!------------------------->
+<!--------------------->
 
-      {% set benefitsWarWidowsPensionsAmountYes %}
-      {{ govukInput({
-      label: {
-        html: "How much money do you get?"
+
+{{ govukRadios({
+  idPrefix: "DD-payday",
+  name: "DD-payday",
+  fieldset: {
+    legend: {
+    html: "When it is paid (Payday)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+      }
       },
-      id: "benefits-war-widows-pensions-amount",
-      name: "benefits-war-widows-pensions-amount",
-      classes: "govuk-input--width-20"
-    }) }}
-      {% endset -%}
+      items: [
+    {
+      value: "Monday",
+      text: "Monday",
+      checked: (data["DD-payday"] == "Monday")
+    },
+    {
+      value: "Tuesday",
+      text: "Tuesday",
+      checked: (data["DD-payday"] == "Tuesday")
+    },
+    {
+      value: "Wednesday",
+      text: "Wednesday",
+      checked: (data["DD-payday"] == "Wednesday")
+    },
+    {
+      value: "Thursday",
+      text: "Thursday",
+      checked: (data["DD-payday"] == "Thursday")
+    },
+    {
+      value: "Friday",
+      text: "Friday",
+      checked: (data["DD-payday"] == "Friday")
+    }
+  ]
+}) }}
 
-      {{ govukRadios({
-        classes: "govuk-radios",
-        idPrefix: "benefits-war-widows-pensions-amount-yn",
-        name: "benefits-war-widows-pensions-amount-yn",
-        fieldset: {
-          legend: {
-            html: "Do you know how much it was for?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
+
+<!---------------------------->
+
+        {{ govukInput({
+        label: {
+          html: "<strong>The amount being paid?</strong>"
         },
-        hint: {
-          text: ""
-        },
-        items: [
-        {
-          value: "yes-date",
-          text: "Yes",
-          checked: (data["benefits-war-widows-pensions-amount-yn"] == "Yes"),
-          conditional: {
-            html: benefitsWarWidowsPensionsAmountYes
-          }
-        },
-          {
-            value: "no-date",
-            text: "Unsure",
-            checked: (data["benefits-war-widows-pensions-amount-yn"] == "No")
-          }
-        ]
+        id: "EE-amount",
+        name: "EE-amount",
+        classes: "govuk-input--width-20"
       }) }}
 
+<!---------------------------->
 
+
+      <br>
 
       {{ govukButton({
         text: "Continue"

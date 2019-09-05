@@ -892,11 +892,11 @@ router.post(`${baseUrl}/disregards-types-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/benefit-war-disablement-yn-router`, (req, res) => {
-  const warDisablement = req.session.data['benefit-war-disablement-yn']
+router.post(`${baseUrl}/benefits-war-disablement-yn-router`, (req, res) => {
+  const benefitsWarDisablementYes = req.session.data['benefits-war-disablement-yn']
 
-  if (warDisablement === 'Yes') {
-    res.redirect(`${baseUrl}/benefit-war-disablement-yes`)
+  if (benefitsWarDisablementYes === 'Yes') {
+    res.redirect(`${baseUrl}/benefits-war-disablement-yes`)
   } else {
     res.redirect(`${baseUrl}/benefits-war-widows-pensions-yn`)
   }
@@ -905,16 +905,24 @@ router.post(`${baseUrl}/benefit-war-disablement-yn-router`, (req, res) => {
 
 
 router.post(`${baseUrl}/benefits-war-widows-pensions-yn-router`, (req, res) => {
-  const iidbYes = req.session.data['benefits-war-widows-pensions-yn']
+  const benefitsWarWidowsPensionsYes = req.session.data['benefits-war-widows-pensions-yn']
 
-  if (iidbYes === 'Yes') {
+  if (benefitsWarWidowsPensionsYes === 'Yes') {
     res.redirect(`${baseUrl}/benefits-war-widows-pensions-yes`)
+  } else {
+    res.redirect(`${baseUrl}/benefits-war-and-veterans-yn`)
+  }
+})
+
+router.post(`${baseUrl}/benefits-war-and-veterans-yn-router`, (req, res) => {
+  const benefitsWarAndVeteransYes = req.session.data['benefits-war-and-veterans-yn']
+
+  if (benefitsWarAndVeteransYes === 'Yes') {
+    res.redirect(`${baseUrl}/benefits-war-and-veterans-yes`)
   } else {
     res.redirect(`${baseUrl}/benefit-IIDB-yn`)
   }
 })
-
-
 
 router.post(`${baseUrl}/benefit-IIDB-yn-router`, (req, res) => {
   const iidbYes = req.session.data['benefit-IIDB-yn']
@@ -1042,13 +1050,13 @@ router.post(`${baseUrl}/other-income-home-income-yn-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/other-income-working-tax-credits-yn-router`, (req, res) => {
-  const otherIncomeworkingTaxCreditsYN = req.session.data['other-income-working-tax-credits-yn']
+router.post(`${baseUrl}/benefits-working-tax-credits-yn-router`, (req, res) => {
+  const otherIncomeworkingTaxCreditsYN = req.session.data['benefits-working-tax-credits-yn']
 
   if (otherIncomeworkingTaxCreditsYN === 'Yes') {
-    res.redirect(`${baseUrl}/other-income-working-tax-credits-yes`)
+    res.redirect(`${baseUrl}/benefits-working-tax-credits-yes`)
   } else {
-    res.redirect(`${baseUrl}/other-income-benefits-aboard-yn`)
+    res.redirect(`${baseUrl}/benefits-war-disablement-yn`)
   }
 })
 
