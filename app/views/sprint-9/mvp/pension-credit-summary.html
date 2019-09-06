@@ -21,7 +21,7 @@
 
 
 
-<h1 class="govuk-heading-xl">Check your answers: <br>Alex Smith, Pension Credit application</h1>
+<h1 class="govuk-heading-xl">{{ data["full-name"] }}: Pension Credit application summary</h1>
 
 <h2 class="govuk-heading––extraMedium">Personal information and declaration</h2>
 
@@ -2284,7 +2284,7 @@ Change
 
   <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading––extraMedium">Money, savings and investments</h2>
 
-  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Current accounts </h2>
+  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Current accounts </h2>
 
 
   {% set count = data["account-count"] or 0 %}
@@ -2378,7 +2378,7 @@ Change
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-      <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Savings accounts </h2>
+      <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Savings accounts </h2>
 
 
               {{ govukSummaryList({
@@ -2468,7 +2468,7 @@ Change
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
-    <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Post Office Card Accounts</h2>
+    <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Post Office Card Accounts</h2>
 
 
                   {{ govukSummaryList({
@@ -2506,7 +2506,7 @@ Change
 
                   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-                  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Credit union accounts </h2>
+                  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Credit union accounts </h2>
 
                               {{ govukSummaryList({
                               rows: [
@@ -2596,7 +2596,7 @@ Change
 
           <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-          <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Premium Bonds </h2>
+          <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Premium Bonds </h2>
 
                         {{ govukSummaryList({
                         rows: [
@@ -2633,7 +2633,7 @@ Change
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
-    <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) ISAs?
+    <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> ISAs?
    </h2>
 
 
@@ -2689,7 +2689,7 @@ Change
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-    <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Capital bonds </h2>
+    <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Capital bonds </h2>
 
         {{ govukSummaryList({
           rows: [
@@ -2761,7 +2761,7 @@ Change
 
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Shares </h2>
+        <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Shares </h2>
 
 
                   {{ govukSummaryList({
@@ -2816,7 +2816,7 @@ Change
 
                   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-                  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Unit trusts </h2>
+                  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Unit trusts </h2>
 
                         {{ govukSummaryList({
                           rows: [
@@ -2994,7 +2994,7 @@ Change
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Second properties </h2>
+  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Second properties </h2>
 
 
         {{ govukSummaryList({
@@ -3048,7 +3048,7 @@ Change
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
-          <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">(#) Other money, savings or investments</h2>
+          <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Other money, savings or investments</h2>
 
 
           {{ govukSummaryList({
