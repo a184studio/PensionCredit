@@ -1145,5 +1145,16 @@ router.post(`${baseUrl}/disregards-type-select-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/pc-done-yn-router`, (req, res) => { // router name
+  const pcDoneYn = req.session.data['pc-done-yn']  // name of data / id name
+
+  if (pcDoneYn === 'Agree') { // name of data / + answer
+    res.redirect(`${baseUrl}/pc-done-yn`)
+  } else {
+    res.redirect(`${baseUrl}/done-declaration`)
+  }
+})
+
+
 
 module.exports = router

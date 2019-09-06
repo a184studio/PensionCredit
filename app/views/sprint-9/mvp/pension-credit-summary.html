@@ -16,10 +16,6 @@
   <div class="govuk-grid-column-three-quarters">
 
 <!----Headline---->
-<form action="done" method="post">
-
-
-
 
 <h1 class="govuk-heading-xl">{{ data["full-name"] }}: Pension Credit application summary</h1>
 
@@ -3454,49 +3450,45 @@ Change
   <br></dl>
 
 
-
-
   <!------------------------------------------------------------------------------- End ------------------------------------------------------------>
 
-
-
-
-
+</div></div>
 <br><br>
 
-{{ govukButton({
-  text: "Download PDF",
-  classes: "govuk-button--secondary",
-  href: "pdf-download-complete"
-}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+<form action="pc-done-yn-router" method="post" class="form">
+  {{ govukRadios({
+    idPrefix: "pc-done-yn",
+    name: "pc-done-yn",
+    fieldset: {
+      legend: {
+        text: "Do you understand the way we will use your personal information and want to continue your application?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
 
-{{ govukCheckboxes({
-idPrefix: "download-pdf-checkbox",
-name: "download-pdf-checkbox",
-fieldset: {
-legend: {
-text: "",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--s"
-}
-},
-items: [
-{
-value: "download-pdf",
-text: "Confirm that you have downloaded the PDF"
-}
-]
-}) }}
+    classes: "govuk-radios",
+    items: [
+      {
+        value: "Agree",
+        text: "Agree",
+        checked: (data["pc-done-yn"] == "Agree")
+      },
+      {
+        value: "Disagree",
+        text: "Disagree",
+        checked: (data["pc-done-yn"] == "Disagree")
+      }
+    ]
+  }) }}
 
 
-
-<br>
-
-{{ govukButton({
-  text: "Continue",
-  classes: "govuk-!-margin-right-1"
-}) }}
-
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+</form>
 </div></div>
 
 <!----Break---->
