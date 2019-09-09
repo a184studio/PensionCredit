@@ -137,6 +137,39 @@
                                         </div>
                                         {% endif %}
 
+
+                                        {% if data["other-income-employment-currency-yn"] %}
+                                              <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                  (Employment) What currency is this money in?
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                  {{ data["other-income-employment-currency-yn"] }}
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                  <a href="other-income-employment-yes">
+                                                    Change
+                                                  </a>
+                                                </dd>
+                                              </div>
+                                              {% endif %}
+
+                                            {% if data["other-income-employment-currency-yes"] %}
+                                                  <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                      (Employment) Currency
+                                                    </dt>
+                                                    <dd class="govuk-summary-list__value">
+                                                      {{ data["other-income-employment-currency-yes"] }}
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                      <a href="other-income-employment-yes">
+                                                        Change
+                                                      </a>
+                                                    </dd>
+                                                  </div>
+                                                  {% endif %}
+
                             {% if data["other-income-employment-more-yn"] %}
                                   <div class="govuk-summary-list__row">
                                     <dt class="govuk-summary-list__key">
