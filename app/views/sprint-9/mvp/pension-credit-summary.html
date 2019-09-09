@@ -3447,6 +3447,148 @@ Change
                                 {% endif %}
 
 
+  <br></dl></dl>
+
+  <!------------------------------------------------------------------------------- Pensions ------------------------------------------------------------>
+
+  <br><br><br><h2 class="govuk-heading-l">Earnings & other income</h2>
+
+  <dl class="govuk-summary-list govuk-summary-list--long">
+
+
+              <dl class="govuk-summary-list govuk-summary-list--long">
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Changes to income shown on DWP systems
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data["other-income-employment-type-yn"] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="other-income-employment-type">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+
+                            <br>
+                <!------------------------------------------------>
+
+                {% if data["other-income-employment-what-is-this-money"] %}
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          (Employment) What is this income from employment?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data["other-income-employment-what-is-this-money"] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a href="other-income-employment-yes">
+                            Change
+                          </a>
+                        </dd>
+                      </div>
+                      {% endif %}
+
+
+  <br>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Payments made to you by a trust or discretionary fund following an incident or emergency
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Yes / No
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a href="disregards-monolith-2">
+                                  Change
+                                </a>
+                              </dd>
+                            </div>
+
+
+                            {% if data["disregards-incident-payment-yes"] %}
+                                  <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                      Details of payyments made to you by a trust or discretionary fund following an incident or emergency
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                      {{ data["disregards-incident-payment-yes"] }}
+                                    </dd>
+                                    <dd class="govuk-summary-list__actions">
+                                      <a href="disregards-monolith-2">
+                                        Change
+                                      </a>
+                                    </dd>
+                                  </div>
+                                  {% endif %}
+
+  <br>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Windrush child compensation
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Yes / No
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a href="disregards-monolith-2">
+                                  Change
+                                </a>
+                              </dd>
+                            </div>
+
+
+                            {% if data["disregards-windrush-yes"] %}
+                                  <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                      Details of Windrush child compensation
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                      {{ data["disregards-windrush-yes"] }}
+                                    </dd>
+                                    <dd class="govuk-summary-list__actions">
+                                      <a href="disregards-monolith-2">
+                                        Change
+                                      </a>
+                                    </dd>
+                                  </div>
+                                  {% endif %}
+
+  <br>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Money paid to you to support you with the effects of a blood infection or vCJD
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              Yes / No
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a href="disregards-monolith-2">
+                                Change
+                              </a>
+                            </dd>
+                          </div>
+
+
+                          {% if data["disregards-blood-yes"] %}
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Details of money paid to you to support you with the effects of a blood infection or vCJD
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    {{ data["disregards-blood-yes"] }}
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                    <a href="disregards-monolith-2">
+                                      Change
+                                    </a>
+                                  </dd>
+                                </div>
+                                {% endif %}
+
+
   <br></dl>
 
 
