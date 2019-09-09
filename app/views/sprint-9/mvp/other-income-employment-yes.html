@@ -21,8 +21,15 @@
         <span class="govuk-caption-m"></span>
         <h1 class="govuk-heading-xl">Income from employment</h1>
 
+      {% set formAction = '' %}
 
+      {% if data["other-income-employment-type"] == "Both employed and self-employment" %}
+        {% set formAction = 'other-income-self-employment-yes' %}
+      {% else %}
+        {% set formAction = 'other-income-equity-release-yn' %}
+      {% endif %}
 
+<form method="post" action="{{ formAction }}">
 
         {{ govukInput({
         label: {
@@ -33,68 +40,6 @@
         classes: "govuk-input--width-20"
       }) }}
 
-
-<!--
-                        {% set howOften %}
-                          {{ govukDateInput({
-                            id: "other-income-benefits-aboard-yes-date",
-                            namePrefix: "other-income-benefits-aboard-yes-date",
-                            fieldset: {
-                              legend: {
-                                text: "Enter the received"
-                              }
-                            },
-                            items: [
-                              {
-                                name: "day",
-                                classes: "govuk-input--width-2",
-                                value: data["other-income-benefits-aboard-yes-date-day"]
-                              },
-                              {
-                                name: "month",
-                                classes: "govuk-input--width-2",
-                                value: data["other-income-benefits-aboard-yes-date-month"]
-                              },
-                              {
-                                name: "year",
-                                classes: "govuk-input--width-4",
-                                value: data["other-income-benefits-aboard-yes-date-year"]
-                              }
-                            ]
-                          }) }}
-                        {% endset -%}
-
-                        {{ govukRadios({
-                          classes: "govuk-radios",
-                          idPrefix: "other-income-benefits-aboard-lump-yes",
-                          name: "other-income-benefits-aboard-lump-yes",
-                          fieldset: {
-                            legend: {
-                              html: "Was a payment made as a lump sum?",
-                              isPageHeading: true,
-                              classes: "govuk-fieldset__legend--s"
-                            }
-                          },
-                          hint: {
-                            text: ""
-                          },
-                          items: [
-                          {
-                              value: "no-date",
-                              text: "Yes",
-                              checked: (data["other-income-benefits-aboard-yes-date-yn"] == "Yes"),
-                              conditional: {
-                                html: howOften
-                              }
-                            },
-                              {
-                                value: "No",
-                                text: "No",
-                                checked: (data["other-income-benefits-aboard-yes-"] == "No")
-                              }
-                            ]
-                          }) }}
--->
                       <!------------------------->
                       {% set otherPaymentFrequency %}
                       {{ govukInput({
@@ -253,26 +198,12 @@
 
 <br>
 
-
-
-
-{% if data["other-income-employment-type"] == "Both employed and self-employment" %}
-    {{ govukButton({
-      text: "Continue *",
-      classes: "govuk-!-margin-right-1",
-      href: "other-income-self-employment-yes"
-    }) }}
-{% endif %}
-
-{% if data["other-income-employment-type"] == "Employed" %}
     {{ govukButton({
       text: "Continue",
-      classes: "govuk-!-margin-right-1",
-      href: "other-income-equity-release-yn"
+      classes: "govuk-!-margin-right-1"
     }) }}
-{% endif %}
 
-
+</form>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
