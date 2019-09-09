@@ -26,6 +26,8 @@
         html: ""
       }) }}
 
+      <br>
+
       <h3 class="govuk-heading-m">What happens next</h3>
 
       <p class="govuk-body">
@@ -50,22 +52,48 @@
 
 <br><br>
 
-      <div class="govuk-panel--agent">
 
-      <h3 class="govuk-heading-m">Agent: review the post Pension Credit claim checklist</h3>
-
-      <p class="govuk-body">
-        Something about links to A64a, housing benefit and Carers Allowance.
-      </p>
-      <br>
 
       <form action="XXX" method="post" class="form">
+
+
+
         {{ govukButton({
-          text: "Continue"
+          text: "Download PDF",
+          classes: "govuk-button--secondary",
+          href: "pdf-download-complete"
         }) }}
+
+        {{ govukCheckboxes({
+        idPrefix: "download-pdf-checkbox",
+        name: "download-pdf-checkbox",
+        fieldset: {
+        legend: {
+        text: "",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+        }
+        },
+        items: [
+        {
+        value: "download-pdf",
+        text: "Confirm that you have downloaded the PDF"
+        }
+        ]
+        }) }}
+
+
+
+        <br>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-right-1"
+        }) }}
+
+
 </form>
 
-</div>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
