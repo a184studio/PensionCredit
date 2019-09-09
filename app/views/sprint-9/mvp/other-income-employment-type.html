@@ -22,8 +22,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "other-income-employment-type-yn",
-        name: "other-income-employment-type-yn",
+        idPrefix: "other-income-employment-type",
+        name: "other-income-employment-type",
         fieldset: {
           legend: {
             html: "How did you earn this income?",
@@ -37,18 +37,18 @@
         items: [
         {
             value: "Employed",
-            text: "Employment",
-            checked: (data["other-income-employment-type-yn"] == "Employed")
+            text: "Employed",
+            checked: (data["other-income-employment-type"] == "Employed")
           },
           {
               value: "Self-employment",
               text: "Self-employment",
-              checked: (data["other-income-employment-type-yn"] == "Self-employment")
+              checked: (data["other-income-employment-type"] == "Self-employment")
             },
             {
                 value: "Both employed and self-employment",
-                text: "Both employment and self-employment",
-                checked: (data["other-income-employment-type-yn"] == "Both employed and self-employment")
+                text: "Both employed and self-employment",
+                checked: (data["other-income-employment-type"] == "Both employed and self-employment")
               }
         ]
       }) }}

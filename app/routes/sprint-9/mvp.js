@@ -448,16 +448,6 @@ router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router na
   }
 })
 
-
-
-
-
-
-
-
-
-
-
 router.post(`${baseUrl}/still-employed-router`, (req, res) => {
   const stillEmployed = req.session.data['still-employed']
 
@@ -468,18 +458,8 @@ router.post(`${baseUrl}/still-employed-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/employment-type-router`, (req, res) => {
-  const employmentType = req.session.data['employment-type']
 
-  if (employmentType === 'Self employed') {
-    res.redirect(`${baseUrl}/add-self-employment`)
-  } else if (employmentType === 'Full time employment') {
-    res.redirect(`${baseUrl}/add-employment`)
-  } else if (employmentType === 'Employed and Self employed') {
-    req.session.data.employedAndSelfEmployed = true
-    res.redirect(`${baseUrl}/add-employment`)
-  }
-})
+
 
 router.post(`${baseUrl}/existing-claim-router`, (req, res) => {
   const existingClaim = req.session.data['existing-claim']
@@ -978,19 +958,21 @@ router.post(`${baseUrl}/other-income-employment-yn-router`, (req, res) => {
 
 
 router.post(`${baseUrl}/other-income-employment-type-router`, (req, res) => {
-  const employmentType = req.session.data['other-income-employment-type-yn']
+  const employmentType = req.session.data['other-income-employment-type']
 
   if (employmentType === 'Self-employment') {
     res.redirect(`${baseUrl}/other-income-self-employment-yes`)
   }
   else if (employmentType === 'Employed') {
     res.redirect(`${baseUrl}/other-income-employment-yes`)
-  } else {
+  }
+  else if (employmentType === 'Both employed and self-employment') {
+    res.redirect(`${baseUrl}/other-income-employment-yes`)
+  }
+   else {
     res.redirect(`${baseUrl}/other-income-self-employment-yes`)
   }
 })
-
-
 
 
 router.post(`${baseUrl}/other-income-self-employment-yn-router`, (req, res) => {

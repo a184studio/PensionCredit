@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  NotePad - Area
+  other-income-employment-yes - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -17,7 +17,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="other-income-self-employment-yes" method="post">
 
         <span class="govuk-caption-m"></span>
         <h1 class="govuk-heading-xl">Income from employment</h1>
@@ -100,7 +99,7 @@
                       {% set otherPaymentFrequency %}
                       {{ govukInput({
                       label: {
-                        html: "How often is this paid?"
+                        html: "<strong>How often is this paid?</strong>"
                       },
                       id: "other-income-employment-frequency-yes-other",
                       name: "other-income-employment-frequency-yes-other",
@@ -115,7 +114,7 @@
                         name: "other-income-employment-frequency-yes",
                         fieldset: {
                           legend: {
-                            text: "How often is this income paid?",
+                            html: "<strong>How often is this paid?</strong>",
                             isPageHeading: true,
                             classes: "<!--govuk-fieldset__legend--s-->"
                             }
@@ -162,6 +161,48 @@
 
                       <!------------------------->
 
+                      {% set otherPaymentCurrency %}
+                      {{ govukInput({
+                      label: {
+                        html: "<strong>What is this currency?</strong>"
+                      },
+                      id: "other-income-employment-frequency-yes-other",
+                      name: "other-income-employment-frequency-yes-other",
+                      classes: "govuk-input--width-20"
+                      }) }}
+                      {% endset -%}
+
+
+                      {{ govukRadios({
+                        idPrefix: "other-income-employment-currency-yes",
+                        name: "other-income-employment-currency-yes",
+                        fieldset: {
+                          legend: {
+                            html: "<strong>What currency is this money in?</strong>",
+                            isPageHeading: true,
+                            classes: "<!--govuk-fieldset__legend--s-->"
+                            }
+                            },
+
+                        items: [
+                          {
+                            value: "Pounds sterling (£)",
+                            text: "Pounds sterling (£)",
+                            checked: (data["other-income-employment-currency-yn"] == "Pounds sterling (£)")
+                          },
+                          {
+                            value: "Another currency",
+                            text: "Another currency",
+                            checked: (data["other-income-employment-currency-yn"] == "Another currency")                      ,
+                                  conditional: {
+                                    html: otherPaymentCurrency
+                                  }
+                                }
+                              ]
+                            }) }}
+
+                      <!------------------------->
+
                       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
@@ -170,7 +211,7 @@
                         name: "other-income-employment-more-yes-detail",
                         id: "other-income-employment-more-yes-detail",
                         label: {
-                          text: "Description of income, how often it is paid and how much it is"
+                          text: "Description of income, how often it is paid, how much it is and what is the currency"
                         },
                         hint: {
                           text: ""
@@ -210,14 +251,28 @@
                         }) }}
 
 
+<br>
 
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
 
 
-      </form>
+{% if data["other-income-employment-type"] == "Both employed and self-employment" %}
+    {{ govukButton({
+      text: "Continue *",
+      classes: "govuk-!-margin-right-1",
+      href: "other-income-self-employment-yes"
+    }) }}
+{% endif %}
+
+{% if data["other-income-employment-type"] == "Employed" %}
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-right-1",
+      href: "other-income-equity-release-yn"
+    }) }}
+{% endif %}
+
+
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
