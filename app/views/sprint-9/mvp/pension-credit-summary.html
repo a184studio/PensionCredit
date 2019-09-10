@@ -588,7 +588,7 @@
 
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Address for letters
+       Address for letters
       </dt>
       <dd class="govuk-summary-list__value">
         221B Baker Street<br>
@@ -652,7 +652,7 @@
   {% if data["contact-formats-email-yes"] %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Email address
+      EmailAddress
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data["contact-formats-email-yes"] }}
@@ -711,7 +711,7 @@
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    Is your home address the same as the address we use to send you letters?
+    Is your homeAddress the same as theAddress we use to send you letters?
   </dt>
   <dd class="govuk-summary-list__value">
     {{ data["address-correspondence-yn"] }}
@@ -725,7 +725,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Home address
+      HomeAddress
     </dt>
     <dd class="govuk-summary-list__value">
       221B Baker Street<br>
@@ -849,7 +849,7 @@
 {% if data["rent-service-charges"] %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Additional service charges
+       Additional service charges
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data["rent-service-charges"] or "None "}}
@@ -2280,8 +2280,7 @@ Change
 
   <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading––extraMedium">Money, savings and investments</h2>
 
-  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Current accounts </h2>
-
+  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># current accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
 
   {% set count = data["account-count"] or 0 %}
   {% for i in range(0, count) -%}
@@ -2374,7 +2373,8 @@ Change
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-      <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Savings accounts </h2>
+      <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># savings accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
+
 
 
               {{ govukSummaryList({
@@ -2464,7 +2464,7 @@ Change
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
-    <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Post Office Card Accounts</h2>
+    <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># Post Office Card Accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
 
 
                   {{ govukSummaryList({
@@ -2502,7 +2502,7 @@ Change
 
                   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-                  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Credit union accounts </h2>
+                  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># credit union accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
 
                               {{ govukSummaryList({
                               rows: [
@@ -2592,7 +2592,7 @@ Change
 
           <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-          <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Premium Bonds </h2>
+          <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># Premium Bonds </strong><a href="msic-check-your-answers-a">Add</a></p>
 
                         {{ govukSummaryList({
                         rows: [
@@ -2628,9 +2628,7 @@ Change
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-
-    <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> ISAs?
-   </h2>
+    <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># ISAs </strong><a href="msic-check-your-answers-a">Add</a></p>
 
 
     {{ govukSummaryList({
@@ -2684,8 +2682,7 @@ Change
 
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-    <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Capital bonds </h2>
+    <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># income or capital bonds</strong><a href="msic-check-your-answers-a">Add</a></p>
 
         {{ govukSummaryList({
           rows: [
@@ -2757,7 +2754,7 @@ Change
 
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Shares </h2>
+        <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># shares </strong><a href="msic-check-your-answers-a">Add</a></p>
 
 
                   {{ govukSummaryList({
@@ -2811,8 +2808,7 @@ Change
 
 
                   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-                  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Unit trusts </h2>
+                  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># <u></u>nit trusts </strong><a href="msic-check-your-answers-a">Add</a></p>
 
                         {{ govukSummaryList({
                           rows: [
@@ -2883,7 +2879,7 @@ Change
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">Cash at home </h2>
+  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># cash at home </strong><a href="msic-check-your-answers-a">Add</a></p>
 
       {{ govukSummaryList({
         rows: [
@@ -2917,7 +2913,7 @@ Change
 
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-      <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m">Money abroad </h2>
+      <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># monies abroad </strong><a href="msic-check-your-answers-a">Add</a></p>
 
 
             {{ govukSummaryList({
@@ -2990,8 +2986,7 @@ Change
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Second properties </h2>
-
+  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong>Second properties </strong><a href="msic-check-your-answers-a"></a></p>
 
         {{ govukSummaryList({
           rows: [
@@ -3016,24 +3011,6 @@ Change
                 }
               ]
             }
-          },
-          {
-            classes: 'govuk-summary-list',
-            key: {
-              text: "Complete A64a"
-            },
-            value: {
-              text: data["msic-second-property-yn"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
           }
           ]
         }) }}
@@ -3043,9 +3020,7 @@ Change
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-
-          <div class="govuk-!-padding-bottom-3"></div><h2 class="govuk-heading-m"> Other money, savings or investments</h2>
-
+        <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># 0 other monies </strong><a href="msic-check-your-answers-a">Add</a></p>
 
           {{ govukSummaryList({
             rows: [
@@ -3599,7 +3574,7 @@ Change
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-<form action="pc-done-yn-router" method="post" class="form">
+<form action="pc-done-yn" method="post" class="form">
 
   <h2 class="govuk-heading-l">Declaration</h2>
 
