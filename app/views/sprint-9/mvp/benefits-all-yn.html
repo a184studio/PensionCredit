@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  benefits-all-yn - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <form action="benefits-summary" method="post" class="form">
+
+        <input type="hidden" name="benefits-complete" value="in-progress"/>
+
+
+{% set benefitsForeignHint %}
+<p class=govuk-hint>Include:</p>
+<ul class="govuk-hint govuk-list govuk-list--bullet">
+  <li>whether it is in payment (If claiming it (not yet awarded) or getting it (in payment))</li>
+  <li>the amount being paid</li>
+  <li>the date the benefit was awarded</li>
+  <li>how often it is paid</li>
+  <li>then it is paid (Payday)</li>
+  <li>Currency</li>
+  <li>Is it paid into a foreign account</li>
+  <li>Disability related</li>
+</ul>
+{% endset %}
+
+        {% set benefitsForeignYes %}
+
+          {{ govukTextarea({
+            label: {
+              classes: "govuk-label--s",
+              html: "1"
+            },
+            hint: {
+              html: benefitsForeignHint},
+            id: "benefits-foreign-yes",
+            name: "benefits-foreign-yes",
+            classes: "govuk-input--width-100",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        <!-------------------------------------->
+
+
+        {% set benefitsWidowsPensionsHint %}
+        <p class=govuk-hint>Include:</p>
+        <ul class="govuk-hint govuk-list govuk-list--bullet">
+          <li>whether it is in payment (If claiming it (not yet awarded) or getting it (in payment))</li>
+          <li>the amount being paid</li>
+          <li>the date the benefit was awarded</li>
+          <li>how often it is paid</li>
+          <li>then it is paid (Payday)</li>
+          <li>Temporary Allowance for War Widows (Veterans Agency)</li>
+        </ul>
+        {% endset %}
+
+        {% set benefitsWidowsPensionsYes %}
+
+          {{ govukTextarea({
+            label: {
+              classes: "govuk-label--s",
+              html: "2"
+            },
+            hint:{
+              html: benefitsWidowsPensionsHint
+            },
+            id: "benefits-war-parent-yes",
+            name: "benefits-war-parent-yes",
+            classes: "govuk-input--width-1}00",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        <!-------------------------------------->
+
+        {% set benefitsGuaranteedIncomePaymentsHint %}
+        <p class=govuk-hint>Include:</p>
+        <ul class="govuk-hint govuk-list govuk-list--bullet">
+          <li>whether it is in payment (If claiming it (not yet awarded) or getting it (in payment))</li>
+          <li>the amount being paid</li>
+          <li>the date the benefit was awarded</li>
+          <li>how often it is paid</li>
+          <li>then it is paid (Payday)</li>
+        </ul>
+        {% endset %}
+
+        {% set benefitsGuaranteedIncomePaymentsYes %}
+
+          {{ govukTextarea({
+            label: {
+              classes: "govuk-label--s",
+              html: "3"
+            },
+            hint:{
+              html: benefitsGuaranteedIncomePaymentsHint
+            },
+            id: "benefits-widows-pensions-yes",
+            name: "benefits-widows-pensions-yes",
+            classes: "govuk-input--width-1}00",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        <!-------------------------------------->
+
+        {% set benefitsOtherHint %}
+        <p class=govuk-hint>Include:</p>
+        <ul class="govuk-hint govuk-list govuk-list--bullet">
+          <li>Name of benefit</li>
+          <li>whether it is in payment (If claiming it (not yet awarded) or getting it (in payment))</li>
+          <li>the amount being paid</li>
+          <li>the date the benefit was awarded</li>
+          <li>how often it is paid</li>
+          <li>then it is paid (Payday)</li>
+        </ul>
+        {% endset %}
+
+        {% set benefitsOtherYes %}
+
+          {{ govukTextarea({
+            label: {
+              classes: "govuk-label--s",
+              html: "4"
+            },
+            hint:{
+              html: benefitsOtherHint
+            },
+            id: "benefits-other-yes",
+            name: "benefits-other-yes",
+            classes: "govuk-input--width-1}00",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+        <!-------------------------------------->
+
+
+        <!----------------------------------------------------- CHECKBOXES z------------------------------------------------------------------------>
+
+        {{ govukCheckboxes({
+          name: "benefits-war-and-veterans-yes",
+          fieldset: {
+            legend: {
+              text: "Benefits related to war or service in the armed forces",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "Select all that apply"
+          },
+          items: [
+          {
+              name: 'benefits-foreign-yn',
+              value: "benefits-foreign-yn",
+              html: "benefits-foreign-yn",
+              conditional: {
+                html: benefitsForeignYes
+              }
+            },
+            {
+                name: 'benefits-widows-pensions-yn',
+                value: "benefits-widows-pensions-yn",
+                html: "benefits-widows-pensions-yn",
+                conditional: {
+                  html: benefitsWidowsPensionsYes
+                }
+              },
+              {
+                name: 'benefits-guaranteed-income-payments-yn',
+                value: "benefits-guaranteed-income-payments-yn",
+                html: "Guaranteed Income Payments from the Armed Forces Comp Scheme (Veterans Agency)",
+                conditional: {
+                  html: benefitsGuaranteedIncomePaymentsYes
+                }
+              },
+                {
+                  name: 'benefits-other-yn',
+                  value: "benefits-other-yn",
+                  html: "benefits-other-yn",
+                  conditional: {
+                    html: benefitsOtherYes
+                  }
+                }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
+
+    </div>
+  </div>
+{% endblock %}
