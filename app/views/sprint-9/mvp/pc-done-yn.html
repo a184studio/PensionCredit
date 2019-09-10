@@ -106,11 +106,21 @@ XXXXX
 </p>
 
 <ul class="govuk-list govuk-list--number">
-  <li>Download PDF</li>
-  <li>Upload PDF to DRS (File type: White Mail and National Insurance number (NI))</li>
-  <li>Enter data gathered through MyPC into PTP CAM</li>
-  <li>Process Business as Usual (BAU)</li>
+  <li>Download MyPC PDF</li>
+  <li>Upload PDF to DRS and tag as the following:</li>
+
+  <ul class="govuk-list govuk-list">
+    <li>Business unit: <strong>Pension Centre</strong></li>
+    <li>Classification: <strong>Supporting</strong></li>
+    <li>Issue date (Date of call): <strong>{{ data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] }}</strong></li>
+
+    <li>Document type: <strong>PC1D</strong> or <strong>PC1E</strong> or <strong>PC1L</strong> TBC</li>
+  </ul>
+
+  <li>Process business as usual (BAU)</li>
 </ul>
+
+
 <br>
 
         {{ govukButton({
