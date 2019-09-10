@@ -18,7 +18,7 @@
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-      <h1 class="govuk-heading-xl"><span class="agent-action">benefits-war-widows-pensions-yes / Add benefit details</h1>
+      <h1 class="govuk-heading-xl"><span class="agent-action">War Widow or Widower's Pension details</h1>
 
 
         {{ govukRadios({
@@ -26,7 +26,7 @@
           name: "AA-type-yn",
           fieldset: {
             legend: {
-            html: "Temporary Allowance for War Widows (Veterans Agency)",
+              html: "Do you get a Temporary Allowance for War Widows or widowers?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
               }
@@ -139,7 +139,7 @@
   name: "DD-payday",
   fieldset: {
     legend: {
-    html: "When it is paid (Payday)",
+    html: "What day of the week is it paid?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
       }
@@ -188,7 +188,7 @@
 
         {{ govukInput({
         label: {
-          html: "<strong>The amount being paid?</strong>"
+          html: "<strong>How much is this pension?</strong>"
         },
         id: "EE-amount",
         name: "EE-amount",

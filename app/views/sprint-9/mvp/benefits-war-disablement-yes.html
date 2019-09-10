@@ -18,7 +18,7 @@
 
       <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-      <h1 class="govuk-heading-xl"><span class="agent-action">benefits-war-disablement-yes</h1>
+      <h1 class="govuk-heading-xl"><span class="agent-action">War disablement pension details</h1>
 
 
         {{ govukRadios({
@@ -26,7 +26,7 @@
           name: "AA-type-yn",
           fieldset: {
             legend: {
-            html: "XXX War Pension Un-employability Supplement (Veterans Agency)",
+            html: "Do you get a war pension unemployability supplement?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
               }
@@ -53,7 +53,7 @@
           namePrefix: "BB-date",
           fieldset: {
             legend: {
-              html: "<strong>The date the benefit was awarded</strong>"
+              html: "<strong>When was the war disablement pension awarded?</strong>"
             }
           },
           items: [
@@ -139,7 +139,7 @@
   name: "DD-payday",
   fieldset: {
     legend: {
-    html: "When it is paid (Payday)",
+    html: "What day of the week is it paid?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
       }
@@ -188,7 +188,7 @@
 
         {{ govukInput({
         label: {
-          html: "<strong>The amount being paid?</strong>"
+          html: "<strong>How much is this pension?</strong>"
         },
         id: "EE-amount",
         name: "EE-amount",
