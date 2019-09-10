@@ -511,16 +511,29 @@ router.post(`${baseUrl}/has-foreign-pension-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
-  const hospital = req.session.data['hospital-yn']
 
-  if (hospital === 'Yes') {
-    res.redirect(`${baseUrl}/hospital-details`)
+
+router.post(`${baseUrl}/hospital-check-yn-router`, (req, res) => {
+  const hospitalCheckYn = req.session.data['hospital-check-yn']
+
+  if (hospitalCheckYn === 'Yes') {
+    res.redirect(`${baseUrl}/hospital-yn`)
   } else {
-    req.session.data['hospital-summary'] = 'true'
-    res.redirect(`${baseUrl}/task-list`)
+    res.redirect(`${baseUrl}/hospital-summary`)
   }
 })
+
+router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
+  const hospitalYn = req.session.data['hospital-yn']
+
+  if (hospitalYn === 'Yes') {
+    res.redirect(`${baseUrl}/hospital-details`)
+  } else {
+    res.redirect(`${baseUrl}/hospital-summary`)
+  }
+})
+
+
 
 router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
   const preDeclaration = req.session.data['pre-declaration']

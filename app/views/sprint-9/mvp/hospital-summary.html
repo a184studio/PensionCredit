@@ -26,20 +26,37 @@
                 <dl class="govuk-summary-list govuk-summary-list--long">
 
 
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Hospital YN
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        {{ data["hospital-yn"] }}
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                        <a href="hospital-yn">
-                                          Change
-                                        </a>
-                                      </dd>
-                                    </div>
 
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does ({{ data["full-name"] }}) receive any of the following benefits:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["hospital-check-yn"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="hospital-check-yn">
+              Change
+            </a>
+          </dd>
+        </div>
+                {% if data["hospital-yn"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Hospital YN
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["hospital-yn"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="hospital-yn">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
 
                                     {% if data["hospital-more-detail"] %}
                                       <div class="govuk-summary-list__row">
