@@ -25,6 +25,7 @@ router.use(require('./routes/sprint-8/end-2-end'))
 router.use(require('./routes/sprint-9/mvp'))
 router.use(require('./routes/sprint-9/end-to-end'))
 router.use(require('./routes/sprint-9/sept-3-2019'))
+router.use(require('./routes/sprint-9/sept-12-2019'))
 
 
 
