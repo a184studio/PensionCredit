@@ -24,10 +24,12 @@
       <input type="hidden" name="pensions-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-xl"> Agent: Check the {{ data["full-name"] }}'s pensions</h1>
+        <h1 class="govuk-heading-l"> Agent: Check and discuss the pensions {{ data["full-name"] }}'s has</h1>
 
-          <p>Check in SearchLight and discuss the pensions in payment shown with {{ data["full-name"] }}</p>
-          <p>Check in OLE NIRS and discuss payments being made into a pension with {{ data["full-name"] }}</p>
+          <ul class="govuk-body govuk-!-font-size-19 govuk-list govuk-list">
+            <li>Check in Searchlight and discuss the pensions in payment</li>
+            <li>Check in OLE NIRS and discuss payments being made into a pension</li>
+          </ul>
       </div>
 
 <br>
