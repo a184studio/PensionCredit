@@ -17,7 +17,7 @@
 
 
     <h1 class="govuk-heading-xl">
-      Hospital admissions: Check your answers
+      Check your answers: hospital admissions
     </h1>
 
     <dl class="govuk-summary-list govuk-summary-list--long">
@@ -45,7 +45,7 @@
                 {% if data["hospital-yn"] %}
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Hospital YN
+                      Have you spent any time in hospital since (date)?
                     </dt>
                     <dd class="govuk-summary-list__value">
                       {{ data["hospital-yn"] }}
@@ -61,7 +61,7 @@
                                     {% if data["hospital-more-detail"] %}
                                       <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">
-                                          Details
+                                          Hospital admission details
                                         </dt>
                                         <dd class="govuk-summary-list__value">
                                           {{ data["hospital-more-detail"] }}
