@@ -18,19 +18,16 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <form action="benefits-war-disablement-yn" method="post" class="form">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="task-list" method="post" class="form">
 
       <input type="hidden" name="benefits-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-xl"> Agent: Check in Searchlight, Legacy, CPS, IIDB and discuss any benefits or Tax Credits the claimant gets</h1>
+        <h1 class="govuk-heading-xl"> Agent: Check in Searchlight, Legacy, CPS, IIDB and discuss any benefits or Tax Credits the Name {{ data["full-name"] }} gets</h1>
       </div>
 
 <br>
-
-<p class="govuk-body"><a href="benefits-all-yn">V2</a></p>
-
 
       {{ govukButton({
         text: "Continue"
