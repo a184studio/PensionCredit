@@ -28,10 +28,10 @@
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    benefits-foreign-yn
+    benefits-foreign-yes
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data["benefits-foreign-yn"] }}
+    {{ data["benefits-foreign-yes"] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="benefits-all-yn">
@@ -40,7 +40,7 @@
   </dd>
 </div>
 
-{% if data["benefits-aboard-yes"] %}
+{% if data["benefits-foreign-yes"] %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Details
@@ -145,7 +145,7 @@
       Details
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data["benefits-other-yn"] }}
+      {{ data["benefits-other-yes"] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="benefits-all-yn">
