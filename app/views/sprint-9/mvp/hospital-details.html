@@ -18,24 +18,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="hospital-summary" method="post">
-
+  <div class="govuk-panel--agent">
         <h1 class="govuk-heading-xl">Hospital admission details</h1>
 
-        <p class="govuk-body govuk-!-font-size-19">Ask the claimant for all the information you need, including:</p>
+        <p class="govuk-body govuk-!-font-size-19">Details of time spent in hospital, including the:</p>
 
 
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            Admission date
+            date they were admitted
           </li>
           <li>
-            Discharge date (If possible)
+            date they were discharged
           </li>
           <li>
-            Hospital name
+            name of the hospital
           </li>
           <li>
-            City / location
+            city or location
           </li>
         </ul>
 
@@ -52,7 +52,7 @@
 <!-- Hidden input to set task to complete on task-list -->
 <input type="hidden" name="notepad-hospital-dates" value="true"/>
 
-
+</div>
         {{ govukButton({
           text: "Continue"
         }) }}
