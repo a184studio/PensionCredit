@@ -41,7 +41,18 @@
           </li>
         </ul>
 
-<br>
+{{ govukTextarea({
+  name: "hospital-details-detail",
+  id: "hospital-details-detail",
+  label: {
+    text: ""
+  },
+  hint: {
+    text: ""
+  }
+}) }}
+
+<!--
 
         {{ govukDateInput({
           id: "hospital-details-admission-date",
@@ -206,7 +217,7 @@
           classes: "govuk-input--width-30"
         }) }}
 
-
+-->
 
 
 
