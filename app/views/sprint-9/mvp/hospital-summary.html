@@ -75,6 +75,104 @@
                                       {% endif %}
 
 
+                {% if data["hospital-details-admission-date"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Date they were admitted?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["hospital-details-admission-date"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="hospital-details">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+                  {% if data["hospital-details-discharge-date"] %}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Date they were discharge?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data["hospital-details-discharge-date"] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a href="hospital-details">
+                          Change
+                        </a>
+                      </dd>
+                    </div>
+                    {% endif %}
+
+                    {% if data["hospital-details-funding"] %}
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          hospital-details-type
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data["hospital-details-funding"] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a href="hospital-details">
+                            Change
+                          </a>
+                        </dd>
+                      </div>
+                      {% endif %}
+
+                    {% if data["hospital-details-funding-more-detail"] %}
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          hospital-details-funding-more-detail
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data["hospital-details-funding-more-detail"] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a href="hospital-details">
+                            Change
+                          </a>
+                        </dd>
+                      </div>
+                      {% endif %}
+
+                      {% if data["hospital-name"] %}
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            hospital-city
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            {{ data["hospital-name"] }}
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a href="hospital-details">
+                              Change
+                            </a>
+                          </dd>
+                        </div>
+                        {% endif %}
+
+                      {% if data["hospital-city"] %}
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            hospital-city
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            {{ data["hospital-city"] }}
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a href="hospital-details">
+                              Change
+                            </a>
+                          </dd>
+                        </div>
+                        {% endif %}
+
+
+
 
 
 <br></dl></dl><br><br>
