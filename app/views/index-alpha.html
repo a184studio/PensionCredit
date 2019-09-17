@@ -25,7 +25,7 @@
       </div>
 
       <div class="govuk-grid-column-three-quarters">
-        <h1 class="govuk-heading-xl">Pension Credit: New claims design experimentation and development</h1>
+        <h1 class="govuk-heading-xl">Pension Credit: Prototype testing and iterations</h1>
       </div></div>
 
       <div class="govuk-grid-row">
@@ -34,14 +34,14 @@
       </div>
 
       <div class="govuk-grid-column-three-quarters">
-        <p class="govuk-body-l">In Alpha we explored four unique ways of capturing data. <br><br>Our main exploration centered around looking at how the service would work if it was agent and citizen facing, and where else we could get data to increase accuracy.<br><br>We have began to break down sections and test those in isolation as the service is becoming larger and harder to test within the little time we have with agents.</p><br>
+        <p class="govuk-body-l">In Alpha we explored four unique ways of capturing data. <br><br>Our main exploration centered around looking at how the service would work if it was agent and citizen facing, and where else we could get data to increase accuracy.<br><br> We are now in Private Beta and prototype testing with agents and citizens what day one MVP will look like. </p><br>
       </div></div>
 
 <!----Main---->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    <h2 class="govuk-heading-m"><strong>A.2.6 / End-to-end</strong></h2>
+    <h2 class="govuk-heading-m"><strong>A.2.6 / End-to-end testing fake call Warrington</strong></h2>
     <p class="govuk-body"> </p>
   </div> <!------------ govuk-grid-column-one-quarter ------------>
 
@@ -68,40 +68,59 @@
       <strong>Discription:</strong><br>Agent testing, full end-to-end / Warrington / 12 September 2019
 
 
-    </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
-    </div> <!------------ Details colum / Grid row close ------------>
+      </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
+      </div> <!------------ Details colum / Grid row close ------------>
       <div class="govuk-grid-row"> <!------------ Details colum ------------>
       <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <p class="govuk-body"></p>
-      <strong>About the testing</strong><br>XXX.
-      <br><br><strong>Assumptions tested</strong><br>XXXX.
 
-      <br><br><strong>Changes made for testing:</strong><br>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Task list: Hidden</li>
-            <li>XXX</li>
-            <li>Date of claim: Single jorney (CAM)</li>
-            <li>Who lives with you: Hidden</li>
+      <p class="govuk-body govuk-!-font-weight-bold">About the testing:</p>
+          <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>We tested the prototype as a fake call with a scenario that aimed to test adding hospital admission details, income over 10k, employment details and the agent instruction screens.</li>
           </ul>
 
-            <br><strong>Changes: XXX</strong><br>
-              <li>MSIC / XXX</li>
-              <br><br>
+      <p class="govuk-body govuk-!-font-weight-bold">Assumptions tested:</p>
+          <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>Do agents understand what the agent instruction pages are telling them to do.</li>
+            <li>Do agents understand how to go back and change information.</li>
+            <li>Do agents understand how to add employment and where to add it.</li>
+            <li>Do agents understand how to add hospital admissions.</li>
+            <li>Do agents know whether a caller would have over or under £10,000.</li>
+          </ul>
 
-            <strong>What we tested: </strong><br>
-            XXX
-            <br><br>
-            <strong>Outcome:</strong><br>
-            XXX
-            <br><br>
-            <strong>Next steps:</strong><br>
-            XXX
-            <br><br>
-            <br>
+      <p class="govuk-body govuk-!-font-weight-bold ">Changes made for testing:</p>
+          <ul class="govuk-list govuk-!-margin-bottom-6">
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/hospital-check-yn" aria-describedby="contact-details-completed">Hospital admissions</a></li>
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/pensions-overview" aria-describedby="contact-details-completed">Pension overview</a></li>
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/benefit-overview" aria-describedby="contact-details-completed">Benefits overview</a></li>
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/other-income-overview" aria-describedby="contact-details-completed">Earnings</a></li>
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/pension-credit-summary" aria-describedby="contact-details-completed">Final CYA (PC summary)</a></li>
+            <!------------ ---- ------------>
+          </ul>
 
+          <p class="govuk-body govuk-!-font-weight-bold">What we tested</p>
+              <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                <li>Prototype.</li>
+                <li>Printed agent instruction screens.</li>
+              </ul>
 
-      <br><br>
+          <p class="govuk-body govuk-!-font-weight-bold">Outcome</p>
+          <ul class="govuk-list govuk-!-margin-bottom-6">
+            <li><strong>Wasn’t always clear what to ask and what not to ask. </strong><br>Some of the agent instructions were read out as questions and some questions skipped</li>
+            <li><strong>Agents didn’t know if the totals given were over or under 10,000k. </strong>1 agent asked this as a question the other 3 selected ‘no’ despite the amount being over 10k because they weren’t sure</li>
+            <li><strong>Agents were concerned about inputting text into a text box. </strong>It was noted as being slow, relying on spelling and could mean not enough information gets collected</li>
+            <li><strong>Agents didn’t know when to check / ask about State Pension, it wasn’t clear what section this belonged to. </strong>Agents weren’t sure whether the instruction of check Searchlight for Pensions included ‘State Pension’</li>
+            <li><strong>Wasn’t clear when to discuss what date they want to claim. </strong>2 agents ending up getting to the ‘reason for date’ screen before they’d mentioned that date the user could claim from.</li>
+            <li><strong>Where do I add Pensions and Benefits? </strong>Agents were expecting somewhere to add in Pensions and benefits.</li>
+            <li><strong>Adding money, savings and investment is slow. </strong>There was comments that there was a lot of clicking around and took a while to get through compared to what they do now.</li>
+              </ul>
+              <a class="app-task-list__task-name" href="https://confluence.service.dwpcloud.uk/pages/viewpage.action?pageId=147755371&moved=true" aria-describedby="contact-details-completed">Indepth findings for this testing</a>
+            <br><br>
       </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
 
       </div> <!------------ Details colum / Grid row close ------------>
@@ -137,7 +156,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    <h2 class="govuk-heading-m"><strong>A.2.5 / End-to-end</strong></h2>
+    <h2 class="govuk-heading-m"><strong>A.2.5 / End-to-end testing TVP</strong></h2>
     <p class="govuk-body"> </p>
   </div> <!------------ govuk-grid-column-one-quarter ------------>
 
@@ -151,54 +170,72 @@
 
       <li class="app-task-list__item app-task-list-pc">
 
-    <details class="govuk-details">
+        <details class="govuk-details">
 
-      <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-      Version notes and module order and shortcuts
-      </span>
-      </summary>
+          <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          Version notes and module order and shortcuts
+          </span>
+          </summary>
 
-      <div class="govuk-grid-row"> <!------------ Details colum ------------>
-      <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
-      <br>
-      <strong>Discription:</strong><br>Agent testing, full end-to-end / Tyne View Park / 3 September 2019
-
-
-    </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
-    </div> <!------------ Details colum / Grid row close ------------>
-      <div class="govuk-grid-row"> <!------------ Details colum ------------>
-      <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <p class="govuk-body"></p>
-      <strong>About the testing</strong><br>XXX.
-      <br><br><strong>Assumptions tested</strong><br>XXXX.
-
-      <br><br><strong>Changes made for testing:</strong><br>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Task list: Hidden</li>
-            <li>XXX</li>
-            <li>Date of claim: Single jorney (CAM)</li>
-            <li>Who lives with you: Hidden</li>
-          </ul>
-
-            <br><strong>Changes: XXX</strong><br>
-              <li>MSIC / XXX</li>
-              <br><br>
-
-            <strong>What we tested: </strong><br>
-            XXX
-            <br><br>
-            <strong>Outcome:</strong><br>
-            XXX
-            <br><br>
-            <strong>Next steps:</strong><br>
-            XXX
-            <br><br>
-            <br>
+          <div class="govuk-grid-row"> <!------------ Details colum ------------>
+          <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
+          <br>
+          <strong>Discription:</strong><br>Agent testing, full end-to-end / Tyne View Park / 3 September 2019
 
 
-      <br><br>
+        </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
+        </div> <!------------ Details colum / Grid row close ------------>
+          <div class="govuk-grid-row"> <!------------ Details colum ------------>
+          <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <p class="govuk-body govuk-!-font-weight-bold">About the testing:</p>
+              <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                <li>We asked agents to navigate through the service as if they were taking a claim. We didn’t run this as a ‘fake call’ as we anticipated a lot of feedback on individual pages. Instead we provided them the responses allowing them to feedback and thinking out loud as they were going through.</li>
+              </ul>
+
+          <p class="govuk-body govuk-!-font-weight-bold">Assumptions tested:</p>
+              <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                <li>Do agents know what is an agent is an <strong>agent instruction</strong> vs <strong>a question?</strong> Do they understand what the instruction is telling them? </li>
+                <li>What do <strong>agents read</strong> out vs what they wouldn’t? What are they reasons they wouldn’t? </li>
+                <li>What are agents having to <strong>write down?</strong></li>
+                <li>Do agents understand what things we disregard as part of a PC claim?</li>
+                <li>Does an agent know how to <strong>change something?</strong></li>
+              </ul>
+
+          <p class="govuk-body govuk-!-font-weight-bold ">Changes made for testing:</p>
+              <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                <li>Task list: Hidden, now it’s a linear journey</li>
+                <li>Date of claim: Single journey (CAM)</li>
+                <li>Who lives with you: Hidden</li>
+              </ul>
+
+              <p class="govuk-body govuk-!-font-weight-bold">What we tested</p>
+                  <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                    <li>Prototype of the service</li>
+                  </ul>
+
+              <p class="govuk-body govuk-!-font-weight-bold">Outcome</p>
+              <ul class="govuk-list govuk-!-margin-bottom-6">
+                <li>CAM still timing out after 15 minutes due to new ‘tool bar’.</li>
+                <li>Still can’t process a case for 30 odd days. </li>
+                <li>A couple of the agents we tested with the prototype ran really slow, they commented that this wasn’t unusual.</li>
+                <li>It differed how much information they collected from G4S, the 3  ‘newer’ members of staff asked for more information that the agents who had been there for over 10 years.</li>
+                <li>Agents write information about the claimant on a paper pad or the computer notepad, they write down information they get from G4S plus what they see in searchlight. Security > Check information > Start claim.</li>
+                <li>Agents told us they do security and then confirm that all the information before we have is correct such as telephone number and address, this is also the point they ask if they have a mobile number. They do all of this ‘before starting the claim’.</li>
+                <li>There were comments are duplication of asking for information which they may have already been asked in security such as name , NI, telephone number which they’d already have.</li>
+                <li>Agents didn’t have issues navigate through the prototype, go back and change information. If someone gave them information at a different point in the service they’d write it down on paper.</li>
+                <li>It was unclear what they had to do on the screen asking them to ‘Do you need to make any changes to the income shown on searchlight, it was the only page in the prototype that we had to explain.</li>
+                <li>Agent said that they only need to ask about War Disablement benefit, War Widows Pensions and IIDB if there’s an interest in Searchlight.</li>
+                <li>Agents were surprised to see the question about email as “it’s not something we offer” it wasn’t clear to all of them that it wasn’t a “preference” and what disability would mean you needed an email. It was mentioned that POAs in particular tend to ask for email. </li>
+                <li>It was unsure on some pages what was an agent instruction and what was a question, agents knew that somethings wouldn’t be asked eg ‘ is their an iDOC but other instructions they thought was meant as a question, 1 agent said this was because ‘?’ Was used for both instructions and questions.</li>
+                <li>There was a lot agents said they wouldn’t read out, including parts of the declaration and privacy policy. They tend to keep it short as people stop listening and just say ‘yeah, yeah’.</li>
+                <li>There were some comments about the speed of moving through, 1 agent said there’s a lot of ‘clicking’ another said that some questions felt spread out eg asking about address twice and this could ‘confuse people’.</li>
+                    </ul>
+                  <a class="app-task-list__task-name" href="https://confluence.service.dwpcloud.uk/pages/viewpage.action?pageId=147755371&moved=true" aria-describedby="contact-details-completed">Indepth findings for this testing</a>
+                <br><br>
+
       </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
 
       </div> <!------------ Details colum / Grid row close ------------>
@@ -234,7 +271,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    <h2 class="govuk-heading-m"><strong>A.2.4 / End-to-end</strong></h2>
+    <h2 class="govuk-heading-m"><strong>A.2.4/ Team crit of end-to-end</strong></h2>
     <p class="govuk-body"> </p>
   </div> <!------------ govuk-grid-column-one-quarter ------------>
 
@@ -244,7 +281,7 @@
     <ul class="app-task-list__items app-task-list-pc">
 
       <a class="app-task-list__task-name" href="/sprint-9/end-to-end/start.html" aria-describedby="company-information-completed">Start Prototype / End-to-End<br></a>
-      <strong class="govuk-tag govuk-tag--hold app-task-list__task-completed" id="company-information-completed">Tested 28.09.2019</strong><br><br>
+      <strong class="govuk-tag govuk-tag--hold app-task-list__task-completed" id="company-information-completed">Tested 28.08.2019</strong><br><br>
       <li class="app-task-list__item app-task-list-pc">
 
     <details class="govuk-details">
@@ -258,7 +295,7 @@
       <div class="govuk-grid-row"> <!------------ Details colum ------------>
       <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
       <br>
-      <strong>Discription:</strong><br>Testing with Nick, full end-to-end / Benton Park View / 28 August 2019
+      <strong>Discription:</strong><br>Team run through of MVP Day 1 / Benton Park View / 28 August 2019
 
 
     </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
@@ -266,35 +303,65 @@
       <div class="govuk-grid-row"> <!------------ Details colum ------------>
       <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <p class="govuk-body"></p>
-      <strong>About the testing</strong><br>XXX.
-      <br><br><strong>Assumptions tested</strong><br>XXXX.
 
-      <br><br><strong>Changes made for testing:</strong><br>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Task list: Hidden</li>
-            <li>Task list: Now simply list of links to each section</li>
-            <li>Date of claim: Single jorney (CAM)</li>
-            <li>Who lives with you: Hidden</li>
+      <p class="govuk-body govuk-!-font-weight-bold">About the testing:</p>
+          <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>Team crit of day 1 MVP. We got our SME Nick to take a pretend claim using the latest prototype of our MVP. We screen-shared this so the team would be able to observes and make comments.</li>
+            <li>We asked the team to write feedback for ‘things that surprised them’, ’things that concerned them’ and ‘things that delighted them.’</li>
           </ul>
 
-            <br><strong>Changes: XXX</strong><br>
-              <li>MSIC / XXX</li>
-              <br><br>
+      <p class="govuk-body govuk-!-font-weight-bold">Assumptions tested:</p>
+          <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>Do the whole team understand how day 1</li>
+            <li>That the content on screens would flow as a conversation.  </li>
+          </ul>
 
-            <strong>What we tested: </strong><br>
-            XXX
-            <br><br>
-            <strong>Outcome:</strong><br>
-            XXX
-            <br><br>
-            <strong>Next steps:</strong><br>
-            XXX
-            <br><br>
-            <br>
+      <p class="govuk-body govuk-!-font-weight-bold ">Changes made for testing:</p>
+          <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>Task list: Now simply list of links to each section</li>
+            <li>Date of claim: Single journey (CAM)</li>
+            <li>Who lives with you: Hidden</li>
+            <li>Added Searchlight prototype to be able to truly test end to end</li>
+          </ul>
 
+          <p class="govuk-body govuk-!-font-weight-bold">What we tested / Our MVP service</p>
+              <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                <li>Task list: Now simply list of links to each section</li>
+                <li>Date of claim: Single journey (CAM)</li>
+                <li>Who lives with you: Hidden</li>
+                <li>Added Searchlight prototype to be able to truly test end to end</li>
+              </ul>
 
-      <br><br>
+            <p class="govuk-body govuk-!-font-weight-bold">Searchlight prototype</p>
+                <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                  <li><a class="app-task-list__task-name" href="https://pension-age.herokuapp.com/cam/searchlight1" aria-describedby="contact-details-completed">https://pension-age.herokuapp.com/cam/searchlight1</a></li>
+                  <li>Username: pension-age</li>
+                  <li>Password: ega-noisnep</li>
+                </ul>
+
+                <p class="govuk-body govuk-!-font-weight-bold">PTP CAM prototype</p>
+                    <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                      <li><a class="app-task-list__task-name" href="https://pension-age.herokuapp.com/cam/cam_s1" aria-describedby="contact-details-completed">https://pension-age.herokuapp.com/cam/cam_s1</a></li>
+                      <li>Username: pension-age</li>
+                      <li>Password: ega-noisnep</li>
+                    </ul>
+
+                    <p class="govuk-body govuk-!-font-weight-bold">Outcome</p>
+                    <ul class="govuk-list govuk-!-margin-bottom-6">
+                            <li>Duplication of question that get asked in CAM and as part of security.</li>
+                            <li>Not everything was read out to the caller, eg check your answers, who lives with you options and question of whether they have a roll number.</li>
+                            <li>Some sections felt slow. Eg declaration was long to read out, security took a lot of time and required switching systems. Also the check your answers pages and the task list felt like it took additional time.</li>
+                            <li>Action action about whether a translator was needed was read out as a question.</li>
+                            <li>There was comments about whether we needed to ask all of these questions eg date of payment.</li>
+                            <li>Some questions seemed confusing. Including how we ask about email. Asking a man if he gets war widows, asking for a name of a ISA, asking if you live in either England, Scotland or Wales, and CTR was not clear or explained.</li>
+                            <li>Is the declaration in the right place.</li>
+                            <li>The same section was clicked into twice for two different sections.</li>
+                            <li>This is leading people to think that they’re getting Pension Credit because we’re asking about bank details.</li>
+                            <li>We didn’t mention that we are checking the data that we hold.</li>
+                          </ul>
+                        <a class="app-task-list__task-name" href="TBC" aria-describedby="contact-details-completed">Indepth findings for this testing TBC</a>
+                      <br><br>
+
       </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
 
       </div> <!------------ Details colum / Grid row close ------------>
@@ -324,27 +391,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    <h2 class="govuk-heading-m"><strong>A.2.3</strong></h2>
+    <h2 class="govuk-heading-m"><strong>A.2.3/Fake call feedback SME Debbie</strong></h2>
     <p class="govuk-body"> </p>
   </div> <!------------ govuk-grid-column-one-quarter ------------>
 
@@ -381,7 +431,7 @@
       <br><br><strong>Assumptions tested</strong><br>We wanted to understand how the full flow worked with a New Claims agent. <br> We have been struggling to get in front of new claims agents, recently we have only had access to Changes agents.
 
       <br><br><strong>Changes: Added in</strong><br>
-          <ul class="govuk-list govuk-list--bullet">
+          <ul class="govuk-list--bullet">
             <li>Date of Claim: New way to collect what date the claim needs to be taken from
             <li>MSIC / New rolling summary</li>
             <li>MSIC / Hint text on accounts</li>
@@ -518,7 +568,7 @@
                   <br><br>
                   <strong>Changes:</strong><br>
 
-                      <ul class="govuk-list govuk-list--bullet">
+                      <ul class="govuk-list--bullet">
                         <li>MSIC / call to actions (CTAs): </li>
                         <li>MSIC / Hint text on accounts: XXXXX</li>
                         <li>MSIC / start page: XXXXX</li>
@@ -540,7 +590,7 @@
                   <br><br>
                   <strong>What we want to test</strong>
 
-                  <ul class="govuk-list govuk-list--bullet">
+                  <ul class="govuk-list--bullet">
                     <li>Although (A) was preferred, how every there is more work to be done. A hypothesise is that we investigate potentially streamlining the method of which the information is asked.</li>
                     <li>There is concerns that if we group the questions into as single question it becomes harder for a user to understand.</li>
                     <li>We have set up an (A) / (C) test for another option, but still follows the (A) method.</li>
@@ -550,7 +600,7 @@
                   <br>
               <strong>Things to change / Investigate </strong>
               <br>  <br>
-              <ul class="govuk-list govuk-list--bullet">
+              <ul class="govuk-list--bullet">
                 <li>TBC</li>
                 </ul>
 
@@ -635,7 +685,7 @@
       <br><br>
       <strong>What did we find?</strong>
 
-      <ul class="govuk-list govuk-list--bullet">
+      <ul class="govuk-list--bullet">
         <li>We found that design 'A' tested better with agents, it was described as being easy to use particularly for new starters as it made it harder to accidently skip sections'. The one question per page was easier for agents to navigate and you were less likely to miss a question.</li>
         <li>One concern with this design is how to go back and add something if someone remembers an additional bank account they have.
 </li>
@@ -645,7 +695,7 @@
       <br>
   <strong>Things to change / Investigate </strong>
   <br>  <br>
-  <ul class="govuk-list govuk-list--bullet">
+  <ul class="govuk-list--bullet">
     <li>Investigate whether we should or should not ask people if they have over or under 10,000k,  before we go through each account. </li>
     <li>Investigate how we can make it clear to agents and citizens what is a TESSA , TOISA and PEP. Or if there other language we can use to group these using simplier labels. </li>
     <li> Investigate how we can make it clearer to users what a 'Unit Trust' is.  </li>
