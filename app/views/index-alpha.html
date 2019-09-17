@@ -25,7 +25,7 @@
       </div>
 
       <div class="govuk-grid-column-three-quarters">
-        <h1 class="govuk-heading-xl">Pension Credit: New claims design experimentation and development</h1>
+        <h1 class="govuk-heading-xl">Pension Credit: Prototype testing and iterations</h1>
       </div></div>
 
       <div class="govuk-grid-row">
@@ -34,7 +34,7 @@
       </div>
 
       <div class="govuk-grid-column-three-quarters">
-        <p class="govuk-body-l">In Alpha we explored four unique ways of capturing data. <br><br>Our main exploration centered around looking at how the service would work if it was agent and citizen facing, and where else we could get data to increase accuracy.<br><br>We have began to break down sections and test those in isolation as the service is becoming larger and harder to test within the little time we have with agents.</p><br>
+        <p class="govuk-body-l">In Alpha we explored four unique ways of capturing data. <br><br>Our main exploration centered around looking at how the service would work if it was agent and citizen facing, and where else we could get data to increase accuracy.<br><br> We are now in Private Beta and prototype testing with agents and citizens what day one MVP will look like. </p><br>
       </div></div>
 
 <!----Main---->
@@ -68,40 +68,59 @@
       <strong>Discription:</strong><br>Agent testing, full end-to-end / Warrington / 12 September 2019
 
 
-    </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
-    </div> <!------------ Details colum / Grid row close ------------>
+      </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
+      </div> <!------------ Details colum / Grid row close ------------>
       <div class="govuk-grid-row"> <!------------ Details colum ------------>
       <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <p class="govuk-body"></p>
-      <strong>About the testing</strong><br>XXX.
-      <br><br><strong>Assumptions tested</strong><br>XXXX.
 
-      <br><br><strong>Changes made for testing:</strong><br>
-          <ul class="govuk-list--bullet">
-            <li>Task list: Hidden</li>
-            <li>XXX</li>
-            <li>Date of claim: Single jorney (CAM)</li>
-            <li>Who lives with you: Hidden</li>
+      <p class="govuk-body govuk-!-font-weight-bold">About the testing:</p>
+          <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>We tested the prototype as a fake call with a scenario that aimed to test adding hospital admission details, income over 10k, employment details and the agent instruction screens.</li>
           </ul>
 
-            <br><strong>Changes: XXX</strong><br>
-              <li>MSIC / XXX</li>
-              <br><br>
+      <p class="govuk-body govuk-!-font-weight-bold">Assumptions tested:</p>
+          <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>Do agents understand what the agent instruction pages are telling them to do.</li>
+            <li>Do agents understand how to go back and change information.</li>
+            <li>Do agents understand how to add employment and where to add it.</li>
+            <li>Do agents understand how to add hospital admissions.</li>
+            <li>Do agents know whether a caller would have over or under £10,000.</li>
+          </ul>
 
-            <strong>What we tested: </strong><br>
-            XXX
-            <br><br>
-            <strong>Outcome:</strong><br>
-            XXX
-            <br><br>
-            <strong>Next steps:</strong><br>
-            XXX
-            <br><br>
-            <br>
+      <p class="govuk-body govuk-!-font-weight-bold ">Changes made for testing:</p>
+          <ul class="govuk-list govuk-!-margin-bottom-6">
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/hospital-check-yn" aria-describedby="contact-details-completed">Hospital admissions</a></li>
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/pensions-overview" aria-describedby="contact-details-completed">Pension overview</a></li>
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/benefit-overview" aria-describedby="contact-details-completed">Benefits overview</a></li>
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/other-income-overview" aria-describedby="contact-details-completed">Earnings</a></li>
+            <!------------ ---- ------------>
+            <li><a href="/sprint-9/mvp/pension-credit-summary" aria-describedby="contact-details-completed">Final CYA (PC summary)</a></li>
+            <!------------ ---- ------------>
+          </ul>
 
+          <p class="govuk-body govuk-!-font-weight-bold">What we tested</p>
+              <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                <li>Prototype.</li>
+                <li>Printed agent instruction screens.</li>
+              </ul>
 
-      <br><br>
+          <p class="govuk-body govuk-!-font-weight-bold">Outcome</p>
+          <ul class="govuk-list govuk-!-margin-bottom-6">
+            <li><strong>Wasn’t always clear what to ask and what not to ask</strong><br>Some of the agent instructions were read out as questions and some questions skipped</li>
+            <li><strong>Agents didn’t know if the totals given were over or under 10,000k</strong>1 agent asked this as a question the other 3 selected ‘no’ despite the amount being over 10k because they weren’t sure</li>
+            <li><strong>Agents were concerned about inputting text into a text box</strong>It was noted as being slow, relying on spelling and could mean not enough information gets collected</li>
+            <li><strong>Agents didn’t know when to check / ask about State Pension, it wasn’t clear what section this belonged to</strong>Agents weren’t sure whether the instruction of check Searchlight for Pensions included ‘State Pension’</li>
+            <li><strong>Wasn’t clear when to discuss what date they want to claim</strong>2 agents ending up getting to the ‘reason for date’ screen before they’d mentioned that date the user could claim from.</li>
+            <li><strong>Where do I add Pensions and Benefits?</strong>Agents were expecting somewhere to add in Pensions and benefits.</li>
+            <li><strong>Adding money, savings and investment is slow</strong>There was comments that there was a lot of clicking around and took a while to get through compared to what they do now.</li>
+              </ul>
+              <a class="app-task-list__task-name" href="https://confluence.service.dwpcloud.uk/pages/viewpage.action?pageId=147755371&moved=true" aria-describedby="contact-details-completed">Indepth findings for this testing</a>
+            <br><br>
       </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
 
       </div> <!------------ Details colum / Grid row close ------------>
