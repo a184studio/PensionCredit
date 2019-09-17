@@ -151,54 +151,72 @@
 
       <li class="app-task-list__item app-task-list-pc">
 
-    <details class="govuk-details">
+        <details class="govuk-details">
 
-      <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-      Version notes and module order and shortcuts
-      </span>
-      </summary>
+          <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          Version notes and module order and shortcuts
+          </span>
+          </summary>
 
-      <div class="govuk-grid-row"> <!------------ Details colum ------------>
-      <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
-      <br>
-      <strong>Discription:</strong><br>Agent testing, full end-to-end / Tyne View Park / 3 September 2019
-
-
-    </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
-    </div> <!------------ Details colum / Grid row close ------------>
-      <div class="govuk-grid-row"> <!------------ Details colum ------------>
-      <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <p class="govuk-body"></p>
-      <strong>About the testing</strong><br>XXX.
-      <br><br><strong>Assumptions tested</strong><br>XXXX.
-
-      <br><br><strong>Changes made for testing:</strong><br>
-          <ul class="govuk-list--bullet">
-            <li>Task list: Hidden</li>
-            <li>XXX</li>
-            <li>Date of claim: Single jorney (CAM)</li>
-            <li>Who lives with you: Hidden</li>
-          </ul>
-
-            <br><strong>Changes: XXX</strong><br>
-              <li>MSIC / XXX</li>
-              <br><br>
-
-            <strong>What we tested: </strong><br>
-            XXX
-            <br><br>
-            <strong>Outcome:</strong><br>
-            XXX
-            <br><br>
-            <strong>Next steps:</strong><br>
-            XXX
-            <br><br>
-            <br>
+          <div class="govuk-grid-row"> <!------------ Details colum ------------>
+          <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
+          <br>
+          <strong>Discription:</strong><br>Agent testing, full end-to-end / Tyne View Park / 3 September 2019
 
 
-      <br><br>
+        </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
+        </div> <!------------ Details colum / Grid row close ------------>
+          <div class="govuk-grid-row"> <!------------ Details colum ------------>
+          <div class="govuk-grid-column-full"> <!------------ Details colum ------------>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <p class="govuk-body govuk-!-font-weight-bold">About the testing:</p>
+              <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                <li>We asked agents to navigate through the service as if they were taking a claim. We didn’t run this as a ‘fake call’ as we anticipated a lot of feedback on individual pages. Instead we provided them the responses allowing them to feedback and thinking out loud as they were going through.</li>
+              </ul>
+
+          <p class="govuk-body govuk-!-font-weight-bold">Assumptions tested:</p>
+              <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                <li>Do agents know what is an agent is an <strong>agent instruction</strong> vs <strong>a question?</strong> Do they understand what the instruction is telling them? </li>
+                <li>What do <strong>agents read</strong> out vs what they wouldn’t? What are they reasons they wouldn’t? </li>
+                <li>What are agents having to <strong>write down?</strong></li>
+                <li>Do agents understand what things we disregard as part of a PC claim?</li>
+                <li>Does an agent know how to <strong>change something?</strong></li>
+              </ul>
+
+          <p class="govuk-body govuk-!-font-weight-bold ">Changes made for testing:</p>
+              <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                <li>Task list: Hidden, now it’s a linear journey</li>
+                <li>Date of claim: Single journey (CAM)</li>
+                <li>Who lives with you: Hidden</li>
+              </ul>
+
+              <p class="govuk-body govuk-!-font-weight-bold">What we tested</p>
+                  <ul class="govuk-list--bullet govuk-!-margin-bottom-6">
+                    <li>Prototype of the service</li>
+                  </ul>
+
+              <p class="govuk-body govuk-!-font-weight-bold">Outcome</p>
+              <ul class="govuk-list govuk-!-margin-bottom-6">
+                <li>CAM still timing out after 15 minutes due to new ‘tool bar’.</li>
+                <li>Still can’t process a case for 30 odd days. </li>
+                <li>A couple of the agents we tested with the prototype ran really slow, they commented that this wasn’t unusual.</li>
+                <li>It differed how much information they collected from G4S, the 3  ‘newer’ members of staff asked for more information that the agents who had been there for over 10 years.</li>
+                <li>Agents write information about the claimant on a paper pad or the computer notepad, they write down information they get from G4S plus what they see in searchlight. Security > Check information > Start claim.</li>
+                <li>Agents told us they do security and then confirm that all the information before we have is correct such as telephone number and address, this is also the point they ask if they have a mobile number. They do all of this ‘before starting the claim’.</li>
+                <li>There were comments are duplication of asking for information which they may have already been asked in security such as name , NI, telephone number which they’d already have.</li>
+                <li>Agents didn’t have issues navigate through the prototype, go back and change information. If someone gave them information at a different point in the service they’d write it down on paper.</li>
+                <li>It was unclear what they had to do on the screen asking them to ‘Do you need to make any changes to the income shown on searchlight, it was the only page in the prototype that we had to explain.</li>
+                <li>Agent said that they only need to ask about War Disablement benefit, War Widows Pensions and IIDB if there’s an interest in Searchlight.</li>
+                <li>Agents were surprised to see the question about email as “it’s not something we offer” it wasn’t clear to all of them that it wasn’t a “preference” and what disability would mean you needed an email. It was mentioned that POAs in particular tend to ask for email. </li>
+                <li>It was unsure on some pages what was an agent instruction and what was a question, agents knew that somethings wouldn’t be asked eg ‘ is their an iDOC but other instructions they thought was meant as a question, 1 agent said this was because ‘?’ Was used for both instructions and questions.</li>
+                <li>There was a lot agents said they wouldn’t read out, including parts of the declaration and privacy policy. They tend to keep it short as people stop listening and just say ‘yeah, yeah’.</li>
+                <li>There were some comments about the speed of moving through, 1 agent said there’s a lot of ‘clicking’ another said that some questions felt spread out eg asking about address twice and this could ‘confuse people’.</li>
+                    </ul>
+                  <a class="app-task-list__task-name" href="https://confluence.service.dwpcloud.uk/pages/viewpage.action?pageId=147755371&moved=true" aria-describedby="contact-details-completed">Indepth findings for this testing</a>
+                <br><br>
+
       </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
 
       </div> <!------------ Details colum / Grid row close ------------>
@@ -311,7 +329,7 @@
 
                     <p class="govuk-body govuk-!-font-weight-bold">Outcome</p>
                     <ul class="govuk-list govuk-!-margin-bottom-6">
-                      Duplication of question that get asked in CAM and as part of security.</li>
+                            <li>Duplication of question that get asked in CAM and as part of security.</li>
                             <li>Not everything was read out to the caller, eg check your answers, who lives with you options and question of whether they have a roll number.</li>
                             <li>Some sections felt slow. Eg declaration was long to read out, security took a lot of time and required switching systems. Also the check your answers pages and the task list felt like it took additional time.</li>
                             <li>Action action about whether a translator was needed was read out as a question.</li>
@@ -322,7 +340,7 @@
                             <li>This is leading people to think that they’re getting Pension Credit because we’re asking about bank details.</li>
                             <li>We didn’t mention that we are checking the data that we hold.</li>
                           </ul>
-                        <a class="app-task-list__task-name" href="https://confluence.service.dwpcloud.uk/pages/viewpage.action?pageId=147755371&moved=true" aria-describedby="contact-details-completed">Indepth findings for this testing</a>
+                        <a class="app-task-list__task-name" href="TBC" aria-describedby="contact-details-completed">Indepth findings for this testing TBC</a>
                       <br><br>
 
       </div> <!------------ Details colum / govuk-grid-column-one-half ------------>
@@ -351,23 +369,6 @@
 
   </div> <!------------ govuk-grid-column-one-quarter ------------>
 </div> <!------------ Grid row close ------------>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
