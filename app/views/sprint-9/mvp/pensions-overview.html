@@ -26,10 +26,16 @@
       <div class="govuk-panel--agent">
         <h1 class="govuk-heading-l"> Agent: Check and discuss the pensions {{ data["full-name"] }} has</h1>
 
-        <ul class="govuk-body govuk-!-font-size-19 govuk-list govuk-list">
-          <li><strong>Searchlight</strong> shows State Pension and other pensions in payment</li>
-          <li><strong>OLE NIRS</strong> shows payments being made into a pension</li>
-        </ul>
+
+          <p class=govuk-body>Check the income tab in <strong>Searchlight</strong> for private and workplace pensions in payment and tell the claimant what you see.</p>
+          <p class=govuk-body>Check the benefits tab in <strong>Searchlight</strong> for State Pension and tell the claimant what you see.</p>
+          <p class=govuk-body>Check the schemes tab in <strong>OLE NIRS</strong> for pension contributions. If contributions indicate unclaimed pensions, send form PPR1.</p>
+
+
+        {{ govukDetails({
+  summaryText: "What to do if the claimant tells you their private pensions are wrong",
+  text: "Tell the claimant that you will use the figures you discussed for their claim. The information we have is from HMRC. The claimant should contact HMRC to resolve any issues with their income."
+}) }}
     </div>
 
 <br>

@@ -106,8 +106,8 @@ XXXXX
 <h2 class="govuk-heading-m">Agent: before leaving this screen:</h2>
 
 <ul class="govuk-list govuk-list--number">
-  <li>Download MyPC PDF</li>
-  <li>Upload PDF to DRS and tag as the following:</li>
+  <li>Download MyPC claim</li>
+  <li>Upload claim to DRS and tag as the following:</li>
 
   <ul class="govuk-list govuk-list">
     <li>Business unit: <strong>Pension Centre</strong></li>
@@ -119,12 +119,12 @@ XXXXX
 
   <li>Process business as usual (BAU)</li>
 </ul>
-</div>
+
 
 <br>
 
         {{ govukButton({
-          text: "Download PDF",
+          text: "Download claim",
           classes: "govuk-button--secondary",
           href: "pdf-download-complete"
         }) }}
@@ -142,12 +142,12 @@ XXXXX
         items: [
         {
         value: "download-pdf",
-        text: "Confirm that you have downloaded the PDF"
+        text: "Confirm that you have downloaded the claim"
         }
         ]
         }) }}
 
-
+</div>
         <br>
 
         {{ govukButton({
