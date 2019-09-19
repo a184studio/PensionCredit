@@ -1046,7 +1046,6 @@ Any one off payments that haven’t been covered in the accounts we have already
         </div>{% endif %}
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        {% if data["msic-pc-payment-alternative-account-balance"] %}
         <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
@@ -1060,28 +1059,27 @@ Any one off payments that haven’t been covered in the accounts we have already
         <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
 
-          {% if data["msic-pc-payment"] == "An alternative account" or data["msic-pc-payment"] == "Same account as State Pension" %}
+          {% if data["msic-pc-payment"] == "A different account" %}
             {{ govukSummaryList({
               rows: [
 
-
-              {
-                key: {
-                  text: "Account you want your Pension Credit paid into"
+                {
+                  key: {
+                    text: "Account you want your Pension Credit paid into"
+                  },
+                  value: {
+                    text: data["msic-pc-payment"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "msic-pc-payment",
+                        text: "Change",
+                        visuallyHiddenText: "type of account"
+                      }
+                    ]
+                  }
                 },
-                value: {
-                  text: data["msic-pc-payment"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment",
-                      text: "Change",
-                      visuallyHiddenText: "type of account"
-                    }
-                  ]
-                }
-              },
 
               {
                   key: {
@@ -1209,6 +1207,7 @@ Any one off payments that haven’t been covered in the accounts we have already
                   }
                 },
 
+
                 {
                 key: {
                   text: "Account owner"
@@ -1253,7 +1252,7 @@ Any one off payments that haven’t been covered in the accounts we have already
 
   <!------------------ Same as State Pension account------------------------->
 
-          {% if data["msic-pc-payment"] == "Same account as State Pension" %}
+          {% if data["msic-pc-payment"] == "The same account as your State Pension" %}
             {{ govukSummaryList({
               rows: [
 
@@ -1294,10 +1293,9 @@ Any one off payments that haven’t been covered in the accounts we have already
               },
 
 
-              {
-                classes: 'govuk-summary-list--no-border',
-                key: {
-                    text: "Amount in this account today"
+                {
+                  key: {
+                    text: "Amount in this account today	"
                   },
                   value: {
                     text: data["msic-pc-payment-alternative-account-balance"]
@@ -1308,6 +1306,44 @@ Any one off payments that haven’t been covered in the accounts we have already
                         href: "msic-pc-payment-state-pension-account",
                         text: "Change",
                         visuallyHiddenText: "sort code"
+                      }
+                    ]
+                  }
+                },
+
+
+                {
+                key: {
+                  text: "Account owner"
+                },
+                value: {
+                  text: data['msic-pc-payment-alternative-account-owner']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "Change",
+                      visuallyHiddenText: "Account owner"
+                    }
+                  ]
+                }
+                },
+
+                {
+                  classes: 'govuk-summary-list--no-border',
+                  key: {
+                    text: "Amount of money that is yours"
+                  },
+                  value: {
+                    text: data['msic-pc-payment-alternative-account-stake']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "Change",
+                        visuallyHiddenText: "Amount of money that is yours"
                       }
                     ]
                   }
