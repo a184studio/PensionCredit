@@ -23,20 +23,82 @@
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
+      <div class="govuk-panel--agent">
+
+
     <h1 class="govuk-heading-xl">
-      Post Pension Credit index
+      Post Pension Credit index (this page is to help an agent know what they need to do based on their answers)
     </h1>
 
-    <p class="govuk-body-l">Post call we may need to do a buch of stuff. <br><a href="https://confluence.service.dwpcloud.uk/display/MYPC/Post+Pension+Credit+index+page" class="govuk-link govuk-link--no-visited-state">@pete Reference</a></p>
+    <p class="govuk-body-l">@pete Based on what ({{ data["full-name"] }}) has answered these items needed to be discussed / actioned, follow the instructions in each section
 
-    <!----------------------------------------------------------------------------------->
+</div>
 
+<!----------------------------------------------------------------------------------->
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        {% set carersAllowanceYes %}
+
+          <p class="govuk-heading-m"><strong>Contact Carers Allowance to discuss a claim</strong></p>
+        <ul class="govuk-list govuk-list">
+        <li>Telephone: 0800 731 0297</li>
+        <li>Textphone: 0800 731 0317</li>
+        <li><a href="https://www.ngts.org.uk/" class="govuk-link govuk-link--no-visited-state">Next Generation Text (NGT)</a> text relay (if you cannot hear or speak on the phone): 18001 then 0800 731 0297</li>
+            <li>Monday to Friday, 8am to 6pm</li>
+            <li><a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state">Find out about call charges  (Opens in new window)</a></li>
+        </ul>
+
+
+        <p class="govuk-heading-m"><strong>Digital claim or download a paper claim pack</strong></p>
+        <ul class="govuk-list govuk-list">
+        <li>United Kingdom: <a href="gov.uk/carers-allowance" class="govuk-link govuk-link--no-visited-state">gov.uk/carers-allowance</a></li>
+
+        <li>Northern Ireland: <a href="nidirect.gov.uk/articles/carers-allowance" class="govuk-link govuk-link--no-visited-state">nidirect.gov.uk/articles/carers-allowance</a></li>
+
+        </ul>
+
+        {% endset -%}
+
+        <h1 class="govuk-heading-l">Carers Allowance</h1>
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "claim-date-idoc-yn",
+          name: "claim-date-idoc-yn",
+          fieldset: {
+            legend: {
+              html: "Do you look after anyone?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["carers-allowance-yn"] == "Yes"),
+            conditional: {
+              html: carersAllowanceYes
+            }
+          },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["carers-allowance-yn"] == "No")
+            }
+          ]
+        }) }}
+
+<!----------------------------------------------------------------------------------->
+
+    {% if data["rent-housing-benefit-apply"] == "Yes" %}
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-    <h1 class="govuk-heading-l">Housing Benefit</h1>
-
-    <p class="govuk-body-m">
-      @Pete what do we need to say to people here. <br></p>
+    <h1 class="govuk-heading-l">Housing Benefit (This is only shown if Yes to housing benefit)</h1>
 
     <ul class="govuk-list govuk-list">
     <li>Housing Benefit claim will take about 20 minutes.</li>
@@ -57,38 +119,15 @@
       <li><a href="#" class="govuk-link govuk-link--no-visited-state">Housing Benefit  (Opens in new window)</a></li>
     </ul>
 
+    {% endif %}
 
 <!----------------------------------------------------------------------------------->
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-    <h1 class="govuk-heading-l">Carers Allowance</h1>
-    <p class="govuk-body-m">
-      @Pete what do we need to say to people here. <br></p>
-      <p class="govuk-heading-m"><strong>Contact for United Kingdom and Northern Ireland</strong></p>
-<ul class="govuk-list govuk-list">
-  <li>Telephone: 0800 731 0297</li>
-    <li>Textphone: 0800 731 0317</li>
-    <li><a href="https://www.ngts.org.uk/" class="govuk-link govuk-link--no-visited-state">Next Generation Text (NGT)</a> text relay (if you cannot hear or speak on the phone): 18001 then 0800 731 0297</li>
-        <li>Monday to Friday, 8am to 6pm</li>
-        <li><a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state">Find out about call charges  (Opens in new window)</a></li>
-</ul>
 
 
-<p class="govuk-heading-m"><strong>Digital claim or download a paper claim pack</strong></p>
-<ul class="govuk-list govuk-list">
-<li>United Kingdom: <a href="gov.uk/carers-allowance" class="govuk-link govuk-link--no-visited-state">gov.uk/carers-allowance</a></li>
+  {% if data["msic-second-property-yn"] == "yes" %}
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-<li>Northern Ireland: <a href="nidirect.gov.uk/articles/carers-allowance" class="govuk-link govuk-link--no-visited-state">nidirect.gov.uk/articles/carers-allowance</a></li>
-
-</ul>
-
-<!----------------------------------------------------------------------------------->
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-<h1 class="govuk-heading-l">Property evaulation in UK or abroad</h1>
-
-<p class="govuk-body-m">
-  @Pete what do we need to say to people here. <br></p>
+<h1 class="govuk-heading-l">Property evaulation in UK or abroad (Only shown if Yes to second property)</h1>
 
   <p class="govuk-heading-m"><strong>Process</strong></p>
   <ul class="govuk-list govuk-list--number">
@@ -107,6 +146,8 @@
   <ul class="govuk-list govuk-list">
     <li><a href="https://intranet.dwp.gov.uk/manual/single-source-guidance/telephone-completion-form-a64apc-valuation-property-uk-or-abroad">A64a  (Opens in new window)</a></li>
   </ul>
+
+  {% endif %}
 
 <!----------------------------------------------------------------------------------->
 
