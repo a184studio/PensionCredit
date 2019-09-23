@@ -43,13 +43,25 @@
 {% endif %}
 
 <!----------------------------------------------------------------------------------->
-{% if data["rent-housing-benefit-apply"] == "Yes" %}
+{% if (data["rent-council-tax-apply"] == "Yes") or (data["own-council-tax-apply"] == "Yes") %}
 
-<h2 class="govuk-heading-m">Take a Housing Benefit application</h2>
+<h2 class="govuk-heading-m">Sign post to Council tax reduction (Rent and owns)</h2>
 
-<p class="govuk-body">(Name) told you they want to apply for Housing Benefit.</p>
-<p class="govuk-body">This will take around 20 minutes and their claim will be sent to their local authority.</p>
-<p class="govuk-body">Complete the <a href="#">Housing Benefit claim (opens in a new window or tab)<a/> and upload it to PTP CAM or DRS.</p>
+<p class="govuk-body">XXXX</p>
+<p class="govuk-body">XXXX</p>
+<p class="govuk-body">XXXX</p>
+
+
+{% endif %}
+
+<!----------------------------------------------------------------------------------->
+{% if data["own-mortgage-home-loan-yes"] == "Yes" %}
+
+<h2 class="govuk-heading-m">Sign post to SMI</h2>
+
+<p class="govuk-body">XXXX</p>
+<p class="govuk-body">XXXX</p>
+<p class="govuk-body">XXXX</p>
 
 
 {% endif %}
