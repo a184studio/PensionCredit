@@ -67,19 +67,19 @@
         name: "eject-error-reason",
         fieldset: {
           legend: {
-            html: "Agent: What went wrong?",
+            html: "Agent: Reason for not finishing this application",
 
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
        },
       hint: {
-        text: "Nothing always works out the way we think. Tell me what is on your mind."
+        text: ""
       },
       items: [
         {
           value: "Agent problem",
-          text: "Agent problem",
+          text: "Agent had to stop taking the application",
           checked: (data["eject-error-reason"] == "Agent problem"),
           conditional: {
             html: agentProblem
@@ -87,7 +87,7 @@
         },
           {
             value: "Claimant problem",
-            text: "Claimant problem",
+            text: "Claimant had to stop taking the application",
             checked: (data["eject-error-reason"] == "Claimant problem"),
             conditional: {
               html: claimantProblem
