@@ -34,16 +34,18 @@
 
 
 {% if data["msic-second-property-yn"] == "yes" %}
+{% endif %}
 
 <h2 class="govuk-heading-m">Complete form A64a</h2>
 
 <p class="govuk-body">(Name) told you they own property or land other than their home.</p>
 <p class="govuk-body">Complete form <a href="https://intranet.dwp.gov.uk/manual/single-source-guidance/telephone-completion-form-a64apc-valuation-property-uk-or-abroad">A64a (opens in a new window or tab)</a> and upload the PDF to PTPCAM or DRS.</p>
 
-{% endif %}
+
 
 <!----------------------------------------------------------------------------------->
 {% if data["rent-housing-benefit-apply"] == "Yes" %}
+{% endif %}
 
 <h2 class="govuk-heading-m govuk-!-padding-top-6">Take Housing Benefit application</h2>
 
@@ -52,7 +54,7 @@
 <p class="govuk-body">Complete the <a href="Pauls URL">Housing Benefit claim (opens in a new window or tab)<a/> and upload it to PTP CAM or DRS.</p>
 
 
-{% endif %}
+
 
 <!----------------------------------------------------------------------------------->
 {% if (data["rent-council-tax-apply"] == "Yes") or (data["own-council-tax-apply"] == "Yes") %}
@@ -60,7 +62,7 @@
 
 <h2 class="govuk-heading-m govuk-!-padding-top-6">Sign post to Council Tax Reduction</h2>
 
-<p class="govuk-body">You need to contact your local authority about applying for Council tax reduction.</p>
+<p class="govuk-body">If (Name) would like to apply for council tax reduction they will need to contact your local authority about applying for Council tax reduction.</p>
 <p class="govuk-body">When PC is awarded take your entitlement notice to the local authority this will be required for Council tax reduction to be awarded.</p>
 <p class="govuk-body">XXXX</p>
 
