@@ -1533,6 +1533,148 @@ Discharge date
 </dl></dl>
 
 
+<!------------------------------------------------------------------------------- Benefits ------------------------------------------------------------>
+
+
+
+<div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Benefits</h2>
+
+
+            <dl class="govuk-summary-list govuk-summary-list--long">
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Do you get any benefits from another country?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes / No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="benefits-all-yn">
+                    Change
+                  </a>
+                </dd>
+              </div>
+
+              {% if data["benefits-foreign-yes"] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Details of benefits from another country
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data["benefits-foreign-yes"] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="benefits-all-yn">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
+              <br><!---------------------------------------------------------------------------------------------->
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Do you get a War widow or widower's pension?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes / No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="benefits-all-yn">
+                    Change
+                  </a>
+                </dd>
+              </div>
+
+              {% if data["benefits-widows-pensions-yes"] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Details of war widow or widower's pension
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data["benefits-widows-pensions-yes"] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="benefits-all-yn">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
+              <br><!---------------------------------------------------------------------------------------------->
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Do you get Guaranteed Income Payments from the Armed Forces Compensation Scheme?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 Yes / No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="benefits-all-yn">
+                    Change
+                  </a>
+                </dd>
+              </div>
+
+              {% if data["benefits-guaranteed-income-payments-yes"] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Details of Guaranteed Income Payments from the Armed Forces Compensation Scheme
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data["benefits-guaranteed-income-payments-yes"] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="benefits-all-yn">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
+              <br><!---------------------------------------------------------------------------------------------->
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Do you get any other benefits?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes / No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="benefits-all-yn">
+                    Change
+                  </a>
+                </dd>
+              </div>
+
+              {% if data["benefits-other-yes"] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Details of any other benefits
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data["benefits-other-yes"] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="benefits-all-yn">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
+</dl>
+
+
 <!------------------------------------------------------------------------------- Earnings & other income ------------------------------------------------------------>
 
 <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Earnings & other income</h2>
