@@ -18,7 +18,69 @@
 <!----Headline---->
 
 <div class="govuk-panel--agent">
-  <h1 class="govuk-heading-l">You are about to leave with an incomplete application</h1>
+  <h1 class="govuk-heading-l">You are about to leave MyPC with an incomplete application</h1>
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Ejected page"
+    },
+    value: {
+      text: 'http://localhost:3000/sprint-9/mvp/contact-text-yn'
+    },
+    actions: {
+      items: [
+        {
+          href: "contact-text-yn",
+          text: "○",
+          visuallyHiddenText: "○ eject error description"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "Eject error"
+    },
+    value: {
+      text: data['eject-error-reason']
+    },
+    actions: {
+      items: [
+        {
+          href: "eject-error-reason",
+          text: "Change",
+          visuallyHiddenText: "○ eject error"
+        }
+      ]
+    }
+  },
+
+  {
+    classes: 'govuk-!-margin-bottom-9 govuk-summary-list--no-border',
+    key: {
+      text: "Eject error description"
+    },
+    value: {
+      text: data['eject-error-reason-details']
+    },
+    actions: {
+      items: [
+        {
+          href: "eject-error-reason",
+          text: "Change",
+          visuallyHiddenText: "○ eject error description"
+        }
+      ]
+    }
+  }
+  ]
+}) }}
+
 </div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-padding-bottom-7">
