@@ -30,17 +30,34 @@
       Agent: What to do next
     </h1>
 
+    <!----------------------------------------------------------------------------------->
+    {% if data["own-mortgage-home-loan-yes"] == "Yes" %}
 
+    <h2 class="govuk-heading-m">Send Support for Mortgage Interest (SMI) information pack</h2>
 
+      <p class=govuk-body>(Name) told you they want to apply for Support for Mortgage Interest. Tell them they will be sent an information pack and application form.</p>
+      <p class=govuk-body>Open the claimant's file in PTP CAM and select the:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li> <strong>Open Case</strong> tab</li>
+        <li> <strong>Customer cases</strong> tab</li>
+        <li><strong>Housing costs</strong> tab</li>
+        <li><strong>Home Loan</strong> tab</li>
+        </ul>
 
-{% if data["msic-second-property-yn"] == "yes" %}
+        <p class=govuk-body>Select <strong>Send correspondence</strong> to issue form MI12</p>
 
-<h2 class="govuk-heading-m">Complete form A64a</h2>
+      <p class=govuk-body>Set <strong>PTP CAM</strong> task for outbound correspondence (task type) <strong>MI12</strong> (sub type)</p>
+      <p class=govuk-body>Assign task to housing costs team queue in the relevant pension centre. The pension centre will be displayed as the owing office in the <strong>more info</strong> view.</p>
 
-<p class="govuk-body">(Name) told you they own property or land other than their home.</p>
-<p class="govuk-body">Complete form <a href="https://intranet.dwp.gov.uk/manual/single-source-guidance/telephone-completion-form-a64apc-valuation-property-uk-or-abroad">A64a (opens in a new window or tab)</a> and upload the PDF to PTPCAM or DRS.</p>
+    {% endif %}
+
+<!----------------------------------------------------------------------------------->
+{% if (data["rent-council-tax-apply"] == "Yes") or (data["own-council-tax-apply"] == "Yes") %}
+
+<h2 class="govuk-heading-m govuk-!-padding-top-6">Sign post to Council Tax Reduction</h2>
+
+<p class="govuk-body">(Name) told you they would like to apply for Council Tax Reduction. If they are awarded Pension Credit, they should contact their local authority to apply.</p>
 {% endif %}
-
 
 <!----------------------------------------------------------------------------------->
 {% if data["rent-housing-benefit-apply"] == "Yes" %}
@@ -53,39 +70,15 @@
 {% endif %}
 
 
-
 <!----------------------------------------------------------------------------------->
-{% if (data["rent-council-tax-apply"] == "Yes") or (data["own-council-tax-apply"] == "Yes") %}
 
-<h2 class="govuk-heading-m govuk-!-padding-top-6">Sign post to Council Tax Reduction</h2>
+{% if data["msic-second-property-yn"] == "yes" %}
 
-<p class="govuk-body">(Name) told you they would like to apply for Council Tax Reduction. If they are awarded Pension Credit, they should contact their local authority to apply.</p>
+<h2 class="govuk-heading-m govuk-!-padding-top-6">Complete form A64a</h2>
+
+<p class="govuk-body">(Name) told you they own property or land other than their home.</p>
+<p class="govuk-body">Complete form <a href="https://intranet.dwp.gov.uk/manual/single-source-guidance/telephone-completion-form-a64apc-valuation-property-uk-or-abroad">A64a (opens in a new window or tab)</a> and upload the PDF to PTPCAM or DRS.</p>
 {% endif %}
-
-
-
-
-<!----------------------------------------------------------------------------------->
-{% if data["own-mortgage-home-loan-yes"] == "Yes" %}
-
-<h2 class="govuk-heading-m">Send Support for Mortgage Interest (SMI) information pack</h2>
-
-  <p class=govuk-body>(Name) told you they want to apply for Support for Mortgage Interest. Tell them they will be sent an information pack and application form.</p>
-  <p class=govuk-body>Open the claimant's file in PTP CAM and select the:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li> <strong>Open Case</strong> tab</li>
-    <li> <strong>Customer cases</strong> tab</li>
-    <li><strong>Housing costs</strong> tab</li>
-    <li><strong>Home Loan</strong> tab</li>
-    </ul>
-
-    <p class=govuk-body>Select <strong>Send correspondence</strong> to issue form MI12</p>
-
-  <p class=govuk-body>Set <strong>PTP CAM</strong> task for outbound correspondence (task type) <strong>MI12</strong> (sub type)</p>
-  <p class=govuk-body>Assign task to housing costs team queue in the relevant pension centre. The pension centre will be displayed as the owing office in the <strong>more info</strong> view.</p>
-
-{% endif %}
-
 
 <!----------------------------------------------------------------------------------->
 
