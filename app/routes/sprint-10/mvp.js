@@ -822,7 +822,7 @@ router.post(`${baseUrl}/msic-all-money-accounts-summary-router`, (req, res) => {
   if (hasSecondProperty === 'yes') {
     res.redirect(`${baseUrl}/msic-missing-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-check-your-answers-a`)
+    res.redirect(`${baseUrl}/msic-check-your-answers-total`)
   }
 })
 
