@@ -12,49 +12,136 @@ Account with: {% extends "layout.html" %}
 
 {% include "includes/js-back-link.html" %}
 
-<form action="msic-all-money-accounts-summary-router" method="post" class="form">
-  <input type="hidden" name="money-you-have-complete" value="in-progress"/>
-
+  <form action="task-list" method="post" class="form">
 
   <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-full">
   <span class="govuk-caption-m"></span>
+  <input type="hidden" name="money-you-have-complete" value="true"/>
+
+
 
   {{ govukRadios({
     idPrefix: "msic-has-missing-account-yn",
     name: "msic-has-missing-account-yn",
-    classes: "govuk-radios--inline",
     fieldset: {
       legend: {
-        text: "Do you have any other money, savings or investments that you have not told us about?",
+        html: "Money, savings and investments <br>Total: £11,200.00*",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
         },
     classes: "govuk-radios--inline",
     items: [
-      {
-        value: "yes",
-        text: "Yes",
-        checked: (data["msic-has-missing-account-yn"] == "yes")
-      },
-      {
-        value: "no",
-        text: "No",
-        checked: (data["msic-has-missing-account-yn"] == "no")
-      }
+
     ]
   }) }}
+  <p class="govuk-body govuk-!-font-size-24">All account details taken into consideration when forming the total<br>apart from items shown in the Calculation breakdown.</p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Calculation breakdown
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+    {{ govukTable({
+      caption: "",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Account type",
+          classes: 'govuk-eject-table-25pc'
+        },
+        {
+          text: "Data that effects calculation",
+          classes: 'govuk-eject-table-25pc'
+        },
+        {
+          text: "Calculation",
+          classes: 'govuk-eject-table-25pc'
+        },
+        {
+          text: "Details",
+          classes: 'govuk-eject-table-25pc'
+        }
+      ],
+      rows: [
+
+      [
+      {
+        text: "Second property"
+      },
+      {
+        text: ""
+      },
+      {
+        text: "Not included"
+      },
+      {
+        text: "Manual calculation"
+      }
+      ],
+
+      [
+      {
+        text: "Foreign account"
+      },
+      {
+        text: ""
+      },
+      {
+        text: "Not included"
+      },
+      {
+        text: "Manual calculation"
+      }
+      ],
+
+        [
+        {
+          text: "Shares"
+        },
+        {
+          text: ""
+        },
+        {
+          text: "Not included"
+        },
+        {
+          text: "Manual calculation"
+        }
+        ],
+
+        [
+          {
+            text: "Capital bonds"
+          },
+          {
+            html: "Life assurance<br>Transferable<br>Assignable"
+          },
+          {
+            html: "Disregarded<br>Nilled<br>Nilled"
+          },
+          {
+            text: "."
+          }
+        ]
+
+      ]
+    }) }}
 
 
-  {{ govukButton({
-    text: "Continue"
-  }) }}
 
-</div></div><br><br>
+  </div>
+</details>
 
 
-  <!----Headline---->
+  </div></div>
+
+
+    <!----Headline---->
   <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -1331,7 +1418,12 @@ Account with: {% extends "layout.html" %}
 
 
 
-</div>
+  </div><br>
+
+  {{ govukButton({
+    text: "Confirm"
+  }) }}
+
 
 </form>
 

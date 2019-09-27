@@ -46,7 +46,7 @@ Account with: {% extends "layout.html" %}
   <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-      {% if data["msic-missing-account-name"] %}
+      {% if data["msic-has-missing-account-yn"] %}
       <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
@@ -159,7 +159,7 @@ Account with: {% extends "layout.html" %}
 
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    {% if data["msic-cash-other-abroad-name"] %}
+    {% if data["msic-cash-other-abroad-yn"] %}
     <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
@@ -243,7 +243,7 @@ Account with: {% extends "layout.html" %}
     </div>{% endif %}
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    {% if data["msic-cash-at-home-amount"] %}
+    {% if data["msic-has-cash-at-home-yn"] %}
     <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
@@ -288,7 +288,7 @@ Account with: {% extends "layout.html" %}
     </div>{% endif %}
 
   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    {% if data["msic-trust-account-name"] %}
+    {% if data["msic-has-unit-trust-account-yn"] %}
     <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
@@ -374,7 +374,7 @@ Account with: {% extends "layout.html" %}
     </div>{% endif %}
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-      {% if data["msic-shares-account-name"] %}
+      {% if data["msic-has-shares-account-yn"] %}
       <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
@@ -442,7 +442,7 @@ Account with: {% extends "layout.html" %}
       </div>{% endif %}
 
       <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        {% if data["msic-capital-bond-company-name"] %}
+        {% if data["msic-has-capital-bond-account-yn"] %}
         <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
@@ -529,7 +529,7 @@ Account with: {% extends "layout.html" %}
         </div>{% endif %}
 
       <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        {% if data["msic-isa-savings-account-name"] %}
+        {% if data["msic-has-isa-savings-account-yn"] %}
         <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
@@ -597,7 +597,7 @@ Account with: {% extends "layout.html" %}
         </div>{% endif %}
 
       <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        {% if data["msic-premium-bond-account-total-bonds"] %}
+        {% if data["msic-has-premium-bond-account-yn"] %}
         <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
@@ -647,7 +647,7 @@ Account with: {% extends "layout.html" %}
         </div>{% endif %}
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-          {% if data["msic-credit-union-account-name"] %}
+          {% if data["msic-has-credit-union-account-yn"] %}
           <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
@@ -749,7 +749,7 @@ Account with: {% extends "layout.html" %}
           </div>{% endif %}
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        {% if data["msic-post-office-card-account-amount"] %}
+        {% if data["msic-has-post-office-card-account-yn"] %}
         <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
@@ -798,7 +798,7 @@ Account with: {% extends "layout.html" %}
         </div>{% endif %}
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-          {% if data["msic-all-savings-account-name"] %}
+          {% if data["msic-has-savings-account-yn"] %}
           <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
@@ -898,7 +898,7 @@ Account with: {% extends "layout.html" %}
           </div></div>{% endif %}
 
       <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        {% if data["account-count"] %}
+        {% if data["msic-has-current-account-yn"] %}
         <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
@@ -1329,6 +1329,6 @@ Account with: {% extends "layout.html" %}
 </form>
 
 
-<p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
+<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
 
 {% endblock %}
