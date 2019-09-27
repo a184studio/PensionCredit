@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  benefit-overview - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="benefits-all-yn" method="post" class="form">
+
+      <input type="hidden" name="benefits-complete" value="in-progress"/>
+
+      <div class="govuk-panel--agent">
+        <h1 class="govuk-heading-xl"> Agent: Check in Searchlight and discuss any benefits or Tax Credits {{ data["full-name"] }} gets</h1>
+
+          <p class=govuk-body>If <strong>Searchlight</strong> shows an interest but no payment amounts, check <strong>Legacy</strong>, <strong>CPS</strong> and <strong>IIDB</strong>. Tell the claimant what you see.</p>
+
+
+<br>
+
+{{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      html: "Agent: Does Searchlight or the PIP server show that (Name) receives any of the following benefits:",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      html: "<strong>Attendance Allowance</strong> (AA)"
+    },
+    {
+      value: "scotland",
+      html: "<strong>Constant Attendance Allowance </strong> (CAA)"
+    },
+    {
+      value: "wales",
+      html: "<strong>Disability Living Allowance </strong> (DLA) <br>Care component at the middle or higher rate"
+    },
+    {
+      value: "northern-ireland",
+      html: "<strong>Daily Living Component of Personal Independence Payment</strong> (PIP)"
+    },
+    {
+      value: "abroad",
+      text: "None of these"
+    }
+  ]
+}) }}
+
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+
+    <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+
+  </div>
+</div>
+{% endblock %}
