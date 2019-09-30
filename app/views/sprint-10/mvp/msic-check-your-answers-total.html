@@ -46,91 +46,101 @@ Account with: {% extends "layout.html" %}
   </summary>
   <div class="govuk-details__text">
 
-    {{ govukTable({
-      caption: "",
-      firstCellIsHeader: true,
-      head: [
-        {
-          text: "Account type",
-          classes: 'govuk-eject-table-25pc'
-        },
-        {
-          text: "Data that effects calculation",
-          classes: 'govuk-eject-table-25pc'
-        },
-        {
-          text: "Calculation",
-          classes: 'govuk-eject-table-25pc'
-        },
-        {
-          text: "Details",
-          classes: 'govuk-eject-table-25pc'
-        }
-      ],
-      rows: [
-
-      [
-      {
-        text: "Second property"
+  {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        html: "Account type"
       },
-      {
-        text: ""
+      value: {
+        html: "<strong>Calculation details</strong>"
       },
-      {
-        text: "Not included"
-      },
-      {
-        text: "Manual calculation"
-      }
-      ],
-
-      [
-      {
-        text: "Foreign account"
-      },
-      {
-        text: ""
-      },
-      {
-        text: "Not included"
-      },
-      {
-        text: "Manual calculation"
-      }
-      ],
-
-        [
-        {
-          text: "Shares"
-        },
-        {
-          text: ""
-        },
-        {
-          text: "Not included"
-        },
-        {
-          text: "Manual calculation"
-        }
-        ],
-
-        [
+      actions: {
+        items: [
           {
-            text: "Capital bonds"
-          },
-          {
-            html: "Life assurance<br>Transferable<br>Assignable"
-          },
-          {
-            html: "Disregarded<br>Nilled<br>Nilled"
-          },
-          {
-            text: "."
+            href: "#",
+            text: "",
+            visuallyHiddenText: "name"
           }
         ]
+      }
+    },
+    {
+      key: {
+        html: "<p>Second property</p>"
+      },
+      value: {
+        text: "Not included in calculation, manual work post call"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
 
-      ]
-    }) }}
+    {
+      key: {
+        html: "<p>Foreign account</p>"
+      },
+      value: {
+        text: "Not included in calculation, manual work post call"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "",
+            visuallyHiddenText: "contact information"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        html: "<p>Shares</p>"
+      },
+      value: {
+        text: "Not included in calculation, manual work post call"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+
+
+    {
+        classes: 'govuk-summary-list--no-border',
+      key: {
+        html: "<p>Capital bonds</p>"
+      },
+      value: {
+        html: "Life assurance: Disregarded <br>Transferable: Nilled<br>Assignable: Nilled"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "",
+            visuallyHiddenText: "contact information"
+          }
+        ]
+      }
+    }
+
+  ]
+}) }}
 
 
 
