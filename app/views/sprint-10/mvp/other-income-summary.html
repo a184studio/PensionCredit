@@ -19,10 +19,9 @@
       Check your answers: Employment and other income
     </h1>
 
-    <dl class="govuk-summary-list govuk-summary-list--long">
-
-
-                <dl class="govuk-summary-list govuk-summary-list--long">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <dl class="govuk-summary-list govuk-summary-list--long">
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -38,26 +37,32 @@
                     </dd>
                   </div>
 
-                              <br>
+              <!----->
 
-                              <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                  How did you earn this income?
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                  {{ data["other-income-employment-type"] }}
-                                </dd>
-                                <dd class="govuk-summary-list__actions">
-                                  <a href="other-income-employment-type">
-                                    Change
-                                  </a>
-                                </dd>
-                              </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      How did you earn this income?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["other-income-employment-type"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="other-income-employment-type">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+
+              </dl></div></div>
 
                   <!------------------------------------------------>
 
-                  <div class="govuk-!-padding-bottom-6"></div><h2 class="govuk-heading govuk-!-font-size-24">Income from employment</h2>
 
+                  <div class="govuk-grid-row govuk-!-padding-top-8">
+                    <div class="govuk-grid-column-full">
+                      <h2 class="govuk-heading-m govuk-!-font-size-24">Income from employment</h2>
+
+                      <dl class="govuk-summary-list govuk-summary-list--long">
 
                   {% if data["other-income-employment-what-is-this-money"] %}
                         <div class="govuk-summary-list__row">
@@ -204,9 +209,15 @@
                                     </div>
                                     {% endif %}
 
+              </dl></div></div>
 
           <!-------------------(Self - employment)----------------------------->
-          <div class="govuk-!-padding-bottom-6"></div><h2 class="govuk-heading govuk-!-font-size-24">Income from self-employment</h2>
+
+          <div class="govuk-grid-row govuk-!-padding-top-8">
+            <div class="govuk-grid-column-full">
+              <h2 class="govuk-heading-m govuk-!-font-size-24 ">Income from self-employment</h2>
+              <dl class="govuk-summary-list govuk-summary-list--long ">
+
 
 
 {% if data["other-income-self-employment-yes-details"] %}
@@ -246,9 +257,15 @@
                         </div>
                         {% endif %}
 
-                        <div class="govuk-!-padding-bottom-6"></div><h2 class="govuk-heading govuk-!-font-size-24">Income from equity release</h2>
+                        </dl></div></div>
 
-            <!------------------------------------------------>
+<!------------------------------------------------>
+
+
+                        <div class="govuk-grid-row govuk-!-padding-top-8">
+                          <div class="govuk-grid-column-full">
+                            <h2 class="govuk-heading-m govuk-!-font-size-24">Income from equity release</h2>
+                            <dl class="govuk-summary-list govuk-summary-list--long ">
 
 
             {% if data["other-income-equity-release-yn"] %}
@@ -267,7 +284,6 @@
                   </div>
                   {% endif %}
 
-      <br>
 
       {% if data["other-income-home-income-yn"] %}
             <div class="govuk-summary-list__row">
@@ -285,7 +301,7 @@
             </div>
             {% endif %}
 
-<br>
+<!----->
 
 {% if data["other-income-equity-release-yes-date-day"] %}
       <div class="govuk-summary-list__row">
@@ -303,7 +319,7 @@
       </div>
       {% endif %}
 
-<br>
+<!----->
 
 {% if data["other-income-equity-release-yes-payment-frequency-yes"] %}
       <div class="govuk-summary-list__row">
@@ -337,7 +353,7 @@
             </div>
             {% endif %}
 
-<br>
+<!----->
 
 {% if data["other-income-equity-release-yes-amount"] %}
       <div class="govuk-summary-list__row">
@@ -355,7 +371,7 @@
       </div>
       {% endif %}
 
-<br>
+<!----->
 
 {% if data["other-income-benefits-aboard-yes-more-yn"] %}
       <div class="govuk-summary-list__row">
@@ -389,6 +405,8 @@
             </div>
             {% endif %}
 
+              </dl></div></div>
+
 <!------------------------------------------------>
 
 <!--
@@ -408,7 +426,11 @@
 </div>
 {% endif %}
 -->
-<div class="govuk-!-padding-bottom-6"></div><h2 class="govuk-heading govuk-!-font-size-24">Other income</h2>
+
+<div class="govuk-grid-row govuk-!-padding-top-8">
+  <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-font-size-24">Other income</h2>
+        <dl class="govuk-summary-list govuk-summary-list--long ">
 
 
 <div class="govuk-summary-list__row">
@@ -441,7 +463,7 @@
 </div>
 {% endif %}
 
-<br>
+<!----->
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
@@ -473,7 +495,7 @@
 </div>
 {% endif %}
 
-<br>
+<!----->
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
@@ -505,7 +527,7 @@
 </div>
 {% endif %}
 
-<br>
+<!----->
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
@@ -538,7 +560,7 @@
 </div>
 {% endif %}
 
-<br>
+<!----->
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
@@ -570,12 +592,14 @@
 </div>
 {% endif %}
 
+
+      </div></div><br><br><br><!-----><!-----><!----->
+
 <!------------------------------------------------>
 
 
 
 
-<br></dl></dl><br><br>
 
     <form action="task-list" method="post">
       <input type="hidden" name="disregards-summary-complete" value="true"/>
@@ -586,8 +610,6 @@
       </p>
     </form>
 
-    <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+    <p class="govuk-body "><a href="eject-error-reason">Save claim and exit</a></p>
 
-  </div>
-</div>
 {% endblock %}
