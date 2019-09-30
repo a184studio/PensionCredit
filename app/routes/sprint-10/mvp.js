@@ -523,6 +523,7 @@ router.post(`${baseUrl}/hospital-check-yn-router`, (req, res) => {
   }
 })
 
+
 router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
   const hospitalYn = req.session.data['hospital-yn']
 
@@ -944,6 +945,16 @@ router.post(`${baseUrl}/benefits-aboard-yn-router`, (req, res) => {
     res.redirect(`${baseUrl}/benefits-aboard-yes`)
   } else {
     res.redirect(`${baseUrl}/benefits-summary`)
+  }
+})
+
+router.post(`${baseUrl}/benefit-hospital-check-yn-router`, (req, res) => {
+  const hospitalCheckYn = req.session.data['benefit-hospital-check-yn']
+
+  if (hospitalCheckYn === 'Yes') {
+    res.redirect(`${baseUrl}/benefits-all-yn`)
+  } else {
+    res.redirect(`${baseUrl}/benefits-all-yn`)
   }
 })
 
