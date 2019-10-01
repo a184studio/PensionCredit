@@ -811,7 +811,7 @@ router.post(`${baseUrl}/msic-second-property-yn-router`, (req, res) => {
   const hasSecondProperty = req.session.data['msic-second-property-yn']
 
   if (hasSecondProperty === 'Yes') {
-    res.redirect(`${baseUrl}/msic-missing-account-yn`)
+    res.redirect(`${baseUrl}/msic-second-property-yes`)
   } else {
     res.redirect(`${baseUrl}/msic-missing-account-yn`)
   }

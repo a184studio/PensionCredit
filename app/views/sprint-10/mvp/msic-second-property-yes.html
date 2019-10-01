@@ -14,23 +14,17 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="msic-second-property-summary" method="post" class="form">
+    <form action="msic-missing-account-yn" method="post" class="form">
       <input type="hidden" name="money-you-have-complete" value="in-progress"/>
 
+      <div class="govuk-panel--agent">
 
-      <h1 class="govuk-heading-xl">
-        Agent: Fill our A64a post Pension Credit application. A note will be added to the PDF to remind you.
-      </h1>
+      <h1 class="govuk-heading-xl">Agent: Complete an A64a form using the link</h1>
 
-      {{ govukInput({
-        label: {
-          text: "Property reference to identify this property"
-        },
-        id: "msic-second-property-reference",
-        name: "msic-second-property-reference",
-        classes: "govuk-input--width-10"
-      }) }}
+      <p class="govuk-body">(Name) told you they own property or land other than their home.</p>
+      <p class="govuk-body">Complete form <a href="https://intranet.dwp.gov.uk/manual/single-source-guidance/telephone-completion-form-a64apc-valuation-property-uk-or-abroad">A64a (opens in a new window or tab)</a> and upload the PDF to PTPCAM or DRS.</p>
 
+</div><br>
 
       {{ govukButton({
         text: "Continue"
