@@ -84,12 +84,49 @@ Account with: {% extends "layout.html" %}
     },
 
     {
-        classes: 'govuk-summary-list--no-border',
       key: {
         html: "<p>Foreign account</p>"
       },
       value: {
         text: "Not included in calculation, manual work post call"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "",
+            visuallyHiddenText: "contact information"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        html: "<p>Shares</p>"
+      },
+      value: {
+        text: "Not included in calculation, manual work post call"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+
+
+    {
+        classes: 'govuk-summary-list--no-border',
+      key: {
+        html: "<p>Capital bonds</p>"
+      },
+      value: {
+        html: "Life assurance: Disregarded <br>Transferable: Nilled<br>Assignable: Nilled"
       },
       actions: {
         items: [
