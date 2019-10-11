@@ -19,6 +19,7 @@ Account with: {% extends "layout.html" %}
   <span class="govuk-caption-m"></span>
   <input type="hidden" name="money-you-have-complete" value="true"/>
 
+  <div class="govuk-panel--agent">
 
 
   {{ govukRadios({
@@ -26,7 +27,7 @@ Account with: {% extends "layout.html" %}
     name: "msic-has-missing-account-yn",
     fieldset: {
       legend: {
-        html: "Soz we cant give you a total, because you have X, y and Z",
+        html: "Agent: Soz we cant give you a total, because you have X, Y and Z",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
@@ -37,6 +38,8 @@ Account with: {% extends "layout.html" %}
     ]
   }) }}
   <p class="govuk-body govuk-!-font-size-24">All account details taken into consideration when forming the total<br>apart from items shown in the Calculation breakdown.</p>
+
+<!--
 
 <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
@@ -107,11 +110,12 @@ Account with: {% extends "layout.html" %}
 
 
 
+
   </div>
 </details>
+-->
 
-
-  </div></div>
+  </div></div></div>
 
 
     <!----Headline---->
