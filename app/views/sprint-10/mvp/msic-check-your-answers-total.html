@@ -38,77 +38,114 @@ Account with: {% extends "layout.html" %}
   }) }}
   <p class="govuk-body govuk-!-font-size-24">All account details taken into consideration when forming the total<br>apart from items shown in the Calculation breakdown.</p>
 
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      * Calculation breakdown
-    </span>
-  </summary>
-  <div class="govuk-details__text">
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        * Calculation breakdown
+      </span>
+    </summary>
+    <div class="govuk-details__text">
 
-  {{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        html: "Account type"
+    {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          html: "Account type"
+        },
+        value: {
+          html: "<strong>Calculation details</strong>"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "name"
+            }
+          ]
+        }
       },
-      value: {
-        html: "<strong>Calculation details</strong>"
+      {
+        key: {
+          html: "<p>Second property</p>"
+        },
+        value: {
+          text: "Not included in calculation, manual work post call"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "date of birth"
+            }
+          ]
+        }
       },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "",
-            visuallyHiddenText: "name"
-          }
-        ]
+
+      {
+        key: {
+          html: "<p>Foreign account</p>"
+        },
+        value: {
+          text: "Not included in calculation, manual work post call"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "contact information"
+            }
+          ]
+        }
+      },
+
+      {
+        key: {
+          html: "<p>Shares</p>"
+        },
+        value: {
+          text: "Not included in calculation, manual work post call"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "contact details"
+            }
+          ]
+        }
+      },
+
+
+      {
+          classes: 'govuk-summary-list--no-border',
+        key: {
+          html: "<p>Capital bonds</p>"
+        },
+        value: {
+          html: "Life assurance: Disregarded <br>Transferable: Nilled<br>Assignable: Nilled"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "contact information"
+            }
+          ]
+        }
       }
-    },
-    {
-      key: {
-        html: "<p>Second property</p>"
-      },
-      value: {
-        text: "Not included in calculation, manual work post call"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "",
-            visuallyHiddenText: "date of birth"
-          }
-        ]
-      }
-    },
 
-    {
-        classes: 'govuk-summary-list--no-border',
-      key: {
-        html: "<p>Foreign account</p>"
-      },
-      value: {
-        text: "Not included in calculation, manual work post call"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "",
-            visuallyHiddenText: "contact information"
-          }
-        ]
-      }
-    }
-
-  ]
-}) }}
+    ]
+  }) }}
 
 
 
-  </div>
-</details>
+    </div>
+  </details>
 
 
   </div></div>
