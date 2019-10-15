@@ -14,108 +14,21 @@ Account with: {% extends "layout.html" %}
 
   <form action="task-list" method="post" class="form">
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <input type="hidden" name="money-you-have-complete" value="true"/>
+        <div class="govuk-panel--agent">
+
+      <h1 class="govuk-heading-xl">Agent: We do not know the total of {{ data["full-name"] }}'s money, savings and investments</h1>
+        <p class="govuk-body govuk-!-font-size-24">We will be able to calculate the to total when we know the value of {{ data["full-name"] }}'s shares and capital bonds.</p>
+  </div>
+  </div>
+  </div>
+
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-  <span class="govuk-caption-m"></span>
-  <input type="hidden" name="money-you-have-complete" value="true"/>
-
-  <div class="govuk-panel--agent">
 
 
-  {{ govukRadios({
-    idPrefix: "msic-has-missing-account-yn",
-    name: "msic-has-missing-account-yn",
-    fieldset: {
-      legend: {
-        html: "Agent: We do not know the total of (name)'s money, savings and investments",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--xl"
-      }
-        },
-    classes: "govuk-radios--inline",
-    items: [
-
-    ]
-  }) }}
-  <p class="govuk-body govuk-!-font-size-24">We will be able to calculate the to total when we know the value of (name)'s shares and capital bonds.</p>
-
-<!--
-
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      * Calculation breakdown
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-
-  {{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        html: "Account type"
-      },
-      value: {
-        html: "<strong>Calculation details</strong>"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "",
-            visuallyHiddenText: "name"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        html: "<p>Second property</p>"
-      },
-      value: {
-        text: "Not included in calculation, manual work post call"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "",
-            visuallyHiddenText: "date of birth"
-          }
-        ]
-      }
-    },
-
-    {
-        classes: 'govuk-summary-list--no-border',
-      key: {
-        html: "<p>Foreign account</p>"
-      },
-      value: {
-        text: "Not included in calculation, manual work post call"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "",
-            visuallyHiddenText: "contact information"
-          }
-        ]
-      }
-    }
-
-  ]
-}) }}
-
-
-
-
-  </div>
-</details>
--->
-
-  </div></div></div>
 
 
     <!----Headline---->
@@ -1398,13 +1311,13 @@ Account with: {% extends "layout.html" %}
   </div><br>
 
   {{ govukButton({
-    text: "Confirm"
+    text: "Continue"
   }) }}
 
 
 </form>
+<p class="govuk-body govuk-!-padding-top-3"><a href="eject-error-reason">Save claim and exit</a></p>
 
-
-<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+</div>
 
 {% endblock %}

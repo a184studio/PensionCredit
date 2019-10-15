@@ -14,32 +14,17 @@ Account with: {% extends "layout.html" %}
 
   <form action="task-list" method="post" class="form">
 
-  <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-  <span class="govuk-caption-m"></span>
-  <input type="hidden" name="money-you-have-complete" value="true"/>
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <input type="hidden" name="money-you-have-complete" value="true"/>
 
+      <h1 class="govuk-heading-xl">The total of {{ data["full-name"] }}'s money, savings <br>and investments is £8200.50</h1>
+    <p class="govuk-body govuk-!-font-size-24"></p>
+</div></div>
 
-  {{ govukRadios({
-    idPrefix: "msic-has-missing-account-yn",
-    name: "msic-has-missing-account-yn",
-    fieldset: {
-      legend: {
-        html: "The total of (name)'s money, savings and investments is £8200.50",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--xl"
-      }
-        },
-    classes: "govuk-radios--inline",
-    items: [
-
-    ]
-  }) }}
-
-
-
-  </div></div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
 
 
     <!----Headline---->
@@ -1322,13 +1307,13 @@ Account with: {% extends "layout.html" %}
   </div><br>
 
   {{ govukButton({
-    text: "Confirm"
+    text: "Continue"
   }) }}
 
 
 </form>
+<p class="govuk-body govuk-!-padding-top-3"><a href="eject-error-reason">Save claim and exit</a></p>
 
-
-<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+</div>
 
 {% endblock %}
