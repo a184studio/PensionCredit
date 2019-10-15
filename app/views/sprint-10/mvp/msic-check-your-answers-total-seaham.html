@@ -14,35 +14,145 @@ Account with: {% extends "layout.html" %}
 
   <form action="task-list" method="post" class="form">
 
-    {% if data["msic-second-property-yn"] == "No" %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
-        <input type="hidden" name="money-you-have-complete" value="true"/>
-
-          <h1 class="govuk-heading-xl">The total of {{ data["full-name"] }}'s money, savings <br>and investments is £8200.50</h1>
-        <p class="govuk-body govuk-!-font-size-24"></p>
-    </div></div>
-    {% endif %}
-
-    {% if data["msic-second-property-yn"] == "Yes" %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
-        <input type="hidden" name="money-you-have-complete" value="true"/>
-        <div class="govuk-panel--agent">
-
-      <h1 class="govuk-heading-xl">Agent: We do not know the total of {{ data["full-name"] }}'s money, savings and investments</h1>
-        <p class="govuk-body govuk-!-font-size-24">We will be able to calculate the to total when we know the value of {{ data["full-name"] }}'s <strong>capital bonds</strong>, <strong>shares</strong>, <strong>second property</strong> and <strong>foreign account</strong>.</p>
-  </div>
-  </div>
-  </div>
-{% endif %}
-
-    <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  <span class="govuk-caption-m"></span>
+  <input type="hidden" name="money-you-have-complete" value="true"/>
 
 
-        <!----Headline---->
-      <div class="govuk-accordion govuk-!-padding-top-6" data-module="govuk-accordion" id="accordion-default">
+
+  {{ govukRadios({
+    idPrefix: "msic-has-missing-account-yn",
+    name: "msic-has-missing-account-yn",
+    fieldset: {
+      legend: {
+        html: "Money, savings and investments <br>Total: £8,200.50*",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+        },
+    classes: "govuk-radios--inline",
+    items: [
+
+    ]
+  }) }}
+  <p class="govuk-body govuk-!-font-size-24">All account details taken into consideration when forming the total<br>apart from items shown in the Calculation breakdown.</p>
+
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        * Calculation breakdown
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+
+    {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          html: "Account type"
+        },
+        value: {
+          html: "<strong>Calculation details</strong>"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "name"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          html: "<p>Second property</p>"
+        },
+        value: {
+          text: "Not included in calculation, manual work post call"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "date of birth"
+            }
+          ]
+        }
+      },
+
+      {
+        key: {
+          html: "<p>Foreign account</p>"
+        },
+        value: {
+          text: "Not included in calculation, manual work post call"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "contact information"
+            }
+          ]
+        }
+      },
+
+      {
+        key: {
+          html: "<p>Shares</p>"
+        },
+        value: {
+          text: "Not included in calculation, manual work post call"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "contact details"
+            }
+          ]
+        }
+      },
+
+
+      {
+          classes: 'govuk-summary-list--no-border',
+        key: {
+          html: "<p>Capital bonds</p>"
+        },
+        value: {
+          html: "Life assurance: Disregarded <br>Transferable: Nilled<br>Assignable: Nilled"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "",
+              visuallyHiddenText: "contact information"
+            }
+          ]
+        }
+      }
+
+    ]
+  }) }}
+
+
+
+    </div>
+  </details>
+
+
+  </div></div>
+
+
+    <!----Headline---->
+  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
       {% if data["msic-has-missing-account-yn"] %}
@@ -141,7 +251,7 @@ Account with: {% extends "layout.html" %}
                     actions: {
                       items: [
                         {
-                          href: "msic-has-second-property-yn",
+                          href: "msic-second-property-yn",
                           html: "Change",
                           visuallyHiddenText: "XXX"
                         }
@@ -1326,8 +1436,8 @@ Account with: {% extends "layout.html" %}
 
 
 </form>
-<p class="govuk-body govuk-!-padding-top-3"><a href="eject-error-reason">Save claim and exit</a></p>
 
-</div>
+
+<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
 
 {% endblock %}

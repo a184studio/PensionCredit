@@ -32,7 +32,7 @@
         name: "disregards-capital-total-yn",
         fieldset: {
           legend: {
-            html: "System: Routed based on the following",
+            html: "Agent: Does the claimant have more than £10,000?",
 
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
@@ -45,12 +45,12 @@
         items: [
         {
             value: "Yes",
-            text: "Over 10k and/or has capital bonds, shares, second property and foreign account",
+            text: "Yes",
             checked: (data["disregards-capital-total-yn"] == "Yes")
           },
           {
             value: "No",
-            text: "Under 10k in all accounts (None of the four dagner accounts)",
+            text: "No",
             checked: (data["disregards-capital-total-yn"] == "No")
           }
         ]
