@@ -8,7 +8,7 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/sprint-10/pc-payment-b'
+const baseUrl = '/sprint-10/pc-payment-a'
 
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
@@ -685,7 +685,7 @@ router.post(`${baseUrl}/msic-all-current-accounts-summary-router`, (req, res) =>
   if (addAnother === 'yes') {
     res.redirect(`${baseUrl}/msic-all-current-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-has-savings-account-yn`)
+    res.redirect(`${baseUrl}/msic-all-savings-accounts-summary`)
   }
 });
 
