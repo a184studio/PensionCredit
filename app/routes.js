@@ -27,6 +27,7 @@ router.use(require('./routes/sprint-9/end-to-end'))
 router.use(require('./routes/sprint-9/sept-3-2019'))
 router.use(require('./routes/sprint-9/sept-12-2019'))
 router.use(require('./routes/sprint-10/mvp'))
-
+router.use(require('./routes/sprint-10/pc-payment-a'))
+router.use(require('./routes/sprint-10/pc-payment-b'))
 
 module.exports = router
