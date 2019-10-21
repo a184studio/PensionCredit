@@ -12,14 +12,14 @@ Account with: {% extends "layout.html" %}
 
 {% include "includes/js-back-link.html" %}
 
-  <form action="task-list" method="post" class="form">
+  <form action="disregards-benefit-check-yn" method="post" class="form">
 
     {% if data["msic-second-property-yn"] == "No" %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
         <input type="hidden" name="money-you-have-complete" value="true"/>
 
-          <h1 class="govuk-heading-xl">The total of {{ data["full-name"] }}'s money, savings <br>and investments is £8200.50</h1>
+          <h1 class="govuk-heading-xl">Money, savings and investments summary</h1>
         <p class="govuk-body govuk-!-font-size-24"></p>
     </div></div>
     {% endif %}
