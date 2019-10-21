@@ -935,6 +935,23 @@ Do you have any more shares? - Pension Credit
                   }
                 },
 
+                key: {
+                  text: "Account with"
+                },
+                value: {
+                  text: data["msic-pc-payment-alternative-account-name"]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "msic-pc-payment",
+                      text: "Change",
+                      visuallyHiddenText: "type of account"
+                    }
+                  ]
+                }
+              },
+
                   {
                     key: {
                       text: "Amount in this account today	"
