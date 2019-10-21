@@ -12,7 +12,7 @@
 
 {% include "includes/js-back-link.html" %}
 
-<form action="msic-has-premium-bond-account-yn" method="post">
+<form action="msic-has-credit-union-yn-router" method="post">
   <input type="hidden" name="money-you-have-complete" value="in-progress"/>
 
 
@@ -23,8 +23,8 @@
 
 
   {{ govukRadios({
-    idPrefix: "msic-has-savings-account-yn",
-    name: "msic-has-savings-account-yn",
+    idPrefix: "msic-has-credit-union-yn",
+    name: "msic-has-credit-union-yn",
     fieldset: {
       legend: {
         text: "Do you have any more money in credit union accounts?",
@@ -38,12 +38,12 @@
       {
         value: "yes",
         text: "Yes",
-        checked: (data["msic-has-savings-account-yn"] == "yes")
+        checked: (data["msic-has-credit-union-yn"] == "yes")
       },
       {
         value: "no",
         text: "No",
-        checked: (data["msic-has-savings-account-yn"] == "no")
+        checked: (data["msic-has-credit-union-yn"] == "no")
       }
     ]
   }) }}
@@ -63,7 +63,7 @@
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
-                  <strong>(#) Other money, savings or investments </strong><a class="govuk-accordion__link" href="msic-missing-account"></a>
+                  <strong>0˙ Other money, savings or investments </strong><a class="govuk-accordion__link" href="msic-missing-account"></a>
                 </span>
               </h2>
             </div>
@@ -130,7 +130,7 @@
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-1">
-                    <strong>(#) Second properties </strong><a class="govuk-accordion__link" href="msic-second-property"> ˙ </a>
+                    <strong>0˙ Second properties </strong><a class="govuk-accordion__link" href="msic-second-property"> ˙ </a>
                   </span>
                 </h2>
               </div>
@@ -305,7 +305,7 @@
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-5">
-                <strong>(#) Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account"> Add^</a>
+                <strong>0˙ Unit trusts </strong><a class="govuk-accordion__link" href="msic-unit-trust-account"> Add^</a>
               </span>
             </h2>
           </div>
@@ -391,7 +391,7 @@
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-6">
-                  <strong>(#) Shares </strong><a class="govuk-accordion__link" href="msic-shares-account"> Add^</a>
+                  <strong>0˙ Shares </strong><a class="govuk-accordion__link" href="msic-shares-account"> Add^</a>
                 </span>
               </h2>
             </div>
@@ -459,7 +459,7 @@
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-7">
-                  <strong>(#) Capital bonds </strong><a class="govuk-accordion__link" href="msic-capital-bond-account"> Add^</a>
+                  <strong>0˙ Capital bonds </strong><a class="govuk-accordion__link" href="msic-capital-bond-account"> Add^</a>
                 </span>
               </h2>
             </div>
@@ -546,7 +546,7 @@
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-8">
-          <strong>(#) ISAs </strong><a class="govuk-accordion__link" href="msic-isa-savings-account"> Add^</a>
+          <strong>0˙ ISAs </strong><a class="govuk-accordion__link" href="msic-isa-savings-account"> Add^</a>
           </span>
           </h2>
           </div>
@@ -614,7 +614,7 @@
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-9">
-          <strong>(#) Premium Bonds </strong><a class="govuk-accordion__link" href="msic-premium-bond-account"> ˙ </a>
+          <strong>0˙ Premium Bonds </strong><a class="govuk-accordion__link" href="msic-premium-bond-account"> ˙ </a>
           </span>
           </h2>
           </div>
@@ -664,7 +664,7 @@
             <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
-            <strong>(#) Credit union accounts </strong><a class="govuk-accordion__link" href="msic-credit-union-account"> Add^</a>
+            <strong>0˙ Credit union accounts </strong><a class="govuk-accordion__link" href="msic-credit-union-account"> Add^</a>
             </span>
             </h2>
             </div>
@@ -766,7 +766,7 @@
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-10">
-          <strong>(#) Post Office Card Accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account"> ˙ </a>
+          <strong>0˙ Post Office Card Accounts </strong><a class="govuk-accordion__link" href="msic-post-office-card-account"> ˙ </a>
           </span>
           </h2>
           </div>
@@ -809,13 +809,14 @@
           </div>
           </div>{% endif %}
 
-          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            {% if data["msic-has-savings-account-yn"] %}
+          <!---——— Savings------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+            {% if data["msic-pc-payment-alternative-account-type"] == "Savings account" %}
             <div class="govuk-accordion__section ">
             <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
-            <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> Add^</a>
+            <strong>1 Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> Add^</a>
             </span>
             </h2>
             </div>
@@ -823,6 +824,8 @@
 
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters">
+
+              {% if data["msic-has-savings-account-yn"] %}
 
             {{ govukSummaryList({
             rows: [
@@ -905,9 +908,15 @@
             ]
             }) }}
 
-            <br></div></div>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-            </div></div>{% endif %}
+            {% endif %}
+
+            </div></div>
+
+            <h2 class="govuk-heading-s">See Pension Credit payment account</h2>
+
+            <br></div></div>{% endif %}
 
         <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
           {% if data["msic-has-current-account-yn"] %}
@@ -915,7 +924,7 @@
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-12">
-            <strong>(#) Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account"> Add^</a>
+            <strong>0˙ Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account"> Add^</a>
           </span>
           </h2>
           </div>

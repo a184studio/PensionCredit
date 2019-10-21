@@ -807,13 +807,13 @@ Do you own any other property or land other than your home? - Pension Credit
           </div>
           </div>{% endif %}
 
-          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            {% if data["msic-has-savings-account-yn"] %}
+          <!---——— Savings------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+            {% if data["msic-pc-payment-alternative-account-type"] == "Savings account" %}
             <div class="govuk-accordion__section ">
             <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-11">
-            <strong>(#) Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> Add^</a>
+            <strong>1 Savings accounts </strong><a class="govuk-accordion__link" href="task-list"> Add^</a>
             </span>
             </h2>
             </div>
@@ -821,6 +821,8 @@ Do you own any other property or land other than your home? - Pension Credit
 
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters">
+
+              {% if data["msic-has-savings-account-yn"] %}
 
             {{ govukSummaryList({
             rows: [
@@ -903,11 +905,101 @@ Do you own any other property or land other than your home? - Pension Credit
             ]
             }) }}
 
-            <br></div></div>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-            </div></div>{% endif %}
+            {% endif %}
 
-        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            </div></div>
+
+            <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+
+              {{ govukSummaryList({
+                rows: [
+
+                {
+                  key: {
+                    text: "Pension Credit payment account"
+                  },
+                  value: {
+                    text: ""
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "msic-pc-payment-state-pension-account",
+                        text: "",
+                        visuallyHiddenText: "sort code"
+                      }
+                    ]
+                  }
+                },
+
+                  {
+                    key: {
+                      text: "Amount in this account today	"
+                    },
+                    value: {
+                      text: data["msic-pc-payment-alternative-account-balance"]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "msic-pc-payment-state-pension-account",
+                          text: "Change",
+                          visuallyHiddenText: "sort code"
+                        }
+                      ]
+                    }
+                  },
+
+
+                  {
+                  key: {
+                    text: "Account owner"
+                  },
+                  value: {
+                    text: data['msic-pc-payment-alternative-account-owner']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "Account owner"
+                      }
+                    ]
+                  }
+                  },
+
+                  {
+                    classes: 'govuk-summary-list--no-border',
+                    key: {
+                      text: "Amount of money that is yours"
+                    },
+                    value: {
+                      text: data['msic-pc-payment-alternative-account-stake']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "Amount of money that is yours"
+                        }
+                      ]
+                    }
+                  }
+
+                ]
+              }) }}
+
+              </div></div>
+
+            <br></div></div>{% endif %}
+
+
+        <!------ has-current-account --------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
           {% if data["msic-has-current-account-yn"] %}
           <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
