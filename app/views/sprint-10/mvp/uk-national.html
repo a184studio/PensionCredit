@@ -9,7 +9,8 @@
 {% endblock %}
 
 {% block content %}
-
+{% set ResideHint %}
+{% endset %}
 {% include "includes/js-back-link.html" %}
 
   <div class="govuk-grid-row">
@@ -21,10 +22,13 @@
           name: "uk-national",
           fieldset: {
             legend: {
-              text: "Are you a UK national?",
+              text: "Do you have the right to live or work in the UK without any immigration restrictions?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
+          },
+          hint: {
+            html: "<p class=\"hint\">You have this right if have a British passport or are a British citizen or British subject with right of abode."
           },
           items: [
             {
@@ -36,6 +40,7 @@
               text: "No"
             }
           ]
+
         }) }}
 
         {{ govukButton({
