@@ -12,7 +12,7 @@
 
 {% include "includes/js-back-link.html" %}
 
-<form action="msic-has-credit-union-yn-router" method="post">
+<form action="msic-has-credit-union-account-yn-router" method="post">
   <input type="hidden" name="money-you-have-complete" value="in-progress"/>
 
 
@@ -23,8 +23,8 @@
 
 
   {{ govukRadios({
-    idPrefix: "msic-has-credit-union-yn",
-    name: "msic-has-credit-union-yn",
+    idPrefix: "msic-has-credit-union-account-yn",
+    name: "msic-has-credit-union-account-yn",
     fieldset: {
       legend: {
         text: "Do you have any more money in credit union accounts?",
@@ -38,12 +38,12 @@
       {
         value: "yes",
         text: "Yes",
-        checked: (data["msic-has-credit-union-yn"] == "yes")
+        checked: (data["msic-has-credit-union-account-yn"] == "yes")
       },
       {
         value: "no",
         text: "No",
-        checked: (data["msic-has-credit-union-yn"] == "no")
+        checked: (data["msic-has-credit-union-account-yn"] == "no")
       }
     ]
   }) }}
@@ -659,7 +659,7 @@
           </div>{% endif %}
 
           <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            {% if data["msic-has-credit-union-yn"] %}
+            {% if data["msic-has-credit-union-account-yn"] %}
             <div class="govuk-accordion__section ">
             <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
