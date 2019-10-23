@@ -29,5 +29,7 @@ router.use(require('./routes/sprint-9/sept-12-2019'))
 router.use(require('./routes/sprint-10/mvp'))
 router.use(require('./routes/sprint-10/pc-payment-a'))
 router.use(require('./routes/sprint-10/pc-payment-b'))
+router.use(require('./routes/sprint-10/agent-actions'))
+
 
 module.exports = router
