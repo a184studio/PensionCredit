@@ -221,9 +221,9 @@ router.post(`${baseUrl}/contact-mobile-can-call-router`, (req, res) => {
   const canText = req.session.data['contact-text-yn']
 
   if (canText === 'Yes') {
-    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+    res.redirect(`${baseUrl}/contact-other-number`)
   } else {
-    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+    res.redirect(`${baseUrl}/contact-other-number`)
   }
 })
 
