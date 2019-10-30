@@ -19,7 +19,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="contact-other-number-router" method="post" class="form">
+    <form action="contact-post-code-lookup" method="post" class="form">
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
@@ -44,8 +44,8 @@
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "contact-other-number-yn",
-        name: "contact-other-number-yn",
+        idPrefix: "contact-other-number",
+        name: "contact-other-number",
         fieldset: {
           legend: {
             html: "Can we call you to give you updates on your claim or to ask for more information?",
@@ -62,7 +62,7 @@
         {
             value: "Yes",
             text: "Yes",
-            checked: (data["contact-other-number-yn"] == "Add number"),
+            checked: (data["contact-other-number"] == "Add number"),
             conditional: {
               html: otherNumberLandline
             }
@@ -70,7 +70,7 @@
           {
             value: "No",
             text: "No",
-            checked: (data["contact-other-number-yn"] == "Opt out of telephone")
+            checked: (data["contact-other-number"] == "Opt out of telephone")
           }
         ]
       }) }}
