@@ -675,7 +675,7 @@ router.post(`${baseUrl}/msic-has-current-account-yn-router`, (req, res) => {
   if (hasCurrentAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-all-current-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-has-savings-account-yn`)
+    res.redirect(`${baseUrl}/msic-all-savings-accounts-summary`)
   }
 })
 
@@ -685,7 +685,7 @@ router.post(`${baseUrl}/msic-all-current-accounts-summary-router`, (req, res) =>
   if (addAnother === 'yes') {
     res.redirect(`${baseUrl}/msic-all-current-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-has-savings-account-yn`)
+    res.redirect(`${baseUrl}/msic-all-savings-accounts-summary`)
   }
 });
 
@@ -711,8 +711,8 @@ router.post(`${baseUrl}/msic-has-post-office-card-account-yn-router`, (req, res)
 
 
 
-router.post(`${baseUrl}/msic-has-credit-union-yn-router`, (req, res) => {
-  const hasCreditUnionAccount = req.session.data['msic-has-credit-union-yn']
+router.post(`${baseUrl}/msic-has-credit-union-account-yn-router`, (req, res) => {
+  const hasCreditUnionAccount = req.session.data['msic-has-credit-union-account-yn']
 
   if (hasCreditUnionAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-credit-union-account`)
