@@ -51,11 +51,11 @@
       }) }}
 -->
       <br>
-      <p class="govuk-body">Amount in this account <strong>today</strong></p>
+      <p class="govuk-body"></p>
 
       {{ govukInput({
         label: {
-          text: ""
+          html: "Amount in this account <strong>today</strong>"
         },
         id: "msic-all-current-account-amount",
         name: "msic-all-current-account-amount-" + count,
