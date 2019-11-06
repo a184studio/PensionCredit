@@ -947,13 +947,12 @@
                       ]
                     }
                   },
-
                   {
                     key: {
                       text: "Amount in this account today"
                     },
                     value: {
-                      text: data['msic-all-current-account-amount-' + i] | formatMoney
+                      text: data['msic-all-current-account-amount-' + i] or '' | formatMoney
                     },
                     actions: {
                       items: [
