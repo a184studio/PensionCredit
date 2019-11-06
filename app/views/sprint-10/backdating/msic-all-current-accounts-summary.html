@@ -1069,10 +1069,10 @@
 
               {
                 key: {
-                  text: "Amount in this account today"
+                  html: "Amount in this account <strong>: Today</strong>"
                 },
                 value: {
-                  text: data['msic-all-current-account-amount-' + i] | formatMoney
+                  text: data['msic-all-current-account-amount-date1' + i] | formatMoney
                 },
                 actions: {
                   items: [
@@ -1084,6 +1084,27 @@
                   ]
                 }
               },
+
+              {
+                key: {
+                  html: "Amount in this account <strong>7 August 2019</strong>"
+                },
+                value: {
+                  text: data['msic-all-current-account-amount-date2-' + i] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+
+
               {
                 key: {
                   text: "Account owner"

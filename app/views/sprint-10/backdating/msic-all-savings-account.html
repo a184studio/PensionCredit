@@ -46,6 +46,10 @@
             <br>
             <p class="govuk-body">Amount in this account <strong>today</strong></p>
 
+
+
+
+
           {{ govukInput({
         label: {
           text: ""
@@ -65,6 +69,54 @@
           classes: "govuk-input--width-10"
         }) }}
       {% endset %}
+
+      {% set yesDate %}
+        {{ govukDateInput({
+          id: "claim-date-idoc-yn-date",
+          namePrefix: "claim-date-idoc-yn-date",
+          fieldset: {
+            legend: {
+              text: "Amount in this account on 7 August 2019"
+            }
+          },
+          items: [
+            {
+              name: "",
+              classes: "govuk-!-width-one-third",
+              value: data["claim-date-idoc-yn-date-day"]
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "claim-date-idoc-yn",
+        name: "claim-date-idoc-yn",
+        fieldset: {
+          legend: {
+            html: "Was this balance different on <strong>7 August 2019</strong>"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "yes-date",
+          text: "Yes",
+          checked: (data["claim-date-idoc-yn"] == "Yes"),
+          conditional: {
+            html: yesDate
+          }
+        },
+          {
+            value: "no-date",
+            text: "No",
+            checked: (data["claim-date-idoc-yn"] == "No")
+          }
+        ]
+      }) }}
 
       {{ govukRadios({
         idPrefix: "msic-all-savings-account-owner",
