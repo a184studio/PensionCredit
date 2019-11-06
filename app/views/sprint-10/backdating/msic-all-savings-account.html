@@ -43,8 +43,19 @@
         }
       }) }}
 -->
-            <br>
-            <p class="govuk-body">Amount in this account <strong>today</strong></p>
+
+
+{% set eedBalance %}
+{{ govukInput({
+  label: {
+    html: "Amount in this account on the <strong>7 August 2019</strong>"
+  },
+  classes: "govuk-input--width-10",
+  id: "msic-all-savings-account-amount-eed",
+  name: "msic-all-savings-account-amount-eed"
+}) }}
+{% endset -%}
+
 
 
 
@@ -52,47 +63,17 @@
 
           {{ govukInput({
         label: {
-          text: ""
+          html: "Amount in this account <strong>today</strong>"
         },
-        id: "msic-all-savings-account-amount",
-        name: "msic-all-savings-account-amount",
+        id: "msic-all-savings-account-amount-today",
+        name: "msic-all-savings-account-amount-today",
         classes: "govuk-input--width-20"
       }) }}
 
-      {% set percentageField %}
-        {{ govukInput({
-          label: {
-            text: "Amount of money that is yours"
-          },
-          id: "msic-all-savings-account-stake",
-          name: "msic-all-savings-account-stake",
-          classes: "govuk-input--width-10"
-        }) }}
-      {% endset %}
-
-      {% set yesDate %}
-        {{ govukDateInput({
-          id: "claim-date-idoc-yn-date",
-          namePrefix: "claim-date-idoc-yn-date",
-          fieldset: {
-            legend: {
-              text: "Amount in this account on 7 August 2019"
-            }
-          },
-          items: [
-            {
-              name: "",
-              classes: "govuk-!-width-one-third",
-              value: data["claim-date-idoc-yn-date-day"]
-            }
-          ]
-        }) }}
-      {% endset -%}
-
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "claim-date-idoc-yn",
-        name: "claim-date-idoc-yn",
+        idPrefix: "msic-all-savings-account-amount-eed-yn",
+        name: "msic-all-savings-account-amount-eed-yn",
         fieldset: {
           legend: {
             html: "Was this balance different on <strong>7 August 2019</strong>"
@@ -103,17 +84,17 @@
         },
         items: [
         {
-          value: "yes-date",
+          value: "Yes",
           text: "Yes",
-          checked: (data["claim-date-idoc-yn"] == "Yes"),
+          checked: (data["msic-all-savings-account-amount-eed-yn"] == "Yes"),
           conditional: {
-            html: yesDate
+            html: eedBalance
           }
         },
           {
-            value: "no-date",
+            value: "No",
             text: "No",
-            checked: (data["claim-date-idoc-yn"] == "No")
+            checked: (data["msic-all-savings-account-amount-eed-yn"] == "No")
           }
         ]
       }) }}
