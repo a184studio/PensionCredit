@@ -171,10 +171,14 @@
         ]
       }) }}
 
-      <div class="govuk-panel--agent">
+      <div>
 
+      <div class="adviser-notice">
+      <h1 class="adviser-notice__heading">Adviser: for your information</h1>
+      <p class="govuk-body"><strong>Does the claimant need a translator?<strong>
+      </div>
 
-              {% set altLanguage %}
+            {% set altLanguage %}
               {{ govukInput({
             label: {
               html: "What language?"
@@ -191,7 +195,7 @@
                 name: "contact-formats-altLanguage-yn",
                 fieldset: {
                   legend: {
-                    html: "Agent: Does the claimant need a translator?",
+                    html: "",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--s"
                   }

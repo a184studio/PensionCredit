@@ -43,28 +43,61 @@
         }
       }) }}
 -->
-            <br>
-            <p class="govuk-body">Amount in this account <strong>today</strong></p>
+
+
+{% set eedBalance %}
+{{ govukInput({
+  label: {
+    html: "Amount in this account on <strong>7 August 2019</strong>"
+  },
+  classes: "govuk-input--width-10",
+  id: "msic-all-savings-account-amount-eed",
+  name: "msic-all-savings-account-amount-eed"
+}) }}
+{% endset -%}
+
+
+
+
+
 
           {{ govukInput({
         label: {
-          text: ""
+          html: "Amount in this account <strong>today</strong>"
         },
-        id: "msic-all-savings-account-amount",
-        name: "msic-all-savings-account-amount",
+        id: "msic-all-savings-account-amount-today",
+        name: "msic-all-savings-account-amount-today",
         classes: "govuk-input--width-20"
       }) }}
 
-      {% set percentageField %}
-        {{ govukInput({
-          label: {
-            text: "Amount of money that is yours"
-          },
-          id: "msic-all-savings-account-stake",
-          name: "msic-all-savings-account-stake",
-          classes: "govuk-input--width-10"
-        }) }}
-      {% endset %}
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "msic-all-savings-account-amount-eed-yn",
+        name: "msic-all-savings-account-amount-eed-yn",
+        fieldset: {
+          legend: {
+            html: "Was the amount in this account different on <strong>7 August 2019?</strong>"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["msic-all-savings-account-amount-eed-yn"] == "Yes"),
+          conditional: {
+            html: eedBalance
+          }
+        },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["msic-all-savings-account-amount-eed-yn"] == "No")
+          }
+        ]
+      }) }}
 
       {{ govukRadios({
         idPrefix: "msic-all-savings-account-owner",

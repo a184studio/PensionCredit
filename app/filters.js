@@ -45,7 +45,7 @@ module.exports = function (env) {
       return day + ' ' + months[month] + ' ' + year
     },
     formatMoney (money) {
-      const sanitised = money ? money.replace(/[^0-9.]/g, '') : 0
+      const sanitised = money ? String(money).replace(/[^0-9.]/g, '') : 0
       return GBP.format(sanitised)
     },
     formatNINO (nino) {

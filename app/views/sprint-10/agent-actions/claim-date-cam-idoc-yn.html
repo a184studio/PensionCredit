@@ -28,7 +28,12 @@
 
 -->
 
-<div class="govuk-panel--agent">
+<div class="adviser-notice">
+<h1 class="adviser-notice__heading">Adviser: check other systems</h1>
+<h1 class="govuk-heading-xl">Is there an initial date of contact (IDOC) in CAM?</h1>
+</div>
+
+<div class="">
         {% set yesDate %}
           {{ govukDateInput({
             id: "claim-date-idoc-yn-date",
@@ -64,7 +69,6 @@
           name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              html: "<span class=\"agent-action\">Agent: </span>Is there an initial date of contact (IDOC) in CAM?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }

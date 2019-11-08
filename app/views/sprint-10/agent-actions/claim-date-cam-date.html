@@ -28,14 +28,18 @@
 
 -->
 
-<div class="govuk-panel--agent">
+<div class="adviser-notice">
+<h1 class="adviser-notice__heading">Adviser: check other systems</h1>
+<h1 class="govuk-heading-l">Use CAM to work out the date of claim</h1>
+</div>
+
+<div>
 
         {{ govukDateInput({
           id: "claim-date-cam-date-entry",
           namePrefix: "claim-date-cam-date-entry",
           fieldset: {
             legend: {
-              html: "<span class=\"agent-action\">Agent: </span>Use CAM to work out the date of claim",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
