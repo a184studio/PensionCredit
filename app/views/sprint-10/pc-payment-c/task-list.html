@@ -343,6 +343,23 @@
             </h2>
             <ul class="app-task-list__items">
 
+
+
+
+<li class="app-task-list__item">
+  <a class="app-task-list__task-name" href="msic-has-state-pension-accout" aria-describedby="eligibility-completed">
+    State Pension payment account details
+  </a>
+  {% if data["msic-has-state-pension-accout"] == "true" %}
+    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+  {% elif data["msic-has-state-pension-accout"] == "in-progress" %}
+    <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
+  {% else %}
+    <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+  {% endif %}
+</li>
+
+
                 <li class="app-task-list__item">
                   <a class="app-task-list__task-name" href="msic-pc-payment" aria-describedby="eligibility-completed">
                     Pension Credit payment account

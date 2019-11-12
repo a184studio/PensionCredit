@@ -218,20 +218,20 @@ router.post(`${baseUrl}/contact-text-yn-router`, (req, res) => {
 
 
 router.post(`${baseUrl}/contact-mobile-can-call-router`, (req, res) => {
-  const canText = req.session.data['contact-text-yn']
+  const canText = req.session.data['contact-mobile-can-call']
 
   if (canText === 'Yes') {
-    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+    res.redirect(`${baseUrl}/contact-post-code-lookup`)
   } else {
-    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+    res.redirect(`${baseUrl}/contact-post-code-lookup`)
   }
 })
 
 router.post(`${baseUrl}/contact-other-number-router`, (req, res) => {
-  const canText = req.session.data['contact-text-yn']
+  const canText = req.session.data['contact-other-number']
 
   if (canText === 'Yes') {
-    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+    res.redirect(`${baseUrl}/contact-post-code-lookup`)
   } else {
     res.redirect(`${baseUrl}/Contact-post-code-lookup`)
   }
@@ -668,6 +668,21 @@ router.post(`${baseUrl}/msic-pc-payment-router`, (req, res) => {
     res.redirect(`${baseUrl}/msic-pc-payment-alternative-account`)
   }
 })
+
+router.post(`${baseUrl}/msic-pc-payment-choose-router`, (req, res) => {
+  const pcPaymentChoose = req.session.data['msic-pc-payment-choose']
+
+  if (pcPaymentChoose === 'Same account as State Pension') {
+    res.redirect(`${baseUrl}/msic-pc-payment-summary`)
+  }
+  else if (pcPaymentChoose === 'A different account') {
+    res.redirect(`${baseUrl}/msic-pc-payment-alternative-account`)
+  } else {
+    res.redirect(`${baseUrl}/msic-pc-payment-sort-acc-account`)
+  }
+})
+
+
 
 router.post(`${baseUrl}/msic-has-current-account-yn-router`, (req, res) => {
   const hasCurrentAccount = req.session.data['msic-has-current-account-yn']

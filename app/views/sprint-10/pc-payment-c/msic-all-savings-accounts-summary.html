@@ -917,43 +917,24 @@
 
 
 
-<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Pension Credit payment account</h2>
+<h2 class="govuk-heading-m govuk-!-margin-bottom-2">State Pension payment account</h2>
 
 
               {{ govukSummaryList({
 
                 rows: [
 
-
-                {
-                  key: {
-                    text: "Account with"
-                  },
-                  value: {
-                    text: data["msic-pc-payment-alternative-account-name"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-pc-payment-alternative-account",
-                        text: "Change",
-                        visuallyHiddenText: "type of account"
-                      }
-                    ]
-                  }
-                },
-
                   {
                     key: {
                       text: "Amount in this account today	"
                     },
                     value: {
-                      text: data["msic-pc-payment-alternative-account-balance"]
+                      text: data["msic-has-state-pension-accout-balance"]
                     },
                     actions: {
                       items: [
                         {
-                          href: "msic-pc-payment-alternative-account",
+                          href: "msic-has-state-pension-accout",
                           text: "Change",
                           visuallyHiddenText: "sort code"
                         }
@@ -967,12 +948,12 @@
                     text: "Account owner"
                   },
                   value: {
-                    text: data['msic-pc-payment-alternative-account-owner']
+                    text: data['msic-has-state-pension-accout-owner']
                   },
                   actions: {
                     items: [
                       {
-                        href: "msic-pc-payment-alternative-account",
+                        href: "msic-has-state-pension-accout",
                         text: "Change",
                         visuallyHiddenText: "Account owner"
                       }
@@ -986,12 +967,12 @@
                       text: "Amount of money that is yours"
                     },
                     value: {
-                      text: data['msic-pc-payment-alternative-account-stake']
+                      text: data['msic-has-state-pension-accout-stake']
                     },
                     actions: {
                       items: [
                         {
-                          href: "msic-pc-payment-alternative-account",
+                          href: "msic-has-state-pension-accout",
                           text: "Change",
                           visuallyHiddenText: "Amount of money that is yours"
                         }
