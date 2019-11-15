@@ -924,7 +924,7 @@
         </div>
         </div>{% endif %}
 
-        
+
 
 
         <!------ has-current-account --------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -972,10 +972,12 @@
 
               {
                 key: {
-                  text: "Amount in this account today"
-                },
+                  html: "msic-all-current-account-amount-EED- // Amount in this account on <strong>"
+                    + data['claim-date-cam-date-entry-day']
+                    + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
+                    + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"                },
                 value: {
-                  text: data['msic-all-current-account-amount-' + i] | formatMoney
+                  html: data['msic-all-current-account-amount-EED-' + i] | formatMoney
                 },
                 actions: {
                   items: [
@@ -987,6 +989,43 @@
                   ]
                 }
               },
+
+              {
+                key: {
+                  html: "msic-all-current-account-amount-balanceTAM-check // @pete: Is the balance same/different <strong>" + '' | formatDate + "</strong>"
+                },
+                value: {
+                  html: data['msic-all-current-account-amount-balanceTAM-check-' + i]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  html: "msic-all-current-account-amount-TAM // @pete: Amount on <strong>" + '' | formatDate + "</strong>"
+                },
+                value: {
+                  html: data['msic-all-current-account-amount-TAM-' + i] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
               {
                 key: {
                   text: "Account owner"

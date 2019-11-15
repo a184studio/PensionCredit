@@ -51,14 +51,68 @@
       }) }}
 -->
 
+      {% set balanceTAM %}
       {{ govukInput({
         label: {
-          html: "Amount in this account <strong>today</strong>"
+          html: "@pete: Amount on <strong>" + '' | formatDate + "</strong>"
         },
-        id: "msic-all-current-account-amount",
-        name: "msic-all-current-account-amount-" + count,
-        classes: "govuk-input--width-20"
+        classes: "govuk-input--width-20",
+        id: "msic-all-current-account-amount-TAM",
+        name: "msic-all-current-account-amount-TAM-" + count
       }) }}
+      {% endset -%}
+
+            {{ govukInput({
+              label: {
+                html: "Amount in this account on <strong>"
+                  + data['claim-date-cam-date-entry-day']
+                  + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
+                  + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
+              },
+              id: "msic-all-current-account-amount-EED",
+              name: "msic-all-current-account-amount-EED-" + count,
+              classes: "govuk-input--width-20"
+            }) }}
+
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "msic-all-current-account-amount-balanceTAM-check",
+              name: "msic-all-current-account-amount-balanceTAM-check-" + count,
+              fieldset: {
+                legend: {
+                  html: "@pete: Is the balance same/different <strong>" + '' | formatDate + "</strong>"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: (data["msic-all-current-account-amount-balanceTAM-check"] == "Yes"),
+                conditional: {
+                  html: balanceTAM
+                }
+              },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: (data["msic-all-current-account-amount-balanceTAM-check"] == "No")
+                }
+              ]
+            }) }}
+
+
+
+
+
+<!--data["claim-date-cam-date-entry"
+html: "Amount in this account" + data["claim-date-cam-date-entry"]""
+
+{{ data["claim-date-manual-eed-daf-yn-camDate-alternate-date"] or data["claim-date-manual-eed-daf-yn-alternate-date"] }}
+
+]-->
 
       {% set percentageField %}
         {{ govukInput({
@@ -95,29 +149,7 @@
         ]
       }) }}
 
-<!--
-{{ govukRadios({
-  idPrefix: "read-from-statement",
-  name: "read-from-statement",
-  fieldset: {
-    legend: {
-      text: "Did you read these details from a statement?",
-      classes: "govuk-fieldset__legend--s"
 
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      text: "No"
-    }
-  ]
-}) }}
--->
 
 <br>
 

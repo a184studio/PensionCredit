@@ -30,30 +30,58 @@
         classes: "govuk-input--width-20"
       }) }}
 
-<!--
+
+      {% set balanceTAM %}
       {{ govukInput({
         label: {
-          text: "Last 4 digits of the account number or roll number"
+          html: "@pete: Amount on <strong>" + '' | formatDate + "</strong>"
         },
-        id: "msic-all-savings-account-last-digits",
-        name: "msic-all-savings-account-last-digits",
-        classes: "govuk-input--width-4",
-        attributes: {
-          maxlength: 4
-        }
+        classes: "govuk-input--width-20",
+        id: "msic-all-savings-account-amount-TAM",
+        name: "msic-all-savings-account-amount-TAM"
       }) }}
--->
-            <br>
-            <p class="govuk-body">Amount in this account <strong>today</strong></p>
+      {% endset -%}
 
-          {{ govukInput({
-        label: {
-          text: ""
-        },
-        id: "msic-all-savings-account-amount",
-        name: "msic-all-savings-account-amount",
-        classes: "govuk-input--width-20"
-      }) }}
+            {{ govukInput({
+              label: {
+                html: "Amount in this account on <strong>"
+                  + data['claim-date-cam-date-entry-day']
+                  + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
+                  + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
+              },
+              id: "msic-all-savings-account-amount-EED",
+              name: "msic-all-savings-account-amount-EED",
+              classes: "govuk-input--width-20"
+            }) }}
+
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "msic-all-savings-account-amount-balanceTAM-check",
+              name: "msic-all-savings-account-amount-balanceTAM-check",
+              fieldset: {
+                legend: {
+                  html: "@pete: Is the balance same/different <strong>" + '' | formatDate + "</strong>"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "Yes"),
+                conditional: {
+                  html: balanceTAM
+                }
+              },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "No")
+                }
+              ]
+            }) }}
 
       {% set percentageField %}
         {{ govukInput({
