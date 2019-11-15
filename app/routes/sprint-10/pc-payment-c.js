@@ -669,6 +669,20 @@ router.post(`${baseUrl}/msic-pc-payment-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/msic-has-state-pension-account-yn-router`, (req, res) => {
+  const statePensionPaymentAccount = req.session.data['msic-has-state-pension-account-yn']
+
+  if (statePensionPaymentAccount === 'Yes') {
+    res.redirect(`${baseUrl}/msic-has-state-pension-account`)
+  } else {
+    res.redirect(`${baseUrl}/msic-has-state-pension-account-check`)
+  }
+})
+
+
+
+
+
 router.post(`${baseUrl}/msic-pc-payment-choose-router`, (req, res) => {
   const pcPaymentChoose = req.session.data['msic-pc-payment-choose']
 
