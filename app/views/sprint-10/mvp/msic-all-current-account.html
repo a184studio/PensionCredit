@@ -54,7 +54,7 @@
       {% set balanceTAM %}
       {{ govukInput({
         label: {
-          html: "@pete: Amount on <strong>" + '' | formatDate + "</strong>"
+          html: "Amount in this account on <strong>" + '' | formatDate + "</strong>"
         },
         classes: "govuk-input--width-20",
         id: "msic-all-current-account-amount-TAM",
@@ -80,7 +80,7 @@
               name: "msic-all-current-account-amount-balanceTAM-check-" + count,
               fieldset: {
                 legend: {
-                  html: "@pete: Is the balance same/different <strong>" + '' | formatDate + "</strong>"
+                  html: "Was the amount in this account different on <strong>" + '' | formatDate + "</strong>"
                 }
               },
               hint: {
