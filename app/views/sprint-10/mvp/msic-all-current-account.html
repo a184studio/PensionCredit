@@ -54,7 +54,7 @@
       {% set balanceTAM %}
       {{ govukInput({
         label: {
-          html: "Amount in this account on <strong>" + '' | formatDate + "</strong>"
+          html: "Balance of this account on <strong>" + '' | formatDate + "</strong>"
         },
         classes: "govuk-input--width-20",
         id: "msic-all-current-account-amount-TAM",
@@ -64,7 +64,7 @@
 
             {{ govukInput({
               label: {
-                html: "Amount in this account on <strong>"
+                html: "Balance this account on <strong>"
                   + data['claim-date-cam-date-entry-day']
                   + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
                   + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
@@ -80,7 +80,7 @@
               name: "msic-all-current-account-amount-balanceTAM-check-" + count,
               fieldset: {
                 legend: {
-                  html: "Was the amount in this account different on <strong>" + '' | formatDate + "</strong>"
+                  html: "Was the balance of this account different on <strong>" + '' | formatDate + "</strong>"
                 }
               },
               hint: {
