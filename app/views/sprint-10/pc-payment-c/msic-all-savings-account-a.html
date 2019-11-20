@@ -34,7 +34,7 @@
       {% set balanceTAM %}
       {{ govukInput({
         label: {
-          html: "Balance on <strong>" + '' | formatDate + "</strong>"
+          html: "Current balance"
         },
         classes: "govuk-input--width-20",
         id: "msic-all-savings-account-amount-TAM",
@@ -49,7 +49,7 @@
         namePrefix: "claim-date-idoc-yn-date",
         fieldset: {
           legend: {
-            text: "Date this balance is from"
+            text: "Date current balance is from"
           }
         },
         items: [
@@ -73,7 +73,7 @@
 
       {{ govukInput({
         label: {
-          html: "Current balance of this account"
+          html: "Current balance"
         },
         classes: "govuk-input--width-20",
         id: "msic-all-savings-account-amount-TAM",
@@ -85,7 +85,7 @@
       {% set balanceEED %}
             {{ govukInput({
               label: {
-                html: "Balance of this account on <strong>"
+                html: "Balance on <strong>"
                   + data['claim-date-cam-date-entry-day']
                   + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
                   + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
