@@ -30,6 +30,8 @@
         classes: "govuk-input--width-20"
       }) }}
 
+      <!--------------- TODAYS = AMOUNT + DATE ----------------------------------------------------------------------------------------->
+
 
       {% set balanceTAM %}
       {{ govukInput({
@@ -49,7 +51,7 @@
         namePrefix: "claim-date-idoc-yn-date",
         fieldset: {
           legend: {
-            text: "Date current balance is from"
+            html: "Date <strong>current</strong> balance is from"
           }
         },
         items: [
@@ -81,6 +83,8 @@
       }) }}
       {% endset -%}
 
+      <!--------------- EED/TAM = AMOUNT ----------------------------------------------------------------------------------------->
+
 
       {% set balanceEED %}
             {{ govukInput({
@@ -95,6 +99,9 @@
               classes: "govuk-input--width-20"
             }) }}
       {% endset -%}
+
+      <!--------------- EED/TAM = AMOUNT + DATE ----------------------------------------------------------------------------------------->
+
 
       {% set balanceDateEED %}
       {{ govukDateInput({
@@ -136,6 +143,7 @@
 
 
 
+      <!--------------- EED/TAM = BALANCE YES / NO ----------------------------------------------------------------------------------------->
 
 
             {{ govukRadios({
@@ -173,6 +181,8 @@
               ]
             }) }}
 
+            <!--------------- TODAYS = BALANCE YES / NO ----------------------------------------------------------------------------------------->
+
 
             {{ govukRadios({
               classes: "govuk-radios",
@@ -180,7 +190,7 @@
               name: "msic-all-savings-account-amount-balanceTAM-check",
               fieldset: {
                 legend: {
-                  html: "Do you know the current balance of this account"
+                  html: "Do you know the <strong>current</strong> balance of this account"
                 }
               },
               hint: {
@@ -206,6 +216,9 @@
               ]
             }) }}
 
+            <!--------------- BREAKDOWN ACCOUNT / BALANCE ----------------------------------------------------------------------------------------->
+
+
       {% set percentageField %}
         {{ govukInput({
           label: {
@@ -216,6 +229,9 @@
           classes: "govuk-input--width-10"
         }) }}
       {% endset %}
+
+      <!--------------- WHOS ACCOUNT ----------------------------------------------------------------------------------------->
+
 
       {{ govukRadios({
         idPrefix: "msic-all-savings-account-owner",
