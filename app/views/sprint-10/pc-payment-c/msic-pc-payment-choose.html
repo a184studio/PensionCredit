@@ -39,17 +39,7 @@
           },
           {
             value: "Bank name A / £100.00",
-            text: "Bank name A / £100.00",
-            checked: (data["msic-pc-payment-choose"] == "Bank name A / £100.00")
-          },
-          {
-            value: "Bank name B / £100.00",
-            text: "Bank name B / £200.00",
-            checked: (data["msic-pc-payment-choose"] == "Bank name A / £100.00")
-          },
-          {
-            value: "Bank name C / £100.00",
-            text: "Bank name C / £300.00",
+            html: "<strong> " + data['msic-all-current-account-name-' + i] + "</strong> " + "with a balance of" + "<strong> " + data['msic-all-current-account-amount-' + i] + "</strong>",
             checked: (data["msic-pc-payment-choose"] == "Bank name A / £100.00")
           },
           {
