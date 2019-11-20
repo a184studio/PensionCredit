@@ -34,7 +34,7 @@
       {% set balanceTAM %}
       {{ govukInput({
         label: {
-          html: "@pete: Amount on <strong>" + '' | formatDate + "</strong>"
+          html: "Balance on <strong>" + '' | formatDate + "</strong>"
         },
         classes: "govuk-input--width-20",
         id: "msic-all-savings-account-amount-TAM",
@@ -42,6 +42,47 @@
       }) }}
       {% endset -%}
 
+
+      {% set balanceDateTAM %}
+      {{ govukDateInput({
+        id: "claim-date-idoc-yn-date",
+        namePrefix: "claim-date-idoc-yn-date",
+        fieldset: {
+          legend: {
+            text: "Enter the IDOC"
+          }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-idoc-yn-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-idoc-yn-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["claim-date-idoc-yn-date-year"]
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: "@pete: Balance on <strong>" + '' | formatDate + "</strong>"
+        },
+        classes: "govuk-input--width-20",
+        id: "msic-all-savings-account-amount-TAM",
+        name: "msic-all-savings-account-amount-TAM"
+      }) }}
+      {% endset -%}
+
+
+      {% set balanceEED %}
             {{ govukInput({
               label: {
                 html: "Amount in this account on <strong>"
@@ -53,6 +94,85 @@
               name: "msic-all-savings-account-amount-EED",
               classes: "govuk-input--width-20"
             }) }}
+      {% endset -%}
+
+      {% set balanceDateEED %}
+      {{ govukDateInput({
+        id: "claim-date-idoc-yn-date",
+        namePrefix: "claim-date-idoc-yn-date",
+        fieldset: {
+          legend: {
+            text: "Enter the IDOC"
+          }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-idoc-yn-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-idoc-yn-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["claim-date-idoc-yn-date-year"]
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: "@pete: Balance on <strong>" + '' | formatDate + "</strong>"
+        },
+        classes: "govuk-input--width-20",
+        id: "msic-all-savings-account-amount-TAM",
+        name: "msic-all-savings-account-amount-TAM"
+      }) }}
+      {% endset -%}
+
+
+
+
+
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "msic-all-savings-account-amount-balanceEED-check",
+              name: "msic-all-savings-account-amount-balanceEED-check",
+              fieldset: {
+                legend: {
+                  html: "@Do you know the balance of this account on the <strong>"
+                    + data['claim-date-cam-date-entry-day']
+                    + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
+                    + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "Yes"),
+                conditional: {
+                  html: balanceEED
+                }
+              },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "No"),
+                  conditional: {
+                    html: balanceDateEED
+                  }
+                }
+              ]
+            }) }}
+
 
             {{ govukRadios({
               classes: "govuk-radios",
@@ -60,7 +180,7 @@
               name: "msic-all-savings-account-amount-balanceTAM-check",
               fieldset: {
                 legend: {
-                  html: "@pete: Is the balance same/different <strong>" + '' | formatDate + "</strong>"
+                  html: "@pete: Do you know the balance of this account on the <strong>" + '' | formatDate + "</strong>"
                 }
               },
               hint: {
@@ -78,7 +198,10 @@
                 {
                   value: "No",
                   text: "No",
-                  checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "No")
+                  checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "No"),
+                  conditional: {
+                    html: balanceDateTAM
+                  }
                 }
               ]
             }) }}
