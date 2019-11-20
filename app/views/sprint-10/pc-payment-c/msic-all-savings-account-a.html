@@ -49,7 +49,7 @@
         namePrefix: "claim-date-idoc-yn-date",
         fieldset: {
           legend: {
-            text: "Enter the IDOC"
+            text: "Date this balance is from"
           }
         },
         items: [
@@ -73,7 +73,7 @@
 
       {{ govukInput({
         label: {
-          html: "@pete: Balance on <strong>" + '' | formatDate + "</strong>"
+          html: "Current balance of this account"
         },
         classes: "govuk-input--width-20",
         id: "msic-all-savings-account-amount-TAM",
@@ -85,7 +85,7 @@
       {% set balanceEED %}
             {{ govukInput({
               label: {
-                html: "Amount in this account on <strong>"
+                html: "Balance of this account on <strong>"
                   + data['claim-date-cam-date-entry-day']
                   + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
                   + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
@@ -102,7 +102,7 @@
         namePrefix: "claim-date-idoc-yn-date",
         fieldset: {
           legend: {
-            text: "Enter the IDOC"
+            text: "Date this balance is from"
           }
         },
         items: [
@@ -126,7 +126,7 @@
 
       {{ govukInput({
         label: {
-          html: "@pete: Balance on <strong>" + '' | formatDate + "</strong>"
+          html: "Balance on this date"
         },
         classes: "govuk-input--width-20",
         id: "msic-all-savings-account-amount-TAM",
@@ -144,7 +144,7 @@
               name: "msic-all-savings-account-amount-balanceEED-check",
               fieldset: {
                 legend: {
-                  html: "@Do you know the balance of this account on the <strong>"
+                  html: "Do you know the balance of this account on <strong>"
                     + data['claim-date-cam-date-entry-day']
                     + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
                     + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
@@ -164,7 +164,7 @@
               },
                 {
                   value: "No",
-                  text: "No",
+                  text: "No, I know it on a different date",
                   checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "No"),
                   conditional: {
                     html: balanceDateEED
@@ -180,7 +180,7 @@
               name: "msic-all-savings-account-amount-balanceTAM-check",
               fieldset: {
                 legend: {
-                  html: "@pete: Do you know the balance of this account on the <strong>" + '' | formatDate + "</strong>"
+                  html: "Do you know the current balance of this account"
                 }
               },
               hint: {
@@ -197,7 +197,7 @@
               },
                 {
                   value: "No",
-                  text: "No",
+                  text: "No, I know it on a different date",
                   checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "No"),
                   conditional: {
                     html: balanceDateTAM
