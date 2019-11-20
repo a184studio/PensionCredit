@@ -145,15 +145,6 @@
 
         {% set balanceDateToday %}
 
-          {{ govukInput({
-            label: {
-              html: "@pete: Balance on <strong>" + '' | formatDate + "</strong>"
-            },
-            classes: "govuk-input--width-20",
-            id: "msic-all-savings-account-amount-TODAY",
-            name: "msic-all-savings-account-amount-TODAY"
-          }) }}
-
           {{ govukDateInput({
             id: "msic-all-savings-account-evidence-date",
             namePrefix: "msic-all-savings-account-evidence-date",
@@ -179,6 +170,15 @@
                 value: data["msic-all-savings-account-evidence-date-year"]
               }
             ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: "@pete: Balance on <strong>" + '' | formatDate + "</strong>"
+            },
+            classes: "govuk-input--width-20",
+            id: "msic-all-savings-account-amount-TODAY",
+            name: "msic-all-savings-account-amount-TODAY"
           }) }}
 
         {% endset -%}
