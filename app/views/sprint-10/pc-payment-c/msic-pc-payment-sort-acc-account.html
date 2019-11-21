@@ -18,7 +18,7 @@
       <input type="hidden" name="msic-pc-payment-complete" value="in-progress"/>
 
       <h1 class="govuk-heading-xl">
-        What is the sort code and account number for BANK-A with a balance of £100.00?
+        What are the details of the {{ data['msic-all-current-account-name-' + 0] }} account with a balance of {{ data['msic-all-current-account-amount-' + 0] }}?
       </h1>
 
       {{ govukInput({
