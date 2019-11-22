@@ -12,7 +12,7 @@ Account with: {% extends "layout.html" %}
 
 {% include "includes/js-back-link.html" %}
 
-  <form action="disregards-benefit-check-yn" method="post" class="form">
+  <form action="msic-pc-payment-choose" method="post" class="form">
 
     {% if data["msic-second-property-yn"] == "No" %}
     <div class="govuk-grid-row">
@@ -905,60 +905,24 @@ Account with: {% extends "layout.html" %}
 
 
 
-<h2 class="govuk-heading-m govuk-!-margin-bottom-0">Pension Credit payment account</h2>
+<h2 class="govuk-heading-m govuk-!-margin-bottom-2">State Pension payment account</h2>
 
 
             {{ govukSummaryList({
 
               rows: [
 
-              {
-                key: {
-                  text: ""
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Account with"
-                },
-                value: {
-                  text: data["msic-pc-payment-alternative-account-name"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment",
-                      text: "",
-                      visuallyHiddenText: "type of account"
-                    }
-                  ]
-                }
-              },
-
                 {
                   key: {
                     text: "Amount in this account today	"
                   },
                   value: {
-                    text: data["msic-pc-payment-alternative-account-balance"]
+                    text: data["msic-has-state-pension-accout-balance"]
                   },
                   actions: {
                     items: [
                       {
-                        href: "msic-pc-payment-account-balance",
+                        href: "msic-has-state-pension-accout",
                         text: "Change",
                         visuallyHiddenText: "sort code"
                       }
@@ -972,13 +936,13 @@ Account with: {% extends "layout.html" %}
                   text: "Account owner"
                 },
                 value: {
-                  text: data['msic-pc-payment-alternative-account-owner']
+                  text: data['msic-has-state-pension-accout-owner']
                 },
                 actions: {
                   items: [
                     {
-                      href: "",
-                      text: "",
+                      href: "msic-has-state-pension-accout",
+                      text: "Change",
                       visuallyHiddenText: "Account owner"
                     }
                   ]
@@ -991,13 +955,13 @@ Account with: {% extends "layout.html" %}
                     text: "Amount of money that is yours"
                   },
                   value: {
-                    text: data['msic-pc-payment-alternative-account-stake']
+                    text: data['msic-has-state-pension-accout-stake']
                   },
                   actions: {
                     items: [
                       {
-                        href: "",
-                        text: "",
+                        href: "msic-has-state-pension-accout",
+                        text: "Change",
                         visuallyHiddenText: "Amount of money that is yours"
                       }
                     ]

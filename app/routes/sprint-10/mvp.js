@@ -658,6 +658,19 @@ router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router 
 
 // Money Savining and investement Routers
 
+router.post(`${baseUrl}/msic-pc-payment-choose-router`, (req, res) => {
+  const pcPaymentChoose = req.session.data['msic-pc-payment-choose']
+
+  if (pcPaymentChoose === 'Same account as State Pension') {
+    res.redirect(`${baseUrl}/msic-pc-payment-summary`)
+  }
+  else if (pcPaymentChoose === 'A different account') {
+    res.redirect(`${baseUrl}/msic-pc-payment-alternative-account`)
+  } else {
+    res.redirect(`${baseUrl}/msic-pc-payment-sort-acc-account`)
+  }
+})
+
 
 router.post(`${baseUrl}/msic-pc-payment-router`, (req, res) => {
   const hasCurrentAccount = req.session.data['msic-pc-payment']
