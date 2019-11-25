@@ -16,10 +16,13 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="XXX" method="post" class="form">
 
+      <div class="govuk-panel--agent govuk-!-margin-bottom-6">
+        <h2 class="govuk-heading-m"><span class="agent-action">Adviser: What does searchlight say?</h2>
+      </div>
+
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
-      {% set today = '' | formatDate %}
 
       {{ govukRadios({
         idPrefix: "hospital-yn",
