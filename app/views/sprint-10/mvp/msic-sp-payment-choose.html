@@ -23,7 +23,7 @@
         name: "msic-sp-payment-choose",
         fieldset: {
           legend: {
-            text: "Where do you get your State Pension paid into?",
+            text: "Which account do you get your State Pension paid into?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
             }
@@ -34,12 +34,12 @@
         items: [
         {
           value: "Bank name A / £100.00",
-          html: "<strong> " + data['msic-all-current-account-name-' + 0] + "</strong> " + "with a balance of" + "<strong> " + data['msic-all-current-account-amount-' + 0] + "</strong>",
+          html: "<strong> " + data['msic-all-current-account-name-' + 0] + "</strong> " + "account with a balance of" + "<strong> " + data['msic-all-current-account-amount-' + 0] + "</strong>",
           checked: (data["msic-sp-payment-choose"] == "Bank name A / £100.00")
         },
           {
             value: "Bank name B / £100.00",
-            html: "<strong> " + data['msic-all-current-account-name-' + 0] + "</strong> " + "with a balance of" + "<strong> " + data['msic-all-current-account-amount-' + 0] + "</strong>",
+            html: "<strong> " + data['msic-all-current-account-name-' + 0] + "</strong> " + "account with a balance of" + "<strong> " + data['msic-all-current-account-amount-' + 0] + "</strong>",
             checked: (data["msic-sp-payment-choose"] == "Bank name B / £100.00")
           },
           {
