@@ -851,7 +851,7 @@
 
             {
               key: {
-                text: "Amount in this account today"
+                text: "Balance one"
               },
               value: {
                 text: data['msic-all-savings-account-amount']
@@ -866,6 +866,79 @@
                 ]
               }
             },
+
+            {
+              key: {
+                text: "date 1"
+              },
+              value: {
+                text: data['XXXX']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "Only if same balance"
+              },
+              value: {
+                text: data['XXXX']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "balance 2"
+              },
+              value: {
+                text: data['XXXX']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "date 2"
+              },
+              value: {
+                text: data['XXXX']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
             {
             key: {
               text: "Account owner"
@@ -905,84 +978,10 @@
             ]
             }) }}
 
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
             {% endif %}
 
             </div></div>
-
-            <div class="govuk-grid-row">
-            <div class="govuk-grid-column-three-quarters">
-
-
-
-<h2 class="govuk-heading-m govuk-!-margin-bottom-2">State Pension payment account</h2>
-
-
-              {{ govukSummaryList({
-
-                rows: [
-
-                  {
-                    key: {
-                      text: "Amount in this account today	"
-                    },
-                    value: {
-                      text: data["msic-has-state-pension-accout-balance"]
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "msic-has-state-pension-accout",
-                          text: "Change",
-                          visuallyHiddenText: "sort code"
-                        }
-                      ]
-                    }
-                  },
-
-
-                  {
-                  key: {
-                    text: "Account owner"
-                  },
-                  value: {
-                    text: data['msic-has-state-pension-accout-owner']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-has-state-pension-accout",
-                        text: "Change",
-                        visuallyHiddenText: "Account owner"
-                      }
-                    ]
-                  }
-                  },
-
-                  {
-                    classes: 'govuk-summary-list--no-border',
-                    key: {
-                      text: "Amount of money that is yours"
-                    },
-                    value: {
-                      text: data['msic-has-state-pension-accout-stake']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "msic-has-state-pension-accout",
-                          text: "Change",
-                          visuallyHiddenText: "Amount of money that is yours"
-                        }
-                      ]
-                    }
-                  }
-
-                ]
-              }) }}
-
-              </div></div>
 
             <br></div></div>
 
