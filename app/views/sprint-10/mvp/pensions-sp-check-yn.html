@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="XXX" method="post" class="form">
+    <form action="pensions-monolith" method="post" class="form">
 
       <div class="govuk-panel--agent govuk-!-margin-bottom-6">
         <h2 class="govuk-heading-m"><span class="agent-action">Adviser: What does searchlight say?</h2>
@@ -25,8 +25,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "hospital-yn",
-        name: "hospital-yn",
+        idPrefix: "pensions-sp-check-yn",
+        name: "pensions-sp-check-yn",
         fieldset: {
           legend: {
             text: "SP YN",
@@ -39,12 +39,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["hospital-yn"] == "Yes")
+            checked: (data["pensions-sp-check-yn"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["hospital-yn"] == "No")
+            checked: (data["pensions-sp-check-yn"] == "No")
           }
         ]
       }) }}

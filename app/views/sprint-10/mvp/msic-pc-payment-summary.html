@@ -23,6 +23,39 @@
 
         <!-- Other ------------------------------------------------------>
 
+        <div class="govuk-!-padding-top-2 govuk-!-padding-bottom-2"><h2 class="govuk-heading-xm">State Pension payment details @pete</h2></div>
+
+
+          {{ govukSummaryList({
+            rows: [
+
+              {
+                  key: {
+                  text: "Which account do you get your State Pension paid into? @pete if they have one only"
+                },
+                value: {
+                  text: data["msic-sp-payment-choose"]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "msic-pc-payment-choose",
+                      text: "Change",
+                      visuallyHiddenText: "type of account"
+                    }
+                  ]
+                }
+              }
+
+            ]
+          }) }}
+
+
+
+          <div class="govuk-!-padding-top-4 govuk-!-padding-bottom-2"><h2 class="govuk-heading-xm">Pension Creidt payment details @pete</h2></div>
+
+
+
         {% if data["msic-pc-payment-choose"] == "A different account" %}
           {{ govukSummaryList({
             rows: [
