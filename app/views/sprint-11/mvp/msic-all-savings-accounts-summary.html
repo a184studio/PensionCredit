@@ -851,10 +851,28 @@
 
             {
               key: {
+                html: "<br>* EARLIEST ENTITLMENT DATE"
+              },
+              value: {
+                text: ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
                 text: "(1) Alt date of balance (Only if applicable interacted with)"
               },
               value: {
-                text: "DD.MM.2019"
+                text: data['msic-all-savings-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-all-savings-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-all-savings-account-amount-EED-date-evidence-year']
               },
               actions: {
                 items: [
@@ -885,7 +903,23 @@
               }
             },
 
-
+            {
+              key: {
+                html: "<br>* TODAY BALANCES DATE"
+              },
+              value: {
+                text: ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
 
             {
               key: {
@@ -910,7 +944,7 @@
                 text: "(2) Alt date of balance (Only if applicable interacted with)"
               },
               value: {
-                text: "DD.MM.2019"
+                text: data['msic-all-savings-account-amount-today-date-evidence-day'] + ' ' + (data['msic-all-savings-account-amount-today-date-evidence-month'] | getMonth) + ' ' + data['msic-all-savings-account-amount-today-date-evidence-year']
               },
               actions: {
                 items: [
