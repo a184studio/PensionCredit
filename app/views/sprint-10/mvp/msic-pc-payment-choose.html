@@ -28,9 +28,7 @@
             classes: "govuk-fieldset__legend--xl"
             }
             },
-            hint: {
-              html: "<p class=\"hint\">We know about the account your State Pension is paid into."
-            },
+
         items: [
           {
             value: "Same account as State Pension",
@@ -39,7 +37,7 @@
           },
           {
             value: "Bank name A / £100.00",
-            html: "<strong> " + data['msic-all-current-account-name-' + 0] + "</strong> " + "with a balance of" + "<strong> " + data['msic-all-current-account-amount-' + 0] + "</strong>",
+            html: "<strong> " + data['msic-all-current-account-name-' + 0] + "</strong> " + "account with a balance of" + "<strong> " + data['msic-all-current-account-amount-' + 0] + "</strong>",
             checked: (data["msic-pc-payment-choose"] == "Bank name A / £100.00")
           },
           {
