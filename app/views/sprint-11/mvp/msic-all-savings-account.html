@@ -50,8 +50,8 @@
 
 {% set balanceDateEED %}
 {{ govukDateInput({
-  id: "claim-date-idoc-yn-date",
-  namePrefix: "claim-date-idoc-yn-date",
+  id: "msic-all-savings-account-amount-EED-date-evidence",
+  namePrefix: "msic-all-savings-account-amount-EED-date-evidence",
   fieldset: {
     legend: {
       text: "Date this balance is from"
@@ -61,17 +61,17 @@
     {
       name: "day",
       classes: "govuk-input--width-2",
-      value: data["claim-date-idoc-yn-date-day"]
+      value: data["msic-all-savings-account-amount-EED-date-evidence-day"]
     },
     {
       name: "month",
       classes: "govuk-input--width-2",
-      value: data["claim-date-idoc-yn-date-month"]
+      value: data["msic-all-savings-account-amount-EED-date-evidence-month"]
     },
     {
       name: "year",
       classes: "govuk-input--width-4",
-      value: data["claim-date-idoc-yn-date-year"]
+      value: data["msic-all-savings-account-amount-EED-date-evidence-year"]
     }
   ]
 }) }}
@@ -81,8 +81,8 @@
     html: "Balance on this date"
   },
   classes: "govuk-input--width-20",
-  id: "msic-all-savings-account-amount-TAM",
-  name: "msic-all-savings-account-amount-TAM"
+  id: "msic-all-savings-account-amount-EED",
+  name: "msic-all-savings-account-amount-EED"
 }) }}
 {% endset -%}
 
@@ -146,8 +146,8 @@
         {% set balanceDateToday %}
 
           {{ govukDateInput({
-            id: "msic-all-savings-account-evidence-date",
-            namePrefix: "msic-all-savings-account-evidence-date",
+            id: "msic-all-savings-account-amount-today-date-evidence",
+            namePrefix: "msic-all-savings-account-amount-today-date-evidence",
             fieldset: {
               legend: {
                 text: "Date this balance is from"
@@ -157,17 +157,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["msic-all-savings-account-evidence-date-day"]
+                value: data["msic-all-savings-account-amount-today-date-evidence-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["msic-all-savings-account-evidence-date-month"]
+                value: data["msic-all-savings-account-amount-today-date-evidence-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["msic-all-savings-account-evidence-date-year"]
+                value: data["msic-all-savings-account-amount-today-date-evidence-year"]
               }
             ]
           }) }}
@@ -259,39 +259,6 @@
         }
       ]
     }) }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
