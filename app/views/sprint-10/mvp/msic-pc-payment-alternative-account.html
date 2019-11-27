@@ -120,46 +120,6 @@
   ]
 }) }}
 
-      {{ govukRadios({
-        idPrefix: "msic-pc-payment-alternative-account-type",
-        name: "msic-pc-payment-alternative-account-type",
-        fieldset: {
-          legend: {
-            text: "What type of account is this?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-        {
-            value: "Current account",
-            text: "Current account",
-            checked: data['msic-pc-payment-alternative-account-type'] == "Current account"
-          },
-          {
-          value: "Savings account",
-          text: "Savings account",
-          checked: data['msic-pc-payment-alternative-account-type'] == "Savings account"
-        },
-        {
-          value: "Post Office",
-          text: "Post Office Card Account",
-          checked: data['msic-pc-payment-alternative-account-type'] == "Post Office"
-        },
-        {
-          value: "Credit Union account",
-          text: "Credit union account",
-          checked: data['msic-pc-payment-alternative-account-type'] == "Credit Union account"
-        },
-        {
-          value: "Other type of account",
-          text: "Other type of account",
-          checked: data['msic-pc-payment-alternative-account-type'] == "Other type of account"
-        }
-
-        ]
-      }) }}
-
 
 {{ govukInput({
 label: {
@@ -186,18 +146,18 @@ idPrefix: "msic-pc-payment-alternative-account-owner",
 name: "msic-pc-payment-alternative-account-owner",
 fieldset: {
   legend: {
-    text: "Account owner",
+    text: "How much of the money in this account is yours?",
     classes: "govuk-fieldset__legend--s"
   }
 },
 items: [
   {
     value: "You",
-    text: "Only you"
+    text: "All of it"
   },
   {
     value: "Joint account",
-    text: "Joint account",
+    text: "Some of it",
     conditional: {
       html: percentageField
     }
