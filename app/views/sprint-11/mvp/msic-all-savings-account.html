@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add bulding society XXX - Pension Credit
+  Add bulding society account - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -25,6 +25,9 @@
         Savings account details
       </h1>
 
+<!--------------- NAME ----------------------------------------------------------------------------------------->
+
+
       {{ govukInput({
         label: {
           text: "Name of bank or building society"
@@ -36,61 +39,62 @@
 
 
 
-<!--------------- EED = Yes ----------------------------------------------------------------------------------------->
+<!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // BALANCE ONLY  ----------------------------------------------------------------------------------------->
 
-{% set balanceEED %}
-      {{ govukInput({
-        label: {
-          html: "How much was in this account on <strong>"
-            + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
-        },
-        id: "msic-all-savings-account-amount-EED",
-        name: "msic-all-savings-account-amount-EED",
-        classes: "govuk-input--width-20"
-      }) }}
-{% endset -%}
+          {% set balanceEED %}
+                {{ govukInput({
+                  label: {
+                    html: "How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+                  },
+                  id: "msic-all-savings-account-amount-EED",
+                  name: "msic-all-savings-account-amount-EED",
+                  classes: "govuk-input--width-20"
+                }) }}
+          {% endset -%}
 
-{% set balanceDateEED %}
-{{ govukDateInput({
-  id: "msic-all-savings-account-amount-EED-date-evidence",
-  namePrefix: "msic-all-savings-account-amount-EED-date-evidence",
-  fieldset: {
-    legend: {
-      text: "Date this figure is from"
-    }
-  },
-  items: [
-    {
-      name: "day",
-      classes: "govuk-input--width-2",
-      value: data["msic-all-savings-account-amount-EED-date-evidence-day"]
-    },
-    {
-      name: "month",
-      classes: "govuk-input--width-2",
-      value: data["msic-all-savings-account-amount-EED-date-evidence-month"]
-    },
-    {
-      name: "year",
-      classes: "govuk-input--width-4",
-      value: data["msic-all-savings-account-amount-EED-date-evidence-year"]
-    }
-  ]
-}) }}
+<!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
 
-{{ govukInput({
-  label: {
-    html: "How much was in the account on this date?"
-  },
-  classes: "govuk-input--width-20",
-  id: "msic-all-savings-account-amount-EED",
-  name: "msic-all-savings-account-amount-EED"
-}) }}
-{% endset -%}
+        {% set balanceDateEED %}
+        {{ govukDateInput({
+          id: "msic-all-savings-account-amount-EED-date-evidence",
+          namePrefix: "msic-all-savings-account-amount-EED-date-evidence",
+          fieldset: {
+            legend: {
+              text: "Date this figure is from"
+            }
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["msic-all-savings-account-amount-EED-date-evidence-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["msic-all-savings-account-amount-EED-date-evidence-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["msic-all-savings-account-amount-EED-date-evidence-year"]
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            html: "How much was in the account on this date?"
+          },
+          classes: "govuk-input--width-20",
+          id: "msic-all-savings-account-amount-EED",
+          name: "msic-all-savings-account-amount-EED"
+        }) }}
+        {% endset -%}
 
 
 
-<!--------------- EED = YN ----------------------------------------------------------------------------------------->
+<!--------------- (1) EARLIEST ENTITLEMENT DATE (EED) // CHECK ----------------------------------------------------------------------------------------->
 
 
       {{ govukRadios({
@@ -99,8 +103,7 @@
         name: "msic-all-savings-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "Do you know how much was in this account on <strong>"
-              + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "Do you know how much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
         hint: {
@@ -127,7 +130,7 @@
       }) }}
 
 
-    <!--------------- TODAY = YES + BALANCE ----------------------------------------------------------------------------------------->
+<!--------------- (2) TODAY // BALANCE ONLY ----------------------------------------------------------------------------------------->
 
       {% set balanceToday %}
 
@@ -142,7 +145,7 @@
 
       {% endset -%}
 
-      <!--------------- TODAY = YES + BALANCE ----------------------------------------------------------------------------------------->
+<!--------------- (2) TODAY // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
 
         {% set balanceDateToday %}
 
@@ -186,7 +189,7 @@
 
 
 
-    <!--------------- TODAY = YN ----------------------------------------------------------------------------------------->
+<!--------------- (2) TODAY CHECK  ----------------------------------------------------------------------------------------->
 
 
 
@@ -226,7 +229,7 @@
 
 
 
-      <!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
+<!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
 
 
 
@@ -265,28 +268,10 @@
         ]
       }) }}
 
-<!--
-      {{ govukRadios({
-        idPrefix: "msic-all-savings-account-read-from-statement",
-        name: "msic-all-savings-account-read-from-statement",
-        fieldset: {
-          legend: {
-            text: "Did you read these details from a statement?",
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
--->
+<!--------------- CONTINUE ----------------------------------------------------------------------------------------->
+
+
+
       {{ govukButton({
         text: "Continue"
       }) }}

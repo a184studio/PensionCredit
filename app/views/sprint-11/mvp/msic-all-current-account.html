@@ -28,23 +28,25 @@
 
       <input type="hidden" name="account-count" value="{{ count + 1 }}"/>
 
-      {{ govukInput({
-        label: {
-          text: "Name of bank or building society"
-        },
-        id: "msic-all-current-account-name",
-        name: "msic-all-current-account-name-" + count,
-        classes: "govuk-input--width-20"
-      }) }}
+<!--------------- NAME ----------------------------------------------------------------------------------------->
 
 
-            <!--------------- EED = Yes ----------------------------------------------------------------------------------------->
+          {{ govukInput({
+            label: {
+              text: "Name of bank or building society"
+            },
+            id: "msic-all-current-account-name",
+            name: "msic-all-current-account-name-" + count,
+            classes: "govuk-input--width-20"
+          }) }}
+
+
+<!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // BALANCE ONLY  ----------------------------------------------------------------------------------------->
 
             {% set balanceEED %}
                   {{ govukInput({
                     label: {
-                      html: "Balance on <strong>"
-                        + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
+                      html: "How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
                     },
                     id: "msic-all-current-account-amount-EED",
                     name: "msic-all-current-account-amount-EED-" + count,
@@ -52,13 +54,16 @@
                   }) }}
             {% endset -%}
 
+<!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
+
+
             {% set balanceDateEED %}
             {{ govukDateInput({
               id: "msic-all-current-account-amount-EED-date-evidence",
               namePrefix: "msic-all-current-account-amount-EED-date-evidence-" + count,
               fieldset: {
                 legend: {
-                  text: "Date this balance is from"
+                  text: "Date this figure is from"
                 }
               },
               items: [
@@ -82,7 +87,7 @@
 
             {{ govukInput({
               label: {
-                html: "Balance on this date"
+                html: "How much was in the account on this date?"
               },
               classes: "govuk-input--width-20",
               id: "msic-all-current-account-amount-EED",
@@ -92,7 +97,7 @@
 
 
 
-            <!--------------- EED = YN ----------------------------------------------------------------------------------------->
+<!--------------- (1) EARLIEST ENTITLEMENT DATE // CHECK ----------------------------------------------------------------------------------------->
 
 
                   {{ govukRadios({
@@ -101,8 +106,7 @@
                     name: "msic-all-current-account-amount-balanceEED-check-" + count,
                     fieldset: {
                       legend: {
-                        html: "Do you know the balance of this account on <strong>"
-                          + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
+                        html: "Do you know how much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
                       }
                     },
                     hint: {
@@ -129,13 +133,13 @@
                   }) }}
 
 
-                <!--------------- TODAY = YES + BALANCE ----------------------------------------------------------------------------------------->
+<!--------------- (2) TODAY // BALANCE ONLY ----------------------------------------------------------------------------------------->
 
                   {% set balanceToday %}
 
                     {{ govukInput({
                       label: {
-                      html: "Balance <strong>" + '' | formatDate + "</strong>"
+                        html: "How much was in this account on <strong>" + '' | formatDate + "?</strong>"
                       },
                       classes: "govuk-input--width-20",
                       id: "msic-all-current-account-amount-TODAY",
@@ -144,7 +148,7 @@
 
                   {% endset -%}
 
-                  <!--------------- TODAY = YES + BALANCE ----------------------------------------------------------------------------------------->
+<!--------------- (2) TODAY // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
 
                     {% set balanceDateToday %}
 
@@ -153,7 +157,7 @@
                         namePrefix: "msic-all-current-account-amount-today-date-evidence-" + count,
                         fieldset: {
                           legend: {
-                            text: "Date this balance is from"
+                            text: "Date this figure is from"
                           }
                         },
                         items: [
@@ -188,7 +192,7 @@
 
 
 
-                <!--------------- TODAY = YN ----------------------------------------------------------------------------------------->
+<!--------------- (2) TODAY CHECK  ----------------------------------------------------------------------------------------->
 
 
 
@@ -198,7 +202,7 @@
                   name: "msic-all-current-account-amount-balanceTODAY-check-" + count,
                   fieldset: {
                     legend: {
-                      html: "Do you know the balance on <strong>" + '' | formatDate + "</strong>"
+                      html: "Do you know much was in this account on <strong>" + '' | formatDate + "?</strong>"
                     }
                   },
                   hint: {
@@ -228,7 +232,7 @@
 
 
 
-                  <!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
+<!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
 
       {% set percentageField %}
         {{ govukInput({
@@ -265,6 +269,8 @@
         ]
       }) }}
 
+
+<!--------------- CONTINUE ----------------------------------------------------------------------------------------->
 
 
 <br>
