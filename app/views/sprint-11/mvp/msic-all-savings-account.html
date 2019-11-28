@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add bulding society current account - Pension Credit
+  Add bulding society XXX - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -37,7 +37,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "Amount on <strong>"
+          html: "Balance on <strong>"
             + data['claim-date-cam-date-entry-day']
             + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
             + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
@@ -54,7 +54,7 @@
   namePrefix: "msic-all-savings-account-amount-EED-date-evidence",
   fieldset: {
     legend: {
-      text: "Date this amount is from"
+      text: "Date this balance is from"
     }
   },
   items: [
@@ -78,7 +78,7 @@
 
 {{ govukInput({
   label: {
-    html: "How much was in the account on this date?"
+    html: "Balance on this date"
   },
   classes: "govuk-input--width-20",
   id: "msic-all-savings-account-amount-EED",
@@ -96,7 +96,7 @@
         name: "msic-all-savings-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "Do you know how much money was in this account on <strong>"
+            html: "Do you know the balance of this account on <strong>"
               + data['claim-date-cam-date-entry-day']
               + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
               + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
@@ -116,7 +116,7 @@
         },
           {
             value: "No",
-            text: "No, I know how much was in the account on a different date",
+            text: "No, I know it on a different date",
             checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "No"),
             conditional: {
               html: balanceDateEED
@@ -132,7 +132,7 @@
 
         {{ govukInput({
           label: {
-          html: "Current balance"
+          html: "Balance <strong>" + '' | formatDate + "</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-all-savings-account-amount-TODAY",
@@ -187,7 +187,12 @@
 
     <!--------------- TODAY = YES/NO ----------------------------------------------------------------------------------------->
 
-    {% set balanceCheckYes %}
+
+
+
+    <!--------------- TODAY = YES ----------------------------------------------------------------------------------------->
+
+
 
     {{ govukRadios({
       classes: "govuk-radios",
@@ -195,7 +200,7 @@
       name: "balance-check-yes",
       fieldset: {
         legend: {
-          html: "Do you know the current balance of this account?"
+          html: "Do you know the balance on <strong>" + '' | formatDate + "</strong>"
         }
       },
       hint: {
@@ -216,45 +221,6 @@
           checked: (data["balance-check-yes"] == "No"),
           conditional: {
             html: balanceDateToday
-          }
-        }
-      ]
-    }) }}
-
-    {% endset -%}
-
-
-    <!--------------- TODAY = YES ----------------------------------------------------------------------------------------->
-
-
-
-    {{ govukRadios({
-      classes: "govuk-radios",
-      idPrefix: "balance-check-yn",
-      name: "balance-check-yn",
-      fieldset: {
-        legend: {
-          html: "Is the current balance of this account different?"
-        }
-      },
-      hint: {
-        text: ""
-      },
-      items: [
-      {
-        value: "Different",
-        text: "Yes",
-        checked: (data["balance-check-yn"] == "Different"),
-        conditional: {
-          html: balanceCheckYes
-        }
-      },
-        {
-          value: "Same",
-          text: "No",
-          checked: (data["balance-check-yn"] == "Same"),
-          conditional: {
-            html: balanceCheckNo
           }
         }
       ]

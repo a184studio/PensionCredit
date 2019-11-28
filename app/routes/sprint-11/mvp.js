@@ -704,7 +704,7 @@ router.post(`${baseUrl}/msic-has-current-account-yn-router`, (req, res) => {
   if (hasCurrentAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-all-current-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-all-savings-accounts-summary`)
+    res.redirect(`${baseUrl}/msic-has-savings-account-yn`)
   }
 })
 
