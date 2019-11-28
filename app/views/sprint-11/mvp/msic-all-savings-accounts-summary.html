@@ -851,7 +851,7 @@
 
             {
               key: {
-                html: "<br>* EARLIEST ENTITLMENT DATE"
+                html: "<br>Account details at " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
               },
               value: {
                 text: ""
@@ -869,7 +869,7 @@
 
             {
               key: {
-                text: "(1) Alt date of balance (Only if applicable interacted with)"
+                text: "Date this figure is from"
               },
               value: {
                 text: data['msic-all-savings-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-all-savings-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-all-savings-account-amount-EED-date-evidence-year']
@@ -887,7 +887,7 @@
 
             {
               key: {
-                text: "(1) Balance at DD.MM.2019"
+                text: "How much you had in the account on this date"
               },
               value: {
                 html: data['msic-all-savings-account-amount-EED'] | formatMoney
@@ -905,7 +905,7 @@
 
             {
               key: {
-                html: "<br>* TODAY BALANCES DATE"
+                html: "<br>Account details at " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
               },
               value: {
                 text: ""
@@ -921,10 +921,10 @@
               }
             },
 
-          
+
             {
               key: {
-                text: "(2) Alt date of balance (Only if applicable interacted with)"
+                text: "Date this figure is from"
               },
               value: {
                 text: data['msic-all-savings-account-amount-today-date-evidence-day'] + ' ' + (data['msic-all-savings-account-amount-today-date-evidence-month'] | getMonth) + ' ' + data['msic-all-savings-account-amount-today-date-evidence-year']
@@ -942,7 +942,7 @@
 
             {
               key: {
-                text: "(2) Balance at DD.MM.2019"
+                text: "How much you had in the account on this date"
               },
               value: {
                 html: data['msic-all-savings-account-amount-TODAY'] | formatMoney
