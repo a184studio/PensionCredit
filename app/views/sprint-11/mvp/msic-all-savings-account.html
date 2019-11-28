@@ -17,6 +17,10 @@
     <form action="msic-all-savings-accounts-summary" method="post" class="form">
       <input type="hidden" name="money-you-have-complete" value="in-progress"/>
 
+      {% set count = (data["account-count"] or 0) | int %}
+
+      <input type="hidden" name="account-count" value="{{ count + 1 }}"/>
+
       <h1 class="govuk-heading-xl">
         Savings account details
       </h1>
@@ -38,9 +42,7 @@
       {{ govukInput({
         label: {
           html: "Balance on <strong>"
-            + data['claim-date-cam-date-entry-day']
-            + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
-            + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
+            + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
         },
         id: "msic-all-savings-account-amount-EED",
         name: "msic-all-savings-account-amount-EED",
@@ -98,9 +100,7 @@
         fieldset: {
           legend: {
             html: "Do you know the balance of this account on <strong>"
-              + data['claim-date-cam-date-entry-day']
-              + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
-              + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
+              + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
           }
         },
         hint: {

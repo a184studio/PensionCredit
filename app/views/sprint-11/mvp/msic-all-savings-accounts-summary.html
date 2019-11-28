@@ -890,7 +890,7 @@
                 text: "(1) Balance at DD.MM.2019"
               },
               value: {
-                text: data['msic-all-savings-account-amount-EED']
+                html: data['msic-all-savings-account-amount-EED'] | formatMoney
               },
               actions: {
                 items: [
@@ -962,7 +962,7 @@
                 text: "(2) Balance at DD.MM.2019"
               },
               value: {
-                text: data['msic-all-savings-account-amount-TODAY']
+                html: data['msic-all-savings-account-amount-TODAY'] | formatMoney
               },
               actions: {
                 items: [
@@ -1000,7 +1000,7 @@
                 text: "Amount of money that is yours"
               },
               value: {
-                text: data['msic-all-savings-account-stake']
+                html: data['msic-all-savings-account-stake'] | formatMoney
               },
               actions: {
                 items: [
@@ -1029,7 +1029,7 @@
           <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
           <span class="govuk-accordion__section-button pc-text-regualar" id="accordion-default-heading-12">
-            <strong>1 Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account"> Add^</a>
+            <strong>0 Current accounts </strong><a class="govuk-accordion__link" href="msic-all-current-account"> Add^</a>
           </span>
           </h2>
           </div>
@@ -1041,85 +1041,183 @@
 
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters">
-              {{ govukSummaryList({
-                rows: [
-                {
-                  key: {
-                    text: "Account with"
-                  },
-                  value: {
-                    text: data['msic-all-current-account-name-' + i]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-all-current-account",
-                        html: "Change",
-                        visuallyHiddenText: "XXX"
-                      },
-                      {
-                        href: "msic-remove",
-                        html: "Remove",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                },
 
-                {
-                  key: {
-                    text: "Amount in this account today"
-                  },
-                  value: {
-                    text: data['msic-all-current-account-amount-' + i] | formatMoney
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
+
+              {{ govukSummaryList({
+              rows: [
+              {
+                key: {
+                  text: "Account with"
                 },
-                {
-                  key: {
-                    text: "Account owner"
-                  },
-                  value: {
-                    text: data['current-owner-' + i]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-all-current-account",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
+                value: {
+                  text: data['msic-all-current-account-name-' + i]
                 },
-                {
-                  classes: 'govuk-summary-list--no-border',
-                  key: {
-                    text: "Amount of money that is yours"
-                  },
-                  value: {
-                    text: data['msic-all-current-account-stake-' + i]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-all-current-account-stake",
-                        text: "",
-                        visuallyHiddenText: "XXXX"
-                      }
-                    ]
-                  }
+                actions: {
+                  items: [
+                    {
+                      href: "msic-all-savings-account",
+                      html: "Change",
+                      visuallyHiddenText: "XXX"
+                    },
+                    {
+                      href: "msic-remove",
+                      html: "Remove",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
                 }
+              },
+
+              {
+                key: {
+                  html: "<br>* EARLIEST ENTITLMENT DATE"
+                },
+                value: {
+                  text: ""
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "(1) Alt date of balance (Only if applicable interacted with)"
+                },
+                value: {
+                  text: data['msic-all-current-account-amount-EED-date-evidence-day-' + i] + ' ' + (data['msic-all-savings-account-amount-EED-date-evidence-month-' + i] | getMonth) + ' ' + data['msic-all-savings-account-amount-EED-date-evidence-year-' + i]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "(1) Balance at DD.MM.2019"
+                },
+                value: {
+                  text: data['msic-all-current-account-amount-EED-' + i] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  html: "<br>* TODAY BALANCES DATE"
+                },
+                value: {
+                  text: ""
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "(2) Alt date of balance (Only if applicable interacted with)"
+                },
+                value: {
+                  text: data['msic-all-current-account-amount-today-date-evidence-day-' + i] + ' ' + (data['msic-all-savings-account-amount-today-date-evidence-month-' + i] | getMonth) + ' ' + data['msic-all-savings-account-amount-today-date-evidence-year-' + i]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "(2) Balance at DD.MM.2019"
+                },
+                value: {
+                  text: data['msic-all-current-account-amount-TODAY-' + i] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+
+              {
+              key: {
+                text: "Account owner"
+              },
+              value: {
+                text: data['current-owner-' + i]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
                 ]
+              }
+              },
+
+              {
+                classes: 'govuk-summary-list--no-border',
+                key: {
+                  text: "Amount of money that is yours"
+                },
+                value: {
+                  text: data['msic-all-current-account-stake-' + i]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXXX"
+                    }
+                  ]
+                }
+              }
+              ]
               }) }}
+
+
+
+
             </div></div>
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
           {% endfor %}
