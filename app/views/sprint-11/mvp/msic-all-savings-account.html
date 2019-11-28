@@ -32,7 +32,7 @@
 
 
 
-<!--------------- EED ----------------------------------------------------------------------------------------->
+<!--------------- EED = Yes ----------------------------------------------------------------------------------------->
 
 {% set balanceEED %}
       {{ govukInput({
@@ -88,6 +88,7 @@
 
 
 
+<!--------------- EED = YN ----------------------------------------------------------------------------------------->
 
 
       {{ govukRadios({
@@ -185,12 +186,7 @@
 
 
 
-    <!--------------- TODAY = YES/NO ----------------------------------------------------------------------------------------->
-
-
-
-
-    <!--------------- TODAY = YES ----------------------------------------------------------------------------------------->
+    <!--------------- TODAY = YN ----------------------------------------------------------------------------------------->
 
 
 
@@ -225,154 +221,6 @@
         }
       ]
     }) }}
-
-
-
-
-
-      <!---------------------------------------------------------------->
-
-
-
-      {% set balanceTAM %}
-      {{ govukInput({
-        label: {
-          html: "Balance on <strong>" + '' | formatDate + "</strong>"
-        },
-        classes: "govuk-input--width-20",
-        id: "msic-all-savings-account-amount-TAM",
-        name: "msic-all-savings-account-amount-TAM"
-      }) }}
-
-
-            {{ govukInput({
-              label: {
-                html: "Balance on <strong>"
-                  + data['claim-date-cam-date-entry-day']
-                  + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
-                  + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
-              },
-              id: "msic-all-savings-account-amount-EED",
-              name: "msic-all-savings-account-amount-EED",
-              classes: "govuk-input--width-20"
-            }) }}
-      {% endset -%}
-
-      {% set balanceCheckNo %}
-      {{ govukDateInput({
-        id: "claim-date-idoc-yn-date",
-        namePrefix: "claim-date-idoc-yn-date",
-        fieldset: {
-          legend: {
-            text: "Date this balance is from"
-          }
-        },
-        items: [
-          {
-            name: "day",
-            classes: "govuk-input--width-2",
-            value: data["claim-date-idoc-yn-date-day"]
-          },
-          {
-            name: "month",
-            classes: "govuk-input--width-2",
-            value: data["claim-date-idoc-yn-date-month"]
-          },
-          {
-            name: "year",
-            classes: "govuk-input--width-4",
-            value: data["claim-date-idoc-yn-date-year"]
-          }
-        ]
-      }) }}
-
-      {{ govukInput({
-        label: {
-          html: "@pet1e: Balance on <strong>" + '' | formatDate + "</strong>"
-        },
-        classes: "govuk-input--width-20",
-        id: "msic-all-savings-account-amount-TAM",
-        name: "msic-all-savings-account-amount-TAM"
-      }) }}
-      {% endset -%}
-
-
-
-
-
-
-
-<!---------------------------------------------------------------->
-
-
-
-
-      {% set balanceDateTAM %}
-
-      {{ govukInput({
-        label: {
-          html: "@pete: Balance on <strong>" + '' | formatDate + "</strong>"
-        },
-        classes: "govuk-input--width-20",
-        id: "msic-all-savings-account-amount-TAM",
-        name: "msic-all-savings-account-amount-TAM"
-      }) }}
-      {% endset -%}
-
-
-      {% set balanceEED %}
-            {{ govukInput({
-              label: {
-                html: "Amount in this account on <strong>"
-                  + data['claim-date-cam-date-entry-day']
-                  + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
-                  + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
-              },
-              id: "msic-all-savings-account-amount-EED",
-              name: "msic-all-savings-account-amount-EED",
-              classes: "govuk-input--width-20"
-            }) }}
-      {% endset -%}
-
-      {% set balanceDateEED %}
-      {{ govukDateInput({
-        id: "claim-date-idoc-yn-date",
-        namePrefix: "claim-date-idoc-yn-date",
-        fieldset: {
-          legend: {
-            text: "Date this balance is from"
-          }
-        },
-        items: [
-          {
-            name: "day",
-            classes: "govuk-input--width-2",
-            value: data["claim-date-idoc-yn-date-day"]
-          },
-          {
-            name: "month",
-            classes: "govuk-input--width-2",
-            value: data["claim-date-idoc-yn-date-month"]
-          },
-          {
-            name: "year",
-            classes: "govuk-input--width-4",
-            value: data["claim-date-idoc-yn-date-year"]
-          }
-        ]
-      }) }}
-
-      {{ govukInput({
-        label: {
-          html: "@pete: Balance on <strong>" + '' | formatDate + "</strong>"
-        },
-        classes: "govuk-input--width-20",
-        id: "msic-all-savings-account-amount-TAM",
-        name: "msic-all-savings-account-amount-TAM"
-      }) }}
-      {% endset -%}
-
-
 
 
 
