@@ -995,7 +995,7 @@
                 text: "(1) Alt date of balance (Only if applicable interacted with)"
               },
               value: {
-                html: data['msic-all-current-account-amount-EED-date-evidence-day-' + i] + ' ' + (data['msic-all-current-account-amount-EED-date-evidence-month-' + i] | getMonth) + ' ' + data['msic-all-current-account-amount-EED-date-evidence-year-' + i]
+                html: data['msic-all-current-account-amount-EED-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-EED-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-EED-date-evidence-' + i + '-year']
               },
               actions: {
                 items: [
@@ -1048,7 +1048,7 @@
                 text: "(2) Alt date of balance (Only if applicable interacted with)"
               },
               value: {
-                html: data['msic-all-current-account-amount-today-date-evidence-day-' + i] + ' ' + (data['msic-all-current-account-amount-today-date-evidence-month-' + i] | getMonth) + ' ' + data['msic-all-current-account-amount-today-date-evidence-year-' + i]
+                html: data['msic-all-current-account-amount-today-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-today-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-today-date-evidence-' + i + '-year']
               },
               actions: {
                 items: [

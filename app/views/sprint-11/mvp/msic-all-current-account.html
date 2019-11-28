@@ -55,7 +55,7 @@
             {% set balanceDateEED %}
             {{ govukDateInput({
               id: "msic-all-current-account-amount-EED-date-evidence",
-              namePrefix: "msic-all-current-account-amount-EED-date-evidence",
+              namePrefix: "msic-all-current-account-amount-EED-date-evidence-" + count,
               fieldset: {
                 legend: {
                   text: "Date this balance is from"
@@ -150,7 +150,7 @@
 
                       {{ govukDateInput({
                         id: "msic-all-current-account-amount-today-date-evidence",
-                        namePrefix: "msic-all-current-account-amount-today-date-evidence",
+                        namePrefix: "msic-all-current-account-amount-today-date-evidence-" + count,
                         fieldset: {
                           legend: {
                             text: "Date this balance is from"
