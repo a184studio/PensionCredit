@@ -853,13 +853,31 @@
                           ]
                           }) }}
 
-                          <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                          <h2 class="govuk-heading-s extra-space-cya">Account details at {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-0',
               rows: [
+            {
+              key: {
+                html: "Account details at " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+              },
+              value: {
+                text: ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
             {
               key: {
                 text: "Date this amount is from"
@@ -898,12 +916,32 @@
             ]
             }) }}
 
-            <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{ data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] }}</h2>
+            <p class="govuk-heading-s extra-space-cya">XXXXX</p>
 
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-8',
               rows: [
+            {
+              classes: '',
+              key: {
+                html: "Account details at " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+              },
+              value: {
+                text: ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+
             {
               key: {
                 text: "Date this amount is from"
