@@ -37,7 +37,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "Balance on <strong>"
+          html: "Amount on <strong>"
             + data['claim-date-cam-date-entry-day']
             + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
             + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
@@ -54,7 +54,7 @@
   namePrefix: "msic-all-savings-account-amount-EED-date-evidence",
   fieldset: {
     legend: {
-      text: "Date this balance is from"
+      text: "Date this amount is from"
     }
   },
   items: [
@@ -78,7 +78,7 @@
 
 {{ govukInput({
   label: {
-    html: "Balance on this date"
+    html: "How much was in the account on this date?"
   },
   classes: "govuk-input--width-20",
   id: "msic-all-savings-account-amount-EED",
@@ -96,7 +96,7 @@
         name: "msic-all-savings-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "Do you know the balance of this account on <strong>"
+            html: "Do you know how much money was in this account on <strong>"
               + data['claim-date-cam-date-entry-day']
               + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth)
               + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>"
@@ -116,7 +116,7 @@
         },
           {
             value: "No",
-            text: "No, I know it on a different date",
+            text: "No, I know how much was in the account on a different date",
             checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "No"),
             conditional: {
               html: balanceDateEED
