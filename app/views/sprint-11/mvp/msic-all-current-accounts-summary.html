@@ -947,53 +947,44 @@
           <div class="govuk-grid-column-three-quarters">
 
 
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-0',
+                rows: [
+              {
+                key: {
+                  text: "Account with"
+                },
+                value: {
+                  text: data['msic-all-current-account-name-' + i]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "msic-all-savings-account",
+                      html: "Change",
+                      visuallyHiddenText: "XXX"
+                    },
+                    {
+                      href: "msic-remove",
+                      html: "Remove",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+              ]
+              }) }}
+
+              <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
             {{ govukSummaryList({
-            rows: [
+              classes: 'govuk-!-margin-bottom-0',
+              rows: [
             {
               key: {
-                text: "Account with"
-              },
-              value: {
-                text: data['msic-all-current-account-name-' + i]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-all-savings-account",
-                    html: "Change",
-                    visuallyHiddenText: "XXX"
-                  },
-                  {
-                    href: "msic-remove",
-                    html: "Remove",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-
-            {
-              classes: 'extra-space-cya',
-              key: {
-                html: "<br>* EARLIEST ENTITLMENT DATE"
-              },
-              value: {
-                text: ""
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
-                text: "(1) Alt date of balance (Only if applicable interacted with)"
+                text: "Date this amount is from"
               },
               value: {
                 html: data['msic-all-current-account-amount-EED-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-EED-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-EED-date-evidence-' + i + '-year']
@@ -1011,7 +1002,7 @@
 
             {
               key: {
-                text: "(1) Balance at DD.MM.2019"
+                text: "How much you had in the account on this date"
               },
               value: {
                 text: data['msic-all-current-account-amount-EED-' + i] | formatMoney
@@ -1025,32 +1016,22 @@
                   }
                 ]
               }
-            },
+            }
+            ]
+            }) }}
 
-            {
-              classes: 'extra-space-cya',
-              key: {
-                html: "<br>* TODAY BALANCES DATE"
-              },
-              value: {
-                text: ""
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
+            <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-8',
+              rows: [
             {
               key: {
-                text: "(2) Alt date of balance (Only if applicable interacted with)"
+                text: "Date this amount is from"
               },
               value: {
-                html: data['msic-all-current-account-amount-today-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-today-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-today-date-evidence-' + i + '-year']
+                html: data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-year']
               },
               actions: {
                 items: [
@@ -1065,7 +1046,7 @@
 
             {
               key: {
-                text: "(2) Balance at DD.MM.2019"
+                text: "How much you had in the account on this date"
               },
               value: {
                 text: data['msic-all-current-account-amount-TODAY-' + i] | formatMoney
@@ -1079,11 +1060,16 @@
                   }
                 ]
               }
-            },
+            }
+            ]
+            }) }}
 
+            <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
 
+            {{ govukSummaryList({
+            rows: [
             {
-              classes: 'extra-space-cya',
+              classes: 'govuk-summary-list',
               key: {
               text: "Account owner"
             },
