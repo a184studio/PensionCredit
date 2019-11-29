@@ -21,6 +21,9 @@
         Shares details
       </h1>
 
+      <!--------------- NAME ----------------------------------------------------------------------------------------->
+
+
       {{ govukInput({
         label: {
           text: "Name of company"
@@ -30,47 +33,195 @@
         classes: "govuk-input--width-20"
       }) }}
 
-      {% set percentageField %}
-        {{ govukInput({
-          label: {
-            text: "Percentage stake"
-          },
-          id: "msic-shares-account-stake",
-          name: "msic-shares-account-stake",
-          classes: "govuk-input--width-10"
-        }) }}
-      {% endset %}
 
-          {{ govukInput({
+      <!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // BALANCE ONLY  ----------------------------------------------------------------------------------------->
+
+{% set balanceEED %}
+      {{ govukInput({
         label: {
-          text: "Total number of shares you hold"
+          html: "@Pete (How many Shares) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
-        id: "msic-shares-account-amount",
-        name: "msic-shares-account-amount",
+        id: "msic-shares-account-amount-EED",
+        name: "msic-shares-account-amount-EED",
         classes: "govuk-input--width-20"
       }) }}
+{% endset -%}
 
-<!--
+<!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
+
+
+{% set balanceDateEED %}
+{{ govukDateInput({
+  id: "msic-shares-account-amount-EED-date-evidence",
+  namePrefix: "msic-shares-account-account-amount-EED-date-evidence",
+  fieldset: {
+    legend: {
+      text: "Date this figure is from"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data["msic-shares-account-amount-EED-date-evidence-day"]
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: data["mmsic-shares-account-amount-EED-date-evidence-month"]
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: data["msic-shares-account-amount-EED-date-evidence-year"]
+    }
+  ]
+}) }}
+
+{{ govukInput({
+  label: {
+    html: "@Pete (How many Shares) How much was in the account on this date?"
+  },
+  classes: "govuk-input--width-20",
+  id: "msic-shares-account-amount-EED",
+  name: "msic-shares-account-amount-EED"
+}) }}
+{% endset -%}
+
+
+
+<!--------------- (1) EARLIEST ENTITLEMENT DATE // CHECK ----------------------------------------------------------------------------------------->
+
+
       {{ govukRadios({
-        idPrefix: "msic-shares-account-read-from-statement",
-        name: "msic-shares-account-read-from-statement",
+        classes: "govuk-radios",
+        idPrefix: "msic-shares-account-amount-balanceEED-check",
+        name: "msic-shares-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            text: "Did you read these details from a statement?"
+            html: "@Pete (How many Shares) Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
+        hint: {
+          text: ""
+        },
         items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["msic-shares-account-amount-balanceEED-check"] == "Yes"),
+          conditional: {
+            html: balanceEED
+          }
+        },
           {
             value: "No",
-            text: "No"
+            text: "No, I know it on a different date",
+            checked: (data["msic-shares-account-amount-balanceEED-check"] == "No"),
+            conditional: {
+              html: balanceDateEED
+            }
           }
         ]
       }) }}
--->
+
+
+      <!--------------- (2) TODAY // BALANCE ONLY ----------------------------------------------------------------------------------------->
+
+
+      {% set balanceToday %}
+
+        {{ govukInput({
+          label: {
+          html: "@Pete (How many Shares) How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          },
+          classes: "govuk-input--width-20",
+          id: "msic-shares-account-amount-TODAY",
+          name: "msic-shares-account-amount-TODAY"
+        }) }}
+
+      {% endset -%}
+
+      <!--------------- (2) TODAY // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
+
+        {% set balanceDateToday %}
+
+          {{ govukDateInput({
+            id: "msic-shares-account-amount-TODAY-date-evidence",
+            namePrefix: "mmsic-shares-account-amount-TODAY-date-evidence",
+            fieldset: {
+              legend: {
+                text: "Date this figure is from"
+              }
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["msic-shares-account-amount-TODAY-date-evidence-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["msic-shares-account-amount-TODAY-date-evidence-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["msic-shares-account-amount-TODAY-date-evidence-year"]
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: "@Pete (How many Shares) How much was in this account on this date?"
+            },
+            classes: "govuk-input--width-20",
+            id: "msic-shares-account-amount-TODAY",
+            name: "msic-shares-account-amount-TODAY"
+          }) }}
+
+        {% endset -%}
+
+
+
+        <!--------------- (2) TODAY CHECK  ----------------------------------------------------------------------------------------->
+
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "msic-shares-account-amount-balanceTODAY-check",
+      name: "msic-shares-account-amount-balanceTODAY-check",
+      fieldset: {
+        legend: {
+          html: "@Pete (How many Shares) Do you know how much was in this account on <strong>" + '' | formatDate + "?</strong>"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        checked: (data["msic-shares-account-amount-balanceTODAY-check"] == "Yes"),
+        conditional: {
+          html: balanceToday
+        }
+      },
+        {
+          value: "No",
+          text: "No, I know it on a different date",
+          checked: (data["msic-shares-account-amount-balanceTODAY-check"] == "No"),
+          conditional: {
+            html: balanceDateToday
+          }
+        }
+      ]
+    }) }}
+
+
 
       {{ govukButton({
         text: "Continue"
