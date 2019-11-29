@@ -41,8 +41,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "How much was in this account on <strong>"
-            + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
         id: "msic-all-savings-account-amount-EED",
         name: "msic-all-savings-account-amount-EED",
@@ -116,7 +115,7 @@
         },
           {
             value: "No",
-            text: "No, I know how much was in this account on a different date",
+            text: "No, I know it on a different date",
             checked: (data["msic-all-savings-account-amount-balanceEED-check"] == "No"),
             conditional: {
               html: balanceDateEED
@@ -128,11 +127,12 @@
 
     <!--------------- TODAY = YES + BALANCE ----------------------------------------------------------------------------------------->
 
+
       {% set balanceToday %}
 
         {{ govukInput({
           label: {
-          html: "How much was in this account on <strong>" + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] + "?</strong>"
+          html: "How much was in this account on <strong>" + '' | formatDate + "?</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-all-savings-account-amount-TODAY",
@@ -187,7 +187,6 @@
 
     <!--------------- TODAY = YN ----------------------------------------------------------------------------------------->
 
-html: "Do you know how much was in the account on <strong>" + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] + "?</strong>"
 
     {{ govukRadios({
       classes: "govuk-radios",
