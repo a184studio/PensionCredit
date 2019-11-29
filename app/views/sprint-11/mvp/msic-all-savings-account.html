@@ -25,6 +25,9 @@
         Savings account details
       </h1>
 
+      <!--------------- NAME ----------------------------------------------------------------------------------------->
+
+
       {{ govukInput({
         label: {
           text: "Name of bank or building society"
@@ -35,8 +38,7 @@
       }) }}
 
 
-
-<!--------------- EED = Yes ----------------------------------------------------------------------------------------->
+      <!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // BALANCE ONLY  ----------------------------------------------------------------------------------------->
 
 {% set balanceEED %}
       {{ govukInput({
@@ -48,6 +50,9 @@
         classes: "govuk-input--width-20"
       }) }}
 {% endset -%}
+
+<!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
+
 
 {% set balanceDateEED %}
 {{ govukDateInput({
@@ -89,7 +94,7 @@
 
 
 
-<!--------------- EED = YN ----------------------------------------------------------------------------------------->
+<!--------------- (1) EARLIEST ENTITLEMENT DATE // CHECK ----------------------------------------------------------------------------------------->
 
 
       {{ govukRadios({
@@ -125,7 +130,7 @@
       }) }}
 
 
-    <!--------------- TODAY = YES + BALANCE ----------------------------------------------------------------------------------------->
+      <!--------------- (2) TODAY // BALANCE ONLY ----------------------------------------------------------------------------------------->
 
 
       {% set balanceToday %}
@@ -141,13 +146,13 @@
 
       {% endset -%}
 
-      <!--------------- TODAY = YES + BALANCE ----------------------------------------------------------------------------------------->
+      <!--------------- (2) TODAY // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
 
         {% set balanceDateToday %}
 
           {{ govukDateInput({
-            id: "msic-all-savings-account-amount-today-date-evidence",
-            namePrefix: "msic-all-savings-account-amount-today-date-evidence",
+            id: "msic-all-savings-account-amount-TODAY-date-evidence",
+            namePrefix: "msic-all-savings-account-amount-TODAY-date-evidence",
             fieldset: {
               legend: {
                 text: "Date this figure is from"
@@ -157,17 +162,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["msic-all-savings-account-amount-today-date-evidence-day"]
+                value: data["msic-all-savings-account-amount-TODAY-date-evidence-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["msic-all-savings-account-amount-today-date-evidence-month"]
+                value: data["msic-all-savings-account-amount-TODAY-date-evidence-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["msic-all-savings-account-amount-today-date-evidence-year"]
+                value: data["msic-all-savings-account-amount-TODAY-date-evidence-year"]
               }
             ]
           }) }}
@@ -185,13 +190,13 @@
 
 
 
-    <!--------------- TODAY = YN ----------------------------------------------------------------------------------------->
+        <!--------------- (2) TODAY CHECK  ----------------------------------------------------------------------------------------->
 
 
     {{ govukRadios({
       classes: "govuk-radios",
-      idPrefix: "balance-check-yes",
-      name: "balance-check-yes",
+      idPrefix: "msic-all-savings-account-amount-balanceTODAY-check",
+      name: "msic-all-savings-account-amount-balanceTODAY-check",
       fieldset: {
         legend: {
           html: "Do you know much was in this account on <strong>" + '' | formatDate + "?</strong>"
@@ -204,7 +209,7 @@
       {
         value: "Yes",
         text: "Yes",
-        checked: (data["balance-check-yes"] == "Yes"),
+        checked: (data["msic-all-savings-account-amount-balanceTODAY-check"] == "Yes"),
         conditional: {
           html: balanceToday
         }
@@ -212,7 +217,7 @@
         {
           value: "No",
           text: "No, I know it on a different date",
-          checked: (data["balance-check-yes"] == "No"),
+          checked: (data["msic-all-savings-account-amount-balanceTODAY-check"] == "No"),
           conditional: {
             html: balanceDateToday
           }
@@ -224,7 +229,7 @@
 
 
 
-      <!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
+    <!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
 
 
 
@@ -263,28 +268,7 @@
         ]
       }) }}
 
-<!--
-      {{ govukRadios({
-        idPrefix: "msic-all-savings-account-read-from-statement",
-        name: "msic-all-savings-account-read-from-statement",
-        fieldset: {
-          legend: {
-            text: "Did you read these details from a statement?",
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
--->
+
       {{ govukButton({
         text: "Continue"
       }) }}
