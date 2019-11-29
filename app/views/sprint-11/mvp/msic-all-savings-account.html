@@ -99,8 +99,7 @@
         name: "msic-all-savings-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "Do you know how much was in the account on <strong>"
-              + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
         hint: {
@@ -110,7 +109,7 @@
         {
           value: "Yes",
           text: "Yes",
-          checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "Yes"),
+          checked: (data["msic-all-savings-account-amount-balanceEED-check"] == "Yes"),
           conditional: {
             html: balanceEED
           }
@@ -118,7 +117,7 @@
           {
             value: "No",
             text: "No, I know how much was in this account on a different date",
-            checked: (data["msic-all-savings-account-amount-balanceTAM-check"] == "No"),
+            checked: (data["msic-all-savings-account-amount-balanceEED-check"] == "No"),
             conditional: {
               html: balanceDateEED
             }
@@ -133,7 +132,7 @@
 
         {{ govukInput({
           label: {
-          html: "How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "How much was in this account on <strong>" + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] + "?</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-all-savings-account-amount-TODAY",
@@ -188,7 +187,7 @@
 
     <!--------------- TODAY = YN ----------------------------------------------------------------------------------------->
 
-
+html: "Do you know how much was in the account on <strong>" + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] + "?</strong>"
 
     {{ govukRadios({
       classes: "govuk-radios",
