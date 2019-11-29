@@ -37,7 +37,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "How much was in this account on <strong>"
+          html: "@Pete (Value of Credit union) How much was in this account on <strong>"
             + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
         id: "msic-credit-union-account-amount-EED",
@@ -76,7 +76,7 @@
 
 {{ govukInput({
   label: {
-    html: "How much was in the account on this date?"
+    html: "@Pete (Value of Credit union) How much was in the account on this date?"
   },
   classes: "govuk-input--width-20",
   id: "msic-credit-union-account-amount-EED",
@@ -95,7 +95,7 @@
         name: "msic-credit-union-account-balanceEED-check",
         fieldset: {
           legend: {
-            html: "Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "@Pete (Value of Credit union) Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
         hint: {
@@ -128,7 +128,7 @@
 
         {{ govukInput({
           label: {
-          html: "How much was in this account on <strong>" + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] + "?</strong>"
+          html: "@Pete (Value of Credit union) How much was in this account on <strong>" + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] + "?</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-credit-union-account-amount-TODAY",
@@ -170,7 +170,7 @@
 
           {{ govukInput({
             label: {
-              html: "How much was in this account on this date?"
+              html: "@Pete (Value of Credit union) How much was in this account on this date?"
             },
             classes: "govuk-input--width-20",
             id: "msic-credit-union-account-TODAY",
@@ -189,7 +189,7 @@
       name: "msic-credit-union-account-balanceTODAY-check",
       fieldset: {
         legend: {
-          html: "Do you know much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "@Pete (Value of Credit union) Do you know much was in this account on <strong>" + '' | formatDate + "?</strong>"
         }
       },
       hint: {
