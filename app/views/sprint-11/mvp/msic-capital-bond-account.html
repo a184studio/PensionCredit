@@ -21,6 +21,8 @@
         Income or capital bonds details
       </h1>
 
+      <!--------------- NAME ----------------------------------------------------------------------------------------->
+
 
       {{ govukInput({
         label: {
@@ -31,17 +33,193 @@
         classes: "govuk-input--width-20"
       }) }}
 
+
+      <!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // BALANCE ONLY  ----------------------------------------------------------------------------------------->
+
+{% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "Total value of bonds <strong>today</strong>"
+          html: "@Pete (Value of capital bond) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
-        id: "msic-capital-bond-account-total-bonds",
-        name: "msic-capital-bond-account-total-bonds",
-        classes: "govuk-input--width-20",
-        attributes: {
-          maxlength: 20
-        }
+        id: "msic-capital-bond-amount-EED",
+        name: "msic-capital-bond-amount-EED",
+        classes: "govuk-input--width-20"
       }) }}
+{% endset -%}
+
+<!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
+
+
+{% set balanceDateEED %}
+{{ govukDateInput({
+  id: "msic-capital-bond-amount-EED-date-evidence",
+  namePrefix: "msic-capital-bond-amount-EED-date-evidence",
+  fieldset: {
+    legend: {
+      text: "Date this figure is from"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data["msic-capital-bond-amount-EED-date-evidence-day"]
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: data["msic-capital-bond-amount-EED-date-evidence-month"]
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: data["msic-capital-bond-amount-EED-date-evidence-year"]
+    }
+  ]
+}) }}
+
+{{ govukInput({
+  label: {
+    html: "@Pete (Value of capital bond) How much was in the account on this date?"
+  },
+  classes: "govuk-input--width-20",
+  id: "msic-capital-bond-amount-EED",
+  name: "msic-capital-bond-amount-EED"
+}) }}
+{% endset -%}
+
+
+
+<!--------------- (1) EARLIEST ENTITLEMENT DATE // CHECK ----------------------------------------------------------------------------------------->
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "msic-capital-bond-amount-balanceEED-check",
+        name: "mmsic-capital-bond-amount-balanceEED-check",
+        fieldset: {
+          legend: {
+            html: "@Pete (Value of capital bond) Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["msic-capital-bond-amount-balanceEED-check"] == "Yes"),
+          conditional: {
+            html: balanceEED
+          }
+        },
+          {
+            value: "No",
+            text: "No, I know it on a different date",
+            checked: (data["msic-capital-bond-amount-balanceEED-check"] == "No"),
+            conditional: {
+              html: balanceDateEED
+            }
+          }
+        ]
+      }) }}
+
+
+      <!--------------- (2) TODAY // BALANCE ONLY ----------------------------------------------------------------------------------------->
+
+
+      {% set balanceToday %}
+
+        {{ govukInput({
+          label: {
+          html: "@Pete (Value of capital bond) How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          },
+          classes: "govuk-input--width-20",
+          id: "msic-capital-bond-amount-TODAY",
+          name: "msic-capital-bond-amount-TODAY"
+        }) }}
+
+      {% endset -%}
+
+      <!--------------- (2) TODAY // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
+
+        {% set balanceDateToday %}
+
+          {{ govukDateInput({
+            id: "msic-capital-bond-amount-TODAY-date-evidence",
+            namePrefix: "msic-capital-bond-amount-TODAY-date-evidence",
+            fieldset: {
+              legend: {
+                text: "Date this figure is from"
+              }
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["msic-capital-bond-amount-TODAY-date-evidence-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["msic-capital-bond-amount-TODAY-date-evidence-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["msic-capital-bond-amount-TODAY-date-evidence-year"]
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: "@Pete (Value of capital bond) How much was in this account on this date?"
+            },
+            classes: "govuk-input--width-20",
+            id: "msic-capital-bond-amount-TODAY",
+            name: "msic-capital-bond-amount-TODAY"
+          }) }}
+
+        {% endset -%}
+
+
+
+        <!--------------- (2) TODAY CHECK  ----------------------------------------------------------------------------------------->
+
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "msic-capital-bond-balanceTODAY-check",
+      name: "msic-capital-bond-balanceTODAY-check",
+      fieldset: {
+        legend: {
+          html: "@Pete (Value of capital bond) Do you know how much was in this account on <strong>" + '' | formatDate + "?</strong>"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        checked: (data["msic-capital-bond-balanceTODAY-check"] == "Yes"),
+        conditional: {
+          html: balanceToday
+        }
+      },
+        {
+          value: "No",
+          text: "No, I know it on a different date",
+          checked: (data["msic-capital-bond-balanceTODAY-check"] == "No"),
+          conditional: {
+            html: balanceDateToday
+          }
+        }
+      ]
+    }) }}
 
       {{ govukRadios({
         idPrefix: "msic-capital-bond-account-life-assurance",
