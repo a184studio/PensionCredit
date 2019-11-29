@@ -21,122 +21,220 @@
         Other money, savings or investments that you have not told us about
       </h1>
 
+      <!--------------- NAME ----------------------------------------------------------------------------------------->
+
+
       {{ govukInput({
         label: {
-          text: "Description of this money?"
+          text: "Name of bank or building society"
         },
         id: "msic-missing-account-name",
         name: "msic-missing-account-name",
         classes: "govuk-input--width-20"
       }) }}
 
-<!--
+
+      <!--------------- CURRENCY ----------------------------------------------------------------------------------------->
+
+
       {{ govukInput({
         label: {
-          text: "Last 4 digits of the account number or roll number"
+          text: "What currency is it?"
         },
-        id: "msic-missing-account-last-digits",
-        name: "msic-missing-account-last-digits",
-        classes: "govuk-input--width-4",
-        attributes: {
-          maxlength: 4
-        }
+        id: "msic-missing-account-currency",
+        name: "msic-missing-account-currency",
+        classes: "govuk-input--width-20"
       }) }}
--->
 
-    {{ govukInput({
-      label: {
-        text: "What currency is it?"
-      },
-      id: "msic-missing-account-currency",
-      name: "msic-missing-account-currency",
-      classes: "govuk-input--width-20"
-    }) }}
 
+      <!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // BALANCE ONLY  ----------------------------------------------------------------------------------------->
+
+{% set balanceEED %}
       {{ govukInput({
-    label: {
-      html: "Total amount <strong>today</strong>"
-    },
-    id: "msic-missing-account-amount",
-    name: "msic-missing-account-amount",
-    classes: "govuk-input--width-20"
-  }) }}
-
-      {% set percentageField %}
-        {{ govukInput({
-          label: {
-            text: "Percentage stake"
-          },
-          id: "msic-missing-account-stake",
-          name: "msic-missing-account-stake",
-          classes: "govuk-input--width-10"
-        }) }}
-      {% endset %}
-
-<!--
+        label: {
+          html: "@Pete (Value of money) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+        },
+        id: "msic-missing-account-amount-EED",
+        name: "msic-missing-account-amount-EED",
+        classes: "govuk-input--width-20"
       }) }}
+{% endset -%}
+
+<!--------------- (2) EARLIEST ENTITLEMENT DATE (EED) // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
+
+
+{% set balanceDateEED %}
+{{ govukDateInput({
+  id: "msic-missing-account-amount-EED-date-evidence",
+  namePrefix: "msic-missing-account-amount-EED-date-evidence",
+  fieldset: {
+    legend: {
+      text: "Date this figure is from"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data["msic-missing-account-amount-EED-date-evidence-day"]
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: data["msic-missing-account-amount-EED-date-evidence-month"]
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: data["msic-missing-account-amount-EED-date-evidence-year"]
+    }
+  ]
+}) }}
+
+{{ govukInput({
+  label: {
+    html: "@Pete (Value of money) How much was in the account on this date?"
+  },
+  classes: "govuk-input--width-20",
+  id: "msic-missing-account-amount-EED",
+  name: "msic-missing-account-amount-EED"
+}) }}
+{% endset -%}
+
+
+
+<!--------------- (1) EARLIEST ENTITLEMENT DATE // CHECK ----------------------------------------------------------------------------------------->
 
 
       {{ govukRadios({
-        idPrefix: "msic-missing-account-owner",
-        name: "msic-missing-account-owner",
+        classes: "govuk-radios",
+        idPrefix: "msic-missing-account-amount-balanceEED-check",
+        name: "msic-missing-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            text: "Account owner",
-            classes: "govuk-fieldset__legend--s"
+            html: "@Pete (Value of money) Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
+        hint: {
+          text: ""
+        },
         items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["msic-missing-account-amount-balanceEED-check"] == "Yes"),
+          conditional: {
+            html: balanceEED
+          }
+        },
           {
-            value: "You",
-            text: "Only you"
-          },
-          {
-            value: "Joint account",
-            text: "Joint account",
+            value: "No",
+            text: "No, I know it on a different date",
+            checked: (data["msic-missing-account-balanceEED-check"] == "No"),
             conditional: {
-              html: percentageField
+              html: balanceDateEED
             }
           }
         ]
       }) }}
--->
 
 
-<!--
-      {{ govukRadios({
-        idPrefix: "msic-missing-account-read-from-statement",
-        name: "msic-missing-account-read-from-statement",
-        fieldset: {
-          legend: {
-            text: "Did you read these details from a statement?",
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
+      <!--------------- (2) TODAY // BALANCE ONLY ----------------------------------------------------------------------------------------->
+
+
+      {% set balanceToday %}
+
+        {{ govukInput({
+          label: {
+          html: "@Pete (Value of money) How much was in this account on <strong>" + '' | formatDate + "?</strong>"
           },
-          {
-            value: "No",
-            text: "No"
+          classes: "govuk-input--width-20",
+          id: "msic-missing-account-amount-TODAY",
+          name: "msic-missing-account-amount-TODAY"
+        }) }}
+
+      {% endset -%}
+
+      <!--------------- (2) TODAY // ENTER DATE AND BALANCE  ----------------------------------------------------------------------------------------->
+
+        {% set balanceDateToday %}
+
+          {{ govukDateInput({
+            id: "msic-missing-account-amount-TODAY-date-evidence",
+            namePrefix: "msic-missing-account-amount-TODAY-date-evidence",
+            fieldset: {
+              legend: {
+                text: "Date this figure is from"
+              }
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["msic-missing-account-amount-TODAY-date-evidence-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["msic-missing-account-amount-TODAY-date-evidence-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["msic-missing-account-amount-TODAY-date-evidence-year"]
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: "@Pete (Value of money) How much was in this account on this date?"
+            },
+            classes: "govuk-input--width-20",
+            id: "msic-missing-account-amount-TODAY",
+            name: "msic-missing-account-amount-TODAY"
+          }) }}
+
+        {% endset -%}
+
+
+
+        <!--------------- (2) TODAY CHECK  ----------------------------------------------------------------------------------------->
+
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "msic-missing-account-amount-balanceTODAY-check",
+      name: "msic-missing-account-amount-balanceTODAY-check",
+      fieldset: {
+        legend: {
+          html: "@Pete (Value of money) Do you know how much was in this account on <strong>" + '' | formatDate + "?</strong>"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        checked: (data["msic-missing-account-amount-balanceTODAY-check"] == "Yes"),
+        conditional: {
+          html: balanceToday
+        }
+      },
+        {
+          value: "No",
+          text: "No, I know it on a different date",
+          checked: (data["msic-missing-account-amount-balanceTODAY-check"] == "No"),
+          conditional: {
+            html: balanceDateToday
           }
-        ]
-      }) }}
--->
-      <br>
-<!--
-      <p class="govuk-body">Because this wan't on our list give more details if possible</p>
+        }
+      ]
+    }) }}
 
-      {{ govukTextarea({
-        name: "msic-missing-account-money-detail",
-        id: "msic-missing-account-money-detail",
 
-        value: data["msic-missing-account-money-detail"]
-      }) }}
-
--->
 
       {{ govukButton({
         text: "Continue"
