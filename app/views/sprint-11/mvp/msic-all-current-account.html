@@ -153,8 +153,8 @@
                     {% set balanceDateToday %}
 
                       {{ govukDateInput({
-                        id: "msic-all-current-account-amount-today-date-evidence",
-                        namePrefix: "msic-all-current-account-amount-today-date-evidence-" + count,
+                        id: "msic-all-current-account-amount-TODAY-date-evidence",
+                        namePrefix: "msic-all-current-account-amount-TODAY-date-evidence-" + count,
                         fieldset: {
                           legend: {
                             text: "Date this figure is from"
@@ -164,17 +164,17 @@
                           {
                             name: "day",
                             classes: "govuk-input--width-2",
-                            value: data["msic-all-current-account-amount-today-date-evidence-day-" + count]
+                            value: data["msic-all-current-account-amount-TODAY-date-evidence-day-" + count]
                           },
                           {
                             name: "month",
                             classes: "govuk-input--width-2",
-                            value: data["msic-all-current-account-amount-today-date-evidence-month-" + count]
+                            value: data["msic-all-current-account-amount-TODAY-date-evidence-month-" + count]
                           },
                           {
                             name: "year",
                             classes: "govuk-input--width-4",
-                            value: data["msic-all-current-account-amount-today-date-evidence-year-" + count]
+                            value: data["msic-all-current-account-amount-TODAY-date-evidence-year-" + count]
                           }
                         ]
                       }) }}
