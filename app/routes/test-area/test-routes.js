@@ -57,7 +57,7 @@ function makeAStay(data) {
       res.redirect('telephone-rre')
     } else if (telephoneNIcheck === 'NOCOPE') {
       res.redirect('telephone-cope-check')
-    } else if (telephoneNIcheck === 'NI00112233A') {
+    } else if (telephoneNIcheck === 'NI') {
       res.redirect('telephone-cope-check')
     } else {
       res.redirect('validation')
