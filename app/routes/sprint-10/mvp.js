@@ -668,7 +668,7 @@ router.post(`${baseUrl}/msic-sp-payment-choose-router`, (req, res) => {
     res.redirect(`${baseUrl}/msic-pc-payment-choose`)
   }
   else if (pcPaymentChoose === 'A different account') {
-    res.redirect(`${baseUrl}/msic-pc-payment-alternative-account`)
+    res.redirect(`${baseUrl}/msic-sp-payment-alternative-account`)
   } else {
     res.redirect(`${baseUrl}/msic-pc-payment-choose`)
   }

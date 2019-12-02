@@ -86,23 +86,6 @@
 
             {
                 key: {
-                text: "Pension credit payment account"
-              },
-              value: {
-                text: data["msic-pc-payment-choose"]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-sp-payment-choose",
-                    text: "Change",
-                    visuallyHiddenText: "type of account"
-                  }
-                ]
-              }
-            },
-            {
-                key: {
                   text: "Name on account"
                 },
                 value: {
@@ -212,6 +195,75 @@
 
             ]
           }) }}
+
+
+                    {{ govukSummaryList({
+                      rows: [
+
+                        {
+                            key: {
+                            text: "How much of the money in this account is yours?"
+                          },
+                          value: {
+                            text: data["msic-pc-payment-alternative-account-owner"]
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "msic-sp-payment-choose",
+                                text: "Change",
+                                visuallyHiddenText: "type of account"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                            key: {
+                            text: "Amount of money that is yours"
+                          },
+                          value: {
+                            text: data["msic-pc-payment-alternative-account-stake"]
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "msic-sp-payment-choose",
+                                text: "Change",
+                                visuallyHiddenText: "type of account"
+                              }
+                            ]
+                          }
+                        }
+
+                      ]
+                    }) }}
+
+          {% endif %}
+
+          {% if data["msic-pc-payment-choose"] == "Bank name A / £100.00" %}
+            {{ govukSummaryList({
+              rows: [
+
+                {
+                  key: {
+                    text: "Which account do you get your State Pension paid into?"
+                  },
+                  value: {
+                    text: data["msic-sp-payment-choose"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "msic-sp-payment-choose",
+                        text: "Change",
+                        visuallyHiddenText: "type of account"
+                      }
+                    ]
+                  }
+                }
+
+            ]
+          }) }}
           {% endif %}
 
 
@@ -226,8 +278,8 @@
             rows: [
 
               {
-                  key: {
-                  text: "Which account do you get your Pension Credit paid into?"
+                key: {
+                  text: "Account you want your Pension Credit paid into"
                 },
                 value: {
                   text: data["msic-pc-payment-choose"]
@@ -235,18 +287,16 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-sp-payment-choose",
+                      href: "msic-pc-payment",
                       text: "Change",
                       visuallyHiddenText: "type of account"
                     }
                   ]
                 }
               }
-
             ]
           }) }}
           {% endif %}
-
 
         {% if data["msic-pc-payment-choose"] == "A different account" %}
           {{ govukSummaryList({
@@ -533,7 +583,6 @@
                 ]
               }
             }
-
 
           ]
         }) }}
