@@ -627,34 +627,97 @@
           <div class="govuk-grid-row">
           <div class="govuk-grid-column-three-quarters">
 
-          {{ govukSummaryList({
-          rows: [
-          {
-            classes: 'govuk-summary-list--no-border',
-            key: {
-              text: "Value of Premium Bonds"
-            },
-            value: {
-              text: data['msic-premium-bond-account-total-bonds']
-            },
-            actions: {
-              items: [
-                {
-                  href: "msic-premium-bond-account",
-                  html: "Change",
-                  visuallyHiddenText: "XXX"
-                },
-                {
-                  href: "msic-remove",
-                  html: "Remove",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
-          }
-          ]
-          }) }}
 
+                      <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
+                        {{ govukSummaryList({
+                          classes: 'govuk-!-margin-bottom-0',
+                          rows: [
+                        {
+                          key: {
+                            text: "Date this amount is from"
+                          },
+                          value: {
+                            text: data['msic-premium-bond-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-premium-bond-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-premium-bond-account-amount-EED-date-evidence-year']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "",
+                                text: "",
+                                visuallyHiddenText: "XXX"
+                              }
+                            ]
+                          }
+                        },
+
+                        {
+                          key: {
+                            text: "How much you had in the account on this date"
+                          },
+                          value: {
+                            html: data['msic-premium-bond-account-amount-EED'] | formatMoney
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "",
+                                text: "",
+                                visuallyHiddenText: "XXX"
+                              }
+                            ]
+                          }
+                        }
+                        ]
+                        }) }}
+
+                        <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+
+
+                        {{ govukSummaryList({
+                          classes: 'govuk-!-margin-bottom-8',
+                          rows: [
+                        {
+                          key: {
+                            text: "Date this amount is from"
+                          },
+                          value: {
+                            text: data['msic-premium-bond-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-premium-bond-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-premium-bond-account-amount-TODAY-date-evidence-year']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "",
+                                text: "",
+                                visuallyHiddenText: "XXX"
+                              }
+                            ]
+                          }
+                        },
+
+                        {
+                          key: {
+                            text: "How much you had in the account on this date"
+                          },
+                          value: {
+                            html: data['msic-premium-bond-account-amount-TODAY'] | formatMoney
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "",
+                                text: "",
+                                visuallyHiddenText: "XXX"
+                              }
+                            ]
+                          }
+                        }
+                        ]
+                        }) }}
+
+                
           <br></div></div>
 
           </div>
