@@ -675,36 +675,46 @@
             <div class="govuk-grid-column-three-quarters">
 
               {{ govukSummaryList({
-              rows: [
-              {
-                key: {
-                  text: "Account with"
-                },
-                value: {
-                  text: data['msic-credit-union-account-name']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-credit-union-account",
-                      html: "Change",
-                      visuallyHiddenText: "XXX"
-                    },
-                    {
-                      href: "msic-remove",
-                      html: "Remove",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
+                  classes: 'govuk-!-margin-bottom-0',
+                  rows: [
+                {
+                  key: {
+                    text: "Account with"
+                  },
+                  value: {
+                    text: data['msic-credit-union-account-name']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "msic-credit-union-account",
+                        html: "Change",
+                        visuallyHiddenText: "XXX"
+                      },
+                      {
+                        href: "msic-remove",
+                        html: "Remove",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
                 }
-              },
+                ]
+                }) }}
 
+                <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-0',
+                rows: [
               {
                 key: {
-                  text: "Amount in this account today"
+                  text: "Date this amount is from"
                 },
                 value: {
-                  text: data['msic-credit-union-account-amount']
+                  text: data['msic-credit-union-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-credit-union-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-credit-union-account-amount-EED-date-evidence-year']
                 },
                 actions: {
                   items: [
@@ -716,8 +726,78 @@
                   ]
                 }
               },
+
               {
-              key: {
+                key: {
+                  text: "How much you had in the account on this date"
+                },
+                value: {
+                  html: data['msic-credit-union-account-amount-EED'] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+              ]
+              }) }}
+
+              <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-8',
+                rows: [
+              {
+                key: {
+                  text: "Date this amount is from"
+                },
+                value: {
+                  text: data['msic-credit-union-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-credit-union-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-credit-union-account-amount-TODAY-date-evidence-year']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "How much you had in the account on this date"
+                },
+                value: {
+                  html: data['msic-credit-union-account-amount-TODAY'] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+              ]
+              }) }}
+
+              <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
+
+              {{ govukSummaryList({
+              rows: [
+              {
+                classes: 'govuk-summary-list',
+                key: {
                 text: "Account owner"
               },
               value: {
@@ -740,7 +820,7 @@
                   text: "Amount of money that is yours"
                 },
                 value: {
-                  text: data['msic-credit-union-account-stake']
+                  html: data['msic-credit-union-account-stake'] | formatMoney
                 },
                 actions: {
                   items: [
