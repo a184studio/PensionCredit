@@ -25,13 +25,13 @@
 
         <div class="govuk-!-padding-top-2 govuk-!-padding-bottom-2"><h2 class="govuk-heading-xm">State Pension payment account details</h2></div>
 
-        {% if data["msic-pc-payment-choose"] == "Bank name A / £100.00" %}
+        {% if data["msic-sp-payment-choose"] == "Bank name A / £100.00" %}
           {{ govukSummaryList({
             rows: [
 
               {
                 key: {
-                  text: "Account your State Pensions gets paid into"
+                  text: "Which account do you get your State Pension paid into?"
                 },
                 value: {
                   text: data["msic-sp-payment-choose"]
@@ -39,7 +39,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment",
+                      href: "msic-sp-payment-choose",
                       text: "Change",
                       visuallyHiddenText: "type of account"
                     }
@@ -482,24 +482,6 @@
 
             {
               key: {
-                text: "Account with"
-              },
-              value: {
-                text: data["msic-all-savings-account-name"]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-pc-payment-sort-acc-account",
-                    text: "Change",
-                    visuallyHiddenText: "type of account"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
                 text: "Sort code"
               },
               value: {
@@ -550,29 +532,17 @@
                   }
                 ]
               }
-            },
-
-            {
-              key: {
-                text: "Amount in this account today"
-              },
-              value: {
-                text: data["msic-all-savings-account-amount"]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "x",
-                    text: "Change",
-                    visuallyHiddenText: "sort code"
-                  }
-                ]
-              }
             }
 
 
           ]
         }) }}
+
+
+
+
+
+
         {% endif %}
 
 
