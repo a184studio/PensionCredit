@@ -240,35 +240,6 @@
 
           {% endif %}
 
-          {% if data["msic-pc-payment-choose"] == "Bank name A / £100.00" %}
-            {{ govukSummaryList({
-              rows: [
-
-                {
-                  key: {
-                    text: "Which account do you get your State Pension paid into?"
-                  },
-                  value: {
-                    text: data["msic-sp-payment-choose"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-sp-payment-choose",
-                        text: "Change",
-                        visuallyHiddenText: "type of account"
-                      }
-                    ]
-                  }
-                }
-
-            ]
-          }) }}
-          {% endif %}
-
-
-
-
 
           <div class="govuk-!-padding-top-4 govuk-!-padding-bottom-2"><h2 class="govuk-heading-xm">Pension Credit payment account details</h2></div>
 
