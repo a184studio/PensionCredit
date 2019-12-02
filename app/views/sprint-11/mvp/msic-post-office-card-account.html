@@ -26,55 +26,55 @@
 
 <!--------------- EED = Yes ----------------------------------------------------------------------------------------->
 
-{% set balanceEED %}
+      {% set balanceEED %}
+            {{ govukInput({
+              label: {
+                html: "How much was in this account on <strong>"
+                  + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+              },
+              id: "msic-post-office-card-account-amount-EED",
+              name: "msic-post-office-card-account-amount-EED",
+              classes: "govuk-input--width-20"
+            }) }}
+      {% endset -%}
+
+      {% set balanceDateEED %}
+      {{ govukDateInput({
+        id: "msic-post-office-card-account-amount-EED-date-evidence",
+        namePrefix: "msic-post-office-card-account-amount-EED-date-evidence",
+        fieldset: {
+          legend: {
+            text: "Date this figure is from"
+          }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["msic-post-office-card-account-amount-EED-date-evidence-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["msic-post-office-card-account-amount-EED-date-evidence-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["msic-post-office-card-account-amount-EED-date-evidence-year"]
+          }
+        ]
+      }) }}
+
       {{ govukInput({
         label: {
-          html: "How much was in this account on <strong>"
-            + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "How much was in the account on this date?"
         },
+        classes: "govuk-input--width-20",
         id: "msic-post-office-card-account-amount-EED",
-        name: "msic-post-office-card-account-amount-EED",
-        classes: "govuk-input--width-20"
+        name: "msic-post-office-card-account-amount-EED"
       }) }}
-{% endset -%}
-
-{% set balanceDateEED %}
-{{ govukDateInput({
-  id: "msic-post-office-card-account-amount-EED-date-evidence",
-  namePrefix: "msic-post-office-card-account-amount-EED-date-evidence",
-  fieldset: {
-    legend: {
-      text: "Date this figure is from"
-    }
-  },
-  items: [
-    {
-      name: "day",
-      classes: "govuk-input--width-2",
-      value: data["msic-post-office-card-account-amount-EED-date-evidence-day"]
-    },
-    {
-      name: "month",
-      classes: "govuk-input--width-2",
-      value: data["msic-post-office-card-account-amount-EED-date-evidence-month"]
-    },
-    {
-      name: "year",
-      classes: "govuk-input--width-4",
-      value: data["msic-post-office-card-account-amount-EED-date-evidence-year"]
-    }
-  ]
-}) }}
-
-{{ govukInput({
-  label: {
-    html: "How much was in the account on this date?"
-  },
-  classes: "govuk-input--width-20",
-  id: "msic-post-office-card-account-amount-EED",
-  name: "msic-post-office-card-account-amount-EED"
-}) }}
-{% endset -%}
+      {% endset -%}
 
 
 
