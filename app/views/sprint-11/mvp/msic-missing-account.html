@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add bulding society current account - Pension Credit
+  Add Other money, savings or investments that you have not told us about - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -229,6 +229,45 @@
           checked: (data["msic-missing-account-amount-balanceTODAY-check"] == "No"),
           conditional: {
             html: balanceDateToday
+          }
+        }
+      ]
+    }) }}
+
+    <!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
+
+
+
+    {% set percentageField %}
+      {{ govukInput({
+        label: {
+          text: "Amount of money that is yours"
+        },
+        id: "msic-missing-account-amount-stake",
+        name: "msic-missing-account-amount-stake",
+        classes: "govuk-input--width-10"
+      }) }}
+    {% endset %}
+
+    {{ govukRadios({
+      idPrefix: "msic-missing-account-amount-owner",
+      name: "msic-missing-account-amount-owner",
+      fieldset: {
+        legend: {
+          text: "Account owner",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "You",
+          text: "Only you"
+        },
+        {
+          value: "Joint account",
+          text: "Joint account",
+          conditional: {
+            html: percentageField
           }
         }
       ]
