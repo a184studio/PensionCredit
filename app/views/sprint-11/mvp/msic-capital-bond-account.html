@@ -39,7 +39,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "@Pete (Value of capital bond) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "What was the value of this bond on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
         id: "msic-capital-bond-amount-EED",
         name: "msic-capital-bond-amount-EED",
@@ -80,7 +80,7 @@
 
 {{ govukInput({
   label: {
-    html: "@Pete (Value of capital bond) How much was in the account on this date?"
+    html: "What was the value of this bond on this date?"
   },
   classes: "govuk-input--width-20",
   id: "msic-capital-bond-amount-EED",
@@ -99,7 +99,7 @@
         name: "mmsic-capital-bond-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "@Pete (Value of capital bond) Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "Do you know how the value of this bond on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
         hint: {
@@ -116,7 +116,7 @@
         },
           {
             value: "No",
-            text: "No, I know it on a different date",
+            text: "No, I know the value on a different date",
             checked: (data["msic-capital-bond-amount-balanceEED-check"] == "No"),
             conditional: {
               html: balanceDateEED
@@ -133,7 +133,7 @@
 
         {{ govukInput({
           label: {
-          html: "@Pete (Value of capital bond) How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "What was the value of this bond on <strong>" + '' | formatDate + "?</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-capital-bond-amount-TODAY",
@@ -175,7 +175,7 @@
 
           {{ govukInput({
             label: {
-              html: "@Pete (Value of capital bond) How much was in this account on this date?"
+              html: "What was the value of this bond on this date?"
             },
             classes: "govuk-input--width-20",
             id: "msic-capital-bond-amount-TODAY",
@@ -195,7 +195,7 @@
       name: "msic-capital-bond-balanceTODAY-check",
       fieldset: {
         legend: {
-          html: "@Pete (Value of capital bond) Do you know how much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "Do you know the value of this bond on <strong>" + '' | formatDate + "?</strong>"
         }
       },
       hint: {
@@ -212,7 +212,7 @@
       },
         {
           value: "No",
-          text: "No, I know it on a different date",
+          text: "No, I know the value on a different date",
           checked: (data["msic-capital-bond-balanceTODAY-check"] == "No"),
           conditional: {
             html: balanceDateToday

@@ -68,7 +68,7 @@
 
       {{ govukInput({
         label: {
-          html: "How much was in the account on this date?"
+          html: "How much was in this account on this date?"
         },
         classes: "govuk-input--width-20",
         id: "msic-post-office-card-account-amount-EED",
@@ -87,7 +87,7 @@
         name: "msic-post-office-card-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "Do you know how much was in the account on <strong>"
+            html: "Do you know how much was in this account on <strong>"
               + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
@@ -201,7 +201,7 @@
       },
         {
           value: "No",
-          text: "No, I know it on a different date",
+          text: "No, I know how much was in this account on a different date",
           checked: (data["msic-post-office-card-account-amount-balanceTODAY-check"] == "No"),
           conditional: {
             html: balanceDateToday

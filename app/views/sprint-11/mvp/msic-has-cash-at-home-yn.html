@@ -28,7 +28,7 @@ Do you have more Cash at home - Pension Credit
 
     {{ govukInput({
       label: {
-        text: "Description of this money?"
+        text: "Description of this money"
       },
       id: "msic-has-cash-at-home-name",
       name: "msic-has-cash-at-home-name",
@@ -54,7 +54,7 @@ Do you have more Cash at home - Pension Credit
 {% set balanceEED %}
     {{ govukInput({
       label: {
-        html: "@Pete (Value of Cash) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+        html: "How much cadsh did you have on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
       },
       id: "msic-has-cash-at-home-amount-EED",
       name: "msic-has-cash-at-home-amount-EED",
@@ -95,7 +95,7 @@ items: [
 
 {{ govukInput({
 label: {
-  html: "@Pete (Value of Cash) How much was in the account on this date?"
+  html: "How much cash did you have on this date?"
 },
 classes: "govuk-input--width-20",
 id: "msic-has-cash-at-home-amount-EED",
@@ -114,7 +114,7 @@ name: "msic-has-cash-at-home-amount-EED"
       name: "msic-has-cash-at-home-amount-balanceEED-check",
       fieldset: {
         legend: {
-          html: "@Pete (Value of Cash) Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "Do you know how much cash you had at home on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         }
       },
       hint: {
@@ -131,7 +131,7 @@ name: "msic-has-cash-at-home-amount-EED"
       },
         {
           value: "No",
-          text: "No, I know it on a different date",
+          text: "No, I know how much I had on a different date",
           checked: (data["msic-has-cash-at-home-amount-balanceEED-check"] == "No"),
           conditional: {
             html: balanceDateEED
@@ -148,7 +148,7 @@ name: "msic-has-cash-at-home-amount-EED"
 
       {{ govukInput({
         label: {
-        html: "@Pete (Value of Cash) How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+        html: "How much cash did you have on <strong>" + '' | formatDate + "?</strong>"
         },
         classes: "govuk-input--width-20",
         id: "msic-has-cash-at-home-amount-TODAY",
@@ -190,7 +190,7 @@ name: "msic-has-cash-at-home-amount-EED"
 
         {{ govukInput({
           label: {
-            html: "@Pete (Value of Cash) How much was in this account on this date?"
+            html: "How much cash did you have on this date?"
           },
           classes: "govuk-input--width-20",
           id: "msic-has-cash-at-home-amount-TODAY",
@@ -210,7 +210,7 @@ name: "msic-has-cash-at-home-amount-EED"
     name: "msic-has-cash-at-home-amount-balanceTODAY-check",
     fieldset: {
       legend: {
-        html: "@Pete (Value of Cash) Do you know how much was in this account on <strong>" + '' | formatDate + "?</strong>"
+        html: "Do you know how much cash you had on <strong>" + '' | formatDate + "?</strong>"
       }
     },
     hint: {
@@ -227,7 +227,7 @@ name: "msic-has-cash-at-home-amount-EED"
     },
       {
         value: "No",
-        text: "No, I know it on a different date",
+        text: "No, I know how much I had on a different date",
         checked: (data["msic-has-cash-at-home-amount-balanceTODAY-check"] == "No"),
         conditional: {
           html: balanceDateToday

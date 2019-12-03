@@ -26,7 +26,7 @@
 
       {{ govukInput({
         label: {
-          text: "Name of bank or building society"
+          text: "Description of this money"
         },
         id: "msic-missing-account-name",
         name: "msic-missing-account-name",
@@ -52,7 +52,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "@Pete (Value of money) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "How much did you have on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
         id: "msic-missing-account-amount-EED",
         name: "msic-missing-account-amount-EED",
@@ -93,7 +93,7 @@
 
 {{ govukInput({
   label: {
-    html: "@Pete (Value of money) How much was in the account on this date?"
+    html: "How much did you have on this date?"
   },
   classes: "govuk-input--width-20",
   id: "msic-missing-account-amount-EED",
@@ -112,7 +112,7 @@
         name: "msic-missing-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "@Pete (Value of money) Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "Do you kn ow how much you had on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
         hint: {
@@ -129,7 +129,7 @@
         },
           {
             value: "No",
-            text: "No, I know it on a different date",
+            text: "No, I know how much I had on a different date",
             checked: (data["msic-missing-account-balanceEED-check"] == "No"),
             conditional: {
               html: balanceDateEED
@@ -146,7 +146,7 @@
 
         {{ govukInput({
           label: {
-          html: "@Pete (Value of money) How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "How much did you have on <strong>" + '' | formatDate + "?</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-missing-account-amount-TODAY",
@@ -188,7 +188,7 @@
 
           {{ govukInput({
             label: {
-              html: "@Pete (Value of money) How much was in this account on this date?"
+              html: "How much did you have on this date?"
             },
             classes: "govuk-input--width-20",
             id: "msic-missing-account-amount-TODAY",
@@ -208,7 +208,7 @@
       name: "msic-missing-account-amount-balanceTODAY-check",
       fieldset: {
         legend: {
-          html: "@Pete (Value of money) Do you know how much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "Do you know how much you had on <strong>" + '' | formatDate + "?</strong>"
         }
       },
       hint: {
@@ -225,7 +225,7 @@
       },
         {
           value: "No",
-          text: "No, I know it on a different date",
+          text: "No, I know how much I had on a different date",
           checked: (data["msic-missing-account-amount-balanceTODAY-check"] == "No"),
           conditional: {
             html: balanceDateToday

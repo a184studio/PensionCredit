@@ -39,7 +39,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "@Pete (How many Shares) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "How many shares did you have on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
         id: "msic-shares-account-amount-EED",
         name: "msic-shares-account-amount-EED",
@@ -80,7 +80,7 @@
 
 {{ govukInput({
   label: {
-    html: "@Pete (How many Shares) How much was in the account on this date?"
+    html: "How many shares did you have on this date?"
   },
   classes: "govuk-input--width-20",
   id: "msic-shares-account-amount-EED",
@@ -99,7 +99,7 @@
         name: "msic-shares-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "@Pete (How many Shares) Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "Do you know how many shares you had on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
         hint: {
@@ -116,7 +116,7 @@
         },
           {
             value: "No",
-            text: "No, I know it on a different date",
+            text: "No, I know how many I had on a different date",
             checked: (data["msic-shares-account-amount-balanceEED-check"] == "No"),
             conditional: {
               html: balanceDateEED
@@ -133,7 +133,7 @@
 
         {{ govukInput({
           label: {
-          html: "@Pete (How many Shares) How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "How many shares did you have on <strong>" + '' | formatDate + "?</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-shares-account-amount-TODAY",
@@ -175,7 +175,7 @@
 
           {{ govukInput({
             label: {
-              html: "@Pete (How many Shares) How much was in this account on this date?"
+              html: "How many shares did you have on this date?"
             },
             classes: "govuk-input--width-20",
             id: "msic-shares-account-amount-TODAY",
@@ -195,7 +195,7 @@
       name: "msic-shares-account-amount-balanceTODAY-check",
       fieldset: {
         legend: {
-          html: "@Pete (How many Shares) Do you know how much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "Do you know how many shares you had on <strong>" + '' | formatDate + "?</strong>"
         }
       },
       hint: {
@@ -212,7 +212,7 @@
       },
         {
           value: "No",
-          text: "No, I know it on a different date",
+          text: "No, I know how many I had on a different date",
           checked: (data["msic-shares-account-amount-balanceTODAY-check"] == "No"),
           conditional: {
             html: balanceDateToday

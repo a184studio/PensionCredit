@@ -39,7 +39,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "@pete (number of units) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "How many units did you own on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
         id: "msic-unit-trust-account-units-EED",
         name: "msic-unit-trust-account-units-EED",
@@ -48,7 +48,7 @@
 
       {{ govukInput({
         label: {
-          html: "@pete (bid price today) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "What was the bid price on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
         id: "msic-unit-trust-account-price-EED",
         name: "msic-unit-trust-account-price-EED",
@@ -66,7 +66,7 @@
   namePrefix: "msic-unit-trust-account-amount-EED-date-evidence",
   fieldset: {
     legend: {
-      text: "Date this figure is from"
+      text: "Date these figures are from"
     }
   },
   items: [
@@ -90,7 +90,7 @@
 
 {{ govukInput({
   label: {
-    html: "@pete (number of units) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+    html: "How many units did you own on this date?"
   },
   id: "msic-unit-trust-account-units-EED",
   name: "msic-unit-trust-account-units-EED",
@@ -99,7 +99,7 @@
 
 {{ govukInput({
   label: {
-    html: "@pete (bid price today) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+    html: "What was the bid price on this date?"
   },
   id: "msic-unit-trust-account-price-EED",
   name: "msic-unit-trust-account-price-EED",
@@ -118,7 +118,7 @@
         name: "msic-unit-trust-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "@pete Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "Do you know the value of your investment in this trust on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
         hint: {
@@ -135,7 +135,7 @@
         },
           {
             value: "No",
-            text: "No, I know it on a different date",
+            text: "No, I know the value on a different date",
             checked: (data["msic-unit-trust-account-amount-balanceEED-check"] == "No"),
             conditional: {
               html: balanceDateEED
@@ -152,7 +152,7 @@
 
         {{ govukInput({
           label: {
-          html: "How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "How many units did you own on <strong>" + '' | formatDate + "?</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-unit-trust-account-units-TODAY",
@@ -161,7 +161,7 @@
 
         {{ govukInput({
           label: {
-          html: "How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "What was the bid price on <strong>" + '' | formatDate + "?</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-unit-trust-account-price-TODAY",
@@ -179,7 +179,7 @@
             namePrefix: "msic-unit-trust-account-amount-TODAY-date-evidence",
             fieldset: {
               legend: {
-                text: "Date this figure is from"
+                text: "Date these figures are from"
               }
             },
             items: [
@@ -203,7 +203,7 @@
 
           {{ govukInput({
             label: {
-            html: "How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+            html: "How many units did you own on this date?"
             },
             classes: "govuk-input--width-20",
             id: "msic-unit-trust-account-units-TODAY",
@@ -212,7 +212,7 @@
 
           {{ govukInput({
             label: {
-            html: "How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+            html: "What was the bid price on this date?"
             },
             classes: "govuk-input--width-20",
             id: "msic-unit-trust-account-price-TODAY",
@@ -231,7 +231,7 @@
       name: "msic-unit-trust-account-amount-balanceTODAY-check",
       fieldset: {
         legend: {
-          html: "Do you know how much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "Do you know the value of your investment in this trust on <strong>" + '' | formatDate + "?</strong>"
         }
       },
       hint: {
@@ -248,7 +248,7 @@
       },
         {
           value: "No",
-          text: "No, I know it on a different date",
+          text: "No, I know the value on a different date",
           checked: (data["msic-unit-trust-account-amount-balanceTODAY-check"] == "No"),
           conditional: {
             html: balanceDateToday

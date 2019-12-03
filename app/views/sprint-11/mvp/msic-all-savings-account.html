@@ -84,7 +84,7 @@
 
 {{ govukInput({
   label: {
-    html: "How much was in the account on this date?"
+    html: "How much was in this account on this date?"
   },
   classes: "govuk-input--width-20",
   id: "msic-all-savings-account-amount-EED",
@@ -103,7 +103,7 @@
         name: "msic-all-savings-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "Do you know how much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
         hint: {
@@ -120,7 +120,7 @@
         },
           {
             value: "No",
-            text: "No, I know it on a different date",
+            text: "No, I know how much was in this account on a different date",
             checked: (data["msic-all-savings-account-amount-balanceEED-check"] == "No"),
             conditional: {
               html: balanceDateEED
@@ -216,7 +216,7 @@
       },
         {
           value: "No",
-          text: "No, I know it on a different date",
+          text: "No, I know how much was in this account on a different date",
           checked: (data["msic-all-savings-account-amount-balanceTODAY-check"] == "No"),
           conditional: {
             html: balanceDateToday

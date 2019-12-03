@@ -31,7 +31,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "@Pete (Value of Premium Bonds) How much was in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "What was the value on<strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
         id: "msic-premium-bond-account-amount-EED",
         name: "msic-premium-bond-account-amount-EED",
@@ -72,7 +72,7 @@
 
 {{ govukInput({
   label: {
-    html: "@Pete (Value of Premium Bonds) How much was in the account on this date?"
+    html: "What was the value on this date?"
   },
   classes: "govuk-input--width-20",
   id: "msic-premium-bond-account-amount-EED",
@@ -91,7 +91,7 @@
         name: "msic-premium-bond-account-amount-balanceEED-check",
         fieldset: {
           legend: {
-            html: "@Pete (Value of Premium Bonds) Do you know how much was in the account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "Do you know the value of your Premium Bonds on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           }
         },
         hint: {
@@ -108,7 +108,7 @@
         },
           {
             value: "No",
-            text: "No, I know it on a different date",
+            text: "No, I know the value on a different date",
             checked: (data["msic-premium-bond-account-amount-balanceEED-check"] == "No"),
             conditional: {
               html: balanceDateEED
@@ -125,7 +125,7 @@
 
         {{ govukInput({
           label: {
-          html: "@Pete (Value of Premium Bonds) How much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "What was the value on <strong>" + '' | formatDate + "?</strong>"
           },
           classes: "govuk-input--width-20",
           id: "msic-premium-bond-account-amount-TODAY",
@@ -167,7 +167,7 @@
 
           {{ govukInput({
             label: {
-              html: "@Pete (Value of Premium Bonds) How much was in this account on this date?"
+              html: "What was the value on this date?"
             },
             classes: "govuk-input--width-20",
             id: "msic-premium-bond-account-amount-TODAY",
@@ -187,7 +187,7 @@
       name: "msic-premium-bond-account-amount-balanceTODAY-check",
       fieldset: {
         legend: {
-          html: "@Pete (Value of Premium Bonds) Do you know how much was in this account on <strong>" + '' | formatDate + "?</strong>"
+          html: "Do you know how the value of your Premium Bonds on <strong>" + '' | formatDate + "?</strong>"
         }
       },
       hint: {
@@ -204,7 +204,7 @@
       },
         {
           value: "No",
-          text: "No, I know it on a different date",
+          text: "No, I know the value on a different date",
           checked: (data["msic-premium-bond-account-amount-balanceTODAY-check"] == "No"),
           conditional: {
             html: balanceDateToday
