@@ -3209,7 +3209,32 @@ Details of any other income
 
 
 
-                {% if data["msic-pc-payment-choose"] == "A different account" %}
+                {{ govukSummaryList({
+                  rows: [
+
+                    {
+                        key: {
+                        text: "Where do you want your Pension Credit paid if your claim is successful?"
+                      },
+                      value: {
+                        text: data["msic-pc-payment-choose"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "msic-pc-payment-choose",
+                            text: "Change",
+                            visuallyHiddenText: "type of account"
+                          }
+                        ]
+                      }
+                    }
+
+                  ]
+                }) }}
+
+
+              {% if data["msic-pc-payment-choose"] == "A different account" %}
                 {{ govukSummaryList({
                   rows: [
 
@@ -3397,13 +3422,13 @@ Details of any other income
 
                   ]
                 }) }}
-                {% endif %}
+              {% endif %}
 
-                <!------------------ Choosen account ------------------------->
+              <!------------------ Choosen account ------------------------->
 
-                {% if data["msic-pc-payment-choose"] == "Bank name A / £100.00" %}
+              {% if data["msic-pc-payment-choose"] == "Bank name A / £100.00" %}
 
-                {{ govukSummaryList({
+              {{ govukSummaryList({
                 rows: [
 
                 {
@@ -3533,8 +3558,8 @@ Details of any other income
 
 
                 ]
-                }) }}
-                {% endif %}
+              }) }}
+              {% endif %}
 
   <!------------------------------------------------------------------------------- CApital disregards ------------------------------------------------------------>
 
