@@ -192,6 +192,30 @@
           <div class="govuk-!-padding-top-4 govuk-!-padding-bottom-2"><h2 class="govuk-heading-xm">Pension Credit payment account details</h2></div>
 
 
+          {{ govukSummaryList({
+            rows: [
+
+              {
+                  key: {
+                  text: "Where do you want your Pension Credit paid if your claim is successful?"
+                },
+                value: {
+                  text: data["msic-pc-payment-choose"]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "msic-pc-payment-choose",
+                      text: "Change",
+                      visuallyHiddenText: "type of account"
+                    }
+                  ]
+                }
+              }
+
+            ]
+          }) }}
+
 
         {% if data["msic-pc-payment-choose"] == "A different account" %}
           {{ govukSummaryList({
