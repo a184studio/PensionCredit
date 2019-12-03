@@ -21,10 +21,10 @@
       Check your answers: Pension Credit payment details
     </h1>
 
-        <!-- Other ------------------------------------------------------>
 
         <div class="govuk-!-padding-top-2 govuk-!-padding-bottom-2"><h2 class="govuk-heading-xm">State Pension payment account details</h2></div>
 
+        <!------------------------------- STATE PENSION PAID INTO ------------------------------------------------------>
 
           {{ govukSummaryList({
             rows: [
@@ -49,6 +49,9 @@
 
             ]
           }) }}
+
+          <!------------------------------- STATE PENSION: DIFFERENT ------------------------------------------------------>
+
 
           {% if data["msic-sp-payment-choose"] == "A different account" %}
 
@@ -192,29 +195,7 @@
           <div class="govuk-!-padding-top-4 govuk-!-padding-bottom-2"><h2 class="govuk-heading-xm">Pension Credit payment account details</h2></div>
 
 
-          {{ govukSummaryList({
-            rows: [
-
-              {
-                  key: {
-                  text: "Where do you want your Pension Credit paid if your claim is successful?"
-                },
-                value: {
-                  text: data["msic-pc-payment-choose"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-choose",
-                      text: "Change",
-                      visuallyHiddenText: "type of account"
-                    }
-                  ]
-                }
-              }
-
-            ]
-          }) }}
+          <!------------------------------- PENSION CREDIT: DIFFERENT ------------------------------------------------------>
 
 
         {% if data["msic-pc-payment-choose"] == "A different account" %}
@@ -223,7 +204,7 @@
 
               {
                 key: {
-                  text: "Account you want your Pension Credit paid into"
+                  text: "Which account do you get your Pension Credit paid into?"
                 },
                 value: {
                   text: data["msic-pc-payment-choose"]
@@ -416,7 +397,7 @@
 
           {
               key: {
-              text: "Pension credit payment account"
+              text: "Which account do you get your Pension Credit paid into?"
             },
             value: {
               text: data["msic-pc-payment-choose"]
