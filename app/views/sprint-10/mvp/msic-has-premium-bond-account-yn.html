@@ -814,7 +814,6 @@ The bonds are entered in a monthly prize draw and NS&I promises to buy them back
           </div>{% endif %}
 
           <!---——— Savings------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-            {% if data["msic-pc-payment-alternative-account-type"] == "Savings account" %}
             <div class="govuk-accordion__section ">
             <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
@@ -922,60 +921,24 @@ The bonds are entered in a monthly prize draw and NS&I promises to buy them back
 
 
 
-<h2 class="govuk-heading-m govuk-!-margin-bottom-0">Pension Credit payment account</h2>
+<h2 class="govuk-heading-m govuk-!-margin-bottom-2">State Pension payment account</h2>
 
 
               {{ govukSummaryList({
 
                 rows: [
 
-                {
-                  key: {
-                    text: ""
-                  },
-                  value: {
-                    text: ""
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "",
-                        visuallyHiddenText: "sort code"
-                      }
-                    ]
-                  }
-                },
-
-                {
-                  key: {
-                    text: "Account with"
-                  },
-                  value: {
-                    text: data["msic-pc-payment-alternative-account-name"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-pc-payment",
-                        text: "",
-                        visuallyHiddenText: "type of account"
-                      }
-                    ]
-                  }
-                },
-
                   {
                     key: {
                       text: "Amount in this account today	"
                     },
                     value: {
-                      text: data["msic-pc-payment-alternative-account-balance"]
+                      text: data["msic-has-state-pension-accout-balance"]
                     },
                     actions: {
                       items: [
                         {
-                          href: "msic-pc-payment-account-balance",
+                          href: "msic-has-state-pension-accout",
                           text: "Change",
                           visuallyHiddenText: "sort code"
                         }
@@ -989,13 +952,13 @@ The bonds are entered in a monthly prize draw and NS&I promises to buy them back
                     text: "Account owner"
                   },
                   value: {
-                    text: data['msic-pc-payment-alternative-account-owner']
+                    text: data['msic-has-state-pension-accout-owner']
                   },
                   actions: {
                     items: [
                       {
-                        href: "",
-                        text: "",
+                        href: "msic-has-state-pension-accout",
+                        text: "Change",
                         visuallyHiddenText: "Account owner"
                       }
                     ]
@@ -1008,13 +971,13 @@ The bonds are entered in a monthly prize draw and NS&I promises to buy them back
                       text: "Amount of money that is yours"
                     },
                     value: {
-                      text: data['msic-pc-payment-alternative-account-stake']
+                      text: data['msic-has-state-pension-accout-stake']
                     },
                     actions: {
                       items: [
                         {
-                          href: "",
-                          text: "",
+                          href: "msic-has-state-pension-accout",
+                          text: "Change",
                           visuallyHiddenText: "Amount of money that is yours"
                         }
                       ]
@@ -1026,7 +989,7 @@ The bonds are entered in a monthly prize draw and NS&I promises to buy them back
 
               </div></div>
 
-            <br></div></div>{% endif %}
+            <br></div></div>
 
 
           <!------ has-current-account --------------------------------------------------------------------------------------------------------------------------------------------------------------------------->

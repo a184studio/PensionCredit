@@ -21,10 +21,10 @@
       Check your answers: Pension Credit payment details
     </h1>
 
-        <!-- Other ------------------------------------------------------>
 
         <div class="govuk-!-padding-top-2 govuk-!-padding-bottom-2"><h2 class="govuk-heading-xm">State Pension payment account details</h2></div>
 
+        <!------------------------------- STATE PENSION PAID INTO ------------------------------------------------------>
 
           {{ govukSummaryList({
             rows: [
@@ -39,7 +39,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-sp-payment-choose",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "type of account"
                     }
@@ -49,6 +49,9 @@
 
             ]
           }) }}
+
+          <!------------------------------- STATE PENSION: DIFFERENT ------------------------------------------------------>
+
 
           {% if data["msic-sp-payment-choose"] == "A different account" %}
 
@@ -65,7 +68,7 @@
               actions: {
                 items: [
                   {
-                    href: "msic-sp-payment-choose",
+                    href: "x",
                     text: "Change",
                     visuallyHiddenText: "type of account"
                   }
@@ -82,7 +85,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-sp-payment-choose",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "name on account"
                     }
@@ -100,7 +103,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-sort-acc-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "type of account"
                     }
@@ -118,7 +121,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-sort-acc-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "sort code"
                     }
@@ -136,7 +139,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-sort-acc-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "account number"
                     }
@@ -154,7 +157,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-sort-acc-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "roll number"
                     }
@@ -192,6 +195,8 @@
           <div class="govuk-!-padding-top-4 govuk-!-padding-bottom-2"><h2 class="govuk-heading-xm">Pension Credit payment account details</h2></div>
 
 
+          <!------------------------------- PENSION CREDIT: DIFFERENT ------------------------------------------------------>
+
 
         {% if data["msic-pc-payment-choose"] == "A different account" %}
           {{ govukSummaryList({
@@ -199,7 +204,7 @@
 
               {
                 key: {
-                  text: "Account you want your Pension Credit paid into"
+                  text: "Which account do you get your Pension Credit paid into?"
                 },
                 value: {
                   text: data["msic-pc-payment-choose"]
@@ -207,7 +212,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "type of account"
                     }
@@ -225,7 +230,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-alternative-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "name on account"
                     }
@@ -243,7 +248,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "type of account"
                     }
@@ -261,7 +266,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-alternative-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "sort code"
                     }
@@ -279,7 +284,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-alternative-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "account number"
                     }
@@ -297,7 +302,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-alternative-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "roll number"
                     }
@@ -315,7 +320,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-alternative-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "Bank or buildings society account"
                     }
@@ -333,7 +338,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-alternative-account",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "sort code"
                     }
@@ -352,7 +357,7 @@
               actions: {
                 items: [
                   {
-                    href: "",
+                    href: "x",
                     text: "Change",
                     visuallyHiddenText: "Account owner"
                   }
@@ -370,7 +375,7 @@
                 actions: {
                   items: [
                     {
-                      href: "",
+                      href: "x",
                       text: "Change",
                       visuallyHiddenText: "Amount of money that is yours"
                     }
@@ -392,7 +397,7 @@
 
           {
               key: {
-              text: "Pension credit payment account"
+              text: "Which account do you get your Pension Credit paid into?"
             },
             value: {
               text: data["msic-pc-payment-choose"]
@@ -400,7 +405,7 @@
             actions: {
               items: [
                 {
-                  href: "msic-pc-payment-choose",
+                  href: "x",
                   text: "Change",
                   visuallyHiddenText: "type of account"
                 }
@@ -417,7 +422,7 @@
               actions: {
                 items: [
                   {
-                    href: "msic-pc-payment-sort-acc-account",
+                    href: "x",
                     text: "Change",
                     visuallyHiddenText: "name on account"
                   }
@@ -435,7 +440,7 @@
               actions: {
                 items: [
                   {
-                    href: "msic-pc-payment-sort-acc-account",
+                    href: "x",
                     text: "Change",
                     visuallyHiddenText: "type of account"
                   }
@@ -453,7 +458,7 @@
               actions: {
                 items: [
                   {
-                    href: "msic-pc-payment-sort-acc-account",
+                    href: "x",
                     text: "Change",
                     visuallyHiddenText: "sort code"
                   }
@@ -471,7 +476,7 @@
               actions: {
                 items: [
                   {
-                    href: "msic-pc-payment-sort-acc-account",
+                    href: "x",
                     text: "Change",
                     visuallyHiddenText: "account number"
                   }
@@ -489,7 +494,7 @@
               actions: {
                 items: [
                   {
-                    href: "msic-pc-payment-sort-acc-account",
+                    href: "x",
                     text: "Change",
                     visuallyHiddenText: "roll number"
                   }
