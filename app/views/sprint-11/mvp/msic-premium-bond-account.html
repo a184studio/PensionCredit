@@ -31,7 +31,7 @@
 {% set balanceEED %}
       {{ govukInput({
         label: {
-          html: "What was the value on<strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "What was the value on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
         id: "msic-premium-bond-account-amount-EED",
         name: "msic-premium-bond-account-amount-EED",
