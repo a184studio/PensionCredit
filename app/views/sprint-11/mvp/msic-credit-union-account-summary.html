@@ -15,11 +15,17 @@
 <form action="msic-has-credit-union-account-yn-router" method="post">
   <input type="hidden" name="money-you-have-complete" value="in-progress"/>
 
-
-
-
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
+
+    <!------------HEADLINE------------>
+      {% set legend %}
+      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any current accounts with a bank or building society? {% endif %}
+      {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any current accounts with a bank or building society?{% endif %}
+      {% endset %}
+    <!------------HEADLINE------------>
+
+    Once done replace text: Headline with //////// html: legend, //////
 
 
   {{ govukRadios({

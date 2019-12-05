@@ -19,6 +19,14 @@ Any other money held in this country or abroad? - Pension Credit
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
+    <!------------HEADLINE------------>
+      {% set legend %}
+      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any current accounts with a bank or building society? {% endif %}
+      {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any current accounts with a bank or building society?{% endif %}
+      {% endset %}
+    <!------------HEADLINE------------>
+
+
   {{ govukRadios({
     idPrefix: "msic-cash-other-abroad-yn",
     name: "msic-cash-other-abroad-yn",
