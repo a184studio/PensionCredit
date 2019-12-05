@@ -197,6 +197,33 @@
 
           <!------------------------------- PENSION CREDIT: DIFFERENT ------------------------------------------------------>
 
+          {% if data["msic-pc-payment-choose"] == "Same account as State Pension" %}
+
+          {{ govukSummaryList({
+            rows: [
+
+            {
+                key: {
+                text: "Which account do you get your Pension Credit paid into?"
+              },
+              value: {
+                text: data["msic-pc-payment-choose"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "x",
+                    text: "Change",
+                    visuallyHiddenText: ""
+                  }
+                ]
+              }
+            }
+
+
+            ]
+          }) }}
+          {% endif %}
 
         {% if data["msic-pc-payment-choose"] == "A different account" %}
           {{ govukSummaryList({
