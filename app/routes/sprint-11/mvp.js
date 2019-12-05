@@ -714,7 +714,7 @@ router.post(`${baseUrl}/msic-all-current-accounts-summary-router`, (req, res) =>
   if (addAnother === 'yes') {
     res.redirect(`${baseUrl}/msic-all-current-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-all-savings-accounts-summary`)
+    res.redirect(`${baseUrl}/msic-has-savings-account-yn`)
   }
 });
 
