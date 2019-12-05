@@ -760,7 +760,7 @@ router.post(`${baseUrl}/msic-has-premium-bond-account-yn-router`, (req, res) => 
   if (hasPremiumBondAccount === 'yes') {
     res.redirect(`${baseUrl}/msic-premium-bond-account`)
   } else {
-    res.redirect(`${baseUrl}/msic-has-isa-savings-account-yn`)
+    res.redirect(`${baseUrl}/msic-has-premium-bond-account-yn`)
   }
 })
 
