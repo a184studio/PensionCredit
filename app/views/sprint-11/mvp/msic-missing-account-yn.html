@@ -22,13 +22,10 @@ Account with: {% extends "layout.html" %}
 
   <!------------HEADLINE------------>
     {% set legend %}
-    {% if data["claim-filter"] == "Advanced or Today" %} Do you have any current accounts with a bank or building society? {% endif %}
-    {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any current accounts with a bank or building society?{% endif %}
+    {% if data["claim-filter"] == "Advanced or Today" %} Do you have any other money, savings or investments that you have not told usabout? {% endif %}
+    {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any other money, savings or investments that you have not told us about?{% endif %}
     {% endset %}
   <!------------HEADLINE------------>
-
-  Once done replace text: Headline with //////// html: legend, //////
-
 
   {{ govukRadios({
     idPrefix: "msic-has-missing-account-yn",
@@ -36,7 +33,7 @@ Account with: {% extends "layout.html" %}
     classes: "govuk-radios--inline",
     fieldset: {
       legend: {
-        text: "Do you have any other money, savings or investments that you have not told us about?",
+        html: legend,
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }

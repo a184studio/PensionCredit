@@ -19,13 +19,22 @@ Do you have any more Unit Trusts? - Pension Credit
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
+    <!------------HEADLINE------------>
+      {% set legend %}
+      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any more money investedin unit trusts? {% endif %}
+      {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any more money investedin unit trusts?{% endif %}
+      {% endset %}
+    <!------------HEADLINE------------>
+
+
+
   {{ govukRadios({
     classes: "govuk-radios--inline",
     idPrefix: "changed-name",
     name: "changed-name",
     fieldset: {
       legend: {
-        text: "Do have any more money invested in unit trusts?",
+        html: legend,
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }

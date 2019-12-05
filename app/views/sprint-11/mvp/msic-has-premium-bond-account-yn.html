@@ -21,18 +21,17 @@
 
     <!------------HEADLINE------------>
       {% set legend %}
-      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any current accounts with a bank or building society? {% endif %}
-      {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any current accounts with a bank or building society?{% endif %}
+      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any Premium Bonds? {% endif %}
+      {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any Premium Bonds?{% endif %}
       {% endset %}
     <!------------HEADLINE------------>
-
 
   {{ govukRadios({
     idPrefix: "msic-has-premium-bond-account-yn",
     name: "msic-has-premium-bond-account-yn",
     fieldset: {
       legend: {
-        text: "Do you have any Premium Bonds?",
+        html: legend,
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }

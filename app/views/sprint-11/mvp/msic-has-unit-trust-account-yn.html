@@ -21,8 +21,8 @@ Do you have any Unit Trusts? - Pension Credit
 
     <!------------HEADLINE------------>
       {% set legend %}
-      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any current accounts with a bank or building society? {% endif %}
-      {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any current accounts with a bank or building society?{% endif %}
+      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any money invested in unit trusts? {% endif %}
+      {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any money invested in unit trusts?{% endif %}
       {% endset %}
     <!------------HEADLINE------------>
 
@@ -31,7 +31,7 @@ Do you have any Unit Trusts? - Pension Credit
     name: "msic-has-unit-trust-account-yn",
     fieldset: {
       legend: {
-        text: "Do you have any money invested in unit trusts?",
+        html: legend,
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
