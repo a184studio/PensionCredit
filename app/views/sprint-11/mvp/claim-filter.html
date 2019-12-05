@@ -17,19 +17,20 @@
     <form action="msic-has-current-account-yn" method="post" class="form">
       <input type="hidden" name="msic-pc-payment-complete" value="in-progress"/>
 
+      <div class="govuk-panel--agent">
 
       {{ govukRadios({
         idPrefix: "claim-filter",
         name: "claim-filter",
         fieldset: {
           legend: {
-            text: "Type of claim",
+            html: "For internal use only:<br>Type of claim",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
             }
             },
             hint: {
-              html: "<p class=\"hint\">We know about the account your State Pension is paid into."
+              html: "<p class=\"hint\">"
             },
         items: [
           {
@@ -44,6 +45,8 @@
           }
         ]
       }) }}
+
+      </div>
 
       {{ govukButton({
         text: "Continue"
