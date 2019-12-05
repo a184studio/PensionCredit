@@ -96,7 +96,7 @@ Account with: {% extends "layout.html" %}
                       ]
                       }) }}
 
-            <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+            <h2 class="govuk-heading-s extra-space-cya">Details of this money on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -105,7 +105,7 @@ Account with: {% extends "layout.html" %}
                 rows: [
               {
                 key: {
-                  text: "Date this amount is from"
+                  text: "Date this figure is from"
                 },
                 value: {
                   text: data['msic-missing-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-missing-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-missing-account-amount-EED-date-evidence-year']
@@ -123,7 +123,7 @@ Account with: {% extends "layout.html" %}
 
               {
                 key: {
-                  text: "How much you had in the account on this date"
+                  text: "How much money you had on this date"
                 },
                 value: {
                   html: data['msic-missing-account-amount-EED'] | formatMoney
@@ -141,7 +141,7 @@ Account with: {% extends "layout.html" %}
               ]
               }) }}
 
-              <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+              <h2 class="govuk-heading-s extra-space-cya">Details of this money on (IDOC) {{'' | formatDate}}</h2>
 
 
               {{ govukSummaryList({
@@ -149,7 +149,7 @@ Account with: {% extends "layout.html" %}
                 rows: [
               {
                 key: {
-                  text: "Date this amount is from"
+                  text: "Date this figure is from"
                 },
                 value: {
                   text: data['msic-missing-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-missing-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-missing-account-amount-TODAY-date-evidence-year']
@@ -167,7 +167,7 @@ Account with: {% extends "layout.html" %}
 
               {
                 key: {
-                  text: "How much you had in the account on this date"
+                  text: "How much money you had on this date"
                 },
                 value: {
                   html: data['msic-missing-account-amount-TODAY'] | formatMoney
@@ -192,7 +192,7 @@ Account with: {% extends "layout.html" %}
               {
                 classes: 'govuk-summary-list',
                 key: {
-                text: "Account owner"
+                text: "Who owns this money?"
               },
               value: {
                 text: data['msic-missing-account-amount-owner']
@@ -256,7 +256,7 @@ Account with: {% extends "layout.html" %}
                         {
                           classes: 'govuk-summary-list--no-border',
                           key: {
-                            text: "Has second property"
+                            text: "Owns second property"
                           },
                           value: {
                             text: data["msic-second-property-yn"]
@@ -345,7 +345,7 @@ Account with: {% extends "layout.html" %}
                       ]
                       }) }}
 
-                      <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                      <h2 class="govuk-heading-s extra-space-cya">Details of this money on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -372,7 +372,7 @@ Account with: {% extends "layout.html" %}
 
                             {
                               key: {
-                                text: "Amount of cash you had on this datee"
+                                text: "Amount of money you had on this date"
                               },
                               value: {
                                 html: data['msic-cash-other-abroad-amount-EED'] | formatMoney
@@ -390,7 +390,7 @@ Account with: {% extends "layout.html" %}
                             ]
                             }) }}
 
-                            <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                            <h2 class="govuk-heading-s extra-space-cya">Details of this money on (IDOC) {{'' | formatDate}}</h2>
 
 
                             {{ govukSummaryList({
@@ -417,7 +417,7 @@ Account with: {% extends "layout.html" %}
                             {
                               classes: 'govuk-summary-list--no-border',
                               key: {
-                                text: "Amount of cash you had on this date"
+                                text: "Amount of money you had on this date"
                               },
                               value: {
                                 html: data['msic-cash-other-abroad-amount-TODAY'] | formatMoney
@@ -507,7 +507,7 @@ Account with: {% extends "layout.html" %}
                       ]
                       }) }}
 
-                      <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                      <h2 class="govuk-heading-s extra-space-cya">Details of this cash on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -534,7 +534,7 @@ Account with: {% extends "layout.html" %}
 
                             {
                               key: {
-                                text: "Amount of cash you had on this datee"
+                                text: "Amount of cash you had on this date"
                               },
                               value: {
                                 html: data['msic-has-cash-at-home-amount-EED'] | formatMoney
@@ -552,7 +552,7 @@ Account with: {% extends "layout.html" %}
                             ]
                             }) }}
 
-                            <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                            <h2 class="govuk-heading-s extra-space-cya">Details of this cash on (IDOC) {{'' | formatDate}}</h2>
 
 
                             {{ govukSummaryList({
@@ -649,7 +649,7 @@ Account with: {% extends "layout.html" %}
                       ]
                       }) }}
 
-                      <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                      <h2 class="govuk-heading-s extra-space-cya">Unit trust details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -658,7 +658,7 @@ Account with: {% extends "layout.html" %}
                               rows: [
                             {
                               key: {
-                                text: "DATE"
+                                text: "Date these figures are from"
                               },
                               value: {
                                 text: data['msic-unit-trust-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-unit-trust-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-unit-trust-account-amount-EED-date-evidence-year']
@@ -712,7 +712,7 @@ Account with: {% extends "layout.html" %}
                             ]
                             }) }}
 
-                            <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                            <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
 
 
                             {{ govukSummaryList({
@@ -720,7 +720,7 @@ Account with: {% extends "layout.html" %}
                               rows: [
                             {
                               key: {
-                                text: "Date this amount is from"
+                                text: "Date these figures are from"
                               },
                               value: {
                                 text: data['msic-unit-trust-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-unit-trust-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-unit-trust-account-amount-TODAY-date-evidence-year']
@@ -827,7 +827,7 @@ Account with: {% extends "layout.html" %}
                         ]
                         }) }}
 
-                        <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                        <h2 class="govuk-heading-s extra-space-cya">Details of shares on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -836,7 +836,7 @@ Account with: {% extends "layout.html" %}
                                 rows: [
                               {
                                 key: {
-                                  text: "Date this amount is from"
+                                  text: "Date this figure is from"
                                 },
                                 value: {
                                   text: data['msic-shares-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-shares-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-shares-account-amount-EED-date-evidence-year']
@@ -854,7 +854,7 @@ Account with: {% extends "layout.html" %}
 
                               {
                                 key: {
-                                  text: "How much you had in the account on this date"
+                                  text: "How many shares you had on this date"
                                 },
                                 value: {
                                   html: data['msic-shares-account-amount-EED'] | formatMoney
@@ -872,7 +872,7 @@ Account with: {% extends "layout.html" %}
                               ]
                               }) }}
 
-                              <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                              <h2 class="govuk-heading-s extra-space-cya">Details of shares on (IDOC) {{'' | formatDate}}</h2>
 
 
                               {{ govukSummaryList({
@@ -880,7 +880,7 @@ Account with: {% extends "layout.html" %}
                                 rows: [
                               {
                                 key: {
-                                  text: "Date this amount is from"
+                                  text: "Date this figure is from"
                                 },
                                 value: {
                                   text: data['msic-shares-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-shares-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-shares-account-amount-TODAY-date-evidence-year']
@@ -899,7 +899,7 @@ Account with: {% extends "layout.html" %}
                               {
                                 classes: 'govuk-summary-list--no-border',
                                 key: {
-                                  text: "How much you had in the account on this date"
+                                  text: "How many shares you had on this date"
                                 },
                                 value: {
                                   html: data['msic-shares-account-amount-TODAY'] | formatMoney
@@ -967,7 +967,7 @@ Account with: {% extends "layout.html" %}
                         ]
                         }) }}
 
-                        <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                        <h2 class="govuk-heading-s extra-space-cya">Bond details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -976,7 +976,7 @@ Account with: {% extends "layout.html" %}
                                 rows: [
                               {
                                 key: {
-                                  text: "Date this amount is from"
+                                  text: "Date this figure is from"
                                 },
                                 value: {
                                   text: data['msic-capital-bond-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-capital-bond-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-capital-bond-account-amount-EED-date-evidence-year']
@@ -994,7 +994,7 @@ Account with: {% extends "layout.html" %}
 
                               {
                                 key: {
-                                  text: "How much you had in the account on this date"
+                                  text: "Value of this bond on this date"
                                 },
                                 value: {
                                   html: data['msic-capital-bond-account-amount-EED'] | formatMoney
@@ -1012,7 +1012,7 @@ Account with: {% extends "layout.html" %}
                               ]
                               }) }}
 
-                              <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                              <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
 
 
                               {{ govukSummaryList({
@@ -1020,7 +1020,7 @@ Account with: {% extends "layout.html" %}
                                 rows: [
                               {
                                 key: {
-                                  text: "Date this amount is from"
+                                  text: "Date this figure is from"
                                 },
                                 value: {
                                   text: data['msic-capital-bond-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-capital-bond-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-capital-bond-account-amount-TODAY-date-evidence-year']
@@ -1038,7 +1038,7 @@ Account with: {% extends "layout.html" %}
 
                               {
                                 key: {
-                                  text: "How much you had in the account on this date"
+                                  text: "Vaslue of this bond on this date"
                                 },
                                 value: {
                                   html: data['msic-capital-bond-account-amount-TODAY'] | formatMoney
@@ -1169,7 +1169,7 @@ Account with: {% extends "layout.html" %}
                     ]
                     }) }}
 
-                    <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                    <h2 class="govuk-heading-s extra-space-cya">ISA details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -1178,7 +1178,7 @@ Account with: {% extends "layout.html" %}
                             rows: [
                           {
                             key: {
-                              text: "Date this amount is from"
+                              text: "Date this figure is from"
                             },
                             value: {
                               text: data['msic-isa-savings-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-isa-savings-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-isa-savings-account-amount-EED-date-evidence-year']
@@ -1196,7 +1196,7 @@ Account with: {% extends "layout.html" %}
 
                           {
                             key: {
-                              text: "How much you had in the account on this date"
+                              text: "How much you had in this ISA on this date"
                             },
                             value: {
                               html: data['msic-isa-savings-account-amount-EED'] | formatMoney
@@ -1214,7 +1214,7 @@ Account with: {% extends "layout.html" %}
                           ]
                           }) }}
 
-                          <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                          <h2 class="govuk-heading-s extra-space-cya">ISA details on (IDOC) {{'' | formatDate}}</h2>
 
 
                           {{ govukSummaryList({
@@ -1222,7 +1222,7 @@ Account with: {% extends "layout.html" %}
                             rows: [
                           {
                             key: {
-                              text: "Date this amount is from"
+                              text: "Date this figure is from"
                             },
                             value: {
                               text: data['msic-isa-savings-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-isa-savings-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-isa-savings-account-amount-TODAY-date-evidence-year']
@@ -1241,7 +1241,7 @@ Account with: {% extends "layout.html" %}
                           {
                             classes: 'govuk-summary-list--no-border',
                             key: {
-                              text: "How much you had in the account on this date"
+                              text: "How much you had in this ISA on this date"
                             },
                             value: {
                               html: data['msic-isa-savings-account-amount-TODAY'] | formatMoney
@@ -1282,14 +1282,14 @@ Account with: {% extends "layout.html" %}
               <div class="govuk-grid-column-three-quarters">
 
 
-                        <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                        <h2 class="govuk-heading-s extra-space-cya">Premium Bond details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
                               {{ govukSummaryList({
                                 classes: 'govuk-!-margin-bottom-0',
                                 rows: [
                               {
                                 key: {
-                                  text: "Date this amount is from"
+                                  text: "Date this figure is from"
                                 },
                                 value: {
                                   text: data['msic-premium-bond-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-premium-bond-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-premium-bond-account-amount-EED-date-evidence-year']
@@ -1307,7 +1307,7 @@ Account with: {% extends "layout.html" %}
 
                               {
                                 key: {
-                                  text: "How much you had in the account on this date"
+                                  text: "Value of Premium Bonds on this date"
                                 },
                                 value: {
                                   html: data['msic-premium-bond-account-amount-EED'] | formatMoney
@@ -1325,7 +1325,7 @@ Account with: {% extends "layout.html" %}
                               ]
                               }) }}
 
-                              <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                              <h2 class="govuk-heading-s extra-space-cya">Premium Bond details on (IDOC) {{'' | formatDate}}</h2>
 
 
                               {{ govukSummaryList({
@@ -1333,7 +1333,7 @@ Account with: {% extends "layout.html" %}
                                 rows: [
                               {
                                 key: {
-                                  text: "Date this amount is from"
+                                  text: "Date this figure is from"
                                 },
                                 value: {
                                   text: data['msic-premium-bond-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-premium-bond-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-premium-bond-account-amount-TODAY-date-evidence-year']
@@ -1352,7 +1352,7 @@ Account with: {% extends "layout.html" %}
                               {
                                 classes: 'govuk-summary-list--no-border',
                                 key: {
-                                  text: "How much you had in the account on this date"
+                                  text: "Value of Premium Bonds on this date"
                                 },
                                 value: {
                                   html: data['msic-premium-bond-account-amount-TODAY'] | formatMoney
@@ -1419,7 +1419,7 @@ Account with: {% extends "layout.html" %}
                       ]
                       }) }}
 
-                      <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                      <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -1428,7 +1428,7 @@ Account with: {% extends "layout.html" %}
                               rows: [
                             {
                               key: {
-                                text: "Date this amount is from"
+                                text: "Date this figure is from"
                               },
                               value: {
                                 text: data['msic-credit-union-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-credit-union-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-credit-union-account-amount-EED-date-evidence-year']
@@ -1446,7 +1446,7 @@ Account with: {% extends "layout.html" %}
 
                             {
                               key: {
-                                text: "How much you had in the account on this date"
+                                text: "Value of Premium Bonds on this date"
                               },
                               value: {
                                 html: data['msic-credit-union-account-amount-EED'] | formatMoney
@@ -1464,7 +1464,7 @@ Account with: {% extends "layout.html" %}
                             ]
                             }) }}
 
-                            <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                            <h2 class="govuk-heading-s extra-space-cya">Premium Bond details on (IDOC) {{'' | formatDate}}</h2>
 
 
                             {{ govukSummaryList({
@@ -1472,7 +1472,7 @@ Account with: {% extends "layout.html" %}
                               rows: [
                             {
                               key: {
-                                text: "Date this amount is from"
+                                text: "Date this figure is from"
                               },
                               value: {
                                 text: data['msic-credit-union-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-credit-union-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-credit-union-account-amount-TODAY-date-evidence-year']
@@ -1490,7 +1490,7 @@ Account with: {% extends "layout.html" %}
 
                             {
                               key: {
-                                text: "How much you had in the account on this date"
+                                text: "Value of Premium Bonds on this date"
                               },
                               value: {
                                 html: data['msic-credit-union-account-amount-TODAY'] | formatMoney
@@ -1510,47 +1510,7 @@ Account with: {% extends "layout.html" %}
 
                             <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
 
-                            {{ govukSummaryList({
-                            rows: [
-                            {
-                              classes: 'govuk-summary-list',
-                              key: {
-                              text: "Account owner"
-                            },
-                            value: {
-                              text: data['msic-credit-union-account-owner']
-                            },
-                            actions: {
-                              items: [
-                                {
-                                  href: "",
-                                  text: "",
-                                  visuallyHiddenText: "XXXX"
-                                }
-                              ]
-                            }
-                            },
 
-                            {
-                              classes: 'govuk-summary-list--no-border',
-                              key: {
-                                text: "Amount of money that is yours"
-                              },
-                              value: {
-                                html: data['msic-credit-union-account-stake'] | formatMoney
-                              },
-                              actions: {
-                                items: [
-                                  {
-                                    href: "",
-                                    text: "",
-                                    visuallyHiddenText: "XXXX"
-                                  }
-                                ]
-                              }
-                            }
-                            ]
-                            }) }}
 
                 <br></div></div>
 
@@ -1578,7 +1538,7 @@ Account with: {% extends "layout.html" %}
                   rows: [
                 {
                   key: {
-                    text: "Date this amount is from"
+                    text: "Date this figure is from"
                   },
                   value: {
                     text: data['msic-post-office-card-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-post-office-card-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-post-office-card-account-amount-EED-date-evidence-year']
@@ -1596,7 +1556,7 @@ Account with: {% extends "layout.html" %}
 
                 {
                   key: {
-                    text: "How much you had in the account on this date"
+                    text: "How much you had in this account on this date"
                   },
                   value: {
                     html: data['msic-post-office-card-account-amount-EED'] | formatMoney
@@ -1614,7 +1574,7 @@ Account with: {% extends "layout.html" %}
                 ]
                 }) }}
 
-                <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
 
 
                 {{ govukSummaryList({
@@ -1622,7 +1582,7 @@ Account with: {% extends "layout.html" %}
                   rows: [
                 {
                   key: {
-                    text: "Date this amount is from"
+                    text: "Date this figure is from"
                   },
                   value: {
                     text: data['msic-post-office-card-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-post-office-card-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-post-office-card-account-amount-TODAY-date-evidence-year']
@@ -1641,7 +1601,7 @@ Account with: {% extends "layout.html" %}
                 {
                   classes: 'govuk-summary-list--no-border',
                   key: {
-                    text: "How much you had in the account on this date"
+                    text: "How much you had in this account on this date"
                   },
                   value: {
                     html: data['msic-post-office-card-account-amount-TODAY'] | formatMoney
@@ -1708,7 +1668,7 @@ Account with: {% extends "layout.html" %}
                             ]
                             }) }}
 
-                            <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                            <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -1717,7 +1677,7 @@ Account with: {% extends "layout.html" %}
                 rows: [
               {
                 key: {
-                  text: "Date this amount is from"
+                  text: "Date this figure is from"
                 },
                 value: {
                   text: data['msic-all-savings-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-all-savings-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-all-savings-account-amount-EED-date-evidence-year']
@@ -1735,7 +1695,7 @@ Account with: {% extends "layout.html" %}
 
               {
                 key: {
-                  text: "How much you had in the account on this date"
+                  text: "How much you had in this account on this date"
                 },
                 value: {
                   html: data['msic-all-savings-account-amount-EED'] | formatMoney
@@ -1753,7 +1713,7 @@ Account with: {% extends "layout.html" %}
               ]
               }) }}
 
-              <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+              <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
 
 
               {{ govukSummaryList({
@@ -1761,7 +1721,7 @@ Account with: {% extends "layout.html" %}
                 rows: [
               {
                 key: {
-                  text: "Date this amount is from"
+                  text: "Date this figure is from"
                 },
                 value: {
                   text: data['msic-all-savings-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-all-savings-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-all-savings-account-amount-TODAY-date-evidence-year']
@@ -1779,7 +1739,7 @@ Account with: {% extends "layout.html" %}
 
               {
                 key: {
-                  text: "How much you had in the account on this date"
+                  text: "How much you had in this account on this date"
                 },
                 value: {
                   html: data['msic-all-savings-account-amount-TODAY'] | formatMoney
@@ -1893,7 +1853,7 @@ Account with: {% extends "layout.html" %}
                     ]
                     }) }}
 
-                    <h2 class="govuk-heading-s extra-space-cya">Account details at (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                    <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
 
@@ -1902,7 +1862,7 @@ Account with: {% extends "layout.html" %}
                     rows: [
                   {
                     key: {
-                      text: "Date this amount is from"
+                      text: "Date this figure is from"
                     },
                     value: {
                       html: data['msic-all-current-account-amount-EED-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-EED-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-EED-date-evidence-' + i + '-year']
@@ -1920,7 +1880,7 @@ Account with: {% extends "layout.html" %}
 
                   {
                     key: {
-                      text: "How much you had in the account on this date"
+                      text: "How much you had in this account on this date"
                     },
                     value: {
                       text: data['msic-all-current-account-amount-EED-' + i] | formatMoney
@@ -1938,7 +1898,7 @@ Account with: {% extends "layout.html" %}
                   ]
                   }) }}
 
-                  <h2 class="govuk-heading-s extra-space-cya">Account details at (IDOC) {{'' | formatDate}}</h2>
+                  <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
 
 
                   {{ govukSummaryList({
@@ -1946,7 +1906,7 @@ Account with: {% extends "layout.html" %}
                     rows: [
                   {
                     key: {
-                      text: "Date this amount is from"
+                      text: "Date this figure is from"
                     },
                     value: {
                       html: data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-year']
