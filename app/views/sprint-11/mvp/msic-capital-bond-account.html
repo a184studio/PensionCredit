@@ -41,8 +41,8 @@
         label: {
           html: "What was the value of this bond on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
         },
-        id: "msic-capital-bond-amount-EED",
-        name: "msic-capital-bond-amount-EED",
+        id: "msic-capital-bond-account-amount-EED",
+        name: "msic-capital-bond-account-amount-EED",
         classes: "govuk-input--width-20"
       }) }}
 {% endset -%}
@@ -52,8 +52,8 @@
 
 {% set balanceDateEED %}
 {{ govukDateInput({
-  id: "msic-capital-bond-amount-EED-date-evidence",
-  namePrefix: "msic-capital-bond-amount-EED-date-evidence",
+  id: "msic-capital-bond-account-amount-EED-date-evidence",
+  namePrefix: "msic-capital-bond-account-amount-EED-date-evidence",
   fieldset: {
     legend: {
       text: "Date this figure is from"
@@ -63,17 +63,17 @@
     {
       name: "day",
       classes: "govuk-input--width-2",
-      value: data["msic-capital-bond-amount-EED-date-evidence-day"]
+      value: data["msic-capital-bond-account-amount-EED-date-evidence-day"]
     },
     {
       name: "month",
       classes: "govuk-input--width-2",
-      value: data["msic-capital-bond-amount-EED-date-evidence-month"]
+      value: data["msic-capital-bond-account-amount-EED-date-evidence-month"]
     },
     {
       name: "year",
       classes: "govuk-input--width-4",
-      value: data["msic-capital-bond-amount-EED-date-evidence-year"]
+      value: data["msic-capital-bond-account-amount-EED-date-evidence-year"]
     }
   ]
 }) }}
@@ -83,8 +83,8 @@
     html: "What was the value of this bond on this date?"
   },
   classes: "govuk-input--width-20",
-  id: "msic-capital-bond-amount-EED",
-  name: "msic-capital-bond-amount-EED"
+  id: "msic-capital-bond-account-amount-EED",
+  name: "msic-capital-bond-account-amount-EED"
 }) }}
 {% endset -%}
 
@@ -147,8 +147,8 @@
         {% set balanceDateToday %}
 
           {{ govukDateInput({
-            id: "msic-capital-bond-amount-TODAY-date-evidence",
-            namePrefix: "msic-capital-bond-amount-TODAY-date-evidence",
+            id: "msic-capital-bond-account-amount-TODAY-date-evidence",
+            namePrefix: "msic-capital-bond-account-amount-TODAY-date-evidence",
             fieldset: {
               legend: {
                 text: "Date this figure is from"
@@ -158,17 +158,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["msic-capital-bond-amount-TODAY-date-evidence-day"]
+                value: data["msic-capital-bond-account-amount-TODAY-date-evidence-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["msic-capital-bond-amount-TODAY-date-evidence-month"]
+                value: data["msic-capital-bond-account-amount-TODAY-date-evidence-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["msic-capital-bond-amount-TODAY-date-evidence-year"]
+                value: data["msic-capital-bond-account-amount-TODAY-date-evidence-year"]
               }
             ]
           }) }}
@@ -178,8 +178,8 @@
               html: "What was the value of this bond on this date?"
             },
             classes: "govuk-input--width-20",
-            id: "msic-capital-bond-amount-TODAY",
-            name: "msic-capital-bond-amount-TODAY"
+            id: "msic-capital-bond-account-amount-TODAY",
+            name: "msic-capital-bond-account-amount-TODAY"
           }) }}
 
         {% endset -%}

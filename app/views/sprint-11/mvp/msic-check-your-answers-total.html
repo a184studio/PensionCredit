@@ -15,10 +15,10 @@ Account with: {% extends "layout.html" %}
   <form action="msic-sp-payment-choose" method="post" class="form">
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
+      <div class="govuk-grid-column-full">
         <input type="hidden" name="money-you-have-complete" value="true"/>
 
-        <h1 class="govuk-heading-xl">Money, savings and<br>investments summary</h1>
+        <h1 class="govuk-heading-xl">Money, savings and investments summary {% if data["claim-filter"] == "Backdating" %} since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}{% endif %} </h1>
         <p class="govuk-body govuk-!-font-size-24"></p>
     </div></div>
 

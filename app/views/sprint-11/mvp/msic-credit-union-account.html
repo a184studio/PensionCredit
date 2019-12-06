@@ -48,7 +48,7 @@
 
 {% set balanceDateEED %}
 {{ govukDateInput({
-  id: "msic-credit-union-account-EED-date-evidence",
+  id: "msic-credit-union-account-amount-EED-date-evidence",
   namePrefix: "msic-credit-union-account-amount-EED-date-evidence",
   fieldset: {
     legend: {
@@ -59,17 +59,17 @@
     {
       name: "day",
       classes: "govuk-input--width-2",
-      value: data["msic-credit-union-account-EED-date-evidence-day"]
+      value: data["msic-credit-union-account-amount-EED-date-evidence-day"]
     },
     {
       name: "month",
       classes: "govuk-input--width-2",
-      value: data["msic-credit-union-account-EED-date-evidence-month"]
+      value: data["msic-credit-union-account-amount-EED-date-evidence-month"]
     },
     {
       name: "year",
       classes: "govuk-input--width-4",
-      value: data["msic-credit-union-account-EED-date-evidence-year"]
+      value: data["msic-credit-union-account-amount-EED-date-evidence-year"]
     }
   ]
 }) }}
@@ -142,7 +142,7 @@
         {% set balanceDateToday %}
 
           {{ govukDateInput({
-            id: "msic-credit-union-account-TODAY-date-evidence",
+            id: "msic-credit-union-account-amount-TODAY-date-evidence",
             namePrefix: "msic-credit-union-account-amount-TODAY-date-evidence",
             fieldset: {
               legend: {
@@ -173,7 +173,7 @@
               html: "How much was in this account on this date?"
             },
             classes: "govuk-input--width-20",
-            id: "msic-credit-union-account-TODAY",
+            id: "msic-credit-union-account-amount-TODAY",
             name: "msic-credit-union-account-amount-TODAY"
           }) }}
 
