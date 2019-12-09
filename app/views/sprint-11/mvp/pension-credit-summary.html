@@ -3040,501 +3040,6 @@ Details of any other income
             ]
           }) }}
 
-          <!------------------------------------------------------------------------- PC PAYMENT ACCOUNT -------------------------------------------------------------------------------------------------------->
-
-
-          <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">State Pension payment account details</h2>
-
-          {{ govukSummaryList({
-            rows: [
-
-              {
-                  key: {
-                  text: "Which account do you get your State Pension paid into?"
-                },
-                value: {
-                  text: data["msic-sp-payment-choose"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-sp-payment-choose",
-                      text: "Change",
-                      visuallyHiddenText: "type of account"
-                    }
-                  ]
-                }
-              }
-
-            ]
-          }) }}
-
-          {% if data["msic-sp-payment-choose"] == "A different account" %}
-
-          {{ govukSummaryList({
-            rows: [
-
-            {
-                key: {
-                text: "Pension credit payment account"
-              },
-              value: {
-                text: data["msic-pc-payment-choose"]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-sp-payment-choose",
-                    text: "Change",
-                    visuallyHiddenText: "type of account"
-                  }
-                ]
-              }
-            },
-            {
-                key: {
-                  text: "Name on account"
-                },
-                value: {
-                  text: data["name-on-account"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-sp-payment-choose",
-                      text: "Change",
-                      visuallyHiddenText: "name on account"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Account with"
-                },
-                value: {
-                  text: data["msic-all-savings-account-name"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-sort-acc-account",
-                      text: "Change",
-                      visuallyHiddenText: "type of account"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Sort code"
-                },
-                value: {
-                  text: data["sort-code"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-sort-acc-account",
-                      text: "Change",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Account number"
-                },
-                value: {
-                  text: data["Account number"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-pc-payment-sort-acc-account",
-                      text: "Change",
-                      visuallyHiddenText: "account number"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Roll or reference number"
-                },
-                value: {
-                  text: data["Roll number"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "x",
-                      text: "Change",
-                      visuallyHiddenText: "roll number"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Amount in this account today"
-                },
-                value: {
-                  text: data["msic-all-savings-account-amount"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "x",
-                      text: "Change",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
-                }
-              }
-
-
-            ]
-          }) }}
-          {% endif %}
-
-
-                <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Pension Credit payment account details</h2>
-
-
-
-                {% if data["msic-pc-payment-choose"] == "A different account" %}
-                  {{ govukSummaryList({
-                    rows: [
-
-                      {
-                        key: {
-                          text: "Which account do you get your Pension Credit paid into?"
-                        },
-                        value: {
-                          text: data["msic-pc-payment-choose"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "x",
-                              text: "Change",
-                              visuallyHiddenText: "type of account"
-                            }
-                          ]
-                        }
-                      },
-
-                    {
-                        key: {
-                          text: "Name on account"
-                        },
-                        value: {
-                          text: data["name-on-account"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "x",
-                              text: "Change",
-                              visuallyHiddenText: "name on account"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Account with"
-                        },
-                        value: {
-                          text: data['msic-all-current-account-name-' + 0]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "x",
-                              text: "Change",
-                              visuallyHiddenText: "type of account"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Sort code"
-                        },
-                        value: {
-                          text: data["sort-code"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "x",
-                              text: "Change",
-                              visuallyHiddenText: "sort code"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Account number"
-                        },
-                        value: {
-                          text: data["Account number"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "x",
-                              text: "Change",
-                              visuallyHiddenText: "account number"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Roll or reference number"
-                        },
-                        value: {
-                          text: data["Roll number"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "x",
-                              text: "Change",
-                              visuallyHiddenText: "roll number"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Type of account"
-                        },
-                        value: {
-                          text: data["msic-pc-payment-alternative-account-type"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "x",
-                              text: "Change",
-                              visuallyHiddenText: "Bank or buildings society account"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Amount in this account today"
-                        },
-                        value: {
-                          text: data['msic-all-current-account-amount-' + 0]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "x",
-                              text: "Change",
-                              visuallyHiddenText: "sort code"
-                            }
-                          ]
-                        }
-                      },
-
-
-                      {
-                      key: {
-                        text: "Account owner"
-                      },
-                      value: {
-                        text: data['msic-pc-payment-alternative-account-owner']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "x",
-                            text: "Change",
-                            visuallyHiddenText: "Account owner"
-                          }
-                        ]
-                      }
-                      },
-
-                      {
-                        key: {
-                          text: "Amount of money that is yours"
-                        },
-                        value: {
-                          text: data['msic-pc-payment-alternative-account-stake']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "x",
-                              text: "Change",
-                              visuallyHiddenText: "Amount of money that is yours"
-                            }
-                          ]
-                        }
-                      }
-
-
-                    ]
-                  }) }}
-                {% endif %}
-
-                <!------------------ Choosen account ------------------------->
-
-                {% if data["msic-pc-payment-choose"] == "Bank name A / £100.00" %}
-
-                {{ govukSummaryList({
-                  rows: [
-
-                  {
-                      key: {
-                      text: "Which account do you get your Pension Credit paid into?"
-                    },
-                    value: {
-                      text: data["msic-pc-payment-choose"]
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "x",
-                          text: "Change",
-                          visuallyHiddenText: "type of account"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                      key: {
-                        text: "Name on account"
-                      },
-                      value: {
-                        text: data["name-on-account"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "x",
-                            text: "Change",
-                            visuallyHiddenText: "name on account"
-                          }
-                        ]
-                      }
-                    },
-
-                    {
-                      key: {
-                        text: "Account with"
-                      },
-                      value: {
-                        text: data["msic-all-savings-account-name"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "x",
-                            text: "Change",
-                            visuallyHiddenText: "type of account"
-                          }
-                        ]
-                      }
-                    },
-
-                    {
-                      key: {
-                        text: "Sort code"
-                      },
-                      value: {
-                        text: data["sort-code"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "x",
-                            text: "Change",
-                            visuallyHiddenText: "sort code"
-                          }
-                        ]
-                      }
-                    },
-
-                    {
-                      key: {
-                        text: "Account number"
-                      },
-                      value: {
-                        text: data["Account number"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "x",
-                            text: "Change",
-                            visuallyHiddenText: "account number"
-                          }
-                        ]
-                      }
-                    },
-
-                    {
-                      key: {
-                        text: "Roll or reference number"
-                      },
-                      value: {
-                        text: data["Roll number"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "x",
-                            text: "Change",
-                            visuallyHiddenText: "roll number"
-                          }
-                        ]
-                      }
-                    },
-
-                    {
-                      key: {
-                        text: "Amount in this account today"
-                      },
-                      value: {
-                        text: data["msic-all-savings-account-amount"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "x",
-                            text: "Change",
-                            visuallyHiddenText: "sort code"
-                          }
-                        ]
-                      }
-                    }
-
-
-                  ]
-                }) }}
-                {% endif %}
 
   <!------------------------------------------------------------------------------- CApital disregards ------------------------------------------------------------>
 
@@ -3890,19 +3395,459 @@ Details of any other income
   <br></dl></dl>
 
 
+  <!------------------------------------------------------------------------- PC PAYMENT ACCOUNT -------------------------------------------------------------------------------------------------------->
+
+  <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">State Pension payment account details</h2>
+
+
+  <!------------------------------- STATE PENSION PAID INTO ------------------------------------------------------>
+  {% if data["msic-sp-payment-choose"] == "Bank name A / £100.00" %}
+
+    {{ govukSummaryList({
+      rows: [
+
+        {
+            key: {
+            text: "Which account do you get your State Pension paid into?"
+          },
+          value: {
+            text: data["msic-sp-payment-choose"]
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "type of account"
+              }
+            ]
+          }
+        }
+
+      ]
+    }) }}
+
+    {% endif %}
+
+
+    <!------------------------------- STATE PENSION: DIFFERENT ------------------------------------------------------>
+
+
+    {% if data["msic-sp-payment-choose"] == "A different account" %}
+
+    {{ govukSummaryList({
+      rows: [
+
+      {
+          key: {
+          text: "Pension credit payment account"
+        },
+        value: {
+          text: data["msic-pc-payment-choose"]
+        },
+        actions: {
+          items: [
+            {
+              href: "x",
+              text: "Change",
+              visuallyHiddenText: "type of account"
+            }
+          ]
+        }
+      },
+        {
+          key: {
+            text: "Amount in this account today"
+          },
+          value: {
+            text: data["msic-all-savings-account-amount"]
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "sort code"
+              }
+            ]
+          }
+        }
+
+
+      ]
+    }) }}
+    {% endif %}
+
+
+    <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Pension Credit payment account details</h2>
+
+
+    <!------------------------------- PENSION CREDIT: DIFFERENT ------------------------------------------------------>
+
+    {% if data["msic-pc-payment-choose"] == "Same account as State Pension" %}
+
+    {{ govukSummaryList({
+      rows: [
+
+      {
+          key: {
+          text: "Which account do you get your Pension Credit paid into?"
+        },
+        value: {
+          text: data["msic-pc-payment-choose"]
+        },
+        actions: {
+          items: [
+            {
+              href: "msic-pc-payment-choose",
+              text: "Change",
+              visuallyHiddenText: ""
+            }
+          ]
+        }
+      }
+
+      ]
+    }) }}
+    {% endif %}
+
+  {% if data["msic-pc-payment-choose"] == "A different account" %}
+    {{ govukSummaryList({
+      rows: [
+
+        {
+          key: {
+            text: "Which account do you get your Pension Credit paid into?"
+          },
+          value: {
+            text: data["msic-pc-payment-choose"]
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-pc-payment-choose",
+                text: "Change",
+                visuallyHiddenText: "type of account"
+              }
+            ]
+          }
+        },
+
+      {
+          key: {
+            text: "Name on account"
+          },
+          value: {
+            text: data["name-on-account"]
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "name on account"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Account with"
+          },
+          value: {
+            text: data['msic-all-current-account-name-' + 0]
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "type of account"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Sort code"
+          },
+          value: {
+            text: data["sort-code"]
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "sort code"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Account number"
+          },
+          value: {
+            text: data["Account number"]
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "account number"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Roll or reference number"
+          },
+          value: {
+            text: data["Roll number"]
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "roll number"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Type of account"
+          },
+          value: {
+            text: data["msic-pc-payment-alternative-account-type"]
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "Bank or buildings society account"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Amount in this account today"
+          },
+          value: {
+            text: data['msic-all-current-account-amount-' + 0]
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "sort code"
+              }
+            ]
+          }
+        },
+
+
+        {
+        key: {
+          text: "Account owner"
+        },
+        value: {
+          text: data['msic-pc-payment-alternative-account-owner']
+        },
+        actions: {
+          items: [
+            {
+              href: "x",
+              text: "Change",
+              visuallyHiddenText: "Account owner"
+            }
+          ]
+        }
+        },
+
+        {
+          key: {
+            text: "Amount of money that is yours"
+          },
+          value: {
+            text: data['msic-pc-payment-alternative-account-stake']
+          },
+          actions: {
+            items: [
+              {
+                href: "x",
+                text: "Change",
+                visuallyHiddenText: "Amount of money that is yours"
+              }
+            ]
+          }
+        }
+
+
+      ]
+    }) }}
+  {% endif %}
+
+  <!------------------ Choosen account ------------------------->
+
+  {% if data["msic-pc-payment-choose"] == "Bank name A / £100.00" %}
+
+  {{ govukSummaryList({
+    rows: [
+
+    {
+        key: {
+        text: "Which account do you get your Pension Credit paid into?"
+      },
+      value: {
+        text: data["msic-pc-payment-choose"]
+      },
+      actions: {
+        items: [
+          {
+            href: "msic-pc-payment-choose",
+            text: "Change",
+            visuallyHiddenText: "type of account"
+          }
+        ]
+      }
+    },
+    {
+        key: {
+          text: "Name on account"
+        },
+        value: {
+          text: data["name-on-account"]
+        },
+        actions: {
+          items: [
+            {
+              href: "x",
+              text: "Change",
+              visuallyHiddenText: "name on account"
+            }
+          ]
+        }
+      },
+
+      {
+        key: {
+          text: "Account with"
+        },
+        value: {
+          text: data["msic-all-savings-account-name"]
+        },
+        actions: {
+          items: [
+            {
+              href: "x",
+              text: "Change",
+              visuallyHiddenText: "type of account"
+            }
+          ]
+        }
+      },
+
+      {
+        key: {
+          text: "Sort code"
+        },
+        value: {
+          text: data["sort-code"]
+        },
+        actions: {
+          items: [
+            {
+              href: "x",
+              text: "Change",
+              visuallyHiddenText: "sort code"
+            }
+          ]
+        }
+      },
+
+      {
+        key: {
+          text: "Account number"
+        },
+        value: {
+          text: data["Account number"]
+        },
+        actions: {
+          items: [
+            {
+              href: "x",
+              text: "Change",
+              visuallyHiddenText: "account number"
+            }
+          ]
+        }
+      },
+
+      {
+        key: {
+          text: "Roll or reference number"
+        },
+        value: {
+          text: data["Roll number"]
+        },
+        actions: {
+          items: [
+            {
+              href: "x",
+              text: "Change",
+              visuallyHiddenText: "roll number"
+            }
+          ]
+        }
+      },
+
+      {
+        key: {
+          text: "Amount in this account today"
+        },
+        value: {
+          text: data["msic-all-savings-account-amount"]
+        },
+        actions: {
+          items: [
+            {
+              href: "x",
+              text: "Change",
+              visuallyHiddenText: "sort code"
+            }
+          ]
+        }
+      }
+
+
+    ]
+  }) }}
+  {% endif %}
 
   <!------------------------------------------------------------------------------- End ------------------------------------------------------------>
 
 </div></div>
-<br><br>
 
-
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-top-8">
   <div class="govuk-grid-column-three-quarters">
 <form action="pc-done-yn" method="post" class="form">
 
 
-<div class="govuk-panel--agent">
+<div class="govuk-panel--agent ">
   <h2 class="govuk-heading-l">Agent: read this declaration to the caller</h2>
 </div>
 
