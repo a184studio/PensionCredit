@@ -57,18 +57,18 @@ idPrefix: "msic-sp-payment-alternative-account-owner",
 name: "msic-sp-payment-alternative-account-owner",
 fieldset: {
   legend: {
-    text: "How much of the money in this account is yours?",
+    text: "Account owner",
     classes: "govuk-fieldset__legend--s"
   }
 },
 items: [
   {
-    value: "All of it",
-    text: "All of it"
+    value: "You",
+    text: "Only you"
   },
   {
     value: "Joint account",
-    text: "Some of it",
+    text: "Joint account",
     conditional: {
       html: percentageField
     }
