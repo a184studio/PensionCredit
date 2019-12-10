@@ -2262,102 +2262,14 @@ Details of any other income
 
 
       {{ govukSummaryList({
-        rows: [
-        {
-          key: {
-            text: "Account with"
-          },
-          value: {
-            text: data['msic-all-current-account-name-' + i]
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-all-current-account",
-                html: "Change",
-                visuallyHiddenText: "XXX"
-              },
-              {
-                href: "msic-remove",
-                html: "Remove",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "Amount in this account today"
-          },
-          value: {
-            text: data['msic-all-current-account-amount-' + i] | formatMoney
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Account owner"
-          },
-          value: {
-            text: data['current-owner-' + i]
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-all-current-account",
-                text: "",
-                visuallyHiddenText: "XXXX"
-              }
-            ]
-          }
-        },
-        {
-          classes: 'govuk-summary-list',
-          key: {
-            text: "Amount of money that is yours"
-          },
-          value: {
-            text: data['msic-all-current-account-stake-' + i]
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-all-current-account-stake",
-                text: "",
-                visuallyHiddenText: "XXXX"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
-
-
-  {% endfor %}
-
-  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-      <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># savings accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
-
-
-
-              {{ govukSummaryList({
-              rows: [
+                classes: 'govuk-!-margin-bottom-0',
+                rows: [
               {
                 key: {
                   text: "Account with"
                 },
                 value: {
-                  text: data['msic-all-savings-account-name']
+                  text: data['msic-all-current-account-name-' + i]
                 },
                 actions: {
                   items: [
@@ -2373,14 +2285,726 @@ Details of any other income
                     }
                   ]
                 }
-              },
+              }
+              ]
+              }) }}
 
+              <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-0',
+              rows: [
+            {
+              key: {
+                text: "Date this figure is from"
+              },
+              value: {
+                html: data['msic-all-current-account-amount-EED-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-EED-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-EED-date-evidence-' + i + '-year']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "How much you had in this account on this date"
+              },
+              value: {
+                text: data['msic-all-current-account-amount-EED-' + i] | formatMoney
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+            ]
+            }) }}
+
+            <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
+
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-8',
+              rows: [
+            {
+              key: {
+                text: "Date this figure is from"
+              },
+              value: {
+                html: data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-year']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "How much you had in the account on this date"
+              },
+              value: {
+                text: data['msic-all-current-account-amount-TODAY-' + i] | formatMoney
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+            ]
+            }) }}
+
+            <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
+
+            {{ govukSummaryList({
+            rows: [
+            {
+              classes: 'govuk-summary-list',
+              key: {
+              text: "Account owner"
+            },
+            value: {
+              text: data['current-owner-' + i]
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "",
+                  visuallyHiddenText: "XXXX"
+                }
+              ]
+            }
+            },
+
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Amount of money that is yours"
+              },
+              value: {
+                text: data['msic-all-current-account-stake-' + i]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            }
+            ]
+            }) }}
+
+
+  {% endfor %}
+
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># savings accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
+
+
+
+              {{ govukSummaryList({
+                        classes: 'govuk-!-margin-bottom-0',
+                        rows: [
+                      {
+                        key: {
+                          text: "Account with"
+                        },
+                        value: {
+                          text: data['msic-all-savings-account-name']
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-all-savings-account",
+                              html: "Change",
+                              visuallyHiddenText: "XXX"
+                            },
+                            {
+                              href: "msic-remove",
+                              html: "Remove",
+                              visuallyHiddenText: "XXX"
+                            }
+                          ]
+                        }
+                      }
+                      ]
+                      }) }}
+
+                      <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-0',
+          rows: [
+        {
+          key: {
+            text: "Date this figure is from"
+          },
+          value: {
+            text: data['msic-all-savings-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-all-savings-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-all-savings-account-amount-EED-date-evidence-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "How much you had in this account on this date"
+          },
+          value: {
+            html: data['msic-all-savings-account-amount-EED'] | formatMoney
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
+
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-8',
+          rows: [
+        {
+          key: {
+            text: "Date this figure is from"
+          },
+          value: {
+            text: data['msic-all-savings-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-all-savings-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-all-savings-account-amount-TODAY-date-evidence-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "How much you had in this account on this date"
+          },
+          value: {
+            html: data['msic-all-savings-account-amount-TODAY'] | formatMoney
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
+
+        {{ govukSummaryList({
+        rows: [
+        {
+          classes: 'govuk-summary-list',
+          key: {
+          text: "Account owner"
+        },
+        value: {
+          text: data['msic-all-savings-account-owner']
+        },
+        actions: {
+          items: [
+            {
+              href: "",
+              text: "",
+              visuallyHiddenText: "XXXX"
+            }
+          ]
+        }
+        },
+
+        {
+          classes: 'govuk-summary-list--no-border',
+          key: {
+            text: "Amount of money that is yours"
+          },
+          value: {
+            html: data['msic-all-savings-account-stake'] | formatMoney
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        }
+        ]
+        }) }}
+
+              <br><br>
+
+
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+    <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># Post Office Card Accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
+
+
+    <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-0',
+      rows: [
+    {
+      key: {
+        text: "Date this figure is from"
+      },
+      value: {
+        text: data['msic-post-office-card-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-post-office-card-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-post-office-card-account-amount-EED-date-evidence-year']
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "How much you had in this account on this date"
+      },
+      value: {
+        html: data['msic-post-office-card-account-amount-EED'] | formatMoney
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    }
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
+
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-8',
+      rows: [
+    {
+      key: {
+        text: "Date this figure is from"
+      },
+      value: {
+        text: data['msic-post-office-card-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-post-office-card-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-post-office-card-account-amount-TODAY-date-evidence-year']
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    },
+
+    {
+      classes: 'govuk-summary-list--no-border',
+      key: {
+        text: "How much you had in this account on this date"
+      },
+      value: {
+        html: data['msic-post-office-card-account-amount-TODAY'] | formatMoney
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "",
+            visuallyHiddenText: "XXX"
+          }
+        ]
+      }
+    }
+    ]
+    }) }}
+
+                  <br><br>
+
+
+
+
+                  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+                  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># credit union accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
+
+                  {{ govukSummaryList({
+                              classes: 'govuk-!-margin-bottom-0',
+                              rows: [
+                            {
+                              key: {
+                                text: "Account with"
+                              },
+                              value: {
+                                text: data['msic-credit-union-account-name']
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "msic-credit-union-account",
+                                    html: "Change",
+                                    visuallyHiddenText: "XXX"
+                                  },
+                                  {
+                                    href: "msic-remove",
+                                    html: "Remove",
+                                    visuallyHiddenText: "XXX"
+                                  }
+                                ]
+                              }
+                            }
+                            ]
+                            }) }}
+
+                            <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
+                          {{ govukSummaryList({
+                            classes: 'govuk-!-margin-bottom-0',
+                            rows: [
+                          {
+                            key: {
+                              text: "Date this figure is from"
+                            },
+                            value: {
+                              text: data['msic-credit-union-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-credit-union-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-credit-union-account-amount-EED-date-evidence-year']
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "",
+                                  text: "",
+                                  visuallyHiddenText: "XXX"
+                                }
+                              ]
+                            }
+                          },
+
+                          {
+                            key: {
+                              text: "How much you had in this account on this date"
+                            },
+                            value: {
+                              html: data['msic-credit-union-account-amount-EED'] | formatMoney
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "",
+                                  text: "",
+                                  visuallyHiddenText: "XXX"
+                                }
+                              ]
+                            }
+                          }
+                          ]
+                          }) }}
+
+                          <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
+
+
+                          {{ govukSummaryList({
+                            classes: 'govuk-!-margin-bottom-8',
+                            rows: [
+                          {
+                            key: {
+                              text: "Date this figure is from"
+                            },
+                            value: {
+                              text: data['msic-credit-union-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-credit-union-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-credit-union-account-amount-TODAY-date-evidence-year']
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "",
+                                  text: "",
+                                  visuallyHiddenText: "XXX"
+                                }
+                              ]
+                            }
+                          },
+
+                          {
+                            key: {
+                              text: "How much you had in this account on this date"
+                            },
+                            value: {
+                              html: data['msic-credit-union-account-amount-TODAY'] | formatMoney
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "",
+                                  text: "",
+                                  visuallyHiddenText: "XXX"
+                                }
+                              ]
+                            }
+                          }
+                          ]
+                          }) }}
+
+                          <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
+
+                          {{ govukSummaryList({
+                          rows: [
+                          {
+                            classes: 'govuk-summary-list',
+                            key: {
+                            text: "Account owner"
+                          },
+                          value: {
+                            text: data['msic-credit-union-account-owner']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "",
+                                text: "",
+                                visuallyHiddenText: "XXXX"
+                              }
+                            ]
+                          }
+                          },
+
+                          {
+                            classes: 'govuk-summary-list--no-border',
+                            key: {
+                              text: "Amount of money that is yours"
+                            },
+                            value: {
+                              text: data['msic-credit-union-account-stake']
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "",
+                                  text: "",
+                                  visuallyHiddenText: "XXXX"
+                                }
+                              ]
+                            }
+                          }
+                          ]
+                          }) }}
+
+                              <br><br>
+
+
+
+
+          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+          <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># Premium Bonds </strong><a href="msic-check-your-answers-a">Add</a></p>
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-0',
+            rows: [
+          {
+            key: {
+              text: "Date this figure is from"
+            },
+            value: {
+              text: data['msic-premium-bond-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-premium-bond-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-premium-bond-account-amount-EED-date-evidence-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Value of Premium Bonds on this date"
+            },
+            value: {
+              html: data['msic-premium-bond-account-amount-EED'] | formatMoney
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+          ]
+          }) }}
+
+          <h2 class="govuk-heading-s extra-space-cya">Premium Bond details on (IDOC) {{'' | formatDate}}</h2>
+
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-8',
+            rows: [
+          {
+            key: {
+              text: "Date this figure is from"
+            },
+            value: {
+              text: data['msic-premium-bond-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-premium-bond-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-premium-bond-account-amount-TODAY-date-evidence-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+
+          {
+            classes: 'govuk-summary-list--no-border',
+            key: {
+              text: "Value of Premium Bonds on this date"
+            },
+            value: {
+              html: data['msic-premium-bond-account-amount-TODAY'] | formatMoney
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+          ]
+          }) }}
+
+                        <br><br>
+
+
+
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># ISAs </strong><a href="msic-check-your-answers-a">Add</a></p>
+
+
+    {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-0',
+          rows: [
+        {
+          key: {
+            text: "Name of ISA"
+          },
+          value: {
+            text: data['msic-isa-savings-account-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-isa-savings-account",
+                html: "Change",
+                visuallyHiddenText: "XXX"
+              },
+              {
+                href: "msic-remove",
+                html: "Remove",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-s extra-space-cya">ISA details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-0',
+                rows: [
               {
                 key: {
-                  text: "Amount in this account today"
+                  text: "Date this figure is from"
                 },
                 value: {
-                  text: data['msic-all-savings-account-amount']
+                  text: data['msic-isa-savings-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-isa-savings-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-isa-savings-account-amount-EED-date-evidence-year']
                 },
                 actions: {
                   items: [
@@ -2392,12 +3016,207 @@ Details of any other income
                   ]
                 }
               },
+
               {
-              key: {
-                text: "Account owner"
+                key: {
+                  text: "How much you had in this ISA on this date"
+                },
+                value: {
+                  html: data['msic-isa-savings-account-amount-EED'] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+              ]
+              }) }}
+
+              <h2 class="govuk-heading-s extra-space-cya">ISA details on (IDOC) {{'' | formatDate}}</h2>
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-8',
+                rows: [
+              {
+                key: {
+                  text: "Date this figure is from"
+                },
+                value: {
+                  text: data['msic-isa-savings-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-isa-savings-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-isa-savings-account-amount-TODAY-date-evidence-year']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                classes: 'govuk-summary-list--no-border',
+                key: {
+                  text: "How much you had in this ISA on this date"
+                },
+                value: {
+                  html: data['msic-isa-savings-account-amount-TODAY'] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+              ]
+              }) }}
+
+    <br><br>
+
+
+
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># income or capital bonds</strong><a href="msic-check-your-answers-a">Add</a></p>
+
+    {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-0',
+          rows: [
+        {
+          key: {
+            text: "Name of income or capital bond"
+          },
+          value: {
+            text: data['msic-capital-bond-company-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "msic-capital-bond-account",
+                html: "Change",
+                visuallyHiddenText: "XXX"
+              },
+              {
+                href: "msic-remove",
+                html: "Remove",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-s extra-space-cya">Bond details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-0',
+                rows: [
+              {
+                key: {
+                  text: "Date this figure is from"
+                },
+                value: {
+                  text: data['msic-capital-bond-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-capital-bond-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-capital-bond-account-amount-EED-date-evidence-year']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "Value of this bond on this date"
+                },
+                value: {
+                  html: data['msic-capital-bond-account-amount-EED'] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+              ]
+              }) }}
+
+              <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-8',
+                rows: [
+              {
+                key: {
+                  text: "Date this figure is from"
+                },
+                value: {
+                  text: data['msic-capital-bond-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-capital-bond-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-capital-bond-account-amount-TODAY-date-evidence-year']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "Vaslue of this bond on this date"
+                },
+                value: {
+                  html: data['msic-capital-bond-account-amount-TODAY'] | formatMoney
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+              ]
+              }) }}
+
+              <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
+
+              {{ govukSummaryList({
+              rows: [
+              {
+                classes: 'govuk-summary-list',
+                key: {
+                text: "Does this bond have any element of life assurance attached to it?"
               },
               value: {
-                text: data['msic-all-savings-account-owner']
+                text: data['msic-capital-bond-account-life-assurance']
               },
               actions: {
                 items: [
@@ -2413,10 +3232,29 @@ Details of any other income
               {
                 classes: 'govuk-summary-list',
                 key: {
-                  text: "Amount of money that is yours"
+                text: "Can this bond be assigned or transfered to someone else?"
+              },
+              value: {
+                text: data['msic-capital-bond-account-transfer']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+              },
+
+              {
+                classes: 'govuk-summary-list--no-border',
+                key: {
+                  text: "Can you cash this bond in early?"
                 },
                 value: {
-                  text: data['msic-all-savings-account-stake']
+                  html: data['msic-capital-bond-account-cash-early']
                 },
                 actions: {
                   items: [
@@ -2431,39 +3269,128 @@ Details of any other income
               ]
               }) }}
 
-              <br><br>
+        <br><br>
 
 
-  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># shares </strong><a href="msic-check-your-answers-a">Add</a></p>
 
 
-    <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># Post Office Card Accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
+        {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-0',
+              rows: [
+            {
+              key: {
+                text: "Name of company"
+              },
+              value: {
+                text: data['msic-shares-account-name']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-shares-account",
+                    html: "Change",
+                    visuallyHiddenText: "XXX"
+                  },
+                  {
+                    href: "msic-remove",
+                    html: "Remove",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+            ]
+            }) }}
+
+            <h2 class="govuk-heading-s extra-space-cya">Details of shares on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
 
 
                   {{ govukSummaryList({
-                  rows: [
+                    classes: 'govuk-!-margin-bottom-0',
+                    rows: [
                   {
-                    classes: 'govuk-summary-list',
-                  key: {
-                  text: "Amount in this account today"
-                  },
-                  value: {
-                  text: data['msic-post-office-card-account-amount']
-                  },
-                  actions: {
-                  items: [
-                    {
-                      visuallyHiddenText: "",
-                      href: "msic-post-office-card-account",
-                      html: "Change"
+                    key: {
+                      text: "Date this figure is from"
                     },
-                    {
-                      href: "msic-remove",
-                      html: "Remove",
-                      visuallyHiddenText: ""
+                    value: {
+                      text: data['msic-shares-EED-date-evidence-day'] + ' ' + (data['msic-shares-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-shares-EED-date-evidence-year']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
                     }
-                  ]
+                  },
+
+                  {
+                    key: {
+                      text: "How many shares you had on this date"
+                    },
+                    value: {
+                      text: data['msic-shares-account-number-EED']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
                   }
+                  ]
+                  }) }}
+
+                  <h2 class="govuk-heading-s extra-space-cya">Details of shares on (IDOC) {{'' | formatDate}}</h2>
+
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-8',
+                    rows: [
+                  {
+                    key: {
+                      text: "Date this figure is from"
+                    },
+                    value: {
+                      text: data['msic-shares-TODAY-date-evidence-day'] + ' ' + (data['msic-shares-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-shares-TODAY-date-evidence-year']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+
+                  {
+                    classes: 'govuk-summary-list--no-border',
+                    key: {
+                      text: "How many shares you had on this date"
+                    },
+                    value: {
+                      text: data['msic-shares-account-number-TODAY']
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
                   }
                   ]
                   }) }}
@@ -2472,204 +3399,333 @@ Details of any other income
 
 
 
-
                   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+                  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># <u></u>unit trusts </strong><a href="msic-check-your-answers-a">Add</a></p>
 
-                  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># credit union accounts </strong><a href="msic-check-your-answers-a">Add</a></p>
+                  {{ govukSummaryList({
+                        classes: 'govuk-!-margin-bottom-0',
+                        rows: [
+                      {
+                        key: {
+                          text: "Name of trust"
+                        },
+                        value: {
+                          text: data['msic-unit-trust-account-name']
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-unit-trust-account",
+                              html: "Change",
+                              visuallyHiddenText: "XXX"
+                            },
+                            {
+                              href: "msic-remove",
+                              html: "Remove",
+                              visuallyHiddenText: "XXX"
+                            }
+                          ]
+                        }
+                      }
+                      ]
+                      }) }}
 
-                              {{ govukSummaryList({
+                      <h2 class="govuk-heading-s extra-space-cya">Unit trust details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
+                            {{ govukSummaryList({
+                              classes: 'govuk-!-margin-bottom-0',
                               rows: [
-                              {
-                                key: {
-                                  text: "Account with"
-                                },
-                                value: {
-                                  text: data['msic-credit-union-account-name']
-                                },
-                                actions: {
-                                  items: [
-                                    {
-                                      href: "msic-credit-union-account",
-                                      html: "Change",
-                                      visuallyHiddenText: "XXX"
-                                    },
-                                    {
-                                      href: "msic-remove",
-                                      html: "Remove",
-                                      visuallyHiddenText: "XXX"
-                                    }
-                                  ]
-                                }
-                              },
-
-                              {
-                                key: {
-                                  text: "Amount in this account today"
-                                },
-                                value: {
-                                  text: data['msic-credit-union-account-amount']
-                                },
-                                actions: {
-                                  items: [
-                                    {
-                                      href: "",
-                                      text: "",
-                                      visuallyHiddenText: "XXX"
-                                    }
-                                  ]
-                                }
-                              },
-                              {
+                            {
                               key: {
-                                text: "Account owner"
+                                text: "Date these figures are from"
                               },
                               value: {
-                                text: data['msic-credit-union-account-owner']
+                                text: data['msic-unit-trust-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-unit-trust-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-unit-trust-account-amount-EED-date-evidence-year']
                               },
                               actions: {
                                 items: [
                                   {
                                     href: "",
                                     text: "",
-                                    visuallyHiddenText: "XXXX"
+                                    visuallyHiddenText: "XXX"
                                   }
                                 ]
                               }
+                            },
+
+                            {
+                              key: {
+                                text: "Number of units you owned on this date"
                               },
-
-                              {
-                                classes: 'govuk-summary-list',
-                                key: {
-                                  text: "Amount of money that is yours"
-                                },
-                                value: {
-                                  text: data['msic-credit-union-account-stake']
-                                },
-                                actions: {
-                                  items: [
-                                    {
-                                      href: "",
-                                      text: "",
-                                      visuallyHiddenText: "XXXX"
-                                    }
-                                  ]
-                                }
-                              }
-                              ]
-                              }) }}
-
-                              <br><br>
-
-
-
-
-          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-          <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># Premium Bonds </strong><a href="msic-check-your-answers-a">Add</a></p>
-
-                        {{ govukSummaryList({
-                        rows: [
-                        {
-                          classes: 'govuk-summary-list',
-                          key: {
-                            text: "Value of Premium Bonds"
-                          },
-                          value: {
-                            text: data['msic-premium-bond-account-total-bonds']
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "msic-premium-bond-account",
-                                html: "Change",
-                                visuallyHiddenText: "XXX"
+                              value: {
+                                text: data['msic-unit-trust-account-units-EED']
                               },
-                              {
-                                href: "msic-remove",
-                                html: "Remove",
-                                visuallyHiddenText: "XXX"
+                              actions: {
+                                items: [
+                                  {
+                                    href: "",
+                                    text: "",
+                                    visuallyHiddenText: "XXX"
+                                  }
+                                ]
                               }
+                            },
+
+                            {
+                              key: {
+                                text: "Unit price on this date"
+                              },
+                              value: {
+                                html: data['msic-unit-trust-account-price-EED'] | formatMoney
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "",
+                                    text: "",
+                                    visuallyHiddenText: "XXX"
+                                  }
+                                ]
+                              }
+                            }
                             ]
-                          }
-                        }
-                        ]
-                        }) }}
+                            }) }}
+
+                            <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
+
+
+                            {{ govukSummaryList({
+                              classes: 'govuk-!-margin-bottom-8',
+                              rows: [
+                            {
+                              key: {
+                                text: "Date these figures are from"
+                              },
+                              value: {
+                                text: data['msic-unit-trust-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-unit-trust-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-unit-trust-account-amount-TODAY-date-evidence-year']
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "",
+                                    text: "",
+                                    visuallyHiddenText: "XXX"
+                                  }
+                                ]
+                              }
+                            },
+
+                            {
+                              key: {
+                                text: "Number of units you owned on this date"
+                              },
+                              value: {
+                                text: data['msic-unit-trust-account-units-TODAY']
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "",
+                                    text: "",
+                                    visuallyHiddenText: "XXX"
+                                  }
+                                ]
+                              }
+                            },
+
+                            {
+                              classes: 'govuk-summary-list--no-border',
+                              key: {
+                                text: "Unit price on this date"
+                              },
+                              value: {
+                                html: data['msic-unit-trust-account-price-TODAY'] | formatMoney
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "",
+                                    text: "",
+                                    visuallyHiddenText: "XXX"
+                                  }
+                                ]
+                              }
+                            }
+
+
+                            ]
+                            }) }}
 
                         <br><br>
 
 
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># cash at home </strong><a href="msic-check-your-answers-a">Add</a></p>
 
-    <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># ISAs </strong><a href="msic-check-your-answers-a">Add</a></p>
-
-
-    {{ govukSummaryList({
-    rows: [
-    {
-    key: {
-      text: "Account with:"
-    },
-    value: {
-      text: data['msic-isa-savings-account-name']
-    },
-    actions: {
-      items: [
-        {
-          href: "msic-isa-savings-account",
-          html: "Change",
-          visuallyHiddenText: "XXX"
+  {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-0',
+        rows: [
+      {
+        key: {
+          text: "Description of this money"
         },
-        {
-          href: "msic-remove",
-          html: "Remove",
-          visuallyHiddenText: "XXX"
+        value: {
+          text: data['msic-has-cash-at-home-name']
+        },
+        actions: {
+          items: [
+            {
+              href: "msic-cash-at-home",
+              html: "Change",
+              visuallyHiddenText: "XXX"
+            },
+            {
+              href: "msic-remove",
+              html: "Remove",
+              visuallyHiddenText: "XXX"
+            }
+          ]
         }
-      ]
-    }
-    },
+      },
 
-    {
-    classes: 'govuk-summary-list',
-    key: {
-      text: "Amount in this account today"
-    },
-    value: {
-      text: data['msic-isa-savings-account-amount']
-    },
-    actions: {
-      items: [
-        {
-          href: "",
-          text: "",
-          visuallyHiddenText: "XXX"
+      {
+        key: {
+          text: "What currency is it"
+        },
+        value: {
+          text: data['msic-has-cash-at-home-currency']
+        },
+        actions: {
+          items: [
+            {
+              href: "",
+              html: "",
+              visuallyHiddenText: "XXX"
+            }
+          ]
         }
+      }
+
+
       ]
-    }
-    }
-    ]
-    }) }}
+      }) }}
 
-    <br><br>
+      <h2 class="govuk-heading-s extra-space-cya">Details of this cash on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
+
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-0',
+              rows: [
+            {
+              key: {
+                text: "Date this figure is from"
+              },
+              value: {
+                text: data['msic-has-cash-at-home-amount-EED-date-evidence-day'] + ' ' + (data['msic-has-cash-at-home-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-has-cash-at-home-amount-EED-date-evidence-year']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "Amount of cash you had on this date"
+              },
+              value: {
+                html: data['msic-has-cash-at-home-amount-EED'] | formatMoney
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+            ]
+            }) }}
+
+            <h2 class="govuk-heading-s extra-space-cya">Details of this cash on (IDOC) {{'' | formatDate}}</h2>
+
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-8',
+              rows: [
+            {
+              key: {
+                text: "Date this figure is from"
+              },
+              value: {
+                text: data['msic-has-cash-at-home-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-has-cash-at-home-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-has-cash-at-home-amount-TODAY-date-evidence-year']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+
+            {
+              classes: 'govuk-summary-list--no-border',
+              key: {
+                text: "Amount of cash you had on this date"
+              },
+              value: {
+                html: data['msic-has-cash-at-home-amount-TODAY'] | formatMoney
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+
+
+            ]
+            }) }}
+
+      <br><br>
 
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># income or capital bonds</strong><a href="msic-check-your-answers-a">Add</a></p>
+      <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># monies abroad </strong><a href="msic-check-your-answers-a">Add</a></p>
 
-        {{ govukSummaryList({
-          rows: [
+
+      {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-0',
+            rows: [
           {
             key: {
-              text: "Account with"
+              text: "Description of this money"
             },
             value: {
-              text: data['msic-capital-bond-company-name']
+              text: data['msic-cash-other-abroad-name']
             },
             actions: {
               items: [
                 {
-                  href: "msic-capital-bond-account",
+                  href: "msic-cash-at-home",
                   html: "Change",
                   visuallyHiddenText: "XXX"
                 },
@@ -2681,275 +3737,120 @@ Details of any other income
               ]
             }
           },
+
           {
             key: {
-              text: "Value of capital bonds today"
+              text: "What currency is it"
             },
             value: {
-              text: data['msic-capital-bond-account-total-bonds']
+              text: data['msic-cash-other-abroad-currency']
             },
             actions: {
               items: [
                 {
                   href: "",
-                  text: "",
-                  visuallyHiddenText: "XXXX"
-                }
-              ]
-            }
-          },
-
-
-
-          {
-            classes: 'govuk-summary-list',
-            key: {
-              text: "Account has life assurance"
-            },
-            value: {
-              text: data['msic-capital-bond-account-life-assurance']
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXXX"
+                  html: "",
+                  visuallyHiddenText: "XXX"
                 }
               ]
             }
           }
+
+
           ]
-        }) }}
+          }) }}
 
-        <br><br>
-
-
-
-        <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># shares </strong><a href="msic-check-your-answers-a">Add</a></p>
+          <h2 class="govuk-heading-s extra-space-cya">Details of this money on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
 
-                  {{ govukSummaryList({
-                    rows: [
-                    {
-                      key: {
-                        text: "Company name"
-                      },
-                      value: {
-                        text: data['msic-shares-account-name']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "msic-shares-account",
-                            html: "Change",
-                            visuallyHiddenText: "XXX"
-                          },
-                          {
-                            href: "msic-remove",
-                            html: "Remove",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
+
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-0',
+                  rows: [
+                {
+                  key: {
+                    text: "Date this figure is from"
+                  },
+                  value: {
+                    text: data['msic-cash-other-abroad-amount-EED-date-evidence-day'] + ' ' + (data['msic-cash-other-abroad-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-cash-other-abroad-amount-EED-date-evidence-year']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
                       }
-                    },
-
-                    {
-                      classes: 'govuk-summary-list',
-                      key: {
-                        text: "Total number shares held"
-                      },
-                      value: {
-                        text: data['msic-shares-account-amount']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXXX"
-                          }
-                        ]
-                      }
-                    }
                     ]
-                  }) }}
-
-                  <br><br>
-
-
-
-                  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-                  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># <u></u>unit trusts </strong><a href="msic-check-your-answers-a">Add</a></p>
-
-                        {{ govukSummaryList({
-                          rows: [
-                          {
-                            key: {
-                              text: "Name of trust"
-                            },
-                            value: {
-                              text: data['msic-trust-account-name']
-                            },
-                            actions: {
-                              items: [
-                                {
-                                  href: "msic-unit-trust-account",
-                                  html: "Change",
-                                  visuallyHiddenText: "XXX"
-                                },
-                                {
-                                  href: "msic-remove",
-                                  html: "Remove",
-                                  visuallyHiddenText: "XXX"
-                                }
-                              ]
-                            }
-                          },
-
-                          {
-                            key: {
-                              text: "Number of units"
-                            },
-                            value: {
-                              text: data['msic-trust-account-purchase-value']
-                            },
-                            actions: {
-                              items: [
-                                {
-                                  href: "msic-unit-trust-account",
-                                  html: "",
-                                  visuallyHiddenText: "XXX"
-                                }
-                              ]
-                            }
-                          },
-
-                          {
-                            classes: 'govuk-summary-list',
-                            key: {
-                              text: "Bid price of units today"
-                            },
-                            value: {
-                              text: data['msic-trust-account-units']
-                            },
-                            actions: {
-                              items: [
-                                {
-                                  href: "",
-                                  text: "",
-                                  visuallyHiddenText: "XXXX"
-                                }
-                              ]
-                            }
-                          }
-                          ]
-                        }) }}
-
-                        <br><br>
-
-
-  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-  <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># cash at home </strong><a href="msic-check-your-answers-a">Add</a></p>
-
-      {{ govukSummaryList({
-        rows: [
-        {
-          classes: 'govuk-summary-list',
-          key: {
-            text: "Amount"
-          },
-          value: {
-            text: data['msic-cash-at-home-amount']
-          },
-          actions: {
-            items: [
-              {
-                href: "msic-cash-at-home",
-                html: "Change",
-                visuallyHiddenText: "XXX"
-              },
-              {
-                href: "msic-remove",
-                html: "Remove",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
-
-      <br><br>
-
-
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-      <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># monies abroad </strong><a href="msic-check-your-answers-a">Add</a></p>
-
-
-            {{ govukSummaryList({
-              rows: [
-              {
-                key: {
-                  text: "Account with"
+                  }
                 },
-                value: {
-                  text: data['msic-cash-other-abroad-name']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "msic-cash-other-abroad",
-                      html: "Change",
-                      visuallyHiddenText: "XXX"
-                    },
-                    {
-                      href: "msic-remove",
-                      html: "Remove",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
+
+                {
+                  key: {
+                    text: "Amount of money you had on this date"
+                  },
+                  value: {
+                    html: data['msic-cash-other-abroad-amount-EED'] | formatMoney
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
                 }
-              },
-              {
-                key: {
-                  text: "Currency"
+                ]
+                }) }}
+
+                <h2 class="govuk-heading-s extra-space-cya">Details of this money on (IDOC) {{'' | formatDate}}</h2>
+
+
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-8',
+                  rows: [
+                {
+                  key: {
+                    text: "Date this figure is from"
+                  },
+                  value: {
+                    text: data['msic-cash-other-abroad-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-cash-other-abroad-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-cash-other-abroad-amount-TODAY-date-evidence-year']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
                 },
-                value: {
-                  text: data['msic-cash-other-abroad-currency']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
+
+                {
+                  classes: 'govuk-summary-list--no-border',
+                  key: {
+                    text: "Amount of money you had on this date"
+                  },
+                  value: {
+                    html: data['msic-cash-other-abroad-amount-TODAY'] | formatMoney
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
                 }
-              },
-              {
-                classes: 'govuk-summary-list',
-                key: {
-                  text: "Amount in this account today"
-                },
-                value: {
-                  text: data['msic-cash-other-abroad-amount']
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "",
-                      text: "",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
-                }
-              }
-              ]
-            }) }}
+
+
+                ]
+                }) }}
 
           <br><br>
 
@@ -2996,49 +3897,185 @@ Details of any other income
         <div class="govuk-!-padding-bottom-3"></div><p class="govuk-body govuk-!-font-size-24"><strong># 0 other monies </strong><a href="msic-check-your-answers-a">Add</a></p>
 
           {{ govukSummaryList({
-            rows: [
-            {
-              key: {
-                text: "This money is"
-              },
-              value: {
-                text: data['msic-missing-account-name']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "msic-missing-account",
-                    html: "Change",
-                    visuallyHiddenText: "XXX"
+                  classes: 'govuk-!-margin-bottom-0',
+                  rows: [
+                {
+                  key: {
+                    text: "Description of this money"
                   },
-                  {
-                    href: "msic-remove",
-                    html: "Remove",
-                    visuallyHiddenText: "XXX"
+                  value: {
+                    text: data['msic-missing-account-name']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "msic-missing-account",
+                        html: "Change",
+                        visuallyHiddenText: "XXX"
+                      },
+                      {
+                        href: "msic-remove",
+                        html: "Remove",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
                   }
-                ]
-              }
-            },
-            {
-              classes: 'govuk-summary-list',
-              key: {
-                text: "Amount today"
-              },
-              value: {
-                text: data['msic-missing-account-amount']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
+                },
+
+                {
+                  key: {
+                    text: "What currency is it"
+                  },
+                  value: {
+                    text: data['msic-missing-account-currency']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        html: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
                   }
+                }
+
+
                 ]
+                }) }}
+
+      <h2 class="govuk-heading-s extra-space-cya">Details of this money on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+
+
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-0',
+          rows: [
+        {
+          key: {
+            text: "Date this figure is from"
+          },
+          value: {
+            text: data['msic-missing-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-missing-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-missing-account-amount-EED-date-evidence-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
               }
-            }
             ]
-          }) }}
+          }
+        },
+
+        {
+          key: {
+            text: "How much money you had on this date"
+          },
+          value: {
+            html: data['msic-missing-account-amount-EED'] | formatMoney
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-s extra-space-cya">Details of this money on (IDOC) {{'' | formatDate}}</h2>
+
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-8',
+          rows: [
+        {
+          key: {
+            text: "Date this figure is from"
+          },
+          value: {
+            text: data['msic-missing-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-missing-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-missing-account-amount-TODAY-date-evidence-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "How much money you had on this date"
+          },
+          value: {
+            html: data['msic-missing-account-amount-TODAY'] | formatMoney
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
+
+        {{ govukSummaryList({
+        rows: [
+        {
+          classes: 'govuk-summary-list',
+          key: {
+          text: "Who owns this money?"
+        },
+        value: {
+          text: data['msic-missing-account-amount-owner']
+        },
+        actions: {
+          items: [
+            {
+              href: "",
+              text: "",
+              visuallyHiddenText: "XXXX"
+            }
+          ]
+        }
+        },
+
+        {
+          classes: 'govuk-summary-list--no-border',
+          key: {
+            text: "Amount of money that is yours"
+          },
+          value: {
+            html: data['msic-missing-account-amount-stake'] | formatMoney
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        }
+        ]
+        }) }}
 
 
   <!------------------------------------------------------------------------------- CApital disregards ------------------------------------------------------------>
