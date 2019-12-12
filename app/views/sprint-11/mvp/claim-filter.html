@@ -19,14 +19,17 @@
 
       <div class="govuk-panel--agent">
 
+        <h1 class="govuk-heading-xl">For internal use only, backdating set up</h1>
+
+
       {{ govukRadios({
         idPrefix: "claim-filter",
         name: "claim-filter",
         fieldset: {
           legend: {
-            html: "For internal use only:<br>Type of claim",
+            html: "Type of claim",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--s"
             }
             },
             hint: {
@@ -44,6 +47,48 @@
             checked: (data["claim-filter"] == "Backdating")
           }
         ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "claim-date-idoc-yn-date",
+        namePrefix: "claim-date-idoc-yn-date",
+        fieldset: {
+          legend: {
+            html: "<strong>IDOC</strong>"
+          }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-idoc-yn-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-idoc-yn-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["claim-date-idoc-yn-date-year"]
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "claim-date-cam-date-entry",
+        namePrefix: "claim-date-cam-date-entry",
+        fieldset: {
+          legend: {
+            html: "Date of claim",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: ""
+        }
       }) }}
 
       </div>
