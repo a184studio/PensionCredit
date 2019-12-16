@@ -22,7 +22,7 @@
           name: "claim-date-options-backdating-outside-yn",
           fieldset: {
             legend: {
-              text: "Have you spent longer than 4 weeks outside the UK since X Month Year?",
+              html: "Have you spent longer than 4 weeks outside the UK since " + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'],
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }

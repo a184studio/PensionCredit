@@ -58,13 +58,19 @@
           }) }}
         {% endset -%}
 
+<!--
+{{ data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] }}
+<span class=\"agent-action\">Agent: </span>Use IDOC data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'], check PTP CAM and previous Pension Credit claim to work out the date to consider this claim from"
+html: "Agent: Use IDOC from the  " + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] +", check PTP CAM and previous Pension Credit claim to work out the date to consider this claim from",
+
+-->
         {{ govukRadios({
           classes: "govuk-radios",
           idPrefix: "claim-date-idoc-yn",
           name: "claim-date-idoc-yn",
           fieldset: {
             legend: {
-              html: "<span class=\"agent-action\">Agent: </span>Use IDOC date (xx July 2019), check PTP CAM and previous Pension Credit claim to work out the date to consider this claim from",
+              html: "Agent: Check PTP CAM and check for previous Pension Credit claim and select the most relevent",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -76,12 +82,12 @@
 
           {
             value: "no-date",
-            text: "Use the earliest entitlment date XX April 2019",
+            html: "Use " + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] + "",
             checked: (data["claim-date-idoc-yn"] == "No")
           },
           {
             value: "yes-date",
-            text: "Use a different start date",
+            text: "Use PC end date DD MM YYYY",
             checked: (data["claim-date-idoc-yn"] == "Yes"),
             conditional: {
               html: yesDate
