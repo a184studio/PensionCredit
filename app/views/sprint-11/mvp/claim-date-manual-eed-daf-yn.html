@@ -19,116 +19,34 @@
 
 
         <div class="govuk-panel--agent">
-          <h1 class="govuk-heading-m"><span class="agent-action">Agent: </span> The earliest date that you can consider this application from is {{ data['claim-date-manual-eed-date-day'] + ' ' + (data['claim-date-manual-eed-date-month'] | getMonth) + ' ' + data['claim-date-manual-eed-date-year'] }}. </h1>
+          <h1 class="govuk-heading-m"><span class="agent-action">Agent: </span> The earliest date that XXX claim from is {{ data['claim-date-manual-eed-date-day'] + ' ' + (data['claim-date-manual-eed-date-month'] | getMonth) + ' ' + data['claim-date-manual-eed-date-year'] }}. </h1>
 
-          <p class="govuk-body">Discuss how any changes since this date can affect the claim and ask whether they want to make a claim from this date or choose a different date.</p>
+          <p class="govuk-body">Discuss how any of the following changes, they may affect the claim and ask whether they want to make a claim from this date or choose a different date.</p>
 
-          <p class="govuk-body govuk-!-font-weight-bold"> Important changes to discuss are</p>
-
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Important changes to discuss are:</h2>
           <ul class="govuk-list govuk-list--bullet">
              <!--<li>previous Pension Credit claims</li>-->
               <li>changes to who lives with the claimant</li>
               <li>changes to where they live</li>
               <li>changes to income</li>
-              <li>changes to money they have</li>
               </ul>
 
 <br>
 
-        {% set noDate %}
-          {{ govukDateInput({
-            id: "claim-date-manual-eed-daf-yn-alternate-date",
-            namePrefix: "claim-date-manual-eed-daf-yn-alternate-date",
-            fieldset: {
-              legend: {
-                text: "What date do you want to start the claim?"
-              }
-            },
-            items: [
-              {
-                name: "day",
-                classes: "govuk-input--width-2",
-                value: data["claim-date-manual-eed-daf-yn-alternate-date-day"]
-              },
-              {
-                name: "month",
-                classes: "govuk-input--width-2",
-                value: data["claim-date-manual-eed-daf-yn-alternate-date-month"]
-              },
-              {
-                name: "year",
-                classes: "govuk-input--width-4",
-                value: data["claim-date-manual-eed-daf-yn-alternate-date-year"]
-              }
-            ]
-          }) }}
-        {% endset -%}
-
-        {% set camDate %}
-          {{ govukDateInput({
-            id: "claim-date-manual-eed-daf-yn-camDate-alternate-date",
-            namePrefix: "claim-date-manual-eed-daf-yn-camDate-alternate-date",
-            fieldset: {
-              legend: {
-                text: "What date do you want to start the claim?"
-              }
-            },
-            items: [
-              {
-                name: "day",
-                classes: "govuk-input--width-2",
-                value: data["camDate-alternate-date-day"]
-              },
-              {
-                name: "month",
-                classes: "govuk-input--width-2",
-                value: data["camDate-alternate-date-day"]
-              },
-              {
-                name: "year",
-                classes: "govuk-input--width-4",
-                value: data["camDate-alternate-date-day"]
-              }
-            ]
-          }) }}
-        {% endset -%}
-
-        {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "claim-date-manual-eed-daf-yn",
-          name: "claim-date-manual-eed-daf-yn",
-          fieldset: {
-            legend: {
-              text: "What do you want to do next?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-
-          items: [
-          {
-            value: "multi-changes",
-            text: "Continue in PTP CAM as there have been complex changes",
-            checked: (data["claim-date-manual-eed-daf-yn"] == "multi-changes"),
-            conditional: {
-              html: camDate
-            }
-          },
-            {
-              value: "no-changes",
-              text: "Take a claim from 16 April 2019 as there have only been simple changes",
-              checked: (data["claim-date-manual-eed-daf-yn"] == "no-changes")},
-            {
-              value: "stable-date",
-              text: "Take a claim from a different date as there have only been simple changes",
-              checked: (data["claim-date-manual-eed-daf-yn"] == "stable-date"),
-              conditional: {
-                html: noDate
-              }
-
-            }
-          ]
-        }) }}
+{{ govukDateInput({
+  id: "claim-date-cam-date-entry",
+  namePrefix: "claim-date-cam-date-entry",
+  fieldset: {
+    legend: {
+      html: "Discuss and enter agreed date of claim",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "For example, 12 11 2019"
+  }
+}) }}
 
       </div>
 
