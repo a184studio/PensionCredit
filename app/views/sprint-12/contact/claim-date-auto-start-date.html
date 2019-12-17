@@ -82,12 +82,12 @@ html: "Agent: Use IDOC from the  " + data['claim-date-idoc-yn-date-day'] + ' ' +
 
           {
             value: "no-date",
-            html: "Use " + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] + "",
+            html: "No previous Pension Credit claim",
             checked: (data["claim-date-idoc-yn"] == "No")
           },
           {
             value: "yes-date",
-            text: "Use PC end date DD MM YYYY",
+            text: "Add Pension Credit end date",
             checked: (data["claim-date-idoc-yn"] == "Yes"),
             conditional: {
               html: yesDate
@@ -96,6 +96,9 @@ html: "Agent: Use IDOC from the  " + data['claim-date-idoc-yn-date-day'] + ' ' +
 
           ]
         }) }}
+
+        <!--            html: "Use " + data['claim-date-idoc-yn-date-day'] + ' ' + (data['claim-date-idoc-yn-date-month'] | getMonth) + ' ' + data['claim-date-idoc-yn-date-year'] + "",
+-->
 
         {{ govukButton({
           text: "Continue"
