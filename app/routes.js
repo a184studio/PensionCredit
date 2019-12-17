@@ -33,6 +33,8 @@ router.use(require('./routes/sprint-10/agent-actions'))
 router.use(require('./routes/sprint-10/backdating'))
 router.use(require('./routes/sprint-10/pc-payment-c'))
 router.use(require('./routes/sprint-11/mvp'))
+router.use(require('./routes/sprint-12/mvp'))
+router.use(require('./routes/sprint-12/contact'))
 
 
 
