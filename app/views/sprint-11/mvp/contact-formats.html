@@ -22,13 +22,14 @@
       {% set accessability = data["accessibility"] or [] %}
 
       {{ govukCheckboxes({
+        classes: "govuk-!-margin-bottom-4",
         idPrefix: "disabilities",
         name: "disabilities",
         fieldset: {
           legend: {
             text: "Do you need us to contact you in any different formats?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
         },
         hint: {
@@ -71,38 +72,15 @@
         ]
       }) }}
 
-<!--
-      {{ govukCheckboxes({
-        idPrefix: "disabilities",
-        name: "disabilities",
-        fieldset: {
-          legend: {
-            text: "Do you need letters in Welsh?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (disabilities.includes("Welsh"))
-          }
-        ]
-      }) }}
--->
       {{ govukRadios({
-        classes: "govuk-radios",
+        classes: "govuk-radios govuk-!-margin-bottom-4",
         idPrefix: "disabilities-welsh-yn",
         name: "disabilities-welsh-yn",
         fieldset: {
           legend: {
             html: "Do you need letters in Welsh?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
+            classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
@@ -126,7 +104,7 @@
 
 
 
-
+<!--
 
       {% set hasEmail %}
       {{ govukInput({
@@ -171,6 +149,8 @@
         ]
       }) }}
 
+-->
+
       <div class="govuk-panel--agent">
 
 
@@ -181,19 +161,19 @@
             },
             id: "contact-formats-altLanguage",
             name: "contact-formats-altLanguage",
-            classes: "govuk-input--width-20"
+            classes: "govuk-input--width-20 "
           }) }}
               {% endset -%}
 
               {{ govukRadios({
-                classes: "govuk-radios",
+                classes: "govuk-radios ",
                 idPrefix: "contact-formats-altLanguage-yn",
                 name: "contact-formats-altLanguage-yn",
                 fieldset: {
                   legend: {
-                    html: "Agent: Does the claimant need a translator?",
+                    html: "@pete Agent: Add translator details",
                     isPageHeading: true,
-                    classes: "govuk-fieldset__legend--s"
+                    classes: "govuk-fieldset__legend--m"
                   }
                 },
                 hint: {
@@ -202,7 +182,7 @@
                 items: [
                 {
                   value: "Yes",
-                  text: "Yes",
+                  text: "Add language",
                   checked: (data["contact-formats-altLanguage-yn"] == "Yes"),
                   conditional: {
                     html: altLanguage
@@ -211,7 +191,7 @@
                 },
                   {
                     value: "No",
-                    text: "No",
+                    text: "No translator used",
                     checked: (data["contact-formats-altLanguage-yn"] == "No")
                   }
                 ]
@@ -246,7 +226,7 @@
       }) }}
 -->
 
-
+<br>
 
       {{ govukButton({
         text: "Continue"
