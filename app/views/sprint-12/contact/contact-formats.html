@@ -53,10 +53,17 @@
             text: "Braille",
             checked: (disabilities.includes("Braille"))
           },
+
           {
             value: "Large print",
             text: "Large print",
             checked: (disabilities.includes("Large print"))
+          },
+
+          {
+            value: "Welsh",
+            text: "Letters in Welsh",
+            checked: (disabilities.includes("TypeTalk"))
           },
 
           {
@@ -67,11 +74,6 @@
           {
             value: "TypeTalk",
             text: "TypeTalk",
-            checked: (disabilities.includes("TypeTalk"))
-          },
-          {
-            value: "Welsh",
-            text: "Letters in Welsh",
             checked: (disabilities.includes("TypeTalk"))
           }
         ]
@@ -128,7 +130,7 @@
       }) }}
 
 -->
-
+<!--
       <div class="govuk-panel--agent">
 
 
@@ -177,7 +179,7 @@
 
 </div>
 
-<!--
+
       {{ govukRadios({
         classes: "govuk-radios",
         idPrefix: "contact-welsh-yn",
@@ -203,8 +205,6 @@
         ]
       }) }}
 -->
-
-<br>
 
       {{ govukButton({
         text: "Continue"
