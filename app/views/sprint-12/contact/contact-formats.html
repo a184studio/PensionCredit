@@ -68,38 +68,16 @@
             value: "TypeTalk",
             text: "TypeTalk",
             checked: (disabilities.includes("TypeTalk"))
+          },
+          {
+            value: "Welsh",
+            text: "Letters in Welsh",
+            checked: (disabilities.includes("TypeTalk"))
           }
         ]
       }) }}
 
-      {{ govukRadios({
-        classes: "govuk-radios govuk-!-margin-bottom-4",
-        idPrefix: "disabilities-welsh-yn",
-        name: "disabilities-welsh-yn",
-        fieldset: {
-          legend: {
-            html: "Do you need letters in Welsh?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-        {
-          value: "Yes",
-          text: "Yes",
-          checked: (data["disabilities-welsh-yn"] == "Yes")
-        },
-        {
-          value: "No",
-          text: "No",
-          checked: (data["disabilities-welsh-yn"] == "No")
-        }
 
-        ]
-      }) }}
 
 
 
