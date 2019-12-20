@@ -247,7 +247,7 @@ router.post(`${baseUrl}/contact-other-number-router`, (req, res) => {
 router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
   const contactFormats = req.session.data['contact-formats']
 
-  if (contactFormats === 'Email') {
+  if (contactFormats.includes('Email') === true) {
     res.redirect(`${baseUrl}/contact-email`)
   }
   else if (contactFormats === 'XXX') {
