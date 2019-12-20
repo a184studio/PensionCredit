@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="contact-email" method="post" class="form">
+    <form action="contact-formats-router" method="post" class="form">
 
       <input type="hidden" name="contact-formats-complete" value="in-progress"/>
 
@@ -23,8 +23,8 @@
 
       {{ govukCheckboxes({
         classes: "govuk-!-margin-bottom-4",
-        idPrefix: "disabilities",
-        name: "disabilities",
+        idPrefix: "contact-formats",
+        name: "contact-formats",
         fieldset: {
           legend: {
             text: "Do you need us to contact you in any different formats?",
@@ -39,42 +39,54 @@
 {
           value: "Audio form",
           text: "Audio form",
-          checked: (disabilities.includes("Audio"))
+          checked: (data["contact-formats"] == "Audio form")
         },
         {
 
           value: "Audio CD, cassette or MP3",
           text: "Audio CD, cassette or MP3",
-          checked: (accessability.includes("Audioform"))
+          checked: (data["contact-formats"] == "Audio CD, cassette or MP3")
         },
 
           {
             value: "Braille",
             text: "Braille",
-            checked: (disabilities.includes("Braille"))
+            checked: (data["contact-formats"] == "Braille")
           },
+
+            {
+              value: "Email",
+              text: "Email",
+              checked: (data["contact-formats"] == "Email"),
+          hint: {
+            text: "To aid with screen readers etc"
+          }
+        },
 
           {
             value: "Large print",
             text: "Large print",
-            checked: (disabilities.includes("Large print"))
+            checked: (data["contact-formats"] == "Large print")
           },
 
           {
             value: "Welsh",
             text: "Letters in Welsh",
-            checked: (disabilities.includes("TypeTalk"))
-          },
+            checked: (data["contact-formats"] == "Letters in Welsh"),
+      hint: {
+        text: "Only offer this for claimants with a Welsh post code"
+      }
+    },
 
           {
             value: "TexBox",
             text: "TexBox",
-            checked: (disabilities.includes("Large print"))
+            checked: (data["contact-formats"] == "TexBox")
           },
           {
             value: "TypeTalk",
             text: "TypeTalk",
-            checked: (disabilities.includes("TypeTalk"))
+            checked: (data["contact-formats"] == "TypeTalk")
           }
         ]
       }) }}
@@ -209,6 +221,8 @@
       {{ govukButton({
         text: "Continue"
       }) }}
+      <p class="govuk-body govuk-!-padding-top-0"><a href="contact-email">Yes to email</a></p>
+
 
     </form>
     <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
