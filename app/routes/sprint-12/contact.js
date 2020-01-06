@@ -225,9 +225,9 @@ router.post(`${baseUrl}/contact-mobile-can-call-router`, (req, res) => {
   const canText = req.session.data['contact-text-yn']
 
   if (canText === 'Yes') {
-    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+    res.redirect(`${baseUrl}/contact-translator`)
   } else {
-    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+    res.redirect(`${baseUrl}/contact-translator`)
   }
 })
 
@@ -235,9 +235,25 @@ router.post(`${baseUrl}/contact-other-number-router`, (req, res) => {
   const canText = req.session.data['contact-text-yn']
 
   if (canText === 'Yes') {
-    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+    res.redirect(`${baseUrl}/contact-translator`)
   } else {
-    res.redirect(`${baseUrl}/Contact-post-code-lookup`)
+    res.redirect(`${baseUrl}/contact-translator`)
+  }
+})
+
+
+
+
+router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
+  const contactFormats = req.session.data['contact-formats']
+
+  if (contactFormats.includes('Email') === true) {
+    res.redirect(`${baseUrl}/contact-email`)
+  }
+  else if (contactFormats === 'XXX') {
+    res.redirect(`${baseUrl}/XXX`)
+  } else {
+    res.redirect(`${baseUrl}/contact-summary`)
   }
 })
 
