@@ -90,7 +90,7 @@ router.post(`${baseUrl}/claim-date-options-router`, (req, res) => {
     res.redirect(`${baseUrl}/claim-date-cam-idoc-yn`)
   }
   else if (claimDateOptions === 'December Date of claim') {
-    res.redirect(`${baseUrl}/DOC-claim-check`)
+    res.redirect(`${baseUrl}/DOC-claim-idoc-yn`)
   } else {
     res.redirect(`${baseUrl}/claim-date-idoc-yn`)
   }
