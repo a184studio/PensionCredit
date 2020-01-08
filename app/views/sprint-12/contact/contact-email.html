@@ -19,20 +19,15 @@
       <input type="hidden" name="contact-formats-complete" value="in-progress"/>
 
 
-<div class="govuk-panel--agent">
 
 
-            <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Risks around email</h2>
 
-            <p class="govuk-body govuk-!-margin-bottom-2">We can only use email if a disability means that you are not able to read letters. If they have any of these disability, X, Y and Z: </p>
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you want us to send you letters by email?</h2>
 
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
-               <!--<li>previous Pension Credit claims</li>-->
-                <li>@BA / @pete: Risk A</li>
-                <li>@BA / @pete: Risk B</li>
-                <li>@BA / @pete: Risk C</li>
-                <li>@BA / @pete: Risk D</li>
-                </ul>
+          <p class="govuk-body govuk-!-margin-bottom-2">The letters we send you will contain your personal information.</p>
+          <p class="govuk-body govuk-!-margin-bottom-2">Information sent by email is not secure. Emails and attachments can be intercepted by third parties and could contain malicious software like viruses or spyware.</p>
+          <p class="govuk-body govuk-!-margin-bottom-2">By agreeing to receive letters from us by email, you are accepting these risks.</p>
+
 
       {% set hasEmail %}
       {{ govukInput({
@@ -51,7 +46,7 @@
         name: "contact-formats-email-yn",
         fieldset: {
           legend: {
-            html: "Is the claimant happy with the risks and would like us to email?",
+            html: "",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -87,6 +82,6 @@
     <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
 
 
-  </div>
+
 </div>
 {% endblock %}

@@ -28,7 +28,7 @@
         {% set altLanguage %}
         {{ govukInput({
       label: {
-        html: "What language?"
+        html: "What is the claimant's first language?"
       },
       id: "contact-formats-altLanguage",
       name: "contact-formats-altLanguage",
@@ -42,7 +42,7 @@
           name: "contact-formats-altLanguage-yn",
           fieldset: {
             legend: {
-              html: "@pete Agent: Add translator details if used to take this claim",
+              html: "Agent: Did the claimant need a translator to take this claim?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -53,7 +53,7 @@
           items: [
           {
             value: "Yes",
-            text: "Add language",
+            text: "Yes",
             checked: (data["contact-formats-altLanguage-yn"] == "Yes"),
             conditional: {
               html: altLanguage
@@ -62,7 +62,7 @@
           },
             {
               value: "No",
-              text: "No translator used",
+              text: "No",
               checked: (data["contact-formats-altLanguage-yn"] == "No")
             }
           ]
