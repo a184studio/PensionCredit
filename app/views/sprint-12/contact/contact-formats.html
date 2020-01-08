@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="contact-formats-router" method="post" class="form">
+    <form action="contact-email-check" method="post" class="form">
 
       <input type="hidden" name="contact-formats-complete" value="in-progress"/>
 
@@ -54,15 +54,6 @@
             checked: (data["contact-formats"] == "Braille")
           },
 
-            {
-              value: "Email",
-              text: "Email",
-              checked: (data["contact-formats"] == "Email"),
-          hint: {
-            text: "@pete: To aid with screen readers etc"
-          }
-        },
-
           {
             value: "Large print",
             text: "Large print",
@@ -90,6 +81,16 @@
           }
         ]
       }) }}
+
+      <!--
+                  {
+                    value: "Email",
+                    text: "Email",
+                    checked: (data["contact-formats"] == "Email"),
+                hint: {
+                  text: "@pete: To aid with screen readers etc"
+                }
+              }, -->
 
 
 
