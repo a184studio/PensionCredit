@@ -314,7 +314,7 @@
               actions: {
                 items: [
                 {
-                  href: "contact-formats",
+                  href: "contact-email-check",
                   text: "Change",
                   visuallyHiddenText: "XXXX"
                   }
@@ -324,30 +324,55 @@
             ]
           }) }}
 
-{% if data["contact-formats-email-yes"] %}
-  {{ govukSummaryList({
-    classes: 'govuk-!-margin-bottom-9',
-    rows: [
-    {
-      key: {
-        text: "Email address"
-      },
-      value: {
-        html: data["contact-formats-email-yes"]
-      },
-      actions: {
-        items: [
-        {
-          href: "contact-formats",
-          text: "Change",
-          visuallyHiddenText: "XXXX"
-          }
-        ]
-      }
-    }
-    ]
-  }) }}
-{% endif %}
+          {% if data["contact-formats-email-yn"] %}
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+              {
+                key: {
+                  text: "Do you want us to send you letters by email?"
+                },
+                value: {
+                  html: data["contact-formats-email-yn"]
+                },
+                actions: {
+                  items: [
+                  {
+                    href: "contact-email",
+                    text: "Change",
+                    visuallyHiddenText: "XXXX"
+                    }
+                  ]
+                }
+              }
+              ]
+            }) }}
+          {% endif %}
+
+        {% if data["contact-formats-email-yes"] %}
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                html: data["contact-formats-email-yes"]
+              },
+              actions: {
+                items: [
+                {
+                  href: "contact-email",
+                  text: "Change",
+                  visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+        {% endif %}
 
 
 
