@@ -225,13 +225,12 @@
           ]
         }) }}
 
-        {% if data["contact-formats-altLanguage-yn"] %}
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
             {
               key: {
-                text: "Translator needed"
+                text: "Did the claimant need a translator to take this claim?"
               },
               value: {
                 html: data["contact-formats-altLanguage-yn"]
@@ -248,7 +247,6 @@
             }
             ]
           }) }}
-        {% endif %}
 
         {% if data["contact-formats-altLanguage"] %}
           {{ govukSummaryList({
@@ -259,7 +257,7 @@
                 text: "Claimant's first language"
               },
               value: {
-                html: data["contact-other-number-yn"]
+                html: data["contact-formats-altLanguage"]
               },
               actions: {
                 items: [
@@ -302,6 +300,29 @@
           }
           ]
         }) }}
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: "Does the claimant need letters by email as a reasonable adjustment?"
+              },
+              value: {
+                html: data["contact-email-check-yn"]
+              },
+              actions: {
+                items: [
+                {
+                  href: "contact-formats",
+                  text: "Change",
+                  visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
 
 {% if data["contact-formats-email-yes"] %}
   {{ govukSummaryList({
