@@ -48,7 +48,13 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .verticalLine {
-  border-left: 1px solid #B1B4B6;
+  border-left: 1px solid govuk-colour("mid-grey");
+}
+
+
+
+.govuk-section-break-id-bar {
+  border-bottom: 1px solid govuk-colour("mid-grey");
 }
 
 // —————————————————————————————————————
