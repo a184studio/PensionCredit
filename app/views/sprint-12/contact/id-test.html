@@ -13,13 +13,13 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
     <form action="contact-text-yn-router" method="post" class="form">
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h2 class="govuk-heading-m"><span class="agent-action">Agent: </span>The number the claimant is calling from is 0<strong>{{ data["telephone-number"] }}</strong></h2>
+        <h2 class="govuk-heading-m"><span class="agent-action">Agent: </span>The number the claimant is calling from is <strong>{{ data["telephone-number"] }}</strong></h2>
       </div>
 
 
