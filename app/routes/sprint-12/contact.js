@@ -31,6 +31,18 @@ router.post(`${baseUrl}/security-router`, (req, res) => {
   }
 })
 
+
+router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
+  const claimingFor = req.session.data['who-is-caller']
+
+  if (claimingFor === 'Yourself') {
+    res.redirect(`${baseUrl}/name-and-nino`)
+  } else {
+    res.redirect(`${baseUrl}/who-is-caller-name`)
+  }
+})
+
+
 router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
   const hasPartner = req.session.data['has-partner']
 
@@ -52,6 +64,9 @@ router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
     res.redirect(`${baseUrl}/who-lives-with-you-types`)
   }
 })
+
+
+
 
 router.post(`${baseUrl}/address-correspondence-yn-router`, (req, res) => { // router name
   const correspondenceYN = req.session.data['address-correspondence-yn']  // name of data / id name
