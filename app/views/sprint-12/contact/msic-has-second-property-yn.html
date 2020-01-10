@@ -23,7 +23,7 @@ Do you own any property or land other than your home? - Pension Credit
   <!------------HEADLINE------------>
     {% set legend %}
     {% if data["claim-filter"] == "Advanced or Today" %} Do you own any property or land other than your home? {% endif %}
-    {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any property or land other than your home?{% endif %}
+    {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you owned any property or land other than your home?{% endif %}
     {% endset %}
   <!------------HEADLINE------------>
 
