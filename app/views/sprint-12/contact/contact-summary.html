@@ -21,6 +21,8 @@
       Check your answers: How we contact you
     </h1>
 
+
+
     {{ govukSummaryList({
       classes: 'govuk-!-margin-bottom-9',
       rows: [
@@ -199,6 +201,28 @@
 
     <dl class="govuk-summary-list govuk-summary-list--long">
 
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+        {
+          key: {
+            text: "Did the claimant need a translator to make this claim?"
+          },
+          value: {
+            html: data["contact-formats-altLanguage-yn"]
+          },
+          actions: {
+            items: [
+            {
+              href: "contact-translator",
+              text: "Change",
+              visuallyHiddenText: "XXXX"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
@@ -225,28 +249,7 @@
           ]
         }) }}
 
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-9',
-            rows: [
-            {
-              key: {
-                text: "Did the claimant need a translator to make this claim?"
-              },
-              value: {
-                html: data["contact-formats-altLanguage-yn"]
-              },
-              actions: {
-                items: [
-                {
-                  href: "contact-translator",
-                  text: "Change",
-                  visuallyHiddenText: "XXXX"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
+
 
         {% if data["contact-formats-altLanguage"] %}
           {{ govukSummaryList({
