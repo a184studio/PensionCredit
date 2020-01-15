@@ -4,29 +4,21 @@
 
 {% block beforeContent %}
 
-  <ul class="ul-id-bar govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-0">
-    <li class="li-id-bar govuk-!-font-size-16">Claimant:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['full-name'] }} </strong></li>
-    <li class="li-id-bar govuk-!-font-size-16">Claimant NI number:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['nino'] }}</strong></li>
-    {% if data["who-is-caller-name"] %}
-    <li class="li-id-bar-item govuk-!-font-size-19 verticalLine"><br></li>
-    <li class="li-id-bar govuk-!-font-size-16">Caller:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['who-is-caller-name'] }}</strong></li>
-    {% endif %}
-</ul>
-
-
-
-
-
-
-<!--
-<ul class="ul-id-bar govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-0">
-  <li class="li-id-bar govuk-!-font-size-16">Claimant:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['full-name'] }} </strong></li>
-  <li class="li-id-bar govuk-!-font-size-16">NI:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['nino'] }}</strong></li>
-  <li class="li-id-bar-item govuk-!-font-size-19 verticalLine"><br></li>
-  <li class="li-id-bar govuk-!-font-size-16">Caller:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>Alex Smith</strong></li>
-</ul>
--->
+{% if data["who-is-caller"] == "Yourself" %}<ul class="ul-id-bar govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-0">
+  {% if data["full-name"] %}<li class="li-id-bar govuk-!-font-size-16">Citizen:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['full-name'] }} </strong></li>{% endif %}
+  {% if data["full-name"] %}<li class="li-id-bar govuk-!-font-size-16">NI number:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['nino'] }}</strong></li>{% endif %}
+  {% if data["full-name"] %}<li class="li-id-bar-item govuk-!-font-size-19 verticalLine"><br></li>{% endif %}
+  {% if data["who-is-caller-name"] %}<li class="li-id-bar govuk-!-font-size-16">Caller:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['who-is-caller-name'] }}</strong></li>{% endif %}
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break-id-bar">
+{% endif %}
+<br>
+
+{% if data["who-is-caller"] !== "Yourself" %}<ul class="ul-id-bar govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-0">
+  <li class="li-id-bar govuk-!-font-size-16">Citizen:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['full-name'] }} </strong></li>
+  <li class="li-id-bar govuk-!-font-size-16">NI number:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['nino'] }}</strong></li>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break-id-bar">
+{% endif %}
 
 {% endblock %}
