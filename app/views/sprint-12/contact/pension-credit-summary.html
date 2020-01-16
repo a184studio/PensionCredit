@@ -72,26 +72,44 @@
   classes: 'govuk-!-margin-bottom-9',
   rows: [
 
-            {
-              classes: 'govuk-summary-list',
-              key: {
-                text: "Who you are claiming for"
-              },
-              value: {
-                text: data['claiming-for']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "who-is-caller",
-                    text: "Change",
-                    visuallyHiddenText: "Change who you are claiming for"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
+  {
+    classes: 'govuk-summary-list',
+    key: {
+      text: "Who you are claiming for"
+    },
+    value: {
+      text: data['claiming-for']
+    },
+    actions: {
+      items: [
+        {
+          href: "who-is-caller",
+          text: "Change",
+          visuallyHiddenText: "Change who you are claiming for"
+        }
+      ]
+    }
+  },
+  {
+    classes: 'govuk-summary-list',
+    key: {
+      text: "Caller"
+    },
+    value: {
+      text: data['who-is-caller-name']
+    },
+    actions: {
+      items: [
+        {
+          href: "who-is-caller",
+          text: "Change",
+          visuallyHiddenText: "Change who you are claiming for"
+        }
+      ]
+    }
+  }
+  ]
+}) }}
 
 
 <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">About you</h2>
