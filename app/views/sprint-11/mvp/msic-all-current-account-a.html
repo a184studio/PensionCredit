@@ -56,6 +56,44 @@
                   classes: "govuk-input--width-20"
                 }) }}
 
+<!--
+                {% set OtherPercent %}
+                {{ govukInput({
+                  label: {
+                    html: ""
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "msic-all-current-account-amount-TODAY",
+                  name: "msic-all-current-account-amount-TODAY-" + count
+                }) }}
+                {% endset %}
+
+              {{ govukRadios({
+                classes: "govuk-radios--small",
+                idPrefix: "percent-yours",
+                name: "percent-yours",
+                fieldset: {
+                  legend: {
+                    text: "Percent that is yours",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                {
+                  value: "100%",
+                  text: "100%"
+                },
+                  {
+                    value: "Other",
+                    text: "Other",
+                    conditional: {
+                      html: OtherPercent
+                    }
+                  }
+                ]
+              }) }} -->
+
                 {{ govukInput({
                   label: {
                     html: "(That is yours) How much was in this account on <strong>" + '' | formatDate + "?</strong>"
@@ -91,6 +129,9 @@
                 }) }}
 
                 {% endset %}
+
+
+
 
                 {{ govukRadios({
                   idPrefix: "shared-account",
