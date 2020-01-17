@@ -223,6 +223,32 @@
         }
         ]
       }) }}
+
+      {% if data["contact-formats-altLanguage"] %}
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+          {
+            key: {
+              text: "Claimant's first language"
+            },
+            value: {
+              html: data["contact-formats-altLanguage"]
+            },
+            actions: {
+              items: [
+              {
+                href: "contact-translator",
+                text: "Change",
+                visuallyHiddenText: "XXXX"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+      {% endif %}
+
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
@@ -251,30 +277,7 @@
 
 
 
-        {% if data["contact-formats-altLanguage"] %}
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-9',
-            rows: [
-            {
-              key: {
-                text: "Claimant's first language"
-              },
-              value: {
-                html: data["contact-formats-altLanguage"]
-              },
-              actions: {
-                items: [
-                {
-                  href: "contact-translator",
-                  text: "Change",
-                  visuallyHiddenText: "XXXX"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
-        {% endif %}
+
 
 
         {{ govukSummaryList({
