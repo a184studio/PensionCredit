@@ -1846,7 +1846,7 @@
                 rows: [
               {
                 key: {
-                  text: "Account with XXX"
+                  text: "Account with"
                 },
                 value: {
                   text: data['msic-all-current-account-name-' + i]
@@ -1878,24 +1878,6 @@
               rows: [
             {
               key: {
-                text: "Date this figure is from"
-              },
-              value: {
-                html: data['msic-all-current-account-amount-EED-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-EED-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-EED-date-evidence-' + i + '-year']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
                 text: "How much you had in this account on this date"
               },
               value: {
@@ -1921,24 +1903,7 @@
               classes: 'govuk-!-margin-bottom-8',
               rows: [
             {
-              key: {
-                text: "Date this figure is from"
-              },
-              value: {
-                html: data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-year']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-
-            {
+              classes: 'govuk-summary-list--no-border',
               key: {
                 text: "How much you had in the account on this date"
               },
@@ -1951,50 +1916,6 @@
                     href: "",
                     text: "",
                     visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            }
-            ]
-            }) }}
-
-            <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
-
-            {{ govukSummaryList({
-            rows: [
-            {
-              classes: 'govuk-summary-list',
-              key: {
-              text: "Account owner"
-            },
-            value: {
-              text: data['current-owner-' + i]
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXXX"
-                }
-              ]
-            }
-            },
-
-            {
-              classes: 'govuk-summary-list--no-border',
-              key: {
-                text: "Amount of money that is yours"
-              },
-              value: {
-                text: data['msic-all-current-account-stake-' + i]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXXX"
                   }
                 ]
               }

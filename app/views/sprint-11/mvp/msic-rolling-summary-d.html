@@ -1846,7 +1846,7 @@
                 rows: [
               {
                 key: {
-                  text: "Account with XXX"
+                  text: "Account with"
                 },
                 value: {
                   text: data['msic-all-current-account-name-' + i]
@@ -1869,34 +1869,13 @@
               ]
               }) }}
 
-              <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
-
-
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-0',
               rows: [
             {
               key: {
-                text: "Date this figure is from"
-              },
-              value: {
-                html: data['msic-all-current-account-amount-EED-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-EED-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-EED-date-evidence-' + i + '-year']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
-                text: "How much you had in this account on this date"
+                html: "How much money did you have in this account on 1 January 2020"
               },
               value: {
                 text: data['msic-all-current-account-amount-EED-' + i] | formatMoney
@@ -1914,33 +1893,14 @@
             ]
             }) }}
 
-            <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
-
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-8',
               rows: [
             {
+              classes: 'govuk-summary-list--no-border',
               key: {
-                text: "Date this figure is from"
-              },
-              value: {
-                html: data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-day'] + ' ' + (data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-month'] | getMonth) + ' ' + data['msic-all-current-account-amount-TODAY-date-evidence-' + i + '-year']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
-                text: "How much you had in the account on this date"
+                text: "How much money did you have in this account on 19 January 2020"
               },
               value: {
                 text: data['msic-all-current-account-amount-TODAY-' + i] | formatMoney
@@ -1951,50 +1911,6 @@
                     href: "",
                     text: "",
                     visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            }
-            ]
-            }) }}
-
-            <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
-
-            {{ govukSummaryList({
-            rows: [
-            {
-              classes: 'govuk-summary-list',
-              key: {
-              text: "Account owner"
-            },
-            value: {
-              text: data['current-owner-' + i]
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXXX"
-                }
-              ]
-            }
-            },
-
-            {
-              classes: 'govuk-summary-list--no-border',
-              key: {
-                text: "Amount of money that is yours"
-              },
-              value: {
-                text: data['msic-all-current-account-stake-' + i]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXXX"
                   }
                 ]
               }
