@@ -20,7 +20,7 @@
     <form action="msic-all-current-accounts-summary" method="post" class="form">
       <input type="hidden" name="money-you-have-complete" value="in-progress"/>
 
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
         Current account details
       </h1>
 
@@ -42,8 +42,7 @@
 
 
 
-
-          <!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
+<!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
           <p class="govuk-body govuk-!-font-weight-bold">
             If this account is shared with someone else, only tell<br>us about the amount of money that is yours.
           </p>
@@ -57,10 +56,6 @@
                   classes: "govuk-input--width-20"
                 }) }}
 
-
-
-
-
                 {{ govukInput({
                   label: {
                     html: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
@@ -69,19 +64,6 @@
                   name: "msic-all-current-account-amount-EED-" + count,
                   classes: "govuk-input--width-20"
                 }) }}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!--------------- CONTINUE ----------------------------------------------------------------------------------------->
 
