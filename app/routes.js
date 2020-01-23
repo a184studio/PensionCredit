@@ -35,6 +35,7 @@ router.use(require('./routes/sprint-10/pc-payment-c'))
 router.use(require('./routes/sprint-11/mvp'))
 router.use(require('./routes/sprint-12/mvp'))
 router.use(require('./routes/sprint-12/contact'))
+router.use(require('./routes/version-13/mvp'))
 
 
 
