@@ -30,50 +30,22 @@
         classes: "govuk-input--width-20"
       }) }}
 
-
-
-{{ govukInput({
-label: {
-html: "Amount in this account <strong>today</strong>"
-},
-id: "msic-sp-payment-alternative-account-balance",
-name: "msic-sp-payment-alternative-account-balance",
-classes: "govuk-input--width-20"
-}) }}
-
-{% set percentageField %}
 {{ govukInput({
   label: {
-    text: "Amount of money that is yours"
+    html: "Amount in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
   },
-  id: "msic-sp-payment-alternative-account-stake",
-  name: "msic-sp-payment-alternative-account-stake",
-  classes: "govuk-input--width-10"
+  id: "msic-sp-payment-alternative-account-EED",
+  name: "msic-sp-payment-alternative-account-EED",
+  classes: "govuk-input--width-20"
 }) }}
-{% endset %}
 
-{{ govukRadios({
-idPrefix: "msic-sp-payment-alternative-account-owner",
-name: "msic-sp-payment-alternative-account-owner",
-fieldset: {
-  legend: {
-    text: "Account owner",
-    classes: "govuk-fieldset__legend--s"
-  }
-},
-items: [
-  {
-    value: "You",
-    text: "Only you"
+{{ govukInput({
+  label: {
+  html: "Amount in this account on  <strong>" + '' | formatDate + "?</strong>"
   },
-  {
-    value: "Joint account",
-    text: "Joint account",
-    conditional: {
-      html: percentageField
-    }
-  }
-]
+  classes: "govuk-input--width-20",
+  id: "msic-sp-payment-alternative-account-TODAY",
+  name: "msic-sp-payment-alternative-account-TODAY"
 }) }}
 
 

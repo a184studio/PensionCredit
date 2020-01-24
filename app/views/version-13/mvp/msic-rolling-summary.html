@@ -454,32 +454,10 @@
                       }
                     ]
                   }
-                },
-
-                {
-                  key: {
-                    text: "What currency is it"
-                  },
-                  value: {
-                    text: data['msic-has-cash-at-home-currency']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        html: "",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
                 }
-
 
                 ]
                 }) }}
-
-                <h2 class="govuk-heading-s extra-space-cya">Details of this cash on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
-
 
 
                       {{ govukSummaryList({
@@ -487,25 +465,7 @@
                         rows: [
                       {
                         key: {
-                          text: "Date this figure is from"
-                        },
-                        value: {
-                          text: data['msic-has-cash-at-home-amount-EED-date-evidence-day'] + ' ' + (data['msic-has-cash-at-home-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-has-cash-at-home-amount-EED-date-evidence-year']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Amount of cash you had on this date"
+                          text: "Amount of cash you had on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
                         },
                         value: {
                           html: data['msic-has-cash-at-home-amount-EED'] | formatMoney
@@ -523,34 +483,14 @@
                       ]
                       }) }}
 
-                      <h2 class="govuk-heading-s extra-space-cya">Details of this cash on (IDOC) {{'' | formatDate}}</h2>
-
 
                       {{ govukSummaryList({
                         classes: 'govuk-!-margin-bottom-8',
                         rows: [
                       {
-                        key: {
-                          text: "Date this figure is from"
-                        },
-                        value: {
-                          text: data['msic-has-cash-at-home-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-has-cash-at-home-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-has-cash-at-home-amount-TODAY-date-evidence-year']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
                         classes: 'govuk-summary-list--no-border',
                         key: {
-                          text: "Amount of cash you had on this date"
+                          text: "Amount of cash you had on " + '' | formatDate
                         },
                         value: {
                           html: data['msic-has-cash-at-home-amount-TODAY'] | formatMoney
@@ -1141,8 +1081,6 @@
               }) }}
 
 
-
-
                     {{ govukSummaryList({
                       classes: 'govuk-!-margin-bottom-0',
                       rows: [
@@ -1214,32 +1152,12 @@
         <div class="govuk-grid-column-three-quarters">
 
 
-                  <h2 class="govuk-heading-s extra-space-cya">Premium Bond details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
-
                         {{ govukSummaryList({
                           classes: 'govuk-!-margin-bottom-0',
                           rows: [
                         {
                           key: {
-                            text: "Date this figure is from"
-                          },
-                          value: {
-                            text: data['msic-premium-bond-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-premium-bond-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-premium-bond-account-amount-EED-date-evidence-year']
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "",
-                                text: "",
-                                visuallyHiddenText: "XXX"
-                              }
-                            ]
-                          }
-                        },
-
-                        {
-                          key: {
-                            text: "Value of Premium Bonds on this date"
+                            text: "Value of Premium Bonds on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
                           },
                           value: {
                             html: data['msic-premium-bond-account-amount-EED'] | formatMoney
@@ -1257,34 +1175,13 @@
                         ]
                         }) }}
 
-                        <h2 class="govuk-heading-s extra-space-cya">Premium Bond details on (IDOC) {{'' | formatDate}}</h2>
-
-
                         {{ govukSummaryList({
                           classes: 'govuk-!-margin-bottom-8',
                           rows: [
                         {
-                          key: {
-                            text: "Date this figure is from"
-                          },
-                          value: {
-                            text: data['msic-premium-bond-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-premium-bond-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-premium-bond-account-amount-TODAY-date-evidence-year']
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "",
-                                text: "",
-                                visuallyHiddenText: "XXX"
-                              }
-                            ]
-                          }
-                        },
-
-                        {
                           classes: 'govuk-summary-list--no-border',
                           key: {
-                            text: "Value of Premium Bonds on this date"
+                            text: "Value of Premium Bonds on " + '' | formatDate
                           },
                           value: {
                             html: data['msic-premium-bond-account-amount-TODAY'] | formatMoney

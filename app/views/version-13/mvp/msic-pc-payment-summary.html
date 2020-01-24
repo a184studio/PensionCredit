@@ -64,7 +64,7 @@
 
             {
                 key: {
-                text: "Pension credit payment account"
+                text: "State Pension payment account"
               },
               value: {
                 text: data["msic-pc-payment-choose"]
@@ -72,30 +72,48 @@
               actions: {
                 items: [
                   {
-                    href: "x",
+                    href: "msic-sp-payment-choose",
                     text: "Change",
                     visuallyHiddenText: "type of account"
                   }
                 ]
               }
             },
-              {
-                key: {
-                  text: "Amount in this account today"
-                },
-                value: {
-                  text: data["msic-all-savings-account-amount"]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "x",
-                      text: "Change",
-                      visuallyHiddenText: "sort code"
-                    }
-                  ]
-                }
+            {
+              key: {
+                html: "Amount in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+              },
+              value: {
+                text: data["msic-sp-payment-alternative-account-EED"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "x",
+                    text: "",
+                    visuallyHiddenText: "sort code"
+                  }
+                ]
               }
+            },
+
+            {
+              key: {
+                html: "Amount in this account on  <strong>" + '' | formatDate + "?</strong>"
+              },
+              value: {
+                text: data["msic-sp-payment-alternative-account-TODAY"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "x",
+                    text: "",
+                    visuallyHiddenText: "sort code"
+                  }
+                ]
+              }
+            }
 
 
             ]
@@ -152,7 +170,7 @@
                 actions: {
                   items: [
                     {
-                      href: "msic-pc-payment-choose",
+                      href: "msic-pc-payment-alternative-account",
                       text: "Change",
                       visuallyHiddenText: "type of account"
                     }
@@ -170,7 +188,7 @@
                 actions: {
                   items: [
                     {
-                      href: "x",
+                      href: "msic-pc-payment-alternative-account",
                       text: "Change",
                       visuallyHiddenText: "name on account"
                     }
@@ -189,7 +207,7 @@
                   items: [
                     {
                       href: "x",
-                      text: "Change",
+                      text: "",
                       visuallyHiddenText: "type of account"
                     }
                   ]
@@ -207,7 +225,7 @@
                   items: [
                     {
                       href: "x",
-                      text: "Change",
+                      text: "",
                       visuallyHiddenText: "sort code"
                     }
                   ]
@@ -225,7 +243,7 @@
                   items: [
                     {
                       href: "x",
-                      text: "Change",
+                      text: "",
                       visuallyHiddenText: "account number"
                     }
                   ]
@@ -243,7 +261,7 @@
                   items: [
                     {
                       href: "x",
-                      text: "Change",
+                      text: "",
                       visuallyHiddenText: "roll number"
                     }
                   ]
@@ -252,72 +270,35 @@
 
               {
                 key: {
-                  text: "Type of account"
+                  html: "Amount in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
                 },
                 value: {
-                  text: data["msic-pc-payment-alternative-account-type"]
+                  text: data["msic-pc-payment-alternative-account-EED"]
                 },
                 actions: {
                   items: [
                     {
                       href: "x",
-                      text: "Change",
-                      visuallyHiddenText: "Bank or buildings society account"
-                    }
-                  ]
-                }
-              },
-
-              {
-                key: {
-                  text: "Amount in this account today"
-                },
-                value: {
-                  text: data['msic-all-current-account-amount-' + 0]
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "x",
-                      text: "Change",
+                      text: "",
                       visuallyHiddenText: "sort code"
                     }
                   ]
                 }
               },
 
-
-              {
-              key: {
-                text: "Account owner"
-              },
-              value: {
-                text: data['msic-pc-payment-alternative-account-owner']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "x",
-                    text: "Change",
-                    visuallyHiddenText: "Account owner"
-                  }
-                ]
-              }
-              },
-
               {
                 key: {
-                  text: "Amount of money that is yours"
+                  html: "Amount in this account on <strong>" + '' | formatDate + "?</strong>"
                 },
                 value: {
-                  text: data['msic-pc-payment-alternative-account-stake']
+                  text: data["msic-pc-payment-alternative-account-TODAY"]
                 },
                 actions: {
                   items: [
                     {
                       href: "x",
-                      text: "Change",
-                      visuallyHiddenText: "Amount of money that is yours"
+                      text: "",
+                      visuallyHiddenText: "sort code"
                     }
                   ]
                 }
@@ -363,7 +344,7 @@
                 items: [
                   {
                     href: "x",
-                    text: "Change",
+                    text: "",
                     visuallyHiddenText: "name on account"
                   }
                 ]
@@ -381,7 +362,7 @@
                 items: [
                   {
                     href: "x",
-                    text: "Change",
+                    text: "",
                     visuallyHiddenText: "type of account"
                   }
                 ]
@@ -399,7 +380,7 @@
                 items: [
                   {
                     href: "x",
-                    text: "Change",
+                    text: "",
                     visuallyHiddenText: "sort code"
                   }
                 ]
@@ -417,7 +398,7 @@
                 items: [
                   {
                     href: "x",
-                    text: "Change",
+                    text: "",
                     visuallyHiddenText: "account number"
                   }
                 ]
@@ -435,7 +416,7 @@
                 items: [
                   {
                     href: "x",
-                    text: "Change",
+                    text: "",
                     visuallyHiddenText: "roll number"
                   }
                 ]
@@ -444,16 +425,34 @@
 
             {
               key: {
-                text: "Amount in this account today"
+                text: "Amount in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
               },
               value: {
-                text: data["msic-all-savings-account-amount"]
+                text: data["msic-pc-payment-alternative-account-EED"]
               },
               actions: {
                 items: [
                   {
                     href: "x",
-                    text: "Change",
+                    text: "",
+                    visuallyHiddenText: "sort code"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                html: "Amount in this account on <strong>" + '' | formatDate + "?</strong>"
+              },
+              value: {
+                text: data["msic-pc-payment-alternative-account-TODAY"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "x",
+                    text: "",
                     visuallyHiddenText: "sort code"
                   }
                 ]
