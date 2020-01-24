@@ -29,10 +29,13 @@
         name: "msic-sp-payment-alternative-account-name",
         classes: "govuk-input--width-20"
       }) }}
+      <p class="govuk-body govuk-!-font-weight-bold">
+        If this account is shared with someone else, only tell<br>us about the amount of money that is yours.
+      </p>
 
 {{ govukInput({
   label: {
-    html: "Amount in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+    html: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
   },
   id: "msic-sp-payment-alternative-account-EED",
   name: "msic-sp-payment-alternative-account-EED",
@@ -41,7 +44,7 @@
 
 {{ govukInput({
   label: {
-  html: "Amount in this account on  <strong>" + '' | formatDate + "?</strong>"
+  html: "How much money did you have in this account on <strong>" + '' | formatDate + "?</strong>"
   },
   classes: "govuk-input--width-20",
   id: "msic-sp-payment-alternative-account-TODAY",
