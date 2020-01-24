@@ -81,7 +81,7 @@
             },
             {
               key: {
-                html: "How much you had in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
               },
               value: {
                 text: data["msic-sp-payment-alternative-account-EED"]
@@ -99,7 +99,7 @@
 
             {
               key: {
-                html: "How much you had in this account on  <strong>" + '' | formatDate + "?</strong>"
+                html: "How much money did you have in this account on  <strong>" + '' | formatDate + "?</strong>"
               },
               value: {
                 text: data["msic-sp-payment-alternative-account-TODAY"]
@@ -270,7 +270,7 @@
 
               {
                 key: {
-                  html: "Amount in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                  html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
                 },
                 value: {
                   text: data["msic-pc-payment-alternative-account-EED"]
@@ -288,7 +288,7 @@
 
               {
                 key: {
-                  html: "Amount in this account on <strong>" + '' | formatDate + "?</strong>"
+                  html: "How much money did you have in this account on <strong>" + '' | formatDate + "?</strong>"
                 },
                 value: {
                   text: data["msic-pc-payment-alternative-account-TODAY"]
@@ -425,7 +425,7 @@
 
             {
               key: {
-                text: "How much you had in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                text: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
               },
               value: {
                 text: data["msic-pc-payment-alternative-account-EED"]
@@ -443,7 +443,7 @@
 
             {
               key: {
-                html: "How much you had in this account on <strong>" + '' | formatDate + "?</strong>"
+                html: "How much money did you have in this account on <strong>" + '' | formatDate + "?</strong>"
               },
               value: {
                 text: data["msic-pc-payment-alternative-account-TODAY"]
