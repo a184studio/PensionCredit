@@ -20,7 +20,7 @@
 
     <!------------HEADLINE------------>
       {% set legend %}
-      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any more savings accounts with abank, building society or Post Office? {% endif %}
+      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any more savings accounts with a bank, building society or Post Office? {% endif %}
       {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any more savings accounts with abank, building society or Post Office?{% endif %}
       {% endset %}
     <!------------HEADLINE------------>
