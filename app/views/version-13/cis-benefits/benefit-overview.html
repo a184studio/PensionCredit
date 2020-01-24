@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  benefit-overview - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="benefit-hospital-check-yn" method="post" class="form">
+
+      <input type="hidden" name="benefits-complete" value="in-progress"/>
+
+      <h1 class="govuk-heading-xl"> Benefits for {{ data["full-name"] }}</h1>
+
+      <div class="govuk-panel--agent govuk-!-margin-bottom-8">
+          <p class=govuk-body>If <strong>Searchlight</strong> shows an interest but no payment amounts, check <strong>Legacy</strong>, <strong>CPS</strong>, the <strong>PIP server</strong> and <strong>IIDB</strong>. Tell the claimant what you see.</p>
+      </div>
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom-3"><span class="agent-action">In payment</h2>
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__cell">Benefit</th>
+            <td class="govuk-table__cell">Start date</td>
+            <td class="govuk-table__cell">End date</td>
+            <th scope="row" class="govuk-table__cell">Weekly amount</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__cell">Housing benefit</th>
+            <td class="govuk-table__cell">01 Jan 2019</td>
+            <td class="govuk-table__cell">—</td>
+            <th scope="row" class="govuk-table__header">£10.00</th>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Council Tax Support</th>
+            <td class="govuk-table__cell">02 Jan 2019</td>
+            <td class="govuk-table__cell">—</td>
+            <th scope="row" class="govuk-table__header">£10.00</th>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Carers Allowance</th>
+            <td class="govuk-table__cell">01 Jan 2019</td>
+            <td class="govuk-table__cell">—</td>
+            <th scope="row" class="govuk-table__header">£10.00</th>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Personal Independence Payment</th>
+            <td class="govuk-table__cell">04 Jan 2019</td>
+            <td class="govuk-table__cell">—</td>
+            <th scope="row" class="govuk-table__header">£10.00</th>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-3"><span class="agent-action">Intrest</h2>
+
+        <p class="govuk-body govuk-!-font-size-19">No other benefit services shown as interest</p>
+
+
+            <h2 class="govuk-heading-l govuk-!-margin-top-4 govuk-!-margin-bottom-4"><span class="agent-action">Previous</h2>
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">Benefit</th>
+                          <td class="govuk-table__cell">Start date</td>
+                          <th scope="row" class="govuk-table__cell">End date</th>
+                          <td class="govuk-table__cell">Weekly amount</td>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">Personal Independence Payment</th>
+                          <td class="govuk-table__cell">04 Jan 2015</td>
+                          <th scope="row" class="govuk-table__header">00 Jan 2018</th>
+                          <td class="govuk-table__cell">£10.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+
+<br><br>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+
+    <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+
+  </div>
+</div>
+{% endblock %}
