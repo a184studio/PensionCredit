@@ -23,20 +23,14 @@
 
       <input type="hidden" name="pensions-complete" value="in-progress"/>
 
-      <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-l"> Agent: Check and discuss the pensions {{ data["full-name"] }} has</h1>
+<h1 class="govuk-heading-xl"> State Pension for {{ data["full-name"] }} is currently in payment</h1>
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">First payment: <strong>6 May 2019</strong></p>
+<p class="govuk-body govuk-!-font-size-24">Weekly amount: <strong>£156.70</strong></p>
 
 
-          <p class=govuk-body>Check the income tab in <strong>Searchlight</strong> for private and workplace pensions in payment and tell the claimant what you see.</p>
-          <p class=govuk-body>Check the benefits tab in <strong>Searchlight</strong> for State Pension and tell the claimant what you see.</p>
-          <p class=govuk-body>Check the schemes tab in <strong>OLE NIRS</strong> for pension contributions. If contributions indicate unclaimed pensions, send form PPR1.</p>
 
 
-        {{ govukDetails({
-  summaryText: "What to do if the claimant tells you their private or workplace pensions are wrong",
-  text: "Tell the claimant that you will use the figures you discussed for their claim. The information we have is from HMRC and they should contact HMRC to resolve any issues."
-}) }}
-    </div>
+
 
 <br>
 

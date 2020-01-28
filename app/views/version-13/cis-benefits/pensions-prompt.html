@@ -18,18 +18,16 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
     <form action="pensions-sp-check-yn" method="post" class="form">
 
       <input type="hidden" name="pensions-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-l"> Agent: Check and discuss the pensions {{ data["full-name"] }} has</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6"> Agent: Check and discuss the pensions {{ data["full-name"] }} has</h1>
 
-
-          <p class=govuk-body>Check the income tab in <strong>Searchlight</strong> for private and workplace pensions in payment and tell the claimant what you see.</p>
-          <p class=govuk-body>Check the benefits tab in <strong>Searchlight</strong> for State Pension and tell the claimant what you see.</p>
-          <p class=govuk-body>Check the schemes tab in <strong>OLE NIRS</strong> for pension contributions. If contributions indicate unclaimed pensions, send form PPR1.</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"> Check the income tab in <strong>Searchlight</strong> for private and workplace pensions in payment and tell the claimant what you see.</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"> Check the schemes tab in <strong>OLE NIRS</strong> for pension contributions. <br>If contributions indicate unclaimed pensions, send form PPR1.</p>
 
 
         {{ govukDetails({
