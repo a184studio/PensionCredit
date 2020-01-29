@@ -19,16 +19,18 @@
 
 <!----Headline---->
 
-<h1 class="govuk-heading-xl">We need to ask you some questions about your residency in the UK</h1>
+{% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl">We need to ask you some questions about your residency in the UK</h1>{% endif %}
+{% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl">We need to ask you some questions about {{ data["full-name"] }}'s residency in the UK</h1>{% endif %}
 
-  <h3 class="govuk-heading-m">As you are not a British citizen or have lived outside the UK in the last 2 years, we need to ask you some additional questions about your residency.</h3>
-<br><br>
+{% if data["who-is-caller"] == "Yourself" %}<h3 class="govuk-heading-m">As you are not a British citizen or have lived outside the UK in the last 2 years, we need to ask you some additional questions about your residency.</h3>{% endif %}
+{% if data["who-is-caller"] !== "Yourself" %}<h3 class="govuk-heading-m">As {{ data["full-name"] }} is not a British citizen or has lived outside the UK in the last 2 years, we need to ask you some additional questions about their residency.</h3>{% endif %}
+
 
 <!----Headline---->
 <form action="done-hrt" method="post">
 
   <div class="govuk-panel--agent">
-    <h2 class="govuk-heading-s"><span class="agent-action">Agent: </span> Check the claimant's answers and change any that are incorrect. Record the information on this page into PTP CAM. Take the caller through the Habitual Residency test. </h2>
+    <h2 class="govuk-heading-s"><span class="agent-action">Agent: </span> Check the answers and change any that are incorrect. Record the information on this page into PTP CAM. Take the caller through the Habitual Residency test. </h2>
 
 
     <p class="govuk-body">Finish and close to go back to the start page to take another application.</p>

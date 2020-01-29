@@ -16,11 +16,14 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="done-has-someone-else-living-with-them" method="post" class="form">
 
+      {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Who  lives with you?</h1>{% endif %}
+      {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Who lives with {{ data["full-name"] }}?</h1>{% endif %}
+
 
       {% set moreThanOneChild %}
       {{ govukInput({
         label: {
-          text: "How many children live with you?"
+          text: "How many children?"
         },
         classes: "govuk-input--width-10",
         id: "who-lives-with-you-child",
@@ -31,7 +34,7 @@
       {% set moreThanOneSomeoneElse %}
       {{ govukInput({
         label: {
-          text: "How many other people live with you?"
+          text: "How many other people?"
         },
         classes: "govuk-input--width-10",
         id: "who-lives-with-you-someone-else",
@@ -44,7 +47,7 @@
                 name: "who-lives-with-you-type",
                 fieldset: {
                   legend: {
-                    text: "Who lives with you?",
+                    text: "",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--xl"
                   }
@@ -55,7 +58,7 @@
                 items: [
                   {
                     value: "Partner",
-                    text: "My partner",
+                    text: "A partner",
                   checked: (data["who-lives-with-you"] == "Partner")
                 },
                 {

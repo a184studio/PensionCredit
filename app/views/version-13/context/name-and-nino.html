@@ -17,8 +17,8 @@
       <form action="over-spa" method="post"><!--existing-claim-yn-->
 
         <!------------HEADLINE------------>
-          {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What are {{ data | getPronoun }} details?</h1>{% endif %}
-          {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is {{ data ["who-is-caller-name"]}}'s details?</h1>{% endif %}
+          {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What are your details?</h1>{% endif %}
+          {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What are the claimant's details?</h1>{% endif %}
 
           <!------------ if only one headline on a page swap the headline for legend, ask Niall------------>
 
@@ -31,7 +31,7 @@
 
         {{ govukInput({
           label: {
-            text:""
+            text:"Full name"
           },
           hint: {
             text: "Include any middle names."
@@ -44,7 +44,7 @@
 
         {{ govukInput({
           label: {
-            text: "What is your National Insurance number?"
+            text: "National Insurance number"
           },
           id: "nino",
           name: "nino",
@@ -52,15 +52,17 @@
           value: data["nino"]
         }) }}
 
+{% if data["who-is-caller"] == "Yourself" %}
         {{ govukInput({
           label: {
-            text: "What is the number you are calling from?"
+            text: "What number are you calling from?"
           },
           id: "telephone-number",
           name: "telephone-number",
           classes: "govuk-input--width-20",
           value: data["telephone-number"]
         }) }}
+{% endif %}
 
         {{ govukButton({
           text: "Continue"

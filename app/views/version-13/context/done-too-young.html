@@ -18,12 +18,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">You cannot apply for Pension Credit yet</h1>
+      {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You cannot apply for Pension Credit yet</h1>{% endif %}
+      {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">{{ data["full-name"] }} cannot apply for Pension Credit yet</h1>{% endif %}
 
 
       <br>
 
-      <h3 class="govuk-heading-m">You can apply for Pension Credit up to 4 months before you reach your State Pension age.</h3>
+      {% if data["who-is-caller"] == "Yourself" %}<h3 class="govuk-heading-m">You can apply for Pension Credit up to 4 months before you reach your State Pension age.</h3>{% endif %}
+      {% if data["who-is-caller"] !== "Yourself" %}<h3 class="govuk-heading-m">They can apply for Pension Credit up to 4 months before they reach their State Pension age.</h3>{% endif %}
 
 <br>
 
@@ -34,7 +36,8 @@
         <strong>Textphone</strong> 0800 169 0133
       </p>
 
-      <h3 class="govuk-heading-m">You might be able to apply for Universal Credit.</h3>
+      {% if data["who-is-caller"] == "Yourself" %}<h3 class="govuk-heading-m">You might be able to apply for Universal Credit</h3>{% endif %}
+      {% if data["who-is-caller"] !== "Yourself" %}<h3 class="govuk-heading-m">They might be able to apply for Universal Credit</h3>{% endif %}
 
       <p class="govuk-body">
         <strong>Contact Universal Credit</strong><br>Monday to Friday, 8am to 6pm (closed on bank holidays). <br>Calls to 0800 numbers are free from landlines and mobiles.
@@ -44,10 +47,9 @@
       </p>
 
             <div class="govuk-panel--agent">
-              <h2 class="govuk-heading-s"><span class="agent-action">Agent: </span> Use the back link to go back to the previous page if the claimant needs to correct their date of birth. Finish and close to go back to the start page to take another application.</h2>
+              <p class="govuk-body"><span class="agent-action"><strong>Agent:</strong> </span> Go back to the previous page if the claimant needs to correct their date of birth. Finish and close to go back to the start page to take another application.</h2>
 
 
-              <p class="govuk-body">Finish and close to go back to the start page to take another application.</p>
 
             </div>
 

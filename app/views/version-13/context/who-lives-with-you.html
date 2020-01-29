@@ -17,31 +17,9 @@
     <form action="who-lives-with-you-router" method="post" class="form">
 
 
-
-
-
-
-              {% set moreThanOneChild %}
-              {{ govukInput({
-                label: {
-                  text: "How many?"
-                },
-                classes: "govuk-input--width-5",
-                id: "who-lives-with-you-child",
-                name: "who-lives-with-you-child"
-              }) }}
-              {% endset -%}
-
-              {% set moreThanOneSomeoneElse %}
-              {{ govukInput({
-                label: {
-                  text: "How many?"
-                },
-                classes: "govuk-input--width-5",
-                id: "who-lives-with-you-someone-else",
-                name: "who-lives-with-you-someone-else"
-              }) }}
-              {% endset -%}
+      <!------------HEADLINE------------>
+        {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Does anyone else live with you?</h1>{% endif %}
+        {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Does anyone else live with {{ data["full-name"] }}?</h1>{% endif %}
 
 
               {{ govukRadios({
@@ -50,7 +28,7 @@
                 name: "who-lives-with-you",
                 fieldset: {
                   legend: {
-                    text: "Does anyone else live with you?",
+                    text: "",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--xl"
                   }

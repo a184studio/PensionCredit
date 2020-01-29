@@ -16,12 +16,16 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="over-spa-router" method="post">
 
+        <!------------HEADLINE------------>
+        {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is your date of birth?</h1>{% endif %}
+        {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is {{ data["full-name"] }}'s date of birth?</h1>{% endif %}
+
         {{ govukDateInput({
           id: "dob",
           namePrefix: "dob",
           fieldset: {
             legend: {
-              text: "What is your date of birth?",
+              text: " ",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
