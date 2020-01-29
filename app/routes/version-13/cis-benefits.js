@@ -48,7 +48,7 @@ router.post(`${baseUrl}/national-insurance-return-router`, (req, res) => {
   const nationalInsuranceReturn = req.session.data['national-insurance-return']
 
   if (nationalInsuranceReturn === 'Yes') {
-    res.redirect(`${baseUrl}/over-spa`)
+    res.redirect(`${baseUrl}/caller-number`)
   } else {
     res.redirect(`${baseUrl}/national-insurance-call`)
   }
