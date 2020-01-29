@@ -8,7 +8,7 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/version-13/mvp'
+const baseUrl = '/version-13/cis-benefits'
 
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
@@ -25,7 +25,7 @@ router.post(`${baseUrl}/security-router`, (req, res) => {
   const passedSecurity = req.session.data['passed-security']
 
   if (passedSecurity === 'Yes') {
-    res.redirect(`${baseUrl}/name-and-nino`)
+    res.redirect(`${baseUrl}/national-insurance-call`)
   } else {
     res.redirect(`${baseUrl}/agent-action`)
   }
@@ -36,7 +36,7 @@ router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['who-is-caller']
 
   if (claimingFor === 'Yourself') {
-    res.redirect(`${baseUrl}/name-and-nino`)
+    res.redirect(`${baseUrl}/national-insurance-call`)
   } else {
     res.redirect(`${baseUrl}/who-is-caller-name`)
   }
