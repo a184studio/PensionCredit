@@ -67,6 +67,23 @@ module.exports = function (env) {
     }
   }
 
+  filters.getPronoun = function(data) {
+    if (data['who-is-caller'] === 'Yourself') {
+      return 'Your';
+    }
+    if (data['who-is-caller'] === 'Power of attorney') {
+      return 'data["full-name"]';
+    }
+    if (data['who-is-caller'] === 'Appointee') {
+      return 'data["full-name"]';
+    }
+    if (data['who-is-caller'] === 'SomeoneElse') {
+      return 'data["full-name"]';
+    }
+    return 'pronoun';
+  }
+
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
