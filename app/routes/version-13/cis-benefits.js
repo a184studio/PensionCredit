@@ -43,6 +43,18 @@ router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
 })
 
 
+
+router.post(`${baseUrl}/national-insurance-return-router`, (req, res) => {
+  const nationalInsuranceReturn = req.session.data['national-insurance-return']
+
+  if (nationalInsuranceReturn === 'Yes') {
+    res.redirect(`${baseUrl}/over-spa`)
+  } else {
+    res.redirect(`${baseUrl}/national-insurance-call`)
+  }
+})
+
+
 router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
   const hasPartner = req.session.data['has-partner']
 

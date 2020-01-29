@@ -17,8 +17,8 @@
       <form action="national-insurance-return" method="post"><!--existing-claim-yn-->
 
         <!------------HEADLINE------------>
-          {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What are {{ data | getPronoun }} details?</h1>{% endif %}
-          {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is {{ data ["who-is-caller-name"]}}'s details?</h1>{% endif %}
+          {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is {{ data | getPronoun }} National Insurance number?</h1>{% endif %}
+          {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is {{ data ["who-is-caller-name"]}}'s National Insurance number?</h1>{% endif %}
 
           <!------------ if only one headline on a page swap the headline for legend, ask Niall------------>
 
@@ -31,35 +31,15 @@
 
         {{ govukInput({
           label: {
-            text:"What is your full name?"
+            text: ""
           },
-          hint: {
-            text: "Include any middle names."
-          },
-          id: "full-name",
-          name: "full-name",
-          classes: "govuk-input--width-20",
-          value: data["full-name"]
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "What is your National Insurance number?"
-          },
+            hint: {
+              html: "It’s on your National Insurance card, benefit letter, payslip or P60. <br>For example, ‘QQ 12 34 56 C’."
+            },
           id: "nino",
           name: "nino",
           classes: "govuk-input--width-10",
           value: data["nino"]
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "What is the number you are calling from?"
-          },
-          id: "telephone-number",
-          name: "telephone-number",
-          classes: "govuk-input--width-20",
-          value: data["telephone-number"]
         }) }}
 
         {{ govukButton({
