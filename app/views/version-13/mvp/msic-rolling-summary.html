@@ -1413,90 +1413,50 @@
 
 
           {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-0',
-            rows: [
-          {
-            key: {
-              text: "Date this figure is from"
-            },
-            value: {
-              text: data['msic-post-office-card-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-post-office-card-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-post-office-card-account-amount-EED-date-evidence-year']
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
+          classes: 'govuk-!-margin-bottom-0',
+          rows: [
+      {
+          key: {
+            text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
           },
-
-          {
-            key: {
-              text: "How much you had in this account on this date"
-            },
-            value: {
-              html: data['msic-post-office-card-account-amount-EED'] | formatMoney
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
-          }
-          ]
-          }) }}
-
-          <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
-
-
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-8',
-            rows: [
-          {
-            key: {
-              text: "Date this figure is from"
-            },
-            value: {
-              text: data['msic-post-office-card-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-post-office-card-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-post-office-card-account-amount-TODAY-date-evidence-year']
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
+          value: {
+            html: data['msic-post-office-card-account-amount-EED'] | formatMoney
           },
-
-          {
-            classes: 'govuk-summary-list--no-border',
-            key: {
-              text: "How much you had in this account on this date"
-            },
-            value: {
-              html: data['msic-post-office-card-account-amount-TODAY'] | formatMoney
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
           }
-          ]
-          }) }}
+        }
+        ]
+        }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-8',
+          rows: [
+          {
+          key: {
+            text: "How much money did you have in this account on " + '' | formatDate
+          },
+          value: {
+            html: data['msic-post-office-card-account-amount-TODAY'] | formatMoney
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        }
+        ]
+        }) }}
 
 
         <br></div></div>
