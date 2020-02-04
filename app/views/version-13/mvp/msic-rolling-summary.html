@@ -296,7 +296,7 @@
 
                 {
                   key: {
-                    text: "What currency is it"
+                    text: "What currency is it?"
                   },
                   value: {
                     text: data['msic-cash-other-abroad-currency']
@@ -565,7 +565,7 @@
                   rows: [
               {
                   key: {
-                    text: "How many units did you own on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                    text: "How many units did you own on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                   },
                   value: {
                     html: data['msic-unit-trust-account-units-EED']
@@ -588,7 +588,7 @@
                   rows: [
                   {
                     key: {
-                    text: "What was the bid price on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                    text: "What was the bid price on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                   },
                   value: {
                     html: data['msic-unit-trust-account-price-EED'] | formatMoney
@@ -611,7 +611,7 @@
                   rows: [
               {
                   key: {
-                    text: "How many units did you own on " + '' | formatDate
+                    text: "How many units did you own on " + '' | formatDate +'?'
                   },
                   value: {
                     html: data['msic-unit-trust-account-units-TODAY'] | formatMoney
@@ -635,7 +635,7 @@
                   {
                     classes: 'govuk-summary-list--no-border',
                     key: {
-                    text: "What was the bid price on " + '' | formatDate
+                    text: "What was the bid price on " + '' | formatDate +'?'
                   },
                   value: {
                     html: data['msic-unit-trust-account-price-TODAY'] | formatMoney
@@ -708,7 +708,7 @@
                 rows: [
                 {
                 key: {
-                  text: "How many shares did you have on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                  text: "How many shares did you have on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                 },
                 value: {
                   html: data['msic-shares-account-number-EED']
@@ -732,7 +732,7 @@
                 {
                   classes: 'govuk-summary-list--no-border',
                   key: {
-                  text: "How many shares did you have on " + '' | formatDate
+                  text: "How many shares did you have on " + '' | formatDate +'?'
                 },
                 value: {
                   html: data['msic-shares-account-number-TODAY']
@@ -965,7 +965,7 @@
                       rows: [
                     {
                       key: {
-                        text: "How much was in this ISA on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                        text: "How much was in this ISA on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                       },
                       value: {
                         html: data['msic-isa-savings-account-amount-EED'] | formatMoney
@@ -990,7 +990,7 @@
                                         {
                       classes: 'govuk-summary-list--no-border',
                       key: {
-                        text: "How much was in this ISA on " + '' | formatDate
+                        text: "How much was in this ISA on " + '' | formatDate +'?'
                       },
                       value: {
                         html: data['msic-isa-savings-account-amount-TODAY'] | formatMoney
@@ -1137,7 +1137,7 @@
                   rows: [
                   {
                   key: {
-                    text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                    text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                   },
                   value: {
                     html: data['msic-credit-union-account-amount-EED'] | formatMoney
@@ -1161,7 +1161,7 @@
                   {
                     classes: 'govuk-summary-list--no-border',
                     key: {
-                    text: "How much money did you have in this account on " + '' | formatDate
+                    text: "How much money did you have in this account on " + '' | formatDate +'?'
                   },
                   value: {
                     html: data['msic-credit-union-account-amount-TODAY'] | formatMoney
@@ -1207,7 +1207,7 @@
           rows: [
       {
           key: {
-            text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+            text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
           },
           value: {
             html: data['msic-post-office-card-account-amount-EED'] | formatMoney
@@ -1231,7 +1231,7 @@
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-            text: "How much money did you have in this account on " + '' | formatDate
+            text: "How much money did you have in this account on " + '' | formatDate +'?'
           },
           value: {
             html: data['msic-post-office-card-account-amount-TODAY'] | formatMoney
@@ -1303,7 +1303,7 @@
           rows: [
       {
           key: {
-            text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+            text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
           },
           value: {
             html: data['msic-all-savings-account-amount-EED'] | formatMoney
@@ -1327,7 +1327,7 @@
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-            text: "How much money did you have in this account on " + '' | formatDate
+            text: "How much money did you have in this account on " + '' | formatDate +'?'
           },
           value: {
             html: data['msic-all-savings-account-amount-TODAY'] | formatMoney
@@ -1404,7 +1404,7 @@
               rows: [
             {
               key: {
-                html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
               },
               value: {
                 text: data['msic-all-current-account-amount-EED-' + i] | formatMoney
@@ -1429,7 +1429,7 @@
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                text: "How much money did you have in this account on " + '' | formatDate
+                text: "How much money did you have in this account on " + '' | formatDate +'?'
               },
               value: {
                 text: data['msic-all-current-account-amount-TODAY-' + i] | formatMoney
