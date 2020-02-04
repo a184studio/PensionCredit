@@ -16,9 +16,11 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="national-insurance-return" method="post"><!--existing-claim-yn-->
 
+        <div class="govuk-panel--agent">
+
         <!------------HEADLINE------------>
-          {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is {{ data | getPronoun }} National Insurance number?</h1>{% endif %}
-          {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is {{ data ["who-is-caller-name"]}}'s National Insurance number?</h1>{% endif %}
+          <!-- {% if data["who-is-caller"] == "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is {{ data | getPronoun }} National Insurance number?</h1>{% endif %}
+          {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is {{ data ["who-is-caller-name"]}}'s National Insurance number?</h1>{% endif %} -->
 
           <!------------ if only one headline on a page swap the headline for legend, ask Niall------------>
 
@@ -27,6 +29,8 @@
           {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-0">What is ["who-is-caller-name"]'s details?</h1>{% endif %}
           {% endset %} -->
         <!------------HEADLINE------------>
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter claimants National Issurance number</h1>
 
 
         {{ govukInput({
@@ -43,8 +47,11 @@
         }) }}
 
         {{ govukButton({
+          classes: "govuk-!-margin-bottom-0",
           text: "Continue"
         }) }}
+
+</div>
       </form>
       <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
     </div>
