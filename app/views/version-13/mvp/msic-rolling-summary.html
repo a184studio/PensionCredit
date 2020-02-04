@@ -805,7 +805,7 @@
                     rows: [
                     {
                     key: {
-                      text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                      text: "Value of this bond on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
                     },
                     value: {
                       html: data['msic-capital-bond-account-amount-EED']
@@ -828,7 +828,7 @@
                     rows: [
                     {
                       key: {
-                      text: "How much money did you have in this account on " + '' | formatDate
+                      text: "Value of this bond on " + '' | formatDate
                     },
                     value: {
                       html: data['msic-capital-bond-account-amount-TODAY']
