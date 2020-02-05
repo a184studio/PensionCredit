@@ -597,7 +597,7 @@ router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
   const preDeclaration = req.session.data['pre-declaration']
 
   if (preDeclaration === 'Yes') {
-    res.redirect(`${baseUrl}/who-is-caller`)
+    res.redirect(`${baseUrl}/reside-in-uk`)
   } else {
     res.redirect(`${baseUrl}/done-declaration`)
   }
