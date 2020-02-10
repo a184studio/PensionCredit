@@ -115,7 +115,10 @@
             ]
           }) }}
 
-<br><br><br><h2 class="govuk-heading-l">About you</h2>
+<br><br><br>
+
+{% if data["who-is-caller"] == "Yourself" %}<h2 class="govuk-heading-l">About you</h2>{% endif %}
+{% if data["who-is-caller"] !== "Yourself" %}<h2 class="govuk-heading-l">About {{ data["full-name"] }}</h2>{% endif %}
 
 
           {{ govukSummaryList({
