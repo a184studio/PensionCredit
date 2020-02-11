@@ -43,6 +43,7 @@ router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
 })
 
 
+
 router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
   const hasPartner = req.session.data['has-partner']
 
@@ -1030,6 +1031,19 @@ router.post(`${baseUrl}/benefit-hospital-check-yn-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/pensions-journey-router`, (req, res) => {
+  const pensionJourney = req.session.data['pensions-journey']
+
+  if (pensionJourney === 'A') {
+    res.redirect(`${baseUrl}/pensions-display-pension`)
+  } else if (pensionJourney === 'B') {
+      res.redirect(`${baseUrl}/pensions-display-no-pension`)
+  } else if (pensionJourney === 'C') {
+      res.redirect(`${baseUrl}/pensions-display-bau-pension`)
+    } else {
+    res.redirect(`${baseUrl}/pensions-display-searchlight-down`)
+  }
+})
 
 
 
