@@ -21,7 +21,8 @@
         Post Office Card Account details
       </h1>
 
-    <!--------------- MONEY ----------------------------------------------------------------------------------------->
+    <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+    {% if data["claim-filter"] == "Backdating" %}
 
             {{ govukInput({
               label: {
@@ -32,14 +33,22 @@
               classes: "govuk-input--width-20"
             }) }}
 
+          {% endif %}
+
+<!--------------- DATE ONE (TODAY) ----------------------------------------------------------------------------------------->
+
+            {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
             {{ govukInput({
               label: {
-                html: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+                html: "How much money do you have in this account <strong>today?</strong>"
               },
               id: "msic-post-office-card-account-amount-TODAY",
               name: "msic-post-office-card-account-amount-TODAY",
               classes: "govuk-input--width-20"
             }) }}
+
+          {% endif %}
 
     <!--------------- CONTINUE ----------------------------------------------------------------------------------------->
 

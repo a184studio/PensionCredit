@@ -34,26 +34,29 @@
       }) }}
 
 
-      <!--------------- OTHER DETIALS ----------------------------------------------------------------------------------------->
-
+      <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+            {% if data["claim-filter"] == "Backdating" %}
 
               {{ govukInput({
                 label: {
-                  html: "How much money did you have in this ISA on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+                  html: "How much money did you have in this ISA on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>?"
                 },
                 id: "msic-isa-savings-account-amount-EED",
                 name: "msic-isa-savings-account-amount-EED",
                 classes: "govuk-input--width-20"
               }) }}
+              {% endif %}
 
+{% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
               {{ govukInput({
                 label: {
-                  html: "How much money did you have in this ISA on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+                  html: "How much money do you have in this ISA <strong>today</strong>?"
                 },
                 id: "msic-isa-savings-account-amount-TODAY",
                 name: "msic-isa-savings-account-amount-TODAY",
                 classes: "govuk-input--width-20"
               }) }}
+            {% endif %}
 
       <!--------------- CONTINUE ----------------------------------------------------------------------------------------->
 

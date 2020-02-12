@@ -57,9 +57,12 @@
                   name: "msic-all-current-account-amount-EED-" + count,
                   classes: "govuk-input--width-20"
                 }) }}
+              {% endif %}
 
+<!--------------- DATE TWO (TODAY FOR BACKDATING) ----------------------------------------------------------------------------------------->
 
-<!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+            {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
                 {{ govukInput({
                   label: {
                     html: "How much money do you have in this account <strong>today</strong>?"
@@ -71,19 +74,6 @@
 
                 {% endif %}
 
-<!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
-              {% if data["claim-filter"] == "Advanced or Today" %}
-
-                {{ govukInput({
-                  label: {
-                    html: "How much money do you have in this account <strong>today</strong>?"
-                  },
-                  id: "msic-all-current-account-amount-TODAY",
-                  name: "msic-all-current-account-amount-TODAY-" + count,
-                  classes: "govuk-input--width-20"
-                }) }}
-
-              {% endif %}
 
 <!--------------- CONTINUE ----------------------------------------------------------------------------------------->
 

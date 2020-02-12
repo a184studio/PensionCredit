@@ -800,12 +800,15 @@
                   ]
                   }) }}
 
+
+                  {% if data["claim-filter"] == "Backdating" %}
+
                   {{ govukSummaryList({
                     classes: 'govuk-!-margin-bottom-0',
                     rows: [
                     {
                     key: {
-                      text: "Value of this bond on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                      text: "What was the value of this bond on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                     },
                     value: {
                       html: data['msic-capital-bond-account-amount-EED']
@@ -823,12 +826,16 @@
                   ]
                   }) }}
 
+                  {% endif %}
+
+                  {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
                   {{ govukSummaryList({
                     classes: 'govuk-!-margin-bottom-8',
                     rows: [
                     {
                       key: {
-                      text: "Value of this bond on " + '' | formatDate
+                      text: "What is the value of this bond today?"
                     },
                     value: {
                       html: data['msic-capital-bond-account-amount-TODAY']
@@ -845,6 +852,9 @@
                   }
                   ]
                   }) }}
+
+                  {% endif %}
+
 
                         <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
 
@@ -959,13 +969,13 @@
               ]
               }) }}
 
-
+                  {% if data["claim-filter"] == "Backdating" %}
                     {{ govukSummaryList({
                       classes: 'govuk-!-margin-bottom-0',
                       rows: [
                     {
                       key: {
-                        text: "How much was in this ISA on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
+                        text: "How much money did you have in this ISA on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                       },
                       value: {
                         html: data['msic-isa-savings-account-amount-EED'] | formatMoney
@@ -982,7 +992,9 @@
                     }
                     ]
                     }) }}
+                  {% endif %}
 
+                  {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
                     {{ govukSummaryList({
                       classes: 'govuk-!-margin-bottom-8',
@@ -990,7 +1002,7 @@
                                         {
                       classes: 'govuk-summary-list--no-border',
                       key: {
-                        text: "How much was in this ISA on " + '' | formatDate +'?'
+                        text: "How much money do you have in this ISA today?"
                       },
                       value: {
                         html: data['msic-isa-savings-account-amount-TODAY'] | formatMoney
@@ -1007,6 +1019,7 @@
                     }
                     ]
                     }) }}
+                  {% endif %}
 
         <br></div></div>
 
@@ -1031,12 +1044,13 @@
         <div class="govuk-grid-column-three-quarters">
 
 
+          {% if data["claim-filter"] == "Backdating" %}
                         {{ govukSummaryList({
                           classes: 'govuk-!-margin-bottom-0',
                           rows: [
                         {
                           key: {
-                            text: "Value of Premium Bonds on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                            text: "What was the value of your Premium Bonds on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
                           },
                           value: {
                             html: data['msic-premium-bond-account-amount-EED'] | formatMoney
@@ -1058,14 +1072,16 @@
                         }
                         ]
                         }) }}
+                      {% endif %}
 
+                      {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
                         {{ govukSummaryList({
                           classes: 'govuk-!-margin-bottom-8',
                           rows: [
                         {
                           classes: 'govuk-summary-list--no-border',
                           key: {
-                            text: "Value of Premium Bonds on " + '' | formatDate
+                            text: "What is the value of your Premium Bonds today?"
                           },
                           value: {
                             html: data['msic-premium-bond-account-amount-TODAY'] | formatMoney
@@ -1082,6 +1098,7 @@
                         }
                         ]
                         }) }}
+                      {% endif %}
 
         <br></div></div>
 
@@ -1132,6 +1149,8 @@
                       ]
                       }) }}
 
+              {% if data["claim-filter"] == "Backdating" %}
+
                 {{ govukSummaryList({
                   classes: 'govuk-!-margin-bottom-0',
                   rows: [
@@ -1154,14 +1173,16 @@
                 }
                 ]
                 }) }}
+              {% endif %}
 
+              {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
                 {{ govukSummaryList({
                   classes: 'govuk-!-margin-bottom-8',
                   rows: [
                   {
                     classes: 'govuk-summary-list--no-border',
                     key: {
-                    text: "How much money did you have in this account on " + '' | formatDate +'?'
+                    text: "How much money do you have in this account today?"
                   },
                   value: {
                     html: data['msic-credit-union-account-amount-TODAY'] | formatMoney
@@ -1178,6 +1199,8 @@
                 }
                 ]
                 }) }}
+
+                {% endif %}
 
 
 
@@ -1202,6 +1225,9 @@
         <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
 
+
+          {% if data["claim-filter"] == "Backdating" %}
+
           {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-0',
           rows: [
@@ -1225,13 +1251,17 @@
         ]
         }) }}
 
+        {% endif %}
+
+        {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-8',
           rows: [
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-            text: "How much money did you have in this account on " + '' | formatDate +'?'
+            text: "How much money do you have in this account today?"
           },
           value: {
             html: data['msic-post-office-card-account-amount-TODAY'] | formatMoney
@@ -1248,6 +1278,8 @@
         }
         ]
         }) }}
+
+        {% endif %}
 
 
         <br></div></div>
@@ -1298,6 +1330,9 @@
                       ]
                       }) }}
 
+  {% if data["claim-filter"] == "Backdating" %}
+
+
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-0',
           rows: [
@@ -1321,13 +1356,18 @@
         ]
         }) }}
 
+      {% endif %}
+
+        {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
+
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-8',
           rows: [
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-            text: "How much money did you have in this account on " + '' | formatDate +'?'
+            text: "How much money do you have in this account today?"
           },
           value: {
             html: data['msic-all-savings-account-amount-TODAY'] | formatMoney
@@ -1344,6 +1384,9 @@
         }
         ]
         }) }}
+
+          {% endif %}
+
 
 
         </div></div>
@@ -1423,33 +1466,9 @@
             ]
             }) }}
 
-            {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-8',
-              rows: [
-            {
-              classes: 'govuk-summary-list--no-border',
-              key: {
-                html: "How much money do you have in this account today?"
-              },
-              value: {
-                text: data['msic-all-current-account-amount-TODAY-' + i] | formatMoney
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            }
-            ]
-            }) }}
-
             {% endif %}
 
-            {% if data["claim-filter"] == "Advanced or Today" %}
+            {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-8',

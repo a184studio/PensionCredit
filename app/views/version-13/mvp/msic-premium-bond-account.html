@@ -21,27 +21,33 @@
         Premium Bonds details
       </h1>
 
-      <!--------------- NAME ----------------------------------------------------------------------------------------->
+      <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
 
+      {% if data["claim-filter"] == "Backdating" %}
 
         {{ govukInput({
           label: {
-            html: "What was the value of your premium bonds on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+            html: "What was the value of your Premium Bonds on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
           },
           id: "msic-premium-bond-account-amount-EED",
           name: "msic-premium-bond-account-amount-EED",
           classes: "govuk-input--width-20"
         }) }}
+        {% endif %}
 
+        <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+
+      {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
         {{ govukInput({
           label: {
-            html: "What was the value of your premium bonds on <strong>" + '' | formatDate + "?</strong>"
+            html: "What is the value of your Premium Bonds <strong>today</strong>?"
           },
           classes: "govuk-input--width-20",
           id: "msic-premium-bond-account-amount-TODAY",
           name: "msic-premium-bond-account-amount-TODAY"
         }) }}
+        {% endif %}
 
 
 
