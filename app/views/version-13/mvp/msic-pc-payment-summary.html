@@ -81,7 +81,7 @@
             },
             {
               key: {
-                html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
               },
               value: {
                 text: data["msic-sp-payment-alternative-account-EED"]
@@ -99,7 +99,7 @@
 
             {
               key: {
-                html: "How much money did you have in this account on  <strong>" + '' | formatDate + "?</strong>"
+                html: "How much money do you have in this account today?"
               },
               value: {
                 text: data["msic-sp-payment-alternative-account-TODAY"]
@@ -198,7 +198,7 @@
 
               {
                 key: {
-                  text: "Account with"
+                  text: "Name of bank or building society"
                 },
                 value: {
                   text: data['msic-all-current-account-name-' + 0]
@@ -270,7 +270,7 @@
 
               {
                 key: {
-                  html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                  html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                 },
                 value: {
                   text: data["msic-pc-payment-alternative-account-EED"]
@@ -288,7 +288,7 @@
 
               {
                 key: {
-                  html: "How much money did you have in this account on <strong>" + '' | formatDate + "?</strong>"
+                  html: "How much money do you have in this account today?"
                 },
                 value: {
                   text: data["msic-pc-payment-alternative-account-TODAY"]

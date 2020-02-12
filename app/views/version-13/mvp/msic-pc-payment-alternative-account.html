@@ -124,23 +124,33 @@
   If this account is shared with someone else, only tell<br>us about the amount of money that is yours.
 </p>
 
+<!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+{% if data["claim-filter"] == "Backdating" %}
+
 {{ govukInput({
   label: {
-    html: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+    html: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>?"
   },
   id: "msic-pc-payment-alternative-account-EED",
   name: "msic-pc-payment-alternative-account-EED",
   classes: "govuk-input--width-20"
 }) }}
 
+{% endif %}
+
+<!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+{% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
 {{ govukInput({
   label: {
-  html: "How much money did you have in this account on  <strong>" + '' | formatDate + "?</strong>"
+  html: "How much money do you have in this account <strong>today</strong>?"
   },
   classes: "govuk-input--width-20",
   id: "msic-pc-payment-alternative-account-TODAY",
   name: "msic-pc-payment-alternative-account-TODAY"
 }) }}
+
+{% endif %}
 
 
 <br>
