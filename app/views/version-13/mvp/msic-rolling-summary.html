@@ -703,6 +703,9 @@
               ]
               }) }}
 
+              <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+              {% if data["claim-filter"] == "Backdating" %}
+
               {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-0',
                 rows: [
@@ -726,13 +729,18 @@
               ]
               }) }}
 
+              {% endif %}
+
+              <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+              {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
               {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-8',
                 rows: [
                 {
                   classes: 'govuk-summary-list--no-border',
                   key: {
-                  text: "How many shares did you have on " + '' | formatDate +'?'
+                  text: "How many shares do you have today?"
                 },
                 value: {
                   html: data['msic-shares-account-number-TODAY']
@@ -749,6 +757,8 @@
               }
               ]
               }) }}
+
+              {% endif %}
 
         <br></div></div>
 

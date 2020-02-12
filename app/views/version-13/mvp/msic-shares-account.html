@@ -33,25 +33,32 @@
         classes: "govuk-input--width-20"
       }) }}
 
-    <!--------------- MONEY ----------------------------------------------------------------------------------------->
+      <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+      {% if data["claim-filter"] == "Backdating" %}
 
             {{ govukInput({
               label: {
-                html: "How many shares did you have on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+                html: "How many shares did you have on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>?"
               },
               id: "msic-shares-account-number-EED",
               name: "msic-shares-account-number-EED",
               classes: "govuk-input--width-20"
             }) }}
+          {% endif %}
+
+
+        <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+        {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
             {{ govukInput({
               label: {
-                html: "How many shares did you have on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+                html: "How many shares do you have <strong>today</strong>?"
               },
               id: "msic-shares-account-number-TODAY",
               name: "msic-shares-account-number-TODAY",
               classes: "govuk-input--width-20"
             }) }}
+          {% endif %}
 
     <!--------------- CONTINUE ----------------------------------------------------------------------------------------->
 
