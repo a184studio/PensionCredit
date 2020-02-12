@@ -47,36 +47,21 @@
             If this account is shared with someone else, only tell<br>us about the amount of money that is yours.
           </p>
 
-          {% if data["claim-filter"] == "Backdating" %}
-
                 {{ govukInput({
                   label: {
-                    html: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>?"
+                    html: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
                   },
                   id: "msic-all-current-account-amount-EED",
                   name: "msic-all-current-account-amount-EED-" + count,
                   classes: "govuk-input--width-20"
                 }) }}
 
-
 <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
-                {{ govukInput({
-                  label: {
-                    html: "How much money do you have in this account <strong>today</strong>?"
-                  },
-                  id: "msic-all-current-account-amount-TODAY",
-                  name: "msic-all-current-account-amount-TODAY-" + count,
-                  classes: "govuk-input--width-20"
-                }) }}
-
-                {% endif %}
-
-<!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
-              {% if data["claim-filter"] == "Advanced or Today" %}
+              {% if data["claim-filter"] == "Backdating" %}
 
                 {{ govukInput({
                   label: {
-                    html: "How much money do you have in this account <strong>today</strong>?"
+                    html: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
                   },
                   id: "msic-all-current-account-amount-TODAY",
                   name: "msic-all-current-account-amount-TODAY-" + count,

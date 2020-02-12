@@ -1375,7 +1375,7 @@
                 rows: [
               {
                 key: {
-                  text: "Name of bank or building society"
+                  text: "Name of bank or buildings society"
                 },
                 value: {
                   text: data['msic-all-current-account-name-' + i]
@@ -1398,7 +1398,6 @@
               ]
               }) }}
 
-              {% if data["claim-filter"] == "Backdating" %}
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-0',
@@ -1423,13 +1422,14 @@
             ]
             }) }}
 
+
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-8',
               rows: [
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                html: "How much money do you have in this account today?"
+                text: "How much money did you have in this account on " + '' | formatDate +'?'
               },
               value: {
                 text: data['msic-all-current-account-amount-TODAY-' + i] | formatMoney
@@ -1446,36 +1446,6 @@
             }
             ]
             }) }}
-
-            {% endif %}
-
-            {% if data["claim-filter"] == "Advanced or Today" %}
-
-            {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-8',
-              rows: [
-            {
-              classes: 'govuk-summary-list--no-border',
-              key: {
-                html: "How much money do you have in this account today?"
-              },
-              value: {
-                text: data['msic-all-current-account-amount-TODAY-' + i] | formatMoney
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            }
-            ]
-            }) }}
-
-            {% endif %}
 
 
         </div></div>

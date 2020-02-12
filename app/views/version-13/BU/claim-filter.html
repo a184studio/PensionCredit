@@ -51,11 +51,39 @@
 
 
       {{ govukDateInput({
+        id: "claim-date-idoc-yn-date",
+        namePrefix: "claim-date-idoc-yn-date",
+        fieldset: {
+          legend: {
+            html: "<strong>IDOC</strong>"
+          }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-idoc-yn-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-idoc-yn-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["claim-date-idoc-yn-date-year"]
+          }
+        ]
+      }) }}
+
+
+      {{ govukDateInput({
         id: "claim-date-cam-date-entry",
         namePrefix: "claim-date-cam-date-entry",
         fieldset: {
           legend: {
-            html: "Date of claim",
+            html: "Earliest entitlement date / Date of claim",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -64,6 +92,10 @@
           text: ""
         }
       }) }}
+
+      <p class="govuk-heading-s">For internal use only, backdating set up</p>
+      <p class="govuk-body">Second date will be today.</p>
+
 
 
 
