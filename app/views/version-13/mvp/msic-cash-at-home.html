@@ -18,7 +18,7 @@
       <input type="hidden" name="money-you-have-complete" value="in-progress"/>
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Do you have any money at home in cash?
+        Details of money at home in cash
       </h1>
 
       <!--------------- NAME ----------------------------------------------------------------------------------------->
@@ -38,24 +38,32 @@
         If this money is shared with someone else, only tell<br>us about the amount of money that is yours.
       </p>
 
+      <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+      {% if data["claim-filter"] == "Backdating" %}
+
       {{ govukInput({
         label: {
-          html: " How much cash did you have on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "?</strong>"
+          html: "How much cash did you have on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] + "</strong>?"
         },
         id: "msic-has-cash-at-home-amount-EED",
         name: "msic-has-cash-at-home-amount-EED",
         classes: "govuk-input--width-20"
       }) }}
 
+    {% endif %}
+
+    <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+    {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
       {{ govukInput({
         label: {
-        html: "How much cash did you have on <strong>" + '' | formatDate + "?</strong>"
+        html: "How much cash do you have <strong>today</strong>?"
         },
         classes: "govuk-input--width-20",
         id: "msic-has-cash-at-home-amount-TODAY",
         name: "msic-has-cash-at-home-amount-TODAY"
       }) }}
-
+    {% endif %}
 
 
 

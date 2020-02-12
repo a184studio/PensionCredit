@@ -21,7 +21,7 @@ Do you have any more Unit Trusts? - Pension Credit
 
     <!------------HEADLINE------------>
       {% set legend %}
-      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any more money investedin unit trusts? {% endif %}
+      {% if data["claim-filter"] == "Advanced or Today" %} Do you have any more money invested in unit trusts? {% endif %}
       {% if data["claim-filter"] == "Backdating" %} Since {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}, have you had any more money invested in unit trusts?{% endif %}
       {% endset %}
     <!------------HEADLINE------------>
