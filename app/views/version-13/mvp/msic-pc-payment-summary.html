@@ -78,6 +78,23 @@
                   }
                 ]
               }
+            },
+            {
+                key: {
+                text: "Name of account"
+              },
+              value: {
+                html: data["msic-sp-payment-alternative-account-name"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "msic-sp-payment-alternative-account",
+                    text: "Change",
+                    visuallyHiddenText: "type of account"
+                  }
+                ]
+              }
             }
             ]
           }) }}
@@ -137,6 +154,8 @@
 
             ]
           }) }}
+
+
 
           {% endif %}
 
