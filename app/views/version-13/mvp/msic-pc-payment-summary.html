@@ -78,7 +78,16 @@
                   }
                 ]
               }
-            },
+            }
+            ]
+          }) }}
+
+          <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+          {% if data["claim-filter"] == "Backdating" %}
+
+          {{ govukSummaryList({
+            rows: [
+
             {
               key: {
                 html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
@@ -95,7 +104,18 @@
                   }
                 ]
               }
-            },
+            }
+
+            ]
+          }) }}
+
+          {% endif %}
+
+            <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+            {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
+          {{ govukSummaryList({
+            rows: [
 
             {
               key: {
@@ -115,9 +135,11 @@
               }
             }
 
-
             ]
           }) }}
+
+          {% endif %}
+
           {% endif %}
 
 
@@ -266,7 +288,15 @@
                     }
                   ]
                 }
-              },
+              }
+              ]
+          }) }}
+
+          <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+          {% if data["claim-filter"] == "Backdating" %}
+
+          {{ govukSummaryList({
+            rows: [
 
               {
                 key: {
@@ -284,7 +314,17 @@
                     }
                   ]
                 }
-              },
+              }
+                ]
+          }) }}
+
+          {% endif %}
+
+          <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+          {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
+          {{ govukSummaryList({
+            rows: [
 
               {
                 key: {
@@ -303,10 +343,11 @@
                   ]
                 }
               }
-
-
             ]
           }) }}
+          {% endif %}
+
+
         {% endif %}
 
         <!------------------ Choosen account ------------------------->
@@ -421,9 +462,17 @@
                   }
                 ]
               }
-            },
+            }
+          ]
+        }) }}
 
-            {
+        <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+        {% if data["claim-filter"] == "Backdating" %}
+
+        {{ govukSummaryList({
+          rows: [
+
+          {
               key: {
                 text: "How much money did you have in this account on <strong>" + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
               },
@@ -439,9 +488,20 @@
                   }
                 ]
               }
-            },
+            }
+          ]
+        }) }}
 
-            {
+        {% endif %}
+
+          <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+          {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
+
+        {{ govukSummaryList({
+          rows: [
+
+          {
               key: {
                 html: "How much money did you have in this account on <strong>" + '' | formatDate + "?</strong>"
               },
@@ -462,6 +522,7 @@
 
           ]
         }) }}
+        {% endif %}
         {% endif %}
 
 
