@@ -24,19 +24,7 @@
       <!--------------- NAME ----------------------------------------------------------------------------------------->
 
 
-      {{ govukInput({
-        label: {
-          text: "Description of this money"
-        },
-        id: "msic-has-cash-at-home-name",
-        name: "msic-has-cash-at-home-name",
-        classes: "govuk-input--width-20"
-      }) }}
-
-      <!--------------- CURRENCY ----------------------------------------------------------------------------------------->
-      <p class="govuk-body govuk-!-font-weight-bold">
-        If this money is shared with someone else, only tell<br>us about the amount of money that is yours.
-      </p>
+    
 
       <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
       {% if data["claim-filter"] == "Backdating" %}
