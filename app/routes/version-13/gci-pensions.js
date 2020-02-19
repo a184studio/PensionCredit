@@ -1038,8 +1038,10 @@ router.post(`${baseUrl}/pensions-journey-router`, (req, res) => {
     res.redirect(`${baseUrl}/pensions-display-pension`)
   } else if (pensionJourney === 'B') {
       res.redirect(`${baseUrl}/pensions-display-no-pension`)
+  } else if (pensionJourney === 'C') {
+      res.redirect(`${baseUrl}/pensions-api-down`)
     } else {
-    res.redirect(`${baseUrl}/pensions-display-bau-pension`)
+    res.redirect(`${baseUrl}/pensions-gcii-down`)
   }
 })
 

@@ -24,16 +24,15 @@
       <input type="hidden" name="pensions-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-l"> Agent: No private or workplace pension found for {{ data["full-name"] }}</h1>    
+        <h1 class="govuk-heading-l"> Agent: No private or workplace pension found for {{ data["full-name"] }}</h1>
     </div>
 
 <br>
 
 
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-    </form>
+<a href="pensions-display-pension-continue" type="submit" class="govuk-button">
+    Continue
+</a>
 
     <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
 
