@@ -54,7 +54,7 @@
     rows: [
     {
       key: {
-        text: "Do you agree to how we use your personal information?"
+        text: "Do you agree to how we use personal information?"
       },
       value: {
         text: data['agrees-privacy']
@@ -93,7 +93,7 @@
 
 
 
-  <br><br><h2 class="govuk-heading-m">Claimant or representative</h2>
+
 
 
   {{ govukSummaryList({
@@ -117,11 +117,28 @@
                     }
                   ]
                 }
-              }
+              },
+              text: "Number you are calling from"
+            },
+            value: {
+              text: data["telephone-number"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "name-and-nino",
+                  text: "Change",
+                  visuallyHiddenText: "Change number you are calling from"
+                }
+              ]
+            }
+          }
               ]
             }) }}
 
-            <br><br><h2 class="govuk-heading-m">About you</h2>
+            <br><br>    {% if data["who-is-caller"] == "Yourself" %}<h2 class="govuk-heading-m">About you</h2>{% endif %}
+                {% if data["who-is-caller"] !== "Yourself" %}<h2 class="govuk-heading-m">About {{ data["full-name"] }}</h2>{% endif %}
+
 
 
             {{ govukSummaryList({
@@ -203,7 +220,8 @@
                         rows: [
                         {
                           key: {
-                            text: "Do you live in the UK?"
+                            text: "Do you live in the UK?" if data["who-is-caller"] == "Yourself"
+                              else "Does " + data["full-name"] + " live in the UK?"
                           },
                           value: {
                             text: data['resides-in-uk']
@@ -213,14 +231,15 @@
                               {
                                 href: "reside-in-uk",
                                 text: "Change",
-                                visuallyHiddenText: "Change whetehr you live in the UK"
+                                visuallyHiddenText: "Change whether you live in the UK"
                               }
                             ]
                           }
                         },
                         {
                           key: {
-                            text: "Have you lived permanently in the UK for the last 2 years?"
+                            text: "Have you lived permanently in the UK for the last 2 years?" if data["who-is-caller"] == "Yourself"
+                              else "Has " + data["full-name"] + " lived permanently in the UK for the last 2 years?"
                           },
                           value: {
                             text: data['lived-abroad']
@@ -237,7 +256,8 @@
                         },
                         {
                           key: {
-                            text: "Are you a UK national?"
+                            text: "Do you have the right to live and work in the UK?" if data["who-is-caller"] == "Yourself"
+                              else "Does " + data["full-name"] + " have the right to live and work in the UK?"
                           },
                           value: {
                             text: data['uk-national']
@@ -255,7 +275,8 @@
                         {
                           classes: 'govuk-summary-list',
                           key: {
-                text: "Who else live with you?"
+                            text: "Does anyone else live with you?" if data["who-is-caller"] == "Yourself"
+                              else "Does anyone else live with " + data["full-name"] + "?"
               },
               value: {
                 text: data['who-lives-with-you']
@@ -269,59 +290,9 @@
                   }
                 ]
               }
-            },
-            {
-              key: {
-                text: "Do you live with a partner?"
-              },
-              value: {
-                text: "Yes / No"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "who-lives-with-you-types",
-                    text: "Change",
-                    visuallyHiddenText: "Change whether you live with a partner"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Number of children under 16 that live with you"
-              },
-              value: {
-                text: data['who-lives-with-you-child']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "who-lives-with-you-types",
-                    text: "Change",
-                    visuallyHiddenText: "Change number of children under 16 that live with you"
-                  }
-                ]
-              }
-            },
-            {
-              classes: 'govuk-summary-list--no-border',
-              key: {
-                text: "Number of other people that live with you"
-              },
-              value: {
-                text: data['who-lives-with-you-someone-else']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "who-lives-with-you-types",
-                    text: "Change",
-                    visuallyHiddenText: "Change number of other people that live with you"
-                  }
-                ]
-              }
             }
+
+
             ]
           }) }}
 

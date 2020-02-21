@@ -56,7 +56,7 @@
       rows: [
       {
         key: {
-          text: "Do you agree to how we use your personal information?"
+          text: "Do you agree to how we use personal information?"
         },
         value: {
           text: data['agrees-privacy']
@@ -95,7 +95,7 @@
 
 
 
-    <br><br><h2 class="govuk-heading-m">Claimant or representative</h2>
+
 
 
     {{ govukSummaryList({
@@ -119,11 +119,32 @@
                       }
                     ]
                   }
+                },
+                {
+                  key: {
+                    text: "Number you are calling from"
+                  },
+                  value: {
+                    text: data["caller-number"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "name-and-nino",
+                        text: "Change",
+                        visuallyHiddenText: "Change number you are calling from"
+                      }
+                    ]
+                  }
                 }
                 ]
               }) }}
 
-              <br><br><h2 class="govuk-heading-m">About you</h2>
+              <br><br>
+
+              {% if data["who-is-caller"] == "Yourself" %}<h2 class="govuk-heading-m">About you</h2>{% endif %}
+              {% if data["who-is-caller"] !== "Yourself" %}<h2 class="govuk-heading-m">About {{ data["full-name"] }}</h2>{% endif %}
+
 
 
               {{ govukSummaryList({
@@ -201,11 +222,14 @@
                           ]
                         }) }}
 
+
+
                         {{ govukSummaryList({
                           rows: [
                           {
                             key: {
-                              text: "Do you live in the UK?"
+                              text: "Do you live in the UK?" if data["who-is-caller"] == "Yourself"
+                                else "Does " + data["full-name"] + " live in the UK"
                             },
                             value: {
                               text: data['resides-in-uk']
@@ -215,14 +239,15 @@
                                 {
                                   href: "reside-in-uk",
                                   text: "Change",
-                                  visuallyHiddenText: "Change whetehr you live in the UK"
+                                  visuallyHiddenText: "Change whether you live in the UK"
                                 }
                               ]
                             }
                           },
                           {
                             key: {
-                              text: "Have you lived permanently in the UK for the last 2 years?"
+                              text: "Have you lived permanently in the UK for the last 2 years?" if data["who-is-caller"] == "Yourself"
+                                else "Has " + data["full-name"] + " lived permanently in the UK for the last 2 years?"
                             },
                             value: {
                               text: data['lived-abroad']
@@ -240,7 +265,8 @@
                           {
                             classes: 'govuk-summary-list--no-border',
                             key: {
-                              text: "Are you a UK national?"
+                              text: "Do you have the right to live and work in the UK?" if data["who-is-caller"] == "Yourself"
+                                else "Does " + data["full-name"] + " have the right to live and work in the UK?"
                             },
                             value: {
                               text: data['uk-national']
