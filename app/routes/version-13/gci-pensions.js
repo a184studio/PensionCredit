@@ -1031,6 +1031,17 @@ router.post(`${baseUrl}/benefit-hospital-check-yn-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/pensions-scenarios-router`, (req, res) => {
+  const pensionScenarios = req.session.data['pensions-scenarios']
+
+  if (pensionScenarios === 'A') {
+    res.redirect(`${baseUrl}/pensions-journey`)
+  } else if (pensionScenarios === 'B') {
+      res.redirect(`${baseUrl}/pensions-journey-2`)
+  }
+})
+
+
 router.post(`${baseUrl}/pensions-journey-router`, (req, res) => {
   const pensionJourney = req.session.data['pensions-journey']
 
@@ -1046,7 +1057,19 @@ router.post(`${baseUrl}/pensions-journey-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/pensions-journey-2-router`, (req, res) => {
+  const pensionJourney = req.session.data['pensions-journey-2']
 
+  if (pensionJourney === 'A') {
+    res.redirect(`${baseUrl}/pensions-display-pension-2`)
+  } else if (pensionJourney === 'B') {
+      res.redirect(`${baseUrl}/pensions-display-no-pension-2`)
+  } else if (pensionJourney === 'C') {
+      res.redirect(`${baseUrl}/pensions-api-down-2`)
+    } else {
+    res.redirect(`${baseUrl}/pensions-gcii-down-2`)
+  }
+})
 
 
 
