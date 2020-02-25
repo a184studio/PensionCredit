@@ -24,11 +24,11 @@
       <input type="hidden" name="pensions-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-l"> Agent: Check and discuss the state pensions {{ data["full-name"] }} has</h1>
+        <h1 class="govuk-heading-l"> Agent: Check and discuss the private and workplace pensions {{ data["full-name"] }} has</h1>
 
-        <p class=govuk-body><strong>@Pete</strong> Show message that API isn't able to make a return.</p>
+        <p class=govuk-body><strong>Unable to show {{ data["full-name"] }}'s private or workplace pensions.</p>
 
-          <p class=govuk-body>Check the benefits tab in <strong>Searchlight</strong> for State Pension and tell the claimant what you see.</p>
+          <p class=govuk-body>Check the income tab in <strong>Searchlight</strong> for private and workplace pensions in payment and tell the claimant what you see.</p>
 
         {{ govukDetails({
   summaryText: "What to do if the claimant tells you their private or workplace pensions are wrong",

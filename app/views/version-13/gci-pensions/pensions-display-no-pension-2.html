@@ -24,9 +24,14 @@
       <input type="hidden" name="pensions-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-l"> Agent: No private or workplace pensions found for {{ data["full-name"] }}</h1>
+        <h1 class="govuk-heading-l"> Agent: No private or workplace pensions in payment for {{ data["full-name"] }}</h1>
     </div>
 
+
+            {{ govukDetails({
+      summaryText: "What to do if the claimant tells you they do have private or workplace pensions in payment",
+      text: "Tell the claimant that you will only use the details you have for their claim. The information we have is from HMRC and they should contact HMRC to resolve any issues."
+    }) }}
 <br>
 
 

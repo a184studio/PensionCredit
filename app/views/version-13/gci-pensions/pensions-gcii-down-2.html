@@ -24,17 +24,14 @@
       <input type="hidden" name="pensions-complete" value="in-progress"/>
 
       <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-l"> Agent: Check and discuss the state pensions {{ data["full-name"] }} has</h1>
+        <h1 class="govuk-heading-l"> Agent: Check and discuss the private and workplace pensions {{ data["full-name"] }} has</h1>
 
-          <p class=govuk-body><strong>@Pete</strong> New error - instruction to adviser to ask claimant about NSP and to enter directly into CAM.</p>
+          <p class=govuk-body><strong>Unable to show {{ data["full-name"] }}'s private or workplace pensions.</strong></p>
 
-          <p class=govuk-body><strong>@Pete - current message:</strong> Check the benefits tab in <strong>Searchlight</strong> for State Pension and tell the claimant what you see.</p>
+          <p class=govuk-body>Ask about any privatre or workplace pensions they have and enter the details directly into CAM.</p>
 
 
-        {{ govukDetails({
-  summaryText: "What to do if the claimant tells you their private or workplace pensions are wrong",
-  text: "Tell the claimant that you will use the figures you discussed for their claim. The information we have is from HMRC and they should contact HMRC to resolve any issues."
-}) }}
+
     </div>
 
 <br>

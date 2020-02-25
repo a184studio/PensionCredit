@@ -20,7 +20,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Private and workplace pensions</h1>
+    <h1 class="govuk-heading-xl">Your private and workplace pensions in payment</h1>
 
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
         <thead class="govuk-table__head">
@@ -40,12 +40,16 @@
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">True Potential Investor</th>
-            <td class="govuk-table__cell">Annual</td>
+            <td class="govuk-table__cell">Yearly</td>
           </tr>
         </tbody>
       </table>
 
 
+              {{ govukDetails({
+        summaryText: "What to do if the claimant tells you their private or workplace pensions are wrong",
+        text: "Tell the claimant that you will use the figures you discussed for their claim. The information we have is from HMRC and they should contact HMRC to resolve any issues."
+      }) }}
 <br>
 
 <a href="pensions-display-pension-continue-2" type="submit" class="govuk-button">
