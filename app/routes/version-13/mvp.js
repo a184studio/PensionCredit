@@ -272,15 +272,15 @@ router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
 
 
 
-// router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
-//   const emailCheck = req.session.data['contact-email-check-yn']
-//
-//   if (emailCheck === 'Yes') {
-//     res.redirect(`${baseUrl}/contact-email`)
-//   } else {
-//     res.redirect(`${baseUrl}/contact-summary`)
-//   }
-// })
+router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
+  const emailCheck = req.session.data['contact-email-check-yn']
+
+  if (emailCheck === 'Yes') {
+    res.redirect(`${baseUrl}/contact-formats`)
+  } else {
+    res.redirect(`${baseUrl}/contact-summary`)
+  }
+})
 
 
 // Contact end

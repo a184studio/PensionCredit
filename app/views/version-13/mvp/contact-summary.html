@@ -307,6 +307,31 @@
           ]
         }) }}
 
+        {% if data["contact-formats-email-yn"] %}
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: "HELP @pete?"
+              },
+              value: {
+                html: data["contact-formats-email-yn"]
+              },
+              actions: {
+                items: [
+                {
+                  href: "contact-email",
+                  text: "Change",
+                  visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+        {% endif %}
+
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -330,30 +355,7 @@
             ]
           }) }}
 
-          <!-- {% if data["contact-formats-email-yn"] %}
-            {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-9',
-              rows: [
-              {
-                key: {
-                  text: "Do you want us to send you letters by email?"
-                },
-                value: {
-                  html: data["contact-formats-email-yn"]
-                },
-                actions: {
-                  items: [
-                  {
-                    href: "contact-email",
-                    text: "Change",
-                    visuallyHiddenText: "XXXX"
-                    }
-                  ]
-                }
-              }
-              ]
-            }) }}
-          {% endif %} -->
+
 
         {% if data["contact-formats-email-yes"] %}
           {{ govukSummaryList({
