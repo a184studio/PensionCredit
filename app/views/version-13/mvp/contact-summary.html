@@ -307,6 +307,29 @@
           ]
         }) }}
 
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+          {
+            key: {
+              text: "contact-welsh-check-yn"
+            },
+            value: {
+              html: data["contact-welsh-check-yn"]
+            },
+            actions: {
+              items: [
+              {
+                href: "contact-welsh-check",
+                text: "Change",
+                visuallyHiddenText: "XXXX"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+
         {% if data["contact-formats-email-yn"] %}
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
@@ -331,6 +354,7 @@
             ]
           }) }}
         {% endif %}
+
 
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
