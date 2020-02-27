@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="contact-email-check" method="post" class="form">
+    <form action="contact-formats-router" method="post" class="form">
 
       <input type="hidden" name="contact-formats-complete" value="in-progress"/>
 
@@ -61,10 +61,16 @@
           },
 
           {
+            value: "Letters by email",
+            text: "Letters by email",
+            checked: (data["contact-formats"] == "Letters by email")
+          },
+
+          {
             value: "Welsh",
             text: "Letters in Welsh",
             checked: (data["contact-formats"] == "Letters in Welsh")
-    },
+          },
 
           {
             value: "TexBox",

@@ -258,32 +258,29 @@ router.post(`${baseUrl}/contact-other-number-router`, (req, res) => {
 
 
 
+router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
+  const contactFormats = req.session.data['contact-formats'] || []
 
-// router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
-//   const contactFormats = req.session.data['contact-formats']
-//
-//   if (contactFormats.includes('Email') === true) {
-//     res.redirect(`${baseUrl}/contact-email`)
-//   }
-//   else if (contactFormats === 'XXX') {
-//     res.redirect(`${baseUrl}/XXX`)
-//   } else {
-//     res.redirect(`${baseUrl}/contact-email-check`)
-//   }
-// })
-
-
-
-
-router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
-  const emailCheck = req.session.data['contact-email-check-yn']
-
-  if (emailCheck === 'Yes') {
+  if (contactFormats.includes('Letters by email') === true) {
     res.redirect(`${baseUrl}/contact-email`)
-  } else {
+  }
+  else {
     res.redirect(`${baseUrl}/contact-summary`)
   }
 })
+
+
+
+
+// router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
+//   const emailCheck = req.session.data['contact-email-check-yn']
+//
+//   if (emailCheck === 'Yes') {
+//     res.redirect(`${baseUrl}/contact-email`)
+//   } else {
+//     res.redirect(`${baseUrl}/contact-summary`)
+//   }
+// })
 
 
 // Contact end
