@@ -21,7 +21,11 @@
         <div class="govuk-panel--agent">
 
         <!------------HEADLINE------------>
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ data ["nino"]}} is registered to [Name API]. Is this correct?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Result found:</h1>
+
+          <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National Insurance number: <strong>{{ data ["nino"]}}</strong></h1>
+          <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Name: <strong>[Name API]</strong></h1>
+          <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Date of birth: <strong>{{ data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']}}</strong></h1>
 
           <!------------ if only one headline on a page swap the headline for legend, ask Niall------------>
 
@@ -37,9 +41,9 @@
           name: "national-insurance-return",
           fieldset: {
             legend: {
-              html: "",
+              html: "Something in here",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
+              classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
@@ -64,6 +68,9 @@
             classes: "govuk-!-margin-bottom-0",
             text: "Continue"
           }) }}
+
+          <p class="govuk-body govuk-!-padding-top-6"><a href="national-insurance-return-fail">@pete: Failed call</a></p>
+
 
 </div>
 

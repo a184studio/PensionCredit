@@ -30,12 +30,12 @@
           {% endset %} -->
         <!------------HEADLINE------------>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter the claimant's National Insurance number</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Find a person</h1>
 
 
         {{ govukInput({
           label: {
-            text: ""
+            html: "<strong>Enter the claimant's National Insurance number</strong>"
           },
             hint: {
               html: ""
@@ -46,10 +46,45 @@
           value: data["nino"]
         }) }}
 
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "What is your date of birth?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["dob-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["dob-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["dob-year"]
+            }
+          ]
+        }) }}
+
         {{ govukButton({
           classes: "govuk-!-margin-bottom-0",
           text: "Continue"
         }) }}
+
+
+
 
 </div>
       </form>
