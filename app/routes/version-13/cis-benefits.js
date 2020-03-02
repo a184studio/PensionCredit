@@ -36,9 +36,19 @@ router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['who-is-caller']
 
   if (claimingFor === 'Yourself') {
-    res.redirect(`${baseUrl}/national-insurance-call`)
+    res.redirect(`${baseUrl}/national-insurance-call-AB`)
   } else {
     res.redirect(`${baseUrl}/who-is-caller-name`)
+  }
+})
+
+router.post(`${baseUrl}/national-insurance-call-AB-router`, (req, res) => {
+  const niCallAB = req.session.data['national-insurance-call-AB']
+
+  if (niCallAB === 'Yes') {
+    res.redirect(`${baseUrl}/national-insurance-call-A`)
+  } else {
+    res.redirect(`${baseUrl}/national-insurance-call-B`)
   }
 })
 
