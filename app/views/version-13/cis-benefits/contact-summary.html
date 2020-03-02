@@ -275,38 +275,6 @@
           ]
         }) }}
 
-
-
-
-
-
-        {{ govukSummaryList({
-          classes: 'govuk-!-margin-bottom-9',
-          rows: [
-          {
-            key: {
-              text: "Different formats"
-            },
-            value: {
-              html: "Braille<br>
-              Email<br>
-              Large print<br>
-              Sign language<br>
-              ...<br>"
-            },
-            actions: {
-              items: [
-              {
-                href: "contact-formats",
-                text: "Change",
-                visuallyHiddenText: "XXXX"
-                }
-              ]
-            }
-          }
-          ]
-        }) }}
-
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -321,6 +289,33 @@
                 items: [
                 {
                   href: "contact-email-check",
+                  text: "Change",
+                  visuallyHiddenText: "XXXX"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: "Different formats"
+              },
+              value: {
+                html: "Braille<br>
+                Email<br>
+                Large print<br>
+                Sign language<br>
+                ...<br>"
+              },
+              actions: {
+                items: [
+                {
+                  href: "contact-formats",
                   text: "Change",
                   visuallyHiddenText: "XXXX"
                   }
