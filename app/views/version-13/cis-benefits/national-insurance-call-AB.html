@@ -17,6 +17,7 @@
       <form action="national-insurance-call-AB-router" method="post"><!--existing-claim-yn-->
 
 
+        <div class="govuk-panel--agent">
 
       {{ govukRadios({
           classes: "govuk-radios",
@@ -24,7 +25,7 @@
           name: "national-insurance-call-AB",
           fieldset: {
             legend: {
-              html: "NI CALL AB",
+              html: "NI CALL AB test",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -47,11 +48,12 @@
           }) }}
 
 
+
           {{ govukButton({
             classes: "govuk-!-margin-bottom-0",
             text: "Continue"
           }) }}
-
+        </div>
 
       </form>
       <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>

@@ -25,7 +25,7 @@
 
           <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National Insurance number: <strong>{{ data ["nino"]}}</strong></h1>
           <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Name: <strong>[Name API]</strong></h1>
-          <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Date of birth: <strong>{{ data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']}}</strong></h1>
+          <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Date of birth: <strong>{{ data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']}}</strong></h1>
 
           <!------------ if only one headline on a page swap the headline for legend, ask Niall------------>
 
@@ -69,10 +69,12 @@
             text: "Continue"
           }) }}
 
+          </div>
+
           <p class="govuk-body govuk-!-padding-top-6"><a href="national-insurance-return-fail">@pete: Failed call</a></p>
 
 
-</div>
+
 
       </form>
       <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
