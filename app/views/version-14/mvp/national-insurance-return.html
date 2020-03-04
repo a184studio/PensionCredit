@@ -24,7 +24,7 @@
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Person found</h1>
 
 
-            <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Name: <strong>Bert Smash</strong></h1>
+            <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Name: <strong>{{ data ["full-name"]}}</strong></h1>
             <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National Insurance number: <strong>{{ data ["nino"]}}</strong></h1>
             <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Date of birth: <strong>{{ data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']}}</strong></h1>
 
