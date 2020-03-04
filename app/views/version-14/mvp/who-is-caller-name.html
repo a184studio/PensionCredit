@@ -14,14 +14,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="name-and-nino" method="post">
+      <form action="national-insurance-call-AB" method="post">
 
 
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Caller full name</h2>
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Caller's details</h2>
 
         {{ govukInput({
           label: {
-            text: "",
+            text: "Full name",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           },
@@ -32,6 +32,16 @@
           name: "who-is-caller-name",
           classes: "govuk-input--width-20",
           value: data["who-is-caller-name"]
+        }) }}
+
+        {{ govukInput({
+          label: {
+              text: "What number are you calling from?"
+          },
+          id: "caller-number",
+          name: "caller-number",
+          classes: "govuk-input--width-20",
+          value: data["caller-number"]
         }) }}
 
 <br>

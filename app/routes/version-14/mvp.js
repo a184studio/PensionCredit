@@ -36,9 +36,31 @@ router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['who-is-caller']
 
   if (claimingFor === 'Yourself') {
-    res.redirect(`${baseUrl}/name-and-nino`)
+    res.redirect(`${baseUrl}/national-insurance-call-AB`)
   } else {
     res.redirect(`${baseUrl}/who-is-caller-name`)
+  }
+})
+
+router.post(`${baseUrl}/national-insurance-call-AB-router`, (req, res) => {
+  const niCallAB = req.session.data['national-insurance-call-AB']
+
+  if (niCallAB === 'Yes') {
+    res.redirect(`${baseUrl}/national-insurance-call-A`)
+  } else {
+    res.redirect(`${baseUrl}/national-insurance-call-B`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/national-insurance-return-router`, (req, res) => {
+  const nationalInsuranceReturn = req.session.data['national-insurance-return']
+
+  if (nationalInsuranceReturn === 'Yes') {
+    res.redirect(`${baseUrl}/caller-number`)
+  } else {
+    res.redirect(`${baseUrl}/national-insurance-call`)
   }
 })
 
@@ -59,7 +81,7 @@ router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
   console.log(whoLivesWithYou);
 
   if (whoLivesWithYou === 'Live alone') {
-    res.redirect(`${baseUrl}/mvp-eligibility-summary`)
+    res.redirect(`${baseUrl}/claim-date-cam-idoc-yn`)
   } else {
     res.redirect(`${baseUrl}/who-lives-with-you-types`)
   }
