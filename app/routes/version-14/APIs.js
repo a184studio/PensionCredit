@@ -409,7 +409,7 @@ router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
   if (accountType === 'Yes') {
     res.redirect(`${baseUrl}/add-hospital-dates`)
   } else {
-    res.redirect(`${baseUrl}/address-summary`)
+    res.redirect(`${baseUrl}/other-income-overview`)
   }
 })
 
@@ -583,7 +583,7 @@ router.post(`${baseUrl}/hospital-check-yn-router`, (req, res) => {
   if (hospitalCheckYn === 'Yes') {
     res.redirect(`${baseUrl}/hospital-yn`)
   } else {
-    res.redirect(`${baseUrl}/hospital-summary`)
+    res.redirect(`${baseUrl}/other-income-overview`)
   }
 })
 
@@ -594,7 +594,7 @@ router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
   if (hospitalYn === 'Yes') {
     res.redirect(`${baseUrl}/hospital-details`)
   } else {
-    res.redirect(`${baseUrl}/hospital-summary`)
+    res.redirect(`${baseUrl}/other-income-overview`)
   }
 })
 
