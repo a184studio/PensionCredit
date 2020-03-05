@@ -39,9 +39,7 @@ router.use(require('./routes/version-13/mvp'))
 router.use(require('./routes/version-13/gci-pensions'))
 router.use(require('./routes/version-13/cis-benefits'))
 router.use(require('./routes/version-13/context'))
-router.use(require('./routes/version-14/mvp'))
-router.use(require('./routes/version-14/gci-pensions'))
-router.use(require('./routes/version-14/cis-benefits'))
+router.use(require('./routes/version-14/APIs'))
 
 
 module.exports = router

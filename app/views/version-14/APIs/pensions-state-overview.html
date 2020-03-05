@@ -1,0 +1,54 @@
+{% extends "layout-id-bar.html" %}
+
+{% block pageTitle %}
+  Agent: Check and discuss the pensions Alex Smith's has - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="pensions-overview" method="post" class="form">
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Your State Pension details</h1>
+
+    <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Start date: <strong>01 January 2020</strong></h1>
+    <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">End date: <strong>—</strong></h1>
+    <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Amount: <strong>£150.00</strong></h1>
+    <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Payment frequency: <strong>Weekly</strong></h1>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+
+
+    <div class="govuk-panel--agent-alert govuk-!-margin-top-6">
+      {% set AddName %}
+
+      <p class="govuk-body"><a href="XXX">Error 1</a></p>
+      <p class="govuk-body"><a href="XXX">Error 2</a></p>
+      <p class="govuk-body"><a href="XXX">Error 3</a></p>
+
+      {% endset %}
+    </div>
+
+    {{ govukDetails({
+      classes: "PC-router",
+      summaryText: "Router",
+      html: AddName
+    }) }}
+
+
+  </div>
+</div>
+{% endblock %}
