@@ -36,7 +36,7 @@ router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
   const claimingFor = req.session.data['who-is-caller']
 
   if (claimingFor === 'Yourself') {
-    res.redirect(`${baseUrl}/national-insurance-call-AB`)
+    res.redirect(`${baseUrl}/national-insurance-call-B`)
   } else {
     res.redirect(`${baseUrl}/who-is-caller-name`)
   }
