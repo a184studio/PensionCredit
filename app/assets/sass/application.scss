@@ -59,6 +59,16 @@ $govuk-assets-path: '/govuk/assets/';
 
 // —————————————————————————————————————
 
+.PC-router {
+  margin:80px auto 10px auto !important;
+  color:govuk-colour("pink") !important; // pink white
+}
+
+.PC-router .govuk-details__summary-text {
+  margin:80px auto 10px auto !important;
+  color: #ededed !important; // pink white
+}
+
 
 .govuk-tag--not-in-use {
   background-color: #dee0e2;

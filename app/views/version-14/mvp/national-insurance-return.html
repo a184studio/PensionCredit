@@ -14,7 +14,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="national-insurance-return-router" method="post"><!--existing-claim-yn-->
+
+        {% if data["nino"] !== "NN 11 22 33 Y" %}<form action="national-insurance-return-router" method="post" class="form">{% endif %}
+          {% if data["nino"] == "NN 11 22 33 Y" %}<form action="done-too-young" method="post" class="form">{% endif %}
 
 
 
@@ -73,27 +75,25 @@
           </div>
 
 
-
-
-          <div class="govuk-panel--agent-alert govuk-!-margin-top-6">
-            {% set AddName %}
-
-            <p class="govuk-body"><a href="national-insurance-return-fail">@pete: Failed call</a></p>
-            <p class="govuk-body"><a href="XXX">Error 2</a></p>
-            <p class="govuk-body"><a href="XXX">Error 3</a></p>
-
-            {% endset %}
-          </div>
-
-          {{ govukDetails({
-            summaryText: "Router and API errors",
-            html: AddName
-          }) }}
-
-
-
       </form>
       <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+
+      <div class="govuk-panel--agent-alert govuk-!-margin-top-6">
+        {% set AddName %}
+
+        <p class="govuk-body"><a href="national-insurance-return-fail">@pete: Failed call</a></p>
+        <p class="govuk-body"><a href="XXX">Error 2</a></p>
+        <p class="govuk-body"><a href="XXX">Error 3</a></p>
+
+        {% endset %}
+      </div>
+
+      {{ govukDetails({
+        classes: "PC-router",
+        summaryText: "Router and API errors",
+        html: AddName
+      }) }}
+
     </div>
   </div>
 {% endblock %}

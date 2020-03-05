@@ -89,6 +89,24 @@
 </div>
       </form>
       <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+
+      <div class="govuk-panel--agent-alert govuk-!-margin-top-6">
+        {% set AddName %}
+
+        <p class="govuk-body">NN 11 22 33 Y = Too young</p>
+        <p class="govuk-body">NN 11 22 33 - = TBC</p>
+
+
+        {% endset %}
+      </div>
+
+      {{ govukDetails({
+        classes: "PC-router",
+        summaryText: "Router and API errors",
+        html: AddName
+
+      }) }}
+
     </div>
   </div>
 {% endblock %}
