@@ -111,6 +111,44 @@
         ]
       }) }}
 
+        <h1 class="govuk-heading-l">Agent: Does {{ data["full-name"] }} receive any of the following benefits:</h1>
+
+        <ul class="govuk-body govuk-list govuk-list--bullet">
+          <li><strong>Attendance Allowance</strong> (AA) or <strong>Constant Attendance Allowance </strong> (CAA)</li>
+          <li><strong>Disability Living Allowance </strong> (DLA) <br>Care component at the middle or higher rate</li>
+          <li><strong>Daily Living Component of Personal Independence Payment</strong> (PIP)</li>
+        </ul>
+
+      {{ govukRadios({
+        idPrefix: "benefit-hospital-check-yn",
+        name: "benefit-hospital-check-yn",
+        fieldset: {
+          legend: {
+            html: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["benefit-hospital-check-yn"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["benefit-hospital-check-yn"] == "No")
+          }
+        ]
+      }) }}
+      <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
+
+
 
 
       </div>

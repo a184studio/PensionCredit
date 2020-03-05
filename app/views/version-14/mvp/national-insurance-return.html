@@ -72,8 +72,23 @@
 
           </div>
 
-          <p class="govuk-body govuk-!-padding-top-6"><a href="national-insurance-return-fail">@pete: Failed call</a></p>
 
+
+
+          <div class="govuk-panel--agent-alert govuk-!-margin-top-6">
+            {% set AddName %}
+
+            <p class="govuk-body"><a href="national-insurance-return-fail">@pete: Failed call</a></p>
+            <p class="govuk-body"><a href="XXX">Error 2</a></p>
+            <p class="govuk-body"><a href="XXX">Error 3</a></p>
+
+            {% endset %}
+          </div>
+
+          {{ govukDetails({
+            summaryText: "Router and API errors",
+            html: AddName
+          }) }}
 
 
 

@@ -287,7 +287,7 @@ router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
     res.redirect(`${baseUrl}/contact-email`)
   }
   else {
-    res.redirect(`${baseUrl}/pensions-overview`)
+    res.redirect(`${baseUrl}/pensions-state-overview`)
   }
 })
 
@@ -300,7 +300,7 @@ router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
   if (emailCheck === 'Yes') {
     res.redirect(`${baseUrl}/contact-formats`)
   } else {
-    res.redirect(`${baseUrl}/pensions-overview`)
+    res.redirect(`${baseUrl}/pensions-state-overview`)
   }
 })
 

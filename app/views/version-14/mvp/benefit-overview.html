@@ -8,26 +8,408 @@
   {% include "includes/internal-header.html" %}
 {% endblock %}
 
-
-
-
-
-
 {% block content %}
 
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form action="benefit-hospital-check-yn" method="post" class="form">
+  <div class="govuk-grid-column-full">
+    <form action="benefits-all-yn" method="post" class="form">
 
-      <input type="hidden" name="benefits-complete" value="in-progress"/>
+<h1 class="govuk-heading-xl">Your Benefits</h1>
 
-      <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-xl"> Agent: Check in Searchlight and discuss any benefits or Tax Credits {{ data["full-name"] }} gets</h1>
+<div class="govuk-panel--agent govuk-!-margin-bottom-8">
+    <p class=govuk-body></p>
+</div>
 
-          <p class=govuk-body>If <strong>Searchlight</strong> shows an interest but no payment amounts, check <strong>Legacy</strong>, <strong>CPS</strong>, the <strong>PIP server</strong> and <strong>IIDB</strong>. Tell the claimant what you see.</p>
-      </div>
+<h2 class="govuk-heading-l govuk-!-margin-bottom-3"><span class="agent-action">In payment</h2>
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-20-percent">Benefit</td>
+      <td class="govuk-table__cell govuk-20-percent">Conponant</td>
+      <td class="govuk-table__cell govuk-20-percent">Start date</td>
+      <td class="govuk-table__cell govuk-20-percent">End date</td>
+      <td class="govuk-table__cell govuk-20-percent">Weekly amount</td>
+
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Bereavement Support Payment</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Bereavement Benefit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Carer's Allowance</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">New Tax Credit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Invalidity Benefit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Incapacity Benefit / ESA</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Income Support</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Universal Credit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Jobseeker's Allowance</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Reduced Earnings Allowance / Retirement Allowance</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Severe Disablement Allowance / - Severe Disablement Occupational Allowance – (subsumed into ESA)</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Widows Benefit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Widow's Pension and Widow's Pension (age related)</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Working Tax Credit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Industrial Death Benefit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">War Orphan's Pension (Veterans Agency)</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Widows Benefit Yes</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Widow's Pension and Widow's Pension (age related)</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Working Tax Credit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Industrial Death Benefit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Attendance Allowance</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Bereavement Support Payment</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Carer's Allowance Supplement</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Disability Living Allowance Yes</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">PIP</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Maternity Allowance</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Sickness Benefit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Pension Credit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-3"><span class="agent-action">Interest</h2>
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-20-percent">Benefit</td>
+        <td class="govuk-table__cell govuk-20-percent"></td>
+        <td class="govuk-table__cell govuk-20-percent">Start date</td>
+        <td class="govuk-table__cell govuk-20-percent">End date</td>
+        <td class="govuk-table__cell govuk-20-percent"></td>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Adult Dependent Pension (Veterans Agency)(payable to widows/widowers)</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Armed Forces Death in Service awards</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Armed Forces Independent payments Yes</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Constant Attendance Allowance – paid with War Disablement Pension</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Council Tax Reduction</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Guaranteed Income Payments from the Armed Forces Comp Scheme (Veterans Agency) (AFCS)</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Housing Benefit</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Industrial Injuries Disablement Benefit</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Maternity Allowance</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Pension Credit</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Sickness Benefit</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">War Disablement Pension (Veterans Agency)</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">War Orphan's Pension (Veterans Agency)</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">War Pension Unemployability Supplement (Veterans Agency) - This is a War Disablement Pension extra allowance and has to be claimed separately</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">War Widowʼs or Widowerʼs Pension (Veterans Agency)</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+  <div class="govuk-grid-row govuk-!-padding-top-2 govuk-!-padding-top-2 govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-panel--agent-single">
+
+    <p class=govuk-body>If <strong>Searchlight</strong> shows an interest but no payment amounts, check <strong>Legacy</strong>, <strong>CPS</strong>, the <strong>PIP server</strong> and <strong>IIDB</strong>. Tell the claimant what you see.</p>
+  </div></div></div>
+
+
 
 <br>
 
@@ -37,8 +419,22 @@
     </form>
 
 
-
     <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+
+    <div class="govuk-panel--agent-alert govuk-!-margin-top-6">
+      {% set AddName %}
+
+      <p class="govuk-body"><a href="XX">Failed call</a></p>
+      <p class="govuk-body"><a href="XXX">Error 2</a></p>
+      <p class="govuk-body"><a href="XXX">Error 3</a></p>
+
+      {% endset %}
+    </div>
+
+    {{ govukDetails({
+      summaryText: "Router and API errors",
+      html: AddName
+    }) }}
 
   </div>
 </div>

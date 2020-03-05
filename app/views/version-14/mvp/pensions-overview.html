@@ -8,38 +8,45 @@
   {% include "includes/internal-header.html" %}
 {% endblock %}
 
-
-
-
-
-
 {% block content %}
 
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form action="pensions-sp-check-yn" method="post" class="form">
-
-      <input type="hidden" name="pensions-complete" value="in-progress"/>
-
-      <div class="govuk-panel--agent">
-        <h1 class="govuk-heading-l"> Agent: Check and discuss the pensions {{ data["full-name"] }} has</h1>
+  <div class="govuk-grid-column-three-quarters">
+    <form action="pensions-monolith" method="post" class="form">
 
 
-          <p class=govuk-body>Check the income tab in <strong>Searchlight</strong> for private and workplace pensions in payment and tell the claimant what you see.</p>
-          <p class=govuk-body>Check the benefits tab in <strong>Searchlight</strong> for State Pension and tell the claimant what you see.</p>
-          <p class=govuk-body>Check the schemes tab in <strong>OLE NIRS</strong> for pension contributions. If contributions indicate unclaimed pensions, send form PPR1.</p>
+    <h1 class="govuk-heading-xl">Your private and workplace pensions in payment</h1>
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Name of provider</td>
+            <td class="govuk-table__cell">Payment made</td>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__cell">Standard Life Assurance Plc</th>
+            <td class="govuk-table__cell">Monthly</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Hargreaves Lansdown</th>
+            <td class="govuk-table__cell">Monthly</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">True Potential Investor</th>
+            <td class="govuk-table__cell">Yearly</td>
+          </tr>
+        </tbody>
+      </table>
 
 
-        {{ govukDetails({
-  summaryText: "What to do if the claimant tells you their private or workplace pensions are wrong",
-  text: "Tell the claimant that you will use the figures you discussed for their claim. The information we have is from HMRC and they should contact HMRC to resolve any issues."
-}) }}
-    </div>
-
-<br>
-
+              {{ govukDetails({
+        summaryText: "What to do if the claimant tells you their private or workplace pensions are wrong",
+        html: "Tell the claimant that you will use the figures you discussed for their claim. The information we have is from HMRC and they should contact HMRC to resolve any issues."
+      }) }}
 
       {{ govukButton({
         text: "Continue"
@@ -47,6 +54,23 @@
     </form>
 
     <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+
+
+    <div class="govuk-panel--agent-alert govuk-!-margin-top-6">
+      {% set AddName %}
+
+      <p class="govuk-body"><a href="pensions-display-no-pension">Display no private and workplace pensions</a></p>
+      <p class="govuk-body"><a href="pensions-api-down">API down</a></p>
+      <p class="govuk-body"><a href="pensions-gcii-down">GCII down</a></p>
+
+      {% endset %}
+    </div>
+
+    {{ govukDetails({
+      summaryText: "Router and API errors",
+      html: AddName
+    }) }}
+
 
   </div>
 </div>
