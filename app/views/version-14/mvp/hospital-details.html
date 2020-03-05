@@ -17,8 +17,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="hospital-summary" method="post">
-        <h1 class="govuk-heading-xl">Details of hospital admissions since XX XX XXXX</h1>
+      <form action="other-income-overview" method="post">
+        <h1 class="govuk-heading-xl">Details of hospital admissions since {{data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']}}</h1>
 
         <p class="govuk-body govuk-!-font-size-19">Details of periods spent in hospital, including:</p>
 

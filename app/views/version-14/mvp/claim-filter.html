@@ -65,6 +65,36 @@
         }
       }) }}
 
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "disregards-capital-total-yn",
+        name: "disregards-capital-total-yn",
+        fieldset: {
+          legend: {
+            html: "System: Routed based on the following",
+
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: " "
+        },
+
+        items: [
+        {
+            value: "Yes",
+            text: "Under or over 10k and/or has capital bonds, shares, second property and foreign account",
+            checked: (data["disregards-capital-total-yn"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "Under 10k in all accounts (None of the four danger accounts)",
+            checked: (data["disregards-capital-total-yn"] == "No")
+          }
+        ]
+      }) }}
+
 
 
       </div>

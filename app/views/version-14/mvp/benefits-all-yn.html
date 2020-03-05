@@ -13,7 +13,12 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="benefits-summary" method="post" class="form">
+
+      <!------------CONDITIONAL ROUTING------------>
+      {% if data['benefit-hospital-check-yn'] == "Yes" %}<form action="hospital-yn" method="post" class="form">{% endif %}
+      {% if data['benefit-hospital-check-yn'] == "No" %}<form action="other-income-overview" method="post" class="form">{% endif %}
+      <!--------------------------————------------->
+
 
         <input type="hidden" name="benefits-complete" value="in-progress"/>
 

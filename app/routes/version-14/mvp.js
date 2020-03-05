@@ -287,7 +287,7 @@ router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
     res.redirect(`${baseUrl}/contact-email`)
   }
   else {
-    res.redirect(`${baseUrl}/contact-summary`)
+    res.redirect(`${baseUrl}/pensions-overview`)
   }
 })
 
@@ -300,7 +300,7 @@ router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
   if (emailCheck === 'Yes') {
     res.redirect(`${baseUrl}/contact-formats`)
   } else {
-    res.redirect(`${baseUrl}/contact-summary`)
+    res.redirect(`${baseUrl}/pensions-overview`)
   }
 })
 
@@ -742,7 +742,7 @@ router.post(`${baseUrl}/msic-pc-payment-choose-router`, (req, res) => {
   const pcPaymentChoose = req.session.data['msic-pc-payment-choose']
 
   if (pcPaymentChoose === 'Same account as State Pension') {
-    res.redirect(`${baseUrl}/msic-pc-payment-summary`)
+    res.redirect(`${baseUrl}/disregards-benefit-check-yn`)
   }
   else if (pcPaymentChoose === 'A different account') {
     res.redirect(`${baseUrl}/msic-pc-payment-alternative-account`)
