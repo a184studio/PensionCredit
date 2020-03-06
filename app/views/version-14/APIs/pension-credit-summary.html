@@ -1280,59 +1280,61 @@ Discharge date
 
   </dl>
 
-  <!------------------------------------------------------------------------------- Hospitals ------------------------------------------------------------>
+    <!------------------------------------------------------------------------------- Pensions ------------------------------------------------------------>
 
-  <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Hospital admissions</h2>
+    <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">State pension details</h2>
 
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-20-percent">Start date</th>
+          <th class="govuk-table__cell govuk-20-percent">End date</th>
+          <th class="govuk-table__cell govuk-20-percent">Amount</th>
+          <th class="govuk-table__cell govuk-20-percent">Payment frequency</th>
+        </tr>
+        </thead>
 
-  <dl class="govuk-summary-list govuk-summary-list--long">
+        <tbody class="govuk-table__body">
 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">01 January 2020</td>
+          <td class="govuk-table__cell">—</td>
+          <td class="govuk-table__cell">£150.00</td>
+          <td class="govuk-table__cell">Weekly</td>
+        </tr>
 
-              <dl class="govuk-summary-list govuk-summary-list--long">
-
-
-                                  <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                      Hospital YN
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                      {{ data["hospital-yn"] }}
-                                    </dd>
-                                    <dd class="govuk-summary-list__actions">
-                                      <a href="hospital-yn">
-                                        Change
-                                      </a>
-                                    </dd>
-                                  </div>
-
-
-                                  {% if data["hospital-more-detail"] %}
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Details
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        {{ data["hospital-more-detail"] }}
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                        <a href="hospital-details">
-                                          Change
-                                        </a>
-                                      </dd>
-                                    </div>
-                                    {% endif %}
+        </tbody>
+        </table>
 
 
+  <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Private and workplace pensions (In payment)</h2>
 
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Name of provider</td>
+          <td class="govuk-table__cell">Payment made</td>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__cell">Standard Life Assurance Plc</th>
+          <td class="govuk-table__cell">Monthly</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Hargreaves Lansdown</th>
+          <td class="govuk-table__cell">Monthly</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">True Potential Investor</th>
+          <td class="govuk-table__cell">Yearly</td>
+        </tr>
+      </tbody>
+    </table>
 
-  </dl></dl>
+  <!------------------------------------------------------------------------------- API end ------------------------------------------------------------>
 
-  <!------------------------------------------------------------------------------- Pensions ------------------------------------------------------------>
-
-
-
-  <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Pensions</h2>
-
+  <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Pensions (Other)</h2>
 
   <dl class="govuk-summary-list govuk-summary-list--long">
 
@@ -1547,8 +1549,98 @@ Discharge date
 <!------------------------------------------------------------------------------- Benefits ------------------------------------------------------------>
 
 
+<div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Benefits (In payment)</h2>
 
-<div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Benefits</h2>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-20-percent">Benefit</td>
+      <td class="govuk-table__cell govuk-20-percent">Conponant</td>
+      <td class="govuk-table__cell govuk-20-percent">Start date</td>
+      <td class="govuk-table__cell govuk-20-percent">End date</td>
+      <td class="govuk-table__cell govuk-20-percent">Weekly amount</td>
+    </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Attendance Allowance</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Bereavement Support Payment</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Disability Living Allowance Yes</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <th scope="row" class="govuk-table__header">—</th>
+      <td class="govuk-table__cell">£00.00</td>
+    </tr>
+
+    </tbody>
+    </table>
+
+    <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Benefits (Interest)</h2>
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-20-percent">Benefit</td>
+        <td class="govuk-table__cell govuk-20-percent"></td>
+        <td class="govuk-table__cell govuk-20-percent">Start date</td>
+        <td class="govuk-table__cell govuk-20-percent">End date</td>
+        <td class="govuk-table__cell govuk-20-percent"></td>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Adult Dependent Pension (Veterans Agency)(payable to widows/widowers)</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Armed Forces Death in Service awards</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <th scope="row" class="govuk-table__header">—</th>
+        <th scope="row" class="govuk-table__header"></th>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------- API END ------------------------------------------------------------>
+
+<div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Benefits (Other)</h2>
+
 
 
             <dl class="govuk-summary-list govuk-summary-list--long">
@@ -1684,6 +1776,54 @@ Discharge date
               {% endif %}
 
 </dl>
+
+<!------------------------------------------------------------------------------- Hospitals ------------------------------------------------------------>
+
+<div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Hospital admissions</h2>
+
+
+<dl class="govuk-summary-list govuk-summary-list--long">
+
+
+            <dl class="govuk-summary-list govuk-summary-list--long">
+
+
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Hospital YN
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    {{ data["hospital-yn"] }}
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                    <a href="hospital-yn">
+                                      Change
+                                    </a>
+                                  </dd>
+                                </div>
+
+
+                                {% if data["hospital-more-detail"] %}
+                                  <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                      Details
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                      {{ data["hospital-more-detail"] }}
+                                    </dd>
+                                    <dd class="govuk-summary-list__actions">
+                                      <a href="hospital-details">
+                                        Change
+                                      </a>
+                                    </dd>
+                                  </div>
+                                  {% endif %}
+
+
+
+
+</dl></dl>
+
 
 
 <!------------------------------------------------------------------------------- Earnings & other income ------------------------------------------------------------>

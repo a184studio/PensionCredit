@@ -287,7 +287,7 @@ router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
     res.redirect(`${baseUrl}/contact-email`)
   }
   else {
-    res.redirect(`${baseUrl}/pensions-state-overview`)
+    res.redirect(`${baseUrl}/address-correspondence-yn`)
   }
 })
 
@@ -300,7 +300,7 @@ router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
   if (emailCheck === 'Yes') {
     res.redirect(`${baseUrl}/contact-formats`)
   } else {
-    res.redirect(`${baseUrl}/pensions-state-overview`)
+    res.redirect(`${baseUrl}/address-correspondence-yn`)
   }
 })
 
@@ -423,7 +423,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/rent-service-charges`)
   }
   else if (homeOwnership === 'You live in someone else\'s home without paying rent') {
-    res.redirect(`${baseUrl}/address-summary`)
+    res.redirect(`${baseUrl}/pensions-state-overview`)
   }
   else if (homeOwnership === 'You own and rent it (shared ownership)') {
     res.redirect(`${baseUrl}/notepad-shared-ownership`)
@@ -435,10 +435,10 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/notepad-sheltered`)
   }
   else if (homeOwnership === 'Other accommodation') {
-    res.redirect(`${baseUrl}/address-summary`)
+    res.redirect(`${baseUrl}/pensions-state-overview`)
   }
 
-  res.redirect(`${baseUrl}/address-summary`)
+  res.redirect(`${baseUrl}/pensions-overview`)
 })
 
 
@@ -459,7 +459,7 @@ router.post(`${baseUrl}/rent-housing-benefit-yn-router`, (req, res) => { // rout
   const rentHousingBenefitApply = req.session.data['rent-housing-benefit-yn']  // name of data / id name
 
   if (rentHousingBenefitApply === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/address-summary`)
+    res.redirect(`${baseUrl}/pensions-overview`)
   } else {
     res.redirect(`${baseUrl}/rent-housing-benefit-apply`)
   }
@@ -506,7 +506,7 @@ router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router na
   const rentCouncilTaxApply = req.session.data['own-council-tax-yn']  // name of data / id name
 
   if (rentCouncilTaxApply === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/address-summary`)
+    res.redirect(`${baseUrl}/pensions-overview`)
   } else {
     res.redirect(`${baseUrl}/own-council-tax-apply`)
   }
