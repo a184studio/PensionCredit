@@ -12,7 +12,11 @@ Account with: {% extends "layout-id-bar.html" %}
 
 {% include "includes/js-back-link.html" %}
 
-  <form action="msic-sp-payment-choose" method="post" class="form">
+
+    <!------------CONDITIONAL ROUTING------------>
+    {% if data["disregards-capital-total-yn"] == "Yes" %}<form action="disregards-benefit-check-yn" method="post" class="form">{% endif %}
+    {% if data["disregards-capital-total-yn"] == "No" %}<form action="msic-sp-payment-choose" method="post" class="form">{% endif %}
+    <!--------------------------————------------->
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">

@@ -15,10 +15,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-            <!------------CONDITIONAL ROUTING------------>
-            {% if data["disregards-capital-total-yn"] == "Yes" %}<form action="disregards-benefit-check-yn" method="post" class="form">{% endif %}
-            {% if data["disregards-capital-total-yn"] == "No" %}<form action="pension-credit-summary" method="post" class="form">{% endif %}
-            <!--------------------------————------------->
+            <form action="pension-credit-summary" method="post" class="form">
 
       <input type="hidden" name="msic-pc-payment-complete" value="in-progress"/>
 
