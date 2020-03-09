@@ -13,47 +13,50 @@
 {% include "includes/js-back-link.html" %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-thirds">
       <form action="claim-date-cam-date-reason" method="post">
 
+        <div class="govuk-panel--agent">
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Agent: Work out the earliest date a claim can be considered from</h1>
 
-<!--
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            Agent: Check if there is an initial date of claim (IDOC) in PTP CAM.
-          </strong>
-        </div>
+          <p class='govuk-body govuk-!-font-size-24 govuk-!-padding-bottom-0'>Talk to the claimant and use the information available in CAM and SearchLight to help them decide the best date to start their claim.</p>
 
--->
 
-<div class="govuk-panel--agent">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Things that could influence this date are:</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>previous claims for Pension Credit or other benefits </li>
+            <li>changes to whether they live with a partner or anyone else</li>
+            <li>changes to the amount of money they have, their income or employment status</li>
+            <li>whether they have spent longer than 4 weeks outside the UK since the earliest claim date, unless it was connected to medical treatment, convalescence or the death of a partner or child</li>
+              </ul>
+
+        <br>
 
         {{ govukDateInput({
-          id: "claim-date-cam-date-entry",
-          namePrefix: "claim-date-cam-date-entry",
-          fieldset: {
-            legend: {
-              html: "<span class=\"agent-action\">Agent: </span>Use CAM to work out the date of claim",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            text: "For example, 12 11 2019"
-          }
+        id: "claim-date-cam-date-entry",
+        namePrefix: "claim-date-cam-date-entry",
+        fieldset: {
+        legend: {
+        html: "Claim start date",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+        }
+        },
+        hint: {
+        text: "For example, 12 11 2019"
+        }
         }) }}
 
-                </div>
+      </div>
+
+
 
 
         {{ govukButton({
           text: "Continue"
         }) }}
-
       </form>
-      <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+        <p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
     </div>
   </div>
 {% endblock %}
