@@ -16,6 +16,55 @@
 
 {% endblock %}
 
+{% block footer %}
+
+<footer class="govuk-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__navigation">
+      <div class="govuk-footer__section">
+        <h2 class="govuk-heading-s">Pension Credit service help and information</h2>
+
+        <ul class="govuk-footer__list govuk-footer__list--columns-2">
+          <li class="govuk-footer__list-item">
+            <a class="govuk-footer__link" href="/eject-error-reason">
+              Save claim and exit
+            </a>
+          </li>
+          <li class="govuk-footer__list-item">
+            <a class="govuk-footer__link" href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter">
+              Personal Information Charter (opens in a new window or tab)
+            </a>
+          </li>
+          <li class="govuk-footer__list-item">
+            <a class="govuk-footer__link" href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter">
+               .
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+{{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+
+
+{% endblock %}
+
 
 
 <!--
