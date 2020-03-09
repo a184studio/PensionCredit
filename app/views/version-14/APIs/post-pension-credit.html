@@ -26,14 +26,15 @@
       <div class="govuk-panel--agent">
 
 
-    <h1 class="govuk-heading-xl">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
       Agent: What to do next
     </h1>
 
     <!----------------------------------------------------------------------------------->
     {% if data["own-mortgage-home-loan-yes"] == "Yes" %}
 
-    <h2 class="govuk-heading-m">Send Support for Mortgage Interest (SMI) information pack</h2>
+<div class="govuk-!-margin-bottom-8">
+    <h2 class="govuk-heading-xm">Send Support for Mortgage Interest (SMI) information pack</h2>
 
       <p class=govuk-body>(Name) told you they want to apply for Support for Mortgage Interest. Tell them they will be sent an information pack and application form.</p>
       <p class=govuk-body>Open the claimant's file in PTP CAM and select the:</p>
@@ -48,24 +49,25 @@
 
       <p class=govuk-body>Set <strong>PTP CAM</strong> task for outbound correspondence (task type) <strong>MI12</strong> (sub type)</p>
       <p class=govuk-body>Assign task to housing costs team queue in the relevant pension centre. The pension centre will be displayed as the owing office in the <strong>more info</strong> view.</p>
-
-    {% endif %}
+</div>
+      {% endif %}
 
 <!----------------------------------------------------------------------------------->
 {% if (data["rent-council-tax-apply"] == "Yes") or (data["own-council-tax-apply"] == "Yes") %}
 
-<h2 class="govuk-heading-m govuk-!-padding-top-6">Signpost to Council Tax Reduction</h2>
-
-<p class="govuk-body">(Name) told you they would like to apply for Council Tax Reduction. They should contact their local authority to apply.</p>
+<div class="govuk-!-margin-bottom-8">
+  <h2 class="govuk-heading-xm">Signpost to Council Tax Reduction</h2>
+  <p class="govuk-body">(Name) told you they would like to apply for Council Tax Reduction. They should contact their local authority to apply.</p>
+</div>
 {% endif %}
 
 <!----------------------------------------------------------------------------------->
 {% if data["rent-housing-benefit-apply"] == "Yes" %}
 
-<h2 class="govuk-heading-m govuk-!-padding-top-6">Take Housing Benefit application</h2>
-
-
-<p class="govuk-body">Complete the <a href="Pauls URL">Housing Benefit claim (opens in a new window or tab).<a/></p>
+<div class="govuk-!-margin-bottom-8">
+  <h2 class="govuk-heading-xm">Take Housing Benefit application</h2>
+  <p class="govuk-body">Complete the <a href="Pauls URL">Housing Benefit claim (opens in a new window or tab).<a/></p>
+</div>
 {% endif %}
 
 
@@ -82,33 +84,21 @@
 -->
 <!----------------------------------------------------------------------------------->
 
+<div class="govuk-!-margin-bottom-8">
+  <h2 class="govuk-heading-xm">Ask about Carer's Allowance</h2>
 
-        <h2 class="govuk-heading-m govuk-!-padding-top-6">Ask about Carer's Allowance</h2>
-
-          <p class="govuk-body">If (Name) cares for someone for more than 35 hours a week, give them the details of how to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance (Opens in a new window or tab)<a/>.</p>
-          <ul class="govuk-list govuk-list">
-          <li>Telephone: 0800 731 0297</li>
-          <li>Textphone: 0800 731 0317</li>
-          <li><a href="https://www.ngts.org.uk/" class="govuk-link govuk-link--no-visited-state">Next Generation Text (NGT) (Opens in a new window or tab)</a> text relay (if you cannot hear or speak on the phone): 18001 then 0800 731 0297</li>
-              <li>Monday to Friday, 8am to 6pm</li>
-              <li><a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state">Find out about call charges  (Opens in new window)</a></li>
-          </ul>
-
-
-        </div>
-
-<!----------------------------------------------------------------------------------->
-
-
-
-
-
-
-
+  <p class="govuk-body">If (Name) cares for someone for more than 35 hours a week, give them the details of how to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance (Opens in a new window or tab)<a/>.</p>
+  <ul class="govuk-list govuk-list">
+  <li>Telephone: 0800 731 0297</li>
+  <li>Textphone: 0800 731 0317</li>
+  <li><a href="https://www.ngts.org.uk/" class="govuk-link govuk-link--no-visited-state">Next Generation Text (NGT) (Opens in a new window or tab)</a> text relay (if you cannot hear or speak on the phone): 18001 then 0800 731 0297</li>
+      <li>Monday to Friday, 8am to 6pm</li>
+      <li><a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state">Find out about call charges  (Opens in new window)</a></li>
+  </ul>
+</div>
+</div>
 
 <!----------------------------------------------------------------------------------->
-
-<br><br>
 
       {{ govukButton({
         text: "Finish and close"
