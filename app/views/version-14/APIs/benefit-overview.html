@@ -22,6 +22,134 @@
     <p class=govuk-body></p>
 </div>
 
+{% if data["nino"] == "NN 11 22 33 B" %}
+<div>
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom-3"><span class="agent-action">In payment</h2>
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-32-percent">Benefit</td>
+      <td class="govuk-table__cell govuk-22-percent">Conponant</td>
+      <td class="govuk-table__cell govuk-12-percent">Start date</td>
+      <td class="govuk-table__cell govuk-12-percent"><strong>End date</strong></td>
+      <td class="govuk-table__cell govuk-12-percent">Amount</td>
+      <td class="govuk-table__cell govuk-10-percent">Frequency</td>
+
+    </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Attendance Allowance</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <td class="govuk-table__cell">—</td>
+      <td class="govuk-table__cell">£00.00</td>
+      <td class="govuk-table__cell">W / M / Y</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Bereavement Support Payment</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <td class="govuk-table__cell">—</td>
+      <td class="govuk-table__cell">£00.00</td>
+      <td class="govuk-table__cell">W / M / Y</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Carer's Allowance</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <td class="govuk-table__cell">—</td>
+      <td class="govuk-table__cell">£00.00</td>
+      <td class="govuk-table__cell">W / M / Y</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">PIP</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <td class="govuk-table__cell">—</td>
+      <td class="govuk-table__cell">£00.00</td>
+      <td class="govuk-table__cell">W / M / Y</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">Working Tax Credit</th>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell">X M XX</td>
+      <td class="govuk-table__cell">—</td>
+      <td class="govuk-table__cell">£00.00</td>
+      <td class="govuk-table__cell">W / M / Y</td>
+    </tr>
+
+    </tbody>
+    </table>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-3"><span class="agent-action">Interest</h2>
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-32-percent">Benefit</td>
+        <td class="govuk-table__cell govuk-22-percent">.</td>
+        <td class="govuk-table__cell govuk-12-percent">Start date</td>
+        <td class="govuk-table__cell govuk-12-percent"><strong>End date</strong></td>
+        <td class="govuk-table__cell govuk-22-percent"></td>
+
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Council Tax Reduction</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <td class="govuk-table__cell">—</td>
+        <th scope="row" class="govuk-table__header"></th>
+        <td class="govuk-table__cell"> </td>
+
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">Housing Benefit</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <td class="govuk-table__cell">—</td>
+        <th scope="row" class="govuk-table__header"></th>
+        <td class="govuk-table__cell"> </td>
+
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">War Disablement Pension (Veterans Agency)</th>
+        <td class="govuk-table__cell"> </td>
+        <td class="govuk-table__cell">01 M XXXX</td>
+        <td class="govuk-table__cell">—</td>
+        <th scope="row" class="govuk-table__header"></th>
+        <td class="govuk-table__cell"> </td>
+
+      </tr>
+
+
+    </tbody>
+  </table>
+
+</div>
+{% endif %}
+<!---->
+
+{% if data["nino"] !== "NN 11 22 33 B" %}
+<!-- FULL -->
+<div>
+
 <h2 class="govuk-heading-l govuk-!-margin-bottom-3"><span class="agent-action">In payment</h2>
 
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
@@ -469,7 +597,8 @@
     </tbody>
   </table>
 
-
+</div>
+{% endif %}
 
   <div class="govuk-grid-row govuk-!-padding-top-2 govuk-!-padding-top-2 govuk-!-margin-top-0 govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-two-thirds">
