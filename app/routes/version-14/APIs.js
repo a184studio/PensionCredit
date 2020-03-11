@@ -757,7 +757,7 @@ router.post(`${baseUrl}/msic-pc-payment-choose-router`, (req, res) => {
   const pcPaymentChoose = req.session.data['msic-pc-payment-choose']
 
   if (pcPaymentChoose === 'Same account as State Pension') {
-    res.redirect(`${baseUrl}/pension-credit-summary`)
+    res.redirect(`${baseUrl}/disregards-benefit-check-yn`)
   }
   else if (pcPaymentChoose === 'A different account') {
     res.redirect(`${baseUrl}/msic-pc-payment-alternative-account`)
