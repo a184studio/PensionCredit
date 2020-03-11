@@ -58,10 +58,10 @@ router.post(`${baseUrl}/national-insurance-router`, (req, res) => {
   const nationalInsuranceRouter = req.session.data['nino']
 
   if (nationalInsuranceRouter === 'NN 11 22 33 M') {
-    res.redirect(`${baseUrl}/national-insurance-return-fail`)
+    res.redirect(`${baseUrl}/national-insurance-return-no-match`)
   }
-  else if (nationalInsuranceRouter === 'NN 11 22 33 U') {
-    res.redirect(`${baseUrl}/API-broken`)
+  else if (nationalInsuranceRouter === 'NN 11 22 33 F') {
+    res.redirect(`${baseUrl}/national-insurance-return-error-500`)
   }
   else {
     res.redirect(`${baseUrl}/national-insurance-return`)
