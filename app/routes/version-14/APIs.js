@@ -54,6 +54,21 @@ router.post(`${baseUrl}/national-insurance-call-AB-router`, (req, res) => {
 
 
 
+router.post(`${baseUrl}/national-insurance-router`, (req, res) => {
+  const nationalInsuranceRouter = req.session.data['nino']
+
+  if (nationalInsuranceRouter === 'NN 11 22 33 M') {
+    res.redirect(`${baseUrl}/national-insurance-return-fail`)
+  }
+  else if (nationalInsuranceRouter === 'NN 11 22 33 U') {
+    res.redirect(`${baseUrl}/API-broken`)
+  }
+  else {
+    res.redirect(`${baseUrl}/national-insurance-return`)
+  }
+})
+
+
 router.post(`${baseUrl}/national-insurance-return-router`, (req, res) => {
   const nationalInsuranceReturn = req.session.data['national-insurance-return']
 
