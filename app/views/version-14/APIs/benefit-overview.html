@@ -16,11 +16,30 @@
   <div class="govuk-grid-column-full">
     <form action="benefits-all-yn" method="post" class="form">
 
-<h1 class="govuk-heading-xl">Your Benefits</h1>
+<h1 class="govuk-heading-xl">Your benefits</h1>
 
 <div class="govuk-panel--agent govuk-!-margin-bottom-8">
     <p class=govuk-body></p>
 </div>
+
+
+{% if data["nino"] == "NN 11 22 33 P" %}
+
+<div class="govuk-!-margin-bottom-8">
+<h2 class="govuk-heading-l govuk-!-margin-bottom-3"><span class="agent-action">In payment</h2>
+<h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Attendance Allowance</h1>
+<h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Bereavement Support Payment</h1>
+<h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Carer's Allowance</h1>
+<h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">PIP</h1>
+<h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Working Tax Credit</h1>
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom-3"><span class="agent-action">Interest</h2>
+  <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Council Tax Reduction</h1>
+  <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Housing Benefit</h1>
+  <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">War Disablement Pension </h1>
+
+</div>
+{% endif %}
 
 {% if data["nino"] == "NN 11 22 33 B" %}
 <div>
@@ -31,7 +50,7 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell govuk-32-percent">Benefit</td>
-      <td class="govuk-table__cell govuk-22-percent">Conponant</td>
+      <td class="govuk-table__cell govuk-22-percent">Component</td>
       <td class="govuk-table__cell govuk-12-percent">Start date</td>
       <td class="govuk-table__cell govuk-12-percent"><strong>End date</strong></td>
       <td class="govuk-table__cell govuk-12-percent">Amount</td>
@@ -73,6 +92,24 @@
 
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__cell">PIP</th>
+      <td class="govuk-table__cell">Enhanced daily living</td>
+      <td class="govuk-table__cell">18 Jan 2018</td>
+      <td class="govuk-table__cell">—</td>
+      <td class="govuk-table__cell">£87.65</td>
+      <td class="govuk-table__cell">Weekly</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">.</th>
+      <td class="govuk-table__cell">Enhanced daily living</td>
+      <td class="govuk-table__cell">18 Jan 2018</td>
+      <td class="govuk-table__cell">—</td>
+      <td class="govuk-table__cell">£87.65</td>
+      <td class="govuk-table__cell">Weekly</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__cell">.</th>
       <td class="govuk-table__cell">Enhanced daily living</td>
       <td class="govuk-table__cell">18 Jan 2018</td>
       <td class="govuk-table__cell">—</td>
@@ -146,8 +183,7 @@
 {% endif %}
 <!---->
 
-{% if data["nino"] !== "NN 11 22 33 B" %}
-<!-- FULL -->
+<!--
 <div>
 
 <h2 class="govuk-heading-l govuk-!-margin-bottom-3"><span class="agent-action">In payment</h2>
@@ -597,16 +633,17 @@
     </tbody>
   </table>
 
-</div>
-{% endif %}
+</div> -->
 
+
+<!--
   <div class="govuk-grid-row govuk-!-padding-top-2 govuk-!-padding-top-2 govuk-!-margin-top-0 govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-two-thirds">
   <div class="govuk-panel--agent-single">
 
     <p class="govuk-body govuk-!-font-size-24"><strong>Agent:</strong> If <strong>Searchlight</strong> shows an interest but no payment amounts, check <strong>Legacy</strong>, <strong>CPS</strong>, the <strong>PIP server</strong> and <strong>IIDB</strong>. Tell the claimant what you see.</p>
   </div></div></div>
-
+-->
 
 
 <br>
