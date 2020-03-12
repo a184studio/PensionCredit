@@ -21,6 +21,7 @@ function makeAStay(data) {
 
 
 
+
 router.post(`${baseUrl}/security-router`, (req, res) => {
   const passedSecurity = req.session.data['passed-security']
 
