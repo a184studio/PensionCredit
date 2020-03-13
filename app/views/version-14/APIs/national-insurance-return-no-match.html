@@ -21,7 +21,7 @@
         <div class="govuk-panel--agent">
 
         <!------------HEADLINE------------>
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Details do not match</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Person not found</h1>
 
           <!------------ if only one headline on a page swap the headline for legend, ask Niall------------>
 
@@ -30,13 +30,15 @@
           {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-0">What is ["who-is-caller-name"]'s details?</h1>{% endif %}
           {% endset %} -->
         <!------------HEADLINE------------>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">The National Insurance number and date of birth do not match. Confrm these with the caller and try again.</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">There is no record for that combination of National Insurance number and date of birth. Check the details and try again.</p>
 
           {{ govukButton({
             classes: "govuk-!-margin-bottom-0",
             text: "Try again"
           }) }}
-
+          <br>
+          <br>
+          <p class="govuk-body govuk-!-margin-top-6"><a href="name-and-nino">Enter claimant's details manually</a></p>
 </div>
 
       </form>

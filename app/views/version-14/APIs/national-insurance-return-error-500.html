@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-id-bar.html" %}
 
 {% block pageTitle %}
   Name and National Insurance number - Pension Credit
@@ -21,7 +21,7 @@
         <div class="govuk-panel--agent">
 
         <!------------HEADLINE------------>
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Agent: Sorry it's not you it's me. </h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Adviser: We were not able to look up the claimant's details </h1>
 
           <!------------ if only one headline on a page swap the headline for legend, ask Niall------------>
 
@@ -30,12 +30,14 @@
           {% if data["who-is-caller"] !== "Yourself" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-0">What is ["who-is-caller-name"]'s details?</h1>{% endif %}
           {% endset %} -->
         <!------------HEADLINE------------>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">500 error . Soz mate, no internets. As a user I want to understand that it wasn't my mistake, and this is an error in the system.</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">There was a system error. Try again or enter the claimant's details manually.</p>
 
           {{ govukButton({
             classes: "govuk-!-margin-bottom-0",
             text: "Try again"
           }) }}
+
+          <p class="govuk-body govuk-!-margin-top-6"><a href="name-and-nino">Enter claimant's details manually</a></p>
 
 </div>
 
