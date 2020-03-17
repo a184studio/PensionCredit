@@ -65,7 +65,7 @@
 
 
 
-<div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Claimant or representative</h2>
+<div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">Caller details</h2>
 
 
 {{ govukSummaryList({
@@ -78,7 +78,7 @@
       text: "Who you are claiming for"
     },
     value: {
-      text: data['claiming-for']
+      text: data['who-is-caller']
     },
     actions: {
       items: [
@@ -89,7 +89,17 @@
         }
       ]
     }
-  },
+  }
+
+  ]
+}) }}
+{% if data["who-is-caller-name"] %}
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
   {
     classes: 'govuk-summary-list',
     key: {
@@ -107,9 +117,30 @@
         }
       ]
     }
+  },
+
+  {
+    key: {
+      text: "Number you are calling from"
+    },
+    value: {
+      text: data["telephone-number"]
+    },
+    actions: {
+      items: [
+        {
+          href: "name-and-nino",
+          text: "Change",
+          visuallyHiddenText: "Change number you are calling from"
+        }
+      ]
+    }
   }
+
   ]
 }) }}
+
+{% endif %}
 
 
 <div class="govuk-!-padding-bottom-7"></div><h2 class="govuk-heading-xm">About you</h2>
@@ -118,6 +149,42 @@
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
+
+                        {
+                          key: {
+                            text: "National Insurance number"
+                          },
+                          value: {
+                            text: data["nino"]
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "name-and-nino",
+                                text: " ",
+                                visuallyHiddenText: "Change National Insurance number"
+                              }
+                            ]
+                          }
+                        },
+
+                        {
+                          key: {
+                            text: "Date of birth"
+                          },
+                          value: {
+                            text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "over-spa",
+                                text: "",
+                                visuallyHiddenText: "Change date of birth"
+                              }
+                            ]
+                          }
+                        },
 
                         {
                           key: {
@@ -130,29 +197,13 @@
                             items: [
                               {
                                 href: "name-and-nino",
-                                text: "Change",
+                                text: "",
                                 visuallyHiddenText: "Change name"
                               }
                             ]
                           }
                         },
-                        {
-                          key: {
-                            text: "National Insurance number"
-                          },
-                          value: {
-                            text: data["nino"]
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "name-and-nino",
-                                text: "Change",
-                                visuallyHiddenText: "Change National Insurance number"
-                              }
-                            ]
-                          }
-                        },
+
                         {
                           key: {
                             text: "Number you are calling from"
@@ -169,26 +220,38 @@
                               }
                             ]
                           }
-                        },
-                        {
-                          key: {
-                            text: "Date of birth"
-                          },
-                          value: {
-                            text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "over-spa",
-                                text: "Change",
-                                visuallyHiddenText: "Change date of birth"
-                              }
-                            ]
-                          }
                         }
+
                       ]
                     }) }}
+
+                  {% if data["who-is-caller-name"] == "Yourself" %}
+
+                    {{ govukSummaryList({
+                      classes: 'govuk-!-margin-bottom-9',
+                      rows: [
+
+                      {
+                        key: {
+                          text: "Number you are calling from"
+                        },
+                        value: {
+                          text: data["telephone-number"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "name-and-nino",
+                              text: "Change",
+                              visuallyHiddenText: "Change number you are calling from"
+                            }
+                          ]
+                        }
+                      }
+
+                    ]
+                  }) }}
+                  {% endif %}
 
                     {{ govukSummaryList({
                       rows: [
