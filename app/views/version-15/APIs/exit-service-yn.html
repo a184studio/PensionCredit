@@ -15,30 +15,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="start" method="post" class="form">
-      {{ govukRadios({
-        idPrefix: "msic-remove-yn",
-        name: "msic-remove-yn",
-        fieldset: {
-          legend: {
-            text: "Are you sure you wish to leave the service?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        classes: "govuk-radios--inline",
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            checked: (data["msic-remove-yn"] == "yes")
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: (data["msic-remove-yn"] == "no")
-          }
-        ]
-      }) }}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Are you sure you wish to leave the service?</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Go back, or leave</p>
+
 
       {{ govukButton({
         text: "End session",
