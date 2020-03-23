@@ -80,11 +80,21 @@ $govuk-assets-path: '/govuk/assets/';
   background-color: #6f777b;
 }
 
+.govuk-tag--tested {
+  background-color: #28a197;
+}
+
+.govuk-tag--untested {
+  background-color: #d4351c;
+}
+
 .govuk-tag--incomplete {
   text-transform: capitalize;
   color: #6f777b;
   background-color: #dee0e2;
 }
+
+
 
 .app-task-list__task-completed {
   text-transform: capitalize;
