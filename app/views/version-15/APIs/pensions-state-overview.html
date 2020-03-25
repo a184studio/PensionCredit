@@ -22,14 +22,23 @@
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Your State Pension is in payment</h1>
 
-    <!-- <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Start date: <strong>@MM date of birth + 68 years / 1 January 2020</strong></h1> -->
-    <!-- <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">End date: <strong>—</strong></h1> -->
     <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-1">Amount: <strong>£150.00</strong></p>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Figure reflects payment of AA and SP combined so may appear higher. Or we only ever show the State Pension amount. When in benefits we show AA as a benefit amount</p>
 
-    <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-6">Payment frequency: <strong>Weekly</strong></p>
+    <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-8">Payment frequency: <strong>Weekly</strong></p>
 
-<br><br>
+—————
+
+    <div class="govuk-panel--agent govuk-!-margin-bottom-6">
+      <h1 class="govuk-heading-m"><span class="agent-action">Adviser: Discuss State Pension details with {{data["full-name"]}}.</h1>
+    </div>
+
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Your State Pension and AA is in payment</h1>
+
+  <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-1">Amount: <strong>£150.00</strong></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Figure reflects payment of AA and SP combined so may appear higher. Or we only ever show the State Pension amount. When in benefits we show AA as a benefit amount</p>
+
+  <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-8">Payment frequency: <strong>Weekly</strong></p>
+
 
       {{ govukButton({
         text: "Continue"
