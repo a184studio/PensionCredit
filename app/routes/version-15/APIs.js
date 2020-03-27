@@ -92,7 +92,7 @@ router.post(`${baseUrl}/national-insurance-return-previous-PC-router`, (req, res
   if (nationalInsuranceReturn === 'Yes') {
     res.redirect(`${baseUrl}/caller-number`)
   } else {
-    res.redirect(`${baseUrl}/exit-service-yn`)
+    res.redirect(`${baseUrl}/done-pc-in-payment`)
   }
 })
 
