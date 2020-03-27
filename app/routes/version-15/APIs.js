@@ -64,6 +64,12 @@ router.post(`${baseUrl}/national-insurance-router`, (req, res) => {
   else if (nationalInsuranceRouter === 'NN 11 22 33 F') {
     res.redirect(`${baseUrl}/national-insurance-return-error-500`)
   }
+  else if (nationalInsuranceRouter === 'NN 11 22 33 R') {
+    res.redirect(`${baseUrl}/national-insurance-return-previous-PC`)
+  }
+  else if (nationalInsuranceRouter === 'NN 11 22 33 T') {
+    res.redirect(`${baseUrl}/national-insurance-return-previous-PC`)
+  }
   else {
     res.redirect(`${baseUrl}/national-insurance-return`)
   }
@@ -80,6 +86,15 @@ router.post(`${baseUrl}/national-insurance-return-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/national-insurance-return-previous-PC-router`, (req, res) => {
+  const nationalInsuranceReturn = req.session.data['national-insurance-return-previous-PC']
+
+  if (nationalInsuranceReturn === 'Yes') {
+    res.redirect(`${baseUrl}/caller-number`)
+  } else {
+    res.redirect(`${baseUrl}/exit-service-yn`)
+  }
+})
 
 router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
   const hasPartner = req.session.data['has-partner']

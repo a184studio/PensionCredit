@@ -1,0 +1,93 @@
+{% extends "layout-id-bar-temp.html" %}
+
+{% block pageTitle %}
+  PC relationship or in payment - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <form action="national-insurance-return-previous-PC-router" method="post" class="form">
+
+        <div class="govuk-panel--agent">
+
+        <!------------HEADLINE------------>
+        {% if data["nino"] == "NN 11 22 33 R" %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Adviser: Claimant is getting PC</h1>
+        {% endif %}
+
+        {% if data["nino"] == "NN 11 22 33 T" %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Adviser: Claimant is getting PC via a partner</h1>
+
+        {% endif %}
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">What are we asking the agent to do?</p>
+
+<br>
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "national-insurance-return-previous-PC",
+          name: "national-insurance-return-previous-PC",
+          fieldset: {
+            legend: {
+              html: "Are you happy to continue based on what you know??",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            html: ""
+          },
+          items: [
+          {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["national-insurance-return-previous-PC"] == "Yes")
+            },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["national-insurance-return-previous-PC"] == "No")
+              }
+            ]
+          }) }}
+
+          </div>
+
+          {{ govukButton({
+            classes: "govuk-!-margin-bottom-0",
+            text: "Continue"
+          }) }}
+
+
+
+
+      </form>
+      <!-- <p class="govuk-body govuk-!-padding-top-8"><a href="eject-error-reason">Save claim and exit</a></p> -->
+
+      <div class="govuk-panel--agent-alert govuk-!-margin-top-6">
+        {% set AddName %}
+
+        <p class="govuk-body"><a href="national-insurance-return-fail">@pete: Failed call</a></p>
+        <p class="govuk-body"><a href="XXX">Error 2</a></p>
+        <p class="govuk-body"><a href="XXX">Error 3</a></p>
+
+        {% endset %}
+      </div>
+
+      {{ govukDetails({
+        classes: "PC-router",
+        summaryText: "Router and API errors",
+        html: AddName
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
