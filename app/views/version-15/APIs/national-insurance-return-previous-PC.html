@@ -22,13 +22,16 @@
         <!------------HEADLINE------------>
         {% if data["nino"] == "NN 11 22 33 R" %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Adviser: The claimant has an existing Pension Credit claim</h1>
+
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Discuss the reason that a claim already exists for the claimant, whether it is their own claim or a partner's claim. </p>
         {% endif %}
 
         {% if data["nino"] == "NN 11 22 33 T" %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Adviser: The claimant is part of a partner's existing Pension Credit claim</h1>
 
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Discuss the reason that the claimant is part of a partner's existing claim. </p>
         {% endif %}
-            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Discuss the reason that a claim already exists for the claimant, whether it is their own claim or a partner's claim. </p>
+
 
             <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Decide if there is a valid reason to take a new claim. For example separation, bereavement or other changes in the claimant's circumstances.</p>
 
