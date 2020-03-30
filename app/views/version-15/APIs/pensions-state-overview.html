@@ -40,35 +40,69 @@
 
   <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-8">Payment made: <strong>weekly</strong></p>
 
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-<div class="govuk-panel--agent govuk-!-margin-bottom-6">
-  <h1 class="govuk-heading-m"><span class="agent-action">Adviser: This is advanced claim</h1>
-</div>
-
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">So your first payment hasnt been made. Agent needs to check Payment details. See if they exist.</h1>
-
-<p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-1">XXX: <strong>XXX</strong></p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">@this will effect the following pages content. YN SP in payment or not</p>
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-<div class="govuk-panel--agent govuk-!-margin-bottom-6">
-  <h1 class="govuk-heading-m"><span class="agent-action">Adviser: Entiled to nil</h1>
-</div>
-
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This is you are entitled to State Pension but you don't get any money from it becasue of X</h1>
-
-<p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-1">XXX: <strong>XXX</strong></p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">@this will effect the following pages content. YN SP in payment or not</p>
-
-
-
 
 
       {{ govukButton({
         text: "Continue"
       }) }}
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <div class="govuk-panel--agent govuk-!-margin-bottom-6">
+        <h1 class="govuk-heading-m"><span class="agent-action">Adviser: This is advanced claim</h1>
+      </div>
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">So your first payment hasnt been made. Agent needs to check Payment details. See if they exist.</h1>
+
+      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-1">XXX: <strong>XXX</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">@this will effect the routing and following pages content. YN SP in payment or not</p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <div class="govuk-panel--agent govuk-!-margin-bottom-6">
+        <h1 class="govuk-heading-m"><span class="agent-action">Adviser: Entiled to nil</h1>
+      </div>
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This is you are entitled to State Pension but you don't get any money from it becasue of X</h1>
+
+      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-1">XXX: <strong>XXX</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">@this will effect the routing and following pages content. YN SP in payment or not</p>
+
+
+
+
+
+      {{ govukRadios({
+        idPrefix: "pensions-sp-check-yn",
+        name: "pensions-sp-check-yn",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["pensions-sp-check-yn"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["pensions-sp-check-yn"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
     </form>
 
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
