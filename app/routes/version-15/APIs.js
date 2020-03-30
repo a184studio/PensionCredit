@@ -65,7 +65,7 @@ router.post(`${baseUrl}/national-insurance-router`, (req, res) => {
     res.redirect(`${baseUrl}/national-insurance-return-error-500`)
   }
   else if (nationalInsuranceRouter === 'NN 11 22 33 R') {
-    res.redirect(`${baseUrl}/national-insurance-return-previous-PC`)
+    res.redirect(`${baseUrl}/done-single-pc-in-payment`)
   }
   else if (nationalInsuranceRouter === 'NN 11 22 33 T') {
     res.redirect(`${baseUrl}/national-insurance-return-previous-PC`)
