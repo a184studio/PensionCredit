@@ -21,15 +21,16 @@
 
         <!------------HEADLINE------------>
         {% if data["nino"] == "NN 11 22 33 R" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Adviser: Claimant is getting PC</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Adviser: The claimant has an existing Pension Credit claim</h1>
         {% endif %}
 
         {% if data["nino"] == "NN 11 22 33 T" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Adviser: Claimant is getting PC via a partner</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Adviser: The claimant is part of a partner's existing Pension Credit claim</h1>
 
         {% endif %}
-            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">GAV: "why are you trying to claim when you’re already named on a claim/have an existing claim?’, and use their judgement to decide whether it’s appropriate to proceed or kick out"
-            @pate: basically what do they need to know to contiune</p>
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Discuss the reason that a claim already exists for the claimant, whether it is their own claim or a partner's claim. </p>
+
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Decide if there is a valid reason to take a new claim. For example separation, bereavement or other changes in the claimant's circumstances.</p>
 
 <br>
         {{ govukRadios({
@@ -38,7 +39,7 @@
           name: "national-insurance-return-previous-PC",
           fieldset: {
             legend: {
-              html: "Are you happy to continue based on what you know??",
+              html: "Do you want to continue taking this claim?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
