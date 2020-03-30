@@ -17,6 +17,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form action="start" method="post" class="form">
+
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You already have a Pension Credit claim in payment</h1>
 
@@ -33,9 +35,11 @@
 
 
       {{ govukButton({
-        text: "Finish and close",
-        href: "start"
+        classes: "govuk-!-margin-top-4",
+        text: "Finish and close"
       }) }}
+
+  </form>
 
 
 
