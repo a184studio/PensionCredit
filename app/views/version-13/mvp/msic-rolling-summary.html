@@ -301,36 +301,7 @@
           <div class="govuk-grid-row">
           <div class="govuk-grid-column-three-quarters">
 
-            {{ govukSummaryList({
-                  classes: 'govuk-!-margin-bottom-0',
-                  rows: [
-                {
-                  key: {
-                    text: "Description of this money"
-                  },
-                  value: {
-                    text: data['msic-has-cash-at-home-name']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-cash-at-home",
-                        html: "Change",
-                        visuallyHiddenText: "XXX"
-                      },
-                      {
-                        href: "msic-remove",
-                        html: "Remove",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                }
-
-                ]
-                }) }}
-
-                <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+  <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
                 {% if data["claim-filter"] == "Backdating" %}
 
                       {{ govukSummaryList({
@@ -340,14 +311,16 @@
                         key: {
                           text: "How much cash did you have on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                         },
-                        value: {
-                          html: data['msic-has-cash-at-home-amount-EED'] | formatMoney
-                        },
                         actions: {
                           items: [
                             {
-                              href: "",
-                              text: "",
+                              href: "msic-cash-at-home",
+                              html: "Change",
+                              visuallyHiddenText: "XXX"
+                            },
+                            {
+                              href: "msic-remove",
+                              html: "Remove",
                               visuallyHiddenText: "XXX"
                             }
                           ]

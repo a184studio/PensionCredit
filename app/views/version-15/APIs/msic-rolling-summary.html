@@ -311,20 +311,21 @@
                         key: {
                           text: "How much cash did you have on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                         },
-                        items: [
-                          {
-                            href: "msic-cash-at-home",
-                            html: "Change",
-                            visuallyHiddenText: "XXX"
-                          },
-                          {
-                            href: "msic-remove",
-                            html: "Remove",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
+                        actions: {
+                          items: [
+                            {
+                              href: "msic-cash-at-home",
+                              html: "Change",
+                              visuallyHiddenText: "XXX"
+                            },
+                            {
+                              href: "msic-remove",
+                              html: "Remove",
+                              visuallyHiddenText: "XXX"
+                            }
+                          ]
+                        }
                       }
-                    }
                       ]
                       }) }}
 

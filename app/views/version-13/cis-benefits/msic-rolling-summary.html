@@ -43,58 +43,19 @@
                       }
                     ]
                   }
-                },
-
-                {
-                  key: {
-                    text: "What currency is it"
-                  },
-                  value: {
-                    text: data['msic-missing-account-currency']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        html: "",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
                 }
-
-
                 ]
                 }) }}
 
-      <h2 class="govuk-heading-s extra-space-cya">Details of this money on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
-
-
+      <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+      {% if data["claim-filter"] == "Backdating" %}
 
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-0',
           rows: [
         {
           key: {
-            text: "Date this figure is from"
-          },
-          value: {
-            text: data['msic-missing-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-missing-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-missing-account-amount-EED-date-evidence-year']
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "How much money you had on this date"
+            text: "How much did you have on 1 January 2020?"
           },
           value: {
             html: data['msic-missing-account-amount-EED'] | formatMoney
@@ -112,33 +73,18 @@
         ]
         }) }}
 
-        <h2 class="govuk-heading-s extra-space-cya">Details of this money on (IDOC) {{'' | formatDate}}</h2>
+        {% endif %}
 
+        <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+        {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-8',
           rows: [
         {
+          classes: 'govuk-summary-list--no-border',
           key: {
-            text: "Date this figure is from"
-          },
-          value: {
-            text: data['msic-missing-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-missing-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-missing-account-amount-TODAY-date-evidence-year']
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        },
-
-        {
-          key: {
-            text: "How much money you had on this date"
+            text: "How much do you have today?"
           },
           value: {
             html: data['msic-missing-account-amount-TODAY'] | formatMoney
@@ -156,49 +102,7 @@
         ]
         }) }}
 
-        <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
-
-        {{ govukSummaryList({
-        rows: [
-        {
-          classes: 'govuk-summary-list',
-          key: {
-          text: "Who owns this money?"
-        },
-        value: {
-          text: data['msic-missing-account-amount-owner']
-        },
-        actions: {
-          items: [
-            {
-              href: "",
-              text: "",
-              visuallyHiddenText: "XXXX"
-            }
-          ]
-        }
-        },
-
-        {
-          classes: 'govuk-summary-list--no-border',
-          key: {
-            text: "Amount of money that is yours"
-          },
-          value: {
-            html: data['msic-missing-account-amount-stake'] | formatMoney
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "",
-                visuallyHiddenText: "XXXX"
-              }
-            ]
-          }
-        }
-        ]
-        }) }}
+        {% endif %}
 
         <br></div></div>
 
@@ -296,7 +200,7 @@
 
                 {
                   key: {
-                    text: "What currency is it"
+                    text: "What currency is it?"
                   },
                   value: {
                     text: data['msic-cash-other-abroad-currency']
@@ -316,34 +220,15 @@
                 ]
                 }) }}
 
-                <h2 class="govuk-heading-s extra-space-cya">Details of this money on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
-
-
+                <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+                  {% if data["claim-filter"] == "Backdating" %}
 
                       {{ govukSummaryList({
                         classes: 'govuk-!-margin-bottom-0',
                         rows: [
                       {
                         key: {
-                          text: "Date this figure is from"
-                        },
-                        value: {
-                          text: data['msic-cash-other-abroad-amount-EED-date-evidence-day'] + ' ' + (data['msic-cash-other-abroad-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-cash-other-abroad-amount-EED-date-evidence-year']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Amount of money you had on this date"
+                          text: "How much did you have on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                         },
                         value: {
                           html: data['msic-cash-other-abroad-amount-EED'] | formatMoney
@@ -361,34 +246,18 @@
                       ]
                       }) }}
 
-                      <h2 class="govuk-heading-s extra-space-cya">Details of this money on (IDOC) {{'' | formatDate}}</h2>
+                    {% endif %}
 
+                    <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+                    {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
                       {{ govukSummaryList({
                         classes: 'govuk-!-margin-bottom-8',
                         rows: [
                       {
-                        key: {
-                          text: "Date this figure is from"
-                        },
-                        value: {
-                          text: data['msic-cash-other-abroad-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-cash-other-abroad-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-cash-other-abroad-amount-TODAY-date-evidence-year']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
                         classes: 'govuk-summary-list--no-border',
                         key: {
-                          text: "Amount of money you had on this date"
+                          text: "How much do you have today?"
                         },
                         value: {
                           html: data['msic-cash-other-abroad-amount-TODAY'] | formatMoney
@@ -407,6 +276,8 @@
 
                       ]
                       }) }}
+
+                      {% endif %}
 
           <br></div></div>
 
@@ -430,51 +301,26 @@
           <div class="govuk-grid-row">
           <div class="govuk-grid-column-three-quarters">
 
-            {{ govukSummaryList({
-                  classes: 'govuk-!-margin-bottom-0',
-                  rows: [
-                {
-                  key: {
-                    text: "Description of this money"
-                  },
-                  value: {
-                    text: data['msic-has-cash-at-home-name']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "msic-cash-at-home",
-                        html: "Change",
-                        visuallyHiddenText: "XXX"
-                      },
-                      {
-                        href: "msic-remove",
-                        html: "Remove",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                }
-
-                ]
-                }) }}
-
+  <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+                {% if data["claim-filter"] == "Backdating" %}
 
                       {{ govukSummaryList({
                         classes: 'govuk-!-margin-bottom-0',
                         rows: [
                       {
                         key: {
-                          text: "Amount of cash you had on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
-                        },
-                        value: {
-                          html: data['msic-has-cash-at-home-amount-EED'] | formatMoney
+                          text: "How much cash did you have on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                         },
                         actions: {
                           items: [
                             {
-                              href: "",
-                              text: "",
+                              href: "msic-cash-at-home",
+                              html: "Change",
+                              visuallyHiddenText: "XXX"
+                            },
+                            {
+                              href: "msic-remove",
+                              html: "Remove",
                               visuallyHiddenText: "XXX"
                             }
                           ]
@@ -483,6 +329,12 @@
                       ]
                       }) }}
 
+                      {% endif %}
+
+
+                  <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+                  {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
 
                       {{ govukSummaryList({
                         classes: 'govuk-!-margin-bottom-8',
@@ -490,7 +342,7 @@
                       {
                         classes: 'govuk-summary-list--no-border',
                         key: {
-                          text: "Amount of cash you had on " + '' | formatDate
+                          text: "How much cash do you have today?"
                         },
                         value: {
                           html: data['msic-has-cash-at-home-amount-TODAY'] | formatMoney
@@ -509,6 +361,8 @@
 
                       ]
                       }) }}
+
+                  {% endif %}
 
           <br></div></div>
 
@@ -560,133 +414,108 @@
                 ]
                 }) }}
 
-                <h2 class="govuk-heading-s extra-space-cya">Unit trust details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+                <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+                {% if data["claim-filter"] == "Backdating" %}
 
-
-
-                      {{ govukSummaryList({
-                        classes: 'govuk-!-margin-bottom-0',
-                        rows: [
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-0',
+                  rows: [
+              {
+                  key: {
+                    text: "How many units did you own on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
+                  },
+                  value: {
+                    html: data['msic-unit-trust-account-units-EED'] | formatMoney
+                  },
+                  actions: {
+                    items: [
                       {
-                        key: {
-                          text: "Date these figures are from"
-                        },
-                        value: {
-                          text: data['msic-unit-trust-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-unit-trust-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-unit-trust-account-amount-EED-date-evidence-year']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Number of units you owned on this date"
-                        },
-                        value: {
-                          text: data['msic-unit-trust-account-units-EED']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Unit price on this date"
-                        },
-                        value: {
-                          html: data['msic-unit-trust-account-price-EED'] | formatMoney
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
                       }
-                      ]
-                      }) }}
+                    ]
+                  }
+                }
+                ]
+                }) }}
 
-                      <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
-
-
-                      {{ govukSummaryList({
-                        classes: 'govuk-!-margin-bottom-8',
-                        rows: [
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-8',
+                  rows: [
+                  {
+                    key: {
+                    text: "What was the bid price on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
+                  },
+                  value: {
+                    html: data['msic-unit-trust-account-price-EED'] | formatMoney
+                  },
+                  actions: {
+                    items: [
                       {
-                        key: {
-                          text: "Date these figures are from"
-                        },
-                        value: {
-                          text: data['msic-unit-trust-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-unit-trust-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-unit-trust-account-amount-TODAY-date-evidence-year']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Number of units you owned on this date"
-                        },
-                        value: {
-                          text: data['msic-unit-trust-account-units-TODAY']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        classes: 'govuk-summary-list--no-border',
-                        key: {
-                          text: "Unit price on this date"
-                        },
-                        value: {
-                          html: data['msic-unit-trust-account-price-TODAY'] | formatMoney
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: "XXX"
-                            }
-                          ]
-                        }
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
                       }
+                    ]
+                  }
+                }
+                ]
+                }) }}
 
+                {% endif %}
 
-                      ]
-                      }) }}
+                <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+                {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-0',
+                  rows: [
+              {
+                  key: {
+                    text: "How many units do you own today?"
+                  },
+                  value: {
+                    html: data['msic-unit-trust-account-units-TODAY'] | formatMoney
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                }
+                ]
+                }) }}
+
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-8',
+                  rows: [
+                  {
+                    classes: 'govuk-summary-list--no-border',
+                    key: {
+                    text: "What is the bid price today?"
+                  },
+                  value: {
+                    html: data['msic-unit-trust-account-price-TODAY'] | formatMoney
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
+                      }
+                    ]
+                  }
+                }
+                ]
+                }) }}
+
+                {% endif %}
 
           <br></div></div>
 
@@ -738,95 +567,62 @@
               ]
               }) }}
 
-              <h2 class="govuk-heading-s extra-space-cya">Details of shares on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+              <!--------------- DATE ONE (CLAIM START) ----------------------------------------------------------------------------------------->
+              {% if data["claim-filter"] == "Backdating" %}
 
-
-
-                    {{ govukSummaryList({
-                      classes: 'govuk-!-margin-bottom-0',
-                      rows: [
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-0',
+                rows: [
+                {
+                key: {
+                  text: "How many shares did you have on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
+                },
+                value: {
+                  html: data['msic-shares-account-number-EED']
+                },
+                actions: {
+                  items: [
                     {
-                      key: {
-                        text: "Date this figure is from"
-                      },
-                      value: {
-                        text: data['msic-shares-EED-date-evidence-day'] + ' ' + (data['msic-shares-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-shares-EED-date-evidence-year']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
-                    },
-
-                    {
-                      key: {
-                        text: "How many shares you had on this date"
-                      },
-                      value: {
-                        text: data['msic-shares-account-number-EED']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
                     }
-                    ]
-                    }) }}
+                  ]
+                }
+              }
+              ]
+              }) }}
 
-                    <h2 class="govuk-heading-s extra-space-cya">Details of shares on (IDOC) {{'' | formatDate}}</h2>
+              {% endif %}
 
+              <!--------------- DATE TWO (TODAY) ----------------------------------------------------------------------------------------->
+              {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
-                    {{ govukSummaryList({
-                      classes: 'govuk-!-margin-bottom-8',
-                      rows: [
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-8',
+                rows: [
+                {
+                  classes: 'govuk-summary-list--no-border',
+                  key: {
+                  text: "How many shares do you have today?"
+                },
+                value: {
+                  html: data['msic-shares-account-number-TODAY']
+                },
+                actions: {
+                  items: [
                     {
-                      key: {
-                        text: "Date this figure is from"
-                      },
-                      value: {
-                        text: data['msic-shares-TODAY-date-evidence-day'] + ' ' + (data['msic-shares-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-shares-TODAY-date-evidence-year']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
-                    },
-
-                    {
-                      classes: 'govuk-summary-list--no-border',
-                      key: {
-                        text: "How many shares you had on this date"
-                      },
-                      value: {
-                        text: data['msic-shares-account-number-TODAY']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
+                      href: "",
+                      text: "",
+                      visuallyHiddenText: "XXX"
                     }
-                    ]
-                    }) }}
+                  ]
+                }
+              }
+              ]
+              }) }}
+
+              {% endif %}
 
         <br></div></div>
 
@@ -878,94 +674,61 @@
                   ]
                   }) }}
 
-                  <h2 class="govuk-heading-s extra-space-cya">Bond details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
+                  {% if data["claim-filter"] == "Backdating" %}
 
-
-                        {{ govukSummaryList({
-                          classes: 'govuk-!-margin-bottom-0',
-                          rows: [
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-0',
+                    rows: [
+                    {
+                    key: {
+                      text: "What was the value of this bond on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
+                    },
+                    value: {
+                      html: data['msic-capital-bond-account-amount-EED']
+                    },
+                    actions: {
+                      items: [
                         {
-                          key: {
-                            text: "Date this figure is from"
-                          },
-                          value: {
-                            text: data['msic-capital-bond-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-capital-bond-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-capital-bond-account-amount-EED-date-evidence-year']
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "",
-                                text: "",
-                                visuallyHiddenText: "XXX"
-                              }
-                            ]
-                          }
-                        },
-
-                        {
-                          key: {
-                            text: "Value of this bond on this date"
-                          },
-                          value: {
-                            html: data['msic-capital-bond-account-amount-EED'] | formatMoney
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "",
-                                text: "",
-                                visuallyHiddenText: "XXX"
-                              }
-                            ]
-                          }
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
                         }
-                        ]
-                        }) }}
+                      ]
+                    }
+                  }
+                  ]
+                  }) }}
 
-                        <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
+                  {% endif %}
 
+                  {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
-                        {{ govukSummaryList({
-                          classes: 'govuk-!-margin-bottom-8',
-                          rows: [
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-8',
+                    rows: [
+                    {
+                      key: {
+                      text: "What is the value of this bond today?"
+                    },
+                    value: {
+                      html: data['msic-capital-bond-account-amount-TODAY']
+                    },
+                    actions: {
+                      items: [
                         {
-                          key: {
-                            text: "Date this figure is from"
-                          },
-                          value: {
-                            text: data['msic-capital-bond-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-capital-bond-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-capital-bond-account-amount-TODAY-date-evidence-year']
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "",
-                                text: "",
-                                visuallyHiddenText: "XXX"
-                              }
-                            ]
-                          }
-                        },
-
-                        {
-                          key: {
-                            text: "Vaslue of this bond on this date"
-                          },
-                          value: {
-                            html: data['msic-capital-bond-account-amount-TODAY'] | formatMoney
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "",
-                                text: "",
-                                visuallyHiddenText: "XXX"
-                              }
-                            ]
-                          }
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: "XXX"
                         }
-                        ]
-                        }) }}
+                      ]
+                    }
+                  }
+                  ]
+                  }) }}
+
+                  {% endif %}
+
 
                         <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
 
@@ -1080,13 +843,13 @@
               ]
               }) }}
 
-
+                  {% if data["claim-filter"] == "Backdating" %}
                     {{ govukSummaryList({
                       classes: 'govuk-!-margin-bottom-0',
                       rows: [
                     {
                       key: {
-                        text: "How much was in this ISA on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                        text: "How much money did you have in this ISA on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
                       },
                       value: {
                         html: data['msic-isa-savings-account-amount-EED'] | formatMoney
@@ -1103,7 +866,9 @@
                     }
                     ]
                     }) }}
+                  {% endif %}
 
+                  {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
                     {{ govukSummaryList({
                       classes: 'govuk-!-margin-bottom-8',
@@ -1111,7 +876,7 @@
                                         {
                       classes: 'govuk-summary-list--no-border',
                       key: {
-                        text: "How much was in this ISA on " + '' | formatDate
+                        text: "How much money do you have in this ISA today?"
                       },
                       value: {
                         html: data['msic-isa-savings-account-amount-TODAY'] | formatMoney
@@ -1128,6 +893,7 @@
                     }
                     ]
                     }) }}
+                  {% endif %}
 
         <br></div></div>
 
@@ -1152,12 +918,13 @@
         <div class="govuk-grid-column-three-quarters">
 
 
+          {% if data["claim-filter"] == "Backdating" %}
                         {{ govukSummaryList({
                           classes: 'govuk-!-margin-bottom-0',
                           rows: [
                         {
                           key: {
-                            text: "Value of Premium Bonds on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                            text: "What was the value of your Premium Bonds on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
                           },
                           value: {
                             html: data['msic-premium-bond-account-amount-EED'] | formatMoney
@@ -1165,8 +932,13 @@
                           actions: {
                             items: [
                               {
-                                href: "",
-                                text: "",
+                                href: "msic-premium-bond-account",
+                                html: "Change",
+                                visuallyHiddenText: "XXX"
+                              },
+                              {
+                                href: "msic-remove",
+                                html: "Remove",
                                 visuallyHiddenText: "XXX"
                               }
                             ]
@@ -1174,14 +946,16 @@
                         }
                         ]
                         }) }}
+                      {% endif %}
 
+                      {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
                         {{ govukSummaryList({
                           classes: 'govuk-!-margin-bottom-8',
                           rows: [
                         {
                           classes: 'govuk-summary-list--no-border',
                           key: {
-                            text: "Value of Premium Bonds on " + '' | formatDate
+                            text: "What is the value of your Premium Bonds today?"
                           },
                           value: {
                             html: data['msic-premium-bond-account-amount-TODAY'] | formatMoney
@@ -1198,6 +972,7 @@
                         }
                         ]
                         }) }}
+                      {% endif %}
 
         <br></div></div>
 
@@ -1248,138 +1023,58 @@
                       ]
                       }) }}
 
-                      <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
+              {% if data["claim-filter"] == "Backdating" %}
 
-
-
-                    {{ govukSummaryList({
-                      classes: 'govuk-!-margin-bottom-0',
-                      rows: [
-                    {
-                      key: {
-                        text: "Date this figure is from"
-                      },
-                      value: {
-                        text: data['msic-credit-union-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-credit-union-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-credit-union-account-amount-EED-date-evidence-year']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-0',
+                  rows: [
+                  {
+                  key: {
+                    text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
+                  },
+                  value: {
+                    html: data['msic-credit-union-account-amount-EED'] | formatMoney
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
                       }
-                    },
-
-                    {
-                      key: {
-                        text: "How much you had in this account on this date"
-                      },
-                      value: {
-                        html: data['msic-credit-union-account-amount-EED'] | formatMoney
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
-                    }
                     ]
-                    }) }}
+                  }
+                }
+                ]
+                }) }}
+              {% endif %}
 
-                    <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
-
-
-                    {{ govukSummaryList({
-                      classes: 'govuk-!-margin-bottom-8',
-                      rows: [
-                    {
-                      key: {
-                        text: "Date this figure is from"
-                      },
-                      value: {
-                        text: data['msic-credit-union-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-credit-union-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-credit-union-account-amount-TODAY-date-evidence-year']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
+              {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-8',
+                  rows: [
+                  {
+                    classes: 'govuk-summary-list--no-border',
+                    key: {
+                    text: "How much money do you have in this account today?"
+                  },
+                  value: {
+                    html: data['msic-credit-union-account-amount-TODAY'] | formatMoney
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "XXX"
                       }
-                    },
-
-                    {
-                      key: {
-                        text: "How much you had in this account on this date"
-                      },
-                      value: {
-                        html: data['msic-credit-union-account-amount-TODAY'] | formatMoney
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
-                    }
                     ]
-                    }) }}
+                  }
+                }
+                ]
+                }) }}
 
-                    <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2"></h2>
-
-                    {{ govukSummaryList({
-                    rows: [
-                    {
-                      classes: 'govuk-summary-list',
-                      key: {
-                      text: "Account owner"
-                    },
-                    value: {
-                      text: data['msic-credit-union-account-owner']
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "",
-                          visuallyHiddenText: "XXXX"
-                        }
-                      ]
-                    }
-                    },
-
-                    {
-                      classes: 'govuk-summary-list--no-border',
-                      key: {
-                        text: "Amount of money that is yours"
-                      },
-                      value: {
-                        text: data['msic-credit-union-account-stake']
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "",
-                            visuallyHiddenText: "XXXX"
-                          }
-                        ]
-                      }
-                    }
-                    ]
-                    }) }}
+                {% endif %}
 
 
 
@@ -1404,94 +1099,61 @@
         <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
 
-          <h2 class="govuk-heading-s extra-space-cya">Account details on (EED) {{ data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] }}</h2>
 
+          {% if data["claim-filter"] == "Backdating" %}
 
           {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-0',
-            rows: [
-          {
-            key: {
-              text: "Date this figure is from"
-            },
-            value: {
-              text: data['msic-post-office-card-account-amount-EED-date-evidence-day'] + ' ' + (data['msic-post-office-card-account-amount-EED-date-evidence-month'] | getMonth) + ' ' + data['msic-post-office-card-account-amount-EED-date-evidence-year']
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
+          classes: 'govuk-!-margin-bottom-0',
+          rows: [
+      {
+          key: {
+            text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
           },
-
-          {
-            key: {
-              text: "How much you had in this account on this date"
-            },
-            value: {
-              html: data['msic-post-office-card-account-amount-EED'] | formatMoney
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
+          value: {
+            html: data['msic-post-office-card-account-amount-EED'] | formatMoney
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
           }
-          ]
-          }) }}
+        }
+        ]
+        }) }}
 
-          <h2 class="govuk-heading-s extra-space-cya">Account details on (IDOC) {{'' | formatDate}}</h2>
+        {% endif %}
 
+        {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-8',
-            rows: [
-          {
-            key: {
-              text: "Date this figure is from"
-            },
-            value: {
-              text: data['msic-post-office-card-account-amount-TODAY-date-evidence-day'] + ' ' + (data['msic-post-office-card-account-amount-TODAY-date-evidence-month'] | getMonth) + ' ' + data['msic-post-office-card-account-amount-TODAY-date-evidence-year']
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
-          },
-
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-8',
+          rows: [
           {
             classes: 'govuk-summary-list--no-border',
             key: {
-              text: "How much you had in this account on this date"
-            },
-            value: {
-              html: data['msic-post-office-card-account-amount-TODAY'] | formatMoney
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
+            text: "How much money do you have in this account today?"
+          },
+          value: {
+            html: data['msic-post-office-card-account-amount-TODAY'] | formatMoney
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "XXX"
+              }
+            ]
           }
-          ]
-          }) }}
+        }
+        ]
+        }) }}
+
+        {% endif %}
 
 
         <br></div></div>
@@ -1542,12 +1204,15 @@
                       ]
                       }) }}
 
+  {% if data["claim-filter"] == "Backdating" %}
+
+
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-0',
           rows: [
       {
           key: {
-            text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+            text: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
           },
           value: {
             html: data['msic-all-savings-account-amount-EED'] | formatMoney
@@ -1565,12 +1230,18 @@
         ]
         }) }}
 
+      {% endif %}
+
+        {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
+
+
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-8',
           rows: [
           {
-          key: {
-            text: "How much money did you have in this account on " + '' | formatDate
+            classes: 'govuk-summary-list--no-border',
+            key: {
+            text: "How much money do you have in this account today?"
           },
           value: {
             html: data['msic-all-savings-account-amount-TODAY'] | formatMoney
@@ -1587,6 +1258,9 @@
         }
         ]
         }) }}
+
+          {% endif %}
+
 
 
         </div></div>
@@ -1618,7 +1292,7 @@
                 rows: [
               {
                 key: {
-                  text: "Name of bank or buildings society"
+                  text: "Name of bank or building society"
                 },
                 value: {
                   text: data['msic-all-current-account-name-' + i]
@@ -1641,13 +1315,14 @@
               ]
               }) }}
 
+              {% if data["claim-filter"] == "Backdating" %}
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-0',
               rows: [
             {
               key: {
-                html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year']
+                html: "How much money did you have in this account on " + data['claim-date-cam-date-entry-day'] + ' ' + (data['claim-date-cam-date-entry-month'] | getMonth) + ' ' + data['claim-date-cam-date-entry-year'] +'?'
               },
               value: {
                 text: data['msic-all-current-account-amount-EED-' + i] | formatMoney
@@ -1665,6 +1340,9 @@
             ]
             }) }}
 
+            {% endif %}
+
+            {% if data["claim-filter"] == "Advanced or Today" or data["claim-filter"] == "Backdating" %}
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-8',
@@ -1672,7 +1350,7 @@
             {
               classes: 'govuk-summary-list--no-border',
               key: {
-                text: "How much money did you have in this account on " + '' | formatDate
+                html: "How much money do you have in this account today?"
               },
               value: {
                 text: data['msic-all-current-account-amount-TODAY-' + i] | formatMoney
@@ -1689,6 +1367,8 @@
             }
             ]
             }) }}
+
+            {% endif %}
 
 
         </div></div>
