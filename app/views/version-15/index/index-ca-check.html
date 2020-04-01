@@ -1,0 +1,53 @@
+{% extends "layout-id-bar.html" %}
+
+{% block pageTitle %}
+  Post Pension Credit index - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+
+
+
+<!----------------------------------------------------------------------------------->
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="index-call-wrapup" method="post" class="form">
+
+      <input type="hidden" name="contact-complete" value="in-progress"/>
+
+      <div class="govuk-panel--agent govuk-!-margin-bottom-8">
+  <h2 class="govuk-heading-m">Adviser: All claims should be asked about caring responsibilities unless you know for sure during the claim that they dont</h2>
+  </div>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      Do you care for somone more that 35 hours a week?
+    </h1>
+
+      <!----------------------------------------------------------------------------------->
+
+        <p class="govuk-body">If (Name) cares for someone for more than 35 hours a week, give them the details of how to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance (Opens in a new window or tab)<a/>.</p>
+        <ul class="govuk-list govuk-list">
+        <li>Telephone: 0800 731 0297</li>
+        <li>Textphone: 0800 731 0317</li>
+        <li><a href="https://www.ngts.org.uk/" class="govuk-link govuk-link--no-visited-state">Next Generation Text (NGT) (Opens in a new window or tab)</a> text relay (if you cannot hear or speak on the phone): 18001 then 0800 731 0297</li>
+            <li>Monday to Friday, 8am to 6pm</li>
+            <li><a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state">Find out about call charges  (Opens in new window)</a></li>
+        </ul>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

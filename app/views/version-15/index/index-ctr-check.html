@@ -1,0 +1,49 @@
+{% extends "layout-id-bar.html" %}
+
+{% block pageTitle %}
+  Post Pension Credit index - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+
+
+
+<!----------------------------------------------------------------------------------->
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="index-hb-questions" method="post" class="form">
+
+      <input type="hidden" name="contact-complete" value="in-progress"/>
+
+      <div class="govuk-panel--agent">
+
+
+    <p class="govuk-heading-m govuk-!-margin-bottom-6">
+      (Name) told you they would like to apply for Council Tax Reduction. They should contact their local authority to apply.
+    </p>
+
+    </div> <!--Agent end-->
+    <!----------------------------------------------------------------------------------->
+    <div class="govuk-!-margin-bottom-8">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You should contact their local authority to apply for CTR</h1>
+      <p class="govuk-body">Tell them them you would like to apply for Council Tax Reduction.</p>
+    </div>
+
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
