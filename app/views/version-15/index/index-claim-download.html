@@ -14,7 +14,7 @@
 
 {% include "includes/js-back-link.html" %}
 
-<form action="index-done" method="post" class="form">
+<form action="start" method="post" class="form">
 
   <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
@@ -54,6 +54,9 @@
         </ul>
 
 
+@mm remove instructions
+@MM maybe two buttons. Two PDFs /?
+
 
         {{ govukButton({
           text: "Download claim",
@@ -83,7 +86,7 @@
 
 
         {{ govukButton({
-          text: "Continue",
+          text: "Finish and close",
           classes: "govuk-!-margin-top-4"
         }) }}
 
