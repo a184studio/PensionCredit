@@ -80,7 +80,7 @@ router.post(`${baseUrl}/national-insurance-return-router`, (req, res) => {
   const nationalInsuranceReturn = req.session.data['national-insurance-return']
 
   if (nationalInsuranceReturn === 'Yes') {
-    res.redirect(`${baseUrl}/caller-number`)
+    res.redirect(`${baseUrl}/reside-in-uk`)
   } else {
     res.redirect(`${baseUrl}/national-insurance-call`)
   }
@@ -90,7 +90,7 @@ router.post(`${baseUrl}/national-insurance-return-previous-PC-router`, (req, res
   const nationalInsuranceReturn = req.session.data['national-insurance-return-previous-PC']
 
   if (nationalInsuranceReturn === 'Yes') {
-    res.redirect(`${baseUrl}/caller-number`)
+    res.redirect(`${baseUrl}/reside-in-uk`)
   } else {
     res.redirect(`${baseUrl}/done-pc-in-payment`)
   }
