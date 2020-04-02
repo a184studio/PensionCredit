@@ -19,36 +19,9 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="pensions-state-overview" method="post" class="form">
 
-      {{ govukRadios({
-        idPrefix: "rent-council-tax-apply",
-        name: "rent-council-tax-apply",
-        fieldset: {
-          legend: {
-            text: "Do you want to apply for Council Tax Reduction?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["rent-council-tax-apply"] == "Yes")
-          },
-          {
-            value: "No",
-            text: "No",
-            checked: (data["rent-council-tax-apply"] == "No")
-          }
-        ]
-      }) }}
-
-
-
-
-
-
+      <h2 class="govuk-heading-xl">
+          Contact your local authority to apply for a Council Tax Reduction
+      </h2>
 
 
       {{ govukButton({
