@@ -498,7 +498,7 @@ router.post(`${baseUrl}/own-mortgage-home-loan-yn-router`, (req, res) => {
   }
 })
 
-
+ 
 router.post(`${baseUrl}/own-mortgage-yn-router`, (req, res) => {
   const hasMortgage = req.session.data['own-mortgage-yn']
 
