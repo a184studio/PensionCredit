@@ -14,11 +14,11 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="pensions-state-overview" method="post" class="form">
+    <form action="index-rent-housing-benefit-apply-router" method="post" class="form">
 
       {{ govukRadios({
-        idPrefix: "rent-housing-benefit-apply",
-        name: "rent-housing-benefit-apply",
+        idPrefix: "index-rent-housing-benefit-yn",
+        name: "index-rent-housing-benefit-yn",
         fieldset: {
           legend: {
             text: "Do you want to apply for Housing Benefit?",
@@ -33,12 +33,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["rent-housing-benefit-apply"] == "Yes")
+            checked: (data["index-rent-housing-benefit-yn"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["rent-housing-benefit-apply"] == "No")
+            checked: (data["index-rent-housing-benefit-yn"] == "No")
           }
         ]
       }) }}

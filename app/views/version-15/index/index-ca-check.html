@@ -19,28 +19,37 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="index-call-wrapup" method="post" class="form">
+    <form action="index-ca-check-router" method="post" class="form">
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
 
-
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      Do you care for someone for 35 hours a week or more?
-    </h1>
-
-      <!----------------------------------------------------------------------------------->
-
-        <p class="govuk-body">If you care for someone for 35 hours a week or more, you might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance (Opens in a new window or tab)<a/>.</p>
-
-            <p class="govuk-body">Search online for Carer's Allowance or call:</p>
-        <ul class="govuk-list govuk-list">
-        <li>Telephone: 0800 731 0297</li>
-        <li>Textphone: 0800 731 0317</li>
-        <li><a href="https://www.ngts.org.uk/" class="govuk-link govuk-link--no-visited-state">Next Generation Text (NGT) (Opens in a new window or tab)</a> text relay (if you cannot hear or speak on the phone): 18001 then 0800 731 0297</li>
-            <li>Monday to Friday, 8am to 6pm</li>
-            <li><a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state">Find out about call charges  (Opens in new window)</a></li>
-        </ul>
+    {{ govukRadios({
+      idPrefix: "index-ca-check",
+      name: "index-ca-check",
+      fieldset: {
+        legend: {
+          text: "Do you care for someone for 35 hours a week or more?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["index-ca-check"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["index-ca-check"] == "No")
+        }
+      ]
+    }) }}
 
         {{ govukButton({
           text: "Continue",

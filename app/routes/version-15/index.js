@@ -80,7 +80,7 @@ router.post(`${baseUrl}/national-insurance-return-router`, (req, res) => {
   const nationalInsuranceReturn = req.session.data['national-insurance-return']
 
   if (nationalInsuranceReturn === 'Yes') {
-    res.redirect(`${baseUrl}/caller-number`)
+    res.redirect(`${baseUrl}/reside-in-uk`)
   } else {
     res.redirect(`${baseUrl}/national-insurance-call`)
   }
@@ -90,7 +90,7 @@ router.post(`${baseUrl}/national-insurance-return-previous-PC-router`, (req, res
   const nationalInsuranceReturn = req.session.data['national-insurance-return-previous-PC']
 
   if (nationalInsuranceReturn === 'Yes') {
-    res.redirect(`${baseUrl}/caller-number`)
+    res.redirect(`${baseUrl}/reside-in-uk`)
   } else {
     res.redirect(`${baseUrl}/done-pc-in-payment`)
   }
@@ -485,16 +485,7 @@ router.post(`${baseUrl}/rent-council-tax-yn-router`, (req, res) => { // router n
   }
 })
 
-router.post(`${baseUrl}/rent-housing-benefit-yn-router`, (req, res) => { // router name
 
-  const rentHousingBenefitApply = req.session.data['rent-housing-benefit-yn']  // name of data / id name
-
-  if (rentHousingBenefitApply === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/pensions-overview`)
-  } else {
-    res.redirect(`${baseUrl}/rent-housing-benefit-apply`)
-  }
-})
 
 
 router.post(`${baseUrl}/own-mortgage-home-loan-yn-router`, (req, res) => {
@@ -507,7 +498,7 @@ router.post(`${baseUrl}/own-mortgage-home-loan-yn-router`, (req, res) => {
   }
 })
 
-
+ 
 router.post(`${baseUrl}/own-mortgage-yn-router`, (req, res) => {
   const hasMortgage = req.session.data['own-mortgage-yn']
 
@@ -537,7 +528,7 @@ router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router na
   const rentCouncilTaxApply = req.session.data['own-council-tax-yn']  // name of data / id name
 
   if (rentCouncilTaxApply === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/pensions-overview`)
+    res.redirect(`${baseUrl}/pensions-state-overview`)
   } else {
     res.redirect(`${baseUrl}/own-council-tax-apply`)
   }
@@ -1281,6 +1272,33 @@ router.post(`${baseUrl}/pc-done-yn-router`, (req, res) => { // router name
     res.redirect(`${baseUrl}/done-declaration`)
   }
 })
+
+// INDEX
+
+router.post(`${baseUrl}/index-rent-housing-benefit-apply-router`, (req, res) => { // router name
+
+  const rentHousingBenefitApply = req.session.data['index-rent-housing-benefit-yn']  // name of data / id name
+
+  if (rentHousingBenefitApply === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/index-hb-questions`)
+  } else {
+    res.redirect(`${baseUrl}/index-ca-check`)
+  }
+})
+
+router.post(`${baseUrl}/index-ca-check-router`, (req, res) => { // router name
+
+  const indexCAcheck = req.session.data['index-ca-check']  // name of data / id name
+
+  if (indexCAcheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/index-ca-yes`)
+  } else {
+    res.redirect(`${baseUrl}/index-call-wrapup`)
+  }
+})
+
+
+
 
 
 
