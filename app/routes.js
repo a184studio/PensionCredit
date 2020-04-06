@@ -43,6 +43,8 @@ router.use(require('./routes/version-14/APIs'))
 router.use(require('./routes/version-15/APIs'))
 router.use(require('./routes/version-15/survey'))
 router.use(require('./routes/version-15/index'))
+router.use(require('./routes/citizen-version-1/mvp'))
+
 
 
 module.exports = router
