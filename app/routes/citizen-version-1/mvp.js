@@ -33,69 +33,6 @@ router.post(`${baseUrl}/security-router`, (req, res) => {
 })
 
 
-router.post(`${baseUrl}/who-is-caller-router`, (req, res) => {
-  const claimingFor = req.session.data['who-is-caller']
-
-  if (claimingFor === 'Yourself') {
-    res.redirect(`${baseUrl}/national-insurance-call-B`)
-  } else {
-    res.redirect(`${baseUrl}/who-is-caller-name`)
-  }
-})
-
-router.post(`${baseUrl}/national-insurance-call-AB-router`, (req, res) => {
-  const niCallAB = req.session.data['national-insurance-call-AB']
-
-  if (niCallAB === 'Yes') {
-    res.redirect(`${baseUrl}/national-insurance-call-A`)
-  } else {
-    res.redirect(`${baseUrl}/national-insurance-call-B`)
-  }
-})
-
-
-
-router.post(`${baseUrl}/national-insurance-router`, (req, res) => {
-  const nationalInsuranceRouter = req.session.data['nino']
-
-  if (nationalInsuranceRouter === 'NN 11 22 33 M') {
-    res.redirect(`${baseUrl}/national-insurance-return-no-match`)
-  }
-  else if (nationalInsuranceRouter === 'NN 11 22 33 F') {
-    res.redirect(`${baseUrl}/national-insurance-return-error-500`)
-  }
-  else if (nationalInsuranceRouter === 'NN 11 22 33 R') {
-    res.redirect(`${baseUrl}/done-single-pc-in-payment`)
-  }
-  else if (nationalInsuranceRouter === 'NN 11 22 33 T') {
-    res.redirect(`${baseUrl}/national-insurance-return-previous-PC`)
-  }
-  else {
-    res.redirect(`${baseUrl}/national-insurance-return`)
-  }
-})
-
-
-router.post(`${baseUrl}/national-insurance-return-router`, (req, res) => {
-  const nationalInsuranceReturn = req.session.data['national-insurance-return']
-
-  if (nationalInsuranceReturn === 'Yes') {
-    res.redirect(`${baseUrl}/reside-in-uk`)
-  } else {
-    res.redirect(`${baseUrl}/national-insurance-call`)
-  }
-})
-
-router.post(`${baseUrl}/national-insurance-return-previous-PC-router`, (req, res) => {
-  const nationalInsuranceReturn = req.session.data['national-insurance-return-previous-PC']
-
-  if (nationalInsuranceReturn === 'Yes') {
-    res.redirect(`${baseUrl}/reside-in-uk`)
-  } else {
-    res.redirect(`${baseUrl}/done-pc-in-payment`)
-  }
-})
-
 router.post(`${baseUrl}/partner-under-spa-router`, (req, res) => {
   const hasPartner = req.session.data['has-partner']
 
@@ -407,7 +344,7 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   const residesInUk = req.session.data['uk-national']
 
   if (residesInUk === 'Yes') {
-    res.redirect(`${baseUrl}/who-lives-with-you`)
+    res.redirect(`${baseUrl}/over-spa`)
   } else {
     res.redirect(`${baseUrl}/done-lived-abroad-hrt`)
   }
@@ -635,7 +572,7 @@ router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
   const preDeclaration = req.session.data['pre-declaration']
 
   if (preDeclaration === 'Yes') {
-    res.redirect(`${baseUrl}/who-is-caller`)
+    res.redirect(`${baseUrl}/reside-in-uk`)
   } else {
     res.redirect(`${baseUrl}/done-declaration`)
   }
