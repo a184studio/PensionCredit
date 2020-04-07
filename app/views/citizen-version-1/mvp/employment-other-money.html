@@ -14,24 +14,30 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="empolyment-check" method="post" class="form">
-
-      <h1 class="govuk-heading-xl">
-        Employment
-      </h1>
+    <form action="payment-prompt" method="post" class="form">
 
 
-      {% set employmentDetails %}
+      <!------------Legend------------>
+        {% set legendOtherMoney %}
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>What we need to kmow:</strong></p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">What is this money?</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">How much is paid and how often?</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">Who is paid the money? You/partner</p>
+
+        {% endset %}
+      <!------------Legend------------>
+
+      {% set otherMoneyDetails %}
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
             html: "Details of this"
           },
           hint: {
-            text: "Tell me about the details?"
+            html: legendOtherMoney
           },
-          id: "employment-check-yes-details",
-          name: "employment-check-yes-details",
+          id: "other-money-yes-details",
+          name: "other-money-yes-details",
           classes: "govuk-input--width-100",
           attributes: {
             maxlength: 200
@@ -40,12 +46,12 @@
       {% endset %}
 
       {{ govukRadios({
-        name: "employment-check",
+        name: "other-money-check",
         fieldset: {
           legend: {
-            text: "Are you or your partner doing any type of paid work employment now?",
+            text: "Do you or your partner have any other money coming? Y/N",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
@@ -55,62 +61,15 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["employment-check"] == "Yes"),
+            checked: (data["other-money-check"] == "Yes"),
                   conditional: {
-                    html: employmentDetails
+                    html: otherMoneyDetails
         }
           },
           {
             value: "No",
             text: "No",
-            checked: (data["benefit-check"] == "No")
-          }
-        ]
-      }) }}
-
-      {% set selfEmploymentDetails %}
-        {{ govukTextarea({
-          label: {
-            classes: "govuk-label--s",
-            html: "Details of this"
-          },
-          hint: {
-            text: "Tell me about the details?"
-          },
-          id: "self-employment-check-yes-details",
-          name: "self-employment-check-yes-details",
-          classes: "govuk-input--width-100",
-          attributes: {
-            maxlength: 200
-          }
-        }) }}
-      {% endset %}
-
-      {{ govukRadios({
-        name: "self-employment-check",
-        fieldset: {
-          legend: {
-            text: "Are you or your partner doing any type of paid work Self employment now?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "Remember about the last three months @pete saves a question. See plan"
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["self-employment-check"] == "Yes"),
-                  conditional: {
-                    html: selfEmploymentDetails
-        }
-          },
-          {
-            value: "No",
-            text: "No",
-            checked: (data["self-employment-check"] == "No")
+            checked: (data["other-money-check"] == "No")
           }
         ]
       }) }}
