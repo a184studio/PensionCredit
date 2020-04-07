@@ -358,7 +358,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   if (childrenCheck === 'No') {
     res.redirect(`${baseUrl}/state-pension-check-yn`)
   } else {
-    res.redirect(`${baseUrl}/done-uc`)
+    res.redirect(`${baseUrl}/done-children`)
   }
 })
 
@@ -388,7 +388,7 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   if (childrenCheck === 'Yes') {
     res.redirect(`${baseUrl}/partner-over-spa-check`)
   } else {
-    res.redirect(`${baseUrl}/done-uc`)
+    res.redirect(`${baseUrl}/done-partner`)
   }
 })
 
