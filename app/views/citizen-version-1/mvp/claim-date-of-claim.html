@@ -16,19 +16,22 @@
       <div class="govuk-grid-column-two-thirds">
       <form action="claimant-details" method="post">
 
-        <div class="govuk-panel--agent">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Adviser: Work out the earliest date a claim can be considered from</h1>
-
-          <p class='govuk-body govuk-!-font-size-24 govuk-!-padding-bottom-0'>Talk to the claimant and use the information available in CAM and SearchLight to help them decide the best date to start their claim.</p>
 
 
-          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Things that could influence this date are:</h2>
+
+          {% set claimdate %}
+          <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">You can backdate your claim for up to 3 months if you are eligible. You can claim up to 4 months in advance if you have not yet reached State Pension age.</p>
+          <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">Things that might affect your eligibility are:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>previous claims for Pension Credit or other benefits </li>
-            <li>changes to whether they live with a partner or anyone else</li>
-            <li>changes to the amount of money they have, their income or employment status</li>
-            <li>whether they have spent longer than 4 weeks outside the UK since the earliest claim date, unless it was connected to medical treatment, convalescence or the death of a partner or child</li>
+            <li>changes to whether you live with a partner or anyone else</li>
+            <li>changes to the amount of money you have, your income or employment status</li>
+            <li>whether you have spent longer than 4 weeks outside the UK in the period you are claiming for, unless it was connected to medical treatment, convalescence or the death of a partner or child</li>
               </ul>
+          {% endset %}
+
+
+  <p class='govuk-body govuk-!-font-size-24 govuk-!-padding-bottom-0'>
 
         <br>
 
@@ -37,17 +40,16 @@
         namePrefix: "claim-date-cam-date-entry",
         fieldset: {
         legend: {
-        html: "Claim start date",
+        html: "What date do you want your Pension Credit claim to start?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
         }
         },
         hint: {
-        text: "For example, 12 11 2019"
+        html: claimdate
         }
         }) }}
 
-      </div>
 
 
 
