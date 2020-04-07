@@ -537,6 +537,234 @@
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About where you live</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you live permanently in a care home?"
+            },
+            value: {
+              text: data['home-care-home-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "home-care-home-check",
+                  text: "Change",
+                  visuallyHiddenText: "Change date of birth"
+                }
+              ]
+            }
+          }
+  ]
+}) }}
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+
+      {
+        key: {
+          text: "If Yes, Do you own the property you used to live in?"
+        },
+        value: {
+          text: data["home-care-home-check-still-own"]
+        },
+        actions: {
+          items: [
+            {
+              href: "",
+              text: "",
+              visuallyHiddenText: ""
+            }
+          ]
+        }
+      }
+
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
+
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "Address line one
+        <br>Address line Two
+        <br>Address line Three
+        <br>" + data["postcode"]
+      },
+      actions: {
+        items: [
+          {
+            href: "address-post-code-lookup",
+            text: "Change",
+            visuallyHiddenText: ""
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Is your home address the same as the address we use to send you letters?"
+      },
+      value: {
+        text: data["address-correspondence-yn"]
+      },
+      actions: {
+        items: [
+          {
+            href: "address-post-code-lookup",
+            text: "Change",
+            visuallyHiddenText: ""
+          }
+        ]
+      }
+    }
+
+  ]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Letters address"
+    },
+    value: {
+      html: "Address line one
+      <br>Address line Two
+      <br>Address line Three
+      <br>" + data["postcode"]
+    },
+    actions: {
+      items: [
+        {
+          href: "address-post-code-lookup",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Does anyone live in your household apart from you and your partner?"
+    },
+    value: {
+      text: data["home-living-with-you"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-living-with-you",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Details"
+    },
+    value: {
+      text: data["home-living-with-you-yes-details"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-living-with-you",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Are you or your partner responsible for paying the rent, Council Tax or both for the place where you live?"
+    },
+    value: {
+      text: data["home-responsible-CTR-HB"]
+    },
+    actions: {
+      items: [
+        {
+          href: "address-post-code-lookup",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  },
+
+  {
+  key: {
+    text: "Which best describes the place where you live?"
+  },
+  value: {
+    text: data["home-ownership"]
+  },
+  actions: {
+    items: [
+      {
+        href: "address-post-code-lookup",
+        text: "Change",
+        visuallyHiddenText: ""
+      }
+    ]
+  }
+}
+]
+}) }}
+
+
+
+
+
+
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 
 <!--CYA end-->
     </div>
