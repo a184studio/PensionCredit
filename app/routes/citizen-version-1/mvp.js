@@ -302,7 +302,7 @@ router.post(`${baseUrl}/over-spa-router`, (req, res) => {
       res.redirect(`${baseUrl}/sex`)
     }
   } catch (err) {
-    res.redirect(`${baseUrl}/claim-date-of-claim`)
+    res.redirect(`${baseUrl}/partner-check-yn`)
   }
 })
 
@@ -358,7 +358,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   if (childrenCheck === 'No') {
     res.redirect(`${baseUrl}/state-pension-check-yn`)
   } else {
-    res.redirect(`${baseUrl}/done-has-children`)
+    res.redirect(`${baseUrl}/done-uc`)
   }
 })
 
@@ -388,7 +388,7 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   if (childrenCheck === 'Yes') {
     res.redirect(`${baseUrl}/partner-over-spa-check`)
   } else {
-    res.redirect(`${baseUrl}/done-has-partner`)
+    res.redirect(`${baseUrl}/done-uc`)
   }
 })
 

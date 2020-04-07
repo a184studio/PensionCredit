@@ -19,60 +19,7 @@
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
-      <h1 class="govuk-heading-xl">
-      Parnter status
-      </h1>
 
-
-      {{ govukRadios({
-        idPrefix: "partner-carehome-yn",
-        name: "partner-carehome-yn",
-        fieldset: {
-          legend: {
-            text: "Does your partner live permanently in a care home?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        classes: "govuk-radios",
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["partner-carehome-yn"] == "Yes")
-                    },
-          {
-            value: "No",
-            text: "No",
-            checked: (data["partner-carehome-yn"] == "No")
-          }
-        ]
-      }) }}
-
-      {{ govukRadios({
-        idPrefix: "partner-separated-yn",
-        name: "partner-separated-yn",
-        fieldset: {
-          legend: {
-            text: "Are you separated from your partner?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        classes: "govuk-radios",
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["partner-separated-yn"] == "Yes")
-                    },
-          {
-            value: "No",
-            text: "No",
-            checked: (data["partner-separated-yn"] == "No")
-          }
-        ]
-      }) }}
 
       {{ govukRadios({
         idPrefix: "partner-application-yn",
@@ -81,7 +28,7 @@
           legend: {
             text: "Does your partner agree to you making this application?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--xl"
           }
         },
         classes: "govuk-radios",
@@ -98,6 +45,8 @@
           }
         ]
       }) }}
+
+
 
 
 
