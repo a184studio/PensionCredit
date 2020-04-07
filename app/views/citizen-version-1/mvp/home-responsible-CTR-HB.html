@@ -21,30 +21,25 @@
         name: "home-responsible-CTR-HB",
         fieldset: {
           legend: {
-            html: "Are you or your partner responsible for paying the rent, Council Tax or both for the place where you live? If they are paid through Housing Benefit of Council Tax Reduction, still tick yes. Y/N",
+            html: "Are you or your partner responsible for paying the rent, Council Tax or both for the place where you live? ",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          html: ""
+          html: "If they are paid through Housing Benefit or Council Tax Reduction, select yes."
         },
         classes: "govuk-radios",
         items: [
           {
-            value: "Council tax rediction",
-            text: "Council tax rediction",
+            value: "Yes",
+            text: "Yes",
             checked: (data["home-responsible-CTR-HB"] == "Council tax rediction")
           },
           {
-            value: "Housing benefit",
-            text: "Housing benefit",
+            value: "No",
+            text: "No",
             checked: (data["home-responsible-CTR-HB"] == "Housing benefit")
-          },
-          {
-            value: "Both",
-            text: "Both",
-            checked: (data["home-responsible-CTR-HB"] == "Both")
           }
         ]
       }) }}
