@@ -39,8 +39,11 @@
 
       {{ govukInput({
         label: {
-          text: "What is your National Insurance number?"
+          html: "<strong>What is the claimant's National Insurance number?</strong>"
         },
+          hint: {
+            html: ""
+          },
         id: "nino",
         name: "nino",
         classes: "govuk-input--width-10",
