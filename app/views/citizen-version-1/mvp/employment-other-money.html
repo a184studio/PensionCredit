@@ -14,19 +14,30 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="benefit-check" method="post" class="form">
+    <form action="payment-prompt" method="post" class="form">
 
-      {% set pensionDetails %}
+
+      <!------------Legend------------>
+        {% set legendOtherMoney %}
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>What we need to kmow:</strong></p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">What is this money?</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">How much is paid and how often?</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">Who is paid the money? You/partner</p>
+
+        {% endset %}
+      <!------------Legend------------>
+
+      {% set otherMoneyDetails %}
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
             html: "Details of this"
           },
           hint: {
-            text: "Who pays the pension? <br> How much is paid? <br> How often is it paid?"
+            html: legendOtherMoney
           },
-          id: "pension-check-details",
-          name: "pension-check-details",
+          id: "other-money-yes-details",
+          name: "other-money-yes-details",
           classes: "govuk-input--width-100",
           attributes: {
             maxlength: 200
@@ -35,30 +46,34 @@
       {% endset %}
 
       {{ govukRadios({
-        name: "pension-check",
+        name: "other-money-check",
         fieldset: {
           legend: {
-            text: "Do you or your partner get a private pension, money from a place where you used to work or any other pension? Y/N",
+            text: "Do you or your partner have any other money coming? Y/N",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
+        },
+        hint: {
+          text: "Hint"
         },
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["pension-check"] == "Yes"),
+            checked: (data["other-money-check"] == "Yes"),
                   conditional: {
-                    html: pensionDetails
+                    html: otherMoneyDetails
         }
           },
           {
             value: "No",
             text: "No",
-            checked: (data["pension-check"] == "No")
+            checked: (data["other-money-check"] == "No")
           }
         ]
       }) }}
+
 
       {{ govukButton({
         text: "Continue"

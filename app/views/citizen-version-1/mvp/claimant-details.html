@@ -1,7 +1,7 @@
-{% extends "layout-id-bar.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-  Have you spent any time in hospital recently? - Pension Credit
+  Your details? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -23,6 +23,8 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
         Your details
       </h1>
+
+      @clare: govuk-fieldset__legend--m
 
       {{ govukInput({
         label: {
@@ -80,13 +82,13 @@
 
       {{ govukInput({
         label: {
-          text: "Other names you have been known by"
+          text: "Other names you have been known by (optional)"
         },
         hint: {
-          text: "Do we need hint text here?"
+          text: "For example, maiden names or previous married names."
         },
-        id: "full-name",
-        name: "full-name",
+        id: "other-full-name",
+        name: "other-full-name",
         classes: "govuk-input--width-20",
         value: data["full-name"]
       }) }}
@@ -94,7 +96,7 @@
 
       {{ govukInput({
         label: {
-          text: "What is the claimant's National Insurance number?"
+          text: "What is your National Insurance number?"
         },
           hint: {
             text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
@@ -107,21 +109,21 @@
 
       {{ govukInput({
         label: {
-          text: "Contact number"
+          text: "What is your contact telephone number?"
         },
           hint: {
             text: ""
           },
-        id: "nino",
-        name: "nino",
+        id: "telephone-number",
+        name: "telephone-number",
         classes: "govuk-input--width-10",
-        value: data["nino"]
+        value: data["telephone-number"]
       }) }}
 
 
       {{ govukRadios({
-        idPrefix: "contact-formats-check",
-        name: "contact-formats-check",
+        idPrefix: "contact-blind-check",
+        name: "contact-blind-check",
         fieldset: {
           legend: {
             text: "Are you registered blind or severely sight impaired?",
@@ -134,12 +136,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["contact-formats-check"] == "Yes")
+            checked: (data["contact-blind-check"] == "Yes")
                     },
           {
             value: "No",
             text: "No",
-            checked: (data["contact-formats-check"] == "No")
+            checked: (data["contact-blind-check"] == "No")
           }
         ]
       }) }}
@@ -149,7 +151,7 @@
 {% set altLanguage %}
   {{ govukInput({
   label: {
-  html: "What is the claimant's first language?"
+  html: "What is your first language?"
   },
   id: "contact-formats-altLanguage",
   name: "contact-formats-altLanguage",
@@ -162,7 +164,7 @@
   name: "claimant-language-check",
   fieldset: {
     legend: {
-      text: "Are able to speak to us in English? Y/N",
+      text: "Are able to speak to us in English?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -187,8 +189,8 @@
 
 
 {{ govukRadios({
-  idPrefix: "contact-formats-check",
-  name: "contact-formats-check",
+  idPrefix: "contact-welsh-check",
+  name: "contact-welsh-check",
   fieldset: {
     legend: {
       text: "If you live in Wales, do you want to speak to us in Welsh?",
@@ -201,12 +203,12 @@
     {
       value: "Yes",
       text: "Yes",
-      checked: (data["contact-formats-check"] == "Yes")
+      checked: (data["contact-welsh-check"] == "Yes")
               },
     {
       value: "No",
       text: "No",
-      checked: (data["contact-formats-check"] == "No")
+      checked: (data["contact-welsh-check"] == "No")
     }
   ]
 }) }}
