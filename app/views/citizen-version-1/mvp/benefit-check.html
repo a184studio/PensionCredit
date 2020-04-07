@@ -17,7 +17,7 @@
     <form action="money-total" method="post" class="form">
 
       <h1 class="govuk-heading-xl">
-        Benefits you have
+        Benefits you have applied for
       </h1>
 
 
@@ -25,10 +25,10 @@
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "Details of this"
+            html: "Which benefits have you applied for?"
           },
           hint: {
-            text: "Tell me about the details?"
+            text: ""
           },
           id: "benefit-check-details",
           name: "benefit-check-details",
@@ -43,7 +43,7 @@
         name: "benefit-check",
         fieldset: {
           legend: {
-            text: "Have you or your partner claimed any social security benefits that you are waiting to hear about? Y/N",
+            text: "Have you or your partner applied for any benefits that you are waiting to hear about?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }

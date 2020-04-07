@@ -30,10 +30,10 @@
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "Details of this"
+            html: "Tell us the name of anyone that lives with you and their relationship to you."
           },
           hint: {
-            html: legendEmployment
+            text: ""
           },
           id: "home-living-with-you-yes-details",
           name: "home-living-with-you-yes-details",
@@ -48,13 +48,13 @@
         name: "home-living-with-you",
         fieldset: {
           legend: {
-            text: "Does anyone live in your household apart from you and your partner? Y/N",
+            text: "Does anyone else live with you apart from your partner?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "Hint"
+          text: ""
         },
         items: [
           {
