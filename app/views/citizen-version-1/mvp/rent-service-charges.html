@@ -14,8 +14,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="rent-council-tax-yn" method="post" class="form">
+    <form action="home-shared-payments" method="post" class="form">
 
+
+      {% set rentServiceChargeAmount %}
+        {{ govukInput({
+        label: {
+        html: "How much?"
+        },
+        id: "contact-formats-altLanguage",
+        name: "contact-formats-altLanguage",
+        classes: "govuk-input--width-20 "
+        }) }}
+      {% endset -%}
 
       {{ govukRadios({
         idPrefix: "rent-service-charges",
@@ -42,7 +53,10 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["rent-service-charges"] == "Yes")
+            checked: (data["rent-service-charges"] == "Yes"),
+                  conditional: {
+                    html: rentServiceChargeAmount
+        }
           },
           {
             value: "No",
