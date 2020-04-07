@@ -37,17 +37,43 @@
         value: data["full-name"]
       }) }}
 
-      {{ govukInput({
+      {% set altName %}
+        {{ govukInput({
         label: {
-          text: "Other names they have been known by"
+        html: "What was this name?"
         },
-        hint: {
-          text: "Do we need hint text here?"
+        id: "contact-formats-altName",
+        name: "contact-formats-altName",
+        classes: "govuk-input--width-20 "
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "claimant-name-check",
+        name: "claimant-name-check",
+        fieldset: {
+          legend: {
+            text: "Where you known by any pervious names?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
         },
-        id: "full-name",
-        name: "full-name",
-        classes: "govuk-input--width-20",
-        value: data["full-name"]
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["claimant-name-check"] == "Yes"),
+                  conditional: {
+                    html: altName
+                  }
+            },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["claimant-name-check"] == "No")
+          }
+        ]
       }) }}
 
 
