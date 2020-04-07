@@ -11,15 +11,14 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="page-2" method="post" class="form">
 
-    <p class="govuk-body govuk--version-control">Survey</p>
+    <p class="govuk-body govuk--version-control">MVP / Version 13</p>
 
-    <h1 class="govuk-heading-xl">Feedback survey</h1>
+    <h1 class="govuk-heading-xl">Apply for Pension Credit</h1>
 
-    <h2 class="govuk-heading-m">What did you think of the service today?</h2>
+    <h2 class="govuk-heading-m">Start a Pension Credit application</h2>
 
-    <p class="govuk-body-m">This should take around <strong>5 minutes</strong>.</p>
+    <p class="govuk-body-m">This part of your application should take around <strong>20 minutes</strong> depending on your circumstances.</p>
 
     <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit
 
@@ -37,47 +36,20 @@
     </ul>
 
 -->
-<!--
-<div class="govuk-panel--agent-alert govuk-!-margin-top-6">
-  {% set AddName %}
-
-  {{ govukInput({
-    label: {
-      text: "Add full name?"
-    },
-    hint: {
-      text: "Include any middle names."
-    },
-    id: "full-name",
-    name: "full-name",
-    classes: "govuk-input--width-20",
-    value: data["full-name"]
-  }) }}
-
-  {% endset %}
-</div>
-
-{{ govukDetails({
-  summaryText: "Add API name",
-  html: AddName
-}) }} -->
-
 
 
       {{ govukButton({
         text: "Start now",
-        classes: "govuk-button--start govuk-!-margin-top-4 govuk-!-margin-bottom-8"
+        href: "privacy-policy",
+        classes: "govuk-button--start govuk-!-margin-top-4 govuk-!-margin-bottom-2"
       }) }}
 
-      <br>
-
-<a href="page-3" class="govuk-link">Skip</a>
 
 
 
 
     <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
 
-</form>
+
 </div>
 {% endblock %}
