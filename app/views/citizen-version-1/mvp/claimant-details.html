@@ -39,10 +39,24 @@
 
       {{ govukInput({
         label: {
-          html: "<strong>What is the claimant's National Insurance number?</strong>"
+          text: "Other names you have been known by"
+        },
+        hint: {
+          text: "Do we need hint text here?"
+        },
+        id: "full-name",
+        name: "full-name",
+        classes: "govuk-input--width-20",
+        value: data["full-name"]
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "What is the claimant's National Insurance number?"
         },
           hint: {
-            html: ""
+            text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
           },
         id: "nino",
         name: "nino",
@@ -50,17 +64,46 @@
         value: data["nino"]
       }) }}
 
-National insurance number
-<br>
+      {{ govukInput({
+        label: {
+          text: "Contact number"
+        },
+          hint: {
+            text: ""
+          },
+        id: "nino",
+        name: "nino",
+        classes: "govuk-input--width-10",
+        value: data["nino"]
+      }) }}
 
-Full name
-<br>
-Other names you have been known by
-<br>
-Contact numer
-<br>
-Are you registered blind or severely sight impaired? Y/N
-<br>
+
+      {{ govukRadios({
+        idPrefix: "contact-formats-check",
+        name: "contact-formats-check",
+        fieldset: {
+          legend: {
+            text: "Are you registered blind or severely sight impaired?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["contact-formats-check"] == "Yes")
+                    },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["contact-formats-check"] == "No")
+          }
+        ]
+      }) }}
+
+
 
 {% set altLanguage %}
 {{ govukInput({
@@ -102,8 +145,32 @@ classes: "govuk-input--width-20 "
 }) }}
 
 
+{{ govukRadios({
+  idPrefix: "contact-formats-check",
+  name: "contact-formats-check",
+  fieldset: {
+    legend: {
+      text: "If you live in Wales, do you want to speak to us in Welsh?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  classes: "govuk-radios",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["contact-formats-check"] == "Yes")
+              },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["contact-formats-check"] == "No")
+    }
+  ]
+}) }}
 
-If you live in Wales, do you want to speak to us in Welsh? Y/N
+
 
 {{ govukRadios({
   idPrefix: "contact-formats-check",
