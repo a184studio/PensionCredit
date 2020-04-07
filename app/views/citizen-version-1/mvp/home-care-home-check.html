@@ -14,24 +14,22 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="contact-formats-check-router" method="post" class="form">
+    <form action="home-care-home-check-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
-      <input type="hidden" name="hospitals-complete" value="true"/>
-
 
 
         {% set stillOwnHome %}
 
 
         {{ govukRadios({
-          idPrefix: "claimant-language-check",
-          name: "claimant-language-check",
+          idPrefix: "home-care-home-check-still-own",
+          name: "home-care-home-check-still-own",
           fieldset: {
             legend: {
-              text: "Do you live permanently in a care home? Y/N",
+              text: "If Yes, Do you own the property you used to live in?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
+              classes: "govuk-fieldset__legend--s"
             }
           },
           classes: "govuk-radios",
@@ -39,7 +37,7 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: (data["claimant-language-check"] == "Yes")      ,
+              checked: (data["home-care-home-check-still-own"] == "Yes")      ,
                     conditional: {
                       html: altLanguage
                     }
@@ -47,18 +45,17 @@
             {
               value: "No",
               text: "No",
-              checked: (data["claimant-language-check"] == "No")
+              checked: (data["home-care-home-check-still-own"] == "No")
             }
           ]
         }) }}
-
-
-
         {% endset -%}
 
+
+
 {{ govukRadios({
-  idPrefix: "claimant-language-check",
-  name: "claimant-language-check",
+  idPrefix: "home-care-home-check",
+  name: "home-care-home-check",
   fieldset: {
     legend: {
       text: "Do you live permanently in a care home?",
@@ -71,7 +68,7 @@
     {
       value: "Yes",
       text: "Yes",
-      checked: (data["claimant-language-check"] == "Yes")      ,
+      checked: (data["home-care-home-check"] == "Yes")      ,
             conditional: {
               html: stillOwnHome
             }
@@ -79,39 +76,11 @@
     {
       value: "No",
       text: "No",
-      checked: (data["claimant-language-check"] == "No")
+      checked: (data["home-care-home-check"] == "No")
     }
   ]
 }) }}
 
-
-
-If you live in Wales, do you want to speak to us in Welsh? Y/N
-
-{{ govukRadios({
-  idPrefix: "contact-formats-check",
-  name: "contact-formats-check",
-  fieldset: {
-    legend: {
-      text: "Do you need help with letters or phone calls?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  classes: "govuk-radios",
-  items: [
-    {
-      value: "Yes",
-      text: "Yes",
-      checked: (data["contact-formats-check"] == "Yes")
-              },
-    {
-      value: "No",
-      text: "No",
-      checked: (data["contact-formats-check"] == "No")
-    }
-  ]
-}) }}
 
       {{ govukButton({
         text: "Continue"

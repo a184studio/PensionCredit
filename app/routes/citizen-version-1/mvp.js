@@ -402,6 +402,19 @@ router.post(`${baseUrl}/contact-formats-check-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
+  const contactFormats = req.session.data['home-care-home-check']
+
+  if (contactFormats === 'Yes') {
+    res.redirect(`${baseUrl}/address-post-code-lookup`)
+  } else {
+    res.redirect(`${baseUrl}/address-post-code-lookup`)
+  }
+})
+
+// home-care-home-check-still-own
+
+
 
 
 
