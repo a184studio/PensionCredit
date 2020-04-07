@@ -1,0 +1,100 @@
+{% extends "layout-id-bar.html" %}
+
+{% block pageTitle %}
+  Which best describes the place where you live? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="money-total" method="post" class="form">
+
+      <h1 class="govuk-heading-xl">
+        Benefits you have
+      </h1>
+
+
+      {% set benefitDetails %}
+        {{ govukTextarea({
+          label: {
+            classes: "govuk-label--s",
+            html: "Details of this"
+          },
+          hint: {
+            text: "Tell me about the details?"
+          },
+          id: "benefit-check-details",
+          name: "benefit-check-details",
+          classes: "govuk-input--width-100",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+      {% endset %}
+
+      {{ govukRadios({
+        name: "benefit-check",
+        fieldset: {
+          legend: {
+            text: "Have you or your partner claimed any social security benefits that you are waiting to hear about? Y/N",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["benefit-check"] == "Yes"),
+                  conditional: {
+                    html: benefitDetails
+        }
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["benefit-check"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "CarerAllowance-check",
+        fieldset: {
+          legend: {
+            text: "Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["CarerAllowance-check"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["CarerAllowance-check"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+  </div>
+</div>
+{% endblock %}

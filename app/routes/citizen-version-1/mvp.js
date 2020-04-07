@@ -474,20 +474,8 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   else if (homeOwnership === 'You rent it') {
     res.redirect(`${baseUrl}/rent-service-charges`)
   }
-  else if (homeOwnership === 'You live in someone else\'s home without paying rent') {
-    res.redirect(`${baseUrl}/pensions-state-overview`)
-  }
-  else if (homeOwnership === 'You own and rent it (shared ownership)') {
-    res.redirect(`${baseUrl}/notepad-shared-ownership`)
-  }
-  else if (homeOwnership === 'You live in a care home or nursing home') {
-    res.redirect(`${baseUrl}/notepad-care-nursing-home`)
-  }
-  else if (homeOwnership === 'You live in sheltered accommodation') {
-    res.redirect(`${baseUrl}/notepad-sheltered`)
-  }
   else if (homeOwnership === 'Other accommodation') {
-    res.redirect(`${baseUrl}/pensions-state-overview`)
+    res.redirect(`${baseUrl}/home-shared-payments`)
   }
 
   res.redirect(`${baseUrl}/pensions-overview`)

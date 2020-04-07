@@ -14,15 +14,31 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="pension-check" method="post" class="form">
+    <form action="benefit-check" method="post" class="form">
 
-
+      {% set pensionDetails %}
+        {{ govukTextarea({
+          label: {
+            classes: "govuk-label--s",
+            html: "Details of this"
+          },
+          hint: {
+            text: "Who pays the pension? <br> How much is paid? <br> How often is it paid?"
+          },
+          id: "pension-check-details",
+          name: "pension-check-details",
+          classes: "govuk-input--width-100",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+      {% endset %}
 
       {{ govukRadios({
-        name: "pensions-check",
+        name: "pension-check",
         fieldset: {
           legend: {
-            text: "x4 H1 for this page /// Do you or your partner share the rent or mortgage for the place where you live with anyone else? If you and your partner just share with each other, tick No. Y/N",
+            text: "Do you or your partner get a private pension, money from a place where you used to work or any other pension? Y/N",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -31,12 +47,15 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["pensions-check"] == "Yes")
+            checked: (data["pension-check"] == "Yes"),
+                  conditional: {
+                    html: pensionDetails
+        }
           },
           {
             value: "No",
             text: "No",
-            checked: (data["pensions-check"] == "No")
+            checked: (data["pension-check"] == "No")
           }
         ]
       }) }}

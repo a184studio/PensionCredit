@@ -1,17 +1,12 @@
 {% extends "layout-id-bar.html" %}
 
 {% block pageTitle %}
-  How would you prefer to be contacted? - Pension Credit
+  Which best describes the place where you live? - Pension Credit
 {% endblock %}
 
 {% block header %}
   {% include "includes/internal-header.html" %}
 {% endblock %}
-
-
-
-
-
 
 {% block content %}
 
@@ -19,40 +14,32 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="has-private-pension" method="post" class="form">
+    <form action="empolyment-check" method="post" class="form">
 
-      <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
+
 
       {{ govukRadios({
-        classes: "govuk-radios",
-        idPrefix: "disregards-capital-total-yn",
-        name: "disregards-capital-total-yn",
+        name: "money-second-property-check",
         fieldset: {
           legend: {
-            html: "Do you have X?",
-
+            text: "Do you own any property or land other than your home?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
-        hint: {
-          text: " "
-        },
-
         items: [
-        {
+          {
             value: "Yes",
             text: "Yes",
-            checked: (data["disregards-capital-total-yn"] == "Yes")
+            checked: (data["money-second-property-check"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["disregards-capital-total-yn"] == "No")
+            checked: (data["money-second-property-check"] == "No")
           }
         ]
       }) }}
-
 
       {{ govukButton({
         text: "Continue"
