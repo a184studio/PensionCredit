@@ -442,192 +442,62 @@
 
       </div>
 
-      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-            <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About your partner</h2>
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About your partner</h2>
 
-              {{ govukSummaryList({
-                classes: 'govuk-!-margin-bottom-9',
-                rows: [
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
 
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: data['partner-dob-day'] + ' ' + (data['partner-dob-month'] | getMonth) + ' ' + data['partner-dob-year']
+            },
+            actions: {
+              items: [
                 {
-                  key: {
-                    text: "Date of birth"
-                  },
-                  value: {
-                    text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "over-spa",
-                        text: "Change",
-                        visuallyHiddenText: "Change date of birth"
-                      }
-                    ]
-                  }
-                },
+                  href: "partner-check-yn",
+                  text: "Change",
+                  visuallyHiddenText: "Change date of birth"
+                }
+              ]
+            }
+          },
 
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data["partner-full-name"]
+            },
+            actions: {
+              items: [
                 {
-                  key: {
-                    text: "Name"
-                  },
-                  value: {
-                    text: data["full-name"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "claimant-details",
-                        text: "Change",
-                        visuallyHiddenText: "Change name"
-                      }
-                    ]
-                  }
-                },
-                            {
-                              key: {
-                                text: "National Insurance number"
-                              },
-                              value: {
-                                text: data["nino"]
-                              },
-                              actions: {
-                                items: [
-                                  {
-                                    href: "",
-                                    text: " ",
-                                    visuallyHiddenText: "Change National Insurance number"
-                                  }
-                                ]
-                              }
-                            },
-
-                            {
-                              key: {
-                                text: "What is your contact telephone number?"
-                              },
-                              value: {
-                                text: data["telephone-number"]
-                              },
-                              actions: {
-                                items: [
-                                  {
-                                    href: "",
-                                    text: "",
-                                    visuallyHiddenText: "Change number you are calling from"
-                                  }
-                                ]
-                              }
-                            }
-
-                          ]
-                        }) }}
-
-
-                        {{ govukSummaryList({
-                          classes: 'govuk-!-margin-bottom-9',
-                          rows: [
-
-                          {
-                            key: {
-                              text: "Are you registered blind or severely sight impaired?"
-                            },
-                            value: {
-                              text: data["contact-blind-check"]
-                            },
-                            actions: {
-                              items: [
-                                {
-                                  href: "",
-                                  text: "",
-                                  visuallyHiddenText: "Change number you are calling from"
-                                }
-                              ]
-                            }
-                          },
-
-                          {
-                            key: {
-                              text: "Are able to speak to us in English?"
-                            },
-                            value: {
-                              text: data["telephone-number"]
-                            },
-                            actions: {
-                              items: [
-                                {
-                                  href: "",
-                                  text: "",
-                                  visuallyHiddenText: "Change number you are calling from"
-                                }
-                              ]
-                            }
-                          }
-
-                        ]
-                      }) }}
-
-                      {{ govukSummaryList({
-                        classes: 'govuk-!-margin-bottom-9',
-                        rows: [
-
-                        {
-                          key: {
-                            text: "What is your first language?"
-                          },
-                          value: {
-                            text: data["contact-formats-altLanguage"]
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "",
-                                text: "",
-                                visuallyHiddenText: ""
-                              }
-                            ]
-                          }
-                        }
-
-                      ]
-                    }) }}
-
-                    {{ govukSummaryList({
-                      classes: 'govuk-!-margin-bottom-9',
-                      rows: [
-
+                  href: "partner-details",
+                  text: "Change",
+                  visuallyHiddenText: "Change name"
+                }
+              ]
+            }
+          },
                       {
                         key: {
-                          text: "If you live in Wales, do you want to speak to us in Welsh?"
+                          text: "National Insurance number"
                         },
                         value: {
-                          text: data["contact-welsh-check"]
+                          text: data["partner-nino"]
                         },
                         actions: {
                           items: [
                             {
                               href: "",
-                              text: "",
-                              visuallyHiddenText: "Change number you are calling from"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
-                          text: "Do you need help with letters or phone calls?"
-                        },
-                        value: {
-                          text: data["contact-formats-check"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "",
-                              visuallyHiddenText: ""
+                              text: " ",
+                              visuallyHiddenText: "Change National Insurance number"
                             }
                           ]
                         }
@@ -636,28 +506,24 @@
                     ]
                   }) }}
 
+
                   {{ govukSummaryList({
                     classes: 'govuk-!-margin-bottom-9',
                     rows: [
 
                     {
                       key: {
-                        text: "Formats"
+                        text: "Are you registered blind or severely sight impaired?"
                       },
                       value: {
-                        html: "     Audio,
-                                <br>Braille
-                                <br>Large print
-                                <br>Sign language
-                                <br>TextPhone
-                                <br>TypeTalk"
+                        text: data["contact-partner-blind-check"]
                       },
                       actions: {
                         items: [
                           {
-                            href: "contact-formats",
-                            text: "Change",
-                            visuallyHiddenText: ""
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "Change number you are calling from"
                           }
                         ]
                       }
@@ -666,35 +532,10 @@
                   ]
                 }) }}
 
-                {{ govukSummaryList({
-                  classes: 'govuk-!-margin-bottom-9',
-                  rows: [
 
-                              {
-                    key: {
-                      text: "TextPhone number"
-                    },
-                    value: {
-                      text: data["contact-formats-text-phone-number"]
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "",
-                          visuallyHiddenText: ""
-                        }
-                      ]
-                    }
-                  }
+      </div>
 
-                ]
-              }) }}
-
-
-            </div>
-
-      <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
 <!--CYA end-->

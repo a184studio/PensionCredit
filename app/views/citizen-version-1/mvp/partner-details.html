@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Have you spent any time in hospital recently? - Pension Credit
+  Partner details - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -58,29 +58,17 @@
           hint: {
             text: "It’s on their National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
           },
-        id: "nino",
-        name: "nino",
+        id: "partner-nino",
+        name: "partner-nino",
         classes: "govuk-input--width-10",
-        value: data["nino"]
+        value: data["partner-nino"]
       }) }}
 
-      {{ govukInput({
-        label: {
-          text: "What is your partner's contact telephone number?"
-        },
-          hint: {
-            text: ""
-          },
-        id: "nino",
-        name: "nino",
-        classes: "govuk-input--width-10",
-        value: data["nino"]
-      }) }}
 
 
       {{ govukRadios({
-        idPrefix: "contact-formats-check",
-        name: "contact-formats-check",
+        idPrefix: "contact-partner-blind-check",
+        name: "contact-partner-blind-check",
         fieldset: {
           legend: {
             text: "Is your partner registered blind or severely sight impaired?",
@@ -93,12 +81,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["contact-formats-check"] == "Yes")
+            checked: (data["contact-partner-blind-check"] == "Yes")
                     },
           {
             value: "No",
             text: "No",
-            checked: (data["contact-formats-check"] == "No")
+            checked: (data["contact-partner-blind-check"] == "No")
           }
         ]
       }) }}
