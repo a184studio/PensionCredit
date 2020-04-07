@@ -1,4 +1,4 @@
-{% extends "layout-id-bar.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Post Pension Credit index - Pension Credit
@@ -23,10 +23,10 @@
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
-
-      <h1 class="govuk-heading-xl">
-        Application in progress
-      </h1>
+      {{ govukPanel({
+              titleText: "Application sent",
+                classes:"govuk-!-margin-bottom-6"
+            }) }}
 
       <h3 class="govuk-heading-m">What happens next</h3>
 
