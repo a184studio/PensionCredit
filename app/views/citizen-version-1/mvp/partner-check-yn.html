@@ -25,7 +25,7 @@
             namePrefix: "dob",
             fieldset: {
               legend: {
-                text: "What is your patners date of birth?",
+                text: "What is your partner's date of birth?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--m"
               }
@@ -58,12 +58,15 @@
         name: "partner-check-yn",
         fieldset: {
           legend: {
-            text: "Do you have a partner?",
+            text: "Do you live with a partner?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         classes: "govuk-radios",
+        hint: {
+          text: "A partner is a husband, wife, civil partner or someone that you live with as a couple."
+        },
         items: [
           {
             value: "Yes",
