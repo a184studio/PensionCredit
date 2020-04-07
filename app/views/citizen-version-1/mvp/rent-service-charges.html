@@ -16,6 +16,16 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="home-shared-payments" method="post" class="form">
 
+      <!------------HEADLINE------------>
+        {% set legend %}
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Service charges can include:</strong></p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">warden services</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">caretaker services like gardening, maintenance and cleaning of communal areas</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">use of a laundry room</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">use of communal areas like a lounge or TV area</p>
+
+        {% endset %}
+      <!------------HEADLINE------------>
 
       {% set rentServiceChargeAmount %}
         {{ govukInput({
@@ -39,15 +49,7 @@
           }
         },
         hint: {
-          html: "<p class=\"hint\">
-                <br><strong>Service charges can include:
-                </strong>
-                <ul class=\"govuk-list hint govuk-list--bullet\">
-                  <li>warden services</li>
-                  <li>caretaker services like gardening, maintenance and cleaning of communal areas</li>
-                  <li>use of a laundry room</li>
-                  <li>use of communal areas like a lounge or TV area</li>
-                </ul></hint>"
+          html: legend
         },
         items: [
           {
