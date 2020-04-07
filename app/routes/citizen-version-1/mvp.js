@@ -55,8 +55,15 @@ router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/home-ownership-router`, (req, res) => { // router name
+  const correspondenceYN = req.session.data['address-correspondence-yn']  // name of data / id name
 
-
+  if (correspondenceYN === 'No - I live at a different address') { // name of data / + answer
+    res.redirect(`${baseUrl}/post-code-lookup`)
+  } else {
+    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
+  }
+})
 
 router.post(`${baseUrl}/address-correspondence-yn-router`, (req, res) => { // router name
   const correspondenceYN = req.session.data['address-correspondence-yn']  // name of data / id name
@@ -64,9 +71,11 @@ router.post(`${baseUrl}/address-correspondence-yn-router`, (req, res) => { // ro
   if (correspondenceYN === 'No - I live at a different address') { // name of data / + answer
     res.redirect(`${baseUrl}/post-code-lookup`)
   } else {
-    res.redirect(`${baseUrl}/home-ownership`)
+    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
   }
 })
+
+
 
 router.post(`${baseUrl}/clear-data-yn-router`, (req, res) => { // router name
   const privacyPolicy = req.session.data['clear-data-yn']  // name of data / id name
@@ -403,18 +412,14 @@ router.post(`${baseUrl}/contact-formats-check-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
-  const contactFormats = req.session.data['home-care-home-check']
-
-  if (contactFormats === 'Yes') {
-    res.redirect(`${baseUrl}/address-post-code-lookup`)
+  const careHome = req.session.data['home-care-home-check']
+  const careHomeStillOwn = req.session.data['home-care-home-check-still-own']
+  if (careHome === 'Yes' && careHomeStillOwn === 'Yes') {
+    res.redirect(`${baseUrl}/pensions-check`)
   } else {
     res.redirect(`${baseUrl}/address-post-code-lookup`)
   }
 })
-
-// home-care-home-check-still-own
-
-
 
 
 
