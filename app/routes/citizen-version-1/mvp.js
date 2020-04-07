@@ -276,6 +276,8 @@ router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
 // Contact end
 
 
+
+
 router.post(`${baseUrl}/over-spa-router`, (req, res) => {
   try {
     const dob = req.session.data['dob-year'] + '-' +
@@ -300,7 +302,7 @@ router.post(`${baseUrl}/over-spa-router`, (req, res) => {
       res.redirect(`${baseUrl}/sex`)
     }
   } catch (err) {
-    res.redirect(`${baseUrl}/reside-in-uk`)
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
   }
 })
 
@@ -349,6 +351,71 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
     res.redirect(`${baseUrl}/done-lived-abroad-hrt`)
   }
 })
+
+router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
+  const statePensionCheck = req.session.data['state-pension-check-yn']
+
+  if (statePensionCheck === 'Yes') {
+    res.redirect(`${baseUrl}/children-check-yn`)
+  } else {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
+  }
+})
+
+
+router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
+  const childrenCheck = req.session.data['children-check-yn']
+
+  if (childrenCheck === 'Yes') {
+    res.redirect(`${baseUrl}/partner-check-yn`)
+  } else {
+    res.redirect(`${baseUrl}/done-has-children`)
+  }
+})
+
+router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
+  const childrenCheck = req.session.data['partner-check-yn']
+
+  if (childrenCheck === 'No') {
+    res.redirect(`${baseUrl}/claim-date-of-claim`)
+  } else {
+    res.redirect(`${baseUrl}/partner-over-spa-check`)
+  }
+})
+
+router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
+  const childrenCheck = req.session.data['partner-mac-yn']
+
+  if (childrenCheck === 'Yes') {
+    res.redirect(`${baseUrl}/partner-over-spa-check`)
+  } else {
+    res.redirect(`${baseUrl}/done-has-partner`)
+  }
+})
+
+router.post(`${baseUrl}/contact-formats-check-router`, (req, res) => {
+  const contactFormats = req.session.data['contact-formats-check']
+
+  if (contactFormats === 'Yes') {
+    res.redirect(`${baseUrl}/contact-formats`)
+  } else {
+    res.redirect(`${baseUrl}/single-joint-check`)
+  }
+})
+
+
+
+
+router.post(`${baseUrl}/single-joint-check-router`, (req, res) => {
+  const singleJoint = req.session.data['single-joint-check']
+
+  if (singleJoint === 'Single') {
+    res.redirect(`${baseUrl}/claimant-details`)
+  } else {
+    res.redirect(`${baseUrl}/done-has-partner`)
+  }
+})
+
 
 router.post(`${baseUrl}/has-work-router`, (req, res) => {
   const hasWork = req.session.data['has-work']
