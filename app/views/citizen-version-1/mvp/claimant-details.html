@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Have you spent any time in hospital recently? - Pension Credit
+  Your details? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -73,16 +73,16 @@
           hint: {
             text: ""
           },
-        id: "nino",
-        name: "nino",
+        id: "telephone-number",
+        name: "telephone-number",
         classes: "govuk-input--width-10",
-        value: data["nino"]
+        value: data["telephone-number"]
       }) }}
 
 
       {{ govukRadios({
-        idPrefix: "contact-formats-check",
-        name: "contact-formats-check",
+        idPrefix: "contact-blind-check",
+        name: "contact-blind-check",
         fieldset: {
           legend: {
             text: "Are you registered blind or severely sight impaired?",
@@ -95,12 +95,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["contact-formats-check"] == "Yes")
+            checked: (data["contact-blind-check"] == "Yes")
                     },
           {
             value: "No",
             text: "No",
-            checked: (data["contact-formats-check"] == "No")
+            checked: (data["contact-blind-check"] == "No")
           }
         ]
       }) }}
@@ -148,8 +148,8 @@
 
 
 {{ govukRadios({
-  idPrefix: "contact-formats-check",
-  name: "contact-formats-check",
+  idPrefix: "contact-welsh-check",
+  name: "contact-welsh-check",
   fieldset: {
     legend: {
       text: "If you live in Wales, do you want to speak to us in Welsh?",
@@ -162,12 +162,12 @@
     {
       value: "Yes",
       text: "Yes",
-      checked: (data["contact-formats-check"] == "Yes")
+      checked: (data["contact-welsh-check"] == "Yes")
               },
     {
       value: "No",
       text: "No",
-      checked: (data["contact-formats-check"] == "No")
+      checked: (data["contact-welsh-check"] == "No")
     }
   ]
 }) }}

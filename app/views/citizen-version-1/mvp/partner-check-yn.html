@@ -21,8 +21,8 @@
 
       {% set ageCheck %}
           {{ govukDateInput({
-            id: "dob",
-            namePrefix: "dob",
+            id: "partner-dob",
+            namePrefix: "partner-dob",
             fieldset: {
               legend: {
                 text: "What is your partner's date of birth?",
@@ -37,17 +37,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["dob-day"]
+                value: data["partner-dob-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["dob-month"]
+                value: data["partner-dob-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["dob-year"]
+                value: data["partner-dob-year"]
               }
             ]
           }) }}
