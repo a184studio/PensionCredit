@@ -23,52 +23,87 @@
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
-      <div class="govuk-panel--agent">
+
+      <h1 class="govuk-heading-xl">
+        Application in progress
+      </h1>
+
+      <h3 class="govuk-heading-m">What happens next</h3>
+
+      <p class="govuk-body">
+        We are doing some final checks on your application. We will contact you
+        by <strong>DD / Month / Year (6 - 8 weeks) </strong> either to confirm your award or ask you for more information. You do not need to contact us before then unless anything changes.
+      </p>
+
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">If anything changes</h2>
+
+      <p class="govuk-body">
+        While you are receiving Pension Credit, you must tell us straight away about any changes that could affect the amount of Pension Credit you get.</p>
+      <p class="govuk-body">  If you do not report any changes, we might reduce or stop your Pension Credit.</p>
+
+      <p class="govuk-body">  Changes that could affect your claim include:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>if you go abroad for longer than 4 weeks</li>
+        <li>your address changes, or anyone moves in or out of your home</li>
+        <li>your income changes, including any changes to employment or self-employment</li>
+        <li>changes to the value of your savings, investments or second properties</li>
+        <li>if you go into hospital or a care home for more than 4 weeks</li>
+      </ul>
+
+
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Contact the Pension Service helpline to report any changes:</h2>
+
+<ul class="govuk-list govuk-list">
+  <li>Telephone: 0800 731 0469</li>
+  <li>Textphone: 0800 169 0133</li>
+<li><a href="https://www.ngts.org.uk/" class="govuk-link govuk-link--no-visited-state">Next Generation Text (NGT)</a> text relay (if you cannot hear or speak on the phone): 18001 then 0800 731 0469</li>
+    <li>Monday to Friday, 8am to 7:30pm</li>
+    <br>
+    <li><a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state">Find out about call charges  (opens in a new window or tab)</a></li>
+</ul>
+
+<p>You can also report by post. The address is on the letters you get about your Pension Credit.</p>
+
+
+
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
 
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      Adviser: What to do next
+      Sign posting
     </h1>
 
     <!----------------------------------------------------------------------------------->
-    {% if data["own-mortgage-home-loan-yes"] == "Yes" %}
 
-<div class="govuk-!-margin-bottom-8">
-    <h2 class="govuk-heading-xm">Send Support for Mortgage Interest (SMI) information pack</h2>
-
-      <p class=govuk-body>(Name) told you they want to apply for Support for Mortgage Interest. Tell them they will be sent an information pack and application form.</p>
-      <p class=govuk-body>Open the claimant's file in PTP CAM and select the:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li> <strong>Open Case</strong> tab</li>
-        <li> <strong>Customer cases</strong> tab</li>
-        <li><strong>Housing costs</strong> tab</li>
-        <li><strong>Home Loan</strong> tab</li>
-        </ul>
-
-        <p class=govuk-body>Select <strong>Send correspondence</strong> to issue form MI12</p>
-
-      <p class=govuk-body>Set <strong>PTP CAM</strong> task for outbound correspondence (task type) <strong>MI12</strong> (sub type)</p>
-      <p class=govuk-body>Assign task to housing costs team queue in the relevant pension centre. The pension centre will be displayed as the owing office in the <strong>more info</strong> view.</p>
-</div>
-      {% endif %}
 
 <!----------------------------------------------------------------------------------->
 {% if (data["rent-council-tax-apply"] == "Yes") or (data["own-council-tax-apply"] == "Yes") %}
+{% endif %}
 
 <div class="govuk-!-margin-bottom-8">
   <h2 class="govuk-heading-xm">Signpost to Council Tax Reduction</h2>
   <p class="govuk-body">(Name) told you they would like to apply for Council Tax Reduction. They should contact their local authority to apply.</p>
 </div>
-{% endif %}
+
 
 <!----------------------------------------------------------------------------------->
 {% if data["rent-housing-benefit-apply"] == "Yes" %}
+{% endif %}
 
 <div class="govuk-!-margin-bottom-8">
   <h2 class="govuk-heading-xm">Take Housing Benefit application</h2>
   <p class="govuk-body">Complete the <a href="Pauls URL">Housing Benefit claim (opens in a new window or tab).<a/></p>
 </div>
-{% endif %}
+
 
 
 <!----------------------------------------------------------------------------------->
@@ -99,14 +134,6 @@
 
 
 <!----------------------------------------------------------------------------------->
-
-<div class="govuk-!-margin-bottom-8">
-  <h2 class="govuk-heading-xm">Service survey</h2>
-
-  <p class="govuk-body">???? <a href="/version-15/survey/start" class="govuk-link govuk-link--no-visited-state">Service survey</a>
-</div>
-
-</div> <!--Agent end-->
 
 
       {{ govukButton({

@@ -23,8 +23,9 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have not agreed to the declaration</h1>
 
 
-      <p class="govuk-body">We cannot take your claim for Pension Credit.</p>
+      <p class="govuk-body govuk-!-margin-bottom-0">We cannot take your claim for Pension Credit.</p>
 
+      {% include "citizen-version-1/mvp/survey.html" %}
 
       {{ govukButton({
         text: "Finish and close",
