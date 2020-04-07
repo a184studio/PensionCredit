@@ -39,6 +39,47 @@
         value: data["full-name"]
       }) }}
 
+
+      {% set altName %}
+        {{ govukInput({
+        label: {
+        html: "What was this name?"
+        },
+        id: "contact-formats-altName",
+        name: "contact-formats-altName",
+        classes: "govuk-input--width-20 "
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "claimant-name-check",
+        name: "claimant-name-check",
+        fieldset: {
+          legend: {
+            text: "Where you known by any pervious names?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["claimant-name-check"] == "Yes"),
+                  conditional: {
+                    html: altName
+                  }
+            },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["claimant-name-check"] == "No")
+          }
+        ]
+      }) }}
+
+
       {{ govukInput({
         label: {
           text: "Other names you have been known by (optional)"
