@@ -1,0 +1,123 @@
+{% extends "layout-id-bar.html" %}
+
+{% block pageTitle %}
+  Have you spent any time in hospital recently? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="contact-formats-check-router" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+
+
+        {% set stillOwnHome %}
+
+
+        {{ govukRadios({
+          idPrefix: "claimant-language-check",
+          name: "claimant-language-check",
+          fieldset: {
+            legend: {
+              text: "Do you live permanently in a care home? Y/N",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          classes: "govuk-radios",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["claimant-language-check"] == "Yes")      ,
+                    conditional: {
+                      html: altLanguage
+                    }
+                      },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["claimant-language-check"] == "No")
+            }
+          ]
+        }) }}
+
+
+
+        {% endset -%}
+
+{{ govukRadios({
+  idPrefix: "claimant-language-check",
+  name: "claimant-language-check",
+  fieldset: {
+    legend: {
+      text: "Do you live permanently in a care home?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  classes: "govuk-radios",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["claimant-language-check"] == "Yes")      ,
+            conditional: {
+              html: stillOwnHome
+            }
+              },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["claimant-language-check"] == "No")
+    }
+  ]
+}) }}
+
+
+
+If you live in Wales, do you want to speak to us in Welsh? Y/N
+
+{{ govukRadios({
+  idPrefix: "contact-formats-check",
+  name: "contact-formats-check",
+  fieldset: {
+    legend: {
+      text: "Do you need help with letters or phone calls?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  classes: "govuk-radios",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["contact-formats-check"] == "Yes")
+              },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["contact-formats-check"] == "No")
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}
