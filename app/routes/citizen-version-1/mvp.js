@@ -1291,6 +1291,19 @@ router.post(`${baseUrl}/pc-done-yn-router`, (req, res) => { // router name
   }
 })
 
+router.post(`${baseUrl}/index-survey-router`, (req, res) => { // router name
+  const indexSurveyYN = req.session.data['index-survey-yn']  // name of data / id name
+
+  if (indexSurveyYN === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}getinvolved.dwp.gov.uk/++preview++/digital/fa743129`)
+  } else {
+    res.redirect(`${baseUrl}/start`)
+  }
+})
+
+
+
+
 
 
 module.exports = router
