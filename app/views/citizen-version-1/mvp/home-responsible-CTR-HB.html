@@ -1,0 +1,61 @@
+{% extends "layout-id-bar.html" %}
+
+{% block pageTitle %}
+  Which best describes the place where you live? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="home-ownership" method="post" class="form">
+
+      {{ govukRadios({
+        idPrefix: "home-responsible-CTR-HB",
+        name: "home-responsible-CTR-HB",
+        fieldset: {
+          legend: {
+            html: "Are you or your partner responsible for paying the rent, Council Tax or both for the place where you live? If they are paid through Housing Benefit of Council Tax Reduction, still tick yes. Y/N",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Council tax rediction",
+            text: "Council tax rediction",
+            checked: (data["home-responsible-CTR-HB"] == "Council tax rediction")
+          },
+          {
+            value: "Housing benefit",
+            text: "Housing benefit",
+            checked: (data["home-responsible-CTR-HB"] == "Housing benefit")
+          },
+          {
+            value: "Both",
+            text: "Both",
+            checked: (data["home-responsible-CTR-HB"] == "Both")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+  </div>
+</div>
+{% endblock %}
