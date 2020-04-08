@@ -16,8 +16,8 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="home-shared-payments" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "own-mortgage-home-loan-yes",
-        name: "own-mortgage-home-loan-yes",
+        idPrefix: "home-mortgage-home-loan",
+        name: "home-mortgage-home-loan",
         fieldset: {
           legend: {
             text: "Do you want to apply for support with interest on a mortgage or loan secured against your home?",
@@ -37,12 +37,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["own-mortgage-home-loan-yes"] == "Yes")
+            checked: (data["home-mortgage-home-loan"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["own-mortgage-home-loan-yes"] == "No")
+            checked: (data["home-mortgage-home-loan"] == "No")
           }
         ]
       }) }}

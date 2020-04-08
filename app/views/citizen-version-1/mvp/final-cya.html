@@ -802,17 +802,391 @@
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-Which best describes the place where you live?
+<!-- Which best describes the place where you live?
 
 home-ownership
 home-ownership-other
 
 home-property-charges
+Do you pay any service charges?
 home-property-service-charges
+
+How much do you pay in service charges?
+home-property-service-charges-value
+
+Do you pay ground rent?
+
 home-property-ground-rent
+How much do you pay in ground rent?
+home-property-ground-rent-value
+
+/home-mortgage-home-loan
+Do you want to apply for support with interest on a mortgage or loan secured against your home?
+home-mortgage-home-loan
+
+home-shared-payments
+
+————
+Pensions
+
+/pension-check
+
+For each pension you get, tell us who pays it, how much it is and how often it is paid.
+pension-check-details
+————
+Benefits
+Benefits you have applied for
+
+Have you or your partner applied for any benefits that you are waiting to hear about?
+benefit-check
+Which benefits have you applied for?
+benefit-check-details
+
+Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?
+CarerAllowance-check
+—————
+Earnings
+Do you or your partner have any income from employment?
+employment-check
+
+Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner.
+employment-check-yes-details
+
+Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?
+self-employment-check
+
+Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner.
+self-employment-check-yes-details
+
+Do you or your partner have any other money coming in?
+other-money-check
+
+Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner.
+other-money-yes-details
+—————
+money
+How much money you have, including savings and investments?
+money-total
+
+Do you own any property or land other than your home?
+money-second-property-check
+
+Disregards
+Is any of the money you have from: -->
+
+<dl class="govuk-summary-list govuk-summary-list--long">
 
 
+{% if data["disregards-capital-total-yn"] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Details of benefit arrears, correction or compensation payments
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data["disregards-benefit-check-yes"] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="disregards-monolith-2">
+      Change
+    </a>
+  </dd>
+</div>
+{% endif %}
 
+<br>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Payments related to Council Tax Reduction
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes / No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="disregards-monolith-2">
+            Change
+          </a>
+        </dd>
+      </div>
+
+
+      {% if data["disregards-council-yes"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Details of payments related to Council Tax Reduction
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["disregards-council-yes"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="disregards-monolith-2">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+<br>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Compensation payments related to the second world war or service in the armed forces
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes / No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="disregards-monolith-2">
+            Change
+          </a>
+        </dd>
+      </div>
+
+
+      {% if data["disregards-warpayment-yes"] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Details of compensation payments related to the second world war or service in the armed forces
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["disregards-warpayment-yes"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="disregards-monolith-2">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+<br>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Personal injury claim payments
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes / No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="disregards-monolith-2">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+
+            {% if data["disregards-compensation-for-injury-yes"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Details of personal injury claim payments
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["disregards-compensation-for-injury-yes"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="disregards-monolith-2">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+<br>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Payments from a home insurance policy to cover lost or damaged personal possessions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes / No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="disregards-monolith-2">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+
+            {% if data["disregards-contents-insurance-yes"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Details of payments from a home insurance policy to cover lost or damaged personal possessions
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["disregards-contents-insurance-yes"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="disregards-monolith-2">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+<br>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Savings that you intend to use to buy or make essential repairs to your main home
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes / No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="disregards-monolith-2">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+
+            {% if data["disregards-money-for-property-yes"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Details of savings that you intend to use to buy or make essential repairs to your main home
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["disregards-money-for-property-yes"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="disregards-monolith-2">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+<br>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Payments to help you live independently in your own home or the community
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes / No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="disregards-monolith-2">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+
+            {% if data["disregards-independently-living-yes"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Details of payments to help you live independently in your own home or the community
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["disregards-independently-living-yes"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="disregards-monolith-2">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+
+<br>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Payments to help you if you have been involved in an incident or emergency
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes / No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="disregards-monolith-2">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+
+            {% if data["disregards-incident-payment-yes"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Details of payments to help you if you have been involved in an incident or emergency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["disregards-incident-payment-yes"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="disregards-monolith-2">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+<br>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Windrush child compensation
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes / No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="disregards-monolith-2">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+
+            {% if data["disregards-windrush-yes"] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Details of Windrush child compensation
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data["disregards-windrush-yes"] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a href="disregards-monolith-2">
+                        Change
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+<br>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Payments to support you with the effects of a blood infection or vCJD
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes / No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="disregards-monolith-2">
+                Change
+              </a>
+            </dd>
+          </div>
+
+
+          {% if data["disregards-blood-yes"] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Details of payments to support you with the effects of a blood infection or vCJD
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data["disregards-blood-yes"] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="disregards-monolith-2">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+                {% endif %}
+
+  </div>
 
 
 <!--CYA end-->

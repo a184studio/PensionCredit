@@ -24,7 +24,7 @@
       <!------------Legend--------------->
 
       {{ govukRadios({
-        name: "pensions-check",
+        name: "home-shared-payments",
         fieldset: {
           legend: {
             html: dynamicH1,
@@ -36,12 +36,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["pensions-check"] == "Yes")
+            checked: (data["home-shared-payments"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["pensions-check"] == "No")
+            checked: (data["home-shared-payments"] == "No")
           }
         ]
       }) }}
