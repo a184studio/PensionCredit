@@ -375,11 +375,23 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['partner-check-yn']
 
   if (childrenCheck === 'No') {
-    res.redirect(`${baseUrl}/claim-date-of-claim`)
+    res.redirect(`${baseUrl}/claim-filter`)
   } else {
-    res.redirect(`${baseUrl}/partner-over-spa-check`)
+    res.redirect(`${baseUrl}/partner-app-check`)
   }
 })
+
+router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
+  const claimFilter = req.session.data['claim-filter']
+
+  if (claimFilter === 'Normal') {
+    res.redirect(`${baseUrl}/claim-date-of-claim`)
+  } else {
+    res.redirect(`${baseUrl}/claim-notification`)
+  }
+})
+
+
 
 router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['partner-mac-yn']

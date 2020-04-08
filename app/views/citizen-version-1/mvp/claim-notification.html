@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Date of claim - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="claimant-details" method="post">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Becasuse this is an advanced claim you can only claim from DD Month YYYY</h1>
+
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Sorry, </p>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -20,32 +20,39 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
         About your partner
       </h1>
 
+      {% set legendName %}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is your partners full name?</h3>
+      {% endset -%}
+
       {{ govukInput({
         label: {
-          text: "What is your partners full name?"
+          html: legendName
         },
         hint: {
           text: "Include any middle names."
         },
         id: "partner-full-name",
         name: "partner-full-name",
-        classes: "govuk-input--width-20",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
         value: data["full-name"]
       }) }}
 
+      {% set legendPreviousName %}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What were your partner's previous names?</h3>
+      {% endset -%}
 
       {% set altName %}
         {{ govukInput({
         label: {
-        html: "What were your partner's previous names?"
+        html:legendPreviousName
         },
         id: "patner-alt-name-yes",
         name: "patner-alt-name-yes",
-        classes: "patner-input--width-20 "
+        classes: "patner-input--width-20 govuk-!-margin-bottom-4"
         }) }}
       {% endset -%}
 
@@ -62,7 +69,7 @@
         hint: {
           text: "For example, maiden names or previous married names."
         },
-        classes: "govuk-radios",
+        classes: "govuk-radios govuk-!-margin-bottom-4",
         items: [
           {
             value: "Yes",
@@ -81,16 +88,20 @@
       }) }}
 
 
+      {% set legendNI %}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is the your partners National Insurance number?</h3>
+      {% endset -%}
+
       {{ govukInput({
         label: {
-          text: "What is the your partners National Insurance number?"
+          html: legendNI
         },
           hint: {
             text: "It’s on their National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
           },
         id: "partner-nino",
         name: "partner-nino",
-        classes: "govuk-input--width-10",
+        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
         value: data["partner-nino"]
       }) }}
 
@@ -106,7 +117,7 @@
             classes: "govuk-fieldset__legend--m"
           }
         },
-        classes: "govuk-radios",
+        classes: "govuk-radios govuk-!-margin-bottom-4",
         items: [
           {
             value: "Yes",
