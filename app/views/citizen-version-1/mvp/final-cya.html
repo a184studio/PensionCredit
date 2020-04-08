@@ -1033,20 +1033,93 @@ actions: {
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">XXXX</h2>
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Benefits you have applied for</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Have you or your partner applied for any benefits that you are waiting to hear about?"
+            },
+            value: {
+              text: data['benefit-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "benefit-check",
+                  text: "Change",
+                  visuallyHiddenText: "benefit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["pension-check-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Which benefits have you applied for?"
+          },
+          value: {
+            text: data['benefit-check-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "benefit-check",
+                text: "Change",
+                visuallyHiddenText: "pension-check-details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?"
+    },
+    value: {
+      text: data['CarerAllowance-check']
+    },
+    actions: {
+      items: [
+        {
+          href: "benefit-check",
+          text: "Change",
+          visuallyHiddenText: "benefit"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+
       </div>
 
-      ————
-      Benefits
-      Benefits you have applied for
 
-      Have you or your partner applied for any benefits that you are waiting to hear about?
-      benefit-check
-      Which benefits have you applied for?
-      benefit-check-details
 
-      Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?
-      CarerAllowance-check
+
+
+
+
+
+
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
