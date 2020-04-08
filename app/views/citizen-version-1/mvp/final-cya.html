@@ -1029,8 +1029,6 @@ actions: {
 
       </div>
 
-
-
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Benefits you have applied for</h2>
@@ -1059,7 +1057,7 @@ actions: {
         ]
       }) }}
 
-{% if data["pension-check-details"] %}
+{% if data["benefit-check-details"] %}
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
@@ -1112,22 +1110,11 @@ actions: {
 
       </div>
 
-
-
-
-
-
-
-
-
-
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">XXXX</h2>
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employment and earnings</h2>
       </div>
 
-—————
-Earnings
 Do you or your partner have any income from employment?
 employment-check
 
@@ -1148,17 +1135,58 @@ other-money-yes-details
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">XXXX</h2>
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Money you have</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "How much money you have, including savings and investments?"
+            },
+            value: {
+              text: data['money-total']
+            },
+            actions: {
+              items: [
+                {
+                  href: "money-total",
+                  text: "Change",
+                  visuallyHiddenText: "money-total"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Do you own any property or land other than your home?"
+          },
+          value: {
+            text: data['money-second-property-check']
+          },
+          actions: {
+            items: [
+              {
+                href: "money-second-property-check",
+                text: "Change",
+                visuallyHiddenText: "money-second-property-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
       </div>
-
-
-—————
-money
-How much money you have, including savings and investments?
-money-total
-
-Do you own any property or land other than your home?
-money-second-property-check
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
