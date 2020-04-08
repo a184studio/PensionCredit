@@ -20,6 +20,29 @@
 
          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Is any of the money you have from:</h1>
 
+
+         {% set arrearsOver %}
+           {{ govukTextarea({
+             label: {
+               html: "<p><strong>Description of the payments for arrears or official error, the date paid and the amount.</strong></p>
+
+
+                       "},
+             hint: {
+               html: "<p class=govuk-hint>Disregard arrears of benefits up to £5,000 for one year.</p>
+                       <p class=govuk-hint> Disregard arrears of benefits of £5,000 or over indefinitely.</p>
+                       <p class=govuk-hint>Disregard payments of £5,000 or more to correct or compensate for official errors or late payment of benefit indefinitely.</p>"
+             },
+             id: "disregards-benefit-check-yes",
+             name: "disregards-benefit-check-yes",
+             classes: "govuk-input--width-30",
+             attributes: {
+               maxlength: 200
+             }
+           }) }}
+         {% endset %}
+
+
         {% set council %}
           {{ govukTextarea({
             label: {
@@ -54,6 +77,7 @@
               <li>Armed Forces Independence Payment</li>
             </ul>
           {% endset %}
+
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
@@ -225,6 +249,9 @@
           }) }}
         {% endset %}
 
+
+        <!-- ———————————————————————————————————— -->
+
         {{ govukCheckboxes({
           name: "disregards",
           fieldset: {
@@ -238,6 +265,14 @@
             text: ""
           },
           items: [
+          {
+            name: 'arrears',
+            value: "Payments to correct or compensate for an official error or for arrears of benefits",
+            html: "Payments to correct or compensate for an official error or for arrears of benefits",
+            conditional: {
+              html: arrearsOver
+            }
+          },
           {
             name: 'council',
             value: "Payments related to Council Tax Reduction",
