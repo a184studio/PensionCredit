@@ -1113,25 +1113,163 @@ actions: {
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employment and earnings</h2>
+
+  {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you or your partner have any income from employment?"
+            },
+            value: {
+              text: data['employment-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-check",
+                  text: "Change",
+                  visuallyHiddenText: "benefit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["employment-check-yes-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+          },
+          value: {
+            text: data['employment-check-yes-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "employment-check",
+                text: "Change",
+                visuallyHiddenText: "employment-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+
+  {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?"
+            },
+            value: {
+              text: data['self-employment-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-check",
+                  text: "Change",
+                  visuallyHiddenText: "benefit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["self-employment-check-yes-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+          },
+          value: {
+            text: data['self-employment-check-yes-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "employment-check",
+                text: "Change",
+                visuallyHiddenText: "employment-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+
+
+
+  {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you or your partner have any other money coming in?"
+            },
+            value: {
+              text: data['other-money-yes-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-other-money",
+                  text: "Change",
+                  visuallyHiddenText: "employment-other-money"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["employment-check-yes-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+          },
+          value: {
+            text: data['other-money-yes-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "other-money-check",
+                text: "Change",
+                visuallyHiddenText: "other-money-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+
       </div>
-
-Do you or your partner have any income from employment?
-employment-check
-
-Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner.
-employment-check-yes-details
-
-Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?
-self-employment-check
-
-Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner.
-self-employment-check-yes-details
-
-Do you or your partner have any other money coming in?
-other-money-check
-
-Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner.
-other-money-yes-details
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
