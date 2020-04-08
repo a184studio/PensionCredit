@@ -31,10 +31,10 @@
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "Details of this"
+            html: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
           },
           hint: {
-            html: legendOtherMoney
+            text: ""
           },
           id: "other-money-yes-details",
           name: "other-money-yes-details",
@@ -49,13 +49,13 @@
         name: "other-money-check",
         fieldset: {
           legend: {
-            text: "Do you or your partner have any other money coming? Y/N",
+            text: "Do you or your partner have any other money coming in?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "Hint"
+          text: ""
         },
         items: [
           {

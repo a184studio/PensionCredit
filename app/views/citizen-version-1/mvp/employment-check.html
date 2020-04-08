@@ -17,7 +17,7 @@
     <form action="employment-other-money" method="post" class="form">
 
       <h1 class="govuk-heading-xl">
-        Employment
+        Earnings
       </h1>
 
 
@@ -35,10 +35,10 @@
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "Details of this"
+            html: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
           },
           hint: {
-            html: legendEmployment
+            text: ""
           },
           id: "employment-check-yes-details",
           name: "employment-check-yes-details",
@@ -53,13 +53,13 @@
         name: "employment-check",
         fieldset: {
           legend: {
-            text: "Are you or your partner doing any type of paid work employment now?",
+            text: "Do you or your partner have any income from employment?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "Hint"
+          text: ""
         },
         items: [
           {
@@ -95,10 +95,10 @@
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "Details of this"
+            html: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
           },
           hint: {
-            html: legendSelfEmployment
+            text: ""
           },
           id: "self-employment-check-yes-details",
           name: "self-employment-check-yes-details",
@@ -114,13 +114,13 @@
         name: "self-employment-check",
         fieldset: {
           legend: {
-            text: "Are you or your partner doing any type of paid work Self employment now?",
+            text: "Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "Remember about the last three months @pete saves a question. See plan"
+          text: ""
         },
         items: [
           {
