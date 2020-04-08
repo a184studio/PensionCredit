@@ -28,7 +28,7 @@
                 classes:"govuk-!-margin-bottom-6"
             }) }}
 
-      <h3 class="govuk-heading-m">What happens next</h3>
+      <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
 
       <p class="govuk-body">
         We are doing some final checks on your application. We will contact you
@@ -36,102 +36,43 @@
       </p>
 
 
+      <div class="govuk-!-margin-top-6">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3">If anything changes</h2>
+      <p class="govuk-body">While you are receiving Pension Credit, you must tell us straight away about any <a href="https://www.gov.uk/pension-credit/change-of-circumstances">changes that could affect the amount of Pension Credit you get (opens in a new window or tab)</a>.</p>
+      </div>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-6">If anything changes</h2>
-
-      <p class="govuk-body">
-        While you are receiving Pension Credit, you must tell us straight away about any <a href="https://www.gov.uk/pension-credit/change-of-circumstances">changes that could affect the amount of Pension Credit you get</a>.</p>
-    <!--  <p class="govuk-body">  If you do not report any changes, we might reduce or stop your Pension Credit.</p>
-
-      <p class="govuk-body">  Changes that could affect your claim include:
-      </p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>if you go abroad for longer than 4 weeks</li>
-        <li>your address changes, or anyone moves in or out of your home</li>
-        <li>your income changes, including any changes to employment or self-employment</li>
-        <li>changes to the value of your savings, investments or second properties</li>
-        <li>if you go into hospital or a care home for more than 4 weeks</li>
-      </ul>
-
-
-
-
-<h2 class="govuk-heading-m govuk-!-margin-top-6">Contact the Pension Service helpline to report any changes:</h2>
-
-<ul class="govuk-list govuk-list">
-  <li>Telephone: 0800 731 0469</li>
-  <li>Textphone: 0800 169 0133</li>
-<li><a href="https://www.ngts.org.uk/" class="govuk-link govuk-link--no-visited-state">Next Generation Text (NGT)</a> text relay (if you cannot hear or speak on the phone): 18001 then 0800 731 0469</li>
-    <li>Monday to Friday, 8am to 7:30pm</li>
-    <br>
-    <li><a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state">Find out about call charges  (opens in a new window or tab)</a></li>
-</ul>
-
-<p>You can also report by post. The address is on the letters you get about your Pension Credit.</p>
-
-
-
-
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
--->
-
-
-
-    <!----------------------------------------------------------------------------------->
 
 
 <!----------------------------------------------------------------------------------->
-{% if (data["rent-council-tax-apply"] == "Yes") or (data["own-council-tax-apply"] == "Yes") %}
-{% endif %}
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-<div class="govuk-!-margin-bottom-8">
-  <h2 class="govuk-heading-xm">Council Tax Reduction and Housing Benefit</h2>
+<div class="govuk-!-margin-top-6">
+  <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Council Tax Reduction and Housing Benefit</h2>
   <p class="govuk-body">If your application is successful, you might be able to claim Council Tax Reduction and Housing Benefit. You should contact your local authority to apply for these.</p>
 </div>
 
 
-<!----------------------------------------------------------------------------------->
-<!--
-{% if data["rent-housing-benefit-apply"] == "Yes" %}
-{% endif %}
 
-<div class="govuk-!-margin-bottom-8">
-  <h2 class="govuk-heading-xm">Housing Benefit</h2>
-  <p class="govuk-body">Complete the <a href="Pauls URL">Housing Benefit claim (opens in a new window or tab).<a/></p>
-</div>
--->
-
-
-<!----------------------------------------------------------------------------------->
-
-<!--
-{% if data["msic-second-property-yn"] == "yes" %}
-
-<h2 class="govuk-heading-m govuk-!-padding-top-6">Complete form A64a</h2>
-
-<p class="govuk-body">(Name) told you they own property or land other than their home.</p>
-<p class="govuk-body">Complete form <a href="https://intranet.dwp.gov.uk/manual/single-source-guidance/telephone-completion-form-a64apc-valuation-property-uk-or-abroad">A64a (opens in a new window or tab)</a> and upload the PDF to PTPCAM or DRS.</p>
-{% endif %}
--->
-<!----------------------------------------------------------------------------------->
-
-<div class="govuk-!-margin-bottom-8">
-  <h2 class="govuk-heading-xm">Carer's Allowance</h2>
-
+<div class="govuk-!-margin-top-6">
+  <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
   <p class="govuk-body">You might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance (Opens in a new window or tab)<a/> if you care for someone for 35 hours or more a week.</p>
-  
 </div>
 
 
 <!----------------------------------------------------------------------------------->
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<div class="govuk-!-margin-top-6">
+<h2 class="govuk-heading-m govuk-!-margin-bottom-3">
+Help us improve Pension Credit
+</h2>
+<p class="govuk-body govuk-!-margin-bottom-8"><a href="https://getinvolved.dwp.gov.uk/digital/fa743129/start_preview?token=721b98c7019344093611254c9ffe7a1d4807b86f">Take a short survey (opens in a new window or tab)</a></p>
+</div>
 
 
-      {{ govukButton({
+      <!-- {{ govukButton({
         text: "Continue"
-      }) }}
+      }) }} -->
     </form>
   </div>
 </div>
