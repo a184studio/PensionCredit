@@ -31,9 +31,23 @@
         {% endset %}
       <!------------HEADLINE------------>
 
+
+      {% set groundValue %}
+        {{ govukInput({
+        label: {
+        html: "home-property-service-charges-value"
+        },
+        id: "home-property-service-charges-value",
+        name: "home-property-service-charges-value",
+        classes: "govuk-input--width-20 "
+        }) }}
+      {% endset -%}
+
+      <!------------CR------------>
+
       {{ govukRadios({
-        idPrefix: "own-service-charges",
-        name: "own-service-charges",
+        idPrefix: "home-property-service-charges",
+        name: "home-property-service-charges",
         fieldset: {
           legend: {
             text: "Do you pay any service charges?",
@@ -48,21 +62,39 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["own-service-charges"] == "Yes")
-          },
+            checked: (data["home-property-service-charges"] == "Yes"),
+                  conditional: {
+                    html: groundValue
+                  }
+            },
           {
             value: "No",
             text: "No",
-            checked: (data["own-service-charges"] == "No")
+            checked: (data["home-property-service-charges"] == "No")
           }
         ]
       }) }}
 
 
+      <!------------------------>
+
+
+      {% set serviceValue %}
+        {{ govukInput({
+        label: {
+        html: "home-property-ground-rent-value"
+        },
+        id: "home-property-ground-rent-value",
+        name: "home-property-ground-rent-value",
+        classes: "govuk-input--width-20 "
+        }) }}
+      {% endset -%}
+
+      <!------------CR------------>
 
       {{ govukRadios({
-        idPrefix: "own-ground-rent",
-        name: "own-ground-rent",
+        idPrefix: "home-property-ground-rent",
+        name: "home-property-ground-rent",
         fieldset: {
           legend: {
             text: "Do you pay ground rent?",
@@ -77,12 +109,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["own-ground-rent"] == "Yes")
+            checked: (data["home-property-ground-rent"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["own-ground-rent"] == "No")
+            checked: (data["home-property-ground-rent"] == "No")
           }
         ]
       }) }}
