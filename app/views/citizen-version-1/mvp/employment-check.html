@@ -49,11 +49,18 @@
         }) }}
       {% endset %}
 
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Single person H1</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Do you or your partner have any income from employment?"</h1>{% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
       {{ govukRadios({
         name: "employment-check",
         fieldset: {
           legend: {
-            text: "Do you or your partner have any income from employment?",
+            html: dynamicH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -109,12 +116,19 @@
         }) }}
       {% endset %}
 
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Single person H1</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?"</h1>{% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
 
       {{ govukRadios({
         name: "self-employment-check",
         fieldset: {
           legend: {
-            text: "Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?",
+            html: dynamicH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
