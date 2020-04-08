@@ -32,7 +32,7 @@
       <!------------HEADLINE------------>
 
 
-      {% set groundValue %}
+      {% set serviceValue %}
         {{ govukInput({
         label: {
         html: "home-property-service-charges-value"
@@ -64,7 +64,7 @@
             text: "Yes",
             checked: (data["home-property-service-charges"] == "Yes"),
                   conditional: {
-                    html: groundValue
+                    html: serviceValue
                   }
             },
           {
@@ -79,7 +79,7 @@
       <!------------------------>
 
 
-      {% set serviceValue %}
+      {% set groundValue %}
         {{ govukInput({
         label: {
         html: "home-property-ground-rent-value"
@@ -109,8 +109,11 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["home-property-ground-rent"] == "Yes")
-          },
+            checked: (data["home-property-ground-rent"] == "Yes"),
+                  conditional: {
+                    html: groundValue
+                  }
+            },
           {
             value: "No",
             text: "No",
