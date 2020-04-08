@@ -43,7 +43,7 @@
       {% set altName %}
         {{ govukInput({
         label: {
-        html: "What was this name?"
+        html: "What were your previous names?"
         },
         id: "claimant-alt-name-yes",
         name: "claimant-alt-name-yes",
@@ -56,10 +56,13 @@
         name: "claimant-name-check",
         fieldset: {
           legend: {
-            text: "Where you known by any pervious names?",
+            text: "Have you been known by any previous names?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
+        },
+        hint: {
+          text: "For example, maiden names or previous married names."
         },
         classes: "govuk-radios",
         items: [
