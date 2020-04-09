@@ -355,7 +355,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
 
   if (childrenCheck === 'No') {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/privacy-policy`)
   } else {
     res.redirect(`${baseUrl}/done-children`)
   }
@@ -365,7 +365,7 @@ router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
   const statePensionCheck = req.session.data['state-pension-check-yn']
 
   if (statePensionCheck === 'Yes') {
-    res.redirect(`${baseUrl}/privacy-policy`)
+    res.redirect(`${baseUrl}/children-check-yn`)
   } else {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   }
