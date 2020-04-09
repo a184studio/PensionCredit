@@ -1312,7 +1312,7 @@ router.post(`${baseUrl}/index-survey-router`, (req, res) => { // router name
 router.post(`${baseUrl}/hrt-check-router`, (req, res) => { // router name
   const hrtCheck = req.session.data['hrt-check']  // name of data / id name
 
-  if (hrtCheck === 'Yes') { // name of data / + answer
+  if (hrtCheck === 'No') { // name of data / + answer
     res.redirect(`${baseUrl}/final-cya`)
   } else {
     res.redirect(`${baseUrl}/hrt-q1`)
