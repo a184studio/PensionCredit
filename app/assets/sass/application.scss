@@ -90,6 +90,12 @@ $govuk-assets-path: '/govuk/assets/';
 
 // —————————————————————————————————————
 
+
+
+// —————————————————————————————————————
+
+
+
 .PC-router {
   margin:80px auto 10px auto !important;
   color:govuk-colour("pink") !important; // pink white
@@ -123,6 +129,25 @@ $govuk-assets-path: '/govuk/assets/';
   background-color: #dee0e2;
 }
 
+// COVID tags
+
+.govuk-tag--covid19-todo {
+  text-transform: capitalize;
+  color: #6f777b;
+  background-color: #dee0e2;
+}
+
+.govuk-tag--covid19-problem {
+  text-transform: capitalize;
+  color: #fff;
+  background-color: #d4351c;
+}
+
+.govuk-tag--covid19-downloaded {
+  text-transform: capitalize;
+  color: #fff;
+  background-color: #1d70b8;
+}
 
 
 .app-task-list__task-completed {
