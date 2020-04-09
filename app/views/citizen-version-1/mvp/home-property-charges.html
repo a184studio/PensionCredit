@@ -13,7 +13,7 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
     <form action="home-mortgage-home-loan" method="post" class="form">
 
       <h1 class="govuk-heading-xl">
@@ -121,6 +121,70 @@
           }
         ]
       }) }}
+
+      <!------------CR------------>
+
+      {% set housingBenefitApply %}
+      {{ govukRadios({
+        idPrefix: "home-property-housing-benefit-apply",
+        name: "home-property-housing-benefit-apply",
+        fieldset: {
+          legend: {
+            text: "Do you want to apply for Housing Benefit?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["home-property-housing-benefit-apply"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["home-property-housing-benefit-apply"] == "No")
+          }
+        ]
+      }) }}
+    {% endset -%}
+
+
+      {{ govukRadios({
+        idPrefix: "home-property-housing-benefit-yn",
+        name: "home-property-housing-benefit-yn",
+        fieldset: {
+          legend: {
+            text: "Do you get Housing Benefit?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["home-property-housing-benefit-yn"] == "Yes"),
+                  conditional: {
+                    html: housingBenefitApply
+                  }
+            },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["home-property-housing-benefit-yn"] == "No")
+          }
+        ]
+      }) }}
+
+
 
 
       {{ govukButton({
