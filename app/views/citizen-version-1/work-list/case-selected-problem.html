@@ -25,30 +25,7 @@ Selected claim - Pension Credit
 
             <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Claim received: <strong>00 May 2020</strong></h1>
             <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National Insurance number: <strong>NA 11 22 33 C</strong></h1>
-            <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Name: <strong>Emma Nicol</strong></h1>
-
-
-          {{ govukCheckboxes({
-            name: "disregards",
-            fieldset: {
-              legend: {
-                text: "Flag for a specialist",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--s "
-              }
-            },
-            hint: {
-              text: "If there is a problem with this case you can flag it as a problem"
-            },
-            items: [
-            {
-              name: 'flag',
-              value: "Flag this claim",
-              html: "Flag this claim"
-              }
-            ]
-          }) }}
-
+            <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Name: <strong>Emma Nicol</strong></h1>
 
 
           {{ govukButton({
@@ -56,6 +33,27 @@ Selected claim - Pension Credit
             text: "Download"
           }) }}
       </form>
+
+      {{ govukCheckboxes({
+        name: "disregards",
+        fieldset: {
+          legend: {
+            text: "Flag for a specialist",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s "
+          }
+        },
+        hint: {
+          text: "If there is a problem with this case you can flag it as a problem"
+        },
+        items: [
+        {
+          name: 'flag',
+          value: "Flag this claim",
+          html: "Flag this claim"
+          }
+        ]
+      }) }}
 
       <p class="govuk-body govuk-!-margin-top-4"><a href="case-load">Return to work list</a></p>
 
