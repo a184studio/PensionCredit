@@ -14,7 +14,11 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="address-correspondence-yn" method="post">
+    <form action="home-ownership" method="post">
+
+      <h1 class="govuk-heading-xl">
+        Address not found
+      </h1>
 
 
 
@@ -22,7 +26,7 @@
   {% call govukFieldset({
     legend: {
       text: "What is your address?",
-      classes: "govuk-fieldset__legend--xl",
+      classes: "govuk-fieldset__legend--m",
       isPageHeading: true
     }
   }) %}
@@ -75,9 +79,6 @@
       {{ govukButton({
         text: "Continue"
       }) }}
-
-      <p class="govuk-body"><a href="address-post-code-lookup">Use the postcode look up to find your address</a></p>
-
     </form>
 
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
