@@ -13,7 +13,7 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
     <form action="home-mortgage-home-loan" method="post" class="form">
 
       <h1 class="govuk-heading-xl">
@@ -153,6 +153,7 @@
       }) }}
     {% endset -%}
 
+
       {{ govukRadios({
         idPrefix: "home-property-housing-benefit-yn",
         name: "home-property-housing-benefit-yn",
@@ -160,7 +161,7 @@
           legend: {
             text: "Do you get Housing Benefit?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
