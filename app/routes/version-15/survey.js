@@ -8,7 +8,7 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/version-15/APIs'
+const baseUrl = '/version-15/survey'
 
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
@@ -17,16 +17,17 @@ function makeAStay(data) {
   return {admission, discharge, totalDays}
 }
 
+router.post(`${baseUrl}/survey-journey-router`, (req, res) => {
+  const pensionScenarios = req.session.data['survey-journey']
 
-router.post(`${baseUrl}/pc-done-yn-router`, (req, res) => { // router name
-  const pcDoneYn = req.session.data['pc-done-yn']  // name of data / id name
-
-  if (pcDoneYn === 'Agree') { // name of data / + answer
-    res.redirect(`${baseUrl}/pc-done-yn`)
-  } else {
-    res.redirect(`${baseUrl}/done-declaration`)
+  if (surveyJourney === 'A') {
+    res.redirect(`${baseUrl}/a`)
+  } else if (surveyJourney === 'B') {
+      res.redirect(`${baseUrl}/b`)
   }
 })
+
+
 
 
 module.exports = router

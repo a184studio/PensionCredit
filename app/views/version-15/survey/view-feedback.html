@@ -1,3 +1,4 @@
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -15,12 +16,33 @@
 
     <p class="govuk-body govuk--version-control">Survey</p>
 
-    <h1 class="govuk-heading-xl">Help us make this service better.</h1>
+    <h1 class="govuk-heading-xl">Survey feedback</h1>
 
-    <span id="more-detail-hint" class="govuk-hint">
-  Do not include personal or financial information, like your National Insurance number or credit card details. Questions are optional.
-</span>
+    <button class="govuk-button" data-module="govuk-button">
+      Delete
+    </button>
 
+    <button class="govuk-button" data-module="govuk-button">
+      Delete
+    </button>
+
+    <button class="govuk-button" data-module="govuk-button">
+      Log out
+    </button>
+
+
+<div>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list">
+        <dt class="govuk-summary-list__value">
+          <b>Adviser</b> ADV_0001
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <b>Date</b> 01 March 2020 04:07PM
+        </dd>
+</div>
+
+<br>
 <br>
 
     {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
@@ -110,11 +132,6 @@
   html: AddName
 }) }} -->
 
-
-
-<a href="page-3" type="submit" class="govuk-button">
-    Send feedback
-</a>
 
 
 

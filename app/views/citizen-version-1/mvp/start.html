@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-covid19.html" %}
 
 {% block pageTitle %}
   Apply for Pension Credit - Pension Credit
@@ -11,15 +11,14 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="page-2" method="post" class="form">
+    <form action="children-check-yn" method="post" class="form">
 
-    <p class="govuk-body govuk--version-control">Survey</p>
+    <p class="govuk-body govuk--version-control">Citizen version 1 / MVP</p>
 
-    <h1 class="govuk-heading-xl">Feedback survey</h1>
+    <h1 class="govuk-heading-xl">Apply for Pension Credit</h1>
 
-    <h2 class="govuk-heading-m">What did you think of the service today?</h2>
-
-    <p class="govuk-body-m">This should take around <strong>5 minutes</strong>.</p>
+    <p class="govuk-body-m">You will not be able to save your application. You will need to complete it in one go.</p>
+    <p class="govuk-body-m">If you apply online, we will pay you into the account you get your State Pension paid into. You will be able to change this once your Pension Credit is in payment.</p>
 
     <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit
 
@@ -64,19 +63,15 @@
 
 
 
+
+
       {{ govukButton({
-        text: "Start now",
-        classes: "govuk-button--start govuk-!-margin-top-4 govuk-!-margin-bottom-8"
-      }) }}
-
-      <br>
-
-<a href="page-3" class="govuk-link">Skip</a>
+       text: "Start now",
+       classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8",
+       isStartButton: true
+     }) }}
 
 
-
-
-    <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
 
 </form>
 </div>

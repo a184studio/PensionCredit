@@ -1,0 +1,1937 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Check your answers: Pension Credit application - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <form action="payment-prompt" method="post" class="form">
+
+
+      <h1 class="govuk-heading-xl">{{ data["full-name"] }}: Pension Credit application summary</h1>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Pre check</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+        {
+          key: {
+            text: "Do any children or qualifying young people live with you?"
+          },
+          value: {
+            text: data['children-check-yn']
+          },
+          actions: {
+            items: [
+              {
+                href: "@ChangeURL",
+                text: "@ChangeLink",
+                visuallyHiddenText: "@Hidden"
+              }
+            ]
+          }
+        },
+
+        {
+          classes: 'govuk-summary-list',
+          key: {
+            text: "Have you claimed your State Pension?"
+          },
+          value: {
+            text: data['state-pension-check-yn']
+          },
+          actions: {
+            items: [
+            {
+              href: "@ChangeURL",
+              text: "@ChangeLink",
+              visuallyHiddenText: "@Hidden"
+            }
+          ]
+        }
+      }
+
+
+        ]
+      }) }}
+
+      </div>
+<!---------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Personal information and declaration</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+        {
+          key: {
+            text: "Do you agree to how we use your personal information?"
+          },
+          value: {
+            text: data['agrees-privacy']
+          },
+          actions: {
+            items: [
+              {
+                href: "start",
+                text: "Change",
+                visuallyHiddenText: "Change agreement to privacy policy"
+              }
+            ]
+          }
+        },
+
+        {
+          classes: 'govuk-summary-list',
+          key: {
+            text: "Do you agree to the declaration?"
+          },
+          value: {
+            text: data['pre-declaration']
+          },
+          actions: {
+            items: [
+              {
+                href: "pre-declaration",
+                text: "Change",
+                visuallyHiddenText: "Change agreement to declaration"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Do you live in the UK?"
+          },
+          value: {
+            text: data['resides-in-uk']
+          },
+          actions: {
+            items: [
+              {
+                href: "reside-in-uk",
+                text: "Change",
+                visuallyHiddenText: "Change whetehr you live in the UK"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Have you lived permanently in the UK for the last 2 years?"
+          },
+          value: {
+            text: data['lived-abroad']
+          },
+          actions: {
+            items: [
+              {
+                href: "lived-abroad",
+                text: "Change",
+                visuallyHiddenText: "Change whether you have lived permanently in the UK for the last 2 years"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Do you have the right to live or work in the UK without any immigration restrictions?"
+          },
+          value: {
+            text: data['uk-national']
+          },
+          actions: {
+            items: [
+              {
+                href: "uk-national",
+                text: "Change",
+                visuallyHiddenText: "Change whether you are a UK national"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "What date do you want your Pension Credit claim to start?"
+          },
+          value: {
+            text: data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "claim-date-of-claim",
+                text: "Change",
+                visuallyHiddenText: "Change whether you have lived permanently in the UK for the last 2 years"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+
+
+      </div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About you</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "over-spa",
+                  text: "Change",
+                  visuallyHiddenText: "Change date of birth"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data["full-name"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "claimant-details",
+                  text: "Change",
+                  visuallyHiddenText: "Change name"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Alt name"
+            },
+            value: {
+              text: data["claimant-alt-name-yes"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "claimant-details",
+                  text: "Change",
+                  visuallyHiddenText: "Change name"
+                }
+              ]
+            }
+          },
+                      {
+                        key: {
+                          text: "National Insurance number"
+                        },
+                        value: {
+                          text: data["nino"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "",
+                              text: " ",
+                              visuallyHiddenText: "Change National Insurance number"
+                            }
+                          ]
+                        }
+                      },
+
+                      {
+                        key: {
+                          text: "What is your contact telephone number?"
+                        },
+                        value: {
+                          text: data["telephone-number"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "",
+                              text: "",
+                              visuallyHiddenText: "Change number you are calling from"
+                            }
+                          ]
+                        }
+                      }
+
+                    ]
+                  }) }}
+
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Are you registered blind or severely sight impaired?"
+                      },
+                      value: {
+                        text: data["contact-blind-check"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "Change number you are calling from"
+                          }
+                        ]
+                      }
+                    },
+
+                    {
+                      key: {
+                        text: "Are able to speak to us in English?"
+                      },
+                      value: {
+                        text: data["telephone-number"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "Change number you are calling from"
+                          }
+                        ]
+                      }
+                    }
+
+                  ]
+                }) }}
+
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-9',
+                  rows: [
+
+                  {
+                    key: {
+                      text: "What is your first language?"
+                    },
+                    value: {
+                      text: data["contact-formats-altLanguage"]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "",
+                          visuallyHiddenText: ""
+                        }
+                      ]
+                    }
+                  }
+
+                ]
+              }) }}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+
+                {
+                  key: {
+                    text: "If you live in Wales, do you want to speak to us in Welsh?"
+                  },
+                  value: {
+                    text: data["contact-welsh-check"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: "Change number you are calling from"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    text: "Do you need help with letters or phone calls?"
+                  },
+                  value: {
+                    text: data["contact-formats-check"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "",
+                        visuallyHiddenText: ""
+                      }
+                    ]
+                  }
+                }
+
+              ]
+            }) }}
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+
+              {
+                key: {
+                  text: "Formats"
+                },
+                value: {
+                  html: "     Audio,
+                          <br>Braille
+                          <br>Large print
+                          <br>Sign language
+                          <br>TextPhone
+                          <br>TypeTalk"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "contact-formats",
+                      text: "Change",
+                      visuallyHiddenText: ""
+                    }
+                  ]
+                }
+              }
+
+            ]
+          }) }}
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+
+                        {
+              key: {
+                text: "TextPhone number"
+              },
+              value: {
+                text: data["contact-formats-text-phone-number"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "",
+                    visuallyHiddenText: ""
+                  }
+                ]
+              }
+            }
+
+          ]
+        }) }}
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About your partner</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: data['partner-dob-day'] + ' ' + (data['partner-dob-month'] | getMonth) + ' ' + data['partner-dob-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "partner-check-yn",
+                  text: "Change",
+                  visuallyHiddenText: "Change date of birth"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data["partner-full-name"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "partner-details",
+                  text: "Change",
+                  visuallyHiddenText: "Change name"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Alt Name"
+            },
+            value: {
+              text: data["partner-alt-name-yes"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "partner-details",
+                  text: "Change",
+                  visuallyHiddenText: "Change name"
+                }
+              ]
+            }
+          },
+                      {
+                        key: {
+                          text: "National Insurance number"
+                        },
+                        value: {
+                          text: data["partner-nino"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "",
+                              text: " ",
+                              visuallyHiddenText: "Change National Insurance number"
+                            }
+                          ]
+                        }
+                      }
+
+                    ]
+                  }) }}
+
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Are you registered blind or severely sight impaired?"
+                      },
+                      value: {
+                        text: data["contact-partner-blind-check"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "",
+                            visuallyHiddenText: "Change number you are calling from"
+                          }
+                        ]
+                      }
+                    }
+
+                  ]
+                }) }}
+
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About where you live</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you live permanently in a care home?"
+            },
+            value: {
+              text: data['home-care-home-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "home-care-home-check",
+                  text: "Change",
+                  visuallyHiddenText: "Change date of birth"
+                }
+              ]
+            }
+          }
+  ]
+}) }}
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+
+      {
+        key: {
+          text: "If Yes, Do you own the property you used to live in?"
+        },
+        value: {
+          text: data["home-care-home-check-still-own"]
+        },
+        actions: {
+          items: [
+            {
+              href: "",
+              text: "",
+              visuallyHiddenText: ""
+            }
+          ]
+        }
+      }
+
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
+
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "Address line one
+        <br>Address line Two
+        <br>Address line Three
+        <br>" + data["postcode"]
+      },
+      actions: {
+        items: [
+          {
+            href: "address-post-code-lookup",
+            text: "Change",
+            visuallyHiddenText: ""
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Is your home address the same as the address we use to send you letters?"
+      },
+      value: {
+        text: data["address-correspondence-yn"]
+      },
+      actions: {
+        items: [
+          {
+            href: "address-post-code-lookup",
+            text: "Change",
+            visuallyHiddenText: ""
+          }
+        ]
+      }
+    }
+
+  ]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Letters address"
+    },
+    value: {
+      html: "Address line one
+      <br>Address line Two
+      <br>Address line Three
+      <br>" + data["postcode"]
+    },
+    actions: {
+      items: [
+        {
+          href: "address-post-code-lookup",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Does anyone live in your household apart from you and your partner?"
+    },
+    value: {
+      text: data["home-living-with-you"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-living-with-you",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Details"
+    },
+    value: {
+      text: data["home-living-with-you-yes-details"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-living-with-you",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Are you or your partner responsible for paying the rent, Council Tax or both for the place where you live?"
+    },
+    value: {
+      text: data["home-responsible-CTR-HB"]
+    },
+    actions: {
+      items: [
+        {
+          href: "address-post-code-lookup",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  },
+
+  {
+  key: {
+    text: "Which best describes the place where you live?"
+  },
+  value: {
+    text: data["home-ownership"]
+  },
+  actions: {
+    items: [
+      {
+        href: "home-ownership",
+        text: "Change",
+        visuallyHiddenText: ""
+      }
+    ]
+  }
+},
+
+{
+key: {
+  text: "Description of where you live"
+},
+value: {
+  text: data["home-ownership-other"]
+},
+actions: {
+  items: [
+    {
+      href: "home-ownership",
+      text: "",
+      visuallyHiddenText: ""
+    }
+  ]
+}
+}
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you pay any service charges?"
+    },
+    value: {
+      text: data["home-property-service-charges"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-property-charges",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+    {% if data["home-property-service-charges-value"] %}
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+
+        {
+        key: {
+          text: "How much do you pay in service charges?"
+        },
+        value: {
+          text: data["home-property-service-charges-value"]
+        },
+        actions: {
+          items: [
+            {
+              href: "home-property-charges",
+              text: "Change",
+              visuallyHiddenText: ""
+            }
+          ]
+        }
+      }
+
+    ]
+    }) }}
+
+    {% endif %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you pay ground rent?"
+    },
+    value: {
+      text: data["home-property-ground-rent"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-property-charges",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+      {% if data["home-property-ground-rent-value"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+            {
+            key: {
+              text: "How much do you pay in ground rent?"
+            },
+            value: {
+              text: data["home-property-ground-rent-value"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "home-property-charges",
+                  text: "Change",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          }
+
+        ]
+        }) }}
+      {% endif %}
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "Do you want to apply for support with interest on a mortgage or loan secured against your home?"
+          },
+          value: {
+            text: data["home-mortgage-home-loan"]
+          },
+          actions: {
+            items: [
+              {
+                href: "home-mortgage-home-loan",
+                text: "Change",
+                visuallyHiddenText: ""
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "home-shared-payments"
+          },
+          value: {
+            text: data["home-shared-payments"]
+          },
+          actions: {
+            items: [
+              {
+                href: "home-shared-payments",
+                text: "Change",
+                visuallyHiddenText: ""
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Pensions</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "pension-check"
+            },
+            value: {
+              text: data['pension-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "pension-check",
+                  text: "Change",
+                  visuallyHiddenText: "Change date of birth"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["pension-check-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "For each pension you get, tell us who pays it, how much it is and how often it is paid."
+          },
+          value: {
+            text: data['pension-check-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "pension-check",
+                text: "Change",
+                visuallyHiddenText: "pension-check-details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Benefits you have applied for</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Have you or your partner applied for any benefits that you are waiting to hear about?"
+            },
+            value: {
+              text: data['benefit-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "benefit-check",
+                  text: "Change",
+                  visuallyHiddenText: "benefit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["benefit-check-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Which benefits have you applied for?"
+          },
+          value: {
+            text: data['benefit-check-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "benefit-check",
+                text: "Change",
+                visuallyHiddenText: "pension-check-details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?"
+    },
+    value: {
+      text: data['CarerAllowance-check']
+    },
+    actions: {
+      items: [
+        {
+          href: "benefit-check",
+          text: "Change",
+          visuallyHiddenText: "benefit"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employment and earnings</h2>
+
+  {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you or your partner have any income from employment?"
+            },
+            value: {
+              text: data['employment-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-check",
+                  text: "Change",
+                  visuallyHiddenText: "benefit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["employment-check-yes-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+          },
+          value: {
+            text: data['employment-check-yes-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "employment-check",
+                text: "Change",
+                visuallyHiddenText: "employment-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+
+  {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?"
+            },
+            value: {
+              text: data['self-employment-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-check",
+                  text: "Change",
+                  visuallyHiddenText: "benefit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["self-employment-check-yes-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+          },
+          value: {
+            text: data['self-employment-check-yes-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "employment-check",
+                text: "Change",
+                visuallyHiddenText: "employment-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+
+
+
+  {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you or your partner have any other money coming in?"
+            },
+            value: {
+              text: data['other-money-yes-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-other-money",
+                  text: "Change",
+                  visuallyHiddenText: "employment-other-money"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["employment-check-yes-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+          },
+          value: {
+            text: data['other-money-yes-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "other-money-check",
+                text: "Change",
+                visuallyHiddenText: "other-money-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Money you have</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "How much money you have, including savings and investments?"
+            },
+            value: {
+              text: data['money-total-then']
+            },
+            actions: {
+              items: [
+                {
+                  href: "money-total",
+                  text: "Change",
+                  visuallyHiddenText: "money-total"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "How much money you have, including savings and investments?"
+          },
+          value: {
+            text: data['money-total-now']
+          },
+          actions: {
+            items: [
+              {
+                href: "money-total",
+                text: "Change",
+                visuallyHiddenText: "money-total"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Do you own any property or land other than your home?"
+          },
+          value: {
+            text: data['money-second-property-check']
+          },
+          actions: {
+            items: [
+              {
+                href: "money-second-property-check",
+                text: "Change",
+                visuallyHiddenText: "money-second-property-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Disregards</h2>
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Payments for arrears of benefits, or any payments to correct or compensate for an official error"
+    },
+    value: {
+      text: data['disregards-benefit-check-yn']
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% if data["disregards-benefit-check-yes"] %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Details of benefit arrears, correction or compensation payments"
+    },
+    value: {
+      text: data['disregards-benefit-check-yes']
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% endif %}
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Payments related to Council Tax Reduction"
+    },
+    value: {
+      text: "Yes / No"
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% if data["disregards-council-yes"] %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Details of payments related to Council Tax Reduction"
+    },
+    value: {
+      text: data["disregards-council-yes"]
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% endif %}
+
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Compensation payments related to the second world war or service in the armed forces"
+    },
+    value: {
+      text: "Yes / No"
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% if data["disregards-warpayment-yes"] %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Details of compensation payments related to the second world war or service in the armed forces"
+    },
+    value: {
+      text: data["disregards-warpayment-yes"]
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% endif %}
+
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Personal injury claim payments"
+    },
+    value: {
+      text: "Yes / No"
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% if data["disregards-compensation-for-injury-yes"] %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Details of personal injury claim payments"
+    },
+    value: {
+      text: data["disregards-compensation-for-injury-yes"]
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% endif %}
+
+
+<!---------------------------------------------------------------------------------------------------->
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Payments from a home insurance policy to cover lost or damaged personal possessions"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-contents-insurance-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of payments from a home insurance policy to cover lost or damaged personal possessions"
+                      },
+                      value: {
+                        text: data["disregards-contents-insurance-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% endif %}
+
+
+<!---------------------------------------------------------------------------------------------------->
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Savings that you intend to use to buy or make essential repairs to your main home"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-money-for-property-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of savings that you intend to use to buy or make essential repairs to your main home"
+                      },
+                      value: {
+                        text: data["disregards-money-for-property-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% endif %}
+
+<!---------------------------------------------------------------------------------------------------->
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Payments to help you live independently in your own home or the community"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-independently-living-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of payments to help you live independently in your own home or the community"
+                      },
+                      value: {
+                        text: data["disregards-independently-living-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% endif %}
+
+<!---------------------------------------------------------------------------------------------------->
+
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Payments to help you if you have been involved in an incident or emergency"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-incident-payment-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of payments to help you if you have been involved in an incident or emergency"
+                      },
+                      value: {
+                        text: data["disregards-incident-payment-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% endif %}
+
+
+<!---------------------------------------------------------------------------------------------------->
+
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Windrush child compensation"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-windrush-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of Windrush child compensation"
+                      },
+                      value: {
+                        text: data["disregards-windrush-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% endif %}
+
+<!---------------------------------------------------------------------------------------------------->
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-padd-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Payments to support you with the effects of a blood infection or vCJD"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-blood-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 ',
+                    rows: [
+
+                    {
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                        text: "Details of payments to support you with the effects of a blood infection or vCJD"
+                      },
+                      value: {
+                        text: data["disregards-blood-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% endif %}
+
+
+
+<!--CYA end-->
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  </div>
+  </div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--Declaration-->
+  <div>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-heading-l">By applying you agree that:</h2>
+           <ul class="govuk-list govuk-list--bullet">
+             <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-2">the information is correct and complete as far as you know</p></li>
+             <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-2">you&rsquo;ll pay back any money you&rsquo;re overpaid if you&rsquo;re asked to</p></li>
+           </ul>
+
+           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><strong>You could be prosecuted or have to pay a financial penalty if you deliberately give the wrong or incomplete information or do&nbsp;not report changes.</strong></p>
+
+      </div>
+    </div>
+  </div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+{% endblock %}
