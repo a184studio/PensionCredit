@@ -1284,7 +1284,7 @@ actions: {
               text: "How much money you have, including savings and investments?"
             },
             value: {
-              text: data['money-total']
+              text: data['money-total-then']
             },
             actions: {
               items: [
@@ -1298,6 +1298,30 @@ actions: {
           }
         ]
       }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "How much money you have, including savings and investments?"
+          },
+          value: {
+            text: data['money-total-now']
+          },
+          actions: {
+            items: [
+              {
+                href: "money-total",
+                text: "Change",
+                visuallyHiddenText: "money-total"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',

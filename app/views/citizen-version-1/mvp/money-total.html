@@ -39,17 +39,29 @@
 
       {{ govukInput({
         label: {
-          text: ""
+          html: "<strong>Total money then / DD Month YYYY<strong>"
         },
         hint: {
           text: ""
         },
-        id: "money-total",
-        name: "money-total",
+        id: "money-total-then",
+        name: "money-total-then",
         classes: "govuk-input--width-20",
         value: data["money-total"]
       }) }}
 
+      {{ govukInput({
+        label: {
+          html: "<strong>Total money Today / DD Month YYYY<strong>"
+        },
+        hint: {
+          text: ""
+        },
+        id: "money-total-now",
+        name: "money-total-now",
+        classes: "govuk-input--width-20",
+        value: data["money-total"]
+      }) }}
 
 
       {{ govukButton({
