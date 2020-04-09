@@ -337,7 +337,7 @@ router.post(`${baseUrl}/lived-abroad-router`, (req, res) => {
   if (residesInUk === 'Yes') {
     res.redirect(`${baseUrl}/uk-national`)
   } else {
-    res.redirect(`${baseUrl}/done-lived-abroad-hrt`)
+    res.redirect(`${baseUrl}/hrt-flag-2-years-prompt`)
   }
 })
 
@@ -347,7 +347,7 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   if (residesInUk === 'Yes') {
     res.redirect(`${baseUrl}/over-spa`)
   } else {
-    res.redirect(`${baseUrl}/done-lived-abroad-hrt`)
+    res.redirect(`${baseUrl}/hrt-flag-immigration-prompt`)
   }
 })
 

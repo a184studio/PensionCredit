@@ -1,0 +1,29 @@
+{% extends "layout-covid19.html" %}
+
+
+{% block pageTitle %}
+  Check for previous Pension Credit cliam - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="over-spa" method="post">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">System: This is a HRT flag, this means you will see the HRT section</h1>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
