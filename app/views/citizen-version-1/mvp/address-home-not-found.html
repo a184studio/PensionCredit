@@ -14,15 +14,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="home-living-with-you" method="post">
+    <form action="address-correspondence-yn" method="post">
+
+      <h1 class="govuk-heading-xl">
+        Address not found
+      </h1>
 
 
 
 
   {% call govukFieldset({
     legend: {
-      text: "What is the address we should send letters to?",
-      classes: "govuk-fieldset__legend--xl",
+      text: "What is your home address?",
+      classes: "govuk-fieldset__legend--m",
       isPageHeading: true
     }
   }) %}
@@ -75,9 +79,6 @@
       {{ govukButton({
         text: "Continue"
       }) }}
-
-      <p class="govuk-body"><a href="address-correspondence-post-code-lookup">Use the postcode look up to find your address</a></p>
-
     </form>
 
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->

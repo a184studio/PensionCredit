@@ -35,7 +35,7 @@
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+            html: "Tell us what this income is, how much you are paid and how often you are paid."
           },
           hint: {
             text: ""
@@ -51,8 +51,8 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Single person H1</h1>{% endif %}
-        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Do you or your partner have any income from employment?"</h1>{% endif %}
+        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Do you have any income from employment?</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">Do you or your partner have any income from employment?</h1>{% endif %}
         {% endset %}
       <!------------Legend--------------->
 
@@ -102,7 +102,7 @@
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+            html: "Tell us what this income is, how much you are paid and how often you are paid."
           },
           hint: {
             text: ""
@@ -118,8 +118,8 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Single person H1</h1>{% endif %}
-        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?"</h1>{% endif %}
+        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Do you have any income from self-employment now or in the 3 months before [date of claim]?</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?</h1>{% endif %}
         {% endset %}
       <!------------Legend--------------->
 

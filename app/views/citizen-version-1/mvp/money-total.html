@@ -16,13 +16,19 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="money-second-property" method="post" class="form">
 
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you share the rent or mortgage for the place where you live with anyone?</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you share the rent or mortgage for the place where you live with anyone other than your partner?</h1>{% endif %}
+        {% endset %}
+
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-        How much money you have, including savings and investments?
-      </h1>
+      {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">How much money do you have, including savings and investments?</h1>{% endif %}
+      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">How much money do you and your partner have, including savings and investments?</h1>{% endif %}
+
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This includes:</p>
 <ul class="govuk-list govuk-list--bullet">
       <li>money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office</li>
@@ -39,7 +45,7 @@
 
       {{ govukInput({
         label: {
-          html: "<strong>Total money then / DD Month YYYY<strong>"
+          html: "<strong>How much money did you have on DD Month YYYY?<strong>"
         },
         hint: {
           text: ""
@@ -52,7 +58,7 @@
 
       {{ govukInput({
         label: {
-          html: "<strong>Total money Today / DD Month YYYY<strong>"
+          html: "<strong>How much money do you have today?<strong>"
         },
         hint: {
           text: ""
