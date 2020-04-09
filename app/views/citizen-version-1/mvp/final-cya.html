@@ -782,19 +782,192 @@
   actions: {
     items: [
       {
-        href: "address-post-code-lookup",
+        href: "home-ownership",
         text: "Change",
         visuallyHiddenText: ""
       }
     ]
   }
+},
+
+{
+key: {
+  text: "Description of where you live"
+},
+value: {
+  text: data["home-ownership-other"]
+},
+actions: {
+  items: [
+    {
+      href: "home-ownership",
+      text: "",
+      visuallyHiddenText: ""
+    }
+  ]
+}
 }
 ]
 }) }}
 
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you pay any service charges?"
+    },
+    value: {
+      text: data["home-property-service-charges"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-property-charges",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+    {% if data["home-property-service-charges-value"] %}
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+
+        {
+        key: {
+          text: "How much do you pay in service charges?"
+        },
+        value: {
+          text: data["home-property-service-charges-value"]
+        },
+        actions: {
+          items: [
+            {
+              href: "home-property-charges",
+              text: "Change",
+              visuallyHiddenText: ""
+            }
+          ]
+        }
+      }
+
+    ]
+    }) }}
+
+    {% endif %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you pay ground rent?"
+    },
+    value: {
+      text: data["home-property-ground-rent"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-property-charges",
+          text: "Change",
+          visuallyHiddenText: ""
+        }
+      ]
+    }
+  }
+
+]
+}) }}
 
 
+      {% if data["home-property-ground-rent-value"] %}
 
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+            {
+            key: {
+              text: "How much do you pay in ground rent?"
+            },
+            value: {
+              text: data["home-property-ground-rent-value"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "home-property-charges",
+                  text: "Change",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          }
+
+        ]
+        }) }}
+      {% endif %}
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "Do you want to apply for support with interest on a mortgage or loan secured against your home?"
+          },
+          value: {
+            text: data["home-mortgage-home-loan"]
+          },
+          actions: {
+            items: [
+              {
+                href: "home-mortgage-home-loan",
+                text: "Change",
+                visuallyHiddenText: ""
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "home-shared-payments"
+          },
+          value: {
+            text: data["home-shared-payments"]
+          },
+          actions: {
+            items: [
+              {
+                href: "home-shared-payments",
+                text: "Change",
+                visuallyHiddenText: ""
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
 
 
 
@@ -802,397 +975,914 @@
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<!-- Which best describes the place where you live?
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Pensions</h2>
 
-home-ownership
-home-ownership-other
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
 
-home-property-charges
-Do you pay any service charges?
-home-property-service-charges
+          {
+            key: {
+              text: "pension-check"
+            },
+            value: {
+              text: data['pension-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "pension-check",
+                  text: "Change",
+                  visuallyHiddenText: "Change date of birth"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
-How much do you pay in service charges?
-home-property-service-charges-value
+{% if data["pension-check-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
 
-Do you pay ground rent?
-
-home-property-ground-rent
-How much do you pay in ground rent?
-home-property-ground-rent-value
-
-/home-mortgage-home-loan
-Do you want to apply for support with interest on a mortgage or loan secured against your home?
-home-mortgage-home-loan
-
-home-shared-payments
-
-————
-Pensions
-
-/pension-check
-
-For each pension you get, tell us who pays it, how much it is and how often it is paid.
-pension-check-details
-————
-Benefits
-Benefits you have applied for
-
-Have you or your partner applied for any benefits that you are waiting to hear about?
-benefit-check
-Which benefits have you applied for?
-benefit-check-details
-
-Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?
-CarerAllowance-check
-—————
-Earnings
-Do you or your partner have any income from employment?
-employment-check
-
-Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner.
-employment-check-yes-details
-
-Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?
-self-employment-check
-
-Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner.
-self-employment-check-yes-details
-
-Do you or your partner have any other money coming in?
-other-money-check
-
-Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner.
-other-money-yes-details
-—————
-money
-How much money you have, including savings and investments?
-money-total
-
-Do you own any property or land other than your home?
-money-second-property-check
-
-Disregards
-Is any of the money you have from: -->
-
-<dl class="govuk-summary-list govuk-summary-list--long">
-
-
-{% if data["disregards-capital-total-yn"] %}
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Details of benefit arrears, correction or compensation payments
-  </dt>
-  <dd class="govuk-summary-list__value">
-    {{ data["disregards-benefit-check-yes"] }}
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a href="disregards-monolith-2">
-      Change
-    </a>
-  </dd>
-</div>
+        {
+          key: {
+            text: "For each pension you get, tell us who pays it, how much it is and how often it is paid."
+          },
+          value: {
+            text: data['pension-check-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "pension-check",
+                text: "Change",
+                visuallyHiddenText: "pension-check-details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 {% endif %}
 
-<br>
-
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Payments related to Council Tax Reduction
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Yes / No
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="disregards-monolith-2">
-            Change
-          </a>
-        </dd>
       </div>
 
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-      {% if data["disregards-council-yes"] %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Details of payments related to Council Tax Reduction
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data["disregards-council-yes"] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="disregards-monolith-2">
-                  Change
-                </a>
-              </dd>
-            </div>
-            {% endif %}
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Benefits you have applied for</h2>
 
-<br>
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Have you or your partner applied for any benefits that you are waiting to hear about?"
+            },
+            value: {
+              text: data['benefit-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "benefit-check",
+                  text: "Change",
+                  visuallyHiddenText: "benefit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["benefit-check-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Which benefits have you applied for?"
+          },
+          value: {
+            text: data['benefit-check-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "benefit-check",
+                text: "Change",
+                visuallyHiddenText: "pension-check-details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?"
+    },
+    value: {
+      text: data['CarerAllowance-check']
+    },
+    actions: {
+      items: [
+        {
+          href: "benefit-check",
+          text: "Change",
+          visuallyHiddenText: "benefit"
+        }
+      ]
+    }
+  }
+]
+}) }}
 
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Compensation payments related to the second world war or service in the armed forces
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Yes / No
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="disregards-monolith-2">
-            Change
-          </a>
-        </dd>
       </div>
 
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-      {% if data["disregards-warpayment-yes"] %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Details of compensation payments related to the second world war or service in the armed forces
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data["disregards-warpayment-yes"] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="disregards-monolith-2">
-                  Change
-                </a>
-              </dd>
-            </div>
-            {% endif %}
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employment and earnings</h2>
 
-<br>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Personal injury claim payments
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Yes / No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="disregards-monolith-2">
-                  Change
-                </a>
-              </dd>
-            </div>
+  {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you or your partner have any income from employment?"
+            },
+            value: {
+              text: data['employment-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-check",
+                  text: "Change",
+                  visuallyHiddenText: "benefit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["employment-check-yes-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+          },
+          value: {
+            text: data['employment-check-yes-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "employment-check",
+                text: "Change",
+                visuallyHiddenText: "employment-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
 
 
-            {% if data["disregards-compensation-for-injury-yes"] %}
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Details of personal injury claim payments
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{ data["disregards-compensation-for-injury-yes"] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a href="disregards-monolith-2">
-                        Change
-                      </a>
-                    </dd>
-                  </div>
+  {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?"
+            },
+            value: {
+              text: data['self-employment-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-check",
+                  text: "Change",
+                  visuallyHiddenText: "benefit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["self-employment-check-yes-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+          },
+          value: {
+            text: data['self-employment-check-yes-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "employment-check",
+                text: "Change",
+                visuallyHiddenText: "employment-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+
+
+
+  {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you or your partner have any other money coming in?"
+            },
+            value: {
+              text: data['other-money-yes-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-other-money",
+                  text: "Change",
+                  visuallyHiddenText: "employment-other-money"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["employment-check-yes-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+          },
+          value: {
+            text: data['other-money-yes-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "other-money-check",
+                text: "Change",
+                visuallyHiddenText: "other-money-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Money you have</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "How much money you have, including savings and investments?"
+            },
+            value: {
+              text: data['money-total']
+            },
+            actions: {
+              items: [
+                {
+                  href: "money-total",
+                  text: "Change",
+                  visuallyHiddenText: "money-total"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Do you own any property or land other than your home?"
+          },
+          value: {
+            text: data['money-second-property-check']
+          },
+          actions: {
+            items: [
+              {
+                href: "money-second-property-check",
+                text: "Change",
+                visuallyHiddenText: "money-second-property-check"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Disregards</h2>
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Payments for arrears of benefits, or any payments to correct or compensate for an official error"
+    },
+    value: {
+      text: data['disregards-benefit-check-yn']
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% if data["disregards-benefit-check-yes"] %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Details of benefit arrears, correction or compensation payments"
+    },
+    value: {
+      text: data['disregards-benefit-check-yes']
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% endif %}
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Payments related to Council Tax Reduction"
+    },
+    value: {
+      text: "Yes / No"
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% if data["disregards-council-yes"] %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Details of payments related to Council Tax Reduction"
+    },
+    value: {
+      text: data["disregards-council-yes"]
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% endif %}
+
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Compensation payments related to the second world war or service in the armed forces"
+    },
+    value: {
+      text: "Yes / No"
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% if data["disregards-warpayment-yes"] %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Details of compensation payments related to the second world war or service in the armed forces"
+    },
+    value: {
+      text: data["disregards-warpayment-yes"]
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% endif %}
+
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Personal injury claim payments"
+    },
+    value: {
+      text: "Yes / No"
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% if data["disregards-compensation-for-injury-yes"] %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Details of personal injury claim payments"
+    },
+    value: {
+      text: data["disregards-compensation-for-injury-yes"]
+    },
+    actions: {
+      items: [
+        {
+          href: "money-disregards-all",
+          text: "Change",
+          visuallyHiddenText: "money-disregards-all"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{% endif %}
+
+
+<!---------------------------------------------------------------------------------------------------->
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Payments from a home insurance policy to cover lost or damaged personal possessions"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-contents-insurance-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of payments from a home insurance policy to cover lost or damaged personal possessions"
+                      },
+                      value: {
+                        text: data["disregards-contents-insurance-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
                   {% endif %}
 
-<br>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Payments from a home insurance policy to cover lost or damaged personal possessions
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Yes / No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="disregards-monolith-2">
-                  Change
-                </a>
-              </dd>
-            </div>
 
+<!---------------------------------------------------------------------------------------------------->
 
-            {% if data["disregards-contents-insurance-yes"] %}
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Details of payments from a home insurance policy to cover lost or damaged personal possessions
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{ data["disregards-contents-insurance-yes"] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a href="disregards-monolith-2">
-                        Change
-                      </a>
-                    </dd>
-                  </div>
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Savings that you intend to use to buy or make essential repairs to your main home"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-money-for-property-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of savings that you intend to use to buy or make essential repairs to your main home"
+                      },
+                      value: {
+                        text: data["disregards-money-for-property-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
                   {% endif %}
 
-<br>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Savings that you intend to use to buy or make essential repairs to your main home
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Yes / No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="disregards-monolith-2">
-                  Change
-                </a>
-              </dd>
-            </div>
+<!---------------------------------------------------------------------------------------------------->
 
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
 
-            {% if data["disregards-money-for-property-yes"] %}
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Details of savings that you intend to use to buy or make essential repairs to your main home
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{ data["disregards-money-for-property-yes"] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a href="disregards-monolith-2">
-                        Change
-                      </a>
-                    </dd>
-                  </div>
+                    {
+                      key: {
+                        text: "Payments to help you live independently in your own home or the community"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-independently-living-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of payments to help you live independently in your own home or the community"
+                      },
+                      value: {
+                        text: data["disregards-independently-living-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
                   {% endif %}
 
-<br>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Payments to help you live independently in your own home or the community
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Yes / No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="disregards-monolith-2">
-                  Change
-                </a>
-              </dd>
-            </div>
+<!---------------------------------------------------------------------------------------------------->
 
 
-            {% if data["disregards-independently-living-yes"] %}
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Details of payments to help you live independently in your own home or the community
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{ data["disregards-independently-living-yes"] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a href="disregards-monolith-2">
-                        Change
-                      </a>
-                    </dd>
-                  </div>
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Payments to help you if you have been involved in an incident or emergency"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-incident-payment-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of payments to help you if you have been involved in an incident or emergency"
+                      },
+                      value: {
+                        text: data["disregards-incident-payment-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
                   {% endif %}
 
 
-<br>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Payments to help you if you have been involved in an incident or emergency
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Yes / No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="disregards-monolith-2">
-                  Change
-                </a>
-              </dd>
-            </div>
+<!---------------------------------------------------------------------------------------------------->
 
 
-            {% if data["disregards-incident-payment-yes"] %}
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Details of payments to help you if you have been involved in an incident or emergency
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{ data["disregards-incident-payment-yes"] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a href="disregards-monolith-2">
-                        Change
-                      </a>
-                    </dd>
-                  </div>
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Windrush child compensation"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-windrush-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "Details of Windrush child compensation"
+                      },
+                      value: {
+                        text: data["disregards-windrush-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
                   {% endif %}
 
-<br>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Windrush child compensation
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Yes / No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="disregards-monolith-2">
-                  Change
-                </a>
-              </dd>
-            </div>
+<!---------------------------------------------------------------------------------------------------->
 
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-padd-bottom-9',
+                    rows: [
 
-            {% if data["disregards-windrush-yes"] %}
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Details of Windrush child compensation
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{ data["disregards-windrush-yes"] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a href="disregards-monolith-2">
-                        Change
-                      </a>
-                    </dd>
-                  </div>
+                    {
+                      key: {
+                        text: "Payments to support you with the effects of a blood infection or vCJD"
+                      },
+                      value: {
+                        text: "Yes / No"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
+                  {% if data["disregards-blood-yes"] %}
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 ',
+                    rows: [
+
+                    {
+                      classes: 'govuk-summary-list--no-border',
+                      key: {
+                        text: "Details of payments to support you with the effects of a blood infection or vCJD"
+                      },
+                      value: {
+                        text: data["disregards-blood-yes"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-all",
+                            text: "Change",
+                            visuallyHiddenText: "money-disregards-all"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+
                   {% endif %}
 
-<br>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Payments to support you with the effects of a blood infection or vCJD
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Yes / No
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="disregards-monolith-2">
-                Change
-              </a>
-            </dd>
-          </div>
-
-
-          {% if data["disregards-blood-yes"] %}
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Details of payments to support you with the effects of a blood infection or vCJD
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data["disregards-blood-yes"] }}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a href="disregards-monolith-2">
-                      Change
-                    </a>
-                  </dd>
-                </div>
-                {% endif %}
-
-  </div>
 
 
 <!--CYA end-->
-    </div>
-  </div>
+</div>
 
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  </div>
+  </div>
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!--Declaration-->
   <div>

@@ -39,11 +39,18 @@
         }) }}
       {% endset %}
 
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Single person H1</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Have you or your partner applied for any benefits that you are waiting to hear about?"</h1>{% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
       {{ govukRadios({
         name: "benefit-check",
         fieldset: {
           legend: {
-            text: "Have you or your partner applied for any benefits that you are waiting to hear about?",
+            html: dynamicH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -65,11 +72,18 @@
         ]
       }) }}
 
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Single person H1</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">"Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?"</h1>{% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
       {{ govukRadios({
         name: "CarerAllowance-check",
         fieldset: {
           legend: {
-            text: "Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?",
+            html: dynamicH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
