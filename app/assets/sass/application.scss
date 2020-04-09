@@ -38,7 +38,6 @@ $govuk-assets-path: '/govuk/assets/';
   padding-left: 0px;
 }
 
-
 .li-id-bar {
   display: inline-block;
   padding-right: 0px !important;
@@ -58,6 +57,36 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-section-break-id-bar {
   border-bottom: 1px solid govuk-colour("mid-grey");
 }
+
+// COVID19 Layout style for ID BAR
+
+.covid-id-bar.govuk-main-wrapper {
+  padding-top: 0px !important;
+}
+
+.ul-covid-id-bar{
+  list-style-type: none;
+  text-align: right;
+  padding-left: 0px;
+}
+
+
+.li-covid-id-bar {
+  display: inline-block;
+  padding-right: 0px !important;
+}
+
+.li-covid-id-bar-item {
+  display: inline-block;
+  padding-right: 20px !important;
+}
+
+.govuk-section-break-covid-id-bar {
+  border-bottom: 1px solid govuk-colour("mid-grey");
+  margin-bottom: 30px !important;
+}
+
+
 
 // —————————————————————————————————————
 
