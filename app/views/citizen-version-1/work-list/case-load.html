@@ -21,11 +21,23 @@
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">To do: <strong>1,000+ </strong> / Problems: <strong>1,000+ </strong> / Downloaded: <strong>1,000+ </strong></p>
 
 
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>FAQs:</strong> </p>
 
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-1">Use (CMD + F) to find a National Insurance number (NI) or name </p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-1">Press Up, Down, Left, Right, A+B and start to get Max £</p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-6">Any proplems call Niall 0800 20 30 40 (Call costs)</p>
+                {% set faq %}
+                <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-1">Use (CMD + F) to find a National Insurance number (NI) or name </p>
+                <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-1">Press Up, Down, Left, Right, A+B and start to get Max £</p>
+                <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-1">Any proplems call Niall 0800 20 30 40 (Call costs)</p>
+
+                {% endset %}
+
+
+              {{ govukDetails({
+                classes: "govuk-!-margin-bottom-4",
+                summaryText: "FAQs:",
+                html: faq
+              }) }}
+
+
+
 
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
   <thead class="govuk-table__head">
