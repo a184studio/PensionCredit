@@ -171,15 +171,16 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["home-property-housing-benefit-yn"] == "Yes"),
-                  conditional: {
-                    html: housingBenefitApply
-                  }
+            checked: (data["home-property-housing-benefit-yn"] == "Yes")
+
             },
           {
             value: "No",
             text: "No",
-            checked: (data["home-property-housing-benefit-yn"] == "No")
+            checked: (data["home-property-housing-benefit-yn"] == "No"),
+            conditional: {
+              html: housingBenefitApply
+            }
           }
         ]
       }) }}
