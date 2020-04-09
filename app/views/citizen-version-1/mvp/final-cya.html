@@ -925,6 +925,61 @@ actions: {
 
           {
           key: {
+            text: "Do you get Housing Benefit?"
+          },
+          value: {
+            text: data["home-property-housing-benefit-yn"]
+          },
+          actions: {
+            items: [
+              {
+                href: "home-property-charges",
+                text: "Change",
+                visuallyHiddenText: ""
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+
+            {% if data["home-property-housing-benefit-apply"] %}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+
+                  {
+                  key: {
+                    text: "Do you want to apply for Housing Benefit?"
+                  },
+                  value: {
+                    text: data["home-property-housing-benefit-apply"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "home-property-charges",
+                        text: "Change",
+                        visuallyHiddenText: ""
+                      }
+                    ]
+                  }
+                }
+
+              ]
+              }) }}
+            {% endif %}
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
             text: "Do you want to apply for support with interest on a mortgage or loan secured against your home?"
           },
           value: {
