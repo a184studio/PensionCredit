@@ -59,7 +59,7 @@ router.post(`${baseUrl}/address-correspondence-yn-router`, (req, res) => { // ro
   const correspondenceYN = req.session.data['address-correspondence-yn']  // name of data / id name
 
   if (correspondenceYN === 'No - I live at a different address') { // name of data / + answer
-    res.redirect(`${baseUrl}/post-code-lookup`)
+    res.redirect(`${baseUrl}/address-correspondence-post-code-lookup`)
   } else {
     res.redirect(`${baseUrl}/home-living-with-you`)
   }
