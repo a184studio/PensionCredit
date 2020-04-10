@@ -1293,7 +1293,7 @@ router.post(`${baseUrl}/index-ca-check-router`, (req, res) => { // router name
   if (indexCAcheck === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/index-ca-yes`)
   } else {
-    res.redirect(`${baseUrl}/index-call-wrapup`)
+    res.redirect(`${baseUrl}/index-claim-download`)
   }
 })
 
