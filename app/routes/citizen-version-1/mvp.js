@@ -397,7 +397,7 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['partner-mac-yn']
 
   if (childrenCheck === 'Yes') {
-    res.redirect(`${baseUrl}/partner-over-spa-check`)
+    res.redirect(`${baseUrl}/partner-app-check`)
   } else {
     res.redirect(`${baseUrl}/done-partner`)
   }
