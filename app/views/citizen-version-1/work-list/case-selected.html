@@ -21,7 +21,7 @@
         <!------------HEADLINE------------>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Selected claim</h1>
 
-        <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong class="govuk-tag govuk-!-font-size-19 govuk-tag--covid19-todo govuk-phase-banner__content__tag">To do</strong></h1>
+        <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Status:  <strong class="govuk-tag govuk-!-font-size-19 govuk-tag--covid19-todo govuk-phase-banner__content__tag">To do</strong></h1>
 
             <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Claim received: <strong>00 May 2020</strong></h1>
             <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National Insurance number: <strong>NA 11 22 33 C</strong></h1>
@@ -44,14 +44,19 @@
           }
         },
         hint: {
-          text: "If there is a problem with this case you can flag it as a problem"
+          text: "If there is a problem with this case you can flag for the Admins"
         },
         items: [
         {
-          name: 'flag',
-          value: "Flag this claim",
-          html: "Flag this claim"
-          }
+          name: 'flag-problem',
+          value: "Flag as problem",
+          html: "Flag as problem"
+          },
+          {
+            name: 'flag-removal',
+            value: "Flag for removal",
+            html: "Flag for removal"
+            }
         ]
       }) }}
 

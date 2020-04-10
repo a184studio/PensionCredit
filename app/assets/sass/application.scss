@@ -133,20 +133,26 @@ $govuk-assets-path: '/govuk/assets/';
 
 .govuk-tag--covid19-todo {
   text-transform: capitalize;
-  color: #6f777b;
+  color: #000;
   background-color: #dee0e2;
 }
 
 .govuk-tag--covid19-problem {
   text-transform: capitalize;
-  color: #fff;
-  background-color: #d4351c;
+  color: #000;
+  background-color: #f499be;
 }
 
 .govuk-tag--covid19-downloaded {
   text-transform: capitalize;
   color: #fff;
   background-color: #1d70b8;
+}
+
+.govuk-tag--covid19-deleted {
+  text-transform: capitalize;
+  color: #fff;
+  background-color: #d4351c;
 }
 
 
