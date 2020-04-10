@@ -30,7 +30,7 @@
         items: [
           {
             value: "Yes",
-            text: "Yes",
+            text: "Yes /// If yes it will push you down >10k route",
             checked: (data["money-second-property-check"] == "Yes")
           },
           {
@@ -42,12 +42,12 @@
       }) }}
 
       {{ govukButton({
-        text: "Continue"
+        text: "Continue (<10k)"
       }) }}
 
 
-            <p class="govuk-body govuk-!-padding-top-0"><a href="money-disregards-all">Money over 10k</a></p>
-            <p class="govuk-body govuk-!-padding-top-0"><a href="hrt-check">Money under 10k</a></p>
+            <p class="govuk-body govuk-!-padding-top-0"><a href="money-disregards-all">Routing: >10k route</a></p>
+            <!-- <p class="govuk-body govuk-!-padding-top-0"><a href="hrt-check">Money under 10k</a></p> -->
 
     </form>
 
