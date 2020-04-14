@@ -19,11 +19,11 @@
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Login to COVID19<br>Pension Credit claims
+        Sign in to <br>Pension Credit claims manager
       </h1>
 
       {% set legendName %}
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Enter username</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Username</h3>
       {% endset -%}
 
       {{ govukInput({
@@ -40,7 +40,7 @@
       }) }}
 
       {% set legendNI %}
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Enter password</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Password</h3>
       {% endset -%}
 
       {{ govukInput({
@@ -58,7 +58,7 @@
 
 
       {{ govukButton({
-        text: "Continue"
+        text: "Sign in"
       }) }}
     </form>
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->

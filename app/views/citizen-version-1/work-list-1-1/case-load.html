@@ -15,18 +15,18 @@
   <div class="govuk-grid-column-full">
     <form action="case-next-claim" method="post" class="form">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Pension Credit claims work list</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Pension Credit claims manager</h1>
   </div>
 
 
         </div>
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Help or instructions here. <br>There are <strong>200</strong> claims waiting to do.</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><br>There are <strong>200</strong> claims to be processed.</p>
 
 
         {{ govukButton({
           classes: "govuk-!-margin-top-4",
-          text: "Get next claim"
+          text: "Process next claim"
         }) }}
         </form>
 
@@ -47,11 +47,11 @@
                   {% endset %}
 
 
-                {{ govukDetails({
+      <!--          {{ govukDetails({
                   classes: "govuk-!-margin-bottom-4",
                   summaryText: "FAQs",
                   html: faq
-                }) }}
+                }) }} -->
 
 <!---
   <p class="govuk-body govuk-!-font-size-27 govuk-!-padding-top-6 govuk-!-margin-bottom-4"><strong>Not yet uploaded to DRS/CAM: </strong>2</p>
@@ -99,9 +99,9 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell govuk-20-percent">Date received</td>
-      <td class="govuk-table__cell govuk-20-percent"><strong>NI</strong></td>
+      <td class="govuk-table__cell govuk-20-percent"><strong>NI number</strong></td>
       <td class="govuk-table__cell govuk-20-percent">DRS ID</td>
-      <td class="govuk-table__cell govuk-40-percent">Name</td>
+      <td class="govuk-table__cell govuk-40-percent">Claimant's name</td>
       <td class="govuk-table__cell govuk-10-percent">Status</td>
     </tr>
     </thead>
