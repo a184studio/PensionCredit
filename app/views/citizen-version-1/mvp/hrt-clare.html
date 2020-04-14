@@ -16,6 +16,11 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="hrt-clare-router" method="post" class="form">
 
+      {% set dynamicH1 %}
+      {% if data["single-joint-check"] == "Joint" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">At any time, have you or your partner come to live in the UK or returned to the UK to live from abroad?</h1>
+      {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">At any time, have you come to live in the UK or returned to the UK to live from abroad?</h1>{% endif %}
+      {% endset %}
+
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
@@ -25,7 +30,7 @@
         name: "hrt-clare",
         fieldset: {
           legend: {
-            text: "At any time, returned to the UK to live from abroad",
+            html: dynamicH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
