@@ -949,10 +949,10 @@ router.post(`${baseUrl}/hrt-clare-router`, (req, res) => { // router name
 router.post(`${baseUrl}/hrt-q2-router`, (req, res) => { // router name
   const hrtCheck = req.session.data['hrt-q2']  // name of data / id name
 
-  if (hrtCheck === 'No') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-q3`)
-  } else {
+  if (hrtCheck === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/hrt-sponsorship-details`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-q3`)
   }
 })
 
