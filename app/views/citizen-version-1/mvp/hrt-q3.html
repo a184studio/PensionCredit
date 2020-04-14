@@ -154,6 +154,31 @@
                 ]
               }) }}
 
+              {{ govukRadios({
+                idPrefix: "contact-blind-check",
+                name: "contact-blind-check",
+                fieldset: {
+                  legend: {
+                    text: "Been supported by the Home Office",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+                  }
+                },
+                classes: "govuk-radios",
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: (data["contact-blind-check"] == "Yes")
+                            },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: (data["contact-blind-check"] == "No")
+                  }
+                ]
+              }) }}
+
               <br>
 
               {{ govukButton({
