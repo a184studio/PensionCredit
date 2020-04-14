@@ -20,14 +20,20 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+              Other details
+            </h1>
+
+
       {{ govukRadios({
-        idPrefix: "hrt-q1",
-        name: "hrt-q1",
+        idPrefix: "contact-blind-check",
+        name: "contact-blind-check",
         fieldset: {
           legend: {
-            text: "hrt-q3",
+            text: "You or partner asylum seeker",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
           }
         },
         classes: "govuk-radios",
@@ -35,12 +41,84 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["hrt-q1"] == "Yes")
+            checked: (data["contact-blind-check"] == "Yes")
                     },
           {
             value: "No",
             text: "No",
-            checked: (data["hrt-q1"] == "No")
+            checked: (data["contact-blind-check"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "contact-blind-check",
+        name: "contact-blind-check",
+        fieldset: {
+          legend: {
+            text: "Apply for asylum before 3 April 2000",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["contact-blind-check"] == "Yes")
+                    },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["contact-blind-check"] == "No")
+          }
+        ]
+      }) }}
+
+      {% set legendPreviousName %}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Date of successful decision</h3>
+      {% endset -%}
+
+
+      {% set altName %}
+        {{ govukInput({
+        label: {
+        html: legendPreviousName
+        },
+        id: "claimant-alt-name-yes",
+        name: "claimant-alt-name-yes",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-4"
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "claimant-name-check",
+        name: "claimant-name-check",
+        fieldset: {
+          legend: {
+            text: "Recent decision on asylum",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+          }
+        },
+        hint: {
+          text: "Do we require hint text here?"
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["claimant-name-check"] == "Yes"),
+                  conditional: {
+                    html: altName
+                  }
+            },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["claimant-name-check"] == "No")
           }
         ]
       }) }}
