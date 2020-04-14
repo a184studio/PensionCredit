@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hrt-q2-router" method="post" class="form">
+    <form action="hrt-uk-sponsorship-router" method="post" class="form">
 
       {% set dynamicH1 %}
       {% if data["single-joint-check"] == "Joint" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did you or your partner come to the UK on a sponsorship undertaking?</h1>
@@ -26,8 +26,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "hrt-q2",
-        name: "hrt-q2",
+        idPrefix: "hrt-uk-sponsorship",
+        name: "hrt-uk-sponsorship",
         fieldset: {
           legend: {
             html: dynamicH1,
@@ -40,12 +40,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["hrt-q2"] == "Yes")
+            checked: (data["hrt-uk-sponsorship"] == "Yes")
                     },
           {
             value: "No",
             text: "No",
-            checked: (data["hrt-q2"] == "No")
+            checked: (data["hrt-uk-sponsorship"] == "No")
           }
         ]
       }) }}

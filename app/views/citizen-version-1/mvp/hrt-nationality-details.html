@@ -14,55 +14,55 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hrt-q2" method="post" class="form">
+    <form action="hrt-uk-sponsorship" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Sponsorship details
+        HRT details
       </h1>
 
-      {% set legendTelephoneNumber %}
+      {% set legendNationality %}
       <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is your nationality?</h3>
       {% endset -%}
 
       {{ govukInput({
         label: {
-          html: legendTelephoneNumber
+          html: legendNationality
         },
           hint: {
             text: ""
           },
-        id: "telephone-number",
-        name: "telephone-number",
+        id: "claimant-nationality",
+        name: "claimant-nationality",
         classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
-        value: data["telephone-number"]
+        value: data["claimant-nationality"]
       }) }}
 
 
-      {% set legendTelephoneNumber %}
+      {% set legendOriginCountry %}
       <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Which country have you come from?</h3>
       {% endset -%}
 
       {{ govukInput({
         label: {
-          html: legendTelephoneNumber
+          html: legendOriginCountry
         },
           hint: {
             text: ""
           },
-        id: "telephone-number",
-        name: "telephone-number",
+        id: "claimant-origin-country",
+        name: "claimant-origin-country",
         classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
-        value: data["telephone-number"]
+        value: data["claimant-origin-country"]
       }) }}
 
       {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
 {{ govukDateInput({
-  id: "passport-issued",
-  namePrefix: "passport-issued",
+  id: "claimant-date-to-uk",
+  namePrefix: "claimant-date-to-uk",
   fieldset: {
     legend: {
       text: "Last date came to the UK",
@@ -76,8 +76,8 @@
 }) }}
 
 {{ govukRadios({
-  idPrefix: "contact-blind-check",
-  name: "contact-blind-check",
+  idPrefix: "claimant-work-uk",
+  name: "claimant-work-uk",
   fieldset: {
     legend: {
       text: "Was this to work?",
@@ -90,19 +90,19 @@
     {
       value: "Yes",
       text: "Yes",
-      checked: (data["contact-blind-check"] == "Yes")
+      checked: (data["claimant-work-uk"] == "Yes")
               },
     {
       value: "No",
       text: "No",
-      checked: (data["contact-blind-check"] == "No")
+      checked: (data["claimant-work-uk"] == "No")
     }
   ]
 }) }}
 
 {{ govukRadios({
-  idPrefix: "contact-blind-check",
-  name: "contact-blind-check",
+  idPrefix: "claimant-rassport-recourse",
+  name: "claimant-rassport-recourse",
   fieldset: {
     legend: {
       text: "Passport say recourse to public funds",
@@ -115,19 +115,19 @@
     {
       value: "Yes",
       text: "Yes",
-      checked: (data["contact-blind-check"] == "Yes")
+      checked: (data["claimant-rassport-recourse"] == "Yes")
               },
     {
       value: "No",
       text: "No",
-      checked: (data["contact-blind-check"] == "No")
+      checked: (data["claimant-rassport-recourse"] == "No")
     }
   ]
 }) }}
 
 {{ govukDateInput({
-  id: "passport-issued",
-  namePrefix: "passport-issued",
+  id: "claimant-date-left-uk",
+  namePrefix: "claimant-date-left-uk",
   fieldset: {
     legend: {
       text: "Last left the UK",
@@ -141,8 +141,8 @@
 }) }}
 
 {{ govukRadios({
-  idPrefix: "hrt-q1",
-  name: "hrt-q1",
+  idPrefix: "claimant-family-reunion-uk",
+  name: "claimant-family-reunion-uk",
   fieldset: {
     legend: {
       text: "Come to UK under family reunion",
@@ -155,12 +155,12 @@
     {
       value: "Yes",
       text: "Yes",
-      checked: (data["hrt-q1"] == "Yes")
+      checked: (data["claimant-family-reunion-uk"] == "Yes")
               },
     {
       value: "No",
       text: "No",
-      checked: (data["hrt-q1"] == "No")
+      checked: (data["claimant-family-reunion-uk"] == "No")
     }
   ]
 }) }}

@@ -928,31 +928,31 @@ router.post(`${baseUrl}/hrt-check-router`, (req, res) => { // router name
   const hrtCheck = req.session.data['hrt-check']  // name of data / id name
 
   if (hrtCheck === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-clare`)
+    res.redirect(`${baseUrl}/hrt-returned-to-uk`)
   } else {
     res.redirect(`${baseUrl}/final-cya`)
   }
 })
-router.post(`${baseUrl}/hrt-clare-router`, (req, res) => { // router name
-  const hrtCheck = req.session.data['hrt-clare']  // name of data / id name
+router.post(`${baseUrl}/hrt-returned-to-uk-router`, (req, res) => { // router name
+  const returnedToUK = req.session.data['hrt-returned-to-uk']  // name of data / id name
 
-  if (hrtCheck === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-q1`)
+  if (returnedToUK === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-nationality-details`)
   } else {
-    res.redirect(`${baseUrl}/hrt-q2`)
+    res.redirect(`${baseUrl}/hrt-uk-sponsorship`)
   }
 })
 
 
 
 
-router.post(`${baseUrl}/hrt-q2-router`, (req, res) => { // router name
-  const hrtCheck = req.session.data['hrt-q2']  // name of data / id name
+router.post(`${baseUrl}/hrt-uk-sponsorship-router`, (req, res) => { // router name
+  const ukSponsorshipCheck = req.session.data['hrt-uk-sponsorship']  // name of data / id name
 
-  if (hrtCheck === 'Yes') { // name of data / + answer
+  if (ukSponsorshipCheck === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/hrt-sponsorship-details`)
   } else {
-    res.redirect(`${baseUrl}/hrt-q3`)
+    res.redirect(`${baseUrl}/hrt-other-details`)
   }
 })
 

@@ -24,70 +24,70 @@
       </h1>
 
 
-      {% set legendTelephoneNumber %}
+      {% set legendClaimantSponsorName %}
       <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is the name of your sponsor?</h3>
       {% endset -%}
 
       {{ govukInput({
         label: {
-          html: legendTelephoneNumber
+          html: legendClaimantSponsorName
         },
           hint: {
             text: ""
           },
-        id: "telephone-number",
-        name: "telephone-number",
+        id: "claimant-sponsor-name",
+        name: "claimant-sponsor-name",
         classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
-        value: data["telephone-number"]
+        value: data["laimant-sponsor-name"]
       }) }}
 
 
-      {% set legendTelephoneNumber %}
+      {% set legendHomeOfficeRef %}
       <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is your Home office reference number?</h3>
       {% endset -%}
 
       {{ govukInput({
         label: {
-          html: legendTelephoneNumber
+          html: legendHomeOfficeRef
         },
           hint: {
             text: ""
           },
-        id: "telephone-number",
-        name: "telephone-number",
+        id: "home-office-ref",
+        name: "home-office-ref",
         classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
-        value: data["telephone-number"]
+        value: data["home-office-ref"]
       }) }}
 
-      {% set legendTelephoneNumber %}
+      {% set legendSponsorSignDate %}
       <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What date was your sponsorship undertaking signed?</h3>
       {% endset -%}
 
-      {{ govukInput({
-        label: {
-          html: legendTelephoneNumber
+
+      {{ govukDateInput({
+        id: "sponsor-sign-date",
+        namePrefix: "sponsor-sign-date",
+        fieldset: {
+          legend: {
+            html: legendSponsorSignDate,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
         },
-          hint: {
-            text: ""
-          },
-        id: "telephone-number",
-        name: "telephone-number",
-        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
-        value: data["telephone-number"]
+        hint: {
+          text: "For example, 12 11 2007"
+        }
       }) }}
 
       {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
-
-
-<br>
 
 
       <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
 
 
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        classes: "govuk-!-margin-top-4"
       }) }}
     </form>
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
