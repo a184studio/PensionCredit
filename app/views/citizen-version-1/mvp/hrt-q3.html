@@ -92,49 +92,81 @@
         }) }}
       {% endset -%}
 
-      {{ govukRadios({
-        idPrefix: "claimant-name-check",
-        name: "claimant-name-check",
-        fieldset: {
-          legend: {
-            text: "Recent decision on asylum",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        classes: "govuk-radios",
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["claimant-name-check"] == "Yes"),
-                  conditional: {
-                    html: altName
+
+
+              {% set yesDate %}
+                {{ govukDateInput({
+                  id: "claim-date-idoc-yn-date",
+                  namePrefix: "claim-date-idoc-yn-date",
+                  fieldset: {
+                    legend: {
+                      text: "Date of successful decision"
+                    }
+                  },
+                  items: [
+                    {
+                      name: "day",
+                      classes: "govuk-input--width-2",
+                      value: data["claim-date-idoc-yn-date-day"]
+                    },
+                    {
+                      name: "month",
+                      classes: "govuk-input--width-2",
+                      value: data["claim-date-idoc-yn-date-month"]
+                    },
+                    {
+                      name: "year",
+                      classes: "govuk-input--width-4",
+                      value: data["claim-date-idoc-yn-date-year"]
+                    }
+                  ]
+                }) }}
+              {% endset -%}
+
+              {{ govukRadios({
+                classes: "govuk-radios",
+                idPrefix: "claim-date-idoc-yn",
+                name: "claim-date-idoc-yn",
+                fieldset: {
+                  legend: {
+                    html: "<span class=\"agent-action\"></span>Recent decision on asylum",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--m"
                   }
-            },
-          {
-            value: "No",
-            text: "No",
-            checked: (data["claimant-name-check"] == "No")
-          }
-        ]
-      }) }}
+                },
+                hint: {
+                  text: ""
+                },
+                items: [
+                {
+                  value: "yes-date",
+                  text: "Yes",
+                  checked: (data["claim-date-idoc-yn"] == "Yes"),
+                  conditional: {
+                    html: yesDate
+                  }
+                },
+                  {
+                    value: "no-date",
+                    text: "No",
+                    checked: (data["claim-date-idoc-yn"] == "No")
+                  }
+                ]
+              }) }}
 
-<br><br>
+              <br>
 
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+            </form>
 
+              </div>
 
 
       <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
 
 
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-    </form>
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
   </div>
 </div>
