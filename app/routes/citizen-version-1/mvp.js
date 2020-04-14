@@ -927,10 +927,10 @@ router.post(`${baseUrl}/index-survey-router`, (req, res) => { // router name
 router.post(`${baseUrl}/hrt-check-router`, (req, res) => { // router name
   const hrtCheck = req.session.data['hrt-check']  // name of data / id name
 
-  if (hrtCheck === 'No') { // name of data / + answer
-    res.redirect(`${baseUrl}/final-cya`)
-  } else {
+  if (hrtCheck === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/hrt-clare`)
+  } else {
+    res.redirect(`${baseUrl}/final-cya`)
   }
 })
 router.post(`${baseUrl}/hrt-clare-router`, (req, res) => { // router name
@@ -949,10 +949,10 @@ router.post(`${baseUrl}/hrt-clare-router`, (req, res) => { // router name
 router.post(`${baseUrl}/hrt-q2-router`, (req, res) => { // router name
   const hrtCheck = req.session.data['hrt-q2']  // name of data / id name
 
-  if (hrtCheck === 'No') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-q3`)
+  if (hrtCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-sponsorship-details`)
   } else {
-    res.redirect(`${baseUrl}/sponsorship-details`)
+    res.redirect(`${baseUrl}/hrt-q3`)
   }
 })
 
