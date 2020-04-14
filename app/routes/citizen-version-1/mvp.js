@@ -952,7 +952,7 @@ router.post(`${baseUrl}/hrt-q2-router`, (req, res) => { // router name
   if (hrtCheck === 'No') { // name of data / + answer
     res.redirect(`${baseUrl}/hrt-q3`)
   } else {
-    res.redirect(`${baseUrl}/sponsorship-details`)
+    res.redirect(`${baseUrl}/hrt-sponsorship-details`)
   }
 })
 
