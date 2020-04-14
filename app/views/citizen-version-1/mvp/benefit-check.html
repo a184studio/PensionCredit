@@ -41,8 +41,8 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Have you applied for any benefits that you are waiting to hear about?</h1>{% endif %}
-        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">Have you or your partner applied for any benefits that you are waiting to hear about?</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Have you or your partner applied for any benefits that you are waiting to hear about?</h2>
+        {% else %}<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Have you applied for any benefits that you are waiting to hear about?</h2>{% endif %}
         {% endset %}
       <!------------Legend--------------->
 
@@ -74,8 +74,8 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Single" %}  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you?</h1>{% endif %}
-        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-m govuk-!-margin-bottom-2">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you or your partner?</h1>{% endif %}
+        {% if data["single-joint-check"] == "joint" %}  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you or your partner?</h2>
+        {% else %}<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you?</h2>{% endif %}
         {% endset %}
       <!------------Legend--------------->
 
