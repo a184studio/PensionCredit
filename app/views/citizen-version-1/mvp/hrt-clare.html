@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hrt-check-router" method="post" class="form">
+    <form action="hrt-clare-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
@@ -22,8 +22,8 @@
 <div class="govuk-panel--agent">
 
       {{ govukRadios({
-        idPrefix: "hrt-check",
-        name: "hrt-check",
+        idPrefix: "hrt-clare",
+        name: "hrt-clare",
         fieldset: {
           legend: {
             text: "System: @pete - HRT flag - At any time, returned to the UK to live from abroad",
@@ -36,12 +36,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["hrt-check"] == "Yes")
+            checked: (data["hrt-clare"] == "Yes")
                     },
           {
             value: "No",
             text: "No",
-            checked: (data["hrt-check"] == "No")
+            checked: (data["hrt-clare"] == "No")
           }
         ]
       }) }}
