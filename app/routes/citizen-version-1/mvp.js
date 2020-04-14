@@ -928,11 +928,22 @@ router.post(`${baseUrl}/hrt-check-router`, (req, res) => { // router name
   const hrtCheck = req.session.data['hrt-check']  // name of data / id name
 
   if (hrtCheck === 'No') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-q2`)
+    res.redirect(`${baseUrl}/final-cya`)
   } else {
-    res.redirect(`${baseUrl}/hrt-q1`)
+    res.redirect(`${baseUrl}/hrt-clare`)
   }
 })
+router.post(`${baseUrl}/hrt-clare-router`, (req, res) => { // router name
+  const hrtCheck = req.session.data['hrt-clare']  // name of data / id name
+
+  if (hrtCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-q1`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-q2`)
+  }
+})
+
+
 
 
 router.post(`${baseUrl}/hrt-q2-router`, (req, res) => { // router name
