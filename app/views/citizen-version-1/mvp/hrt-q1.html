@@ -1,0 +1,181 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Have you spent any time in hospital recently? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="hrt-q2" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Sponsorship details
+      </h1>
+
+      {% set legendTelephoneNumber %}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is your nationality?</h3>
+      {% endset -%}
+
+      {{ govukInput({
+        label: {
+          html: legendTelephoneNumber
+        },
+          hint: {
+            text: ""
+          },
+        id: "telephone-number",
+        name: "telephone-number",
+        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+        value: data["telephone-number"]
+      }) }}
+
+
+      {% set legendTelephoneNumber %}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Which country have you come from?</h3>
+      {% endset -%}
+
+      {{ govukInput({
+        label: {
+          html: legendTelephoneNumber
+        },
+          hint: {
+            text: ""
+          },
+        id: "telephone-number",
+        name: "telephone-number",
+        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+        value: data["telephone-number"]
+      }) }}
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Last date came to the UK",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 12 11 2007"
+  }
+}) }}
+
+{{ govukRadios({
+  idPrefix: "contact-blind-check",
+  name: "contact-blind-check",
+  fieldset: {
+    legend: {
+      text: "Was this to work?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+    }
+  },
+  classes: "govuk-radios",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["contact-blind-check"] == "Yes")
+              },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["contact-blind-check"] == "No")
+    }
+  ]
+}) }}
+
+{{ govukRadios({
+  idPrefix: "contact-blind-check",
+  name: "contact-blind-check",
+  fieldset: {
+    legend: {
+      text: "Passport say recourse to public funds",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+    }
+  },
+  classes: "govuk-radios",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["contact-blind-check"] == "Yes")
+              },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["contact-blind-check"] == "No")
+    }
+  ]
+}) }}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Last left the UK",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 12 11 2007"
+  }
+}) }}
+
+{{ govukRadios({
+  idPrefix: "hrt-q1",
+  name: "hrt-q1",
+  fieldset: {
+    legend: {
+      text: "Come to UK under family reunion",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  classes: "govuk-radios",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["hrt-q1"] == "Yes")
+              },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["hrt-q1"] == "No")
+    }
+  ]
+}) }}
+
+<br>
+
+
+      <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}
