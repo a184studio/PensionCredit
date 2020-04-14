@@ -928,9 +928,9 @@ router.post(`${baseUrl}/hrt-check-router`, (req, res) => { // router name
   const hrtCheck = req.session.data['hrt-check']  // name of data / id name
 
   if (hrtCheck === 'No') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-q2`)
+    res.redirect(`${baseUrl}/final-cya`)
   } else {
-    res.redirect(`${baseUrl}/hrt-q1`)
+    res.redirect(`${baseUrl}/hrt-clare`)
   }
 })
 
