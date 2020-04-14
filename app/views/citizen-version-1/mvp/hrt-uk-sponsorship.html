@@ -14,18 +14,18 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hrt-clare-router" method="post" class="form">
+    <form action="hrt-uk-sponsorship-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
       {{ govukRadios({
-        idPrefix: "hrt-clare",
-        name: "hrt-clare",
+        idPrefix: "hrt-uk-sponsorship",
+        name: "hrt-uk-sponsorship",
         fieldset: {
           legend: {
-            text: "At any time, returned to the UK to live from abroad",
+            text: "Come to UK on sponsorship",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -35,19 +35,15 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["hrt-clare"] == "Yes")
+            checked: (data["hrt-uk-sponsorship"] == "Yes")
                     },
           {
             value: "No",
             text: "No",
-            checked: (data["hrt-clare"] == "No")
+            checked: (data["hrt-uk-sponsorship"] == "No")
           }
         ]
       }) }}
-
-
-
-
 
 
       <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
