@@ -58,52 +58,29 @@
         value: data["claimant-origin-country"]
       }) }}
 
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
 {{ govukDateInput({
   id: "claimant-date-to-uk",
   namePrefix: "claimant-date-to-uk",
   fieldset: {
     legend: {
-      text: "Last date came to the UK",
+      text: "What date did you last come to the UK?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
     text: "For example, 12 11 2007"
-  },
-  items: [
-    {
-      name: "day",
-      classes: "govuk-input--width-2",
-      value: data["claimant-date-to-uk-day"]
-    },
-    {
-      name: "month",
-      classes: "govuk-input--width-2",
-      value: data["claimant-date-to-uk-month"]
-    },
-    {
-      name: "year",
-      classes: "govuk-input--width-4",
-      value: data["claimant-date-to-uk-year"]
-    }
-  ]
+  }
 }) }}
-
-
-
-
-
-
-
-
 
 {{ govukRadios({
   idPrefix: "claimant-work-uk",
   name: "claimant-work-uk",
   fieldset: {
     legend: {
-      text: "Was this to work?",
+      text: "Did you come to the UK to work?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
     }
@@ -128,7 +105,7 @@
   name: "claimant-rassport-recourse",
   fieldset: {
     legend: {
-      text: "Passport say recourse to public funds",
+      text: "Does your passport say you have no recourse to public funds?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
     }
@@ -168,7 +145,7 @@
   name: "claimant-family-reunion-uk",
   fieldset: {
     legend: {
-      text: "Come to UK under family reunion",
+      text: "Have you come to the UK under the Family Reunion Scheme?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
