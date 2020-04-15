@@ -45,9 +45,11 @@
       <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What were your partner's previous names?</h3>
       {% endset -%}
 
+      {% set altName %}
+
         {{ govukTextarea({
-          id: "patner-alt-name-yes",
-          name: "patner-alt-name-yes",
+          id: "partner-alt-name-yes",
+          name: "partner-alt-name-yes",
           classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
           label: {
             html: legendPreviousName
