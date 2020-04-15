@@ -355,7 +355,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
 
   if (childrenCheck === 'No') {
-    res.redirect(`${baseUrl}/privacy-policy`)
+    res.redirect(`${baseUrl}/reside-in-uk`)
   } else {
     res.redirect(`${baseUrl}/done-children`)
   }
