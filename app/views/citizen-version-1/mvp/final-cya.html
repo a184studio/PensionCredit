@@ -440,6 +440,33 @@
 
                         {
               key: {
+                text: "Other details"
+              },
+              value: {
+                text: data["contact-other-details"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "Change",
+                    visuallyHiddenText: ""
+                  }
+                ]
+              }
+            }
+
+          ]
+        }) }}
+
+
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+
+                        {
+              key: {
                 text: "TextPhone number"
               },
               value: {
