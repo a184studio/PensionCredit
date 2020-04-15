@@ -8,14 +8,13 @@
   {% include "includes/internal-header.html" %}
 {% endblock %}
 
+{% block content %}
 
 
 
 <!----------------------------------------------------------------------------------->
 
-{% block content %}
 
-<!-- {% include "includes/js-back-link.html" %} -->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -25,7 +24,7 @@
 
       {{ govukPanel({
               titleText: "Application sent",
-                classes:"govuk-!-margin-bottom-6"
+                classes:"govuk-!-margin-top-8 govuk-!-margin-bottom-6"
             }) }}
 
       <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
