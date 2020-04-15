@@ -418,7 +418,11 @@ router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
   const careHomeStillOwn = req.session.data['home-care-home-check-still-own']
   if (careHome === 'Yes' && careHomeStillOwn === 'Yes') {
     res.redirect(`${baseUrl}/pension-check`)
-  } else {
+  }
+  if (careHome === 'Yes' && careHomeStillOwn === 'No') {
+    res.redirect(`${baseUrl}/pension-check`)
+  }
+  else {
     res.redirect(`${baseUrl}/address-post-code-lookup`)
   }
 })

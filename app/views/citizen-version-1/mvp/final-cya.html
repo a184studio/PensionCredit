@@ -596,6 +596,61 @@
                   ]
                 }) }}
 
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-9',
+                  rows: [
+
+                  {
+                    key: {
+                      text: "Do you have the right to live or work in the UK without any immigration restrictions?"
+                    },
+                    value: {
+                      text: data["partner-uk-national"]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "partner-nationality-check",
+                          text: "Change",
+                          visuallyHiddenText: "Change number you are calling from"
+                        }
+                      ]
+                    }
+                  }
+
+                ]
+              }) }}
+
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+
+                {
+                  key: {
+                    text: "@partner Have you lived permanently in the UK for the last 2 years?"
+                  },
+                  value: {
+                    text: data["partner-lived-abroad"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-nationality-check",
+                        text: "Change",
+                        visuallyHiddenText: "Change number you are calling from"
+                      }
+                    ]
+                  }
+                }
+
+              ]
+            }) }}
+
+
+
+
 
       </div>
 
