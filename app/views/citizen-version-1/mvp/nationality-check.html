@@ -18,7 +18,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="over-spa" method="post">
 
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Nationality checks</h1>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Your nationality</h1>
 
         {{ govukRadios({
           classes: "govuk-radios",
@@ -32,7 +32,7 @@
             }
           },
           hint: {
-            html: "<p class=\"hint\">@partner You have this right if you have a British passport or are a British citizen or British subject with right of abode."
+            html: "<p class=\"hint\">You have this right if you have a British passport or are a British citizen or British subject with right of abode."
           },
           items: [
             {
@@ -53,7 +53,7 @@
           name: "lived-abroad",
           fieldset: {
             legend: {
-              text: "@partner Have you lived permanently in the UK for the last 2 years?",
+              text: "Have you lived permanently in the UK for the last 2 years?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
