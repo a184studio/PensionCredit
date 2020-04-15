@@ -325,7 +325,7 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   const residesInUk = req.session.data['resides-in-uk']
 
   if (residesInUk === 'Yes') {
-    res.redirect(`${baseUrl}/lived-abroad`)
+    res.redirect(`${baseUrl}/nationality-check`)
   } else {
     res.redirect(`${baseUrl}/done-none-uk`)
   }
