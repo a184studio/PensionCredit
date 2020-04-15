@@ -125,12 +125,13 @@
   ]
 }) }}
 
+{% set lastLeftUk %}
 {{ govukDateInput({
   id: "claimant-date-left-uk",
   namePrefix: "claimant-date-left-uk",
   fieldset: {
     legend: {
-      text: "Last left the UK",
+      text: "What date did you last leave the UK?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -139,6 +140,37 @@
     text: "For example, 12 11 2007"
   }
 }) }}
+{% endset %}
+
+{{ govukRadios({
+  idPrefix: "lived-uk-before",
+  name: "lived-uk-before",
+  fieldset: {
+    legend: {
+      text: "Have you lived in the UK before?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+    }
+  },
+  classes: "govuk-radios",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["lived-uk-before"] == "Yes"),
+      conditional: {
+        html: lastLeftUk
+}
+              },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["lived-uk-before"] == "No")
+    }
+  ]
+}) }}
+
+
 
 {{ govukRadios({
   idPrefix: "claimant-family-reunion-uk",

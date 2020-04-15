@@ -22,16 +22,130 @@
 
 
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-              Other details
+              Asylum details
             </h1>
+{% set asylumSeeker %}
+{{ govukRadios({
+  idPrefix: "asylum-before-april",
+  name: "asylum-before-april",
+  fieldset: {
+    legend: {
+      text: "Did you first apply for asylum before 3 April 2000?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+    }
+  },
+  classes: "govuk-radios",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["asylum-before-april"] == "Yes")
+              },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["asylum-before-april"] == "No")
+    }
+  ]
+}) }}
 
+{% set legendSuccessfulDecision %}
+<h3 class="govuk-heading-m govuk-!-margin-bottom-0">What date did you get a successful decision of your application?</h3>
+{% endset -%}
+
+        {% set yesDate %}
+          {{ govukDateInput({
+            id: "asylum-decision-date",
+            namePrefix: "asylum-decision-date",
+            fieldset: {
+              legend: {
+                html: legendSuccessfulDecision
+              }
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["asylum-decision-date-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["asylum-decision-date-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["asylum-decision-date-year"]
+              }
+            ]
+          }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "asylum-decision-check",
+          name: "asylum-decision-check",
+          fieldset: {
+            legend: {
+              html: "Have you recently had a successful decision on your asylum application?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["asylum-decision-check"] == "Yes"),
+            conditional: {
+              html: yesDate
+            }
+          },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["asylum-decision-check"] == "No")
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          idPrefix: "supported-by-home-office",
+          name: "supported-by-home-office",
+          fieldset: {
+            legend: {
+              text: "Have you been supported by the Home Office while waiting for a decision on your application?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+            }
+          },
+          classes: "govuk-radios",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["supported-by-home-office"] == "Yes")
+                      },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["supported-by-home-office"] == "No")
+            }
+          ]
+        }) }}
+{% endset %}
 
       {{ govukRadios({
         idPrefix: "asylum-seeker",
         name: "asylum-seeker",
         fieldset: {
           legend: {
-            text: "You or partner asylum seeker",
+            text: "Are you an asylum seeker?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
           }
@@ -41,7 +155,10 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["contact-blind-check"] == "Yes")
+            checked: (data["contact-blind-check"] == "Yes"),
+            conditional: {
+              html: asylumSeeker
+      }
                     },
           {
             value: "No",
@@ -51,119 +168,6 @@
         ]
       }) }}
 
-      {{ govukRadios({
-        idPrefix: "asylum-before-april",
-        name: "asylum-before-april",
-        fieldset: {
-          legend: {
-            text: "Apply for asylum before 3 April 2000",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
-          }
-        },
-        classes: "govuk-radios",
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["asylum-before-april"] == "Yes")
-                    },
-          {
-            value: "No",
-            text: "No",
-            checked: (data["asylum-before-april"] == "No")
-          }
-        ]
-      }) }}
-
-      {% set legendSuccessfulDecision %}
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Date of successful decision</h3>
-      {% endset -%}
-
-              {% set yesDate %}
-                {{ govukDateInput({
-                  id: "asylum-decision-date",
-                  namePrefix: "asylum-decision-date",
-                  fieldset: {
-                    legend: {
-                      html: legendSuccessfulDecision
-                    }
-                  },
-                  items: [
-                    {
-                      name: "day",
-                      classes: "govuk-input--width-2",
-                      value: data["asylum-decision-date-day"]
-                    },
-                    {
-                      name: "month",
-                      classes: "govuk-input--width-2",
-                      value: data["asylum-decision-date-month"]
-                    },
-                    {
-                      name: "year",
-                      classes: "govuk-input--width-4",
-                      value: data["asylum-decision-date-year"]
-                    }
-                  ]
-                }) }}
-              {% endset -%}
-
-              {{ govukRadios({
-                classes: "govuk-radios",
-                idPrefix: "asylum-decision-check",
-                name: "asylum-decision-check",
-                fieldset: {
-                  legend: {
-                    html: "Recent decision on asylum",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                  text: ""
-                },
-                items: [
-                {
-                  value: "Yes",
-                  text: "Yes",
-                  checked: (data["asylum-decision-check"] == "Yes"),
-                  conditional: {
-                    html: yesDate
-                  }
-                },
-                  {
-                    value: "No",
-                    text: "No",
-                    checked: (data["asylum-decision-check"] == "No")
-                  }
-                ]
-              }) }}
-
-              {{ govukRadios({
-                idPrefix: "supported-by-home-office",
-                name: "supported-by-home-office",
-                fieldset: {
-                  legend: {
-                    text: "Been supported by the Home Office",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
-                  }
-                },
-                classes: "govuk-radios",
-                items: [
-                  {
-                    value: "Yes",
-                    text: "Yes",
-                    checked: (data["supported-by-home-office"] == "Yes")
-                            },
-                  {
-                    value: "No",
-                    text: "No",
-                    checked: (data["supported-by-home-office"] == "No")
-                  }
-                ]
-              }) }}
 
               <br>
 
