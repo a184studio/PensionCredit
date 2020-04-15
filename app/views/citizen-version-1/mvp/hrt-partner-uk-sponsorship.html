@@ -18,7 +18,7 @@
 
       {% set dynamicH1 %}
       {% if data["single-joint-check"] == "Joint" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did you or your partner come to the UK on a sponsorship undertaking?</h1>
-      {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did you come to the UK on a sponsorship undertaking?</h1>{% endif %}
+      {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did your partner come to the UK on a sponsorship undertaking?</h1>{% endif %}
       {% endset %}
 
       <!-- Hidden input to set task to complete on task-list -->
@@ -30,7 +30,7 @@
         name: "hrt-partner-uk-sponsorship",
         fieldset: {
           legend: {
-            html: dynamicH1,
+            text: "Did you or your partner come to the UK on a sponsorship undertaking?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }

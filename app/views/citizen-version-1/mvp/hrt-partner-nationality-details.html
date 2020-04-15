@@ -20,11 +20,11 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Your nationality and residence
+        Your partner's nationality and residence
       </h1>
 
       {% set legendNationality %}
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is your nationality?</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is your partner's nationality?</h3>
       {% endset -%}
 
       {{ govukInput({
@@ -42,7 +42,7 @@
 
 
       {% set legendOriginCountry %}
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Which country have you come from?</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Which country has your partner come from?</h3>
       {% endset -%}
 
       {{ govukInput({
@@ -65,7 +65,7 @@
   namePrefix: "partner-date-to-uk",
   fieldset: {
     legend: {
-      text: "What date did you last come to the UK?",
+      text: "What date did your partner last come to the UK?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -80,7 +80,7 @@
   name: "partner-work-uk",
   fieldset: {
     legend: {
-      text: "Did you come to the UK to work?",
+      text: "Did your partner come to the UK to work?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
     }
@@ -105,7 +105,7 @@
   name: "partner-passport-recourse",
   fieldset: {
     legend: {
-      text: "Does your passport say you have no recourse to public funds?",
+      text: "Does your partner's passport say they have no recourse to public funds?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
     }
@@ -131,7 +131,7 @@
   namePrefix: "partner-date-left-uk",
   fieldset: {
     legend: {
-      text: "What date did you last leave the UK?",
+      text: "What date did your partner last leave the UK?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -147,7 +147,7 @@
   name: "partner-lived-uk-before",
   fieldset: {
     legend: {
-      text: "Have you lived in the UK before?",
+      text: "Has your partner lived in the UK before?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
     }
@@ -177,7 +177,7 @@
   name: "partner-family-reunion-uk",
   fieldset: {
     legend: {
-      text: "Have you come to the UK under the Family Reunion Scheme?",
+      text: "Has your partner come to the UK under the Family Reunion Scheme?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }

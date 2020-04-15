@@ -22,7 +22,7 @@
 
 
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-              Are you an asylum seeker?
+              Is your partner an asylum seeker?
             </h1>
 {% set asylumSeeker %}
 {{ govukRadios({
@@ -30,7 +30,7 @@
   name: "partner-asylum-before-april",
   fieldset: {
     legend: {
-      text: "Did you first apply for asylum before 3 April 2000?",
+      text: "Did your partner first apply for asylum before 3 April 2000?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
     }
@@ -51,7 +51,7 @@
 }) }}
 
 {% set legendSuccessfulDecision %}
-<h3 class="govuk-heading-m govuk-!-margin-bottom-0">What date did you get a successful decision of your application?</h3>
+<h3 class="govuk-heading-m govuk-!-margin-bottom-0">What date did your partner get a successful decision on their application?</h3>
 {% endset -%}
 
         {% set yesDate %}
@@ -89,7 +89,7 @@
           name: "partner-asylum-decision-check",
           fieldset: {
             legend: {
-              html: "Have you recently had a successful decision on your asylum application?",
+              html: "Has your partner recently had a successful decision on their asylum application?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -119,7 +119,7 @@
           name: "partner-supported-by-home-office",
           fieldset: {
             legend: {
-              text: "Have you been supported by the Home Office while waiting for a decision on your application?",
+              text: "Has your partner been supported by the Home Office while waiting for a decision on their application?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
             }
