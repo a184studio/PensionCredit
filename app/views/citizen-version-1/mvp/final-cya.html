@@ -2231,11 +2231,33 @@ actions: {
 
 
 
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
 
+    {
+      key: {
+        text: "HRT Address"
+      },
+      value: {
+        html: "Address line one
+        <br>Address line Two
+        <br>Address line Three
+        <br>" + data["hrt-postcode"]
+      },
+      actions: {
+        items: [
+          {
+            href: "hrt-address-post-code-lookup",
+            text: "Change",
+            visuallyHiddenText: ""
+          }
+        ]
+      }
+    }
 
-(HRT) What is your home postcode?
-hrt-postcode
-—
+  ]
+}) }}
 
 
 {{ govukSummaryList({
