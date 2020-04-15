@@ -16,14 +16,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="over-spa" method="post">
+      <form action="home-care-home-check" method="post">
 
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Nationality checks</h1>
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "uk-national",
-          name: "uk-national",
+          idPrefix: "partner-uk-national",
+          name: "partner-uk-national",
           fieldset: {
             legend: {
               text: "Do you have the right to live or work in the UK without any immigration restrictions?",
@@ -32,7 +32,7 @@
             }
           },
           hint: {
-            html: "<p class=\"hint\">You have this right if you have a British passport or are a British citizen or British subject with right of abode."
+            html: "<p class=\"hint\">@partner You have this right if you have a British passport or are a British citizen or British subject with right of abode."
           },
           items: [
             {
@@ -49,11 +49,11 @@
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "lived-abroad",
-          name: "lived-abroad",
+          idPrefix: "partner-lived-abroad",
+          name: "partner-lived-abroad",
           fieldset: {
             legend: {
-              text: "Have you lived permanently in the UK for the last 2 years?",
+              text: "@partner Have you lived permanently in the UK for the last 2 years?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -62,12 +62,12 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: data['lived-abroad'] == "Yes"
+              checked: data['partner-lived-abroad'] == "Yes"
             },
             {
               value: "No",
               text: "No",
-              checked: data['lived-abroad'] == "No"
+              checked: data['partner-lived-abroad'] == "No"
             }
           ]
         }) }}
