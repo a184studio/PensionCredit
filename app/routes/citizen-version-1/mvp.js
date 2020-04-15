@@ -958,6 +958,18 @@ router.post(`${baseUrl}/hrt-uk-sponsorship-router`, (req, res) => { // router na
 
 
 
+router.post(`${baseUrl}/hrt-partner-check-router`, (req, res) => { // router name
+  const ukSponsorshipCheck = req.session.data['hrt-partner-check']  // name of data / id name
+
+  if (ukSponsorshipCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-partner`)
+  } else {
+    res.redirect(`${baseUrl}/final-CYA`)
+  }
+})
+
+
+
 
 
 
