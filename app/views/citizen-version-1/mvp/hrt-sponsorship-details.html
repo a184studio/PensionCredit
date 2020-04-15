@@ -71,15 +71,31 @@
           legend: {
             html: legendSponsorSignDate,
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
         },
         hint: {
           text: "For example, 12 11 2007"
-        }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["sponsor-sign-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["sponsor-sign-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["sponsor-sign-date-year"]
+          }
+        ]
       }) }}
 
-      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
 
       <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->

@@ -58,8 +58,6 @@
         value: data["claimant-origin-country"]
       }) }}
 
-      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
 {{ govukDateInput({
   id: "claimant-date-to-uk",
   namePrefix: "claimant-date-to-uk",
@@ -67,13 +65,38 @@
     legend: {
       text: "Last date came to the UK",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
     }
   },
   hint: {
     text: "For example, 12 11 2007"
-  }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data["claimant-date-to-uk-day"]
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: data["claimant-date-to-uk-month"]
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: data["claimant-date-to-uk-year"]
+    }
+  ]
 }) }}
+
+
+
+
+
+
+
+
 
 {{ govukRadios({
   idPrefix: "claimant-work-uk",
