@@ -1968,7 +1968,7 @@ actions: {
 
           {
             key: {
-              text: "At any time , returned to the UK to live from abroad"
+              text: "At any time, have you come to live in the UK or returned to the UK to live from abroad?"
             },
             value: {
               text: data['hrt-returned-to-uk']
@@ -2043,7 +2043,7 @@ actions: {
         text: "Last date came to the UK"
       },
       value: {
-        text: data['claimant-date-to-uk']
+        text: data['claimant-date-to-uk-day'] + ' ' + (data['claimant-date-to-uk-month'] | getMonth) + ' ' + data['claimant-date-to-uk-year']
       },
       actions: {
         items: [
@@ -2057,6 +2057,7 @@ actions: {
     }
   ]
 }) }}
+
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -2083,42 +2084,158 @@ actions: {
 }) }}
 
 
-Passport say recourse to public funds
-claimant-rassport-recourse
--
-Come to UK under family reunion
-claimant-family-reunion-uk
--
-Come to UK on sponsorship
-hrt-uk-sponsorship
--
-Name of sponsor
-claimant-sponsor-name
-—
-Home office reference number
-home-office-ref
-—
-Date sponsor signed sponsorship undertaking
-sponsor-sign-date
-—
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Passport say recourse to public funds"
+    },
+    value: {
+      text: data['claimant-rassport-recourse']
+    },
+    actions: {
+      items: [
+        {
+          href: "hrt-nationality-details",
+          text: "Change",
+          visuallyHiddenText: "money-total"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Come to UK under family reunion"
+    },
+    value: {
+      text: data['claimant-family-reunion-uk']
+    },
+    actions: {
+      items: [
+        {
+          href: "hrt-nationality-details",
+          text: "Change",
+          visuallyHiddenText: "money-total"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Did you come to the UK on a sponsorship undertaking?"
+    },
+    value: {
+      text: data['hrt-uk-sponsorship']
+    },
+    actions: {
+      items: [
+        {
+          href: "hrt-uk-sponsorship",
+          text: "Change",
+          visuallyHiddenText: "money-total"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Name of sponsor"
+    },
+    value: {
+      text: data['claimant-sponsor-name']
+    },
+    actions: {
+      items: [
+        {
+          href: "hrt-sponsorship-details",
+          text: "Change",
+          visuallyHiddenText: "money-total"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Home office reference number"
+    },
+    value: {
+      text: data['home-office-ref']
+    },
+    actions: {
+      items: [
+        {
+          href: "hrt-sponsorship-details",
+          text: "Change",
+          visuallyHiddenText: "money-total"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Date sponsor signed sponsorship undertaking"
+    },
+    value: {
+      text: data['sponsor-sign-date-day'] + ' ' + (data['sponsor-sign-date-month'] | getMonth) + ' ' + data['sponsor-sign-date-year']
+    },
+    actions: {
+      items: [
+        {
+          href: "hrt-sponsorship-details",
+          text: "Change",
+          visuallyHiddenText: "money-total"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+
+
+
+
 (HRT) What is your home postcode?
 hrt-postcode
 —
-You or partner asylum seeker
-asylum-seeker
-—
-Apply for asylum before 3 April 2000
-asylum-before-april
-—
-Recent decision on asylum
-asylum-decision-check
-—
-Date of successful decision
-asylum-decision-date
-asylum-decision-date-day
-—
-Been supported by the Home Office
-supported-by-home-office
 
 
 {{ govukSummaryList({
@@ -2127,15 +2244,15 @@ supported-by-home-office
 
   {
     key: {
-      text: "XXXX"
+      text: "You or partner asylum seeker"
     },
     value: {
-      text: data['datadata']
+      text: data['asylum-seeker']
     },
     actions: {
       items: [
         {
-          href: "XXX",
+          href: "hrt-sponsorship-details",
           text: "Change",
           visuallyHiddenText: "money-total"
         }
@@ -2151,15 +2268,15 @@ supported-by-home-office
 
   {
     key: {
-      text: "XXXX"
+      text: "Apply for asylum before 3 April 2000"
     },
     value: {
-      text: data['datadata']
+      text: data['asylum-before-april']
     },
     actions: {
       items: [
         {
-          href: "XXX",
+          href: "hrt-sponsorship-details",
           text: "Change",
           visuallyHiddenText: "money-total"
         }
@@ -2168,6 +2285,7 @@ supported-by-home-office
   }
 ]
 }) }}
+
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -2175,15 +2293,15 @@ supported-by-home-office
 
   {
     key: {
-      text: "XXXX"
+      text: "Recent decision on asylum"
     },
     value: {
-      text: data['datadata']
+      text: data['asylum-decision-check']
     },
     actions: {
       items: [
         {
-          href: "XXX",
+          href: "hrt-sponsorship-details",
           text: "Change",
           visuallyHiddenText: "money-total"
         }
@@ -2192,6 +2310,7 @@ supported-by-home-office
   }
 ]
 }) }}
+
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -2199,15 +2318,15 @@ supported-by-home-office
 
   {
     key: {
-      text: "XXXX"
+      text: "Date of successful decision"
     },
     value: {
-      text: data['datadata']
+      text: data['asylum-decision-date-day'] + ' ' + (data['asylum-decision-date-month'] | getMonth) + ' ' + data['asylum-decision-date-year']
     },
     actions: {
       items: [
         {
-          href: "XXX",
+          href: "",
           text: "Change",
           visuallyHiddenText: "money-total"
         }
@@ -2216,6 +2335,7 @@ supported-by-home-office
   }
 ]
 }) }}
+
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -2223,15 +2343,15 @@ supported-by-home-office
 
   {
     key: {
-      text: "XXXX"
+      text: "Been supported by the Home Office"
     },
     value: {
-      text: data['datadata']
+      text: data['supported-by-home-office']
     },
     actions: {
       items: [
         {
-          href: "XXX",
+          href: "",
           text: "Change",
           visuallyHiddenText: "money-total"
         }
@@ -2241,125 +2361,11 @@ supported-by-home-office
 ]
 }) }}
 
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
 
-  {
-    key: {
-      text: "XXXX"
-    },
-    value: {
-      text: data['datadata']
-    },
-    actions: {
-      items: [
-        {
-          href: "XXX",
-          text: "Change",
-          visuallyHiddenText: "money-total"
-        }
-      ]
-    }
-  }
-]
-}) }}
 
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
 
-  {
-    key: {
-      text: "XXXX"
-    },
-    value: {
-      text: data['datadata']
-    },
-    actions: {
-      items: [
-        {
-          href: "XXX",
-          text: "Change",
-          visuallyHiddenText: "money-total"
-        }
-      ]
-    }
-  }
-]
-}) }}
 
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
 
-  {
-    key: {
-      text: "XXXX"
-    },
-    value: {
-      text: data['datadata']
-    },
-    actions: {
-      items: [
-        {
-          href: "XXX",
-          text: "Change",
-          visuallyHiddenText: "money-total"
-        }
-      ]
-    }
-  }
-]
-}) }}
-
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
-
-  {
-    key: {
-      text: "XXXX"
-    },
-    value: {
-      text: data['datadata']
-    },
-    actions: {
-      items: [
-        {
-          href: "XXX",
-          text: "Change",
-          visuallyHiddenText: "money-total"
-        }
-      ]
-    }
-  }
-]
-}) }}
-
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
-
-  {
-    key: {
-      text: "XXXX"
-    },
-    value: {
-      text: data['datadata']
-    },
-    actions: {
-      items: [
-        {
-          href: "XXX",
-          text: "Change",
-          visuallyHiddenText: "money-total"
-        }
-      ]
-    }
-  }
-]
-}) }}
 
 
       </div>
