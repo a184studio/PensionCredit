@@ -956,17 +956,38 @@ router.post(`${baseUrl}/hrt-uk-sponsorship-router`, (req, res) => { // router na
   }
 })
 
-
+// HRT PARTNER ROUTING
 
 router.post(`${baseUrl}/hrt-partner-check-router`, (req, res) => { // router name
-  const ukSponsorshipCheck = req.session.data['hrt-partner-check']  // name of data / id name
+  const partnerCheck = req.session.data['hrt-partner-check']  // name of data / id name
 
-  if (ukSponsorshipCheck === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-partner`)
+  if (partnerCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-partner-returned-to-uk`)
   } else {
     res.redirect(`${baseUrl}/final-CYA`)
   }
 })
+
+router.post(`${baseUrl}/hrt-partner-returned-to-uk-router`, (req, res) => { // router name
+  const partnerReturnedToUK = req.session.data['hrt-partner-returned-to-uk']  // name of data / id name
+
+  if (partnerReturnedToUK === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-partner-nationality-details`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-partner-uk-sponsorship`)
+  }
+})
+
+router.post(`${baseUrl}/hrt-partner-uk-sponsorship-router`, (req, res) => { // router name
+  const partnerUKSponsorshipCheck = req.session.data['hrt-partner-uk-sponsorship']  // name of data / id name
+
+  if (partnerUKSponsorshipCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-partner-sponsorship-details`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-partner-other-details`)
+  }
+})
+
 
 
 
