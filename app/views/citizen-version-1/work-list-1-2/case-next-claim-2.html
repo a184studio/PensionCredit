@@ -19,20 +19,22 @@
 
 
         <!------------HEADLINE------------>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Pension Credit claim #2</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><strong>Forename and surname #2</strong></h1>
 
-            <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Claim received: <strong>00 May 2020</strong></h1>
-            <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National Insurance number: <strong>NA 11 22 33 C</strong></h1>
-            <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Name: <strong>Forename and surname</strong></h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">NI: <strong>NA 11 22 33 C</strong></p>
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Received: <strong>00 May 2020</strong></p>
 
 
             {{ govukButton({
-              text: "Downlaod PDF",
+              text: "Download PDF",
               classes: "govuk-button--secondary govuk-!-margin-bottom-8"
             }) }}
 
+            <p class="govuk-heading-m govuk-!-margin-bottom-2">Get next claim</p>
+             <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Before trying to get <strong>next claim</strong> make sure you<br> have added the claim to DRS successfully.</h3>
 
 
+<!--
       {% set legendDRS %}
       <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Enter PTP CAM case ID</h3>
       {% endset -%}
@@ -48,9 +50,8 @@
         name: "drs-id",
         classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
         value: data["drs-id"]
-      }) }}
+      }) }} -->
 
-    <!--  <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Before trying to <strong>Get next claim</strong> make sure you have added the DRS/CAM ID and the claim has been downloaded successfully</h3> -->
 
 
       {{ govukButton({
