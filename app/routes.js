@@ -45,7 +45,7 @@ router.use(require('./routes/version-15/survey'))
 router.use(require('./routes/version-15/index'))
 router.use(require('./routes/version-15/index-2'))
 router.use(require('./routes/citizen-version-1/mvp'))
-router.use(require('./routes/citizen-version-1/work-list'))
+router.use(require('./routes/citizen-version-1/work-list-1-2'))
 router.use(require('./routes/citizen-version-1-1/mvp'))
 
 

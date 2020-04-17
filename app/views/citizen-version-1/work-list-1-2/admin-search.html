@@ -1,0 +1,86 @@
+{% extends "layout-work-list-id-bar.html" %}
+
+{% block pageTitle %}
+  WorkLlist - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="case-next-claim" method="post" class="form">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Find a claim</h1>
+
+
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-2">National Insurance number and select the case from the list</p>
+
+
+                {{ govukInput({
+                  label: {
+                    html: legendName
+                  },
+                  hint: {
+                    text: ""
+                  },
+                  id: "user-full-name",
+                  name: "user-full-name",
+                  classes: "govuk-input--width-30 govuk-!-margin-bottom-0",
+                  value: data["full-name"]
+                }) }}
+
+                {{ govukButton({
+                  text: "Search",
+                  classes: "govuk-button--secondary govuk-!-margin-bottom-6"
+                }) }}
+
+
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-20-percent">NI number</td>
+                      <td class="govuk-table__cell govuk-40-percent">Name</td>
+                      <td class="govuk-table__cell govuk-15-percent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td class="govuk-table__cell govuk-15-percent">Received</td>
+                      <td class="govuk-table__cell govuk-10-percent">Age (days)</td>
+                    </tr>
+                    </thead>
+
+
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__cell">NA 11 22 33 c</th>
+                      <td class="govuk-table__cell"><a href="XXX">Mel Gibson</a></td>
+                      <td class="govuk-table__cell"></td>
+
+                      <td class="govuk-table__cell">DD Sept 2020</td>
+                      <td class="govuk-table__cell">102</td>
+
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__cell">NA 11 22 33 c</th>
+                      <td class="govuk-table__cell"><a href="XXX">Mellon Adamson</a></td>
+                      <td class="govuk-table__cell"></td>
+
+                      <td class="govuk-table__cell">DD Sept 2020</td>
+                      <td class="govuk-table__cell">100</td>
+
+                    </tr>
+
+                    </table>
+
+                  </div>
+                </div>
+
+
+
+
+{% endblock %}

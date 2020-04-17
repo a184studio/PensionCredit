@@ -19,35 +19,16 @@
       <form action="index-claim-help" method="post" class="form">
 
 
-      <h1 class="govuk-heading-xl">{{ data["full-name"] }}: Pension Credit application summary</h1>
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Pre check</h2>
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About you</h2>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
         {
-          key: {
-            text: "Do any children or qualifying young people live with you?"
-          },
-          value: {
-            text: data['children-check-yn']
-          },
-          actions: {
-            items: [
-              {
-                href: "@ChangeURL",
-                text: "@ChangeLink",
-                visuallyHiddenText: "@Hidden"
-              }
-            ]
-          }
-        },
-
-        {
-          classes: 'govuk-summary-list',
           key: {
             text: "Have you claimed your State Pension?"
           },
@@ -58,8 +39,28 @@
             items: [
             {
               href: "@ChangeURL",
-              text: "@ChangeLink",
-              visuallyHiddenText: "@Hidden"
+              text: "Change",
+              visuallyHiddenText: "whether you have claimed your State Pension"
+
+              }
+            ]
+          }
+        },
+
+        {
+          classes: 'govuk-summary-list',
+          key: {
+            text: "Do any children or qualifying young people live with you?"
+          },
+          value: {
+            text: data['children-check-yn']
+          },
+          actions: {
+            items: [
+              {
+                href: "@ChangeURL",
+                text: "Change",
+                visuallyHiddenText: "whether any children or qualifying young people live with you"
             }
           ]
         }
@@ -69,52 +70,6 @@
         ]
       }) }}
 
-      </div>
-<!---------------------------------------------------------------------------------------------------------------------------------->
-
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Personal information and declaration</h2>
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-        {
-          key: {
-            text: "Do you agree to how we use your personal information?"
-          },
-          value: {
-            text: data['agrees-privacy']
-          },
-          actions: {
-            items: [
-              {
-                href: "start",
-                text: "Change",
-                visuallyHiddenText: "Change agreement to privacy policy"
-              }
-            ]
-          }
-        },
-
-        {
-          classes: 'govuk-summary-list',
-          key: {
-            text: "Do you agree to the declaration?"
-          },
-          value: {
-            text: data['pre-declaration']
-          },
-          actions: {
-            items: [
-              {
-                href: "pre-declaration",
-                text: "Change",
-                visuallyHiddenText: "Change agreement to declaration"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
 
       {{ govukSummaryList({
         rows: [
@@ -130,7 +85,7 @@
               {
                 href: "reside-in-uk",
                 text: "Change",
-                visuallyHiddenText: "Change whetehr you live in the UK"
+                visuallyHiddenText: "whether you live in the UK"
               }
             ]
           }
@@ -147,7 +102,7 @@
               {
                 href: "lived-abroad",
                 text: "Change",
-                visuallyHiddenText: "Change whether you have lived permanently in the UK for the last 2 years"
+                visuallyHiddenText: "whether you have lived permanently in the UK for the last 2 years"
               }
             ]
           }
@@ -164,7 +119,7 @@
               {
                 href: "uk-national",
                 text: "Change",
-                visuallyHiddenText: "Change whether you are a UK national"
+                visuallyHiddenText: "whether have the right to live or work in the UK without any immigration restrictions"
               }
             ]
           }
@@ -181,7 +136,7 @@
               {
                 href: "claim-date-of-claim",
                 text: "Change",
-                visuallyHiddenText: "Change whether you have lived permanently in the UK for the last 2 years"
+                visuallyHiddenText: "what date you want your Pension Credit claim to start"
               }
             ]
           }
@@ -191,10 +146,6 @@
 
 
 
-      </div>
-<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About you</h2>
 
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
@@ -202,7 +153,7 @@
 
           {
             key: {
-              text: "Date of birth"
+              text: "Your date of birth"
             },
             value: {
               text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
@@ -212,7 +163,7 @@
                 {
                   href: "over-spa",
                   text: "Change",
-                  visuallyHiddenText: "Change date of birth"
+                  visuallyHiddenText: "your date of birth"
                 }
               ]
             }
@@ -220,7 +171,7 @@
 
           {
             key: {
-              text: "Name"
+              text: "Your name"
             },
             value: {
               text: data["full-name"]
@@ -230,7 +181,7 @@
                 {
                   href: "claimant-details",
                   text: "Change",
-                  visuallyHiddenText: "Change name"
+                  visuallyHiddenText: "your name"
                 }
               ]
             }
@@ -238,7 +189,7 @@
 
           {
             key: {
-              text: "Alt name"
+              text: "Your previous names"
             },
             value: {
               text: data["claimant-alt-name-yes"]
@@ -248,14 +199,14 @@
                 {
                   href: "claimant-details",
                   text: "Change",
-                  visuallyHiddenText: "Change name"
+                  visuallyHiddenText: "your previous names"
                 }
               ]
             }
           },
                       {
                         key: {
-                          text: "National Insurance number"
+                          text: "Your National Insurance number"
                         },
                         value: {
                           text: data["nino"]
@@ -264,8 +215,8 @@
                           items: [
                             {
                               href: "",
-                              text: " ",
-                              visuallyHiddenText: "Change National Insurance number"
+                              text: "Change",
+                              visuallyHiddenText: "your National Insurance number"
                             }
                           ]
                         }
@@ -282,8 +233,8 @@
                           items: [
                             {
                               href: "",
-                              text: "",
-                              visuallyHiddenText: "Change number you are calling from"
+                              text: "Change",
+                              visuallyHiddenText: "your contact telephone number"
                             }
                           ]
                         }
@@ -308,8 +259,8 @@
                         items: [
                           {
                             href: "",
-                            text: "",
-                            visuallyHiddenText: "Change number you are calling from"
+                            text: "Change",
+                            visuallyHiddenText: "whether you are registered blind or severely sight impaired"
                           }
                         ]
                       }
@@ -326,8 +277,8 @@
                         items: [
                           {
                             href: "",
-                            text: "",
-                            visuallyHiddenText: "Change number you are calling from"
+                            text: "Change",
+                            visuallyHiddenText: "whether you are able to speak to us in English"
                           }
                         ]
                       }
@@ -351,8 +302,8 @@
                       items: [
                         {
                           href: "",
-                          text: "",
-                          visuallyHiddenText: ""
+                          text: "Change",
+                          visuallyHiddenText: "your first language"
                         }
                       ]
                     }
@@ -376,8 +327,8 @@
                     items: [
                       {
                         href: "",
-                        text: "",
-                        visuallyHiddenText: "Change number you are calling from"
+                        text: "Change",
+                        visuallyHiddenText: "whether you want to speak to us in Welsh"
                       }
                     ]
                   }
@@ -394,8 +345,8 @@
                     items: [
                       {
                         href: "",
-                        text: "",
-                        visuallyHiddenText: ""
+                        text: "Change",
+                        visuallyHiddenText: "whether you need help with letters or phone calls"
                       }
                     ]
                   }
@@ -410,7 +361,7 @@
 
               {
                 key: {
-                  text: "Formats"
+                  text: "Do you need us to contact you in any different formats?"
                 },
                 value: {
                   html: "     Audio,
@@ -425,7 +376,7 @@
                     {
                       href: "contact-formats",
                       text: "Change",
-                      visuallyHiddenText: ""
+                      visuallyHiddenText: "whether you need us to contact you in any different formats"
                     }
                   ]
                 }
@@ -440,7 +391,7 @@
 
                         {
               key: {
-                text: "Other details"
+                text: "Details of other formats you need us to use to contact you"
               },
               value: {
                 text: data["contact-other-details"]
@@ -450,7 +401,7 @@
                   {
                     href: "",
                     text: "Change",
-                    visuallyHiddenText: ""
+                    visuallyHiddenText: "the details of other formats you need us to use to contact you"
                   }
                 ]
               }
@@ -467,7 +418,7 @@
 
                         {
               key: {
-                text: "TextPhone number"
+                text: "Your textphone number"
               },
               value: {
                 text: data["contact-formats-text-phone-number"]
@@ -476,8 +427,8 @@
                 items: [
                   {
                     href: "",
-                    text: "",
-                    visuallyHiddenText: ""
+                    text: "Change",
+                    visuallyHiddenText: "your textphone number"
                   }
                 ]
               }
@@ -498,7 +449,7 @@
 
           {
             key: {
-              text: "Date of birth"
+              text: "Your partner's date of birth"
             },
             value: {
               text: data['partner-dob-day'] + ' ' + (data['partner-dob-month'] | getMonth) + ' ' + data['partner-dob-year']
@@ -508,7 +459,7 @@
                 {
                   href: "partner-check-yn",
                   text: "Change",
-                  visuallyHiddenText: "Change date of birth"
+                  visuallyHiddenText: "your partner's date of birth"
                 }
               ]
             }
@@ -516,7 +467,7 @@
 
           {
             key: {
-              text: "Name"
+              text: "Your partner's name"
             },
             value: {
               text: data["partner-full-name"]
@@ -526,7 +477,7 @@
                 {
                   href: "partner-details",
                   text: "Change",
-                  visuallyHiddenText: "Change name"
+                  visuallyHiddenText: "your partners name"
                 }
               ]
             }
@@ -534,7 +485,7 @@
 
           {
             key: {
-              text: "Alt Name"
+              text: "Your partner's previous names"
             },
             value: {
               text: data["partner-alt-name-yes"]
@@ -544,14 +495,14 @@
                 {
                   href: "partner-details",
                   text: "Change",
-                  visuallyHiddenText: "Change name"
+                  visuallyHiddenText: "your partner's previous names"
                 }
               ]
             }
           },
                       {
                         key: {
-                          text: "National Insurance number"
+                          text: "Your partner's National Insurance number"
                         },
                         value: {
                           text: data["partner-nino"]
@@ -560,8 +511,8 @@
                           items: [
                             {
                               href: "",
-                              text: " ",
-                              visuallyHiddenText: "Change National Insurance number"
+                              text: "Change",
+                              visuallyHiddenText: "your partner's National Insurance number"
                             }
                           ]
                         }
@@ -577,7 +528,7 @@
 
                     {
                       key: {
-                        text: "Are you registered blind or severely sight impaired?"
+                        text: "Is your partner registered blind or severely sight impaired?"
                       },
                       value: {
                         text: data["contact-partner-blind-check"]
@@ -586,8 +537,8 @@
                         items: [
                           {
                             href: "",
-                            text: "",
-                            visuallyHiddenText: "Change number you are calling from"
+                            text: "Change",
+                            visuallyHiddenText: "whether your partner is registered blind or severely sight impaired"
                           }
                         ]
                       }
@@ -602,7 +553,7 @@
 
                   {
                     key: {
-                      text: "Do you have the right to live or work in the UK without any immigration restrictions?"
+                      text: "Does your partner have the right to live or work in the UK without any immigration restrictions?"
                     },
                     value: {
                       text: data["partner-uk-national"]
@@ -612,7 +563,7 @@
                         {
                           href: "partner-nationality-check",
                           text: "Change",
-                          visuallyHiddenText: "Change number you are calling from"
+                          visuallyHiddenText: "whether your partner has the right to live or work in the UK without any immigration restrictions"
                         }
                       ]
                     }
@@ -629,7 +580,7 @@
 
                 {
                   key: {
-                    text: "@partner Have you lived permanently in the UK for the last 2 years?"
+                    text: "Has your partner lived permanently in the UK for the last 2 years?"
                   },
                   value: {
                     text: data["partner-lived-abroad"]
@@ -639,7 +590,7 @@
                       {
                         href: "partner-nationality-check",
                         text: "Change",
-                        visuallyHiddenText: "Change number you are calling from"
+                        visuallyHiddenText: "whether your partner has lived permanently in the UK for the last 2 years"
                       }
                     ]
                   }
@@ -674,7 +625,7 @@
                 {
                   href: "home-care-home-check",
                   text: "Change",
-                  visuallyHiddenText: "Change date of birth"
+                  visuallyHiddenText: "whether you live permanently in a care home"
                 }
               ]
             }
@@ -688,7 +639,7 @@
 
       {
         key: {
-          text: "If Yes, Do you own the property you used to live in?"
+          text: "Do you own the property you used to live in?"
         },
         value: {
           text: data["home-care-home-check-still-own"]
@@ -697,8 +648,8 @@
           items: [
             {
               href: "",
-              text: "",
-              visuallyHiddenText: ""
+              text: "Change",
+              visuallyHiddenText: "whether you own the property you used to live in"
             }
           ]
         }
@@ -713,7 +664,7 @@
 
     {
       key: {
-        text: "Address"
+        text: "Your home address"
       },
       value: {
         html: "Address line one
@@ -726,7 +677,7 @@
           {
             href: "address-post-code-lookup",
             text: "Change",
-            visuallyHiddenText: ""
+            visuallyHiddenText: "your home address"
           }
         ]
       }
@@ -744,7 +695,7 @@
           {
             href: "address-post-code-lookup",
             text: "Change",
-            visuallyHiddenText: ""
+            visuallyHiddenText: "whether your home address is the same as the address we use to send you letters"
           }
         ]
       }
@@ -759,7 +710,7 @@
 
   {
     key: {
-      text: "Letters address"
+      text: "The address we should send letters to"
     },
     value: {
       html: "Address line one
@@ -772,7 +723,7 @@
         {
           href: "address-post-code-lookup",
           text: "Change",
-          visuallyHiddenText: ""
+          visuallyHiddenText: "the address we should send letters to"
         }
       ]
     }
@@ -788,7 +739,7 @@
 
     {
     key: {
-      text: "Does anyone live in your household apart from you and your partner?"
+      text: "Does anyone else live with you apart from you [and your partner]?"
     },
     value: {
       text: data["home-living-with-you"]
@@ -798,7 +749,7 @@
         {
           href: "home-living-with-you",
           text: "Change",
-          visuallyHiddenText: ""
+          visuallyHiddenText: "whether anyone else lives with you"
         }
       ]
     }
@@ -813,7 +764,7 @@
 
     {
     key: {
-      text: "Details"
+      text: "Details of anyone else that lives with you"
     },
     value: {
       text: data["home-living-with-you-yes-details"]
@@ -823,7 +774,7 @@
         {
           href: "home-living-with-you",
           text: "Change",
-          visuallyHiddenText: ""
+          visuallyHiddenText: "the details of anyone else that lives with you"
         }
       ]
     }
@@ -838,7 +789,7 @@
 
     {
     key: {
-      text: "Are you or your partner responsible for paying the rent, Council Tax or both for the place where you live?"
+      text: "Are you [or your partner] responsible for paying the rent, Council Tax or both for the place where you live?"
     },
     value: {
       text: data["home-responsible-CTR-HB"]
@@ -848,7 +799,7 @@
         {
           href: "address-post-code-lookup",
           text: "Change",
-          visuallyHiddenText: ""
+          visuallyHiddenText: "whether you are responsible for paying the rent, Council Tax or both for the place where you live"
         }
       ]
     }
@@ -866,7 +817,7 @@
       {
         href: "home-ownership",
         text: "Change",
-        visuallyHiddenText: ""
+        visuallyHiddenText: "which best describes the place where you live"
       }
     ]
   }
@@ -883,8 +834,8 @@ actions: {
   items: [
     {
       href: "home-ownership",
-      text: "",
-      visuallyHiddenText: ""
+      text: "Change",
+      visuallyHiddenText: "the description of where you live"
     }
   ]
 }
@@ -908,7 +859,7 @@ actions: {
         {
           href: "home-property-charges",
           text: "Change",
-          visuallyHiddenText: ""
+          visuallyHiddenText: "whether you pay any service charges"
         }
       ]
     }
@@ -925,7 +876,7 @@ actions: {
 
         {
         key: {
-          text: "How much do you pay in service charges?"
+          text: "How much do you pay in service charges each month?"
         },
         value: {
           text: data["home-property-service-charges-value"]
@@ -935,7 +886,7 @@ actions: {
             {
               href: "home-property-charges",
               text: "Change",
-              visuallyHiddenText: ""
+              visuallyHiddenText: "how much you pay in service charges each month"
             }
           ]
         }
@@ -962,7 +913,7 @@ actions: {
         {
           href: "home-property-charges",
           text: "Change",
-          visuallyHiddenText: ""
+          visuallyHiddenText: "whether you pay ground rent"
         }
       ]
     }
@@ -980,7 +931,7 @@ actions: {
 
             {
             key: {
-              text: "How much do you pay in ground rent?"
+              text: "How much do you pay in ground rent each month?"
             },
             value: {
               text: data["home-property-ground-rent-value"]
@@ -990,7 +941,7 @@ actions: {
                 {
                   href: "home-property-charges",
                   text: "Change",
-                  visuallyHiddenText: ""
+                  visuallyHiddenText: "how much you pay in ground rent each month"
                 }
               ]
             }
@@ -1017,7 +968,7 @@ actions: {
               {
                 href: "home-property-charges",
                 text: "Change",
-                visuallyHiddenText: ""
+                visuallyHiddenText: "whether you get housing benefit"
               }
             ]
           }
@@ -1045,7 +996,7 @@ actions: {
                       {
                         href: "home-property-charges",
                         text: "Change",
-                        visuallyHiddenText: ""
+                        visuallyHiddenText: "whether you want to apply for housing benefit"
                       }
                     ]
                   }
@@ -1072,7 +1023,7 @@ actions: {
               {
                 href: "home-mortgage-home-loan",
                 text: "Change",
-                visuallyHiddenText: ""
+                visuallyHiddenText: "whether you want to apply for support with interest on a mortgage or loan secured against your home"
               }
             ]
           }
@@ -1087,7 +1038,7 @@ actions: {
 
           {
           key: {
-            text: "home-shared-payments"
+            text: "Do you share the rent or mortgage for the place where you live with anyone [apart from your partner]?"
           },
           value: {
             text: data["home-shared-payments"]
@@ -1097,7 +1048,7 @@ actions: {
               {
                 href: "home-shared-payments",
                 text: "Change",
-                visuallyHiddenText: ""
+                visuallyHiddenText: "whether you share the rent or mortgage for the place where you live with anyone"
               }
             ]
           }
@@ -1120,7 +1071,7 @@ actions: {
 
           {
             key: {
-              text: "pension-check"
+              text: "Do you get a private pension, a pension from a place where you used to work or any other pension?"
             },
             value: {
               text: data['pension-check']
@@ -1130,7 +1081,7 @@ actions: {
                 {
                   href: "pension-check",
                   text: "Change",
-                  visuallyHiddenText: "Change date of birth"
+                  visuallyHiddenText: "whether you get a private pension, a pension from a place where you used to work or any other pension"
                 }
               ]
             }
@@ -1145,7 +1096,7 @@ actions: {
 
         {
           key: {
-            text: "For each pension you get, tell us who pays it, how much it is and how often it is paid."
+            text: "Details of your private and workplace pensions"
           },
           value: {
             text: data['pension-check-details']
@@ -1155,7 +1106,7 @@ actions: {
               {
                 href: "pension-check",
                 text: "Change",
-                visuallyHiddenText: "pension-check-details"
+                visuallyHiddenText: "the details of your private and workplace pensions"
               }
             ]
           }
@@ -1176,7 +1127,7 @@ actions: {
 
           {
             key: {
-              text: "Have you or your partner applied for any benefits that you are waiting to hear about?"
+              text: "Have you [or your partner] applied for any benefits that you are waiting to hear about?"
             },
             value: {
               text: data['benefit-check']
@@ -1186,7 +1137,7 @@ actions: {
                 {
                   href: "benefit-check",
                   text: "Change",
-                  visuallyHiddenText: "benefit"
+                  visuallyHiddenText: "you have applied for any benefits that you are waiting to hear about"
                 }
               ]
             }
@@ -1211,7 +1162,7 @@ actions: {
               {
                 href: "benefit-check",
                 text: "Change",
-                visuallyHiddenText: "pension-check-details"
+                visuallyHiddenText: "which benefits you have applied for"
               }
             ]
           }
@@ -1226,7 +1177,7 @@ actions: {
 
   {
     key: {
-      text: "Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you or your partner?"
+      text: "Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you [or your partner]?"
     },
     value: {
       text: data['CarerAllowance-check']
@@ -1236,7 +1187,7 @@ actions: {
         {
           href: "benefit-check",
           text: "Change",
-          visuallyHiddenText: "benefit"
+          visuallyHiddenText: "whether anyone gets Carer’s Allowance or Carer’s Element of Universal Credit for looking after you"
         }
       ]
     }
@@ -1257,7 +1208,7 @@ actions: {
 
           {
             key: {
-              text: "Do you or your partner have any income from employment?"
+              text: "Do you [or your partner] have any income from employment?"
             },
             value: {
               text: data['employment-check']
@@ -1267,7 +1218,7 @@ actions: {
                 {
                   href: "employment-check",
                   text: "Change",
-                  visuallyHiddenText: "benefit"
+                  visuallyHiddenText: "whether you have any income from employment"
                 }
               ]
             }
@@ -1282,7 +1233,7 @@ actions: {
 
         {
           key: {
-            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+            text: "Details of your income from employment"
           },
           value: {
             text: data['employment-check-yes-details']
@@ -1292,7 +1243,7 @@ actions: {
               {
                 href: "employment-check",
                 text: "Change",
-                visuallyHiddenText: "employment-check"
+                visuallyHiddenText: "details of your income from employment"
               }
             ]
           }
@@ -1308,7 +1259,7 @@ actions: {
 
           {
             key: {
-              text: "Do you or your partner have any income from self-employment now or in the 3 months before [date of claim]?"
+              text: "Do you [or your partner] have any income from self-employment now or in the 3 months before [date of claim]?"
             },
             value: {
               text: data['self-employment-check']
@@ -1318,7 +1269,7 @@ actions: {
                 {
                   href: "employment-check",
                   text: "Change",
-                  visuallyHiddenText: "benefit"
+                  visuallyHiddenText: "whether you have any income from self-employment now or in the 3 months before your claim date"
                 }
               ]
             }
@@ -1333,7 +1284,7 @@ actions: {
 
         {
           key: {
-            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+            text: "Details of your income from self-employment"
           },
           value: {
             text: data['self-employment-check-yes-details']
@@ -1343,7 +1294,7 @@ actions: {
               {
                 href: "employment-check",
                 text: "Change",
-                visuallyHiddenText: "employment-check"
+                visuallyHiddenText: "details of your income from self-employment"
               }
             ]
           }
@@ -1361,7 +1312,7 @@ actions: {
 
           {
             key: {
-              text: "Do you or your partner have any other money coming in?"
+              text: "Do you [or your partner] have any other money coming in?"
             },
             value: {
               text: data['other-money-yes-details']
@@ -1371,7 +1322,7 @@ actions: {
                 {
                   href: "employment-other-money",
                   text: "Change",
-                  visuallyHiddenText: "employment-other-money"
+                  visuallyHiddenText: "whether you have any other money coming in"
                 }
               ]
             }
@@ -1386,7 +1337,7 @@ actions: {
 
         {
           key: {
-            text: "Tell us what this income is, how much you are paid, how often you are paid and whether it is paid to you or your partner."
+            text: "Details of other money you have coming in"
           },
           value: {
             text: data['other-money-yes-details']
@@ -1396,7 +1347,7 @@ actions: {
               {
                 href: "other-money-check",
                 text: "Change",
-                visuallyHiddenText: "other-money-check"
+                visuallyHiddenText: "the details of other money you have coming in"
               }
             ]
           }
@@ -1418,7 +1369,7 @@ actions: {
 
           {
             key: {
-              text: "How much money you have, including savings and investments?"
+              text: "How much money you had on [claim-date]"
             },
             value: {
               text: data['money-total-then']
@@ -1428,7 +1379,7 @@ actions: {
                 {
                   href: "money-total",
                   text: "Change",
-                  visuallyHiddenText: "money-total"
+                  visuallyHiddenText: "how much money you had on your claim start date"
                 }
               ]
             }
@@ -1442,7 +1393,7 @@ actions: {
 
         {
           key: {
-            text: "How much money you have, including savings and investments?"
+            text: "How much money you have today"
           },
           value: {
             text: data['money-total-now']
@@ -1452,7 +1403,7 @@ actions: {
               {
                 href: "money-total",
                 text: "Change",
-                visuallyHiddenText: "money-total"
+                visuallyHiddenText: "how much money you have today"
               }
             ]
           }
@@ -1476,7 +1427,7 @@ actions: {
               {
                 href: "money-second-property-check",
                 text: "Change",
-                visuallyHiddenText: "money-second-property-check"
+                visuallyHiddenText: "whether you own any property or land other than your home"
               }
             ]
           }
@@ -1485,11 +1436,10 @@ actions: {
     }) }}
 
 
-      </div>
+
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Disregards</h2>
 
 
 {{ govukSummaryList({
@@ -1508,7 +1458,7 @@ actions: {
         {
           href: "money-disregards-all",
           text: "Change",
-          visuallyHiddenText: "money-disregards-all"
+          visuallyHiddenText: "whether you have had any payments for arrears of benefits, or any payments to correct or compensate for an official error"
         }
       ]
     }
@@ -1534,7 +1484,7 @@ actions: {
         {
           href: "money-disregards-all",
           text: "Change",
-          visuallyHiddenText: "money-disregards-all"
+          visuallyHiddenText: "details of benefit arrears, correction or compensation payments"
         }
       ]
     }
@@ -1561,7 +1511,7 @@ actions: {
         {
           href: "money-disregards-all",
           text: "Change",
-          visuallyHiddenText: "money-disregards-all"
+          visuallyHiddenText: "whether you have had any payments related to Council Tax Reduction"
         }
       ]
     }
@@ -1587,7 +1537,7 @@ actions: {
         {
           href: "money-disregards-all",
           text: "Change",
-          visuallyHiddenText: "money-disregards-all"
+          visuallyHiddenText: "details of payments related to Council Tax Reduction"
         }
       ]
     }
@@ -1615,7 +1565,7 @@ actions: {
         {
           href: "money-disregards-all",
           text: "Change",
-          visuallyHiddenText: "money-disregards-all"
+          visuallyHiddenText: "whether you have had any compensation payments related to the second world war or service in the armed forces"
         }
       ]
     }
@@ -1641,7 +1591,7 @@ actions: {
         {
           href: "money-disregards-all",
           text: "Change",
-          visuallyHiddenText: "money-disregards-all"
+          visuallyHiddenText: "details of compensation payments related to the second world war or service in the armed forces"
         }
       ]
     }
@@ -1669,7 +1619,7 @@ actions: {
         {
           href: "money-disregards-all",
           text: "Change",
-          visuallyHiddenText: "money-disregards-all"
+          visuallyHiddenText: "whether you have had any personal injury claim payments"
         }
       ]
     }
@@ -1695,7 +1645,7 @@ actions: {
         {
           href: "money-disregards-all",
           text: "Change",
-          visuallyHiddenText: "money-disregards-all"
+          visuallyHiddenText: "details of personal injury claim payments"
         }
       ]
     }
@@ -1724,7 +1674,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "whether you have had any payments from a home insurance policy to cover lost or damaged personal possessions"
                           }
                         ]
                       }
@@ -1750,7 +1700,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "details of payments from a home insurance policy to cover lost or damaged personal possessionsl"
                           }
                         ]
                       }
@@ -1779,7 +1729,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "whether you have any savings that you intend to use to buy or make essential repairs to your main home"
                           }
                         ]
                       }
@@ -1805,7 +1755,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "details of savings that you intend to use to buy or make essential repairs to your main home"
                           }
                         ]
                       }
@@ -1833,7 +1783,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "whether you have had any payments to help you live independently in your own home or the community"
                           }
                         ]
                       }
@@ -1859,7 +1809,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "details of payments to help you live independently in your own home or the communityl"
                           }
                         ]
                       }
@@ -1888,7 +1838,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "whether you have had any payments to help you if you have been involved in an incident or emergency"
                           }
                         ]
                       }
@@ -1914,7 +1864,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "details of payments to help you if you have been involved in an incident or emergency"
                           }
                         ]
                       }
@@ -1944,7 +1894,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "whether you hve been paid Windrush child compensation"
                           }
                         ]
                       }
@@ -1970,7 +1920,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "details of Windrush child compensation"
                           }
                         ]
                       }
@@ -1998,7 +1948,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "whether you have had any payments to support you with the effects of a blood infection or vCJD"
                           }
                         ]
                       }
@@ -2025,7 +1975,7 @@ actions: {
                           {
                             href: "money-disregards-all",
                             text: "Change",
-                            visuallyHiddenText: "money-disregards-all"
+                            visuallyHiddenText: "details of payments to support you with the effects of a blood infection or vCJD"
                           }
                         ]
                       }
@@ -2042,7 +1992,7 @@ actions: {
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">@pete Habitual residence Claimant</h2>
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About your residency in the UK</h2>
 
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
@@ -2060,7 +2010,7 @@ actions: {
                 {
                   href: "hrt-returned-to-uk",
                   text: "Change",
-                  visuallyHiddenText: "money-total"
+                  visuallyHiddenText: "whether you have you come to live in the UK or returned to the UK to live from abroad"
                 }
               ]
             }
@@ -2084,7 +2034,7 @@ actions: {
               {
                 href: "hrt-nationality-details",
                 text: "Change",
-                visuallyHiddenText: "money-total"
+                visuallyHiddenText: "your nationality"
               }
             ]
           }
@@ -2108,7 +2058,7 @@ actions: {
             {
               href: "hrt-nationality-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "which country you came from"
             }
           ]
         }
@@ -2122,7 +2072,7 @@ actions: {
 
     {
       key: {
-        text: "Last date came to the UK"
+        text: "What date did you last come to the UK?"
       },
       value: {
         text: data['claimant-date-to-uk-day'] + ' ' + (data['claimant-date-to-uk-month'] | getMonth) + ' ' + data['claimant-date-to-uk-year']
@@ -2132,7 +2082,7 @@ actions: {
           {
             href: "hrt-nationality-details",
             text: "Change",
-            visuallyHiddenText: "money-total"
+            visuallyHiddenText: "what date you last came to the UK"
           }
         ]
       }
@@ -2147,7 +2097,7 @@ actions: {
 
   {
     key: {
-      text: "Was this to work?"
+      text: "Did you come to the UK to work?"
     },
     value: {
       text: data['claimant-work-uk']
@@ -2157,7 +2107,7 @@ actions: {
         {
           href: "hrt-nationality-details",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "whether you came to the UK to work"
         }
       ]
     }
@@ -2172,7 +2122,7 @@ actions: {
 
   {
     key: {
-      text: "Passport say recourse to public funds"
+      text: "Does your passport say you have no recourse to public funds?"
     },
     value: {
       text: data['claimant-rassport-recourse']
@@ -2182,7 +2132,7 @@ actions: {
         {
           href: "hrt-nationality-details",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "whether your passport says you have no recourse to public funds"
         }
       ]
     }
@@ -2196,7 +2146,55 @@ actions: {
 
   {
     key: {
-      text: "Come to UK under family reunion"
+      text: "Have you lived in the UK before?"
+    },
+    value: {
+      text: data['lived-uk-before']
+    },
+    actions: {
+      items: [
+        {
+          href: "hrt-nationality-details",
+          text: "Change",
+          visuallyHiddenText: "whether you have lived in the UK before"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "What date did you last leave the UK?"
+    },
+    value: {
+      text: data['claimant-date-left-uk-day'] + ' ' + (data['claimant-date-left-uk-month'] | getMonth) + ' ' + data['claimant-date-left-uk-year']
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "the date you last left the UK"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Have you come to the UK under the Family Reunion Scheme?"
     },
     value: {
       text: data['claimant-family-reunion-uk']
@@ -2206,7 +2204,7 @@ actions: {
         {
           href: "hrt-nationality-details",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "whether you have come to the UK under the family reunion scheme"
         }
       ]
     }
@@ -2230,7 +2228,7 @@ actions: {
         {
           href: "hrt-uk-sponsorship",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "whether you came to the UK on a sponsorship undertaking"
         }
       ]
     }
@@ -2244,7 +2242,7 @@ actions: {
 
   {
     key: {
-      text: "Name of sponsor"
+      text: "What is the name of your sponsor"
     },
     value: {
       text: data['claimant-sponsor-name']
@@ -2254,7 +2252,7 @@ actions: {
         {
           href: "hrt-sponsorship-details",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "the name of your sponsor"
         }
       ]
     }
@@ -2269,7 +2267,7 @@ actions: {
 
   {
     key: {
-      text: "Home office reference number"
+      text: "What is your Home Office reference number"
     },
     value: {
       text: data['home-office-ref']
@@ -2279,7 +2277,7 @@ actions: {
         {
           href: "hrt-sponsorship-details",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "your Home Office reference number"
         }
       ]
     }
@@ -2293,7 +2291,7 @@ actions: {
 
   {
     key: {
-      text: "Date sponsor signed sponsorship undertaking"
+      text: "What date was your sponsorship undertaking signed?"
     },
     value: {
       text: data['sponsor-sign-date-day'] + ' ' + (data['sponsor-sign-date-month'] | getMonth) + ' ' + data['sponsor-sign-date-year']
@@ -2303,7 +2301,7 @@ actions: {
         {
           href: "hrt-sponsorship-details",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "the date your sponsorship undertaking was signed"
         }
       ]
     }
@@ -2319,7 +2317,7 @@ actions: {
 
     {
       key: {
-        text: "HRT Address"
+        text: "Your sponsor's address"
       },
       value: {
         html: "Address line one
@@ -2332,7 +2330,7 @@ actions: {
           {
             href: "hrt-address-post-code-lookup",
             text: "Change",
-            visuallyHiddenText: ""
+            visuallyHiddenText: "your sponsor's address"
           }
         ]
       }
@@ -2348,7 +2346,7 @@ actions: {
 
   {
     key: {
-      text: "You or partner asylum seeker"
+      text: "Are you an asylum seeker?"
     },
     value: {
       text: data['asylum-seeker']
@@ -2358,7 +2356,7 @@ actions: {
         {
           href: "hrt-sponsorship-details",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "whether you are an asylum seeker"
         }
       ]
     }
@@ -2372,7 +2370,7 @@ actions: {
 
   {
     key: {
-      text: "Apply for asylum before 3 April 2000"
+      text: "Did you first apply for asylum before 3 April 2000?"
     },
     value: {
       text: data['asylum-before-april']
@@ -2382,7 +2380,7 @@ actions: {
         {
           href: "hrt-sponsorship-details",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "whether you first applied for asylum before 3 April 2000"
         }
       ]
     }
@@ -2397,7 +2395,7 @@ actions: {
 
   {
     key: {
-      text: "Recent decision on asylum"
+      text: "Have you recently had a successful decision on your asylum application?"
     },
     value: {
       text: data['asylum-decision-check']
@@ -2407,7 +2405,7 @@ actions: {
         {
           href: "hrt-sponsorship-details",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "whether you have recently had a successful decision on your asylum application"
         }
       ]
     }
@@ -2422,7 +2420,7 @@ actions: {
 
   {
     key: {
-      text: "Date of successful decision"
+      text: "What date did you get a successful decision on your application?"
     },
     value: {
       text: data['asylum-decision-date-day'] + ' ' + (data['asylum-decision-date-month'] | getMonth) + ' ' + data['asylum-decision-date-year']
@@ -2432,7 +2430,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "the date you got a successful decision on your application"
         }
       ]
     }
@@ -2447,7 +2445,7 @@ actions: {
 
   {
     key: {
-      text: "Been supported by the Home Office"
+      text: "Have you been supported by the Home Office while waiting for a decision on your application?"
     },
     value: {
       text: data['supported-by-home-office']
@@ -2457,7 +2455,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "money-total"
+          visuallyHiddenText: "whether you have been supported by the Home Office while waiting for a decision on your application"
         }
       ]
     }
@@ -2476,7 +2474,7 @@ actions: {
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-          <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">@pete Habitual residence Partner</h2>
+          <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About your partner's residency in the UK</h2>
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-9',
@@ -2484,7 +2482,7 @@ actions: {
 
               {
                 key: {
-                  text: "At any time, have you come to live in the UK or returned to the UK to live from abroad?"
+                  text: "At any time, has your partner come to live in the UK or returned to the UK to live from abroad?"
                 },
                 value: {
                   text: data['hrt-returned-to-uk']
@@ -2494,7 +2492,7 @@ actions: {
                     {
                       href: "hrt-returned-to-uk",
                       text: "Change",
-                      visuallyHiddenText: "money-total"
+                      visuallyHiddenText: "whether your partner come to live in the UK or returned to the UK to live from abroad"
                     }
                   ]
                 }
@@ -2508,7 +2506,7 @@ actions: {
 
             {
               key: {
-                text: "What is your nationality?"
+                text: "What is your partner's nationality?"
               },
               value: {
                 text: data['claimant-nationality']
@@ -2518,7 +2516,7 @@ actions: {
                   {
                     href: "hrt-nationality-details",
                     text: "Change",
-                    visuallyHiddenText: "money-total"
+                    visuallyHiddenText: "your partner's nationality"
                   }
                 ]
               }
@@ -2532,7 +2530,7 @@ actions: {
 
           {
             key: {
-              text: "Which country have you come from?"
+              text: "Which country has your partner come from?"
             },
             value: {
               text: data['claimant-origin-country']
@@ -2542,7 +2540,7 @@ actions: {
                 {
                   href: "hrt-nationality-details",
                   text: "Change",
-                  visuallyHiddenText: "money-total"
+                  visuallyHiddenText: "which county your partner has come from"
                 }
               ]
             }
@@ -2556,7 +2554,7 @@ actions: {
 
         {
           key: {
-            text: "Last date came to the UK"
+            text: "What date did your partner last come to the UK?"
           },
           value: {
             text: data['claimant-date-to-uk-day'] + ' ' + (data['claimant-date-to-uk-month'] | getMonth) + ' ' + data['claimant-date-to-uk-year']
@@ -2566,7 +2564,7 @@ actions: {
               {
                 href: "hrt-nationality-details",
                 text: "Change",
-                visuallyHiddenText: "money-total"
+                visuallyHiddenText: "what date your prtner last came to the UK"
               }
             ]
           }
@@ -2581,7 +2579,7 @@ actions: {
 
       {
         key: {
-          text: "Was this to work?"
+          text: "Did your partner come to the UK to work?"
         },
         value: {
           text: data['claimant-work-uk']
@@ -2591,7 +2589,7 @@ actions: {
             {
               href: "hrt-nationality-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "whether your partner came to the UK to work"
             }
           ]
         }
@@ -2606,7 +2604,7 @@ actions: {
 
       {
         key: {
-          text: "Passport say recourse to public funds"
+          text: "Does your partner's passport say they have no recourse to public funds?"
         },
         value: {
           text: data['claimant-rassport-recourse']
@@ -2616,7 +2614,7 @@ actions: {
             {
               href: "hrt-nationality-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "whether your partner's passport says they have no recourse to public funds"
             }
           ]
         }
@@ -2630,7 +2628,55 @@ actions: {
 
       {
         key: {
-          text: "Come to UK under family reunion"
+          text: "Has your partner lived in the UK before?"
+        },
+        value: {
+          text: data['partner-lived-uk-before']
+        },
+        actions: {
+          items: [
+            {
+              href: "hrt-partner-nationality-details",
+              text: "Change",
+              visuallyHiddenText: "whether your partner has lived in the UK before"
+            }
+          ]
+        }
+      }
+    ]
+    }) }}
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+
+      {
+        key: {
+          text: "What date did your partner last leave the UK?"
+        },
+        value: {
+          text: data['partner-date-left-uk-day'] + ' ' + (data['partner-date-left-uk-month'] | getMonth) + ' ' + data['partner-date-left-uk-year']
+        },
+        actions: {
+          items: [
+            {
+              href: "",
+              text: "Change",
+              visuallyHiddenText: "the date your partner last left the UK"
+            }
+          ]
+        }
+      }
+    ]
+    }) }}
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+
+      {
+        key: {
+          text: "Has your partner come to the UK under the Family Reunion Scheme?"
         },
         value: {
           text: data['claimant-family-reunion-uk']
@@ -2640,7 +2686,7 @@ actions: {
             {
               href: "hrt-nationality-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "whether your has partner come to the UK under the Family Reunion Scheme"
             }
           ]
         }
@@ -2654,7 +2700,7 @@ actions: {
 
       {
         key: {
-          text: "Did you come to the UK on a sponsorship undertaking?"
+          text: "Did your partner come to the UK on a sponsorship undertaking?"
         },
         value: {
           text: data['hrt-uk-sponsorship']
@@ -2664,7 +2710,7 @@ actions: {
             {
               href: "hrt-uk-sponsorship",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "whether your partner came to the UK on a sponsorship undertaking"
             }
           ]
         }
@@ -2678,7 +2724,7 @@ actions: {
 
       {
         key: {
-          text: "Name of sponsor"
+          text: "What is the name of your partner's sponsor?"
         },
         value: {
           text: data['claimant-sponsor-name']
@@ -2688,7 +2734,7 @@ actions: {
             {
               href: "hrt-sponsorship-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "the name of your partner's sponsor"
             }
           ]
         }
@@ -2703,7 +2749,7 @@ actions: {
 
       {
         key: {
-          text: "Home office reference number"
+          text: "What is your partner's Home Office reference number?"
         },
         value: {
           text: data['home-office-ref']
@@ -2713,7 +2759,7 @@ actions: {
             {
               href: "hrt-sponsorship-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "your partner's Home Office reference number"
             }
           ]
         }
@@ -2727,7 +2773,7 @@ actions: {
 
       {
         key: {
-          text: "Date sponsor signed sponsorship undertaking"
+          text: "What date was your partner's sponsorship undertaking signed?"
         },
         value: {
           text: data['sponsor-sign-date-day'] + ' ' + (data['sponsor-sign-date-month'] | getMonth) + ' ' + data['sponsor-sign-date-year']
@@ -2737,7 +2783,7 @@ actions: {
             {
               href: "hrt-sponsorship-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "the date your partner's sponsorship undertaking was signed"
             }
           ]
         }
@@ -2753,7 +2799,7 @@ actions: {
 
         {
           key: {
-            text: "HRT Address"
+            text: "Your partner's sponsor's address"
           },
           value: {
             html: "Address line one
@@ -2766,7 +2812,7 @@ actions: {
               {
                 href: "hrt-address-post-code-lookup",
                 text: "Change",
-                visuallyHiddenText: ""
+                visuallyHiddenText: "your partner's sponsor's address"
               }
             ]
           }
@@ -2782,7 +2828,7 @@ actions: {
 
       {
         key: {
-          text: "You or partner asylum seeker"
+          text: "Is your partner an asylum seeker?"
         },
         value: {
           text: data['asylum-seeker']
@@ -2792,7 +2838,7 @@ actions: {
             {
               href: "hrt-sponsorship-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "whether your partner is an asylum seeker"
             }
           ]
         }
@@ -2806,7 +2852,7 @@ actions: {
 
       {
         key: {
-          text: "Apply for asylum before 3 April 2000"
+          text: "Did your partner first apply for asylum before 3 April 2000?"
         },
         value: {
           text: data['asylum-before-april']
@@ -2816,7 +2862,7 @@ actions: {
             {
               href: "hrt-sponsorship-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "whether your partner first applied for asylum before 3 April 2000"
             }
           ]
         }
@@ -2831,7 +2877,7 @@ actions: {
 
       {
         key: {
-          text: "Recent decision on asylum"
+          text: "Has your partner recently had a successful decision on their asylum application?"
         },
         value: {
           text: data['asylum-decision-check']
@@ -2841,7 +2887,7 @@ actions: {
             {
               href: "hrt-sponsorship-details",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "whether your partner has recently had a successful decision on their asylum application"
             }
           ]
         }
@@ -2856,7 +2902,7 @@ actions: {
 
       {
         key: {
-          text: "Date of successful decision"
+          text: "What date did your partner get a successful decision on their application?"
         },
         value: {
           text: data['asylum-decision-date-day'] + ' ' + (data['asylum-decision-date-month'] | getMonth) + ' ' + data['asylum-decision-date-year']
@@ -2866,7 +2912,7 @@ actions: {
             {
               href: "",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "what date  your partner got a successful decision on their application"
             }
           ]
         }
@@ -2881,7 +2927,7 @@ actions: {
 
       {
         key: {
-          text: "Been supported by the Home Office"
+          text: "Has your partner been supported by the Home Office while waiting for a decision on their application?"
         },
         value: {
           text: data['supported-by-home-office']
@@ -2891,7 +2937,7 @@ actions: {
             {
               href: "",
               text: "Change",
-              visuallyHiddenText: "money-total"
+              visuallyHiddenText: "whether your partner has been supported by the Home Office while waiting for a decision on their application"
             }
           ]
         }
