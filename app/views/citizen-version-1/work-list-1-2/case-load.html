@@ -99,10 +99,10 @@
                   value: data["full-name"]
                 }) }}
 
+{% endif %}
 
 
-
-<p class="govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-2">Claims assigned to agent</p>
+<p class="govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-2">Claims assigned</p>
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-4">Cases are held with agent for 10 minutes before put back into queue for next agent to pick up</p>
 
 
@@ -129,6 +129,8 @@
 
       </tr>
 
+      {% if data["user-full-name"] == "Admin" %}
+
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__cell">NA 11 22 33 c</th>
         <td class="govuk-table__cell"><a href="case-claim-assigned">Niall Molloy</a></td>
@@ -138,7 +140,7 @@
         <td class="govuk-table__cell">100 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
       </tr>
-
+{% endif %}
       </table>
 
 
@@ -161,7 +163,7 @@
 
 
 <p class="govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-padding-top-6 govuk-!-margin-bottom-4">All claims</p>
-{% endif %}
+
 
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
     <thead class="govuk-table__head">
