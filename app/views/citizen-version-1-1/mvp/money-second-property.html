@@ -1,7 +1,7 @@
 {% extends "layout-covid19.html" %}
 
 {% block pageTitle %}
-  Have you spent any time in hospital recently? - Pension Credit
+  Which best describes the place where you live? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,52 +14,45 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="claim-filter" method="post" class="form">
-
-      <!-- Hidden input to set task to complete on task-list -->
-      <input type="hidden" name="hospitals-complete" value="true"/>
+    <form action="money-second-property-router" method="post" class="form">
 
 
 
       {{ govukRadios({
-        idPrefix: "partner-application-yn",
-        name: "partner-application-yn",
+        name: "money-second-property",
         fieldset: {
           legend: {
-            text: "Does your partner agree to you making this application?",
+            text: "Do you own any property or land other than your home?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
-        classes: "govuk-radios",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["partner-application-yn"] == "Yes")
-                    },
+            checked: (data["money-second-property"] == "Yes")
+          },
           {
             value: "No",
             text: "No",
-            checked: (data["partner-application-yn"] == "No")
+            checked: (data["money-second-property"] == "No")
           }
         ]
       }) }}
 
-
-
-
-
-
-
-      <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
-
-
       {{ govukButton({
         text: "Continue"
       }) }}
+
+
+            <!-- <p class="govuk-body govuk-!-padding-top-0"><a href="money-disregards-all">Routing: >10k route</a></p> -->
+            <!-- <p class="govuk-body govuk-!-padding-top-0"><a href="hrt-check">Money under 10k</a></p> -->
+
     </form>
+
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
   </div>
 </div>
 {% endblock %}

@@ -8,7 +8,7 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/citizen-version-1/work-list'
+const baseUrl = '/citizen-version-1-1/mvp'
 
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
@@ -325,7 +325,7 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   const residesInUk = req.session.data['resides-in-uk']
 
   if (residesInUk === 'Yes') {
-    res.redirect(`${baseUrl}/lived-abroad`)
+    res.redirect(`${baseUrl}/nationality-check`)
   } else {
     res.redirect(`${baseUrl}/done-none-uk`)
   }
@@ -355,7 +355,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
 
   if (childrenCheck === 'No') {
-    res.redirect(`${baseUrl}/privacy-policy`)
+    res.redirect(`${baseUrl}/reside-in-uk`)
   } else {
     res.redirect(`${baseUrl}/done-children`)
   }
@@ -375,7 +375,7 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['partner-check-yn']
 
   if (childrenCheck === 'No') {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/claim-date-of-claim`)
   } else {
     res.redirect(`${baseUrl}/partner-app-check`)
   }
@@ -397,7 +397,7 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['partner-mac-yn']
 
   if (childrenCheck === 'Yes') {
-    res.redirect(`${baseUrl}/partner-over-spa-check`)
+    res.redirect(`${baseUrl}/partner-app-check`)
   } else {
     res.redirect(`${baseUrl}/done-partner`)
   }
@@ -409,7 +409,17 @@ router.post(`${baseUrl}/contact-formats-check-router`, (req, res) => {
   if (contactFormats === 'Yes') {
     res.redirect(`${baseUrl}/contact-formats`)
   } else {
-    res.redirect(`${baseUrl}/single-joint-check`)
+    res.redirect(`${baseUrl}/home-care-home-check`)
+  }
+})
+
+router.post(`${baseUrl}/contact-formats-check-joint-router`, (req, res) => {
+  const contactFormats = req.session.data['contact-formats-check']
+
+  if (contactFormats === 'Yes') {
+    res.redirect(`${baseUrl}/contact-formats`)
+  } else {
+    res.redirect(`${baseUrl}/partner-details`)
   }
 })
 
@@ -417,8 +427,12 @@ router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
   const careHome = req.session.data['home-care-home-check']
   const careHomeStillOwn = req.session.data['home-care-home-check-still-own']
   if (careHome === 'Yes' && careHomeStillOwn === 'Yes') {
-    res.redirect(`${baseUrl}/pensions-check`)
-  } else {
+    res.redirect(`${baseUrl}/pension-check`)
+  }
+  if (careHome === 'Yes' && careHomeStillOwn === 'No') {
+    res.redirect(`${baseUrl}/pension-check`)
+  }
+  else {
     res.redirect(`${baseUrl}/address-post-code-lookup`)
   }
 })
@@ -480,32 +494,9 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/home-shared-payments`)
   }
 
-  res.redirect(`${baseUrl}/pensions-overview`)
+  res.redirect(`${baseUrl}/XXX`)
 })
 
-
-
-router.post(`${baseUrl}/rent-council-tax-yn-router`, (req, res) => { // router name
-
-  const rentCouncilTaxApply = req.session.data['rent-council-tax-yn']  // name of data / id name
-
-  if (rentCouncilTaxApply === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/rent-housing-benefit-yn`)
-  } else {
-    res.redirect(`${baseUrl}/rent-council-tax-apply`)
-  }
-})
-
-router.post(`${baseUrl}/rent-housing-benefit-yn-router`, (req, res) => { // router name
-
-  const rentHousingBenefitApply = req.session.data['rent-housing-benefit-yn']  // name of data / id name
-
-  if (rentHousingBenefitApply === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/pensions-overview`)
-  } else {
-    res.redirect(`${baseUrl}/rent-housing-benefit-apply`)
-  }
-})
 
 
 router.post(`${baseUrl}/own-mortgage-home-loan-yn-router`, (req, res) => {
@@ -596,50 +587,6 @@ router.post(`${baseUrl}/anyone-living-with-you-router`, (req, res) => {
     res.redirect(`${baseUrl}/household-summary`)
   }
 })
-
-router.post(`${baseUrl}/has-private-pension-router`, (req, res) => {
-  const otherPensions = req.session.data['has-private-pension']
-
-  if (otherPensions === 'yes') {
-    res.redirect(`${baseUrl}/notepad-otherPensions`)
-  } else {
-    res.redirect(`${baseUrl}/has-foreign-pension`)
-  }
-})
-
-router.post(`${baseUrl}/has-foreign-pension-router`, (req, res) => {
-  const foreignPension = req.session.data['has-foreign-pension']
-
-  if (foreignPension === 'yes') {
-    res.redirect(`${baseUrl}/notepad-foreignPensions`)
-  } else {
-    res.redirect(`${baseUrl}/all-other-pensions-summary`)
-  }
-})
-
-
-
-router.post(`${baseUrl}/hospital-check-yn-router`, (req, res) => {
-  const hospitalCheckYn = req.session.data['hospital-check-yn']
-
-  if (hospitalCheckYn === 'Yes') {
-    res.redirect(`${baseUrl}/hospital-yn`)
-  } else {
-    res.redirect(`${baseUrl}/other-income-overview`)
-  }
-})
-
-
-router.post(`${baseUrl}/hospital-yn-router`, (req, res) => {
-  const hospitalYn = req.session.data['hospital-yn']
-
-  if (hospitalYn === 'Yes') {
-    res.redirect(`${baseUrl}/hospital-details`)
-  } else {
-    res.redirect(`${baseUrl}/other-income-overview`)
-  }
-})
-
 
 
 router.post(`${baseUrl}/pre-declaration-router`, (req, res) => {
@@ -767,240 +714,6 @@ router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router 
 
 
 
-router.post(`${baseUrl}/msic-sp-payment-choose-router`, (req, res) => {
-  const pcPaymentChoose = req.session.data['msic-sp-payment-choose']
-
-  if (pcPaymentChoose === 'Same account as State Pension') {
-    res.redirect(`${baseUrl}/msic-pc-payment-choose`)
-  }
-  else if (pcPaymentChoose === 'A different account') {
-    res.redirect(`${baseUrl}/msic-sp-payment-alternative-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-pc-payment-choose`)
-  }
-})
-
-router.post(`${baseUrl}/msic-pc-payment-choose-router`, (req, res) => {
-  const pcPaymentChoose = req.session.data['msic-pc-payment-choose']
-
-  if (pcPaymentChoose === 'Same account as State Pension') {
-    res.redirect(`${baseUrl}/disregards-benefit-check-yn`)
-  }
-  else if (pcPaymentChoose === 'A different account') {
-    res.redirect(`${baseUrl}/msic-pc-payment-alternative-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-pc-payment-sort-acc-account`)
-  }
-})
-
-
-router.post(`${baseUrl}/msic-pc-payment-router`, (req, res) => {
-  const hasCurrentAccount = req.session.data['msic-pc-payment']
-
-  if (hasCurrentAccount === 'The same account as your State Pension') {
-    res.redirect(`${baseUrl}/msic-pc-payment-state-pension-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-pc-payment-alternative-account`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-current-account-yn-router`, (req, res) => {
-  const hasCurrentAccount = req.session.data['msic-has-current-account-yn']
-
-  if (hasCurrentAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-all-current-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-savings-account-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-all-current-accounts-summary-router`, (req, res) => {
-  const addAnother = req.session.data['add-another-current']
-
-  if (addAnother === 'yes') {
-    res.redirect(`${baseUrl}/msic-all-current-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-savings-account-yn`)
-  }
-});
-
-router.post(`${baseUrl}/msic-has-savings-account-yn-router`, (req, res) => {
-  const hasBuildingsCurrentAccount = req.session.data['msic-has-savings-account-yn']
-
-  if (hasBuildingsCurrentAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-all-savings-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-post-office-card-account-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-post-office-card-account-yn-router`, (req, res) => {
-  const hasPostOfficeCardAccount = req.session.data['msic-has-post-office-card-account-yn']
-
-  if (hasPostOfficeCardAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-post-office-card-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-credit-union-account-yn`)
-  }
-})
-
-
-
-router.post(`${baseUrl}/msic-has-credit-union-account-yn-router`, (req, res) => {
-  const hasCreditUnionAccount = req.session.data['msic-has-credit-union-account-yn']
-
-  if (hasCreditUnionAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-credit-union-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-premium-bond-account-yn`)
-  }
-})
-
-
-router.post(`${baseUrl}/msic-has-premium-bond-account-yn-router`, (req, res) => {
-  const hasPremiumBondAccount = req.session.data['msic-has-premium-bond-account-yn']
-
-  if (hasPremiumBondAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-premium-bond-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-isa-savings-account-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-isa-savings-account-yn-router`, (req, res) => {
-  const hasISASavingsAccount = req.session.data['msic-has-isa-savings-account-yn']
-
-  if (hasISASavingsAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-isa-savings-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-capital-bond-account-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-capital-bond-account-yn-router`, (req, res) => {
-  const hasCapitalBondAccount = req.session.data['msic-has-capital-bond-account-yn']
-
-  if (hasCapitalBondAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-capital-bond-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-shares-account-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-shares-account-yn-router`, (req, res) => {
-  const hasSharesAccount = req.session.data['msic-has-shares-account-yn']
-
-  if (hasSharesAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-shares-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-unit-trust-account-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-unit-trust-account-yn-router`, (req, res) => {
-  const hasUnitTrustAccount = req.session.data['msic-has-unit-trust-account-yn']
-
-  if (hasUnitTrustAccount === 'yes') {
-    res.redirect(`${baseUrl}/msic-unit-trust-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-cash-at-home-yn`)
-  }
-})
-
-
-router.post(`${baseUrl}/msic-has-cash-at-home-yn-router`, (req, res) => {
-  const hasCashAtHome = req.session.data['msic-has-cash-at-home-yn']
-
-  if (hasCashAtHome === 'yes') {
-    res.redirect(`${baseUrl}/msic-cash-at-home`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-cash-other-abroad-yn`)
-  }
-})
-
-
-router.post(`${baseUrl}/msic-cash-other-abroad-yn-router`, (req, res) => {
-  const hasOtherCashAboad = req.session.data['msic-cash-other-abroad-yn']
-
-  if (hasOtherCashAboad === 'yes') {
-    res.redirect(`${baseUrl}/msic-cash-other-abroad`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-second-property-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-cash-lump-sum-yn-router`, (req, res) => {
-  const hasCashLumpSum = req.session.data['msic-has-cash-lump-sum-yn']
-
-  if (hasCashLumpSum === 'yes') {
-    res.redirect(`${baseUrl}/msic-cash-lump-sum`)
-  } else {
-    res.redirect(`${baseUrl}/msic-has-second-property-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-second-property-yn-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['msic-second-property-yn']
-
-  if (hasSecondProperty === 'Yes') {
-    res.redirect(`${baseUrl}/msic-second-property-yes`)
-  } else {
-    res.redirect(`${baseUrl}/msic-missing-account-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-all-money-accounts-summary-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['msic-has-missing-account-yn']
-
-  if (hasSecondProperty === 'yes') {
-    res.redirect(`${baseUrl}/msic-missing-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-check-your-answers-total`)
-  }
-})
-
-router.post(`${baseUrl}/msic-has-payments-yn-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['msic-has-payments-yn']
-
-  if (hasSecondProperty === 'yes') {
-    res.redirect(`${baseUrl}/msic-missing-account-state-pension-check-yn`)
-  } else {
-    res.redirect(`${baseUrl}/msic-missing-account-benfit-check-yn`)
-  }
-})
-
-router.post(`${baseUrl}/msic-missing-account-state-pension-check-yn-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['msic-missing-account-state-pension-check-yn']
-
-  if (hasSecondProperty === 'yes') {
-    res.redirect(`${baseUrl}/msic-missing-account-benfit-check-yn`)
-  } else {
-    res.redirect(`${baseUrl}/msic-missing-account-select`)
-  }
-})
-
-router.post(`${baseUrl}/msic-missing-account-benfit-check-yn-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['msic-missing-account-benfit-check-yn']
-
-  if (hasSecondProperty === 'yes') {
-    res.redirect(`${baseUrl}/msic-pc-account`)
-  } else {
-    res.redirect(`${baseUrl}/msic-missing-account-select`)
-  }
-})
-
-router.post(`${baseUrl}/msic-all-money-accounts-check-yn-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['msic-all-money-accounts-check-yn']
-
-  if (hasSecondProperty === 'yes') {
-    res.redirect(`${baseUrl}/task-list`)
-  } else {
-    res.redirect(`${baseUrl}/msic-missing-account-yn`)
-  }
-})
-
-
-
 
 router.post(`${baseUrl}/disregards-types-router`, (req, res) => {
   const disregardsRouter = req.session.data['disregards-type-select']
@@ -1016,90 +729,6 @@ router.post(`${baseUrl}/disregards-types-router`, (req, res) => {
 
 // disregards END
 
-
-
-router.post(`${baseUrl}/benefits-war-disablement-yn-router`, (req, res) => {
-  const benefitsWarDisablementYes = req.session.data['benefits-war-disablement-yn']
-
-  if (benefitsWarDisablementYes === 'Yes') {
-    res.redirect(`${baseUrl}/benefits-war-disablement-yes`)
-  } else {
-    res.redirect(`${baseUrl}/benefits-war-widows-pensions-yn`)
-  }
-})
-
-
-
-router.post(`${baseUrl}/benefits-war-widows-pensions-yn-router`, (req, res) => {
-  const benefitsWarWidowsPensionsYes = req.session.data['benefits-war-widows-pensions-yn']
-
-  if (benefitsWarWidowsPensionsYes === 'Yes') {
-    res.redirect(`${baseUrl}/benefits-war-widows-pensions-yes`)
-  } else {
-    res.redirect(`${baseUrl}/benefits-war-and-veterans-yn`)
-  }
-})
-
-router.post(`${baseUrl}/benefits-war-and-veterans-yn-router`, (req, res) => {
-  const benefitsWarAndVeteransYes = req.session.data['benefits-war-and-veterans-yn']
-
-  if (benefitsWarAndVeteransYes === 'Yes') {
-    res.redirect(`${baseUrl}/benefits-war-and-veterans-yes`)
-  } else {
-    res.redirect(`${baseUrl}/benefit-IIDB-yn`)
-  }
-})
-
-router.post(`${baseUrl}/benefit-IIDB-yn-router`, (req, res) => {
-  const iidbYes = req.session.data['benefit-IIDB-yn']
-
-  if (iidbYes === 'Yes') {
-    res.redirect(`${baseUrl}/benefit-IIDB-yes`)
-  } else {
-    res.redirect(`${baseUrl}/benefit-industrial-death-benefit-yn`)
-  }
-})
-
-router.post(`${baseUrl}/benefit-industrial-death-benefit-yn-router`, (req, res) => {
-  const iidbYes = req.session.data['benefit-industrial-death-benefit-yn']
-
-  if (iidbYes === 'Yes') {
-    res.redirect(`${baseUrl}/benefit-industrial-death-benefit-yes`)
-  } else {
-    res.redirect(`${baseUrl}/benefits-aboard-yn`)
-  }
-})
-
-router.post(`${baseUrl}/benefits-aboard-yn-router`, (req, res) => {
-  const benefitsAboard = req.session.data['benefits-aboard-yn']
-
-  if (benefitsAboard === 'Yes') {
-    res.redirect(`${baseUrl}/benefits-aboard-yes`)
-  } else {
-    res.redirect(`${baseUrl}/benefits-summary`)
-  }
-})
-
-router.post(`${baseUrl}/benefit-hospital-check-yn-router`, (req, res) => {
-  const hospitalCheckYn = req.session.data['benefit-hospital-check-yn']
-
-  if (hospitalCheckYn === 'Yes') {
-    res.redirect(`${baseUrl}/benefits-all-yn`)
-  } else {
-    res.redirect(`${baseUrl}/benefits-all-yn`)
-  }
-})
-
-
-
-
-
-
-
-
-
-
-// benefits END
 
 router.post(`${baseUrl}/other-income-employment-yn-router`, (req, res) => {
   const employmentFulltime = req.session.data['other-income-employment-yn']
@@ -1233,76 +862,15 @@ router.post(`${baseUrl}/other-income-everything-else-yn-router`, (req, res) => {
   }
 })
 
-
-
-
-
-
-// Other Income END
-
-
-router.post(`${baseUrl}/disregards-capital-total-yn-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['disregards-capital-total-yn']
+router.post(`${baseUrl}/money-second-property-router`, (req, res) => {
+  const hasSecondProperty = req.session.data['money-second-property']
 
   if (hasSecondProperty === 'Yes') {
-    res.redirect(`${baseUrl}/disregards-benefit-check-yn`)
+    res.redirect(`${baseUrl}/money-disregards-all`)
   } else {
-    res.redirect(`${baseUrl}/disregards-summary`)
+    res.redirect(`${baseUrl}/hrt-check`)
   }
 })
-
-router.post(`${baseUrl}/disregards-type-more-yn-router`, (req, res) => {
-  const hasSecondProperty = req.session.data['disregards-type-select']
-
-  if (disregardsSelect === 'None') {
-    res.redirect(`${baseUrl}/disregards-type-more-yn`)
-  } else {
-    res.redirect(`${baseUrl}/disregards-summary`)
-  }
-})
-
-router.post(`${baseUrl}/disregards-types-yn-router`, (req, res) => {
-  const disregardsTypes = req.session.data['disregards-types-yn']
-
-  if (disregardsTypes === 'Yes') {
-    res.redirect(`${baseUrl}/disregards-entry`)
-  } else {
-    res.redirect(`${baseUrl}/disregards-summary`)
-  }
-})
-
-
-router.post(`${baseUrl}/disregards-type-select-router`, (req, res) => {
-  const disregardsSelect = req.session.data['disregards-types-all']
-
-  if (disregardsSelect === 'None') {
-    res.redirect(`${baseUrl}/disregards-type-more-yn`)
-  } else {
-    res.redirect(`${baseUrl}/disregards-entry`)
-  }
-})
-
-
-router.post(`${baseUrl}/pc-done-yn-router`, (req, res) => { // router name
-  const pcDoneYn = req.session.data['pc-done-yn']  // name of data / id name
-
-  if (pcDoneYn === 'Agree') { // name of data / + answer
-    res.redirect(`${baseUrl}/pc-done-yn`)
-  } else {
-    res.redirect(`${baseUrl}/done-declaration`)
-  }
-})
-
-router.post(`${baseUrl}/index-survey-router`, (req, res) => { // router name
-  const indexSurveyYN = req.session.data['index-survey-yn']  // name of data / id name
-
-  if (indexSurveyYN === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}getinvolved.dwp.gov.uk/++preview++/digital/fa743129`)
-  } else {
-    res.redirect(`${baseUrl}/start`)
-  }
-})
-
 
 
 // HRT ROUTING
@@ -1312,12 +880,68 @@ router.post(`${baseUrl}/index-survey-router`, (req, res) => { // router name
 router.post(`${baseUrl}/hrt-check-router`, (req, res) => { // router name
   const hrtCheck = req.session.data['hrt-check']  // name of data / id name
 
-  if (hrtCheck === 'No') { // name of data / + answer
-    res.redirect(`${baseUrl}/final-cya`)
+  if (hrtCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-returned-to-uk`)
   } else {
-    res.redirect(`${baseUrl}/hrt-q1`)
+    res.redirect(`${baseUrl}/final-cya`)
   }
 })
+router.post(`${baseUrl}/hrt-returned-to-uk-router`, (req, res) => { // router name
+  const returnedToUK = req.session.data['hrt-returned-to-uk']  // name of data / id name
+
+  if (returnedToUK === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-nationality-details`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-uk-sponsorship`)
+  }
+})
+
+
+
+
+router.post(`${baseUrl}/hrt-uk-sponsorship-router`, (req, res) => { // router name
+  const ukSponsorshipCheck = req.session.data['hrt-uk-sponsorship']  // name of data / id name
+
+  if (ukSponsorshipCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-sponsorship-details`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-other-details`)
+  }
+})
+
+// HRT PARTNER ROUTING
+
+router.post(`${baseUrl}/hrt-partner-check-router`, (req, res) => { // router name
+  const partnerCheck = req.session.data['hrt-partner-check']  // name of data / id name
+
+  if (partnerCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-partner-returned-to-uk`)
+  } else {
+    res.redirect(`${baseUrl}/final-CYA`)
+  }
+})
+
+router.post(`${baseUrl}/hrt-partner-returned-to-uk-router`, (req, res) => { // router name
+  const partnerReturnedToUK = req.session.data['hrt-partner-returned-to-uk']  // name of data / id name
+
+  if (partnerReturnedToUK === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-partner-nationality-details`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-partner-uk-sponsorship`)
+  }
+})
+
+router.post(`${baseUrl}/hrt-partner-uk-sponsorship-router`, (req, res) => { // router name
+  const partnerUKSponsorshipCheck = req.session.data['hrt-partner-uk-sponsorship']  // name of data / id name
+
+  if (partnerUKSponsorshipCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-partner-sponsorship-details`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-partner-other-details`)
+  }
+})
+
+
 
 
 

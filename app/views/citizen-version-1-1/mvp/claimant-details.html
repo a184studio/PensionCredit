@@ -14,7 +14,15 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="contact-formats-check-router" method="post" class="form">
+
+      {% if data["partner-check-yn"] == "Yes" and data["contact-formats-check"]%}
+      <form action="contact-formats-check-joint-router" method="post" class="form">
+      {% endif %}
+
+      {% if data["partner-check-yn"] == "No" %}
+      <form action="contact-formats-router" method="post" class="form">
+      {% endif %}
+
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
