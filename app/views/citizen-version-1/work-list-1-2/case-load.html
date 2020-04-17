@@ -23,21 +23,24 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Pension Credit claims</h1>
       {% endif %}
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">There are <strong>13</strong> claims to be downloaded.</p>
+
 
   </div>
 
 
         </div>
 
-
+      {% if data["user-full-name"] !== "Admin" %}
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">There are <strong>13</strong> claims to be downloaded.</p>
 
         {{ govukButton({
           classes: "govuk-!-margin-top-4",
           text: "Download next claim"
         }) }}
+
         </form>
 
+      {% endif %}
 
 
 
