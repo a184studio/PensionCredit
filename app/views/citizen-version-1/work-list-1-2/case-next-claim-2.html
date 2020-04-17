@@ -33,23 +33,24 @@
              <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Before trying to get <strong>next claim</strong> make sure you<br> have added the claim to DRS successfully.</h3>
 
 
-<!--
-      {% set legendDRS %}
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Enter PTP CAM case ID</h3>
-      {% endset -%}
-
-      {{ govukInput({
-        label: {
-          html: legendDRS
-        },
-        hint: {
-          text: "You will get this from DRS / CAM"
-        },
-        id: "drs-id",
-        name: "drs-id",
-        classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
-        value: data["drs-id"]
-      }) }} -->
+             {{ govukCheckboxes({
+               idPrefix: "confirm",
+               name: "confirm",
+               classes: "govuk-checkboxes--small",
+               fieldset: {
+                 legend: {
+                   text: "",
+                   isPageHeading: true,
+                   classes: "govuk-fieldset__legend--m"
+                 }
+               },
+               items: [
+                 {
+                   value: "Confirm upload complete",
+                   text: "Confirm upload complete"
+                 }
+               ]
+             }) }}
 
       <form action="case-load-clear" method="post" class="form">
 
