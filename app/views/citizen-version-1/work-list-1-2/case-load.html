@@ -82,7 +82,7 @@
 
 
 <p class="govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-padding-top-6 govuk-!-margin-bottom-1">Find a claim</p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-2">(TypeHead) Start typing a name or National Insurance number and select the case from the list</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-2">(AutoComplete) Start typing a name or National Insurance number and select the case from the list</p>
 
 
                 {{ govukInput({
@@ -96,6 +96,11 @@
                   name: "user-full-name",
                   classes: "govuk-input--width-30 govuk-!-margin-bottom-0",
                   value: data["full-name"]
+                }) }}
+
+                {{ govukButton({
+                  text: "Search",
+                  classes: "govuk-button--secondary govuk-!-margin-bottom-6"
                 }) }}
 
 
