@@ -14,15 +14,20 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hrt-check" method="post" class="form">
-      
-{% if data["user-full-name"] == "Admin" %}{% endif %}
+    <form action="pension-check" method="post" class="form">
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you share the rent or mortgage for the place where you live with anyone other than your partner?</h1>
+        {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you share the rent or mortgage for the place where you live with anyone?</h1>{% endif %}
+        {% endset %}
+      <!------------Legend--------------->
 
       {{ govukRadios({
-        name: "money-second-property-check",
+        name: "home-shared-payments",
         fieldset: {
           legend: {
-            text: "Do you own any property or land other than your home?",
+            html: dynamicH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -30,25 +35,20 @@
         items: [
           {
             value: "Yes",
-            text: "Yes /// If yes it will push you down >10k route",
-            checked: (data["money-second-property-check"] == "Yes")
+            text: "Yes",
+            checked: (data["home-shared-payments"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["money-second-property-check"] == "No")
+            checked: (data["home-shared-payments"] == "No")
           }
         ]
       }) }}
 
       {{ govukButton({
-        text: "Continue (<10k)"
+        text: "Continue"
       }) }}
-
-
-            <p class="govuk-body govuk-!-padding-top-0"><a href="money-disregards-all">Routing: >10k route</a></p>
-            <!-- <p class="govuk-body govuk-!-padding-top-0"><a href="hrt-check">Money under 10k</a></p> -->
-
     </form>
 
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->

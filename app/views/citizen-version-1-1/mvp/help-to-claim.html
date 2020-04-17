@@ -14,41 +14,38 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hrt-check" method="post" class="form">
-      
-{% if data["user-full-name"] == "Admin" %}{% endif %}
+    <form action="index-pension-credit" method="post" class="form">
+
+
 
       {{ govukRadios({
-        name: "money-second-property-check",
+        name: "help-to-claim-yn",
         fieldset: {
           legend: {
-            text: "Do you own any property or land other than your home?",
+            text: "Did you need any help to use this service?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
+        hint: {
+          text: "EG family memeber, charity= etc etc"
+        },
         items: [
           {
             value: "Yes",
-            text: "Yes /// If yes it will push you down >10k route",
-            checked: (data["money-second-property-check"] == "Yes")
-          },
+            text: "Yes",
+            checked: (data["help-to-claim-yn"] == "Yes")},
           {
             value: "No",
             text: "No",
-            checked: (data["money-second-property-check"] == "No")
+            checked: (data["help-to-claim-yn"] == "No")
           }
         ]
       }) }}
 
       {{ govukButton({
-        text: "Continue (<10k)"
+        text: "Continue"
       }) }}
-
-
-            <p class="govuk-body govuk-!-padding-top-0"><a href="money-disregards-all">Routing: >10k route</a></p>
-            <!-- <p class="govuk-body govuk-!-padding-top-0"><a href="hrt-check">Money under 10k</a></p> -->
-
     </form>
 
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
