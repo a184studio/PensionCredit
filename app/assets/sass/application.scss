@@ -90,7 +90,14 @@ $govuk-assets-path: '/govuk/assets/';
 
 // —————————————————————————————————————
 
-
+.govuk-button--secondary-clear {
+  color:govuk-colour("blue") !important;
+  text-decoration: underline;
+  background-color:govuk-colour("white") !important;
+  margin-left: 20px;
+  border-radius: 0px;
+  boarder-color:govuk-colour("white") !important;
+}
 
 // —————————————————————————————————————
 
