@@ -19,7 +19,7 @@
     </div>
   </div>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">There are <strong>13</strong> claims to be downloaded.</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">There are <strong>13</strong> claims to download.</p>
 
         {{ govukButton({
           classes: "govuk-!-margin-top-4",
@@ -40,7 +40,7 @@
 <div>
 
 <p class="govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-padding-top-6 govuk-!-margin-bottom-4">Find a claim</p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-2">National Insurance number (NA112233c) and select the case from the list.<br>Downloaded claims will be cleared from this list after 30 days</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-2">Enter a National Insurance number. For example, ‘QQ 12 34 56 C’.</p>
 
 
                 {{ govukInput({
@@ -57,7 +57,7 @@
                 }) }}
 
                 {{ govukButton({
-                  text: "Search",
+                  text: "Find",
                   classes: "govuk-!-margin-right-1 govuk-button--secondary govuk-!-margin-bottom-6",
                   href: "case-load-claim-found"
                 }) }}
@@ -68,8 +68,9 @@
                   href: "case-load"
                 }) }}
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-top-2 govuk-!-margin-bottom-2">Claim(s) found for: <strong>NA112233c</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-top-2 govuk-!-margin-bottom-2">Claims found for: <strong>NA 11 22 33 C</strong></p>
 
+<p class="govuk-body">Downloaded claims will be cleared from this list after 30 days</p>
 
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
               <thead class="govuk-table__head">
