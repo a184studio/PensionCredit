@@ -140,25 +140,25 @@ $govuk-assets-path: '/govuk/assets/';
 // COVID tags
 
 .govuk-tag--covid19-todo {
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #000;
   background-color: #dee0e2;
 }
 
 .govuk-tag--covid19-problem {
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #000;
   background-color: #f499be;
 }
 
 .govuk-tag--covid19-downloaded {
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #fff;
   background-color: #1d70b8;
 }
 
 .govuk-tag--covid19-deleted {
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #fff;
   background-color: #d4351c;
 }
@@ -348,6 +348,13 @@ padding-bottom:0;
 .govuk-40-percent{
   width: 40% !important;
 }
+.govuk-39-percent{
+  width: 38% !important;
+}
+
+.govuk-38-percent{
+  width: 38% !important;
+}
 
 .govuk-37-5-percent{
   width: 37.5% !important;
@@ -372,6 +379,9 @@ padding-bottom:0;
 }
 .govuk-20-percent{
   width: 20% !important;
+}
+.govuk-18-percent{
+  width: 18% !important;
 }
 .govuk-17-percent{
   width: 17% !important;
