@@ -15,6 +15,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+<!-- <form action="final-cya" method="post" class="form"> -->
+
     {% if data['lived-abroad'] == "Yes" %}
     <form action="money-second-property-router" method="post" class="form">
   {% endif %}
@@ -22,10 +24,6 @@
     {% if data['lived-abroad'] == "No" %}
       <form action="hrt-returned-to-uk" method="post" class="form">
   {% endif %}
-
-
-
-
 
 
       {{ govukRadios({

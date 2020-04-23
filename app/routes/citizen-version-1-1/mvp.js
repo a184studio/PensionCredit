@@ -868,7 +868,7 @@ router.post(`${baseUrl}/money-second-property-router`, (req, res) => {
   if (hasSecondProperty === 'Yes') {
     res.redirect(`${baseUrl}/money-disregards-all`)
   } else {
-    res.redirect(`${baseUrl}/final-CYA`)
+    res.redirect(`${baseUrl}/final-cya`)
   }
 })
 
