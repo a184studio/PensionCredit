@@ -38,9 +38,13 @@
 
 
 
+{% set LegendAmount %}
+<strong>How much money did you have on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}?<strong>
+{% endset -%}
+
       {{ govukInput({
         label: {
-          html: "<strong>How much money did you have on DD Month YYYY?<strong>"
+          html: LegendAmount
         },
         hint: {
           text: ""
