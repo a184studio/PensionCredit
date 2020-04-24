@@ -25,8 +25,17 @@
 
             {{ govukButton({
               text: "Download claim",
-              classes: "govuk-button--secondary govuk-!-margin-bottom-6"
+              classes: "govuk-button--secondary govuk-!-margin-bottom-6",
+              href: downLoader
             }) }}
+
+    <!------------H1 LEGEND------------>
+      {% set downLoader %}
+      <a href="claim.png" download></a>
+      {% endset %}
+    <!------------Legend--------------->
+
+
 
             <!-- <p class="govuk-heading-m govuk-!-margin-bottom-2">@pete Downloaded // Add this claim to DRS before you get the next claim.</p>
 
