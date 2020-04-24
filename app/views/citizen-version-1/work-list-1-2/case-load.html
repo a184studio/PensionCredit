@@ -46,7 +46,7 @@
 
 
 <!------------H1 LEGEND------------>
-  {% set dynamicH1 %}
+  {% set extraRoutes %}
   <p class="govuk-body govuk-!-margin-bottom-2"><a href="case-load-error">Case load error</a></p>
   <p class="govuk-body"><a href="case-load-clear">IF 0 claims are in the queue</a></p>
   {% endset %}
@@ -54,7 +54,7 @@
 
 {{ govukDetails({
   summaryText: "If journeys",
-  html: dynamicH1,
+  html: extraRoutes,
   classes: "govuk-!-margin-top-8 govuk-!-margin-bottom-0"
 }) }}
 
