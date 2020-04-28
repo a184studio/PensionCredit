@@ -945,7 +945,7 @@ router.post(`${baseUrl}/hrt-check-router`, (req, res) => { // router name
   if (hrtCheck === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/hrt-returned-to-uk`)
   } else {
-    res.redirect(`${baseUrl}/final-cya`)
+    res.redirect(`${baseUrl}/help-to-claim`)
   }
 })
 router.post(`${baseUrl}/hrt-returned-to-uk-router`, (req, res) => { // router name
@@ -979,7 +979,7 @@ router.post(`${baseUrl}/hrt-partner-check-router`, (req, res) => { // router nam
   if (partnerCheck === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/hrt-partner-returned-to-uk`)
   } else {
-    res.redirect(`${baseUrl}/final-CYA`)
+    res.redirect(`${baseUrl}/help-to-claim`)
   }
 })
 
