@@ -2945,16 +2945,41 @@ actions: {
     ]
     }) }}
 
-
-
-
-
-
-
-
           </div>
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Help from other people</h2>
+
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9 govuk-summary-list--no-border',
+      rows: [
+
+      {
+        key: {
+          text: "Did you need any help to use this service?"
+        },
+        value: {
+          text: data['help-to-claim-yn']
+        },
+        actions: {
+          items: [
+            {
+              href: "",
+              text: "Change",
+              visuallyHiddenText: "whether you needed any help to use this service"
+            }
+          ]
+        }
+      }
+    ]
+    }) }}
+
+    </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 
   </div>
   </div>
