@@ -30,14 +30,24 @@
 
           items: [
             {
-              value: "ESW",
-              text: "England, Scotland or Wales",
-              checked: data['resides-in-uk'] == "ESC"
+              value: "England",
+              text: "England",
+              checked: data['resides-in-uk'] == "England"
             },
             {
-              value: "NI",
+              value: "Scotland",
+              text: "Scotland",
+              checked: data['resides-in-uk'] == "Scotland"
+            },
+            {
+              value: "Wales",
+              text: "Wales",
+              checked: data['resides-in-uk'] == "Wales"
+            },
+            {
+              value: "Northern-Ireland",
               text: "Northern Ireland",
-              checked: data['resides-in-uk'] == "NI"
+              checked: data['resides-in-uk'] == "Northern-Ireland"
             },
             {
               value: "Other",

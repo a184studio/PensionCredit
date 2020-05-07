@@ -324,9 +324,13 @@ router.post(`${baseUrl}/sex-router`, (req, res) => {
 router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   const residesInUk = req.session.data['resides-in-uk']
 
-  if (residesInUk === 'ESW') {
+  if (residesInUk === 'England') {
     res.redirect(`${baseUrl}/state-pension-check-yn`)
-  } else if (residesInUk === 'NI') {
+  } else if (residesInUk === 'Scotland') {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
+  } else if (residesInUk === 'Wales') {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
+  } else if (residesInUk === 'Northern-Ireland') {
     res.redirect(`${baseUrl}/state-pension-check-yn`)
   } else {
     res.redirect(`${baseUrl}/done-none-uk`)
