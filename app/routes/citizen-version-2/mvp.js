@@ -324,8 +324,10 @@ router.post(`${baseUrl}/sex-router`, (req, res) => {
 router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   const residesInUk = req.session.data['resides-in-uk']
 
-  if (residesInUk === 'Yes') {
-    res.redirect(`${baseUrl}/nationality-check`)
+  if (residesInUk === 'ESW') {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
+  } else if (residesInUk === 'NI') {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
   } else {
     res.redirect(`${baseUrl}/done-none-uk`)
   }
@@ -355,7 +357,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
 
   if (childrenCheck === 'No') {
-    res.redirect(`${baseUrl}/reside-in-uk`)
+    res.redirect(`${baseUrl}/nationality-check`)
   } else {
     res.redirect(`${baseUrl}/done-children`)
   }
@@ -372,9 +374,9 @@ router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
-  const childrenCheck = req.session.data['partner-check-yn']
+  const partnerCheck = req.session.data['partner-check-yn']
 
-  if (childrenCheck === 'No') {
+  if (partnerCheck === 'No') {
     res.redirect(`${baseUrl}/claim-filter`)
   } else {
     res.redirect(`${baseUrl}/partner-app-check`)
@@ -394,9 +396,9 @@ router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
 
 
 router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
-  const childrenCheck = req.session.data['partner-mac-yn']
+  const macPartnerCheck = req.session.data['partner-mac-yn']
 
-  if (childrenCheck === 'Yes') {
+  if (macPartnerCheck === 'Yes') {
     res.redirect(`${baseUrl}/partner-app-check`)
   } else {
     res.redirect(`${baseUrl}/done-partner`)
