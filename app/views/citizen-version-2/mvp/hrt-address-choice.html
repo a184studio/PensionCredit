@@ -20,9 +20,8 @@
       Select your sponsor's address
     </h1>
 
-    <p class="govuk-body govuk-!-font-weight-regular"><strong>Postcode: </strong>NE16 6QG<br><a class="govuk-link" href="hrt-address-post-code-lookup">Change</a></p>
-
-
+    <p class="govuk-!-font-size-24 govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><strong>Postcode: </strong>{{data["hrt-postcode"]}}</p>
+    <p class=" govuk-body govuk-!-font-weight-regular"><a class="govuk-link" href="hrt-address-post-code-lookup">Change</a></p>
 
       {{ govukSelect({
         id: "address",
