@@ -22,24 +22,39 @@
 
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">We need you to call us to make a claim that includes children or qualifying young people.</p>
 
-<h2 class="govuk-heading-m govuk-!-margin-top-4">Pension Credit claim line</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-4">Pension Credit claim line</h2>
 
-      <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
-        <li>Telephone: 0800 99 1234</li>
-        <li>Textphone: 0800 169 0133</li>
-      </ul>
+      <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Monday to Friday, 9:30am to 3:30pm (closed on bank holidays).<br>Calls to 0800 numbers are free from landlines and mobiles.</p>
+        @NI<ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
+          <li>Telephone: 0800 99 1234</li>
+          <li>Textphone: 0800 169 0133</li>
+        </ul>
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Monday to Friday, 9:30am to 3:30pm (closed on bank holidays).<br>Calls to 0800 numbers are free from landlines and mobiles.</p>
+
+
+
+        <!---- UK ---->{% else %}
+
+        @UK<ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
+          <li>Telephone: 0800 99 1234</li>
+          <li>Textphone: 0800 169 0133</li>
+        </ul>
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Monday to Friday, 9:30am to 3:30pm (closed on bank holidays).<br>Calls to 0800 numbers are free from landlines and mobiles.</p>
+
+        <!---- COUNTRY END ---->{% endif %}
+
+
+
+
+
+
+
+
 
       {% include "citizen-version-2/mvp/survey.html" %}
-
-
-
-      <!-- {{ govukButton({
-        text: "Finish and close",
-        href: "start"
-      }) }} -->
-
 
     </div>
   </div>
