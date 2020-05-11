@@ -22,9 +22,9 @@
 
 <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You can only apply for Pension Credit if both you and your partner have reached your State Pension age.</p>
 
-      <h2 class="govuk-heading-m govuk-list govuk-!-margin-bottom-2">You might be able to apply for Universal Credit.</h2>
 
       <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+      <h2 class="govuk-heading-m govuk-list govuk-!-margin-bottom-2">You might be able to apply for Universal Credit.</h2>
 
       <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">@NI
               <li>Telephone: 0800 328 5644</li>
@@ -44,6 +44,7 @@
 
 
         <!---- UK ---->{% else %}
+        <h2 class="govuk-heading-m govuk-list govuk-!-margin-bottom-2">You might be able to apply for Universal Credit.</h2>
 
         <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
           <li>Telephone: 0800 328 5644</li>
