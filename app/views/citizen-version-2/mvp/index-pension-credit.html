@@ -37,30 +37,78 @@
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will be able to change this to a different account once your Pension Credit is in payment.</p>
 
 
+      <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
 
       <div class="govuk-!-margin-top-6">
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-3">If anything changes</h2>
-      <p class="govuk-body">While you are receiving Pension Credit, you must tell us straight away about any <a href="https://www.gov.uk/pension-credit/change-of-circumstances">changes that could affect the amount of Pension Credit you get (opens in a new window or tab)</a>.</p>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-3"> @NI If anything changes</h2>
+        <p class="govuk-body"> @NI While you are receiving Pension Credit, you must tell us straight away about any <a href="https://www.gov.uk/pension-credit/change-of-circumstances">changes that could affect the amount of Pension Credit you get (opens in a new window or tab)</a>.</p>
       </div>
+
+        <!---- UK ---->{% else %}
+
+        <div class="govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-3">If anything changes</h2>
+          <p class="govuk-body">While you are receiving Pension Credit, you must tell us straight away about any <a href="https://www.gov.uk/pension-credit/change-of-circumstances">changes that could affect the amount of Pension Credit you get (opens in a new window or tab)</a>.</p>
+        </div>
+
+        <!---- COUNTRY END ---->{% endif %}
 
 
 
 <!----------------------------------------------------------------------------------->
 
-<div class="govuk-!-margin-top-6">
-  <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
-  <p class="govuk-body">If you pay rent for the place where you live, you might qualify for Housing Benefit. We will make this application for you using the details from your Pension Credit claim. Your local authority will contact you.</p>
-</div>
+
+<!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
 
 <div class="govuk-!-margin-top-6">
-  <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Council Tax Reduction</h2>
-  <p class="govuk-body">If your application is successful, you might be able to claim Council Tax Reduction. You should contact your local authority to apply.</p>
+  <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">@NI Housing Benefit</h2>
+  <p class="govuk-body">@NI  If you pay rent for the place where you live, you might qualify for Housing Benefit. We will make this application for you using the details from your Pension Credit claim. Your local authority will contact you.</p>
 </div>
 
+  <!---- UK ---->{% else %}
+
+  <div class="govuk-!-margin-top-6">
+    <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
+    <p class="govuk-body">If you pay rent for the place where you live, you might qualify for Housing Benefit. We will make this application for you using the details from your Pension Credit claim. Your local authority will contact you.</p>
+  </div>
+
+  <!---- COUNTRY END ---->{% endif %}
+
+<!----------------------------------------------------------------------------------->
+
+<!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+
 <div class="govuk-!-margin-top-6">
-  <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
-  <p class="govuk-body">You might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance (Opens in a new window or tab)<a/> if you care for someone for 35 hours or more a week.</p>
+  <h2 class="govuk-heading-xm govuk-!-margin-bottom-3"> @NI Council Tax Reduction</h2>
+  <p class="govuk-body"> @NI If your application is successful, you might be able to claim Council Tax Reduction. You should contact your local authority to apply.</p>
 </div>
+
+  <!---- UK ---->{% else %}
+
+  <div class="govuk-!-margin-top-6">
+    <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Council Tax Reduction</h2>
+    <p class="govuk-body">If your application is successful, you might be able to claim Council Tax Reduction. You should contact your local authority to apply.</p>
+  </div>
+
+  <!---- COUNTRY END ---->{% endif %}
+
+<!----------------------------------------------------------------------------------->
+
+<!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+
+<div class="govuk-!-margin-top-6">
+  <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">@NI Carer's Allowance</h2>
+  <p class="govuk-body">@NI You might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance (Opens in a new window or tab)<a/> if you care for someone for 35 hours or more a week.</p>
+</div>
+
+  <!---- UK ---->{% else %}
+
+  <div class="govuk-!-margin-top-6">
+    <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
+    <p class="govuk-body">You might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance (Opens in a new window or tab)<a/> if you care for someone for 35 hours or more a week.</p>
+  </div>
+
+  <!---- COUNTRY END ---->{% endif %}
 
 
 <!----------------------------------------------------------------------------------->
