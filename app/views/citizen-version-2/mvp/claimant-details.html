@@ -97,21 +97,6 @@
         ]
       }) }}
 
-
-      <!-- {{ govukInput({
-        label: {
-          text: "Other names you have been known by (optional)"
-        },
-        hint: {
-          text: "For example, maiden names or previous married names."
-        },
-        id: "other-full-name",
-        name: "other-full-name",
-        classes: "govuk-input--width-20",
-        value: data["full-name"]
-      }) }} -->
-
-
       {% set legendNI %}
       <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is your National Insurance number?</h3>
       {% endset -%}
@@ -213,6 +198,8 @@
   ]
 }) }}
 
+<!---- WALES ---->{% if data['resides-in-uk'] == 'Wales' %}
+
 
 {{ govukRadios({
   idPrefix: "contact-welsh-check",
@@ -238,6 +225,7 @@
     }
   ]
 }) }}
+<!---- COUNTRY END ---->{% endif %}
 
 
 
