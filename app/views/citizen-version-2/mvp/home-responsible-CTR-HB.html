@@ -25,6 +25,12 @@
         {% endset %}
       <!------------Legend--------------->
 
+      <!------------HINT LEGEND------------>
+        {% set dynamicHint %}
+        <p class="govuk-hint">This includes if they are paid through Housing Benefit or Rates Relief.</p>
+        {% endset %}
+      <!------------Legend--------------->
+
         <!---- UK ---->{% else %}
 
         <!------------H1 LEGEND------------>
@@ -34,12 +40,13 @@
           {% endset %}
         <!------------Legend--------------->
 
+        <!------------HINT LEGEND------------>
+          {% set dynamicHint %}
+          <p class="govuk-hint">This includes if they are paid through Housing Benefit or Council Tax Reduction.</p>
+          {% endset %}
+        <!------------Legend--------------->
+
         <!---- COUNTRY END ---->{% endif %}
-
-
-
-
-
 
 
       {{ govukRadios({
@@ -53,7 +60,7 @@
           }
         },
         hint: {
-        html: "This includes if they are paid through Housing Benefit or Council Tax Reduction (NI - Rate Relief)."
+          html: dynamicHint
         },
         classes: "govuk-radios",
         items: [
