@@ -42,10 +42,32 @@
 
 
         {% set council %}
+
+
+        <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+
+        <!------------SUBHEAD LEGEND------------>
+          {% set dynamicSubHead %}
+          <p class="govuk-body govuk-!-font-weight-bold">@NI Describe the payment related to Council Rates Reduction, the date it was paid and amount</p>
+          {% endset %}
+        <!------------Legend--------------->
+
+          <!---- UK ---->{% else %}
+
+
+          <!------------SUBHEAD LEGEND------------>
+            {% set dynamicSubHead %}
+            <p class="govuk-body govuk-!-font-weight-bold">Describe the payment related to Council Tax Reduction, the date it was paid and amount</p>
+            {% endset %}
+          <!------------Legend--------------->
+
+          <!---- COUNTRY END ---->{% endif %}
+
+
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
-              html: "Describe the payment related to Council Tax Reduction, the date it was paid and amount"
+              html: dynamicSubHead
             },
             hint: {
               text: ""
@@ -250,6 +272,24 @@
 
         <!-- ———————————————————————————————————— -->
 
+        <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+
+        <!------------H2 LEGEND------------>
+          {% set dynamicH2 %}
+          <p class="govuk-body">@NI Payments related to Council Rates Reduction</p>
+          {% endset %}
+        <!------------Legend--------------->
+
+          <!---- UK ---->{% else %}
+
+          <!------------H2 LEGEND------------>
+            {% set dynamicH2 %}
+            <p class="govuk-body">Payments related to Council Tax Reduction</p>
+            {% endset %}
+          <!------------Legend--------------->
+
+          <!---- COUNTRY END ---->{% endif %}
+
         {{ govukCheckboxes({
           name: "disregards",
           fieldset: {
@@ -274,7 +314,7 @@
           {
             name: 'council',
             value: "Payments related to Council Tax Reduction",
-            html: "Payments related to Council Tax Reduction",
+            html: dynamicH2,
             conditional: {
               html: council
             }
