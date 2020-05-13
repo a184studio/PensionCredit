@@ -408,6 +408,31 @@
 
                         {
               key: {
+                text: "Your textphone number"
+              },
+              value: {
+                text: data["contact-formats-text-phone-number"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "",
+                    text: "Change",
+                    visuallyHiddenText: "your textphone number"
+                  }
+                ]
+              }
+            }
+
+          ]
+        }) }}
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+
+                        {
+              key: {
                 text: "Tell us any other ways we can help you when we contact you"
               },
               value: {
@@ -429,30 +454,7 @@
 
 
 
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-9',
-            rows: [
 
-                        {
-              key: {
-                text: "Your textphone number"
-              },
-              value: {
-                text: data["contact-formats-text-phone-number"]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "Change",
-                    visuallyHiddenText: "your textphone number"
-                  }
-                ]
-              }
-            }
-
-          ]
-        }) }}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
