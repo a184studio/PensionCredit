@@ -171,7 +171,7 @@
 
           {
             key: {
-              text: "What is your name"
+              text: "What is your full name?"
             },
             value: {
               text: data["full-name"]
@@ -189,7 +189,24 @@
 
           {
             key: {
-              text: "What were your previous names"
+              text: "Have you been known by any previous names?"
+            },
+            value: {
+              text: data["claimant-alt-name-yes"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "claimant-details",
+                  text: "Change",
+                  visuallyHiddenText: "whether you have been known by any previous names"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "What were your previous names?"
             },
             value: {
               text: data["claimant-alt-name-yes"]
@@ -206,7 +223,7 @@
           },
                       {
                         key: {
-                          text: "What is your National Insurance number"
+                          text: "What is your National Insurance number?"
                         },
                         value: {
                           text: data["nino"]
