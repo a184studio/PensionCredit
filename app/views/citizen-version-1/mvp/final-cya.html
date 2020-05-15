@@ -511,7 +511,7 @@
 
           {
             key: {
-              text: "Your partner's name"
+              text: "What is your partner's full name?"
             },
             value: {
               text: data["partner-full-name"]
@@ -521,7 +521,25 @@
                 {
                   href: "partner-details",
                   text: "Change",
-                  visuallyHiddenText: "your partners name"
+                  visuallyHiddenText: "your partners full name"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Has your partner been known by any previous names?"
+            },
+            value: {
+              text: data["claimant-alt-name-yes"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "claimant-details",
+                  text: "Change",
+                  visuallyHiddenText: "whether your partner has been known by any previous names"
                 }
               ]
             }
@@ -1082,7 +1100,7 @@ actions: {
 
           {
           key: {
-            text: "Do you share the rent or mortgage for the place where you live with anyone [apart from your partner]?"
+            text: "Do you share the rent or mortgage for the place where you live with anyone [other than your partner]?"
           },
           value: {
             text: data["home-shared-payments"]
