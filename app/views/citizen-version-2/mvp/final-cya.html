@@ -30,6 +30,23 @@
         rows: [
         {
           key: {
+            text: "Which country do you live in?"
+          },
+          value: {
+            text: data['resides-in-uk']
+          },
+          actions: {
+            items: [
+              {
+                href: "reside-in-uk",
+                text: "Change",
+                visuallyHiddenText: "which country you live in"
+              }
+            ]
+          }
+        },
+        {
+          key: {
             text: "Have you claimed your State Pension?"
           },
           value: {
@@ -73,23 +90,7 @@
 
       {{ govukSummaryList({
         rows: [
-        {
-          key: {
-            text: "Which country do you live in?"
-          },
-          value: {
-            text: data['resides-in-uk']
-          },
-          actions: {
-            items: [
-              {
-                href: "reside-in-uk",
-                text: "Change",
-                visuallyHiddenText: "which country you live in"
-              }
-            ]
-          }
-        },
+
         {
           key: {
             text: "Have you lived permanently in the UK for the last 2 years?"
@@ -418,7 +419,7 @@
 
                         {
               key: {
-                text: "Your textphone number"
+                text: "What is your textphone (Text Relay) number"
               },
               value: {
                 text: data["contact-formats-text-phone-number"]
@@ -428,7 +429,7 @@
                   {
                     href: "",
                     text: "Change",
-                    visuallyHiddenText: "your textphone number"
+                    visuallyHiddenText: "your textphone (Text Relay) number"
                   }
                 ]
               }
