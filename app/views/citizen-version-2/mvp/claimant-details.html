@@ -157,6 +157,7 @@
         ]
       }) }}
 
+      <!---- WALES ---->{% if data['resides-in-uk'] !== 'Wales' %}
 
 
 {% set altLanguage %}
@@ -198,15 +199,30 @@
   ]
 }) }}
 
+<!---- COUNTRY END ---->{% endif %}
+
 <!---- WALES ---->{% if data['resides-in-uk'] == 'Wales' %}
 
+
+
+
+{% set altLanguage %}
+  {{ govukInput({
+  label: {
+  html: "What is your first language?"
+  },
+  id: "contact-formats-altLanguage",
+  name: "contact-formats-altLanguage",
+  classes: "govuk-input--width-20 govuk-!-margin-bottom-4"
+  }) }}
+{% endset -%}
 
 {{ govukRadios({
   idPrefix: "contact-welsh-check",
   name: "contact-welsh-check",
   fieldset: {
     legend: {
-      text: "If you live in Wales, do you want to speak to us in Welsh?",
+      text: "Are you able to speak to us in Welsh?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -217,14 +233,20 @@
       value: "Yes",
       text: "Yes",
       checked: (data["contact-welsh-check"] == "Yes")
-              },
+      },
     {
       value: "No",
       text: "No",
-      checked: (data["contact-welsh-check"] == "No")
+      checked: (data["contact-welsh-check"] == "No"),
+            conditional: {
+              html: altLanguage
+            }
     }
   ]
 }) }}
+
+
+
 <!---- COUNTRY END ---->{% endif %}
 
 
