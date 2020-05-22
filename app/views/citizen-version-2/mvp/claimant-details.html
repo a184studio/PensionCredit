@@ -157,18 +157,54 @@
         ]
       }) }}
 
+      {% set altLanguage %}
+        {{ govukInput({
+        label: {
+        html: "What is your first language?"
+        },
+        id: "contact-formats-altLanguage",
+        name: "contact-formats-altLanguage",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-4"
+        }) }}
+      {% endset -%}
 
-{% set altLanguage %}
-  {{ govukInput({
-  label: {
-  html: "What language do you want us to use?"
-  },
-  id: "contact-formats-altLanguage",
-  name: "contact-formats-altLanguage",
-  classes: "govuk-input--width-20 govuk-!-margin-bottom-4"
-  }) }}
-{% endset -%}
 
+      <!---- ESWNI ---->{% if data['resides-in-uk'] !== 'Wales' %}
+
+      {{ govukRadios({
+        idPrefix: "claimant-language-check",
+        name: "claimant-language-check",
+        fieldset: {
+          legend: {
+            text: "What language do you want us to speak to you in?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "English",
+            text: "English",
+            checked: (data["claimant-language-check"] == "English")
+          },
+            {
+            value: "Other",
+            text: "Other",
+            checked: (data["claimant-language-check"] == "Other"),
+                  conditional: {
+                    html: altLanguage
+                  }
+          }
+        ]
+      }) }}
+
+<!---- COUNTRY END ---->{% endif %}
+
+
+
+
+<!---- WALES ---->{% if data['resides-in-uk'] == 'Wales' %}
 {{ govukRadios({
   idPrefix: "claimant-language-check",
   name: "claimant-language-check",
@@ -198,9 +234,10 @@
             conditional: {
               html: altLanguage
             }
-    }
-  ]
-}) }}
+      }
+    ]
+  }) }}
+<!---- COUNTRY END ---->{% endif %}
 
 
 
