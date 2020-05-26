@@ -22,7 +22,7 @@
 
 
       {% set legendTelephoneNumber %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What is your contact telephone number?</h1>
+      <h1 class="govuk-heading-xl">What is your contact telephone number?</h1>
       {% endset -%}
 
       {{ govukInput({
@@ -30,7 +30,7 @@
           html: legendTelephoneNumber
         },
           hint: {
-            text: "@pete, This is Optional, really? Do we need to say why it would be best that you give us a telephoe number XYZ?, If we need to contact you about you claim"
+            text: ""
           },
         id: "telephone-number",
         name: "telephone-number",
