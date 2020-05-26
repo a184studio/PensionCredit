@@ -409,8 +409,8 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/contact-formats-check-router`, (req, res) => {
-  const contactFormats = req.session.data['contact-formats-check']
+router.post(`${baseUrl}/claimant-contact-formats-check-router`, (req, res) => {
+  const contactFormats = req.session.data['claimant-contact-formats-check']
 
   if (contactFormats === 'Yes') {
     res.redirect(`${baseUrl}/contact-formats`)
