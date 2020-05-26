@@ -361,7 +361,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
 
   if (childrenCheck === 'No') {
-    res.redirect(`${baseUrl}/nationality-check`)
+    res.redirect(`${baseUrl}/over-spa`)
   } else {
     res.redirect(`${baseUrl}/done-children`)
   }
@@ -949,18 +949,40 @@ router.post(`${baseUrl}/hrt-check-router`, (req, res) => { // router name
   const hrtCheck = req.session.data['hrt-check']  // name of data / id name
 
   if (hrtCheck === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-returned-to-uk`)
+    res.redirect(`${baseUrl}/hrt-claimant-immigration-restrictions`)
   } else {
     res.redirect(`${baseUrl}/help-to-claim`)
   }
 })
-router.post(`${baseUrl}/hrt-returned-to-uk-router`, (req, res) => { // router name
-  const returnedToUK = req.session.data['hrt-returned-to-uk']  // name of data / id name
 
-  if (returnedToUK === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-nationality-details`)
+router.post(`${baseUrl}/hrt-check-router`, (req, res) => { // router name
+  const hrtCheck = req.session.data['hrt-check']  // name of data / id name
+
+  if (hrtCheck === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-claimant-immigration-restrictions`)
   } else {
-    res.redirect(`${baseUrl}/hrt-uk-sponsorship`)
+    res.redirect(`${baseUrl}/help-to-claim`)
+  }
+})
+
+
+router.post(`${baseUrl}/hrt-claimant-permanently-in-UK-router`, (req, res) => { // router name
+  const claimantPermanentlyInUK = req.session.data['hrt-claimant-permanently-in-UK']  // name of data / id name
+
+  if (claimantPermanentlyInUK === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/help-to-claim`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-partner-returned-to-uk`)
+  }
+})
+
+router.post(`${baseUrl}/hrt-partner-permanently-in-UK-router`, (req, res) => { // router name
+  const partnerPermanentlyInUK = req.session.data['hrt-partner-permanently-in-UK']  // name of data / id name
+
+  if (partnerPermanentlyInUK === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/help-to-claim`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-partner-returned-to-uk`)
   }
 })
 
@@ -983,7 +1005,7 @@ router.post(`${baseUrl}/hrt-partner-check-router`, (req, res) => { // router nam
   const partnerCheck = req.session.data['hrt-partner-check']  // name of data / id name
 
   if (partnerCheck === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/hrt-partner-returned-to-uk`)
+    res.redirect(`${baseUrl}/hrt-partner-immigration-restrictions`)
   } else {
     res.redirect(`${baseUrl}/help-to-claim`)
   }

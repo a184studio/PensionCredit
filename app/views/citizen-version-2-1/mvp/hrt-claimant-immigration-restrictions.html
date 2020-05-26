@@ -16,14 +16,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="over-spa" method="post">
+      <form action="hrt-claimant-permanently-in-UK" method="post">
 
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Your nationality</h1>
 
 <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
 
   {% set legendUKNationalHeadline %}
-  <h class="govuk-heading-m govuk-!-margin-bottom-0">Do you have the right to live or work in the UK without any immigration restrictions?</h>
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you have the right to live or work in the UK without any immigration restrictions?</h1>
+
   {% endset -%}
 
 
@@ -31,7 +31,7 @@
   <!---- UK ---->{% else %}
 
   {% set legendUKNationalHeadline %}
-  <h class="govuk-heading-m govuk-!-margin-bottom-0">Do you have the right to live or work in the UK without any immigration restrictions?</h>
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you have the right to live or work in the UK without any immigration restrictions?</h1>
   {% endset -%}
 
   {% set legendUKNationalHint %}
@@ -68,46 +68,6 @@
 
         }) }}
 
-
-        <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
-
-        {% set legendLivedAbroadHeadline %}
-        <h class="govuk-heading-m govuk-!-margin-bottom-0">Have you lived permanently in the UK for the last 2 years?</h>
-        {% endset -%}
-
-
-          <!---- UK ---->{% else %}
-
-          {% set legendLivedAbroadHeadline %}
-          <h class="govuk-heading-m govuk-!-margin-bottom-0">Have you lived permanently in the UK for the last 2 years?</h>
-          {% endset -%}
-
-          <!---- COUNTRY END ---->{% endif %}
-
-        {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "lived-abroad",
-          name: "lived-abroad",
-          fieldset: {
-            legend: {
-              html: legendLivedAbroadHeadline,
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: data['lived-abroad'] == "Yes"
-            },
-            {
-              value: "No",
-              text: "No",
-              checked: data['lived-abroad'] == "No"
-            }
-          ]
-        }) }}
 
         {{ govukButton({
           text: "Continue"
