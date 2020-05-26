@@ -452,7 +452,7 @@ router.post(`${baseUrl}/single-joint-check-router`, (req, res) => {
   if (singleJoint === 'Single') {
     res.redirect(`${baseUrl}/home-care-home-check`)
   } else {
-    res.redirect(`${baseUrl}/partner-details`)
+    res.redirect(`${baseUrl}/partner-national-insurance`)
   }
 })
 
