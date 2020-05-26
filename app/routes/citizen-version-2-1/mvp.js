@@ -8,7 +8,7 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/citizen-version-2/mvp'
+const baseUrl = '/citizen-version-2-1/mvp'
 
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
@@ -409,8 +409,8 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/contact-formats-check-router`, (req, res) => {
-  const contactFormats = req.session.data['contact-formats-check']
+router.post(`${baseUrl}/claimant-contact-formats-check-router`, (req, res) => {
+  const contactFormats = req.session.data['claimant-contact-formats-check']
 
   if (contactFormats === 'Yes') {
     res.redirect(`${baseUrl}/contact-formats`)
