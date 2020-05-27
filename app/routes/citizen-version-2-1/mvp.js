@@ -972,7 +972,17 @@ router.post(`${baseUrl}/hrt-claimant-permanently-in-UK-router`, (req, res) => { 
   if (claimantPermanentlyInUK === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/help-to-claim`)
   } else {
-    res.redirect(`${baseUrl}/hrt-partner-returned-to-uk`)
+    res.redirect(`${baseUrl}/hrt-claimant-returned-to-uk`)
+  }
+})
+
+router.post(`${baseUrl}/hrt-claimant-returned-to-uk-router`, (req, res) => { // router name
+  const claimantReturnedToUK = req.session.data['hrt-claimant-returned-to-uk']  // name of data / id name
+
+  if (claimantReturnedToUK === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-nationality-details`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-uk-sponsorship`)
   }
 })
 
