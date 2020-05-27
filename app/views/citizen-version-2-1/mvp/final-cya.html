@@ -82,8 +82,6 @@
           ]
         }
       }
-
-
         ]
       }) }}
 
@@ -91,40 +89,6 @@
       {{ govukSummaryList({
         rows: [
 
-        {
-          key: {
-            text: "Have you lived permanently in the UK for the last 2 years?"
-          },
-          value: {
-            text: data['lived-abroad']
-          },
-          actions: {
-            items: [
-              {
-                href: "lived-abroad",
-                text: "Change",
-                visuallyHiddenText: "whether you have lived permanently in the UK for the last 2 years"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Do you have the right to live or work in the UK without any immigration restrictions?"
-          },
-          value: {
-            text: data['uk-national']
-          },
-          actions: {
-            items: [
-              {
-                href: "uk-national",
-                text: "Change",
-                visuallyHiddenText: "whether have the right to live or work in the UK without any immigration restrictions"
-              }
-            ]
-          }
-        },
         {
           key: {
             text: "What date do you want your Pension Credit claim to start?"
@@ -172,6 +136,24 @@
 
           {
             key: {
+              text: "Your National Insurance number"
+            },
+            value: {
+              text: data["nino"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "your National Insurance number"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
               text: "Your name"
             },
             value: {
@@ -207,24 +189,6 @@
           },
                       {
                         key: {
-                          text: "Your National Insurance number"
-                        },
-                        value: {
-                          text: data["nino"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "Change",
-                              visuallyHiddenText: "your National Insurance number"
-                            }
-                          ]
-                        }
-                      },
-
-                      {
-                        key: {
                           text: "What is your contact telephone number?"
                         },
                         value: {
@@ -251,25 +215,7 @@
 
                     {
                       key: {
-                        text: "Are you registered blind or severely sight impaired?"
-                      },
-                      value: {
-                        text: data["contact-blind-check"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "Change",
-                            visuallyHiddenText: "whether you are registered blind or severely sight impaired"
-                          }
-                        ]
-                      }
-                    },
-
-                    {
-                      key: {
-                        text: "Are able to speak to us in English?"
+                        text: "What language do you want us to speak to you in?"
                       },
                       value: {
                         text: data["telephone-number"]
@@ -279,7 +225,25 @@
                           {
                             href: "",
                             text: "Change",
-                            visuallyHiddenText: "whether you are able to speak to us in English"
+                            visuallyHiddenText: "what language do you want us to speak to you in"
+                          }
+                        ]
+                      }
+                    },
+
+                    {
+                      key: {
+                        text: "What is your first language?"
+                      },
+                      value: {
+                        text: data["contact-formats-altLanguage"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "Change",
+                            visuallyHiddenText: "your first language"
                           }
                         ]
                       }
@@ -294,17 +258,17 @@
 
                   {
                     key: {
-                      text: "What is your first language?"
+                      text: "Are you registered blind or severely sight impaired?"
                     },
                     value: {
-                      text: data["contact-formats-altLanguage"]
+                      text: data["contact-blind-check"]
                     },
                     actions: {
                       items: [
                         {
                           href: "",
                           text: "Change",
-                          visuallyHiddenText: "your first language"
+                          visuallyHiddenText: "whether you are registered blind or severely sight impaired"
                         }
                       ]
                     }
@@ -316,24 +280,6 @@
               {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
                 rows: [
-
-                {
-                  key: {
-                    text: "If you live in Wales, do you want to speak to us in Welsh?"
-                  },
-                  value: {
-                    text: data["contact-welsh-check"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "",
-                        text: "Change",
-                        visuallyHiddenText: "whether you want to speak to us in Welsh"
-                      }
-                    ]
-                  }
-                },
 
                 {
                   key: {
@@ -468,6 +414,24 @@
 
           {
             key: {
+              text: "Your partner's National Insurance number"
+            },
+            value: {
+              text: data["partner-nino"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "your partner's National Insurance number"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
               text: "Your partner's name"
             },
             value: {
@@ -500,24 +464,7 @@
                 }
               ]
             }
-          },
-                      {
-                        key: {
-                          text: "Your partner's National Insurance number"
-                        },
-                        value: {
-                          text: data["partner-nino"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "",
-                              text: "Change",
-                              visuallyHiddenText: "your partner's National Insurance number"
-                            }
-                          ]
-                        }
-                      }
+          }
 
                     ]
                   }) }}
@@ -547,58 +494,6 @@
 
                   ]
                 }) }}
-
-                {{ govukSummaryList({
-                  classes: 'govuk-!-margin-bottom-9',
-                  rows: [
-
-                  {
-                    key: {
-                      text: "Does your partner have the right to live or work in the UK without any immigration restrictions?"
-                    },
-                    value: {
-                      text: data["partner-uk-national"]
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "partner-nationality-check",
-                          text: "Change",
-                          visuallyHiddenText: "whether your partner has the right to live or work in the UK without any immigration restrictions"
-                        }
-                      ]
-                    }
-                  }
-
-                ]
-              }) }}
-
-
-
-              {{ govukSummaryList({
-                classes: 'govuk-!-margin-bottom-9',
-                rows: [
-
-                {
-                  key: {
-                    text: "Has your partner lived permanently in the UK for the last 2 years?"
-                  },
-                  value: {
-                    text: data["partner-lived-abroad"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "partner-nationality-check",
-                        text: "Change",
-                        visuallyHiddenText: "whether your partner has lived permanently in the UK for the last 2 years"
-                      }
-                    ]
-                  }
-                }
-
-              ]
-            }) }}
 
 
 
@@ -1995,11 +1890,65 @@ actions: {
 
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About your residency in the UK</h2>
 
-hrt-claimant-immigration-restrictions
-hrt-claimant-permanently-in-UK
 
-hrt-partner-immigration-restrictions
-hrt-partner-permanently-in-UK
+      {{ govukSummaryList({
+        rows: [
+
+        {
+          key: {
+            text: "Do you have the right to live or work in the UK without any immigration restrictions?"
+          },
+          value: {
+            text: data['hrt-claimant-immigration-restrictions']
+          },
+          actions: {
+            items: [
+              {
+                href: "hrt-claimant-immigration-restrictions",
+                text: "Change",
+                visuallyHiddenText: "whether have the right to live or work in the UK without any immigration restrictions"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "Have you lived permanently in the UK for the last 2 years?"
+          },
+          value: {
+            text: data['hrt-claimant-permanently-in-UK']
+          },
+          actions: {
+            items: [
+              {
+                href: "hrt-claimant-permanently-in-UK",
+                text: "Change",
+                visuallyHiddenText: "whether you have lived permanently in the UK for the last 2 years"
+              }
+            ]
+          }
+        },
+
+        {
+          key: {
+            text: "What date do you want your Pension Credit claim to start?"
+          },
+          value: {
+            text: data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "claim-date-of-claim",
+                text: "Change",
+                visuallyHiddenText: "what date you want your Pension Credit claim to start"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
 
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
@@ -2482,6 +2431,60 @@ hrt-partner-permanently-in-UK
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
           <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">About your partner's residency in the UK</h2>
+
+
+
+                            {{ govukSummaryList({
+                              classes: 'govuk-!-margin-bottom-9',
+                              rows: [
+
+                              {
+                                key: {
+                                  text: "Does your partner have the right to live or work in the UK without any immigration restrictions?"
+                                },
+                                value: {
+                                  text: data["hrt-partner-immigration-restrictions"]
+                                },
+                                actions: {
+                                  items: [
+                                    {
+                                      href: "hrt-partner-immigration-restrictions",
+                                      text: "Change",
+                                      visuallyHiddenText: "whether your partner has the right to live or work in the UK without any immigration restrictions"
+                                    }
+                                  ]
+                                }
+                              }
+
+                            ]
+                          }) }}
+
+                          {{ govukSummaryList({
+                            classes: 'govuk-!-margin-bottom-9',
+                            rows: [
+
+                            {
+                              key: {
+                                text: "Has your partner lived permanently in the UK for the last 2 years?"
+                              },
+                              value: {
+                                text: data["hrt-partner-permanently-in-UK"]
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "hrt-partner-permanently-in-UK",
+                                    text: "Change",
+                                    visuallyHiddenText: "whether your partner has lived permanently in the UK for the last 2 years"
+                                  }
+                                ]
+                              }
+                            }
+
+                          ]
+                        }) }}
+
+
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-9',
