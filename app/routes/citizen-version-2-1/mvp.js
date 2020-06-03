@@ -488,7 +488,6 @@ router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
   }
 })
 
-
 // Home ownership router (home-property-charges)
 
 router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
@@ -498,7 +497,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/own`) // If it finds it it does here
   }
   else if (homeOwnership === 'You rent it') {
-    res.redirect(`${baseUrl}/rent`)
+    res.redirect(`${baseUrl}/home-rent-ground-rent`)
   }
   else if (homeOwnership === 'Shared ownership') {
     res.redirect(`${baseUrl}/shared`)
@@ -510,6 +509,22 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/blank`) // If nothing is selected it will go here.
   }
 })
+
+// Home ownership router: RENT
+
+router.post(`${baseUrl}/home-rent-ground-rent-router`, (req, res) => { // When the button is pressed it looks for this router
+  const homeRentGroundRent = req.session.data['home-rent-ground-rent'] // The router is looking for this ID.
+
+  if (homeRentGroundRent === 'Yes') {
+    res.redirect(`${baseUrl}/home-rent-21-years`)
+  } else {
+    res.redirect(`${baseUrl}/home-rent-housing-benefit`)
+  }
+})
+
+
+
+
 
 
 
