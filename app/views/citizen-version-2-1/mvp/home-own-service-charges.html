@@ -1,0 +1,70 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Do you pay any service charges? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="home-own-ground-rent" method="post" class="form">
+
+
+      <!------------HEADLINE------------>
+        {% set legend %}
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0"><strong>Service charges can include:</strong></p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">warden services</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">caretaker services like gardening, maintenance and cleaning of communal areas</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">use of a laundry room</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">use of communal areas like a lounge or TV area</p>
+
+        {% endset %}
+      <!------------HEADLINE------------>
+
+
+
+      {{ govukRadios({
+        idPrefix: "home-own-service-charges",
+        name: "home-property-service-charges",
+        fieldset: {
+          legend: {
+            text: "Do you pay any service charges?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: legend
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["home-own-service-charges"] == "Yes")
+            },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["home-own-service-charges"] == "No")
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+  </div>
+</div>
+{% endblock %}

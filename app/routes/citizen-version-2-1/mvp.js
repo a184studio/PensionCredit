@@ -494,16 +494,16 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   const homeOwnership = req.session.data['home-ownership']
 
   if (homeOwnership === 'You own it') { // Looking for this checked data
-    res.redirect(`${baseUrl}/own`) // If it finds it it does here
+    res.redirect(`${baseUrl}/home-own-service-charges`) // If it finds it it does here
   }
   else if (homeOwnership === 'You rent it') {
     res.redirect(`${baseUrl}/home-rent-ground-rent`)
   }
   else if (homeOwnership === 'Shared ownership') {
-    res.redirect(`${baseUrl}/shared`)
+    res.redirect(`${baseUrl}/home-shared-ground-rent`)
   }
   else if (homeOwnership === 'Other accommodation') {
-    res.redirect(`${baseUrl}/other`)
+    res.redirect(`${baseUrl}/home-other-service-charges`)
   }
   else {
     res.redirect(`${baseUrl}/blank`) // If nothing is selected it will go here.

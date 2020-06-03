@@ -1,7 +1,7 @@
 {% extends "layout-covid19.html" %}
 
 {% block pageTitle %}
-  Do you pay any service charges? - Pension Credit
+  Do you want to apply for support with interest on a mortgage or loan secured against your home? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -13,36 +13,39 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <form action="home-mortgage-home-loan" method="post" class="form">
-
+  <div class="govuk-grid-column-two-thirds">
+    <form action="ground-rent-router" method="post" class="form">
       {{ govukRadios({
-        idPrefix: "home-own-ground-rent",
-        name: "home-own-ground-rent",
+        idPrefix: "rent-router",
+        name: "rent-router",
         fieldset: {
           legend: {
-            text: "Do you pay ground rent?",
+            text: "Do you or your partner pay ground rent for the place where you live?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
-        },
-        hint: {
-          text: "You might pay ground rent if you are the leaseholder of your home."
-        },
+            },
+            hint: {
+              html: "<br><p class=\"hint\">
+                In Scotland this is called ground annual.</p>
+
+                    "
+            },
+
+        classes: "govuk-radios",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["home-own-ground-rent"] == "Yes")
-            },
+            checked: (data["rent-router"] == "Yes")
+          },
           {
             value: "No",
             text: "No",
-            checked: (data["home-own-ground-rent"] == "No")
+            checked: (data["rent-router"] == "No")
           }
         ]
       }) }}
-
 
       {{ govukButton({
         text: "Continue"
@@ -52,5 +55,4 @@
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
 
   </div>
-</div>
 {% endblock %}

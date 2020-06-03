@@ -14,10 +14,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="home-mortgage-home-loan" method="post" class="form">
+    <form action="home-other-housing-benefit" method="post" class="form">
 
       {{ govukRadios({
-        idPrefix: "home-own-ground-rent",
+        idPrefix: "home-other-ground-rent",
         name: "home-own-ground-rent",
         fieldset: {
           legend: {
@@ -33,12 +33,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["home-own-ground-rent"] == "Yes")
+            checked: (data["home-other-ground-rent"] == "Yes")
             },
           {
             value: "No",
             text: "No",
-            checked: (data["home-own-ground-rent"] == "No")
+            checked: (data["home-other-ground-rent"] == "No")
           }
         ]
       }) }}
