@@ -739,8 +739,6 @@ actions: {
 ]
 }) }}
 
-///////// All the new data item ids
-
 <!----------------------------- HOME OWNERSHIP = RENT ------------------------------------------------------------------------------------->
 
 {{ govukSummaryList({
@@ -768,6 +766,7 @@ actions: {
 ]
 }) }}
 
+{% if data["home-rent-21-years"] %}
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -793,6 +792,7 @@ actions: {
 
 ]
 }) }}
+{% endif %}
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -929,6 +929,34 @@ actions: {
 
 ]
 }) }}
+
+{% if data["home-shared-21-years"] %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Is the lease for your property or land for 21 years or more?"
+    },
+    value: {
+      text: data["home-shared-21-years"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-shared-21-years",
+          text: "Change",
+          visuallyHiddenText: "whether the lease for your property or land is for 21 years or more"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+{% endif %}
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',

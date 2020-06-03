@@ -14,31 +14,31 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="home-shared-ground-rent-router" method="post" class="form">
+    <form action="home-shared-housing-benefit" method="post" class="form">
 
       {{ govukRadios({
-        idPrefix: "home-shared-ground-rent",
-        name: "home-shared-ground-rent",
+        idPrefix: "home-shared-21-years",
+        name: "home-shared-21-years",
         fieldset: {
           legend: {
-            text: "Do you pay ground rent?",
+            text: "Is the lease for your property or land for 21 years or more?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "You might pay ground rent if you are the leaseholder of your home."
+          text: ""
         },
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["home-shared-ground-rent"] == "Yes")
+            checked: (data["home-shared-21-years"] == "Yes")
             },
           {
             value: "No",
             text: "No",
-            checked: (data["home-shared-ground-rent"] == "No")
+            checked: (data["home-shared-21-years"] == "No")
           }
         ]
       }) }}

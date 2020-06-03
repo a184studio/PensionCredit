@@ -522,6 +522,18 @@ router.post(`${baseUrl}/home-rent-ground-rent-router`, (req, res) => { // When t
   }
 })
 
+// Home ownership router: SHARED
+
+router.post(`${baseUrl}/home-shared-ground-rent-router`, (req, res) => { // When the button is pressed it looks for this router
+  const homeSharedGroundRent = req.session.data['home-shared-ground-rent'] // The router is looking for this ID.
+
+  if (homeSharedGroundRent === 'Yes') {
+    res.redirect(`${baseUrl}/home-shared-21-years`)
+  } else {
+    res.redirect(`${baseUrl}/home-shared-housing-benefit`)
+  }
+})
+
 
 
 
