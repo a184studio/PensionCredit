@@ -488,17 +488,22 @@ router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
   }
 })
 
+// Home ownership router (home-property-charges)
+
 router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   const homeOwnership = req.session.data['home-ownership']
 
   if (homeOwnership === 'You own it') {
-    res.redirect(`${baseUrl}/own-property-charges`)
+    res.redirect(`${baseUrl}/own`)
   }
   else if (homeOwnership === 'You rent it') {
-    res.redirect(`${baseUrl}/rent-service-charges`)
+    res.redirect(`${baseUrl}/rent`)
+  }
+  else if (homeOwnership === 'Shared ownership') {
+    res.redirect(`${baseUrl}/shared`)
   }
   else if (homeOwnership === 'Other accommodation') {
-    res.redirect(`${baseUrl}/home-shared-payments`)
+    res.redirect(`${baseUrl}/other`)
   }
 
   res.redirect(`${baseUrl}/XXX`)
