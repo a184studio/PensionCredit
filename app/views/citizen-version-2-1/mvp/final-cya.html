@@ -850,12 +850,249 @@ actions: {
 
 <!----------------------------- HOME OWNERSHIP = OWN ------------------------------------------------------------------------------------->
 
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you pay ground rent?"
+    },
+    value: {
+      text: data["home-own-ground-rent"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-own-ground-rent",
+          text: "Change",
+          visuallyHiddenText: "whether you pay ground rent"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you pay any service charges?"
+    },
+    value: {
+      text: data["home-own-service-charges"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-own-service-charges",
+          text: "Change",
+          visuallyHiddenText: "whether you pay any service charges"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+
 
 <!----------------------------- HOME OWNERSHIP = SHARED ------------------------------------------------------------------------------------->
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you pay ground rent?"
+    },
+    value: {
+      text: data["home-shared-ground-rent"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-shared-ground-rent",
+          text: "Change",
+          visuallyHiddenText: "whether you pay ground rent"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you get Housing Benefit?"
+    },
+    value: {
+      text: data["home-shared-housing-benefit"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-shared-housing-benefit",
+          text: "Change",
+          visuallyHiddenText: "whether you get housing benefit"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+      {% if data["home-shared-housing-benefit-apply"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+            {
+            key: {
+              text: "Do you want to apply for Housing Benefit?"
+            },
+            value: {
+              text: data["home-shared-housing-benefit-apply"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "home-shared-housing-benefit",
+                  text: "Change",
+                  visuallyHiddenText: "whether you want to apply for housing benefit"
+                }
+              ]
+            }
+          }
+
+        ]
+        }) }}
+      {% endif %}
 
 
 <!----------------------------- HOME OWNERSHIP = OTHER ------------------------------------------------------------------------------------->
 
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you pay any service charges?"
+    },
+    value: {
+      text: data["home-other-service-charges"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-other-service-charges",
+          text: "Change",
+          visuallyHiddenText: "whether you pay any service charges"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you pay ground rent?"
+    },
+    value: {
+      text: data["home-other-ground-rent"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-other-ground-rent",
+          text: "Change",
+          visuallyHiddenText: "whether you pay ground rent"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Do you get Housing Benefit?"
+    },
+    value: {
+      text: data["home-other-housing-benefit"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-other-housing-benefit",
+          text: "Change",
+          visuallyHiddenText: "whether you get housing benefit"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+      {% if data["home-other-housing-benefit-apply"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+            {
+            key: {
+              text: "Do you want to apply for Housing Benefit?"
+            },
+            value: {
+              text: data["home-other-housing-benefit-apply"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "home-other-housing-benefit",
+                  text: "Change",
+                  visuallyHiddenText: "whether you want to apply for housing benefit"
+                }
+              ]
+            }
+          }
+
+        ]
+        }) }}
+      {% endif %}
+
+
+<!------------------------------------------------------------------------------------------------------------------>
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
