@@ -51,6 +51,7 @@ router.use(require('./routes/citizen-version-1-1/mvp'))
 router.use(require('./routes/agent-worklist-v2/worklist'))
 router.use(require('./routes/citizen-version-2/mvp'))
 router.use(require('./routes/citizen-version-2-1/mvp'))
+router.use(require('./routes/citizen-version-2-2/mvp'))
 
 
 
