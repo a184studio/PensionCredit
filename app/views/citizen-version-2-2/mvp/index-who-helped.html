@@ -20,7 +20,7 @@
       {% set helpIDCharity %}
 
       {% set legendCharity %}
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Name of Charity</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Name of charity or orgasnisation</h3>
       {% endset -%}
 
       {{ govukInput({
@@ -28,7 +28,7 @@
           html: legendCharity
         },
         hint: {
-          text: "@pete Not sure if needed"
+          text: ""
         },
         id: "index-who-helped-id",
         name: "index-who-helped-id",
@@ -72,7 +72,7 @@
         name: "index-who-helped",
         fieldset: {
           legend: {
-            text: "Who are you claiming Pension Credit for? ",
+            text: "Who helped you complete this application? ",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -80,17 +80,17 @@
         items: [
           {
           value: "Power of attorney",
-          text: "Someone you have power of attorney for",
+          text: "Someone who has power of attorney for you",
           checked: data['index-who-helped'] == "Power of attorney"
         },
         {
           value: "Appointee",
-          text: "Someone who acts as an appointee for you",
+          text: "Someone who you act as an appointee for",
           checked: data['index-who-helped'] == "Appointee"
         },
         {
           value: "Charity",
-          text: "Someone who has asked your charity for help",
+          text: "Someone from a charity or organisation that you have asked for help",
           checked: data['index-who-helped'] == "Charity",
           conditional: {
             html: helpIDCharity
