@@ -1075,6 +1075,17 @@ router.post(`${baseUrl}/hrt-partner-uk-sponsorship-router`, (req, res) => { // r
   }
 })
 
+// Help to make the claim
+
+router.post(`${baseUrl}/index-claim-help-router`, (req, res) => { // router name
+  const helpToClaim = req.session.data['index-claim-help']  // name of data / id name
+
+  if (helpToClaim === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/index-who-helped`)
+  } else {
+    res.redirect(`${baseUrl}/index-pension-credit`)
+  }
+})
 
 
 
