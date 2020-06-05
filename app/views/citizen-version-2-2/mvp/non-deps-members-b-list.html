@@ -1,0 +1,124 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Disregard types - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <form action="non-deps-members-b" method="post" class="form">
+
+        <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
+
+
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Lots of members</h1>
+
+         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">We need to understand who lives in your houseold with you as it may help with your application</p>
+
+         {{ govukSummaryList({
+             classes: 'govuk-!-padding-bottom-2',
+             rows: [
+           {
+             key: {
+               text: "member 1"
+             },
+             value: {
+               text: data['msic-missing-account-name']
+             },
+             actions: {
+               items: [
+                 {
+                   href: "msic-missing-account",
+                   html: "Change",
+                   visuallyHiddenText: "XXX"
+                 },
+                 {
+                   href: "msic-remove",
+                   html: "Remove",
+                   visuallyHiddenText: "XXX"
+                 }
+               ]
+             }
+           }
+           ]
+           }) }}
+
+           {{ govukSummaryList({
+               classes: 'govuk-!-padding-bottom-8',
+               rows: [
+             {
+               key: {
+                 text: "Member 2"
+               },
+               value: {
+                 text: data['msic-missing-account-name']
+               },
+               actions: {
+                 items: [
+                   {
+                     href: "msic-missing-account",
+                     html: "Change",
+                     visuallyHiddenText: "XXX"
+                   },
+                   {
+                     href: "msic-remove",
+                     html: "Remove",
+                     visuallyHiddenText: "XXX"
+                   }
+                 ]
+               }
+             }
+             ]
+             }) }}
+
+             <h1 class="govuk-heading-l govuk-!-padding-top-4 govuk-!-margin-bottom-4">Anyone else live with you like??</h1>
+
+
+             {{ govukRadios({
+               idPrefix: "own-mortgage-home-loan-yes",
+               name: "own-mortgage-home-loan-yes",
+               fieldset: {
+                 legend: {
+                   text: "",
+                   isPageHeading: true,
+                   classes: "govuk-fieldset__legend--l"
+                 }
+                   },
+                   hint: {
+                     html: ""
+                   },
+
+               classes: "govuk-radios",
+               items: [
+                 {
+                   value: "Yes",
+                   text: "Yes",
+                   checked: (data["own-mortgage-home-loan-yes"] == "Yes")
+                 },
+                 {
+                   value: "No",
+                   text: "No",
+                   checked: (data["own-mortgage-home-loan-yes"] == "No")
+                 }
+               ]
+             }) }}
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+      <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+    </div>
+  </div>
+{% endblock %}

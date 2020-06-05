@@ -503,6 +503,18 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/non-deps-living-with-you-b-router`, (req, res) => {
+  const nonDepsCheckB = req.session.data['non-deps-living-with-you-b']
+
+  if (nonDepsCheckB === 'Yes') {
+    res.redirect(`${baseUrl}/non-deps-members-b`)
+  } else {
+    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
+  }
+})
+
+
+
 
 // Home ownership router (home-property-charges)
 
