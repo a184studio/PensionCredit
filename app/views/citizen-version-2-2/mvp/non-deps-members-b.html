@@ -22,11 +22,9 @@
 
          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">We need to understand who lives in your houseold with you as it may help with your application</p>
 
-         {% set bloodHint %}
-
          {{ govukInput({
            label: {
-             html: legendName
+             html: "Name"
            },
            hint: {
              text: "Include any middle names."
@@ -36,6 +34,10 @@
            classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
            value: data["full-name"]
          }) }}
+
+         {% set bloodHint %}
+
+
 
            <p class=govuk-hint></p>
            <ul class="govuk-hint govuk-list govuk-list--bullet">
