@@ -488,6 +488,22 @@ router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
   }
 })
 
+// NON DEPS
+
+
+
+
+router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
+  const nonDepsCheck = req.session.data['non-deps-living-with-you']
+
+  if (nonDepsCheck === 'Yes') {
+    res.redirect(`${baseUrl}/non-deps-members`)
+  } else {
+    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
+  }
+})
+
+
 // Home ownership router (home-property-charges)
 
 router.post(`${baseUrl}/home-ownership-router`, (req, res) => {

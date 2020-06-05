@@ -1,0 +1,165 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Disregard types - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <form action="home-responsible-CTR-HB" method="post" class="form">
+
+        <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
+
+
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Lets talk about members</h1>
+
+         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">We need to understand who lives in your houseold with you as it may help with your application</p>
+
+        {% set householdMemberX %}
+          {% set bloodHint %}
+            <p class=govuk-hint></p>
+            <ul class="govuk-hint govuk-list govuk-list--bullet">
+              <li>Name</li>
+              <li>National insurance number</li>
+              <li>Date of birth</li>
+              <li>If they are in full time / part time education</li>
+              <li>If they are in full time / part time empoyment</li>
+              <li>If they pay you any euros</li>
+            </ul>
+          {% endset %}
+
+          {{ govukTextarea({
+            label: {
+              classes: "govuk-label--s",
+              text: "Discribe this person"
+             },
+            hint: {
+              html: bloodHint
+            },
+            id: "disregards-blood-yes",
+            name: "disregards-blood-yes",
+            classes: "govuk-input--width-100",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+        {% endset %}
+
+
+
+
+          <!---- ——————— ---->
+
+        {{ govukCheckboxes({
+          name: "disregards",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+          {
+            name: 'Household member 1',
+            value: "Household member 1",
+            html: "Household member 1",
+            conditional: {
+              html: householdMemberX
+            }
+          },
+          {
+            name: 'Household member 2',
+            value: "Household member 2",
+            html: "Household member 2",
+            conditional: {
+              html: householdMemberX
+            }
+          },
+            {
+              name: 'Household member 3',
+              value: "Household member 3",
+              html: "Household member 3",
+              conditional: {
+                html: householdMemberX
+              }
+            },
+            {
+              name: 'Household member 4',
+              value: "Household member 4",
+              html: "Household member 4",
+              conditional: {
+                html: householdMemberX
+              }
+            },
+            {
+              name: 'Household member 5',
+              value: "Household member 5",
+              html: "Household member 5",
+              conditional: {
+                html: householdMemberX
+              }
+            },
+            {
+              name: 'Household member 6',
+              value: "Household member 6",
+              html: "Household member 6",
+              conditional: {
+                html: householdMemberX
+              }
+            },
+            {
+              name: 'Household member 7',
+              value: "Household member 7",
+              html: "Household member 7",
+              conditional: {
+                html: householdMemberX
+              }
+            },
+            {
+              name: 'Household member 8',
+              value: "Household member 8",
+              html: "Household member 8",
+              conditional: {
+                html: householdMemberX
+              }
+            },
+            {
+              name: 'Household member 9',
+              value: "Household member 9",
+              html: "Household member 9",
+              conditional: {
+                html: householdMemberX
+              }
+            },
+            {
+              name: 'Household member 10',
+              value: "Household member 10",
+              html: "Household member 10",
+              conditional: {
+                html: householdMemberX
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+      <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+    </div>
+  </div>
+{% endblock %}
