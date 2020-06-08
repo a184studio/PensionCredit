@@ -1,0 +1,103 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Disregard types - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <form action="non-deps-members-b-details" method="post" class="form">
+
+        <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
+
+
+         {{ govukRadios({
+           idPrefix: "non-depts-category",
+           name: "non-depts-category",
+           fieldset: {
+             legend: {
+               text: "Relationship to the claimant",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--xl"
+             }
+           },
+           items: [
+             {
+             value: "A close relative",
+             text: "A close relative",
+             checked: data['non-depts-category'] == "A close relative",
+              hint: {
+                text: "Definition at Regulation 1(2) of the Pension Credit Regs -
+“close relative” means a parent, parent-in-law, son, son-in-law, daughter, daughter-in-law, step-parent, step-son, step-daughter, brother, sister, [or if any of the preceding persons is one member of a couple, the other member of that couple], the other member of that couple;"
+              }
+           },
+           {
+             value: "Commercial boarders",
+             text: "Commercial boarders",
+             checked: data['non-depts-category'] == "Commercial boarders",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "Commercial subtenants",
+             text: "Commercial subtenants",
+             checked: data['non-depts-category'] == "Commercial subtenants",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "Certain joint tenants or owner occupiers",
+             text: "Certain joint tenants or owner occupiers",
+             checked: data['non-depts-category'] == "Certain joint tenants or owner occupiers",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "Anyone who is separately liable to make payments to the landlord",
+             text: "Anyone who is separately liable to make payments to the landlord",
+             checked: data['non-depts-category'] == "Anyone who is separately liable to make payments to the landlord",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "charitable org",
+             text: "charitable org",
+             checked: data['non-depts-category'] == "charitable org",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "Other",
+             text: "Other",
+             checked: data['non-depts-category'] == "Other",
+              hint: {
+                text: "XXX"
+              }
+           }
+           ]
+         }) }}
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+      <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+    </div>
+  </div>
+{% endblock %}

@@ -48,7 +48,7 @@
          }) }}
 
 
-         {{ govukDateInput({
+         <!-- {{ govukDateInput({
            id: "non-depts-details-dob",
            namePrefix: "non-depts-details-dob",
            fieldset: {
@@ -78,7 +78,7 @@
                value: data["non-depts-dob-year"]
              }
            ]
-         }) }}
+         }) }} -->
 
          {{ govukRadios({
            idPrefix: "XXX",
@@ -106,69 +106,6 @@
                text: "No",
                checked: (data["XXX"] == "No")
              }
-           ]
-         }) }}
-
-
-         {{ govukRadios({
-           idPrefix: "non-depts-category",
-           name: "non-depts-category",
-           fieldset: {
-             legend: {
-               text: "Relationship to the claimant",
-               isPageHeading: true,
-               classes: "govuk-fieldset__legend--s"
-             }
-           },
-           items: [
-             {
-             value: "A close relative",
-             text: "A close relative",
-             checked: data['non-depts-category'] == "A close relative",
-              hint: {
-                text: "XXX"
-              }
-           },
-           {
-             value: "Commercial boarders",
-             text: "Commercial boarders",
-             checked: data['non-depts-category'] == "Commercial boarders",
-              hint: {
-                text: "XXX"
-              }
-           },
-           {
-             value: "Commercial subtenants",
-             text: "Commercial subtenants",
-             checked: data['non-depts-category'] == "Commercial subtenants",
-              hint: {
-                text: "XXX"
-              }
-           },
-           {
-             value: "Certain joint tenants or owner occupiers",
-             text: "Certain joint tenants or owner occupiers",
-             checked: data['non-depts-category'] == "Certain joint tenants or owner occupiers",
-              hint: {
-                text: "XXX"
-              }
-           },
-           {
-             value: "Anyone who is separately liable to make payments to the landlord",
-             text: "Anyone who is separately liable to make payments to the landlord",
-             checked: data['non-depts-category'] == "Anyone who is separately liable to make payments to the landlord",
-              hint: {
-                text: "XXX"
-              }
-           },
-           {
-             value: "charitable org",
-             text: "charitable org",
-             checked: data['non-depts-category'] == "charitable org",
-              hint: {
-                text: "XXX"
-              }
-           }
            ]
          }) }}
 
