@@ -53,6 +53,9 @@
            value: data["full-name"]
          }) }}
 
+         <!---- IF CAB ---->{% if data['index-who-helped'] !== 'Corporate acting body' %}
+
+
          {{ govukInput({
            label: {
              html: "<strong>National insurance number</strong>"
@@ -65,6 +68,7 @@
            classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
            value: data["index-help-details-nino"]
          }) }}
+
 
          {{ govukDateInput({
            id: "index-help-details-dob",
@@ -98,6 +102,8 @@
            ]
          }) }}
 
+               <!---- CAB END ---->{% endif %}
+
          {{ govukInput({
            label: {
              html: "<strong>Contact telephone number</strong>"
@@ -117,7 +123,7 @@
            namePrefix: "index-help-start-date",
            fieldset: {
              legend: {
-               text: "Wehn did you start taking care of this persons affars?",
+               text: "When did you start taking care of this persons affairs?",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--s"
              }
