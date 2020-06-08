@@ -1,0 +1,212 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Disregard types - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <form action="index-pension-credit" method="post" class="form">
+
+        <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
+
+
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Helper details</h1>
+
+         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">We need to know more about this person so we know who to contact</p>
+
+         <!---- IF CAB ---->{% if data['index-who-helped'] == 'Corporate acting body' %}
+
+         {{ govukInput({
+           label: {
+             html: "<strong>Corporate ID</strong>"
+           },
+           hint: {
+             text: ""
+           },
+           id: "index-help-details-full-name",
+           name: "index-help-details-full-name",
+           classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+           value: data["full-name"]
+         }) }}
+
+      <!---- CAB END ---->{% endif %}
+
+
+         {{ govukInput({
+           label: {
+             html: "<strong>Name</strong>"
+           },
+           hint: {
+             text: ""
+           },
+           id: "index-help-details-full-name",
+           name: "index-help-details-full-name",
+           classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+           value: data["full-name"]
+         }) }}
+
+         {{ govukInput({
+           label: {
+             html: "<strong>National insurance number</strong>"
+           },
+             hint: {
+               html: "It’s on your National Insurance card, benefit letter, payslip or P60. <br>For example, ‘QQ 12 34 56 C’."
+             },
+           id: "index-help-details-nino",
+           name: "index-help-details-nino",
+           classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+           value: data["index-help-details-nino"]
+         }) }}
+
+         {{ govukDateInput({
+           id: "index-help-details-dob",
+           namePrefix: "index-help-details-dob",
+           fieldset: {
+             legend: {
+               text: "What is your date of birth?",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--s"
+             }
+           },
+           hint: {
+             text: "For example, 31 3 1948."
+           },
+           items: [
+             {
+               name: "day",
+               classes: "govuk-input--width-2 govuk-!-margin-bottom-4",
+               value: data["index-help-details-dob-day"]
+             },
+             {
+               name: "month",
+               classes: "govuk-input--width-2",
+               value: data["index-help-details-dob-month"]
+             },
+             {
+               name: "year",
+               classes: "govuk-input--width-4",
+               value: data["index-help-details-dob-year"]
+             }
+           ]
+         }) }}
+
+         {{ govukInput({
+           label: {
+             html: "<strong>Contact telephone number</strong>"
+           },
+             hint: {
+               html: ""
+             },
+           id: "index-help-details-telephone-number",
+           name: "index-help-details-telephone-number",
+           classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
+           value: data["index-help-details-telephone-number"]
+         }) }}
+
+
+         {{ govukDateInput({
+           id: "index-help-start-date",
+           namePrefix: "index-help-start-date",
+           fieldset: {
+             legend: {
+               text: "Wehn did you start taking care of this persons affars?",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--s"
+             }
+           },
+           hint: {
+             text: "For example, 31 3 1948."
+           },
+           items: [
+             {
+               name: "day",
+               classes: "govuk-input--width-2 govuk-!-margin-bottom-4",
+               value: data["index-help-start-date-day"]
+             },
+             {
+               name: "month",
+               classes: "govuk-input--width-2",
+               value: data["index-help-start-date-month"]
+             },
+             {
+               name: "year",
+               classes: "govuk-input--width-4",
+               value: data["index-help-start-date-year"]
+             }
+           ]
+         }) }}
+
+         {{ govukRadios({
+           idPrefix: "index-help-status",
+           name: "index-help-status",
+           fieldset: {
+             legend: {
+               text: "What is the verification status?",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--s"
+             }
+           },
+           items: [
+             {
+             value: "Status A",
+             text: "Status A",
+             checked: data['index-help-status'] == "Status A"
+           },
+           {
+             value: "Status B",
+             text: "Status B",
+             checked: data['index-help-status'] == "Status B"
+           },
+           {
+             value: "Don't know",
+             text: "Don't know",
+             checked: data['index-help-status'] == "Don't know"
+           }
+           ]
+         }) }}
+
+
+         {% set detailsHint %}
+
+           <p class=govuk-hint></p>
+           <ul class="govuk-hint govuk-list govuk-list--bullet">
+             <li>XXX</li>
+
+           </ul>
+         {% endset %}
+
+         {{ govukTextarea({
+           label: {
+             classes: "govuk-label--s",
+             text: "Address"
+            },
+           hint: {
+             html: detailsHint
+           },
+           id: "disregards-blood-yes",
+           name: "disregards-blood-yes",
+           classes: "govuk-input--width-20",
+           attributes: {
+             maxlength: 200
+           }
+         }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+      <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+    </div>
+  </div>
+{% endblock %}
