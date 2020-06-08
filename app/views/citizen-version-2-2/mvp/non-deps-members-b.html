@@ -173,8 +173,8 @@
          }) }}
 
          {{ govukRadios({
-           idPrefix: "XXX",
-           name: "XXX",
+           idPrefix: "non-deps-bathroom",
+           name: "non-deps-bathroom",
            fieldset: {
              legend: {
                text: "@pete. Really Share a bathroom? / Anyone who shares only a bathroom, toilet, hall or stairway",
@@ -191,12 +191,12 @@
              {
                value: "Yes",
                text: "Yes",
-               checked: (data["XXX"] == "Yes")
+               checked: (data["non-deps-bathroom"] == "Yes")
              },
              {
                value: "No",
                text: "No",
-               checked: (data["XXX"] == "No")
+               checked: (data["non-deps-bathroom"] == "No")
              }
            ]
          }) }}
