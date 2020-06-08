@@ -1115,6 +1115,23 @@ router.post(`${baseUrl}/index-claim-help-router`, (req, res) => { // router name
   }
 })
 
+router.post(`${baseUrl}/index-who-helped-router`, (req, res) => { // router name
+  const whohelped = req.session.data['index-who-helped']  // name of data / id name
+
+  if (whohelped === 'Power of attorney') { // name of data / + answer
+    res.redirect(`${baseUrl}/index-help-details`)
+  }
+  else if (whohelped === 'Appointee') {
+    res.redirect(`${baseUrl}/index-help-details`)
+  }
+  else if (whohelped === 'Corporate acting body') {
+    res.redirect(`${baseUrl}/index-help-details`)
+  }
+  else {
+    res.redirect(`${baseUrl}/index-pension-credit`)
+  }
+})
+
 
 
 
