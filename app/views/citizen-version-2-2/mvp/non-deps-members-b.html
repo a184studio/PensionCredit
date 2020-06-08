@@ -18,9 +18,8 @@
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Lets talk about members b</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Details of people that live with you</h1>
 
-         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">We need to understand who lives in your houseold with you as it may help with your application</p>
 
          {{ govukInput({
            label: {
@@ -36,25 +35,20 @@
          }) }}
 
          {% set bloodHint %}
-
-
-
-           <p class=govuk-hint></p>
-           <ul class="govuk-hint govuk-list govuk-list--bullet">
-             <li>National insurance number</li>
-             <li>Date of birth</li>
-             <li>If they are in full time / part time education</li>
-             <li>If they are in full time / part time empoyment</li>
-             <li>If they pay you any euros</li>
-             <li>Category: bodger loder etc</li>
-
-           </ul>
+         <ul class="govuk-list govuk-list--bullet">
+           <li>their name</li>
+           <li> their national Insurance number</li>
+           <li>their date of birth</li>
+           <li>the details of any full-time or part-time education</li>
+           <li>the details of any full-time or part-time employment</li>
+           <li>the amount any money they pay you and how often they pay you</li>
+         </ul>
          {% endset %}
 
          {{ govukTextarea({
            label: {
              classes: "govuk-label--s",
-             text: "Discribe this person"
+             text: "Tell us:"
             },
            hint: {
              html: bloodHint
@@ -67,7 +61,7 @@
            }
          }) }}
 
-         <h1 class="govuk-heading-l govuk-!-padding-top-4 govuk-!-margin-bottom-4">Anyone else live with you like??</h1>
+         <h1 class="govuk-heading-l govuk-!-padding-top-4 govuk-!-margin-bottom-4">Does anyone else live with you?</h1>
 
 
          {{ govukRadios({
