@@ -21,6 +21,19 @@
          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Details of people that live with you</h1>
 
 
+         {{ govukInput({
+           label: {
+             html: "Name"
+           },
+           hint: {
+             text: "Include any middle names."
+           },
+           id: "full-name",
+           name: "full-name",
+           classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+           value: data["full-name"]
+         }) }}
+
          {% set bloodHint %}
          <ul class="govuk-list govuk-list--bullet">
            <li>their name</li>
