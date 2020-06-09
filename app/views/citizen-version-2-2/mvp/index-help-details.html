@@ -13,7 +13,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="index-address" method="post" class="form">
+      <form action="index-help-address-correspondence-post-code-lookup" method="post" class="form">
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
@@ -208,8 +208,8 @@
 
          {{ govukRadios({
            classes: "govuk-radios",
-           idPrefix: "index-made-claim-address-correspondence-yn",
-           name: "index-made-claim-address-correspondence-yn",
+           idPrefix: "index-made-claim-letter-check",
+           name: "index-made-claim-letter-check",
            fieldset: {
              legend: {
                html: "Can we send letters to your home address?",
@@ -226,12 +226,12 @@
            {
                value: "Yes",
                text: "Yes",
-               checked: (data["index-made-claim-address-correspondence-yn"] == "Yes")
+               checked: (data["index-made-claim-letter-check"] == "Yes")
              },
              {
-               value: "No - I live at a different address",
+               value: "No - send letters to a different address",
                text: "No - send letters to a different address",
-               checked: (data["index-made-claim-address-correspondence-yn"] == "No - I live at a different address")
+               checked: (data["index-made-claim-letter-check"] == "No - send letters to a different address")
              }
            ]
          }) }}

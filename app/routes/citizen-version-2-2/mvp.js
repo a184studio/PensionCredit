@@ -1122,17 +1122,17 @@ router.post(`${baseUrl}/index-claim-help-router`, (req, res) => { // router name
   if (helpToClaim === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/index-who-helped`)
   } else {
-    res.redirect(`${baseUrl}/index-pension-credit`)
+    res.redirect(`${baseUrl}/final-cya`)
   }
 })
 
 router.post(`${baseUrl}/index-made-claim-address-correspondence-yn-router`, (req, res) => { // router name
-  const helpToClaim = req.session.data['index-made-claim-address-correspondence-yn']  // name of data / id name
+  const helpToClaim = req.session.data['index-made-claim-letter-check']  // name of data / id name
 
-  if (helpToClaim === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/index-who-helped`)
+  if (helpToClaim === 'No - send letters to a different address') { // name of data / + answer
+    res.redirect(`${baseUrl}/No - send letters to a different address`)
   } else {
-    res.redirect(`${baseUrl}/index-pension-credit`)
+    res.redirect(`${baseUrl}/final-cya`)
   }
 })
 
