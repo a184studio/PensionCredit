@@ -18,12 +18,12 @@
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Details of the person that lives with you</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Details of people that live with you</h1>
 
 
          {{ govukInput({
            label: {
-             html: "<strong>What is their full name</strong>"
+             html: "<strong>Name</strong>"
            },
            hint: {
              text: "Include any middle names."
@@ -34,7 +34,7 @@
            value: data["non-depts-full-name"]
          }) }}
 
-         <!-- {{ govukInput({
+         {{ govukInput({
            label: {
              html: "<strong>National insurance number</strong>"
            },
@@ -45,10 +45,10 @@
            name: "non-depts-details-nino",
            classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
            value: data["non-depts-details-nino"]
-         }) }} -->
+         }) }}
 
 
-         <!-- {{ govukDateInput({
+         {{ govukDateInput({
            id: "non-depts-details-dob",
            namePrefix: "non-depts-details-dob",
            fieldset: {
@@ -78,14 +78,14 @@
                value: data["non-depts-dob-year"]
              }
            ]
-         }) }} -->
+         }) }}
 
          {{ govukRadios({
            idPrefix: "XXX",
            name: "XXX",
            fieldset: {
              legend: {
-               text: "Are they registered blind?",
+               text: "Anyone who is certified blind or who has recently been on the register?",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--s"
              }
@@ -109,12 +109,75 @@
            ]
          }) }}
 
+
+         {{ govukRadios({
+           idPrefix: "non-depts-category",
+           name: "non-depts-category",
+           fieldset: {
+             legend: {
+               text: "Relationship to the claimant",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--s"
+             }
+           },
+           items: [
+             {
+             value: "A close relative",
+             text: "A close relative",
+             checked: data['non-depts-category'] == "A close relative",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "Commercial boarders",
+             text: "Commercial boarders",
+             checked: data['non-depts-category'] == "Commercial boarders",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "Commercial subtenants",
+             text: "Commercial subtenants",
+             checked: data['non-depts-category'] == "Commercial subtenants",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "Certain joint tenants or owner occupiers",
+             text: "Certain joint tenants or owner occupiers",
+             checked: data['non-depts-category'] == "Certain joint tenants or owner occupiers",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "Anyone who is separately liable to make payments to the landlord",
+             text: "Anyone who is separately liable to make payments to the landlord",
+             checked: data['non-depts-category'] == "Anyone who is separately liable to make payments to the landlord",
+              hint: {
+                text: "XXX"
+              }
+           },
+           {
+             value: "charitable org",
+             text: "charitable org",
+             checked: data['non-depts-category'] == "charitable org",
+              hint: {
+                text: "XXX"
+              }
+           }
+           ]
+         }) }}
+
          {{ govukRadios({
            idPrefix: "non-deps-bathroom",
            name: "non-deps-bathroom",
            fieldset: {
              legend: {
-               text: "Do they share only a bathroom, toilet, hall or stairway with you?",
+               text: "@pete. Really Share a bathroom? / Anyone who shares only a bathroom, toilet, hall or stairway",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--s"
              }
@@ -173,7 +236,7 @@
            {% endset %}
          <!------------Legend--------------->
 
-         <!-- {{ govukRadios({
+         {{ govukRadios({
            name: "non-depts-education-employment",
            fieldset: {
              legend: {
@@ -200,7 +263,7 @@
                checked: (data["non-depts-education-employment"] == "No")
              }
            ]
-         }) }} -->
+         }) }}
 
 
 
@@ -208,7 +271,7 @@
          <!------------Legend------------>
            {% set legendAmount %}
            <ul class="govuk-list govuk-list--bullet">
-             <li>how much they pay you and how often they pay you</li>
+             <li>the amount any money they pay you and how often they pay you</li>
            </ul>
            {% endset %}
          <!------------Legend------------>

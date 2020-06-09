@@ -23,7 +23,7 @@
            name: "non-depts-category",
            fieldset: {
              legend: {
-               text: "Relationship to the claimant",
+               text: "What is your relationship to the person that lives with you?",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--xl"
              }
@@ -34,13 +34,12 @@
              text: "A close relative",
              checked: data['non-depts-category'] == "A close relative",
               hint: {
-                text: "Definition at Regulation 1(2) of the Pension Credit Regs -
-“close relative” means a parent, parent-in-law, son, son-in-law, daughter, daughter-in-law, step-parent, step-son, step-daughter, brother, sister, [or if any of the preceding persons is one member of a couple, the other member of that couple], the other member of that couple;"
+                text: "A close relative is a parent, parent-in-law, son, son-in-law, daughter, daughter-in-law, step-parent, step-son, step-daughter, brother, sister, or anyone that is the partner of one of these people."
               }
            },
            {
              value: "Commercial boarders",
-             text: "Commercial boarders",
+             text: "A commercial boarder",
              checked: data['non-depts-category'] == "Commercial boarders",
               hint: {
                 text: "XXX"
@@ -48,7 +47,7 @@
            },
            {
              value: "Commercial subtenants",
-             text: "Commercial subtenants",
+             text: "A commercial subtenant",
              checked: data['non-depts-category'] == "Commercial subtenants",
               hint: {
                 text: "XXX"
@@ -64,7 +63,7 @@
            },
            {
              value: "Anyone who is separately liable to make payments to the landlord",
-             text: "Anyone who is separately liable to make payments to the landlord",
+             text: "Someone who is separately liable to make payments to the landlord",
              checked: data['non-depts-category'] == "Anyone who is separately liable to make payments to the landlord",
               hint: {
                 text: "XXX"
@@ -80,7 +79,7 @@
             },
             {
               value: "Landlords/landladies and their families",
-              text: "Landlords/landladies and their families",
+              text: "A landlord landlady and their family",
               checked: data['non-depts-category'] == "Landlords/landladies and their families",
                hint: {
                  text: "XXX"
