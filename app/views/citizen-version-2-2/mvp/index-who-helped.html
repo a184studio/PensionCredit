@@ -90,16 +90,12 @@
         },
         {
           value: "Corporate acting body",
-          text: "Someone who acts as a Corporate acting body for you",
+          text: "Someone who acts as a Public acting body (PAB) or (CAB) Corporate acting body for you ",
           checked: data['index-who-helped'] == "Corporate acting body"
         },
         {
           value: "Charity",
-          text: "Someone from a charity or organisation that you have asked for help",
-          checked: data['index-who-helped'] == "Charity",
-          conditional: {
-            html: helpIDCharity
-          }
+          text: "Someone from a charity or organisation that you have asked for help"
         },
         {
           value: "Family member",
@@ -121,6 +117,13 @@
         }
         ]
       }) }}
+
+<!--
+      ,
+      checked: data['index-who-helped'] == "Charity",
+      conditional: {
+        html: helpIDCharity
+      } -->
 
       {{ govukButton({
         text: "Continue"
