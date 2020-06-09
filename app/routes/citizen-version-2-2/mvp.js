@@ -1130,7 +1130,7 @@ router.post(`${baseUrl}/index-made-claim-letter-check-router`, (req, res) => { /
   const helpToClaim = req.session.data['index-made-claim-letter-check']  // name of data / id name
 
   if (helpToClaim === 'No - send letters to a different address') { // name of data / + answer
-    res.redirect(`${baseUrl}/No - send letters to a different address`)
+    res.redirect(`${baseUrl}/index-help-address-correspondence-post-code-lookup`)
   } else {
     res.redirect(`${baseUrl}/final-cya`)
   }
