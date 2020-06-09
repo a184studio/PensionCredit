@@ -22,60 +22,45 @@
 
 
          {{ govukSummaryList({
-             classes: 'govuk-!-padding-bottom-2',
-             rows: [
+           classes: 'govuk-!-padding-top-6 govuk-!-padding-bottom-9',
+           rows: [
            {
              key: {
-               text: "member 1"
+               text: "Partner"
              },
              value: {
-               text: data['msic-missing-account-name']
+               text: "Name of partner"
              },
              actions: {
                items: [
-                 {
-                   href: "msic-missing-account",
-                   html: "Change",
-                   visuallyHiddenText: "XXX"
-                 },
-                 {
-                   href: "msic-remove",
-                   html: "Remove",
-                   visuallyHiddenText: "XXX"
-                 }
+               ]
+             }
+           },
+           {
+             key: {
+               text: "Type"
+             },
+             value: {
+               text: "Name of person"
+             },
+             actions: {
+               items: [
+               {
+                 href: "msic-missing-account",
+                 html: "Change",
+                 visuallyHiddenText: "XXX"
+               },
+               {
+                 href: "msic-remove",
+                 html: "Remove",
+                 visuallyHiddenText: "XXX"
+               }
                ]
              }
            }
            ]
-           }) }}
+         }) }}
 
-           {{ govukSummaryList({
-               classes: 'govuk-!-padding-bottom-8',
-               rows: [
-             {
-               key: {
-                 text: "Member 2"
-               },
-               value: {
-                 text: data['msic-missing-account-name']
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "msic-missing-account",
-                     html: "Change",
-                     visuallyHiddenText: "XXX"
-                   },
-                   {
-                     href: "msic-remove",
-                     html: "Remove",
-                     visuallyHiddenText: "XXX"
-                   }
-                 ]
-               }
-             }
-             ]
-             }) }}
 
              <h1 class="govuk-heading-l govuk-!-padding-top-4 govuk-!-margin-bottom-4">Does anyone else live with you?</h1>
 

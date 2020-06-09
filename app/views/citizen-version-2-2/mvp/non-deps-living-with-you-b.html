@@ -17,9 +17,42 @@
     <form action="non-deps-living-with-you-b-router" method="post" class="form">
 
 
+      {% if data["single-joint-check"] == "Joint" %}
+
+      <p class="govuk-heading-xl govuk-!-margin-bottom-2">People you have said in your household so far</p>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-padding-top-6 govuk-!-padding-bottom-9',
+        rows: [
+        {
+          key: {
+            text: "Partner"
+          },
+          value: {
+            text: "Name of partner"
+          },
+          actions: {
+            items: [
+              {
+                href: "reside-in-uk",
+                text: "",
+                visuallyHiddenText: "which country you live in"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+      {% endif %}
+
+
+
+
+
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}<p class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone else live with you apart from your partner?</p>
+        {% if data["single-joint-check"] == "Joint" %}<p class="govuk-heading-m govuk-!-margin-bottom-2">Does anyone else live with you apart from your partner?</p>
         {% else %}<p class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone else live with you?</p>{% endif %}
         {% endset %}
       <!------------Legend--------------->
@@ -33,6 +66,8 @@
 
         {% endset %}
       <!------------Legend------------>
+
+
 
       {{ govukRadios({
         name: "non-deps-living-with-you-b",
