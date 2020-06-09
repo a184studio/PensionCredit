@@ -150,7 +150,7 @@
          <!------------Legend------------>
 
          {% set EducationEmploymentDetails %}
-           {{ govukTextarea({
+           <!-- {{ govukTextarea({
              label: {
                classes: "govuk-label--s",
                html: "Tell us"
@@ -164,16 +164,51 @@
              attributes: {
                maxlength: 200
              }
+           }) }} -->
+
+           {{ govukRadios({
+             name: "non-depts-under-18",
+             fieldset: {
+               legend: {
+                 html: "Any of these",
+                 isPageHeading: true,
+                 classes: "govuk-fieldset__legend--s"
+               }
+             },
+             hint: {
+               text: "XXX"
+             },
+             items: [
+               {
+                 value: "Full-time or part-time education",
+                 text: "Full-time or part-time education",
+                 checked: (data["non-depts-under-18"] == "Full-time or part-time education")
+               },
+               {
+                 value: "full-time or part-time employment",
+                 text: "full-time or part-time employment",
+                 checked: (data["full-time or part-time employment"] == "No")
+               },
+               {
+                 value: "None",
+                 text: "None",
+                 checked: (data["full-time or part-time employment"] == "None")
+               }
+
+             ]
            }) }}
+
+
+
          {% endset %}
 
          <!------------H1 LEGEND------------>
            {% set dynamicH1 %}
-           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">education-employment?</h2>
+           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Is the person under 18?</h2>
            {% endset %}
          <!------------Legend--------------->
 
-         <!-- {{ govukRadios({
+         {{ govukRadios({
            name: "non-depts-education-employment",
            fieldset: {
              legend: {
@@ -200,7 +235,7 @@
                checked: (data["non-depts-education-employment"] == "No")
              }
            ]
-         }) }} -->
+         }) }}
 
 
 
