@@ -13,7 +13,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="index-pension-credit" method="post" class="form">
+      <form action="index-address" method="post" class="form">
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
@@ -117,7 +117,7 @@
            value: data["index-help-details-telephone-number"]
          }) }}
 
-
+<!--
          {{ govukDateInput({
            id: "index-help-start-date",
            namePrefix: "index-help-start-date",
@@ -148,9 +148,9 @@
                value: data["index-help-start-date-year"]
              }
            ]
-         }) }}
+         }) }} -->
 
-         {{ govukRadios({
+         <!-- {{ govukRadios({
            idPrefix: "index-help-status",
            name: "index-help-status",
            fieldset: {
@@ -177,7 +177,7 @@
              checked: data['index-help-status'] == "Don't know"
            }
            ]
-         }) }}
+         }) }} -->
 
 
          {% set detailsHint %}
@@ -189,7 +189,7 @@
            </ul>
          {% endset %}
 
-         {{ govukTextarea({
+         <!-- {{ govukTextarea({
            label: {
              classes: "govuk-label--s",
              text: "Address"
@@ -203,6 +203,37 @@
            attributes: {
              maxlength: 200
            }
+         }) }} -->
+
+
+         {{ govukRadios({
+           classes: "govuk-radios",
+           idPrefix: "index-made-claim-address-correspondence-yn",
+           name: "index-made-claim-address-correspondence-yn",
+           fieldset: {
+             legend: {
+               html: "Can we send letters to your home address?",
+
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--m"
+             }
+           },
+           hint: {
+             text: ""
+           },
+
+           items: [
+           {
+               value: "Yes",
+               text: "Yes",
+               checked: (data["index-made-claim-address-correspondence-yn"] == "Yes")
+             },
+             {
+               value: "No - I live at a different address",
+               text: "No - send letters to a different address",
+               checked: (data["index-made-claim-address-correspondence-yn"] == "No - I live at a different address")
+             }
+           ]
          }) }}
 
 

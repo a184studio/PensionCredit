@@ -14,53 +14,46 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="final-cya" method="post" class="form">
+    <form action="index-who-made-claim-router" method="post" class="form">
 
 
       {{ govukRadios({
-        idPrefix: "index-who-helped",
-        name: "index-who-helped",
+        idPrefix: "index-who-made-claim",
+        name: "index-who-made-claim",
         fieldset: {
           legend: {
-            text: "Did you need help to make this claim?",
+            text: "Who made this claim?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         items: [
         {
-        value: "No",
-        text: "No",
-        checked: data['index-who-helped'] == "No"
+        value: "Myself",
+        text: "Myself",
+        checked: data['index-who-made-claim'] == "Myself"
       },
-        {
-          value: "Charity",
-          text: "Someone from a charity or organisation that you have asked for help"
+      {
+          value: "Power of attorney",
+          text: "Someone who has power of attorney for you",
+          checked: data['index-who-made-claim'] == "Power of attorney"
         },
         {
-          value: "Family member",
-          text: "A family member",
-          checked: data['index-who-helped'] == "Family member"
+          value: "Appointee",
+          text: "Someone who acts as an appointee for you",
+          checked: data['index-who-made-claim'] == "Appointee"
         },
         {
-          value: "Friend",
-          text: "A friend",
-          checked: data['index-who-helped'] == "Friend"
-        },
-        {
-          value: "SomeoneElse",
-          text: "Someone else",
-          checked: data['index-who-helped'] == "SomeoneElse",
-          conditional: {
-            html: helpIDSomeoneElse
-          }
+          value: "Corporate acting body",
+          text: "Someone who acts as a Public acting body (PAB) or (CAB) Corporate acting body for you ",
+          checked: data['index-who-made-claim'] == "Corporate acting body"
         }
         ]
       }) }}
 
 <!--
       ,
-      checked: data['index-who-helped'] == "Charity",
+      checked: data['index-who-made-claim'] == "Charity",
       conditional: {
         html: helpIDCharity
       } -->

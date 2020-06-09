@@ -1105,6 +1105,17 @@ router.post(`${baseUrl}/hrt-partner-uk-sponsorship-router`, (req, res) => { // r
 
 // Help to make the claim
 
+
+router.post(`${baseUrl}/index-who-made-claim-router`, (req, res) => { // router name
+  const whoMadeClaim = req.session.data['index-who-made-claim']  // name of data / id name
+
+  if (whoMadeClaim === 'Myself') { // name of data / + answer
+    res.redirect(`${baseUrl}/index-who-helped`)
+  } else {
+    res.redirect(`${baseUrl}/index-help-details`)
+  }
+})
+
 router.post(`${baseUrl}/index-claim-help-router`, (req, res) => { // router name
   const helpToClaim = req.session.data['index-claim-help']  // name of data / id name
 
@@ -1114,6 +1125,21 @@ router.post(`${baseUrl}/index-claim-help-router`, (req, res) => { // router name
     res.redirect(`${baseUrl}/index-pension-credit`)
   }
 })
+
+router.post(`${baseUrl}/index-made-claim-address-correspondence-yn-router`, (req, res) => { // router name
+  const helpToClaim = req.session.data['index-made-claim-address-correspondence-yn']  // name of data / id name
+
+  if (helpToClaim === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/index-who-helped`)
+  } else {
+    res.redirect(`${baseUrl}/index-pension-credit`)
+  }
+})
+
+
+
+
+
 
 router.post(`${baseUrl}/index-who-helped-router`, (req, res) => { // router name
   const whohelped = req.session.data['index-who-helped']  // name of data / id name
