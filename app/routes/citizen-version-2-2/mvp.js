@@ -1126,7 +1126,7 @@ router.post(`${baseUrl}/index-claim-help-router`, (req, res) => { // router name
   }
 })
 
-router.post(`${baseUrl}/index-made-claim-address-correspondence-yn-router`, (req, res) => { // router name
+router.post(`${baseUrl}/index-made-claim-letter-check-router`, (req, res) => { // router name
   const helpToClaim = req.session.data['index-made-claim-letter-check']  // name of data / id name
 
   if (helpToClaim === 'No - send letters to a different address') { // name of data / + answer
