@@ -409,13 +409,13 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/claimant-contact-formats-check-router`, (req, res) => {
-  const contactFormats = req.session.data['claimant-contact-formats-check']
+router.post(`${baseUrl}/del-auth-contact-formats-check-router`, (req, res) => {
+  const contactFormats = req.session.data['del-auth-contact-formats-check']
 
   if (contactFormats === 'Yes') {
-    res.redirect(`${baseUrl}/contact-formats`)
+    res.redirect(`${baseUrl}/del-auth-contact-formats`)
   } else {
-    res.redirect(`${baseUrl}/single-joint-check`)
+    res.redirect(`${baseUrl}/del-auth-who-check`)
   }
 })
 
@@ -1105,22 +1105,32 @@ router.post(`${baseUrl}/hrt-partner-uk-sponsorship-router`, (req, res) => { // r
 
 // Help to make the claim
 
+router.post(`${baseUrl}/del-auth-who-check-router`, (req, res) => {
+  const singleJoint = req.session.data['del-auth-who-check']
 
-router.post(`${baseUrl}/index-who-made-claim-router`, (req, res) => { // router name
-  const whoMadeClaim = req.session.data['index-who-made-claim']  // name of data / id name
-
-  if (whoMadeClaim === 'Myself') { // name of data / + answer
-    res.redirect(`${baseUrl}/index-who-helped`)
+  if (singleJoint === 'Myself') {
+    res.redirect(`${baseUrl}/del-auth-claim-help`)
   } else {
-    res.redirect(`${baseUrl}/index-help-details`)
+    res.redirect(`${baseUrl}/del-auth-address-correspondence-post-code-lookup`)
   }
 })
 
-router.post(`${baseUrl}/index-claim-help-router`, (req, res) => { // router name
-  const helpToClaim = req.session.data['index-claim-help']  // name of data / id name
+
+router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // router name
+  const whoMadeClaim = req.session.data['del-auth-who-made-claim']  // name of data / id name
+
+  if (whoMadeClaim === 'Myself') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-claim-help`)
+  } else {
+    res.redirect(`${baseUrl}/del-auth-contact-name`)
+  }
+})
+
+router.post(`${baseUrl}/del-auth-claim-help-router`, (req, res) => { // router name
+  const helpToClaim = req.session.data['del-auth-claim-help']  // name of data / id name
 
   if (helpToClaim === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/index-who-helped`)
+    res.redirect(`${baseUrl}/del-auth-claim-help-who`)
   } else {
     res.redirect(`${baseUrl}/final-cya`)
   }

@@ -18,8 +18,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "index-who-helped",
-        name: "index-who-helped",
+        idPrefix: "del-auth-claim-help-who",
+        name: "del-auth-claim-help-who",
         fieldset: {
           legend: {
             text: "Did you need help to make this claim?",
@@ -29,28 +29,23 @@
         },
         items: [
         {
-        value: "No",
-        text: "No",
-        checked: data['index-who-helped'] == "No"
-      },
-        {
           value: "Charity",
           text: "Someone from a charity or organisation that you have asked for help"
         },
         {
           value: "Family member",
           text: "A family member",
-          checked: data['index-who-helped'] == "Family member"
+          checked: data['del-auth-claim-help-who'] == "Family member"
         },
         {
           value: "Friend",
           text: "A friend",
-          checked: data['index-who-helped'] == "Friend"
+          checked: data['del-auth-claim-help-who'] == "Friend"
         },
         {
           value: "SomeoneElse",
           text: "Someone else",
-          checked: data['index-who-helped'] == "SomeoneElse",
+          checked: data['del-auth-claim-help-who'] == "SomeoneElse",
           conditional: {
             html: helpIDSomeoneElse
           }
@@ -60,7 +55,7 @@
 
 <!--
       ,
-      checked: data['index-who-helped'] == "Charity",
+      checked: data['del-auth-claim-help-who'] == "Charity",
       conditional: {
         html: helpIDCharity
       } -->

@@ -1,0 +1,87 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  claimant-language - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="del-auth-contact-language" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+
+      <span class="govuk-caption-m govuk-!-margin-bottom-4">Details for: {{data["del-auth-who-made-claim"]}}</span>
+
+
+      {% set legendTelephoneNumber %}
+      <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What is your contact telephone number?</h1>
+      {% endset -%}
+
+
+      {% set delAuthContactNumberYes %}
+
+      {{ govukInput({
+        label: {
+          html: legendTelephoneNumber
+        },
+          hint: {
+            text: ""
+          },
+        id: "del-auth-contact-number",
+        name: "del-auth-contact-number",
+        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+        value: data["del-auth-contact-number"]
+      }) }}
+
+      {% endset -%}
+
+
+      {{ govukRadios({
+        idPrefix: "del-auth-contact-number-check",
+        name: "del-auth-contact-number-check",
+        fieldset: {
+          legend: {
+            text: "Can we call you about this claim?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          text: "We will need to call you if we need help with the cliam you are doing"
+        },
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["del-auth-contact-number-check"] == "Yes"),
+                  conditional: {
+                    html: delAuthContactNumberYes
+                  }
+            },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["del-auth-contact-number-check"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}

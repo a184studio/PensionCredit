@@ -18,11 +18,11 @@
       What is the postcode of the address we should send letters to?
     </h1>
 
-    <form action="index-help-address-correspondence-choice" method="post" class="form">
+    <form action="del-auth-address-correspondence-choice" method="post" class="form">
       {{ govukInput({
-        id: "postcode",
-        name: "postcode",
-        value: data["postcode"],
+        id: "del-auth-postcode",
+        name: "del-auth-postcode",
+        value: data["del-auth-postcode"],
         classes: "govuk-input--width-10",
         label: {
           text: "Postcode"
@@ -40,7 +40,7 @@
 
     <ul class="govuk-list">
       <li>
-        <a class="govuk-link" href="index-help-address-correspondence-manual">Enter your address manually</a>
+        <a class="govuk-link" href="del-auth-address-correspondence-manual">Enter your address manually</a>
       </li>
     </ul>
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">

@@ -1,7 +1,7 @@
 {% extends "layout-covid19.html" %}
 
 {% block pageTitle %}
-  Which best describes the place where you live? - Pension Credit
+  del-auth-who-made-claim-router? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,12 +14,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="index-who-made-claim-router" method="post" class="form">
+    <form action="del-auth-who-made-claim-router" method="post" class="form">
 
 
       {{ govukRadios({
-        idPrefix: "index-who-made-claim",
-        name: "index-who-made-claim",
+        idPrefix: "del-auth-who-made-claim",
+        name: "del-auth-who-made-claim",
         fieldset: {
           legend: {
             text: "Who made this claim?",
@@ -31,29 +31,34 @@
         {
         value: "Myself",
         text: "Myself",
-        checked: data['index-who-made-claim'] == "Myself"
+        checked: data['del-auth-who-made-claim'] == "Myself"
       },
       {
           value: "Power of attorney",
           text: "Someone who has power of attorney for you",
-          checked: data['index-who-made-claim'] == "Power of attorney"
+          checked: data['del-auth-who-made-claim'] == "Power of attorney"
         },
         {
           value: "Appointee",
           text: "Someone who acts as an appointee for you",
-          checked: data['index-who-made-claim'] == "Appointee"
+          checked: data['del-auth-who-made-claim'] == "Appointee"
+        },
+        {
+          value: "Personal acting body",
+          text: "Someone who acts as a Personal acting body (PAB)",
+          checked: data['del-auth-who-made-claim'] == "Personal acting body"
         },
         {
           value: "Corporate acting body",
-          text: "Someone who acts as a Public acting body (PAB) or (CAB) Corporate acting body for you ",
-          checked: data['index-who-made-claim'] == "Corporate acting body"
+          text: "Someone who acts as a Corporate acting body (CAB) for you ",
+          checked: data['del-auth-who-made-claim'] == "Corporate acting body"
         }
         ]
       }) }}
 
 <!--
       ,
-      checked: data['index-who-made-claim'] == "Charity",
+      checked: data['del-auth-who-made-claim'] == "Charity",
       conditional: {
         html: helpIDCharity
       } -->

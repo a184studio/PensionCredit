@@ -14,13 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="index-claim-help-router" method="post" class="form">
+    <form action="del-auth-claim-help-router" method="post" class="form">
 
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "index-claim-help",
-        name: "index-claim-help",
+        idPrefix: "del-auth-claim-help",
+        name: "del-auth-claim-help",
         fieldset: {
           legend: {
             text: "Did anyone help you complete this application?",
@@ -32,12 +32,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: data['index-claim-help'] == "Yes"
+            checked: data['del-auth-claim-help'] == "Yes"
           },
           {
             value: "No",
             text: "No",
-            checked: data['index-claim-help'] == "No"
+            checked: data['del-auth-claim-help'] == "No"
           }
         ]
       }) }}
