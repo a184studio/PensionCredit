@@ -55,16 +55,6 @@ router.post(`${baseUrl}/who-lives-with-you-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/address-correspondence-yn-router`, (req, res) => { // router name
-  const correspondenceYN = req.session.data['address-correspondence-yn']  // name of data / id name
-
-  if (correspondenceYN === 'No - I live at a different address') { // name of data / + answer
-    res.redirect(`${baseUrl}/address-correspondence-post-code-lookup`)
-  } else {
-    res.redirect(`${baseUrl}/home-care-home-route-check`)
-  }
-})
-
 
 
 router.post(`${baseUrl}/clear-data-yn-router`, (req, res) => { // router name
@@ -1111,7 +1101,17 @@ router.post(`${baseUrl}/del-auth-who-check-router`, (req, res) => {
   if (singleJoint === 'Yourself') {
     res.redirect(`${baseUrl}/del-auth-claim-help`)
   } else {
+    res.redirect(`${baseUrl}/del-auth-address-correspondence-yn`)
+  }
+})
+
+router.post(`${baseUrl}/del-auth-address-correspondence-yn-router`, (req, res) => { // router name
+  const correspondenceYN = req.session.data['del-auth-address-correspondence-yn']  // name of data / id name
+
+  if (correspondenceYN === 'No - I live at a different address') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-address-correspondence-post-code-lookup`)
+  } else {
+    res.redirect(`${baseUrl}/final-cya`)
   }
 })
 

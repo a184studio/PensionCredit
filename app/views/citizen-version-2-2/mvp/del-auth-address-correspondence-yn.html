@@ -19,15 +19,15 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="address-correspondence-yn-router" method="post" class="form">
+    <form action="del-auth-address-correspondence-yn-router" method="post" class="form">
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>{% endif %}
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "address-correspondence-yn",
-        name: "address-correspondence-yn",
+        idPrefix: "del-auth-address-correspondence-yn",
+        name: "del-auth-address-correspondence-yn",
         fieldset: {
           legend: {
             html: "Can we send letters to your home address?",
@@ -44,12 +44,12 @@
         {
             value: "Yes",
             text: "Yes",
-            checked: (data["address-correspondence-yn"] == "Yes")
+            checked: (data["del-auth-address-correspondence-yn"] == "Yes")
           },
           {
             value: "No - I live at a different address",
-            text: "No - send letters to a different address",
-            checked: (data["address-correspondence-yn"] == "No - I live at a different address")
+            text: "Change this in the router so it matches, if you need to change it if not it will work // No - send letters to a different address",
+            checked: (data["del-auth-address-correspondence-yn"] == "No - I live at a different address")
           }
         ]
       }) }}
