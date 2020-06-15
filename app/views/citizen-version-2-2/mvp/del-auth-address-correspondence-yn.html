@@ -30,7 +30,7 @@
         name: "del-auth-address-correspondence-yn",
         fieldset: {
           legend: {
-            html: "Can we send letters to your home address?",
+            html: "What address should we send letters to?",
 
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
@@ -42,14 +42,14 @@
 
         items: [
         {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["del-auth-address-correspondence-yn"] == "Yes")
+            value: "Claimant address",
+            text: "The claimant's home address",
+            checked: (data["del-auth-address-correspondence-yn"] == "Claimant address")
           },
           {
-            value: "No - I live at a different address",
-            text: "Change this in the router so it matches, if you need to change it if not it will work // No - send letters to a different address",
-            checked: (data["del-auth-address-correspondence-yn"] == "No - I live at a different address")
+            value: "A different address",
+            text: "A different address",
+            checked: (data["del-auth-address-correspondence-yn"] == "A different address")
           }
         ]
       }) }}

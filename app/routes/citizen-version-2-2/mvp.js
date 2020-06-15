@@ -1108,7 +1108,7 @@ router.post(`${baseUrl}/del-auth-who-check-router`, (req, res) => {
 router.post(`${baseUrl}/del-auth-address-correspondence-yn-router`, (req, res) => { // router name
   const correspondenceYN = req.session.data['del-auth-address-correspondence-yn']  // name of data / id name
 
-  if (correspondenceYN === 'No - I live at a different address') { // name of data / + answer
+  if (correspondenceYN === 'A different address') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-address-correspondence-post-code-lookup`)
   } else {
     res.redirect(`${baseUrl}/final-cya`)
