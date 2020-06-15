@@ -1108,7 +1108,7 @@ router.post(`${baseUrl}/hrt-partner-uk-sponsorship-router`, (req, res) => { // r
 router.post(`${baseUrl}/del-auth-who-check-router`, (req, res) => {
   const singleJoint = req.session.data['del-auth-who-check']
 
-  if (singleJoint === 'Myself') {
+  if (singleJoint === 'Yourself') {
     res.redirect(`${baseUrl}/del-auth-claim-help`)
   } else {
     res.redirect(`${baseUrl}/del-auth-address-correspondence-post-code-lookup`)
@@ -1119,7 +1119,7 @@ router.post(`${baseUrl}/del-auth-who-check-router`, (req, res) => {
 router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // router name
   const whoMadeClaim = req.session.data['del-auth-who-made-claim']  // name of data / id name
 
-  if (whoMadeClaim === 'Myself') { // name of data / + answer
+  if (whoMadeClaim === 'Yourself') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-number`)
   } else {
     res.redirect(`${baseUrl}/del-auth-contact-name`)

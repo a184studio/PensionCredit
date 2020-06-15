@@ -1,7 +1,7 @@
 {% extends "layout-covid19.html" %}
 
 {% block pageTitle %}
-  claimant-language - Pension Credit
+  Yourself-language - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -18,7 +18,7 @@
 
       <!-- Hidden input to set task to complete on task-list -->
 
-      {% if data["del-auth-who-made-claim"] == "claimant" %}
+      {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>{% endif %}
 
       {% set legendTelephoneNumber %}
