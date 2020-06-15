@@ -2968,7 +2968,7 @@ actions: {
 
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-    <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Help from other people</h2>
+    <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Contacting you about this claim</h2>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -2976,7 +2976,7 @@ actions: {
 
         {
           key: {
-            text: "del-auth-who-made-claim"
+            text: "Who are you claiming Pension Credit for?"
           },
           value: {
             text: data["del-auth-who-made-claim"]
@@ -2986,7 +2986,7 @@ actions: {
               {
                 href: "",
                 text: "Change",
-                visuallyHiddenText: "del-auth-who-made-claim"
+                visuallyHiddenText: "who you are claiming Pension Credit for"
               }
             ]
           }
@@ -3001,7 +3001,7 @@ actions: {
 
       {
         key: {
-          text: "del-auth-contact-name"
+          text: "What is your full name"
         },
         value: {
           text: data["del-auth-contact-name"]
@@ -3011,7 +3011,7 @@ actions: {
             {
               href: "",
               text: "Change",
-              visuallyHiddenText: "del-auth-contact-name"
+              visuallyHiddenText: "your full name"
             }
           ]
         }
@@ -3026,7 +3026,7 @@ actions: {
 
     {
       key: {
-        text: "del-auth-contact-corporate-id"
+        text: "What is your Corporate ID?"
       },
       value: {
         text: data["del-auth-contact-corporate-id"]
@@ -3036,7 +3036,7 @@ actions: {
           {
             href: "",
             text: "Change",
-            visuallyHiddenText: "del-auth-contact-corporate-id"
+            visuallyHiddenText: "your Corporate ID"
           }
         ]
       }
@@ -3051,7 +3051,7 @@ actions: {
 
   {
     key: {
-      text: "del-auth-national-insurance"
+      text: "What is your National Insurance number?"
     },
     value: {
       text: data["del-auth-national-insurance"]
@@ -3061,7 +3061,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "del-auth-national-insurance"
+          visuallyHiddenText: "your National Insurance number"
         }
       ]
     }
@@ -3076,7 +3076,7 @@ actions: {
 
   {
     key: {
-      text: "del-auth-contact-number-check"
+      text: "Can we call you about this claim?"
     },
     value: {
       text: data["del-auth-contact-number-check"]
@@ -3086,7 +3086,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "del-auth-contact-number-check"
+          visuallyHiddenText: "whether we can call you about this claim"
         }
       ]
     }
@@ -3101,7 +3101,7 @@ actions: {
 
   {
     key: {
-      text: "del-auth-contact-number"
+      text: "What is your contact telephone number?"
     },
     value: {
       text: data["del-auth-contact-number"]
@@ -3111,7 +3111,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "del-auth-contact-number"
+          visuallyHiddenText: "your contact telephone number"
         }
       ]
     }
@@ -3144,7 +3144,7 @@ actions: {
 
   {
     key: {
-      text: "What is your first language?"
+      text: "What language do you want us to use?"
     },
     value: {
       text: data["del-auth-contact-formats-altLanguage"]
@@ -3154,7 +3154,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "your first language"
+          visuallyHiddenText: "what language you want us to use"
         }
       ]
     }
@@ -3323,7 +3323,7 @@ actions: {
 
       {
         key: {
-          text: "del-auth-claim-help Did you need any help to use this service?"
+          text: "Did anyone help you complete this application?"
         },
         value: {
           text: data["del-auth-claim-help"]
@@ -3333,14 +3333,14 @@ actions: {
             {
               href: "del-auth-claim-help",
               text: "Change",
-              visuallyHiddenText: "del-auth-claim-help"
+              visuallyHiddenText: "whether anyone helped you make this application"
             }
           ]
         }
       },
       {
         key: {
-          text: "del-auth-claim-help Who was it that helped??"
+          text: "Who helped you make this application?"
         },
         value: {
           text: data['del-auth-claim-help-who']
@@ -3350,7 +3350,7 @@ actions: {
             {
               href: "",
               text: "Change",
-              visuallyHiddenText: "del-auth-claim-help-who"
+              visuallyHiddenText: "who helped you make this application"
             }
           ]
         }
