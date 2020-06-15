@@ -18,8 +18,8 @@
 
       <!-- Hidden input to set task to complete on task-list -->
 
-      <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>
-
+      {% if data["del-auth-who-made-claim"] == "claimant" %}
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>{% endif %}
 
       {% set legendTelephoneNumber %}
       <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What is your contact telephone number?</h1>

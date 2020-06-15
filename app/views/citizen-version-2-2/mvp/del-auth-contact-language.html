@@ -16,8 +16,8 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="del-auth-contact-formats-check" method="post" class="form">
 
-      <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>
-
+      {% if data["del-auth-who-made-claim"] == "claimant" %}
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>{% endif %}
 
       {% set legendH1 %}
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What language do you want us to speak to you in?</h1>
