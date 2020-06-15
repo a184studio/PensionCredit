@@ -1120,7 +1120,7 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
   const whoMadeClaim = req.session.data['del-auth-who-made-claim']  // name of data / id name
 
   if (whoMadeClaim === 'Myself') { // name of data / + answer
-    res.redirect(`${baseUrl}/del-auth-claim-help`)
+    res.redirect(`${baseUrl}/del-auth-contact-number`)
   } else {
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
