@@ -192,49 +192,6 @@
                   }) }}
 
 
-                  {{ govukSummaryList({
-                    classes: 'govuk-!-margin-bottom-9',
-                    rows: [
-
-                    {
-                      key: {
-                        text: "What language do you want us to speak to you in?"
-                      },
-                      value: {
-                        text: data["telephone-number"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "Change",
-                            visuallyHiddenText: "what language do you want us to speak to you in"
-                          }
-                        ]
-                      }
-                    },
-
-                    {
-                      key: {
-                        text: "What is your first language?"
-                      },
-                      value: {
-                        text: data["contact-formats-altLanguage"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "Change",
-                            visuallyHiddenText: "your first language"
-                          }
-                        ]
-                      }
-                    }
-
-                  ]
-                }) }}
-
                 {{ govukSummaryList({
                   classes: 'govuk-!-margin-bottom-9',
                   rows: [
@@ -3163,6 +3120,49 @@ actions: {
 ]
 }) }}
 
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "What language do you want us to speak to you in?"
+    },
+    value: {
+      text: data["del-auth-contact-language"]
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "what language do you want us to speak to you in"
+        }
+      ]
+    }
+  },
+
+  {
+    key: {
+      text: "What is your first language?"
+    },
+    value: {
+      text: data["del-auth-contact-formats-altLanguage"]
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "your first language"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -3188,6 +3188,8 @@ actions: {
 
 ]
 }) }}
+
+
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-9',
