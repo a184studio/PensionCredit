@@ -22,7 +22,7 @@
         name: "del-auth-who-made-claim",
         fieldset: {
           legend: {
-            text: "Who made this claim?",
+            text: "Who are you claiming Pension Credit for?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -30,27 +30,27 @@
         items: [
         {
         value: "Myself",
-        text: "Myself",
+        text: "Yourself",
         checked: data['del-auth-who-made-claim'] == "Myself"
       },
       {
           value: "Power of attorney",
-          text: "Someone who has power of attorney for you",
+          text: "Someone you have power of attorney for",
           checked: data['del-auth-who-made-claim'] == "Power of attorney"
         },
         {
           value: "Appointee",
-          text: "Someone who acts as an appointee for you",
+          text: "Someone you act as an appointee for",
           checked: data['del-auth-who-made-claim'] == "Appointee"
         },
         {
           value: "Personal acting body",
-          text: "Someone who acts as a Personal acting body (PAB)",
+          text: "Someone you act as a Personal acting body (PAB) for",
           checked: data['del-auth-who-made-claim'] == "Personal acting body"
         },
         {
           value: "Corporate acting body",
-          text: "Someone who acts as a Corporate acting body (CAB) for you ",
+          text: "Someone you act as a Corporate acting body (CAB) for",
           checked: data['del-auth-who-made-claim'] == "Corporate acting body"
         }
         ]
