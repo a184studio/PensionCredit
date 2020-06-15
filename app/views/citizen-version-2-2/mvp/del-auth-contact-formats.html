@@ -18,7 +18,7 @@
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>{% endif %}
 
-      <input type="hidden" name="contact-formats-complete" value="in-progress"/>
+      <input type="hidden" name="del-auth-contact-formats-complete" value="in-progress"/>
 
       {% set disabilities = data["disabilities"] or [] %}
       {% set accessability = data["accessibility"] or [] %}
@@ -28,8 +28,8 @@
     label: {
       html: "What is your textphone (Text Relay) number?"
     },
-    id: "contact-formats-text-phone-number",
-    name: "contact-formats-text-phone-number",
+    id: "del-auth-contact-formats-text-phone-number",
+    name: "del-auth-contact-formats-text-phone-number",
     classes: "govuk-input--width-20 "
   }) }}
       {% endset -%}
@@ -54,8 +54,8 @@
 
       {{ govukCheckboxes({
         classes: "govuk-!-margin-bottom-4",
-        idPrefix: "contact-formats",
-        name: "contact-formats",
+        idPrefix: "del-auth-contact-formats",
+        name: "del-auth-contact-formats",
         fieldset: {
           legend: {
             text: "Do you need us to contact you in any different formats?",
@@ -70,29 +70,29 @@
 {
           value: "Audio",
           text: "Audio",
-          checked: (data["contact-formats"] == "Audio")
+          checked: (data["del-auth-contact-formats"] == "Audio")
         },
           {
             value: "Braille",
             text: "Braille",
-            checked: (data["contact-formats"] == "Braille")
+            checked: (data["del-auth-contact-formats"] == "Braille")
           },
 
           {
             value: "Large print",
             text: "Large print",
-            checked: (data["contact-formats"] == "Large print")
+            checked: (data["del-auth-contact-formats"] == "Large print")
           },
 
           {
             value: "Sign language",
             text: "Sign language",
-            checked: (data["contact-formats"] == "Sign language")
+            checked: (data["del-auth-contact-formats"] == "Sign language")
           },
           {
             value: "TextPhone",
             text: "TextPhone (Text Relay)",
-            checked: (data["contact-formats"] == "TextPhone"),
+            checked: (data["del-auth-contact-formats"] == "TextPhone"),
                   conditional: {
                     html: textPhoneNumber
                   }
@@ -100,7 +100,7 @@
           {
             value: "TypeTalk",
             text: "TypeTalk",
-            checked: (data["contact-formats"] == "Sign language (Loop)")
+            checked: (data["del-auth-contact-formats"] == "Sign language (Loop)")
           },
           {
             value: "Other",
