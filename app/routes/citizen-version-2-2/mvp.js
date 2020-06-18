@@ -399,30 +399,6 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/del-auth-contact-formats-check-router`, (req, res) => {
-  const contactFormats = req.session.data['del-auth-contact-formats-check']
-
-  if (contactFormats === 'Yes') {
-    res.redirect(`${baseUrl}/del-auth-contact-formats`)
-  } else {
-    res.redirect(`${baseUrl}/del-auth-who-check`)
-  }
-})
-
-// router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
-//   const careHome = req.session.data['home-care-home-check']
-//   const careHomeStillOwn = req.session.data['home-care-home-check-still-own']
-//   if (careHome === 'Yes' && careHomeStillOwn === 'Yes') {
-//     res.redirect(`${baseUrl}/pension-check`)
-//   }
-//   if (careHome === 'Yes' && careHomeStillOwn === 'No') {
-//     res.redirect(`${baseUrl}/pension-check`)
-//   }
-//   else {
-//     res.redirect(`${baseUrl}/address-post-code-lookup`)
-//   }
-// })
-
 
 
 router.post(`${baseUrl}/home-care-home-route-check-router`, (req, res) => {
@@ -1099,11 +1075,15 @@ router.post(`${baseUrl}/del-auth-who-check-router`, (req, res) => {
   const singleJoint = req.session.data['del-auth-who-check']
 
   if (singleJoint === 'Yourself') {
-    res.redirect(`${baseUrl}/del-auth-claim-help`)
+    res.redirect(`${baseUrl}/final-cya`)
   } else {
     res.redirect(`${baseUrl}/del-auth-address-correspondence-yn`)
   }
 })
+
+
+
+
 
 router.post(`${baseUrl}/del-auth-address-correspondence-yn-router`, (req, res) => { // router name
   const correspondenceYN = req.session.data['del-auth-address-correspondence-yn']  // name of data / id name
@@ -1121,10 +1101,36 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
 
   if (whoMadeClaim === 'Yourself') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-number`)
-  } else {
+  }
+  else if (whoMadeClaim === 'Power of attorney') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
+  else if (whoMadeClaim === 'Appointee') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-contact-name`)
+  }
+  else if (whoMadeClaim === 'Personal acting body') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-contact-name`)
+  }
+  else if (whoMadeClaim === 'Corporate acting body') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-contact-name`)
+  }
+  else if (whoMadeClaim === 'Charity') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-contact-number`)
+  }
+  else if (whoMadeClaim === 'Family member') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-contact-number`)
+  }
+  else if (whoMadeClaim === 'SomeoneElse') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-contact-number`)
+  }
+  else {
+    res.redirect(`${baseUrl}/del-auth-contact-number`)
+  }
 })
+
+
+
+
 
 router.post(`${baseUrl}/del-auth-claim-help-router`, (req, res) => { // router name
   const helpToClaim = req.session.data['del-auth-claim-help']  // name of data / id name
@@ -1147,26 +1153,30 @@ router.post(`${baseUrl}/index-made-claim-letter-check-router`, (req, res) => { /
 })
 
 
+router.post(`${baseUrl}/del-auth-contact-formats-check-router`, (req, res) => {
+  const contactFormats = req.session.data['del-auth-contact-formats-check']
 
-
-
-
-router.post(`${baseUrl}/index-who-helped-router`, (req, res) => { // router name
-  const whohelped = req.session.data['index-who-helped']  // name of data / id name
-
-  if (whohelped === 'Power of attorney') { // name of data / + answer
-    res.redirect(`${baseUrl}/index-help-details`)
-  }
-  else if (whohelped === 'Appointee') {
-    res.redirect(`${baseUrl}/index-help-details`)
-  }
-  else if (whohelped === 'Corporate acting body') {
-    res.redirect(`${baseUrl}/index-help-details`)
-  }
-  else {
-    res.redirect(`${baseUrl}/index-pension-credit`)
+  if (contactFormats === 'Yes') {
+    res.redirect(`${baseUrl}/del-auth-contact-formats`)
+  } else {
+    res.redirect(`${baseUrl}/del-auth-who-check`)
   }
 })
+
+// router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
+//   const careHome = req.session.data['home-care-home-check']
+//   const careHomeStillOwn = req.session.data['home-care-home-check-still-own']
+//   if (careHome === 'Yes' && careHomeStillOwn === 'Yes') {
+//     res.redirect(`${baseUrl}/pension-check`)
+//   }
+//   if (careHome === 'Yes' && careHomeStillOwn === 'No') {
+//     res.redirect(`${baseUrl}/pension-check`)
+//   }
+//   else {
+//     res.redirect(`${baseUrl}/address-post-code-lookup`)
+//   }
+// })
+
 
 
 

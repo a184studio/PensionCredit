@@ -21,7 +21,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="del-auth-address-correspondence-yn-router" method="post" class="form">
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
-      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>{% endif %}
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
       {{ govukRadios({

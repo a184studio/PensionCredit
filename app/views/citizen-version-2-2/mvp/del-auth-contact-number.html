@@ -19,10 +19,21 @@
       <!-- Hidden input to set task to complete on task-list -->
 
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
-      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>{% endif %}
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
 
       {% set legendTelephoneNumber %}
-      <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What is your contact telephone number?</h1>
+
+      {% if data["del-auth-who-made-claim"] == "Yourself"
+         or data["del-auth-who-made-claim"] == "Power of attorney"
+         or data["del-auth-who-made-claim"] == "Appointee"
+         or data["del-auth-who-made-claim"] == "Personal acting body"
+         or data["del-auth-who-made-claim"] == "Corporate acting body"
+       %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What is your contact telephone number?</h1>
+      {% else %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What is the claimants contact telephone number?</h1>
+      {% endif %}
+
       {% endset -%}
 
 
@@ -43,13 +54,27 @@
 
       {% endset -%}
 
+      {% set LegendH1 %}
+
+      {% if data["del-auth-who-made-claim"] == "Yourself"
+         or data["del-auth-who-made-claim"] == "Power of attorney"
+         or data["del-auth-who-made-claim"] == "Appointee"
+         or data["del-auth-who-made-claim"] == "Personal acting body"
+         or data["del-auth-who-made-claim"] == "Corporate acting body"
+       %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Can we call you about this claim?</h1>
+      {% else %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Can we call the claimant about this claim?</h1>
+      {% endif %}
+
+      {% endset -%}
 
       {{ govukRadios({
         idPrefix: "del-auth-contact-number-check",
         name: "del-auth-contact-number-check",
         fieldset: {
           legend: {
-            text: "Can we call you about this claim?",
+            html: LegendH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
           }

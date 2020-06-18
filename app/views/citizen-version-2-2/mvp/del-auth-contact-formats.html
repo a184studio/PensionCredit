@@ -16,7 +16,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="del-auth-who-check" method="post" class="form">
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
-      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}} details</span>{% endif %}
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
 
       <input type="hidden" name="del-auth-contact-formats-complete" value="in-progress"/>
 
@@ -51,6 +51,21 @@
       {% endset -%}
 
 
+      {% set legendH1 %}
+
+      {% if data["del-auth-who-made-claim"] == "Yourself"
+         or data["del-auth-who-made-claim"] == "Power of attorney"
+         or data["del-auth-who-made-claim"] == "Appointee"
+         or data["del-auth-who-made-claim"] == "Personal acting body"
+         or data["del-auth-who-made-claim"] == "Corporate acting body"
+       %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need us to contact you in any different formats?</h1>
+      {% else %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Does the claimant need us to contact them in any different formats?</h1>
+      {% endif %}
+
+      {% endset -%}
+
 
       {{ govukCheckboxes({
         classes: "govuk-!-margin-bottom-4",
@@ -58,7 +73,7 @@
         name: "del-auth-contact-formats",
         fieldset: {
           legend: {
-            text: "Do you need us to contact you in any different formats?",
+            html: legendH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }

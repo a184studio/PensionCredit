@@ -16,24 +16,13 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="del-auth-who-made-claim-router" method="post" class="form">
 
-      {% set helpIDSomeoneElse %}
-        {{ govukInput({
-        label: {
-          html: "Who dis?"
-        },
-        id: "del-auth-who-made-claim-SomeoneElse",
-        name: "del-auth-who-made-claim-SomeoneElse",
-        classes: "govuk-input--width-20"
-        }) }}
-      {% endset -%}
-
 
       {{ govukRadios({
         idPrefix: "del-auth-who-made-claim",
         name: "del-auth-who-made-claim",
         fieldset: {
           legend: {
-            text: "Which of these best describes you?",
+            text: "Who are you claiming Pension Credit for?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,50 +30,49 @@
         items: [
         {
         value: "Yourself",
-        html: "You are the <strong>Claimant</strong>",
+        text: "Yourself",
         checked: data['del-auth-who-made-claim'] == "Yourself"
       },
       {
           value: "Power of attorney",
-          html: "You have <strong>power of attorney</strong> for the claimant",
+          text: "Power of attorney",
+            hint: {
+              text: "You have power of attorney for the claimant"
+            },
           checked: data['del-auth-who-made-claim'] == "Power of attorney"
         },
         {
           value: "Appointee",
-          html: "You act as an <strong>appointee</strong> for the claimant",
+          text: "Appointee",
           checked: data['del-auth-who-made-claim'] == "Appointee"
         },
         {
           value: "Personal acting body",
-          html: "You are a <strong>Personal Acting Body</strong> (PAB) for the claimant",
+          text: "Personal acting body",
           checked: data['del-auth-who-made-claim'] == "Personal acting body"
         },
         {
           value: "Corporate acting body",
-          html: "You are a <strong>Corporate Acting Body</strong> (CAB) for the claimant",
+          text: "Corporate acting body",
           checked: data['del-auth-who-made-claim'] == "Corporate acting body"
         },
         {
-          value: "Charity",
-          html: "You work for a <strong>charity or organisation</strong> that is helping the claimant make their application",
-          checked: data['del-auth-who-made-claim'] == "Charity"
-        },
-        {
-          value: "Family member",
-          html: "You are a <strong>friend or family member</strong> who is helping the claimant make their application",
-          checked: data['del-auth-claim-help-who'] == "Family member"
-        },
-        {
-          value: "SomeoneElse",
-          html: "Someone else",
-          checked: data['del-auth-claim-help-who'] == "SomeoneElse",
-          conditional: {
-            html: helpIDSomeoneElse
+            value: "Power of attorney",
+            text: "Charity",
+              hint: {
+                text: "You work for a charity or organisation that is helping  Mary Smith make their application"
+              },
+            checked: data['del-auth-who-made-claim'] == "Power of attorney"
           }
-        }
         ]
       }) }}
 
+<!--
+      ,
+      checked: data['del-auth-who-made-claim'] == "Charity",
+      conditional: {
+        html: helpIDCharity
+      } -->
 
       {{ govukButton({
         text: "Continue"
