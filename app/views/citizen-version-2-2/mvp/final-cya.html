@@ -3221,6 +3221,8 @@ actions: {
             ]
           }) }}
 
+          {% if data["del-auth-contact-formats-text-phone-number"] %}
+
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -3246,6 +3248,10 @@ actions: {
           ]
         }) }}
 
+        {% endif %}
+
+        {% if data["contact-other-details"] %}
+
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -3270,6 +3276,8 @@ actions: {
 
           ]
         }) }}
+
+        {% endif %}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
