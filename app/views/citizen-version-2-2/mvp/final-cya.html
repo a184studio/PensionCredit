@@ -3338,6 +3338,32 @@ actions: {
           ]
         }) }}
 
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+                      {
+            key: {
+              text: "What is the claimant's textphone (Text Relay) number"
+            },
+            value: {
+              text: data["del-auth-contact-formats-text-phone-number"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "your textphone (Text Relay) number"
+                }
+              ]
+            }
+          }
+
+        ]
+      }) }}
+
+
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -3362,6 +3388,31 @@ actions: {
 
           ]
         }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+                      {
+            key: {
+              text: "Details of other formats the claimant needs us to use to contact them"
+            },
+            value: {
+              text: data["contact-other-details"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "the details of other formats the claimant needs us to use to contact them"
+                }
+              ]
+            }
+          }
+
+        ]
+      }) }}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
