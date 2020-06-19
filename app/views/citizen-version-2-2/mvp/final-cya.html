@@ -3313,6 +3313,8 @@ actions: {
             ]
           }) }}
 
+          {% if data["del-auth-contact-formats-text-phone-number"] %}
+
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -3354,7 +3356,7 @@ actions: {
                 {
                   href: "",
                   text: "Change",
-                  visuallyHiddenText: "your textphone (Text Relay) number"
+                  visuallyHiddenText: "the claimant's textphone (Text Relay) number"
                 }
               ]
             }
@@ -3434,7 +3436,15 @@ actions: {
               }
             ]
           }
-        },
+        }
+
+      ]
+      }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9 govuk-summary-list--no-border ',
+        rows: [
+
       {
           key: {
             text: "The address we should send letters to"
