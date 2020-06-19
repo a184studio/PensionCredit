@@ -1108,16 +1108,16 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
   else if (whoMadeClaim === 'Appointee') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
-  else if (whoMadeClaim === 'Personal acting body') { // name of data / + answer
+  else if (whoMadeClaim === 'Personal Acting Body') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
-  else if (whoMadeClaim === 'Corporate acting body') { // name of data / + answer
+  else if (whoMadeClaim === 'Corporate Acting Body') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
   else if (whoMadeClaim === 'Charity') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-number`)
   }
-  else if (whoMadeClaim === 'Family member') { // name of data / + answer
+  else if (whoMadeClaim === 'Friend or family member') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-number`)
   }
   else if (whoMadeClaim === 'SomeoneElse') { // name of data / + answer

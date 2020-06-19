@@ -3317,46 +3317,6 @@ actions: {
       }) }}
 
 
-    {{ govukSummaryList({
-      classes: 'govuk-!-margin-bottom-9 govuk-summary-list--no-border',
-      rows: [
-
-      {
-        key: {
-          text: "Did anyone help you complete this application?"
-        },
-        value: {
-          text: data["del-auth-claim-help"]
-        },
-        actions: {
-          items: [
-            {
-              href: "del-auth-claim-help",
-              text: "Change",
-              visuallyHiddenText: "whether anyone helped you make this application"
-            }
-          ]
-        }
-      },
-      {
-        key: {
-          text: "Who helped you make this application?"
-        },
-        value: {
-          text: data['del-auth-claim-help-who']
-        },
-        actions: {
-          items: [
-            {
-              href: "",
-              text: "Change",
-              visuallyHiddenText: "who helped you make this application"
-            }
-          ]
-        }
-      }
-    ]
-    }) }}
 
 
 

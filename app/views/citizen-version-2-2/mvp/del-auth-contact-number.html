@@ -26,8 +26,8 @@
       {% if data["del-auth-who-made-claim"] == "Yourself"
          or data["del-auth-who-made-claim"] == "Power of attorney"
          or data["del-auth-who-made-claim"] == "Appointee"
-         or data["del-auth-who-made-claim"] == "Personal acting body"
-         or data["del-auth-who-made-claim"] == "Corporate acting body"
+         or data["del-auth-who-made-claim"] == "Personal Acting Body"
+         or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
         <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What is your contact telephone number?</h1>
       {% else %}
@@ -59,7 +59,7 @@
       {% if data["del-auth-who-made-claim"] == "Yourself"
          or data["del-auth-who-made-claim"] == "Power of attorney"
          or data["del-auth-who-made-claim"] == "Appointee"
-         or data["del-auth-who-made-claim"] == "Personal acting body"
+         or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate acting body"
        %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Can we call you about this claim?</h1>
@@ -80,7 +80,7 @@
           }
         },
         hint: {
-          text: "We might need to call you to ask you for more information or to tell you about the progress of the claim."
+          text: "We might need to call to ask you for more information or to tell you about the progress of the claim."
         },
         classes: "govuk-radios govuk-!-margin-bottom-4",
         items: [
