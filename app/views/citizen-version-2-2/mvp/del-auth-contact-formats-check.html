@@ -29,9 +29,9 @@
          or data["del-auth-who-made-claim"] == "Personal acting body"
          or data["del-auth-who-made-claim"] == "Corporate acting body"
        %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need help with letters or phone calls?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need us to use any different formats when we contact you by letter or phone?</h1>
       {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Does the climant need help with letters or phone calls?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Does the claimant need us to use any different formats when we contact them by letter or phone?</h1>
       {% endif %}
 
       {% endset -%}
@@ -46,6 +46,9 @@
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
     }
+  },
+  hint: {
+    text: "For example, braille, large print or textphone."
   },
   classes: "govuk-radios",
   items: [
