@@ -18,11 +18,11 @@
       What is the postcode of the address we should send letters to?
     </h1>
 
-    <form action="address-correspondence-choice" method="post" class="form">
+    <form action="address-correspondence-post-code-lookup" method="post" class="form">
       {{ govukInput({
-        id: "postcode",
-        name: "postcode",
-        value: data["postcode"],
+        id: "address-correspondence-post-code",
+        name: "address-correspondence-post-code",
+        value: data["address-correspondence-post-code"],
         classes: "govuk-input--width-10",
         label: {
           text: "Postcode"
