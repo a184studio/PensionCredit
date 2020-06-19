@@ -2976,7 +2976,7 @@ actions: {
 
         {
           key: {
-            text: "Who are you claiming Pension Credit for?"
+            text: "Which of these best describes you?"
           },
           value: {
             text: data["del-auth-who-made-claim"]
@@ -2986,7 +2986,7 @@ actions: {
               {
                 href: "",
                 text: "Change",
-                visuallyHiddenText: "who you are claiming Pension Credit for"
+                visuallyHiddenText: "which of these best describes you"
               }
             ]
           }
@@ -3101,6 +3101,31 @@ actions: {
 
   {
     key: {
+      text: "Can we call the claimant about this claim?"
+    },
+    value: {
+      text: data["del-auth-contact-number-check"]
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "whether we can call the claimant about this claim"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
       text: "What is your contact telephone number?"
     },
     value: {
@@ -3126,6 +3151,32 @@ actions: {
 
   {
     key: {
+      text: "What is the claimant's contact telephone number?"
+    },
+    value: {
+      text: data["del-auth-contact-number"]
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "the claimant's contact telephone number"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
       text: "What language do you want us to speak to you in?"
     },
     value: {
@@ -3137,6 +3188,24 @@ actions: {
           href: "",
           text: "Change",
           visuallyHiddenText: "what language do you want us to speak to you in"
+        }
+      ]
+    }
+  },
+
+  {
+    key: {
+      text: "What language do you want us to speak to the claimant in?"
+    },
+    value: {
+      text: data["del-auth-contact-formats-altLanguage"]
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "what language you want us to speak to the claimant in"
         }
       ]
     }
@@ -3170,7 +3239,7 @@ actions: {
 
   {
     key: {
-      text: "Do you need help with letters or phone calls?"
+      text: "Do you need us to use any different formats when we contact you by letter or phone?"
     },
     value: {
       text: data["del-auth-contact-formats-check"]
@@ -3180,7 +3249,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "whether you need help with letters or phone calls"
+          visuallyHiddenText: "whether you need us to use any different formats when we contact them by letter or phone"
         }
       ]
     }
@@ -3189,7 +3258,30 @@ actions: {
 ]
 }) }}
 
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
 
+  {
+    key: {
+      text: "Does the claimant need us to use any different formats when we contact them by letter or phone?"
+    },
+    value: {
+      text: data["del-auth-contact-formats-check"]
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "whether the claimant needs us to use any different formats when we contact them by letter or phone"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-9',
@@ -3248,9 +3340,31 @@ actions: {
           ]
         }) }}
 
-        {% endif %}
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
 
-        {% if data["contact-other-details"] %}
+                      {
+            key: {
+              text: "What is the claimant's textphone (Text Relay) number"
+            },
+            value: {
+              text: data["del-auth-contact-formats-text-phone-number"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "the claimant's textphone (Text Relay) number"
+                }
+              ]
+            }
+          }
+
+        ]
+      }) }}
+
 
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
@@ -3277,7 +3391,30 @@ actions: {
           ]
         }) }}
 
-        {% endif %}
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+                      {
+            key: {
+              text: "Details of other formats the claimant needs us to use to contact them"
+            },
+            value: {
+              text: data["contact-other-details"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "the details of other formats the claimant needs us to use to contact them"
+                }
+              ]
+            }
+          }
+
+        ]
+      }) }}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
