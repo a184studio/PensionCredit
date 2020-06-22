@@ -16,10 +16,6 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="employment-check-router" method="post" class="form">
 
-<<<<<<< HEAD
-=======
-
->>>>>>> f9450574594b84f421bfa1f0e955f9b639ecb593
 
       <!------------Legend------------>
         {% set legendEmployment %}
@@ -34,13 +30,8 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-<<<<<<< HEAD
         {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner have any income from employment?</h2>
         {% else %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you [or your partner] have any income from employment?</h2>{% endif %}
-=======
-        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl">Do you or your partner have any income from employment?</h1>
-        {% else %}  <h1 class="govuk-heading-xl">Do you have any income from employment?</h1>{% endif %}
->>>>>>> f9450574594b84f421bfa1f0e955f9b639ecb593
         {% endset %}
       <!------------Legend--------------->
 
