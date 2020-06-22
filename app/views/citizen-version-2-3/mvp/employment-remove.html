@@ -18,39 +18,7 @@
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Name of employer summary</h1>
-
-
-         {{ govukSummaryList({
-           classes: 'govuk-!-padding-top-6 govuk-!-padding-bottom-9',
-           rows: [
-           {
-             key: {
-               text: "Employer"
-             },
-             value: {
-               text: "Name of employer"
-             },
-             actions: {
-               items: [
-               {
-                 href: "employment-details",
-                 html: "Change",
-                 visuallyHiddenText: "XXX"
-               },
-               {
-                 href: "employment-remove",
-                 html: "Remove",
-                 visuallyHiddenText: "XXX"
-               }
-               ]
-             }
-           }
-           ]
-         }) }}
-
-
-             <h1 class="govuk-heading-l govuk-!-padding-top-4 govuk-!-margin-bottom-4">Do you have any more income from employment?</h1>
+         <h1 class="govuk-heading-xl govuk-!-padding-top-4 govuk-!-margin-bottom-4">Are you sure you want to remove?</h1>
 
 
              {{ govukRadios({
