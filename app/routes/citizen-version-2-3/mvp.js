@@ -439,7 +439,20 @@ router.post(`${baseUrl}/self-employed-router`, (req, res) => {
   if (selfEmployed === 'yes') {
     res.redirect(`${baseUrl}/about-your-self-employment`)
   } else {
-    res.redirect(`${baseUrl}/other-income`)
+    res.redirect(`${baseUrl}/employment-other-money`)
+  }
+})
+
+
+// Employment router CB (employment-check)
+
+router.post(`${baseUrl}/employment-check-router`, (req, res) => {
+  const isEmployed = req.session.data['self-employed']
+
+  if (isEmployed === 'yes') {
+    res.redirect(`${baseUrl}/employment-details`)
+  } else {
+    res.redirect(`${baseUrl}/self-employed`)
   }
 })
 
