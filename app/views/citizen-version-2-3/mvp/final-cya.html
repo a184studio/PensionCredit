@@ -1208,6 +1208,34 @@ actions: {
     }) }}
 {% endif %}
 
+{{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+    key: {
+      text: "The address we should send letters to"
+    },
+    value: {
+      html: "Address line one
+      <br>Address line Two
+      <br>Address line Three
+      <br>" + data["postcode"]
+    },
+    actions: {
+      items: [
+        {
+          href: "del-auth-address-correspondence-post-code-lookup",
+          text: "Change",
+          visuallyHiddenText: "the address we should send letters to"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
 
 
 
