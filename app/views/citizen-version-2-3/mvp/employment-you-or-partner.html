@@ -30,8 +30,8 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Is this you or your parntner?</h2>
-        {% else %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Is this you or your parntner?</h2>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Whose is this income?</h2>
+        {% else %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Whose is this income?</h2>{% endif %}
         {% endset %}
       <!------------Legend--------------->
 
@@ -50,12 +50,12 @@
         items: [
           {
             value: "Me",
-            text: "Me",
+            text: "Yours",
             checked: (data["employment-check"] == "Me")
           },
           {
             value: "Partner",
-            text: "Partner",
+            text: "Your partner's",
             checked: (data["employment-check"] == "Partner")
           }
         ]
