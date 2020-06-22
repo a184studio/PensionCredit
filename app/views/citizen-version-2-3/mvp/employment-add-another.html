@@ -50,7 +50,9 @@
          }) }}
 
 
-             <h1 class="govuk-heading-l govuk-!-padding-top-4 govuk-!-margin-bottom-4">Do you have any more income from employment?</h1>
+      
+         {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner have any more income from employment?</h2>
+         {% else %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you have any more income from employment?</h2>{% endif %}
 
 
              {{ govukRadios({

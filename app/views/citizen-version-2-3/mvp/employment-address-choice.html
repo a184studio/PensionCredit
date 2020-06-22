@@ -16,9 +16,9 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="employment-add-another" method="post" class="form">
 
-      <h1 class="govuk-heading-xl">
-        Select your employer's address
-      </h1>
+
+      {% if data["employment-you-or-partner"] == "Partner" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Select your partner's employer's address</h2>
+      {% else %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Select your employer's address</h2>{% endif %}
 
       <p class="govuk-!-font-size-24 govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><strong>Postcode: </strong>{{data["postcode"]}}</p>
       <p class=" govuk-body govuk-!-font-weight-regular"><a class="govuk-link" href="address-post-code-lookup">Change</a></p>

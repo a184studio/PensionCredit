@@ -21,8 +21,10 @@
 
 
       {% set legendName %}
-      <h3 class="govuk-heading-xl govuk-!-margin-bottom-0">What is the name of your employer?</h3>
-      {% endset -%}
+
+    {% if data["employment-you-or-partner"] == "Partner" %}  <h3 class="govuk-heading-xl govuk-!-margin-bottom-0">What is the name of your partner's employer?</h3>
+      {% else %}    <h3 class="govuk-heading-xl govuk-!-margin-bottom-0">What is the name of your employer?</h3>{% endif %}
+      {% endset %}
 
       {{ govukInput({
         label: {

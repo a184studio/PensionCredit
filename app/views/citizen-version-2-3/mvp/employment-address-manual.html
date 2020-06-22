@@ -16,12 +16,15 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="home-care-home-route-check" method="post">
 
-
+      {% set dynamicH1 %}
+      {% if data["employment-you-or-partner"] == "Partner" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What is your employers address?</h1>
+      {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What is your employers address?</h1>{% endif %}
+      {% endset %}
 
 
   {% call govukFieldset({
     legend: {
-      text: "What is your employers address?",
+      html: dynamicH1,
       classes: "govuk-fieldset__legend--xl",
       isPageHeading: true
     }
