@@ -1114,7 +1114,7 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
   else if (whoMadeClaim === 'Corporate Acting Body') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
-  else if (whoMadeClaim === 'Charity') { // name of data / + answer
+  else if (whoMadeClaim === 'Charity or organisation') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-number`)
   }
   else if (whoMadeClaim === 'Friend or family member') { // name of data / + answer
