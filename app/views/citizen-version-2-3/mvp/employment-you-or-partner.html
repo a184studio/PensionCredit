@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="employment-check-router" method="post" class="form">
+    <form action="employment-details" method="post" class="form">
 
 
       <!------------Legend------------>
@@ -36,7 +36,7 @@
       <!------------Legend--------------->
 
       {{ govukRadios({
-        name: "employment-check",
+        name: "employment-you-or-partner",
         fieldset: {
           legend: {
             html: dynamicH1,
@@ -51,12 +51,12 @@
           {
             value: "Me",
             text: "Yours",
-            checked: (data["employment-check"] == "Me")
+            checked: (data["employment-you-or-partner"] == "Me")
           },
           {
             value: "Partner",
             text: "Your partner's",
-            checked: (data["employment-check"] == "Partner")
+            checked: (data["employment-you-or-partner"] == "Partner")
           }
         ]
       }) }}
