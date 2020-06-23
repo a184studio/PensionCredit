@@ -447,7 +447,7 @@ router.post(`${baseUrl}/self-employed-router`, (req, res) => {
 // Employment router CB (employment-check)
 
 router.post(`${baseUrl}/employment-check-router`, (req, res) => {
-  const isEmployed = req.session.data['self-employed']
+  const isEmployed = req.session.data['employment-check']
 
   if (isEmployed === 'Yes') {
     res.redirect(`${baseUrl}/employment-you-or-partner`)
