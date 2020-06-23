@@ -446,6 +446,19 @@ router.post(`${baseUrl}/self-employed-router`, (req, res) => {
 
 // Employment router CB (employment-check)
 
+
+
+router.post(`${baseUrl}/employment-single-joint-router`, (req, res) => {
+  const employedSingleJoint = req.session.data['employment-single-joint']
+
+  if (employedSingleJoint === 'Single') {
+    res.redirect(`${baseUrl}/employment-details`)
+  } else {
+    res.redirect(`${baseUrl}/employment-you-or-partner`)
+  }
+})
+
+
 router.post(`${baseUrl}/employment-check-router`, (req, res) => {
   const isEmployed = req.session.data['employment-check']
 
