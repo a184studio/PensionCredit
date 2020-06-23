@@ -1075,7 +1075,7 @@ router.post(`${baseUrl}/del-auth-who-check-router`, (req, res) => {
   const singleJoint = req.session.data['del-auth-who-check']
 
   if (singleJoint === 'Yourself') {
-    res.redirect(`${baseUrl}/final-cya`)
+    res.redirect(`${baseUrl}/address-correspondence-post-code-lookup`)
   } else {
     res.redirect(`${baseUrl}/del-auth-address-correspondence-post-code-lookup`)
   }
