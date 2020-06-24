@@ -1182,6 +1182,32 @@ actions: {
         ]
       }) }}
 
+
+      {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+
+              {
+                key: {
+                  text: "Whose is this income?"
+                },
+                value: {
+                  text: data['self-employment-check']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "employment-check",
+                      text: "Change",
+                      visuallyHiddenText: "whether you have any income from self-employment now or in the 3 months before your claim date"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+
 {% if data["self-employment-check-yes-details"] %}
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
