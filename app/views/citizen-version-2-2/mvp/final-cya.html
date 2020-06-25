@@ -3466,7 +3466,7 @@ actions: {
 
         {
           key: {
-            text: "What address should we send letters to?"
+            text: "[Claimant + non Del Auth] What address should we send letters to?"
           },
           value: {
             text: data["del-auth-address-correspondence-yn"]
@@ -3486,12 +3486,40 @@ actions: {
       }) }}
 
       {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+      {
+          key: {
+            text: "[Claimant] The address we should send letters to"
+          },
+          value: {
+            html: "Address line one
+            <br>Address line Two
+            <br>Address line Three
+            <br>" + data["address-correspondence-post-code"]
+          },
+          actions: {
+            items: [
+              {
+                href: "address-correspondence-post-code-lookup",
+                text: "Change",
+                visuallyHiddenText: "the address we should send letters to"
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+      {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9 govuk-summary-list--no-border ',
         rows: [
 
       {
           key: {
-            text: "The address we should send letters to"
+            text: "[Del Auth] The address we should send letters to"
           },
           value: {
             html: "Address line one
