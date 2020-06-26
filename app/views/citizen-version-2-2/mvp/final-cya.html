@@ -482,23 +482,182 @@
 ]
 }) }}
 
+
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
 
     {
     key: {
-      text: "non-deps-member-full-name"
+      text: "non-deps-frequency"
     },
     value: {
-      text: data["non-deps-member-full-name"]
+      text: data["non-deps-frequency"]
     },
     actions: {
       items: [
         {
           href: "non-deps-member-details",
           text: "Change",
-          visuallyHiddenText: "non-deps-member-full-name"
+          visuallyHiddenText: "non-deps-frequency"
+        }
+      ]
+    }
+  },
+
+  {
+  key: {
+    text: "non-deps-member-category"
+  },
+  value: {
+    html: " A family member<br>
+            Charity<br>
+            ...<br>
+            ..."  },
+  actions: {
+    items: [
+      {
+        href: "non-deps-member-category",
+        text: "Change",
+        visuallyHiddenText: "non-deps-member-category"
+      }
+    ]
+  }
+}
+
+]
+}) }}
+
+{% if data["non-deps-member-category-OtherDetails"] %}
+
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
+
+      {
+      key: {
+        text: "non-deps-member-category-OtherDetails"
+      },
+      value: {
+        text: data["non-deps-member-category-OtherDetails"]
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-category",
+            text: "Change",
+            visuallyHiddenText: "non-deps-member-category-OtherDetails"
+          }
+        ]
+      }
+    }
+
+  ]
+  }) }}
+
+{% endif %}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "non-deps-member-details-dob"
+    },
+    value: {
+      text: data['non-deps-member-details-dob-day'] + ' ' + (data['non-deps-member-details-dob-month'] | getMonth) + ' ' + data['non-deps-member-details-dob-year']
+    },
+    actions: {
+      items: [
+        {
+          href: "non-deps-member-details",
+          text: "Change",
+          visuallyHiddenText: "non-deps-member-details-dob"
+        }
+      ]
+    }
+  },
+
+  {
+  key: {
+    text: "non-deps-member-details-blind"
+  },
+  value: {
+    text: data["non-deps-member-details-blind"]
+  },
+  actions: {
+    items: [
+      {
+        href: "non-deps-member-details",
+        text: "Change",
+        visuallyHiddenText: "non-deps-member-details-blind"
+      }
+    ]
+  }
+},
+
+{
+key: {
+  text: "non-deps-member-education-employment"
+},
+value: {
+  html: " Employment: Full-time<br>
+          Employment: Part-time<br>
+          Education: Full-time<br>
+          Education: Part-time"
+},
+actions: {
+  items: [
+    {
+      href: "non-deps-member-details",
+      text: "Change",
+      visuallyHiddenText: "non-deps-member-education-employment"
+    }
+  ]
+}
+},
+
+{
+key: {
+  text: "non-deps-member-details-weekly-earnings"
+},
+value: {
+  text: data["non-deps-member-details-weekly-earnings"]
+},
+actions: {
+  items: [
+    {
+      href: "non-deps-member-details",
+      text: "Change",
+      visuallyHiddenText: "non-deps-member-details-weekly-earnings"
+    }
+  ]
+}
+}
+
+]
+}) }}
+
+<br>
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "Person 2: example (Line break between each member)"
+    },
+    value: {
+      text: "Alex Smith JR"
+    },
+    actions: {
+      items: [
+        {
+          href: "non-deps-member-category",
+          text: "Change",
+          visuallyHiddenText: "non-deps-member-category-OtherDetails"
         }
       ]
     }
@@ -506,29 +665,6 @@
 
 ]
 }) }}
-
-<br>
-
-
-
-non-deps-frequency
-non-deps-member-category
-non-deps-member-category-OtherDetails
-
-
-
-non-deps-member-details-dob
-non-deps-member-details-dob-day
-non-deps-member-details-dob-month
-non-deps-member-details-dob-year
-
-non-deps-member-details-blind
-
-non-deps-member-education-employment
-
-non-deps-member-details-weekly-earnings
-
-
 
 <div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Housing costs</h2>
 
