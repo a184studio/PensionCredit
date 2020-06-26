@@ -1133,6 +1133,30 @@ actions: {
 
       <div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employers</h2>
 
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+            {
+            key: {
+              text: "Employment: Who?"
+            },
+            value: {
+              text: data["employment-you-or-partner"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-summary",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+
+        ]
+        }) }}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -1140,7 +1164,7 @@ actions: {
 
           {
           key: {
-            text: "Your employer [Your partner's employer]"
+            text: "Employer name"
           },
           value: {
             text: data["XXX"]
@@ -1148,7 +1172,7 @@ actions: {
           actions: {
             items: [
               {
-                href: "home-living-with-you",
+                href: "employment-summary",
                 text: "Change",
                 visuallyHiddenText: "the details of anyone else that lives with you"
               }
@@ -1165,7 +1189,7 @@ actions: {
 
               {
           key: {
-            text: "The employment address we should send letters to"
+            text: "Employment address"
           },
           value: {
             html: "Address line one
@@ -1176,7 +1200,7 @@ actions: {
           actions: {
             items: [
               {
-                href: "XXX",
+                href: "employment-summary",
                 text: "Change",
                 visuallyHiddenText: "the address we should send letters to"
               }
