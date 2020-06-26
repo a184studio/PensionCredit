@@ -452,6 +452,7 @@
 
 
 
+<!-- - - - - - - - - - - - - - - - - -  WHO LIVES WITH YOU / NON DEPS - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -462,12 +463,12 @@
       text: "Does anyone else live with you apart from you [and your partner]?"
     },
     value: {
-      text: data["home-living-with-you"]
+      text: data["non-deps-living-with-you"]
     },
     actions: {
       items: [
         {
-          href: "home-living-with-you",
+          href: "non-deps-living-with-you",
           text: "Change",
           visuallyHiddenText: "whether anyone else lives with you"
         }
@@ -477,6 +478,28 @@
 
 ]
 }) }}
+
+
+non-deps-frequency
+non-deps-member-category
+non-deps-member-category-OtherDetails
+
+non-deps-member-full-name
+
+non-deps-member-details-dob
+non-deps-member-details-dob-day
+non-deps-member-details-dob-month
+non-deps-member-details-dob-year
+
+non-deps-member-details-blind
+
+non-deps-member-education-employment
+
+non-deps-member-details-weekly-earnings
+
+
+
+
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
