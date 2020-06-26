@@ -469,15 +469,17 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/non-deps-living-with-you-b-router`, (req, res) => {
-  const nonDepsCheckB = req.session.data['non-deps-living-with-you-b']
+router.post(`${baseUrl}/non-deps-summary-router`, (req, res) => {
+  const nonDepsSummary = req.session.data['non-deps-summary']
 
-  if (nonDepsCheckB === 'Yes') {
-    res.redirect(`${baseUrl}/non-deps-members-b-category`)
+  if (nonDepsSummary === 'Yes') {
+    res.redirect(`${baseUrl}/non-deps-members`)
   } else {
     res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
   }
 })
+
+
 
 
 
