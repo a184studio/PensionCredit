@@ -13,26 +13,59 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="non-deps-members-b-details" method="post" class="form">
+      <form action="non-deps-member-details" method="post" class="form">
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
+        {% set OtherDetails %}
 
-         {{ govukRadios({
-           idPrefix: "non-depts-category",
-           name: "non-depts-category",
-           fieldset: {
-             legend: {
-               text: "What is your relationship to the person that lives with you?",
-               isPageHeading: true,
-               classes: "govuk-fieldset__legend--xl"
-             }
-           },
-           items: [
+
+        <!------------SUBHEAD LEGEND------------>
+          {% set dynamicSubHead %}
+          <p class="govuk-body govuk-!-font-weight-bold">@pete: Define this someone else</p>
+          {% endset %}
+        <!------------Legend--------------->
+
+        {{ govukTextarea({
+          label: {
+            classes: "govuk-label--s",
+            html: dynamicSubHead
+          },
+          hint: {
+            text: ""
+          },
+          id: "non-deps-member-category-OtherDetails",
+          name: "non-deps-member-category-OtherDetails",
+          classes: "govuk-input--width-100",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+
+      {% endset %}
+
+      <!------------ CR ENDS--------------->
+
+
+
+      {{ govukCheckboxes({
+        name: "non-deps-member-category",
+        fieldset: {
+          legend: {
+            text: "What is your relationship to the person that lives with you?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+          }
+        },
+        hint: {
+          text: "@pete: Select one or more that apply",
+          classes: "govuk-fieldset__legend--s govuk-!-margin-bottom-6"
+        },
+        items: [
              {
              value: "A close relative",
              text: "A close relative",
-             checked: data['non-depts-category'] == "A close relative",
+             checked: data['non-deps-member-category'] == "A close relative",
               hint: {
                 text: "A close relative is a parent, parent-in-law, son, son-in-law, daughter, daughter-in-law, step-parent, step-son, step-daughter, brother, sister, or anyone that is the partner of one of these people."
               }
@@ -40,7 +73,7 @@
            {
              value: "Commercial boarders",
              text: "A commercial boarder",
-             checked: data['non-depts-category'] == "Commercial boarders",
+             checked: data['non-deps-member-category'] == "Commercial boarders",
               hint: {
                 text: "XXX"
               }
@@ -48,7 +81,7 @@
            {
              value: "Commercial subtenants",
              text: "A commercial subtenant",
-             checked: data['non-depts-category'] == "Commercial subtenants",
+             checked: data['non-deps-member-category'] == "Commercial subtenants",
               hint: {
                 text: "XXX"
               }
@@ -56,7 +89,7 @@
            {
              value: "Certain joint tenants or owner occupiers",
              text: "Certain joint tenants or owner occupiers",
-             checked: data['non-depts-category'] == "Certain joint tenants or owner occupiers",
+             checked: data['non-deps-member-category'] == "Certain joint tenants or owner occupiers",
               hint: {
                 text: "XXX"
               }
@@ -64,7 +97,7 @@
            {
              value: "Anyone who is separately liable to make payments to the landlord",
              text: "Someone who is separately liable to make payments to the landlord",
-             checked: data['non-depts-category'] == "Anyone who is separately liable to make payments to the landlord",
+             checked: data['non-deps-member-category'] == "Anyone who is separately liable to make payments to the landlord",
               hint: {
                 text: "XXX"
               }
@@ -72,7 +105,7 @@
            {
              value: "Certain volunteers from charitable organisations",
              text: "Certain volunteers from charitable organisations",
-             checked: data['non-depts-category'] == "Certain volunteers from charitable organisations",
+             checked: data['non-deps-member-category'] == "Certain volunteers from charitable organisations",
               hint: {
                 text: "XXX"
               }
@@ -80,7 +113,7 @@
             {
               value: "Landlords/landladies and their families",
               text: "A landlord landlady and their family",
-              checked: data['non-depts-category'] == "Landlords/landladies and their families",
+              checked: data['non-deps-member-category'] == "Landlords/landladies and their families",
                hint: {
                  text: "XXX"
                }
@@ -88,13 +121,14 @@
            {
              value: "Other",
              text: "Other",
-             checked: data['non-depts-category'] == "Other",
-              hint: {
-                text: "XXX"
+             checked: data['non-deps-member-category'] == "Other",
+                conditional: {
+                  html: OtherDetails
+                }
               }
-           }
-           ]
-         }) }}
+            ]
+          }) }}
+
 
 
 
