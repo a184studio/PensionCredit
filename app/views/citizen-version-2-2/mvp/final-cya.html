@@ -454,6 +454,9 @@
 
 <!-- - - - - - - - - - - - - - - - - -  WHO LIVES WITH YOU / NON DEPS - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
+<div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">People who live with you</h2>
+
+
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
@@ -479,12 +482,40 @@
 ]
 }) }}
 
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "non-deps-member-full-name"
+    },
+    value: {
+      text: data["non-deps-member-full-name"]
+    },
+    actions: {
+      items: [
+        {
+          href: "non-deps-member-details",
+          text: "Change",
+          visuallyHiddenText: "non-deps-member-full-name"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+<br>
+
+
 
 non-deps-frequency
 non-deps-member-category
 non-deps-member-category-OtherDetails
 
-non-deps-member-full-name
+
 
 non-deps-member-details-dob
 non-deps-member-details-dob-day
@@ -499,6 +530,7 @@ non-deps-member-details-weekly-earnings
 
 
 
+<div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Housing costs</h2>
 
 
 {{ govukSummaryList({
