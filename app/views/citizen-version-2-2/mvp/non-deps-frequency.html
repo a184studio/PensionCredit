@@ -1,7 +1,7 @@
 {% extends "layout-covid19.html" %}
 
 {% block pageTitle %}
-  Which best describes the place where you live? - Pension Credit
+  non-deps-frequency - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,46 +14,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="non-deps-living-with-you-b-router" method="post" class="form">
-
-
-      {% if data["single-joint-check"] == "Joint" %}
-
-      <p class="govuk-heading-xl govuk-!-margin-bottom-2">People you have said in your household so far</p>
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-padding-top-6 govuk-!-padding-bottom-9',
-        rows: [
-        {
-          key: {
-            text: "Partner"
-          },
-          value: {
-            text: "Name of partner"
-          },
-          actions: {
-            items: [
-              {
-                href: "reside-in-uk",
-                text: "",
-                visuallyHiddenText: "which country you live in"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
-
-      {% endif %}
-
-
-
+    <form action="non-deps-member-category" method="post" class="form">
 
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}<p class="govuk-heading-m govuk-!-margin-bottom-2">Does anyone else live with you apart from your partner?</p>
-        {% else %}<p class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone else live with you?</p>{% endif %}
+        <p class="govuk-heading-xl govuk-!-margin-bottom-2">Does this person live with you permanently?</p>
         {% endset %}
       <!------------Legend--------------->
 
@@ -67,10 +33,8 @@
         {% endset %}
       <!------------Legend------------>
 
-
-
       {{ govukRadios({
-        name: "non-deps-living-with-you-b",
+        name: "non-deps-frequency",
         fieldset: {
           legend: {
             html: dynamicH1,
@@ -85,12 +49,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["non-deps-living-with-you-b"] == "Yes")
+            checked: (data["non-deps-frequency"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["non-deps-living-with-you-b"] == "No")
+            checked: (data["non-deps-frequency"] == "No")
           }
         ]
       }) }}
