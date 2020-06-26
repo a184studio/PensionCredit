@@ -18,15 +18,15 @@
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Employers you have told us about</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Employers you have told us about</h1>
 
 
          {{ govukSummaryList({
-           classes: 'govuk-!-padding-top-6 govuk-!-padding-bottom-9',
+           classes: 'govuk-!-padding-top-6 govuk-!-padding-bottom-8',
            rows: [
            {
              key: {
-               text: "Employer"
+               text: "Your employer [Your partner's employer]"
              },
              value: {
                text: "Name of employer"
@@ -50,9 +50,11 @@
          }) }}
 
 
-      
-         {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner have any more income from employment?</h2>
-         {% else %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you have any more income from employment?</h2>{% endif %}
+
+
+
+         {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xm govuk-!-margin-bottom-2">Do you or your partner have any more income from employment?</h2>
+         {% else %}  <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Do you have any more income from employment?</h2>{% endif %}
 
 
              {{ govukRadios({
@@ -62,7 +64,7 @@
                  legend: {
                    text: "",
                    isPageHeading: true,
-                   classes: "govuk-fieldset__legend--l"
+                   classes: "govuk-fieldset__legend--m"
                  }
                    },
                    hint: {

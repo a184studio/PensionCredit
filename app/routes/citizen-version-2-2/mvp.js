@@ -407,7 +407,7 @@ router.post(`${baseUrl}/home-care-home-route-check-router`, (req, res) => {
   if (careHomeRouteCheck === 'Yes') {
     res.redirect(`${baseUrl}/pension-check`)
   } else {
-    res.redirect(`${baseUrl}/home-living-with-you`)
+    res.redirect(`${baseUrl}/non-deps-living-with-you`)
   }
 })
 
