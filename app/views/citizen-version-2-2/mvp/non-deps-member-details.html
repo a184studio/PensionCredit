@@ -23,7 +23,7 @@
 
          {{ govukInput({
            label: {
-             html: "<strong>What is their full name</strong>"
+             html: "<strong>What is their full name?</strong>"
            },
            hint: {
              text: "Include any middle names."
@@ -72,13 +72,13 @@
            name: "non-deps-member-details-blind",
            fieldset: {
              legend: {
-               text: "Registered blind or severely sight impaired?",
+               text: "Are they registered blind or severely sight impaired?",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--s"
              }
                },
                hint: {
-                 html: "XXX"
+                 html: ""
                },
 
            classes: "govuk-radios govuk-!-margin-bottom-4",
@@ -102,46 +102,46 @@
            name: "non-deps-member-education-employment",
            fieldset: {
              legend: {
-               text: "Do any of these apply?",
+               text: "Are they in education or employment?",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--s"
              }
            },
            hint: {
-             text: "@pete: Select one or more that apply",
+             text: "Select all that apply",
              classes: "govuk-fieldset__legend--s govuk-!-margin-bottom-4"
            },
            items: [
                 {
                 value: "Employment: Full time",
-                text: "Employment: Full time",
+                text: "Full-time employment",
                 checked: data['non-deps-member-education-employment'] == "Employment: Full time",
                  hint: {
-                   text: "XXX"
+                   text: ""
                  }
               },
               {
                 value: "Employment: Part time",
-                text: "Employment: Part time",
+                text: "Part-time employment",
                 checked: data['non-deps-member-education-employment'] == "Employment: Part time",
                  hint: {
-                   text: "XXX"
+                   text: ""
                  }
               },
               {
                 value: "Education: Full time",
-                text: "Education: Full time",
+                text: "Full-time education",
                 checked: data['non-deps-member-education-employment'] == "Education: Full time",
                  hint: {
-                   text: "XXX"
+                   text: ""
                  }
               },
               {
                 value: "Education: Part time",
-                text: "Education: Part time",
+                text: "Part-time education",
                 checked: data['non-deps-member-education-employment'] == "Education: Part time",
                  hint: {
-                   text: "XXX"
+                   text: ""
                  }
               },
               {
@@ -149,14 +149,14 @@
                 text: "Not in employment or education",
                 checked: data['non-deps-member-education-employment'] == "Not in employment or education",
                  hint: {
-                   text: "XXX"
+                   text: ""
                  }
               }
                ]
              }) }}
 
              {% set LegendAmount %}
-             <strong>[Dynamic based on Yes to housing costs] How much do they earn a week?<strong>
+             <strong>[Dynamic based on Yes to housing costs] How much do they earn each week?<strong>
              {% endset -%}
 
                    {{ govukInput({

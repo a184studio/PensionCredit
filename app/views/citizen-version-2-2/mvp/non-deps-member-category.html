@@ -22,7 +22,7 @@
 
         <!------------SUBHEAD LEGEND------------>
           {% set dynamicSubHead %}
-          <p class="govuk-body govuk-!-font-weight-bold">@pete: Define this someone else</p>
+          <p class="govuk-body govuk-!-font-weight-bold">What is your relationship to this person?</p>
           {% endset %}
         <!------------Legend--------------->
 
@@ -58,7 +58,7 @@
           }
         },
         hint: {
-          text: "@pete: Select one or more that apply",
+          text: "Select all that apply",
           classes: "govuk-fieldset__legend--s govuk-!-margin-bottom-6"
         },
         items: [
@@ -72,26 +72,19 @@
            },
            {
              value: "Commercial boarders",
-             text: "A commercial boarder",
+             text: "A commercial boarder, lodger or subtenant",
              checked: data['non-deps-member-category'] == "Commercial boarders",
               hint: {
-                text: "XXX"
+                text: "Someone who pays you to share your home or rent part of the property."
               }
            },
-           {
-             value: "Commercial subtenants",
-             text: "A commercial subtenant",
-             checked: data['non-deps-member-category'] == "Commercial subtenants",
-              hint: {
-                text: "XXX"
-              }
-           },
+
            {
              value: "Certain joint tenants or owner occupiers",
-             text: "Certain joint tenants or owner occupiers",
+             text: "A joint tenant or owner occupier",
              checked: data['non-deps-member-category'] == "Certain joint tenants or owner occupiers",
               hint: {
-                text: "XXX"
+                text: "Someone who is named on the mortgage or tenancy agreement."
               }
            },
            {
@@ -99,15 +92,15 @@
              text: "Someone who is separately liable to make payments to the landlord",
              checked: data['non-deps-member-category'] == "Anyone who is separately liable to make payments to the landlord",
               hint: {
-                text: "XXX"
+                text: "Someone who has a separate arrangement with the same landlord as you."
               }
            },
            {
              value: "Certain volunteers from charitable organisations",
-             text: "Certain volunteers from charitable organisations",
+             text: "A volunteer from charitable organisations",
              checked: data['non-deps-member-category'] == "Certain volunteers from charitable organisations",
               hint: {
-                text: "XXX"
+                text: "Someone who is paid to live in your home to care for you."
               }
             },
             {
@@ -115,12 +108,12 @@
               text: "A landlord landlady and their family",
               checked: data['non-deps-member-category'] == "Landlords/landladies and their families",
                hint: {
-                 text: "XXX"
+                 text: ""
                }
             },
            {
              value: "Other",
-             text: "Other",
+             text: "Someone else",
              checked: data['non-deps-member-category'] == "Other",
                 conditional: {
                   html: OtherDetails
