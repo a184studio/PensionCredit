@@ -463,7 +463,7 @@
 
     {
     key: {
-      text: "Does anyone else live with you apart from you [and your partner]?"
+      text: "Does anyone else live with you [apart from your partner]?"
     },
     value: {
       text: data["non-deps-living-with-you"]
@@ -489,7 +489,7 @@
 
     {
     key: {
-      text: "non-deps-frequency"
+      text: "Does this person live with you all the time?"
     },
     value: {
       text: data["non-deps-frequency"]
@@ -499,7 +499,7 @@
         {
           href: "non-deps-member-details",
           text: "Change",
-          visuallyHiddenText: "non-deps-frequency"
+          visuallyHiddenText: "whether this person lives with you all the time"
         }
       ]
     }
@@ -507,7 +507,7 @@
 
   {
   key: {
-    text: "non-deps-member-category"
+    text: "What is your relationship to the person that lives with you?"
   },
   value: {
     html: " A family member<br>
@@ -519,7 +519,7 @@
       {
         href: "non-deps-member-category",
         text: "Change",
-        visuallyHiddenText: "non-deps-member-category"
+        visuallyHiddenText: "your relationship to this person"
       }
     ]
   }
@@ -536,7 +536,7 @@
 
       {
       key: {
-        text: "non-deps-member-category-OtherDetails"
+        text: "What is your relationship to the person that lives with you?"
       },
       value: {
         text: data["non-deps-member-category-OtherDetails"]
@@ -546,7 +546,7 @@
           {
             href: "non-deps-member-category",
             text: "Change",
-            visuallyHiddenText: "non-deps-member-category-OtherDetails"
+            visuallyHiddenText: "your relationship to the person that lives with you"
           }
         ]
       }
@@ -561,9 +561,26 @@
   classes: 'govuk-!-margin-bottom-9',
   rows: [
 
+  {
+  key: {
+    text: "What is their full name?"
+  },
+  value: {
+    text: data[non-deps-member-details-full-name]
+  },
+  actions: {
+    items: [
+      {
+        href: "non-deps-member-details",
+        text: "Change",
+        visuallyHiddenText: "their full name"
+      }
+    ]
+  }
+},
     {
     key: {
-      text: "non-deps-member-details-dob"
+      text: "What is their date of birth?"
     },
     value: {
       text: data['non-deps-member-details-dob-day'] + ' ' + (data['non-deps-member-details-dob-month'] | getMonth) + ' ' + data['non-deps-member-details-dob-year']
@@ -573,7 +590,7 @@
         {
           href: "non-deps-member-details",
           text: "Change",
-          visuallyHiddenText: "non-deps-member-details-dob"
+          visuallyHiddenText: "their date of birth"
         }
       ]
     }
@@ -581,7 +598,7 @@
 
   {
   key: {
-    text: "non-deps-member-details-blind"
+    text: "Are they registered blind or severely sight impaired?"
   },
   value: {
     text: data["non-deps-member-details-blind"]
@@ -591,7 +608,7 @@
       {
         href: "non-deps-member-details",
         text: "Change",
-        visuallyHiddenText: "non-deps-member-details-blind"
+        visuallyHiddenText: "whether they are blind or severely sight impaired"
       }
     ]
   }
@@ -599,7 +616,7 @@
 
 {
 key: {
-  text: "non-deps-member-education-employment"
+  text: "Are they in education or employment?"
 },
 value: {
   html: " Employment: Full-time<br>
@@ -612,7 +629,7 @@ actions: {
     {
       href: "non-deps-member-details",
       text: "Change",
-      visuallyHiddenText: "non-deps-member-education-employment"
+      visuallyHiddenText: "whether they are in education or employment"
     }
   ]
 }
@@ -620,7 +637,7 @@ actions: {
 
 {
 key: {
-  text: "non-deps-member-details-weekly-earnings"
+  text: "How much do they earn each week?"
 },
 value: {
   text: data["non-deps-member-details-weekly-earnings"]
@@ -630,7 +647,7 @@ actions: {
     {
       href: "non-deps-member-details",
       text: "Change",
-      visuallyHiddenText: "non-deps-member-details-weekly-earnings"
+      visuallyHiddenText: "how much they earn each week"
     }
   ]
 }
@@ -3651,30 +3668,6 @@ actions: {
 
 {% endif %}
 
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-
-        {
-          key: {
-            text: "[Claimant + non Del Auth] What address should we send letters to?"
-          },
-          value: {
-            text: data["del-auth-address-correspondence-yn"]
-          },
-          actions: {
-            items: [
-              {
-                href: "del-auth-address-correspondence-post-code-lookup",
-                text: "Change",
-                visuallyHiddenText: "whether your home address is the same as the address we use to send you letters"
-              }
-            ]
-          }
-        }
-
-      ]
-      }) }}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -3682,7 +3675,7 @@ actions: {
 
       {
           key: {
-            text: "[Claimant] The address we should send letters to"
+            text: "What is the address we should send letters to?"
           },
           value: {
             html: "Address line one
@@ -3710,7 +3703,7 @@ actions: {
 
       {
           key: {
-            text: "[Del Auth] The address we should send letters to"
+            text: "What is your address?"
           },
           value: {
             html: "Address line one
@@ -3723,7 +3716,7 @@ actions: {
               {
                 href: "del-auth-address-correspondence-post-code-lookup",
                 text: "Change",
-                visuallyHiddenText: "the address we should send letters to"
+                visuallyHiddenText: "your address"
               }
             ]
           }
