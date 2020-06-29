@@ -1131,31 +1131,114 @@ actions: {
         ]
       }) }}
 
-{% if data["employment-check-yes-details"] %}
+      <div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employers</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+            {
+            key: {
+              text: "Employment: Who?"
+            },
+            value: {
+              text: data["employment-you-or-partner"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment-summary",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+
+        ]
+        }) }}
+
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
 
-        {
+          {
           key: {
-            text: "Details of your income from employment"
+            text: "Employer name"
           },
           value: {
-            text: data['employment-check-yes-details']
+            text: data["XXX"]
           },
           actions: {
             items: [
               {
-                href: "employment-check",
+                href: "employment-summary",
                 text: "Change",
-                visuallyHiddenText: "details of your income from employment"
+                visuallyHiddenText: "the details of anyone else that lives with you"
               }
             ]
           }
         }
+
       ]
-    }) }}
-{% endif %}
+      }) }}
+
+      {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+
+              {
+          key: {
+            text: "Employment address"
+          },
+          value: {
+            html: "Address line one
+            <br>Address line Two
+            <br>Address line Three
+            <br>" + data["postcode"]
+          },
+          actions: {
+            items: [
+              {
+                href: "employment-summary",
+                text: "Change",
+                visuallyHiddenText: "the address we should send letters to"
+              }
+            ]
+          }
+        }
+      }
+      }) }}
+
+      <br>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "Employment 2(Bit of space above)"
+          },
+          value: {
+            text: "address"
+          },
+          actions: {
+            items: [
+              {
+                href: "home-living-with-you",
+                text: "Change",
+                visuallyHiddenText: "the details of anyone else that lives with you"
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+      <div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Self-employment</h2>
+
 
 
   {{ govukSummaryList({
@@ -1234,33 +1317,6 @@ actions: {
     }) }}
 {% endif %}
 
-{{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-
-        {
-    key: {
-      text: "The employment address we should send letters to"
-    },
-    value: {
-      html: "Address line one
-      <br>Address line Two
-      <br>Address line Three
-      <br>" + data["postcode"]
-    },
-    actions: {
-      items: [
-        {
-          href: "del-auth-address-correspondence-post-code-lookup",
-          text: "Change",
-          visuallyHiddenText: "the address we should send letters to"
-        }
-      ]
-    }
-  }
-
-]
-}) }}
 
 
 
