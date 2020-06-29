@@ -16,7 +16,10 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="final-cya" method="post" class="form">
 
-    <h1 class="govuk-heading-xl">
+      {% if data["del-auth-who-made-claim"] == "Yourself" %}
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
       Select the address we should send letters to
     </h1>
 

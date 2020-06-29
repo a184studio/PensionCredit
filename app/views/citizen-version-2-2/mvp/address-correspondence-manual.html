@@ -16,7 +16,8 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="final-cya" method="post">
 
-
+      {% if data["del-auth-who-made-claim"] == "Yourself" %}
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
 
 
   {% call govukFieldset({
