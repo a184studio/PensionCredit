@@ -3668,30 +3668,6 @@ actions: {
 
 {% endif %}
 
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-
-        {
-          key: {
-            text: "[Claimant + non Del Auth] What address should we send letters to?"
-          },
-          value: {
-            text: data["del-auth-address-correspondence-yn"]
-          },
-          actions: {
-            items: [
-              {
-                href: "del-auth-address-correspondence-post-code-lookup",
-                text: "Change",
-                visuallyHiddenText: "whether your home address is the same as the address we use to send you letters"
-              }
-            ]
-          }
-        }
-
-      ]
-      }) }}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -3699,7 +3675,7 @@ actions: {
 
       {
           key: {
-            text: "[Claimant] The address we should send letters to"
+            text: "What is the address we should send letters to?"
           },
           value: {
             html: "Address line one
@@ -3727,7 +3703,7 @@ actions: {
 
       {
           key: {
-            text: "[Del Auth] The address we should send letters to"
+            text: "What is your address?"
           },
           value: {
             html: "Address line one
@@ -3740,7 +3716,7 @@ actions: {
               {
                 href: "del-auth-address-correspondence-post-code-lookup",
                 text: "Change",
-                visuallyHiddenText: "the address we should send letters to"
+                visuallyHiddenText: "your address"
               }
             ]
           }
