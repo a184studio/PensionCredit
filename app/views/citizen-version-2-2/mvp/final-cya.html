@@ -2180,24 +2180,6 @@ actions: {
               }
             ]
           }
-        },
-
-        {
-          key: {
-            text: "What date do you want your Pension Credit claim to start?"
-          },
-          value: {
-            text: data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']
-          },
-          actions: {
-            items: [
-              {
-                href: "claim-date-of-claim",
-                text: "Change",
-                visuallyHiddenText: "what date you want your Pension Credit claim to start"
-              }
-            ]
-          }
         }
         ]
       }) }}
