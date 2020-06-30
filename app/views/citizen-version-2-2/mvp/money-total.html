@@ -24,11 +24,11 @@
       {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">How much money do you and your partner have?</h1>
       {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">How much money do you have?</h1>{% endif %}
 
-      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-body">If you have money in accounts that are shared with someone else, only tell us about the amount of money that belongs to you and your partner.</p>
-      {% else %}  <p class="govuk-body">If you have money in accounts that are shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
+      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you have money in accounts that are shared with someone else, only tell us about the amount of money that belongs to you and your partner.</p>
+      {% else %}  <p class="govuk-!-font-size-24">If you have money in accounts that are shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
 
-      <p class="govuk-body">This includes:</p>
-<ul class="govuk-list govuk-list--bullet">
+      <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
       <li>money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office</li>
       <li>National Savings and Investment products like Savings Certificates, Premium Bonds, Income Bonds and residual accounts</li>
       <li>money at home in cash</li>
@@ -50,7 +50,7 @@
           html: LegendAmount
         },
         hint: {
-          text: ""
+          text: "For example, £100.00 or £1,000.00"
         },
         id: "money-total-then",
         name: "money-total-then",
@@ -61,10 +61,10 @@
       {{ govukInput({
         label: {
           html: "<strong>How much money do you have today?<strong>"
-        },
-        hint: {
-          text: ""
-        },
+          },
+          hint: {
+            text: "For example, £100.00 or £1,000.00"
+          },
         id: "money-total-now",
         name: "money-total-now",
         classes: "govuk-input--width-20",
