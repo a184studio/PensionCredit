@@ -451,238 +451,6 @@
 }) }}
 
 
-
-<!-- - - - - - - - - - - - - - - - - -  WHO LIVES WITH YOU / NON DEPS - - - - - - - - - - - - - - - - - - - - - - - - - -->
-
-<div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">People who live with you</h2>
-
-
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
-
-    {
-    key: {
-      text: "Does anyone else live with you [apart from your partner]?"
-    },
-    value: {
-      text: data["non-deps-living-with-you"]
-    },
-    actions: {
-      items: [
-        {
-          href: "non-deps-living-with-you",
-          text: "Change",
-          visuallyHiddenText: "whether anyone else lives with you"
-        }
-      ]
-    }
-  }
-
-]
-}) }}
-
-
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
-
-    {
-    key: {
-      text: "Does this person live with you all the time?"
-    },
-    value: {
-      text: data["non-deps-frequency"]
-    },
-    actions: {
-      items: [
-        {
-          href: "non-deps-member-details",
-          text: "Change",
-          visuallyHiddenText: "whether this person lives with you all the time"
-        }
-      ]
-    }
-  },
-
-  {
-  key: {
-    text: "What is your relationship to the person that lives with you?"
-  },
-  value: {
-    html: " A family member<br>
-            Charity<br>
-            ...<br>
-            ..."  },
-  actions: {
-    items: [
-      {
-        href: "non-deps-member-category",
-        text: "Change",
-        visuallyHiddenText: "your relationship to this person"
-      }
-    ]
-  }
-}
-
-]
-}) }}
-
-{% if data["non-deps-member-category-OtherDetails"] %}
-
-  {{ govukSummaryList({
-    classes: 'govuk-!-margin-bottom-9',
-    rows: [
-
-      {
-      key: {
-        text: "What is your relationship to the person that lives with you?"
-      },
-      value: {
-        text: data["non-deps-member-category-OtherDetails"]
-      },
-      actions: {
-        items: [
-          {
-            href: "non-deps-member-category",
-            text: "Change",
-            visuallyHiddenText: "your relationship to the person that lives with you"
-          }
-        ]
-      }
-    }
-
-  ]
-  }) }}
-
-{% endif %}
-
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
-
-  {
-  key: {
-    text: "What is their full name?"
-  },
-  value: {
-    text: data[non-deps-member-details-full-name]
-  },
-  actions: {
-    items: [
-      {
-        href: "non-deps-member-details",
-        text: "Change",
-        visuallyHiddenText: "their full name"
-      }
-    ]
-  }
-},
-    {
-    key: {
-      text: "What is their date of birth?"
-    },
-    value: {
-      text: data['non-deps-member-details-dob-day'] + ' ' + (data['non-deps-member-details-dob-month'] | getMonth) + ' ' + data['non-deps-member-details-dob-year']
-    },
-    actions: {
-      items: [
-        {
-          href: "non-deps-member-details",
-          text: "Change",
-          visuallyHiddenText: "their date of birth"
-        }
-      ]
-    }
-  },
-
-  {
-  key: {
-    text: "Are they registered blind or severely sight impaired?"
-  },
-  value: {
-    text: data["non-deps-member-details-blind"]
-  },
-  actions: {
-    items: [
-      {
-        href: "non-deps-member-details",
-        text: "Change",
-        visuallyHiddenText: "whether they are blind or severely sight impaired"
-      }
-    ]
-  }
-},
-
-{
-key: {
-  text: "Are they in education or employment?"
-},
-value: {
-  html: " Employment: Full-time<br>
-          Employment: Part-time<br>
-          Education: Full-time<br>
-          Education: Part-time"
-},
-actions: {
-  items: [
-    {
-      href: "non-deps-member-details",
-      text: "Change",
-      visuallyHiddenText: "whether they are in education or employment"
-    }
-  ]
-}
-},
-
-{
-key: {
-  text: "How much do they earn each week?"
-},
-value: {
-  text: data["non-deps-member-details-weekly-earnings"]
-},
-actions: {
-  items: [
-    {
-      href: "non-deps-member-details",
-      text: "Change",
-      visuallyHiddenText: "how much they earn each week"
-    }
-  ]
-}
-}
-
-]
-}) }}
-
-<br>
-
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
-
-    {
-    key: {
-      text: "Person 2: example (Line break between each member)"
-    },
-    value: {
-      text: "Alex Smith JR"
-    },
-    actions: {
-      items: [
-        {
-          href: "non-deps-member-category",
-          text: "Change",
-          visuallyHiddenText: "non-deps-member-category-OtherDetails"
-        }
-      ]
-    }
-  }
-
-]
-}) }}
-
 <div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Housing costs</h2>
 
 
@@ -1208,6 +976,237 @@ actions: {
 
 
       </div>
+
+      <!-- - - - - - - - - - - - - - - - - -  WHO LIVES WITH YOU / NON DEPS - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+      <div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">People who live with you</h2>
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "Does anyone else live with you [apart from your partner]?"
+          },
+          value: {
+            text: data["non-deps-living-with-you"]
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-living-with-you",
+                text: "Change",
+                visuallyHiddenText: "whether anyone else lives with you"
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "Does this person live with you all the time?"
+          },
+          value: {
+            text: data["non-deps-frequency"]
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "whether this person lives with you all the time"
+              }
+            ]
+          }
+        },
+
+        {
+        key: {
+          text: "What is your relationship to the person that lives with you?"
+        },
+        value: {
+          html: " A family member<br>
+                  Charity<br>
+                  ...<br>
+                  ..."  },
+        actions: {
+          items: [
+            {
+              href: "non-deps-member-category",
+              text: "Change",
+              visuallyHiddenText: "your relationship to this person"
+            }
+          ]
+        }
+      }
+
+      ]
+      }) }}
+
+      {% if data["non-deps-member-category-OtherDetails"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+            {
+            key: {
+              text: "What is your relationship to the person that lives with you?"
+            },
+            value: {
+              text: data["non-deps-member-category-OtherDetails"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "non-deps-member-category",
+                  text: "Change",
+                  visuallyHiddenText: "your relationship to the person that lives with you"
+                }
+              ]
+            }
+          }
+
+        ]
+        }) }}
+
+      {% endif %}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+        key: {
+          text: "What is their full name?"
+        },
+        value: {
+          text: data[non-deps-member-details-full-name]
+        },
+        actions: {
+          items: [
+            {
+              href: "non-deps-member-details",
+              text: "Change",
+              visuallyHiddenText: "their full name"
+            }
+          ]
+        }
+      },
+          {
+          key: {
+            text: "What is their date of birth?"
+          },
+          value: {
+            text: data['non-deps-member-details-dob-day'] + ' ' + (data['non-deps-member-details-dob-month'] | getMonth) + ' ' + data['non-deps-member-details-dob-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "their date of birth"
+              }
+            ]
+          }
+        },
+
+        {
+        key: {
+          text: "Are they registered blind or severely sight impaired?"
+        },
+        value: {
+          text: data["non-deps-member-details-blind"]
+        },
+        actions: {
+          items: [
+            {
+              href: "non-deps-member-details",
+              text: "Change",
+              visuallyHiddenText: "whether they are blind or severely sight impaired"
+            }
+          ]
+        }
+      },
+
+      {
+      key: {
+        text: "Are they in education or employment?"
+      },
+      value: {
+        html: " Employment: Full-time<br>
+                Employment: Part-time<br>
+                Education: Full-time<br>
+                Education: Part-time"
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "whether they are in education or employment"
+          }
+        ]
+      }
+      },
+
+      {
+      key: {
+        text: "How much do they earn each week?"
+      },
+      value: {
+        text: data["non-deps-member-details-weekly-earnings"]
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "how much they earn each week"
+          }
+        ]
+      }
+      }
+
+      ]
+      }) }}
+
+      <br>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "Person 2: example (Line break between each member)"
+          },
+          value: {
+            text: "Alex Smith JR"
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-category",
+                text: "Change",
+                visuallyHiddenText: "non-deps-member-category-OtherDetails"
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
