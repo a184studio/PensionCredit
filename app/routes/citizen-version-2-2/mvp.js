@@ -407,7 +407,7 @@ router.post(`${baseUrl}/home-care-home-route-check-router`, (req, res) => {
   if (careHomeRouteCheck === 'Yes') {
     res.redirect(`${baseUrl}/pension-check`)
   } else {
-    res.redirect(`${baseUrl}/non-deps-living-with-you`)
+    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
   }
 })
 
@@ -463,9 +463,9 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   const nonDepsCheck = req.session.data['non-deps-living-with-you']
 
   if (nonDepsCheck === 'Yes') {
-    res.redirect(`${baseUrl}/non-deps-members`)
+    res.redirect(`${baseUrl}/non-deps-frequency`)
   } else {
-    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
+    res.redirect(`${baseUrl}/pension-check`)
   }
 })
 
@@ -475,7 +475,7 @@ router.post(`${baseUrl}/non-deps-summary-router`, (req, res) => {
   if (nonDepsSummary === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-members`)
   } else {
-    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
+    res.redirect(`${baseUrl}/pension-check`)
   }
 })
 
