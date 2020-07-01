@@ -129,6 +129,14 @@
                  }
               },
               {
+                value: "Employment: Self-employed",
+                text: "Self-employed",
+                checked: data['non-deps-member-education-employment'] == "Employment: Self-employed",
+                 hint: {
+                   text: ""
+                 }
+              },
+              {
                 value: "Education: Full time",
                 text: "Full-time education",
                 checked: data['non-deps-member-education-employment'] == "Education: Full time",
@@ -144,6 +152,7 @@
                    text: ""
                  }
               },
+
               {
                 value: "Not in employment or education",
                 text: "Not in employment or education",
@@ -164,7 +173,7 @@
                        html: LegendAmount
                      },
                      hint: {
-                       text: "For example, £100.00 or £1,000.00"
+                       text: "Tell us their total earnings before tax and National Insurance are deducted. For example, £100.00 or £1,000.00."
                      },
                      id: "non-deps-member-details-weekly-earnings",
                      name: "non-deps-member-details-weekly-earnings",
