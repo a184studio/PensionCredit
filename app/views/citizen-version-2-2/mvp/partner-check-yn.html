@@ -58,27 +58,35 @@
         name: "partner-check-yn",
         fieldset: {
           legend: {
-            text: "Do you live with a partner?",
+            text: "Do you have a partner?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         classes: "govuk-radios",
         hint: {
-          text: "A partner is a husband, wife, civil partner or someone that you live with as a couple."
+          text: "A partner is a husband, wife, civil partner or someone that you are in a relationship with."
         },
         items: [
           {
             value: "Yes",
-            text: "Yes",
+            text: "Yes, we live together and will both be included in this claim",
             checked: (data["partner-check-yn"] == "Yes"),
                   conditional: {
                     html: ageCheck
                   }
                     },
+            {
+              value: "Yes",
+              text: "Yes, but we do not live together so they won't be included in this claim",
+              checked: (data["partner-check-yn"] == "Yes"),
+                conditional: {
+                      html: ageCheck
+                            }
+                              },
           {
             value: "No",
-            text: "No",
+            text: "No, I do not have a partner",
             checked: (data["partner-check-yn"] == "No")
           }
         ]
