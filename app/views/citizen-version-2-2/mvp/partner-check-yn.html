@@ -69,7 +69,7 @@
         },
         items: [
           {
-            value: "Yes",
+            value: "Yes, we live together and will both be included in this claim",
             text: "Yes, we live together and will both be included in this claim",
             checked: (data["partner-check-yn"] == "Yes"),
                   conditional: {
@@ -77,7 +77,7 @@
                   }
                     },
             {
-              value: "Yes",
+              value: "Yes, but we do not live together so they won't be included in this claim",
               text: "Yes, but we do not live together so they won't be included in this claim",
               checked: (data["partner-check-yn"] == "Yes"),
                 conditional: {
@@ -85,7 +85,7 @@
                             }
                               },
           {
-            value: "No",
+            value: "No, I do not have a partner",
             text: "No, I do not have a partner",
             checked: (data["partner-check-yn"] == "No")
           }
