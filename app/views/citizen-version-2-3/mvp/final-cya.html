@@ -1167,12 +1167,12 @@ actions: {
             text: "Employer name"
           },
           value: {
-            text: data["XXX"]
+            text: data["employment-details"]
           },
           actions: {
             items: [
               {
-                href: "employment-summary",
+                href: "employment-details",
                 text: "Change",
                 visuallyHiddenText: "the details of anyone else that lives with you"
               }
@@ -1195,12 +1195,12 @@ actions: {
             html: "Address line one
             <br>Address line Two
             <br>Address line Three
-            <br>" + data["postcode"]
+            <br>" + data["employment-post-code-lookup"]
           },
           actions: {
             items: [
               {
-                href: "employment-summary",
+                href: "employment-post-code-lookup",
                 text: "Change",
                 visuallyHiddenText: "the address we should send letters to"
               }
@@ -1275,7 +1275,7 @@ actions: {
                   text: "Whose is this income?"
                 },
                 value: {
-                  text: data['self-employment-check']
+                  text: data['employment-you-or-partner']
                 },
                 actions: {
                   items: [
