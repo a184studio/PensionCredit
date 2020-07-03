@@ -16,9 +16,12 @@
   <div class="govuk-grid-column-two-thirds">
     {% if data["del-auth-who-made-claim"] == "Yourself" %}
     {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
-    <h1 class="govuk-heading-xl  govuk-!-margin-bottom-6">
-      What is your postcode?
-    </h1>
+
+    {% if data["del-auth-who-made-claim"] == "Yourself" %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What is the postcode of the address we should send letters to?</h1>
+    {% else %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What is your postcode?</h1>
+    {% endif %}
 
     <form action="del-auth-address-correspondence-choice" method="post" class="form">
       {{ govukInput({
@@ -42,7 +45,7 @@
 
     <ul class="govuk-list">
       <li>
-        <a class="govuk-link" href="del-auth-address-correspondence-manual">Enter your address manually</a>
+        <a class="govuk-link" href="del-auth-address-correspondence-manual">Enter the address manually</a>
       </li>
     </ul>
     <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->

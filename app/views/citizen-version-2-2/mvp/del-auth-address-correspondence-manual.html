@@ -19,11 +19,20 @@
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
 
+      {% set addressH1 %}
 
+      {% if data["del-auth-who-made-claim"] == "Yourself"
+       %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What is the address we should send letters to?</h1>
+      {% else %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What is your address?</h1>
+      {% endif %}
+
+      {% endset %}
 
   {% call govukFieldset({
     legend: {
-      text: "What is your address?",
+      html: addressH1,
       classes: "govuk-fieldset__legend--xl",
       isPageHeading: true
     }
@@ -78,7 +87,7 @@
         text: "Continue"
       }) }}
 
-      <p class="govuk-body"><a href="del-auth-correspondence-post-code-lookup">Use the postcode look up to find your address</a></p>
+      <p class="govuk-body"><a href="del-auth-correspondence-post-code-lookup">Use the postcode look up to find the address</a></p>
 
     </form>
 
