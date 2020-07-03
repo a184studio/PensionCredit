@@ -370,12 +370,15 @@ router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
 router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   const partnerCheck = req.session.data['partner-check-yn']
 
-  if (partnerCheck === 'No') {
+  if (partnerCheck === 'No, I do not have a partner') {
     res.redirect(`${baseUrl}/claim-filter`)
   } else {
     res.redirect(`${baseUrl}/partner-app-check`)
   }
 })
+
+
+
 
 router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
   const claimFilter = req.session.data['claim-filter']
