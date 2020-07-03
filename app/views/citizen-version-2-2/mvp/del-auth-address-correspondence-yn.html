@@ -20,6 +20,17 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="del-auth-address-correspondence-yn-router" method="post" class="form">
+
+      {% set addressRadio %}
+
+      {% if data["del-auth-who-made-claim"] == "Yourself"
+       %}
+        <p class="govuk-body">Your home address</p>
+      {% else %}
+        <p class="govuk-body">The customer's home address</p>
+      {% endif %}
+
+      {% endset -%}
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
       <input type="hidden" name="contact-complete" value="in-progress"/>
@@ -43,7 +54,7 @@
         items: [
         {
             value: "Claimant address",
-            text: "The customer's home address",
+            html: addressRadio,
             checked: (data["del-auth-address-correspondence-yn"] == "Claimant address")
           },
           {
