@@ -1125,7 +1125,7 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
   else if (whoMadeClaim === 'Friend or family member') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-number`)
   }
-  else if (whoMadeClaim === 'SomeoneElse') { // name of data / + answer
+  else if (whoMadeClaim === 'Someone else') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-number`)
   }
   else {

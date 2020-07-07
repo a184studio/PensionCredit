@@ -19,7 +19,11 @@
   {% if data["del-auth-who-made-claim"] == "Yourself" %}
   {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
 
-  {% if data["del-auth-who-made-claim"] == "Yourself" %}
+  {% if data["del-auth-who-made-claim"] == "Yourself"
+  or data["del-auth-who-made-claim"] == "Charity or organisation"
+  or data["del-auth-who-made-claim"] == "Friend or family member"
+  or data["del-auth-who-made-claim"] == "Someone else" 
+  %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Select the address we should send letters to</h1>
   {% else %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Select your address</h1>
