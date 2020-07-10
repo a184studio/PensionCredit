@@ -34,6 +34,24 @@
            value: data["non-deps-member-full-name"]
          }) }}
 
+         {% if data['non-deps-member-category'] == "Certain volunteers from charitable organisations" %}
+
+                  {{ govukInput({
+                    label: {
+                      html: "<strong>What is the name of the charity this person works for?</strong>"
+                    },
+                    hint: {
+                      text: ""
+                    },
+                    id: "non-deps-member-charity-name",
+                    name: "non-deps-member-charity-name",
+                    classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+                    value: data["non-deps-member-charity-name"]
+                  }) }}
+
+               {% endif %}
+
+               {% if data['non-deps-member-category'] == "A close relative" %}
 
          {{ govukDateInput({
            id: "non-deps-member-details-dob",
@@ -181,7 +199,7 @@
                      value: data["non-deps-member-details-weekly-earnings"]
                    }) }}
 
-
+{% endif %}
 
 
         {{ govukButton({
