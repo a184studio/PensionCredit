@@ -69,19 +69,23 @@
         },
         items: [
           {
-            value: "Yes, we live together and will both be included in this claim",
-            text: "Yes, we live together and will both be included in this claim",
+            value: "Yes, we live together",
+            text: "Yes, we live together",
             checked: (data["partner-check-yn"] == "Yes"),
                   conditional: {
                     html: ageCheck
                   }
                     },
             {
-              value: "Yes, but we do not live together so they wont be included in this claim",
-              text: "Yes, but we do not live together so they won't be included in this claim",
+              value: "Yes, but we do not live together",
+              text: "Yes, but we do not live together",
+              hint: {
+         text: "If you do not live together, we will not need to ask you about them."
+       },
               checked: (data["partner-check-yn"] == "No")
 
                               },
+
           {
             value: "No, I do not have a partner",
             text: "No, I do not have a partner",
