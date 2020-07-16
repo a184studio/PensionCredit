@@ -3243,6 +3243,31 @@ actions: {
 
     ]
   }) }}
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
+
+    {
+      key: {
+        text: "What is your relationship to the applicant?"
+      },
+      value: {
+        text: data["del-auth-contact-name"]
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "Change",
+            visuallyHiddenText: "your relationship to the applicant"
+          }
+        ]
+      }
+    }
+
+  ]
+}) }}
+
 
   {{ govukSummaryList({
     classes: 'govuk-!-margin-bottom-9',
@@ -3260,7 +3285,7 @@ actions: {
           {
             href: "",
             text: "Change",
-            visuallyHiddenText: "your Corporate ID"
+            visuallyHiddenText: "your corporate ID"
           }
         ]
       }
@@ -3528,7 +3553,7 @@ actions: {
                     {
                       href: "del-auth-contact-formats",
                       text: "Change",
-                      visuallyHiddenText: "what formats you need us to use when we contact you by letter or phone?"
+                      visuallyHiddenText: "what formats you need us to use when we contact you by letter or phone"
                     }
                   ]
                 }
@@ -3578,7 +3603,7 @@ actions: {
 
                       {
             key: {
-              text: "What is the your textphone (Text Relay) number"
+              text: "What is your textphone (Text Relay) number"
             },
             value: {
               text: data["del-auth-contact-formats-text-phone-number"]
@@ -3633,7 +3658,7 @@ actions: {
 
               {
     key: {
-      text: "Details of other formats you need us to use to contact you"
+      text: "How can we help when we contact you?"
     },
     value: {
       text: data["contact-other-details"]
@@ -3643,7 +3668,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "the details of other formats you need us to use to contact you"
+          visuallyHiddenText: "how we can help when we contact you"
         }
       ]
     }
@@ -3658,7 +3683,7 @@ actions: {
 
                         {
               key: {
-                text: "Details of other formats you need us to use to contact you"
+                text: "How can we help when we contact the applicant?"
               },
               value: {
                 text: data["contact-other-details"]
@@ -3668,7 +3693,7 @@ actions: {
                   {
                     href: "",
                     text: "Change",
-                    visuallyHiddenText: "the details of other formats you need us to use to contact you"
+                    visuallyHiddenText: "how we can help when we contact the applicant"
                   }
                 ]
               }
@@ -3686,7 +3711,7 @@ actions: {
 
       {
           key: {
-            text: "What is the address we should send letters to?"
+            text: "What address we should send letters to?"
           },
           value: {
             html: "Address line one
