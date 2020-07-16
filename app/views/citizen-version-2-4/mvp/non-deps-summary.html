@@ -66,8 +66,8 @@
 
 
              {{ govukRadios({
-               idPrefix: "own-mortgage-home-loan-yes",
-               name: "own-mortgage-home-loan-yes",
+               idPrefix: "non-deps-summary",
+               name: "non-deps-summary",
                fieldset: {
                  legend: {
                    text: "",
@@ -84,12 +84,12 @@
                  {
                    value: "Yes",
                    text: "Yes",
-                   checked: (data["own-mortgage-home-loan-yes"] == "Yes")
+                   checked: (data["non-deps-summary"] == "Yes")
                  },
                  {
                    value: "No",
                    text: "No",
-                   checked: (data["own-mortgage-home-loan-yes"] == "No")
+                   checked: (data["non-deps-summary"] == "No")
                  }
                ]
              }) }}
