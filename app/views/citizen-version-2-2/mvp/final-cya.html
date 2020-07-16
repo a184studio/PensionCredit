@@ -3513,7 +3513,7 @@ actions: {
 
               {
                 key: {
-                  text: "Do you need us to contact you in any different formats?"
+                  text: "What formats do you need us to use when we contact you by letter or phone?"
                 },
                 value: {
                   html: "     Audio,
@@ -3528,7 +3528,7 @@ actions: {
                     {
                       href: "del-auth-contact-formats",
                       text: "Change",
-                      visuallyHiddenText: "whether you need us to contact you in any different formats"
+                      visuallyHiddenText: "what formats you need us to use when we contact you by letter or phone?"
                     }
                   ]
                 }
@@ -3536,6 +3536,36 @@ actions: {
 
             ]
           }) }}
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+
+            {
+              key: {
+                text: "What formats does the applicant need us to use when we contact them by letter or phone?"
+              },
+              value: {
+                html: "     Audio,
+                        <br>Braille
+                        <br>Large print
+                        <br>Sign language
+                        <br>TextPhone or Text Relay
+                        <br>TypeTalk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "del-auth-contact-formats",
+                    text: "Change",
+                    visuallyHiddenText: "what formats the applicant needs us to use when we contact them by letter or phone"
+                  }
+                ]
+              }
+            }
+
+          ]
+        }) }}
 
 
 
