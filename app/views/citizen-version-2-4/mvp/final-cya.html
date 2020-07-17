@@ -1141,20 +1141,35 @@ actions: {
 
       {
       key: {
-        text: "Are they in education or employment?"
+        text: "Are they in education?"
       },
       value: {
-        html: " Employment: Full-time<br>
-                Employment: Part-time<br>
-                Education: Full-time<br>
-                Education: Part-time"
+        text: data["non-deps-member-education"]
       },
       actions: {
         items: [
           {
             href: "non-deps-member-details",
             text: "Change",
-            visuallyHiddenText: "whether they are in education or employment"
+            visuallyHiddenText: "whether they are in employment"
+          }
+        ]
+      }
+      },
+
+      {
+      key: {
+        text: "Are they in employment?"
+      },
+      value: {
+        text: data["non-deps-member-employment"]
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "whether they are in employment"
           }
         ]
       }
