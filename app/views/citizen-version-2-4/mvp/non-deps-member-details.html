@@ -116,6 +116,81 @@
 
 
 
+         {{ govukRadios({
+           idPrefix: "non-deps-member-education",
+           name: "non-deps-member-education",
+           fieldset: {
+             legend: {
+               text: "Are they in education?",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--s"
+             }
+               },
+               hint: {
+                 html: ""
+               },
+
+           classes: "govuk-radios govuk-!-margin-bottom-4",
+           items: [
+             {
+               value: "Full time",
+               text: "Full time",
+               checked: (data["non-deps-member-education"] == "Full time")
+             },
+             {
+               value: "Part time",
+               text: "Part time",
+               checked: (data["non-deps-member-education"] == "Part time")
+             },
+             {
+               value: "Not in education",
+               text: "Not in education",
+               checked: (data["non-deps-member-education"] == "Not in education")
+             }
+           ]
+         }) }}
+
+         {{ govukRadios({
+           idPrefix: "non-deps-member-employment",
+           name: "non-deps-member-employment",
+           fieldset: {
+             legend: {
+               text: "Are they in employment?",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--s"
+             }
+               },
+               hint: {
+                 html: ""
+               },
+
+           classes: "govuk-radios govuk-!-margin-bottom-4",
+           items: [
+             {
+               value: "Full time",
+               text: "Full time",
+               checked: (data["non-deps-member-employment"] == "Full time")
+             },
+             {
+               value: "Part time",
+               text: "Part time",
+               checked: (data["non-deps-member-employment"] == "Part time")
+             },
+             {
+               value: "Self-employed",
+               text: "Self-employed",
+               checked: (data["non-deps-member-employment"] == "Self-employed")
+             },
+             {
+               value: "Not in employment",
+               text: "Not in employment",
+               checked: (data["non-deps-member-employment"] == "Not in employment")
+             }
+           ]
+         }) }}
+
+
+<!--
          {{ govukCheckboxes({
            name: "non-deps-member-education-employment",
            fieldset: {
@@ -180,7 +255,7 @@
                  }
               }
                ]
-             }) }}
+             }) }} -->
 
              {% set LegendAmount %}
              <strong>[Dynamic based on Yes to housing costs] How much do they earn each week?<strong>
