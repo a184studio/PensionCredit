@@ -1177,6 +1177,24 @@ actions: {
 
       {
       key: {
+        text: "Are they in self employment?"
+      },
+      value: {
+        text: data["non-deps-member-self-employment"]
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "whether they are in self employment"
+          }
+        ]
+      }
+      },
+
+      {
+      key: {
         text: "How much do they earn each week?"
       },
       value: {

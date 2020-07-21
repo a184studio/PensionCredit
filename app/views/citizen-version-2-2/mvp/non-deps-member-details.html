@@ -176,14 +176,38 @@
                checked: (data["non-deps-member-employment"] == "Part time")
              },
              {
-               value: "Self-employed",
-               text: "Self-employed",
-               checked: (data["non-deps-member-employment"] == "Self-employed")
-             },
-             {
                value: "Not in employment",
                text: "Not in employment",
                checked: (data["non-deps-member-employment"] == "Not in employment")
+             }
+           ]
+         }) }}
+
+         {{ govukRadios({
+           idPrefix: "non-deps-member-self-employment",
+           name: "non-deps-member-self-employment",
+           fieldset: {
+             legend: {
+               text: "Are they self employed?",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--s"
+             }
+               },
+               hint: {
+                 html: ""
+               },
+
+           classes: "govuk-radios govuk-!-margin-bottom-4",
+           items: [
+             {
+               value: "Yes",
+               text: "Yes",
+               checked: (data["non-deps-member-self-employment"] == "Yes")
+             },
+             {
+               value: "No",
+               text: "No",
+               checked: (data["non-deps-member-self-employment"] == "No")
              }
            ]
          }) }}
