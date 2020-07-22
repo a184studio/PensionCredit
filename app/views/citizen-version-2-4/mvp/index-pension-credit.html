@@ -32,6 +32,10 @@
       {% if data["home-care-home-check"] == "Yes" or data["money-second-property-check"] == "Yes" %}<p class=”govuk-body”>We will send you a form by <strong>DD / Month / Year (4 weeks) </strong> to ask you for details of the property or land that you own.</p>
               {% else %}  <p class="govuk-body"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong> either to confirm your award or ask you for more information. You do not need to contact us before then unless anything changes.</p>{% endif %}
 
+              {{ govukButton({
+                text: "Save or print a copy of this application",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-6"
+              }) }}
 
       <p class="govuk-heading-m govuk-!-margin-bottom-4">If your application is successful we will pay your Pension Credit into the same account as your State Pension.</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will be able to change this to a different account once your Pension Credit is in payment.</p>
@@ -55,22 +59,6 @@
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-
-        <div class="govuk-!-margin-top-6">
-          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Save completed application</h2>
-          <p class="govuk-body">You can save or print a copy of your application and what happens next with your claim</p>
-          <p class="govuk-body">Your documents: <a href="pdf">Download copy of claim</a></p>
-
-
-          {{ govukButton({
-            text: "Download copy of claim",
-            classes: "govuk-button--secondary govuk-!-margin-bottom-6"
-          }) }}
-
-
-        </div>
-
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 <div class="govuk-!-margin-top-6">
   <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
