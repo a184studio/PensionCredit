@@ -53,9 +53,24 @@
 
         <!---- COUNTRY END ---->{% endif %}
 
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-<!----------------------------------------------------------------------------------->
+        <div class="govuk-!-margin-top-6">
+          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Save completed application</h2>
+          <p class="govuk-body">You can save or print a copy of your application and what happens next with your claim</p>
+          <p class="govuk-body">Your documents: <a href="pdf">Download copy of claim</a></p>
+
+
+          {{ govukButton({
+            text: "Download copy of claim",
+            classes: "govuk-button--secondary govuk-!-margin-bottom-6"
+          }) }}
+
+
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 <div class="govuk-!-margin-top-6">
   <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
