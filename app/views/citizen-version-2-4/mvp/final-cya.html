@@ -2654,12 +2654,12 @@ actions: {
       text: "Are you an asylum seeker?"
     },
     value: {
-      text: data['asylum-seeker']
+      text: data['hrt-asylum-seeker']
     },
     actions: {
       items: [
         {
-          href: "hrt-sponsorship-details",
+          href: "hrt-asylum-seeker",
           text: "Change",
           visuallyHiddenText: "whether you are an asylum seeker"
         }
@@ -2683,7 +2683,7 @@ actions: {
     actions: {
       items: [
         {
-          href: "hrt-sponsorship-details",
+          href: "hrt-asylum-details",
           text: "Change",
           visuallyHiddenText: "whether you first applied for asylum before 3 April 2000"
         }
@@ -2708,7 +2708,7 @@ actions: {
     actions: {
       items: [
         {
-          href: "hrt-sponsorship-details",
+          href: "hrt-asylum-details",
           text: "Change",
           visuallyHiddenText: "whether you have recently had a successful decision on your asylum application"
         }
@@ -2733,7 +2733,7 @@ actions: {
     actions: {
       items: [
         {
-          href: "",
+          href: "hrt-asylum-details",
           text: "Change",
           visuallyHiddenText: "the date you got a successful decision on your application"
         }
@@ -2758,7 +2758,7 @@ actions: {
     actions: {
       items: [
         {
-          href: "",
+          href: "hrt-asylum-details",
           text: "Change",
           visuallyHiddenText: "whether you have been supported by the Home Office while waiting for a decision on your application"
         }
@@ -3190,12 +3190,12 @@ actions: {
           text: "Is your partner an asylum seeker?"
         },
         value: {
-          text: data['asylum-seeker']
+          text: data['hrt-partner-asylum-seeker']
         },
         actions: {
           items: [
             {
-              href: "hrt-sponsorship-details",
+              href: "hrt-partner-asylum-seeker",
               text: "Change",
               visuallyHiddenText: "whether your partner is an asylum seeker"
             }
@@ -3214,12 +3214,12 @@ actions: {
           text: "Did your partner first apply for asylum before 3 April 2000?"
         },
         value: {
-          text: data['asylum-before-april']
+          text: data['partner-asylum-before-april']
         },
         actions: {
           items: [
             {
-              href: "hrt-sponsorship-details",
+              href: "hrt-partner-asylum-details",
               text: "Change",
               visuallyHiddenText: "whether your partner first applied for asylum before 3 April 2000"
             }
@@ -3239,12 +3239,12 @@ actions: {
           text: "Has your partner recently had a successful decision on their asylum application?"
         },
         value: {
-          text: data['asylum-decision-check']
+          text: data['partner-asylum-decision-check']
         },
         actions: {
           items: [
             {
-              href: "hrt-sponsorship-details",
+              href: "hrt-partner-asylum-details",
               text: "Change",
               visuallyHiddenText: "Change whether your partner recently had a successful decision on their asylum application"
             }
@@ -3264,7 +3264,7 @@ actions: {
           text: "What date did your partner get a successful decision on their application?"
         },
         value: {
-          text: data['asylum-decision-date-day'] + ' ' + (data['asylum-decision-date-month'] | getMonth) + ' ' + data['asylum-decision-date-year']
+          text: data['partner-asylum-decision-date-day'] + ' ' + (data['partner-asylum-decision-date-month'] | getMonth) + ' ' + data['partner-asylum-decision-date-year']
         },
         actions: {
           items: [
@@ -3289,12 +3289,12 @@ actions: {
           text: "Has your partner been supported by the Home Office while waiting for a decision on their application?"
         },
         value: {
-          text: data['supported-by-home-office']
+          text: data['partner-supported-by-home-office']
         },
         actions: {
           items: [
             {
-              href: "",
+              href: "hrt-partner-asylum-details",
               text: "Change",
               visuallyHiddenText: "whether your partner has been supported by the Home Office while waiting for a decision on their application"
             }

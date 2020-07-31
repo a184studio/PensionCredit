@@ -1057,7 +1057,17 @@ router.post(`${baseUrl}/hrt-uk-sponsorship-router`, (req, res) => { // router na
   if (ukSponsorshipCheck === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/hrt-sponsorship-details`)
   } else {
-    res.redirect(`${baseUrl}/hrt-other-details`)
+    res.redirect(`${baseUrl}/hrt-asylum-seeker`)
+  }
+})
+
+router.post(`${baseUrl}/hrt-asylum-seeker-router`, (req, res) => { // router name
+  const hrtAsylumSeeker = req.session.data['hrt-asylum-seeker']  // name of data / id name
+
+  if (hrtAsylumSeeker === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-asylum-details`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-partner-check`)
   }
 })
 
@@ -1069,7 +1079,7 @@ router.post(`${baseUrl}/hrt-partner-check-router`, (req, res) => { // router nam
   if (partnerCheck === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/hrt-partner-immigration-restrictions`)
   } else {
-    res.redirect(`${baseUrl}/help-to-claim`)
+    res.redirect(`${baseUrl}/del-auth-who-made-claim`)
   }
 })
 
@@ -1089,7 +1099,17 @@ router.post(`${baseUrl}/hrt-partner-uk-sponsorship-router`, (req, res) => { // r
   if (partnerUKSponsorshipCheck === 'Yes') { // name of data / + answer
     res.redirect(`${baseUrl}/hrt-partner-sponsorship-details`)
   } else {
-    res.redirect(`${baseUrl}/hrt-partner-other-details`)
+    res.redirect(`${baseUrl}/hrt-partner-asylum-seeker`)
+  }
+})
+
+router.post(`${baseUrl}/hrt-partner-asylum-seeker-router`, (req, res) => { // router name
+  const hrtPartnerAsylumSeeker = req.session.data['hrt-partner-asylum-seeker']  // name of data / id name
+
+  if (hrtPartnerAsylumSeeker === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/hrt-partner-asylum-details`)
+  } else {
+    res.redirect(`${baseUrl}/del-auth-who-made-claim`)
   }
 })
 
