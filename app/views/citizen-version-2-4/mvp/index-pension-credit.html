@@ -26,7 +26,6 @@ p {
 @media print {
   /* Print paragraph text colour is red */
 
-  header {display: none}
   body > div > div {display: none}
   body > div > div {display: none}
   #main-content > div > div > form > button {display: none}
@@ -35,13 +34,84 @@ p {
   #main-content > div > div > form > a > hr {display: none}
   #main-content > div > div > button {display: none}
 
-  #main-content > div > div > form > h1  {display: inline}
 
   body > footer {display: none}
-  #main-content > div > div > form > div.govuk-panel.govuk-panel--confirmation.govuk-\!-margin-top-8.govuk-\!-margin-bottom-6  {display: none}
 
 
 }
+</style>
+
+<!-- PRINT SCREEN DETAILS -->
+
+
+<style>
+
+  p {
+    color: black;
+  }
+
+  #main-content > div > div > form > h1:nth-child(2) {display: none}
+
+  /* This is set to 0 globally for some reason, setting it back for this example */
+  .govuk-summary-list {
+    margin-bottom: 30px !important;
+  }
+
+  @media print {
+
+    #main-content > div > div > form > div.govuk-panel.govuk-panel--confirmation.govuk-\!-margin-top-8.govuk-\!-margin-bottom-6 {
+      margin:0%;
+      padding:0%;
+    }
+
+    #main-content > div > div > form > div.govuk-panel.govuk-panel--confirmation.govuk-\!-margin-top-8.govuk-\!-margin-bottom-6 > h1 {
+      color: black;
+      text-align:left;
+    }
+
+    #main-content > p > span {display: none}
+    body > div > div {display: none}
+    body > div > div {display: none}
+
+
+    .dont-print,
+    .govuk-header__logo,
+    .govuk-footer,
+    .govuk-summary-list__actions {
+      display: none;
+    }
+    .govuk-header__container {
+      border: 0;
+    }
+
+    /* Use desktop layout for summary list */
+    .govuk-summary-list {
+      display:table;
+      width:100%;
+      table-layout:fixed;
+      margin-bottom:30px
+    }
+    .govuk-summary-list__row {
+      display:table-row
+    }
+    .govuk-summary-list__key,
+    .govuk-summary-list__value {
+      display:table-cell;
+      padding-right:20px;
+      padding-top:10px;
+      padding-bottom:10px;
+      border-bottom:1px solid #b1b4b6
+    }
+    .govuk-summary-list__key {
+      width:30%
+    }
+    .govuk-summary-list__value {
+      width:50%
+    }
+    .govuk-summary-list__value:last-child {
+      width:70%
+    }
+  }
 </style>
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -58,9 +128,6 @@ p {
               titleText: "Application sent",
                 classes:"govuk-!-margin-top-8 govuk-!-margin-bottom-6"
             }) }}
-
-            <h1 class="govuk-heading-xl">Your application for Pension Credit has been sent</h1><!-- PRINT SCREEN H1 -->
-
 
       <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
 
