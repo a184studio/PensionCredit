@@ -451,6 +451,16 @@ router.post(`${baseUrl}/employment-check-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/self-employed-router`, (req, res) => {
+  const selfEmployed = req.session.data['self-employed']
+
+  if (selfEmployed === 'yes') {
+    res.redirect(`${baseUrl}/about-your-self-employment`)
+  } else {
+    res.redirect(`${baseUrl}/employment-other-money`)
+  }
+})
+
 
 // Employment add another router CB (employment-check)
 
@@ -463,6 +473,8 @@ router.post(`${baseUrl}/employment-add-another-router`, (req, res) => {
     res.redirect(`${baseUrl}/self-employed`)
   }
 })
+
+
 
 
 router.post(`${baseUrl}/hospital-time-router`, (req, res) => {
