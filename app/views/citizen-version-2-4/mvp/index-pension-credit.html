@@ -12,7 +12,41 @@
 
 
 
-<!----------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- PRINT SCREEN DETAILS -->
+
+<style>
+/* Screen paragraph text colour is blue */
+p {
+  color: black;
+}
+
+@media print {
+  /* Print paragraph text colour is red */
+
+  header {display: none}
+  body > div > div {display: none}
+  body > div > div {display: none}
+  #main-content > div > div > form > button {display: none}
+  #main-content > div > div > form > div:nth-child(14) > a > h2 {display: none}
+  #main-content > div > div > form > div:nth-child(14) > p {display: none}
+  #main-content > div > div > form > a > hr {display: none}
+  #main-content > div > div > button {display: none}
+  body > footer {display: none}
+  #main-content > div > div > form > div.govuk-panel.govuk-panel--confirmation.govuk-\!-margin-top-8.govuk-\!-margin-bottom-6 {
+    margin:0%;
+    padding:0%;
+  }
+
+  #main-content > div > div > form > div.govuk-panel.govuk-panel--confirmation.govuk-\!-margin-top-8.govuk-\!-margin-bottom-6 > h1 {
+    color: black;
+    text-align:left;
+  }
+
+}
+</style>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
 
