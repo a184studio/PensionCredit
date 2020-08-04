@@ -15,42 +15,15 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- PRINT SCREEN DETAILS -->
 
-<style>
-/* Screen paragraph text colour is blue */
-p {
-  color: black;
-}
-#main-content > div > div > form > h1  {display: none}
-
-
-@media print {
-  /* Print paragraph text colour is red */
-
-  body > div > div {display: none}
-  body > div > div {display: none}
-  #main-content > div > div > form > button {display: none}
-  #main-content > div > div > form > div:nth-child(14) > a > h2 {display: none}
-  #main-content > div > div > form > div:nth-child(14) > p {display: none}
-  #main-content > div > div > form > a > hr {display: none}
-  #main-content > div > div > button {display: none}
-
-
-  body > footer {display: none}
-
-
-}
-</style>
-
-<!-- PRINT SCREEN DETAILS -->
-
 
 <style>
 
   p {
     color: black;
   }
-
+  #main-content > div > div > form > button {display: none}
   #main-content > div > div > form > h1:nth-child(2) {display: none}
+  #main-content > div > div > button {display: none}
 
   /* This is set to 0 globally for some reason, setting it back for this example */
   .govuk-summary-list {
@@ -139,7 +112,7 @@ p {
 
               {{ govukButton({
                 text: "Print a copy of this page",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-9"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-9 dont-print"
               }) }}
 
 
@@ -213,9 +186,9 @@ p {
 
 
 <!----------------------------------------------------------------------------------->
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
-<div class="govuk-!-margin-top-6">
+<div class="govuk-!-margin-top-6 dont-print">
 <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
 Help us improve Pension Credit
 </h2>
