@@ -1,20 +1,19 @@
-{% extends "layout-covid19.html" %}
+  {% extends "layout-covid19.html" %}
 
-{% block pageTitle %}
-  Are you self employed? - Pension Credit
-{% endblock %}
+  {% block pageTitle %}
+    Are you self employed? - Pension Credit
+  {% endblock %}
 
-{% block header %}
-  {% include "includes/internal-header.html" %}
-{% endblock %}
+  {% block header %}
+    {% include "includes/internal-header.html" %}
+  {% endblock %}
 
-{% block content %}
+  {% set mainClasses = "govuk-main-wrapper--l" %}
 
-<p>
-  {{ govukBackLink({
-    href: "has-work"
-  }) }}
-</p>
+  {% block content %}
+
+  {% include "includes/js-back-link.html" %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
