@@ -25,7 +25,7 @@
 
 #main-content > div > div > form > div:nth-child(5) > div:nth-child(6) > div:nth-child(8) > h2.govuk-heading-m {display: none}
 
-  #main-content > div > div > form > h1:nth-child(2) {display: none}
+  #main-content > div > div > form > div:nth-child(2) {display: none} /* PRINT ONLY NOTIFICATION */
 
   /* This is set to 0 globally for some reason, setting it back for this example */
   .govuk-summary-list {
@@ -37,7 +37,7 @@
     #main-content > p > span {display: none}
     body > div > div {display: none}
     body > div > div {display: none}
-    #main-content > div > div > form > div:nth-child(5) > div:nth-child(6) > div:nth-child(8) > h2.govuk-heading-m {display: inline}
+    #main-content > div > div > form > div:nth-child(2) {display: inline}  /* PRINT ONLY NOTIFICATION */
 
 
 
@@ -90,12 +90,14 @@
 
 
       <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
-      <h1 class="govuk-heading-xl">Check your answers before sending your Pension Credit application</h1><!-- PRINT SCREEN H1 -->
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<p class="govuk-body">This is only a copy of your answers. It is not proof that you have applied for or been awarded Pension Credit.</p>
-<p class="govuk-body">Printing this document does not submit your application. You must submit your application from the check your answers page.</p>
+<div>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This is only a copy of your answers. It is not proof that you have applied for or been awarded Pension Credit.</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Printing this document does not submit your application. You must submit your application from the check your answers page.</p>
+
+</div>
 
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Applicant details</h2>
 
@@ -3976,7 +3978,6 @@ rows: [
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
-<h2 class="govuk-heading-m">This is a copy of the answers shown on this page. If you change anything, you will need to print a new copy before you submit your application.</h2>
 
 
 
