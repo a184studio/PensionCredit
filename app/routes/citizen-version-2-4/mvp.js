@@ -783,8 +783,15 @@ router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router 
 // Money Savining and investement Routers
 
 
+router.post(`${baseUrl}/money-bonds-router`, (req, res) => {
+  const moneyBondsRouter = req.session.data['money-bonds']
 
-
+  if (moneyBondsRouter === 'Yes') {
+    res.redirect(`${baseUrl}/money-bonds-assurance`)
+  } else {
+    res.redirect(`${baseUrl}/money-second-property`)
+  }
+})
 
 router.post(`${baseUrl}/disregards-types-router`, (req, res) => {
   const disregardsRouter = req.session.data['disregards-type-select']

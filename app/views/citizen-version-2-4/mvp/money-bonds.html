@@ -1,0 +1,58 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Which best describes the place where you live? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="money-bonds-router" method="post" class="form">
+
+{% if data["user-full-name"] == "Admin" %}{% endif %}
+
+      {{ govukRadios({
+        name: "money-bonds",
+        fieldset: {
+          legend: {
+            text: "Is any of your money held in income or capital bonds?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["money-bonds"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["money-bonds"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+            <p class="govuk-body govuk-!-padding-top-0"><a href="money-second-property">Routing: Less than 10k route</a></p>
+            <!-- <p class="govuk-body govuk-!-padding-top-0"><a href="hrt-check">Money under 10k</a></p> -->
+
+    </form>
+
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+  </div>
+</div>
+{% endblock %}
