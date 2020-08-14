@@ -21,16 +21,12 @@
 
           {% set claimdate %}
 
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You can claim up to 3 months in the past if you are eligible.</p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Changes that might affect when you can claim are:</strong></p>
+          <p class="govuk-body">Based on your circumstances, this is the earliest date we can consider backdating your claim to.</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If your circumstance have changed since [Calculated EED], you might want us to consider your claim from the date that change took place. For example, if you have:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>when you reached your State Pension age</li>
-            <li>previous claims for Pension Credit or other benefits</li>
-            <li>changes to whether you live with a partner or anyone else</li>
-            <li>changes to the amount of money you have, your income or employment status</li>
-            <li>whether you have spent longer than 4 weeks outside the UK in the period you are claiming for, unless it was connected to medical treatment, convalescence or the death of a partner or child</li>
+            <li>been part of a previous claim for Pension Credit</li>
+            <li>started or stopped living with a partner</li>
               </ul>
-
 
           {% endset %}
 
@@ -39,7 +35,7 @@
           namePrefix: "claim-date-of-claim",
           fieldset: {
             legend: {
-              html: "What date do you want your Pension Credit claim to start?",
+              html: "Do you want us to consider backdating your claim to [Calculated EED]?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
             }
