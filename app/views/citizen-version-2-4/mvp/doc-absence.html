@@ -23,7 +23,7 @@
 
       {% set hintLegend %}
 
-      <p class="govuk-body govuk-!-font-size-19">Bit of contect about looking after people and illnesses</p>
+      <p class="govuk-body govuk-!-font-size-19">We can only consider your claim from the date you returned to the UK, unless the reason you were outside the UK was it was connected to medical treatment, convalescence or the death of a partner or child.</p>
 
       {% endset %}
 
@@ -33,7 +33,7 @@
         name: "doc-absence",
         fieldset: {
           legend: {
-            text: "Have you been outside of the UK for more than four weeks between [3 months or SPA] and today?",
+            text: "Have you been outside of the UK for a period of more than four weeks since [3 months or SPA]?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
@@ -50,7 +50,7 @@
           },
           {
             value: "No",
-            text: "Yes — But it was for a death in the family or health related",
+            text: "Yes — for medical treatment, convalescence or the death of a partner or child",
             checked: (data["doc-absence"] == "Yes — But it was for a death in the family or health related")
                     },
           {

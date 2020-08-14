@@ -19,20 +19,29 @@
 
 
 
+          {% set claimdate %}
 
+          <p class="govuk-body">Based on your circumstances, this is the earliest date we can consider backdating your claim to.</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If your circumstance have changed since [Calculated EED], you might want us to consider your claim from the date that change took place. For example, if you have:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>been part of a previous claim for Pension Credit</li>
+            <li>started or stopped living with a partner</li>
+              </ul>
+
+          {% endset %}
 
         {{ govukDateInput({
           id: "claim-date-of-claim",
           namePrefix: "claim-date-of-claim",
           fieldset: {
             legend: {
-              html: "What date do you want us to consider your claim from?",
+              html: "Do you want us to consider backdating your claim to [Calculated EED]?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
             }
           },
           hint: {
-            text: "For example, 31 8 2020"
+            html: claimdate
           },
           items: [
             {

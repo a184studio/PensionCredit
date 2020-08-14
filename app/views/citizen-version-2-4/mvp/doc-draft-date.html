@@ -35,7 +35,7 @@
         name: "doc-draft-date",
         fieldset: {
           legend: {
-            text: "The date we can give you is X you happy with that?",
+            text: "Do you want us to consider backdating your claim to [Calculated EED]?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
@@ -47,12 +47,12 @@
         items: [
           {
             value: "Yes",
-            text: "Yes — [Date is good with me]",
+            text: "Yes — consider my claim from [Calculated EED]",
             checked: (data["doc-draft-date"] == "Yes")
                     },
           {
             value: "No",
-            text: "No — I want an alt date",
+            text: "No — consider my claim from a different date",
             checked: (data["doc-draft-date"] == "No")
           }
         ]
