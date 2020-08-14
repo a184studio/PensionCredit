@@ -1,0 +1,135 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Have you spent any time in hospital recently? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="doc-draft-date" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Dates you left and entered the uK</h1>
+
+
+      {% set dateCheck %}
+          {{ govukDateInput({
+            id: "doc-absence-date-left",
+            namePrefix: "doc-absence-date-left",
+            fieldset: {
+              legend: {
+                text: "When did you leave the UK?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 1948."
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["doc-absence-date-left-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["doc-absence-date-left-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["doc-absence-date-left-year"]
+              }
+            ]
+          }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "doc-absence-date-left-check",
+        name: "doc-absence-date-left-check",
+        fieldset: {
+          legend: {
+            text: "When did you leave the UK?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: claimdate
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Before",
+            text: "Before [3 months or SPA]",
+            checked: (data["doc-absence-date-left-check"] == "Before")
+                    },
+          {
+            value: "After",
+            text: "After [3 months or SPA]",
+            checked: (data["doc-absence-date-left-check"] == "After"),
+            conditional: {
+              html: dateCheck
+            }
+              }
+        ]
+      }) }}
+
+        {{ govukDateInput({
+          id: "doc-absence-date-return",
+          namePrefix: "doc-absence-date-return",
+          fieldset: {
+            legend: {
+              html: "Date arrived back in the UK",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            html: claimdate
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["doc-absence-date-return-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["doc-absence-date-return-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["doc-absence-date-return-year"]
+            }
+          ]
+        }) }}
+
+
+
+      <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}

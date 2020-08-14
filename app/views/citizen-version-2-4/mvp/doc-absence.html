@@ -1,0 +1,66 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Have you spent any time in hospital recently? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="doc-absence-router" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+
+      {{ govukRadios({
+        idPrefix: "doc-absence",
+        name: "doc-absence",
+        fieldset: {
+          legend: {
+            text: "Have you been outside of the UK for more than four weeks between [3 months or SPA] and today?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["doc-absence"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "Yes — But it was for a death in the family or health related",
+            checked: (data["doc-absence"] == "Yes — But it was for a death in the family or health related")
+                    },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["doc-absence"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+
+      <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}

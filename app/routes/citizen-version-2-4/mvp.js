@@ -378,17 +378,37 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
 })
 
 
-
-
 router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
   const claimFilter = req.session.data['claim-filter']
 
   if (claimFilter === 'Normal') {
-    res.redirect(`${baseUrl}/claim-date-of-claim`)
+    res.redirect(`${baseUrl}/doc-absence`)
   } else {
     res.redirect(`${baseUrl}/claim-notification`)
   }
 })
+
+router.post(`${baseUrl}/doc-absence-router`, (req, res) => {
+  const docAbsence = req.session.data['doc-absence']
+
+  if (docAbsence === 'Yes') {
+    res.redirect(`${baseUrl}/doc-absence-dates`)
+  } else {
+    res.redirect(`${baseUrl}/doc-draft-date`)
+  }
+})
+
+router.post(`${baseUrl}/doc-draft-date-router`, (req, res) => {
+  const docDraftDate = req.session.data['doc-draft-date']
+
+  if (docDraftDate === 'Yes') {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
+  } else {
+    res.redirect(`${baseUrl}/doc-alt-date`)
+  }
+})
+
+
 
 
 
