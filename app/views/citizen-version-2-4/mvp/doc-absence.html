@@ -20,6 +20,14 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
+
+      {% set hintLegend %}
+
+      <p class="govuk-body govuk-!-font-size-19">Bit of contect about looking after people and illnesses</p>
+
+      {% endset %}
+
+
       {{ govukRadios({
         idPrefix: "doc-absence",
         name: "doc-absence",
@@ -27,8 +35,11 @@
           legend: {
             text: "Have you been outside of the UK for more than four weeks between [3 months or SPA] and today?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
+        },
+        hint: {
+          html: hintLegend
         },
         classes: "govuk-radios",
         items: [
