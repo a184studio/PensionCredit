@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="hrt-claimant-immigration-restrictions" method="post" class="form">
+    <form action="money-second-property-router" method="post" class="form">
 
 {% if data["user-full-name"] == "Admin" %}{% endif %}
 
@@ -30,7 +30,7 @@
         items: [
           {
             value: "Yes",
-            text: "Yes /// If yes it will push you down >10k route",
+            text: "Yes",
             checked: (data["money-second-property-check"] == "Yes")
           },
           {
@@ -42,11 +42,11 @@
       }) }}
 
       {{ govukButton({
-        text: "Continue (<10k)"
+        text: "Continue"
       }) }}
 
 
-            <p class="govuk-body govuk-!-padding-top-0"><a href="money-disregards-all">Routing: >10k route</a></p>
+            <p class="govuk-body govuk-!-padding-top-0"><a href="hrt-claimant-immigration-restrictions">Routing: <10k route</a></p>
             <!-- <p class="govuk-body govuk-!-padding-top-0"><a href="hrt-check">Money under 10k</a></p> -->
 
     </form>

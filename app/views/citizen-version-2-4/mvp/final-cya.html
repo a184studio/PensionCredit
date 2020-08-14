@@ -1750,29 +1750,7 @@ actions: {
       ]
     }) }}
 
-    {{ govukSummaryList({
-      classes: 'govuk-!-margin-bottom-9',
-      rows: [
 
-      {
-        key: {
-          text: "Is any of your money invested in income or capital bonds?"
-        },
-        value: {
-          text: data['money-bonds']
-        },
-        actions: {
-          items: [
-            {
-              href: "money-bonds",
-              text: "Change",
-              visuallyHiddenText: "money invested in income or capital bonds?"
-            }
-          ]
-        }
-      }
-    ]
-  }) }}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -1798,6 +1776,29 @@ actions: {
       ]
     }) }}
 
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+
+      {
+        key: {
+          text: "Is any of your money invested in income or capital bonds?"
+        },
+        value: {
+          text: data['money-bonds']
+        },
+        actions: {
+          items: [
+            {
+              href: "money-bonds",
+              text: "Change",
+              visuallyHiddenText: "money invested in income or capital bonds?"
+            }
+          ]
+        }
+      }
+    ]
+  }) }}
 
 
 
