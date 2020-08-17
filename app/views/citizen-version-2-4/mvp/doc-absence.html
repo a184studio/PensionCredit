@@ -23,7 +23,7 @@
 
       {% set hintLegend %}
 
-      <p class="govuk-body govuk-!-font-size-19">We can only consider backdating your application to the date you returned to the UK, unless the reason you were outside the UK was connected to medical treatment, convalescence or the death of a partner or child.</p>
+      <p class="govuk-body govuk-!-font-size-19">We can only consider backdating your application to the date you returned to the UK, unless the reason you were outside the UK was connected to medical treatment or the death of a partner or child.</p>
 
       {% endset %}
 
@@ -50,7 +50,7 @@
           },
           {
             value: "No",
-            text: "Yes — for medical treatment, convalescence or the death of a partner or child",
+            text: "Yes — for medical treatment or the death of a partner or child",
             checked: (data["doc-absence"] == "Yes — But it was for a death in the family or health related")
                     },
           {
