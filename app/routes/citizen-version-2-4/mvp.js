@@ -392,7 +392,7 @@ router.post(`${baseUrl}/doc-absence-router`, (req, res) => {
   const docAbsence = req.session.data['doc-absence']
 
   if (docAbsence === 'Yes') {
-    res.redirect(`${baseUrl}/doc-absence-dates`)
+    res.redirect(`${baseUrl}/doc-absence-plural`)
   } else {
     res.redirect(`${baseUrl}/doc-draft-date`)
   }

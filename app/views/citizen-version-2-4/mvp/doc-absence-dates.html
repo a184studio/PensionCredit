@@ -20,16 +20,20 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What were the dates of the period you spent outside the UK?</h1>
 
-
+<!------------H1 LEGEND------------>
+  {% set dynamicH1 %}
+  {% if data["doc-absence-plural"] == "Yes" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">More than one headline</h1>
+  {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What were the dates of the period you spent outside the UK?</h1>{% endif %}
+  {% endset %}
+<!------------Legend--------------->
 
       {{ govukDateInput({
         id: "doc-absence-date-left",
         namePrefix: "doc-absence-date-left",
         fieldset: {
           legend: {
-            html: "Date you left the UK",
+            html: dynamicH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }

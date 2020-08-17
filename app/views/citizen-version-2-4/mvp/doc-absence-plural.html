@@ -1,0 +1,72 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Have you spent any time in hospital recently? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="doc-absence-dates" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+
+      <!------------Hint LEGEND------------>
+        {% set hintLegend %}
+        <p class="govuk-body govuk-!-font-size-19">XXX</p>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        idPrefix: "doc-absence-plural",
+        name: "doc-absence-plural",
+        fieldset: {
+          legend: {
+            text: "Tell me how many times",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+          }
+        },
+        hint: {
+          html: hintLegend
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "More than once",
+            checked: (data["doc-absence-plural"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "Just the once",
+            checked: (data["doc-absence"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+
+      <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}
