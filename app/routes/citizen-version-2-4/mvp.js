@@ -398,6 +398,16 @@ router.post(`${baseUrl}/doc-absence-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/doc-absence-medical-router`, (req, res) => {
+  const docAbsenceMedical = req.session.data['doc-absence-medical']
+
+  if (docAbsenceMedical === 'Yes') {
+    res.redirect(`${baseUrl}/doc-draft-date`)
+  } else {
+    res.redirect(`${baseUrl}/doc-absence-dates`)
+  }
+})
+
 router.post(`${baseUrl}/doc-draft-date-router`, (req, res) => {
   const docDraftDate = req.session.data['doc-draft-date']
 
