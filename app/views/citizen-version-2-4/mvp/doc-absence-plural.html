@@ -22,7 +22,7 @@
 
       <!------------Hint LEGEND------------>
         {% set hintLegend %}
-        <p class="govuk-body govuk-!-font-size-19">XXX</p>
+        <p class="govuk-body govuk-!-font-size-19"></p>
 
         {% endset %}
       <!------------Legend--------------->
@@ -33,7 +33,7 @@
         name: "doc-absence-plural",
         fieldset: {
           legend: {
-            text: "Tell me how many times",
+            text: "How many periods of 4 weeks or more have you spent uoutside the UK since [calculated EED]?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
@@ -44,14 +44,14 @@
         classes: "govuk-radios",
         items: [
           {
-            value: "Yes",
-            text: "More than once",
-            checked: (data["doc-absence-plural"] == "Yes")
+            value: "No",
+            text: "Once",
+            checked: (data["doc-absence-plural"] == "No")
           },
           {
-            value: "No",
-            text: "Just the once",
-            checked: (data["doc-absence"] == "No")
+            value: "Yes",
+            text: "More than once",
+            checked: (data["doc-absence"] == "Yes")
           }
         ]
       }) }}
