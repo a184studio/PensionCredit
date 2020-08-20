@@ -291,7 +291,7 @@ router.post(`${baseUrl}/over-spa-router`, (req, res) => {
       res.redirect(`${baseUrl}/sex`)
     }
   } catch (err) {
-    res.redirect(`${baseUrl}/partner-check-yn`)
+    res.redirect(`${baseUrl}/claim-filter`)
   }
 })
 
@@ -373,7 +373,7 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   if (partnerCheck === 'Yes, we live together') {
     res.redirect(`${baseUrl}/partner-app-check`)
   } else {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   }
 })
 
@@ -398,13 +398,23 @@ router.post(`${baseUrl}/doc-absence-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/doc-absence-medical-router`, (req, res) => {
-  const docAbsenceMedical = req.session.data['doc-absence-medical']
+router.post(`${baseUrl}/doc-absence-medical-single-router`, (req, res) => {
+  const docAbsenceSingleMedical = req.session.data['doc-absence-medical']
 
-  if (docAbsenceMedical === 'Yes') {
-    res.redirect(`${baseUrl}/doc-draft-date`)
+  if (docAbsenceSingleMedical === 'Yes') {
+    res.redirect(`${baseUrl}/doc-signpost`)
   } else {
     res.redirect(`${baseUrl}/doc-absence-dates`)
+  }
+})
+
+router.post(`${baseUrl}/doc-absence-medical-plural-router`, (req, res) => {
+  const docAbsencePluralMedical = req.session.data['doc-absence-medical']
+
+  if (docAbsencePluralMedical === 'Yes') {
+    res.redirect(`${baseUrl}/doc-signpost`)
+  } else {
+    res.redirect(`${baseUrl}/doc-signpost`)
   }
 })
 
@@ -412,9 +422,9 @@ router.post(`${baseUrl}/doc-draft-date-router`, (req, res) => {
   const docDraftDate = req.session.data['doc-draft-date']
 
   if (docDraftDate === 'Yes') {
-    res.redirect(`${baseUrl}/claimant-national-insurance`)
+    res.redirect(`${baseUrl}/partner-check-yn`)
   } else {
-    res.redirect(`${baseUrl}/doc-alt-date`)
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   }
 })
 
