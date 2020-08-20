@@ -14,7 +14,14 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="doc-absence-medical-router" method="post" class="form">
+
+        {% if data['doc-absence-plural'] == 'Yes' %}
+        <form action="doc-absence-medical-plural-router" method="post" class="form">
+        {% else %}
+          <form action="doc-absence-medical-single-router" method="post" class="form">
+        {% endif %}
+
+
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
