@@ -424,7 +424,7 @@ router.post(`${baseUrl}/doc-draft-date-router`, (req, res) => {
   if (docDraftDate === 'Yes') {
     res.redirect(`${baseUrl}/partner-check-yn`)
   } else {
-    res.redirect(`${baseUrl}/claimant-national-insurance`)
+    res.redirect(`${baseUrl}/doc-alt-date`)
   }
 })
 
