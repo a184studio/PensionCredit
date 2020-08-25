@@ -21,9 +21,9 @@
   p {
     color: black;
   }
-  #main-content > div > div > form > button {display: none}
-  #main-content > div > div > form > h1:nth-child(2) {display: none}
-  #main-content > div > div > button {display: none}
+  /* #main-content > div > div > form > button {display: none} */
+  /* #main-content > div > div > form > h1:nth-child(2) {display: none} */
+  /* #main-content > div > div > button {display: none} */
 
   /* This is set to 0 globally for some reason, setting it back for this example */
   .govuk-summary-list {
@@ -108,20 +108,19 @@
               {% else %}  <p class="govuk-body"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong> either to confirm your award or ask you for more information. You do not need to contact us before then unless anything changes.</p>{% endif %}
 
               <!---- DATE OF CLAIM ---->{% if data['doc-absence'] == 'Yes' %}
-              <div class="govuk-!-margin-top-6">
+              <div class="govuk-!-margin-top-6 govuk-!-margin-bottom-6">
                 <p class="govuk-heading-m govuk-!-margin-bottom-3">Backdating your application</p>
                 <p class="govuk-body">We will contact you to ask about the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions.</p>
               </div>
                 <!---- UK ---->{% endif %}
-
+<!--
               <button onclick="window.print(); return false;">Print Me !!!</button>
-              <br><br>
+              <br><br> -->
 
               {{ govukButton({
                 text: "Print a copy of this page",
-                classes: "govuk-button--secondary govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-9 dont-print"
+                classes: "govuk-button--secondary govuk-!-margin-top-2 govuk-!-margin-bottom-8 dont-print"
               }) }}
-
 
 
 
