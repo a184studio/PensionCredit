@@ -602,7 +602,7 @@ router.post(`${baseUrl}/home-shared-ground-rent-router`, (req, res) => { // When
   if (homeSharedGroundRent === 'Yes') {
     res.redirect(`${baseUrl}/home-shared-21-years`)
   } else {
-    res.redirect(`${baseUrl}/home-shared-housing-benefit`)
+    res.redirect(`${baseUrl}/home-mortgage`)
   }
 })
 

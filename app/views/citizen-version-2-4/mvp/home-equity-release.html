@@ -14,7 +14,17 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="non-deps-living-with-you" method="post" class="form">
+
+
+<!---- SHARED ---->{% if data['home-ownership'] == 'Shared ownership' %}
+<form action="home-shared-housing-benefit" method="post" class="form">
+<!---- OTHER ---->{% elseif data['home-ownership'] == 'Other accommodation' %}
+<form action="home-other-housing-benefit" method="post" class="form">
+<!---- OWN ---->{% else %}
+<form action="non-deps-living-with-you" method="post" class="form">
+{% endif %}
+
+
 
       {% set legendHint %}
       <p class="govuk-hint">XXX</p>
