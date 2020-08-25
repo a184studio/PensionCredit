@@ -998,6 +998,30 @@ actions: {
 
 <!------------------------------------------------------------------------------------------------------------------>
 
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "@ pete mortgage"
+    },
+    value: {
+      text: data["home-mortgage"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-mortgage",
+          text: "Change",
+          visuallyHiddenText: "@pete"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -1041,6 +1065,31 @@ actions: {
                 href: "home-shared-payments",
                 text: "Change",
                 visuallyHiddenText: "whether you share the rent or mortgage for the place where you live with anyone"
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "@ pete mortgage"
+          },
+          value: {
+            text: data["home-mortgage"]
+          },
+          actions: {
+            items: [
+              {
+                href: "home-mortgage",
+                text: "Change",
+                visuallyHiddenText: "@pete"
               }
             ]
           }
