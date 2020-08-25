@@ -1,7 +1,7 @@
 {% extends "layout-covid19.html" %}
 
 {% block pageTitle %}
-  Do you pay any service charges? - Pension Credit
+  Do you want to apply for support with interest on a mortgage or loan secured against your home? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -13,36 +13,43 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <form action="home-mortgage" method="post" class="form">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="home-mortgage-router" method="post" class="form">
+
+      {% set legendHint %}
+      <p class="govuk-hint">XXX</p>
+      {% endset %}
+
+
 
       {{ govukRadios({
-        idPrefix: "home-own-ground-rent",
-        name: "home-own-ground-rent",
+        idPrefix: "home-mortgage",
+        name: "home-mortgage",
         fieldset: {
           legend: {
-            text: "Do you pay ground rent?",
+            text: "Do you have mortgage that you have not yet paid off?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
-        },
-        hint: {
-          text: "You might pay ground rent if you are the leaseholder of your home."
-        },
+            },
+            hint: {
+              html: legendHint
+            },
+
+        classes: "govuk-radios",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["home-own-ground-rent"] == "Yes")
-            },
+            checked: (data["home-mortgage"] == "Yes")
+          },
           {
             value: "No",
             text: "No",
-            checked: (data["home-own-ground-rent"] == "No")
+            checked: (data["home-mortgage"] == "No")
           }
         ]
       }) }}
-
 
       {{ govukButton({
         text: "Continue"
@@ -52,5 +59,4 @@
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
 
   </div>
-</div>
 {% endblock %}

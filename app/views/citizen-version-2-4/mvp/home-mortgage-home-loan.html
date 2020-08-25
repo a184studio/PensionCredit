@@ -14,7 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="non-deps-living-with-you" method="post" class="form">
+    <form action="home-equity-release" method="post" class="form">
+
+      {% set legendHint %}
+      <p class="govuk-hint">This support is paid as a loan that you must repay when your home is sold or transferred. We will send you more information and an application form by post.</p>
+      {% endset %}
+
+
       {{ govukRadios({
         idPrefix: "home-mortgage-home-loan",
         name: "home-mortgage-home-loan",
@@ -26,10 +32,7 @@
           }
             },
             hint: {
-              html: "<br><p class=\"hint\">
-                This support is paid as a loan that you must repay when your home is sold or transferred. We will send you more information and an application form by post.</p>
-
-                    "
+              html: legendHint
             },
 
         classes: "govuk-radios",

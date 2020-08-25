@@ -455,6 +455,8 @@ router.post(`${baseUrl}/home-care-home-route-check-router`, (req, res) => {
 })
 
 
+
+
 router.post(`${baseUrl}/single-joint-check-router`, (req, res) => {
   const singleJoint = req.session.data['single-joint-check']
 
@@ -605,6 +607,16 @@ router.post(`${baseUrl}/home-shared-ground-rent-router`, (req, res) => { // When
 })
 
 
+
+router.post(`${baseUrl}/home-mortgage-router`, (req, res) => {
+  const hasMortgage = req.session.data['home-mortgage']
+
+  if (hasMortgage === 'Yes') {
+    res.redirect(`${baseUrl}/home-mortgage-home-loan`)
+  } else {
+    res.redirect(`${baseUrl}/home-equity-release`)
+  }
+})
 
 
 
