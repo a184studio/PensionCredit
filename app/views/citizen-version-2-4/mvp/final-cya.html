@@ -1021,6 +1021,32 @@ actions: {
   }
 
 ]
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+    {
+    key: {
+      text: "@ pete mortgage"
+    },
+    value: {
+      text: data["home-mortgage"]
+    },
+    actions: {
+      items: [
+        {
+          href: "home-mortgage",
+          text: "Change",
+          visuallyHiddenText: "@pete"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
 }) }}
 
       {{ govukSummaryList({
@@ -1040,6 +1066,32 @@ actions: {
                 href: "home-mortgage-home-loan",
                 text: "Change",
                 visuallyHiddenText: "whether you want to apply for support with interest on a mortgage or loan secured against your home"
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "equity Release"
+          },
+          value: {
+            text: data["home-mortgage"]
+          },
+          actions: {
+            items: [
+              {
+                href: "home-mortgage",
+                text: "Change",
+                visuallyHiddenText: "@pete"
               }
             ]
           }
@@ -1073,30 +1125,7 @@ actions: {
       ]
       }) }}
 
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
 
-          {
-          key: {
-            text: "@ pete mortgage"
-          },
-          value: {
-            text: data["home-mortgage"]
-          },
-          actions: {
-            items: [
-              {
-                href: "home-mortgage",
-                text: "Change",
-                visuallyHiddenText: "@pete"
-              }
-            ]
-          }
-        }
-
-      ]
-      }) }}
 
 
 
