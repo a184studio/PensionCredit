@@ -14,35 +14,17 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="employment-check" method="post" class="form">
-
-      {% set benefitDetails %}
-        {{ govukTextarea({
-          label: {
-            classes: "govuk-label--s",
-            html: "Benefits have you applied for"
-          },
-          hint: {
-            text: ""
-          },
-          id: "benefit-check-details",
-          name: "benefit-check-details",
-          classes: "govuk-input--width-100",
-          attributes: {
-            maxlength: 200
-          }
-        }) }}
-      {% endset %}
+    <form action="benefit-check" method="post" class="form">
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you or your partner applied for any benefits that you are waiting to hear about?</h2>
-        {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you applied for any benefits that you are waiting to hear about?</h2>{% endif %}
+        {% if data["single-joint-check"] == "joint" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you or your partner?</h2>
+        {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you?</h2>{% endif %}
         {% endset %}
       <!------------Legend--------------->
 
       {{ govukRadios({
-        name: "benefit-check",
+        name: "benefit-UC-Carer",
         fieldset: {
           legend: {
             html: dynamicH1,
@@ -54,15 +36,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["benefit-check"] == "Yes"),
-                  conditional: {
-                    html: benefitDetails
-        }
+            checked: (data["benefit-UC-Carer"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["benefit-check"] == "No")
+            checked: (data["benefit-UC-Carer"] == "No")
           }
         ]
       }) }}
