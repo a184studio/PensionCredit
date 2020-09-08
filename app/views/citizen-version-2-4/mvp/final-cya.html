@@ -1463,6 +1463,30 @@ actions: {
 
           {
             key: {
+              text: "Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you [or your partner]?"
+            },
+            value: {
+              text: data['benefit-UC-Carer']
+            },
+            actions: {
+              items: [
+                {
+                  href: "benefit-UC-Carer",
+                  text: "Change",
+                  visuallyHiddenText: "whether anyone gets Carer’s Allowance or Carer’s Element of Universal Credit for looking after you"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
               text: "Have you [or your partner] applied for any benefits that you are waiting to hear about?"
             },
             value: {
@@ -1507,29 +1531,7 @@ actions: {
     }) }}
 {% endif %}
 
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
 
-  {
-    key: {
-      text: "Does anyone get Carer’s Allowance or Carer’s Element of Universal Credit for looking after you [or your partner]?"
-    },
-    value: {
-      text: data['benefit-UC-Carer']
-    },
-    actions: {
-      items: [
-        {
-          href: "benefit-UC-Carer",
-          text: "Change",
-          visuallyHiddenText: "whether anyone gets Carer’s Allowance or Carer’s Element of Universal Credit for looking after you"
-        }
-      ]
-    }
-  }
-]
-}) }}
 
 
       </div>
