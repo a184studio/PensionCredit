@@ -104,31 +104,20 @@
 
       <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
 
-    <p class="govuk-!-font-size-24"> (CR = Standard) We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong> either to confirm your award or ask you for more information.</p>
+    {% if data["doc-absence"] == "Yes" or data["money-second-property-check"] == "Yes" or data["home-equity-release"] == "Yes" or data["self-employed"] == "Yes" or data["money-bonds"] == "Yes" %}
+        <p class="govuk-!-font-size-24">  (CR = Defo call back) We are doing some final checks on your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
 
---------------
-<br><br>
-    <p class="govuk-!-font-size-24">  (CR = Defo call back) We are doing some final checks on your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
+       <ul class="govuk-list govuk-list--bullet">
+         {% if data["doc-absence"] == "Yes" %}<li>the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>{% endif %}
+         {% if data["money-second-property-check"] == "Yes" %}<li>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>{% endif %}
+         {% if data["home-equity-release"] == "Yes" %}<li>your equity release. We will ask you for information from an annual statement from your provider</li>{% endif %}
+         {% if data["self-employed"] == "Yes"%}<li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>{% endif %}
+         {% if data["money-bonds"] == "Yes" %}<li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>{% endif %}
+      </ul>
 
-
-     <ul class="govuk-list govuk-list--bullet">
-       <li>the time you spent outside the UK - we might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>
-       <li>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>
-       <li>your equity release - we will ask you for information from an annual statement from your provider</li>
-       <li>your self-employment - we will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>
-       <li>your income or capital bonds - we will ask you for information from a letter or statment from your provider</li>
-    </ul>
-
-      {% if data["home-care-home-check"] == "Yes" or data["money-second-property-check"] == "Yes" %}<p class=”govuk-body”>We will send you a form by <strong>DD / Month / Year (4 weeks) </strong> to ask you for details of the property or land that you own.</p>
-
-      {% else %}{% endif %}
-
-      <!---- DATE OF CLAIM ---->{% if data['doc-absence'] == 'Yes' %}
-      <div class="govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-        <p class="govuk-heading-m govuk-!-margin-bottom-3">Backdating your application</p>
-        <p class="govuk-body">We will contact you to ask about the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions.</p>
-      </div>
-        <!---- UK ---->{% endif %}
+    {% else %}
+      <p class="govuk-!-font-size-24"> (CR = Standard) We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong> either to confirm your award or ask you for more information.</p>
+    {% endif %}
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
