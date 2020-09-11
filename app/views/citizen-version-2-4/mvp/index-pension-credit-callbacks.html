@@ -108,11 +108,11 @@
         <p class="govuk-!-font-size-24">  (CR = Defo call back) We are doing some final checks on your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
 
        <ul class="govuk-list govuk-list--bullet">
-         <li>the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>
-         <li>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>
-         <li>your equity release. We will ask you for information from an annual statement from your provider</li>
-         <li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>
-         <li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>
+         {% if data["doc-absence"] == "Yes" %}<li>the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>{% endif %}
+         {% if data["money-second-property-check"] == "Yes" %}<li>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>{% endif %}
+         {% if data["home-equity-release"] == "Yes" %}<li>your equity release. We will ask you for information from an annual statement from your provider</li>{% endif %}
+         {% if data["self-employed"] == "Yes"%}<li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>{% endif %}
+         {% if data["money-bonds"] == "Yes" %}<li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>{% endif %}
       </ul>
 
     {% else %}
