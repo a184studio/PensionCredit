@@ -129,12 +129,17 @@
                     <ul class="app-task-list__items">
 
                       <li class="app-task-list__item">
-
-                      </li>
-                      <a class="app-task-list__task-name" href="benefit-UC" aria-describedby="eligibility-completed">
-                        Benefit UC
+                        <a class="app-task-list__task-name" href="benefit-UC" aria-describedby="eligibility-completed">
+                          Universal Credit checker
                       </a>
+                      {% if data["claim-date-complete"] %}
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+                      {% else %}
+                        <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+                      {% endif %}
+                    </li>
 
+                      <li class="app-task-list__item">
                         <a class="app-task-list__task-name" href="benefit-UC-Carer" aria-describedby="eligibility-completed">
                           Benefit check
                         </a>
@@ -145,11 +150,9 @@
                         {% else %}
                           <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
                         {% endif %}
-
-
+                      </li>
 
                     </ul>
-                  </li>
                 </ol>
 
                 <!------------ ––– ------------>
