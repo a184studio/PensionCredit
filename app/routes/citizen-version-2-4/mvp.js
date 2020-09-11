@@ -542,7 +542,7 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-frequency`)
   } else {
-    res.redirect(`${baseUrl}/benefit-UC-Carer`)
+    res.redirect(`${baseUrl}/benefit-UC`)
   }
 })
 
