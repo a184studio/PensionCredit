@@ -17,9 +17,11 @@ function makeAStay(data) {
   return {admission, discharge, totalDays}
 }
 
-
-
-
+router.get(`${baseUrl}/doc-absence`, (req, res, next) => {
+  const today = new Date()
+  const threeMonthsAgo = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate())
+  res.render(`citizen-version-2-5-ur/mvp/doc-absence.html`, { threeMonthsAgo })
+})
 
 
 router.post(`${baseUrl}/security-router`, (req, res) => {
@@ -291,9 +293,11 @@ router.post(`${baseUrl}/over-spa-router`, (req, res) => {
       res.redirect(`${baseUrl}/sex`)
     }
   } catch (err) {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/doc-absence`)
   }
 })
+
+
 
 router.post(`${baseUrl}/sex-router`, (req, res) => {
   try {

@@ -12,6 +12,8 @@
 
 {% include "includes/js-back-link.html" %}
 
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="doc-absence-router" method="post" class="form">
@@ -21,18 +23,19 @@
 
 
 
-      {% set hintLegend %}
+      {% set h1Legend %}
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Have you been outside the UK for a period of more than four weeks since {{ threeMonthsAgo | formatDate }}?
+</h1>
 
 
       {% endset %}
-
 
       {{ govukRadios({
         idPrefix: "doc-absence",
         name: "doc-absence",
         fieldset: {
           legend: {
-            text: "Have you been outside the UK for a period of more than four weeks since [3 months or SPA]?",
+            html: h1Legend,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
