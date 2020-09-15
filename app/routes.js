@@ -1,6 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
+router.use((req, res, next) => {
+  const today = new Date()
+  const threeMonthsAgo = new Date(today.getFullYear(), today.getMonth() -3, today.getDate())
+  res.locals.threeMonthsAgo = threeMonthsAgo
+  next()
+})
+
 router.use(require('./routes/development/wf'))
 router.use(require('./routes/sprint-1/new-claims'))
 router.use(require('./routes/sprint-2/new-claims'))

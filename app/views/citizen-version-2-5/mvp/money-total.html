@@ -28,7 +28,7 @@
       {% else %}  <p class="govuk-!-font-size-24">If you have money in accounts that are shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
 
       <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
-<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
       <li>money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office</li>
       <li>National Savings and Investment products like Savings Certificates, Premium Bonds, Income Bonds and residual accounts</li>
       <li>money at home in cash</li>
@@ -46,29 +46,41 @@
 {% endset -%}
 
       {{ govukInput({
+        id: "money-total-then",
+        name: "money-total-then",
         label: {
-          html: LegendAmount
+          html: LegendAmount,
+          classes: "govuk-label--s",
+          isPageHeading: true
         },
         hint: {
           text: "Enter an amount in pounds and pence, for example, £100.00"
         },
-        id: "money-total-then",
-        name: "money-total-then",
+        prefix: {
+          text: "£"
+        },
+        value: data["money-total-then"],
         classes: "govuk-input--width-10",
-        value: data["money-total-then"]
+        spellcheck: false
       }) }}
 
       {{ govukInput({
-        label: {
-          html: "<strong>What is the total amount of money you have today?<strong>"
-          },
-          hint: {
-            text: "Enter an amount in pounds and pence, for example, £100.00"
-          },
         id: "money-total-now",
         name: "money-total-now",
-        classes: "govuk-input--width-10",
-        value: data["money-total-now"]
+        label: {
+          html: "What is the total amount of money you have today?",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Enter an amount in pounds and pence, for example, £100.00"
+        },
+        prefix: {
+          text: "£"
+        },
+        value: data["money-total-now"],
+        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+        spellcheck: false
       }) }}
 
 
