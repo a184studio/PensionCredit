@@ -50,7 +50,6 @@
           html: LegendAmount
         },
         hint: {
-          text: "Enter an amount in pounds and pence, for example, £100.00"
         },
         id: "money-total-then",
         name: "money-total-then",
@@ -58,18 +57,21 @@
         value: data["money-total-then"]
       }) }}
 
+      <!-- text: "Enter an amount in pounds and pence, for example, £100.00" -->
+
+
       {{ govukInput({
         label: {
           html: "<strong>What is the total amount of money you have today?<strong>"
           },
           hint: {
-            text: "Enter an amount in pounds and pence, for example, £100.00"
           },
         id: "money-total-now",
         name: "money-total-now",
         classes: "govuk-input--width-10",
         value: data["money-total-now"]
       }) }}
+      <!-- text: "Enter an amount in pounds and pence, for example, £100.00" -->
 
 
       {{ govukButton({
