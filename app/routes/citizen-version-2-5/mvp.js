@@ -579,6 +579,9 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   else if (homeOwnership === 'Other accommodation') {
     res.redirect(`${baseUrl}/home-other-service-charges`)
   }
+  else if (homeOwnership === 'Live in someone elses home') {
+    res.redirect(`${baseUrl}/benefit-UC`)
+  }
   else {
     res.redirect(`${baseUrl}/blank`) // If nothing is selected it will go here.
   }

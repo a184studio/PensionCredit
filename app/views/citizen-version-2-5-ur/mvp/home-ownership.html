@@ -60,6 +60,11 @@
             checked: (data["home-ownership"] == "Shared ownership")
           },
           {
+            value: "Live in someone elses home",
+            text: "You live in someone else’s home without paying towards the rent or mortgage",
+            checked: (data["home-ownership"] == "Live in someone elses home")
+          },
+          {
             value: "Other accommodation",
             text: "Other",
             checked: (data["home-ownership"] == "Other accommodation"),
@@ -69,6 +74,9 @@
           }
         ]
       }) }}
+
+
+
 
       {{ govukButton({
         text: "Continue"
