@@ -1223,7 +1223,7 @@ router.post(`${baseUrl}/del-auth-address-correspondence-yn-router`, (req, res) =
   if (correspondenceYN === 'A different address') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-address-correspondence-post-code-lookup`)
   } else {
-    res.redirect(`${baseUrl}/final-cya`)
+    res.redirect(`${baseUrl}/del-auth-email-confirmation`)
   }
 })
 
@@ -1261,26 +1261,13 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
 })
 
 
-
-
-
-router.post(`${baseUrl}/del-auth-claim-help-router`, (req, res) => { // router name
-  const helpToClaim = req.session.data['del-auth-claim-help']  // name of data / id name
-
-  if (helpToClaim === 'Yes') { // name of data / + answer
-    res.redirect(`${baseUrl}/del-auth-claim-help-who`)
-  } else {
-    res.redirect(`${baseUrl}/final-cya`)
-  }
-})
-
 router.post(`${baseUrl}/index-made-claim-letter-check-router`, (req, res) => { // router name
   const helpToClaim = req.session.data['index-made-claim-letter-check']  // name of data / id name
 
   if (helpToClaim === 'No - send letters to a different address') { // name of data / + answer
     res.redirect(`${baseUrl}/index-help-address-correspondence-post-code-lookup`)
   } else {
-    res.redirect(`${baseUrl}/final-cya`)
+    res.redirect(`${baseUrl}/del-auth-email-confirmation`)
   }
 })
 
