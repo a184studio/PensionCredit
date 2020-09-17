@@ -18,11 +18,11 @@
 
       {% set legendHint %}
 
-      {% if data["del-auth-who-made-claim"] == "Yourself"
+      {% if data["del-auth-who-made-claim"] == "Yourself" or data["del-auth-who-made-claim"] == "Power of attorney"
       %}
         <h1 class="govuk-body govuk-!-margin-bottom-2">Email address</h1>
       {% else %}
-        <h1 class="govuk-body govuk-!-margin-bottom-2">Applicants email address</h1>
+        <h1 class="govuk-body govuk-!-margin-bottom-2">Applicant's email address</h1>
       {% endif %}
       <!------------Legend--------------->
       {% endset %}
@@ -49,7 +49,7 @@
 
     {% set legendH1 %}
 
-    {% if data["del-auth-who-made-claim"] == "Yourself"
+    {% if data["del-auth-who-made-claim"] == "Yourself" or data["del-auth-who-made-claim"] == "Power of attorney"
     %}
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you want us to send you confirmation that we have received the application by email?</h1>
     {% else %}
