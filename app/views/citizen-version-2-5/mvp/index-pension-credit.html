@@ -103,17 +103,17 @@
             }) }}
 
 
-            <p class="govuk-heading-xm govuk-!-margin-bottom-2">We might need you to send us some stuff</p>
+            <p class="govuk-heading-xm govuk-!-margin-bottom-2">We need you to send us some information</p>
 
             {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] or data["home-rent-service-charges"] or data["home-shared-service-charges"] or data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}
 
             {% if data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}<p class="govuk-!-font-size-24 govuk-!-margin-bottom-2">Service charges {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] == "Yes" %} /Ground rent</p>{% endif %}
 
             <p class="govuk-!-font-size-24">Send a copy
-            {% if data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}SC: Incoice and breakdown of services{% endif %}
-            {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] == "Yes" %} GR: Invoice {% endif %}
+            {% if data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}Send us your most recent service charge invoice. This should include an itemised breakdown of charges{% endif %}
+            {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] == "Yes" %} Send us your most up to date ground rent invoice {% endif %}
 
-            the address with make sure to add <strong>Name</strong> and <strong>National insurance number</strong></p>
+            Send these by post, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
 
             {{ govukInsetText({
               html: "The Pension Service 4 <br>
