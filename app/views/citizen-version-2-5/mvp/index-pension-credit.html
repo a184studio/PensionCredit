@@ -102,6 +102,27 @@
                 classes:"govuk-!-margin-top-8 govuk-!-margin-bottom-6"
             }) }}
 
+
+            <p class="govuk-heading-xm govuk-!-margin-bottom-2">We might need you to send us some stuff</p>
+
+            {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] or data["home-rent-service-charges"] or data["home-shared-service-charges"] or data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}
+
+            {% if data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}<p class="govuk-!-font-size-24 govuk-!-margin-bottom-2">Service charges {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] == "Yes" %} /Ground rent</p>{% endif %}
+
+            <p class="govuk-!-font-size-24">Send a copy
+            {% if data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}SC: Incoice and breakdown of services{% endif %}
+            {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] == "Yes" %} GR: Invoice {% endif %}
+
+            the address with make sure to add <strong>Name</strong> and <strong>National insurance number</strong></p>
+
+            {{ govukInsetText({
+              html: "The Pension Service 4 <br>
+              Mail Handling Site A<br>
+              Wolverhampton<br>
+              WV98 1AG"
+            }) }}
+            {% endif %}
+
       <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
 
     {% if data["doc-absence"] == "Yes" or data["money-second-property-check"] == "Yes" or data["home-equity-release"] == "Yes" or data["self-employed"] == "Yes" or data["money-bonds"] == "Yes" %}
@@ -113,11 +134,19 @@
          {% if data["home-equity-release"] == "Yes" %}<li>your equity release. We will ask you for information from an annual statement from your provider</li>{% endif %}
          {% if data["self-employed"] == "Yes"%}<li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>{% endif %}
          {% if data["money-bonds"] == "Yes" %}<li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>{% endif %}
+         {% endif %}
+
+
       </ul>
+
+
 
     {% else %}
       <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong> either to confirm your award or ask you for more information.</p>
     {% endif %}
+
+
+
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
