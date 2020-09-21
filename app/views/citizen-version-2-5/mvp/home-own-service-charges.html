@@ -21,7 +21,7 @@
         {% set legend %}
 
         <p class="govuk-hint"><strong>Service charges can include:</strong></p>
-        <ul class="govuk-hint govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-bottom-6">
+        <ul class="govuk-hint govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
           <li>
             warden services
           </li>
@@ -43,7 +43,7 @@
 
       {{ govukRadios({
         idPrefix: "home-own-service-charges",
-        name: "home-property-service-charges",
+        name: "home-own-service-charges",
         fieldset: {
           legend: {
             text: "Do you pay any service charges?",
@@ -67,6 +67,8 @@
           }
         ]
       }) }}
+
+
 
 
       {{ govukButton({
