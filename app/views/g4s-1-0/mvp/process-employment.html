@@ -19,120 +19,34 @@
 
         <!------------HEADLINE------------>
 
+
         <div class="panel panel-border-wide alert-default govuk-!-margin-bottom-6">
           <h2 class="govuk-heading-m">Alert</h2>
           <p>Use SearchLight to find this out. Do not ask the citizen.</p>
         </div>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-          How much does Mel get a week from employment?
-        </h1>
-
-
-        {% set empoloymentDetails %}
-
-        {% set LegendName %}
-        <strong>Empoloyment Name<strong>
-        {% endset -%}
-
-        {{ govukInput({
-          label: {
-            html: LegendName
-          },
-          hint: {
-            text: "For example, £100.00 or £1,000.00"
-          },
-          id: "money-total-then",
-          name: "money-total-then",
-          classes: "govuk-input--width-20",
-          value: data["money-total-then"]
-        }) }}
-
-        <br>
-
         {% set LegendAmount %}
-        <strong>Empoloyment amount weekly<strong>
+        <strong>What is the total amount of money you had on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}?<strong>
         {% endset -%}
 
               {{ govukInput({
+                id: "money-total-now",
+                name: "money-total-now",
                 label: {
-                  html: LegendAmount
+                  html: "Add how much Mel Gibsion gets from employment a week",
+                  classes: "govuk-label--xl",
+                  isPageHeading: true
                 },
                 hint: {
-                  text: "For example, £100.00 or £1,000.00"
+                  text: "Enter an amount in pounds and pence, for example, 100.00"
                 },
-                id: "money-total-then",
-                name: "money-total-then",
-                classes: "govuk-input--width-20",
-                value: data["money-total-then"]
+                prefix: {
+                  text: "£"
+                },
+                value: data["money-total-now"],
+                classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+                spellcheck: false
               }) }}
-
-        {% endset %}
-
-
-        {{ govukCheckboxes({
-          name: "disregards",
-          fieldset: {
-            legend: {
-              text: "",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: ""
-          },
-          items: [
-          {
-            name: 'empoloyment-details-a',
-            value: "empoloyment A",
-            html: "Empoloyment A",
-            conditional: {
-              html: empoloymentDetails
-            }
-          },
-          {
-            name: 'empoloyment-details-a',
-            value: "empoloyment B",
-            html: "Empoloyment B",
-            conditional: {
-              html: empoloymentDetails
-            }
-          },
-          {
-            name: 'empoloyment-details-a',
-            value: "empoloyment C",
-            html: "Empoloyment C",
-            conditional: {
-              html: empoloymentDetails
-            }
-          },
-          {
-            name: 'empoloyment-details-a',
-            value: "empoloyment D",
-            html: "Empoloyment D",
-            conditional: {
-              html: empoloymentDetails
-            }
-          },
-          {
-            name: 'empoloyment-details-a',
-            value: "empoloyment E",
-            html: "Empoloyment E",
-            conditional: {
-              html: empoloymentDetails
-            }
-          },
-          {
-            name: 'empoloyment-details-a',
-            value: "empoloyment F",
-            html: "Empoloyment F",
-            conditional: {
-              html: empoloymentDetails
-            }
-          }
-          ]
-        }) }}
 
 
       {{ govukButton({
