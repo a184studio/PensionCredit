@@ -1,0 +1,41 @@
+{% extends "layout-work-list-id-bar.html" %}
+
+{% block pageTitle %}
+  Selected claim - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form action="process-reside-in-uk" method="post" class="form">
+
+
+        <!------------HEADLINE------------>
+
+        <div class="panel panel-border-wide alert-default govuk-!-margin-bottom-6">
+          <h2 class="govuk-heading-m">Alert</h2>
+          <p>You are about to take a Pension Credit claim. Some information will be pulled from our records to perform an inital calculation in the background.</p>
+        </div>
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Pension credit checker</h1>
+
+
+      {{ govukButton({
+        classes: "govuk-!-margin-top-0",
+        text: "Continue"
+      }) }}
+
+
+
+
+</form>
+    </div>
+  </div>
+{% endblock %}

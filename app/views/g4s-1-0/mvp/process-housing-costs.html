@@ -1,0 +1,70 @@
+{% extends "layout-work-list-id-bar.html" %}
+
+{% block pageTitle %}
+  Selected claim - empoloyment Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form action="process-outcome" method="post" class="form">
+
+
+        <!------------HEADLINE------------>
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "resides-in-uk",
+          name: "resides-in-uk",
+          fieldset: {
+            legend: {
+              text: "Which of the following apply to you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl "
+            }
+          },
+
+          items: [
+            {
+              value: "England",
+              text: "Ground rent",
+              checked: data['resides-in-uk'] == "England"
+            },
+            {
+              value: "Scotland",
+              text: "Service charges",
+              checked: data['resides-in-uk'] == "Scotland"
+            },
+            {
+              value: "Wales",
+              text: "Both Service charges and ground rent",
+              checked: data['resides-in-uk'] == "Wales"
+            },
+            {
+              value: "Northern-Ireland",
+              text: "None of these",
+              checked: data['resides-in-uk'] == "Northern-Ireland"
+            }
+          ]
+        }) }}
+
+
+      {{ govukButton({
+        classes: "govuk-!-margin-top-0",
+        text: "Continue"
+      }) }}
+
+      <!-- <p class="govuk-body govuk-!-margin-top-4"><a href="case-load">Back to start</a></p>
+      <p class="govuk-body govuk-!-margin-top-4"><a href="case-load-clear">...</a></p> -->
+
+</form>
+    </div>
+  </div>
+{% endblock %}
