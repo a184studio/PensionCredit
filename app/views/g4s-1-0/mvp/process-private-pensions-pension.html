@@ -25,28 +25,31 @@
         </div>
 
 
-        {% set LegendAmount %}
-        <strong>What is the total of all pensions amount of money you had on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}?<strong>
-        {% endset -%}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "resides-in-uk",
+          name: "resides-in-uk",
+          fieldset: {
+            legend: {
+              text: "Does Mel Gibson get over £175 a week from private pensions?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl "
+            }
+          },
 
-              {{ govukInput({
-                id: "money-total-now",
-                name: "money-total-now",
-                label: {
-                  html: "Add how much Mel Gibsion gets from private pensions a week",
-                  classes: "govuk-label--xl",
-                  isPageHeading: true
-                },
-                hint: {
-                  text: "Enter an amount in pounds and pence, for example, 100.00"
-                },
-                prefix: {
-                  text: "£"
-                },
-                value: data["money-total-now"],
-                classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
-                spellcheck: false
-              }) }}
+          items: [
+            {
+              value: "England",
+              text: "Yes",
+              checked: data['resides-in-uk'] == "England"
+            },
+            {
+              value: "Scotland",
+              text: "No",
+              checked: data['resides-in-uk'] == "Scotland"
+            }
+          ]
+        }) }}
 
 
 
