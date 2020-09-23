@@ -14,18 +14,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <form action="process-capital" method="post" class="form">
+      <form action="process-outcome" method="post" class="form">
 
 
         <!------------HEADLINE------------>
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "resides-in-uk",
-          name: "resides-in-uk",
+          idPrefix: "process-housing-costs",
+          name: "process-housing-costs",
           fieldset: {
             legend: {
-              text: "Which of the following apply to you?",
+              text: "Do you have to pay any of the following?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl "
             }
@@ -33,24 +33,24 @@
 
           items: [
             {
-              value: "England",
+              value: "Ground rent",
               text: "Ground rent",
-              checked: data['resides-in-uk'] == "England"
+              checked: data['process-housing-costs'] == "Ground rent"
             },
             {
-              value: "Scotland",
+              value: "Service charges",
               text: "Service charges",
-              checked: data['resides-in-uk'] == "Scotland"
+              checked: data['process-housing-costs'] == "Service charges"
             },
             {
-              value: "Wales",
+              value: "Both",
               text: "Both Service charges and ground rent",
-              checked: data['resides-in-uk'] == "Wales"
+              checked: data['process-housing-costs'] == "Both"
             },
             {
-              value: "Northern-Ireland",
+              value: "None",
               text: "None of these",
-              checked: data['resides-in-uk'] == "Northern-Ireland"
+              checked: data['process-housing-costs'] == "None"
             }
           ]
         }) }}

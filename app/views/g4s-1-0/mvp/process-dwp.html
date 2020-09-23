@@ -14,28 +14,33 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <form action="process-done" method="post" class="form">
+      <form action="process-start" method="post" class="form">
 
 
         <!------------HEADLINE------------>
 
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6"><strong>Hand applicant over to DWP</strong></h1>
+        <div class="panel panel-border-wide alert-default govuk-!-margin-bottom-6">
+          <h2 class="govuk-heading-m">Transfer claim to DWP staff</h2>
+          <p>Do not play back details to applicant, these are for DWP staff only.</p>
+
+        </div>
 
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">DWP staff can see this claim. Call them and hand it over</p>
-
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
-        <p class="govuk-heading-xm govuk-!-margin-bottom-2">Claimant details</p>
+        <p class="govuk-heading-l govuk-!-margin-bottom-6">Claimant details</p>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Name: <strong>Mel Gibson</strong></p>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National insurance number: <strong>NA 11 22 33 c</strong></p>
-            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Date of birth: <strong>01 May 1940</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Date of birth: <strong>01 May 1940</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">State pension over £X: <strong>Yes/No</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Benefits that help them to get PC: <strong>Yes/No</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Income over £X: <strong>Yes/No</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Pensions over £X: <strong>Yes/No</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Service and ground rent: <strong>Yes/No</strong></p>
+
 
       {{ govukButton({
         classes: "govuk-!-margin-top-0",
-        text: "Continue"
+        text: "Finish when transfer is complete"
       }) }}
 
 </form>

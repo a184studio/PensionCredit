@@ -32,6 +32,64 @@ router.post(`${baseUrl}/login-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/process-resides-in-uk-router`, (req, res) => {
+  const residesInUk = req.session.data['process-resides-in-uk']
+
+  if (residesInUk === 'England') {
+    res.redirect(`${baseUrl}/process-partner`)
+  } else if (residesInUk === 'Scotland') {
+    res.redirect(`${baseUrl}/process-partner`)
+  } else if (residesInUk === 'Wales') {
+    res.redirect(`${baseUrl}/process-partner`)
+  } else if (residesInUk === 'Northern-Ireland') {
+    res.redirect(`${baseUrl}/process-partner`)
+  } else {
+    res.redirect(`${baseUrl}/done-none-uk`)
+  }
+})
+
+router.post(`${baseUrl}/process-evidence-prompt`, (req, res) => {
+  const processOutcome = req.session.data['process-outcome']
+
+  if (processOutcome === 'Yes') {
+    res.redirect(`${baseUrl}/process-evidence-prompt`)
+  } else {
+    res.redirect(`${baseUrl}/done-none-uk`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/process-benefits-router`, (req, res) => {
+  const processBenefits = req.session.data['process-benefits']
+
+  if (processBenefits === 'Yes') {
+    res.redirect(`${baseUrl}/process-outcome`)
+  } else {
+    res.redirect(`${baseUrl}/process-private-pensions-pension`)
+  }
+})
+
+router.post(`${baseUrl}/process-outcome-router`, (req, res) => {
+  const processOutcome = req.session.data['process-outcome']
+
+  if (processOutcome === 'Yes') {
+    res.redirect(`${baseUrl}/process-evidence-prompt`)
+  } else {
+    res.redirect(`${baseUrl}/Doesnt-want-to-apply`)
+  }
+})
+
+router.post(`${baseUrl}/process-evidence-prompt-router`, (req, res) => {
+  const processEvidence = req.session.data['process-evidence-prompt']
+
+  if (processEvidence === 'Yes') {
+    res.redirect(`${baseUrl}/process-dwp`)
+  } else {
+    res.redirect(`${baseUrl}/Come-back-when-you-have-your-bits`)
+  }
+})
+
 
 
 

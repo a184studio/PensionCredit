@@ -11,21 +11,13 @@
 {% block content %}
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-
-      <form action="process-name" method="post" class="form">
-
-
-        <!------------HEADLINE------------>
-
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <form action="reside-in-uk-router" method="post">
+            <form action="process-resides-in-uk-router" method="post">
               {{ govukRadios({
                 classes: "govuk-radios",
-                idPrefix: "resides-in-uk",
-                name: "resides-in-uk",
+                idPrefix: "process-resides-in-uk",
+                name: "process-resides-in-uk",
                 fieldset: {
                   legend: {
                     text: "Which country do you live in?",
@@ -38,27 +30,27 @@
                   {
                     value: "England",
                     text: "England",
-                    checked: data['resides-in-uk'] == "England"
+                    checked: data['process-resides-in-uk'] == "England"
                   },
                   {
                     value: "Scotland",
                     text: "Scotland",
-                    checked: data['resides-in-uk'] == "Scotland"
+                    checked: data['process-resides-in-uk'] == "Scotland"
                   },
                   {
                     value: "Wales",
                     text: "Wales",
-                    checked: data['resides-in-uk'] == "Wales"
+                    checked: data['process-resides-in-uk'] == "Wales"
                   },
                   {
                     value: "Northern-Ireland",
                     text: "Northern Ireland",
-                    checked: data['resides-in-uk'] == "Northern-Ireland"
+                    checked: data['process-resides-in-uk'] == "Northern-Ireland"
                   },
                   {
                     value: "Other",
                     text: "Somewhere else",
-                    checked: data['resides-in-uk'] == "Other"
+                    checked: data['process-resides-in-uk'] == "Other"
                   }
                 ]
               }) }}
@@ -69,9 +61,6 @@
             </form>
 
 
-
-
-</form>
     </div>
   </div>
 {% endblock %}

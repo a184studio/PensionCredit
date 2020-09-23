@@ -20,29 +20,34 @@
         <!------------HEADLINE------------>
 
         <div class="panel panel-border-wide alert-default govuk-!-margin-bottom-6">
-          <h2 class="govuk-heading-m">Alert</h2>
-          <p>Use SearchLight to find this out. Do not ask the citizen.</p>
+          <h2 class="govuk-heading-m">Use SearchLight</h2>
+          <p>Do not ask the citizen</p>
         </div>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-          How much State Penson does Mel get a week?
-        </h1>
-
-        {% set legendName %}
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Amount paid a week</h3>
-        {% endset -%}
-
-        {{ govukInput({
-          label: {
-            html: "Amount paid a week"
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "process-state-pension",
+          name: "process-state-pension",
+          fieldset: {
+            legend: {
+              text: "Does SeachLight show more than £175 a week from State Pension?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl "
+            }
           },
-          hint: {
-            text: ""
-          },
-          id: "user-full-name",
-          name: "user-full-name",
-          classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
-          value: data["user-full-name"]
+
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: data['process-state-pension'] == "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: data['process-state-pension'] == "No"
+            }
+          ]
         }) }}
 
 

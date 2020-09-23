@@ -14,13 +14,72 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <form action="process-dwp" method="post" class="form">
+      <form action="process-outcome-router" method="post" class="form">
 
 
         <!------------HEADLINE------------>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><strong>Looks like Mel Gibson Will get Pension Credit</strong></h1>
+        <!---- SERVICE CHARGE ONLY ---->
+        {% if
+          data["process-benefits"] == "Yes"
 
+        %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6"><strong>Likley the applicant will get Pension Credit</strong></h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">More information is needed to make the full claim.</p>
+
+
+        <!---- GROUND RENT ONLY ---->
+        {% elif
+          data["process-private-pensions-pension"] == "Yes" and
+          data["process-state-pension"] == "Yes" and
+          data["process-evidence-prompt"] == "Yes"
+        %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6"><strong>It is unlikley the applicant will get Pension Credit</strong></h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Looks like there is alot of income and no qualifiting benefits are in payment</p>
+
+
+        {% elif
+          data["process-private-pensions-pension"] == "No" or
+          data["process-state-pension"] == "No" or
+          data["process-evidence-prompt"] == "No"
+        %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6"><strong>We cant be sure at this point, we need to go through the full application to be sure</strong></h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You need to hand the applicant over to the application line</p>
+
+
+
+        {% else %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6"><strong>XXX</strong></h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">More information is needed to make the full claim.</p>
+
+        {% endif %}
+
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "process-outcome",
+          name: "process-outcome",
+          fieldset: {
+            legend: {
+              text: "Do they wish to apply?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l govuk-!-padding-top-6"
+            }
+          },
+
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: data['process-outcome'] == "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: data['process-outcome'] == "No"
+            }
+          ]
+        }) }}
 
       {{ govukButton({
         classes: "govuk-!-margin-top-0",
