@@ -452,7 +452,7 @@ router.post(`${baseUrl}/home-care-home-route-check-router`, (req, res) => {
   if (careHomeRouteCheck === 'Yes') {
     res.redirect(`${baseUrl}/pension-check`)
   } else {
-    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
+    res.redirect(`${baseUrl}/non-deps-living-with-you`)
   }
 })
 
@@ -542,7 +542,7 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-frequency`)
   } else {
-    res.redirect(`${baseUrl}/benefit-UC`)
+    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
   }
 })
 
