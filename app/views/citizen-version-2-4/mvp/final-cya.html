@@ -163,6 +163,28 @@
 
       {{ govukSummaryList({
         rows: [
+        {
+        key: {
+          text: "Your date of birth"
+        },
+        value: {
+          text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
+        },
+        actions: {
+          items: [
+            {
+              href: "over-spa",
+              text: "Change",
+              visuallyHiddenText: "your date of birth"
+            }
+          ]
+        }
+      }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
 
         {
           key: {
@@ -176,7 +198,7 @@
               {
                 href: "doc-absence",
                 text: "Change",
-                visuallyHiddenText: "Have you been outside the UK for a period of more than four weeks since [3 months or SPA]?"
+                visuallyHiddenText: "whether you been outside the UK for a period of more than four weeks since [3 months or SPA]?"
               }
             ]
           }
@@ -199,7 +221,7 @@
               {
                 href: "doc-absence-plural",
                 text: "Change",
-                visuallyHiddenText: "How many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?"
+                visuallyHiddenText: "how many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?"
               }
             ]
           }
@@ -222,7 +244,7 @@
               {
                 href: "doc-absence-medical",
                 text: "Change",
-                visuallyHiddenText: "If the period you spent outside the UK connected to medical treatment or the death of a partner or child?"
+                visuallyHiddenText: "whether the period you spent outside the UK connected to medical treatment or the death of a partner or child?"
               }
             ]
           }
@@ -245,7 +267,7 @@
               {
                 href: "",
                 text: "Change",
-                visuallyHiddenText: "Date you left the UK"
+                visuallyHiddenText: "date you left the UK"
               }
             ]
           }
@@ -262,7 +284,7 @@
               {
                 href: "",
                 text: "Change",
-                visuallyHiddenText: "Date you returned to the UK"
+                visuallyHiddenText: "divate you returned to the UK"
               }
             ]
           }
@@ -285,7 +307,7 @@
               {
                 href: "doc-draft-date",
                 text: "Change",
-                visuallyHiddenText: "Do you want us to consider backdating your application to [Calculated EED]?"
+                visuallyHiddenText: "whether you want us to consider backdating your application to [Calculated EED]?"
               }
             ]
           }
@@ -308,7 +330,7 @@
               {
                 href: "XXX",
                 text: "Change",
-                visuallyHiddenText: "What date do you want us to consider your application from?"
+                visuallyHiddenText: "what date do you want us to consider your application from?"
               }
             ]
           }
@@ -325,24 +347,6 @@
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
-
-          {
-            key: {
-              text: "Your date of birth"
-            },
-            value: {
-              text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
-            },
-            actions: {
-              items: [
-                {
-                  href: "over-spa",
-                  text: "Change",
-                  visuallyHiddenText: "your date of birth"
-                }
-              ]
-            }
-          },
 
           {
             key: {
