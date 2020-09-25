@@ -106,27 +106,32 @@
           {% if
             data["home-rent-ground-rent"] == "Yes" or
             data["home-shared-ground-rent"] == "Yes" or
-            data["home-own-ground-rent"] == "Yes" or
             data["home-other-ground-rent"] == "Yes" or
+            data["home-own-ground-rent"] == "Yes" or
             data["home-own-service-charges"] == "Yes" or
             data["home-other-service-charges"] == "Yes"
             %}
 
+
+
+
             <!---- SERVICE CHARGE ONLY ---->
             {% if
-              data["home-own-service-charges"] == "Yes" or
               data["home-other-service-charges"] == "Yes" %}
                 <p class="govuk-heading-xm govuk-!-margin-bottom-2">We need you to send us some information about your service charges</p>
                   <p class="govuk-body">Send a copy of your most recent service charge invoice, with an itemised breakdown of charges, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
+                  <!-- data["home-own-service-charges"] == "Yes" or -->
+
             {% endif %}
 
             <!---- GROUND RENT ONLY ---->
             {% if
               data["home-rent-ground-rent"] == "Yes" or
               data["home-shared-ground-rent"] == "Yes" or
-              data["home-own-ground-rent"] == "Yes" or
               data["home-other-ground-rent"] == "Yes"
             %}
+            <!-- data["home-own-ground-rent"] == "Yes" or -->
+
             <p class="govuk-heading-xm govuk-!-margin-bottom-2">We need you to send us some information about your ground rent</p>
               <p class="govuk-body">Send a copy of your most up to date ground rent invoice, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
             {% endif %}
