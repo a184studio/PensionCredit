@@ -10,8 +10,6 @@
 
 {% block content %}
 
-{% include "includes/js-back-link.html" %}
-
 
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -101,16 +99,85 @@
 
       {{ govukPanel({
               titleText: "Application sent",
-                classes:"govuk-!-margin-bottom-6"
+                classes:"govuk-!-margin-top-8 govuk-!-margin-bottom-6"
             }) }}
 
 
-            <p class="govuk-heading-xm govuk-!-margin-bottom-2">We need you to send us some information.</p>
+          {% if
+            data["home-rent-ground-rent"] == "Yes" or
+            data["home-shared-ground-rent"] == "Yes" or
+            data["home-other-ground-rent"] == "Yes" or
+            data["home-own-ground-rent"] == "Yes" or
+            data["home-own-service-charges"] == "Yes" or
+            data["home-other-service-charges"] == "Yes"
+            %}
 
-            {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] or data["home-rent-service-charges"] or data["home-shared-service-charges"] or data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}
 
-            {% if data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}<p class="govuk-!-font-size-24 govuk-!-margin-bottom-2">Service charges {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] == "Yes" %} /Ground rent</p>{% endif %}
 
+
+            <!---- SERVICE CHARGE ONLY ---->
+            {% if
+              data["home-other-service-charges"] == "Yes" %}
+                <p class="govuk-heading-xm govuk-!-margin-bottom-2">We need you to send us some information about your service charges</p>
+                  <p class="govuk-body">Send a copy of your most recent service charge invoice, with an itemised breakdown of charges, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
+                  <!-- data["home-own-service-charges"] == "Yes" or -->
+
+            {% endif %}
+
+            <!---- GROUND RENT ONLY ---->
+            {% if
+              data["home-rent-ground-rent"] == "Yes" or
+              data["home-shared-ground-rent"] == "Yes" or
+              data["home-other-ground-rent"] == "Yes"
+            %}
+            <!-- data["home-own-ground-rent"] == "Yes" or -->
+
+            <p class="govuk-heading-xm govuk-!-margin-bottom-2">We need you to send us some information about your ground rent</p>
+              <p class="govuk-body">Send a copy of your most up to date ground rent invoice, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
+            {% endif %}
+
+            <!---- BOTH GROUND AND SERVICE ---->
+            {% if
+              data["home-own-service-charges"] == "Yes" and
+              data["home-own-ground-rent"] == "Yes" %}
+
+              <p class="govuk-heading-xm govuk-!-margin-bottom-2">We need you to send us some information about your service charges and ground rent</p>
+                <p class="govuk-body">Send a copy of your most recent ground rent invoice and your most recent service charge invoice, with an itemised breakdown of charges, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
+            {% endif %}
+
+
+
+            <div  class="govuk-panel--address govuk-!-margin-top-4">
+
+                <p class="govuk-heading-s govuk-!-margin-bottom-1">By email:</p>
+                <p class="govuk-body">newcastle.pensioncentre@dwp.gsi.gov.uk</p>
+              </div>
+
+              <div  class="govuk-panel--address">
+
+                <p class="govuk-heading-s govuk-!-margin-bottom-1">By post:</p>
+
+                <p class="govuk-body">
+                The Pension Service 4<br>
+                Mail Handling Site A<br>
+                Wolverhampton
+                WV98 1AG</p>
+
+              </div>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+
+          {% endif %}
+
+        {% if
+          data["doc-absence"] == "Yes" or
+          data["money-second-property-check"] == "Yes" or
+          data["home-equity-release"] == "Yes" or
+          data["self-employed"] == "Yes" or
+          data["money-bonds"] == "Yes"
+        %}
+
+            <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
 
             {% if
               data["home-rent-ground-rent"] == "Yes" or
@@ -121,18 +188,12 @@
               data["home-other-service-charges"] == "Yes"
               %}
 
-              <p class="govuk-!-font-size-24">@pete: We need you to supply the details around ground rent and/or service charges before we can fully process your claim.</p>
+              <p class="govuk-!-font-size-19">We cant say we are doing final checks as there is outstanding things to do for Service and ground.</p>
+              <p class="govuk-!-font-size-19">What is our process? We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
 
-              {% endif %}
-
-              {% if
-                data["doc-absence"] == "Yes" or
-                data["money-second-property-check"] == "Yes" or
-                data["home-equity-release"] == "Yes" or
-                data["home-self-employed"] == "Yes" or
-                data["home-money-bonds"] == "Yes"
-              %}
-              <p class="govuk-!-font-size-24">We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
+            {% else %}
+              <p class="govuk-!-font-size-24">We are doing some final checks on your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
+            {% endif %}
 
 
             <ul class="govuk-list govuk-list--bullet">
@@ -155,7 +216,9 @@
 
           <!---- CALL BACK = NO ---->
           {% else %}
+            <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
             <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong> either to confirm your award or ask you for more information.</p>
+
           {% endif %}
 
 
