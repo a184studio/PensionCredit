@@ -258,18 +258,6 @@ router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
 
 
 
-
-router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
-  const emailCheck = req.session.data['contact-email-check-yn']
-
-  if (emailCheck === 'Yes') {
-    res.redirect(`${baseUrl}/contact-formats`)
-  } else {
-    res.redirect(`${baseUrl}/address-correspondence-yn`)
-  }
-})
-
-
 // Contact end
 
 
@@ -1233,7 +1221,7 @@ router.post(`${baseUrl}/del-auth-address-correspondence-yn-router`, (req, res) =
   if (correspondenceYN === 'A different address') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-address-correspondence-post-code-lookup`)
   } else {
-    res.redirect(`${baseUrl}/final-cya`)
+    res.redirect(`${baseUrl}/del-auth-email-confirmation`)
   }
 })
 
