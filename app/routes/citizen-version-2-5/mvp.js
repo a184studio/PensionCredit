@@ -237,29 +237,8 @@ router.post(`${baseUrl}/contact-other-number-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
-  const contactFormats = req.session.data['contact-formats'] || []
-
-  if (contactFormats.includes('Letters by email') === true) {
-    res.redirect(`${baseUrl}/contact-email`)
-  }
-  else {
-    res.redirect(`${baseUrl}/address-correspondence-yn`)
-  }
-})
 
 
-
-
-router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
-  const emailCheck = req.session.data['contact-email-check-yn']
-
-  if (emailCheck === 'Yes') {
-    res.redirect(`${baseUrl}/contact-formats`)
-  } else {
-    res.redirect(`${baseUrl}/address-correspondence-yn`)
-  }
-})
 
 
 // Contact end
