@@ -21,27 +21,68 @@
          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">People that live with you</h1>
 
 
+         {% if data["non-deps-member-full-name-2"] %}
+
          {{ govukSummaryList({
-           classes: 'govuk-!-padding-top-6 govuk-!-padding-bottom-8',
+           classes: 'govuk-!-padding-top-6',
            rows: [
            {
              key: {
                text: "Partner"
              },
              value: {
-               text: "Name of partner"
+               html: data['partner-full-name']
              },
              actions: {
                items: [
+
                ]
              }
-           },
+           }
+           ]
+         }) }}
+
+        {% endif %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-padding-top-6',
+          rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              html: data['non-deps-member-full-name']
+            },
+            actions: {
+              items: [
+              {
+                href: "non-deps-frequency",
+                html: "Change",
+                visuallyHiddenText: "XXX"
+              },
+              {
+                href: "non-deps-member-remove",
+                html: "Remove",
+                visuallyHiddenText: "XXX"
+              }
+              ]
+            }
+          }
+          ]
+        }) }}
+
+      {% if data["non-deps-member-full-name-2"] %}
+
+         {{ govukSummaryList({
+           classes: 'govuk-!-padding-top-0',
+           rows: [
            {
              key: {
                text: "Name"
              },
              value: {
-               html: data['non-deps-member-full-name']
+               html: data['non-deps-member-full-name-2']
              },
              actions: {
                items: [
@@ -61,8 +102,10 @@
            ]
          }) }}
 
+      {% endif %}
 
-             <h1 class="govuk-heading-l govuk-!-padding-top-2 govuk-!-margin-bottom-2">Does anyone else live with you?</h1>
+
+             <h1 class="govuk-heading-l govuk-!-padding-top-8 govuk-!-margin-bottom-2">Does anyone else live with you?</h1>
 
 
              {{ govukRadios({

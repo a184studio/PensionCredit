@@ -161,13 +161,166 @@
         ]
       }) }}
 
+      {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+          text: "Your date of birth"
+        },
+        value: {
+          text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
+        },
+        actions: {
+          items: [
+            {
+              href: "over-spa",
+              text: "Change",
+              visuallyHiddenText: "your date of birth"
+            }
+          ]
+        }
+      }
+        ]
+      }) }}
 
       {{ govukSummaryList({
         rows: [
 
         {
           key: {
-            text: "What date do you want your Pension Credit claim to start?"
+            text: "Have you been outside the UK for a period of more than four weeks since [3 months or SPA]?"
+          },
+          value: {
+            text: data['doc-absence']
+          },
+          actions: {
+            items: [
+              {
+                href: "doc-absence",
+                text: "Change",
+                visuallyHiddenText: "whether you been outside the UK for a period of more than four weeks since [3 months or SPA]?"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+          key: {
+            text: "How many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?"
+          },
+          value: {
+            text: data['doc-absence-plural']
+          },
+          actions: {
+            items: [
+              {
+                href: "doc-absence-plural",
+                text: "Change",
+                visuallyHiddenText: "how many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+          key: {
+            text: "Was the period you spent outside the UK connected to medical treatment or the death of a partner or child?"
+          },
+          value: {
+            text: data['doc-absence-medical']
+          },
+          actions: {
+            items: [
+              {
+                href: "doc-absence-medical",
+                text: "Change",
+                visuallyHiddenText: "whether the period you spent outside the UK connected to medical treatment or the death of a partner or child?"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+          key: {
+            text: "Date you left the UK"
+          },
+          value: {
+            text: data['doc-absence-date-left-day'] + ' ' + (data['doc-absence-date-left-month'] | getMonth) + ' ' + data['doc-absence-date-left-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "Change",
+                visuallyHiddenText: "date you left the UK"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Date you returned to the UK"
+          },
+          value: {
+            text: data['doc-absence-date-return-day'] + ' ' + (data['doc-absence-date-return-month'] | getMonth) + ' ' + data['doc-absence-date-return-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "Change",
+                visuallyHiddenText: "divate you returned to the UK"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+          key: {
+            text: "Do you want us to consider backdating your application to [Calculated EED]?"
+          },
+          value: {
+            text: data['doc-draft-date']
+          },
+          actions: {
+            items: [
+              {
+                href: "doc-draft-date",
+                text: "Change",
+                visuallyHiddenText: "whether you want us to consider backdating your application to [Calculated EED]?"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+          key: {
+            text: "What date do you want us to consider your application from?"
           },
           value: {
             text: data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']
@@ -175,9 +328,9 @@
           actions: {
             items: [
               {
-                href: "claim-date-of-claim",
+                href: "XXX",
                 text: "Change",
-                visuallyHiddenText: "what date you want your Pension Credit claim to start"
+                visuallyHiddenText: "what date do you want us to consider your application from?"
               }
             ]
           }
@@ -188,27 +341,12 @@
 
 
 
+
+
+
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
-
-          {
-            key: {
-              text: "Your date of birth"
-            },
-            value: {
-              text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
-            },
-            actions: {
-              items: [
-                {
-                  href: "over-spa",
-                  text: "Change",
-                  visuallyHiddenText: "your date of birth"
-                }
-              ]
-            }
-          },
 
           {
             key: {

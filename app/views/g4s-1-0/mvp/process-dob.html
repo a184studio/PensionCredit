@@ -1,0 +1,67 @@
+{% extends "layout-work-list-id-bar.html" %}
+
+{% block pageTitle %}
+  Selected claim - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form action="process-partner" method="post" class="form">
+
+
+        <!------------HEADLINE------------>
+
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "What is your date of birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1948."
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["dob-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["dob-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["dob-year"]
+            }
+          ]
+        }) }}
+
+
+      {{ govukButton({
+        classes: "govuk-!-margin-top-0",
+        text: "Continue"
+      }) }}
+
+
+
+
+</form>
+    </div>
+  </div>
+{% endblock %}

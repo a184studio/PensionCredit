@@ -1,0 +1,71 @@
+{% extends "layout-work-list-id-bar.html" %}
+
+{% block pageTitle %}
+  Selected claim - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form action="process-dob" method="post" class="form">
+
+
+        <!------------HEADLINE------------>
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Applicant details</h1>
+
+
+        {% set legendNI %}
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is your National Insurance number?</h3>
+        {% endset -%}
+
+        {% set legendName %}
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is your full name?</h3>
+        {% endset -%}
+
+        {{ govukInput({
+          label: {
+            html: legendName
+          },
+          hint: {
+            text: "Include any middle names."
+          },
+          id: "full-name",
+          name: "full-name",
+          classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
+          value: data["full-name"]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            html: legendNI
+          },
+            hint: {
+              html: "It’s on your National Insurance card, benefit letter, payslip or P60. <br>For example, ‘QQ 12 34 56 C’."
+            },
+          id: "nino",
+          name: "nino",
+          classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+          value: data["nino"]
+        }) }}
+
+
+      {{ govukButton({
+        classes: "govuk-!-margin-top-0",
+        text: "Continue"
+      }) }}
+
+
+
+
+</form>
+    </div>
+  </div>
+{% endblock %}

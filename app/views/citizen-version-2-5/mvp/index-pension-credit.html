@@ -10,6 +10,8 @@
 
 {% block content %}
 
+{% include "includes/js-back-link.html" %}
+
 
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -99,7 +101,7 @@
 
       {{ govukPanel({
               titleText: "Application sent",
-                classes:"govuk-!-margin-top-8 govuk-!-margin-bottom-6"
+                classes:"govuk-!-margin-bottom-6"
             }) }}
 
 
@@ -109,72 +111,85 @@
 
             {% if data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}<p class="govuk-!-font-size-24 govuk-!-margin-bottom-2">Service charges {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] == "Yes" %} /Ground rent</p>{% endif %}
 
-            <p class="govuk-!-font-size-24">Send a copy
-            {% if data["home-own-service-charges"] or data["home-other-service-charges"] == "Yes" %}Send us your most recent service charge invoice. This should include an itemised breakdown of charges{% endif %}
-            {% if data["home-rent-ground-rent"] or data["home-shared-ground-rent"] or data["home-own-ground-rent"] or data["home-other-ground-rent"] == "Yes" %} Send us your most up to date ground rent invoice {% endif %}
 
-            Send these by post, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
+            {% if
+              data["home-rent-ground-rent"] == "Yes" or
+              data["home-shared-ground-rent"] == "Yes" or
+              data["home-own-ground-rent"] == "Yes" or
+              data["home-other-ground-rent"] == "Yes" or
+              data["home-own-service-charges"] == "Yes" or
+              data["home-other-service-charges"] == "Yes"
+              %}
 
-            {{ govukInsetText({
-              html: "The Pension Service 4 <br>
-              Mail Handling Site A<br>
-              Wolverhampton<br>
-              WV98 1AG"
-            }) }}
-            {% endif %}
+              <p class="govuk-!-font-size-24">@pete: We need you to supply the details around ground rent and/or service charges before we can fully process your claim.</p>
 
-      <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+              {% endif %}
 
-    {% if data["doc-absence"] == "Yes" or data["money-second-property-check"] == "Yes" or data["home-equity-release"] == "Yes" or data["self-employed"] == "Yes" or data["money-bonds"] == "Yes" %}
-        <p class="govuk-!-font-size-24">  We are doing some final checks on your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
-
-       <ul class="govuk-list govuk-list--bullet">
-         {% if data["doc-absence"] == "Yes" %}<li>the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>{% endif %}
-         {% if data["money-second-property-check"] == "Yes" %}<li>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>{% endif %}
-         {% if data["home-equity-release"] == "Yes" %}<li>your equity release. We will ask you for information from an annual statement from your provider</li>{% endif %}
-         {% if data["self-employed"] == "Yes"%}<li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>{% endif %}
-         {% if data["money-bonds"] == "Yes" %}<li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>{% endif %}
-         {% endif %}
+              {% if
+                data["doc-absence"] == "Yes" or
+                data["money-second-property-check"] == "Yes" or
+                data["home-equity-release"] == "Yes" or
+                data["home-self-employed"] == "Yes" or
+                data["home-money-bonds"] == "Yes"
+              %}
+              <p class="govuk-!-font-size-24">We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
 
 
-      </ul>
+            <ul class="govuk-list govuk-list--bullet">
+              {% if data["doc-absence"] == "Yes" %}
+              <li>the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>{% endif %}
+
+              {% if data["money-second-property-check"] == "Yes" %}
+              <li>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>{% endif %}
+
+              {% if data["home-equity-release"] == "Yes" %}
+              <li>your equity release. We will ask you for information from an annual statement from your provider</li>{% endif %}
+
+              {% if data["self-employed"] == "Yes"%}
+              <li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>{% endif %}
+
+              {% if data["money-bonds"] == "Yes" %}
+              <li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>{% endif %}
+            </ul>
+
+
+          <!---- CALL BACK = NO ---->
+          {% else %}
+            <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong> either to confirm your award or ask you for more information.</p>
+          {% endif %}
 
 
 
-    {% else %}
-      <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong> either to confirm your award or ask you for more information.</p>
-    {% endif %}
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
-
-
-
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
-
-
+<!-- - - - - - - - - - - - - - - - - - - PAYMENT ACCOUNT - - - - - - - - - - - - - - - - - - -->
 
       <p class="govuk-heading-m govuk-!-margin-bottom-4">If your application is successful we will pay your Pension Credit into the same account as your State Pension.</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will be able to change this to a different account once your Pension Credit is in payment.</p>
 
 
-      <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
-
-      <div class="govuk-!-margin-top-6">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-3">If anything changes</h2>
-        <p class="govuk-body">While you are receiving Pension Credit, you must tell us straight away about any <a href="www.nidirect.gov.uk/articles/pensions-report-change-your-circumstances">changes that could affect the amount of Pension Credit you get</a>.</p>
-      </div>
-
-        <!---- UK ---->{% else %}
-
-        <div class="govuk-!-margin-top-6">
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-3">If anything changes</h2>
-          <p class="govuk-body">While you are receiving Pension Credit, you must tell us straight away about any <a href="https://www.gov.uk/pension-credit/change-of-circumstances">changes that could affect the amount of Pension Credit you get</a>.</p>
-        </div>
-
-        <!---- COUNTRY END ---->{% endif %}
+<!-- - - - - - - - - - - - - - - - - - - CHANGES - - - - - - - - - - - - - - - - - - -->
 
 
+    <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
 
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    <div class="govuk-!-margin-top-6">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">If anything changes</h2>
+    <p class="govuk-body">While you are receiving Pension Credit, you must tell us straight away about any <a href="www.nidirect.gov.uk/articles/pensions-report-change-your-circumstances">changes that could affect the amount of Pension Credit you get</a>.</p>
+    </div>
+
+    <!---- UK ---->{% else %}
+
+    <div class="govuk-!-margin-top-6">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">If anything changes</h2>
+    <p class="govuk-body">While you are receiving Pension Credit, you must tell us straight away about any <a href="https://www.gov.uk/pension-credit/change-of-circumstances">changes that could affect the amount of Pension Credit you get</a>.</p>
+    </div>
+
+    {% endif %}
+
+<!-- - - - - - - - - - - - - - - - - - - LOWER PAGE - - - - - - - - - - - - - - - - - - -->
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
     <div class="govuk-!-margin-top-6">
@@ -183,7 +198,7 @@
 </div>
 
 
-<!----------------------------------------------------------------------------------->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
 
@@ -201,7 +216,7 @@
 
   <!---- COUNTRY END ---->{% endif %}
 
-<!----------------------------------------------------------------------------------->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
 

@@ -237,29 +237,8 @@ router.post(`${baseUrl}/contact-other-number-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/contact-formats-router`, (req, res) => {
-  const contactFormats = req.session.data['contact-formats'] || []
-
-  if (contactFormats.includes('Letters by email') === true) {
-    res.redirect(`${baseUrl}/contact-email`)
-  }
-  else {
-    res.redirect(`${baseUrl}/address-correspondence-yn`)
-  }
-})
 
 
-
-
-router.post(`${baseUrl}/contact-email-check-router`, (req, res) => {
-  const emailCheck = req.session.data['contact-email-check-yn']
-
-  if (emailCheck === 'Yes') {
-    res.redirect(`${baseUrl}/contact-formats`)
-  } else {
-    res.redirect(`${baseUrl}/address-correspondence-yn`)
-  }
-})
 
 
 // Contact end
@@ -452,7 +431,7 @@ router.post(`${baseUrl}/home-care-home-route-check-router`, (req, res) => {
   if (careHomeRouteCheck === 'Yes') {
     res.redirect(`${baseUrl}/pension-check`)
   } else {
-    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
+    res.redirect(`${baseUrl}/non-deps-living-with-you`)
   }
 })
 
@@ -542,7 +521,7 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-frequency`)
   } else {
-    res.redirect(`${baseUrl}/benefit-UC`)
+    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
   }
 })
 
