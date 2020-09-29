@@ -49,15 +49,24 @@
 
       {% endif %}
 
-      <p class="govuk-!-font-size-24"><strong>XXX@xxx.com</strong></p>
+    <div  class="govuk-panel--address govuk-!-margin-top-4">
 
-      {{ govukInsetText({
-        html: "The Pension Service 4 <br>
+        <p class="govuk-heading-s govuk-!-margin-bottom-1">By email:</p>
+        <p class="govuk-body">newcastle.pensioncentre@dwp.gsi.gov.uk</p>
+      </div>
+
+      <div  class="govuk-panel--address">
+
+        <p class="govuk-heading-s govuk-!-margin-bottom-1">By post:</p>
+
+        <p class="govuk-body">
+        The Pension Service 4<br>
         Mail Handling Site A<br>
-        Wolverhampton<br>
-        WV98 1AG",
-        classes: ""
-      }) }}
+        Wolverhampton
+        WV98 1AG</p>
+      </div>
+
+<br>
 
       <!-- {{ govukButton({
         text: "Print a copy of this page",
