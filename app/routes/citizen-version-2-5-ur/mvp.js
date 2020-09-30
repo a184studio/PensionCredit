@@ -361,9 +361,12 @@ router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
   if (statePensionCheck === 'Yes') {
     res.redirect(`${baseUrl}/children-check-yn`)
   } else {
-    res.redirect(`${baseUrl}/done-not-getting-sp`)
+    res.redirect(`${baseUrl}/children-check-yn`)
   }
 })
+
+// res.redirect(`${baseUrl}/done-not-getting-sp`)
+
 
 router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   const partnerCheck = req.session.data['partner-check-yn']
