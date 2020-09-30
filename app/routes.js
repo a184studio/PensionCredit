@@ -8,6 +8,13 @@ router.use((req, res, next) => {
   next()
 })
 
+router.use((req, res, next) => {
+  const today = new Date()
+  const sixMonthsAgo = new Date(today.getFullYear(), today.getMonth() -6, today.getDate())
+  res.locals.sixMonthsAgo = sixMonthsAgo
+  next()
+})
+
 router.use(require('./routes/development/wf'))
 router.use(require('./routes/sprint-1/new-claims'))
 router.use(require('./routes/sprint-2/new-claims'))
