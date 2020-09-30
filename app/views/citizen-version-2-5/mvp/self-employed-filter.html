@@ -34,27 +34,27 @@
           items: [
             {
               value: "Normal",
-              text: "Normal (Defaulted to 3 back dating from today)",
+              text: "Normal (3 total) (Defaulted to 3 back dating from today)",
               checked: (data["claim-filter"] == "Normal")
             },
   {
               value: "Today",
-              text: "Today (3 backdated + 3 for self employment(6 month total)",
+              text: "Today (6 total) (3 backdated + 3 for self employment",
               checked: (data["claim-filter"] == "Today")
             },
   {
               value: "SPA",
-              text: "SPA (No backdating)",
+              text: "SPA (3 total) (No backdating / 3 month self employed)",
               checked: (data["claim-filter"] == "SPA")
             },
   {
               value: "Today",
-              text: "NO EED established (3 backdated + 3 for self employment(6 month total)",
+              text: "NO EED established (3 backdated + 3 for self employment (6 month total)",
               checked: (data["claim-filter"] == "Today")
                       },
             {
               value: "Advanced",
-              text: "Advanced (3 month, if today is 3months prior to SPA)",
+              text: "Advanced (3 total) (If today is 3 months prior to SPA)",
               checked: (data["claim-filter"] == "Advanced")
             }
           ]
