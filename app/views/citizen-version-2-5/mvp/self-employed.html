@@ -25,23 +25,23 @@
       {% if
         data["claim-filter"] == "Normal" or data["self-employed-filter"] == "Normal"
         %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you {% if data["single-joint-check"] == "Joint" %}or your partner {% endif %} had any income from self-employment since {{ threeMonthsAgo | formatDate }}?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you {% if data["single-joint-check"] == "Joint" %}or your partner {% endif %} had any income from self-employment since {{ threeMonthsAgo | formatDate }}? [3]</h1>
 
         {% elif
           data["claim-filter"] == "Today"
           %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you {% if data["single-joint-check"] == "Joint" %}or your partner {% endif %} had any income from self-employment since {{ sixMonthsAgo | formatDate }}?</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you {% if data["single-joint-check"] == "Joint" %}or your partner {% endif %} had any income from self-employment since {{ sixMonthsAgo | formatDate }}? [6]</h1>
 
           {% elif
             data["claim-filter"] == "SPA"
             %}
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you {% if data["single-joint-check"] == "Joint" %}or your partner {% endif %} had any income from self-employment since {{ threeMonthsAgo | formatDate }}?</h1>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you {% if data["single-joint-check"] == "Joint" %}or your partner {% endif %} had any income from self-employment since {{ threeMonthsAgo | formatDate }}? [3]</h1>
 
 
           {% elif
             data["claim-filter"] == "Advanced"
             %}
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you {% if data["single-joint-check"] == "Joint" %}or your partner {% endif %} had any income from self-employment since {{ threeMonthsAgo | formatDate }}?</h1>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you {% if data["single-joint-check"] == "Joint" %}or your partner {% endif %} have any income from self-employment?</h1>
 
         {% else %}
 

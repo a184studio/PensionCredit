@@ -33,28 +33,28 @@
           classes: "govuk-radios",
           items: [
             {
-              value: "Normal",
-              text: "Normal (3 total) (Defaulted to 3 back dating from today)",
+              value: "Today",
+              text: "Claiming backdated = 3 months back from their backdated date",
               checked: (data["claim-filter"] == "Normal")
             },
   {
-              value: "Today",
-              text: "Today (6 total) (3 backdated + 3 for self employment",
+              value: "Normal",
+              text: "Claiming from today = 3 months back from today",
               checked: (data["claim-filter"] == "Today")
             },
+          {
+            value: "Today",
+            text: "If we don't establish a date of claim = 6 months back from today",
+            checked: (data["claim-filter"] == "Advanced")
+          },
   {
               value: "SPA",
-              text: "SPA (3 total) (No backdating / 3 month self employed)",
+              text: "Claiming less than 3 months in advance = 3 months back from their SPA",
               checked: (data["claim-filter"] == "SPA")
             },
-  {
-              value: "Today",
-              text: "NO EED established (3 backdated + 3 for self employment (6 month total)",
-              checked: (data["claim-filter"] == "Today")
-                      },
             {
               value: "Advanced",
-              text: "Advanced (3 total) (If today is 3 months prior to SPA)",
+              text: "Claiming more than 3 months in advance = We just ask if they're self employed now",
               checked: (data["claim-filter"] == "Advanced")
             }
           ]
