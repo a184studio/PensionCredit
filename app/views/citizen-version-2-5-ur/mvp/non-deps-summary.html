@@ -105,7 +105,12 @@
       {% endif %}
 
 
-             <h1 class="govuk-heading-l govuk-!-padding-top-8 govuk-!-margin-bottom-2">Does anyone else live with you?</h1>
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        {% if data["partner-check-yn"] == "Yes" %}<p class="govuk-heading-l govuk-!-padding-top-8 govuk-!-margin-bottom-2">Does anyone else live with you apart from your partner?</p>
+        {% else %}<p class="govuk-heading-l govuk-!-padding-top-8 govuk-!-margin-bottom-2">Does anyone else live with you?</p>{% endif %}
+        {% endset %}
+      <!------------Legend--------------->
 
 
              {{ govukRadios({
@@ -113,7 +118,7 @@
                name: "non-deps-summary",
                fieldset: {
                  legend: {
-                   text: "",
+                   html: dynamicH1,
                    isPageHeading: true,
                    classes: "govuk-fieldset__legend--l"
                  }

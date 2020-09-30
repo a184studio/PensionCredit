@@ -21,7 +21,13 @@
 <!---- OTHER ---->{% elseif data['home-ownership'] == 'Other accommodation' %}
 <form action="home-other-housing-benefit" method="post" class="form">
 <!---- OWN ---->{% else %}
-<form action="home-shared-payments" method="post" class="form">
+
+    <!---- Mortgage Yes ---->{% if data['home-mortgage'] == 'Yes' %}
+    <form action="home-shared-payments" method="post" class="form">
+    <!---- Mortgage No ---->{% else %}
+    <form action="non-deps-living-with-you" method="post" class="form">
+    {% endif %}
+
 {% endif %}
 
 

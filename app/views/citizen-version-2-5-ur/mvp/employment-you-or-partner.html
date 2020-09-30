@@ -30,7 +30,7 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Whose is this income?</h2>
+        {% if data["partner-check-yn"] == "Yes" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Whose is this income?</h2>
         {% else %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Whose is this income?</h2>{% endif %}
         {% endset %}
       <!------------Legend--------------->

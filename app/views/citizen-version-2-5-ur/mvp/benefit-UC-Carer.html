@@ -18,7 +18,7 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "joint" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you or your partner?</h2>
+        {% if data["partner-check-yn"] == "Yes" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you or your partner?</h2>
         {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you?</h2>{% endif %}
         {% endset %}
       <!------------Legend--------------->

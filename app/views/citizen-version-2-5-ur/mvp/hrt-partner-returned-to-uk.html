@@ -17,7 +17,7 @@
     <form action="hrt-partner-returned-to-uk-router" method="post" class="form">
 
       {% set dynamicH1 %}
-      {% if data["single-joint-check"] == "Joint" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">At any time, have you or your partner come to live in the UK or returned to the UK to live from abroad?</h1>
+      {% if data["partner-check-yn"] == "Yes" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">At any time, have you or your partner come to live in the UK or returned to the UK to live from abroad?</h1>
       {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">At any time, has your partner come to live in the UK or returned to the UK to live from abroad?</h1>{% endif %}
       {% endset %}
 

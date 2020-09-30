@@ -17,7 +17,7 @@
     <form action="hrt-uk-sponsorship-router" method="post" class="form">
 
       {% set dynamicH1 %}
-      {% if data["single-joint-check"] == "Joint" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did you or your partner come to the UK on a sponsorship undertaking?</h1>
+      {% if data["partner-check-yn"] == "Yes" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did you or your partner come to the UK on a sponsorship undertaking?</h1>
       {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did you come to the UK on a sponsorship undertaking?</h1>{% endif %}
       {% endset %}
 

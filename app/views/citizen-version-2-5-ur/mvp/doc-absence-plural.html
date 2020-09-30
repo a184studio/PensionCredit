@@ -21,9 +21,11 @@
 
 
       <!------------Hint LEGEND------------>
-        {% set hintLegend %}
+      {% set h1Legend %}
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-0">How many periods of more than 4 weeks have you spent outside the UK since {{ threeMonthsAgo | formatDate }}?
+</h1>
 
-        {% endset %}
+      {% endset %}
       <!------------Legend--------------->
 
 
@@ -32,7 +34,7 @@
         name: "doc-absence-plural",
         fieldset: {
           legend: {
-            text: "How many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?",
+            html: h1Legend,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }

@@ -22,14 +22,14 @@
 
 
          {{ govukSummaryList({
-           classes: 'govuk-!-padding-top-6 govuk-!-padding-bottom-8',
+           classes: 'govuk-!-padding-top-6 ',
            rows: [
            {
              key: {
-               text: "Your employer [Your partner's employer]"
+               text: "Your employer"
              },
              value: {
-               text: "Name of employer"
+               html: data['employment-details']
              },
              actions: {
                items: [
@@ -49,12 +49,44 @@
            ]
          }) }}
 
+         {% if data["employment-details-partner"] %}
+
+         {{ govukSummaryList({
+           classes: '',
+           rows: [
+           {
+             key: {
+               text: "Your partner's employer"
+             },
+             value: {
+               html: data['employment-details-partner']
+             },
+             actions: {
+               items: [
+               {
+                 href: "employment-you-or-partner",
+                 html: "Change",
+                 visuallyHiddenText: "this employer"
+               },
+               {
+                 href: "employment-remove",
+                 html: "Remove",
+                 visuallyHiddenText: "this employer"
+               }
+               ]
+             }
+           }
+           ]
+         }) }}
+
+         {% endif %}
 
 
 
 
-         {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xm govuk-!-margin-bottom-2">Do you or your partner have any more income from employment?</h2>
-         {% else %}  <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Do you have any more income from employment?</h2>{% endif %}
+
+         {% if data["partner-check-yn"] == "Yes" %}<h2 class="govuk-heading-xm govuk-!-margin-bottom-2 govuk-!-margin-top-8">Do you or your partner have any more income from employment?</h2>
+         {% else %}  <h2 class="govuk-heading-xm govuk-!-margin-bottom-2 govuk-!-margin-top-8">Do you have any more income from employment?</h2>{% endif %}
 
 
              {{ govukRadios({
@@ -92,7 +124,7 @@
           text: "Continue"
         }) }}
 
-        <p class="govuk-body govuk-!-padding-top-6"><a href="employment-limit">You've hit your limit</a></p>
+        <p class="govuk-body govuk-!-padding-top-6"><a href="employment-limit">...</a></p> <!-- You've hit your limit -->
 
       </form>
 

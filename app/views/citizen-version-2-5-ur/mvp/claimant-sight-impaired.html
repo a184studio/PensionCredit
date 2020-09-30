@@ -14,7 +14,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    {% if data["partner-check-yn"] == "Yes" %}
+      <form action="partner-national-insurance" method="post" class="form">
+
+    {% else %}
     <form action="home-care-home-check" method="post" class="form">
+    {% endif %}
+
+
+
+
+
+
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>

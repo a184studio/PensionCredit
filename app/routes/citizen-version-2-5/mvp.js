@@ -488,10 +488,10 @@ router.post(`${baseUrl}/self-employed-router`, (req, res) => {
 // Employment add another router CB (employment-check)
 
 router.post(`${baseUrl}/employment-add-another-router`, (req, res) => {
-  const employmentAddAnother = req.session.data['employment-add-another-check']
+  const employmentAddAnother = req.session.data['employment-add-another']
 
   if (employmentAddAnother === 'Yes') {
-    res.redirect(`${baseUrl}/employment-details`)
+    res.redirect(`${baseUrl}/employment-you-or-partner`)
   } else {
     res.redirect(`${baseUrl}/self-employed`)
   }
@@ -521,7 +521,7 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-frequency`)
   } else {
-    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
+    res.redirect(`${baseUrl}/benefit-UC`)
   }
 })
 
@@ -532,7 +532,7 @@ router.post(`${baseUrl}/non-deps-summary-router`, (req, res) => {
   if (nonDepsSummary === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-frequency`)
   } else {
-    res.redirect(`${baseUrl}/pension-check`)
+    res.redirect(`${baseUrl}/benefit-UC`)
   }
 })
 

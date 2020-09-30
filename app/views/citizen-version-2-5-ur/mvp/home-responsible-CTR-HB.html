@@ -20,7 +20,7 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Are you or your partner responsible for paying the rent or rates for the place where you live?</h1>
+        {% if data["partner-check-yn"] == "Yes" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Are you or your partner responsible for paying the rent or rates for the place where you live?</h1>
         {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Are you responsible for paying the rent or rates for the place where you live?</h1>{% endif %}
         {% endset %}
       <!------------Legend--------------->
@@ -35,7 +35,7 @@
 
         <!------------H1 LEGEND------------>
           {% set dynamicH1 %}
-          {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Are you or your partner responsible for paying the rent or Council Tax for the place where you live?</h1>
+          {% if data["partner-check-yn"] == "Yes" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Are you or your partner responsible for paying the rent or Council Tax for the place where you live?</h1>
           {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Are you responsible for paying the rent or Council Tax for the place where you live?</h1>{% endif %}
           {% endset %}
         <!------------Legend--------------->
