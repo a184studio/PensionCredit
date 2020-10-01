@@ -79,15 +79,11 @@
             classes: "govuk-fieldset__legend--xl"
           }
         },
-        classes: "govuk-radios--inline",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["self-employed"] == "Yes"),
-                  conditional: {
-                    html: selfEmploymentDetails
-        }
+            checked: (data["self-employed"] == "Yes")
           },
           {
             value: "No",
