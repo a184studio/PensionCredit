@@ -161,13 +161,12 @@
         ]
       }) }}
 
-
       {{ govukSummaryList({
         rows: [
 
         {
           key: {
-            text: "Full name"
+            text: "Date of claim"
           },
           value: {
             text: "Details"
@@ -184,6 +183,32 @@
         }
         ]
       }) }}
+
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+          key: {
+            text: "National Insurance number"
+          },
+          value: {
+            text: "NA 11 22 33 c"
+          },
+          actions: {
+            items: [
+              {
+                href: "claimant-national-insurance",
+                text: "Change",
+                visuallyHiddenText: "whether you been outside the UK for a period of more than four weeks since [3 months or SPA]?"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+
 
       {{ govukSummaryList({
         classes: 'govuk-summary-list--no-border',
