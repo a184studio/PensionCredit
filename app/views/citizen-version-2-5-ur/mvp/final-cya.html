@@ -4168,6 +4168,63 @@ rows: [
       }) }}
 
 
+      {% if data["contact-other-details"] %}
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+                    {
+          key: {
+            text: "Do you want us to send you an email confirmation that we have received the application?"
+          },
+          value: {
+            text: data["del-auth-email-confirmation"]
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "Change",
+                visuallyHiddenText: "XXX"
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-9',
+                  rows: [
+
+                              {
+                    key: {
+                      text: "Email address"
+                    },
+                    value: {
+                      text: data["email-address"]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  }
+
+                ]
+              }) }}
+
+      {% endif %}
+
+
+
 
 
 
