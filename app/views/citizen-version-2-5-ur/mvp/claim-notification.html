@@ -26,10 +26,11 @@
 
 
         <!---- OWN ---->{% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We will consider your application from {{ data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']}} when you reach your State Pension age</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We will consider your application from the day you reach your State Pension age</h1>
 
         {% endif %}
 
+        <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We will consider your application from {{ data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']}} when you reach your State Pension age</h1> -->
 
 
         {{ govukButton({
