@@ -208,6 +208,52 @@
         ]
       }) }}
 
+      {{ govukSummaryList({
+        rows: [
+
+        {
+          key: {
+            text: "Who lives with you"
+          },
+          value: {
+            text: "Details"
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-living-with-you",
+                text: "Change",
+                visuallyHiddenText: "Who lives with you?"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+          key: {
+            text: "Employment"
+          },
+          value: {
+            text: "Details"
+          },
+          actions: {
+            items: [
+              {
+                href: "employment-check",
+                text: "Change",
+                visuallyHiddenText: "Employment"
+              }
+            ]
+          }
+        }
+        ]
+      }) }}
+
 
 
       {{ govukSummaryList({
@@ -224,8 +270,8 @@
           actions: {
             items: [
               {
-                href: "Details",
-                text: "Change",
+                href: "...",
+                text: "",
                 visuallyHiddenText: "how many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?"
               }
             ]
