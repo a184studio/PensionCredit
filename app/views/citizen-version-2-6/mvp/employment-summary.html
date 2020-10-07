@@ -18,18 +18,18 @@
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Employers you have told us about</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You have added [2] employers</h1>
 
 
          {{ govukSummaryList({
-           classes: 'govuk-!-padding-top-6 govuk-!-padding-bottom-8',
+           classes: 'govuk-!-padding-top-0',
            rows: [
            {
              key: {
-               text: "Your employer [Your partner's employer]"
+               text: "Your employer"
              },
              value: {
-               text: "Name of employer"
+               text: data['employment-details']
              },
              actions: {
                items: [
@@ -50,12 +50,43 @@
          }) }}
 
 
+{% if data["employment-details-partner"] %}
+         {{ govukSummaryList({
+           classes: '',
+           rows: [
+           {
+             key: {
+               text: "Your partner's employer"
+             },
+             value: {
+               text: data['employment-details-partner']
+             },
+             actions: {
+               items: [
+               {
+                 href: "employment-you-or-partner",
+                 html: "Change",
+                 visuallyHiddenText: "this employer"
+               },
+               {
+                 href: "employment-remove",
+                 html: "Remove",
+                 visuallyHiddenText: "this employer"
+               }
+               ]
+             }
+           }
+           ]
+         }) }}
+{% endif %}
 
 
 
-         {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xm govuk-!-margin-bottom-2">Do you or your partner have any more income from employment?</h2>
-         {% else %}  <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Do you have any more income from employment?</h2>{% endif %}
 
+         {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-2">Do you or your partner have any more income from employment?</h2>
+         {% else %}  <h2 class="govuk-heading-l govuk-!-margin-bottom-2 govuk-!-margin-top-8">Do you have any more income from employment?</h2>{% endif %}
+
+         <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">You can add more than one employment and you need to tell us them all</p>
 
              {{ govukRadios({
                idPrefix: "employment-add-another-check",

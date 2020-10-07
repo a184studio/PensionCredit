@@ -16,7 +16,7 @@
   <div class="govuk-grid-column-two-thirds">
 
   {% if data["employment-you-or-partner"] == "Partner" %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is the postcode of your partner's employer's address?</h1>
-  {% else %}    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is the postcode of your employer's address?</h1>{% endif %}
+  {% else %}    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is [the postcode of your] employer's address?</h1>{% endif %}
 
 
     <form action="employment-address-choice" method="post" class="form">
@@ -44,7 +44,6 @@
         <a class="govuk-link" href="employment-address-manual">Enter the address manually</a>
       </li>
     </ul>
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
   <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
 

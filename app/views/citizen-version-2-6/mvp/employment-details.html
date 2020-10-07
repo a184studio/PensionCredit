@@ -20,11 +20,30 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Details about employment</h2>
+
+
       {% set legendName %}
 
-    {% if data["employment-you-or-partner"] == "Partner" %}  <h3 class="govuk-heading-xl govuk-!-margin-bottom-0">What is the name of your partner's employer?</h3>
-      {% else %}    <h3 class="govuk-heading-xl govuk-!-margin-bottom-0">What is the name of your employer?</h3>{% endif %}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">What is the employer name?</h3>
       {% endset %}
+
+      {% if data["employment-add-another-check"] == "Yes" %}
+
+      {{ govukInput({
+        label: {
+          html: legendName
+        },
+        hint: {
+          text: "You can find this on your P60 or payslip."
+        },
+        id: "employment-details-partner",
+        name: "employment-details-partner",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+        value: data["employment-details-partner"]
+      }) }}
+
+      {% else %}
 
       {{ govukInput({
         label: {
@@ -37,6 +56,38 @@
         name: "employment-details",
         classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
         value: data["employment-details"]
+      }) }}
+
+      {% endif %}
+
+
+
+
+
+      {{ govukRadios({
+        name: "employment-you-or-partner",
+        fieldset: {
+          legend: {
+            html: "Whose is this employer?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-0"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "Yours",
+            text: "Yours",
+            checked: (data["employment-you-or-partner"] == "Yours")
+          },
+          {
+            value: "Partner",
+            text: "Your partner's",
+            checked: (data["employment-you-or-partner"] == "Partner")
+          }
+        ]
       }) }}
 
 
