@@ -1,0 +1,43 @@
+{% extends "layout-assisted-digital.html" %}
+
+{% block pageTitle %}
+  Which best describes the place where you live? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="non-deps-frequency" method="post" class="form">
+
+
+        {% if data["single-joint-check"] == "Joint" %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You need to tell us details of the people that live with you and your partner</h2>
+
+        {% else %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You need to tell us details of the people that live with you</h2>
+        {% endif %}
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-6">You need to add these one at a time, but you can as many as you need</p>
+
+
+
+<!------------Legend------------>
+
+
+
+      {{ govukButton({
+        text: "Add people who live with you"
+      }) }}
+    </form>
+
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+  </div>
+</div>
+{% endblock %}
