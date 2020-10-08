@@ -169,39 +169,71 @@
            ]
          }) }}
 
-         {{ govukRadios({
-           idPrefix: "non-deps-member-employment",
-           name: "non-deps-member-employment",
-           fieldset: {
-             legend: {
-               text: "Are they in employment?",
-               isPageHeading: true,
-               classes: "govuk-fieldset__legend--s"
-             }
-               },
-               hint: {
-                 html: ""
-               },
 
-           classes: "govuk-radios govuk-!-margin-bottom-4",
-           items: [
-             {
-               value: "Full time",
-               text: "Full-time",
-               checked: (data["non-deps-member-employment"] == "Full time")
-             },
-             {
-               value: "Part time",
-               text: "Part-time",
-               checked: (data["non-deps-member-employment"] == "Part time")
-             },
-             {
-               value: "Not in employment",
-               text: "Not in employment",
-               checked: (data["non-deps-member-employment"] == "Not in employment")
-             }
-           ]
-         }) }}
+                  {% set nonDepSlary %}
+
+                  {% set LegendAmount %}
+                  <strong>[Dynamic based on Yes to housing costs] How much do they earn each week?<strong>
+                  {% endset -%}
+
+                        {{ govukInput({
+                          label: {
+                            html: LegendAmount
+                          },
+                          hint: {
+                            text: "Tell us their total earnings before tax and National Insurance are deducted. For example, £100.00 or £1,000.00."
+                          },
+                          id: "non-deps-member-details-weekly-earnings",
+                          name: "non-deps-member-details-weekly-earnings",
+                          classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
+                          value: data["non-deps-member-details-weekly-earnings"]
+                        }) }}
+
+                        {% endset -%}
+
+                        {% endif %}
+
+                  {{ govukRadios({
+                    idPrefix: "non-deps-member-employment",
+                    name: "non-deps-member-employment",
+                    fieldset: {
+                      legend: {
+                        text: "Are they in employment?",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--s"
+                      }
+                        },
+                        hint: {
+                          html: ""
+                        },
+
+                    classes: "govuk-radios govuk-!-margin-bottom-4",
+                    items: [
+                      {
+                        value: "Full time",
+                        text: "Full-time",
+                        checked: (data["non-deps-member-employment"] == "Full time"),
+                              conditional: {
+                                html: nonDepSlary
+                              }
+                        },
+                      {
+                        value: "Part time",
+                        text: "Part-time",
+                        checked: (data["non-deps-member-employment"] == "Part time"),
+                              conditional: {
+                                html: nonDepSlary
+                              }
+                        },
+                      {
+                        value: "Not in employment",
+                        text: "Not in employment",
+                        checked: (data["non-deps-member-employment"] == "Not in employment")
+                      }
+                    ]
+                  }) }}
+
+
 
          {{ govukRadios({
            idPrefix: "non-deps-member-self-employment",
@@ -233,91 +265,6 @@
          }) }}
 
 
-<!--
-         {{ govukCheckboxes({
-           name: "non-deps-member-education-employment",
-           fieldset: {
-             legend: {
-               text: "Are they in education or employment?",
-               isPageHeading: true,
-               classes: "govuk-fieldset__legend--s"
-             }
-           },
-           hint: {
-             text: "Select all that apply",
-             classes: "govuk-fieldset__legend--s govuk-!-margin-bottom-4"
-           },
-           items: [
-                {
-                value: "Employment: Full time",
-                text: "Full-time employment",
-                checked: data['non-deps-member-education-employment'] == "Employment: Full time",
-                 hint: {
-                   text: ""
-                 }
-              },
-              {
-                value: "Employment: Part time",
-                text: "Part-time employment",
-                checked: data['non-deps-member-education-employment'] == "Employment: Part time",
-                 hint: {
-                   text: ""
-                 }
-              },
-              {
-                value: "Employment: Self-employed",
-                text: "Self-employed",
-                checked: data['non-deps-member-education-employment'] == "Employment: Self-employed",
-                 hint: {
-                   text: ""
-                 }
-              },
-              {
-                value: "Education: Full time",
-                text: "Full-time education",
-                checked: data['non-deps-member-education-employment'] == "Education: Full time",
-                 hint: {
-                   text: ""
-                 }
-              },
-              {
-                value: "Education: Part time",
-                text: "Part-time education",
-                checked: data['non-deps-member-education-employment'] == "Education: Part time",
-                 hint: {
-                   text: ""
-                 }
-              },
-
-              {
-                value: "Not in employment or education",
-                text: "Not in employment or education",
-                checked: data['non-deps-member-education-employment'] == "Not in employment or education",
-                 hint: {
-                   text: ""
-                 }
-              }
-               ]
-             }) }} -->
-
-             {% set LegendAmount %}
-             <strong>[Dynamic based on Yes to housing costs] How much do they earn each week?<strong>
-             {% endset -%}
-
-                   {{ govukInput({
-                     label: {
-                       html: LegendAmount
-                     },
-                     hint: {
-                       text: "Tell us their total earnings before tax and National Insurance are deducted. For example, £100.00 or £1,000.00."
-                     },
-                     id: "non-deps-member-details-weekly-earnings",
-                     name: "non-deps-member-details-weekly-earnings",
-                     classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
-                     value: data["non-deps-member-details-weekly-earnings"]
-                   }) }}
-
-{% endif %}
 
 
         {{ govukButton({
