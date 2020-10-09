@@ -1136,7 +1136,7 @@ actions: {
 
     {
     key: {
-      text: "@ pete mortgage"
+      text: "Do you have a mortgage or loan secured against your home?"
     },
     value: {
       text: data["home-mortgage"]
@@ -1162,7 +1162,7 @@ actions: {
 
     {
     key: {
-      text: "@ pete mortgage"
+      text: "Do you want to apply for support with interest on a mortgage or loan secured against your home?"
     },
     value: {
       text: data["home-mortgage"]
@@ -1180,33 +1180,6 @@ actions: {
 
 ]
 }) }}
-
-}) }}
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-
-          {
-          key: {
-            text: "Do you want to apply for support with interest on a mortgage or loan secured against your home?"
-          },
-          value: {
-            text: data["home-mortgage-home-loan"]
-          },
-          actions: {
-            items: [
-              {
-                href: "home-mortgage-home-loan",
-                text: "Change",
-                visuallyHiddenText: "whether you want to apply for support with interest on a mortgage or loan secured against your home"
-              }
-            ]
-          }
-        }
-
-      ]
-      }) }}
 
 
       {{ govukSummaryList({

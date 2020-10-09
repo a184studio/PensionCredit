@@ -80,15 +80,10 @@
          }) }}
 {% endif %}
 
-
-LegendQ
-
-
-
          <!------------H1 LEGEND------------>
            {% set dynamicQ %}
-           {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-2">Do you or your partner have any more employers?</h2>
-           {% else %}  <h2 class="govuk-heading-xm govuk-!-margin-bottom-2 govuk-!-margin-top-8">Do you have any more employers?</h2>{% endif %}
+           {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-0">Do you or your partner have any more employers?</h2>
+           {% else %}  <h2 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-0">Do you have any more employers?</h2>{% endif %}
            {% endset %}
          <!------------Legend--------------->
 
@@ -104,7 +99,7 @@ LegendQ
                name: "employment-add-another-check",
                fieldset: {
                  legend: {
-                   text: dynamicQ,
+                   html: dynamicQ,
                    isPageHeading: true,
                    classes: "govuk-fieldset__legend--m"
                  }
