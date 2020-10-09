@@ -23,7 +23,7 @@
     color: black;
   }
 
-#main-content > div > div > form > div:nth-child(5) > div:nth-child(6) > div:nth-child(8) > h2.govuk-heading-m {display: none}
+#main-content > div > div > form > div:nth-child(5) > div:nth-child(6) > div:nth-child(8) > h2.govuk-heading-xm {display: none}
 
   #main-content > div > div > form > div:nth-child(2) {display: none} /* PRINT ONLY NOTIFICATION */
 
@@ -659,7 +659,7 @@
 }) }}
 
 
-<div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Housing costs</h2>
+<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Housing costs</h2>
 
 
 {{ govukSummaryList({
@@ -1267,7 +1267,7 @@ actions: {
 
       <!-- - - - - - - - - - - - - - - - - -  WHO LIVES WITH YOU / NON DEPS - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-      <div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Other people in the household</h2>
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Other people in the household</h2>
 
 
       {{ govukSummaryList({
@@ -1696,37 +1696,11 @@ actions: {
               ]
             }) }}
 
-            <div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employers</h2>
-
-              {{ govukSummaryList({
-                classes: 'govuk-!-margin-bottom-9',
-                rows: [
-
-                  {
-                  key: {
-                    text: "Employment: Who?"
-                  },
-                  value: {
-                    text: data["employment-you-or-partner"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "employment-summary",
-                        text: "Change",
-                        visuallyHiddenText: "XXX"
-                      }
-                    ]
-                  }
-                }
-
-              ]
-              }) }}
+            <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employers</h2>
 
             {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-9',
+              classes: 'govuk-!-margin-bottom-0',
               rows: [
-
                 {
                 key: {
                   text: "Employer name"
@@ -1740,6 +1714,31 @@ actions: {
                       href: "employment-details",
                       text: "Change",
                       visuallyHiddenText: "the details of anyone else that lives with you"
+                    }
+                  ]
+                }
+              }
+
+            ]
+            }) }}
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+
+                {
+                key: {
+                  text: "Employment: Who?"
+                },
+                value: {
+                  text: data["employment-you-or-partner"]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "employment-summary",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
                     }
                   ]
                 }
@@ -1802,7 +1801,7 @@ actions: {
             ]
             }) }}
 
-            <div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Self-employment</h2>
+            <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Self-employment</h2>
 
 
   {{ govukSummaryList({
@@ -1856,7 +1855,7 @@ actions: {
 {% endif %}
 
 
-<div><h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Other invome</h2>
+<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Other invome</h2>
 
 
   {{ govukSummaryList({
@@ -4139,10 +4138,10 @@ rows: [
       ]
       }) }}
 
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9 govuk-summary-list--no-border ',
-        rows: [
 
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
       {
           key: {
             text: "What is your address?"
@@ -4167,6 +4166,56 @@ rows: [
       ]
       }) }}
 
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+      {
+          key: {
+            text: "Email address: [Dynamic]"
+          },
+          value: {
+            html: data["del-auth-email-confirmation"]
+          },
+          actions: {
+            items: [
+              {
+                href: "del-auth-email-confirmation",
+                text: "Change",
+                visuallyHiddenText: "your address"
+              }
+            ]
+          }
+        }
+      ]
+      }) }}
+
+
+      {% if data["email-address"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+      {
+          key: {
+            text: "[Applicant's] Email address: [Dynamic]"
+          },
+          value: {
+            html: data["email-address"]
+          },
+          actions: {
+            items: [
+              {
+                href: "del-auth-email-confirmation",
+                text: "Change",
+                visuallyHiddenText: "your address"
+              }
+            ]
+          }
+        }
+      ]
+      }) }}
+
+      {% endif %}
+
 
 
 
@@ -4180,7 +4229,7 @@ rows: [
   </div>
 
     <div class="dont-print">
-  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
 
 
   <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">Print a copy of your answers</h3>
