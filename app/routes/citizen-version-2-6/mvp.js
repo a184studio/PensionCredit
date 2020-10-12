@@ -530,7 +530,7 @@ router.post(`${baseUrl}/non-deps-summary-router`, (req, res) => {
   const nonDepsSummary = req.session.data['non-deps-summary']
 
   if (nonDepsSummary === 'Yes') {
-    res.redirect(`${baseUrl}/non-deps-frequency`)
+    res.redirect(`${baseUrl}/non-deps-member-category`)
   } else {
     res.redirect(`${baseUrl}/benefit-UC`)
   }

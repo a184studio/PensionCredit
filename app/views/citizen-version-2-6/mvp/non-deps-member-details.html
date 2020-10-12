@@ -133,6 +133,33 @@
            ]
          }) }}
 
+         {{ govukRadios({
+           name: "non-deps-frequency",
+           fieldset: {
+             legend: {
+               html: "Does this person live with you all the time?",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--s"
+             }
+           },
+           hint: {
+             text: ""
+           },
+       classes: "govuk-radios govuk-!-margin-bottom-4",
+       items: [
+         {
+               value: "Yes",
+               text: "Yes",
+               checked: (data["non-deps-frequency"] == "Yes")
+             },
+             {
+               value: "No",
+               text: "No",
+               checked: (data["non-deps-frequency"] == "No")
+             }
+           ]
+         }) }}
+
 
 
          {{ govukRadios({
@@ -177,16 +204,22 @@
                   {% endset -%}
 
                         {{ govukInput({
-                          label: {
-                            html: LegendAmount
-                          },
-                          hint: {
-                            text: "Tell us their total earnings before tax and National Insurance are deducted. For example, £100.00 or £1,000.00."
-                          },
                           id: "non-deps-member-details-weekly-earnings",
                           name: "non-deps-member-details-weekly-earnings",
-                          classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
-                          value: data["non-deps-member-details-weekly-earnings"]
+                          label: {
+                            html: "What is the total amount of money you have today?",
+                            classes: "govuk-label--s",
+                            isPageHeading: true
+                          },
+                          hint: {
+                            html: "Tell us their total earnings before tax and National Insurance are deducted. <br>Enter an amount in pounds and pence, for example, 100.00"
+                          },
+                          prefix: {
+                            text: "£"
+                          },
+                          value: data["non-deps-member-details-weekly-earnings"],
+                          classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+                          spellcheck: false
                         }) }}
 
                         {% endset -%}
