@@ -14,7 +14,6 @@
 
 
   <style>
-    #main-content > div > div > form > dl:nth-child(3) > div > dd.govuk-summary-list__actions > ul > li:nth-child(1) {display: none}
 
 </style>
 
@@ -24,8 +23,12 @@
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
+        {% if data["single-joint-check"] == "Joint" %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You have told us about [2] people that live with you and your partner</h2>
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You have told us about [2] people that live with you (and your partner)</h1>
+        {% else %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You have told us about [2] people that live with you</h2>
+        {% endif %}
 
 
          <!-- {% if data["partner-full-name"] %}
@@ -73,7 +76,7 @@
             actions: {
               items: [
               {
-                href: "non-deps-frequency",
+                href: "xxx",
                 html: "Change",
                 visuallyHiddenText: "XXX"
               },
@@ -124,7 +127,7 @@
       <!------------H1 LEGEND------------>
         {% set dynamicQ %}
         {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-0">Do any more people live with you and your partner?</h2>
-        {% else %}  <h2 class="govuk-heading-xmgovuk-!-margin-top-8 govuk-!-margin-bottom-0">Do any more people live with you?</h2>{% endif %}
+        {% else %}  <h2 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-0">Do any more people live with you?</h2>{% endif %}
         {% endset %}
       <!------------Legend--------------->
 
