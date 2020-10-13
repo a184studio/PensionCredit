@@ -19,7 +19,7 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if single-joint-check"] == "Joint" %}<p class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone else live with you apart from your partner?</p>
+        {% if data["partner"] == "Yes" %}<p class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone else live with you and your partner?</p>
         {% else %}<p class="govuk-heading-xl govuk-!-margin-bottom-2">Does anyone else live with you?</p>{% endif %}
         {% endset %}
       <!------------Legend--------------->
