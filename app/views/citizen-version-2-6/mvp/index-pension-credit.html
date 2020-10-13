@@ -98,9 +98,10 @@
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
       {{ govukPanel({
-              titleText: "Application sent",
-                classes:"govuk-!-margin-top-8 govuk-!-margin-bottom-6"
-            }) }}
+          titleText: "Application sent",
+          html: "Your reference will be your Nalional Insurance number",
+          classes:"govuk-!-margin-top-8 govuk-!-margin-bottom-6"
+        }) }}
 
 
           {% if
