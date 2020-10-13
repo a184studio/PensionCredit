@@ -180,17 +180,17 @@
            items: [
              {
                value: "Full time",
-               text: "Full-time",
+               text: "Yes - full-time",
                checked: (data["non-deps-member-education"] == "Full time")
              },
              {
                value: "Part time",
-               text: "Part-time",
+               text: "Yes - part-time",
                checked: (data["non-deps-member-education"] == "Part time")
              },
              {
                value: "Not in education",
-               text: "Not in education",
+               text: "No",
                checked: (data["non-deps-member-education"] == "Not in education")
              }
            ]
@@ -207,7 +207,7 @@
                           id: "non-deps-member-details-weekly-earnings",
                           name: "non-deps-member-details-weekly-earnings",
                           label: {
-                            html: "What is the total amount of money you have today?",
+                            html: "How much money do they earn each week?",
                             classes: "govuk-label--s",
                             isPageHeading: true
                           },
@@ -244,7 +244,7 @@
                     items: [
                       {
                         value: "Full time",
-                        text: "Full-time",
+                        text: "Yes - full-time",
                         checked: (data["non-deps-member-employment"] == "Full time"),
                               conditional: {
                                 html: nonDepSlary
@@ -252,7 +252,7 @@
                         },
                       {
                         value: "Part time",
-                        text: "Part-time",
+                        text: "Yes - part-time",
                         checked: (data["non-deps-member-employment"] == "Part time"),
                               conditional: {
                                 html: nonDepSlary
@@ -260,7 +260,7 @@
                         },
                       {
                         value: "Not in employment",
-                        text: "Not in employment",
+                        text: "No",
                         checked: (data["non-deps-member-employment"] == "Not in employment")
                       }
                     ]
