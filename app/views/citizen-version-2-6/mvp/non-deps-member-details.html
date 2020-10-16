@@ -35,6 +35,7 @@
            value: data["non-deps-member-full-name-2"]
          }) }}
 
+
          {% else %}
 
          {{ govukInput({
@@ -71,6 +72,19 @@
                {% endif %}
 
                {% if data['non-deps-member-category'] == "A close relative or friend" %}
+
+               {{ govukInput({
+                 label: {
+                   html: "<strong>@pete What is your relationship to this person</strong>"
+                 },
+                 hint: {
+                   text: ""
+                 },
+                 id: "non-deps-member-full-name-2",
+                 name: "non-deps-member-full-name-2",
+                 classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+                 value: data["non-deps-member-full-name-2"]
+               }) }}
 
          {{ govukDateInput({
            id: "non-deps-member-details-dob",
