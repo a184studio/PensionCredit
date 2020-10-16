@@ -1,7 +1,7 @@
 {% extends "layout-assisted-digital.html" %}
 
 {% block pageTitle %}
-  Do you want to apply for support with interest on a mortgage or loan secured against your home? - Pension Credit
+  Do you want us to send you some information about support with interest on a mortgage or loan secured against your home? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -17,7 +17,7 @@
     <form action="home-equity-release" method="post" class="form">
 
       {% set legendHint %}
-      <p class="govuk-hint">This support is paid as a loan that you must repay when your home is sold or transferred. We will send you more information and an application form by post.</p>
+      <p class="govuk-hint">This support is paid as a loan that you must repay when your home is sold or transferred.</p>
       {% endset %}
 
 
@@ -26,7 +26,7 @@
         name: "home-mortgage-home-loan",
         fieldset: {
           legend: {
-            text: "Do you want to apply for support with interest on a mortgage or loan secured against your home?",
+            text: "Do you want us to send you some information about support with interest on a mortgage or loan secured against your home?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
