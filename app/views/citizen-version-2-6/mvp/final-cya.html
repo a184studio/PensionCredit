@@ -1273,24 +1273,6 @@ actions: {
         classes: 'govuk-!-margin-bottom-9',
         rows: [
 
-          {
-          key: {
-            text: "Does this person live with you all the time?"
-          },
-          value: {
-            text: data["non-deps-frequency"]
-          },
-          actions: {
-            items: [
-              {
-                href: "non-deps-member-details",
-                text: "Change",
-                visuallyHiddenText: "whether this person lives with you all the time"
-              }
-            ]
-          }
-        },
-
         {
         key: {
           text: "What is your relationship to the person that lives with you?"
@@ -1364,6 +1346,24 @@ actions: {
           ]
         }
       },
+              {
+                        key: {
+                          text: "What is their relationship to you?"
+                        },
+                        value: {
+                          text: data["non-deps-relationship"]
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "non-deps-relationship",
+                              text: "Change",
+                              visuallyHiddenText: "Their relationship to you"
+                            }
+                          ]
+                        }
+                      },
+
           {
           key: {
             text: "What is their date of birth?"
@@ -1395,6 +1395,23 @@ actions: {
               href: "non-deps-member-details",
               text: "Change",
               visuallyHiddenText: "whether they are blind or severely sight impaired"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Does this person live with you all the time?"
+        },
+        value: {
+          text: data["non-deps-frequency"]
+        },
+        actions: {
+          items: [
+            {
+              href: "non-deps-member-details",
+              text: "Change",
+              visuallyHiddenText: "whether this person lives with you all the time"
             }
           ]
         }
