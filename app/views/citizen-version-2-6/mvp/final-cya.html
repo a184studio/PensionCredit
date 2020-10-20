@@ -1363,7 +1363,7 @@ actions: {
                           items: [
                             {
                               href: "non-deps-relationship",
-                              text: "Change",
+                              text: "",
                               visuallyHiddenText: "their relationship to you"
                             }
                           ]
@@ -1381,7 +1381,7 @@ actions: {
             items: [
               {
                 href: "non-deps-member-details",
-                text: "Change",
+                text: "",
                 visuallyHiddenText: "their date of birth"
               }
             ]
@@ -1399,7 +1399,7 @@ actions: {
           items: [
             {
               href: "non-deps-member-details",
-              text: "Change",
+              text: "",
               visuallyHiddenText: "whether they are blind or severely sight impaired"
             }
           ]
@@ -1416,7 +1416,7 @@ actions: {
           items: [
             {
               href: "non-deps-member-details",
-              text: "Change",
+              text: "",
               visuallyHiddenText: "whether this person lives with you all the time"
             }
           ]
@@ -1434,7 +1434,7 @@ actions: {
         items: [
           {
             href: "non-deps-member-details",
-            text: "Change",
+            text: "",
             visuallyHiddenText: "whether they are in education"
           }
         ]
@@ -1452,8 +1452,25 @@ actions: {
         items: [
           {
             href: "non-deps-member-details",
-            text: "Change",
+            text: "",
             visuallyHiddenText: "whether they are in employment"
+          }
+        ]
+      }
+      },
+      {
+      key: {
+        text: "How much do they earn each week?"
+      },
+      value: {
+        text: data["non-deps-member-details-weekly-earnings"]
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "",
+            visuallyHiddenText: "how much they earn each week"
           }
         ]
       }
@@ -1470,26 +1487,8 @@ actions: {
         items: [
           {
             href: "non-deps-member-details",
-            text: "Change",
+            text: "",
             visuallyHiddenText: "whether they are self-employed"
-          }
-        ]
-      }
-      },
-
-      {
-      key: {
-        text: "How much do they earn each week?"
-      },
-      value: {
-        text: data["non-deps-member-details-weekly-earnings"]
-      },
-      actions: {
-        items: [
-          {
-            href: "non-deps-member-details",
-            text: "Change",
-            visuallyHiddenText: "how much they earn each week"
           }
         ]
       }
@@ -1498,7 +1497,7 @@ actions: {
       ]
       }) }}
 
-      <br>
+      <br>[Spacer]
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -1506,10 +1505,13 @@ actions: {
 
           {
           key: {
-            text: "Person 2: example (Line break between each member)"
+            text: "[Person X] What is your relationship to the person that lives with you?"
           },
           value: {
-            text: "Alex Smith JR"
+            html: "A family member<br>
+                    Charity<br>
+                    ...<br>
+                    ..."
           },
           actions: {
             items: [
