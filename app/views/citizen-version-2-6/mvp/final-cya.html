@@ -185,6 +185,7 @@
         ]
       }) }}
 
+      {% if data["doc-absence-plural"] %}
       {{ govukSummaryList({
         rows: [
 
@@ -207,7 +208,9 @@
         }
         ]
       }) }}
+      {% endif %}
 
+      {% if data["doc-absence-medical"] %}
       {{ govukSummaryList({
         rows: [
 
@@ -230,7 +233,9 @@
         }
         ]
       }) }}
+      {% endif %}
 
+      {% if data["doc-absence-plural"] == "No" %}
       {{ govukSummaryList({
         rows: [
 
@@ -270,6 +275,7 @@
         }
         ]
       }) }}
+{% endif %}
 
       {{ govukSummaryList({
         rows: [
@@ -294,6 +300,8 @@
         ]
       }) }}
 
+      {% if data["doc-draft-date"] == "No" %}
+
       {{ govukSummaryList({
         rows: [
 
@@ -316,7 +324,7 @@
         }
         ]
       }) }}
-
+{% endif %}
 
 
 
@@ -378,8 +386,7 @@
           },
           {
             key: {
-              text: "Do you and your partner get pension age Housing Benefit?
-"
+              text: "Do you and your partner get pension age Housing Benefit?"
             },
             value: {
               text: data["nino"]
@@ -430,7 +437,6 @@
               ]
             }
           }
-
                     ]
                   }) }}
 
