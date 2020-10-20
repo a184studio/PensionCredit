@@ -152,17 +152,26 @@
                 <p class="govuk-body">newcastle.pensioncentre@dwp.gsi.gov.uk</p>
               </div> -->
 
-              <div  class="govuk-panel--address govuk-!-margin-top-4">
+              <div  class="govuk-panel--address govuk-!-margin-top-6">
 
-                <p class="govuk-heading-s govuk-!-margin-bottom-1">By post:</p>
+                {% if data['resides-in-uk'] == 'Northern-Ireland' %}
 
+                <p class="govuk-body">
+                  Northern Ireland Pension Centre<br>
+                  Mail Opening Unit<br>
+                  PO Box 42<br>
+                  Limavady<br>
+                  BT49 4AW</p>
+                </div>
+
+              {% else %}
                 <p class="govuk-body">
                 The Pension Service 4<br>
                 Mail Handling Site A<br>
                 Wolverhampton<br>
                 WV98 1AG</p>
-
               </div>
+            {% endif %}
 
           <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
