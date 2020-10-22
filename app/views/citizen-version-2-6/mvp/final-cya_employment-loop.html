@@ -23,6 +23,7 @@
     color: black;
   }
 
+#main-content > div > div > form > div:nth-child(5) > div:nth-child(6) > div:nth-child(8) > h2.govuk-heading-xm {display: none}
 
   #main-content > div > div > form > div:nth-child(2) {display: none} /* PRINT ONLY NOTIFICATION */
 
@@ -1526,7 +1527,61 @@ actions: {
       ]
       }) }}
 
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
+      <!-- <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Pensions</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "Do you get a private pension, a pension from a place where you used to work or any other pension?"
+            },
+            value: {
+              text: data['pension-check']
+            },
+            actions: {
+              items: [
+                {
+                  href: "pension-check",
+                  text: "Change",
+                  visuallyHiddenText: "whether you get a private pension, a pension from a place where you used to work or any other pension"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+{% if data["pension-check-details"] %}
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+          key: {
+            text: "Details of your private and workplace pensions"
+          },
+          value: {
+            text: data['pension-check-details']
+          },
+          actions: {
+            items: [
+              {
+                href: "pension-check",
+                text: "Change",
+                visuallyHiddenText: "the details of your private and workplace pensions"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+      </div> -->
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1613,50 +1668,50 @@ actions: {
 
       <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-            <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employers</h2>
+            <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employment and earnings</h2>
 
+        {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
 
-              {{ govukSummaryList({
-                      classes: 'govuk-!-margin-bottom-9',
-                      rows: [
-
+                {
+                  key: {
+                    text: "Do you [or your partner] have any income from employment?"
+                  },
+                  value: {
+                    text: data['employment-check']
+                  },
+                  actions: {
+                    items: [
                       {
-                        key: {
-                          text: "Do you [or your partner] have any income from employment?"
-                        },
-                        value: {
-                          text: data['employment-check']
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "employment-check",
-                              text: "Change",
-                              visuallyHiddenText: "whether you have any income from employment"
-                            }
-                          ]
-                        }
+                        href: "employment-check",
+                        text: "Change",
+                        visuallyHiddenText: "whether you have any income from employment"
                       }
                     ]
-                  }) }}
+                  }
+                }
+              ]
+            }) }}
 
-          {% if data["employment-check-yes-details"] %}
+            <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Employers</h2>
+
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-0',
               rows: [
                 {
                 key: {
-                  text: "employment-check-yes-details"
+                  text: "Employer name"
                 },
                 value: {
-                  text: data["employment-check-yes-details"]
+                  text: data["employment-details"]
                 },
                 actions: {
                   items: [
                     {
-                      href: "employment-check",
+                      href: "employment-details",
                       text: "Change",
-                      visuallyHiddenText: "@pete "
+                      visuallyHiddenText: "the details of anyone else that lives with you"
                     }
                   ]
                 }
@@ -1664,8 +1719,85 @@ actions: {
 
             ]
             }) }}
-          {% endif %}
 
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+
+                {
+                key: {
+                  text: "Employment: Who?"
+                },
+                value: {
+                  text: data["employment-you-or-partner"]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "employment-summary",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+
+            ]
+            }) }}
+
+            {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                key: {
+                  text: "Employment address"
+                },
+                value: {
+                  html: "Address line one
+                  <br>Address line Two
+                  <br>Address line Three
+                  <br>" + data["employment-post-code-lookup"]
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "employment-post-code-lookup",
+                      text: "Change",
+                      visuallyHiddenText: "the address we should send letters to"
+                    }
+                  ]
+                }
+              }
+            }
+            }) }}
+
+            <br>
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+
+                {
+                key: {
+                  text: "Employment 2(Bit of space above)"
+                },
+                value: {
+                  text: "address"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "home-living-with-you",
+                      text: "Change",
+                      visuallyHiddenText: "the details of anyone else that lives with you"
+                    }
+                  ]
+                }
+              }
+
+            ]
+            }) }}
 
             <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Self-employment</h2>
 
