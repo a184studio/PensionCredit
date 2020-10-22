@@ -14,18 +14,34 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="employment-check-router" method="post" class="form">
+    <form action="self-employed" method="post" class="form">
+
+      <!--To get to looking jounrey turn this on loop--><form action="employment-check-router" method="post" class="form">
 
 
       <!------------Legend------------>
         {% set legendEmployment %}
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>What we need to know:</strong></p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">What is this money?</p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">How much is paid and how often?</p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">Who is paid the money? You/partner</p>
-
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>What we need to know:</strong><br>Name of employer (Both)<br>Address of employment (Both)</p>
         {% endset %}
       <!------------Legend------------>
+
+      {% set employmentDetails %}
+        {{ govukTextarea({
+          label: {
+            classes: "govuk-label--s",
+            html: legendEmployment
+          },
+          hint: {
+            text: ""
+          },
+          id: "employment-check-yes-details",
+          name: "employment-check-yes-details",
+          classes: "govuk-input--width-100",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+      {% endset %}
 
 
       <!------------H1 LEGEND------------>
@@ -51,7 +67,10 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: data["employment-check"] == "Yes"
+            checked: data["employment-check"] == "Yes",
+                  conditional: {
+                    html: employmentDetails
+        }
           },
           {
             value: "No",
@@ -61,18 +80,6 @@
         ]
       }) }}
 
-
-<!---------------------------------------------------------------->
-
-<!------------Legend------------>
-  {% set legendSelfEmployment %}
-  <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>What we need to know:</strong></p>
-  <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">What is this money?</p>
-  <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">How much is paid and how often?</p>
-  <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">Who is paid the money? You/partner</p>
-
-  {% endset %}
-<!------------Legend------------>
 
 
 
