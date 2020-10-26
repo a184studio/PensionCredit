@@ -21,7 +21,7 @@
 
         <!------------SUBHEAD LEGEND------------>
           {% set dynamicSubHead %}
-          <p class="govuk-body govuk-!-font-weight-bold">What is your relationship to this person?</p>
+          <p class="govuk-body govuk-!-font-weight-bold">Who is this person?</p>
           {% endset %}
         <!------------Legend--------------->
 
@@ -31,7 +31,7 @@
             html: dynamicSubHead
           },
           hint: {
-            text: ""
+            text: "Describe your relationship with this person."
           },
           id: "non-deps-member-category-OtherDetails",
           name: "non-deps-member-category-OtherDetails",
@@ -47,7 +47,7 @@
 
       <!------------SUBHEAD LEGEND------------>
         {% set dynamicRelationshipSubHead %}
-        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">What is their relationship to you?</p>
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">Who is this person?</p>
         {% endset %}
       <!------------Legend--------------->
 
@@ -56,7 +56,7 @@
           html: dynamicRelationshipSubHead
         },
         hint: {
-          text: "A close relative is a parent, parent-in-law, son, son-in-law, daughter, daughter-in-law, step-parent, step-son, step-daughter, brother, sister, or anyone that is the partner of one of these people."
+          text: "For example, daughter, brother or friend."
         },
         id: "non-deps-relationship",
         name: "non-deps-relationship",
@@ -93,7 +93,7 @@
              checked: data['non-deps-member-category'] == "A close relative or friend",
 
            hint: {
-             text: "Light"
+             text: "A close relative is a parent, parent-in-law, son, son-in-law, daughter, daughter-in-law, step-parent, step-son, step-daughter, brother, sister, or anyone that is the partner of one of these people."
            },
                 conditional: {
                   html: RelationshipDetails
