@@ -1262,7 +1262,7 @@ actions: {
           actions: {
             items: [
               {
-                href: "non-deps-living-with-you",
+                href: "non-deps-summary",
                 text: "Change",
                 visuallyHiddenText: "whether anyone else lives with you"
               }
@@ -1296,10 +1296,56 @@ actions: {
             }
           ]
         }
+      },
+      {
+        key: {
+          text: "What is their relationship to you?"
+        },
+        value: {
+          text: data["non-deps-relationship"]
+        },
+        actions: {
+          items: [
+            {
+              href: "non-deps-relationship",
+              text: "Change",
+              visuallyHiddenText: "their relationship to you"
+            }
+          ]
+        }
       }
 
       ]
       }) }}
+
+      {% if data["non-deps-relationship"] %}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+      {
+        key: {
+          text: "What is their relationship to you?"
+        },
+        value: {
+          text: data["non-deps-relationship"]
+        },
+        actions: {
+          items: [
+            {
+              href: "non-deps-relationship",
+              text: "Change",
+              visuallyHiddenText: "their relationship to you"
+            }
+          ]
+        }
+      }
+
+      ]
+      }) }}
+
+      {% endif %}
 
       {% if data["non-deps-member-category-OtherDetails"] %}
 
@@ -1351,24 +1397,6 @@ actions: {
           ]
         }
       },
-              {
-                        key: {
-                          text: "What is their relationship to you?"
-                        },
-                        value: {
-                          text: data["non-deps-relationship"]
-                        },
-                        actions: {
-                          items: [
-                            {
-                              href: "non-deps-relationship",
-                              text: "",
-                              visuallyHiddenText: "their relationship to you"
-                            }
-                          ]
-                        }
-                      },
-
           {
           key: {
             text: "What is their date of birth?"
@@ -1380,7 +1408,7 @@ actions: {
             items: [
               {
                 href: "non-deps-member-details",
-                text: "",
+                text: "Change",
                 visuallyHiddenText: "their date of birth"
               }
             ]
@@ -1398,7 +1426,7 @@ actions: {
           items: [
             {
               href: "non-deps-member-details",
-              text: "",
+              text: "Change",
               visuallyHiddenText: "whether they are blind or severely sight impaired"
             }
           ]
@@ -1415,7 +1443,7 @@ actions: {
           items: [
             {
               href: "non-deps-member-details",
-              text: "",
+              text: "Change",
               visuallyHiddenText: "whether this person lives with you all the time"
             }
           ]
@@ -1433,7 +1461,7 @@ actions: {
         items: [
           {
             href: "non-deps-member-details",
-            text: "",
+            text: "Change",
             visuallyHiddenText: "whether they are in education"
           }
         ]
@@ -1451,7 +1479,7 @@ actions: {
         items: [
           {
             href: "non-deps-member-details",
-            text: "",
+            text: "Change",
             visuallyHiddenText: "whether they are in employment"
           }
         ]
@@ -1468,7 +1496,7 @@ actions: {
         items: [
           {
             href: "non-deps-member-details",
-            text: "",
+            text: "Change",
             visuallyHiddenText: "how much they earn each week"
           }
         ]
@@ -1486,7 +1514,7 @@ actions: {
         items: [
           {
             href: "non-deps-member-details",
-            text: "",
+            text: "Change",
             visuallyHiddenText: "whether they are self-employed"
           }
         ]
