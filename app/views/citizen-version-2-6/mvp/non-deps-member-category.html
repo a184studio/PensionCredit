@@ -19,7 +19,6 @@
 
         {% set OtherDetails %}
 
-
         <!------------SUBHEAD LEGEND------------>
           {% set dynamicSubHead %}
           <p class="govuk-body govuk-!-font-weight-bold">What is your relationship to this person?</p>
@@ -44,7 +43,33 @@
 
       {% endset %}
 
+      {% set RelationshipDetails %}
+
+      <!------------SUBHEAD LEGEND------------>
+        {% set dynamicRelationshipSubHead %}
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">What is their relationship to you?</p>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukInput({
+        label: {
+          html: dynamicRelationshipSubHead
+        },
+        hint: {
+          text: "A close relative is a parent, parent-in-law, son, son-in-law, daughter, daughter-in-law, step-parent, step-son, step-daughter, brother, sister, or anyone that is the partner of one of these people."
+        },
+        id: "non-deps-relationship",
+        name: "non-deps-relationship",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+        value: data["non-deps-relationship"]
+      }) }}
+
+
+
+      {% endset %}
+
       <!------------ CR ENDS--------------->
+
 
 
 
@@ -66,10 +91,10 @@
              value: "A close relative or friend",
              text: "A close relative or friend",
              checked: data['non-deps-member-category'] == "A close relative or friend",
-              hint: {
-                text: "A close relative is a parent, parent-in-law, son, son-in-law, daughter, daughter-in-law, step-parent, step-son, step-daughter, brother, sister, or anyone that is the partner of one of these people."
-              }
-           },
+                conditional: {
+                  html: RelationshipDetails
+                }
+              },
            {
              value: "Commercial boarders",
              text: "A commercial boarder, lodger or subtenant",

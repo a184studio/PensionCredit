@@ -73,19 +73,6 @@
 
                {% if data['non-deps-member-category'] == "A close relative or friend" %}
 
-               {{ govukInput({
-                 label: {
-                   html: "<strong>What is their relationship to you?</strong>"
-                 },
-                 hint: {
-                   text: ""
-                 },
-                 id: "non-deps-relationship",
-                 name: "non-deps-relationship",
-                 classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
-                 value: data["non-deps-relationship"]
-               }) }}
-
          {{ govukDateInput({
            id: "non-deps-member-details-dob",
            namePrefix: "non-deps-member-details-dob",
