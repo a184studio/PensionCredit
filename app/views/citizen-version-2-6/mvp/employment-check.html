@@ -21,11 +21,11 @@
 
       <!------------Legend------------>
         {% set legendEmployment %}
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>For each employment, tell us:</strong></p>
+        <p class="govuk-hint">For each employment, tell us:</p>
 
-          <ul class="govuk-list govuk-list--bullet">
+          <ul class="govuk-hint govuk-list govuk-list--bullet">
             <li>the employer's name</li>
-            <li>the employer's address</li>
+            <li>the employer's full address</li>
             </ul>
         {% endset %}
       <!------------Legend------------>
@@ -34,10 +34,10 @@
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: legendEmployment
+            text: "Employer details"
           },
           hint: {
-            text: ""
+            html: legendEmployment
           },
           id: "employment-check-yes-details",
           name: "employment-check-yes-details",
