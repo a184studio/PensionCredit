@@ -1245,7 +1245,7 @@ actions: {
 
       <!-- - - - - - - - - - - - - - - - - -  WHO LIVES WITH YOU / NON DEPS - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Other people in the household</h2>
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Other people that live with you</h2>
 
 
       {{ govukSummaryList({
@@ -1299,7 +1299,7 @@ actions: {
       },
       {
         key: {
-          text: "What is their relationship to you?"
+          text: "Who is this person?"
         },
         value: {
           text: data["non-deps-relationship"]
@@ -1326,7 +1326,7 @@ actions: {
 
       {
         key: {
-          text: "What is their relationship to you?"
+          text: "Who is this person?"
         },
         value: {
           text: data["non-deps-relationship"]
@@ -1397,6 +1397,23 @@ actions: {
           ]
         }
       },
+      {
+      key: {
+        text: "What is the name of the charity this person works for?"
+      },
+      value: {
+        text: data['non-deps-member-charity-name']
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "their date of birth"
+          }
+        ]
+      }
+    },
           {
           key: {
             text: "What is their date of birth?"
