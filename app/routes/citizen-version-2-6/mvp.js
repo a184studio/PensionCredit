@@ -270,7 +270,7 @@ router.post(`${baseUrl}/over-spa-router`, (req, res) => {
       res.redirect(`${baseUrl}/sex`)
     }
   } catch (err) {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
   }
 })
 
@@ -294,17 +294,19 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   const residesInUk = req.session.data['resides-in-uk']
 
   if (residesInUk === 'England') {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/over-spa`)
   } else if (residesInUk === 'Scotland') {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/over-spa`)
   } else if (residesInUk === 'Wales') {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/over-spa`)
   } else if (residesInUk === 'Northern-Ireland') {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/over-spa`)
   } else {
     res.redirect(`${baseUrl}/done-none-uk`)
   }
 })
+
+
 
 router.post(`${baseUrl}/lived-abroad-router`, (req, res) => {
   const residesInUk = req.session.data['lived-abroad']
@@ -330,7 +332,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
 
   if (childrenCheck === 'No') {
-    res.redirect(`${baseUrl}/over-spa`)
+    res.redirect(`${baseUrl}/claim-filter`)
   } else {
     res.redirect(`${baseUrl}/done-children`)
   }
