@@ -14,34 +14,33 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="home-rent-housing-benefit-router" method="post" class="form">
-
+    <form action="home-shared-payments" method="post" class="form">
 
 
       {{ govukRadios({
-        idPrefix: "home-rent-housing-benefit",
-        name: "home-rent-housing-benefit",
+        idPrefix: "home-shared-housing-benefit-apply",
+        name: "home-shared-housing-benefit-apply",
         fieldset: {
           legend: {
-            text: "Do you get Housing Benefit?",
+            text: "Do you want to apply for Housing Benefit?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "@Pete Housing benefit application can also be done at the same time as PC if you dont have it already, we reuse the information in this applciation to generate a HB appliation blah"
+          text: "@Pete This is part of Pension Credit claim and will be done automatically blah"
         },
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["home-rent-housing-benefit"] == "Yes")
+            checked: (data["home-shared-housing-benefit-apply"] == "Yes")
 
             },
           {
             value: "No",
             text: "No",
-            checked: (data["home-rent-housing-benefit"] == "No")
+            checked: (data["home-shared-housing-benefit-apply"] == "No")
           }
         ]
       }) }}

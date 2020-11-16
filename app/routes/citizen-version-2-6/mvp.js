@@ -580,6 +580,17 @@ router.post(`${baseUrl}/home-rent-ground-rent-router`, (req, res) => { // When t
   }
 })
 
+router.post(`${baseUrl}/home-rent-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
+  const homeRentHousingBenefit = req.session.data['home-rent-housing-benefit'] // The router is looking for this ID.
+
+  if (homeRentHousingBenefit === 'No') {
+    res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
+  } else {
+    res.redirect(`${baseUrl}/home-shared-payments`)
+  }
+})
+
+
 // Home ownership router: SHARED
 
 router.post(`${baseUrl}/home-shared-ground-rent-router`, (req, res) => { // When the button is pressed it looks for this router
@@ -593,6 +604,18 @@ router.post(`${baseUrl}/home-shared-ground-rent-router`, (req, res) => { // When
 })
 
 
+router.post(`${baseUrl}/home-shared-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
+  const homeSharedHousingBenefit = req.session.data['home-shared-housing-benefit'] // The router is looking for this ID.
+
+  if (homeSharedHousingBenefit === 'No') {
+    res.redirect(`${baseUrl}/home-shared-housing-benefit-apply`)
+  } else {
+    res.redirect(`${baseUrl}/home-shared-payments`)
+  }
+})
+
+// Home ownership router: OWNS
+
 
 router.post(`${baseUrl}/home-mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['home-mortgage']
@@ -603,9 +626,6 @@ router.post(`${baseUrl}/home-mortgage-router`, (req, res) => {
     res.redirect(`${baseUrl}/home-equity-release`)
   }
 })
-
-
-
 
 
 router.post(`${baseUrl}/own-mortgage-home-loan-yn-router`, (req, res) => {
@@ -653,6 +673,22 @@ router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router na
     res.redirect(`${baseUrl}/own-council-tax-apply`)
   }
 })
+
+// Home ownership router: OTHER
+
+
+router.post(`${baseUrl}/home-other-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
+  const homeOtherHousingBenefit = req.session.data['home-other-housing-benefit'] // The router is looking for this ID.
+
+  if (homeOtherHousingBenefit === 'No') {
+    res.redirect(`${baseUrl}/home-other-housing-benefit-apply`)
+  } else {
+    res.redirect(`${baseUrl}/home-shared-payments`)
+  }
+})
+
+
+
 
 router.post(`${baseUrl}/still-employed-router`, (req, res) => {
   const stillEmployed = req.session.data['still-employed']
