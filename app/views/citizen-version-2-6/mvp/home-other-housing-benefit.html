@@ -17,9 +17,19 @@
     <form action="home-other-housing-benefit-router" method="post" class="form">
 
 
+      {% set legendHint %}
+
+      {% if data["home-ownership"] == "You live in a caravan houseboat or mobile home"%}
+        <p class="govuk-hint">Something about sight fees</p>
+      {% else %}
+        <p class="govuk-hint">XHousing Benefit can help you pay your rent if you’re on a low income or claiming benefits.</p>
+      {% endif %}
+
+      {% endset -%}
+
       {{ govukRadios({
-        idPrefix: "home-shared-housing-benefit",
-        name: "home-shared-housing-benefit",
+        idPrefix: "home-other-housing-benefit",
+        name: "home-other-housing-benefit",
         fieldset: {
           legend: {
             text: "Do you get Housing Benefit?",
@@ -28,7 +38,7 @@
           }
         },
         hint: {
-          text: "Housing Benefit can help you pay your rent if you’re on a low income or claiming benefits."
+          html: legendHint
         },
         items: [
           {

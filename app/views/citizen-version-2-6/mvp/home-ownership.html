@@ -13,7 +13,7 @@
 {% include "includes/js-back-link.html" %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
     <form action="home-ownership-router" method="post" class="form">
 
       {% set otherAccommodationDetails %}
@@ -58,6 +58,11 @@
             value: "Shared ownership",
             text: "You rent it and own it (Shared ownership)",
             checked: (data["home-ownership"] == "Shared ownership")
+          },
+          {
+            value: "You live in a caravan houseboat or mobile home",
+            text: "You live in a caravan, houseboat or mobile home",
+            checked: (data["home-ownership"] == "You live in a caravan houseboat or mobile home")
           },
           {
             value: "Live in someone elses home",

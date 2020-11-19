@@ -557,11 +557,14 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
   else if (homeOwnership === 'Shared ownership') {
     res.redirect(`${baseUrl}/home-shared-ground-rent`)
   }
-  else if (homeOwnership === 'Other accommodation') {
-    res.redirect(`${baseUrl}/home-other-service-charges`)
+  else if (homeOwnership === 'You live in a caravan houseboat or mobile home') {
+    res.redirect(`${baseUrl}/home-moving-homes-ownership`)
   }
   else if (homeOwnership === 'Live in someone elses home') {
     res.redirect(`${baseUrl}/benefit-UC`)
+  }
+  else if (homeOwnership === 'Other accommodation') {
+    res.redirect(`${baseUrl}/home-other-service-charges`)
   }
   else {
     res.redirect(`${baseUrl}/blank`) // If nothing is selected it will go here.
@@ -673,6 +676,21 @@ router.post(`${baseUrl}/own-council-tax-yn-router`, (req, res) => { // router na
     res.redirect(`${baseUrl}/own-council-tax-apply`)
   }
 })
+
+// Home ownership router: MOVING HOMES
+
+
+router.post(`${baseUrl}/home-moving-homes-ownership-router`, (req, res) => {
+  const movingHomesOwnership = req.session.data['home-moving-homes-ownership']
+
+  if (movingHomesOwnership === 'Own') {
+    res.redirect(`${baseUrl}/home-mortgage`)
+  } else {
+    res.redirect(`${baseUrl}/home-rent-housing-benefit`)
+  }
+})
+
+
 
 // Home ownership router: OTHER
 

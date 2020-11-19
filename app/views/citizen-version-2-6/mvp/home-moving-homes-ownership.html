@@ -14,48 +14,34 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="home-rent-housing-benefit-router" method="post" class="form">
-
-
-      {% set legendHint %}
-
-      {% if data["home-ownership"] == "You live in a caravan houseboat or mobile home"%}
-        <p class="govuk-hint">Something about sight fees</p>
-      {% else %}
-        <p class="govuk-hint">XHousing Benefit can help you pay your rent if you’re on a low income or claiming benefits.</p>
-      {% endif %}
-
-      {% endset -%}
+    <form action="home-moving-homes-ownership-router" method="post" class="form">
 
       {{ govukRadios({
-        idPrefix: "home-rent-housing-benefit",
-        name: "home-rent-housing-benefit",
+        idPrefix: "home-moving-homes-ownership",
+        name: "home-moving-homes-ownership",
         fieldset: {
           legend: {
-            text: "Do you get Housing Benefit?",
+            text: "Do you pay ground rent?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          html: legendHint
+          text: "Do you own or rent your caravan houseboat or mobile home?"
         },
         items: [
           {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["home-rent-housing-benefit"] == "Yes")
-
+            value: "Own",
+            text: "Own",
+            checked: (data["home-moving-homes-ownership"] == "Own")
             },
           {
-            value: "No",
-            text: "No",
-            checked: (data["home-rent-housing-benefit"] == "No")
+            value: "Rent",
+            text: "Rent",
+            checked: (data["home-moving-homes-ownership"] == "Rent")
           }
         ]
       }) }}
-
-
 
 
       {{ govukButton({
