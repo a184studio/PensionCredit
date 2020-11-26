@@ -1539,7 +1539,7 @@ actions: {
       ]
       }) }}
 
-      <br>[Spacer]
+
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -1547,20 +1547,17 @@ actions: {
 
           {
           key: {
-            text: "[Person X] What is your relationship to the person that lives with you?"
+            text: "[Non Deps text box]"
           },
           value: {
-            html: "A family member<br>
-                    Charity<br>
-                    ...<br>
-                    ..."
+            text: data["non-deps-multi-member-details"]
           },
           actions: {
             items: [
               {
-                href: "non-deps-member-category",
+                href: "non-deps-multi-member-details",
                 text: "Change",
-                visuallyHiddenText: "non-deps-member-category-OtherDetails"
+                visuallyHiddenText: "non-deps-multi-member-details"
               }
             ]
           }
