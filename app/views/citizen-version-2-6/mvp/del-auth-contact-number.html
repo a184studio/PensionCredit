@@ -62,9 +62,9 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate acting body"
        %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Can we call you about this claim?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Can we call you about this application?</h1>
       {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Can we call the applicant about this claim?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Can we call the applicant about this application?</h1>
       {% endif %}
 
       {% endset -%}
@@ -80,7 +80,7 @@
           }
         },
         hint: {
-          text: "We might need to call to ask for more information or to discuss the progress of the claim."
+          text: "A contact number helps us process an application faster if we need to ask for more information."
         },
         classes: "govuk-radios govuk-!-margin-bottom-4",
         items: [
