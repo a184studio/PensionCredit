@@ -522,11 +522,16 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
 
   if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-prompt`)
+  }
+  else if (nonDepsCheck === 'Yes-one') {
+    res.redirect(`${baseUrl}/non-deps-member-category`)
+  }
+  else if (nonDepsCheck === 'Yes-more') {
+    res.redirect(`${baseUrl}/non-deps-multi-member-details`)
   } else {
     res.redirect(`${baseUrl}/benefit-UC`)
   }
 })
-
 
 router.post(`${baseUrl}/non-deps-summary-router`, (req, res) => {
   const nonDepsSummary = req.session.data['non-deps-summary']
@@ -696,7 +701,7 @@ router.post(`${baseUrl}/home-moving-homes-ownership-router`, (req, res) => {
 
 
 router.post(`${baseUrl}/home-other-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
-  const homeOtherHousingBenefit = req.session.data['home-other-housing-benefit'] // The router is looking for this ID.
+  const homeOtherHousingBenefit = req.session.data['home-other-housing-benefit-router'] // The router is looking for this ID.
 
   if (homeOtherHousingBenefit === 'No') {
     res.redirect(`${baseUrl}/home-other-housing-benefit-apply`)

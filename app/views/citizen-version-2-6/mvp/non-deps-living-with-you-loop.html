@@ -26,6 +26,15 @@
       <!------------Legend--------------->
 
 
+      <!------------Legend------------>
+        {% set legendEmployment %}
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>What we need to know:</strong></p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">Name</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">Relationship</p>
+
+        {% endset %}
+      <!------------Legend------------>
+
       {{ govukRadios({
         name: "non-deps-living-with-you",
         fieldset: {
@@ -40,15 +49,10 @@
         },
         items: [
           {
-            value: "Yes-one",
-            text: "Yes — one person",
-            checked: (data["non-deps-living-with-you"] == "Yes-one")
+            value: "Yes",
+            text: "Yes",
+            checked: (data["non-deps-living-with-you"] == "Yes")
           },
-        {
-              value: "Yes-more",
-              text: "Yes — more than one person",
-              checked: (data["non-deps-living-with-you"] == "Yes-more")
-            },
           {
             value: "No",
             text: "No",
