@@ -427,18 +427,6 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/home-care-home-route-check-router`, (req, res) => {
-  const careHomeRouteCheck = req.session.data['home-care-home-route-check']
-
-  if (careHomeRouteCheck === 'Yes') {
-    res.redirect(`${baseUrl}/pension-check`)
-  } else {
-    res.redirect(`${baseUrl}/non-deps-living-with-you`)
-  }
-})
-
-
-
 
 router.post(`${baseUrl}/single-joint-check-router`, (req, res) => {
   const singleJoint = req.session.data['single-joint-check']
@@ -542,6 +530,44 @@ router.post(`${baseUrl}/non-deps-summary-router`, (req, res) => {
     res.redirect(`${baseUrl}/benefit-UC`)
   }
 })
+
+
+router.post(`${baseUrl}/home-care-home-route-check-router`, (req, res) => {
+  const careHomeRouteCheck = req.session.data['home-care-home-route-check']
+
+  if (careHomeRouteCheck === 'Yes') {
+    res.redirect(`${baseUrl}/benefit-UC`)
+  } else {
+    res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
+  }
+})
+
+router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
+  const careHomeCheck = req.session.data['home-care-home-check']
+
+  if (careHomeCheck === 'Yes') {
+    res.redirect(`${baseUrl}/home-care-home-entry`)
+  } else {
+    res.redirect(`${baseUrl}/address-post-code-lookup`)
+  }
+})
+
+
+
+// router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
+//   const careHome = req.session.data['home-care-home-check']
+//   const careHomeStillOwn = req.session.data['home-care-home-check-still-own']
+//   if (careHome === 'Yes' && careHomeStillOwn === 'Yes') {
+//     res.redirect(`${baseUrl}/pension-check`)
+//   }
+//   if (careHome === 'Yes' && careHomeStillOwn === 'No') {
+//     res.redirect(`${baseUrl}/pension-check`)
+//   }
+//   else {
+//     res.redirect(`${baseUrl}/address-post-code-lookup`)
+//   }
+// })
+
 
 
 
@@ -1321,20 +1347,6 @@ router.post(`${baseUrl}/del-auth-contact-formats-check-router`, (req, res) => {
     res.redirect(`${baseUrl}/del-auth-who-check`)
   }
 })
-
-// router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
-//   const careHome = req.session.data['home-care-home-check']
-//   const careHomeStillOwn = req.session.data['home-care-home-check-still-own']
-//   if (careHome === 'Yes' && careHomeStillOwn === 'Yes') {
-//     res.redirect(`${baseUrl}/pension-check`)
-//   }
-//   if (careHome === 'Yes' && careHomeStillOwn === 'No') {
-//     res.redirect(`${baseUrl}/pension-check`)
-//   }
-//   else {
-//     res.redirect(`${baseUrl}/address-post-code-lookup`)
-//   }
-// })
 
 
 

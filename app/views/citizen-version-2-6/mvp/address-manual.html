@@ -14,15 +14,20 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="home-responsible-CTR-HB" method="post">
+    <form action="home-care-home-route-check" method="post">
 
-<!-- non-deps-living-with-you -->
 
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        {% if data["home-care-home-check"] == "Yes" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">What is your care home address?</h2>
+        {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">What is your home address?</h2>{% endif %}
+        {% endset %}
+      <!------------Legend--------------->
 
 
   {% call govukFieldset({
     legend: {
-      text: "What is your home address?",
+      html: dynamicH1,
       classes: "govuk-fieldset__legend--xl",
       isPageHeading: true
     }
