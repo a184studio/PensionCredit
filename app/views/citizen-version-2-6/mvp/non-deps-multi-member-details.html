@@ -17,15 +17,17 @@
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Tell us the name of anyone else that lives with you their relationship to you and whether they are dependent on you.</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Details of other people that live with you</h1>
 
          <!------------Legend------------>
            {% set legendMemberDetials %}
-           <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>What we need to know:</strong></p>
-           <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">Name</p>
-           <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">Relationship</p>
-           <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-2">?</p>
-
+           <p class="govuk-hint"><strong>For each person, tell us:</strong></p>
+           <ul class="govuk-hint govuk-list govuk-list--bullet">
+           <li>their name</li>
+           <li>their date of birth</li>
+           <li>their relationship to you</li>
+           <li>any income they have from employment or self-employment</li>
+           </ul>
            {% endset %}
          <!------------Legend------------>
 
@@ -41,7 +43,7 @@
              name: "non-deps-multi-member-details",
              classes: "govuk-input--width-100",
              attributes: {
-               maxlength: 1000
+               maxlength: 3000
              }
            }) }}
 
