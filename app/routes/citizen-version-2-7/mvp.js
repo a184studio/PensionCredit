@@ -546,7 +546,7 @@ router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
   const careHomeCheck = req.session.data['home-care-home-check']
 
   if (careHomeCheck === 'Yes') {
-    res.redirect(`${baseUrl}/home-care-home-entry`)
+    res.redirect(`${baseUrl}/home-care-home-funding`)
   } else {
     res.redirect(`${baseUrl}/address-post-code-lookup`)
   }
