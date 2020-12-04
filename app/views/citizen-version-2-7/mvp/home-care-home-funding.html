@@ -20,8 +20,8 @@
 
 
 {{ govukRadios({
-  idPrefix: "home-care-home-check",
-  name: "home-care-home-check",
+  idPrefix: "home-care-home-funding",
+  name: "home-care-home-funding",
   fieldset: {
     legend: {
       html: "Is any part of your care home funding provided by the local authority?",
@@ -37,12 +37,12 @@
     {
       value: "Yes",
       text: "Yes",
-      checked: (data["home-care-home-check"] == "Yes")
+      checked: (data["home-care-home-funding"] == "Yes")
     },
     {
       value: "No",
       text: "No",
-      checked: (data["home-care-home-check"] == "No")
+      checked: (data["home-care-home-funding"] == "No")
     }
   ]
 }) }}
