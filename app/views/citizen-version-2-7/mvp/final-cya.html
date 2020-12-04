@@ -608,6 +608,32 @@
   ]
 }) }}
 
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "Is any part of your care home funding provided by the local authority?"
+    },
+    value: {
+      text: data['home-care-home-funding']
+    },
+    actions: {
+      items: [
+        {
+          href: "home-care-home-funding",
+          text: "Change",
+          visuallyHiddenText: "@pete XXX"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+
+
     {{ govukSummaryList({
       classes: 'govuk-!-margin-bottom-9',
       rows: [
@@ -622,7 +648,7 @@
         actions: {
           items: [
             {
-              href: "",
+              href: "home-care-home-check-still-own",
               text: "Change",
               visuallyHiddenText: "whether you own the property you used to live in"
             }
@@ -639,7 +665,7 @@
 
     {
       key: {
-        text: "Your home address"
+        text: "Your [Care] home address"
       },
       value: {
         html: "Address line one
