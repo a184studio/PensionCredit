@@ -4178,6 +4178,29 @@ rows: [
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!--Declaration-->
+
+<!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+
+<div class="dont-print">
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h2 class="govuk-heading-l">By submitting this application you agree:</h2>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-2">the information is correct and complete and correct</p></li>
+           <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-2">to tell the Department for Communities (DfC) straightaway if your address, bank details or marital status change</p></li>
+           <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-2">DfC can ask you to pay back any recoverable overpayment of Pension Credit.</p></li>
+         </ul>
+
+         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><strong>You may be prosecuted or have to pay a penalty if you give the wrong or incomplete information or do not report changes straight away</strong></p>
+
+    </div>
+  </div>
+</div>
+
+<!---- UK ---->{% else %}
+
   <div class="dont-print">
 
       <div class="govuk-grid-row">
@@ -4194,6 +4217,9 @@ rows: [
       </div>
     </div>
   </div>
+
+  <!---- COUNTRY END ---->{% endif %}
+
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
