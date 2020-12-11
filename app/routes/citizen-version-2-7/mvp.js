@@ -1316,13 +1316,30 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
     res.redirect(`${baseUrl}/del-auth-contact-number`)
   }
   else if (whoMadeClaim === 'Friend or family member') { // name of data / + answer
-    res.redirect(`${baseUrl}/del-auth-contact-number`)
+    res.redirect(`${baseUrl}/del-auth-contact-ff-number-check`)
   }
   else if (whoMadeClaim === 'Someone else') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-number`)
   }
   else {
     res.redirect(`${baseUrl}/del-auth-contact-number`)
+  }
+})
+
+
+
+
+router.post(`${baseUrl}/del-auth-contact-number-check-router`, (req, res) => {
+  const whoMadeClaimNumberCheck = req.session.data['del-auth-contact-number-check']
+
+  if (whoMadeClaimNumberCheck === 'Phone the applicant') {
+    res.redirect(`${baseUrl}/del-auth-contact-language`)
+  }
+  else if (whoMadeClaimNumberCheck === 'Phone someone else') {
+    res.redirect(`${baseUrl}/del-auth-contact-ff-name-number`)
+  }
+   else {
+    res.redirect(`${baseUrl}/del-auth-contact-letter-language`)
   }
 })
 
@@ -1338,11 +1355,21 @@ router.post(`${baseUrl}/index-made-claim-letter-check-router`, (req, res) => { /
 })
 
 
-router.post(`${baseUrl}/del-auth-contact-formats-check-router`, (req, res) => {
-  const contactFormats = req.session.data['del-auth-contact-formats-check']
+router.post(`${baseUrl}/del-auth-contact-call-formats-check-router`, (req, res) => {
+  const contactCallFormats = req.session.data['del-auth-contact-call-formats-check']
 
-  if (contactFormats === 'Yes') {
-    res.redirect(`${baseUrl}/del-auth-contact-formats`)
+  if (contactCallFormats === 'Yes') {
+    res.redirect(`${baseUrl}/del-auth-contact-call-formats`)
+  } else {
+    res.redirect(`${baseUrl}/del-auth-contact-letter-language`)
+  }
+})
+
+router.post(`${baseUrl}/del-auth-contact-letter-formats-check-router`, (req, res) => {
+  const contactLetterFormats = req.session.data['del-auth-contact-letter-formats-check']
+
+  if (contactLetterFormats === 'Yes') {
+    res.redirect(`${baseUrl}/del-auth-contact-letter-formats`)
   } else {
     res.redirect(`${baseUrl}/del-auth-who-check`)
   }
