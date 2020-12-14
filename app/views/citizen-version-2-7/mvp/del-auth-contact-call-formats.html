@@ -19,7 +19,6 @@
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
 
       <input type="hidden" name="del-auth-contact-call-formats-complete" value="in-progress"/>
-del-auth-who-check
       {% set disabilities = data["disabilities"] or [] %}
       {% set accessability = data["accessibility"] or [] %}
 
@@ -116,7 +115,7 @@ del-auth-who-check
       {% endset -%}
 
 
-      {{ govukCheckboxes({
+      {{ govukRadios({
         classes: "govuk-!-margin-bottom-4",
         idPrefix: "del-auth-contact-call-formats",
         name: "del-auth-contact-call-formats",
@@ -124,7 +123,7 @@ del-auth-who-check
           legend: {
             html: legendH1,
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
           }
         },
         hint: {
