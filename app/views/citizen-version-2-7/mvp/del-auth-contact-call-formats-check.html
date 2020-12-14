@@ -29,14 +29,14 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need us to use any different formats when we contact you by phone?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Should we use a different format when we call you?</h1>
 
         {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">[FF] Do you need us to use any different formats when we contact you by phone?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">[FF] Should we use a different format when we call you?</h1>
 
 
       {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Does the applicant need us to use any different formats when we contact them by phone?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">[Should we use a different format when we call you?] Does the applicant need us to use any different formats when we contact them by phone?</h1>
       {% endif %}
 
       {% endset -%}
@@ -53,7 +53,7 @@
     }
   },
   hint: {
-    text: "For example, braille, large print or textphone."
+    text: "For example, TextPhone, TextRelay or TypeTalk."
   },
   classes: "govuk-radios",
   items: [
