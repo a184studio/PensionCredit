@@ -60,9 +60,9 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What format should we use when we write to the applicant?</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What format should we use when we write to the you?</h1>
       {% else %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">[What format should we use when we write to the applicant?]How can we help when we contact the applicant?</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What format should we use when we write to the applicant?</h1>
       {% endif %}
 
       {% endset -%}
@@ -114,14 +114,14 @@
 
 
       {{ govukCheckboxes({
-        classes: "govuk-!-margin-bottom-4",
+        classes: "govuk-!-margin-bottom-2",
         idPrefix: "del-auth-contact-formats",
         name: "del-auth-contact-formats",
         fieldset: {
           legend: {
             html: legendH1,
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
           }
         },
         hint: {
