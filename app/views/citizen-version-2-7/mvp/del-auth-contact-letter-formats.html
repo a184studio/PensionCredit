@@ -61,6 +61,8 @@
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
         <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What format should we use when we write to the you?</h1>
+        {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Tell us any other ways we can help the applicant when we write to them.</h1>
       {% else %}
         <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What format should we use when we write to the applicant?</h1>
       {% endif %}
@@ -76,7 +78,11 @@
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
         <h4 class="govuk-hint govuk-!-margin-top-0">Tell us any other ways we can help you when we contact you.</h4>
+        {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
+        <h4 class="govuk-hint govuk-!-margin-top-0"></h4>
       {% else %}
+
+
         <h4 class="govuk-hint govuk-!-margin-top-0">Tell us any other ways we can help the applicant when we contact them.</h4>
       {% endif %}
 
@@ -113,7 +119,7 @@
       {% endset -%}
 
 
-      {{ govukCheckboxes({
+      {{ govukRadios({
         classes: "govuk-!-margin-bottom-2",
         idPrefix: "del-auth-contact-formats",
         name: "del-auth-contact-formats",
@@ -125,7 +131,7 @@
           }
         },
         hint: {
-          text: "Select all that apply"
+          text: ""
         },
         items: [
 {
