@@ -29,14 +29,14 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Should we use a different methods when we call you?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Should we use a different method when we call you?</h1>
 
         {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">[FF] Should we use a different methods when we call you?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Should we use a different method when we call you?</h1>
 
 
       {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Should we use a different methods when we the applicant?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Should we use a different method when we call the applicant?</h1>
       {% endif %}
 
       {% endset -%}
