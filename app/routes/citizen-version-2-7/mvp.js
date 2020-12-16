@@ -1329,8 +1329,8 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
 
 
 
-router.post(`${baseUrl}/del-auth-contact-number-check-router`, (req, res) => {
-  const whoMadeClaimNumberCheck = req.session.data['del-auth-contact-number-check']
+router.post(`${baseUrl}/del-auth-contact-ff-number-check-router`, (req, res) => {
+  const whoMadeClaimNumberCheck = req.session.data['del-auth-contact-ff-number-check']
 
   if (whoMadeClaimNumberCheck === 'Phone the applicant') {
     res.redirect(`${baseUrl}/del-auth-contact-language`)
