@@ -33,9 +33,9 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is your textphone (Text Relay) number?</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or text relay number</h4>
       {% else %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is the applicant's textphone (Text Relay) number?</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or text relay number</h4>
       {% endif %}
 
       {% endset -%}
@@ -60,9 +60,9 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we contact you?</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Tell us any other ways we can help you when we contact you</h1>
       {% else %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we contact the applicant?</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Tell us any other ways we can help the applicant when we contact them</h1>
       {% endif %}
 
       {% endset -%}
@@ -75,9 +75,9 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h4 class="govuk-hint govuk-!-margin-top-0">Tell us any other ways we can help you when we contact you.</h4>
+        <h4 class="govuk-hint govuk-!-margin-top-0"></h4>
       {% else %}
-        <h4 class="govuk-hint govuk-!-margin-top-0">Tell us any other ways we can help the applicant when we contact them.</h4>
+        <h4 class="govuk-hint govuk-!-margin-top-0"></h4>
       {% endif %}
 
       {% endset -%}
@@ -105,15 +105,15 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What formats do you need us to use when we contact you by letter or phone?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What formats should we use when we contact you by letter or phone?</h1>
       {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What formats does the applicant need us to use when we contact them by letter or phone?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What formats should we use when we contact the applicant by letter or phone?</h1>
       {% endif %}
 
       {% endset -%}
 
 
-      {{ govukRadios({
+      {{ govukCheckboxes({
         classes: "govuk-!-margin-bottom-2",
         idPrefix: "del-auth-contact-formats",
         name: "del-auth-contact-formats",
@@ -147,7 +147,7 @@
 
           {
             value: "TextPhone",
-            text: "TextPhone (Text Relay)",
+            text: "Textphone (text relay)",
             checked: (data["del-auth-contact-formats"] == "TextPhone"),
                   conditional: {
                     html: textPhoneNumber
@@ -155,7 +155,7 @@
           },
           {
             value: "TypeTalk",
-            text: "TypeTalk",
+            text: "Typetalk",
             checked: (data["del-auth-contact-formats"] == "Sign language (Loop)")
           },
           {

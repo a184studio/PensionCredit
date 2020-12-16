@@ -32,14 +32,14 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is your textphone (Text Relay) number?</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is your textphone or text relay number?</h4>
 
         {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone (Text Relay) number</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or text relay number</h4>
 
 
       {% else %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is the applicant's textphone (Text Relay) number?</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is the applicant's textphone or text relay number?</h4>
       {% endif %}
 
       {% endset -%}
@@ -143,18 +143,21 @@
         },
         items: [
           {
-            value: "TextPhone",
-            text: "TextPhone (Text Relay)",
-            checked: (data["del-auth-contact-call-formats"] == "TextPhone"),
+            value: "Textphone or text relay",
+            text: "Textphone or text relay",
+            checked: (data["del-auth-contact-call-formats"] == "Textphone"),
                   conditional: {
                     html: textPhoneNumber
                   }
           },
+
           {
-            value: "TypeTalk",
-            text: "TypeTalk",
+            value: "Typetalk",
+            text: "Typetalk",
             checked: (data["del-auth-contact-call-formats"] == "Sign language (Loop)")
           },
+
+          
           {
             value: "Other",
             text: "Something else",
