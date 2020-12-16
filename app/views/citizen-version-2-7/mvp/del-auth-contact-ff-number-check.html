@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="del-auth-contact-number-check-router" method="post" class="form">
+    <form action="del-auth-contact-ff-number-check-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
 
@@ -70,8 +70,8 @@
       {% endset -%}
 
       {{ govukRadios({
-        idPrefix: "del-auth-contact-number-check",
-        name: "del-auth-contact-number-check",
+        idPrefix: "del-auth-contact-ff-number-check",
+        name: "del-auth-contact-ff-number-check",
         fieldset: {
           legend: {
             html: LegendH1,
@@ -87,7 +87,7 @@
           {
             value: "Phone the applicant",
             text: "Phone the applicant",
-            checked: (data["del-auth-contact-number-check"] == "Phone the applicant"),
+            checked: (data["del-auth-contact-ff-number-check"] == "Phone the applicant"),
                   conditional: {
                     html: delAuthContactNumberYes
                   }
@@ -95,12 +95,12 @@
           {
             value: "Phone someone else",
             text: "Phone someone else",
-            checked: (data["del-auth-contact-number-check"] == "Phone someone else")
+            checked: (data["del-auth-contact-ff-number-check"] == "Phone someone else")
           },
         {
           value: "letter",
           text: "Send a letter to the applicant",
-          checked: (data["del-auth-contact-number-check"] == "Send a letter to the applicant")
+          checked: (data["del-auth-contact-ff-number-check"] == "Send a letter to the applicant")
         }
         ]
       }) }}

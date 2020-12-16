@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="del-auth-contact-formats-check-router" method="post" class="form">
+    <form action="del-auth-contact-formats" method="post" class="form">
 
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
@@ -29,9 +29,9 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need us to use any different formats when we contact you by letter or phone?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Shold we use a different format when we contact you by letter or phone?</h1>
       {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Does the applicant need us to use any different formats when we contact them by letter or phone?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Should we use a different format when we contact them by letter or phone?</h1>
       {% endif %}
 
       {% endset -%}

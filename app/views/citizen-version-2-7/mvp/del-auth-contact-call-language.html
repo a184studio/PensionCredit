@@ -49,8 +49,8 @@
         label: {
           html: "What language do you want us to use?"
         },
-        id: "del-auth-contact-formats-altLanguage",
-        name: "del-auth-contact-formats-altLanguage",
+        id: "del-auth-contact-call-language-altLanguage",
+        name: "del-auth-contact-call-language-altLanguage",
         classes: "govuk-input--width-20"
         }) }}
       {% endset -%}
@@ -59,8 +59,8 @@
       <!---- ESWNI ---->{% if data['resides-in-uk'] !== 'Wales' %}
 
       {{ govukRadios({
-        idPrefix: "del-auth-contact-language-check",
-        name: "del-auth-contact-language-check",
+        idPrefix: "del-auth-contact-call-language-check",
+        name: "del-auth-contact-call-language-check",
         fieldset: {
           legend: {
             html: legendH1,
@@ -73,12 +73,12 @@
           {
             value: "English",
             text: "English",
-            checked: (data["del-auth-contact-language-check"] == "English")
+            checked: (data["del-auth-contact-call-language-check"] == "English")
           },
             {
             value: "Other",
             text: "Other",
-            checked: (data["del-auth-contact-language-check"] == "Other"),
+            checked: (data["del-auth-contact-call-language-check"] == "Other"),
                   conditional: {
                     html: altLanguage
                   }

@@ -3662,7 +3662,7 @@ actions: {
 
   {
     key: {
-      text: "Can we call you about this claim?"
+      html: "[You/your] Can we call you about this claim? <br><br> [Else] Can we call you about this application?"
     },
     value: {
       text: data["del-auth-contact-number-check"]
@@ -3672,7 +3672,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "whether we can call you about this claim"
+          visuallyHiddenText: "whether we can call you about this claim / whether we can call the applicant about this claim"
         }
       ]
     }
@@ -3687,32 +3687,7 @@ actions: {
 
   {
     key: {
-      text: "Can we call the applicant about this claim?"
-    },
-    value: {
-      text: data["del-auth-contact-number-check"]
-    },
-    actions: {
-      items: [
-        {
-          href: "",
-          text: "Change",
-          visuallyHiddenText: "whether we can call the applicant about this claim"
-        }
-      ]
-    }
-  }
-
-]
-}) }}
-
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
-
-  {
-    key: {
-      text: "What is your contact telephone number?"
+      html: "[Y] What is your contact telephone number? <br><br> [E] What is the applicant's contact telephone number?"
     },
     value: {
       text: data["del-auth-contact-number"]
@@ -3722,7 +3697,7 @@ actions: {
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "your contact telephone number"
+          visuallyHiddenText: "your contact telephone number / the applicant's contact telephone number"
         }
       ]
     }
@@ -3737,7 +3712,32 @@ actions: {
 
   {
     key: {
-      text: "What is the applicant's contact telephone number?"
+      html: "How should we ask for more information about this application?"
+    },
+    value: {
+      text: data["del-auth-contact-ff-number-check"]
+    },
+    actions: {
+      items: [
+        {
+          href: "del-auth-contact-ff-number-check",
+          text: "Change",
+          visuallyHiddenText: "@pete"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      html: "What is the applicant's contact telephone number?"
     },
     value: {
       text: data["del-auth-contact-number"]
@@ -3745,9 +3745,9 @@ actions: {
     actions: {
       items: [
         {
-          href: "",
+          href: "del-auth-contact-ff-number-check",
           text: "Change",
-          visuallyHiddenText: "the applicant's contact telephone number"
+          visuallyHiddenText: "@pete"
         }
       ]
     }
@@ -3757,23 +3757,26 @@ actions: {
 }) }}
 
 
+
+
+
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
 
   {
     key: {
-      text: "What language do you want us to speak to you in?"
+      html: "del-auth-contact-ff-name [Full name]"
     },
     value: {
-      text: data["del-auth-contact-language"]
+      text: data["del-auth-contact-ff-name"]
     },
     actions: {
       items: [
         {
-          href: "",
+          href: "del-auth-contact-ff-name-number",
           text: "Change",
-          visuallyHiddenText: "what language do you want us to speak to you in"
+          visuallyHiddenText: "@pete  / @pete"
         }
       ]
     }
@@ -3781,33 +3784,15 @@ actions: {
 
   {
     key: {
-      text: "What language do you want us to speak to the applicant in?"
+      text: "del-auth-contact-ff-number Full number"
     },
     value: {
-      text: data["del-auth-contact-formats-altLanguage"]
+      text: data["del-auth-contact-ff-number"]
     },
     actions: {
       items: [
         {
-          href: "",
-          text: "Change",
-          visuallyHiddenText: "what language you want us to speak to the applicant in"
-        }
-      ]
-    }
-  },
-
-  {
-    key: {
-      text: "What language do you want us to use?"
-    },
-    value: {
-      text: data["del-auth-contact-formats-altLanguage"]
-    },
-    actions: {
-      items: [
-        {
-          href: "",
+          href: "del-auth-contact-ff-name-number",
           text: "Change",
           visuallyHiddenText: "what language you want us to use"
         }
@@ -3819,23 +3804,73 @@ actions: {
 }) }}
 
 
+
+
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
 
   {
     key: {
-      text: "Do you need us to use any different formats when we contact you by letter or phone?"
+      html: "[Y] What language should we use when we call you? <br><br> [FrendFam] What language should we use when we call? <br><br> [E] What language do you want us to speak to the applicant in? "
     },
     value: {
-      text: data["del-auth-contact-formats-check"]
+      text: data["del-auth-contact-call-language-check"]
     },
     actions: {
       items: [
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "whether you need us to use any different formats when we contact them by letter or phone"
+          visuallyHiddenText: "@pete  / @pete"
+        }
+      ]
+    }
+  },
+
+  {
+    key: {
+      text: "What language do you want us to use?"
+    },
+    value: {
+      text: data["del-auth-contact-call-language-altLanguage"]
+    },
+    actions: {
+      items: [
+        {
+          href: "del-auth-contact-call-language",
+          text: "Change",
+          visuallyHiddenText: "what language you want us to use"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      html: "
+      [Y] Should we use a different method when we call you?<br><br>
+      [FF] Should we use a different method when we call?<br><br>
+      [E] Should we use a different method when we call the applicant?"
+    },
+    value: {
+      text: data["del-auth-contact-call-formats-check"]
+    },
+    actions: {
+      items: [
+        {
+          href: "del-auth-contact-call-formats-check",
+          text: "Change",
+          visuallyHiddenText: "@pete [A] [FF] [E]"
         }
       ]
     }
@@ -3869,28 +3904,73 @@ actions: {
 ]
 }) }}
 
+
+
+
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
 
   {
     key: {
-      text: "What formats do you need us to use when we contact you by letter or phone?"
+      html: "
+      [Y] How can we help when we contact you?<br><br>
+      [FF] How can we help when we call?<br><br>
+      [E] How can we help when we contact the applicant?"
     },
     value: {
-      html: "     Audio,
-              <br>Braille
-              <br>Large print
-              <br>Sign language
-              <br>TextPhone or Text Relay
-              <br>TypeTalk"
+      html: "     TextPhone or Text Relay
+              <br>TypeTalk
+              <br>Something else"
     },
     actions: {
       items: [
         {
-          href: "del-auth-contact-formats",
+          href: "del-auth-contact-call-formats",
           text: "Change",
           visuallyHiddenText: "what formats you need us to use when we contact you by letter or phone?"
+        }
+      ]
+    }
+  },
+
+  {
+    key: {
+      html: "
+      [Y] What is your textphone (Text Relay) number?<br><br>
+      [E] What is the applicant's textphone (Text Relay) number?"
+    },
+    value: {
+      text: data["del-auth-contact-call-formats-text-phone-number"]
+
+    },
+    actions: {
+      items: [
+        {
+          href: "del-auth-contact-call-formats",
+          text: "Change",
+          visuallyHiddenText: "XXXX"
+        }
+      ]
+    }
+  },
+
+  {
+    key: {
+      html: "
+      [A] Tell us any other ways we can help you when we contact you.<br><br>
+      [E] Tell us any other ways we can help the applicant when we contact them."
+    },
+    value: {
+      text: data["contact-other-details"]
+
+    },
+    actions: {
+      items: [
+        {
+          href: "del-auth-contact-call-formats",
+          text: "Change",
+          visuallyHiddenText: "XXXX"
         }
       ]
     }
@@ -3900,25 +3980,103 @@ actions: {
 }) }}
 
 {{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      html: "
+      [Y] What language should we use when we write to you?<br><br>
+      [E] What language should we use when we write to the applicant?"
+    },
+    value: {
+      text: data["del-auth-contact-letter-language-check"]
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "@pete  / @pete"
+        }
+      ]
+    }
+  },
+
+  {
+    key: {
+      text: "What language do you want us to use?"
+    },
+    value: {
+      text: data["del-auth-contact-letter-language-altLanguage"]
+    },
+    actions: {
+      items: [
+        {
+          href: "del-auth-contact-letter-language",
+          text: "Change",
+          visuallyHiddenText: "what language you want us to use"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+
+
+
+{{ govukSummaryList({
 classes: 'govuk-!-margin-bottom-9',
 rows: [
 
 {
   key: {
-    text: "What formats does the applicant need us to use when we contact them by letter or phone?"
+    html: "
+    [Y] Should we use a different format when we write to you? <br><br>
+    [E] Should we use a different format when we write to the applicant?"
+  },
+  value: {
+    text: data["del-auth-contact-letter-formats-check"]
+  },
+  actions: {
+    items: [
+      {
+        href: "del-auth-contact-letter-formats-check",
+        text: "Change",
+        visuallyHiddenText: "Should we use a different format when we write to you? / Should we use a different format when we write to the applicant?"
+      }
+    ]
+  }
+}
+
+]
+}) }}
+
+
+{{ govukSummaryList({
+classes: 'govuk-!-margin-bottom-9',
+rows: [
+
+{
+  key: {
+    html: "
+    [Y] Should we use a different format when we write to you? <br><br>
+    [E] Should we use a different format when we write to the applicant?"
   },
   value: {
     html: "     Audio,
             <br>Braille
             <br>Large print
             <br>Sign language
-            <br>TextPhone or Text Relay
-            <br>TypeTalk"
+            <br>Something else"
   },
   actions: {
     items: [
       {
-        href: "del-auth-contact-formats",
+        href: "del-auth-contact-letter-formats",
         text: "Change",
         visuallyHiddenText: "what formats the applicant needs us to use when we contact them by letter or phone"
       }
@@ -3929,83 +4087,25 @@ rows: [
 ]
 }) }}
 
-
-
-        {% if data["del-auth-contact-formats-text-phone-number"] %}
-
-
-        {{ govukSummaryList({
-          classes: 'govuk-!-margin-bottom-9',
-          rows: [
-
-                      {
-            key: {
-              text: "What is the your textphone (Text Relay) number"
-            },
-            value: {
-              text: data["del-auth-contact-formats-text-phone-number"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "Change",
-                  visuallyHiddenText: "your textphone (Text Relay) number"
-                }
-              ]
-            }
-          }
-
-        ]
-      }) }}
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-
-                    {
-          key: {
-            text: "What is the applicant's textphone (Text Relay) number"
-          },
-          value: {
-            text: data["del-auth-contact-formats-text-phone-number"]
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "Change",
-                visuallyHiddenText: "the applicant's textphone (Text Relay) number"
-              }
-            ]
-          }
-        }
-
-      ]
-    }) }}
-
-{% endif %}
-
-{% if data["contact-other-details"] %}
-
-
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
 
               {
     key: {
-      text: "Details of other formats you need us to use to contact you"
+      html: "
+      [Y] Tell us any other ways we can help you when we contact you.<br><br>
+      [E] Tell us any other ways we can help the applicant when we contact them."
     },
     value: {
-      text: data["contact-other-details"]
+      text: data["del-auth-contact-letter-formats-other-details"]
     },
     actions: {
       items: [
         {
           href: "",
           text: "Change",
-          visuallyHiddenText: "the details of other formats you need us to use to contact you"
+          visuallyHiddenText: "other ways we can help you when we contact you / other ways we can help the applicant when we contact them"
         }
       ]
     }
@@ -4014,32 +4114,32 @@ rows: [
 ]
 }) }}
 
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-9',
-            rows: [
 
-                        {
-              key: {
-                text: "Details of other formats you need us to use to contact you"
-              },
-              value: {
-                text: data["contact-other-details"]
-              },
-              actions: {
-                items: [
-                  {
-                    href: "",
-                    text: "Change",
-                    visuallyHiddenText: "the details of other formats you need us to use to contact you"
-                  }
-                ]
-              }
-            }
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+{
+    key: {
+      text: "What address should we send letters to?"
+    },
+    value: {
+      html: data["del-auth-address-correspondence-yn"]
+    },
+    actions: {
+      items: [
+        {
+          href: "del-auth-email-confirmation",
+          text: "Change",
+          visuallyHiddenText: "@pete"
+        }
+      ]
+    }
+  }
+]
+}) }}
 
-          ]
-        }) }}
 
-{% endif %}
+
 
 
       {{ govukSummaryList({
@@ -4103,7 +4203,7 @@ rows: [
         rows: [
       {
           key: {
-            text: "Do you want us to send an email confirmation that we have received the application?"
+            text: "Should we send an email confirmation that we have received the application?"
           },
           value: {
             html: data["del-auth-email-confirmation"]
@@ -4113,7 +4213,7 @@ rows: [
               {
                 href: "del-auth-email-confirmation",
                 text: "Change",
-                visuallyHiddenText: "whether you want us to send an email confirmation that we have received the application"
+                visuallyHiddenText: "@pete"
               }
             ]
           }
