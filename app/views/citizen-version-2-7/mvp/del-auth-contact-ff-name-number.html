@@ -21,10 +21,10 @@
 
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your details</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Contact details</h1>
 
       {% set legendName %}
-      <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What is your full name?</h1>
+      <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Full name</h1>
       {% endset -%}
 
       {{ govukInput({
@@ -42,7 +42,7 @@
 
 
       {% set legendCorporateID %}
-      <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What is your contact telephone number?</h1>
+      <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Contact phone number</h1>
       {% endset -%}
 
       {{ govukInput({
@@ -50,7 +50,7 @@
           html: legendCorporateID
         },
         hint: {
-          text: "You will need to be with the applicant to answer some security questions if we phone you."
+          text: ""
         },
         id: "del-auth-contact-ff-number",
         name: "del-auth-contact-ff-number",
