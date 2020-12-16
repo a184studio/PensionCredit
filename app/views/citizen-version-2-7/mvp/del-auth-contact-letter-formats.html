@@ -33,9 +33,9 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is your textphone (text telay) number?</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is your textphone or Relay UK number?</h4>
       {% else %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is the applicant's textphone (text relay) number?</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is the applicant's textphone or Relay UK number?</h4>
       {% endif %}
 
       {% endset -%}
@@ -60,11 +60,11 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What format should we use when we write to the you?</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we write to you?</h1>
         {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Tell us any other ways we can help the applicant when we write to them</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help the applicant when we write to them?</h1>
       {% else %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What format should we use when we write to the applicant?</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we write to the applicant?</h1>
       {% endif %}
 
       {% endset -%}

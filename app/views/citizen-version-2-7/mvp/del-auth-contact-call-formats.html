@@ -32,14 +32,14 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is your textphone or text relay number?</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or Relay UK number</h4>
 
         {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or text relay number</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or Relay UK number</h4>
 
 
       {% else %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is the applicant's textphone or text relay number?</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or Relay UK number</h4>
       {% endif %}
 
       {% endset -%}
@@ -64,13 +64,13 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we contact you?</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we call you?</h1>
 
 
                 {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
                 <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we call?</h1>
       {% else %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we contact the applicant?</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help the applicant when we call them?</h1>
       {% endif %}
 
       {% endset -%}
@@ -83,12 +83,12 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h4 class="govuk-hint govuk-!-margin-top-0">Tell us any other ways we can help you when we contact you.</h4>
+        <h4 class="govuk-hint govuk-!-margin-top-0"></h4>
 
         {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
         <h4 class="govuk-hint govuk-!-margin-top-0"></h4>
       {% else %}
-        <h4 class="govuk-hint govuk-!-margin-top-0">Tell us any other ways we can help the applicant when we contact them.</h4>
+        <h4 class="govuk-hint govuk-!-margin-top-0"></h4>
       {% endif %}
 
       {% endset -%}
@@ -143,8 +143,8 @@
         },
         items: [
           {
-            value: "Textphone or text relay",
-            text: "Textphone or text relay",
+            value: "Textphone or Relay UK",
+            text: "Textphone or Relay UK",
             checked: (data["del-auth-contact-call-formats"] == "Textphone"),
                   conditional: {
                     html: textPhoneNumber

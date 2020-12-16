@@ -33,9 +33,9 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or text relay number</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or Relay UK number</h4>
       {% else %}
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or text relay number</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Textphone or Relay UK number</h4>
       {% endif %}
 
       {% endset -%}
@@ -147,7 +147,7 @@
 
           {
             value: "TextPhone",
-            text: "Textphone (text relay)",
+            text: "Textphone or Relay UK",
             checked: (data["del-auth-contact-formats"] == "TextPhone"),
                   conditional: {
                     html: textPhoneNumber
