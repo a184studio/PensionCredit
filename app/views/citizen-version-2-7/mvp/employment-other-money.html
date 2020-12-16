@@ -16,6 +16,11 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="money-total" method="post" class="form">
 
+      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Other money you and your partner have coming in</h1>
+      {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Other money you have coming in</h1>{% endif %}
+
+      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">We need to know about certain types of regular income and money you and your partner have coming in. This helps us work out exactly how much Pension Credit you can get.</p>
+      {% else %}  <p class="govuk-!-font-size-24">We need to know about certain types of regular income and money you have coming in. This helps us work out exactly how much Pension Credit you can get.</p>{% endif %}
 
       <!------------Legend------------>
         {% set legendOtherMoney %}
@@ -27,7 +32,7 @@
         {% endset %}
       <!------------Legend------------>
 
-
+{% if data["single-joint-check"] == "Single" %}
       {% set otherMoneyDetails %}
         {{ govukTextarea({
           label: {
@@ -45,46 +50,70 @@
           }
         }) }}
       {% endset %}
+{% endif %}
+
+{% if data["single-joint-check"] == "Joint" %}
+      {% set otherMoneyDetails %}
+        {{ govukTextarea({
+          label: {
+            classes: "govuk-label--s",
+            html: "Tell us what this income is, how much you or your partner are paid and how often you are paid."
+          },
+          hint: {
+            text: ""
+          },
+          id: "other-money-yes-details",
+          name: "other-money-yes-details",
+          classes: "govuk-input--width-100",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+      {% endset %}
+{% endif %}
 
 
+{% if data["single-joint-check"] == "Joint" %}
+            <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>private and foreign pensions, even if you or your partner are not yet receiving money from them</li>
+            <li>maintenance payments from a former spouse or civil partner</li>
+            <li>work where you are paid cash in hand</li>
+            <li>royalties</li>
+            <li>awards or payments relating to a personal injury</li>
+            <li>payments from a trust </li>
+            <li>strike pay</li>
+      </ul>
+{% endif %}
+
+{% if data["single-joint-check"] == "Single" %}
+            <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>private and foreign pensions, even if you are not yet receiving money from them</li>
+            <li>maintenance payments from a former spouse or civil partner</li>
+            <li>work where you are paid cash in hand</li>
+            <li>royalties</li>
+            <li>awards or payments relating to a personal injury</li>
+            <li>payments from a trust </li>
+            <li>strike pay</li>
+      </ul>
+{% endif %}
+
+            <p class="govuk-heading-s govuk-!-margin-bottom-2">Do not tell us about:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>State Pension</li>
+            <li>Attendance Allowance</li>
+            <li>Personal Independence Payment</li>
+            <li>Carer's Allowance</li>
+      </ul>
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Other money you and your partner have coming in</h1>
-        {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Other money you have coming in</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-l govuk-!-margin-bottom-0">Do you or your partner have any other money coming in?</h1>
+        {% else %}  <h1 class="govuk-heading-l govuk-!-margin-bottom-0">Do you have any other money coming in?</h1>{% endif %}
         {% endset %}
 
-        {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">We need to know about certain types of regular income and money you and your partner have coming in. This helps us work out exactly how much Pension Credit you can get.</p>
-        {% else %}  <p class="govuk-!-font-size-24">We need to know about certain types of regular income and money you have coming in. This helps us work out exactly how much Pension Credit you can get.</p>{% endif %}
-
       <!------------Legend--------------->
-
-
-
-      <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
-<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-      <li>money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office</li>
-      <li>National Savings and Investment products like Savings Certificates, Premium Bonds, Income Bonds and residual accounts</li>
-      <li>money at home in cash</li>
-      <li>investments like ISAs</li>
-      <li>shares</li>
-      <li>money invested in unit trusts</li>
-      <li>income or capital bonds</li>
-      <li>any other money in this country or overseas</li>
-</ul>
-
-      <p class="govuk-heading-s govuk-!-margin-bottom-2">Do not tell us about:</p>
-<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-      <li>State Pension</li>
-      <li>Attendance Allowance</li>
-      <li>Personal Independence Payment</li>
-      <li>Carer's Allowance</li>
-</ul>
-
-<!------------LEGEND------------>
-{% if data["single-joint-check"] == "Joint" %}<p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us what this income is, how much you or your partner are paid and how often you are paid.
-{% else %}  <p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us what this income is, how much you are paid and how often you are paid.</p>{% endif %}
-  <!------------Legend--------------->
 
 
       {{ govukRadios({
@@ -92,6 +121,7 @@
         fieldset: {
           legend: {
             html: dynamicH1,
+            text: "",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
