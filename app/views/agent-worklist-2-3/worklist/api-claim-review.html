@@ -1,0 +1,38 @@
+{% extends "layout-work-list-api.html" %}
+
+{% block pageTitle %}
+  Selected claim - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form action="process-state-pension" method="post" class="form">
+
+
+        <!------------HEADLINE------------>
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><strong>Jeff Bridges</strong></h1>
+
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National insurance number: <strong>NA 11 22 33 c</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Date of birth: <strong>01 May 1940</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">State pension amount: <strong>£175.5</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Affected benefits in payment: <strong>None</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Total capital then: <strong>£2,00.00</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Total capital now: <strong>£1,00.00</strong></p>
+
+        <p class="govuk-body govuk-!-margin-top-0"><a href="/citizen-version-2-7/mvp/final-cya">See full application submitted by Mel Gibson</a></p>
+
+
+</form>
+    </div>
+  </div>
+{% endblock %}
