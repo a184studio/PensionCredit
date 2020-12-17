@@ -50,7 +50,7 @@
 
 
 {% if data["single-joint-check"] == "Joint" %}
-            <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
+            <p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
             <li>private and foreign pensions, even if you or your partner are not yet receiving money from them</li>
             <li>maintenance payments from a former spouse or civil partner</li>
@@ -63,7 +63,7 @@
 {% endif %}
 
 {% if data["single-joint-check"] == "Single" %}
-            <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
+            <p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
             <li>private and foreign pensions, even if you are not yet receiving money from them</li>
             <li>maintenance payments from a former spouse or civil partner</li>
@@ -85,8 +85,8 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-l govuk-!-margin-bottom-0">Do you or your partner have any other money coming in?</h1>
-        {% else %}  <h1 class="govuk-heading-l govuk-!-margin-bottom-0">Do you have any other money coming in?</h1>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-l govuk-!-margin-bottom-0">Do you or your partner have other income or money coming in?</h1>
+        {% else %}  <h1 class="govuk-heading-l govuk-!-margin-bottom-0">Do you have other income or money coming in?</h1>{% endif %}
         {% endset %}
 
       <!------------Legend--------------->
