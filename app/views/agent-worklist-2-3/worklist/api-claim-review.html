@@ -13,24 +13,99 @@
 
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-full">
 
-      <form action="process-state-pension" method="post" class="form">
+      <form action="api-claims" method="post" class="form">
 
 
         <!------------HEADLINE------------>
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><strong>Jeff Bridges</strong></h1>
-
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National insurance number: <strong>NA 11 22 33 c</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Date of birth: <strong>01 May 1940</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">State pension amount: <strong>£175.5</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Affected benefits in payment: <strong>None</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Total capital then: <strong>£2,00.00</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Total capital now: <strong>£1,00.00</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">API outcome: <strong>Nil claim</strong></p>
 
-        <p class="govuk-body govuk-!-margin-top-0"><a href="/citizen-version-2-7/mvp/final-cya">See full application submitted by Mel Gibson</a></p>
+        {{ govukSummaryList({
+          classes: "govuk-!-padding-bottom-6",
 
+          rows: [
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "5 January 1978"
+              }
+            },
+            {
+              key: {
+                text: "State pension amount"
+              },
+              value: {
+                html: "£175.5"
+              }
+            },
+            {
+              key: {
+                text: "Affected benefits in payment"
+              },
+              value: {
+                html: "None"
+              }
+            },
+            {
+              key: {
+                text: "Total capital EED"
+              },
+              value: {
+                html: "£1,00.00"
+              }
+            },
+            {
+              key: {
+                text: "Total capital Now"
+              },
+              value: {
+                html: "£6,00.00"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Download PDF claim",
+          classes: "govuk-button--secondary govuk-!-margin-bottom-9"
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "api-claim-outcome",
+          name: "api-claim-outcome",
+          fieldset: {
+            legend: {
+              text: "Was API outcome correct?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m "
+            }
+          },
+
+          items: [
+            {
+              value: "Correct",
+              text: "Yes — Correct",
+              checked: data['api-claim-outcome'] == "Correct"
+            },
+            {
+              value: "Incorrect",
+              text: "No — Incorrect",
+              checked: data['api-claim-outcome'] == "Incorrect"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          classes: "govuk-!-margin-top-0",
+          text: "Confirm outcome"
+        }) }}
 
 </form>
     </div>
