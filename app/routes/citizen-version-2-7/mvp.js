@@ -554,25 +554,6 @@ router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
 
 
 
-// router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
-//   const careHome = req.session.data['home-care-home-check']
-//   const careHomeStillOwn = req.session.data['home-care-home-check-still-own']
-//   if (careHome === 'Yes' && careHomeStillOwn === 'Yes') {
-//     res.redirect(`${baseUrl}/pension-check`)
-//   }
-//   if (careHome === 'Yes' && careHomeStillOwn === 'No') {
-//     res.redirect(`${baseUrl}/pension-check`)
-//   }
-//   else {
-//     res.redirect(`${baseUrl}/address-post-code-lookup`)
-//   }
-// })
-
-
-
-
-
-
 
 // Home ownership router (home-property-charges)
 
@@ -899,6 +880,18 @@ router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router 
     res.redirect(`${baseUrl}/notepad-hospital-to-carehome`)
   } else {
     res.redirect(`${baseUrl}/hospital-summary`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/pension-check-router`, (req, res) => {
+  const pensionCheck = req.session.data['pension-check']
+
+  if (pensionCheck === 'Yes') {
+    res.redirect(`${baseUrl}/pension-drawdown`)
+  } else {
+    res.redirect(`${baseUrl}/employment-other-money`)
   }
 })
 
