@@ -18,16 +18,17 @@
 
       <!------------H1 LEGEND------------>
       {% set dynamicH1 %}
- {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">pension-foreign-check  Do you or your partner get a private pension, a pension from a place where you used to work or any other pension?</h1>
- {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">pension-foreign-check Do you get a private pension, a pension from a place where you used to work or any other pension?</h1>{% endif %}
+ {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">pension-foreign-check  Do you or your partner</h1>
+ {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">pension-foreign-check</h1>{% endif %}
  {% endset %}
       <!------------Legend--------------->
+
 
       {% set pensionDetails %}
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "For each pension you get, tell us who pays it, how much it is and how often it is paid. you do not need to tell us about your State Pension."
+            html: "For each pension you get, tell us who pays it, roughly how much it is/will be"
           },
           hint: {
             text: ""
@@ -41,6 +42,35 @@
         }) }}
       {% endset %}
 
+      {% set dynamicHint %}
+
+      {% if data["single-joint-check"] == "Joint" %}
+                  <p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+                  <li>Pensions you have take out privatly overseas</li>
+                  <li>Overseas Penions with work</li>
+                  <li>Overseas State Pensions </li>
+            </ul>
+
+      {% else %}
+                  <p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+              <li>Pensions you have take out privatly overseas</li>
+              <li>Overseas Penions with work</li>
+              <li>Overseas State Pensions </li>
+            </ul>
+      {% endif %}
+
+                  <p class="govuk-heading-s govuk-!-margin-bottom-2">Do not tell us about:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+              <li>UK state pension</li>
+              <li>UK Workplace pensions</li>
+            </ul>
+
+ {% endset %}
+
+
+
       {{ govukRadios({
         name: "pension-check",
         fieldset: {
@@ -49,6 +79,9 @@
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
+        },
+        hint: {
+          html: dynamicHint
         },
         items: [
           {
