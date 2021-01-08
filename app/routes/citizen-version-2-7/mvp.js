@@ -554,25 +554,6 @@ router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
 
 
 
-// router.post(`${baseUrl}/home-care-home-check-router`, (req, res) => {
-//   const careHome = req.session.data['home-care-home-check']
-//   const careHomeStillOwn = req.session.data['home-care-home-check-still-own']
-//   if (careHome === 'Yes' && careHomeStillOwn === 'Yes') {
-//     res.redirect(`${baseUrl}/pension-check`)
-//   }
-//   if (careHome === 'Yes' && careHomeStillOwn === 'No') {
-//     res.redirect(`${baseUrl}/pension-check`)
-//   }
-//   else {
-//     res.redirect(`${baseUrl}/address-post-code-lookup`)
-//   }
-// })
-
-
-
-
-
-
 
 // Home ownership router (home-property-charges)
 
@@ -727,7 +708,7 @@ router.post(`${baseUrl}/home-moving-homes-ownership-router`, (req, res) => {
 
 
 router.post(`${baseUrl}/home-other-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
-  const homeOtherHousingBenefit = req.session.data['home-other-housing-benefit-router'] // The router is looking for this ID.
+  const homeOtherHousingBenefit = req.session.data['home-other-housing-benefit'] // The router is looking for this ID.
 
   if (homeOtherHousingBenefit === 'No') {
     res.redirect(`${baseUrl}/home-other-housing-benefit-apply`)
@@ -899,6 +880,18 @@ router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router 
     res.redirect(`${baseUrl}/notepad-hospital-to-carehome`)
   } else {
     res.redirect(`${baseUrl}/hospital-summary`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/pension-check-router`, (req, res) => {
+  const pensionCheck = req.session.data['pension-check']
+
+  if (pensionCheck === 'Yes') {
+    res.redirect(`${baseUrl}/pension-drawdown`)
+  } else {
+    res.redirect(`${baseUrl}/employment-other-money`)
   }
 })
 

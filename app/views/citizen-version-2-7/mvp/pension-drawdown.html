@@ -14,42 +14,16 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="pension-check-router" method="post" class="form">
+    <form action="employment-other-money" method="post" class="form">
 
       <!------------H1 LEGEND------------>
       {% set dynamicH1 %}
- {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner get a private pension, a pension from a place where you used to work or any other pension?</h1>
- {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you get a private pension, a pension from a place where you used to work or any other pension?</h1>{% endif %}
+ {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you / partner intend to claim this?</h1>
+ {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you intend to claim this?</h1>{% endif %}
  {% endset %}
       <!------------Legend--------------->
 
-      {% set pensionDetails %}
-        {{ govukTextarea({
-          label: {
-            classes: "govuk-label--s",
-            html: "For each pension you get, tell us who pays it, how much it is and how often it is paid. "
-          },
-          hint: {
-            text: ""
-          },
-          id: "pension-check-details",
-          name: "pension-check-details",
-          classes: "govuk-input--width-100",
-          attributes: {
-            maxlength: 200
-          }
-        }) }}
-      {% endset %}
 
-      {% set dynamicHint %}
-
-            <p class="govuk-heading-s govuk-!-margin-bottom-2">Do not tell us about:</p>
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-              <li>UK state pension</li>
-              <li>UK Workplace pensions</li>
-            </ul>
-
- {% endset %}
 
 
       {{ govukRadios({
@@ -62,7 +36,7 @@
           }
         },
         hint: {
-          html: dynamicHint
+          html: ""
         },
         items: [
           {
