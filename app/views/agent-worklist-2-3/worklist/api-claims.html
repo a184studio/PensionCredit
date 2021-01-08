@@ -26,30 +26,18 @@
 
 
 
-                <!------------Legend------------>
-                  {% set LegendList %}
+              </div>
+                <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-2">
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Total claims<br>in test batch</p>
+                  <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-margin-bottom-2">1,000</p>
+                </div>
 
 
-                <p class="govuk-heading-s govuk-!-margin-bottom-2">APIs used for this claim</p>
-                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
-
-                <li>Matched using Natioanl insurance and Date of birth</li>
-                <li>Reached SPA on or after 6.4.2016</li>
-                <li>Claimant(s) receiving full SP</li>
-                <li>No other affected benefits in payment</li>
-                <li>No open interest in affected benefits</li>
-                <li>No underlying entitlement for Carers Allowance or Carer's element of UC</li>
-                <li>No housing costs (service charges, ground rent, mortgage)</li>
-                </ul>
-
-                  {% endset %}
-                <!------------Legend------------>
-
-                {{ govukDetails({
-                  summaryText: "API matching criteria",
-                  html: LegendList
-                }) }}
-
+                <div class="govuk-grid-column-one-quarter">
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Incorrect claims<br>found by advisers</p>
+                  <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-margin-bottom-2">250</p>
+                </div>
+              </div>
 
 
 

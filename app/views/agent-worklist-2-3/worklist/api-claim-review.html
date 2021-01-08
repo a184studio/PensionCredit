@@ -22,7 +22,30 @@
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><strong>Jeff Bridges</strong></h1>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National insurance number: <strong>NA 11 22 33 c</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">API outcome: <strong>Nil claim</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">API outcome: <strong>Nil claim</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Reason: <strong>XXXX</strong></p>
+
+        <!------------Legend------------>
+          {% set LegendList %}
+        <p class="govuk-heading-s govuk-!-margin-bottom-2">APIs used for this claim</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+
+        <li>Matched using Natioanl insurance and Date of birth</li>
+        <li>Reached SPA on or after 6.4.2016</li>
+        <li>Claimant(s) receiving full SP</li>
+        <li>No other affected benefits in payment</li>
+        <li>No open interest in affected benefits</li>
+        <li>No underlying entitlement for Carers Allowance or Carer's element of UC</li>
+        <li>No housing costs (service charges, ground rent, mortgage)</li>
+        </ul>
+
+          {% endset %}
+        <!------------Legend------------>
+
+        {{ govukDetails({
+          summaryText: "API matching criteria",
+          html: LegendList
+        }) }}
 
         {{ govukSummaryList({
           classes: "govuk-!-padding-bottom-6",
