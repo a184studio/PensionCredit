@@ -79,9 +79,27 @@
         }) }}
 
         {{ govukButton({
-          text: "Download PDF claim",
+          text: "View / Download PDF claim",
           classes: "govuk-button--secondary govuk-!-margin-bottom-9"
         }) }}
+
+        {% set outcomeDetails %}
+          {{ govukTextarea({
+            label: {
+              classes: "govuk-label--s",
+              html: "Tell me the details"
+            },
+            hint: {
+              text: ""
+            },
+            id: "api-claim-outcome-details",
+            name: "api-claim-outcome-details",
+            classes: "govuk-input--width-30",
+            attributes: {
+              maxlength: 200
+            }
+          }) }}
+          {% endset %}
 
         {{ govukRadios({
           classes: "govuk-radios",
@@ -103,8 +121,21 @@
             },
             {
               value: "Incorrect",
-              text: "No — Incorrect",
+              text: "No — because of X",
               checked: data['api-claim-outcome'] == "Incorrect"
+            },
+            {
+              value: "Incorrect",
+              text: "No — because of Y",
+              checked: data['api-claim-outcome'] == "Incorrect"
+            },
+            {
+              value: "Incorrect",
+              text: "No – something else [cr]",
+              checked: data['api-claim-outcome'] == "Incorrect",
+                    conditional: {
+                      html: outcomeDetails
+             }
             }
           ]
         }) }}
