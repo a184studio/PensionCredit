@@ -45,11 +45,11 @@
 
                 <div class="govuk-grid-row">
 
-                  <div class="govuk-grid-column-one-quarter">
+                  <div class="govuk-grid-column-one-half">
 
                   {{ govukInput({
                     label: {
-                      html: "<strong>Filter claims by National Insurance number</strong>",
+                      html: "<strong>Filter claims by National Insurance<br>number or name of a citizen</strong>",
                       classes: "govuk-!-margin-bottom-4"
                     },
                     classes: "govuk-input--width-10",
@@ -58,9 +58,6 @@
                   }) }}
                 </div>
 
-                <div class="govuk-grid-column-one-quarter">
-.
-              </div>
 
                 <div class="govuk-grid-column-one-quarter">
                   {{ govukCheckboxes({
@@ -82,11 +79,18 @@
                       {
                         value: "Incorrect",
                         text: "Incorrect"
+                      },
+                      {
+                        value: "Outcome",
+                        text: "Outcome"
+                      },
+                      {
+                        value: "Reason",
+                        text: "Reason"
                       }
                     ]
                   }) }}
                 </div>
-
 
                 <div class="govuk-grid-column-one-quarter">
 .
