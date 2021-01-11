@@ -27,12 +27,12 @@
               </div>
 
                 <div class="govuk-grid-column-one-quarter">
-                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Total API<br>claims checked</p>
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Total API claims checked</p>
                   <p class="govuk-!-font-weight-bold govuk-!-font-size-48">1,000</p>
                 </div>
 
                 <div class="govuk-grid-column-one-quarter">
-                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Claims that<br>matched scenario</p>
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Total found</p>
                   <p class="govuk-!-font-weight-bold govuk-!-font-size-48">925</p>
                 </div>
 
@@ -52,6 +52,19 @@
 
                 <div class="govuk-grid-row">
 
+                  <div class="govuk-grid-column-one-half">
+
+                  {{ govukInput({
+                    label: {
+                      html: "<strong>Start typing a name or National insurance<br>number to find an individual claim</strong>",
+                      classes: "govuk-!-margin-bottom-4"
+                    },
+                    classes: "govuk-input--width-20",
+                    id: "width-5",
+                    name: "width-5"
+                  }) }}
+                </div>
+
 
                 <div class="govuk-grid-column-one-quarter">
                   {{ govukCheckboxes({
@@ -69,74 +82,26 @@
                       {
                         value: "Correct",
                         text: "Correct"
-                      }
-                    ]
-                  }) }}
-                </div>
-
-                <div class="govuk-grid-column-one-quarter">
-                  {{ govukCheckboxes({
-                    idPrefix: "organisation",
-                    name: "organisation",
-                    classes: "govuk-checkboxes--small",
-                    fieldset: {
-                      legend: {
-                        text: ".",
-                        isPageHeading: true,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    items: [
+                      },
                       {
                         value: "Incorrect",
                         text: "Incorrect"
-                      }
-                    ]
-                  }) }}
-                </div>
-
-                <div class="govuk-grid-column-one-quarter">
-                  {{ govukCheckboxes({
-                    idPrefix: "organisation",
-                    name: "organisation",
-                    classes: "govuk-checkboxes--small",
-                    fieldset: {
-                      legend: {
-                        text: ".",
-                        isPageHeading: true,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    items: [
+                      },
                       {
                         value: "Outcome",
                         text: "Outcome"
+                      },
+                      {
+                        value: "Reason",
+                        text: "Reason"
                       }
                     ]
                   }) }}
                 </div>
 
                 <div class="govuk-grid-column-one-quarter">
-                  {{ govukCheckboxes({
-                    idPrefix: "organisation",
-                    name: "organisation",
-                    classes: "govuk-checkboxes--small",
-                    fieldset: {
-                      legend: {
-                        text: ".",
-                        isPageHeading: true,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    items: [
-                      {
-                        value: "XX",
-                        text: "X"
-                      }
-                    ]
-                  }) }}
+.
                 </div>
-
 
 </div>
 
@@ -157,7 +122,7 @@
                                 <tr class="govuk-table__row">
                                   <th scope="row" class="govuk-table__cell table-spacer">NI 11 22 33 c</th>
                                   <td class="govuk-table__cell table-spacer"><a href="api-claim-review">Jeff Bridges</a></td>
-                                  <td class="govuk-table__cell table-spacer">X</td>
+                                  <td class="govuk-table__cell table-spacer">Nil: Max State pension</td>
                                   <td class="govuk-table__cell table-spacer">
                                     {% if data["api-claim-outcome"] == "Correct" %}
                                     <strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">Correct</strong>
@@ -170,7 +135,7 @@
                                 <tr class="govuk-table__row">
                                   <th scope="row" class="govuk-table__cell table-spacer">NI 44 55 66 a</th>
                                   <td class="govuk-table__cell table-spacer">Mel Gibson</td>
-                                  <td class="govuk-table__cell table-spacer">Max State pension</td>
+                                  <td class="govuk-table__cell table-spacer">Nil: Max State pension</td>
                                   <td class="govuk-table__cell table-spacer"><strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">Correct</strong> </tr>
 
 
@@ -178,7 +143,7 @@
                                 <tr class="govuk-table__row">
                                   <th scope="row" class="govuk-table__cell table-spacer">NI 44 55 66 a</th>
                                   <td class="govuk-table__cell table-spacer">Geoff Linton</td>
-                                  <td class="govuk-table__cell table-spacer">Max State pension</td>
+                                  <td class="govuk-table__cell table-spacer">Nil: Max State pension</td>
                                   <td class="govuk-table__cell table-spacer"><strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">Correct</strong> </tr>
 
 
