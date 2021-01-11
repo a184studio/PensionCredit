@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="pension-check" method="post" class="form">
+    <form action="pension-foreign-check-router" method="post" class="form">
 
       <!------------H1 LEGEND------------>
       {% set dynamicH1 %}
@@ -72,7 +72,7 @@
 
 
       {{ govukRadios({
-        name: "pension-check",
+        name: "pension-foreign-check",
         fieldset: {
           legend: {
             html: dynamicH1,
@@ -87,7 +87,7 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["pension-check"] == "Yes"),
+            checked: (data["pension-foreign-check"] == "Yes"),
                   conditional: {
                     html: pensionDetails
            }
@@ -95,7 +95,7 @@
           {
             value: "No",
             text: "No",
-            checked: (data["pension-check"] == "No")
+            checked: (data["pension-foreign-check"] == "No")
           }
         ]
       }) }}

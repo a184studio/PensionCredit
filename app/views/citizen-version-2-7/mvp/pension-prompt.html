@@ -1,0 +1,38 @@
+{% extends "layout-assisted-digital.html" %}
+
+{% block pageTitle %}
+  Which best describes the place where you live? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="employment-other-money" method="post" class="form">
+
+      <!------------H1 LEGEND------------>
+      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Do you / partner: What this means </h1>
+      {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Single: What this means </h1>{% endif %}
+
+           <!------------Legend--------------->
+
+           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Something in here about what this means.</p>
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+  </div>
+</div>
+{% endblock %}

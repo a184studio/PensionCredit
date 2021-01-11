@@ -885,6 +885,28 @@ router.post(`${baseUrl}/hospital-to-carehome-router`, (req, res) => { // router 
 
 
 
+
+router.post(`${baseUrl}/pension-foreign-check-router`, (req, res) => {
+  const pensionForeignCheck = req.session.data['pension-foreign-check']
+
+  if (pensionForeignCheck === 'Yes') {
+    res.redirect(`${baseUrl}/pension-foreign-drawdown`)
+  } else {
+    res.redirect(`${baseUrl}/pension-check`)
+  }
+})
+
+router.post(`${baseUrl}/pension-foreign-drawdown-router`, (req, res) => {
+  const pensionForeignDrawDownCheck = req.session.data['pension-foreign-drawdown']
+
+  if (pensionForeignDrawDownCheck === 'No') {
+    res.redirect(`${baseUrl}/pension-foreign-prompt`)
+  } else {
+    res.redirect(`${baseUrl}/pension-check`)
+  }
+})
+
+
 router.post(`${baseUrl}/pension-check-router`, (req, res) => {
   const pensionCheck = req.session.data['pension-check']
 
@@ -894,6 +916,18 @@ router.post(`${baseUrl}/pension-check-router`, (req, res) => {
     res.redirect(`${baseUrl}/employment-other-money`)
   }
 })
+
+router.post(`${baseUrl}/pension-drawdown-router`, (req, res) => {
+  const pensionDrawDownCheck = req.session.data['pension-drawdown']
+
+  if (pensionDrawDownCheck === 'No') {
+    res.redirect(`${baseUrl}/pension-prompt`)
+  } else {
+    res.redirect(`${baseUrl}/employment-other-money`)
+  }
+})
+
+
 
 
 // Money Savining and investement Routers
