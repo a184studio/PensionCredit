@@ -169,30 +169,6 @@
                     </ul>
                 </ol>
 
-                <!------------ ––– ------------>
-
-        <ol class="app-task-list">
-          <li>
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">X. </span> Pensions
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="pension-check" aria-describedby="eligibility-completed">
-                  Pension check
-                </a>
-                {% if data["contact-complete"] == "true" %}
-                  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-                {% elif data["contact-complete"] == "in-progress" %}
-                  <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
-                {% else  %}
-                  <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
-                {% endif %}
-              </li>
-
-            </ul>
-          </li>
-        </ol>
 
         <!------------ ––– ------------>
 
@@ -220,6 +196,45 @@
             </ul>
           </li>
         </ol>
+
+        <!------------ ––– ------------>
+
+<ol class="app-task-list">
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">X. </span> Pensions
+    </h2>
+    <ul class="app-task-list__items">
+
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="pension-foreign-check" aria-describedby="eligibility-completed">
+          Foreign pension check
+        </a>
+        {% if data["contact-complete"] == "true" %}
+          <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+        {% elif data["contact-complete"] == "in-progress" %}
+          <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
+        {% else  %}
+          <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+        {% endif %}
+      </li>
+
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="pension-check" aria-describedby="eligibility-completed">
+          Pension check
+        </a>
+        {% if data["contact-complete"] == "true" %}
+          <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+        {% elif data["contact-complete"] == "in-progress" %}
+          <strong class="govuk-tag govuk-tag--in-progress app-task-list__task-in-progress" id="eligibility-completed">In progress</strong>
+        {% else  %}
+          <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+        {% endif %}
+      </li>
+
+    </ul>
+  </li>
+</ol>
 
         <!------------ ––– ------------>
 
