@@ -23,25 +23,10 @@
  {% endset %}
       <!------------Legend--------------->
 
-      {% set pensionDetails %}
-        {{ govukTextarea({
-          label: {
-            classes: "govuk-label--s",
-            html: "For each pension you get, tell us who pays it, how much it is and how often it is paid. "
-          },
-          hint: {
-            text: ""
-          },
-          id: "pension-check-details",
-          name: "pension-check-details",
-          classes: "govuk-input--width-100",
-          attributes: {
-            maxlength: 200
-          }
-        }) }}
-      {% endset %}
-
       {% set dynamicHint %}
+
+      <p class="govuk-hint govuk-!-margin-bottom-2">Generic hint if no dynamic hint needed</p>
+
 
             <p class="govuk-heading-s govuk-!-margin-bottom-2">Do not tell us about:</p>
             <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
@@ -68,10 +53,7 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["pension-check"] == "Yes"),
-                  conditional: {
-                    html: pensionDetails
-           }
+            checked: (data["pension-check"] == "Yes")
           },
           {
             value: "No",

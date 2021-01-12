@@ -24,6 +24,24 @@
       <!------------Legend--------------->
 
 
+      {% set pensionForeignDetails %}
+        {{ govukTextarea({
+          label: {
+            classes: "govuk-label--s",
+            html: "For each pension you get, tell us who pays it, roughly how much it is/will be"
+          },
+          hint: {
+            text: ""
+          },
+          id: "pension-check-details",
+          name: "pension-check-details",
+          classes: "govuk-input--width-100",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+      {% endset %}
+
 
       {{ govukRadios({
         name: "pension-foreign-drawdown",
@@ -43,7 +61,7 @@
             text: "Yes",
             checked: (data["pension-foreign-drawdown"] == "Yes"),
                   conditional: {
-                    html: pensionDetails
+                    html: pensionForeignDetails
            }
           },
           {

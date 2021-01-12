@@ -24,6 +24,26 @@
       <!------------Legend--------------->
 
 
+      {% set pensionDetails %}
+        {{ govukTextarea({
+          label: {
+            classes: "govuk-label--s",
+            html: "For each pension you get, tell us who pays it, how much it is and how often it is paid. "
+          },
+          hint: {
+            text: "XXX"
+          },
+          id: "pension-check-details",
+          name: "pension-check-details",
+          classes: "govuk-input--width-100",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+      {% endset %}
+
+
+
       {{ govukRadios({
         name: "pension-drawdown",
         fieldset: {

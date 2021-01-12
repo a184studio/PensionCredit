@@ -24,25 +24,10 @@
       <!------------Legend--------------->
 
 
-      {% set pensionDetails %}
-        {{ govukTextarea({
-          label: {
-            classes: "govuk-label--s",
-            html: "For each pension you get, tell us who pays it, roughly how much it is/will be"
-          },
-          hint: {
-            text: ""
-          },
-          id: "pension-check-details",
-          name: "pension-check-details",
-          classes: "govuk-input--width-100",
-          attributes: {
-            maxlength: 200
-          }
-        }) }}
-      {% endset %}
-
       {% set dynamicHint %}
+
+      <p class="govuk-hint govuk-!-margin-bottom-2">Generic hint if no dynamic hint needed</p>
+
 
       {% if data["single-joint-check"] == "Joint" %}
                   <p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about:</p>
@@ -87,10 +72,7 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["pension-foreign-check"] == "Yes"),
-                  conditional: {
-                    html: pensionDetails
-           }
+            checked: (data["pension-foreign-check"] == "Yes")
           },
           {
             value: "No",
