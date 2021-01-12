@@ -1786,6 +1786,154 @@ actions: {
     }) }}
 {% endif %}
 
+<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">@Pensions</h2>
+
+
+    {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+
+            {
+              key: {
+                text: "@pensions pension-foreign-check"
+              },
+              value: {
+                text: data['pension-foreign-check']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "pension-foreign-check",
+                    text: "Change",
+                    visuallyHiddenText: "@pensions"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+
+                {
+                  key: {
+                    text: "@pensions pension-foreign-drawdown"
+                  },
+                  value: {
+                    text: data['pension-foreign-drawdown']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "@pensions",
+                        text: "Change",
+                        visuallyHiddenText: "@pensions"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+            {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "@pensions pension-foreign-drawdown-details"
+                      },
+                      value: {
+                        text: data['pension-foreign-drawdown-details']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "pension-foreign-drawdown",
+                            text: "Change",
+                            visuallyHiddenText: "@pensions"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }) }}
+
+                {{ govukSummaryList({
+                        classes: 'govuk-!-margin-bottom-9',
+                        rows: [
+
+                        {
+                          key: {
+                            text: "@pensions pension-check"
+                          },
+                          value: {
+                            text: data['pension-check']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "pension-check",
+                                text: "Change",
+                                visuallyHiddenText: "@pensions"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }) }}
+
+                    {{ govukSummaryList({
+                            classes: 'govuk-!-margin-bottom-9',
+                            rows: [
+
+                            {
+                              key: {
+                                text: "@pensions pension-drawdown"
+                              },
+                              value: {
+                                text: data['pension-drawdown']
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "pension-drawdown",
+                                    text: "Change",
+                                    visuallyHiddenText: "@pensions"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }) }}
+
+                        {{ govukSummaryList({
+                                classes: 'govuk-!-margin-bottom-9',
+                                rows: [
+
+                                {
+                                  key: {
+                                    text: "@pensions pension-drawdown-details"
+                                  },
+                                  value: {
+                                    text: data['pension-drawdown-details']
+                                  },
+                                  actions: {
+                                    items: [
+                                      {
+                                        href: "pension-drawdown",
+                                        text: "Change",
+                                        visuallyHiddenText: "@pensions"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }) }}
+
+
 
 <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Other income</h2>
 
