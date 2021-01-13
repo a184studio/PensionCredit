@@ -60,15 +60,15 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["pension-drawdown"] == "Yes"),
-                  conditional: {
-                    html: pensionDetails
-           }
+            checked: (data["pension-drawdown"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["pension-drawdown"] == "No")
+            checked: (data["pension-drawdown"] == "No"),
+                  conditional: {
+                    html: pensionDetails
+           }
           }
         ]
       }) }}
