@@ -18,21 +18,16 @@
 
       <!------------H1 LEGEND------------>
       {% set dynamicH1 %}
- {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner get a private pension, a pension from a place where you used to work or any other pension?</h1>
- {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you get a private pension, a pension from a place where you used to work or any other pension?</h1>{% endif %}
+ {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner get any private pensions from a UK provider?</h1>
+ {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you get any private pensions from a UK provider?</h1>{% endif %}
  {% endset %}
       <!------------Legend--------------->
 
       {% set dynamicHint %}
 
-      <p class="govuk-hint govuk-!-margin-bottom-2">Generic hint if no dynamic hint needed</p>
+      <p class="govuk-hint govuk-!-margin-bottom-2">You do not need to tell us about your State Pension or any pensions from employers' pension schemes.</p>
 
 
-            <p class="govuk-heading-s govuk-!-margin-bottom-2">Do not tell us about:</p>
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-              <li>UK state pension</li>
-              <li>UK Workplace pensions</li>
-            </ul>
 
  {% endset %}
 

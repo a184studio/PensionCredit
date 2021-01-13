@@ -18,8 +18,8 @@
 
       <!------------H1 LEGEND------------>
       {% set dynamicH1 %}
- {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you / partner intend to claim this?</h1>
- {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you intend to claim this?</h1>{% endif %}
+ {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Are these pensions in payment?</h1>
+ {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Are these pensions in payment?</h1>{% endif %}
  {% endset %}
       <!------------Legend--------------->
 
@@ -28,10 +28,10 @@
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "For each pension you get, tell us who pays it, how much it is and how often it is paid. "
+            html: "For each pension you get, tell us who pays it and how much you get paid "
           },
           hint: {
-            text: "XXX"
+            text: ""
           },
           id: "pension-drawdown-details",
           name: "pension-drawdown-details",
@@ -41,7 +41,23 @@
           }
         }) }}
       {% endset %}
-
+      {% set pensionDetailsNotPaid %}
+        {{ govukTextarea({
+          label: {
+            classes: "govuk-label--s",
+            html: "For each pension, tell us who will pay it and how much you will get paid "
+          },
+          hint: {
+            text: ""
+          },
+          id: "pension-drawdown-details",
+          name: "pension-drawdown-details",
+          classes: "govuk-input--width-100",
+          attributes: {
+            maxlength: 200
+          }
+        }) }}
+      {% endset %}
 
 
       {{ govukRadios({
@@ -54,7 +70,7 @@
           }
         },
         hint: {
-          html: "Something in here about what this means"
+          html: ""
         },
         items: [
           {
@@ -66,8 +82,16 @@
            }
           },
           {
+            value: "Yes",
+            text: "No, but I plan to put them into payment in the next 12 months",
+            checked: (data["pension-drawdown"] == "Yes"),
+                  conditional: {
+                    html: pensionDetailsNotPaid
+           }
+          },
+          {
             value: "No",
-            text: "No",
+            text: "No, and I do not intend to put them into payment in the next 12 months",
             checked: (data["pension-drawdown"] == "No")
           }
         ]

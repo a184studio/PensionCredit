@@ -18,39 +18,20 @@
 
       <!------------H1 LEGEND------------>
       {% set dynamicH1 %}
- {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">pension-foreign-check  Do you or your partner</h1>
- {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">pension-foreign-check</h1>{% endif %}
+ {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner have any state, private or work pensions overseas?</h1>
+ {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you have any state, private or work pensions overseas?</h1>{% endif %}
  {% endset %}
       <!------------Legend--------------->
 
 
       {% set dynamicHint %}
 
-      <p class="govuk-hint govuk-!-margin-bottom-2">Generic hint if no dynamic hint needed</p>
+      <p class="govuk-hint govuk-!-margin-bottom-2">You can tell us about pensions you have in the UK later.</p>
 
 
-      {% if data["single-joint-check"] == "Joint" %}
-                  <p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about:</p>
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-                  <li>Pensions you have take out privatly overseas</li>
-                  <li>Overseas Penions with work</li>
-                  <li>Overseas State Pensions </li>
-            </ul>
 
-      {% else %}
-                  <p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about:</p>
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-              <li>Pensions you have take out privatly overseas</li>
-              <li>Overseas Penions with work</li>
-              <li>Overseas State Pensions </li>
-            </ul>
-      {% endif %}
 
-                  <p class="govuk-heading-s govuk-!-margin-bottom-2">Do not tell us about:</p>
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-              <li>UK state pension</li>
-              <li>UK Workplace pensions</li>
-            </ul>
+
 
  {% endset %}
 
