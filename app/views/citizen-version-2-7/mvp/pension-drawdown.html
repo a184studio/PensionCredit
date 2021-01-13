@@ -76,7 +76,10 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["pension-drawdown"] == "Yes")
+            checked: (data["pension-drawdown"] == "Yes"),
+            conditional: {
+              html: pensionDetails
+     }
           },
           {
             value: "Yes",
