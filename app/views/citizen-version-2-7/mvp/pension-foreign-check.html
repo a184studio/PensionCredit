@@ -18,15 +18,15 @@
 
       <!------------H1 LEGEND------------>
       {% set dynamicH1 %}
- {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner have any state, private or work pensions overseas?</h1>
- {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you have any state, private or work pensions overseas?</h1>{% endif %}
+ {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you or your partner paid into any state, private or work pensions overseas?</h1>
+ {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you paid into any state, private or work pensions overseas?</h1>{% endif %}
  {% endset %}
       <!------------Legend--------------->
 
 
       {% set dynamicHint %}
 
-      <p class="govuk-hint govuk-!-margin-bottom-2">You can tell us about pensions you have in the UK later.</p>
+      <p class="govuk-hint govuk-!-margin-bottom-2">This includes pensions that you have not started taking yet. You can tell us about pensions you have in the UK later.</p>
 
 
 

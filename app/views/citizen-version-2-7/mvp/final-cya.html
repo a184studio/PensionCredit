@@ -1786,7 +1786,7 @@ actions: {
     }) }}
 {% endif %}
 
-<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">@Pensions</h2>
+<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Pensions</h2>
 
 
     {{ govukSummaryList({
@@ -1795,7 +1795,7 @@ actions: {
 
             {
               key: {
-                text: "@pensions pension-foreign-check"
+                text: "Have you paid into any state, private or work pensions overseas?"
               },
               value: {
                 text: data['pension-foreign-check']
@@ -1812,6 +1812,29 @@ actions: {
             }
           ]
         }) }}
+        {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+
+                {
+                  key: {
+                    text: "Have you or your partner paid into any state, private or work pensions overseas?"
+                  },
+                  value: {
+                    text: data['pension-foreign-check']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "pension-foreign-check",
+                        text: "Change",
+                        visuallyHiddenText: "@pensions"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
 
         <!-- {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
@@ -1868,7 +1891,7 @@ actions: {
 
                         {
                           key: {
-                            text: "@pensions pension-check"
+                            text: "Have you paid into any private pensions from a UK provider?"
                           },
                           value: {
                             text: data['pension-check']
@@ -1885,6 +1908,30 @@ actions: {
                         }
                       ]
                     }) }}
+
+                    {{ govukSummaryList({
+                            classes: 'govuk-!-margin-bottom-9',
+                            rows: [
+
+                            {
+                              key: {
+                                text: "Have you or your partner paid into any private pensions from a UK provider?"
+                              },
+                              value: {
+                                text: data['pension-check']
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "pension-check",
+                                    text: "Change",
+                                    visuallyHiddenText: "@pensions"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }) }}
 
                     <!-- {{ govukSummaryList({
                             classes: 'govuk-!-margin-bottom-9',
