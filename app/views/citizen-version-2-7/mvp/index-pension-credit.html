@@ -180,7 +180,9 @@
                 data["money-second-property-check"] == "Yes" or
                 data["home-equity-release"] == "Yes" or
                 data["self-employed"] == "Yes" or
-                data["money-bonds"] == "Yes"
+                data["money-bonds"] == "Yes" or
+                data["pension-check"] == "Yes" or
+                data["pension-foreign-check"] == "Yes"
               %}
 
             <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
@@ -211,6 +213,9 @@
 
               {% if data["home-equity-release"] == "Yes" %}
               <li>your equity release. We will ask you for information from an annual statement from your provider</li>{% endif %}
+
+              {% if data["pension-check"] == "Yes" %}
+              <li>@pensions XXXX</li>{% endif %}
 
               {% if data["self-employed"] == "Yes"%}
               <li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>{% endif %}
