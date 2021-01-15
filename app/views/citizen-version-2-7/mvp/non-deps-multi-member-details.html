@@ -31,6 +31,10 @@
            {% endset %}
          <!------------Legend------------>
 
+       
+
+
+
            {{ govukTextarea({
              label: {
                classes: "govuk-label--s",
@@ -47,7 +51,9 @@
              }
            }) }}
 
-
+           <div class="govuk-inset-text">
+            You should tell friends and family members who live with you that DWP might use information you provide about them as part of your application. We might also use information we already hold about them.
+          </div>
 
         {{ govukButton({
           text: "Continue"
