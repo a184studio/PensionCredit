@@ -1,7 +1,7 @@
 {% extends "layout-assisted-digital.html" %}
 
 {% block pageTitle %}
-  Do you pay any service charges? - Pension Credit
+  Housing benefit - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -43,10 +43,16 @@
         items: [
           {
             value: "Yes",
-            text: "Yes",
-            checked: (data["home-rent-housing-benefit"] == "Yes")
+            text: "Yes - Housing benefit",
+            checked: (data["home-rent-housing-benefit"] == "Yes HB")
 
             },
+            {
+              value: "Yes",
+              text: "Yes - Housing elelment of Universal Credit",
+              checked: (data["home-rent-housing-benefit"] == "Yes HeUC")
+
+              },
           {
             value: "No",
             text: "No",
