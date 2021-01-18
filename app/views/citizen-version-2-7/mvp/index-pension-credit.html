@@ -150,7 +150,7 @@
 
               <div  class="govuk-panel--address govuk-!-margin-top-6">
 
-              {% if data['resides-in-uk'] == 'Northern-Ireland' %}
+              {% if data["resides-in-uk"] == "Northern-Ireland" %}
 
                 <p class="govuk-body">
                   Northern Ireland Pension Centre<br>
@@ -245,7 +245,9 @@
 <!-- - - - - - - - - - - - - - - - - - - CHANGES - - - - - - - - - - - - - - - - - - -->
 
 
-    <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+
+    <!---- NORTHERN IRELAND ---->
+    {% if data["resides-in-uk"] == "Northern-Ireland"%}
 
     <div class="govuk-!-margin-top-6">
     <h2 class="govuk-heading-m govuk-!-margin-bottom-3">If anything changes</h2>
@@ -266,15 +268,37 @@
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-    <div class="govuk-!-margin-top-6">
-  <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
-  <p class="govuk-body">If you pay rent for the place where you live, you might qualify for Housing Benefit. We will make this application for you using the details from your Pension Credit claim. Your local authority will contact you.</p>
-</div>
+<!---- HOUSING BENEFIT ---->
+
+{% if
+  data["home-rent-housing-benefit-apply"] == "Yes" and
+  data["benefit-UC"] == "Yes"
+%}
 
 <div class="govuk-!-margin-top-6">
 <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
 <p class="govuk-body">You told us you are currently getting Housing Benefit as well as Universal Credit. You will need to contact your local authority to tell them if your application for Pension Credit is successful.</p>
 </div>
+
+<!---- NORTHERN IRELAND ---->
+{% elif data["home-rent-housing-benefit-apply"] == "Yes" %}
+
+
+<div class="govuk-!-margin-top-6">
+<h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
+<p class="govuk-body">If you pay rent for the place where you live, you might qualify for Housing Benefit. We will make this application for you using the details from your Pension Credit claim. Your local authority will contact you.</p>
+</div>
+
+
+{% endif %}
+
+
+
+
+
+
+
+
 
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
