@@ -598,10 +598,10 @@ router.post(`${baseUrl}/home-rent-ground-rent-router`, (req, res) => { // When t
 router.post(`${baseUrl}/home-rent-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
   const homeRentHousingBenefit = req.session.data['home-rent-housing-benefit'] // The router is looking for this ID.
 
-  if (homeRentHousingBenefit === 'No') {
-    res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
-  } else {
+  if (homeRentHousingBenefit === 'Yes HB') {
     res.redirect(`${baseUrl}/home-shared-payments`)
+  } else {
+    res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
   }
 })
 
