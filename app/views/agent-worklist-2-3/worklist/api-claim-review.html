@@ -22,8 +22,8 @@
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><strong>Jeff Bridges</strong></h1>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National insurance number: <strong>NA 11 22 33 c</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">API outcome: <strong>Nil claim</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Reason: <strong>XXXX</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">API outcome: <strong>Nil claim</strong></p>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">API outcome reason found: <strong>Max State Pension no qualifying benefits</strong></p> -->
 
         <!------------Legend------------>
           {% set LegendList %}
@@ -118,16 +118,6 @@
               value: "Correct",
               text: "Yes — Correct",
               checked: data['api-claim-outcome'] == "Correct"
-            },
-            {
-              value: "Incorrect",
-              text: "No — because of X",
-              checked: data['api-claim-outcome'] == "Incorrect"
-            },
-            {
-              value: "Incorrect",
-              text: "No — because of Y",
-              checked: data['api-claim-outcome'] == "Incorrect"
             },
             {
               value: "Incorrect",
