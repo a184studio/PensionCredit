@@ -622,12 +622,14 @@ router.post(`${baseUrl}/home-shared-ground-rent-router`, (req, res) => { // When
 router.post(`${baseUrl}/home-shared-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
   const homeSharedHousingBenefit = req.session.data['home-shared-housing-benefit'] // The router is looking for this ID.
 
-  if (homeSharedHousingBenefit === 'No') {
-    res.redirect(`${baseUrl}/home-shared-housing-benefit-apply`)
-  } else {
+  if (homeSharedHousingBenefit === 'Yes HB') {
     res.redirect(`${baseUrl}/home-shared-payments`)
+  } else {
+    res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
   }
 })
+
+
 
 // Home ownership router: OWNS
 
