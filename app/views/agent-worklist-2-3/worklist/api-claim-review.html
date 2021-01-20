@@ -21,29 +21,29 @@
         <!------------HEADLINE------------>
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><strong>Jeff Bridges</strong></h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National insurance number: <strong>NA 11 22 33 c</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">API outcome: <strong>Nil claim</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National insurance number: <strong>NA 11 22 33 C</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim decision: <strong>Nil award</strong></p>
         <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">API outcome reason found: <strong>Max State Pension no qualifying benefits</strong></p> -->
 
         <!------------Legend------------>
           {% set LegendList %}
-        <p class="govuk-heading-s govuk-!-margin-bottom-2">APIs used for this claim</p>
+        <p class="govuk-heading-s govuk-!-margin-bottom-2">Checks done on this claim:</p>
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
 
-        <li>Matched using Natioanl insurance and Date of birth</li>
-        <li>Reached SPA on or after 6.4.2016</li>
-        <li>Claimant(s) receiving full SP</li>
-        <li>No other affected benefits in payment</li>
-        <li>No open interest in affected benefits</li>
-        <li>No underlying entitlement for Carers Allowance or Carer's element of UC</li>
-        <li>No housing costs (service charges, ground rent, mortgage)</li>
+        <li>matched using National insurance and Date of birth</li>
+        <li>reached SPA on or after 6 April 2016</li>
+        <li>receiving full SP</li>
+        <li>no other affected benefits in payment</li>
+        <li>no open interest in affected benefits</li>
+        <li>no underlying entitlement for Carer's Allowance or Carer's element of UC</li>
+        <li>no housing costs (service charges, ground rent, mortgage)</li>
         </ul>
 
           {% endset %}
         <!------------Legend------------>
 
         {{ govukDetails({
-          summaryText: "API matching criteria",
+          summaryText: "Checking criteria",
           html: LegendList
         }) }}
 
@@ -61,7 +61,7 @@
             },
             {
               key: {
-                text: "State pension amount"
+                text: "State Pension amount"
               },
               value: {
                 html: "£175.5"
@@ -79,7 +79,7 @@
         }) }}
 
         {{ govukButton({
-          text: "View / Download PDF claim",
+          text: "Open PDF claim in new tab",
           classes: "govuk-button--secondary govuk-!-margin-bottom-9"
         }) }}
 
@@ -87,7 +87,7 @@
           {{ govukTextarea({
             label: {
               classes: "govuk-label--s",
-              html: "Tell me the details"
+              html: "Why was the outcome of agent check different to the decision?"
             },
             hint: {
               text: ""
@@ -107,7 +107,7 @@
           name: "api-claim-outcome",
           fieldset: {
             legend: {
-              text: "Was API outcome correct?",
+              text: "Does the decision match the outcome of the agent check?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m "
             }
@@ -116,12 +116,12 @@
           items: [
             {
               value: "Correct",
-              text: "Yes — Correct",
+              text: "Yes",
               checked: data['api-claim-outcome'] == "Correct"
             },
             {
               value: "Incorrect",
-              text: "No – something else [cr]",
+              text: "No",
               checked: data['api-claim-outcome'] == "Incorrect",
                     conditional: {
                       html: outcomeDetails
