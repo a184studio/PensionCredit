@@ -271,7 +271,9 @@
 <!---- HOUSING BENEFIT ---->
 
 {% if
-  data["home-rent-housing-benefit"] == "Yes HB"and
+  data["home-rent-housing-benefit"] == "Yes HB" and
+  data["benefit-UC"] == "Yes" or
+  data["home-other-housing-benefit"] == "Yes HB" and
   data["benefit-UC"] == "Yes"
 %}
 
@@ -281,7 +283,7 @@
 </div>
 
 <!---- NORTHERN IRELAND ---->
-{% elif data["home-rent-housing-benefit-apply"] == "Yes" %}
+{% elif data["home-rent-housing-benefit-apply"] == "Yes" or data["home-other-housing-benefit-apply"] == "Yes"  %}
 
 
 <div class="govuk-!-margin-top-6">

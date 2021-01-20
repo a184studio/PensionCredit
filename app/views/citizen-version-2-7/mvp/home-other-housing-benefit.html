@@ -41,17 +41,23 @@
           html: legendHint
         },
         items: [
+        {
+          value: "Yes HB",
+          text: "Yes - Housing Benefit",
+          checked: (data["home-other-housing-benefit"] == "Yes HB")
+
+          },
           {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["home-other-housing-benefit"] == "Yes")
+            value: "Yes HeUC",
+            text: "Yes - a housing payment from Universal Credit",
+            checked: (data["home-other-housing-benefit"] == "Yes HeUC")
 
             },
-          {
-            value: "No",
-            text: "No",
-            checked: (data["home-other-housing-benefit"] == "No")
-          }
+        {
+          value: "No",
+          text: "No",
+          checked: (data["home-other-housing-benefit"] == "No")
+        }
         ]
       }) }}
 

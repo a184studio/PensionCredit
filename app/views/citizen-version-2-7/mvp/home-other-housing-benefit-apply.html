@@ -17,6 +17,16 @@
     <form action="home-shared-payments" method="post" class="form">
 
 
+      {% set legendHint %}
+
+      {% if data["home-other-housing-benefit"] == "Yes HeUC"%}
+      <p class="govuk-hint">Your housing payment from Unversal Credit will stop when you move to Pension Credit. We will pass the information you give us in your Pension Credit application to your local authority. They will start your Housing Benefit application.</p>
+      {% else %}
+        <p class="govuk-hint">We will pass the information you give us in your Pension Credit application to your local authority. They will start your Housing Benefit application.</p>
+      {% endif %}
+
+      {% endset -%}
+
       {{ govukRadios({
         idPrefix: "home-other-housing-benefit-apply",
         name: "home-other-housing-benefit-apply",
@@ -28,7 +38,7 @@
           }
         },
         hint: {
-          text: "We will pass the information you give us in your Pension Credit application to your local authority. They will start your Housing Benefit application."
+          html: legendHint
         },
         items: [
           {
