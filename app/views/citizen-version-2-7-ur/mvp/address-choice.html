@@ -14,7 +14,16 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    <!---- Single/Partner router ---->
+    {% if data['home-care-home-check'] == 'Yes'%}
+    <form action="benefit-UC" method="post" class="form">
+      {% elif data["home-care-home-check"] == "No" %}
+    <form action="home-responsible-CTR-HB" method="post" class="form">
+    {% else %}
     <form action="home-care-home-route-check" method="post" class="form">
+    {% endif %}
+
 
       <!------------H1 LEGEND------------>
         {% if data["home-care-home-check"] == "Yes" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Select your care home address</h2>
