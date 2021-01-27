@@ -20,11 +20,13 @@
 
       {% set ownership %}
         {% if data["home-ownership"] == "You own it" %}
-          mortgage
+          mortgage 3
         {% elseif data["home-ownership"] == "You rent it" %}
-          rent
+          rent 2
+        {% elseif data["home-ownership"] == "Shared ownership" %}
+          rent 5
         {% else %}
-          rent or mortgage
+          rent or mortgage 1
         {% endif %}
       {% endset %}
 
