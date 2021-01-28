@@ -23,10 +23,10 @@
           mortgage
         {% elseif data["home-ownership"] == "You rent it" %}
           rent
-        {% elseif data["home-ownership"] == "Shared ownership"  %}
+        {% elseif data["home-ownership"] == "Shared ownership" and data["home-mortgage"] == "No" %}
           rent
-        {% elseif data["home-mortgage"] == "No"  %}
-          rent
+        {% elseif data["home-ownership"] == "Other accommodation" and data["home-mortgage"] == "No" %}
+            rent  
         {% else %}
           rent or mortgage
         {% endif %}
