@@ -105,34 +105,118 @@
            ]
          }) }}
 
-         {{ govukRadios({
-           idPrefix: "non-deps-member-details-blind",
-           name: "non-deps-member-details-blind",
-           fieldset: {
-             legend: {
-               text: "Are they registered blind or severely sight impaired?",
-               isPageHeading: true,
-               classes: "govuk-fieldset__legend--s"
-             }
-               },
-               hint: {
-                 html: ""
-               },
 
-           classes: "govuk-radios govuk-!-margin-bottom-4",
-           items: [
-             {
-               value: "Yes",
-               text: "Yes",
-               checked: (data["non-deps-member-details-blind"] == "Yes")
-             },
-             {
-               value: "No",
-               text: "No",
-               checked: (data["non-deps-member-details-blind"] == "No")
-             }
-           ]
-         }) }}
+                  {{ govukDateInput({
+                    id: "non-deps-resident-from",
+                    namePrefix: "non-deps-residence-start-date",
+                    fieldset: {
+                      legend: {
+                        text: "When did you start living together?",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--s"
+                      }
+                    },
+                    hint: {
+                      text: "For example, 31 3 2020."
+                    },
+                    items: [
+                      {
+                        name: "day",
+                        classes: "govuk-input--width-2 govuk-!-margin-bottom-4",
+                        value: data["non-deps-member-details-resident-from-day"]
+                      },
+                      {
+                        name: "month",
+                        classes: "govuk-input--width-2",
+                        value: data["non-deps-member-resident-from-month"]
+                      },
+                      {
+                        name: "year",
+                        classes: "govuk-input--width-4",
+                        value: data["non-deps-member-resident-from-year"]
+                      }
+                    ]
+                  }) }}
+
+                          {% set nonDepShare %}
+
+                          {% set LegendAmount %}
+                          <strong>[Dynamic based on Yes to shared mortgage/remt] When did you start living together?<strong>
+                          {% endset -%}
+
+                          {{ govukDateInput({
+                            id: "mortgage-rent-share",
+                            namePrefix: "mortgage-rent-share-date",
+                            fieldset: {
+                              legend: {
+                                text: "When did they start paying towards the rent or mortgage?",
+                                isPageHeading: true,
+                                classes: "govuk-label govuk-label--s"
+                              }
+                            },
+                            hint: {
+                              text: "For example, 31 3 2020."
+                            },
+                            items: [
+                              {
+                                name: "day",
+                                classes: "govuk-input--width-2",
+                                value: data["mortgage-rent-share-day"]
+                              },
+                              {
+                                name: "month",
+                                classes: "govuk-input--width-2",
+                                value: data["mortgage-rent-share-month"]
+                              },
+                              {
+                                name: "year",
+                                classes: "govuk-input--width-4",
+                                value: data["mortgage-rent-share-year"]
+                              }
+                            ]
+                          }) }}
+
+                                {% endset -%}
+
+
+
+
+
+                          {{ govukRadios({
+                            idPrefix: "mortgage-rent-share-date",
+                            name: "mortgage-rent-share-date",
+                            fieldset: {
+                              legend: {
+                                text: "Do they pay towards the rent or mortgage?",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--s"
+                              }
+                                },
+                                hint: {
+                                  html: ""
+                                },
+
+                            classes: "govuk-radios govuk-!-margin-bottom-4",
+                            items: [
+                              {
+                                value: "Yes",
+                                text: "Yes",
+                                checked: (data["mortgage-rent-share-date"] == "Full time"),
+                                      conditional: {
+                                        html: nonDepShare
+                                      }
+                                },
+                              {
+                                value: "No",
+                                text: "No",
+                                checked: (data["mortgage-rent-share-date"] == "Part time"),
+                                      conditional: {
+                                        html: ""
+                                      }
+                                    }
+                               ]
+                          }) }}
+
 
          <!-- {{ govukRadios({
            name: "non-deps-frequency",
@@ -298,117 +382,34 @@
            ]
          }) }}
 
-         {{ govukDateInput({
-           id: "non-deps-resident-from",
-           namePrefix: "non-deps-residence-start-date",
+         {{ govukRadios({
+           idPrefix: "non-deps-member-details-blind",
+           name: "non-deps-member-details-blind",
            fieldset: {
              legend: {
-               text: "When did you start living together?",
+               text: "Are they registered blind or severely sight impaired?",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--s"
              }
-           },
-           hint: {
-             text: "For example, 31 3 2020."
-           },
+               },
+               hint: {
+                 html: ""
+               },
+
+           classes: "govuk-radios govuk-!-margin-bottom-4",
            items: [
              {
-               name: "day",
-               classes: "govuk-input--width-2 govuk-!-margin-bottom-4",
-               value: data["non-deps-member-details-resident-from-day"]
+               value: "Yes",
+               text: "Yes",
+               checked: (data["non-deps-member-details-blind"] == "Yes")
              },
              {
-               name: "month",
-               classes: "govuk-input--width-2",
-               value: data["non-deps-member-resident-from-month"]
-             },
-             {
-               name: "year",
-               classes: "govuk-input--width-4",
-               value: data["non-deps-member-resident-from-year"]
+               value: "No",
+               text: "No",
+               checked: (data["non-deps-member-details-blind"] == "No")
              }
            ]
          }) }}
-
-                 {% set nonDepShare %}
-
-                 {% set LegendAmount %}
-                 <strong>[Dynamic based on Yes to shared mortgage/remt] When did you start living together?<strong>
-                 {% endset -%}
-
-                 {{ govukDateInput({
-                   id: "mortgage-rent-share",
-                   namePrefix: "mortgage-rent-share-date",
-                   fieldset: {
-                     legend: {
-                       text: "When did they start paying towards the rent or mortgage?",
-                       isPageHeading: true,
-                       classes: "govuk-label govuk-label--s"
-                     }
-                   },
-                   hint: {
-                     text: "For example, 31 3 2020."
-                   },
-                   items: [
-                     {
-                       name: "day",
-                       classes: "govuk-input--width-2",
-                       value: data["mortgage-rent-share-day"]
-                     },
-                     {
-                       name: "month",
-                       classes: "govuk-input--width-2",
-                       value: data["mortgage-rent-share-month"]
-                     },
-                     {
-                       name: "year",
-                       classes: "govuk-input--width-4",
-                       value: data["mortgage-rent-share-year"]
-                     }
-                   ]
-                 }) }}
-
-                       {% endset -%}
-
-
-
-
-
-                 {{ govukRadios({
-                   idPrefix: "mortgage-rent-share-date",
-                   name: "mortgage-rent-share-date",
-                   fieldset: {
-                     legend: {
-                       text: "Do they pay towards the rent or mortgage?",
-                       isPageHeading: true,
-                       classes: "govuk-fieldset__legend--s"
-                     }
-                       },
-                       hint: {
-                         html: ""
-                       },
-
-                   classes: "govuk-radios govuk-!-margin-bottom-4",
-                   items: [
-                     {
-                       value: "Yes",
-                       text: "Yes",
-                       checked: (data["mortgage-rent-share-date"] == "Full time"),
-                             conditional: {
-                               html: nonDepShare
-                             }
-                       },
-                     {
-                       value: "No",
-                       text: "No",
-                       checked: (data["mortgage-rent-share-date"] == "Part time"),
-                             conditional: {
-                               html: ""
-                             }
-                           }
-                      ]
-                 }) }}
-
   {% endif %}
 
 
