@@ -20,6 +20,26 @@ function makeAStay(data) {
 
 
 
+router.post(`${baseUrl}/start-check-router`, (req, res) => {
+  const startCheck = req.session.data['start-check']
+  const startCheckArr = Array.isArray(startCheck) ? startCheck : [startCheck]
+  // startCheckArr includes both 'ni' and 'money'
+  if (startCheckArr.includes('ni') && startCheckArr.includes('money')) {
+    res.redirect(`${baseUrl}/reside-in-uk`)
+  }
+  // startCheckArr includes 'ni'
+  else if (startCheckArr.includes('ni')) {
+    res.redirect(`${baseUrl}/start-check-error`)
+  }
+  // startCheckArr includes 'money'
+  else if (startCheckArr.includes('money')) {
+    res.redirect(`${baseUrl}/start-check-error`)
+  }
+  // startCheckArr includes neither 'money' or 'ni'
+  else {
+    res.redirect(`${baseUrl}/start-check-error`)
+  }
+})
 
 
 router.post(`${baseUrl}/security-router`, (req, res) => {

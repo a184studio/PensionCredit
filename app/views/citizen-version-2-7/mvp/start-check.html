@@ -1,0 +1,68 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Apply for Pension Credit - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="start-check-router" method="post" class="form">
+
+    <p class="govuk-body govuk--version-control">Citizen version 2.7 / MVP</p>
+
+    <h1 class="govuk-heading-xl ">To compete you will need x y</h1>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Some thing in here to help you compete</p>
+
+
+{{ govukCheckboxes({
+  idPrefix: "start-check",
+  name: "start-check",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-padding-top-2"
+    }
+  },
+  hint: {
+    text: "Confirm that you have the following ready"
+  },
+  items: [
+
+    {
+      value: "ni",
+      text: "ni",
+      checked: (data["start-check"] == "ni")
+
+    },
+    {
+      value: "money",
+      text: "money",
+      checked: (data["start-check"] == "money")
+    }
+  ]
+}) }}
+
+
+
+      {{ govukButton({
+       text: "Start now",
+       classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8",
+       isStartButton: true
+     }) }}
+<!--
+     {{ govukButton({
+       text: "Continue"
+     }) }} -->
+
+
+
+</form>
+</div>
+{% endblock %}
