@@ -953,13 +953,32 @@ router.post(`${baseUrl}/pension-drawdown-router`, (req, res) => {
 // Money Savining and investement Routers
 
 
+router.post(`${baseUrl}/money-total-eed-router`, (req, res) => {
+  const moneyTotalEED = req.session.data['money-total-eed']
+
+  if (moneyTotalEED === 'High') {
+    res.redirect(`${baseUrl}/money-total-eed`)
+  }
+  // startCheckArr includes 'money'
+  if (moneyTotalEED === '10') {
+    res.redirect(`${baseUrl}/money-total-eed-confirm`)
+  }
+  else {
+    res.redirect(`${baseUrl}/money-second-property`)
+  }
+})
 
 router.post(`${baseUrl}/money-total-now-router`, (req, res) => {
   const moneyTotalNow = req.session.data['money-total-now']
 
   if (moneyTotalNow === 'High') {
     res.redirect(`${baseUrl}/money-total-risk-check`)
-  } else {
+  }
+  // startCheckArr includes 'money'
+  if (moneyTotalNow === '10') {
+    res.redirect(`${baseUrl}/money-total-now-confirm`)
+  }
+  else {
     res.redirect(`${baseUrl}/money-second-property`)
   }
 })
@@ -986,6 +1005,31 @@ router.post(`${baseUrl}/money-total-risk-check-router`, (req, res) => {
     res.redirect(`${baseUrl}/money-second-property`)
   }
 })
+
+router.post(`${baseUrl}/money-total-eed-confirm-router`, (req, res) => {
+  const moneyTotalNowConfirm = req.session.data['money-total-eed-confirm']
+
+  if (moneyTotalNowConfirm === 'Yes') {
+    res.redirect(`${baseUrl}/money-total-now`)
+  } else {
+    res.redirect(`${baseUrl}/money-total-eed`)
+  }
+})
+
+router.post(`${baseUrl}/money-total-now-confirm-router`, (req, res) => {
+  const moneyTotalNowConfirm = req.session.data['money-total-now-confirm']
+
+  if (moneyTotalNowConfirm === 'Yes') {
+    res.redirect(`${baseUrl}/money-total-risk-check`)
+  } else {
+    res.redirect(`${baseUrl}/money-total-now`)
+  }
+})
+
+
+
+
+
 
 
 
