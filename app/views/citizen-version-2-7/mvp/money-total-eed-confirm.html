@@ -28,8 +28,8 @@
            <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">Ten thousand five hundard pounds</p>
 
            {{ govukRadios({
-             idPrefix: "money-total-now-confirm",
-             name: "money-total-now-confirm",
+             idPrefix: "money-total-eed-confirm",
+             name: "money-total-eed-confirm",
              fieldset: {
                legend: {
                  text: "Is amount correct?",
@@ -43,12 +43,12 @@
                {
                  value: "Yes",
                  text: "Yes",
-                 checked: (data["money-total-now-confirm"] == "Yes")
+                 checked: (data["money-total-eed-confirm"] == "Yes")
                },
                {
                  value: "No",
                  text: "No",
-                 checked: (data["money-total-now-confirm"] == "No")
+                 checked: (data["money-total-eed-confirm"] == "No")
                }
              ]
            }) }}

@@ -1007,9 +1007,9 @@ router.post(`${baseUrl}/money-total-risk-check-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/money-total-eed-confirm-router`, (req, res) => {
-  const moneyTotalNowConfirm = req.session.data['money-total-eed-confirm']
+  const moneyTotalEEDConfirm = req.session.data['money-total-eed-confirm']
 
-  if (moneyTotalNowConfirm === 'Yes') {
+  if (moneyTotalEEDConfirm === 'Yes') {
     res.redirect(`${baseUrl}/money-total-now`)
   } else {
     res.redirect(`${baseUrl}/money-total-eed`)
