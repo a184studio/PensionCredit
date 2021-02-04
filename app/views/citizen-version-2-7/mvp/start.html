@@ -74,6 +74,33 @@
 
 
 
+{{ govukCheckboxes({
+  name: "disregards",
+  fieldset: {
+    legend: {
+      text: "What you will need compete the application in one go:",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-padding-top-2"
+    }
+  },
+  hint: {
+    text: "Confirm that you have the following ready"
+  },
+  items: [
+
+    {
+      name: 'ni',
+      value: "National Insurance Number",
+      html: "National Insurance Number"
+    },
+    {
+      name: 'money',
+      value: "You will need to total up all the money saving and investments you have over a three month period",
+      html: "You will need to total up all the money saving and investments you have over a three month period, for example current accounts savings etc"
+    }
+  ]
+}) }}
+
 
 
       {{ govukButton({
