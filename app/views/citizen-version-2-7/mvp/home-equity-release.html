@@ -24,7 +24,7 @@
   <form action="home-other-housing-benefit" method="post" class="form">
 <!---- OWN ---->{% else %}
 
-    <!---- Mortgage Yes ---->{% if data['home-mortgage'] == 'Yes' %}
+    <!---- Mortgage Yes ---->{% if data['home-mortgage'] == '' %}
     <form action="home-shared-payments" method="post" class="form">
     <!---- Mortgage No ---->{% else %}
     <form action="non-deps-living-with-you" method="post" class="form">
