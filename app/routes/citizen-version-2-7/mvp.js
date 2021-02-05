@@ -1059,7 +1059,7 @@ router.post(`${baseUrl}/money-second-property-router`, (req, res) => {
   const moneySecondProperty = req.session.data['money-second-property-check']
 
   if (moneySecondProperty === 'Yes') {
-    res.redirect(`${baseUrl}/money-bonds`)
+    res.redirect(`${baseUrl}/money-disregards-all`)
   } else {
     res.redirect(`${baseUrl}/hrt-claimant-immigration-restrictions`)
   }
