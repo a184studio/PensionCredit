@@ -15,9 +15,16 @@
 
     <p class="govuk-body govuk--version-control">Citizen version 2.7 / MVP</p>
 
-    <h1 class="govuk-heading-xl ">To compete you will need x y</h1>
+    <!-- <h1 class="govuk-heading-xl ">Confirm you have the right information to hand</h1> -->
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Some thing in here to help you compete</p>
+    <h1 class="govuk-heading-xl ">You need the right information to make an application</h1>
+
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">We will ask for some personal and financial details while you make your application.</p>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will need this information for both you and your partner (if you have one).</p>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will not be able to save your application and come back later.</p>
 
 
 {{ govukCheckboxes({
@@ -25,25 +32,30 @@
   name: "start-check",
   fieldset: {
     legend: {
-      text: "If needed",
+      text: "Yes, I confirm I have this information ready:",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m govuk-!-padding-top-2"
     }
   },
   hint: {
-    text: "Confirm that you have the following ready"
+    text: ""
   },
   items: [
 
     {
       value: "ni",
-      text: "ni",
+      text: "National Insurance number",
       checked: (data["start-check"] == "ni")
 
     },
     {
+      value: "bank statements",
+      text: "Bank statements for the last three months",
+      checked: (data["start-check"] == "bank statements")
+    },
+    {
       value: "money",
-      text: "money",
+      text: "Details of any income, pensions, savings or investments",
       checked: (data["start-check"] == "money")
     }
   ]
@@ -52,7 +64,7 @@
 
 
       {{ govukButton({
-       text: "Start now",
+       text: "Confirm and start now",
        classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8",
        isStartButton: true
      }) }}

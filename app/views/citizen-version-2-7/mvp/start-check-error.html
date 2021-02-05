@@ -13,50 +13,71 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="reside-in-uk" method="post" class="form">
 
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#passport-issued-error">Select yes if you have the right information to make an application.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     <p class="govuk-body govuk--version-control">Citizen version 2.7 / MVP</p>
 
-    <h1 class="govuk-heading-xl ">To compete you will need x y</h1>
-
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Some thing in here to help you compete</p>
+    <h1 class="govuk-heading-xl ">Do you have the right information to make an application?</h1>
 
 
-{{ govukCheckboxes({
-  idPrefix: "nationality",
-  name: "nationality",
-  fieldset: {
-    legend: {
-      text: "If needed",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m govuk-!-padding-top-2"
-    }
-  },
-  hint: {
-    text: "If you have dual nationality, select all options that are relevant to you."
-  },
-  errorMessage: {
-    text: "Ideally you need this. "
-  },
-  items: [
-  {
-    value: "ni",
-    text: "ni",
-    checked: (data["start-check"] == "ni")
+    <p class="govuk-body govuk-!-font-size-29 govuk-!-margin-bottom-6">We will ask for some personal and financial information for you and your partner (if you have one) while you make your application. You will not be able to save your application and come back later. You will need:</p>
 
-  },
-  {
-    value: "money",
-    text: "money",
-    checked: (data["start-check"] == "money")
-  }
-  ]
-}) }}
+    <ul class="govuk-list govuk-list--bullet">
+      <li>National Insurance number</li>
+      <li>bank statements, usually for the last three months</li>
+      <li>details of any income, pensions, savings or investments</li>
+    </ul>
 
+
+    {{ govukRadios({
+      idPrefix: "information",
+      name: "information",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      errorMessage: {
+        text: "Select yes if you have the right information to make an application."
+     
+      },
+      classes: "govuk-radios--inline",
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["information"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["information"] == "No")
+        }
+      ]
+    }) }}
 
 
 
 
       {{ govukButton({
-       text: "Start now",
+       text: "Continue",
        classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8",
        isStartButton: true
      }) }}
