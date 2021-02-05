@@ -16,14 +16,12 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="money-total-eed" method="post" class="form">
 
-      <!------------H1 LEGEND------------>
-      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Becasuse you or your partner have some of your money invested in accounts the can fux we need to check a few things with you</h1>
-      {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Becasuse you have some of your money invested in accounts the can fux we need to check a few things with you</h1>{% endif %}
+   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">The money you and your claim date [and if you are backdating] are related</h1>
 
-           <!------------Legend--------------->
+    <!------------Legend--------------->
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">You backdating date is: <strong>[Calculated EED]</strong></p>
 
-           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This is not a big deal, but its so that we can pay you the right amount. We could pay you too much or to little pesion credit</p>
-
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This means </p>
 
 
       {{ govukButton({
