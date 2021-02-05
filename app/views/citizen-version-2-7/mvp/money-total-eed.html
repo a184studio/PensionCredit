@@ -48,8 +48,8 @@
 {% endset -%}
 
       {{ govukInput({
-        id: "money-total-then",
-        name: "money-total-then",
+        id: "money-total-eed-value",
+        name: "money-total-eed-value",
         label: {
           html: LegendAmount,
           classes: "govuk-label--s",
@@ -61,7 +61,7 @@
         prefix: {
           text: "£"
         },
-        value: data["money-total-then"],
+        value: data["money-total-eed-value"],
         classes: "govuk-input--width-10",
         spellcheck: false
       }) }}

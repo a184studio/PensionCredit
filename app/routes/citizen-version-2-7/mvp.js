@@ -964,7 +964,7 @@ router.post(`${baseUrl}/money-total-eed-router`, (req, res) => {
     res.redirect(`${baseUrl}/money-total-eed-confirm`)
   }
   else {
-    res.redirect(`${baseUrl}/money-second-property`)
+    res.redirect(`${baseUrl}/money-total-now`)
   }
 })
 
