@@ -17,22 +17,57 @@
 
     <!-- <h1 class="govuk-heading-xl ">Confirm you have the right information to hand</h1> -->
 
-    <h1 class="govuk-heading-xl ">You need the right information to make an application</h1>
+    <h1 class="govuk-heading-xl ">Do you have the right information to make an application for Pension Credit?</h1>
 
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">We will ask for some personal and financial details while you make your application.</p>
-
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will need this information for both you and your partner (if you have one).</p>
-
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We will ask for some information about you and your partner (if you have one) while you make your application. </p>
+    
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Make sure you have this ready before starting your application.</p>
+      
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will not be able to save your application and come back later.</p>
+      
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">You will need:</p>
 
 
-{{ govukCheckboxes({
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your National Insurance number</li>
+      <li>bank statements, usually for the last three months</li>
+      <li>details of any income, pensions, savings or investments</li>
+    </ul>
+
+
+    {{ govukRadios({
+      idPrefix: "information",
+      name: "information",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      classes: "govuk-radios--inline",
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["information"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["information"] == "No")
+        }
+      ]
+    }) }}
+
+
+<!-- {{ govukCheckboxes({
   idPrefix: "start-check",
   name: "start-check",
   fieldset: {
     legend: {
-      text: "Yes, I confirm I have this information ready:",
+      text: "",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m govuk-!-padding-top-2"
     }
@@ -43,31 +78,28 @@
   items: [
 
     {
-      value: "ni",
-      text: "National Insurance number",
-      checked: (data["start-check"] == "ni")
+      value: "confirm",
+      text: "I confirm I have this information ready",
+      checked: (data["start-check"] == "confirm")
 
-    },
-    {
-      value: "bank statements",
-      text: "Bank statements for the last three months",
-      checked: (data["start-check"] == "bank statements")
-    },
-    {
-      value: "money",
-      text: "Details of any income, pensions, savings or investments",
-      checked: (data["start-check"] == "money")
     }
   ]
-}) }}
+}) }} -->
 
 
 
-      {{ govukButton({
-       text: "Confirm and start now",
+     <!--  {{ govukButton({
+       text: "Continue",
        classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8",
        isStartButton: true
-     }) }}
+     }) }} -->
+
+
+     <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+
+
 <!--
      {{ govukButton({
        text: "Continue"
