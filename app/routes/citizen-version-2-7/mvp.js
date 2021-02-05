@@ -374,7 +374,7 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   if (partnerCheck === 'Yes, we live together') {
     res.redirect(`${baseUrl}/partner-app-check`)
   } else {
-    res.redirect(`${baseUrl}/claimant-national-insurance`)
+    res.redirect(`${baseUrl}/data-we-use`)
   }
 })
 
