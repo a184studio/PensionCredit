@@ -15,9 +15,14 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="claimant-national-insurance" method="post" class="form">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">How we will use your information</h1>
+    <h1 class="govuk-heading-xl">How we will use your information</h1>
 
+    {% if data["partner-check-yn"] == "No"
+    %}
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">As well as the details you provide in your application, we will also use information we already hold about you.</p>
+    {% else %}
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">As well as the details you provide in your application, we will also use information we already hold about you and your partner.</p>
+    {% endif %}
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">We will use information:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -31,12 +36,10 @@
  -->
 
 
-
      {{ govukButton({
        text: "Continue",
        classes: "govuk-!-margin-top-4"
      }) }}
-
 
 
 </form>
