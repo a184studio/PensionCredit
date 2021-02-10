@@ -537,7 +537,7 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   else if (nonDepsCheck === 'Yes-more') {
     res.redirect(`${baseUrl}/non-deps-multi-member-details`)
   } else {
-    res.redirect(`${baseUrl}/benefit-UC`)
+    res.redirect(`${baseUrl}/benefit-UC-Carer`)
   }
 })
 
@@ -547,7 +547,7 @@ router.post(`${baseUrl}/non-deps-summary-router`, (req, res) => {
   if (nonDepsSummary === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-member-category`)
   } else {
-    res.redirect(`${baseUrl}/benefit-UC`)
+    res.redirect(`${baseUrl}/benefit-UC-Carer`)
   }
 })
 
@@ -556,7 +556,7 @@ router.post(`${baseUrl}/home-care-home-route-check-router`, (req, res) => {
   const careHomeRouteCheck = req.session.data['home-care-home-route-check']
 
   if (careHomeRouteCheck === 'Yes') {
-    res.redirect(`${baseUrl}/benefit-UC`)
+    res.redirect(`${baseUrl}/benefit-UC-Carer`)
   } else {
     res.redirect(`${baseUrl}/home-responsible-CTR-HB`)
   }
@@ -593,7 +593,7 @@ router.post(`${baseUrl}/home-ownership-router`, (req, res) => {
     res.redirect(`${baseUrl}/home-moving-homes-ownership`)
   }
   else if (homeOwnership === 'Live in someone elses home') {
-    res.redirect(`${baseUrl}/benefit-UC`)
+    res.redirect(`${baseUrl}/benefit-UC-Carer`)
   }
   else if (homeOwnership === 'Other accommodation') {
     res.redirect(`${baseUrl}/home-other-service-charges`)
