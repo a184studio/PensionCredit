@@ -37,8 +37,8 @@
 
 
     {{ govukRadios({
-      idPrefix: "information",
-      name: "information",
+      idPrefix: "start-check",
+      name: "start-check",
       fieldset: {
         legend: {
           text: "",
@@ -51,12 +51,12 @@
         {
           value: "Yes",
           text: "Yes",
-          checked: (data["information"] == "Yes")
+          checked: (data["start-check"] == "Yes")
         },
         {
           value: "No",
           text: "No",
-          checked: (data["information"] == "No")
+          checked: (data["start-check"] == "No")
         }
       ]
     }) }}
