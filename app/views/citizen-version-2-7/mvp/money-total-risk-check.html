@@ -22,25 +22,25 @@
   name: "money-total-risk-check",
   fieldset: {
     legend: {
-      text: "Tell us what accounts you use to store your money?",
+      text: "What cash, accounts or investments do you have?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl govuk-!-padding-top-2"
     }
   },
   hint: {
-    text: "This will help us better understand how stable your financial situation is",
+    text: "Select all that apply.",
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
   },
   items: [
 
     {
       value: "Low",
-      text: "National Savings and Investment products like Savings Certificates",
+      text: "National Savings and Investment products, such as Premium Bonds or Savings Certificates",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
       value: "High",
-      text: "Investments like shares ISAs",
+      text: "Investments, including shares ISAs",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
@@ -60,12 +60,12 @@
     },
     {
       value: "High",
-      text: "Any money overseas",
+      text: "Money stored overseas",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
       value: "Low",
-      text: "None of these",
+      text: "I have none of these",
       checked: (data["money-total-risk-check"] == "None of these")
     }
   ]

@@ -17,13 +17,16 @@
     <form action="money-second-property" method="post" class="form">
 
       <!------------H1 LEGEND------------>
-      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Becasuse you or your partner have some of your money invested in accounts the can fux we need to check a few things with you</h1>
-      {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Becasuse you have some of your money invested in accounts the can fux we need to check a few things with you</h1>{% endif %}
+      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">We need to make some extra checks</h1>
+      {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">We need to make some extra checks</h1>{% endif %}
 
            <!------------Legend--------------->
 
-           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This is not a big deal, but its so that we can pay you the right amount. We could pay you too much or to little pesion credit</p>
-
+           {% if data["single-joint-check"] == "Joint" %}<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You have told us that you or your partner hold money in shares or investments or overseas. This may affect how much Pension Credit you can get.</p>
+           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We will need to contact you so that we can pay you the right amount of Pension Credit.</p>
+           {% else %}
+           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You have told us that you hold money in shares or investments or overseas. This may affect how much Pension Credit you can get.</p>
+           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We will need to contact you so that we can pay you the right amount of Pension Credit.</p>{% endif %}
 
 
       {{ govukButton({
