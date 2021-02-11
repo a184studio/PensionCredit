@@ -69,7 +69,8 @@
 
 
 {{ govukRadios({
-  name: "money-total-eed",
+  idPrefix: "money-total-now",
+  name: "money-total-now",
   fieldset: {
     legend: {
       html: LegendAmount,
@@ -81,22 +82,22 @@
     {
       value: "Low",
       text: "£0 to £6,000",
-      checked: (data["money-total-eed"] == "£0 to £6,000")
+      checked: (data["money-total-now"] == "£0 to £6,000")
     },
     {
       value: "Low",
       text: "£6,001 to £8,000",
-      checked: (data["money-total-eed"] == "£6,001 to £8,000")
+      checked: (data["money-total-now"] == "£6,001 to £8,000")
     },
     {
       value: "High",
       text: "£8,001 to £10,000",
-      checked: (data["money-total-eed"] == "£8,001 to £10,000")
+      checked: (data["money-total-now"] == "£8,001 to £10,000")
     },
     {
       value: "10",
       text: "More that £10,000",
-      checked: (data["money-total-eed"] == "More that £10,000"),
+      checked: (data["money-total-now"] == "More that £10,000"),
       conditional: {
         html: moneyTotalTodayValue
       }
