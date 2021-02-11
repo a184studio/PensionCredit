@@ -24,8 +24,8 @@
       {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">About the money, savings and investments you and your partner have today</h1>
       {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">About the money, savings and investments you have today</h1>{% endif %}
 
-      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you have money in accounts that are shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
-      {% else %}  <p class="govuk-!-font-size-24">If you have money in accounts that are shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
+      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you have money in accounts shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
+      {% else %}  <p class="govuk-!-font-size-24">If you have money in accounts shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
 
       <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
 <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
@@ -44,7 +44,7 @@
   id: "money-total-now-value",
   name: "money-total-now-value",
   label: {
-    html: "Total amount of money you have today?",
+    html: "What is the total amount of money you have today?",
     classes: "govuk-label--s",
     isPageHeading: true
   },
@@ -64,7 +64,7 @@
 
 
 {% set LegendAmount %}
-<strong>What is the total amount of money you have today?<strong>
+<strong>How much money do you have today?<strong>
 {% endset -%}
 
 
