@@ -1,0 +1,70 @@
+{% extends "layout-assisted-digital-ur.html" %}
+
+{% block pageTitle %}
+  Which best describes the place where you live? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="employment-other-money" method="post" class="form">
+
+      <!------------H1 LEGEND------------>
+      {% set dynamicH1 %}
+ {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you or your partner paid into any private pensions from a UK provider?</h1>
+ {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you paid into any private pensions from a UK provider?</h1>{% endif %}
+ {% endset %}
+      <!------------Legend--------------->
+
+      {% set dynamicHint %}
+
+      <p class="govuk-hint govuk-!-margin-bottom-2">This includes pensions that you have not started taking yet. You do not need to tell us about your State Pension or any pensions from employers' pension schemes.</p>
+
+
+
+ {% endset %}
+
+
+      {{ govukRadios({
+        name: "pension-check",
+        fieldset: {
+          legend: {
+            html: dynamicH1,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: dynamicHint
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["pension-check"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["pension-check"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+  </div>
+</div>
+{% endblock %}

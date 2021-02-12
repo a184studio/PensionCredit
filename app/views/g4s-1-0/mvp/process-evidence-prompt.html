@@ -1,0 +1,90 @@
+{% extends "layout-work-list-id-bar.html" %}
+
+{% block pageTitle %}
+  Selected claim - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form action="process-evidence-prompt-router" method="post" class="form">
+
+
+        <!------------HEADLINE------------>
+
+        <div class="panel panel-border-wide alert-default govuk-!-margin-bottom-6">
+          <h2 class="govuk-heading-m">Alert</h2>
+          <p>Applicant needs to have to the following ready.</p>
+        </div>
+
+        <!------------HEADLINE------------>
+          {% set legend %}
+
+          <!-- <p class="govuk-hint"><strong>Service charges can include:</strong></p> -->
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+            <li>Bank statements that cover the last 3 months from today
+            </li>
+            <li>Details of any income they get
+            </li>
+            <li>Details of your service / ground rent agreements and an invoce
+            </li>
+            <li>XXXX
+            </li>
+            <li>XXX
+            </li>
+            <li>XXX
+            </li>
+
+          </ul>
+
+          {% endset %}
+        <!------------HEADLINE------------>
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "process-evidence-prompt",
+          name: "process-evidence-prompt",
+          fieldset: {
+            legend: {
+              text: "Does the applicant have the following formation to hand?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl "
+            }
+          },
+          hint: {
+            html: legend
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: data['process-evidence-prompt'] == "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: data['process-evidence-prompt'] == "No"
+            }
+          ]
+        }) }}
+
+
+      {{ govukButton({
+        classes: "govuk-!-margin-top-0",
+        text: "Continue"
+      }) }}
+
+      <!-- <p class="govuk-body govuk-!-margin-top-4"><a href="case-load">Back to start</a></p>
+      <p class="govuk-body govuk-!-margin-top-4"><a href="case-load-clear">...</a></p> -->
+
+</form>
+    </div>
+  </div>
+{% endblock %}
