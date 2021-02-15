@@ -3,7 +3,6 @@ const { getStatePensionDate } = require('get-state-pension-date')
 const differenceInDays = require('date-fns/difference_in_days')
 const startOfDay = require('date-fns/start_of_day')
 const subMonths = require('date-fns/sub_months')
-const converter = require('number-to-words');
 const got = require('got')
 const fs = require('fs')
 const {getMonth} = require('../../filters')()
@@ -18,12 +17,6 @@ function makeAStay(data) {
   return {admission, discharge, totalDays}
 }
 
-function moneyInWords(number = '0') {
-  const sanitised = number.replace(/[\s,$-]+/g, '');
-  const [pounds, pence] = String(sanitised).split('.').map(num => parseInt(num, 10))
-  const words = `${converter.toWords(pounds)} pounds${pence ? ` and ${converter.toWords(pence)} pence` : ''}.`
-  return words.charAt(0).toUpperCase() + words.slice(1)
-}
 
 // START ARRAY
 // router.post(`${baseUrl}/start-check-router`, (req, res) => {
@@ -974,11 +967,12 @@ router.post(`${baseUrl}/money-total-eed-router`, (req, res) => {
 
   if (moneyTotalEED === 'High') {
     res.redirect(`${baseUrl}/money-total-eed`)
-  } else if (moneyTotalEED === '10') {
-    const moneyValue = req.session.data['money-total-eed-value']
-    req.session.data['money-total-eed-in-words'] = moneyInWords(moneyValue)
+  }
+  // startCheckArr includes 'money'
+  if (moneyTotalEED === '10') {
     res.redirect(`${baseUrl}/money-total-eed-confirm`)
-  } else {
+  }
+  else {
     res.redirect(`${baseUrl}/money-total-now`)
   }
 })
@@ -988,11 +982,12 @@ router.post(`${baseUrl}/money-total-now-router`, (req, res) => {
 
   if (moneyTotalNow === 'High') {
     res.redirect(`${baseUrl}/money-total-risk-check`)
-  } else if (moneyTotalNow === '10') {
-    const moneyValue = req.session.data['money-total-now-value']
-    req.session.data['money-total-now-in-words'] = moneyInWords(moneyValue)
+  }
+  // startCheckArr includes 'money'
+  if (moneyTotalNow === '10') {
     res.redirect(`${baseUrl}/money-total-now-confirm`)
-  } else {
+  }
+  else {
     res.redirect(`${baseUrl}/money-second-property`)
   }
 })

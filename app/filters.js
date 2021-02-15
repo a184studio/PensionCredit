@@ -1,3 +1,4 @@
+const converter = require('number-to-words')
 const differenceInDays = require('date-fns/difference_in_days')
 
 const months = [
@@ -20,6 +21,8 @@ const GBP = new Intl.NumberFormat('en-GB', {
   currency: 'GBP',
   maximumFractionDigits: 2,
 })
+
+const santiseMoney = (money = 0) => String(money).replace(/[^0-9.]/g, '')
 
 module.exports = function (env) {
   /**
@@ -44,8 +47,14 @@ module.exports = function (env) {
       return day + ' ' + months[month] + ' ' + year
     },
     formatMoney (money) {
-      const sanitised = money ? String(money).replace(/[^0-9.]/g, '') : 0
+      const sanitised = santiseMoney(money)
       return GBP.format(sanitised)
+    },
+    formatMoneyToWords (money = '0') {
+      const sanitised = santiseMoney(money)
+      const [pounds, pence] = String(sanitised).split('.').map(num => parseInt(num, 10))
+      const words = `${converter.toWords(pounds)} pounds${pence ? ` and ${converter.toWords(pence)} pence` : ''}.`
+      return words.charAt(0).toUpperCase() + words.slice(1)
     },
     formatNINO (nino) {
       if (!nino) {
