@@ -236,7 +236,15 @@ router.post(`${baseUrl}/contact-other-number-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/start-check-router`, (req, res) => {
+  const startCheck = req.session.data['start-check']
 
+  if (startCheck === 'Yes') {
+    res.redirect(`${baseUrl}/pension-foreign-check`)
+  } else {
+    res.redirect(`${baseUrl}/start-check-no`)
+  }
+})
 
 
 
@@ -931,6 +939,85 @@ router.post(`${baseUrl}/pension-drawdown-router`, (req, res) => {
 
 
 // Money Savining and investement Routers
+
+
+// Money Savining and investement Routers
+
+
+router.post(`${baseUrl}/money-total-eed-router`, (req, res) => {
+  const moneyTotalEED = req.session.data['money-total-eed']
+
+  if (moneyTotalEED === 'High') {
+    res.redirect(`${baseUrl}/money-total-eed`)
+  }
+  // startCheckArr includes 'money'
+  if (moneyTotalEED === '10') {
+    res.redirect(`${baseUrl}/money-total-eed-confirm`)
+  }
+  else {
+    res.redirect(`${baseUrl}/money-total-now`)
+  }
+})
+
+router.post(`${baseUrl}/money-total-now-router`, (req, res) => {
+  const moneyTotalNow = req.session.data['money-total-now']
+
+  if (moneyTotalNow === 'High') {
+    res.redirect(`${baseUrl}/money-total-risk-check`)
+  }
+  // startCheckArr includes 'money'
+  if (moneyTotalNow === '10') {
+    res.redirect(`${baseUrl}/money-total-now-confirm`)
+  }
+  else {
+    res.redirect(`${baseUrl}/money-second-property`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/money-total-risk-check-router`, (req, res) => {
+  const riskCheck = req.session.data['money-total-risk-check']
+  const riskCheckArr = Array.isArray(riskCheck) ? riskCheck : [riskCheck]
+  // startCheckArr includes both 'ni' and 'money'
+  if (riskCheckArr.includes('Low') && riskCheckArr.includes('High')) {
+    res.redirect(`${baseUrl}/money-risk-notification`)
+  }
+  // startCheckArr includes 'ni'
+  else if (riskCheckArr.includes('Low')) {
+    res.redirect(`${baseUrl}/money-second-property`)
+  }
+  // startCheckArr includes 'money'
+  else if (riskCheckArr.includes('High')) {
+    res.redirect(`${baseUrl}/money-risk-notification`)
+  }
+  // startCheckArr includes neither 'money' or 'ni'
+  else {
+    res.redirect(`${baseUrl}/money-second-property`)
+  }
+})
+
+router.post(`${baseUrl}/money-total-eed-confirm-router`, (req, res) => {
+  const moneyTotalEEDConfirm = req.session.data['money-total-eed-confirm']
+
+  if (moneyTotalEEDConfirm === 'Yes') {
+    res.redirect(`${baseUrl}/money-total-now`)
+  } else {
+    res.redirect(`${baseUrl}/money-total-eed`)
+  }
+})
+
+router.post(`${baseUrl}/money-total-now-confirm-router`, (req, res) => {
+  const moneyTotalNowConfirm = req.session.data['money-total-now-confirm']
+
+  if (moneyTotalNowConfirm === 'Yes') {
+    res.redirect(`${baseUrl}/money-total-risk-check`)
+  } else {
+    res.redirect(`${baseUrl}/money-total-now`)
+  }
+})
+
+
 
 
 router.post(`${baseUrl}/money-bonds-router`, (req, res) => {
