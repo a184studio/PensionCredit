@@ -19,8 +19,9 @@ function makeAStay(data) {
 }
 
 function moneyInWords(number = '0') {
-  const [pounds, pence] = String(number).split('.').map(num => parseInt(num, 10))
-  const words = `${converter.toWords(pounds)} pounds ${pence ? `and ${converter.toWords(pence)} pence` : ''}.`
+  const sanitised = number.replace(/[\s,$-]+/g, '');
+  const [pounds, pence] = String(sanitised).split('.').map(num => parseInt(num, 10))
+  const words = `${converter.toWords(pounds)} pounds${pence ? ` and ${converter.toWords(pence)} pence` : ''}.`
   return words.charAt(0).toUpperCase() + words.slice(1)
 }
 
