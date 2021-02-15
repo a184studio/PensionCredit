@@ -16,10 +16,9 @@ const months = [
 ]
 
 const GBP = new Intl.NumberFormat('en-GB', {
-  minimumFractionDigits: 0,
-  maximumFractionDigits: 0,
   style: 'currency',
-  currency: 'GBP'
+  currency: 'GBP',
+  maximumFractionDigits: 2,
 })
 
 module.exports = function (env) {
