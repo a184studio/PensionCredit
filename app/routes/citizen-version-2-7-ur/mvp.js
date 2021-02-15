@@ -240,7 +240,7 @@ router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 
   if (startCheck === 'Yes') {
-    res.redirect(`${baseUrl}/pension-foreign-check`)
+    res.redirect(`${baseUrl}/money-intro`)
   } else {
     res.redirect(`${baseUrl}/start-check-no`)
   }
