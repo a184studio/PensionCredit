@@ -18,14 +18,14 @@
 
       <!------------H1 LEGEND------------>
       {% set dynamicH1 %}
- {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you or your partner paid into any private pensions from a UK provider?</h1>
- {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you paid into any private pensions from a UK provider?</h1>{% endif %}
+ {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you or your partner paid into any private pensions with a UK provider that you have not taken yet?</h1>
+ {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you paid into any private pensions with a UK providerthat you have not taken yet?</h1>{% endif %}
  {% endset %}
       <!------------Legend--------------->
 
       {% set dynamicHint %}
 
-      <p class="govuk-hint govuk-!-margin-bottom-2">This includes pensions that you have not started taking yet. You do not need to tell us about your State Pension or any pensions from employers' pension schemes.</p>
+      <p class="govuk-hint govuk-!-margin-bottom-2">You do not need to tell us about your State Pension or any other pensions currently in payment.</p>
 
 
 
