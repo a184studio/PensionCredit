@@ -1455,6 +1455,57 @@ actions: {
             ]
           }
         },
+        {
+          key: {
+            text: "When did you start living together?"
+          },
+          value: {
+            text: data['non-deps-member-details-resident-from-day'] + ' ' + (data['non-deps-member-details-from-month'] | getMonth) + ' ' + data['non-deps-member-details-from-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Do they pay towards the rent or mortgage?"
+          },
+          value: {
+            text: data['mortgage-rent-share-date']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "When did they start paying towards the rent or mortgage?"
+          },
+          value: {
+            text: data['non-deps-member-details-share-day'] + ' ' + (data['non-deps-member-details-share-month'] | getMonth) + ' ' + data['non-deps-member-details-share-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
 
         {
         key: {
