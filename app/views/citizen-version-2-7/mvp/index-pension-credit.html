@@ -279,7 +279,7 @@
 
 <div class="govuk-!-margin-top-6">
 <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
-<p class="govuk-body">You told us you are currently getting Housing Benefit. If your application for Pension Credit is successful, you will continue to get Housing Benefit as long as you are elibible. Your local authority will get in touch if anything changes.</p>
+<p class="govuk-body">You told us you are currently getting Housing Benefit. If your application for Pension Credit is successful, you will continue to get Housing Benefit as long as you are eligible. Your local authority will get in touch if anything changes.</p>
 </div>
 
 <!---- NORTHERN IRELAND ---->
@@ -343,13 +343,19 @@ data["home-shared-housing-benefit-apply"] == "Yes"
 
   <!---- COUNTRY END ---->{% endif %}
 
+<!----------------------------------------------------------------------------------->
+<div>
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+  <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">Print or save</h3>
 
-  {{ govukButton({
-    text: "Print a copy of this page",
-    classes: "govuk-button--secondary govuk-!-margin-top-4 govuk-!-margin-bottom-2 dont-print"
-  }) }}
+  <p class="govuk-body"> <a href="#" onclick="window.print();return false;">Print this page<a/></p>
+  <p class="govuk-body govuk-!-margin-bottom-6"> <a href="#" onclick="window.print();return false;">Save this page<a/> (PDF, 100KB)</p>
+
+
+</div>
 
 <!----------------------------------------------------------------------------------->
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
 <div class="govuk-!-margin-top-6 dont-print">

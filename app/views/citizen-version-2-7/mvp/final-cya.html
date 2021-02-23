@@ -1455,6 +1455,57 @@ actions: {
             ]
           }
         },
+        {
+          key: {
+            text: "When did you start living together?"
+          },
+          value: {
+            text: data['non-deps-member-details-resident-from-day'] + ' ' + (data['non-deps-member-details-from-month'] | getMonth) + ' ' + data['non-deps-member-details-from-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Do they pay towards the rent or mortgage?"
+          },
+          value: {
+            text: data['mortgage-rent-share-date']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "When did they start paying towards the rent or mortgage?"
+          },
+          value: {
+            text: data['non-deps-member-details-share-day'] + ' ' + (data['non-deps-member-details-share-month'] | getMonth) + ' ' + data['non-deps-member-details-share-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
 
         {
         key: {
@@ -4435,16 +4486,13 @@ rows: [
     <div class="dont-print">
   <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
 
+    <p class="govuk-body"> If you are happy with the answers you have given, you can either print them out or save them to your computer, tablet or mobile phone.</p>
+    <p class="govuk-body"> If you change anything you will need to print or save a new copy.</p>
 
-  <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">Print a copy of your answers</h3>
+    <p class="govuk-body"> <a href="#" onclick="window.print();return false;">Print your answers<a/> </p>
+    <p class="govuk-body govuk-!-margin-bottom-6"> <a href="#" onclick="window.print();return false;">Save a copy of your answers<a/> (PDF, 230KB)</p>
 
-  <p class="govuk-body">This is a copy of the answers shown on this page. If you change anything, you will need to print a new copy.</p>
 
-    <!-- <button onclick="window.print(); return false;">Print Me !!!</button> -->
-            {{ govukButton({
-            text: "Print a copy of your answers",
-            classes: "govuk-button--secondary govuk-!-margin-bottom-9"
-          }) }}
   </div>
 
 
@@ -4455,7 +4503,9 @@ rows: [
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
 
-        <h2 class="govuk-heading-l">By applying you agree that:</h2>
+        <h2 class="govuk-heading-l">Submit your application</h2>
+        <p class="govuk-body"><strong>By applying you agree that:</strong></p>
+
            <ul class="govuk-list govuk-list--bullet">
              <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-2">the information is correct and complete as far as you know</p></li>
              <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-2">you&rsquo;ll pay back any money you&rsquo;re overpaid if you&rsquo;re asked to</p></li>
