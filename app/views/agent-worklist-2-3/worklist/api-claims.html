@@ -13,7 +13,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="find-a-claim" method="post" class="form">
+    <form action="api-claims" method="post" class="form">
 
       <!-- {% include "citizen-version-1/work-list-1-2/admin-navigation.html" %} -->
 
@@ -56,50 +56,88 @@
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Filter claims
+          <a href>Filter claims by check outcome</a>
         </span>
       </h2>
     </div>
     <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
 
-      {{ govukCheckboxes({
-        idPrefix: "organisation",
-        name: "organisation",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s "
-          }
-        },
-        items: [
-          {
-            value: "Correct",
-            text: "Correct agent check [2]"
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        {{ govukCheckboxes({
+          idPrefix: "organisation",
+          name: "organisation",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s "
+            }
           },
-          {
-            value: "Incorrect",
-            text: "Incorrect agent check [1]"
-          },
-          {
-            value: "XX",
-            text: "Unchecked [1]"
-          }
-        ]
-      }) }}
+          items: [
+            {
+              value: "Correct",
+              text: "Correct [2]"
+            },
+            {
+              value: "Incorrect",
+              text: "Incorrect [1]"
+            },
+            {
+              value: "XX",
+              text: "Unchecked [1]"
+            }
+          ]
+        }) }}
+      </div>
 
+      <div class="govuk-grid-column-one-half">
+        {{ govukCheckboxes({
+          idPrefix: "organisation",
+          name: "organisation",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s "
+            }
+          },
+          items: [
+          {
+            value: "Future Filter",
+            text: "Future Filter: Universal Credit [0]"
+          },
+          {
+              value: "Future filter",
+              text: "FF: Max State Pension [0]"
+            },
+            {
+              value: "Future filter",
+              text: "FF: Benefit A,B,C [0]"
+            },
+            {
+              value: "Future filter, Pensions",
+              text: "FF: Pensions [0]"
+            }
+          ]
+        }) }}
+      </div>
+
+
+      </div>
       {{ govukButton({
   text: "Apply filters",
   classes: "govuk-button--secondary govuk-!-margin-bottom-4"
 }) }}
 
 
-
     </div>
   </div>
 
 </div>
+
 
 
 
