@@ -175,42 +175,42 @@
 
           <!---- ——————————————————————————————————————— ---->
 
-              {% if
-                data["doc-absence"] == "Yes" or
-                data["money-second-property-check"] == "Yes" or
-                data["home-care-home-funding"] == "Yes" or
-                data["home-equity-release"] == "Yes" or
-                data["self-employed"] == "Yes" or
-                data["money-bonds"] == "Yes" or
-                data["pension-check"] == "Yes" or
-                data["pension-foreign-check"] == "Yes"
-              %}
+          {% if
+            data["doc-absence"] == "Yes" or
+            data["money-second-property-check"] == "Yes" or
+            data["home-care-home-check-still-own"] == "Yes" or
+            data["home-equity-release"] == "Yes" or
+            data["self-employed"] == "Yes" or
+            data["money-bonds"] == "Yes" or
+            data["pension-check"] == "Yes" or
+            data["pension-foreign-check"] == "Yes"
+          %}
 
-            <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+        <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
 
-            {% if
-              data["home-rent-ground-rent"] == "Yes" or
-              data["home-shared-ground-rent"] == "Yes" or
-              data["home-own-ground-rent"] == "Yes" or
-              data["home-other-ground-rent"] == "Yes" or
-              data["home-own-service-charges"] == "Yes" or
-              data["home-other-service-charges"] == "Yes"
-              %}
-
-
-              <p class="govuk-!-font-size-19">We will also contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
-
-            {% else %}
-              <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
-            {% endif %}
+        {% if
+          data["home-rent-ground-rent"] == "Yes" or
+          data["home-shared-ground-rent"] == "Yes" or
+          data["home-own-ground-rent"] == "Yes" or
+          data["home-other-ground-rent"] == "Yes" or
+          data["home-own-service-charges"] == "Yes" or
+          data["home-other-service-charges"] == "Yes"
+          %}
 
 
-            <ul class="govuk-list govuk-list--bullet">
-              {% if data["doc-absence"] == "Yes" %}
-              <li>the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>{% endif %}
+          <p class="govuk-!-font-size-19">We will also contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
 
-              {% if data["money-second-property-check"] == "Yes" or data["home-care-home-funding"] == "Yes"%}
-              <li>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>{% endif %}
+        {% else %}
+          <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
+        {% endif %}
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          {% if data["doc-absence"] == "Yes" %}
+          <li>the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>{% endif %}
+
+          {% if data["money-second-property-check"] == "Yes" or data["home-care-home-check-still-own"] == "Yes"%}
+          <li>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>{% endif %}
 
               {% if data["home-equity-release"] == "Yes" %}
               <li>your equity release. We will ask you for information from an annual statement from your provider</li>{% endif %}
