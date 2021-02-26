@@ -16,11 +16,16 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="employment-check" method="post" class="form">
 
+      {% set fieldLabel %}
+      {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Benefits you or your partner have applied for</h2>
+      {% else %}<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Benefits you have applied for</h2>{% endif %}
+      {% endset %}
+
       {% set benefitDetails %}
         {{ govukTextarea({
           label: {
             classes: "govuk-label--s",
-            html: "Benefits have you applied for"
+            html: fieldLabel
           },
           hint: {
             text: ""
@@ -34,10 +39,12 @@
         }) }}
       {% endset %}
 
+
+
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you or your partner applied for any benefits that you are waiting to hear about?</h2>
-        {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you applied for any benefits that you are waiting to hear about?</h2>{% endif %}
+        {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you or your partner applied for any benefits that you are waiting to hear about?</h1>
+        {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you applied for any benefits that you are waiting to hear about?</h1>{% endif %}
         {% endset %}
       <!------------Legend--------------->
 
