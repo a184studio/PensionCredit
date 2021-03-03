@@ -1,0 +1,39 @@
+{% extends "layout-assisted-digital.html" %}
+
+{% block pageTitle %}
+  Which best describes the place where you live? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="money-2-total-now" method="post" class="form">
+
+   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have chosen to backdate your application for Pension Credit to <strong>[Calculated EED]</strong></h1>
+
+    <!------------Legend--------------->
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">This means we will ask you about your money, savings and investments on two separate dates:</p>
+
+    <ul class="govuk-!-font-size-24 govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+      <li>today</li>
+      <li>[Calculated EED]</li>
+    </ul>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+  </div>
+</div>
+{% endblock %}
