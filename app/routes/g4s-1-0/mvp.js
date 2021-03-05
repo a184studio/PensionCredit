@@ -80,13 +80,23 @@ router.post(`${baseUrl}/process-outcome-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/process-evidence-prompt-router`, (req, res) => {
-  const processEvidence = req.session.data['process-evidence-prompt']
+router.post(`${baseUrl}/pensions-router`, (req, res) => {
+  const pensions = req.session.data['pensions']
 
-  if (processEvidence === 'Yes') {
-    res.redirect(`${baseUrl}/process-dwp`)
+  if (pensions === 'Yes') {
+    res.redirect(`${baseUrl}/outcome-unlikely`)
   } else {
-    res.redirect(`${baseUrl}/Come-back-when-you-have-your-bits`)
+    res.redirect(`${baseUrl}/earnings`)
+  }
+})
+
+router.post(`${baseUrl}/earnings-router`, (req, res) => {
+  const earnings = req.session.data['earnings']
+
+  if (earnings === 'Yes') {
+    res.redirect(`${baseUrl}/outcome-unlikely`)
+  } else {
+    res.redirect(`${baseUrl}/outcome-likely`)
   }
 })
 
