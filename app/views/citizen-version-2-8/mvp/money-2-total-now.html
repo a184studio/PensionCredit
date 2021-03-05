@@ -1,7 +1,7 @@
 {% extends "layout-assisted-digital.html" %}
 
 {% block pageTitle %}
-  Money total Now - Pension Credit
+Money you have now - Apply for Pension Credit - GOV.UK
 {% endblock %}
 
 {% block header %}
@@ -21,13 +21,13 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
-      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Tell us how much money, savings and investments you and your partner have today</h1>
-      {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Tell us how much money, savings and investments you have today</h1>{% endif %}
+      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you and your partner have today</h1>
+      {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you have today</h1>{% endif %}
 
       {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you have money in accounts shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
       {% else %}  <p class="govuk-!-font-size-24">If you have money in accounts shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
 
-      <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
+      <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes money, savings and investments such as:</p>
 <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
       <li>money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office</li>
       <li>National Savings and Investment products like Savings Certificates, Premium Bonds, Income Bonds and residual accounts</li>
