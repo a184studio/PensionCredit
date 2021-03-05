@@ -36,7 +36,7 @@
 
      <!------------ LEGEND END --------------->
 
-     {% set howMuch %}
+     {% set earningsHowMuch %}
      {{ govukInput({
        id: "earnings-howMuch-value",
        name: "earnings-howMuch-value",
@@ -81,7 +81,7 @@
                  text: "No",
                  checked: (data["earnings"] == "No"),
                  conditional: {
-                   html: howMuch
+                   html: earningsHowMuch
                  }
                }
              ]
