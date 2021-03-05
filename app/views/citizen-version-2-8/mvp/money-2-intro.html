@@ -16,15 +16,61 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="money-2-total-now" method="post" class="form">
 
-   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You want us to consider your application from  <strong>17 December 2020</strong></h1>
+      {% if data["money-2-claim-filter"] == "Backdated" %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[BackDated] You want us to consider your application from  <strong>[EED]</strong></h1>
+
+      {% elif data["money-2-claim-filter"] == "Today" %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Today] You want us to consider your application from  <strong>[EED]</strong></h1>
+
+      {% else %}
+      <p class="govuk-heading-xl govuk-!-margin-bottom-6">[Advanced] Claim</p>
+
+      {% endif %}
+
 
     <!------------Legend--------------->
-    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">This means we need to ask you about your money, savings and investments on two separate dates:</p>
+
+    {% if data["money-2-claim-filter"] == "Backdated" %}
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">[Backdated] This means we need to ask you about your money, savings and investments on two separate dates:</p>
 
     <ul class="govuk-!-font-size-24 govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
       <li>today</li>
       <li>17 December 2020</li>
     </ul>
+
+    {% elif data["money-2-claim-filter"] == "Today" %}
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-8">[Backdated] This means we need to ask you about your money, savings and investments today because</p>
+
+
+    {% else %}
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">[Advanced] This means we need to ask you about your money, savings and investments on two separate dates:</p>
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">And closer to the time Blah</p>
+
+    <ul class="govuk-!-font-size-24 govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+      <li>today</li>
+      <li>XX</li>
+    </ul>
+
+    {% endif %}
+
+
+    <!------------ --------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       {{ govukButton({
