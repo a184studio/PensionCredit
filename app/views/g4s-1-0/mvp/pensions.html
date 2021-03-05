@@ -27,12 +27,12 @@
      <!------------H1 LEGEND------------>
        {% set dynamicH1 %}
        {% if data["benefit-check"] == "CA" %}
-       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Does their pension income adds up to more than £62.50 a week</h1>
+       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Does their income from pensions add up to more than £62.50 a week</h1>
 
        {% elif data["benefit-check"] == "B" %}
-       <p class="govuk-heading-xl govuk-!-margin-bottom-0">Does if their pension income adds up to more than £91.95 a week</p>
+       <p class="govuk-heading-xl govuk-!-margin-bottom-0">Does their income from pensions add up to more than £91.95 a week</p>
        {% else %}
-       <p class="govuk-heading-xl govuk-!-margin-bottom-0">Does if their pension income adds up to more than £25.00 a week</p>
+       <p class="govuk-heading-xl govuk-!-margin-bottom-0">Does their income from pensions add up to more than £25.00 a week</p>
        {% endif %}
        {% endset %}
 
