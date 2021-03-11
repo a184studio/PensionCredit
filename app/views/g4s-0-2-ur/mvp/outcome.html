@@ -30,11 +30,41 @@
 
          <!------------Legend--------------->
 
+         {{ govukRadios({
+           idPrefix: "outcome-yn",
+           name: "outcome-yn",
+           fieldset: {
+             legend: {
+               text: "Given the outcome, does the citizen want to contine",
+               hint: " ",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--m"
+             }
+           },
+           classes: "govuk-radios",
+           hint: {
+             html: "XXX"
+           },
+           items: [
+             {
+               value: "Yes",
+               text: "Yes",
+               checked: (data["outcome-yn"] == "Yes")
+             },
+             {
+               value: "No",
+               text: "No",
+               checked: (data["outcome-yn"] == "No")
+             }
+           ]
+         }) }}
+
+         {{ govukButton({
+           text: "Continue",
+           classes: "dont-print"
+         }) }}
 
 
-{{ govukButton({
- text: "Continue"
-}) }}
 </form>
 </div>
 {% endblock %}

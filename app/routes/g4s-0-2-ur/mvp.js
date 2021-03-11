@@ -33,6 +33,95 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/claimant-dob-router`, (req, res) => {
+  try {
+    const dob = req.session.data['dob-year'] + '-' +
+      req.session.data['dob-month'].padStart(2, '0') + '-' +
+      req.session.data['dob-day'].padStart(2, '0')
+
+    const today = startOfDay(new Date())
+    const maleSpaDate = getStatePensionDate(dob, 'M')
+    const femaleSpaDate = getStatePensionDate(dob, 'F')
+    const daysSinceMaleSPA = differenceInDays(today, maleSpaDate)
+    const daysSinceFemaleSPA = differenceInDays(today, femaleSpaDate)
+
+    if (daysSinceMaleSPA >= 0 && daysSinceFemaleSPA >= 0) {
+      const threeMonthsAgo = subMonths(today, 3)
+      req.session.data['back-dating-date'] = maleSpaDate < threeMonthsAgo ? threeMonthsAgo : maleSpaDate
+      req.session.data['spa-date'] = maleSpaDate
+
+      res.redirect(`${baseUrl}/reside-in-uk`)
+    } else if (daysSinceMaleSPA < 0 && daysSinceFemaleSPA < 0) {
+      res.redirect(`${baseUrl}/reside-in-uk`)
+    } else {
+      res.redirect(`${baseUrl}/sex`)
+    }
+  } catch (err) {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
+  }
+})
+
+router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
+  const statePensionCheck = req.session.data['state-pension-check-yn']
+
+  if (statePensionCheck === 'Yes') {
+    res.redirect(`${baseUrl}/children-check-yn`)
+  } else {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
+  }
+})
+
+router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
+  const childrenCheck = req.session.data['children-check-yn']
+
+  if (childrenCheck === 'No') {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
+  } else {
+    res.redirect(`${baseUrl}/done-children`)
+  }
+})
+
+router.post(`${baseUrl}/housing-costs-router`, (req, res) => {
+  const housingCosts = req.session.data['housing-costs']
+
+  if (housingCosts === 'Yes') {
+    res.redirect(`${baseUrl}/outcome-likely`)
+  } else {
+    res.redirect(`${baseUrl}/state-pension-amount`)
+  }
+})
+
+router.post(`${baseUrl}/pensions-router`, (req, res) => {
+  const pensions = req.session.data['pensions']
+
+  if (pensions === 'Yes') {
+    res.redirect(`${baseUrl}/outcome-unlikely`)
+  } else {
+    res.redirect(`${baseUrl}/earnings`)
+  }
+})
+
+router.post(`${baseUrl}/earnings-router`, (req, res) => {
+  const earnings = req.session.data['earnings']
+
+  if (earnings === 'Yes') {
+    res.redirect(`${baseUrl}/outcome-unlikely`)
+  } else {
+    res.redirect(`${baseUrl}/outcome-likely`)
+  }
+})
+
+
+router.post(`${baseUrl}/outcome-yn-router`, (req, res) => {
+  const outcomeYN = req.session.data['outcome-yn']
+
+  if (outcomeYN === 'Yes') {
+    res.redirect(`${baseUrl}/handover`)
+  } else {
+    res.redirect(`${baseUrl}/exit`)
+  }
+})
+
 
 
 
