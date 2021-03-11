@@ -17,8 +17,6 @@
 {% endblock %}
 
 
-
-
 {% block footer %}
 
 <div class="govuk-width-container ">
@@ -31,13 +29,12 @@
 
       <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
 
-      <ul class="govuk-list">
+      <ul class="govuk-list govuk-!-margin-bottom-2">
         <li>Telephone: 0800 587 0892</li>
         <li>Textphone: 0808 100 2198</li>
       </ul>
 
-
-      <p class="govuk-body">
+      <p class="govuk-body govuk-list govuk-!-margin-bottom-2">
         Monday to FrIday<br>
         Closed public holidays
 </p>
@@ -46,12 +43,12 @@
 
         <!---- UK ---->{% else %}
 
-        <ul class="govuk-list">
+        <ul class="govuk-list govuk-!-margin-bottom-2">
           <li>Telephone: 0800 99 1234</li>
           <li>Textphone: 0800 169 0133</li>
         </ul>
 
-        <ul class="govuk-list">
+        <ul class="govuk-list govuk-!-margin-bottom-2">
           <li>If you cannot hear or speak on the phone, use <br><a href="https://www.relayuk.bt.com/">Relay UK (opens in a new tab)</a>: 18001 then 0800 99 1234</li>
         </ul>
 

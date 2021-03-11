@@ -8,7 +8,7 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/g4s-1-0/mvp'
+const baseUrl = '/g4s-0-1/mvp'
 
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
