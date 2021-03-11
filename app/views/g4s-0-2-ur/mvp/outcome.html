@@ -9,20 +9,32 @@
 {% endblock %}
 
 {% block content %}
+
+{% include "includes/js-back-link.html" %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="handover" method="post" class="form">
-
-    <h1 class="govuk-heading-xl">Outcome</h1>
+    <form action="outcome-yn-router" method="post" class="form">
 
     <!------------H1 LEGEND------------>
 
     {% if data["housing-costs"] == "Yes" %}
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-6">[Housing costs] You are here because of housing costs</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likey: Housing costs] You are here because of housing costs</h1>
+    <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
+
+    {% elif data["benefit-check"] == "SP" %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Unlikey: SP] Too high [with/without qualifying benefits]</h1>
+    <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
+
     {% elif data["pensions"] == "Yes" %}
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-6">[Housing costs] You are here because of housing costs</h1>
-    {% elif data["employment"] == "Yes" %}
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-6">[Housing costs] You are here because of housing costs</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Unlikely: Pensions] Too high</h1>
+    <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
+
+    {% elif data["earnings"] == "Yes" %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Unlikey: Earnings] Too high</h1>
+    <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
+
+
 
     {% else %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Default] Likely</h1>{% endif %}
@@ -36,7 +48,7 @@
            fieldset: {
              legend: {
                text: "Given the outcome, does the citizen want to contine",
-               hint: " ",
+               hint: "X",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--m"
              }

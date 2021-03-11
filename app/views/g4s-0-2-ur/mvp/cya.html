@@ -188,6 +188,7 @@
         ]
         }) }}
 
+  {% if data["state-pension-amount"] %}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-2',
           rows: [
@@ -210,7 +211,9 @@
           }
         ]
         }) }}
+      {% endif %}
 
+        {% if data["Benefits"] %}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-2',
           rows: [
@@ -233,7 +236,9 @@
           }
         ]
         }) }}
+        {% endif %}
 
+        {% if data["pensions"] %}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-2',
           rows: [
@@ -242,21 +247,23 @@
               text: "Pension"
             },
             value: {
-              html: data["Benefits"]
+              html: data["pensions"]
             },
             actions: {
               items: [
                 {
-                  href: "Benefits",
+                  href: "pensions",
                   text: "Change",
-                  visuallyHiddenText: "Benefits"
+                  visuallyHiddenText: "pensions"
                 }
               ]
             }
           }
         ]
         }) }}
+        {% endif %}
 
+{% if data["earnings"] %}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-2',
           rows: [
@@ -265,46 +272,20 @@
               text: "Earnings"
             },
             value: {
-              html: data["Earnings"]
+              html: data["earnings"]
             },
             actions: {
               items: [
                 {
-                  href: "Benefits",
+                  href: "Earnings",
                   text: "Change",
-                  visuallyHiddenText: "Benefits"
+                  visuallyHiddenText: "Earnings"
                 }
               ]
             }
           }
         ]
         }) }}
-
-
-      {% if data["email-address"] %}
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-2',
-        rows: [
-      {
-          key: {
-            text: "Email address:"
-          },
-          value: {
-            html: data["email-address"]
-          },
-          actions: {
-            items: [
-              {
-                href: "del-auth-email-confirmation",
-                text: "Change",
-                visuallyHiddenText: "the email address for email confirmation"
-              }
-            ]
-          }
-        }
-      ]
-      }) }}
-
       {% endif %}
 
 
