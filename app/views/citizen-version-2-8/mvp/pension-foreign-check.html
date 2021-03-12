@@ -38,14 +38,14 @@
       {% else %}<p class="govuk-!-font-size-24">We need to know about any non-UK pensions you've paid into, including ones not taken yet. This includes:</p>{% endif %}
      
       <ul class="govuk-!-font-size-24 govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-        <li>private pensions</li>
-        <li>state pensions</li>
-        <li>workplace pensions</li>
+        <li>non-UK personal pensions</li>
+        <li>non-UK state pensions</li>
+        <li>non-UK workplace pensions</li>
       </ul>
 
 
-      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Have you or your partner paid into any non-UK private, state or work pensions?</p>
-      {% else %}<p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Have you paid into any non-UK private, state or work pensions?</p>{% endif %}
+      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Have you or your partner paid into any non-UK pensions?</p>
+      {% else %}<p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Have you paid into any non-UK pensions?</p>{% endif %}
 
  {% endset %}
 

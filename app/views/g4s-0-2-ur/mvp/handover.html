@@ -24,19 +24,25 @@
     <div class="govuk-grid-column-three-quarters">
       <form action="index-pension-credit" method="post" class="form">
 
+        <div class="moj-banner">
+        <div class="moj-banner__message">
+        <h2 class="govuk-heading-m govuk-!-margin-top-0">G4s to DWP handover</h2>
+        </div>
+        </div>
 
-      <h1 class="govuk-heading-xl">G4s handover</h1>
+      <h1 class="govuk-heading-xl">You are about to handover to your colleague</h1>
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <div>
-<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">XXX somethign to do with handing over to DWP</p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p>
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This hand over is taking place because: Outcome X, Y or Z</p>
 
 </div>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">***Items show in this summary would be bigger or smaller depending on if they Unlikey and still wish to continue vs say if someone is fast tracked due to Service and ground rent</p>
 
+<h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Applicant details</h2>
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-2',
@@ -52,7 +58,7 @@
       items: [
         {
           href: "claimant-name",
-          text: "Change",
+          text: " ",
           visuallyHiddenText: "claimant-name"
         }
       ]
@@ -75,7 +81,7 @@
       items: [
         {
           href: "over-spa",
-          text: "Change",
+          text: " ",
           visuallyHiddenText: "your date of birth"
         }
       ]
@@ -99,7 +105,7 @@
       items: [
         {
           href: "claimant-national-insurance",
-          text: "Change",
+          text: " ",
           visuallyHiddenText: "claimant-national-insurance"
         }
       ]
@@ -123,7 +129,7 @@
       items: [
         {
           href: "housing-costs",
-          text: "Change",
+          text: " ",
           visuallyHiddenText: "housing-costs"
         }
       ]
@@ -132,6 +138,7 @@
 ]
 }) }}
 
+{% if data["state-pension-amount"] %}
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-2',
   rows: [
@@ -146,7 +153,7 @@
       items: [
         {
           href: "state-pension-amount",
-          text: "Change",
+          text: " ",
           visuallyHiddenText: "state-pension-amount"
         }
       ]
@@ -154,7 +161,9 @@
   }
 ]
 }) }}
+{% endif %}
 
+{% if data["Benefits"] %}
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-2',
   rows: [
@@ -169,7 +178,7 @@
       items: [
         {
           href: "Benefits",
-          text: "Change",
+          text: " ",
           visuallyHiddenText: "Benefits"
         }
       ]
@@ -177,7 +186,9 @@
   }
 ]
 }) }}
+{% endif %}
 
+{% if data["Pension"] %}
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-2',
   rows: [
@@ -192,7 +203,7 @@
       items: [
         {
           href: "Benefits",
-          text: "Change",
+          text: " ",
           visuallyHiddenText: "Benefits"
         }
       ]
@@ -200,7 +211,9 @@
   }
 ]
 }) }}
+{% endif %}
 
+{% if data["Earnings"] %}
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-2',
   rows: [
@@ -215,7 +228,7 @@
       items: [
         {
           href: "Earnings",
-          text: "Change",
+          text: " ",
           visuallyHiddenText: "Earnings"
         }
       ]
@@ -223,7 +236,7 @@
   }
 ]
 }) }}
-
+{% endif %}
 
     </div></div>
 
