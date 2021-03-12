@@ -215,8 +215,11 @@
               {% if data["home-equity-release"] == "Yes" %}
               <li>your equity release. We will ask you for information from an annual statement from your provider</li>{% endif %}
 
+              {% if data["pension-foreign-check"] == "Yes" %}
+              <li>the non-UK pensions you told us about</li>{% endif %}
+
               {% if data["pension-check"] == "Yes" %}
-              <li>the private or overseas pensions you told us about</li>{% endif %}
+              <li>the personal pensions that you have not taken yet that you told us about</li>{% endif %}
 
               {% if data["self-employed"] == "Yes"%}
               <li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>{% endif %}
