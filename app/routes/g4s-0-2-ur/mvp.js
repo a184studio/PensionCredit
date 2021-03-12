@@ -57,19 +57,19 @@ router.post(`${baseUrl}/claimant-dob-router`, (req, res) => {
       res.redirect(`${baseUrl}/sex`)
     }
   } catch (err) {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
-  }
-})
-
-router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
-  const statePensionCheck = req.session.data['state-pension-check-yn']
-
-  if (statePensionCheck === 'Yes') {
     res.redirect(`${baseUrl}/children-check-yn`)
-  } else {
-    res.redirect(`${baseUrl}/done-not-getting-sp`)
   }
 })
+
+// router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
+//   const statePensionCheck = req.session.data['state-pension-check-yn']
+//
+//   if (statePensionCheck === 'Yes') {
+//     res.redirect(`${baseUrl}/children-check-yn`)
+//   } else {
+//     res.redirect(`${baseUrl}/done-not-getting-sp`)
+//   }
+// })
 
 router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
