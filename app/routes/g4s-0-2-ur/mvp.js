@@ -95,7 +95,7 @@ router.post(`${baseUrl}/benefit-check-router`, (req, res) => {
   const benefitCheck = req.session.data['benefit-check']
 
   if (benefitCheck == 'SP') {
-    res.redirect(`${baseUrl}/cya`)
+    res.redirect(`${baseUrl}/outcome`)
   } else {
     res.redirect(`${baseUrl}/pensions`)
   }
@@ -105,7 +105,7 @@ router.post(`${baseUrl}/pensions-router`, (req, res) => {
   const pensions = req.session.data['pensions']
 
   if (pensions === 'Yes') {
-    res.redirect(`${baseUrl}/cya`)
+    res.redirect(`${baseUrl}/outcome`)
   } else {
     res.redirect(`${baseUrl}/earnings`)
   }
@@ -115,9 +115,9 @@ router.post(`${baseUrl}/earnings-router`, (req, res) => {
   const earnings = req.session.data['earnings']
 
   if (earnings === 'Yes') {
-    res.redirect(`${baseUrl}/cya`)
+    res.redirect(`${baseUrl}/outcome`)
   } else {
-    res.redirect(`${baseUrl}/cya`)
+    res.redirect(`${baseUrl}/outcome`)
   }
 })
 
