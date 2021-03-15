@@ -85,7 +85,7 @@ router.post(`${baseUrl}/housing-costs-router`, (req, res) => {
   const housingCosts = req.session.data['housing-costs']
 
   if (housingCosts === 'Yes') {
-    res.redirect(`${baseUrl}/outcome-likely`)
+    res.redirect(`${baseUrl}/outcome`)
   } else {
     res.redirect(`${baseUrl}/state-pension-amount`)
   }
