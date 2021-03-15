@@ -20,19 +20,19 @@
 
     {% if data["housing-costs"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us you have housing costs that Pension Credit could help you with</h1>
-    <p class="govuk-body govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you decide whether to make an application.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you decide whether to make an application.</p>
 
     {% elif data['nino'] == 'S1 11 22 33 A' %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because your income from State Pension and any other benefits is too high</h1>
-    <p class="govuk-body govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
 
     {% elif data["pensions"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because of your pension income.</h1>
-    <p class="govuk-body govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
 
     {% elif data["earnings"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because of your earnings</h1>
-    <p class="govuk-body govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
 
 
 
