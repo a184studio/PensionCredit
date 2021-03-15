@@ -16,19 +16,16 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="handover" method="post" class="form">
 
-    <h1 class="govuk-heading-xl">Outcome</h1>
-
-
     {% if data["pensions"] == "Yes" %}
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-6">[Pensions] Unlikey</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Pensions] Unlikey</h1>
     {% elif data["earnings"] == "Yes" %}
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-6">[earnings] Unlikey</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[earnings] Unlikey</h1>
     {% elif data['nino'] == 'S1 11 22 33 A' %}
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-6">MAX SP and no benefits</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[SP / Benefit] Unlikey Too much income</h1>
     {% elif data['nino'] == 'S5 11 22 33 E' %}
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Claimants scenario is massively complex, too much for G4s to handle = Handover to DWP</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Claimants scenario is massively complex, too much for G4s to handle = Handover to DWP</h1>
     {% else %}
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-6">[Default] Unlikey</h1>{% endif %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Default] Unlikey</h1>{% endif %}
 
 
     {{ govukRadios({
