@@ -20,28 +20,28 @@
 
 
         {% if data["housing-costs"] == "Yes" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likey: Housing costs] You are here because of housing costs</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likely: Housing costs] You are here because of housing costs</h1>
         <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
 
         {% elif data["pensions"] == "Yes" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likey: Pensions] XXXX</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likely: Pensions] XXXX</h1>
         <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
 
         {% elif data["pensions"] == "No" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Unlikey: Pensions] XXXX</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Unlikely: Pensions] XXXX</h1>
         <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
 
         {% elif data["earnings"] == "Yes" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likey: Earnings] XXX</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likely: Earnings] XXX</h1>
         <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
 
         {% elif data["earnings"] == "No" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Unlikey: Earnings] XXX</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Unlikely: Earnings] XXX</h1>
         <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
 
 
         {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Default] Likely</h1>{% endif %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Default] Unlikely</h1>{% endif %}
 
 
          <!------------Legend--------------->
