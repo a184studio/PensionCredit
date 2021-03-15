@@ -14,7 +14,15 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="benefit-check-router" method="post" class="form">
+
+
+<!--- NI ROUTER --->
+{% if data['nino'] == 'S1 11 22 33 A' %}
+<form action="outcome-unlikely" method="post" class="form">
+{% else %}
+<form action="benefit-check-router" method="post" class="form">
+{% endif %}
+
 
       <div class="moj-banner">
       <div class="moj-banner__message">
@@ -52,11 +60,6 @@
       value: "None",
       text: "None of these",
       checked: (data["benefit-check"] == "None")
-    },
-    {
-      value: "SP",
-      text: "[Router: SP to high: no benefits",
-      checked: (data["benefit-check"] == "SP")
     }
   ]
 }) }}
