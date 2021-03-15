@@ -22,7 +22,7 @@
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us you have housing costs that Pension Credit could help you with</h1>
     <p class="govuk-body govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you decide whether to make an application.</p>
 
-    {% elif data["benefit-check"] == "SP" %}
+    {% elif data['nino'] == 'S1 11 22 33 A' %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because you get a full State Pension</h1>
     <p class="govuk-body govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
 
@@ -37,8 +37,31 @@
 
 
     {% else %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are likely to get Pension Credit</h1>{% endif %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are likely to get Pension Credit</h1>
+    {% endif %}
 
+
+    <!------------Legend------------>
+      {% set outComeCTA %}
+      {% if data["housing-costs"] == "Yes" %}
+      <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">[Housing costs] Transfer to DWP</h1>
+
+      {% elif data['nino'] == 'S1 11 22 33 A' %}
+      <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">[SP / Benefit] Unlikey Too much income</h1>
+
+      {% elif data["pensions"] == "Yes" %}
+      <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">[negative] Do you still need to speak to a Pension Credit adviser?</h1>
+
+      {% elif data["earnings"] == "Yes" %}
+      <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">[negative] Do you still need to speak to a Pension Credit adviser?</h1>
+
+
+      {% else %}
+      <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">[Positive] XXX</h1>
+      {% endif %}
+
+      {% endset %}
+    <!------------Legend------------>
 
          <!------------Legend--------------->
 
@@ -47,7 +70,7 @@
            name: "outcome-yn",
            fieldset: {
              legend: {
-               text: "Do you still need to speak to a Pension Credit adviser?",
+               html: outComeCTA,
                hint: "X",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--m"
