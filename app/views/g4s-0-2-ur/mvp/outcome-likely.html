@@ -20,7 +20,7 @@
 
 
         {% if data["housing-costs"] == "Yes" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likely: Housing costs] You are here because of housing costs</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Housing costs] You are here because of housing costs</h1>
         <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
 
         {% elif data["pensions"] == "Yes" %}
@@ -41,7 +41,8 @@
 
 
         {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Default] Unlikely</h1>{% endif %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Default] Unlikely</h1>
+        {% endif %}
 
 
          <!------------Legend--------------->
