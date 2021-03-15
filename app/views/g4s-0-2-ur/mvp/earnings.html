@@ -18,19 +18,19 @@
 
     <div class="moj-banner">
     <div class="moj-banner__message">
-    <h2 class="govuk-heading-m govuk-!-margin-top-0">Agent: Use SeachLight, do not ask citizen</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-top-0">Agent: Find this information in SeachLight. Do not ask caller.</h2>
     </div>
     </div>
 
      <!------------H1 LEGEND------------>
      {% set dynamicH1 %}
      {% if data["benefit-check"] == "CA" %}
-     <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Does their earnings income add up to more than £52.50 a week</h1>
+     <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have earnings of £52.50 a week or more?</h1>
 
      {% elif data["benefit-check"] == "B" %}
-     <p class="govuk-heading-xl govuk-!-margin-bottom-0">Does if their earnings income add up to more than £81.95 a week</p>
+     <p class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have earnings of £81.95 a week or more?</p>
      {% else %}
-     <p class="govuk-heading-xl govuk-!-margin-bottom-0">Does if their earnings income add up to more than £20.00 a week</p>
+     <p class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have earnings of £20.00 a week or more?</p>
      {% endif %}
      {% endset %}
 

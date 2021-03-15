@@ -20,24 +20,8 @@
 
 
         {% if data["housing-costs"] == "Yes" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likely: Housing costs] You are here because of housing costs</h1>
-        <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
-
-        {% elif data["pensions"] == "Yes" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likely: Pensions] XXXX</h1>
-        <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
-
-        {% elif data["pensions"] == "No" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Unlikely: Pensions] XXXX</h1>
-        <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
-
-        {% elif data["earnings"] == "Yes" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Likely: Earnings] XXX</h1>
-        <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
-
-        {% elif data["earnings"] == "No" %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Outcome / Unlikely: Earnings] XXX</h1>
-        <p class="govuk-body govuk-!-margin-bottom-2">XXX</p>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us you have housing costs that Pension Credit could help you with</h1>
+        <p class="govuk-body govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you decide whether to make an application</p>
 
 
         {% else %}
@@ -53,7 +37,7 @@
            name: "outcome-yn",
            fieldset: {
              legend: {
-               text: "Given the outcome, does the citizen want to contine",
+               text: "Do you want to speak to a Pension Credit adviser?",
                hint: "X",
                isPageHeading: true,
                classes: "govuk-fieldset__legend--m"
@@ -61,7 +45,7 @@
            },
            classes: "govuk-radios",
            hint: {
-             html: "XXX"
+             html: ""
            },
            items: [
              {

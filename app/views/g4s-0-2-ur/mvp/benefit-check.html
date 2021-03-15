@@ -18,7 +18,7 @@
 
       <div class="moj-banner">
       <div class="moj-banner__message">
-      <h2 class="govuk-heading-m govuk-!-margin-top-0">Agent: Use SeachLight, do not ask citizen</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-0">Agent: Find this information in SeachLight. Do not ask caller.</h2>
       </div>
       </div>
 
@@ -27,7 +27,7 @@
   name: "benefit-check",
   fieldset: {
     legend: {
-      text: "Enter benefits as seen in SeachLight",
+      text: "Do they get any of these benefits?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
@@ -40,12 +40,12 @@
 
     {
       value: "B",
-      text: "Disability benefits: X, Y and Z",
+      text: "Attendance Allowance, the middle or highest rate of Disability living Allowance, Personal Independence Payment, or Armed Forces Independence Payment",
       checked: (data["benefit-check"] == "B")
     },
     {
       value: "CA",
-      text: "Carers Premium",
+      text: "Carers Allowance, including an underlying entitlement",
       checked: (data["benefit-check"] == "CA")
     },
     {
@@ -55,7 +55,7 @@
     },
     {
       value: "SP",
-      text: "[Router: SP to high: no benefits",
+      text: "[Router: SP too high: no benefits",
       checked: (data["benefit-check"] == "SP")
     }
   ]
