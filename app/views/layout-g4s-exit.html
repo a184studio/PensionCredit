@@ -7,7 +7,7 @@
 
 {{ govukPhaseBanner({
   tag: {
-    text: "G4s Testing only",
+    text: "Testing only",
     classes: "govuk-tag--user-reseach"
   },
   html: 'No information is stored or sent using this service.'
@@ -21,31 +21,19 @@
 
 {% block footer %}
 
-<!-- <div class="govuk-width-container ">
+<div class="govuk-width-container ">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
 
-{% if data["pensions"] == "S1 11 22 33 A" %}
+
 <p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data["earnings"] == "S2 11 22 33 B" %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data['nino'] == 'S3 11 22 33 C' %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data['nino'] == 'S4 11 22 33 D' %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data['nino'] == 'S5 11 22 33 E' %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data['nino'] == 'S6 11 22 33 F' %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% else %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% endif %}
 
 
 </div>
-</div> -->
+</div>
+</div>
 
   {{ govukFooter({
     meta: {
