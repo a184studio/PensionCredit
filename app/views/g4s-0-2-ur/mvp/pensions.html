@@ -24,17 +24,22 @@
     </div>
     </div>
 
+
+
+
      <!------------H1 LEGEND------------>
        {% set dynamicH1 %}
-       {% if data["benefit-check"] == "CA" %}
-       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have workplace or personal pension income of £62.50 a week or more?</h1>
 
-       {% elif data["benefit-check"] == "B" %}
-       <p class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have workplace or personal pension income of £91.95 a week or more?</p>
-       {% else %}
-       <p class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have workplace or personal pension income of £25.00 a week or more?</p>
-       {% endif %}
+       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have workplace or personal pension income of
+
+          {% if data["nino"] == "S2 11 22 33 B" %}£00.00 [S3]
+          {% elif data['nino'] == 'S3 11 22 33 C' %}£00.00 [S3]
+          {% else %}£00.00 [SX] {% endif %} a week or more?</h1>
+
        {% endset %}
+
+
+
 
      <!------------ LEGEND END --------------->
 
