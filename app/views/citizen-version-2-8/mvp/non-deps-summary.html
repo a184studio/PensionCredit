@@ -63,6 +63,7 @@
 
         {% endif %} -->
 
+
         {{ govukSummaryList({
           classes: 'govuk-!-padding-top-0',
           rows: [
@@ -76,7 +77,7 @@
             actions: {
               items: [
               {
-                href: "xxx",
+                href: "non-deps-member-category",
                 html: "Change",
                 visuallyHiddenText: "XXX"
               },
@@ -90,6 +91,11 @@
           }
           ]
         }) }}
+
+
+
+
+
 
       {% if data["non-deps-member-full-name-2"] %}
 
@@ -106,12 +112,12 @@
              actions: {
                items: [
                {
-                 href: "non-deps-frequency",
+                 href: "non-deps-member-category-loop",
                  html: "Change",
                  visuallyHiddenText: "XXX"
                },
                {
-                 href: "non-deps-member-remove",
+                 href: "non-deps-member-remove-loop",
                  html: "Remove",
                  visuallyHiddenText: "XXX"
                }

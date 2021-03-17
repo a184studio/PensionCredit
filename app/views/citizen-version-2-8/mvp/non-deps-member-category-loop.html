@@ -13,7 +13,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="non-deps-member-details" method="post" class="form">
+      <form action="non-deps-member-details-loop" method="post" class="form">
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
@@ -35,8 +35,8 @@
           hint: {
             text: ""
           },
-          id: "non-deps-member-category-OtherDetails",
-          name: "non-deps-member-category-OtherDetails",
+          id: "non-deps-member-category-OtherDetails-2",
+          name: "non-deps-member-category-OtherDetails-2",
           classes: "govuk-input--width-100",
           attributes: {
             maxlength: 200
@@ -60,15 +60,15 @@
         hint: {
           text: "For example, daughter, brother or friend."
         },
-        id: "non-deps-relationship",
-        name: "non-deps-relationship",
+        id: "non-deps-relationship-2",
+        name: "non-deps-relationship-2",
         classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
-        value: data["non-deps-relationship"]
+        value: data["non-deps-relationship-2"]
       }) }}
 
 
 
-        {% endset %}
+      {% endset %}
 
       <!------------ CR ENDS--------------->
 
@@ -76,7 +76,7 @@
 
 
       {{ govukCheckboxes({
-        name: "non-deps-member-category",
+        name: "non-deps-member-category-2",
         fieldset: {
           legend: {
             text: "What is your relationship to the person that lives with you?",
@@ -92,7 +92,7 @@
              {
              value: "A close relative or friend",
              text: "A close relative or friend",
-             checked: data['non-deps-member-category'] == "A close relative or friend",
+             checked: data['non-deps-member-category-2'] == "A close relative or friend",
 
            hint: {
              text: "A close relative is a parent, parent-in-law, son, son-in-law, daughter, daughter-in-law, step-parent, step-son, step-daughter, brother, sister, or anyone that is the partner of one of these people."
@@ -102,9 +102,9 @@
                 }
               },
            {
-             value: "Commercial boarders",
+             value: "Commercial boarders 2",
              text: "A commercial boarder, lodger or subtenant",
-             checked: data['non-deps-member-category'] == "Commercial boarders",
+             checked: data['non-deps-member-category-2'] == "Commercial boarders",
               hint: {
                 text: "Someone who pays you to share your home or rent part of the property."
               }
@@ -113,7 +113,7 @@
            {
              value: "Certain joint tenants or owner occupiers",
              text: "A joint tenant or owner occupier",
-             checked: data['non-deps-member-category'] == "Certain joint tenants or owner occupiers",
+             checked: data['non-deps-member-category-3'] == "Certain joint tenants or owner occupiers",
               hint: {
                 text: "Someone who is named on the mortgage or tenancy agreement."
               }
@@ -121,7 +121,7 @@
            {
              value: "Anyone who is separately liable to make payments to the landlord",
              text: "A person who is separately liable to make payments to the landlord",
-             checked: data['non-deps-member-category'] == "Anyone who is separately liable to make payments to the landlord",
+             checked: data['non-deps-member-category-2'] == "Anyone who is separately liable to make payments to the landlord",
               hint: {
                 text: "Someone who has a separate agreement with the same landlord as you."
               }
@@ -129,7 +129,7 @@
            {
              value: "Certain volunteers from charitable organisations",
              text: "Someone from a charity or voluntary organisation",
-             checked: data['non-deps-member-category'] == "Certain volunteers from charitable organisations",
+             checked: data['non-deps-member-category-2'] == "Certain volunteers from charitable organisations",
               hint: {
                 text: "Someone who volunteers or is paid to live in your home to care for you."
               }
@@ -137,7 +137,7 @@
             {
               value: "Landlords/landladies and their families",
               text: "A landlord landlady and their family",
-              checked: data['non-deps-member-category'] == "Landlords/landladies and their families",
+              checked: data['non-deps-member-category-2'] == "Landlords/landladies and their families",
                hint: {
                  text: ""
                }
@@ -145,7 +145,7 @@
            {
              value: "Other",
              text: "Someone else",
-             checked: data['non-deps-member-category'] == "Other",
+             checked: data['non-deps-member-category-2'] == "Other",
                 conditional: {
                   html: OtherDetails
                 }

@@ -13,14 +13,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="benefit-UC-Carer" method="post" class="form">
+      <form action="non-deps-summary" method="post" class="form">
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
          <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Information about the person that lives with you</h1>
 
-         {% if data['non-deps-summary'] == "Yes" %}
+        <!--{% if data['non-deps-summary'] == "Yes" %}
 
          {{ govukInput({
            label: {
@@ -38,6 +38,9 @@
 
          {% else %}
 
+
+         {% endif %}-->
+
          {{ govukInput({
            label: {
              html: "<strong>What is their full name?</strong>"
@@ -50,8 +53,6 @@
            classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
            value: data["non-deps-member-full-name"]
          }) }}
-
-         {% endif %}
 
 
          {% if data['non-deps-member-category'] == "Certain volunteers from charitable organisations" %}

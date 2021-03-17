@@ -541,7 +541,7 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
     res.redirect(`${baseUrl}/non-deps-prompt`)
   }
   else if (nonDepsCheck === 'Yes-one') {
-    res.redirect(`${baseUrl}/non-deps-member-category`)
+    res.redirect(`${baseUrl}/non-deps-prompt`)
   }
   else if (nonDepsCheck === 'Yes-more') {
     res.redirect(`${baseUrl}/non-deps-multi-member-details`)
@@ -554,7 +554,7 @@ router.post(`${baseUrl}/non-deps-summary-router`, (req, res) => {
   const nonDepsSummary = req.session.data['non-deps-summary']
 
   if (nonDepsSummary === 'Yes') {
-    res.redirect(`${baseUrl}/non-deps-member-category`)
+    res.redirect(`${baseUrl}/non-deps-member-category-loop`)
   } else {
     res.redirect(`${baseUrl}/benefit-UC-Carer`)
   }

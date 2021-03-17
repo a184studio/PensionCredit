@@ -13,16 +13,16 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="non-deps-prompt" method="post" class="form">
+      <form action="non-deps-summary" method="post" class="form">
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Are you sure you want to remove {{data['non-deps-member-full-name']}} from your household?</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Are you sure you want to remove {{data['non-deps-member-full-name-2']}} from your household?</h1>
 
 
              {{ govukRadios({
-               idPrefix: "remove-depnedent-1",
+               idPrefix: "remove-depnedent-2",
                name: "remove-depnedent-1",
                fieldset: {
                  legend: {
@@ -40,12 +40,12 @@
                  {
                    value: "Yes",
                    text: "Yes",
-                   checked: (data["remove-1"] == "Yes")
+                   checked: (data["remove-2"] == "Yes")
                  },
                  {
                    value: "No",
                    text: "No",
-                   checked: (data["remove-1"] == "No")
+                   checked: (data["remove-2"] == "No")
                  }
                ]
              }) }}
