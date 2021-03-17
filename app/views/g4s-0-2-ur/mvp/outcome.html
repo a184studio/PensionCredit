@@ -18,11 +18,11 @@
 
     <!------------H1 LEGEND------------>
 
-    {% elif data['nino'] == '' %}
+    {% if data['nino'] == '' %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have told us that you don't have a National Insurance number</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you apply for one and decide whether to make a Pension Credit application.</p>
 
-    {% if data["housing-costs"] == "Yes" %}
+    {% elif data["housing-costs"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us you have housing costs that Pension Credit could help you with</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you decide whether to make an application.</p>
 
@@ -38,8 +38,6 @@
     {% elif data["earnings"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because of your earnings</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
-
-
 
     {% else %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Default basically, No to everything] You are likely to get Pension Credit</h1>
