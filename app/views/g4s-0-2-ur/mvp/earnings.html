@@ -25,13 +25,39 @@
      <!------------H1 LEGEND------------>
      {% set dynamicH1 %}
 
-     <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have earnings of
+       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have earnings of
 
-        {% if data["nino"] == "S2 11 22 33 B" %}£00.00 [S2]
-        {% elif data['nino'] == 'S3 11 22 33 C' %}£00.00 [S3]
-        {% else %}£00.00 [SX] {% endif %} a week or more?</h1>
+          {% if data["nino"] == "S2 11 22 33 B" %}
 
-     {% endset %}
+              <!------------Benefit values ------------>
+
+              {% if data["benefit-check"] == "B" %}
+              £00.00 +£37.50 [S2]
+
+              {% elif data['benefit-check'] == 'CA' %}
+              £00.00 +£66.95 [S2]
+
+              {% else %}£00.00 [S2] {% endif %}
+              <!------------Benefit values ------------>
+
+          {% elif data['nino'] == 'S2 11 22 33 C' %}
+
+              <!------------Benefit values ------------>
+
+              {% if data["benefit-check"] == "B" %}
+              £00.00 +£37.50 [S3]
+
+              {% elif data['benefit-check'] == 'CA' %}
+              £00.00 +£66.95 [S3]
+
+              {% else %}£00.00 [S3]{% endif %}
+              <!------------Benefit values ------------>
+
+              {% else %}£00.00 [SX] {% endif %}
+
+        a week or more?</h1>
+
+          {% endset %}
 
      <!------------ LEGEND END --------------->
 
