@@ -45,7 +45,7 @@ router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 
   if (startCheck === 'Yes') {
-    res.redirect(`${baseUrl}/reside-in-uk`)
+    res.redirect(`${baseUrl}/doc-absence`)
   } else {
     res.redirect(`${baseUrl}/start-check-no`)
   }
