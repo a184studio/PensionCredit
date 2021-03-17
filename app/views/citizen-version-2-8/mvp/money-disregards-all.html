@@ -18,7 +18,7 @@
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Is any of the money you have from:</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Tell us about the money you have</h1>
 
 
          {% set arrearsOver %}
@@ -290,105 +290,46 @@
 
           <!---- COUNTRY END ---->{% endif %}
 
-        {{ govukCheckboxes({
-          name: "disregards",
-          fieldset: {
-            legend: {
-              text: "",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: ""
-          },
-          items: [
-          {
-            name: 'arrears',
-            value: "Payments to correct or compensate for an official error or for arrears of benefits",
-            html: "Payments to correct or compensate for an official error or for arrears of benefits",
-            conditional: {
-              html: arrearsOver
-            }
-          },
-          {
-            name: 'council',
-            value: "Payments related to Council Tax Reduction",
-            html: dynamicH2,
-            conditional: {
-              html: council
-            }
-          },
-            {
-              name: 'warpayment',
-              value: "Compensation payments related to the second world war or service in the armed forces",
-              html: "Compensation payments related to the second world war or service in the armed forces",
-              conditional: {
-                html: warPaymentYes
-              }
-            },
-            {
-              name: 'compensation-for-injury',
-              value: "Personal injury claim payments",
-              html: "Personal injury claim payments",
-              conditional: {
-                html: compensationInjury
-              }
-            },
-            {
-              name: "contents-insurance",
-              value: "Payments from a home insurance policy to cover lost or damaged personal possessions",
-              html: "Payments from a home insurance policy to cover lost or damaged personal possessions",
-              conditional: {
-                html: ContentsInsurance
-              }
-            },
-            {
-              name: 'money-for-property',
-              value: "Savings that you intend to use to buy or make essential repairs to your main home",
-              html: "Savings that you intend to use to buy or make essential repairs to your main home",
-              conditional: {
-                html: moneyForProperty
-              }
-            },
-            {
-              name: 'independently-living',
-              value: "Payments to help you live independently in your own home or the community",
-              html: "Payments to help you live independently in your own home or the community",
-              conditional: {
-                html: independentlyLiving
-              }
-            },
-            {
-              name: 'incident-payments',
-              value: "Payments to help you if you have been involved in an incident or emergency",
-              html: "Payments to help you if you have been involved in an incident or emergency",
-              conditional: {
-                html: incidentPayment
-              }
-            },
-            {
-              name: 'windrush',
-              value: "Windrush child compensation",
-              html: "Windrush child compensation",
-              conditional: {
-                html: windrushYes
-              }
-            },
-            {
-              name: 'blood',
-              value: "Payments to support you with the effects of a blood infection or vCJD",
-              html: "Payments to support you with the effects of a blood infection or vCJD",
-              conditional: {
-                html: infectedBlood
-              }
-            }
-          ]
-        }) }}
+          <p class="govuk-heading-s govuk-!-margin-bottom-2">Do any of the following apply to you?</p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>Payments to correct or compensate for an official error or for arrears of benefits</li>
+          <li>Payments related to Council Tax Reduction</li>
+          <li>Compensation payments related to the second world war or service in the armed forces</li>
+          <li>Personal injury claim payments</li>
+          <li>Payments from a home insurance policy to cover lost or damaged personal possessions</li>
+          <li>Savings that you intend to use to buy or make essential repairs to your main home</li>
+          <li>Payments to help you live independently in your own home or the community</li>
+          <li>Payments to help you if you have been involved in an incident or emergency</li>
+          <li>Windrush child compensation</li>
+          <li>Payments to support you with the effects of a blood infection or vCJD </li>
+    </ul>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+          {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "uk-national",
+            name: "uk-national",
+            fieldset: {
+              legend: {
+                html: legendUKNationalHeadline,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              html:legendUKNationalHint
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+
+          }) }}
       </form>
 
       <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
