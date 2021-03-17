@@ -77,6 +77,7 @@ router.use(require('./routes/agent-worklist-2-3/worklist'))
 router.use(require('./routes/citizen-version-2-7-ur/mvp'))
 router.use(require('./routes/citizen-version-2-8/mvp'))
 router.use(require('./routes/g4s-0-2-ur/mvp'))
+router.use(require('./routes/citizen-version-2-8-ur/mvp'))
 
 
 module.exports = router
