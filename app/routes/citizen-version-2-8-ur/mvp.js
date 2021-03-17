@@ -45,7 +45,7 @@ router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 
   if (startCheck === 'Yes') {
-    res.redirect(`${baseUrl}/doc-absence`)
+    res.redirect(`${baseUrl}/doc-draft-date`)
   } else {
     res.redirect(`${baseUrl}/start-check-no`)
   }
@@ -383,7 +383,7 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   if (partnerCheck === 'Yes, we live together') {
     res.redirect(`${baseUrl}/partner-app-check`)
   } else {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/money-2-intro`)
   }
 })
 

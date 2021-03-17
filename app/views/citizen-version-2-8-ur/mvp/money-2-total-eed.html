@@ -24,10 +24,10 @@
      <!--  {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you and your partner had on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}</h1>
       {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you had on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}</h1>{% endif %} -->
 
-      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you and your partner had on [EED]</h1>
+      {% if data["partner-application-yn"] == "Yes" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you and your partner had on [EED]</h1>
       {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you had on [EED]</h1>{% endif %}
 
-      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you had money in accounts shared with someone other than your partner, only tell us about the amount of money that belonged to you and your partner.</p>
+      {% if data["partner-application-yn"] == "Yes" %}<p class="govuk-!-font-size-24">If you had money in accounts shared with someone other than your partner, only tell us about the amount of money that belonged to you and your partner.</p>
       {% else %}  <p class="govuk-!-font-size-24">If you had money in accounts shared with someone else, only tell us about the amount of money that belonged to you.</p>{% endif %}
 
       <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes money, savings and investments such as:</p>
@@ -47,7 +47,7 @@
 {% set moneyTotalEEDValue %}
 
 {% set LegendAmount %}
-<strong>What is the total amount of money you had on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}?<strong>
+<strong>What is the total amount of money {% if data["partner-application-yn"] == "Yes" %}you and your partner{% else %}you{% endif %} had on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}?<strong>
 {% endset -%}
 
       {{ govukInput({
@@ -70,12 +70,9 @@
       }) }}
 {% endset %}
 
-<!-- {% set LegendAmount %}
-<strong>How much money did you have on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}?<strong>
-{% endset -%} -->
 
 {% set LegendAmount %}
-<strong>How much money did you have on [EED]?<strong>
+<p class="govuk-heading-m govuk-!-margin-bottom-2">How much money did {% if data["partner-application-yn"] == "Yes" %}you and your partner{% else %}you{% endif %} have on [EED]?</p>
 {% endset -%}
 
 {{ govukRadios({

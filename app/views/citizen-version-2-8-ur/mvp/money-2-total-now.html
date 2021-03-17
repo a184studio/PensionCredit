@@ -21,10 +21,10 @@ Money you have now - Apply for Pension Credit - GOV.UK
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
-      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you and your partner have today</h1>
+      {% if data["partner-application-yn"] == "Yes" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you and your partner have today</h1>
       {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you have today</h1>{% endif %}
 
-      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you have money in accounts shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
+      {% if data["partner-application-yn"] == "Yes" %}<p class="govuk-!-font-size-24">If you have money in accounts shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
       {% else %}  <p class="govuk-!-font-size-24">If you have money in accounts shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
 
       <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes money, savings and investments such as:</p>
@@ -39,12 +39,16 @@ Money you have now - Apply for Pension Credit - GOV.UK
       <li>any other money in this country or overseas</li>
 </ul>
 
+{% set legendValue %}
+What is the total amount of money {% if data["partner-application-yn"] == "Yes" %}you and your partner{% else %}you{% endif %} have today?
+{% endset -%}
+
 {% set moneyTotalTodayValue %}
 {{ govukInput({
   id: "money-2-total-now-value",
   name: "money-2-total-now-value",
   label: {
-    html: "What is the total amount of money you have today?",
+    html: legendValue,
     classes: "govuk-label--s",
     isPageHeading: true
   },
@@ -63,8 +67,9 @@ Money you have now - Apply for Pension Credit - GOV.UK
 
 
 
+
 {% set LegendAmount %}
-<strong>How much money do you have today?<strong>
+What is the total amount of money {% if data["partner-application-yn"] == "Yes" %}you and your partner{% else %}you{% endif %} have today? 
 {% endset -%}
 
 

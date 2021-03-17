@@ -17,7 +17,8 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
     <form action="money-2-total-now-confirm-router" method="post" class="form">
 
       <!------------H1 LEGEND------------>
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Total amount of money you have today</h1>
+{% if data["partner-application-yn"] == "Yes" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Total amount of money you and your partner have today</h1>
+{% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Total amount of money you have today</h1>{% endif %}
 
            <!------------Legend--------------->
 
