@@ -24,77 +24,74 @@
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
         {% if data["single-joint-check"] == "Joint" %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You have told us about 1 person that lives with you and your partner</h2>
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You have told us about 2 people that live with you and your partner</h2>
 
         {% else %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You have told us about 1 person that lives with you</h2>
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You have told us about 2 people that live with you</h2>
         {% endif %}
 
 
-         <!-- {% if data["partner-full-name"] %}
+        {% if data["non-deps-member-full-name"] %}
 
-         {{ govukSummaryList({
-           classes: '',
-           rows: [
-           {
-             key: {
-               text: "Partner"
-             },
-             value: {
-               html: data['partner-full-name']
-             },
-             actions: {
-               items: [
-               {
-                 href: "non-deps-frequency",
-                 html: "",
-                 visuallyHiddenText: "XXX"
-               },
-               {
-                 href: "non-deps-member-remove",
-                 html: "",
-                 visuallyHiddenText: "XXX"
-               }
-               ]
-             }
-           }
-           ]
-         }) }}
-
-        {% endif %} -->
-
-
-      {% if data["non-deps-member-full-name"] %}
-
-        {{ govukSummaryList({
-          classes: 'govuk-!-padding-top-0',
-          rows: [
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              html: data['non-deps-member-full-name']
-            },
-            actions: {
-              items: [
-              {
-                href: "non-deps-member-category",
-                html: "Change",
-                visuallyHiddenText: "XXX"
+          {{ govukSummaryList({
+            classes: 'govuk-!-padding-top-0',
+            rows: [
+            {
+              key: {
+                text: "Name"
               },
+              value: {
+                html: data['non-deps-member-full-name']
+              },
+              actions: {
+                items: [
+                {
+                  href: "non-deps-member-category",
+                  html: "Change",
+                  visuallyHiddenText: "XXX"
+                },
+                {
+                  href: "non-deps-member-remove",
+                  html: "Remove",
+                  visuallyHiddenText: "XXX"
+                }
+                ]
+              }
+            }
+            ]
+          }) }}
+          {% endif %}
+
+          {% if data["non-deps-member-full-name-2"] %}
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-padding-top-0',
+              rows: [
               {
-                href: "non-deps-member-remove",
-                html: "Remove",
-                visuallyHiddenText: "XXX"
+                key: {
+                  text: "Name"
+                },
+                value: {
+                  html: data['non-deps-member-full-name-2']
+                },
+                actions: {
+                  items: [
+                  {
+                    href: "non-deps-member-category-Loop",
+                    html: "Change",
+                    visuallyHiddenText: "XXX"
+                  },
+                  {
+                    href: "non-deps-member-remove-loop",
+                    html: "Remove",
+                    visuallyHiddenText: "XXX"
+                  }
+                  ]
+                }
               }
               ]
-            }
-          }
-          ]
-        }) }}
-        {% endif %}
-
+            }) }}
+            {% endif %}
 
 
 
