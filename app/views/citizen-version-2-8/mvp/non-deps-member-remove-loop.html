@@ -23,7 +23,7 @@
 
              {{ govukRadios({
                idPrefix: "remove-depnedent-2",
-               name: "remove-depnedent-1",
+               name: "remove-depnedent-2",
                fieldset: {
                  legend: {
                    text: "",
@@ -40,12 +40,12 @@
                  {
                    value: "Yes",
                    text: "Yes",
-                   checked: (data["remove-2"] == "Yes")
+                   checked: (data["remove-depnedent-2"] == "Yes")
                  },
                  {
                    value: "No",
                    text: "No",
-                   checked: (data["remove-2"] == "No")
+                   checked: (data["remove-depnedent-2"] == "No")
                  }
                ]
              }) }}
