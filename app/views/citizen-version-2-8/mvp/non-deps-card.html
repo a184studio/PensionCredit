@@ -16,35 +16,23 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="xxx" method="post" class="form">
 
-
-
       <section class="app-summary-card govuk-!-margin-bottom-6">
 
         <header class="app-summary-card__header">
 
           <h2 class="app-summary-card__title">
-            The University of Bristol
+            {{data['non-deps-member-full-name']}}
           </h2>
 
             <div class="app-summary-card__actions">
 
                 <ul class="app-summary-card__actions-list">
 
-
                     <li class="app-summary-card__actions-list-item">
                       <a class="govuk-link" href="#">
                             Delete choice<span class="govuk-visually-hidden"> (The University of Bristol)</span>
                             </a>
                     </li>
-
-
-
-                    <li class="app-summary-card__actions-list-item">
-                      <a class="govuk-link" href="#">
-                            Withdraw<span class="govuk-visually-hidden"> (The University of Bristol)</span>
-                            </a>
-                    </li>
-
 
                 </ul>
 
@@ -54,11 +42,6 @@
 
 
         <div class="app-summary-card__body">
-
-
-
-
-
 
 
       <dl class="govuk-summary-list">
@@ -72,8 +55,11 @@
                 <a href="#">English (3DMD)</a><br>PGCE with QTS full time
               </dd>
 
-            </div>
+              <a class="govuk-summary-list__actions" href="#">
+                    Change<span class="govuk-visually-hidden"> </span>
+                    </a>
 
+            </div>
 
 
             <div class="govuk-summary-list__row">
@@ -85,14 +71,12 @@
       Road, City, SW1 1AA
               </dd>
 
+              <a class="govuk-summary-list__actions" href="#">
+                    Change<span class="govuk-visually-hidden"> </span>
+                    </a>
             </div>
-
-
       </dl>
-
-
         </div>
-
       </section>
 
 

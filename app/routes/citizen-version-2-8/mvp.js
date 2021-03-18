@@ -540,7 +540,7 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-prompt`)
   }
-  else if (nonDepsCheck === 'Yes-one') {
+  else if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-prompt`)
   }
   else if (nonDepsCheck === 'Yes-more') {
