@@ -27,37 +27,37 @@
 
        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have earnings of
 
-          {% if data["nino"] == "S2 11 22 33 B" %}
+         {% if data["nino"] == "S2 11 22 33 B" %}
 
-              <!------------Benefit values ------------>
+             <!------------Benefit values ------------>
 
-              {% if data["benefit-check"] == "B" %}
-              £00.00 +£37.50 [S2]
+             {% if data["benefit-check"] == "B" %}
+             £57.50  [S3+£37.50 -£5]
 
-              {% elif data['benefit-check'] == 'CA' %}
-              £00.00 +£66.95 [S2]
+             {% elif data['benefit-check'] == 'CA' %}
+             £86.95  [S3 +£66.95 -£5]
 
-              {% else %}£00.00 [S2] {% endif %}
-              <!------------Benefit values ------------>
+             {% else %}£20.00 [S3 -£5]{% endif %}
+             <!------------Benefit values ------------>
 
-          {% elif data['nino'] == 'S2 11 22 33 C' %}
+         {% elif data['nino'] == 'S3 11 22 33 C' %}
 
-              <!------------Benefit values ------------>
+             <!------------Benefit values ------------>
 
-              {% if data["benefit-check"] == "B" %}
-              £00.00 +£37.50 [S3]
+             {% if data["benefit-check"] == "B" %}
+             £57.50  [S3+£37.50 -£5]
 
-              {% elif data['benefit-check'] == 'CA' %}
-              £00.00 +£66.95 [S3]
+             {% elif data['benefit-check'] == 'CA' %}
+             £86.95  [S3 +£66.95 -£5]
 
-              {% else %}£00.00 [S3]{% endif %}
-              <!------------Benefit values ------------>
+             {% else %}£20.00 [S3 -£5]{% endif %}
+             <!------------Benefit values ------------>
 
-              {% else %}£00.00 [SX] {% endif %}
+             {% else %}£00.00 [SX] {% endif %}
 
-        a week or more?</h1>
+       a week or more?</h1>
 
-          {% endset %}
+         {% endset %}
 
      <!------------ LEGEND END --------------->
 
