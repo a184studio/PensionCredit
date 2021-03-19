@@ -1272,13 +1272,13 @@ actions: {
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">Other people that live with you</h2>
 
 
-      {{ govukSummaryList({
+      <!--{{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
 
           {
           key: {
-            text: "Does anyone else live with you who is over 18 and [apart from your partner] live with you?"
+            text: "Does anyone else live with you [apart from your partner]?"
           },
           value: {
             text: data["non-deps-living-with-you"]
@@ -1286,7 +1286,7 @@ actions: {
           actions: {
             items: [
               {
-                href: "non-deps-living-with-you",
+                href: "non-deps-summary",
                 text: "Change",
                 visuallyHiddenText: "whether anyone else lives with you"
               }
@@ -1295,14 +1295,9 @@ actions: {
         }
 
       ]
-      }) }}
-
-      <!--<div><h3 class="govuk-heading-m">You told us about [2] people who live with you </h3>-->
-        <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">You told us about [2] people who live with you </h2>
+      }) }}-->
 
 
-
-  {% if data['non-deps-member-full-name'] %}
 
       <section class="app-summary-card govuk-!-margin-bottom-6">
 
@@ -1318,7 +1313,7 @@ actions: {
 
                     <li class="app-summary-card__actions-list-item">
                       <a class="govuk-link" href="#">
-                            Remove<span class="govuk-visually-hidden"> ("")</span>
+                            Delete<span class="govuk-visually-hidden"> (The University of Bristol)</span>
                             </a>
                     </li>
 
@@ -1340,10 +1335,7 @@ actions: {
                 What is your relationship to the person that lives with you?
               </dt>
               <dd class="govuk-summary-list__value">
-                A family member <br>
-                Charity <br>
-                ...
-
+                <a href="#">English (3DMD)</a><br>PGCE with QTS full time
               </dd>
 
               <a class="govuk-summary-list__actions" href="#">
@@ -1355,389 +1347,323 @@ actions: {
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                 Who is this person?
+                Location
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data["non-deps-relationship"]}}
+                School name
+      Road, City, SW1 1AA
               </dd>
 
-              <a class="govuk-summary-list__actions" href="non-deps-relationship">
+              <a class="govuk-summary-list__actions" href="#">
                     Change<span class="govuk-visually-hidden"> </span>
                     </a>
             </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 What is their full name?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['non-deps-member-full-name']}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 What is their date of birth?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['non-deps-member-details-dob-day'] + ' ' + (data['non-deps-member-details-dob-month'] | getMonth) + ' ' + data['non-deps-member-details-dob-year']}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 When did you start living together?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['non-deps-member-details-resident-from-day'] + ' ' + (data['non-deps-member-details-from-month'] | getMonth) + ' ' + data['non-deps-member-details-from-year']}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 Do they pay towards the rent or mortgage?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['mortgage-rent-share-date']}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 When did they start paying towards the rent or mortgage?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['non-deps-member-details-share-day'] + ' ' + (data['non-deps-member-details-share-month'] | getMonth) + ' ' + data['non-deps-member-details-share-year']}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 Are they in education?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data["non-deps-member-education"]}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 Are they in employment?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data["non-deps-member-employment"]}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 How much do they earn each week?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data["non-deps-member-details-weekly-earnings"]}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 How much do they earn each week?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data["non-deps-member-details-weekly-earnings"]}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 Are they registered blind or severely sight impaired?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data["non-deps-member-details-blind"]}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                 What is the name of the charity this person works for?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['non-deps-member-charity-name']}}
-              </dd>
-
-              <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                    Change<span class="govuk-visually-hidden"> </span>
-                    </a>
-            </div>
-
       </dl>
         </div>
       </section>
 
+      <div>
+        <h3 class="govuk-heading-m govuk-!-margin-top-8"">Mateo Olmedo</h3>
+      </div>
+
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+        {
+        key: {
+          text: "What is your relationship to the person that lives with you?"
+        },
+        value: {
+          html: " A family member<br>
+                  Charity<br>
+                  ...<br>
+                  ..."  },
+        actions: {
+          items: [
+            {
+              href: "non-deps-member-category",
+              text: "Change",
+              visuallyHiddenText: "your relationship to data[non-deps-member-details-full-name]"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Who is this person?"
+        },
+        value: {
+          text: data["non-deps-relationship"]
+        },
+        actions: {
+          items: [
+            {
+              href: "non-deps-relationship",
+              text: "Change",
+              visuallyHiddenText: "who data[non-deps-member-details-full-name] is"
+            }
+          ]
+        }
+      }
+
+      ]
+      }) }}
+
+
+      {% if data["non-deps-member-category-OtherDetails"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+            {
+            key: {
+              text: "Describe your relationship with this person"
+            },
+            value: {
+              text: data["non-deps-member-category-OtherDetails"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "non-deps-member-category",
+                  text: "Change",
+                  visuallyHiddenText: "your relationship with data[non-deps-member-details-full-name]"
+                }
+              ]
+            }
+          }
+
+        ]
+        }) }}
+
       {% endif %}
 
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
 
-      {% if data['non-deps-member-full-name-2'] %}
+        {
+        key: {
+          text: "What is their full name?"
+        },
+        value: {
+          text: data[non-deps-member-details-full-name]
+        },
+        actions: {
+          items: [
+            {
+              href: "non-deps-member-details",
+              text: "Change",
+              visuallyHiddenText: "the full name of data[non-deps-member-details-full-name]"
+            }
+          ]
+        }
+      },
+      {
+      key: {
+        text: "What is the name of the charity this person works for?"
+      },
+      value: {
+        text: data['non-deps-member-charity-name']
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "the name of the charity data[non-deps-member-details-full-name] works for"
+          }
+        ]
+      }
+    },
+          {
+          key: {
+            text: "What is their date of birth?"
+          },
+          value: {
+            text: data['non-deps-member-details-dob-day'] + ' ' + (data['non-deps-member-details-dob-month'] | getMonth) + ' ' + data['non-deps-member-details-dob-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "When did you start living together?"
+          },
+          value: {
+            text: data['non-deps-member-details-resident-from-day'] + ' ' + (data['non-deps-member-details-from-month'] | getMonth) + ' ' + data['non-deps-member-details-from-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Do they pay towards the rent or mortgage?"
+          },
+          value: {
+            text: data['mortgage-rent-share-date']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "When did they start paying towards the rent or mortgage?"
+          },
+          value: {
+            text: data['non-deps-member-details-share-day'] + ' ' + (data['non-deps-member-details-share-month'] | getMonth) + ' ' + data['non-deps-member-details-share-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-member-details",
+                text: "Change",
+                visuallyHiddenText: "data[non-deps-member-details-full-name]'s date of birth"
+              }
+            ]
+          }
+        },
 
-          <section class="app-summary-card govuk-!-margin-bottom-6">
+        {
+        key: {
+          text: "Are they registered blind or severely sight impaired?"
+        },
+        value: {
+          text: data["non-deps-member-details-blind"]
+        },
+        actions: {
+          items: [
+            {
+              href: "non-deps-member-details",
+              text: "Change",
+              visuallyHiddenText: "whether data[non-deps-member-details-full-name] is blind or severely sight impaired"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Does this person live with you all the time?"
+        },
+        value: {
+          text: data["non-deps-frequency"]
+        },
+        actions: {
+          items: [
+            {
+              href: "non-deps-member-details",
+              text: "Change",
+              visuallyHiddenText: "whether data[non-deps-member-details-full-name] lives with you all the time"
+            }
+          ]
+        }
+      },
 
-            <header class="app-summary-card__header">
+      {
+      key: {
+        text: "Are they in education?"
+      },
+      value: {
+        text: data["non-deps-member-education"]
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "whether data[non-deps-member-details-full-name] is in education"
+          }
+        ]
+      }
+      },
 
-              <h2 class="app-summary-card__title">
-                {{data['non-deps-member-full-name-2']}}
-              </h2>
+      {
+      key: {
+        text: "Are they in employment?"
+      },
+      value: {
+        text: data["non-deps-member-employment"]
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "whether data[non-deps-member-details-full-name] is in employment"
+          }
+        ]
+      }
+      },
+      {
+      key: {
+        text: "How much do they earn each week?"
+      },
+      value: {
+        text: data["non-deps-member-details-weekly-earnings"]
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "how much data[non-deps-member-details-full-name] earns each week"
+          }
+        ]
+      }
+      },
 
-                <div class="app-summary-card__actions">
+      {
+      key: {
+        text: "Are they self-employed?"
+      },
+      value: {
+        text: data["non-deps-member-self-employment"]
+      },
+      actions: {
+        items: [
+          {
+            href: "non-deps-member-details",
+            text: "Change",
+            visuallyHiddenText: "whether data[non-deps-member-details-full-name] is self-employed"
+          }
+        ]
+      }
+      }
 
-                    <ul class="app-summary-card__actions-list">
-
-                        <li class="app-summary-card__actions-list-item">
-                          <a class="govuk-link" href="non-deps-member-remove-loop">
-                                Remove<span class="govuk-visually-hidden"> ("")</span>
-                                </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </header>
-
-
-            <div class="app-summary-card__body">
-
-
-          <dl class="govuk-summary-list">
-
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    What is your relationship to the person that lives with you?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    A family member <br>
-                    Charity <br>
-                    ...
-
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="#">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-
-                </div>
-
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     Who is this person?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data["non-deps-relationship-2"]}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-relationship">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     What is their full name?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data['non-deps-member-full-name-2']}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     What is their date of birth?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data['non-deps-member-details-dob-day'] + ' ' + (data['non-deps-member-details-dob-month'] | getMonth) + ' ' + data['non-deps-member-details-dob-year']}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     When did you start living together?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data['non-deps-member-details-resident-from-day'] + ' ' + (data['non-deps-member-details-from-month'] | getMonth) + ' ' + data['non-deps-member-details-from-year']}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
-
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     Do they pay towards the rent or mortgage?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data['mortgage-rent-share-date-2']}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
+      ]
+      }) }}
 
 
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     When did they start paying towards the rent or mortgage?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data['non-deps-member-details-share-day'] + ' ' + (data['non-deps-member-details-share-month'] | getMonth) + ' ' + data['non-deps-member-details-share-year']}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
 
 
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     Are they in education?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data["non-deps-member-education-2"]}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     Are they in employment?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data["non-deps-member-employment-2"]}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     How much do they earn each week?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data["non-deps-member-details-weekly-earnings-2"]}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     How much do they earn each week?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data["non-deps-member-details-weekly-earnings-2"]}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
 
 
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     Are they registered blind or severely sight impaired?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data["non-deps-member-details-blind-2"]}}
-                  </dd>
 
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
-
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                     What is the name of the charity this person works for?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data['non-deps-member-charity-name-2']}}
-                  </dd>
-
-                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
-                        Change<span class="govuk-visually-hidden"> </span>
-                        </a>
-                </div>
-
-          </dl>
-            </div>
-          </section>
-
-          {% endif %}
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1792,6 +1718,8 @@ actions: {
       ]
     }) }}
 {% endif %}
+
+
 
 
       </div>
