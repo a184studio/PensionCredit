@@ -35,12 +35,12 @@
               <!------------Benefit values ------------>
 
               {% if data["benefit-check"] == "B" %}
-              £62.50  [S2+£37.50]
+              £62.50  <!--[S2+£37.50]-->
 
               {% elif data['benefit-check'] == 'CA' %}
-              £91.95  [S2 +£66.95 ]
+              £91.95  <!--[S2 +£66.95 ]-->
 
-              {% else %}£25.00 [S2] {% endif %}
+              {% else %}£25.00 <!---[S2]--> {% endif %}
               <!------------Benefit values ------------>
 
           {% elif data['nino'] == 'S3 11 22 33 C' %}
@@ -48,12 +48,12 @@
               <!------------Benefit values ------------>
 
               {% if data["benefit-check"] == "B" %}
-              £62.50  [S3+£37.50]
+              £62.50  <!--[S3+£37.50]-->
 
               {% elif data['benefit-check'] == 'CA' %}
-              £91.95  [S3 +£66.95 ]
+              £91.95  <!--[S3 +£66.95 ]-->
 
-              {% else %}£25.00 [S3]{% endif %}
+              {% else %}£25.00 <!--[S3]-->{% endif %}
               <!------------Benefit values ------------>
 
               {% else %}£00.00 [SX] {% endif %}
