@@ -88,7 +88,7 @@
       <form action="index-pension-credit" method="post" class="form">
 
 
-      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+      <h1 class="govuk-heading-xl">Check your answers before sending your application (Example)</h1>
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -105,193 +105,26 @@
         rows: [
         {
           key: {
-            text: "Your date of birth"
+            text: "Information you will need to apply online"
           },
           value: {
-            text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
+            text: data['start-check']
           },
           actions: {
             items: [
               {
-                href: "over-spa",
+                href: "start-check",
                 text: "Change",
                 visuallyHiddenText: "your date of birth"
               }
             ]
           }
-        },
-        {
-          key: {
-            text: "Which country do you live in?"
-          },
-          value: {
-            text: data['resides-in-uk']
-          },
-          actions: {
-            items: [
-              {
-                href: "reside-in-uk",
-                text: "Change",
-                visuallyHiddenText: "which country you live in"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Have you claimed your State Pension?"
-          },
-          value: {
-            text: data['state-pension-check-yn']
-          },
-          actions: {
-            items: [
-            {
-              href: "@ChangeURL",
-              text: "Change",
-              visuallyHiddenText: "whether you have claimed your State Pension"
-
-              }
-            ]
-          }
-        },
-
-        {
-          classes: 'govuk-summary-list',
-          key: {
-            text: "Do any children or qualifying young people live with you?"
-          },
-          value: {
-            text: data['children-check-yn']
-          },
-          actions: {
-            items: [
-              {
-                href: "@ChangeURL",
-                text: "Change",
-                visuallyHiddenText: "whether any children or qualifying young people live with you"
-            }
-          ]
-        }
       }
         ]
       }) }}
 
 
-      {{ govukSummaryList({
-        rows: [
 
-        {
-          key: {
-            text: "Have you been outside the UK for a period of more than four weeks since [3 months or SPA]?"
-          },
-          value: {
-            text: data['doc-absence']
-          },
-          actions: {
-            items: [
-              {
-                href: "doc-absence",
-                text: "Change",
-                visuallyHiddenText: "whether you been outside the UK for a period of more than 4 weeks since [3 months or SPA]?"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
-
-      {% if data["doc-absence-plural"] %}
-      {{ govukSummaryList({
-        rows: [
-
-        {
-          key: {
-            text: "How many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?"
-          },
-          value: {
-            text: data['doc-absence-plural']
-          },
-          actions: {
-            items: [
-              {
-                href: "doc-absence-plural",
-                text: "Change",
-                visuallyHiddenText: "how many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
-      {% endif %}
-
-      {% if data["doc-absence-medical"] %}
-      {{ govukSummaryList({
-        rows: [
-
-        {
-          key: {
-            text: "Was the period you spent outside the UK connected to medical treatment or the death of a partner or child?"
-          },
-          value: {
-            text: data['doc-absence-medical']
-          },
-          actions: {
-            items: [
-              {
-                href: "doc-absence-medical",
-                text: "Change",
-                visuallyHiddenText: "whether the period you spent outside the UK connected to medical treatment or the death of a partner or child?"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
-      {% endif %}
-
-      {% if data["doc-absence-plural"] == "No" %}
-      {{ govukSummaryList({
-        rows: [
-
-        {
-          key: {
-            text: "Date you left the UK"
-          },
-          value: {
-            text: data['doc-absence-date-left-day'] + ' ' + (data['doc-absence-date-left-month'] | getMonth) + ' ' + data['doc-absence-date-left-year']
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "Change",
-                visuallyHiddenText: "date you left the UK"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Date you returned to the UK"
-          },
-          value: {
-            text: data['doc-absence-date-return-day'] + ' ' + (data['doc-absence-date-return-month'] | getMonth) + ' ' + data['doc-absence-date-return-year']
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "Change",
-                visuallyHiddenText: "date you returned to the UK"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
-{% endif %}
 
       {{ govukSummaryList({
         rows: [
@@ -316,54 +149,11 @@
         ]
       }) }}
 
-      {% if data["doc-draft-date"] == "No" %}
-
-      {{ govukSummaryList({
-        rows: [
-
-        {
-          key: {
-            text: "What date do you want us to consider your application from?"
-          },
-          value: {
-            text: data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']
-          },
-          actions: {
-            items: [
-              {
-                href: "XXX",
-                text: "Change",
-                visuallyHiddenText: "the date you want us to consider your application from"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
-{% endif %}
-
 
 
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
-          {
-            key: {
-              text: "Your National Insurance number"
-            },
-            value: {
-              text: data["nino"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "Change",
-                  visuallyHiddenText: "your National Insurance number"
-                }
-              ]
-            }
-          },
           {
             key: {
               text: "Do you have a partner?"
@@ -380,203 +170,9 @@
                 }
               ]
             }
-          },
-          {
-            key: {
-              text: "Do you and your partner get pension age Housing Benefit?"
-            },
-            value: {
-              text: data["nino"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "Change",
-                  visuallyHiddenText: "whether you and your partner get pension age Housing Benefit"
-                }
-              ]
-            }
-          },
-
-          {
-            key: {
-              text: "Your name"
-            },
-            value: {
-              text: data["full-name"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "claimant-details",
-                  text: "Change",
-                  visuallyHiddenText: "your name"
-                }
-              ]
-            }
-          },
-
-          {
-            key: {
-              text: "Your previous names"
-            },
-            value: {
-              text: data["claimant-alt-name-yes"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "claimant-details",
-                  text: "Change",
-                  visuallyHiddenText: "your previous names"
-                }
-              ]
-            }
           }
                     ]
                   }) }}
-
-
-                {{ govukSummaryList({
-                  classes: 'govuk-!-margin-bottom-9',
-                  rows: [
-
-                  {
-                    key: {
-                      text: "Are you registered blind or severely sight impaired?"
-                    },
-                    value: {
-                      text: data["contact-blind-check"]
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "",
-                          text: "Change",
-                          visuallyHiddenText: "whether you are registered blind or severely sight impaired"
-                        }
-                      ]
-                    }
-                  }
-
-                ]
-              }) }}
-
-      </div>
-
-<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Partner details</h2>
-
-        {{ govukSummaryList({
-          classes: 'govuk-!-margin-bottom-9',
-          rows: [
-
-          {
-            key: {
-              text: "Your partner's date of birth"
-            },
-            value: {
-              text: data['partner-dob-day'] + ' ' + (data['partner-dob-month'] | getMonth) + ' ' + data['partner-dob-year']
-            },
-            actions: {
-              items: [
-                {
-                  href: "partner-check-yn",
-                  text: "Change",
-                  visuallyHiddenText: "your partner's date of birth"
-                }
-              ]
-            }
-          },
-
-          {
-            key: {
-              text: "Your partner's National Insurance number"
-            },
-            value: {
-              text: data["partner-nino"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "Change",
-                  visuallyHiddenText: "your partner's National Insurance number"
-                }
-              ]
-            }
-          },
-
-          {
-            key: {
-              text: "Your partner's name"
-            },
-            value: {
-              text: data["partner-full-name"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "partner-details",
-                  text: "Change",
-                  visuallyHiddenText: "your partner's name"
-                }
-              ]
-            }
-          },
-
-          {
-            key: {
-              text: "Your partner's previous names"
-            },
-            value: {
-              text: data["partner-alt-name-yes"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "partner-details",
-                  text: "Change",
-                  visuallyHiddenText: "your partner's previous names"
-                }
-              ]
-            }
-          }
-
-                    ]
-                  }) }}
-
-
-                  {{ govukSummaryList({
-                    classes: 'govuk-!-margin-bottom-9',
-                    rows: [
-
-                    {
-                      key: {
-                        text: "Is your partner registered blind or severely sight impaired?"
-                      },
-                      value: {
-                        text: data["contact-partner-blind-check"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "Change",
-                            visuallyHiddenText: "whether your partner is registered blind or severely sight impaired"
-                          }
-                        ]
-                      }
-                    }
-
-                  ]
-                }) }}
-
-
-
-
 
       </div>
 
@@ -4490,7 +4086,7 @@ rows: [
     <p class="govuk-body"> If you change anything you will need to print or save a new copy.</p>
 
     <p class="govuk-body"> <a href="#" onclick="window.print();return false;">Print your answers<a/> </p>
-    <p class="govuk-body govuk-!-margin-bottom-6"> <a href="#" onclick="window.print();return false;">Save a copy of your answers<a/> (PDF, 230KB)</p>
+    <p class="govuk-body govuk-!-margin-bottom-6"><a href="/claim.pdf" download >Save a copy of your answers</a> (PDF, 230KB)</p>
 
 
   </div>
