@@ -10,6 +10,8 @@ const {getMonth} = require('../../filters')()
 const router = new express.Router()
 const baseUrl = '/citizen-version-2-8-ur/mvp'
 
+const path = require('path');
+
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
   const discharge = new Date(`${data['discharge-year']}-${data['discharge-month']}-${data['discharge-day']}`)
@@ -17,6 +19,10 @@ function makeAStay(data) {
   return {admission, discharge, totalDays}
 }
 
+// PDF DOWNLOADER
+router.use(`${baseUrl}/claim.pdf`, express.static(path.resolve('app/views/citizen-version-2-8-ur/mvp/claim.pdf'))) // ../ back up a directory
+
+// —————————————————————————————————
 
 // START ARRAY
 // router.post(`${baseUrl}/start-check-router`, (req, res) => {
