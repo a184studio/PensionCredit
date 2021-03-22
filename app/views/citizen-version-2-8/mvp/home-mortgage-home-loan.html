@@ -16,9 +16,16 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="home-equity-release" method="post" class="form">
 
-      {% set legendHint %}
-      <p class="govuk-hint">This support is paid as a loan that you must repay when your home is sold or transferred.</p>
-      {% endset %}
+
+    {% set legendHint %}
+
+      {% if data["home-smi-check"] == "Yes HeUC"%}
+      <p class="govuk-hint">SMI in payment</p>
+      {% else %}
+        <p class="govuk-hint">This support is paid as a loan that you must repay when your home is sold or transferred.</p>
+      {% endif %}
+
+      {% endset -%}
 
 
       {{ govukRadios({

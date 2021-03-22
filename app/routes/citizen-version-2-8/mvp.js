@@ -680,6 +680,8 @@ router.post(`${baseUrl}/home-mortgage-router`, (req, res) => {
   }
 })
 
+
+
 router.post(`${baseUrl}/home-smi-check-router`, (req, res) => {
   const smiCheck = req.session.data['home-smi-check']
 
@@ -689,7 +691,7 @@ router.post(`${baseUrl}/home-smi-check-router`, (req, res) => {
     res.redirect(`${baseUrl}/home-equity-release`)
   }
 })
-home-equity-release
+
 
 
 
