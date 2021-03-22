@@ -1269,7 +1269,7 @@ actions: {
 
       <!-- - - - - - - - - - - - - - - - - -  WHO LIVES WITH YOU / NON DEPS - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">Other people that live with you</h2>
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">Other people who live with you</h2>
 
 
       {{ govukSummaryList({
@@ -1288,7 +1288,7 @@ actions: {
               {
                 href: "non-deps-living-with-you",
                 text: "Change",
-                visuallyHiddenText: "whether anyone else lives with you"
+                visuallyHiddenText: "whether anyone else live with you"
               }
             ]
           }
@@ -1297,12 +1297,86 @@ actions: {
       ]
       }) }}
 
-      <!--<div><h3 class="govuk-heading-m">You told us about [2] people who live with you </h3>-->
+      {% if data ['non-deps-member-full-name' and 'non-deps-member-full-name-2'] %}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+
+          {
+          key: {
+            text: "People who live with you"
+          },
+          value: {
+            text: 2
+            },
+
+            value: {
+              text: 2
+          },
+          actions: {
+            items: [
+              {
+                href: "non-deps-summary",
+                text: "Change",
+                visuallyHiddenText: ""
+              }
+            ]
+          }
+        }
+
+      ]
+      }) }}
+
+      {% elif data ['non-deps-member-full-name']  %}
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+
+                {
+                key: {
+                  text: "You told us 1 other person lives with you"
+                },
+                value: {
+                  text: data["non-deps-member-full-name"]
+
+
+
+
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "non-deps-summary",
+                      text: "Change",
+                      visuallyHiddenText: ""
+                    }
+                  ]
+                }
+              }
+
+            ]
+            }) }}
+      {% endif %}
+
+      <!--<div><h3 class="govuk-heading-m">You told us about [2] people who live with you </h3
         <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">You told us about [2] people who live with you </h2>
 
+        <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10"> About the other person who lives with you </h2>>-->
+
+          {% if data ['non-deps-member-full-name-2' or 'non-deps-member-full-name'] %}
+          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">About the other people who live with you</h2>
+
+          {% elif data ['non-deps-member-full-name']  %}
+          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">About the other person who lives with you</h2>
+
+          {% else %}
+
+          {% endif %}
 
 
   {% if data['non-deps-member-full-name'] %}
+
 
       <section class="app-summary-card govuk-!-margin-bottom-6">
 
