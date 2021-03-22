@@ -126,6 +126,29 @@
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-0',
         rows: [
+        {
+          key: {
+            text: "Have you claimed your State Pension?"
+          },
+          value: {
+            text: data["state-pension-check-yn"]
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "Change",
+                visuallyHiddenText: "whether you have a partner"
+              }
+            ]
+          }
+        }
+                  ]
+                }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-0',
+        rows: [
 
         {
           key: {
@@ -171,10 +194,32 @@
                     ]
                   }) }}
 
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-0',
+                    rows: [
+                    {
+                      key: {
+                        text: "Do you currently get Housing Benefit or a housing payment from Universal Credit?"
+                      },
+                      value: {
+                        text: data["home-rent-housing-benefit"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "Change",
+                            visuallyHiddenText: "whether you have a partner"
+                          }
+                        ]
+                      }
+                    }
+                              ]
+                            }) }}
+
       </div>
             <div>
             <div>
-
 
 
 
@@ -231,30 +276,6 @@
     ]
   }) }}
 
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-
-        {
-          key: {
-            text: "What is the total amount of money you have today?"
-          },
-          value: {
-            text: data['XXX']
-          },
-          actions: {
-            items: [
-              {
-                href: "xxx",
-                text: "Change",
-                visuallyHiddenText: "XXX"
-              }
-            ]
-          }
-        }
-      ]
-    }) }}
 
     {{ govukSummaryList({
       classes: 'govuk-!-margin-bottom-9',
@@ -372,7 +393,8 @@
     <p class="govuk-body"> If you change anything you will need to print or save a new copy.</p>
 
     <p class="govuk-body"> <a href="#" onclick="window.print();return false;">Print your answers<a/> </p>
-    <p class="govuk-body govuk-!-margin-bottom-6"><a href="https://pc-prototype.herokuapp.com/citizen-version-2-8-ur/mvp/claim.pdf" download >Save a copy of your answers</a> (PDF, 230KB)</p>
+    <p class="govuk-body govuk-!-margin-bottom-6"><a href="/citizen-version-2-8-ur/mvp/claim.pdf" download >Save a copy of your answers</a> (PDF, 230KB)</p>
+
 
 
   </div>
