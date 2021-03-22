@@ -396,9 +396,20 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   if (partnerCheck === 'Yes, we live together') {
     res.redirect(`${baseUrl}/partner-app-check`)
   } else {
-    res.redirect(`${baseUrl}/money-2-intro`)
+    res.redirect(`${baseUrl}/home-rent-housing-benefit`)
   }
 })
+
+router.post(`${baseUrl}/home-rent-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
+  const homeRentHousingBenefit = req.session.data['home-rent-housing-benefit'] // The router is looking for this ID.
+
+  if (homeRentHousingBenefit === 'Yes HB') {
+    res.redirect(`${baseUrl}/money-2-intro`)
+  } else {
+    res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
+  }
+})
+
 
 
 router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
