@@ -14,37 +14,24 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="home-equity-release" method="post" class="form">
+    <form action="home-mortgage-home-loan" method="post" class="form">
 
+      {% set legendHint %}
+      <p class="govuk-hint">@pete To be eligible for a Support for Mortgage Interest (SMI) loan, you usually need to be getting one of the following qualifying benefits:
 
-      {% set dynamicH1 %}
-
-        {% if data["home-smi-check"] == "Yes"%}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">SMI in payment</h1>
-        {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you want us to send you some information about support with interest on a mortgage or loan secured against your home?</h1>
-
-        {% endif %}
-
-        {% endset -%}
-
-    {% set legendHint %}
-
-      {% if data["home-smi-check"] == "Yes"%}
-      <p class="govuk-hint">@pete Hint: SMI in payment</p>
-      {% else %}
-        <p class="govuk-hint">@pete Hint: This support is paid as a loan that you must repay when your home is sold or transferred.</p>
-      {% endif %}
-
-      {% endset -%}
+Income Support
+income-based Jobseeker’s Allowance (JSA)
+income-related Employment and Support Allowance (ESA)
+Universal Credit</p>
+      {% endset %}
 
 
       {{ govukRadios({
-        idPrefix: "home-mortgage-home-loan",
-        name: "home-mortgage-home-loan",
+        idPrefix: "home-smi-check",
+        name: "home-smi-check",
         fieldset: {
           legend: {
-            html: dynamicH1,
+            text: "Do you currently get support for mortgage interest (SMI)?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -58,12 +45,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["home-mortgage-home-loan"] == "Yes")
+            checked: (data["home-smi-check"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["home-mortgage-home-loan"] == "No")
+            checked: (data["home-smi-check"] == "No")
           }
         ]
       }) }}

@@ -1,7 +1,7 @@
-{% extends "layout-assisted-digital-ur.html" %}
+{% extends "layout-assisted-digital.html" %}
 
 {% block pageTitle %}
-  Which best describes the place where you live? - Pension Credit
+  Have you spent any time in hospital recently? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,42 +14,43 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="pension-foreign-check" method="post" class="form">
+    <form action="state-pension-check-yn-router" method="post" class="form">
 
-{% if data["user-full-name"] == "Admin" %}{% endif %}
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
 
       {{ govukRadios({
-        name: "money-second-property-check",
+        idPrefix: "state-pension-check-yn",
+        name: "state-pension-check-yn",
         fieldset: {
           legend: {
-            text: "Do you own any property or land other than your home?",
+            text: "Have you claimed your State Pension?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
+        classes: "govuk-radios",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["money-second-property-check"] == "Yes")
+            checked: (data["state-pension-check-yn"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["money-second-property-check"] == "No")
+            checked: (data["state-pension-check-yn"] == "No")
           }
         ]
       }) }}
 
+
       {{ govukButton({
         text: "Continue"
       }) }}
-
-
     </form>
-
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
-
   </div>
 </div>
 {% endblock %}
