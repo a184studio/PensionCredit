@@ -126,6 +126,29 @@
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-0',
         rows: [
+        {
+          key: {
+            text: "Have you claimed your State Pension?"
+          },
+          value: {
+            text: data["state-pension-check-yn"]
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "Change",
+                visuallyHiddenText: "whether you have a partner"
+              }
+            ]
+          }
+        }
+                  ]
+                }) }}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-0',
+        rows: [
 
         {
           key: {
@@ -171,10 +194,32 @@
                     ]
                   }) }}
 
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-0',
+                    rows: [
+                    {
+                      key: {
+                        text: "Do you currently get Housing Benefit or a housing payment from Universal Credit?"
+                      },
+                      value: {
+                        text: data["home-rent-housing-benefit"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "",
+                            text: "Change",
+                            visuallyHiddenText: "whether you have a partner"
+                          }
+                        ]
+                      }
+                    }
+                              ]
+                            }) }}
+
       </div>
             <div>
             <div>
-
 
 
 
