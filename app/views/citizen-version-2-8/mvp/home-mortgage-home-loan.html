@@ -17,9 +17,20 @@
     <form action="home-equity-release" method="post" class="form">
 
 
+      {% set dynamicH1 %}
+
+        {% if data["home-smi-check"] == "Yes"%}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">SMI in payment</h1>
+        {% else %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you want us to send you some information about support with interest on a mortgage or loan secured against your home?</h1>
+
+        {% endif %}
+
+        {% endset -%}
+
     {% set legendHint %}
 
-      {% if data["home-smi-check"] == "Yes HeUC"%}
+      {% if data["home-smi-check"] == "Yes"%}
       <p class="govuk-hint">SMI in payment</p>
       {% else %}
         <p class="govuk-hint">This support is paid as a loan that you must repay when your home is sold or transferred.</p>
@@ -33,7 +44,7 @@
         name: "home-mortgage-home-loan",
         fieldset: {
           legend: {
-            text: "Do you want us to send you some information about support with interest on a mortgage or loan secured against your home?",
+            html: dynamicH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
