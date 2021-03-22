@@ -1269,7 +1269,13 @@ actions: {
 
       <!-- - - - - - - - - - - - - - - - - -  WHO LIVES WITH YOU / NON DEPS - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">Other people who live with you</h2>
+      {% if data["single-joint-check"] == "Joint" %}
+
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">People who live with you and your partner</h2>
+        {% else %}
+
+        <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">People who live with you</h2>
+          {% endif %}
 
 
       {{ govukSummaryList({
@@ -1278,7 +1284,7 @@ actions: {
 
           {
           key: {
-            text: "Does anyone else live with you who is over 18 and [apart from your partner] live with you?"
+            text: "Does anyone else who is over 18 live with you [and your partner]?"
           },
           value: {
             text: data["non-deps-living-with-you"]
@@ -1288,7 +1294,7 @@ actions: {
               {
                 href: "non-deps-living-with-you",
                 text: "Change",
-                visuallyHiddenText: "whether anyone else live with you"
+                visuallyHiddenText: "whether anyone else lives with you"
               }
             ]
           }
@@ -1335,12 +1341,16 @@ actions: {
 
                 {
                 key: {
-                  text: "You told us 1 other person lives with you"
+                  text: "Number of people living with you [and your partner]"
                 },
                 value: {
                   text: data["non-deps-member-full-name"]
 
+                },
 
+                value: {
+                  text: 2
+           
 
 
                 },
@@ -1365,10 +1375,10 @@ actions: {
         <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10"> About the other person who lives with you </h2>>-->
 
           {% if data ['non-deps-member-full-name-2' or 'non-deps-member-full-name'] %}
-          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">About the other people who live with you</h2>
+          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">Details of the people who live with you</h2>
 
           {% elif data ['non-deps-member-full-name']  %}
-          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">About the other person who lives with you</h2>
+          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">Details of the person who lives with you</h2>
 
           {% else %}
 
@@ -1411,7 +1421,7 @@ actions: {
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                What is your relationship to the person that lives with you?
+                What is your relationship to the person who lives with you?
               </dt>
               <dd class="govuk-summary-list__value">
                 A family member <br>
@@ -1617,7 +1627,7 @@ actions: {
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    What is your relationship to the person that lives with you?
+                    What is your relationship to the person who lives with you?
                   </dt>
                   <dd class="govuk-summary-list__value">
                     A family member <br>
