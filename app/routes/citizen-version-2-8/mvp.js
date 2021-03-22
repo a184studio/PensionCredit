@@ -10,6 +10,9 @@ const {getMonth} = require('../../filters')()
 const router = new express.Router()
 const baseUrl = '/citizen-version-2-8/mvp'
 
+const path = require('path');
+
+
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
   const discharge = new Date(`${data['discharge-year']}-${data['discharge-month']}-${data['discharge-day']}`)
@@ -17,6 +20,10 @@ function makeAStay(data) {
   return {admission, discharge, totalDays}
 }
 
+// PDF DOWNLOADER
+router.use(`${baseUrl}/claim.pdf`, express.static(path.resolve('app/views/citizen-version-2-8-ur/mvp/claim.pdf'))) // ../ back up a directory
+
+// —————————————————————————————————
 
 // START ARRAY
 // router.post(`${baseUrl}/start-check-router`, (req, res) => {
@@ -540,7 +547,7 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-prompt`)
   }
-  else if (nonDepsCheck === 'Yes-one') {
+  else if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-prompt`)
   }
   else if (nonDepsCheck === 'Yes-more') {
@@ -667,11 +674,25 @@ router.post(`${baseUrl}/home-mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['home-mortgage']
 
   if (hasMortgage === 'Yes') {
+    res.redirect(`${baseUrl}/home-smi-check`)
+  } else {
+    res.redirect(`${baseUrl}/home-equity-release`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/home-smi-check-router`, (req, res) => {
+  const smiCheck = req.session.data['home-smi-check']
+
+  if (smiCheck === 'Yes') {
     res.redirect(`${baseUrl}/home-mortgage-home-loan`)
   } else {
     res.redirect(`${baseUrl}/home-equity-release`)
   }
 })
+
+
 
 
 router.post(`${baseUrl}/own-mortgage-home-loan-yn-router`, (req, res) => {

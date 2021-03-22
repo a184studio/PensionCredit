@@ -135,5 +135,27 @@ router.post(`${baseUrl}/outcome-yn-router`, (req, res) => {
 
 
 
+router.post(`${baseUrl}/sl-find-a-claim-router`, (req, res) => {
+  const slFindAClaim = req.session.data['sl-find-a-claim']
+
+  if (slFindAClaim === 'S1 11 22 33 A') {
+    res.redirect(`${baseUrl}/sl-claim-a`)
+  } else if (slFindAClaim === 'S2 11 22 33 B') {
+    res.redirect(`${baseUrl}/sl-claim-b`)
+  } else if (slFindAClaim === 'S3 11 22 33 C') {
+    res.redirect(`${baseUrl}/sl-claim-c`)
+  } else if (slFindAClaim === 'S4 11 22 33 D') {
+    res.redirect(`${baseUrl}/sl-claim-d`)
+  } else if (slFindAClaim === 'S5 11 22 33 E') {
+    res.redirect(`${baseUrl}/sl-claim-e`)
+  } else if (slFindAClaim === 'S6 11 22 33 F') {
+    res.redirect(`${baseUrl}/sl-claim-f`)
+  } else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+
+
 
 module.exports = router

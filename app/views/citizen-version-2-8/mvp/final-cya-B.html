@@ -93,7 +93,7 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <div>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This is only a copy of your answers. It is not proof that you have applied for or been awarded Pension Credit.</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"> is only a copy of your answers. It is not proof that you have applied for or been awarded Pension Credit.</p>
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Printing this document does not submit your application. You must submit your application from the check your answers page.</p>
 
 </div>
@@ -1269,13 +1269,7 @@ actions: {
 
       <!-- - - - - - - - - - - - - - - - - -  WHO LIVES WITH YOU / NON DEPS - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-      {% if data["single-joint-check"] == "Joint" %}
-
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">People who live with you and your partner</h2>
-        {% else %}
-
-        <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">People who live with you</h2>
-          {% endif %}
+      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">Other people that live with you</h2>
 
 
       {{ govukSummaryList({
@@ -1284,7 +1278,7 @@ actions: {
 
           {
           key: {
-            text: "Does anyone else who is over 18 live with you [and your partner]?"
+            text: "Does anyone else live with you who is over 18 and [apart from your partner] live with you?"
           },
           value: {
             text: data["non-deps-living-with-you"]
@@ -1303,90 +1297,12 @@ actions: {
       ]
       }) }}
 
-      {% if data ['non-deps-member-full-name' and 'non-deps-member-full-name-2'] %}
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-
-          {
-          key: {
-            text: "People who live with you"
-          },
-          value: {
-            text: 2
-            },
-
-            value: {
-              text: 2
-          },
-          actions: {
-            items: [
-              {
-                href: "non-deps-summary",
-                text: "Change",
-                visuallyHiddenText: ""
-              }
-            ]
-          }
-        }
-
-      ]
-      }) }}
-
-      {% elif data ['non-deps-member-full-name']  %}
-            {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-9',
-              rows: [
-
-                {
-                key: {
-                  text: "Number of people living with you [and your partner]"
-                },
-                value: {
-                  text: data["non-deps-member-full-name"]
-
-                },
-
-                value: {
-                  text: 2
-           
-
-
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "non-deps-summary",
-                      text: "Change",
-                      visuallyHiddenText: ""
-                    }
-                  ]
-                }
-              }
-
-            ]
-            }) }}
-      {% endif %}
-
-      <!--<div><h3 class="govuk-heading-m">You told us about [2] people who live with you </h3
+      <!--<div><h3 class="govuk-heading-m">You told us about [2] people who live with you </h3>-->
         <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">You told us about [2] people who live with you </h2>
 
-        <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10"> About the other person who lives with you </h2>>-->
-
-          {% if data ['non-deps-member-full-name-2' or 'non-deps-member-full-name'] %}
-          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">Details of the people who live with you</h2>
-
-          {% elif data ['non-deps-member-full-name']  %}
-          <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-10">Details of the person who lives with you</h2>
-
-          {% else %}
-
-          {% endif %}
 
 
   {% if data['non-deps-member-full-name'] %}
-
 
       <section class="app-summary-card govuk-!-margin-bottom-6">
 
@@ -1421,7 +1337,7 @@ actions: {
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                What is your relationship to the person who lives with you?
+                What is your relationship to the person that lives with you?
               </dt>
               <dd class="govuk-summary-list__value">
                 A family member <br>
@@ -1557,6 +1473,19 @@ actions: {
                     </a>
             </div>
 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 How much do they earn each week?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data["non-deps-member-details-weekly-earnings"]}}
+              </dd>
+
+              <a class="govuk-summary-list__actions" href="non-deps-member-details">
+                    Change<span class="govuk-visually-hidden"> </span>
+                    </a>
+            </div>
+
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -1627,7 +1556,7 @@ actions: {
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    What is your relationship to the person who lives with you?
+                    What is your relationship to the person that lives with you?
                   </dt>
                   <dd class="govuk-summary-list__value">
                     A family member <br>
@@ -1743,6 +1672,19 @@ actions: {
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{data["non-deps-member-employment-2"]}}
+                  </dd>
+
+                  <a class="govuk-summary-list__actions" href="non-deps-member-details">
+                        Change<span class="govuk-visually-hidden"> </span>
+                        </a>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                     How much do they earn each week?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data["non-deps-member-details-weekly-earnings-2"]}}
                   </dd>
 
                   <a class="govuk-summary-list__actions" href="non-deps-member-details">
@@ -4640,7 +4582,7 @@ rows: [
     <p class="govuk-body"> If you change anything you will need to print or save a new copy.</p>
 
     <p class="govuk-body"> <a href="#" onclick="window.print();return false;">Print your answers<a/> </p>
-      <p class="govuk-body govuk-!-margin-bottom-6"><a href="/citizen-version-2-8-ur/mvp/claim.pdf" download >Save a copy of your answers</a> (PDF, 230KB)</p>
+    <p class="govuk-body govuk-!-margin-bottom-6"> <a href="#" onclick="window.print();return false;">Save a copy of your answers<a/> (PDF, 230KB)</p>
 
 
   </div>

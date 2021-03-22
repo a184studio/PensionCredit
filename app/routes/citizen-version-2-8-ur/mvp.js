@@ -10,6 +10,8 @@ const {getMonth} = require('../../filters')()
 const router = new express.Router()
 const baseUrl = '/citizen-version-2-8-ur/mvp'
 
+const path = require('path');
+
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
   const discharge = new Date(`${data['discharge-year']}-${data['discharge-month']}-${data['discharge-day']}`)
@@ -17,6 +19,10 @@ function makeAStay(data) {
   return {admission, discharge, totalDays}
 }
 
+// PDF DOWNLOADER
+router.use(`${baseUrl}/claim.pdf`, express.static(path.resolve('app/views/citizen-version-2-8-ur/mvp/claim.pdf'))) // ../ back up a directory
+
+// —————————————————————————————————
 
 // START ARRAY
 // router.post(`${baseUrl}/start-check-router`, (req, res) => {
@@ -45,11 +51,24 @@ router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 
   if (startCheck === 'Yes') {
-    res.redirect(`${baseUrl}/doc-draft-date`)
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
   } else {
-    res.redirect(`${baseUrl}/start-check-no`)
+    res.redirect(`${baseUrl}/done-start-check-no`)
   }
 })
+
+router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
+  const statePensionCheck = req.session.data['state-pension-check-yn']
+
+  if (statePensionCheck === 'Yes') {
+    res.redirect(`${baseUrl}/doc-draft-date`)
+  } else {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
+  }
+})
+
+
+
 
 router.post(`${baseUrl}/security-router`, (req, res) => {
   const passedSecurity = req.session.data['passed-security']
@@ -383,9 +402,20 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   if (partnerCheck === 'Yes, we live together') {
     res.redirect(`${baseUrl}/partner-app-check`)
   } else {
-    res.redirect(`${baseUrl}/money-2-intro`)
+    res.redirect(`${baseUrl}/home-rent-housing-benefit`)
   }
 })
+
+router.post(`${baseUrl}/home-rent-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
+  const homeRentHousingBenefit = req.session.data['home-rent-housing-benefit'] // The router is looking for this ID.
+
+  if (homeRentHousingBenefit === 'Yes HB') {
+    res.redirect(`${baseUrl}/money-2-intro`)
+  } else {
+    res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
+  }
+})
+
 
 
 router.post(`${baseUrl}/claim-filter-router`, (req, res) => {

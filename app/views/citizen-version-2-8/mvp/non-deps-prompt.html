@@ -18,27 +18,40 @@
 
 
         {% if data["single-joint-check"] == "Joint" %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">People that live with you and your partner</h2>
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">People who live with you and your partner</h2>
+
+        <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">You must add each person who lives with you and your partner. You can add as many people as you need.</p>
+
+        <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">For some people we only need their name. For close relatives and friends we will ask for further details.</p>
 
         {% else %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">People that live with you</h2>
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">People who live with you</h2>
+        <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">You must add each person who lives with you. You can add as many people as you need.</p>
+        
+
+        <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">For some people we only need their name. For close relatives and friends we will ask for further details.</p>
+
         {% endif %}
-        <p class="govuk-body">Add details of each person that lives with you separately. You can add as many as you need to.</p>
-
-        <p class="govuk-body">People that live with you, their employment status and income might affect how much Pension Credit you could get.</p>
-
-
+    
 
 <!------------Legend------------>
 
+{% if data["single-joint-check"] == "Joint" %}
 
-
-      {{ govukButton({
-        text: "Add a person that lives with you"
-      }) }}
+    {{ govukButton({
+    text: "Add a person who lives with you and your partner"
+    }) }}
+    
+    {% else %}
+    {{ govukButton({
+    text: "Add a person who lives with you"
+    }) }}
+    {% endif %}
     </form>
 
-    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>
+    <p class="govuk-body"><a href="">Cancel</a></p> -->
+
 
   </div>
 </div>
