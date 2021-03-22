@@ -17,8 +17,19 @@
 
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
+        {% if data["single-joint-check"] == "Joint" %}
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Information about the person who lives with you</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Information about the person who lives with you and your partner</h1>
+
+         <p class="govuk-hint govuk-!-margin-bottom-6">The employment status and income of close relatives and friends might affect how much Pension Credit you could get.</p>
+
+         {% else %}
+
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Information about the person who lives with you</h1>
+         
+         <p class="govuk-hint govuk-!-margin-bottom-6">The employment status and income of close relatives and friends might affect how much Pension Credit you could get.</p>
+         {% endif %}
+
 
         <!--{% if data['non-deps-summary'] == "Yes" %}
 
