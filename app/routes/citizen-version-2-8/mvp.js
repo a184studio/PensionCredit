@@ -674,11 +674,23 @@ router.post(`${baseUrl}/home-mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['home-mortgage']
 
   if (hasMortgage === 'Yes') {
+    res.redirect(`${baseUrl}/home-smi-check`)
+  } else {
+    res.redirect(`${baseUrl}/home-equity-release`)
+  }
+})
+
+router.post(`${baseUrl}/home-smi-check-router`, (req, res) => {
+  const smiCheck = req.session.data['home-smi-check']
+
+  if (smiCheck === 'Yes') {
     res.redirect(`${baseUrl}/home-mortgage-home-loan`)
   } else {
     res.redirect(`${baseUrl}/home-equity-release`)
   }
 })
+home-equity-release
+
 
 
 router.post(`${baseUrl}/own-mortgage-home-loan-yn-router`, (req, res) => {
