@@ -45,11 +45,24 @@ router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 
   if (startCheck === 'Yes') {
-    res.redirect(`${baseUrl}/doc-draft-date`)
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
   } else {
-    res.redirect(`${baseUrl}/start-check-no`)
+    res.redirect(`${baseUrl}/done-start-check-no`)
   }
 })
+
+router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
+  const statePensionCheck = req.session.data['state-pension-check-yn']
+
+  if (statePensionCheck === 'Yes') {
+    res.redirect(`${baseUrl}/doc-draft-date`)
+  } else {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
+  }
+})
+
+
+
 
 router.post(`${baseUrl}/security-router`, (req, res) => {
   const passedSecurity = req.session.data['passed-security']
