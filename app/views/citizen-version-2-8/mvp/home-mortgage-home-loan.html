@@ -20,7 +20,7 @@
       {% set dynamicH1 %}
 
         {% if data["home-smi-check"] == "Yes"%}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">SMI in payment</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you want us to send you a form to reapply for Support for Mortgage Interest?</h1>
         {% else %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you want us to send you some information about support with interest on a mortgage or loan secured against your home?</h1>
 
@@ -31,9 +31,9 @@
     {% set legendHint %}
 
       {% if data["home-smi-check"] == "Yes"%}
-      <p class="govuk-hint">@pete Hint: SMI in payment</p>
+      <p class="govuk-hint">Your current claim for SMI will end when you move to Pension Credit. If you still need this support, you will need to apply again.</p>
       {% else %}
-        <p class="govuk-hint">@pete Hint: This support is paid as a loan that you must repay when your home is sold or transferred.</p>
+        <p class="govuk-hint">This support is paid as a loan that you must repay when your home is sold or transferred.</p>
       {% endif %}
 
       {% endset -%}
