@@ -56,7 +56,20 @@
               {% else %}£25.00 <!--[S3]-->{% endif %}
               <!------------Benefit values ------------>
 
-              {% else %}£00.00 [SX] {% endif %}
+              {% else %}
+              
+              <!------------Benefit values ------------>
+
+              {% if data["benefit-check"] == "B" %}
+              £62.50  <!--[S3+£37.50]-->
+
+              {% elif data['benefit-check'] == 'CA' %}
+              £91.95  <!--[S3 +£66.95 ]-->
+
+              {% else %}£25.00 <!--[S3]-->{% endif %}
+              <!------------Benefit values ------------>
+
+              {% endif %}
 
         a week or more?</h1>
 
