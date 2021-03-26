@@ -18,23 +18,23 @@
         <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Tell us about the money you have</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">We can ignore some of the money you have in some situations        </h1>
 
 
 
 
-    <p class="govuk-heading-s govuk-!-margin-bottom-2">Do any of the following apply to you?</p>
+    <p class="govuk-heading-s govuk-!-margin-bottom-2">We might not use some money, savings and investments to work out your Pension Credit if they are:</p>
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-      <li>Savings that you intend to use to buy or make essential repairs to your main home</li>
-      <li>Payments to help you live independently in your own home or the community</li>
-      <li>Payments to correct or compensate for an official error or for arrears of benefits</li>
-      <li>Payments related to Council Tax Reduction</li>
-      <li>Payments to help you if you have been involved in an incident or emergency</li>
-      <li>Payments from a home insurance policy to cover lost or damaged personal possessions</li>
-      <li>Payments to support you with the effects of a blood infection or vCJD </li>
-      <li>Personal injury claim payments</li>
-      <li>Compensation payments related to the second world war or service in the armed forces</li>
-      <li>Windrush child compensation</li>
+      <li>savings that you intend to use to buy or make essential repairs to your main home</li>
+      <li>payments to help you live independently in your own home or the community</li>
+      <li>payments to correct or compensate for an official error or for arrears of benefits</li>
+      <li>payments related to Council Tax Reduction</li>
+      <li>payments to help you if you have been involved in an incident or emergency</li>
+      <li>payments from a home insurance policy to cover lost or damaged personal possessions</li>
+      <li>payments to support you with the effects of a blood infection or vCJD </li>
+      <li>personal injury claim payments</li>
+      <li>compensation payments related to the second world war or service in the armed forces</li>
+      <li>payments from the Windrush Compensation Scheme</li>
       </ul>
 
           {{ govukRadios({
@@ -43,7 +43,10 @@
             name: "uk-national",
             fieldset: {
               legend: {
-                html: legendUKNationalHeadline,
+                text: "Do any of these situations apply to any of your money?
+
+
+                ",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--m"
               }
