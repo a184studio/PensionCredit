@@ -17,51 +17,59 @@
     <form action="money-total-risk-check-router" method="post" class="form">
 
 
+
+      {% set pensionsTaken %}
+      {{ govukInput({
+        id: "money-2-total-now-value",
+        name: "money-2-total-now-value",
+        label: {
+          html: "Are all of your personal or private pensions now in payment?",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        prefix: {
+          text: "Yes or No"
+        },
+        value: data["money-2-total-now-value"],
+        classes: "govuk-input--width-0 govuk-!-margin-bottom-4",
+        spellcheck: false
+      }) }}
+      {% endset %}
+
+
+
 {{ govukCheckboxes({
-  idPrefix: "money-total-risk-check",
-  name: "money-total-risk-check",
+  idPrefix: "pensions-check",
+  name: "pensions-check",
   fieldset: {
     legend: {
-      text: "What accounts or investments do you have?",
+      text: "What pensions have you paid into?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl govuk-!-padding-top-2"
     }
   },
   hint: {
-    text: "Select all that apply.",
+    text: "Select all that apply. You do not need to tell us about your UK State Pension.",
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
   },
   items: [
 
     {
-      value: "Low",
-      text: "National Savings and Investment products, such as Premium Bonds or Savings Certificates",
-      checked: (data["money-total-risk-check"] == "Savings Accounts")
+      value: "High",
+      text: "Workplace pensions - set up by an employer",
+      checked: (data["pensions-check"] == "Workplace or employer pensions")
     },
     {
       value: "High",
-      text: "Investments, including shares ISAs",
-      checked: (data["money-total-risk-check"] == "Savings Accounts")
+      text: "Personal or private pensions - set up by you",
+      checked: (data["pensions-check"] == "Personal or private pensions"),
+      conditional: {
+        html: pensionsTaken }
     },
     {
       value: "High",
-      text: "Shares",
-      checked: (data["money-total-risk-check"] == "Shares")
-    },
-    {
-      value: "High",
-      text: "Money invested in unit trusts",
-      checked: (data["money-total-risk-check"] == "Savings Accounts")
-    },
-    {
-      value: "High",
-      text: "Income or capital bonds",
-      checked: (data["money-total-risk-check"] == "Savings Accounts")
-    },
-    {
-      value: "High",
-      text: "Money overseas",
-      checked: (data["money-total-risk-check"] == "Savings Accounts")
+      text: "Non-UK pensions",
+      checked: (data["money-total-risk-check"] == "Non-UK pensions")
     }
   ]
 }) }}
@@ -85,7 +93,7 @@
   {
     value: "Low",
     text: "I have none of these",
-    checked: (data["money-total-risk-check"] == "None of these")
+    checked: (data["pension-check"] == "None of these")
   }
   ]
 }) }}
