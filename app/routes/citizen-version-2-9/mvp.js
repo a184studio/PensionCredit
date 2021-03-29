@@ -461,18 +461,27 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   }
 })
 
-
-
-
 router.post(`${baseUrl}/single-joint-check-router`, (req, res) => {
   const singleJoint = req.session.data['single-joint-check']
 
   if (singleJoint === 'Single') {
-    res.redirect(`${baseUrl}/home-care-home-check`)
+    res.redirect(`${baseUrl}/home-hospital-check`)
   } else {
     res.redirect(`${baseUrl}/partner-national-insurance`)
   }
 })
+
+router.post(`${baseUrl}/home-hospital-check-router`, (req, res) => {
+  const hospitalCheck = req.session.data['home-hospital-check']
+
+  if (hospitalCheck === 'Yes') {
+    res.redirect(`${baseUrl}/home-hospital-funding`)
+  } else {
+    res.redirect(`${baseUrl}/home-care-home-check`)
+  }
+})
+
+
 
 
 // Employment router CB (employment-check)

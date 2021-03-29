@@ -491,7 +491,7 @@ router.post(`${baseUrl}/single-joint-check-router`, (req, res) => {
   const singleJoint = req.session.data['single-joint-check']
 
   if (singleJoint === 'Single') {
-    res.redirect(`${baseUrl}/home-care-home-check`)
+    res.redirect(`${baseUrl}/home-hospital-check`)
   } else {
     res.redirect(`${baseUrl}/partner-national-insurance`)
   }
