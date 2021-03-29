@@ -13,9 +13,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="money-disregards-all-router" method="post" class="form">
+      <form action="hrt-claimant-immigration-restrictions" method="post" class="form">
 
-        <input type="hidden" name="disregards-summary-complete" value="in-progress"/>
+        <input type="hidden" name="money-disregards-all-payments" value="in-progress"/>
 
 
          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">We can ignore some of the money you have in some situations        </h1>
@@ -25,14 +25,21 @@
 
     <p class="govuk-heading-s govuk-!-margin-bottom-2">We might not use some money, savings and investments to work out your Pension Credit if they are:</p>
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-      <li>savings that you intend to use to buy or make essential repairs to your main home</li>
-
+      <li>payments to help you live independently in your own home or the community</li>
+      <li>payments to correct or compensate for an official error or for arrears of benefits</li>
+      <li>payments related to Council Tax Reduction</li>
+      <li>payments to help you if you have been involved in an incident or emergency</li>
+      <li>payments from a home insurance policy to cover lost or damaged personal possessions</li>
+      <li>payments to support you with the effects of a blood infection or vCJD </li>
+      <li>personal injury claim payments</li>
+      <li>compensation payments related to the second world war or service in the armed forces</li>
+      <li>payments from the Windrush Compensation Scheme</li>
       </ul>
 
           {{ govukRadios({
             classes: "govuk-radios",
-            idPrefix: "money-disregards-all",
-            name: "money-disregards-all",
+            idPrefix: "money-disregards-all-payments",
+            name: "money-disregards-all-payments",
             fieldset: {
               legend: {
                 text: "Do any of these situations apply to any of your money?
@@ -50,12 +57,10 @@
               {
                 value: "Yes",
                 text: "Yes"
-
               },
               {
                 value: "No",
                 text: "No"
-
               }
             ]
 
