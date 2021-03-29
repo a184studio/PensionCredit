@@ -8,9 +8,10 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/citizen-version-2-8-ur/mvp'
+const baseUrl = '/citizen-version-2-9/mvp'
 
 const path = require('path');
+
 
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
@@ -51,24 +52,11 @@ router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 
   if (startCheck === 'Yes') {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/reside-in-uk`)
   } else {
-    res.redirect(`${baseUrl}/done-start-check-no`)
+    res.redirect(`${baseUrl}/start-check-no`)
   }
 })
-
-router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
-  const statePensionCheck = req.session.data['state-pension-check-yn']
-
-  if (statePensionCheck === 'Yes') {
-    res.redirect(`${baseUrl}/doc-draft-date`)
-  } else {
-    res.redirect(`${baseUrl}/done-not-getting-sp`)
-  }
-})
-
-
-
 
 router.post(`${baseUrl}/security-router`, (req, res) => {
   const passedSecurity = req.session.data['passed-security']
@@ -402,20 +390,9 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   if (partnerCheck === 'Yes, we live together') {
     res.redirect(`${baseUrl}/partner-app-check`)
   } else {
-    res.redirect(`${baseUrl}/home-rent-housing-benefit`)
+    res.redirect(`${baseUrl}/data-we-use`)
   }
 })
-
-router.post(`${baseUrl}/home-rent-housing-benefit-router`, (req, res) => { // When the button is pressed it looks for this router
-  const homeRentHousingBenefit = req.session.data['home-rent-housing-benefit'] // The router is looking for this ID.
-
-  if (homeRentHousingBenefit === 'Yes HB') {
-    res.redirect(`${baseUrl}/money-2-intro`)
-  } else {
-    res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
-  }
-})
-
 
 
 router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
@@ -484,9 +461,6 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   }
 })
 
-
-
-
 router.post(`${baseUrl}/single-joint-check-router`, (req, res) => {
   const singleJoint = req.session.data['single-joint-check']
 
@@ -496,6 +470,18 @@ router.post(`${baseUrl}/single-joint-check-router`, (req, res) => {
     res.redirect(`${baseUrl}/partner-national-insurance`)
   }
 })
+
+router.post(`${baseUrl}/home-hospital-check-router`, (req, res) => {
+  const hospitalCheck = req.session.data['home-hospital-check']
+
+  if (hospitalCheck === 'Yes') {
+    res.redirect(`${baseUrl}/home-hospital-funding`)
+  } else {
+    res.redirect(`${baseUrl}/home-care-home-check`)
+  }
+})
+
+
 
 
 // Employment router CB (employment-check)
@@ -570,8 +556,8 @@ router.post(`${baseUrl}/non-deps-living-with-you-router`, (req, res) => {
   if (nonDepsCheck === 'Yes') {
     res.redirect(`${baseUrl}/non-deps-prompt`)
   }
-  else if (nonDepsCheck === 'Yes-one') {
-    res.redirect(`${baseUrl}/non-deps-member-category`)
+  else if (nonDepsCheck === 'Yes') {
+    res.redirect(`${baseUrl}/non-deps-prompt`)
   }
   else if (nonDepsCheck === 'Yes-more') {
     res.redirect(`${baseUrl}/non-deps-multi-member-details`)
@@ -584,7 +570,7 @@ router.post(`${baseUrl}/non-deps-summary-router`, (req, res) => {
   const nonDepsSummary = req.session.data['non-deps-summary']
 
   if (nonDepsSummary === 'Yes') {
-    res.redirect(`${baseUrl}/non-deps-member-category`)
+    res.redirect(`${baseUrl}/non-deps-member-category-loop`)
   } else {
     res.redirect(`${baseUrl}/benefit-UC-Carer`)
   }
@@ -697,11 +683,25 @@ router.post(`${baseUrl}/home-mortgage-router`, (req, res) => {
   const hasMortgage = req.session.data['home-mortgage']
 
   if (hasMortgage === 'Yes') {
+    res.redirect(`${baseUrl}/home-smi-check`)
+  } else {
+    res.redirect(`${baseUrl}/home-equity-release`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/home-smi-check-router`, (req, res) => {
+  const smiCheck = req.session.data['home-smi-check']
+
+  if (smiCheck === 'Yes') {
     res.redirect(`${baseUrl}/home-mortgage-home-loan`)
   } else {
     res.redirect(`${baseUrl}/home-equity-release`)
   }
 })
+
+
 
 
 router.post(`${baseUrl}/own-mortgage-home-loan-yn-router`, (req, res) => {
@@ -1175,6 +1175,17 @@ router.post(`${baseUrl}/money-second-property-router`, (req, res) => {
   }
 })
 
+
+
+router.post(`${baseUrl}/money-disregards-all-router`, (req, res) => {
+  const nonDepsCheck = req.session.data['money-disregards-all']
+
+  if (nonDepsCheck === 'No') {
+    res.redirect(`${baseUrl}/money-disregards-payments`)
+  } else {
+    res.redirect(`${baseUrl}/hrt-claimant-immigration-restrictions`)
+  }
+})
 
 
 // disregards END
