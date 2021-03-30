@@ -1168,17 +1168,6 @@ router.post(`${baseUrl}/money-second-property-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/money-disregards-all-router`, (req, res) => {
-  const nonDepsCheck = req.session.data['money-disregards-all']
-
-  if (nonDepsCheck === 'No') {
-    res.redirect(`${baseUrl}/money-disregards-payments`)
-  } else {
-    res.redirect(`${baseUrl}/hrt-claimant-immigration-restrictions`)
-  }
-})
-
-
 // disregards END
 
 
