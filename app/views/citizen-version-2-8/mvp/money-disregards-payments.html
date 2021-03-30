@@ -18,7 +18,7 @@
         <input type="hidden" name="money-disregards-all-payments" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Is any of your money from these kind of payments or payouts?</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Tell us about money from payments or payouts</h1>
 
 
 
@@ -38,7 +38,7 @@
               }
             },
             hint: {
-              text: "Select all that apply. Money from these might not affect your Pension Credit."
+              text: "Select all that apply. These kind of payments and payouts might not affect your Pension Credit."
             },
             items: [
               {
@@ -76,14 +76,33 @@
               {
                 value: "Option-9",
                 text: "the Windrush Compensation Scheme"
-              },
-              {
-                value: "Option-10",
-                text: "None of these"
               }
             ]
           }) }}
 
+          <p class="govuk-!-font-size-19 govuk-!-padding-left-2 govuk-!-margin-top-0 govuk-!-margin-bottom-0">or</p>
+
+{{ govukCheckboxes({
+  idPrefix: "None",
+  name: "None",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-8 govuk-!-padding-top-0"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "Low",
+    text: "I have none of these",
+    checked: (data["pension-check"] == "None of these")
+  }
+  ]
+}) }}
 
           {{ govukButton({
           text: "Continue"
