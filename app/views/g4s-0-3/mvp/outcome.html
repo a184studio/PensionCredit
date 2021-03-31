@@ -14,7 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    {% if data["housing-costs"] == "Yes" %}
+    <form action="outcome-housing-costs-router" method="post" class="form">
+    {% else %}
     <form action="outcome-yn-router" method="post" class="form">
+    {% endif %}
+
 
     <!------------H1 LEGEND------------>
 
@@ -22,47 +28,55 @@
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have told us that you don't have a National Insurance number</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you apply for one and decide whether to make a Pension Credit application.</p>
 
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
     {% elif data["housing-costs"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us you have housing costs that Pension Credit could help you with</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you decide whether to make an application.</p>
 
-    {% elif data['nino'] == 'S1 11 22 33 A' %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because your income from State Pension and any other benefits is too high</h1>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
     {% elif data["pensions"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because of your pension income</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
 
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
     {% elif data["earnings"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because of your earnings</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
 
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
     {% else %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are likely to get<br>Pension Credit</h1>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
     {% endif %}
 
 
     <!------------Legend------------>
       {% set outComeCTA %}
       {% if data["housing-costs"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">
-        Do you want to speak to a Pension Credit adviser to continue your application?
-      </h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-2">Do you want to speak to a Pension Credit adviser to continue your application?</h1>
 
       {% elif data['nino'] == 'S1 11 22 33 A' %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Do you still want to continue your application?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Do you still want to continue your application?</h1>
 
       {% elif data["pensions"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Do you still want to continue your application?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Do you want to know more about what other help you might be able to get?</h1>
 
       {% elif data["earnings"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Do you still want to continue your application?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Do you want to know more about what other help you might be able to get?</h1>
 
 
       {% else %}
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Do you want to speak to a Pension Credit <br>adviser to continue your application?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Do you want to know more about what other help you might be able to get?</h1>
       {% endif %}
 
       {% endset %}
@@ -103,6 +117,9 @@
            text: "Continue",
            classes: "dont-print"
          }) }}
+
+         <p class="govuk-body govuk-!-padding-bottom-6"><strong>Pass over to DWP if they wish to talk more about PC</strong><br><a href="handover-user-request">Handover claim early</a></p>
+
 
 
 </form>

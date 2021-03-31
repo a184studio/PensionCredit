@@ -126,9 +126,19 @@ router.post(`${baseUrl}/outcome-yn-router`, (req, res) => {
   const outcomeYN = req.session.data['outcome-yn']
 
   if (outcomeYN === 'Yes') {
-    res.redirect(`${baseUrl}/handover`)
+    res.redirect(`${baseUrl}/more-help`)
   } else {
     res.redirect(`${baseUrl}/exit`)
+  }
+})
+
+router.post(`${baseUrl}/outcome-housing-costs-router`, (req, res) => {
+  const outcomeHousingCosts = req.session.data['outcome-yn']
+
+  if (outcomeHousingCosts === 'Yes') {
+    res.redirect(`${baseUrl}/handover`)
+  } else {
+    res.redirect(`${baseUrl}/more-help`)
   }
 })
 
