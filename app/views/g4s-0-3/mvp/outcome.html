@@ -32,7 +32,7 @@
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
     
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
+   <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -42,9 +42,9 @@
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You will need to make a full application for Pension Credit over the phone.</h1>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1> 
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -58,9 +58,9 @@
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Or would you like to find out about other help that is available?</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Or would you like to find out about other help that is available?</p> -->
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -74,9 +74,9 @@
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Or would you like to find out about other help that is available?</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Or would you like to find out about other help that is available?</p> -->
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -86,7 +86,7 @@
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You will need to make an application for Pension Credit over the phone, where an advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -96,20 +96,19 @@
     <!------------Legend------------>
       {% set outComeCTA %}
       {% if data["housing-costs"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-2">Do you want to speak to a Pension Credit adviser to continue your application?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
 
       {% elif data['nino'] == 'S1 11 22 33 A' %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Do you still want to continue your application?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
 
       {% elif data["pensions"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Do you want to know more about what other help you might be able to get?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
 
       {% elif data["earnings"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Do you want to know more about what other help you might be able to get?</h1>
-
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
 
       {% else %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Do you want to know more about what other help you might be able to get?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
       {% endif %}
 
       {% endset %}
@@ -135,12 +134,12 @@
            items: [
              {
                value: "Yes",
-               text: "Yes",
+               text: "Tell me about other help that is available",
                checked: (data["outcome-yn"] == "Yes")
              },
              {
                value: "No",
-               text: "No",
+               text: "Pass me over to the full phone application service",
                checked: (data["outcome-yn"] == "No")
              }
            ]
