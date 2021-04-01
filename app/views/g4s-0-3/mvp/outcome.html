@@ -32,7 +32,7 @@
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
     
-   <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
+   <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -40,27 +40,29 @@
     {% elif data["housing-costs"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us that you have housing costs that Pension Credit might be able to help you with</h1>
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You will need to make a full application for Pension Credit over the phone.</h1>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You will need to make a full application for Pension Credit over the phone.</h1>
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1> 
 
-    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
     {% elif data["pensions"] == "Yes" %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because of your pension income</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on the information you have given me, it doesn't look like you meet the criteria for Pension Credit</h1>
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This is because your pensions take you above the income thresholds.</p>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, I can still put you through to the full application service if you want.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, there might be other ways that DWP can help with your living or housing costs.</p>
+    
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like to find out about the help that is available?</p> 
+
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, I can still put you through to the full application service if you want.</p>
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
 
-    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
-
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Or would you like to find out about other help that is available?</p> -->
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -70,13 +72,15 @@
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This is because your earnings take you above the income thresholds.</p>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, I can still put you through to the full application service if you want.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, there might be other ways that DWP can help with your living or housing costs.</p>
+    
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like to find out about the help that is available?</p> 
+
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, I can still put you through to the full application service if you want.</p>
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
 
-    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
-
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Or would you like to find out about other help that is available?</p> -->
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -86,7 +90,7 @@
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You will need to make an application for Pension Credit over the phone, where an advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
 
-    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -96,19 +100,19 @@
     <!------------Legend------------>
       {% set outComeCTA %}
       {% if data["housing-costs"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
 
       {% elif data['nino'] == 'S1 11 22 33 A' %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
 
       {% elif data["pensions"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">SSelect the next action</h1>
 
       {% elif data["earnings"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
 
       {% else %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Would you like me to hand you over to a colleague to make a full phone application now or would you instead like to find out about other help that is available?</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
       {% endif %}
 
       {% endset %}
@@ -134,14 +138,46 @@
            items: [
              {
                value: "Yes",
-               text: "Tell me about other help that is available",
+               text: "Applicant wants to know more about other help that is available - route to more-help.html",
                checked: (data["outcome-yn"] == "Yes")
              },
+             
              {
                value: "No",
-               text: "Pass me over to the full phone application service",
+               text: "Applicant wants to end the call - route to exit.html",
                checked: (data["outcome-yn"] == "No")
-             }
+             },
+
+             {
+              value: "No",
+              text: "Not eligible - but applicant insists on being put through to the phone application service - route to handover-user-request.html",
+              checked: (data["outcome-yn"] == "No")
+            },
+
+            {
+              value: "No",
+              text: "Applicant only just over the qualifying thresholds - put them through to DWP - rroute to handover-user-request.html",
+              checked: (data["outcome-yn"] == "No")
+            },
+
+            {
+              value: "No",
+              text: "Applicant is eligible - put them through to DWP - route to handover.html",
+              checked: (data["outcome-yn"] == "No")
+            },
+
+            {
+              value: "No",
+              text: "Applicant doesn't have a NINO - put them through to DWP - route to handover-early.html",
+              checked: (data["outcome-yn"] == "No")
+            },
+
+            {
+              value: "No",
+              text: "Applicant has housing costs - put them through to DWP - route to handover-early.html",
+              checked: (data["outcome-yn"] == "No")
+            }
+
            ]
          }) }}
 
@@ -150,7 +186,7 @@
            classes: "dont-print"
          }) }}
 
-         <p class="govuk-body govuk-!-padding-bottom-6"><strong>Pass over to DWP if they wish to talk more about your Pension Credit outcome</strong><br><a href="handover-user-request">Handover claim early</a></p>
+         <!-- <p class="govuk-body govuk-!-padding-bottom-6"><strong>Pass over to DWP if they wish to talk more about your Pension Credit outcome</strong><br><a href="handover-user-request">Handover claim early</a></p> -->
 
 
 
