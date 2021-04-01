@@ -25,35 +25,68 @@
     <!------------H1 LEGEND------------>
 
     {% if data['nino'] == '' %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have told us that you don't have a National Insurance number</h1>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you apply for one and decide whether to make a Pension Credit application.</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us that you do not have a National Insurance number</h1>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This means I cannot give you an exact answer on whether you can get Pension Credit or not.</p>
+      
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">However, you can still make a full application for Pension Credit over the phone, even if you do not have a National Insurance number. </p>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
+    
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
     {% elif data["housing-costs"] == "Yes" %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us you have housing costs that Pension Credit could help you with</h1>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">A Pension Credit advisor will be able to help you decide whether to make an application.</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us that you have housing costs that Pension Credit might be able to help you with</h1>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You will need to make a full application for Pension Credit over the phone.</h1>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
     {% elif data["pensions"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because of your pension income</h1>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This is because your pensions take you above the income thresholds.</p>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, I can still put you through to the full application service if you want.</p>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Or would you like to find out about other help that is available?</p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
     {% elif data["earnings"] == "Yes" %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are unlikely to get Pension Credit because of your earnings</h1>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You can still make an application if you want to, but it is not likely to be successful.</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on the information you have given me, it doesn't look like you meet the criteria for Pension Credit</h1>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This is because your earnings take you above the income thresholds.</p>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, I can still put you through to the full application service if you want.</p>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Or would you like to find out about other help that is available?</p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
     {% else %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are likely to get<br>Pension Credit</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on the information you have given me, it looks like you meet the criteria for Pension Credit</h1>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You will need to make an application for Pension Credit over the phone, where an advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
