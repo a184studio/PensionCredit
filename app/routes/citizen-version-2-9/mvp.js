@@ -379,6 +379,8 @@ router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
 
   if (statePensionCheck === 'Yes') {
     res.redirect(`${baseUrl}/children-check-yn`)
+  } else if (statePensionCheck === 'NoSP') {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
   } else {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   }

@@ -21,11 +21,11 @@
 
 
       {{ govukRadios({
-        idPrefix: "state-pension-check-yn",
-        name: "state-pension-check-yn",
+        idPrefix: "state-pension-status",
+        name: "state-pension-status",
         fieldset: {
           legend: {
-            text: "About your State Pension?",
+            text: "About your State Pension",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,22 +41,22 @@
           {
             value: "Yes",
             text: "Yes – Claimed State pension and in payment",
-            checked: (data["state-pension-check-yn"] == "Yes")
+            checked: (data["state-pension-status"] == "Yes")
           },
           {
             value: "Yes",
             text: "Yes – Claimed State pension and awaiting first payment",
-            checked: (data["state-pension-check-yn"] == "Yes")
+            checked: (data["state-pension-status"] == "Yes")
           },
           {
-            value: "No",
+            value: "NoBank",
             text: "Yes – I have applied but not due to get anything [exit page to = We need your bank account detials to pay you. ]",
-            checked: (data["state-pension-check-yn"] == "Yes")
+            checked: (data["state-pension-status"] == "NoBank")
           },
           {
-            value: "No",
+            value: "NoSP",
             text: "No – I have not attempted to claim my State Pension [ you need to attempt to claim your SP]",
-            checked: (data["state-pension-check-yn"] == "No")
+            checked: (data["state-pension-status"] == "NoSP")
           }
         ]
       }) }}
