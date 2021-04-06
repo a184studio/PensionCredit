@@ -27,6 +27,10 @@
       {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you have money in accounts shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
       {% else %}  <p class="govuk-!-font-size-24">If you have money in accounts shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
 
+
+
+      {% set DynamicDetails %}
+
       <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes:</p>
 <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
       <li>money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office</li>
@@ -38,6 +42,14 @@
       <li>income or capital bonds</li>
       <li>any other money in this country or overseas</li>
 </ul>
+{% endset -%}
+
+      {{ govukDetails({
+        summaryText: "Remind me of the types of accounts that are out there",
+        html: DynamicDetails
+      }) }}
+
+
 
 
 
