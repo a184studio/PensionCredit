@@ -22,13 +22,13 @@
   name: "money-total-risk-check",
   fieldset: {
     legend: {
-      text: "What accounts or investments do you have?",
+      text: "Do you have any of these accounts or investments?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl govuk-!-padding-top-2"
     }
   },
   hint: {
-    text: "Select all that apply.",
+    text: "We might need to contact you if you have money in these accounts to confirm their value. Select all that apply.",
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
   },
   items: [
@@ -40,7 +40,7 @@
     },
     {
       value: "High",
-      text: "Investments, including shares ISAs",
+      text: "Investments, including stocks and shares ISAs",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
