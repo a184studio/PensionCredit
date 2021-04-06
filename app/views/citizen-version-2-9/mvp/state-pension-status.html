@@ -1,0 +1,71 @@
+{% extends "layout-assisted-digital.html" %}
+
+{% block pageTitle %}
+  Have you spent any time in hospital recently? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="state-pension-check-yn-router" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+
+      {{ govukRadios({
+        idPrefix: "state-pension-check-yn",
+        name: "state-pension-check-yn",
+        fieldset: {
+          legend: {
+            text: "Have you claimed your State Pension?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+
+        },
+        hint: {
+          text: "XXX."
+
+
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes – Claimed State pension and in payment",
+            checked: (data["state-pension-check-yn"] == "Yes")
+          },
+          {
+            value: "Yes",
+            text: "Yes – Claimed State pension and awaiting first payment",
+            checked: (data["state-pension-check-yn"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "Yes – I have applied but not due to get anything [exit page to = We need your bank account detials to pay you. ]",
+            checked: (data["state-pension-check-yn"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No – I have not attempted to claim my State Pension [ you need to attempt to claim your SP]",
+            checked: (data["state-pension-check-yn"] == "No")
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
