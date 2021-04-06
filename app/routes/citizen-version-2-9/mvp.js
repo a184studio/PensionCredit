@@ -1141,6 +1141,81 @@ router.post(`${baseUrl}/money-2-total-eed-router`, (req, res) => {
 
 
 
+// [3] Money Savining and investement Routers
+
+router.post(`${baseUrl}/money-3-total-now-router`, (req, res) => {
+  const money2TotalNow = req.session.data['money-3-total-now']
+
+  if (money2TotalNow === '£7,000 to £10,000') {
+    res.redirect(`${baseUrl}/money-3-total-eed-same-check`)
+  }
+  // startCheckArr includes 'money'
+  if (money2TotalNow === '10') {
+    res.redirect(`${baseUrl}/money-3-total-now-confirm`)
+  }
+  else {
+    res.redirect(`${baseUrl}/money-3-total-eed-same-check`)
+  }
+})
+
+router.post(`${baseUrl}/money-3-total-now-confirm-router`, (req, res) => {
+  const money2TotalNowConfirm = req.session.data['money-2-total-now-confirm']
+
+  if (money2TotalNowConfirm === 'Yes') {
+    res.redirect(`${baseUrl}/money-3-total-eed`)
+  } else {
+    res.redirect(`${baseUrl}/money-3-total-now`)
+  }
+})
+
+router.post(`${baseUrl}/money-3-total-eed-same-check-7-router`, (req, res) => {
+  const money2TotalEEDSameCheck7 = req.session.data['money-3-total-eed-same-check']
+
+  if (money2TotalEEDSameCheck7=== 'Yes') {
+    res.redirect(`${baseUrl}/money-second-property`)
+  } else {
+    res.redirect(`${baseUrl}/money-3-total-eed`)
+  }
+})
+
+router.post(`${baseUrl}/money-3-total-eed-same-check-10-router`, (req, res) => {
+  const money2TotalEEDSameCheck10 = req.session.data['money-3-total-eed-same-check']
+
+  if (money2TotalEEDSameCheck10=== 'Yes') {
+    res.redirect(`${baseUrl}/money-total-risk-check`)
+  } else {
+    res.redirect(`${baseUrl}/money-3-total-eed`)
+  }
+})
+
+router.post(`${baseUrl}/money-3-total-eed-confirm-router`, (req, res) => {
+  const money2TotalEEDConfirm = req.session.data['money-3-total-eed-confirm']
+
+  if (money2TotalEEDConfirm === 'Yes') {
+    res.redirect(`${baseUrl}/money-total-risk-check`)
+  } else {
+    res.redirect(`${baseUrl}/money-3-total-eed`)
+  }
+})
+
+router.post(`${baseUrl}/money-3-total-eed-router`, (req, res) => {
+  const money2TotalEED = req.session.data['money-3-total-eed']
+
+  if (money2TotalEED === 'High') {
+    res.redirect(`${baseUrl}/money-total-risk-check`)
+  }
+  // startCheckArr includes 'money'
+  if (money2TotalEED === '10') {
+    res.redirect(`${baseUrl}/money-3-total-eed-confirm`)
+  }
+  else {
+    res.redirect(`${baseUrl}/money-second-property`)
+  }
+})
+
+
+
+
 
 
 
