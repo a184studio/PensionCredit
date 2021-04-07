@@ -135,24 +135,29 @@
                             Applicant has housing costs - put them through to DWP - route to handover-early.html
                           </label>
                         </div>
-                     {% endif %}
 
-                       {% if data["pensions"] == "Yes" or data["earnings"] == "Yes" %}
+                       {% elif data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' %}
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
                           <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                            Applicant wants to know more about other help that is available - route to more-help.html
+                            [OTHER HELP] Applicant wants to know more about other help that is available - route to more-help.html
                           </label>
                         </div>
-                       {% endif %}
 
-                       {% if data["pensions"] == "Yes" or data["earnings"] == "Yes" or data["housing-costs"] == "Yes" %}
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
                           <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                            Applicant wants to end the call - route to exit.html
+                            [END CALL] Applicant wants to end the call - route to exit.html
                           </label>
                         </div>
+                        {% else %}
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            [Standard handover]XXX
+                          </label>
+                        </div>
+
                        {% endif %}
 
                       <div class="govuk-radios__divider">or</div>
@@ -161,16 +166,23 @@
                        <div class="govuk-radios__item">
                          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                           Not eligible - but applicant insists on being put through to the phone application service - route to handover-user-request.html
+                           [MANUAL TO DWP] Not eligible - but applicant insists on being put through to the phone application service - route to handover-user-request.html
                          </label>
                        </div>
 
-                       {% else %}
+                     {% elif data["pensions"] == "No" or data["earnings"] == "No" or data['nino'] == 'S1 11 22 33 A' or data["housing-costs"] == "No"%}
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                          [OTHER HELP] Applicant wants to know more about other help that is available - route to more-help.html
+                        </label>
+                      </div>
+
 
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
                         <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                          Manual hand over - Applicant insists or G4s are worred about outcome reached <br><br>[Not eligible - but applicant insists on being put through to the phone application service - route to handover-user-request.html]
+                          [END CALL] Applicant wants to end the call - route to exit.html
                         </label>
                       </div>
                      {% endif %}
