@@ -24,14 +24,23 @@
 
     <!------------H1 LEGEND------------>
 
-    {% if data['nino'] == '' %}
+    {% if data['nino'] == 'S1 11 22 33 A' %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on the information you have given me, it doesn't look like you meet the criteria for Pension Credit</h1>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">SP / Benedits MAXED OUT XXX</p>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">That said, there might be other help available for your living or housing costs.</p>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Would you like to find out about the help that is available?</p>
+
+    {% elif data['nino'] == '' %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us that you do not have a National Insurance number</h1>
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This means I cannot give you an exact answer on whether you can get Pension Credit or not.</p>
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">However, you can still make a full application for Pension Credit over the phone, even if you do not have a National Insurance number. </p>
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">An advisor will ask you some more questions as part of a full assessment.</h1>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">An advisor will ask you some more questions as part of a full assessment.
 
    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
@@ -39,9 +48,9 @@
     {% elif data["housing-costs"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You told us that you have housing costs that Pension Credit might be able to help you with</h1>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You will need to make a full application for Pension Credit over the phone.</h1>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You will need to make a full application for Pension Credit over the phone.
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">An advisor will ask you some more questions as part of a full assessment.</h1>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">An advisor will ask you some more questions as part of a full assessment.
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
@@ -162,7 +171,7 @@
 
                       <div class="govuk-radios__divider">or</div>
 
-                      {% if data["pensions"] == "Yes" or data["earnings"] == "Yes" %}
+                      {% if data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' %}
                        <div class="govuk-radios__item">
                          <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="manual-dwp">
                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
@@ -170,7 +179,7 @@
                          </label>
                        </div>
 
-                     {% elif data["pensions"] == "No" or data["earnings"] == "No" or data['nino'] == 'S1 11 22 33 A' or data["housing-costs"] == "No"%}
+                     {% elif data["pensions"] == "No" or data["earnings"] == "No" or data["housing-costs"] == "No"%}
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="help">
                         <label class="govuk-label govuk-radios__label" for="changed-name-2">
