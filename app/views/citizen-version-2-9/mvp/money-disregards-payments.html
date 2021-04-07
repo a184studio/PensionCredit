@@ -18,12 +18,11 @@
         <input type="hidden" name="money-disregards-all-payments" value="in-progress"/>
 
 
-         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Tell us about money from payments or payouts</h1>
+         <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">What money do you have from payments and payouts?</h1>
 
 
 
 
-    <p class="govuk-heading-s govuk-!-margin-bottom-2"></p>
 
 
 
@@ -34,11 +33,11 @@
               legend: {
                 text: "",
                 isPageHeading: true,
-                classes: "govuk-fieldset__legend--s"
+                classes: "govuk-fieldset__legend--m"
               }
             },
             hint: {
-              text: "Select all that apply. These kind of payments and payouts might not affect your Pension Credit."
+              text: "We might be able to ignore these amounts when working out your Pension Credit. Select all that apply."
             },
             items: [
               {
@@ -98,7 +97,7 @@
   items: [
   {
     value: "Low",
-    text: "I have none of these",
+    text: "None of my money is from these",
     checked: (data["pension-check"] == "None of these")
   }
   ]
