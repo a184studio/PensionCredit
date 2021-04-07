@@ -175,9 +175,9 @@ router.post(`${baseUrl}/outcome-radios-router`, (req, res) => {
   } else if (outcomeRadios === 'exit') {
     res.redirect(`${baseUrl}/exit`)
   } else if (outcomeRadios === 'dwp') {
-    res.redirect(`${baseUrl}/dwp`)
+    res.redirect(`${baseUrl}/handover-user-request`)
   } else if (outcomeRadios === 'manual-dwp') {
-    res.redirect(`${baseUrl}/manual-dwp`)
+    res.redirect(`${baseUrl}/handover-user-request`)
   } else if (outcomeRadios === 'end') {
     res.redirect(`${baseUrl}/end`)
   } else {
