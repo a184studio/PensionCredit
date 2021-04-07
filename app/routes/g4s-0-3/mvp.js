@@ -165,6 +165,29 @@ router.post(`${baseUrl}/sl-find-a-claim-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/outcome-radios-router`, (req, res) => {
+  const outcomeRadios = req.session.data['outcome-radios']
+
+  if (outcomeRadios === 'housing') {
+    res.redirect(`${baseUrl}/housing`)
+  } else if (outcomeRadios === 'help') {
+    res.redirect(`${baseUrl}/more-help`)
+  } else if (outcomeRadios === 'exit') {
+    res.redirect(`${baseUrl}/exit`)
+  } else if (outcomeRadios === 'dwp') {
+    res.redirect(`${baseUrl}/dwp`)
+  } else if (outcomeRadios === 'manual-dwp') {
+    res.redirect(`${baseUrl}/manual-dwp`)
+  } else if (outcomeRadios === 'end') {
+    res.redirect(`${baseUrl}/end`)
+  } else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+
+
+
 
 
 
