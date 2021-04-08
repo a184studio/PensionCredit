@@ -200,6 +200,23 @@
                       </div>
                      {% endif %}
 
+                     {% if data['nino'] == 'S4 11 22 33 D' %}
+
+                     <div class="govuk-radios__item">
+                       <input class="govuk-radios__input"
+                       id="outcome-radios"
+                       name="outcome-radios"
+                       type="radio"
+                       value="end">
+                       <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                         [END CALL] Applicant wants to end the call <!--- route to exit.html-->
+                       </label>
+                     </div>
+                    {% endif %}
+
+
+
+
 
                     </fieldset>
                   </div>
