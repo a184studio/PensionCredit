@@ -1159,9 +1159,9 @@ router.post(`${baseUrl}/money-3-total-now-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/money-3-total-now-confirm-router`, (req, res) => {
-  const money2TotalNowConfirm = req.session.data['money-2-total-now-confirm']
+  const money3TotalNowConfirm = req.session.data['money-3-total-now-confirm']
 
-  if (money2TotalNowConfirm === 'Yes') {
+  if (money3TotalNowConfirm === 'Yes') {
     res.redirect(`${baseUrl}/money-3-total-eed`)
   } else {
     res.redirect(`${baseUrl}/money-3-total-now`)
