@@ -386,6 +386,22 @@ router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
+  const statePensionStatus = req.session.data['state-pension-status']
+
+  if (statePensionStatus === 'Yes') {
+    res.redirect(`${baseUrl}/children-check-yn`)
+  } else if (statePensionStatus === 'NoSP') {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
+  } else if (statePensionStatus === 'NoBank') {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
+  } else {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
+  }
+})
+
+
+
 router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   const partnerCheck = req.session.data['partner-check-yn']
 
