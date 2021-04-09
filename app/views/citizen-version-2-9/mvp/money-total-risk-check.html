@@ -22,20 +22,25 @@
   name: "money-total-risk-check",
   fieldset: {
     legend: {
-      text: "Do you have any of these accounts or investments?",
+      text: "Does this become something more about which of these do you have? /// Do you have any of these accounts or investments?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl govuk-!-padding-top-2"
     }
   },
   hint: {
-    text: "We might need to contact you if you have money in these accounts to confirm their value. Select all that apply.",
+    text: "Select all that apply. [We might need to contact you if you have money in these accounts to confirm their value. ]",
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
   },
   items: [
 
     {
       value: "Low",
-      text: "Do we show all the normal accounts?",
+      text: "money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office",
+      checked: (data["money-total-risk-check"] == "Savings Accounts")
+    },
+    {
+      value: "Low",
+      text: "investments like ISAs",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
@@ -64,36 +69,23 @@
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
+      value: "Low",
+      text: "money at home in cash",
+      checked: (data["money-total-risk-check"] == "Savings Accounts")
+    },
+    {
       value: "High",
       text: "Money overseas",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
+    },
+    {
+      value: "Low",
+      text: "Other account types not on this list",
+      checked: (data["money-total-risk-check"] == "Savings Accounts")
     }
-  ]
-}) }}
+    ]
+  }) }}
 
-<p class="govuk-!-font-size-19 govuk-!-padding-left-2 govuk-!-margin-top-0 govuk-!-margin-bottom-0">or</p>
-
-{{ govukCheckboxes({
-  idPrefix: "None",
-  name: "None",
-  fieldset: {
-    legend: {
-      text: "",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-8 govuk-!-padding-top-0"
-    }
-  },
-  hint: {
-    text: ""
-  },
-  items: [
-  {
-    value: "Low",
-    text: "I have other accounts not on his list",
-    checked: (data["money-total-risk-check"] == "None of these")
-  }
-  ]
-}) }}
 
 
 

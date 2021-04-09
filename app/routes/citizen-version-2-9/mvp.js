@@ -1047,11 +1047,11 @@ router.post(`${baseUrl}/money-total-risk-check-router`, (req, res) => {
   const riskCheckArr = Array.isArray(riskCheck) ? riskCheck : [riskCheck]
   // startCheckArr includes both 'ni' and 'money'
   if (riskCheckArr.includes('Low') && riskCheckArr.includes('High')) {
-    res.redirect(`${baseUrl}/money-total-now`)
+    res.redirect(`${baseUrl}/money-3-claim-filter`)
   }
   // startCheckArr includes 'ni'
   else if (riskCheckArr.includes('Low')) {
-    res.redirect(`${baseUrl}/money-3-total-now`)
+    res.redirect(`${baseUrl}/money-3-claim-filter`)
   }
   // startCheckArr includes 'money'
   else if (riskCheckArr.includes('High')) {
