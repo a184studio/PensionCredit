@@ -16,41 +16,37 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="money-total-risk-check-router" method="post" class="form">
 
+    <!--[We might need to contact you if you have money in these accounts to confirm their value.]-->
 
 {{ govukCheckboxes({
   idPrefix: "money-total-risk-check",
   name: "money-total-risk-check",
   fieldset: {
     legend: {
-      text: "Does this become something more about which of these do you have? /// Do you have any of these accounts or investments?",
+      text: "Tell us what accounts or investments you have",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl govuk-!-padding-top-2"
     }
   },
   hint: {
-    text: "Select all that apply. [We might need to contact you if you have money in these accounts to confirm their value. ]",
+    text: "Select all that apply.",
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
   },
   items: [
 
     {
       value: "Low",
-      text: "money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office",
+      text: "Money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
       value: "Low",
-      text: "investments like ISAs",
+      text: "Investments, including stocks and shares and cash ISAs",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
       value: "Low",
       text: "National Savings and Investment products, such as Premium Bonds or Savings Certificates",
-      checked: (data["money-total-risk-check"] == "Savings Accounts")
-    },
-    {
-      value: "Low",
-      text: "Investments, including stocks and shares ISAs",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
@@ -70,7 +66,7 @@
     },
     {
       value: "Low",
-      text: "money at home in cash",
+      text: "Money at home in cash",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     },
     {
@@ -80,7 +76,7 @@
     },
     {
       value: "Low",
-      text: "Other account types not on this list",
+      text: "Other accounts or investments",
       checked: (data["money-total-risk-check"] == "Savings Accounts")
     }
     ]
