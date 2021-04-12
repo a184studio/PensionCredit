@@ -27,8 +27,8 @@
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Some examples below of ways DWP can help</p>
 
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with your health</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Attendance Allowance </strong> helps with extra costs if you have a disability severe enough that you need someone to help look after you.</p>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Attendance Allowance </h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Attendance Allowance helps with extra costs if you have a disability severe enough that you need someone to help look after you.</p>
 
 
       {% set DynamicDetails %}
@@ -41,7 +41,7 @@
       {% endset -%}
 
       {{ govukDetails({
-        summaryText: "More information about Attendance Allowance",
+        summaryText: "Contact Attendance Allowance",
         classes: "govuk-!-margin-bottom-6",
         html: DynamicDetails
       }) }}
@@ -57,8 +57,8 @@
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with heating your home</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Winter Fuel Payment: </strong> If you were born on or before 5 October 1954 you could get between £100 and £300 to help you pay your heating bills.</p>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Winter Fuel Payment</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If you were born on or before 5 October 1954 you could get between £100 and £300 to help you pay your heating bills.</p>
 
       {% set DynamicDetails %}
             <!-- <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes money, savings and investments such as:</p> -->
@@ -70,7 +70,7 @@
       {% endset -%}
 
       {{ govukDetails({
-        summaryText: "More information about Winter Fuel payment",
+        summaryText: "Contact Winter Fuel payment",
         classes: "govuk-!-margin-bottom-6",
         html: DynamicDetails
       }) }}
@@ -81,8 +81,8 @@
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with public transport</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Bus pass:</strong> In England you can get a bus pass for free travel when you reach the female State Pension age, whether you’re a man or a woman.</p>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Free bus pass</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">In England you can get a bus pass for free travel when you reach the female State Pension age, whether you’re a man or a woman.</p>
 
       {% set DynamicDetails %}
             <!-- <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes money, savings and investments such as:</p> -->
@@ -94,7 +94,7 @@
       {% endset -%}
 
       {{ govukDetails({
-        summaryText: "More information about the bus pass",
+        summaryText: "Contact bus pass",
         classes: "govuk-!-margin-bottom-6",
         html: DynamicDetails
       }) }}
@@ -102,18 +102,45 @@
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with renting your house or flat</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Housing Benefit</strong> can help you pay your rent if you’re unemployed, on a low income or claiming benefits. It’s being replaced by Universal Credit.</p>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Housing Benefit</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Housing Benefit can help you pay your rent if you’re unemployed, on a low income or claiming benefits. It’s being replaced by Universal Credit.</p>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Go to GOV.UK and search for "housing benefit".</p>
+
+      {% set DynamicDetails %}
+            <!-- <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes money, savings and investments such as:</p> -->
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Contacting Housing benefit</p>
+
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Go to GOV.UK and search for "free bus pass".</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Call 0800 000 000</p>
+
+      {% endset -%}
+
+      {{ govukDetails({
+        summaryText: "Contact Housing benefit",
+        classes: "govuk-!-margin-bottom-6",
+        html: DynamicDetails
+      }) }}
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with your pensions</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>The Pensions Advisory Service</strong> offers free information and advice about your State Pension or your company, personal, stakeholder or occupational pension.</p>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">The Pensions Advisory Service</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The Pensions Advisory Service offers free information and advice about your State Pension or your company, personal, stakeholder or occupational pension.</p>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Go to GOV.UK and search for "TPAS".</p>
 
+      {% set DynamicDetails %}
+            <!-- <p class="govuk-heading-s govuk-!-margin-bottom-2">This includes money, savings and investments such as:</p> -->
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Contacting XX</p>
+
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Go to GOV.UK and search for "TPAS".</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Call 0800 000 000</p>
+
+      {% endset -%}
+
+      {{ govukDetails({
+        summaryText: "Contact The Pensions Advisory Service",
+        classes: "govuk-!-margin-bottom-8",
+        html: DynamicDetails
+      }) }}
 
 
       {{ govukButton({
