@@ -25,14 +25,14 @@
         name: "state-pension-status",
         fieldset: {
           legend: {
-            text: "About your State Pension",
+            text: "Have you claimed your State Pension?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
 
         },
         hint: {
-          text: "XXX."
+          text: ""
 
 
         },
@@ -40,22 +40,22 @@
         items: [
           {
             value: "Yes",
-            text: "Yes – Claimed State pension and in payment",
+            text: "Yes, I claimed my State Pension and it is in payment",
             checked: (data["state-pension-status"] == "Yes")
           },
           {
             value: "Yes",
-            text: "Yes – Claimed State pension and awaiting first payment",
+            text: "Yes, I claimed my State Pension but I am waiting for the first payment",
             checked: (data["state-pension-status"] == "Yes")
           },
           {
             value: "NoBank",
-            text: "Yes – I have applied but not due to get anything",
+            text: "Yes, I made a claim for a State Pension but I am not entitled to one",
             checked: (data["state-pension-status"] == "NoBank")
           },
           {
             value: "NoSP",
-            text: "No – I have not attempted to claim my State Pension",
+            text: "No, I have not claimed my State Pension yet",
             checked: (data["state-pension-status"] == "NoSP")
           }
         ]
