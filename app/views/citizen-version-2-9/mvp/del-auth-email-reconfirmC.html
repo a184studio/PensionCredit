@@ -1,0 +1,93 @@
+{% extends "layout-assisted-digital.html" %}
+
+{% block pageTitle %}
+  Email confirmation? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="final-cya" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+      {% set claimdate %}
+
+      <p class="govuk-body govuk-!-font-size-24">Based on your circumstances, this is the earliest date we can consider backdating your application to.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If your circumstances have changed since [Calculated EED], you might want us to consider your application from the date that change took place. For example, if you have:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>been part of a previous claim for Pension Credit</li>
+        <li>started or stopped living with a partner</li>
+          </ul>
+
+      {% endset %}
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">test1@gmail.com</p>
+
+
+      {% set emailAddressChange %}
+      {{ govukInput({
+        label: {
+          html: legendHint
+        },
+        hint: {
+          text: "Enter your correct email address"
+        },
+        id: "email-address-change",
+        name: "email-address-change",
+        type: "email-address-change",
+        autocomplete: "email",
+        spellcheck: false,
+        value: data["email-address-change"]
+      }) }}
+      {% endset %}
+
+
+
+      {{ govukRadios({
+        name: "del-auth-email-confirmation",
+        fieldset: {
+          legend: {
+            html: legendH1,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["del-auth-email-confirmation"] == "Yes"),
+                  conditional: {
+                    html: emailAddressChange
+        }
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["del-auth-email-confirmation"] == "No")
+          }
+        ]
+      }) }}
+
+      <!-- <p class="govuk-body govuk-!-padding-bottom-6"><a href="XXX">@pete I need help?</a></p> -->
+
+
+
+      {{ govukButton({
+        text: "continue"
+      }) }}
+
+
+    </form>
+  </div>
+</div>
+{% endblock %}
