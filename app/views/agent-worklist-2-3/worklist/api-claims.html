@@ -180,18 +180,32 @@
 
                                 </table>
 
-                                <nav role="navigation" aria-label="Pagination">
-                                  <div class="pagination__summary">Showing 1 - 3 of 3 results</div>
-                                  <ul class="pagination">
-                                    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
-                                    <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 1, current page">1</a></li>
-                                    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
-                                    <!-- <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 3">3</a></li> -->
-                                    <!-- <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li> -->
-                                    <!-- <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li> -->
-                                    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
-                                  </ul>
+
+                                <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+                                <nav class="moj-pagination" id="pagination-label">
+
+                                <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+                                <ul class="moj-pagination__list">
+                                <li class="moj-pagination__item  moj-pagination__item--prev">
+                                  <a class="moj-pagination__link" href="">< Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+                                </li>
+
+                                <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1">1</a></li>
+
+                                <li class="moj-pagination__item moj-pagination__item--active">2</li>
+
+                                <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
+
+                                <li class="moj-pagination__item  moj-pagination__item--next">
+                                  <a class="moj-pagination__link" href="">Next > [Pattern broke]<span class="govuk-visually-hidden"> set of pages</span></a>
+                                </li>
+                                </ul>
+                                <p class="moj-pagination__results">Showing <b>1</b> to <b>3</b> of <b>3</b> results</p>
                                 </nav>
+
+
 
                   </div>
                 </div>
