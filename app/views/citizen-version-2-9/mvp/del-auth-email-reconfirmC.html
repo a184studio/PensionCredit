@@ -19,6 +19,10 @@
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Please confirm your email
+      </h1>
+
       {% set claimdate %}
 
       <p class="govuk-body govuk-!-font-size-24">Based on your circumstances, this is the earliest date we can consider backdating your application to.</p>
@@ -30,7 +34,7 @@
 
       {% endset %}
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">test1@gmail.com</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"> {{data["email-address"]}}</p>
 
 
       {% set emailAddressChange %}
@@ -41,12 +45,12 @@
         hint: {
           text: "Enter your correct email address"
         },
-        id: "email-address-change",
-        name: "email-address-change",
-        type: "email-address-change",
+        id: "email-address",
+        name: "email-address",
+        type: "email-address",
         autocomplete: "email",
         spellcheck: false,
-        value: data["email-address-change"]
+        value: data["email-address"]
       }) }}
       {% endset %}
 
@@ -65,15 +69,15 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["del-auth-email-confirmation"] == "Yes"),
-                  conditional: {
-                    html: emailAddressChange
-        }
+            checked: (data["del-auth-email-confirmation"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["del-auth-email-confirmation"] == "No")
+            checked: (data["del-auth-email-confirmation"] == "No"),
+                  conditional: {
+                    html: emailAddressChange
+        }
           }
         ]
       }) }}
