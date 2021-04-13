@@ -1011,19 +1011,25 @@ h2.govuk-heading-m {
   }
 }
 
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
+.moj-pagination__item--prev .moj-pagination__link:before {
+    border-width: 3px 0 0 3px;
+    margin-right: 5px;
 }
 
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+.moj-pagination__item--next .moj-pagination__link:after {
+    border-width: 0 3px 3px 0;
+    margin-left: 5px;
 }
 
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
+.moj-pagination__item--prev .moj-pagination__link:before, .moj-pagination__item--next .moj-pagination__link:after {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    color: #0b0c0c;
+    background: transparent;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    content: "";
 }
