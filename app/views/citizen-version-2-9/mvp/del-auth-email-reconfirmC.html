@@ -20,7 +20,7 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-        Is your email address correct?
+        Is this email address correct?
       </h1>
 
 
@@ -33,7 +33,7 @@
           html: legendHint
         },
         hint: {
-          text: "Enter your correct email address"
+          text: "Enter the correct email address"
         },
         id: "email-address",
         name: "email-address",
@@ -58,12 +58,12 @@
         items: [
           {
             value: "Yes",
-            text: "Yes",
+            text: "Yes, use this email address for the confirmation email",
             checked: (data["del-auth-email-confirmation"] == "Yes")
           },
           {
             value: "No",
-            text: "No",
+            text: "No, I need to change it",
             checked: (data["del-auth-email-confirmation"] == "No"),
                   conditional: {
                     html: emailAddressChange
@@ -77,7 +77,7 @@
 
 
       {{ govukButton({
-        text: "continue"
+        text: "Continue"
       }) }}
 
 

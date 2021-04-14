@@ -22,7 +22,7 @@
       {% set legendH1 %}
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-        Make sure your email is right
+        Is this email address correct?
       </h1>
 
       {% endset -%}
@@ -32,7 +32,7 @@
           html: legendH1
         },
           hint: {
-            text: "You can change your email address if it is wrong, "
+            text: "You can change it if it is wrong."
           },
         id: "email-address",
         name: "email-address",
@@ -45,7 +45,7 @@
 
 
       {{ govukButton({
-        text: "Yes - this is my email address"
+        text: "Yes - this email address is correct"
       }) }}
 
 
