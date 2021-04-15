@@ -14,26 +14,26 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="del-auth-email-reconfirmC" method="post" class="form">
+    <form action="final-cya" method="post" class="form">
 
-      {% set legendHint %}
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
 
-      {% if data["del-auth-who-made-claim"] == "Yourself" or data["del-auth-who-made-claim"] == "Power of attorney"
-      %}
-        <h1 class="govuk-body govuk-!-margin-bottom-2">Email address</h1>
-      {% else %}
-        <h1 class="govuk-body govuk-!-margin-bottom-2">Email address</h1>
-      {% endif %}
-      <!------------Legend--------------->
-      {% endset %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Is this email address correct?
+      </h1>
 
-      {% set emailAddress %}
+
+      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-6"> {{data["email-address"]}}</p>
+
+
+      {% set emailAddressChange %}
       {{ govukInput({
         label: {
           html: legendHint
         },
         hint: {
-          text: ""
+          text: "Enter the correct email address"
         },
         id: "email-address",
         name: "email-address",
@@ -46,14 +46,11 @@
 
 
 
-
-
-
       {{ govukRadios({
         name: "del-auth-email-confirmation",
         fieldset: {
           legend: {
-            text: "Should we send an email to confirm you have submitted the application?",
+            html: legendH1,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -61,27 +58,30 @@
         items: [
           {
             value: "Yes",
-            text: "Yes",
-            checked: (data["del-auth-email-confirmation"] == "Yes"),
-                  conditional: {
-                    html: emailAddress
-        }
+            text: "Yes, use this email address for the confirmation email",
+            checked: (data["del-auth-email-confirmation"] == "Yes")
           },
           {
             value: "No",
-            text: "No",
-            checked: (data["del-auth-email-confirmation"] == "No")
+            text: "No, I need to change it",
+            checked: (data["del-auth-email-confirmation"] == "No"),
+                  conditional: {
+                    html: emailAddressChange
+        }
           }
         ]
       }) }}
 
+      <!-- <p class="govuk-body govuk-!-padding-bottom-6"><a href="XXX">@pete I need help?</a></p> -->
+
+
+
       {{ govukButton({
         text: "Continue"
       }) }}
+
+
     </form>
-
-    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
-
   </div>
 </div>
 {% endblock %}
