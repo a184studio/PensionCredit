@@ -144,7 +144,7 @@
                             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2"><table class="govuk-table">
                               <thead class="govuk-table__head">
                                 <tr class="govuk-table__row">
-                                  <td class="govuk-table__cell govuk-26-percent">Award id</td>
+                                  <td class="govuk-table__cell govuk-26-percent">Award ID</td>
                                   <td class="govuk-table__cell govuk-50-percent">Agent notes</td>
                                   <td class="govuk-table__cell govuk-26-percent">Agent check</td>
                                 </tr>
@@ -159,18 +159,20 @@
                                     {% elif data["api-claim-outcome"] == "Incorrect" %}
                                     <strong class="govuk-tag govuk-tag--pink govuk-phase-banner__content__tag">Incorrect</strong>
                                     {% else %}
+                                    <strong class="govuk-tag govuk-tag--grey govuk-phase-banner__content__tag">Unchecked</strong>
+
                                     {% endif %}</td>
                                   </tr>
 
                                 <tr class="govuk-table__row">
-                                  <td class="govuk-table__cell table-spacer"><a href="api-claim-review">0002</a></td>
+                                  <td class="govuk-table__cell table-spacer"><a href="#">0002</a></td>
                                   <td class="govuk-table__cell table-spacer">.</td>
                                   <td class="govuk-table__cell table-spacer"><strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">Correct</strong> </tr>
 
 
 
                                 <tr class="govuk-table__row">
-                                  <td class="govuk-table__cell table-spacer"><a href="api-claim-review">0003</a></td>
+                                  <td class="govuk-table__cell table-spacer"><a href="#">0003</a></td>
 
                                   <td class="govuk-table__cell table-spacer">.</td>
                                   <td class="govuk-table__cell table-spacer"><strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">Correct</strong> </tr>
