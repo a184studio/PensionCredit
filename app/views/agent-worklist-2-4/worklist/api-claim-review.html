@@ -20,11 +20,10 @@
 
         <!------------HEADLINE------------>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><strong>Award ID 0001</strong></h1>
-or
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><strong>Jeff Bridges</strong></h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Award ID: <strong>0001</strong></p>
-
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">National insurance number: <strong>NA 11 22 33 C</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">State Pension Amount: <strong>£175.5</strong></p>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">API outcome reason found: <strong>Max State Pension no qualifying benefits</strong></p> -->
 
         <!------------Legend------------>
           {% set LegendList %}
@@ -33,7 +32,7 @@ or
 
         <li>matched using National insurance and Date of birth</li>
         <li>reached SPA on or after 6 April 2016 or similar</li>
-        <li>receiving full SP</li>
+        <li>State Pension amount</li>
         <li>no other affected benefits in payment</li>
         <li>no open interest in affected benefits</li>
         <li>no underlying entitlement for Carer's Allowance or Carer's element of UC</li>
@@ -48,36 +47,7 @@ or
           html: LegendList
         }) }}
 
-        {{ govukSummaryList({
-          classes: "govuk-!-padding-bottom-6",
 
-          rows: [
-            {
-              key: {
-                text: "Date of birth"
-              },
-              value: {
-                text: "5 January 1978"
-              }
-            },
-            {
-              key: {
-                text: "State Pension amount"
-              },
-              value: {
-                html: "£175.5"
-              }
-            },
-            {
-              key: {
-                text: "Affected benefits in payment"
-              },
-              value: {
-                html: "None"
-              }
-            }
-          ]
-        }) }}
 
         {{ govukButton({
           text: "Open PDF claim in new tab",
