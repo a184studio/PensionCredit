@@ -23,13 +23,13 @@
 
     <!---- NORTHERN IRELAND ---->
     {% if data['resides-in-uk'] == 'Northern-Ireland' %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You cannot apply for Pension Credit online</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"></h1>
 
     <!---- STATE PENSION STATUS  ---->
     {% if data['state-pension-status'] == 'NoBank' %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You need to call the Pension Credit application line</h1>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You cannot apply for Pension Credit online if you are not entitled to a State Pension. [Bank details]</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You cannot apply for Pension Credit online if you are not entitled to a State Pension.</p>
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Call the Pension Credit application line to apply over the phone.</p>
 
@@ -51,13 +51,14 @@
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Monday to Friday, 10:00am to 4:00pm (closed on bank holidays).<br><a href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Contacting 08 and 03 numbers</a></p>
 
 
-      <!---- ENGLAND, SCOTLAND, WALES ---->{% else %}
+      <!---- ENGLAND, SCOTLAND, WALES ---->
+      {% else %}
 
       <!---- STATE PENSION STATUS  ---->
       {% if data['state-pension-status'] == 'NoBank' %}
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You need to call the Pension Credit application line</h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You cannot apply for Pension Credit online if you are not entitled to a State Pension. [Bank details]</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You cannot apply for Pension Credit online if you are not entitled to a State Pension.</p>
 
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Call the Pension Credit application line to apply over the phone.</p>
 
