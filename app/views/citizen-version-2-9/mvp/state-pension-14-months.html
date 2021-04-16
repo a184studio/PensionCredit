@@ -14,39 +14,39 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="state-pension-check-yn-router" method="post" class="form">
+    <form action="state-pension-14-months-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
       {{ govukRadios({
-        idPrefix: "state-pension-check-yn",
-        name: "state-pension-check-yn",
+        idPrefix: "state-pension-14-months",
+        name: "state-pension-14-months",
         fieldset: {
           legend: {
-            text: "Have you claimed your State Pension?",
+            text: "Did you apply for your State Pension before [14 months ago]",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
 
         },
         hint: {
-          text: "You should still select yes if you have claimed your State Pension but are waiting to receive your first payment."
+          text: ""
 
 
         },
         classes: "govuk-radios",
         items: [
-          {
+{
             value: "Yes",
             text: "Yes",
-            checked: (data["state-pension-check-yn"] == "Yes")
+            checked: (data["state-pension-14-months"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["state-pension-check-yn"] == "No")
+            checked: (data["state-pension-14-months"] == "No")
           }
         ]
       }) }}
@@ -56,7 +56,6 @@
         text: "Continue"
       }) }}
     </form>
-    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
   </div>
 </div>
 {% endblock %}
