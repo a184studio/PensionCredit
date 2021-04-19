@@ -25,7 +25,7 @@
         name: "state-pension-14-months",
         fieldset: {
           legend: {
-            text: "When did you last apply for your State Pension?",
+            text: "Did you apply for your State Pension within the last 14 months?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -40,12 +40,12 @@
         items: [
 {
             value: "Yes",
-            text: "On or after [14 months ago]",
+            text: "Yes",
             checked: (data["state-pension-14-months"] == "Yes")
           },
           {
             value: "No",
-            text: "Before [14 months ago]",
+            text: "No",
             checked: (data["state-pension-14-months"] == "No")
           }
         ]

@@ -27,12 +27,12 @@
       {% set legendHint %}
 
       {% if data["home-rent-housing-benefit"] == "Yes HeUC"%}
-      <p class="govuk-hint">We can pass the information you give us in your Pension Credit application to your local authority, who will then start your Housing Benefit application.</p>
+      <p class="govuk-hint">We can pass the information you give us in your Pension Credit application to your local authority who can then start your Housing Benefit application.</p>
       {% else %}
-        <p class="govuk-hint">We can pass the information you give us in your Pension Credit application to your local authority. They will then start your Housing Benefit application.</p>
+        <p class="govuk-hint">We can pass the information you give us in your Pension Credit application to your local authority who can then start your Housing Benefit application.</p>
       {% endif %}
 
-      {% if data["home-rent-housing-benefit"] == "Yes HeUC"%}<p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Do you want to apply for Housing Benefit?</p>
+      {% if data["home-rent-housing-benefit"] == "Yes HeUC"%}<p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Do you want to apply for Housing Benefit instead?</p>
       {% else %}<p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2"></p>{% endif %}
 
 
