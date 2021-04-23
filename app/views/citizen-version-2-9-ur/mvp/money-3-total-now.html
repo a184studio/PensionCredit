@@ -21,10 +21,10 @@ Money you have now - Apply for Pension Credit - GOV.UK
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
-      {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you and your partner have today</h1>
+      {% if data["partner-check-yn"] == "Yes" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you and your partner have today</h1>
       {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you have today</h1>{% endif %}
 
-      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you have money in accounts shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
+      {% if data["partner-check-yn"] == "Yes" %}<p class="govuk-!-font-size-24">If you have money in accounts shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
       {% else %}  <p class="govuk-!-font-size-24">If you have money in accounts shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
 
       {% set DynamicDetails %}

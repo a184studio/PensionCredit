@@ -52,7 +52,7 @@ router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 
   if (startCheck === 'Yes') {
-    res.redirect(`${baseUrl}/reside-in-uk`)
+    res.redirect(`${baseUrl}/state-pension-status`)
   } else {
     res.redirect(`${baseUrl}/start-check-no`)
   }
@@ -390,7 +390,7 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   const statePensionStatus = req.session.data['state-pension-status']
 
   if (statePensionStatus === 'Yes') {
-    res.redirect(`${baseUrl}/children-check-yn`)
+    res.redirect(`${baseUrl}/claim-filter`)
   } else if (statePensionStatus === 'NoSP') {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   } else if (statePensionStatus === 'NoBank') {
