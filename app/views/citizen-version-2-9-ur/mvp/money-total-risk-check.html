@@ -18,12 +18,18 @@
 
     <!--[We might need to contact you if you have money in these accounts to confirm their value.]-->
 
+    {% set DynamicH1 %}
+
+    {% if data["partner-check-yn"] == "Yes" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Tell us what accounts or investments you and your partner have</h1>
+    {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Tell us what accounts or investments you have</h1>{% endif %}
+{% endset -%}
+
 {{ govukCheckboxes({
   idPrefix: "money-total-risk-check",
   name: "money-total-risk-check",
   fieldset: {
     legend: {
-      text: "Tell us what accounts or investments you have",
+      html: DynamicH1,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl govuk-!-padding-top-2"
     }
