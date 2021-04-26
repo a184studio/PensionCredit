@@ -23,74 +23,27 @@
 
     <p class="govuk-heading-m govuk-!-margin-bottom-2">We will contact you about:</p>
     <ul class="govuk-list govuk-list--bullet">
+      
       {% if data["state-pension-status"] == "NoBank" %}
-      <li>your State Pension</li>
+      <li class="govuk-!-margin-bottom-4"><strong>your State Pension</li>
       {% endif %}
-      {% if data["money-total-risk-check"] == "High" %}
 
-      <li>
-        <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0"><strong>Your shares</strong> – please have your share certificates or details of your shares to hand</p>
-        <p class="govuk-body"></p>
-      </li>
-
-      <li>your shares - please have your share certificates or details of your shares to hand</li>
-      {% endif %}
       {% if data["money-total-risk-check"] == "High" %}
-      <li>the money you have overseas - please have bank statements or details fo this to hand</li>
+      <li class="govuk-!-margin-bottom-4"><strong>your shares</strong><br> Please have your share certificates or details of your shares to hand</li>
       {% endif %}
+
+      {% if data["money-total-risk-check"] == "High" %}
+      <li class="govuk-!-margin-bottom-4"><strong>the money you have overseas</strong><br> Please have bank statements or details fo this to hand</li>
+      {% endif %}
+
       {% if data["money-disregards-all"] == "Yes" %}
-      <li>the money that you plan to use to buy or carry out essential work on your main home - please have details of what you plan to use the money for to hand</li>
+      <li class="govuk-!-margin-bottom-4"><strong>the money that you plan to use to buy or carry out essential work on your main home</strong><br>Please have details of what you plan to use the money for to hand</li>
       {% endif %}
+
       {% if data["money-disregards-payments-options"] == "Option" %}
-      <li>the money you havefrom payouts or payments - please have details of this to hand</li>
+      <li class="govuk-!-margin-bottom-4"><strong>the money you havefrom payouts or payments</strong><br>Please have details of this to hand</li>
       {% endif %}
     </ul>
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-    <p class="govuk-heading-m govuk-!-margin-bottom-4">We will contact you about:</p>
-
-    {% if data["state-pension-status"] == "NoBank" %}
-    <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0"><strong>Your State Pension</strong></p>
-    {% endif %}
-
-    {% if data["money-total-risk-check"] == "High" %}
-    <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0"><strong>Call back if you have shares</strong></p>
-      <p class="govuk-body">please have your share certificates or details of your shares to hand</p>
-    {% endif %}
-
-    {% if data["money-total-risk-check"] == "High" %}
-    <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0"><strong>Money you have overseas</strong></p>
-      <p class="govuk-body">please have bank statements or details fo this to hand<</p>
-    {% endif %}
-
-    {% if data["money-total-risk-check"] == "High" %}
-    <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0"><strong>Shares you have</strong></p>
-      <p class="govuk-body">Please have your share certificates or details of your shares to hand</p>
-    {% endif %}
-
-    {% if data["money-disregards-all"] == "Yes" %}
-    <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0"><strong>Money that you plan to use to buy or<br>carry out essential work on your main home</strong></p>
-      <p class="govuk-body">please have details of what you plan to use the money for to hand</p>
-    {% endif %}
-
-    {% if data["money-disregards-payments-options"] == "Option" %}
-    <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0"><strong>Money you havefrom payouts or payments</strong></p>
-      <p class="govuk-body">please have details of this to hand</p>
-    {% endif %}
-
-    {% if data["XXX"] == "Yes" %}
-    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">Call back Do you plan to use any of your money to buy or carry out essential work on your main home?</p>
-      <p class="govuk-body">Call back if you have X</p>
-    {% endif %}
-
-    {% if data["XXX"] == "Yes" %}
-    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">Call back For all other disregards</p>
-      <p class="govuk-body">Call back if you have X</p>
-    {% endif %}
-
-
-
 
 
       {{ govukButton({
