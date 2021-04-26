@@ -21,6 +21,44 @@
     <!------------Legend--------------->
     <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">X Y and Z</p>
 
+    <p class="govuk-heading-m govuk-!-margin-bottom-2">@Example We need you to send us some information about your service charges</p>
+      <p class="govuk-body">Send a copy of your most recent service charge invoice, with an itemised breakdown of charges, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
+
+      <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">@pete I'll make it work later</p>
+
+
+    {% if data["XXX"] == "Yes" %}
+    <p class="govuk-heading-m govuk-!-margin-bottom-2">I claimed a State Pension but I am not entitled to one</p>
+      <p class="govuk-body">Call back if you have X</p>
+    {% endif %}
+
+    {% if data["XXX"] == "Yes" %}
+    <p class="govuk-heading-m govuk-!-margin-bottom-2">Call back if you have shares</p>
+      <p class="govuk-body">Call back if you have X</p>
+    {% endif %}
+
+    {% if data["XXX"] == "Yes" %}
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">Call back if you have shares</p>
+      <p class="govuk-body">Call back if you have X</p>
+    {% endif %}
+
+    {% if data["XXX"] == "Yes" %}
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">Call back if you have money overseas</p>
+      <p class="govuk-body">Call back if you have X</p>
+    {% endif %}
+
+    {% if data["XXX"] == "Yes" %}
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">Call back Do you plan to use any of your money to buy or carry out essential work on your main home?</p>
+      <p class="govuk-body">Call back if you have X</p>
+    {% endif %}
+
+    {% if data["XXX"] == "Yes" %}
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">Call back For all other disregards</p>
+      <p class="govuk-body">Call back if you have X</p>
+    {% endif %}
+
+
+
 
 
       {{ govukButton({
