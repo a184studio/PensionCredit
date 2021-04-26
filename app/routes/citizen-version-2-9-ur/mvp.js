@@ -390,7 +390,7 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   const statePensionStatus = req.session.data['state-pension-status']
 
   if (statePensionStatus === 'Yes') {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/doc-absence`)
   } else if (statePensionStatus === 'NoSP') {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   } else if (statePensionStatus === 'NoBank') {
@@ -1059,11 +1059,11 @@ router.post(`${baseUrl}/money-total-risk-check-router`, (req, res) => {
   const riskCheckArr = Array.isArray(riskCheck) ? riskCheck : [riskCheck]
   // startCheckArr includes both 'ni' and 'money'
   if (riskCheckArr.includes('Low') && riskCheckArr.includes('High')) {
-    res.redirect(`${baseUrl}/money-3-claim-filter`)
+    res.redirect(`${baseUrl}/money-second-property`)
   }
   // startCheckArr includes 'ni'
   else if (riskCheckArr.includes('Low')) {
-    res.redirect(`${baseUrl}/money-3-claim-filter`)
+    res.redirect(`${baseUrl}/money-3-intro`)
   }
   // startCheckArr includes 'money'
   else if (riskCheckArr.includes('High')) {
@@ -1220,7 +1220,7 @@ router.post(`${baseUrl}/money-3-total-eed-confirm-router`, (req, res) => {
   const money2TotalEEDConfirm = req.session.data['money-3-total-eed-confirm']
 
   if (money2TotalEEDConfirm === 'Yes') {
-    res.redirect(`${baseUrl}/money-second-property`)
+    res.redirect(`${baseUrl}/money-disregards-all`)
   } else {
     res.redirect(`${baseUrl}/money-3-total-eed`)
   }
