@@ -93,7 +93,9 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="pdf" method="post" class="form">
+    <!-- <form action="pdf" method="post" class="form"> -->
+      <form action="money-total-risk-check" method="post" class="form">
+
 
       <input type="hidden" name="contact-complete" value="in-progress"/>
 
@@ -369,7 +371,9 @@ Help us improve Pension Credit
 <p class="govuk-body govuk-!-margin-bottom-8"><a href="https://getinvolved.dwp.gov.uk/digital/fa743129/start_preview?token=721b98c7019344093611254c9ffe7a1d4807b86f">Take a short survey</a></p>
 </div>
 
-
+{{ govukButton({
+  text: "Scenario 2"
+}) }}
 
     </form>
 
