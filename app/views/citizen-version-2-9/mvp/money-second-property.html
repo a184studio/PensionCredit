@@ -18,12 +18,12 @@
 
 {% set DynamicH1 %}
 {% if data["home-care-home-check-still-own"] == "Yes" %}
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[CareHome still owns] Other than the property you used to live in [prior to care home] do you onw any other property or land?</h1>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land, other than the home you lived in before you moved into a care home?</h1>
 {% elif data["home-ownership"] == "You own it" %}
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Owns own home] Do you own any property or land other than your where you live?</h1>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land other than your where you live?</h1>
 
 {% else %}
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Rest] Do you own any other property or land?</h1>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land?</h1>
 
 {% endif %}
 {% endset -%}
