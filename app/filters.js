@@ -72,6 +72,21 @@ module.exports = function (env) {
     },
     removeAlreadyPickedBenefits (benefitRadios, benefitsChosen = [], excluded) {
       return benefitRadios.filter(benefit => !(excluded ? benefitsChosen.filter(b => b['benefit-type'] !== excluded) : benefitsChosen).some(b => b['benefit-type'] === benefit.value))
+    },
+    typoTLD(email) {
+      const emailBits = email.split('.');
+      const tld = emailBits.pop();
+      let typo;
+      if (tld === 'com') {
+        typo = 'con';
+      } else if (tld === 'org') {
+        typo = 'prg';
+      } else if (tld === 'uk') {
+        typo = 'ik';
+      } else {
+        typo = tld;
+      }
+      const emailBits = email.trim().split('.');
     }
   }
 
