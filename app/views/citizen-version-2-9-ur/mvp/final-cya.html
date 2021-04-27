@@ -128,10 +128,10 @@
         rows: [
         {
           key: {
-            text: "Have you claimed your State Pension?"
+            text: "Have you applied for your State Pension?"
           },
           value: {
-            text: data["state-pension-check-yn"]
+            text: data["state-pension-status"]
           },
           actions: {
             items: [
@@ -145,31 +145,6 @@
         }
                   ]
                 }) }}
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-0',
-        rows: [
-
-        {
-          key: {
-            text: "Do you want us to consider backdating your application to [Calculated EED]?"
-          },
-          value: {
-            text: data['doc-draft-date']
-          },
-          actions: {
-            items: [
-              {
-                href: "doc-draft-date",
-                text: "Change",
-                visuallyHiddenText: "whether you want us to consider backdating your application to [Calculated EED]?"
-              }
-            ]
-          }
-        }
-        ]
-      }) }}
-
 
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-0',
@@ -194,28 +169,6 @@
                     ]
                   }) }}
 
-                  {{ govukSummaryList({
-                    classes: 'govuk-!-margin-bottom-0',
-                    rows: [
-                    {
-                      key: {
-                        text: "Do you currently get Housing Benefit or a housing payment from Universal Credit?"
-                      },
-                      value: {
-                        text: data["home-rent-housing-benefit"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "Change",
-                            visuallyHiddenText: "whether you have a partner"
-                          }
-                        ]
-                      }
-                    }
-                              ]
-                            }) }}
 
       </div>
             <div>
@@ -237,7 +190,7 @@
             text: "How much money you have today"
           },
           value: {
-            text: data['money-2-total-now-value']
+            text: data['money-3-total-now-value']
           },
           actions: {
             items: [
@@ -251,30 +204,6 @@
         }
       ]
     }) }}
-
-    {{ govukSummaryList({
-      classes: 'govuk-!-margin-bottom-9',
-      rows: [
-
-      {
-        key: {
-          text: "How much money you had on 23 December 2020"
-        },
-        value: {
-          text: data['money-2-total-eed-value']
-        },
-        actions: {
-          items: [
-            {
-              href: "money-total",
-              text: "Change",
-              visuallyHiddenText: "how much money you had on your claim start date"
-            }
-          ]
-        }
-      }
-    ]
-  }) }}
 
 
     {{ govukSummaryList({
@@ -307,6 +236,54 @@
 
     {
       key: {
+        text: "How much money you have Today"
+      },
+      value: {
+        text: data['money-3-total-now-value']
+      },
+      actions: {
+        items: [
+          {
+            href: "money-total",
+            text: "Change",
+            visuallyHiddenText: "how much money you had on your claim start date"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "How much money you had on 28 January 2021"
+    },
+    value: {
+      text: data['money-3-total-eed-value']
+    },
+    actions: {
+      items: [
+        {
+          href: "money-total",
+          text: "Change",
+          visuallyHiddenText: "how much money you had on your claim start date"
+        }
+      ]
+    }
+  }
+]
+}) }}
+
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
+
+    {
+      key: {
         text: "Do you own any property or land other than your home?"
       },
       value: {
@@ -325,32 +302,6 @@
   ]
 }) }}
 
-<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Pensions</h2>
-
-
-    {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-9',
-            rows: [
-
-            {
-              key: {
-                text: "Have you paid into any non-UK pensions?"
-              },
-              value: {
-                text: data['pension-foreign-check']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "pension-foreign-check",
-                    text: "Change",
-                    visuallyHiddenText: "@pensions"
-                  }
-                ]
-              }
-            }
-          ]
-        }) }}
 
         {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
@@ -358,15 +309,15 @@
 
                 {
                   key: {
-                    text: "Have you paid into any UK personal pensions that you have not taken yet?"
+                    text: "Do you plan to use any of your money to buy or carry out essential work on your main home?"
                   },
                   value: {
-                    text: data['pension-check']
+                    text: data['money-disregards-all']
                   },
                   actions: {
                     items: [
                       {
-                        href: "pension-check",
+                        href: "money-disregards-all",
                         text: "Change",
                         visuallyHiddenText: "@pensions"
                       }
@@ -376,13 +327,135 @@
               ]
             }) }}
 
-          </div></div>
+            {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+
+                    {
+                      key: {
+                        text: "What money do you have from payments and payouts?"
+                      },
+                      value: {
+                        text: data['money-disregards-payments-options']
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "money-disregards-payments",
+                            text: "Change",
+                            visuallyHiddenText: "@pensions"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }) }}
+
+                {{ govukSummaryList({
+                        classes: 'govuk-!-margin-bottom-9',
+                        rows: [
+
+                        {
+                          key: {
+                            text: "Can we call the applicant about this application?"
+                          },
+                          value: {
+                            text: data['del-auth-contact-number-check']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "del-auth-contact-number-check",
+                                text: "Change",
+                                visuallyHiddenText: "@pensions"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }) }}
+
+                    {{ govukSummaryList({
+                            classes: 'govuk-!-margin-bottom-9',
+                            rows: [
+
+                            {
+                              key: {
+                                text: "What is the applicant's contact telephone number?"
+                              },
+                              value: {
+                                text: data['del-auth-contact-number']
+                              },
+                              actions: {
+                                items: [
+                                  {
+                                    href: "del-auth-contact-number-check",
+                                    text: "Change",
+                                    visuallyHiddenText: "@pensions"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }) }}
+
+                        {{ govukSummaryList({
+                                classes: 'govuk-!-margin-bottom-9',
+                                rows: [
+
+                                {
+                                  key: {
+                                    text: "Should we send an email to confirm you have submitted the application?"
+                                  },
+                                  value: {
+                                    text: data['del-auth-email-confirmation']
+                                  },
+                                  actions: {
+                                    items: [
+                                      {
+                                        href: "del-auth-email-confirmation",
+                                        text: "Change",
+                                        visuallyHiddenText: "@pensions"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }) }}
+
+
+                {{ govukSummaryList({
+                        classes: 'govuk-!-margin-bottom-9',
+                        rows: [
+
+                        {
+                          key: {
+                            text: "Email address"
+                          },
+                          value: {
+                            text: data['email-address']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "del-auth-email-confirmation",
+                                text: "Change",
+                                visuallyHiddenText: "@pensions"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }) }}
+
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
   </div>
   </div>
+
+<br>
 
     <div class="dont-print">
   <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->

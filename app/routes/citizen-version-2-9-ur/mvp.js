@@ -1711,6 +1711,17 @@ router.post(`${baseUrl}/index-made-claim-letter-check-router`, (req, res) => { /
 })
 
 
+
+router.post(`${baseUrl}/del-auth-email-reconfirm-router`, (req, res) => {
+  const emailConfromation = req.session.data['del-auth-email-reconfirm']
+
+  if (emailConfromation === 'Yes') {
+    res.redirect(`${baseUrl}/del-auth-email-reconfirmC`)
+  } else {
+    res.redirect(`${baseUrl}/final-cya`)
+  }
+})
+
 router.post(`${baseUrl}/del-auth-contact-call-formats-check-router`, (req, res) => {
   const contactCallFormats = req.session.data['del-auth-contact-call-formats-check']
 
