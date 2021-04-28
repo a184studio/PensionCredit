@@ -86,7 +86,7 @@ module.exports = function (env) {
       } else {
         typo = tld;
       }
-      const emailBits = email.trim().split('.');
+      return [...emailBits, typo].join('.');
     }
   }
 
