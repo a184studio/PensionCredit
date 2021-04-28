@@ -181,31 +181,6 @@
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Money</h2>
 
 
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-
-        {
-          key: {
-            text: "How much money you have today"
-          },
-          value: {
-            text: data['money-3-total-now-value']
-          },
-          actions: {
-            items: [
-              {
-                href: "money-total",
-                text: "Change",
-                visuallyHiddenText: "how much money you have today"
-              }
-            ]
-          }
-        }
-      ]
-    }) }}
-
-
     {{ govukSummaryList({
       classes: 'govuk-!-margin-bottom-9',
       rows: [
@@ -230,29 +205,30 @@
     ]
   }) }}
 
-  {{ govukSummaryList({
-    classes: 'govuk-!-margin-bottom-9',
-    rows: [
 
-    {
-      key: {
-        text: "How much money you have Today"
-      },
-      value: {
-        text: data['money-3-total-now-value']
-      },
-      actions: {
-        items: [
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
           {
-            href: "money-total",
-            text: "Change",
-            visuallyHiddenText: "how much money you had on your claim start date"
+            key: {
+              text: "How much money you have today"
+            },
+            value: {
+              text: data['money-3-total-now-value']
+            },
+            actions: {
+              items: [
+                {
+                  href: "money-3-total-now",
+                  text: "Change",
+                  visuallyHiddenText: "how much money you have today"
+                }
+              ]
+            }
           }
         ]
-      }
-    }
-  ]
-}) }}
+      }) }}
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -351,6 +327,9 @@
                   ]
                 }) }}
 
+                <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Contact</h2>
+
+
                 {{ govukSummaryList({
                         classes: 'govuk-!-margin-bottom-9',
                         rows: [
@@ -389,7 +368,7 @@
                               actions: {
                                 items: [
                                   {
-                                    href: "del-auth-contact-number-check",
+                                    href: "del-auth-contact-number",
                                     text: "Change",
                                     visuallyHiddenText: "@pensions"
                                   }
