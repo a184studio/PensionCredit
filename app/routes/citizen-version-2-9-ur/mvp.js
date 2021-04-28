@@ -1713,7 +1713,7 @@ router.post(`${baseUrl}/index-made-claim-letter-check-router`, (req, res) => { /
 
 
 router.post(`${baseUrl}/del-auth-email-reconfirm-router`, (req, res) => {
-  const emailConfromation = req.session.data['del-auth-email-reconfirm']
+  const emailConfromation = req.session.data['del-auth-email-confirmation']
 
   if (emailConfromation === 'Yes') {
     res.redirect(`${baseUrl}/del-auth-email-reconfirmC`)
