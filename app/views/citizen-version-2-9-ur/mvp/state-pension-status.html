@@ -1,4 +1,4 @@
-{% extends "layout-assisted-digital-ur.html" %}
+{% extends "layout-assisted-digital.html" %}
 
 {% block pageTitle %}
   XXX - Pension Credit
@@ -45,18 +45,18 @@
           },
           {
             value: "Yes",
-            text: "I have claimed my State Pension but I am waiting for the first payment",
+            text: "I have claimed my State Pension and I am waiting for the first payment",
             checked: (data["state-pension-status"] == "Yes")
           },
           {
             value: "NoBank",
-            text: "I claimed a State Pension but I am not entitled to one",
+            text: "I applied for a State Pension but I am not entitled to one",
             checked: (data["state-pension-status"] == "NoBank")
           },
-
+          
           {
             value: "NoSP",
-            text: "I have not claimed a State Pension",
+            text: "I have not applied for a State Pension",
             checked: (data["state-pension-status"] == "NoSP")
           }
         ]
