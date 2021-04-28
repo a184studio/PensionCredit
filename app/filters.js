@@ -74,7 +74,7 @@ module.exports = function (env) {
       return benefitRadios.filter(benefit => !(excluded ? benefitsChosen.filter(b => b['benefit-type'] !== excluded) : benefitsChosen).some(b => b['benefit-type'] === benefit.value))
     },
     typoTLD(email) {
-      const emailBits = email.split('.');
+      const emailBits = email.trim().split('.');
       const tld = emailBits.pop();
       let typo;
       if (tld === 'com') {
