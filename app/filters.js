@@ -83,6 +83,8 @@ module.exports = function (env) {
         typo = 'prg';
       } else if (tld === 'uk') {
         typo = 'ik';
+      } else if (tld === 'net') {
+        typo = 'met';
       } else {
         typo = tld;
       }
