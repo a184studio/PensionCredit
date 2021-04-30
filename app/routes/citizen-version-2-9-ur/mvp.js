@@ -390,11 +390,11 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   const statePensionStatus = req.session.data['state-pension-status']
 
   if (statePensionStatus === 'Yes') {
-    res.redirect(`${baseUrl}/doc-absence`)
+    res.redirect(`${baseUrl}/doc-draft-date`)
   } else if (statePensionStatus === 'NoSP') {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   } else if (statePensionStatus === 'NoBank') {
-    res.redirect(`${baseUrl}/doc-absence`)
+    res.redirect(`${baseUrl}/doc-draft-date`)
   } else {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   }

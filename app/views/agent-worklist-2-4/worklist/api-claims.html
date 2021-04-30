@@ -51,8 +51,7 @@
                 </div>
 
 
-
-<div class="govuk-accordion govuk-!-margin-top-4" data-module="govuk-accordion" id="accordion-default">
+<div class="pc-accordion govuk-!-margin-top-4" data-module="pc-accordion" id="accordion-default">
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
@@ -87,7 +86,7 @@
             },
             {
               value: "XX",
-              text: "Unchecked"
+              text: "To do"
             }
           ]
         }) }}
@@ -142,6 +141,8 @@
               <div class="govuk-grid-column-full">
 
                             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2"><table class="govuk-table">
+                              <p class="govuk-heading-m govuk-!-padding-top-0">Nil award claims</p>
+
                               <thead class="govuk-table__head">
                                 <tr class="govuk-table__row">
                                   <td class="govuk-table__cell govuk-26-percent">Award ID</td>
@@ -159,7 +160,7 @@
                                     {% elif data["api-claim-outcome"] == "Incorrect" %}
                                     <strong class="govuk-tag govuk-tag--pink govuk-phase-banner__content__tag">Incorrect</strong>
                                     {% else %}
-                                    <strong class="govuk-tag govuk-tag--grey govuk-phase-banner__content__tag">Unchecked</strong>
+                                    <strong class="govuk-tag govuk-tag--grey govuk-phase-banner__content__tag">To do</strong>
 
                                     {% endif %}</td>
                                   </tr>
@@ -204,6 +205,10 @@
                                 </ul>
                                 <p class="moj-pagination__results">Showing <b>1</b> to <b>3</b> of <b>3</b> results</p>
                                 </nav>
+
+
+                                <p class="govuk-heading-m govuk-!-padding-top-8">Nil award claims [Nothing selected or no outcomes]</p>
+                                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">No outcomes [example]</p>
 
 
                   </div>

@@ -394,7 +394,7 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   } else if (statePensionStatus === 'NoSP') {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   } else if (statePensionStatus === 'NoBank') {
-    res.redirect(`${baseUrl}/doc-absence`)
+    res.redirect(`${baseUrl}/children-check-yn`)
   } else {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   }

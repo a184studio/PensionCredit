@@ -14,10 +14,48 @@
     The session data has been cleared.
   </p>
 
-  <p>
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+    <form action="/citizen-version-2-9-ur/mvp/money-total-risk-check" method="post" class="form">
+
+    {{ govukRadios({
+      name: "scenario2",
+      fieldset: {
+        legend: {
+          text: "Are you ready to start scenario two?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["scenario2"] == "Yes"),
+                conditional: {
+                  html: emailAddress
+      }
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["scenario2"] == "No")
+        }
+      ]
+    }) }}
+
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
     <a href="/">
       Prototype home page
     </a>
-  </p>
 
 {% endblock %}
