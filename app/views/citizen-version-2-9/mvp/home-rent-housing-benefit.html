@@ -19,11 +19,13 @@
 
       {% set legendHint %}
 
-      {% if data["home-ownership"] == "You live in a caravan houseboat or mobile home"%}
-      <p class="govuk-hint">Housing Benefit can help you pay your site or mooring fees if you’re on a low income or claiming benefits.</p>
-      {% else %}
-       <p class="govuk-hint">If you are not sure what type of help you get with rent, look at your benefits statement.</p> 
-      {% endif %}
+      <p></p>
+      <p class="govuk-!-font-size-24">If you are already getting Housing Benefit, your claim will continue. If you are getting a housing 
+        payment from Universal Credit, this will stop if you move to Pension Credit.</p>
+
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Do you want to apply for Housing Benefit if you are not getting it already?</p>
+
 
       {% endset -%}
 
@@ -32,7 +34,7 @@
         name: "home-rent-housing-benefit",
         fieldset: {
           legend: {
-            text: "Do you currently get Housing Benefit or a housing payment from Universal Credit?",
+            text: "If your Pension Credit application is successful you could also get Housing Benefit",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -42,21 +44,15 @@
         },
         items: [
           {
-            value: "Yes HB",
-            text: "Yes - Housing Benefit",
-            checked: (data["home-rent-housing-benefit"] == "Yes HB")
+            value: "Yes",
+            text: "Yes",
+            checked: (data["home-rent-housing-benefit-check"] == "Yes")
 
             },
-            {
-              value: "Yes HeUC",
-              text: "Yes - a housing payment from Universal Credit",
-              checked: (data["home-rent-housing-benefit"] == "Yes HeUC")
-
-              },
           {
             value: "No",
             text: "No",
-            checked: (data["home-rent-housing-benefit"] == "No")
+            checked: (data["home-rent-housing-benefit-check"] == "No")
           }
         ]
       }) }}
