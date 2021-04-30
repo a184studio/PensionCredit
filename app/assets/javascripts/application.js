@@ -7,4 +7,8 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
+  var $accordions = document.querySelectorAll('[data-module="pc-accordion"]')
+  $accordions.forEach(function ($accordion) {
+    new GOVUKFrontend.PCAccordion($accordion).init()
+  })
 })
