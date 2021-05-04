@@ -20,11 +20,12 @@
       {% set legendHint %}
 
       <p></p>
-      <p class="govuk-!-font-size-24">If you are already getting Housing Benefit, your claim will continue. If you are getting a housing 
-        payment from Universal Credit, this will stop if you move to Pension Credit.</p>
+      <p class="govuk-!-font-size-24">If you get a housing payment from Universal Credit, it will stop if you move to Pension Credit. If you get Housing Benefit, it will continue. </p>
 
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Do you want to apply for Housing Benefit if you are not getting it already?</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">What help do you want with your rent?</p>
+
+      <p class="govuk-hint"></p>
 
 
       {% endset -%}
@@ -34,24 +35,33 @@
         name: "home-rent-housing-benefit",
         fieldset: {
           legend: {
-            text: "If your Pension Credit application is successful you could also get Housing Benefit",
+            text: "Help with your rent",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
           html: legendHint
+
         },
         items: [
           {
             value: "Yes",
-            text: "Yes",
+            text: "I want my local authority to start my application for Housing Benefit",
             checked: (data["home-rent-housing-benefit-check"] == "Yes")
 
             },
+
+            {
+              value: "Yes",
+              text: "I want my current Housing Benefit claim to continue",
+              checked: (data["home-rent-housing-benefit-check"] == "Yes")
+  
+              },
+
           {
             value: "No",
-            text: "No",
+            text: "I do not need any help with my rent",
             checked: (data["home-rent-housing-benefit-check"] == "No")
           }
         ]
