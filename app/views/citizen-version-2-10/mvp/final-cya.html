@@ -4597,7 +4597,7 @@ rows: [
       }) }}
 
 
-      {% if data["email-address"] %}
+      {% if data["email-address" or "email-addressC"] %}
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
@@ -4606,7 +4606,7 @@ rows: [
             text: "Email address:"
           },
           value: {
-            html: data["email-address"]
+            html: data["email-addressC" or "email-address"]
           },
           actions: {
             items: [
@@ -4622,6 +4622,8 @@ rows: [
       }) }}
 
       {% endif %}
+
+
 
 
 

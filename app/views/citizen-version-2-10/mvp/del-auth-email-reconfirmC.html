@@ -35,9 +35,9 @@
         hint: {
           text: "Enter the correct email address"
         },
-        id: "email-address",
-        name: "email-address",
-        type: "email-address",
+        id: "email-addressC",
+        name: "email-addressC",
+        type: "email-addressC",
         autocomplete: "email",
         spellcheck: false,
         value: ""
@@ -47,7 +47,7 @@
 
 
       {{ govukRadios({
-        name: "del-auth-email-confirmation",
+        name: "del-auth-email-reconfirmation",
         fieldset: {
           legend: {
             html: legendH1,
@@ -59,12 +59,12 @@
           {
             value: "Yes",
             text: "Yes, use this email address for the confirmation email",
-            checked: (data["del-auth-email-confirmation"] == "Yes")
+            checked: (data["del-auth-email-reconfirmation"] == "Yes")
           },
           {
             value: "No",
             text: "No, I need to change it",
-            checked: (data["del-auth-email-confirmation"] == "No"),
+            checked: (data["del-auth-email-reconfirmation"] == "No"),
                   conditional: {
                     html: emailAddressChange
         }

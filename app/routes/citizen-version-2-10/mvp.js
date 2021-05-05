@@ -1639,6 +1639,15 @@ router.post(`${baseUrl}/del-auth-contact-letter-formats-check-router`, (req, res
   }
 })
 
+router.post(`${baseUrl}/del-auth-email-confirmation-router`, (req, res) => { // router name
+  const delAuthEmailConfirmation = req.session.data['del-auth-email-confirmation']  // name of data / id name
+
+  if (delAuthEmailConfirmation === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-email-reconfirmC`)
+  } else {
+    res.redirect(`${baseUrl}/final-cya`)
+  }
+})
 
 
 
