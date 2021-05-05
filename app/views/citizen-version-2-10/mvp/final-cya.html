@@ -4597,7 +4597,7 @@ rows: [
       }) }}
 
 
-      {% if data["email-address" or "email-addressC"] %}
+      {% if data["del-auth-email-confirmation"] == "Yes" %}
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
@@ -4606,7 +4606,7 @@ rows: [
             text: "Email address:"
           },
           value: {
-            html: data["email-addressC" or "email-address"]
+            html: data["email-addressC"]
           },
           actions: {
             items: [
