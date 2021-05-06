@@ -17,8 +17,8 @@
     <form action="money-second-property-router" method="post" class="form">
 
       {% set DynamicH1 %}
-      {% if data["home-ownership"] == "You own it" or "Shared ownership" %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land other than the home you live in?</h1>
+      {% if data["home-ownership"] == "You own it" or data["home-ownership"] == "Shared ownership" %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[I am owned or shared] Do you own any property or land other than the home you live in?</h1>
 
       {% else %}
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you own any property or land?</h1>
