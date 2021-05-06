@@ -98,32 +98,6 @@
 
 </div>
 
-<div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Information you will need to apply online</h2>
-
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-
-  rows: [
-  {
-    key: {
-      text: "Do you have the right information to make an online application for Pension Credit?"
-    },
-    value: {
-      text: data['start-check']
-    },
-    actions: {
-      items: [
-        {
-          href: "start-check",
-          text: "Change",
-          visuallyHiddenText: "XXX"
-        }
-      ]
-    }
-  }
-  ]
-}) }}
-
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Applicant details</h2>
 
       {{ govukSummaryList({
