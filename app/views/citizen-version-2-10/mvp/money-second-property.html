@@ -28,25 +28,6 @@
       {% endif %}
       {% endset -%}
 
-      {% set DynamicH1 %}
-      {% if data["home-ownership"] == "You own it" %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land other than the home you live in?</h1>
-
-      {% else %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land?</h1>
-
-      {% endif %}
-      {% endset -%}
-
-{% set DynamicH1 %}
-{% if data["home-ownership"] == "You own it" %}
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land other than the home you live in?</h1>
-
-{% else %}
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land?</h1>
-
-{% endif %}
-{% endset -%}
 
       {{ govukRadios({
         name: "money-second-property-check",
