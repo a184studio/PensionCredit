@@ -17,9 +17,7 @@
     <form action="money-second-property-router" method="post" class="form">
 
       {% set DynamicH1 %}
-      {% if data["home-care-home-check-still-own"] == "Yes" or data["money-carehome-route-check"] == "No" %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land, other than the home you lived in before you moved into a care home?</h1>
-      {% elif data["home-ownership"] == "You own it" %}
+      {% if data["home-ownership"] == "You own it" or "Shared ownership" %}
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land other than the home you live in?</h1>
 
       {% else %}
