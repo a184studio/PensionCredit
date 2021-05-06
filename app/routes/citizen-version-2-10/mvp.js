@@ -1128,9 +1128,20 @@ router.post(`${baseUrl}/money-3-total-eed-confirm-router`, (req, res) => {
   const money2TotalEEDConfirm = req.session.data['money-3-total-eed-confirm']
 
   if (money2TotalEEDConfirm === 'Yes') {
-    res.redirect(`${baseUrl}/money-second-property`)
+    res.redirect(`${baseUrl}/money-carehome-route-check`)
   } else {
     res.redirect(`${baseUrl}/money-3-total-eed`)
+  }
+})
+
+
+router.post(`${baseUrl}/money-carehome-route-check-router`, (req, res) => {
+  const moneyCareHomeRouteCheck = req.session.data['money-carehome-route-check']
+
+  if (moneyCareHomeRouteCheck === 'Yes') {
+    res.redirect(`${baseUrl}/money-disregards-all`)
+  } else {
+    res.redirect(`${baseUrl}/money-second-property`)
   }
 })
 
@@ -1148,13 +1159,6 @@ router.post(`${baseUrl}/money-3-total-eed-router`, (req, res) => {
     res.redirect(`${baseUrl}/money-second-property`)
   }
 })
-
-
-
-
-
-
-
 
 
 
