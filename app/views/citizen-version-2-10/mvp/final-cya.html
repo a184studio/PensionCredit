@@ -2222,16 +2222,28 @@ actions: {
 
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Money</h2>
 
+
+        {% set AccountList %}
+
+          <ul class="govuk-list">
+                <li>Money in current, savings or deposit accounts with a bank, building society, credit union or the Post Office</li>
+                <li>Investment ISAs or cash ISAs</li>
+                <li>Shares</li>
+                <li>...</li>
+          </ul>
+
+        {% endset %}
+
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
 
           {
             key: {
-              text: "How much money you had on [claim-date]"
+              text: "Tell us what accounts or investments you have"
             },
             value: {
-              text: data['money-total-then']
+              html: AccountList
             },
             actions: {
               items: [
@@ -2246,21 +2258,46 @@ actions: {
         ]
       }) }}
 
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+
+          {
+            key: {
+              text: "What is the total amount of money you have today?"
+            },
+            value: {
+              text: data['money-3-total-now-value']
+            },
+            actions: {
+              items: [
+                {
+                  href: "money-3-total-now",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
 
         {
           key: {
-            text: "How much money you have today"
+            text: "What is the total amount of money you had on [EED]?"
           },
           value: {
-            text: data['money-total-now']
+            text: data['money-3-total-eed-value']
           },
           actions: {
             items: [
               {
-                href: "money-total",
+                href: "money-3-total-eed",
                 text: "Change",
                 visuallyHiddenText: "how much money you have today"
               }
@@ -2295,30 +2332,6 @@ actions: {
         }
       ]
     }) }}
-
-    {{ govukSummaryList({
-      classes: 'govuk-!-margin-bottom-9',
-      rows: [
-
-      {
-        key: {
-          text: "Is any of your money invested in income or capital bonds?"
-        },
-        value: {
-          text: data['money-bonds']
-        },
-        actions: {
-          items: [
-            {
-              href: "money-bonds",
-              text: "Change",
-              visuallyHiddenText: "whether any of your money is invested in income or capital bonds"
-            }
-          ]
-        }
-      }
-    ]
-  }) }}
 
 
 
