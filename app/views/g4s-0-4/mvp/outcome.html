@@ -46,7 +46,7 @@
 
 
     {% elif data["housing-costs"] == "Yes" %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Because you have housing costs, Pension Credit might be able to help you with</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Because you have housing costs, Pension Credit might be able to help you</h1>
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You'll need to make a full application for Pension Credit over the phone.
 
@@ -199,6 +199,21 @@
                         </label>
                       </div>
                      {% endif %}
+
+                     {% if data["housing-costs"] == "Yes" %}
+
+                     <div class="govuk-radios__item">
+                       <input class="govuk-radios__input"
+                       id="outcome-radios"
+                       name="outcome-radios"
+                       type="radio"
+                       value="end">
+                       <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                         <!--[END CALL]--> Applicant wants to end the call <!--- route to exit.html-->
+                       </label>
+                     </div>
+                    {% endif %}
+
 
                      {% if data['nino'] == 'S4 11 22 33 D' %}
 
