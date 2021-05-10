@@ -27,7 +27,7 @@
 
        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have earnings of
 
-         {% if data["nino"] == "S2 11 22 33 B" %}
+         {% if data["nino"] == "S2 11 22 33 B" or data["nino"] == "S2112233B"%}
 
              <!------------Benefit values ------------>
 
@@ -40,7 +40,7 @@
              {% else %}£20.00 <!--[S3 -£5]-->{% endif %}
              <!------------Benefit values ------------>
 
-         {% elif data['nino'] == 'S3 11 22 33 C' %}
+         {% elif data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C'%}
 
              <!------------Benefit values ------------>
 

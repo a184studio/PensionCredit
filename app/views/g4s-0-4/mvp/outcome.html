@@ -24,7 +24,7 @@
 
     <!------------H1 LEGEND------------>
 
-    {% if data['nino'] == 'S1 11 22 33 A' %}
+    {% if data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on the information you have given me, it doesn't look like you meet the criteria for Pension Credit</h1>
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This is because your State Pension takes you above the income thresholds.</p>
@@ -105,7 +105,7 @@
       {% if data["housing-costs"] == "Yes" %}
       <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
 
-      {% elif data['nino'] == 'S1 11 22 33 A' %}
+      {% elif data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
       <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
 
       {% elif data["pensions"] == "Yes" %}
@@ -145,7 +145,7 @@
                           </label>
                         </div>
 
-                       {% elif data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' %}
+                       {% elif data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="help">
                           <label class="govuk-label govuk-radios__label" for="changed-name-2">
@@ -171,7 +171,7 @@
 
                       <div class="govuk-radios__divider">or</div>
 
-                      {% if data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' %}
+                      {% if data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
                        <div class="govuk-radios__item">
                          <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="manual-dwp">
                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
@@ -200,7 +200,7 @@
                       </div>
                      {% endif %}
 
-                     {% if data['nino'] == 'S4 11 22 33 D' %}
+                     {% if data['nino'] == 'S4 11 22 33 D' data['nino'] == 'S4112233D' %}
 
                      <div class="govuk-radios__item">
                        <input class="govuk-radios__input"
