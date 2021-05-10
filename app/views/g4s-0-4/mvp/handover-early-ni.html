@@ -39,17 +39,9 @@
 
 <div>
 
-  {% if data['nino'] == '' %}
-
   <h1 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">I've not been able to establish the caller's eligibility for Pension Credit because they do not have a National Insurance number</h1>
 
   <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">So I am passing them over to you to guide them through a full application for Pension Credit.</p>
-
-  {% else %}
-
-<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">I have asked the applicant the basic eligibility questions and determined that they meet the criteria for Pension Credit because they have some housing costs.</p>
-
-<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">So I am passing them over to you to guide them through a full application for Pension Credit.</p>
 
 
 </div>
@@ -57,8 +49,6 @@
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Applicant details</h2>
-
-{% endif %}
 
 
 {% include "g4s-0-2-ur/mvp/claim-details.html" %}
