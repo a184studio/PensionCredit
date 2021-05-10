@@ -14,6 +14,9 @@
 
 {% include "includes/js-back-link.html" %}
 
+<form method="post" action="/session-clear-route">
+ <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-4/mvp/start">
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -26,11 +29,12 @@
 
       {{ govukButton({
         text: "Clear session",
-        classes: "govuk-button--warning",
-        href: "/g4s-0-4/mvp/start",
+        classes: "govuk-button--warning"
       }) }}
 
 
     </div>
   </div>
+ </form>
+
 {% endblock %}

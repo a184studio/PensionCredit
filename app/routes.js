@@ -15,6 +15,12 @@ router.use((req, res, next) => {
   next()
 })
 
+router.post('/session-clear-route', (req, res, next) => {
+  const nextPage = req.session.data['session-clear-redirect-url']
+  req.session.data = {}
+  res.redirect(nextPage)
+})
+
 router.use(require('./routes/development/wf'))
 router.use(require('./routes/sprint-1/new-claims'))
 router.use(require('./routes/sprint-2/new-claims'))
