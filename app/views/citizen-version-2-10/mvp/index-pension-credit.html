@@ -181,7 +181,7 @@
             data["home-care-home-check-still-own"] == "Yes" or
             data["home-equity-release"] == "Yes" or
             data["self-employed"] == "Yes" or
-            data["money-bonds"] == "Yes" or
+            data["money-total-risk-check"] == "High" or
             data["pension-check"] == "Yes" or
             data["pension-foreign-check"] == "Yes"
           %}
@@ -226,6 +226,20 @@
 
               {% if data["money-bonds"] == "Yes" %}
               <li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>{% endif %}
+
+              {% if data["money-total-risk-check"] == "High" %}
+              <li>Shares</li>{% endif %}
+
+              {% if data["money-total-risk-check"] == "High" %}
+              <li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>{% endif %}
+
+              {% if data["money-total-risk-check"] == "High" %}
+              <li>Money overseas XXX</li>{% endif %}
+
+              {% if data["money-total-risk-check"] == "High" %}
+              <li>Other accounts or investments</li>{% endif %}
+
+
             </ul>
 
 
