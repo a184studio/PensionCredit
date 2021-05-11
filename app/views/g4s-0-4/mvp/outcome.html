@@ -140,8 +140,8 @@
                      {% if data["housing-costs"] == "Yes" %}
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="dwp">
-                          <label class="govuk-label govuk-radios__label" for="changed-name">
-                            <!--[HOUSING COSTS]--> Applicant has housing costs - put them through to DWP <!-- - route to handover-early.html-->
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            <!--[HOUSING COSTS]--> Applicant has housing costs [] - put them through to DWP <!-- - route to handover-early.html-->
                           </label>
                         </div>
 
@@ -159,6 +159,7 @@
                             <!--[END CALL]--> Applicant wants to end the call <!-- - route to exit.html-->
                           </label>
                         </div>
+
                         {% else %}
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="dwp">
