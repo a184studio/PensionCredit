@@ -143,7 +143,7 @@ router.post(`${baseUrl}/outcome-housing-costs-router`, (req, res) => {
     res.redirect(`${baseUrl}/handover-early`)
 
   } else {
-    res.redirect(`${baseUrl}/XXX`)
+    res.redirect(`${baseUrl}/exit`)
   }
 })
 
