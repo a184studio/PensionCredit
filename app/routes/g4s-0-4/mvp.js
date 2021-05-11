@@ -135,9 +135,7 @@ router.post(`${baseUrl}/outcome-yn-router`, (req, res) => {
 router.post(`${baseUrl}/outcome-housing-costs-router`, (req, res) => {
   const outcomeRadios = req.session.data['outcome-radios']
 
-  if (outcomeRadios === 'housing') {
-    res.redirect(`${baseUrl}/housing`)
-  } else if (outcomeRadios === 'help') {
+  if (outcomeRadios === 'help') {
     res.redirect(`${baseUrl}/more-help`)
   } else if (outcomeRadios === 'dwp') {
     res.redirect(`${baseUrl}/handover-early`)
