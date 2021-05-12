@@ -224,20 +224,17 @@
               {% if data["self-employed"] == "Yes"%}
               <li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>{% endif %}
 
-              {% if data["money-bonds"] == "Yes" %}
-              <li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>{% endif %}
-
               {% if data["money-total-risk-check"] == "High" %}
-              <li>Shares</li>{% endif %}
+              <li>your shares. We will ask about the shares you own and how many you have</li>{% endif %}
 
               {% if data["money-total-risk-check"] == "High" %}
               <li>your income or capital bonds. We will ask you for information from a letter or statment from your provider</li>{% endif %}
 
               {% if data["money-total-risk-check"] == "High" %}
-              <li>Money overseas XXX</li>{% endif %}
+              <li>the money you have overseas. We will ask how much you have and what currency it is in</li>{% endif %}
 
               {% if data["money-total-risk-check"] == "High" %}
-              <li>Other accounts or investments</li>{% endif %}
+              <li>the other accounts or investments that you told us about</li>{% endif %}
 
 
             </ul>
