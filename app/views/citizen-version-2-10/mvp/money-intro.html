@@ -23,7 +23,7 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We will consider your application from <strong>today</strong></h1>
 
       {% elif data["money-3-claim-filter"] == "no-doc" %}
-      <p class="govuk-heading-xl govuk-!-margin-bottom-6">[No DOC] We will consider your application from <strong>[Today]</strong></p>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-6">We will ask you questions about money, savings and investments <strong>today</strong></p>
 
       {% else %}
       <p class="govuk-heading-xl govuk-!-margin-bottom-6">We will consider your application from <strong>[Advanced]</strong></p>
@@ -45,13 +45,12 @@
     <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-8">This means we need to ask you about any money, savings and investments you have today.</p>
 
     {% elif data["money-3-claim-filter"] == "no-doc" %}
-    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-4">This means we need to ask you about any money, savings and investments you have today.</p>
-    <p class="govuk-bold govuk-!-font-size-19 govuk-!-margin-bottom-6">We will then call you back by <strong>DD MM YYYY</strong> to discuss whether we can backdate your application and ask for any more information we need.</p>
+    <p class="govuk-bold govuk-!-font-size-19 govuk-!-margin-bottom-6">We will then contact you by <strong>[Contact date]</strong> to discuss whether we can backdate your application and ask for any more information we need.</p>
 
 
     {% else %}
     <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-4">This means we need to ask you about any money, savings and investments you have today.</p>
-    <p class="govuk-bold govuk-!-font-size-19 govuk-!-margin-bottom-6">We will then call you back by <strong>DD MM YYYY</strong> to confirm how much money you have then.</p>
+    <p class="govuk-bold govuk-!-font-size-19 govuk-!-margin-bottom-6">We will then contact you by <strong>[Contact date]</strong> to confirm how much money you have then.</p>
 
     <!-- <ul class="govuk-!-font-size-24 govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
       <li>today</li>
