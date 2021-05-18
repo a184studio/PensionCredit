@@ -1,0 +1,72 @@
+{% extends "layout-assisted-digital.html" %}
+
+{% block pageTitle %}
+  XXX - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="state-pension-status-router" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+
+      {{ govukRadios({
+        idPrefix: "state-pension-status",
+        name: "state-pension-status",
+        fieldset: {
+          legend: {
+            text: "Which of the following apply to your living status in the UK? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+
+        },
+        hint: {
+          text: ""
+
+
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Settled or pre-settled",
+            checked: (data["state-pension-status"] == "Settled or pre-settled")
+          },
+          {
+            value: "Yes",
+            text: "Indefinite leave to remain",
+            checked: (data["state-pension-status"] == "Indefinite leave to remain")
+          },
+          {
+            value: "Something else",
+            text: "Something else",
+            checked: (data["state-pension-status"] == "Something else")
+          },
+
+          {
+            value: "NoSP",
+            text: "Don't Know",
+            checked: (data["state-pension-status"] == "Don't Know")
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
