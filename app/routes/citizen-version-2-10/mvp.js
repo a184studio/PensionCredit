@@ -358,9 +358,19 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   const residesInUk = req.session.data['uk-national']
 
   if (residesInUk === 'Yes') {
-    res.redirect(`${baseUrl}/over-spa`)
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
   } else {
-    res.redirect(`${baseUrl}/hrt-flag-immigration-prompt`)
+    res.redirect(`${baseUrl}/uk-residence-status`)
+  }
+})
+
+router.post(`${baseUrl}/uk-residence-status-router`, (req, res) => {
+  const residenceStatus = req.session.data['uk-residence-status']
+
+  if (residenceStatus === 'Dont know') {
+    res.redirect(`${baseUrl}/uk-residence-date`)
+  } else {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
   }
 })
 
