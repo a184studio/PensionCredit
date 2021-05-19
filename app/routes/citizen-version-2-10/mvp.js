@@ -374,6 +374,16 @@ router.post(`${baseUrl}/uk-residence-status-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/uk-residence-date-router`, (req, res) => {
+  const residenceDate = req.session.data['uk-residence-date']
+
+  if (residenceDate === 'No') {
+    res.redirect(`${baseUrl}/done-pre-1973`)
+  } else {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
+  }
+})
+
 router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
 
