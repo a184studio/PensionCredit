@@ -28,7 +28,7 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What language should we use when we call you?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What language do you want us to speak to you in?</h1>
 
         {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
 
@@ -36,7 +36,7 @@
 
 
       {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What language should we use when we call the applicant?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What language do you want us to speak to the applicant?</h1>
       {% endif %}
 
       {% endset -%}

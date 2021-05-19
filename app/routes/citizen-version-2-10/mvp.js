@@ -1562,6 +1562,7 @@ router.post(`${baseUrl}/del-auth-address-correspondence-yn-router`, (req, res) =
 })
 
 
+
 router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // router name
   const whoMadeClaim = req.session.data['del-auth-who-made-claim']  // name of data / id name
 
@@ -1593,6 +1594,40 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
     res.redirect(`${baseUrl}/del-auth-contact-number`)
   }
 })
+
+// router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // router name
+//   const whoMadeClaim = req.session.data['del-auth-who-made-claim']  // name of data / id name
+//
+//   if (whoMadeClaim === 'Yourself') { // name of data / + answer
+//     res.redirect(`${baseUrl}/claimant-contact-callback`)
+//   }
+//   else if (whoMadeClaim === 'Power of attorney') { // name of data / + answer
+//     res.redirect(`${baseUrl}/claimant-contact-callback`)
+//   }
+//   else if (whoMadeClaim === 'Appointee') { // name of data / + answer
+//     res.redirect(`${baseUrl}/claimant-contact-callback`)
+//   }
+//   else if (whoMadeClaim === 'Personal Acting Body') { // name of data / + answer
+//     res.redirect(`${baseUrl}/claimant-contact-callback`)
+//   }
+//   else if (whoMadeClaim === 'Corporate Acting Body') { // name of data / + answer
+//     res.redirect(`${baseUrl}/claimant-contact-callback`)
+//   }
+//   else if (whoMadeClaim === 'Charity or organisation') { // name of data / + answer
+//     res.redirect(`${baseUrl}/claimant-contact-callback`)
+//   }
+//   else if (whoMadeClaim === 'Friend or family member') { // name of data / + answer
+//     res.redirect(`${baseUrl}/claimant-contact-callback`)
+//   }
+//   else if (whoMadeClaim === 'Someone else') { // name of data / + answer
+//     res.redirect(`${baseUrl}/claimant-contact-callback`)
+//   }
+//   else {
+//     res.redirect(`${baseUrl}/del-auth-contact-number`)
+//   }
+// })
+
+
 
 
 

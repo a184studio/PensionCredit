@@ -1,0 +1,173 @@
+{% extends "layout-assisted-digital-ur.html" %}
+
+{% block pageTitle %}
+  Which best describes the place where you live? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="del-auth-who-made-claim-router" method="post" class="form">
+
+
+
+<!--
+  {% if data["del-auth-who-made-claim"] == "Yourself" %}
+  <form action="del-auth-contact-number" method="post" class="form">
+
+  {% elif data["del-auth-who-made-claim"] == "Power of attorney" or data["del-auth-who-made-claim"] == "Appointee" or data["del-auth-who-made-claim"] == "Personal Acting Body" or data["del-auth-who-made-claim"] == "Corporate Acting Body" or data["del-auth-who-made-claim"] == "Corporate Acting Body" %}
+  <form action="del-auth-contact-name" method="post" class="form">
+
+  {% elif data["del-auth-who-made-claim"] == "Charity or organisation" %}
+  <form action="del-auth-contact-number" method="post" class="form">
+
+  {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
+  <form action="del-auth-contact-ff-number-check" method="post" class="form">
+
+  {% else %}
+  <form action="del-auth-contact-number" method="post" class="form">
+
+  {% endif %} -->
+
+
+   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We will need to contact you for more information</h1>
+
+    <!------------Legend--------------->
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">The quickest way to do this is to provide a contact number so we can contact you by phone.</p>
+
+    <p class="govuk-heading-m govuk-!-margin-bottom-4">We will contact you about:</p>
+    <ul class="govuk-list govuk-list--bullet">
+
+
+      <ul class="govuk-list govuk-list--bullet">
+
+      {% if data["doc-absence"] == "Yes" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[DOC absence] </strong>the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>
+
+      {% if data["home-care-home-check"] == "Yes" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[CareHome] </strong> XXX</li>
+
+      {% if data["home-equity-release"] == "Yes" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Equity release] </strong> your equity release. We will ask you for information from an annual statement from your provider</li>
+
+      {% if data["non-deps-living-with-you"] == "Yes" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Others in the household] </strong> XXX</li>
+
+      {% if data["self-employed"] == "Yes"%}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Self] </strong> your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>
+
+      {% if data["pension-foreign-check"] == "Yes" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Foreign pen] </strong>the non-UK pensions you told us about</li>
+
+      {% if data["pension-check"] == "Yes" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Personal] </strong> the personal pensions that you have not taken yet that you told us about</li>
+
+      {% if data["employment-other-money"] == "Yes" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Money: Other income] </strong> XXX</li>
+
+      {% if data["money-total-risk-check"] == "High" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Money: Shares] </strong> your shares. We will ask about the shares you own and how many you have</li>
+
+      {% if data["money-total-risk-check"] == "High" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Money: Bonds] </strong> your income or capital bonds. We will ask you for information from a letter or statement from your provider</li>
+
+      {% if data["money-total-risk-check"] == "High" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Money: Money Overseas] </strong> the money you have overseas. We will ask how much you have and what currency it is in</li>
+
+      {% if data["XX"] == "XX" %}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Money: Other accounts and investements] </strong> the other accounts or investments that you told us about</li>
+
+      {% if data["money-second-property-check"] == "Yes" or data["home-care-home-check-still-own"] == "Yes"%}
+      {% endif %}
+      <li class="govuk-!-margin-bottom-4"><strong>[Property] </strong>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>
+
+
+
+<!--
+      <ul class="govuk-list govuk-list--bullet">
+        {% if data["doc-absence"] == "Yes" %}
+        <li>the time you spent outside the UK. We might be able to backdate your application by up to 3 months, but we will need to ask you a few more questions</li>{% endif %}
+
+        {% if data["money-second-property-check"] == "Yes" or data["home-care-home-check-still-own"] == "Yes"%}
+        <li>the property you own, who lives in it, what share of the property belongs to you and details of any mortgage</li>{% endif %}
+
+            {% if data["home-equity-release"] == "Yes" %}
+            <li>your equity release. We will ask you for information from an annual statement from your provider</li>{% endif %}
+
+            {% if data["pension-foreign-check"] == "Yes" %}
+            <li>the non-UK pensions you told us about</li>{% endif %}
+
+            {% if data["pension-check"] == "Yes" %}
+            <li>the personal pensions that you have not taken yet that you told us about</li>{% endif %}
+
+            {% if data["self-employed"] == "Yes"%}
+            <li>your self-employment. We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>{% endif %}
+
+
+            {% if data["money-total-risk-check"] == "High" %}
+            <li>your income or capital bonds. We will ask you for information from a letter or statement from your provider</li>{% endif %}
+
+            {% if data["money-total-risk-check"] == "High" %}
+            <li>your shares. We will ask about the shares you own and how many you have</li>{% endif %}
+
+            {% if data["money-total-risk-check"] == "High" %}
+            <li>the money you have overseas. We will ask how much you have and what currency it is in</li>{% endif %}
+
+            {% if data["money-total-risk-check"] == "High" %}
+            <li>the other accounts or investments that you told us about</li>{% endif %}
+
+          </ul> -->
+
+
+
+
+      {% if data["state-pension-status"] == "NoBank" %}
+      <li class="govuk-!-margin-bottom-4"><strong>your State Pension</strong></li>
+      {% endif %}
+
+      {% if data["scenario2"] == "Yes" %}
+      <li class="govuk-!-margin-bottom-4"><strong>your shares</strong><br> Please have your share certificates or details of your shares to hand</li>
+
+      <li class="govuk-!-margin-bottom-4"><strong>the money you have overseas</strong><br> Please have bank statements or details fo this to hand</li>
+      {% endif %}
+
+      {% if data["money-disregards-all"] == "Yes" %}
+      <li class="govuk-!-margin-bottom-4"><strong>the money that you plan to use to buy or carry out essential work on your main home</strong><br>Please have details of what you plan to use the money for to hand</li>
+      {% endif %}
+
+      {% if data["money-disregards-payments-options"] == "Option" %}
+      <li class="govuk-!-margin-bottom-4"><strong>the money you have from payouts or payments</strong><br>Please have details of this to hand</li>
+      {% endif %}
+    </ul>
+
+
+      {{ govukButton({
+        text: "Continue",
+          classes: "govuk-!-margin-top-6"
+      }) }}
+    </form>
+
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+  </div>
+</div>
+{% endblock %}
