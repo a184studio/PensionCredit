@@ -1,4 +1,4 @@
-{% extends "layout-g4s-exit.html" %}
+{% extends "layout-g4s.html" %}
 
 {% block pageTitle %}
   claimant-national-insurance - Pension Credit
@@ -36,11 +36,11 @@
           },
         id: "nino",
         name: "nino",
-        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+        classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
         value: data["nino"]
       }) }}
 
-      <!-- <p class="govuk-body govuk-!-padding-bottom-6"><a href="done-no-national-insurance">Claimant has no National Insurance Number</a></p> -->
+      <p class="govuk-body govuk-!-padding-top-0 govuk-!-padding-bottom-4"><a href="handover-early-ni">No National Insurance number</a></p>
 
 
       {{ govukButton({
