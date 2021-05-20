@@ -1,0 +1,29 @@
+{% extends "layout-g4s.html" %}
+
+{% block pageTitle %}
+  claimant-national-insurance - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="state-pension-amount" method="post">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I am going to be looking up your information our sytems for the next minute or so</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">The line might go quiet, dont worry I'm still here. It means that i dont have to ask you the next few questions as its stuff I can see on the system.</p>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
