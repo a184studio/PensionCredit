@@ -81,6 +81,18 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/claimant-national-insurance-router`, (req, res) => {
+  const claimantNationalInsurance = req.session.data['claimant-national-insurance']
+
+  if (claimantNationalInsurance === 'Yes') {
+    res.redirect(`${baseUrl}/housing-costs`)
+  } else if (claimantNationalInsurance === 'Lost') {
+    res.redirect(`${baseUrl}/search-ni`)
+  } else {
+    res.redirect(`${baseUrl}/handover-early-ni`)
+  }
+})
+
 router.post(`${baseUrl}/housing-costs-router`, (req, res) => {
   const housingCosts = req.session.data['housing-costs']
 
@@ -194,6 +206,8 @@ router.post(`${baseUrl}/outcome-radios-router`, (req, res) => {
     res.redirect(`${baseUrl}/handover-user-request`)
   } else if (outcomeRadios === 'end') {
     res.redirect(`${baseUrl}/end`)
+  } else if (outcomeRadios === 'challenge') {
+    res.redirect(`${baseUrl}/challenge`)
   } else {
     res.redirect(`${baseUrl}/XXX`)
   }
