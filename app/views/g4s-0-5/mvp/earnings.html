@@ -16,16 +16,22 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="earnings-router" method="post" class="form">
 
+<!--
     <div class="moj-banner">
     <div class="moj-banner__message">
     <h2 class="govuk-heading-m govuk-!-margin-top-0">Agent: Find this information in SearchLight. Do not ask caller.</h2>
     </div>
     </div>
+-->
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+  I'm just going to our systems for the earns you have
+</h1>
 
      <!------------H1 LEGEND------------>
      {% set dynamicH1 %}
 
-       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do they have earnings of
+       <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Do they have earnings of
 
          {% if data["nino"] == "S2 11 22 33 B" or data["nino"] == "S2112233B"%}
 
@@ -113,7 +119,7 @@
                },
                {
                  value: "No",
-                 text: "No",
+                 text: "No – They have less",
                  checked: (data["earnings"] == "No")
                }
              ]

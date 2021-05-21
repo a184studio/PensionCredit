@@ -214,8 +214,21 @@
                          <!--[END CALL]--> Applicant wants to end the call <!--- route to exit.html-->
                        </label>
                      </div>
-                    {% endif %}
 
+
+                    {% elif data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input"
+                      id="outcome-radios"
+                      name="outcome-radios"
+                      type="radio"
+                      value="challenge">
+                      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                        <!--[END CALL]--> Citizen challenged the what data was used <!--- route to exit.html-->
+                      </label>
+                    </div>
+                    {% endif %}
 
 
 

@@ -23,26 +23,31 @@
 <form action="benefit-check-router" method="post" class="form">
 {% endif %}
 
-
+<!--
       <div class="moj-banner">
       <div class="moj-banner__message">
-      <h2 class="govuk-heading-m govuk-!-margin-top-0">Agent: Find this information in SearchLight. Do not ask caller.</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-0">Use SearchLight, do not ask caller.</h2>
       </div>
       </div>
+-->
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+        I'm now going to look up your benefits so I dont need to ask you
+      </h1>
 
 {{ govukCheckboxes({
   idPrefix: "benefit-check",
   name: "benefit-check",
   fieldset: {
     legend: {
-      text: "Do they get any of these benefits?",
+      text: "Benefits they have:",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
     text: "Select all that apply.",
-          classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
+          classes: "govuk-fieldset__legend--xl"
   },
   items: [
 

@@ -18,26 +18,26 @@
 
       <input type="hidden" name="hospitals-complete" value="true"/>
 
+<!--
       <div class="moj-banner">
       <div class="moj-banner__message">
-      <h2 class="govuk-heading-m govuk-!-margin-top-0">Agent: Find this information in SearchLight. Do not ask caller.</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-0">Use SearchLight, do not ask caller.</h2>
       </div>
       </div>
+-->
 
-      {% set legendH1 %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-        What is your National Insurance number?
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        I'm just going to check your State Pension amount
       </h1>
 
-      {% endset -%}
 
       {{ govukInput({
         id: "state-pension-amount",
         name: "state-pension-amount",
         label: {
-          html: "How much is their weekly State Pension?",
-          classes: "govuk-label--xl",
+          html: "Enter weekly amount for State Pension",
+          classes: "govuk-label--m",
           isPageHeading: true
         },
         hint: {
