@@ -87,13 +87,12 @@
 
      <!------------ LEGEND END --------------->
 
-     {% set pensionHowMuch %}
      {{ govukInput({
        id: "pensions-howMuch-value",
        name: "pensions-howMuch-value",
        label: {
-         html: "How much is their weekly pension income?",
-         classes: "govuk-label--s",
+         html: "How much is their weekly total pension income?",
+         classes: "govuk-label--m",
          isPageHeading: true
        },
        hint: {
@@ -106,39 +105,6 @@
        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
        spellcheck: false
      }) }}
-     {% endset %}
-
-
-           {{ govukRadios({
-             idPrefix: "pensions",
-             name: "pensions",
-             fieldset: {
-               legend: {
-                 html: dynamicH1,
-                 isPageHeading: true,
-                 classes: "govuk-fieldset__legend--m"
-               }
-             },
-             hint: {
-               text: ""
-             },
-             classes: "govuk-radios",
-             items: [
-               {
-                 value: "Yes",
-                 text: "Yes",
-                 checked: (data["pensions"] == "Yes")
-               },
-               {
-                 value: "No",
-                 text: "No – They have less",
-                 checked: (data["pensions"] == "No"),
-                 conditional: {
-                   html: pensionHowMuch
-                 }
-               }
-             ]
-           }) }}
 
       {{ govukButton({
         text: "Continue"
@@ -153,7 +119,6 @@
 
     Use £5 if no benefits, use £10 for CP or DB -->
 
-    <p class="govuk-body govuk-!-padding-top-0"><a href="pensions-enter">Pensions enter amounts</a></p>
 
   </div>
 </div>
