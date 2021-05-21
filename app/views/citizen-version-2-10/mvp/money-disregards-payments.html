@@ -24,7 +24,24 @@
 
 
 
+ <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
 
+        <!------------H2 LEGEND------------>
+        {% set dynamicH2 %}
+        <p class="govuk-body">Money you were paid for errors in Rate Relief</p>
+        {% endset %}
+      <!------------Legend--------------->
+
+        <!---- UK ---->{% else %}
+
+        <!------------H2 LEGEND------------>
+          {% set dynamicH2 %}
+          <p class="govuk-body">Money you were paid for errors in Council Tax Reduction
+          </p>
+          {% endset %}
+        <!------------Legend--------------->
+
+        <!---- COUNTRY END ---->{% endif %}
 
           {{ govukCheckboxes({
             idPrefix: "money-disregards-payments-options",
@@ -50,7 +67,7 @@
               },
               {
                 value: "Option-3",
-                text: "Money you were paid for errors in Council Tax Reduction"
+                html: dynamicH2
               },
               {
                 value: "Option-4",
