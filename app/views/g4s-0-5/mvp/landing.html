@@ -31,7 +31,34 @@
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">To find out more about how we use information and your information rights, go to GOV.UK and search for DWP's Personal Information Charter. -->
 
 
-
+    {{ govukRadios({
+      idPrefix: "ab-check",
+      name: "ab-check",
+      fieldset: {
+        legend: {
+          text: "Select test version",
+          hint: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+        }
+      },
+      classes: "govuk-radios",
+      hint: {
+        html: ""
+      },
+      items: [
+        {
+          value: "A",
+          text: "A",
+          checked: (data["ab-check"] == "A")
+        },
+        {
+          value: "B",
+          text: "B",
+          checked: (data["ab-check"] == "B")
+        }
+      ]
+    }) }}
 
 
 

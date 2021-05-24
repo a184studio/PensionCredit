@@ -15,19 +15,21 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    {% if data["ab-check"] == "A" %}
     <form action="pensions-router" method="post" class="form">
+    {% else %}
+    <form action="ab-check-pension-router" method="post" class="form">
+    {% endif %}
 
-<!--
-    <div class="moj-banner">
-    <div class="moj-banner__message">
-    <h2 class="govuk-heading-m govuk-!-margin-top-0">Agent: Find this information in SearchLight. Do not ask caller.</h2>
-    </div>
-    </div>
--->
 
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-  I'm just going to our systems for the Pensions you have in payment
-</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      I'm just going to our systems for the Pensions you have in payment
+    </h1>
+
+
+<!------------------------------------------------------------A------------------------------------------------------------------------>
+{% if data["ab-check"] == "A" %}
 
 
 <!--
@@ -139,6 +141,34 @@
                }
              ]
            }) }}
+
+<!------------------------------------------------------------B------------------------------------------------------------------------>
+
+
+{% else %}
+
+
+{{ govukInput({
+  id: "pensions-howMuch-value",
+  name: "pensions-howMuch-value",
+  label: {
+    html: "How much is their weekly total pension income?",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter an amount in pounds and pence, for example, 100.00"
+  },
+  prefix: {
+    text: "£"
+  },
+  value: data["pensions-howMuch-value"],
+  classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+  spellcheck: false
+}) }}
+
+
+ {% endif %}
 
       {{ govukButton({
         text: "Continue"
