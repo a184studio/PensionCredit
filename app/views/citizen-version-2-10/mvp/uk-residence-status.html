@@ -25,7 +25,7 @@
         name: "uk-residence-status",
         fieldset: {
           legend: {
-            text: "Which of the following apply to your living status in the UK? ",
+            text: "What best describes you status in the UK? ",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -40,12 +40,12 @@
         items: [
           {
             value: "Settled or pre-settled",
-            text: "Settled or pre-settled",
+            text: "I have settled or pre-settled settled status",
             checked: (data["uk-residence-status"] == "Settled or pre-settled")
           },
           {
             value: "Indefinite leave to remain",
-            text: "Indefinite leave to remain",
+            text: "I have indefinite leave to remain in the UK",
             checked: (data["uk-residence-status"] == "Indefinite leave to remain")
           },
           {
@@ -56,7 +56,7 @@
 
           {
             value: "Dont know",
-            text: "Don't Know",
+            text: "I don't know",
             checked: (data["uk-residence-status"] == "Dont know")
           }
         ]
