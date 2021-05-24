@@ -55,10 +55,10 @@
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p>
 
 
-    {% elif data["pensions"] == "Yes" %}
+    {% elif data['nino'] == 'S2 11 22 33 B' or data['nino'] == 'S2112233B' or data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C' %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on the information you have given me, it doesn't look like you meet the criteria for Pension Credit</h1>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This is because your pensions take you above the income thresholds.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">@pete Lose terms for two much income. This is because our systems show that your weekly income takes you above the income thresholds.</p>
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, there might be other help available for your living or housing costs.</p>
 
@@ -69,23 +69,6 @@
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
-
-
-    {% elif data["earnings"] == "Yes" %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on the information you have given me, it doesn't look like you meet the criteria for Pension Credit</h1>
-
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This is because your earnings take you above the income thresholds.</p>
-
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">That said, there might be other help available for your living or housing costs.</p>
-
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like to find out about the help that is available?</p>
-
-    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">That said, I can still put you through to the full application service if you want.</p>
-
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">An advisor will ask you some more questions about your personal and financial circumstances and do a full assessment.</h1>
-
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Would you like me to hand you over to a colleague to make a full phone application now?</p> -->
-
 
 
     {% else %}
@@ -108,10 +91,10 @@
       {% elif data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
       <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
 
-      {% elif data["pensions"] == "Yes" %}
+      {% elif data['nino'] == 'S2 11 22 33 B' or data['nino'] == 'S2112233B' %}
       <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
 
-      {% elif data["earnings"] == "Yes" %}
+      {% elif data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C' %}
       <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
 
       {% else %}
@@ -145,7 +128,7 @@
                           </label>
                         </div>
 
-                       {% elif data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
+                        {% elif data['nino'] == 'S2 11 22 33 B' or data['nino'] == 'S2112233B' or data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C' or data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="help">
                           <label class="govuk-label govuk-radios__label" for="changed-name-2">
@@ -172,7 +155,7 @@
 
                       <div class="govuk-radios__divider">or</div>
 
-                      {% if data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
+                      {% if data['nino'] == 'S2 11 22 33 B' or data['nino'] == 'S2112233B' or data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C' or data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
                        <div class="govuk-radios__item">
                          <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="manual-dwp">
                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
@@ -180,7 +163,7 @@
                          </label>
                        </div>
 
-                     {% elif data["pensions"] == "No" or data["earnings"] == "No" or data["housing-costs"] == "No" %}
+                     {% elif data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C' or data["earnings"] == "No" or data["housing-costs"] == "No" %}
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="help">
                         <label class="govuk-label govuk-radios__label" for="changed-name-2">
@@ -216,7 +199,7 @@
                      </div>
 
 
-                    {% elif data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
+                     {% elif data['nino'] == 'S2 11 22 33 B' or data['nino'] == 'S2112233B' or data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C' %}
 
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input"

@@ -113,51 +113,31 @@ router.post(`${baseUrl}/benefit-check-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/pensions-router`, (req, res) => {
-  const pensions = req.session.data['pensions']
 
-  if (pensions === 'Yes') {
-    res.redirect(`${baseUrl}/outcome`)
-  } else {
+
+// AB ROUTER
+
+router.post(`${baseUrl}/ab-check-pension-router`, (req, res) => {
+  const abRouter = req.session.data['sl-find-a-claim']
+
+  if (abRouter === 'S2 11 22 33 B') {
     res.redirect(`${baseUrl}/earnings`)
-  }
-})
+  } else if (abRouter === 'S2112233B') {
+    res.redirect(`${baseUrl}/earnings`)
 
-router.post(`${baseUrl}/earnings-router`, (req, res) => {
-  const earnings = req.session.data['earnings']
-
-  if (earnings === 'Yes') {
+  } else if (abRouter === 'S3 11 22 33 C') {
     res.redirect(`${baseUrl}/outcome`)
-  } else {
+  } else if (abRouter === 'S3112233C') {
     res.redirect(`${baseUrl}/outcome`)
-  }
-})
 
-
-router.post(`${baseUrl}/outcome-yn-router`, (req, res) => {
-  const outcomeYN = req.session.data['outcome-yn']
-
-  if (outcomeYN === 'Yes') {
-    res.redirect(`${baseUrl}/more-help`)
-  } else {
-    res.redirect(`${baseUrl}/exit`)
-  }
-})
-
-router.post(`${baseUrl}/outcome-housing-costs-router`, (req, res) => {
-  const outcomeRadios = req.session.data['outcome-radios']
-
-  if (outcomeRadios === 'help') {
-    res.redirect(`${baseUrl}/more-help`)
-  } else if (outcomeRadios === 'dwp') {
-    res.redirect(`${baseUrl}/handover-early`)
 
   } else {
-    res.redirect(`${baseUrl}/exit`)
+    res.redirect(`${baseUrl}/i-am-b`)
   }
 })
 
 
+// AB ROUTER END
 
 router.post(`${baseUrl}/sl-find-a-claim-router`, (req, res) => {
   const slFindAClaim = req.session.data['sl-find-a-claim']
@@ -214,7 +194,49 @@ router.post(`${baseUrl}/outcome-radios-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/pensions-router`, (req, res) => {
+  const pensions = req.session.data['pensions']
 
+  if (pensions === 'Yes') {
+    res.redirect(`${baseUrl}/outcome`)
+  } else {
+    res.redirect(`${baseUrl}/earnings`)
+  }
+})
+
+router.post(`${baseUrl}/earnings-router`, (req, res) => {
+  const earnings = req.session.data['earnings']
+
+  if (earnings === 'Yes') {
+    res.redirect(`${baseUrl}/outcome`)
+  } else {
+    res.redirect(`${baseUrl}/outcome`)
+  }
+})
+
+
+router.post(`${baseUrl}/outcome-yn-router`, (req, res) => {
+  const outcomeYN = req.session.data['outcome-yn']
+
+  if (outcomeYN === 'Yes') {
+    res.redirect(`${baseUrl}/more-help`)
+  } else {
+    res.redirect(`${baseUrl}/exit`)
+  }
+})
+
+router.post(`${baseUrl}/outcome-housing-costs-router`, (req, res) => {
+  const outcomeRadios = req.session.data['outcome-radios']
+
+  if (outcomeRadios === 'help') {
+    res.redirect(`${baseUrl}/more-help`)
+  } else if (outcomeRadios === 'dwp') {
+    res.redirect(`${baseUrl}/handover-early`)
+
+  } else {
+    res.redirect(`${baseUrl}/exit`)
+  }
+})
 
 
 
