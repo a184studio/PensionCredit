@@ -14,18 +14,18 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="uk-residence-status-router" method="post" class="form">
+    <form action="uk-residence-status-partner-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
       {{ govukRadios({
-        idPrefix: "uk-residence-status",
-        name: "uk-residence-status",
+        idPrefix: "uk-residence-status-partner",
+        name: "uk-residence-status-partner",
         fieldset: {
           legend: {
-            text: "What best describes you status in the UK? ",
+            text: "What best describes your partner's status in the UK? ",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -40,24 +40,24 @@
         items: [
           {
             value: "Settled or pre-settled",
-            text: "I have settled or pre-settled settled status",
-            checked: (data["uk-residence-status"] == "Settled or pre-settled")
+            text: "Has settled or pre-settled settled status",
+            checked: (data["uk-residence-status-partner"] == "Settled or pre-settled")
           },
           {
             value: "Indefinite leave to remain",
-            text: "I have indefinite leave to remain in the UK",
-            checked: (data["uk-residence-status"] == "Indefinite leave to remain")
+            text: "Has indefinite leave to remain in the UK",
+            checked: (data["uk-residence-status-partner"] == "Indefinite leave to remain")
           },
           {
             value: "Something else",
             text: "Something else",
-            checked: (data["uk-residence-status"] == "Something else")
+            checked: (data["uk-residence-status-partner"] == "Something else")
           },
 
           {
             value: "Dont know",
             text: "I don't know",
-            checked: (data["uk-residence-status"] == "Dont know")
+            checked: (data["uk-residence-status-partner"] == "Dont know")
           }
         ]
       }) }}

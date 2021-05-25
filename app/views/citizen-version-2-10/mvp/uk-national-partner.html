@@ -16,14 +16,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="partner-check-yn-router2" method="post">
+      <form action="uk-national-partner-router" method="post">
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "uk-national",
-          name: "uk-national",
+          idPrefix: "uk-residence-status-partner",
+          name: "uk-residence-status-partner",
           fieldset: {
             legend: {
-              text: "What is your nationality as shown on your passport or travel document?",
+              text: "What is your partner's nationality as shown on their passport or travel document?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
