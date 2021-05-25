@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="partner-check-yn-router" method="post" class="form">
+    <form action="partner-check-yn-router2" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
@@ -57,8 +57,8 @@
       {% endset -%}
 
       {{ govukRadios({
-        idPrefix: "partner-check-yn",
-        name: "partner-check-yn",
+        idPrefix: "partner-check-yn2",
+        name: "partner-check-yn2",
         fieldset: {
           legend: {
             text: "Do you have a partner?",
@@ -72,27 +72,27 @@
         },
         items: [
           {
-            value: "Yes, we live together",
+            value: "Yes, we live together2",
             text: "Yes, we live together",
-            checked: (data["partner-check-yn"] == "Yes"),
+            checked: (data["partner-check-yn2"] == "Yes"),
                   conditional: {
                     html: ageCheck
                   }
                     },
             {
-              value: "Yes, but we do not live together",
+              value: "Yes, but we do not live together2",
               text: "Yes, but we do not live together",
               hint: {
          text: "If you do not live together, we will not need to ask you about them."
        },
-              checked: (data["partner-check-yn"] == "No")
+              checked: (data["partner-check-yn2"] == "No")
 
                               },
 
           {
-            value: "No, I do not have a partner",
+            value: "No, I do not have a partner2",
             text: "No, I do not have a partner",
-            checked: (data["partner-check-yn"] == "No")
+            checked: (data["partner-check-yn2"] == "No")
           }
         ]
       }) }}

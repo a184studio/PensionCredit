@@ -16,14 +16,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="partner-check-yn2" method="post">
+      <form action="partner-check-yn-router2" method="post">
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "uk-residence-date",
-          name: "uk-residence-date",
+          idPrefix: "uk-national",
+          name: "uk-national",
           fieldset: {
             legend: {
-              text: "Did you start living in UK before 1 January 1973?",
+              text: "What is your nationality as shown on your passport or travel document?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -34,11 +34,11 @@
           items: [
             {
               value: "Yes",
-              text: "Yes"
+              text: "British"
             },
             {
               value: "No",
-              text: "No"
+              text: "Something else"
             }
           ]
 

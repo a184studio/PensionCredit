@@ -376,6 +376,15 @@ router.post(`${baseUrl}/uk-residence-status-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/partner-check-yn-router2`, (req, res) => {
+  const partnerCheck2 = req.session.data['partner-check-yn2']
+
+  if (partnerCheck2 === 'Yes, we live together2') {
+    res.redirect(`${baseUrl}/partner-app-check`)
+  } else {
+    res.redirect(`${baseUrl}/done-uk-national-hrt`)
+  }
+})
 
 
 router.post(`${baseUrl}/uk-residence-date-router`, (req, res) => {
