@@ -367,12 +367,16 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
 router.post(`${baseUrl}/uk-residence-status-router`, (req, res) => {
   const residenceStatus = req.session.data['uk-residence-status']
 
-  if (residenceStatus === 'Dont know' or 'Something else') {
+  if (residenceStatus === 'Dont know' ) {
+    res.redirect(`${baseUrl}/uk-residence-date`)
+  } else if (residenceStatus === 'Something else') {
     res.redirect(`${baseUrl}/uk-residence-date`)
   } else {
     res.redirect(`${baseUrl}/partner-check-yn2`)
   }
 })
+
+
 
 router.post(`${baseUrl}/uk-residence-date-router`, (req, res) => {
   const residenceDate = req.session.data['uk-residence-date']
