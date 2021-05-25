@@ -36,69 +36,71 @@
 
   {% endif %} -->
 
+  
 
-   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We will need to contact you for more information</h1>
+   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We will need to ask for more information</h1>
 
     <!------------Legend--------------->
-    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">The quickest way to do this is to provide a contact number so we can contact you by phone.</p>
+    <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">The quickest way to do this is to provide a contact number so we can get in touch by phone.</p>
 
-    <p class="govuk-heading-m govuk-!-margin-bottom-4">We will contact you about:</p>
-    <ul class="govuk-list govuk-list--bullet">
+    <p class="govuk-heading-m govuk-!-margin-bottom-4">We will ask about:</p>
+
+    
 
 
       <ul class="govuk-list govuk-list--bullet">
 
       {% if data["doc-absence"] == "Yes" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>the time you spent outside the UK. </strong>We might be able to backdate your application by up to 3 months, but we will need to ask you about the dates and reasons you were outside the UK</li>
+      <li class="govuk-!-margin-bottom-4"><strong> time spent outside the UK. </strong>We might be able to backdate the application by up to 3 months, but we will need to ask about the dates and reasons for time spent outside the UK</li>
 
       {% if data["home-care-home-check"] == "Yes" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>the care home you live in. </strong>We will ask the date you moved in, how your stay there is funded and whether you live there permanently</li>
+      <li class="govuk-!-margin-bottom-4"><strong>living in a care home. </strong>We will ask the moving-in date, how the stay there is funded and whether the stay is permanent</li>
 
       {% if data["home-equity-release"] == "Yes" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>your equity release.</strong>  We will ask you for information from an annual statement from your provider. We will also ask for details of any loan you took to buy the equity release product</li>
+      <li class="govuk-!-margin-bottom-4"><strong> equity release.</strong>  We will ask for information from an annual statement from the provider. We will also ask for details of any loan taken to buy the equity release product</li>
 
       {% if data["non-deps-living-with-you"] == "Yes" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>the other people that live with you.  </strong>We will ask their names, dates of birth, what their relationship is to your and any earnings they have</li>
+      <li class="govuk-!-margin-bottom-4"><strong>the other people that live in the household.  </strong>We will ask their names, dates of birth and any earnings they have</li>
 
       {% if data["self-employed"] == "Yes"%}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>your self-employment.</strong> We will ask when you worked, details of last year's profit and loss accounts and any business assets or buildings you own</li>
+      <li class="govuk-!-margin-bottom-4"><strong>self-employment.</strong> We will ask about dates worked, details of last year's profit and loss accounts and any business assets or buildings</li>
 
       {% if data["pension-foreign-check"] == "Yes" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>the non-UK pensions you told us about.</strong> We will ask you for details from an annual illustration or statement</li>
+      <li class="govuk-!-margin-bottom-4"><strong>non-UK pensions.</strong> We will ask for details from an annual illustration or statement</li>
 
       {% if data["pension-check"] == "Yes" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>the personal pensions that you have not taken yet. </strong>  If you don’t intend to take them, we will need some details from your annual illustrations or statements to work out how much they are worth</li>
+      <li class="govuk-!-margin-bottom-4"><strong>personal pensions. </strong> We will ask for details from  annual illustrations or statements to work out how much they are worth</li>
 
       {% if data["employment-other-money"] == "Yes" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>your other income. </strong> We will ask how much you get and how often it is paid</li>
+      <li class="govuk-!-margin-bottom-4"><strong> other income. </strong> We will ask how much this is and how often it is paid</li>
 
       {% if data["money-total-risk-check"] == "High" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>your shares.</strong>  We will ask about the shares you own and how many you have</li>
+      <li class="govuk-!-margin-bottom-4"><strong> shares.</strong>  We will ask the number of shares and what company they are in</li>
 
       {% if data["money-total-risk-check"] == "High" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>your income or capital bonds. </strong>We will ask you for information from a letter or statement from your provider</li>
+      <li class="govuk-!-margin-bottom-4"><strong> income or capital bonds. </strong>We will ask for details from a letter or statement from the provider</li>
 
       {% if data["money-total-risk-check"] == "High" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong> the money you have overseas. </strong> We will ask how much you have and what currency it is in</li>
+      <li class="govuk-!-margin-bottom-4"><strong>  money overseas. </strong> We will ask the amount and what currency it is in</li>
 
       {% if data["XX"] == "XX" %}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>the other accounts or investments that you told us you have.</strong> We will ask for details of these including what the value is and whether you can access them</li>
+      <li class="govuk-!-margin-bottom-4"><strong> other accounts or investments.</strong> We will ask for details of these including what the value is and whether they can be accessed</li>
 
       {% if data["money-second-property-check"] == "Yes" or data["home-care-home-check-still-own"] == "Yes"%}
       {% endif %}
-      <li class="govuk-!-margin-bottom-4"><strong>the property or land you own.</strong> We will ask who lives there, what share of the property belongs to you and details of any mortgage</li>
+      <li class="govuk-!-margin-bottom-4"><strong> property or land.</strong> We will ask who lives there, what share of the property is owned and details of any mortgage</li>
 
 
 
