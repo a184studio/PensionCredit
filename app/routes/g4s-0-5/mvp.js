@@ -132,7 +132,7 @@ router.post(`${baseUrl}/ab-check-pension-router`, (req, res) => {
 
 
   } else {
-    res.redirect(`${baseUrl}/i-am-b`)
+    res.redirect(`${baseUrl}/no-ni-selected`)
   }
 })
 
