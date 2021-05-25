@@ -358,7 +358,7 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   const residesInUk = req.session.data['uk-national']
 
   if (residesInUk === 'Yes') {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/partner-check-yn2`)
   } else {
     res.redirect(`${baseUrl}/uk-residence-status`)
   }
@@ -367,12 +367,25 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
 router.post(`${baseUrl}/uk-residence-status-router`, (req, res) => {
   const residenceStatus = req.session.data['uk-residence-status']
 
-  if (residenceStatus === 'Dont know') {
+  if (residenceStatus === 'Dont know' ) {
+    res.redirect(`${baseUrl}/uk-residence-date`)
+  } else if (residenceStatus === 'Something else') {
     res.redirect(`${baseUrl}/uk-residence-date`)
   } else {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/partner-check-yn2`)
   }
 })
+
+router.post(`${baseUrl}/partner-check-yn-router2`, (req, res) => {
+  const partnerCheck2 = req.session.data['partner-check-yn2']
+
+  if (partnerCheck2 === 'Yes, we live together2') {
+    res.redirect(`${baseUrl}/partner-app-check`)
+  } else {
+    res.redirect(`${baseUrl}/done-uk-national-hrt`)
+  }
+})
+
 
 router.post(`${baseUrl}/uk-residence-date-router`, (req, res) => {
   const residenceDate = req.session.data['uk-residence-date']
@@ -380,7 +393,7 @@ router.post(`${baseUrl}/uk-residence-date-router`, (req, res) => {
   if (residenceDate === 'No') {
     res.redirect(`${baseUrl}/done-pre-1973`)
   } else {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/partner-check-yn2`)
   }
 })
 

@@ -16,12 +16,20 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data["ab-check"] == "A" %}
-    <form action="pensions-router" method="post" class="form">
-    {% else %}
-    <form action="ab-check-pension-router" method="post" class="form">
-    {% endif %}
+      {% if data["ab-check"] == "A" %}
+        <form action="pensions-router" method="post" class="form">
 
+      {% else %}
+
+          {% if data["nino"] == "S2 11 22 33 B" %}
+            <form action="earnings" method="post" class="form">
+          {% elif data["nino"] == "S3 11 22 33 C" %}
+            <form action="outcome" method="post" class="form">
+          {% else %}
+            <form action="outcome" method="post" class="form">
+          {% endif %}
+
+      {% endif %}
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
       I'm just going to our systems for the Pensions you have in payment
@@ -183,7 +191,7 @@
 
     Use £5 if no benefits, use £10 for CP or DB -->
 
-    <p class="govuk-body govuk-!-padding-top-0"><a href="pensions-enter">Pensions enter amounts</a></p>
+    <!-- <p class="govuk-body govuk-!-padding-top-0"><a href="pensions-enter">Pensions enter amounts</a></p> -->
 
   </div>
 </div>
