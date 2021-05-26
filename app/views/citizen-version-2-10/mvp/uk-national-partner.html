@@ -17,31 +17,48 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="uk-national-partner-router" method="post">
+
+
         {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "uk-residence-status-partner",
-          name: "uk-residence-status-partner",
+          idPrefix: "uk-national-partner",
+          name: "uk-national-partner",
           fieldset: {
             legend: {
               text: "What is your partner's nationality as shown on their passport or travel document?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
+
           },
           hint: {
-            html: "<p class=\"hint\">"
+            text: ""
+
+
           },
+          classes: "govuk-radios",
           items: [
             {
-              value: "Yes",
-              text: "British"
+              value: "British",
+              text: "British",
+              checked: (data["uk-national-partner"] == "British")
             },
             {
-              value: "No",
-              text: "Something else"
+              value: "EEA",
+              text: "EEA",
+              checked: (data["uk-national-partner"] == "EEA")
+            },
+            {
+              value: "Swiss",
+              text: "Swiss",
+              checked: (data["uk-national-partner"] == "Swiss")
+            },
+
+            {
+              value: "Something else",
+              text: "Something else",
+              checked: (data["uk-national-partner"] == "Something else")
             }
           ]
-
         }) }}
 
         {{ govukButton({
