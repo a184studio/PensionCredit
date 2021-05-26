@@ -411,10 +411,6 @@ router.post(`${baseUrl}/uk-residence-date-partner-router`, (req, res) => {
 })
 
 
-
-
-
-
 router.post(`${baseUrl}/uk-residence-date-router`, (req, res) => {
   const residenceDate = req.session.data['uk-residence-date']
 
@@ -424,6 +420,20 @@ router.post(`${baseUrl}/uk-residence-date-router`, (req, res) => {
     res.redirect(`${baseUrl}/partner-check-yn2`)
   }
 })
+
+
+router.post(`${baseUrl}/eu-filter-router`, (req, res) => {
+  const euFilter = req.session.data['eu-filter']
+
+  if (euFilter === 'Call') {
+    res.redirect(`${baseUrl}/done-residence-status`)
+  } else if (euFilter === 'HO') {
+    res.redirect(`${baseUrl}/done-residence-status`)
+  } else {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
+  }
+})
+
 
 router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
@@ -491,7 +501,7 @@ router.post(`${baseUrl}/partner-check-yn-router2`, (req, res) => {
   if (partnerCheck2 === 'Yes, we live together2') {
     res.redirect(`${baseUrl}/partner-app-check2`)
   } else {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/eu-filter`)
   }
 })
 
