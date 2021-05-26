@@ -21,8 +21,8 @@
 
       {% set ageCheck %}
           {{ govukDateInput({
-            id: "partner-dob",
-            namePrefix: "partner-dob",
+            id: "partner-dob2",
+            namePrefix: "partner-dob2",
             fieldset: {
               legend: {
                 text: "What is your partner's date of birth?",
@@ -37,17 +37,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["partner-dob-day"]
+                value: data["partner-dob-day2"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["partner-dob-month"]
+                value: data["partner-dob-month2"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["partner-dob-year"]
+                value: data["partner-dob-year2"]
               }
             ]
           }) }}
@@ -85,14 +85,14 @@
               hint: {
          text: "If you do not live together, we will not need to ask you about them."
        },
-              checked: (data["partner-check-yn2"] == "No")
+              checked: (data["partner-check-yn2"] == "partner-no")
 
                               },
 
           {
             value: "No, I do not have a partner2",
             text: "No, I do not have a partner",
-            checked: (data["partner-check-yn2"] == "No")
+            checked: (data["partner-check-yn2"] == "partner-no")
           }
         ]
       }) }}
@@ -100,6 +100,10 @@
       {{ govukButton({
         text: "Continue"
       }) }}
+
+      <p class="govuk-body"><a href="done-residence-status">...</a></p>
+
+
     </form>
     <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
   </div>
