@@ -368,7 +368,7 @@ router.post(`${baseUrl}/uk-national-partner-router`, (req, res) => {
   const residesInUkPartner = req.session.data['uk-national-partner']
 
   if (residesInUkPartner === 'Yes') {
-    res.redirect(`${baseUrl}/done-residence-status`)
+    res.redirect(`${baseUrl}/`)
   } else {
     res.redirect(`${baseUrl}/uk-residence-status-partner`)
   }
@@ -495,6 +495,15 @@ router.post(`${baseUrl}/partner-check-yn-router2`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/partner-app-check-router`, (req, res) => {
+  const partnerCheck2 = req.session.data['partner-app-check2']
+
+  if (partnerCheck2 === 'Yes') {
+    res.redirect(`${baseUrl}/uk-national-partner`)
+  } else {
+    res.redirect(`${baseUrl}/uk-national-partner`)
+  }
+})
 
 router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
   const claimFilter = req.session.data['claim-filter']
