@@ -357,20 +357,20 @@ router.post(`${baseUrl}/lived-abroad-router`, (req, res) => {
 router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   const residesInUk = req.session.data['uk-national']
 
-  if (residesInUk === 'Yes') {
-    res.redirect(`${baseUrl}/partner-check-yn2`)
-  } else {
+  if (residesInUk === 'Something else') {
     res.redirect(`${baseUrl}/uk-residence-status`)
+  } else {
+    res.redirect(`${baseUrl}/partner-check-yn2`)
   }
 })
 
 router.post(`${baseUrl}/uk-national-partner-router`, (req, res) => {
   const residesInUkPartner = req.session.data['uk-national-partner']
 
-  if (residesInUkPartner === 'Yes') {
-    res.redirect(`${baseUrl}/`)
-  } else {
+  if (residesInUkPartner === 'Something else') {
     res.redirect(`${baseUrl}/uk-residence-status-partner`)
+  } else {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
   }
 })
 
