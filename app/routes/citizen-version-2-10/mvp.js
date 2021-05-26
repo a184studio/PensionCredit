@@ -412,15 +412,7 @@ router.post(`${baseUrl}/uk-residence-date-partner-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/partner-check-yn-router2`, (req, res) => {
-  const partnerCheck2 = req.session.data['partner-check-yn2']
 
-  if (partnerCheck2 === 'Yes, we live together2') {
-    res.redirect(`${baseUrl}/partner-app-check2`)
-  } else {
-    res.redirect(`${baseUrl}/done-residence-status`)
-  }
-})
 
 
 router.post(`${baseUrl}/uk-residence-date-router`, (req, res) => {
@@ -490,6 +482,16 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
     res.redirect(`${baseUrl}/partner-app-check`)
   } else {
     res.redirect(`${baseUrl}/data-we-use`)
+  }
+})
+
+router.post(`${baseUrl}/partner-check-yn-router2`, (req, res) => {
+  const partnerCheck2 = req.session.data['partner-check-yn2']
+
+  if (partnerCheck2 === 'Yes, we live together2') {
+    res.redirect(`${baseUrl}/partner-app-check2`)
+  } else {
+    res.redirect(`${baseUrl}/state-pension-check-yn`)
   }
 })
 
