@@ -209,8 +209,15 @@
 
         {% if data["doc-absence"] == "Yes" %}
         {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> time spent outside the UK. </strong>We might be able to backdate the application by up to 3 months, but we will need to ask about the dates and reasons for time spent outside the UK</li>
+        <li class="govuk-!-margin-bottom-4"><strong> your immigration status in the UK. </strong>We will need to ask some more questions about your right to live and work in the UK.</li>
 
+        {% if data["uk-residence-date"] == "Yes" %}
+        {% endif %}
+        <li class="govuk-!-margin-bottom-4"><strong> your partner's immigration status in the UK. </strong>We will need to ask some more questions about your partner's right to live and work in the UK.</li>
+        
+        {% if data["uk-residence-date"] == "Yes" %}
+        {% endif %}
+        <li class="govuk-!-margin-bottom-4"><strong> time spent outside the UK. </strong>We might be able to backdate the application by up to 3 months, but we will need to ask about the dates and reasons for time spent outside the UK</li>
         {% if data["home-care-home-check"] == "Yes" %}
         {% endif %}
         <li class="govuk-!-margin-bottom-4"><strong>living in a care home. </strong>We will ask the moving-in date, how the stay there is funded and whether the stay is permanent</li>
