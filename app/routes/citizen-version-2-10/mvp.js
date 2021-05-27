@@ -521,7 +521,7 @@ router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
   if (claimFilter === 'Normal') {
     res.redirect(`${baseUrl}/doc-absence`)
   } else if (claimFilter === 'Today') {
-    res.redirect(`${baseUrl}/partner-check-yn`)
+    res.redirect(`${baseUrl}/data-we-use`)
   } else {
     res.redirect(`${baseUrl}/claim-notification`)
   }
