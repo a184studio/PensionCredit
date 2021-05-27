@@ -21,7 +21,7 @@
       <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>
 
       {% set legendTelephoneNumber %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">For example, V-AB12-CD34-EF56</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Enter LPA code</h1>
       {% endset -%}
 
 
@@ -32,7 +32,7 @@
           html: legendTelephoneNumber
         },
           hint: {
-            text: ""
+            text: "For example, V-AB12-CD34-EF56"
           },
         id: "del-auth-secure-access-code",
         name: "del-auth-secure-access-code",
@@ -43,7 +43,7 @@
       {% endset -%}
 
       {% set LegendH1 %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do you have a lasting power of attorney (LPA) access code</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do you have a lasting power of attorney (LPA) access code?</h1>
       {% endset -%}
 
       {{ govukRadios({
