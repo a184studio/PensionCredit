@@ -104,6 +104,13 @@
         }) }}
 
 
+        <p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-2">We need you to get some more infomation from you because there is a power of attorney involved.</p>
+          <p class="govuk-body">Send a copy XXX</p>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+
+
+
           {% if
             data["home-rent-ground-rent"] == "Yes" or
             data["home-shared-ground-rent"] == "Yes" or
@@ -214,7 +221,7 @@
         {% if data["uk-residence-date"] == "Yes" %}
         {% endif %}
         <li class="govuk-!-margin-bottom-4"><strong> your partner's immigration status in the UK. </strong>We will need to ask some more questions about your partner's right to live and work in the UK.</li>
-        
+
         {% if data["uk-residence-date"] == "Yes" %}
         {% endif %}
         <li class="govuk-!-margin-bottom-4"><strong> time spent outside the UK. </strong>We might be able to backdate the application by up to 3 months, but we will need to ask about the dates and reasons for time spent outside the UK</li>
