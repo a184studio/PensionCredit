@@ -14,7 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    {% if data["del-auth-who-made-claim"] == "Power of attorney" %}
+    <form action="del-auth-secure-access-code" method="post" class="form">
+    {% else %}
     <form action="del-auth-contact-number" method="post" class="form">
+    {% endif %}
+
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>

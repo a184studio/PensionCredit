@@ -4050,6 +4050,58 @@ actions: {
 
   {
     key: {
+      text: "del-auth-secure-access-code-check"
+    },
+    value: {
+      text: data["del-auth-secure-access-code-check"]
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "XXX"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
+      text: "del-auth-secure-access-code"
+    },
+    value: {
+      text: data["del-auth-secure-access-code"]
+    },
+    actions: {
+      items: [
+        {
+          href: "",
+          text: "Change",
+          visuallyHiddenText: "XXX"
+        }
+      ]
+    }
+  }
+
+]
+}) }}
+
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+
+  {
+    key: {
       html: "[You/your] Can we call you about this claim? <br><br> [Else] Can we call you about this application?"
     },
     value: {
