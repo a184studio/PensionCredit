@@ -561,7 +561,7 @@ router.post(`${baseUrl}/doc-draft-date-router`, (req, res) => {
   const docDraftDate = req.session.data['doc-draft-date']
 
   if (docDraftDate === 'Yes') {
-    res.redirect(`${baseUrl}/partner-check-yn`)
+    res.redirect(`${baseUrl}/data-we-use`)
   } else {
     res.redirect(`${baseUrl}/doc-alt-date`)
   }
