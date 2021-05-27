@@ -541,7 +541,7 @@ router.post(`${baseUrl}/doc-absence-medical-single-router`, (req, res) => {
   const docAbsenceSingleMedical = req.session.data['doc-absence-medical']
 
   if (docAbsenceSingleMedical === 'Yes') {
-    res.redirect(`${baseUrl}/partner-check-yn`)
+    res.redirect(`${baseUrl}/data-we-use`)
   } else {
     res.redirect(`${baseUrl}/doc-absence-dates`)
   }
@@ -551,9 +551,9 @@ router.post(`${baseUrl}/doc-absence-medical-plural-router`, (req, res) => {
   const docAbsencePluralMedical = req.session.data['doc-absence-medical']
 
   if (docAbsencePluralMedical === 'Yes') {
-    res.redirect(`${baseUrl}/partner-check-yn`)
+    res.redirect(`${baseUrl}/data-we-use`)
   } else {
-    res.redirect(`${baseUrl}/partner-check-yn`)
+    res.redirect(`${baseUrl}/data-we-use`)
   }
 })
 
