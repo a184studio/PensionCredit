@@ -357,7 +357,7 @@ router.post(`${baseUrl}/lived-abroad-router`, (req, res) => {
 router.post(`${baseUrl}/uk-national-router`, (req, res) => {
   const residesInUk = req.session.data['uk-national']
 
-  if (residesInUk === 'Something else') {
+  if (residesInUk === 'EEA') {
     res.redirect(`${baseUrl}/uk-residence-status`)
   } else {
     res.redirect(`${baseUrl}/partner-check-yn2`)
@@ -367,10 +367,10 @@ router.post(`${baseUrl}/uk-national-router`, (req, res) => {
 router.post(`${baseUrl}/uk-national-partner-router`, (req, res) => {
   const residesInUkPartner = req.session.data['uk-national-partner']
 
-  if (residesInUkPartner === 'Something else') {
+  if (residesInUkPartner === 'EEA Partner') {
     res.redirect(`${baseUrl}/uk-residence-status-partner`)
   } else {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/eu-filter`)
   }
 })
 
@@ -394,7 +394,7 @@ router.post(`${baseUrl}/uk-residence-status-partner-router`, (req, res) => {
   } else if (residenceStatusPartner === 'Something else') {
     res.redirect(`${baseUrl}/uk-residence-date-partner`)
   } else {
-    res.redirect(`${baseUrl}/done-residence-status`)
+    res.redirect(`${baseUrl}/eu-filter`)
   }
 })
 
