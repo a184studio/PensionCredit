@@ -155,7 +155,7 @@
                 <p class="govuk-body">newcastle.pensioncentre@dwp.gsi.gov.uk</p>
               </div> -->
 
-              <div  class="govuk-panel--address govuk-!-margin-top-6">
+              <div class="govuk-panel--address govuk-!-margin-top-6">
 
               {% if data["resides-in-uk"] == "Northern-Ireland" %}
 
@@ -195,92 +195,92 @@
 
         <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
 
-        {% if
-          data["home-rent-ground-rent"] == "Yes" or
-          data["home-shared-ground-rent"] == "Yes" or
-          data["home-own-ground-rent"] == "Yes" or
-          data["home-other-ground-rent"] == "Yes" or
-          data["home-own-service-charges"] == "Yes" or
-          data["home-other-service-charges"] == "Yes"
-          %}
-
-
-          <p class="govuk-!-font-size-19">We will also contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
+            {% if
+              data["home-rent-ground-rent"] == "Yes" or
+              data["home-shared-ground-rent"] == "Yes" or
+              data["home-own-ground-rent"] == "Yes" or
+              data["home-other-ground-rent"] == "Yes" or
+              data["home-own-service-charges"] == "Yes" or
+              data["home-other-service-charges"] == "Yes" or
+              data["uk-residence-status"] == "Something else"
+            %}
 
         {% else %}
+
           <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
-        {% endif %}
+
 
 
         <ul class="govuk-list govuk-list--bullet">
 
-        {% if data["doc-absence"] == "Yes" %}
+            {% if data["doc-absence"] == "Yes" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong> time spent outside the UK. </strong>We might be able to backdate the application by up to 3 months, but we will need to ask about the dates and reasons for time spent outside the UK</li>
+
+            {% if data["uk-residence-status"] == "Something else" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong> your immigration status in the UK. </strong>We will need to ask some more questions about your right to live and work in the UK.</li>
+
+            {% if data["uk-residence-status-partner"] == "Something else" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong> your partner's immigration status in the UK. </strong>We will need to ask some more questions about your partner's right to live and work in the UK.</li>
+
+            {% if data["home-care-home-check"] == "Yes" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong>living in a care home. </strong>We will ask the moving-in date, how the stay there is funded and whether the stay is permanent</li>
+
+            {% if data["home-equity-release"] == "Yes" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong> equity release.</strong>  We will ask for information from an annual statement from the provider. We will also ask for details of any loan taken to buy the equity release product</li>
+
+            {% if data["non-deps-living-with-you"] == "Yes" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong>the other people that live in the household. </strong>We will ask their names, dates of birth and any earnings they have</li>
+
+            {% if data["self-employed"] == "Yes"%}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong>self-employment.</strong> We will ask about dates worked, details of last year's profit and loss accounts and any business assets or buildings</li>
+
+            {% if data["pension-foreign-check"] == "Yes" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong>non-UK pensions.</strong> We will ask for details from an annual illustration or statement</li>
+
+            {% if data["pension-check"] == "Yes" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong>personal pensions. </strong> We will ask for details from  annual illustrations or statements to work out how much they are worth</li>
+
+            {% if data["employment-other-money"] == "Yes" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong> other income. </strong> We will ask how much this is and how often it is paid</li>
+
+            {% if data["money-total-risk-check"] == "High" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong> shares.</strong>  We will ask the number of shares and what company they are in</li>
+
+            {% if data["money-total-risk-check"] == "High" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong> income or capital bonds. </strong>We will ask for details from a letter or statement from the provider</li>
+
+            {% if data["money-total-risk-check"] == "High" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong>  money overseas. </strong> We will ask the amount and what currency it is in</li>
+
+            {% if data["XX"] == "XX" %}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong> other accounts or investments.</strong> We will ask for details of these including what the value is and whether they can be accessed</li>
+
+            {% if data["money-second-property-check"] == "Yes" or data["home-care-home-check-still-own"] == "Yes"%}
+            {% endif %}
+            <li class="govuk-!-margin-bottom-4"><strong> property or land.</strong> We will ask who lives there, what share of the property is owned and details of any mortgage</li>
+
         {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> your immigration status in the UK. </strong>We will need to ask some more questions about your right to live and work in the UK.</li>
 
-        {% if data["uk-residence-date"] == "Yes" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> your partner's immigration status in the UK. </strong>We will need to ask some more questions about your partner's right to live and work in the UK.</li>
+      <!---- CALL BACK = NO ---->
+      {% else %}
+        <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+        <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong>. We will contact you by letter If we can award your Pension Credit. We will contact you by phone or by letter if we need any more information.</p>
 
-        {% if data["uk-residence-date"] == "Yes" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> time spent outside the UK. </strong>We might be able to backdate the application by up to 3 months, but we will need to ask about the dates and reasons for time spent outside the UK</li>
-        {% if data["home-care-home-check"] == "Yes" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong>living in a care home. </strong>We will ask the moving-in date, how the stay there is funded and whether the stay is permanent</li>
-
-        {% if data["home-equity-release"] == "Yes" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> equity release.</strong>  We will ask for information from an annual statement from the provider. We will also ask for details of any loan taken to buy the equity release product</li>
-
-        {% if data["non-deps-living-with-you"] == "Yes" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong>the other people that live in the household. </strong>We will ask their names, dates of birth and any earnings they have</li>
-
-        {% if data["self-employed"] == "Yes"%}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong>self-employment.</strong> We will ask about dates worked, details of last year's profit and loss accounts and any business assets or buildings</li>
-
-        {% if data["pension-foreign-check"] == "Yes" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong>non-UK pensions.</strong> We will ask for details from an annual illustration or statement</li>
-
-        {% if data["pension-check"] == "Yes" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong>personal pensions. </strong> We will ask for details from  annual illustrations or statements to work out how much they are worth</li>
-
-        {% if data["employment-other-money"] == "Yes" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> other income. </strong> We will ask how much this is and how often it is paid</li>
-
-        {% if data["money-total-risk-check"] == "High" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> shares.</strong>  We will ask the number of shares and what company they are in</li>
-
-        {% if data["money-total-risk-check"] == "High" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> income or capital bonds. </strong>We will ask for details from a letter or statement from the provider</li>
-
-        {% if data["money-total-risk-check"] == "High" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong>  money overseas. </strong> We will ask the amount and what currency it is in</li>
-
-        {% if data["XX"] == "XX" %}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> other accounts or investments.</strong> We will ask for details of these including what the value is and whether they can be accessed</li>
-
-        {% if data["money-second-property-check"] == "Yes" or data["home-care-home-check-still-own"] == "Yes"%}
-        {% endif %}
-        <li class="govuk-!-margin-bottom-4"><strong> property or land.</strong> We will ask who lives there, what share of the property is owned and details of any mortgage</li>
-
-
-
-          <!---- CALL BACK = NO ---->
-          {% else %}
-            <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-            <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong>. We will contact you by letter If we can award your Pension Credit. We will contact you by phone or by letter if we need any more information.</p>
-
-          {% endif %}
+      {% endif %}
 
 
 
@@ -381,28 +381,27 @@ data["home-shared-housing-benefit-apply"] == "Yes"
 
 <div class="govuk-!-margin-top-6">
   <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
-  <p class="govuk-body">You might be able to claim <a href="https://www.nidirect.gov.uk/articles/carers-allowance">Carer's Allowance<a/> if you care for someone for 35 hours or more a week.</p>
+  <p class="govuk-body">You might be able to claim<a href="https://www.nidirect.gov.uk/articles/carers-allowance">Carer's Allowance<a/> if you care for someone for 35 hours or more a week.</p>
 </div>
 
   <!---- UK ---->{% else %}
 
   <div class="govuk-!-margin-top-6">
     <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
-    <p class="govuk-body">You might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance<a/> if you care for someone for 35 hours or more a week.</p>
+    <p class="govuk-body">You might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance</a> if you care for someone for 35 hours or more a week.</p>
   </div>
 
   <!---- COUNTRY END ---->{% endif %}
 
 <!----------------------------------------------------------------------------------->
-<div>
+
   <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
-  <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">Print or save</h3>
+  <h2 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">Print or save</h2>
 
-  <p class="govuk-body"> <a href="#" onclick="window.print();return false;">Print this page<a/></p>
-  <p class="govuk-body govuk-!-margin-bottom-6"> <a href="#" onclick="window.print();return false;">Save this page<a/> (PDF, 100KB)</p>
+  <p class="govuk-body"><a href="#" onClick="window.print();return false">Print this page</a></p>
+  <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" onClick="window.print();return false">Save this page</a> (PDF, 100KB)</p>
 
 
-</div>
 
 <!----------------------------------------------------------------------------------->
 
