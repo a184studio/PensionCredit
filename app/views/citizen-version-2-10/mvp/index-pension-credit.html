@@ -105,11 +105,11 @@
 </div>
 
 <!-- -- -- -- -- -- -- LPA [POA] -- -- -- -- -- -- -->
+{% if data["del-auth-secure-access-code-check"] == "Yes"%}
+{% endif %}
 <div>
 <p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-2">We need you to get some more infomation from you because there is a power of attorney involved.</p>
 <p class="govuk-body">Send a copy XXX</p>
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 </div>
 
 <!-- -- -- -- -- -- -- SERVICE CHARGES GROUND RENT INSTRUCTIONS -- -- -- -- -- -- -->
@@ -193,19 +193,19 @@
   data["home-care-home-check-still-own"] == "Yes"
 %}
 
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
-<h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-<p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
+          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+          <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
 
-{% include "citizen-version-2-10/mvp/callback-list.html" %}
+          {% include "citizen-version-2-10/mvp/callback-list.html" %}
 
 {% else %}
 
-  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
-  <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-  <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong>. We will contact you by letter If we can award your Pension Credit. We will contact you by phone or by letter if we need any more information.</p>
+          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+          <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong>. We will contact you by letter If we can award your Pension Credit. We will contact you by phone or by letter if we need any more information.</p>
 
 {% endif %}
 
