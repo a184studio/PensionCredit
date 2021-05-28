@@ -83,26 +83,7 @@
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-    <!------------Legend------------>
-      {% set outComeCTA %}
-      {% if data["housing-costs"] == "Yes" %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
 
-      {% elif data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
-
-      {% elif data['nino'] == 'S2 11 22 33 B' or data['nino'] == 'S2112233B' %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
-
-      {% elif data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C' %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
-
-      {% else %}
-      <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Select the next action</h1>
-      {% endif %}
-
-      {% endset %}
-    <!------------Legend------------>
 
          <!------------Legend--------------->
 
@@ -199,7 +180,7 @@
                      </div>
 
 
-                     {% elif data['nino'] == 'S2 11 22 33 B' or data['nino'] == 'S2112233B' or data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C' %}
+                     {% elif data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' or data['nino'] == 'S2 11 22 33 B' or data['nino'] == 'S2112233B' or data['nino'] == 'S3 11 22 33 C' or data['nino'] == 'S3112233C' %}
 
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input"
@@ -219,66 +200,7 @@
                     </fieldset>
                   </div>
 
-         <!-- {{ govukRadios({
-           idPrefix: "outcome-yn",
-           name: "outcome-yn",
-           fieldset: {
-             legend: {
-               html: outComeCTA,
-               hint: "X",
-               isPageHeading: true,
-               classes: "govuk-fieldset__legend--m"
-             }
-           },
-           classes: "govuk-radios",
-           hint: {
-             html: ""
-           },
-           items: [
-             {
-               value: "Yes",
-               text: "Applicant wants to know more about other help that is available - route to more-help.html",
-               checked: (data["outcome-yn"] == "Yes")
-             },
 
-             {
-               value: "No",
-               text: "Applicant wants to end the call - route to exit.html",
-               checked: (data["outcome-yn"] == "No")
-             },
-
-             {
-              value: "No",
-              text: "Not eligible - but applicant insists on being put through to the phone application service - route to handover-user-request.html",
-              checked: (data["outcome-yn"] == "No")
-            },
-
-            {
-              value: "No",
-              text: "Applicant only just over the qualifying thresholds - put them through to DWP - rroute to handover-user-request.html",
-              checked: (data["outcome-yn"] == "No")
-            },
-
-            {
-              value: "No",
-              text: "Applicant is eligible - put them through to DWP - route to handover.html",
-              checked: (data["outcome-yn"] == "No")
-            },
-
-            {
-              value: "No",
-              text: "Applicant doesn't have a NINO - put them through to DWP - route to handover-early.html",
-              checked: (data["outcome-yn"] == "No")
-            },
-
-            {
-              value: "No",
-              text: "Applicant has housing costs - put them through to DWP - route to handover-early.html",
-              checked: (data["outcome-yn"] == "No")
-            }
-
-           ]
-         }) }} -->
 
          {{ govukButton({
            text: "Continue",
