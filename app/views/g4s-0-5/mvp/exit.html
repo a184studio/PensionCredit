@@ -18,11 +18,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-5/mvp/start">
+        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-5/mvp/landing">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">End the call</h1>
 
-      {% if data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A' %}
+      {% if data["pensions"] == "Yes" or data["earnings"] == "Yes" or data['nino'] == 'SS110000A' or data['nino'] == 'SS110000A' %}
       <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-6">[Applicant not eligible]</h1> -->
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You can contact us again if your circumstances change.</p>
 
