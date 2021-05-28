@@ -1,0 +1,109 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Post Pension Credit index - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- PRINT SCREEN DETAILS -->
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="pdf" method="post" class="form">
+
+
+<!-- -- -- -- -- -- -- Application sent -- -- -- -- -- -- -->
+<div>
+      {{ govukPanel({
+          titleText: "Application sent",
+          html: "Your reference number is your National Insurance number<br>",
+          classes:"govuk-!-margin-top-8"
+        }) }}
+</div>
+<!-- -- -- -- -- -- -- Application sent -- -- -- -- -- -- -->
+
+<!-- -- -- -- -- -- -- LPA [POA] -- -- -- -- -- -- -->
+<div>
+<p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-2">We need you to get some more infomation from you because there is a power of attorney involved.</p>
+<p class="govuk-body">Send a copy XXX</p>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+</div>
+<!-- -- -- -- -- -- -- LPA [POA] -- -- -- -- -- -- -->
+
+
+
+{% include "citizen-version-2-10/mvp/callback-list.html" %}
+
+
+<!-- -- -- -- -- -- -- COUNCIL TAX REDUCTION (UK) + RATES RELIEF (NI)-- -- -- -- -- -- -->
+<div>
+{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+  <div class="govuk-!-margin-top-6">
+    <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Rate Relief</h2>
+    <p class="govuk-body">If your application is successful, you might be able to claim Rate Relief. You should contact your local authority to apply.</p>
+  </div>
+{% else %}
+  <div class="govuk-!-margin-top-6">
+    <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Council Tax Reduction</h2>
+    <p class="govuk-body">If your application is successful, you might be able to claim Council Tax Reduction. You should contact your local authority to apply.</p>
+  </div>
+{% endif %}
+</div>
+<!-- -- -- -- -- -- -- COUNCIL TAX REDUCTION (UK) + RATES RELIEF (NI)-- -- -- -- -- -- -->
+
+<!-- -- -- -- -- -- -- CARERS ALLOWANCE (UK) + (NI)-- -- -- -- -- -- -->
+<div>
+{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+  <div class="govuk-!-margin-top-6">
+    <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
+    <p class="govuk-body">You might be able to claim<a href="https://www.nidirect.gov.uk/articles/carers-allowance">Carer's Allowance<a/> if you care for someone for 35 hours or more a week.</p>
+  </div>
+{% else %}
+  <div class="govuk-!-margin-top-6">
+    <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
+    <p class="govuk-body">You might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance</a> if you care for someone for 35 hours or more a week.</p>
+  </div>
+{% endif %}
+</div>
+<!-- -- -- -- -- -- -- CARERS ALLOWANCE (UK) + (NI)-- -- -- -- -- -- -->
+
+<!-- -- -- -- -- -- -- PRINT / SAVE -- -- -- -- -- -- -->
+<div>
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+    <h2 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">Print or save</h2>
+      <p class="govuk-body"><a href="#" onClick="window.print();return false">Print this page</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" onClick="window.print();return false">Save this page</a> (PDF, 100KB)</p>
+</div>
+<!-- -- -- -- -- -- -- PRINT / SAVE -- -- -- -- -- -- -->
+
+<!-- -- -- -- -- -- -- SURVEY -- -- -- -- -- -- -->
+<div>
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+  <div class="govuk-!-margin-top-6 dont-print">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Help us improve Pension Credit</h2>
+      <p class="govuk-body govuk-!-margin-bottom-8"><a href="https://getinvolved.dwp.gov.uk/digital/fa743129/start_preview?token=721b98c7019344093611254c9ffe7a1d4807b86f">Take a short survey</a></p>
+  </div>
+</div>
+<!-- -- -- -- -- -- -- SURVEY -- -- -- -- -- -- -->
+
+
+
+
+
+    </form>
+  </div>
+</div>
+{% endblock %}
