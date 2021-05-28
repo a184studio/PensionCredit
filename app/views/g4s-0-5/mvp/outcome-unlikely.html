@@ -20,9 +20,9 @@
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Pensions] Unlikey</h1>
     {% elif data["earnings"] == "Yes" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[earnings] Unlikey</h1>
-    {% elif data['nino'] == 'S1 11 22 33 A' or data['nino'] == 'S1112233A'%}
+    {% elif data['nino'] == 'SS 11 00 00 A' or data['nino'] == 'SS110000A'%}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[SP / Benefit] Unlikey Too much income</h1>
-    {% elif data['nino'] == 'S5 11 22 33 E' data['nino'] == 'S5112233E'%}
+    {% elif data['nino'] == 'SS 55 00 00 E' data['nino'] == 'SS550000E'%}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Claimants scenario is massively complex, too much for G4s to handle = Handover to DWP</h1>
     {% else %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">[Default] Unlikely</h1>

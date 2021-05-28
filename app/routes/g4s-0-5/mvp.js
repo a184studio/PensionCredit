@@ -120,14 +120,14 @@ router.post(`${baseUrl}/benefit-check-router`, (req, res) => {
 router.post(`${baseUrl}/ab-check-pension-router`, (req, res) => {
   const abRouter = req.session.data['sl-find-a-claim']
 
-  if (abRouter === 'S2 11 22 33 B') {
+  if (abRouter === 'SS 22 00 00 B') {
     res.redirect(`${baseUrl}/earnings`)
-  } else if (abRouter === 'S2112233B') {
+  } else if (abRouter === 'SS220000B') {
     res.redirect(`${baseUrl}/earnings`)
 
-  } else if (abRouter === 'S3 11 22 33 C') {
+  } else if (abRouter === 'SS 33 00 00 C') {
     res.redirect(`${baseUrl}/outcome`)
-  } else if (abRouter === 'S3112233C') {
+  } else if (abRouter === 'SS330000C') {
     res.redirect(`${baseUrl}/outcome`)
 
 
@@ -142,29 +142,29 @@ router.post(`${baseUrl}/ab-check-pension-router`, (req, res) => {
 router.post(`${baseUrl}/sl-find-a-claim-router`, (req, res) => {
   const slFindAClaim = req.session.data['sl-find-a-claim']
 
-  if (slFindAClaim === 'S1 11 22 33 A') {
+  if (slFindAClaim === 'SS 11 00 00 A') {
     res.redirect(`${baseUrl}/sl-claim-a`)
-  } else if (slFindAClaim === 'S1112233A') {
+  } else if (slFindAClaim === 'SS110000A') {
     res.redirect(`${baseUrl}/sl-claim-a`)
-  } else if (slFindAClaim === 'S2 11 22 33 B') {
+  } else if (slFindAClaim === 'SS 22 00 00 B') {
     res.redirect(`${baseUrl}/sl-claim-b`)
-  } else if (slFindAClaim === 'S2112233B') {
+  } else if (slFindAClaim === 'SS220000B') {
     res.redirect(`${baseUrl}/sl-claim-b`)
-  } else if (slFindAClaim === 'S3 11 22 33 C') {
+  } else if (slFindAClaim === 'SS 33 00 00 C') {
     res.redirect(`${baseUrl}/sl-claim-c`)
-  } else if (slFindAClaim === 'S3112233C') {
+  } else if (slFindAClaim === 'SS330000C') {
     res.redirect(`${baseUrl}/sl-claim-c`)
-  } else if (slFindAClaim === 'S4 11 22 33 D') {
+  } else if (slFindAClaim === 'SS 44 00 00 D') {
     res.redirect(`${baseUrl}/sl-claim-d`)
-  } else if (slFindAClaim === 'S4112233D') {
+  } else if (slFindAClaim === 'SS440000D') {
     res.redirect(`${baseUrl}/sl-claim-d`)
-  } else if (slFindAClaim === 'S5 11 22 33 E') {
+  } else if (slFindAClaim === 'SS 55 00 00 E') {
     res.redirect(`${baseUrl}/sl-claim-e`)
-  } else if (slFindAClaim === 'S5112233E') {
+  } else if (slFindAClaim === 'SS550000E') {
     res.redirect(`${baseUrl}/sl-claim-e`)
-  } else if (slFindAClaim === 'S6 11 22 33 F') {
+  } else if (slFindAClaim === 'SS 66 00 00 F') {
     res.redirect(`${baseUrl}/sl-claim-f`)
-  } else if (slFindAClaim === 'S6112233F') {
+  } else if (slFindAClaim === 'SS660000F') {
     res.redirect(`${baseUrl}/sl-claim-f`)
   } else {
     res.redirect(`${baseUrl}/XXX`)
