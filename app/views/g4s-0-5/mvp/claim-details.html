@@ -207,7 +207,32 @@
               text: "Pension"
             },
             value: {
-              html: data["pensions"]
+              html: data["pensions"] or data["pensions-value"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "pensions",
+                  text: "Change",
+                  visuallyHiddenText: "pensions"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+        {% endif %}
+
+        {% if data["pensions-value"] %}
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "Pension"
+            },
+            value: {
+              html: data["pensions-value"]
             },
             actions: {
               items: [
@@ -232,7 +257,7 @@
               text: "Earnings"
             },
             value: {
-              html: data["earnings"]
+              html: data["earnings"] or data ["earnings-value"]
             },
             actions: {
               items: [
@@ -247,3 +272,29 @@
         ]
         }) }}
       {% endif %}
+
+
+      {% if data["earnings-value"] %}
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "Earnings"
+                  },
+                  value: {
+                    html: data["earnings-value"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "Earnings",
+                        text: "Change",
+                        visuallyHiddenText: "Earnings"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+            {% endif %}
