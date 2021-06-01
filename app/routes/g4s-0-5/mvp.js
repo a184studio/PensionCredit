@@ -188,6 +188,8 @@ router.post(`${baseUrl}/outcome-radios-router`, (req, res) => {
     res.redirect(`${baseUrl}/end`)
   } else if (outcomeRadios === 'challenge') {
     res.redirect(`${baseUrl}/challenge`)
+  } else if (outcomeRadios === 'apply') {
+    res.redirect(`${baseUrl}/handover`)
   } else {
     res.redirect(`${baseUrl}/XXX`)
   }
