@@ -25,7 +25,9 @@
             <form action="earnings" method="post" class="form">
           {% elif data["nino"] == "SS 33 00 00 C" or data["nino"] == "SS330000C"%}
             <form action="outcome" method="post" class="form">
-          {% else %}
+              {% elif data["nino"] == "SS 66 00 00 F" or data["nino"] == "SS660000F"%}
+                <form action="earnings" method="post" class="form">
+              {% else %}
             <form action="outcome" method="post" class="form">
           {% endif %}
 
