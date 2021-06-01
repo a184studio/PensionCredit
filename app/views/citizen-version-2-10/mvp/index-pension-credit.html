@@ -104,13 +104,76 @@
         }) }}
 </div>
 
+<!-- -- -- -- -- -- -- WHAT HAPPENS NEXT -- -- -- -- -- -- -->
+
+{% if
+  data["doc-absence"] == "Yes" or
+  data["uk-residence-status"] == "Something else" or
+  data["uk-residence-status-partner"] == "Something else" or
+  data["home-care-home-check"] == "Yes" or
+  data["home-equity-release"] == "Yes" or
+  data["non-deps-living-with-you"] == "Yes" or
+  data["self-employed"] == "Yes" or
+  data["pension-foreign-check"] == "Yes" or
+  data["pension-check"] == "Yes" or
+  data["employment-other-money"] == "Yes" or
+  data["money-total-risk-check"] == "High" or
+  data["money-total-risk-check"] == "High" or
+  data["money-total-risk-check"] == "High" or
+  data["money-second-property-check"] == "Yes" or
+  data["home-care-home-check-still-own"] == "Yes"%}
+
+          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+          <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
+
+          {% include "citizen-version-2-10/mvp/callback-list.html" %}
+
+{% elif data["del-auth-secure-access-code-check"] == "No" %}
+
+<h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+<p class="govuk-!-font-size-24">We are doing some final checks on your application. We will make contact by <strong>DD / Month / Year (4 weeks)</strong>.
+[No call backs but POA / LPA] .
+</p>
+
+
+{% else %}
+
+          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+          <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong>. We will contact you by letter If we can award your Pension Credit. We will contact you by phone or by letter if we need any more information.</p>
+
+{% endif %}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+
 <!-- -- -- -- -- -- -- LPA [POA] -- -- -- -- -- -- -->
-{% if data["del-auth-secure-access-code-check"] == "Yes"%}
+{% if data["del-auth-secure-access-code-check"] == "No"%}
 {% endif %}
 <div>
-<p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-2">We need you to get some more infomation from you because there is a power of attorney involved.</p>
-<p class="govuk-body">Send a copy XXX</p>
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
+  <p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-2">We need you to get some more infomation because there is a power of attorney involved.</p>
+  <p class="govuk-body">Send a copy XXX</p>
+
+    <!---- UK NI ADDRESSES ---->
+
+    {% if data["resides-in-uk"] == "Northern-Ireland" %}
+        <div class="govuk-panel--address govuk-!-margin-top-6">
+          <p class="govuk-body">
+            Northern Ireland Pension Centre<br>
+            Mail Opening Unit<br>
+            PO Box 42<br>
+            Limavady<br>
+            BT49 4AW</p>
+      </div>
+
+    {% else %}
+        <div class="govuk-panel--address govuk-!-margin-top-6">
+          <p class="govuk-body">
+            The Pension Service 4<br>
+            Mail Handling Site A<br>
+            Wolverhampton<br>
+            WV98 1AG</p>
+        </div>
+    {% endif %}
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
 </div>
 
@@ -177,42 +240,6 @@
               {% endif %}
 {% endif %}
 </div>
-
-<!-- -- -- -- -- -- -- WHAT HAPPENS NEXT -- -- -- -- -- -- -->
-
-{% if
-  data["doc-absence"] == "Yes" or
-  data["uk-residence-status"] == "Something else" or
-  data["uk-residence-status-partner"] == "Something else" or
-  data["home-care-home-check"] == "Yes" or
-  data["home-equity-release"] == "Yes" or
-  data["non-deps-living-with-you"] == "Yes" or
-  data["self-employed"] == "Yes" or
-  data["pension-foreign-check"] == "Yes" or
-  data["pension-check"] == "Yes" or
-  data["employment-other-money"] == "Yes" or
-  data["money-total-risk-check"] == "High" or
-  data["money-total-risk-check"] == "High" or
-  data["money-total-risk-check"] == "High" or
-  data["money-second-property-check"] == "Yes" or
-  data["home-care-home-check-still-own"] == "Yes"
-%}
-
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
-
-          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-          <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
-
-          {% include "citizen-version-2-10/mvp/callback-list.html" %}
-
-{% else %}
-
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
-
-          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-          <p class="govuk-!-font-size-24"> We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong>. We will contact you by letter If we can award your Pension Credit. We will contact you by phone or by letter if we need any more information.</p>
-
-{% endif %}
 
 
 <!-- -- -- -- -- -- -- PAYMENT ACCOUNT -- -- -- -- -- -- -->
