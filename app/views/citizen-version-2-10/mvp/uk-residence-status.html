@@ -25,7 +25,7 @@
         name: "uk-residence-status",
         fieldset: {
           legend: {
-            text: "What best describes your status in the UK? ",
+            text: "What best describes your status in the UK?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -42,6 +42,11 @@
             value: "Settled or pre-settled",
             text: "I have settled or pre-settled settled status",
             checked: (data["uk-residence-status"] == "Settled or pre-settled")
+          },
+          {
+            value: "Applied for settlement scheme",
+            text: "...",
+            checked: (data["uk-residence-status"] == "Applied for settlement scheme")
           },
           {
             value: "Indefinite leave to remain",
