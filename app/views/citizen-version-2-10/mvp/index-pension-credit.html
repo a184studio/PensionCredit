@@ -150,7 +150,7 @@
 
 <div>
 
-<p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-0">Tasks we need you to do</p>
+<p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-0">What you need to do next</p>
 
 
 
@@ -158,7 +158,7 @@
 {% if data["del-auth-secure-access-code-check"] == "No"%}
 {% endif %}
 <div>
-  <p class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Information from the POA</p>
+  <p class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Send information about the POA</p>
   <p class="govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p>
 
 </div>
@@ -177,7 +177,7 @@
               <!---- SERVICE CHARGE ONLY ---->
               {% if
                 data["home-other-service-charges"] == "Yes" or data["home-own-service-charges"] == "Yes" %}
-                  <p class="govuk-heading-m govuk-!-margin-bottom-2">We need you to send us some information about your service charges</p>
+                  <p class="govuk-heading-m govuk-!-margin-bottom-2">[Send] We need you to send us some information about your service charges</p>
                   <p class="govuk-body">Send a copy of your most recent service charge invoice, with an itemised breakdown of charges, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
               {% endif %}
 
@@ -188,7 +188,7 @@
                 data["home-shared-ground-rent"] == "Yes" or
                 data["home-other-ground-rent"] == "Yes"
               %}
-                  <p class="govuk-heading-m govuk-!-margin-bottom-2">We need you to send us some information about your ground rent</p>
+                  <p class="govuk-heading-m govuk-!-margin-bottom-2">[Send] We need you to send us some information about your ground rent</p>
                   <p class="govuk-body">Send a copy of your most up to date ground rent invoice, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
               {% endif %}
 
@@ -199,7 +199,7 @@
                 data["home-other-service-charges"] == "Yes" and
                 data["home-other-ground-rent"] == "Yes"
               %}
-                  <p class="govuk-heading-m govuk-!-margin-bottom-2">We need you to send us some information about your service charges and ground rent</p>
+                  <p class="govuk-heading-m govuk-!-margin-bottom-2">[Send] We need you to send us some information about your service charges and ground rent</p>
                   <p class="govuk-body">Send a copy of your most recent ground rent invoice and your most recent service charge invoice, with an itemised breakdown of charges, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
               {% endif %}
 
