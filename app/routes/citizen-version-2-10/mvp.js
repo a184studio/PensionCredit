@@ -1685,6 +1685,20 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
   }
 })
 
+
+router.post(`${baseUrl}/del-auth-contact-number-router`, (req, res) => { // router name
+  const delAuthContactNumber = req.session.data['del-auth-contact-number']  // name of data / id name
+
+  if (delAuthContactNumber === 'Yes') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-contact-call-language`)
+  } else {
+    res.redirect(`${baseUrl}/del-auth-contact-letter-language`)
+  }
+})
+
+
+
+
 // router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // router name
 //   const whoMadeClaim = req.session.data['del-auth-who-made-claim']  // name of data / id name
 //
