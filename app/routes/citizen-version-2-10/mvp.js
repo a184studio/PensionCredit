@@ -430,7 +430,7 @@ router.post(`${baseUrl}/eu-filter-router`, (req, res) => {
   } else if (euFilter === 'HO') {
     res.redirect(`${baseUrl}/done-residence-status`)
   } else {
-    res.redirect(`${baseUrl}/state-pension-check-yn`)
+    res.redirect(`${baseUrl}/state-pension-status`)
   }
 })
 
