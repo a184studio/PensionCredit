@@ -16,8 +16,6 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="del-auth-contact-number-router" method="post" class="form">
 
-      <!-- Hidden input to set task to complete on task-list -->
-
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
 

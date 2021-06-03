@@ -144,13 +144,9 @@
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
-
-
 <!-- -- -- -- -- -- -- TASKS -- -- -- -- -- -- -->
 
-<div>
-
-<p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-0">Tasks we need you to do</p>
+<p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-2">Information we need from you</p>
 
 
 
@@ -158,8 +154,8 @@
 {% if data["del-auth-secure-access-code-check"] == "No"%}
 {% endif %}
 <div>
-  <p class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Information from the POA</p>
-  <p class="govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p>
+  <p class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-2">We need you to get some more infomation because there is a power of attorney involved.</p>
+  <p class="govuk-body">Send a copy XXX</p>
 
 </div>
 
@@ -206,32 +202,27 @@
 {% endif %}
 </div>
 
+<!---- UK NI ADDRESSES ---->
 
-<!---- POSTAL ADDRESS / UK / NI ---->
+{% if data["resides-in-uk"] == "Northern-Ireland" %}
+    <div class="govuk-panel--address govuk-!-margin-top-6">
+      <p class="govuk-body">
+        Northern Ireland Pension Centre<br>
+        Mail Opening Unit<br>
+        PO Box 42<br>
+        Limavady<br>
+        BT49 4AW</p>
+  </div>
 
-<p class="govuk-heading-s govuk-!-margin-top-6">Where to send your documents:</p>
-
-  {% if data["resides-in-uk"] == "Northern-Ireland" %}
-      <div class="govuk-panel--address govuk-!-margin-top-2">
-        <p class="govuk-body">
-          Northern Ireland Pension Centre<br>
-          Mail Opening Unit<br>
-          PO Box 42<br>
-          Limavady<br>
-          BT49 4AW</p>
+{% else %}
+    <div class="govuk-panel--address govuk-!-margin-top-6">
+      <p class="govuk-body">
+        The Pension Service 4<br>
+        Mail Handling Site A<br>
+        Wolverhampton<br>
+        WV98 1AG</p>
     </div>
-
-  {% else %}
-      <div class="govuk-panel--address govuk-!-margin-top-2">
-        <p class="govuk-body">
-          The Pension Service 4<br>
-          Mail Handling Site A<br>
-          Wolverhampton<br>
-          WV98 1AG</p>
-      </div>
-  {% endif %}
-
-</div>
+{% endif %}
 
 <!-- -- -- -- -- -- -- PAYMENT ACCOUNT -- -- -- -- -- -- -->
 <div>
