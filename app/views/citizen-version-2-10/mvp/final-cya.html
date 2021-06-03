@@ -105,6 +105,23 @@
         rows: [
         {
           key: {
+            text: "Which country do you live in?"
+          },
+          value: {
+            text: data['resides-in-uk']
+          },
+          actions: {
+            items: [
+              {
+                href: "reside-in-uk",
+                text: "Change",
+                visuallyHiddenText: "which country you live in"
+              }
+            ]
+          }
+        },
+        {
+          key: {
             text: "Your date of birth"
           },
           value: {
@@ -122,22 +139,103 @@
         },
         {
           key: {
-            text: "Which country do you live in?"
+            text: "What is your nationality as shown on your passport or travel document?"
           },
           value: {
-            text: data['resides-in-uk']
+            text: data['uk-national']
           },
           actions: {
             items: [
               {
-                href: "reside-in-uk",
+                href: "uk-national",
                 text: "Change",
-                visuallyHiddenText: "which country you live in"
+                visuallyHiddenText: "What is your nationality as shown on your passport or travel document?"
               }
             ]
           }
-        },
-        {
+        }
+          ]
+        }) }}
+
+        {% if data["uk-residence-status"] %}
+        {{ govukSummaryList({
+          rows: [
+
+          {
+            key: {
+              text: "What best describes your status in the UK?"
+            },
+            value: {
+              text: data['uk-residence-status']
+            },
+            actions: {
+              items: [
+                {
+                  href: "uk-residence-status",
+                  text: "Change",
+                  visuallyHiddenText: "What best describes your status in the UK?"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+        {% endif %}
+
+        {% if data["uk-residence-date"] %}
+        {{ govukSummaryList({
+          rows: [
+
+          {
+            key: {
+              text: "Did you start living in UK before 1 January 1973?"
+            },
+            value: {
+              text: data['uk-residence-date']
+            },
+            actions: {
+              items: [
+                {
+                  href: "uk-residence-status",
+                  text: "Change",
+                  visuallyHiddenText: "Did you start living in UK before 1 January 1973?"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+        {% endif %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+          {
+            key: {
+              text: "Do you have a partner?"
+            },
+            value: {
+                text: data["partner-check-yn2"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "partner-check-yn2",
+                  text: "Change",
+                  visuallyHiddenText: "whether you have a partner"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+
+
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+          {
           key: {
             text: "Have you claimed your State Pension?"
           },
@@ -364,23 +462,7 @@
               ]
             }
           },
-          {
-            key: {
-              text: "Do you have a partner?"
-            },
-            value: {
-              text: data["partner-check-yn"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "Change",
-                  visuallyHiddenText: "whether you have a partner"
-                }
-              ]
-            }
-          },
+
           {
             key: {
               text: "Do you and your partner get pension age Housing Benefit?"
@@ -489,8 +571,89 @@
                 }
               ]
             }
-          },
+          }
+          ]
+        }) }}
 
+        {% if data["uk-national-partner"] %}
+        {{ govukSummaryList({
+          rows: [
+
+          {
+            key: {
+              text: "What is your partner's nationality as shown on their passport or travel document?"
+            },
+            value: {
+              text: data['uk-national-partner']
+            },
+            actions: {
+              items: [
+                {
+                  href: "uk-national-partner",
+                  text: "Change",
+                  visuallyHiddenText: "1hat is your partner's nationality as shown on their passport or travel document?"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+        {% endif %}
+
+
+          {% if data["uk-residence-status-partner"] %}
+          {{ govukSummaryList({
+            rows: [
+
+            {
+              key: {
+                text: "What best describes your partner's status in the UK?"
+              },
+              value: {
+                text: data['uk-residence-status-partner']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "uk-residence-status-partner",
+                    text: "Change",
+                    visuallyHiddenText: "1What best describes your partner's status in the UK?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+          {% endif %}
+
+          {% if data["uk-residence-date-partner"] %}
+          {{ govukSummaryList({
+            rows: [
+
+            {
+              key: {
+                text: "Did your partner start living in UK before 1 January 1973?"
+              },
+              value: {
+                text: data['uk-residence-date-partner']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "uk-residence-status-partner",
+                    text: "Change",
+                    visuallyHiddenText: "Did your partner start living in UK before 1 January 1973?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+          {% endif %}
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
           {
             key: {
               text: "Your partner's National Insurance number"
