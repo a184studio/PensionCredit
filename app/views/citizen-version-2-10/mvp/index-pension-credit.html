@@ -137,10 +137,33 @@
 
 {% elif data["eu-filter"] == "Applied for settlement" %}
 
-          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">I've applied for EU</h3>
-          <p class="govuk-!-font-size-24">XXX</p>
-          <p class="govuk-!-font-size-24">@pete</p>
+          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+          <p class="govuk-!-font-size-24">The EU Settlement Scheme will tell DWP once your status has been awarded. We will then contact you to check the details of your application.</p>
+          <p class="govuk-!-font-size-24">If you hear from the EU Settlement Scheme before we contact you, you can call the Pension Credit claim line.</p>
+          <h2 class="govuk-heading-m govuk-!-margin-top-4">Pension Credit claim line</h2>
 
+          <!---- NORTHERN IDRLAND ---->{% if data['resides-in-uk'] == 'Northern-Ireland' %}
+    
+          <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
+            <li>Telephone: 0808 100 6165</li>
+            <li>Textphone (Text Relay): 0808 100 2198</li>
+          </ul>
+    
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Monday to Friday, 10:00am to 4:00pm (closed on bank holidays).<br><a href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Contacting 08 and 03 numbers.</a></p>
+    
+    
+    
+    
+            <!---- UK ---->{% else %}
+    
+            <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
+              <li>Telephone: 0800 99 1234</li>
+              <li>Textphone: 0800 169 0133</li>
+            </ul>
+    
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Monday to Friday, 9:30am to 6pm (closed on bank holidays).<br>Calls to 0800 numbers are free from landlines and mobiles.</p>
+    
+            <!---- COUNTRY END ---->{% endif %}
 
 {% else %}
 
