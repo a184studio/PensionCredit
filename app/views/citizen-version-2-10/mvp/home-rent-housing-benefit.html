@@ -19,14 +19,11 @@
 
       {% set legendHint %}
 
-      <p></p>
-      <p class="govuk-!-font-size-24 govuk-!-margin-bottom-6">If you get a housing payment from Universal Credit, it will stop if you move to Pension Credit. If you get Housing Benefit, it will continue. </p>
-
-
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">What help do you want with your rent?</p>
-
-      <p class="govuk-hint"></p>
-
+      {% if data["home-ownership"] == "You live in a caravan houseboat or mobile home"%}
+      <p class="govuk-hint">If you are not sure what type of help you get with rent, look at your benefits statement.</p>
+      {% else %}
+        <p class="govuk-hint">If you are not sure what type of help you get with rent, look at your benefits statement.</p>
+      {% endif %}
 
       {% endset -%}
 
@@ -35,34 +32,31 @@
         name: "home-rent-housing-benefit",
         fieldset: {
           legend: {
-            text: "Help with your rent",
+            text: "Do you currently get Housing Benefit or a housing payment from Universal Credit?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
           html: legendHint
-
         },
         items: [
           {
-            value: "Yes",
-            text: "I want my local authority to start my application for Housing Benefit",
-            checked: (data["home-rent-housing-benefit-check"] == "Yes")
+            value: "Yes HB",
+            text: "Yes - Housing Benefit",
+            checked: (data["home-rent-housing-benefit"] == "Yes HB")
 
             },
-
             {
-              value: "Yes",
-              text: "I want my current Housing Benefit claim to continue",
-              checked: (data["home-rent-housing-benefit-check"] == "Yes")
+              value: "Yes HeUC",
+              text: "Yes - a housing payment from Universal Credit",
+              checked: (data["home-rent-housing-benefit"] == "Yes HeUC")
 
               },
-
           {
             value: "No",
-            text: "I do not need any help with my rent",
-            checked: (data["home-rent-housing-benefit-check"] == "No")
+            text: "No",
+            checked: (data["home-rent-housing-benefit"] == "No")
           }
         ]
       }) }}
