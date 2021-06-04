@@ -766,7 +766,7 @@ router.post(`${baseUrl}/home-rent-housing-benefit-router`, (req, res) => { // Wh
   if (homeRentHousingBenefit === 'Yes HB') {
     res.redirect(`${baseUrl}/non-deps-living-with-you`)
   } else {
-    res.redirect(`${baseUrl}/non-deps-living-with-you`)
+    res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
   }
 })
 
