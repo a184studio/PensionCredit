@@ -182,14 +182,15 @@
 
 <p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-0">What you need to do next</p>
 
+<p class="govuk-body"><strong>We need you to send us:</strong></p>
 
+<ul class="govuk-list govuk-list--bullet">
 
 <!-- -- -- -- -- -- -- LPA [POA] -- -- -- -- -- -- -->
 {% if data["del-auth-secure-access-code-check"] == "No"%}
 {% endif %}
 <div>
-  <p class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Send information about the POA</p>
-  <p class="govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p>
+  <li>the Lasting Power of Attorney (LPA) documentation. You can send us the original documentation or a <a href="https://www.gov.uk/certifying-a-document">certified copy</a></li>
 
 </div>
 
@@ -207,8 +208,8 @@
               <!---- SERVICE CHARGE ONLY ---->
               {% if
                 data["home-other-service-charges"] == "Yes" or data["home-own-service-charges"] == "Yes" %}
-                  <p class="govuk-heading-m govuk-!-margin-bottom-2">[Send] We need you to send us some information about your service charges</p>
-                  <p class="govuk-body">Send a copy of your most recent service charge invoice, with an itemised breakdown of charges, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
+                  <li>a copy of the most recent service charge invoice, with an itemised breakdown of charges</li>
+                  
               {% endif %}
 
               <!---- GROUND RENT ONLY ---->
@@ -218,8 +219,7 @@
                 data["home-shared-ground-rent"] == "Yes" or
                 data["home-other-ground-rent"] == "Yes"
               %}
-                  <p class="govuk-heading-m govuk-!-margin-bottom-2">[Send] We need you to send us some information about your ground rent</p>
-                  <p class="govuk-body">Send a copy of your most up to date ground rent invoice, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
+                  <li>a copy of the most up to date ground rent invoice.</li>
               {% endif %}
 
               <!---- BOTH GROUND AND SERVICE ---->
@@ -229,17 +229,16 @@
                 data["home-other-service-charges"] == "Yes" and
                 data["home-other-ground-rent"] == "Yes"
               %}
-                  <p class="govuk-heading-m govuk-!-margin-bottom-2">[Send] We need you to send us some information about your service charges and ground rent</p>
-                  <p class="govuk-body">Send a copy of your most recent ground rent invoice and your most recent service charge invoice, with an itemised breakdown of charges, including your <strong>name</strong> and <strong>National Insurance number</strong> to:</p>
+                  <li>copy of the most recent ground rent invoice and the most recent service charge invoice, with an itemised breakdown of charges.</li>
               {% endif %}
 
 {% endif %}
 </div>
-
+</ul>
 
 <!---- POSTAL ADDRESS / UK / NI ---->
 
-<p class="govuk-heading-s govuk-!-margin-top-6">Where to send your documents:</p>
+<p class="govuk-heading-s govuk-!-margin-top-6">Send these documents to:</p>
 
   {% if data["resides-in-uk"] == "Northern-Ireland" %}
       <div class="govuk-panel--address govuk-!-margin-top-2">
@@ -261,6 +260,7 @@
       </div>
   {% endif %}
 
+  <p class="govuk-body">Include the applicant's Name and National Insurance number with anything you send. Any original documents will be returned to the address you have asked us to send any letters to.</p>
 </div>
 
 <!-- -- -- -- -- -- -- PAYMENT ACCOUNT -- -- -- -- -- -- -->
