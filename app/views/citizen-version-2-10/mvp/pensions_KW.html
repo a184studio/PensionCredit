@@ -17,24 +17,30 @@
     <form action="money-total-risk-check-router" method="post" class="form">
 
 
-
       {% set pensionsTaken %}
-      {{ govukInput({
-        id: "money-2-total-now-value",
-        name: "money-2-total-now-value",
-        label: {
-          html: "Are all of your personal or private pensions now in payment?",
-          classes: "govuk-label--s",
-          isPageHeading: true
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "Pension Taken",
+        name: "Pension Taken",
+        fieldset: {
+          legend: {
+            text: "Are all of your personal or private pensions now in payment?",
+            isPageHeading: true,
+            classes: "govuk-label--s"
+          }
         },
-        prefix: {
-          text: "Yes or No"
-        },
-        value: data["money-2-total-now-value"],
-        classes: "govuk-input--width-0 govuk-!-margin-bottom-4",
-        spellcheck: false
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
       }) }}
-      {% endset %}
+    {% endset %}
 
 
 
