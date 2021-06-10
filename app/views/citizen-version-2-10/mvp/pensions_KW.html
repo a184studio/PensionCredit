@@ -19,27 +19,28 @@
 
       {% set pensionsTaken %}
       {{ govukRadios({
-    idPrefix: "Pension Taken",
-    name: "Pension Taken",
-    fieldset: {
-      legend: {
-        text: "Are all of your personal or private pensions now in payment?",
-        isPageHeading: true,
-        classes: "govuk-label--s"
-      }
-    },
-    items: [
-      {
-        value: "Yes",
-        text: "Yes"
-      },
-      {
-        value: "No",
-        text: "No"
-      }
-    ]
-}) }}
-{% endset %}
+        classes: "govuk-radios--inline",
+        idPrefix: "Pension Taken",
+        name: "Pension Taken",
+        fieldset: {
+          legend: {
+            text: "Are all of your personal or private pensions now in payment?",
+            isPageHeading: true,
+            classes: "govuk-label--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+    {% endset %}
 
 
 
