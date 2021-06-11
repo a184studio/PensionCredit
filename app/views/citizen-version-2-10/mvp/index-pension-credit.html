@@ -128,13 +128,6 @@
 
           {% include "citizen-version-2-10/mvp/callback-list.html" %}
 
-{% elif data["del-auth-secure-access-code-check"] == "No" %}
-
-          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-          <p class="govuk-!-font-size-24">We are doing some final checks on your application. We will make contact by <strong>DD / Month / Year (4 weeks)</strong>.</p>
-          <p class="govuk-!-font-size-24">[No call backs but POA / LPA]. </p>
-
-
 {% elif data["eu-filter"] == "Applied for settlement" %}
 
           <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
@@ -179,93 +172,107 @@
 <!-- -- -- -- -- -- -- TASKS -- -- -- -- -- -- -->
 
 <div>
-
-<p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-4">What you need to do next</p>
-
-<p class="govuk-body govuk-!-margin-bottom-2"><strong>We need you to send us:</strong></p>
-
-<ul class="govuk-list govuk-list--bullet">
-
-<!-- -- -- -- -- -- -- LPA [POA] -- -- -- -- -- -- -->
-{% if data["del-auth-secure-access-code-check"] == "No"%}
-{% endif %}
-<div>
-  <li>the Lasting Power of Attorney (LPA) documentation. You should send the full document. You can send us the original documentation or a <a href="https://www.gov.uk/certifying-a-document">certified copy</a></li>
-
-</div>
-
-<!-- -- -- -- -- -- -- SERVICE CHARGES GROUND RENT INSTRUCTIONS -- -- -- -- -- -- -->
-<div>
-{% if
-  data["home-rent-ground-rent"] == "Yes" or
-  data["home-shared-ground-rent"] == "Yes" or
-  data["home-other-ground-rent"] == "Yes" or
-  data["home-own-ground-rent"] == "Yes" or
-  data["home-own-service-charges"] == "Yes" or
-  data["home-other-service-charges"] == "Yes"
+  {% if
+    data["home-rent-ground-rent"] == "Yes" or
+    data["home-shared-ground-rent"] == "Yes" or
+    data["home-other-ground-rent"] == "Yes" or
+    data["home-own-ground-rent"] == "Yes" or
+    data["home-own-service-charges"] == "Yes" or
+    data["home-other-service-charges"] == "Yes" or
+    data["del-auth-secure-access-code-check"] == "No"
   %}
+        <p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-4">What you need to do next</p>
 
-              <!---- SERVICE CHARGE ONLY ---->
-              {% if
-                data["home-other-service-charges"] == "Yes" or data["home-own-service-charges"] == "Yes" %}
-                  <li>a copy of the most recent service charge invoice, with an itemised breakdown of charges</li>
+        <p class="govuk-body govuk-!-margin-bottom-2"><strong>We need you to send us:</strong></p>
 
-              {% endif %}
+        <ul class="govuk-list govuk-list--bullet">
 
-              <!---- GROUND RENT ONLY ---->
-              {% if
-                data["home-own-ground-rent"] == "Yes" or
-                data["home-rent-ground-rent"] == "Yes" or
-                data["home-shared-ground-rent"] == "Yes" or
-                data["home-other-ground-rent"] == "Yes"
-              %}
-                  <li>a copy of the most up to date ground rent invoice.</li>
-              {% endif %}
+        <!-- -- -- -- -- -- -- LPA [POA] -- -- -- -- -- -- -->
+        {% if data["del-auth-secure-access-code-check"] == "No"%}
 
-              <!---- BOTH GROUND AND SERVICE ---->
-              {% if
-                data["home-own-service-charges"] == "Yes" and
-                data["home-own-ground-rent"] == "Yes" or
-                data["home-other-service-charges"] == "Yes" and
-                data["home-other-ground-rent"] == "Yes"
-              %}
-                  <li>copy of the most recent ground rent invoice and the most recent service charge invoice, with an itemised breakdown of charges.</li>
-              {% endif %}
+        <div>
+          <li>the Lasting Power of Attorney (LPA) documentation. You should send the full document. You can send us the original documentation or a <a href="https://www.gov.uk/certifying-a-document">certified copy</a></li>
+
+        </div>
+        {% endif %}
+        <!-- -- -- -- -- -- -- SERVICE CHARGES GROUND RENT INSTRUCTIONS -- -- -- -- -- -- -->
+        <div>
+        {% if
+          data["home-rent-ground-rent"] == "Yes" or
+          data["home-shared-ground-rent"] == "Yes" or
+          data["home-other-ground-rent"] == "Yes" or
+          data["home-own-ground-rent"] == "Yes" or
+          data["home-own-service-charges"] == "Yes" or
+          data["home-other-service-charges"] == "Yes"
+          %}
+
+                      <!---- SERVICE CHARGE ONLY ---->
+                      {% if
+                        data["home-other-service-charges"] == "Yes" or data["home-own-service-charges"] == "Yes" %}
+                          <li>a copy of the most recent service charge invoice, with an itemised breakdown of charges</li>
+
+                      {% endif %}
+
+                      <!---- GROUND RENT ONLY ---->
+                      {% if
+                        data["home-own-ground-rent"] == "Yes" or
+                        data["home-rent-ground-rent"] == "Yes" or
+                        data["home-shared-ground-rent"] == "Yes" or
+                        data["home-other-ground-rent"] == "Yes"
+                      %}
+                          <li>a copy of the most up to date ground rent invoice.</li>
+                      {% endif %}
+
+                      <!---- BOTH GROUND AND SERVICE ---->
+                      {% if
+                        data["home-own-service-charges"] == "Yes" and
+                        data["home-own-ground-rent"] == "Yes" or
+                        data["home-other-service-charges"] == "Yes" and
+                        data["home-other-ground-rent"] == "Yes"
+                      %}
+                          <li>copy of the most recent ground rent invoice and the most recent service charge invoice, with an itemised breakdown of charges.</li>
+                      {% endif %}
+
+        {% endif %}
+        </div>
+        </ul>
+
+        <!---- POSTAL ADDRESS / UK / NI ---->
+
+        <p class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2">Send these documents to:</p>
+
+          {% if data["resides-in-uk"] == "Northern-Ireland" %}
+              <div class="govuk-panel--address govuk-!-margin-top-2">
+                <p class="govuk-body">
+                  Northern Ireland Pension Centre<br>
+                  Mail Opening Unit<br>
+                  PO Box 42<br>
+                  Limavady<br>
+                  BT49 4AW</p>
+            </div>
+
+          {% else %}
+              <div class="govuk-panel--address govuk-!-margin-top-2">
+                <p class="govuk-body">
+                  The Pension Service 4<br>
+                  Mail Handling Site A<br>
+                  Wolverhampton<br>
+                  WV98 1AG</p>
+              </div>
+          {% endif %}
+
+          <p class="govuk-body">Include the applicant's Name and National Insurance number with anything you send. Any original documents will be returned to the address you have asked us to send any letters to.</p>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
 {% endif %}
+
+
 </div>
-</ul>
 
-<!---- POSTAL ADDRESS / UK / NI ---->
-
-<p class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2">Send these documents to:</p>
-
-  {% if data["resides-in-uk"] == "Northern-Ireland" %}
-      <div class="govuk-panel--address govuk-!-margin-top-2">
-        <p class="govuk-body">
-          Northern Ireland Pension Centre<br>
-          Mail Opening Unit<br>
-          PO Box 42<br>
-          Limavady<br>
-          BT49 4AW</p>
-    </div>
-
-  {% else %}
-      <div class="govuk-panel--address govuk-!-margin-top-2">
-        <p class="govuk-body">
-          The Pension Service 4<br>
-          Mail Handling Site A<br>
-          Wolverhampton<br>
-          WV98 1AG</p>
-      </div>
-  {% endif %}
-
-  <p class="govuk-body">Include the applicant's Name and National Insurance number with anything you send. Any original documents will be returned to the address you have asked us to send any letters to.</p>
-</div>
 
 <!-- -- -- -- -- -- -- PAYMENT ACCOUNT -- -- -- -- -- -- -->
 <div>
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
 <p class="govuk-heading-m govuk-!-margin-bottom-4">If your application is successful we will pay your Pension Credit into the same account as your State Pension.</p>
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will be able to change this to a different account once your Pension Credit is in payment.</p>
