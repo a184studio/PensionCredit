@@ -181,18 +181,21 @@
     data["home-other-service-charges"] == "Yes" or
     data["del-auth-secure-access-code-check"] == "No"
   %}
-        <p class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-4">What you need to do next</p>
+        <h2 class="govuk-heading-m">What you need to do next</p>
 
-        <p class="govuk-body govuk-!-margin-bottom-2"><strong>We need you to send us:</strong></p>
 
-        <ul class="govuk-list govuk-list--bullet">
 
         <!-- -- -- -- -- -- -- LPA [POA] -- -- -- -- -- -- -->
         {% if data["del-auth-secure-access-code-check"] == "No"%}
 
         <div>
-          <li>the Lasting Power of Attorney (LPA) documentation. You should send the full document. You can send us the original documentation or a <a href="https://www.gov.uk/certifying-a-document">certified copy</a></li>
 
+          <h3 class="govuk-heading-s">Provide us with details of your lasting power of attorney (LPA)</h3>
+          <p class="govuk-body">The quickest way to do this is to phone us with your LPA access code.</p>
+          <p class="govuk-body">If your LPA is for England or Wales, you can <a href="https://www.gov.uk/use-lasting-power-of-attorney">use a lasting power of attorney</a> to get an LPA access code.</p>
+          <p class="govuk-body">Telephone: 0800 99 1234<br>Textphone: 0800 169 0133</p>
+          <p class="govuk-body">Monday to Friday, 9:30am to 6pm (closed on bank holidays).<br>Calls to 0800 numbers are free from landlines and mobiles.</p>
+          <p class="govuk-body">You can also send us the LPA documentation. You should send the full document. You can send us the original documentation or a <a href="https://www.gov.uk/power-of-attorney/certify">certified copy</a>.</p>
         </div>
         {% endif %}
         <!-- -- -- -- -- -- -- SERVICE CHARGES GROUND RENT INSTRUCTIONS -- -- -- -- -- -- -->
@@ -208,19 +211,26 @@
 
                       <!---- SERVICE CHARGE ONLY ---->
                       {% if
-                        data["home-other-service-charges"] == "Yes" or data["home-own-service-charges"] == "Yes" %}
-                          <li>a copy of the most recent service charge invoice, with an itemised breakdown of charges</li>
-
+                        data["home-other-service-charges"] == "Yes" and 
+                        data["home-other-ground-rent"] == "No" or 
+                        data["home-own-service-charges"] == "Yes" and
+                        data["home-own-ground-rent"] == "No"
+                        %}
+                        <h3 class="govuk-heading-s">Send us information about your service charges</h3>
+                        <p class="govuk-body">Send us a copy of the most recent ground rent invoice and the most recent service charge invoice, with an itemised breakdown of charges.</p>
                       {% endif %}
 
                       <!---- GROUND RENT ONLY ---->
                       {% if
-                        data["home-own-ground-rent"] == "Yes" or
+                        data["home-own-ground-rent"] == "Yes" and
+                        data["home-own-service-charges"] == "No" or
                         data["home-rent-ground-rent"] == "Yes" or
                         data["home-shared-ground-rent"] == "Yes" or
-                        data["home-other-ground-rent"] == "Yes"
+                        data["home-other-ground-rent"] == "Yes" and
+                        data["home-other-service-charges"] == "No"
                       %}
-                          <li>a copy of the most up to date ground rent invoice.</li>
+                      <h3 class="govuk-heading-s">Send us information about your ground rent</h3>
+                      <p class="govuk-body">Send us a copy of the most up to date ground rent invoice.</p>
                       {% endif %}
 
                       <!---- BOTH GROUND AND SERVICE ---->
@@ -230,7 +240,8 @@
                         data["home-other-service-charges"] == "Yes" and
                         data["home-other-ground-rent"] == "Yes"
                       %}
-                          <li>copy of the most recent ground rent invoice and the most recent service charge invoice, with an itemised breakdown of charges.</li>
+                      <h3 class="govuk-heading-s">Send us information about your service charges and ground rent</h3>
+                      <p class="govuk-body">Send us a copy of the most recent service charge invoice, with an itemised breakdown of charges.</p>                      
                       {% endif %}
 
         {% endif %}
@@ -239,7 +250,7 @@
 
         <!---- POSTAL ADDRESS / UK / NI ---->
 
-        <p class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2">Send these documents to:</p>
+        <h3 class="govuk-heading-s">Send all documents to:</h3>
 
           {% if data["resides-in-uk"] == "Northern-Ireland" %}
               <div class="govuk-panel--address govuk-!-margin-top-2">
@@ -261,7 +272,7 @@
               </div>
           {% endif %}
 
-          <p class="govuk-body">Include the applicant's Name and National Insurance number with anything you send. Any original documents will be returned to the address you have asked us to send any letters to.</p>
+          <p class="govuk-body">Include the applicant's name and National Insurance number with anything you send. Any original documents will be returned to the address you have asked us to send any letters to.</p>
 
           <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
