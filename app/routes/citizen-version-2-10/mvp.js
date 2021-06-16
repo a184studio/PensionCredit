@@ -330,13 +330,13 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   const residesInUk = req.session.data['resides-in-uk']
 
   if (residesInUk === 'England') {
-    res.redirect(`${baseUrl}/over-spa`)
+    res.redirect(`${baseUrl}/data-we-use`)
   } else if (residesInUk === 'Scotland') {
-    res.redirect(`${baseUrl}/over-spa`)
+    res.redirect(`${baseUrl}/data-we-use`)
   } else if (residesInUk === 'Wales') {
-    res.redirect(`${baseUrl}/over-spa`)
+    res.redirect(`${baseUrl}/data-we-use`)
   } else if (residesInUk === 'Northern-Ireland') {
-    res.redirect(`${baseUrl}/over-spa`)
+    res.redirect(`${baseUrl}/data-we-use`)
   } else {
     res.redirect(`${baseUrl}/done-none-uk`)
   }
@@ -521,7 +521,7 @@ router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
   if (claimFilter === 'Normal') {
     res.redirect(`${baseUrl}/doc-absence`)
   } else if (claimFilter === 'Today') {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
     res.redirect(`${baseUrl}/claim-notification`)
   }
@@ -541,7 +541,7 @@ router.post(`${baseUrl}/doc-absence-medical-single-router`, (req, res) => {
   const docAbsenceSingleMedical = req.session.data['doc-absence-medical']
 
   if (docAbsenceSingleMedical === 'Yes') {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
     res.redirect(`${baseUrl}/doc-absence-dates`)
   }
@@ -551,9 +551,9 @@ router.post(`${baseUrl}/doc-absence-medical-plural-router`, (req, res) => {
   const docAbsencePluralMedical = req.session.data['doc-absence-medical']
 
   if (docAbsencePluralMedical === 'Yes') {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   }
 })
 
@@ -561,7 +561,7 @@ router.post(`${baseUrl}/doc-draft-date-router`, (req, res) => {
   const docDraftDate = req.session.data['doc-draft-date']
 
   if (docDraftDate === 'Yes') {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
     res.redirect(`${baseUrl}/doc-alt-date`)
   }
