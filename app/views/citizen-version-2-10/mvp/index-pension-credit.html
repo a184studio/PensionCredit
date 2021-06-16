@@ -123,7 +123,7 @@
   data["money-second-property-check"] == "Yes" or
   data["home-care-home-check-still-own"] == "Yes"%}
 
-          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+          <h3 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
           <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
 
           {% include "citizen-version-2-10/mvp/callback-list.html" %}
@@ -181,7 +181,7 @@
     data["home-other-service-charges"] == "Yes" or
     data["del-auth-secure-access-code-check"] == "No"
   %}
-        <h2 class="govuk-heading-m">What you need to do next</p>
+        <h2 class="govuk-heading-xm">What you need to do next</h2>
 
 
 
@@ -211,8 +211,8 @@
 
                       <!---- SERVICE CHARGE ONLY ---->
                       {% if
-                        data["home-other-service-charges"] == "Yes" and 
-                        data["home-other-ground-rent"] == "No" or 
+                        data["home-other-service-charges"] == "Yes" and
+                        data["home-other-ground-rent"] == "No" or
                         data["home-own-service-charges"] == "Yes" and
                         data["home-own-ground-rent"] == "No"
                         %}
@@ -241,7 +241,7 @@
                         data["home-other-ground-rent"] == "Yes"
                       %}
                       <h3 class="govuk-heading-s">Send us information about your service charges and ground rent</h3>
-                      <p class="govuk-body">Send us a copy of the most recent ground rent invoice and the most recent service charge invoice, with an itemised breakdown of charges.</p>                      
+                      <p class="govuk-body">Send us a copy of the most recent ground rent invoice and the most recent service charge invoice, with an itemised breakdown of charges.</p>
                       {% endif %}
 
         {% endif %}
@@ -336,12 +336,14 @@ data["home-shared-housing-benefit-apply"] == "Yes"
 {% if data['resides-in-uk'] == 'Northern-Ireland' %}
   <div class="govuk-!-margin-top-6">
     <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
-    <p class="govuk-body">You might be able to claim<a href="https://www.nidirect.gov.uk/articles/carers-allowance">Carer's Allowance<a/> if you care for someone for 35 hours or more a week.</p>
+    <p class="govuk-body">You might be able to claim <a href="https://www.nidirect.gov.uk/articles/carers-allowance">Carer's Allowance</a> if you care for someone for 35 hours or more a week.</p>
   </div>
+
 {% else %}
   <div class="govuk-!-margin-top-6">
     <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
-    <p class="govuk-body">You might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance</a> if you care for someone for 35 hours or more a week.</p>
+    <p class="govuk-body">You might be able to claim
+      <a href="https://www.gov.uk/carers-allowance">Carer's Allowance</a>if you care for someone for 35 hours or more a week.</p>
   </div>
 {% endif %}
 </div>
@@ -350,6 +352,7 @@ data["home-shared-housing-benefit-apply"] == "Yes"
 <div>
   <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
     <h2 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">Print or save</h2>
+
       <p class="govuk-body govuk-!-margin-bottom-2"><a href="#" onClick="window.print();return false">Print this page</a></p>
       <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" onClick="window.print();return false">Save this page</a> (PDF, 100KB)</p>
 </div>
