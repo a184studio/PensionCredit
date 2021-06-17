@@ -16,11 +16,10 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="housing-costs-router" method="post" class="form">
 
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">[@pete we had bullets inside hint text] I might be able to help you with money you pay for housing</h1>
 
-      <!------------HEADLINE------------>
-        {% set legend %}
-        <p class="govuk-hint"><strong>Service charges can include:</strong></p>
-        <ul class="govuk-hint govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <p class="govuk-body"><strong>Service charges can include:</strong></p>
+        <ul class="govuk-body govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
           <li>
             warden services
           </li>
@@ -35,15 +34,7 @@
           </li>
         </ul>
 
-        <p class="govuk-hint govuk-!-padding-bottom-0"><strong>Ground rent:</strong></p>
-
-<p class="govuk-hint govuk-!-padding-bottom-2">You might pay ground rent if you are the leaseholder of your home.</p>
-
-
-        {% endset %}
-      <!------------HEADLINE------------>
-
-
+        <p class="govuk-body govuk-!-padding-bottom-4"><strong>Ground rent: </strong>You might pay ground rent if you are the leaseholder of your home.</p>
 
       {{ govukRadios({
         idPrefix: "housing-costs",
@@ -52,11 +43,11 @@
           legend: {
             text: "Do you pay any service charges or ground rent?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
           }
         },
         hint: {
-          html: legend
+          html: ""
         },
         items: [
           {
