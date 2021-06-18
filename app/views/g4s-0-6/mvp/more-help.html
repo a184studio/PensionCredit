@@ -21,69 +21,106 @@
 
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Other help with your living or housing costs</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">There is other help you could get, such as:</h1>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">There is other help you could get, such as help with:</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>your health</li>
-        <li>heating your home</li>
-        <li>public transport</li>
-        <li>paying rent for your home</li>
-        <li>your pensions</li>
-        <li>benefits in general</li>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Help with your health</h1>
 
-      </ul>
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Would you like to find out  more about any of those?</p>
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-  
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with your health</h1>
+  {% set healthDetails %}
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Attendance Allowance</strong> helps with extra costs if you have a disability severe enough that you need someone to help look after you.</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Go to GOV.UK and search for "attendance allowance".</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Or call 0800 731 0122 (Monday to Friday, 9:30am-3:30pm).</p>
+  {% endset %}
+
+  {{ govukDetails({
+    summaryText: "More about help with your health",
+      html: healthDetails
+  }) }}
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with heating your home</h1>
+
+    <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Help with heating your home</h1>
+
+    {% set heatingDetails %}
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If you were born on or before 5 October 1954 you could get between £100 and £300 to help you pay your heating bills. This is known as a <strong>Winter Fuel Payment</strong>.</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Go to GOV.UK and search for "winter fuel payment".</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Or call 0800 731 0160 (Monday to Friday, 9:30am-3:30pm).</p>
+    {% endset %}
 
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    {{ govukDetails({
+      summaryText: "More about help with your heating",
+        html: heatingDetails
+    }) }}
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with public transport</h1>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Help with public transport</h1>
+
+      {% set transportDetails %}
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">In England you can get a <strong>bus pass for free travel</strong> when you reach the female State Pension age, whether you are a man or a woman.</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Go to GOV.UK and search for "free bus pass".</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Or call your local council as they issue the bus passes.</p>
+      {% endset %}
 
+      {{ govukDetails({
+        summaryText: "More about help with public transport",
+          html: transportDetails
+      }) }}
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with renting your house or flat</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Help with renting your house or flat</h1>
+
+      {% set housingDetails %}
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Housing Benefit</strong> can help you pay your rent if you are unemployed, on a low income or claiming benefits. It is being replaced by Universal Credit.</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Go to GOV.UK and search for "housing benefit".</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Or call your local council as they will deal with your claim.</p>
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "More about help with renting your house or flat",
+          html: housingDetails
+      }) }}
+
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Help with your pensions</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Help with your pensions</h1>
+
+      {% set pensionsDetails %}
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>The Pensions Advisory Service</strong> offers free information and advice about your State Pension or your company, personal, stakeholder or occupational pensions.</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Go to GOV.UK and search for "TPAS".</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Or call 0800 011 3797 (Monday to Friday, 9am-5pm).</p>
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "More about help with with your pensions",
+          html: pensionsDetails
+      }) }}
+
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">General help with benefits</h1>
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">General help with benefits</h1>
+      {% set benefitsDetails %}
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Go to GOV.UK and search for "benefits checker".</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You will find links to a number of independent benefits calculators to help you find out what benefits you could get, how to claim and how your benefits will be affected if you start work.</p>
-      
+{% endset %}
+
+      {{ govukDetails({
+        summaryText: "More about general help with benefits",
+          html: benefitsDetails
+      }) }}
+
+
+
 
 
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        classes: "govuk-!-margin-top-6"
       }) }}
 
 
