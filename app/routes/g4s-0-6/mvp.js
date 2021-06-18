@@ -85,7 +85,7 @@ router.post(`${baseUrl}/claimant-national-insurance-router`, (req, res) => {
   const claimantNationalInsurance = req.session.data['claimant-national-insurance']
 
   if (claimantNationalInsurance === 'Yes') {
-    res.redirect(`${baseUrl}/housing-costs`)
+    res.redirect(`${baseUrl}/housing-service-charge`)
   } else if (claimantNationalInsurance === 'Lost') {
     res.redirect(`${baseUrl}/search-ni`)
   } else {
@@ -102,6 +102,7 @@ router.post(`${baseUrl}/housing-costs-router`, (req, res) => {
     res.redirect(`${baseUrl}/data-we-use`)
   }
 })
+
 
 router.post(`${baseUrl}/benefit-check-router`, (req, res) => {
   const benefitCheck = req.session.data['benefit-check']
