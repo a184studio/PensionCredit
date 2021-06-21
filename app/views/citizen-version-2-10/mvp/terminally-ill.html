@@ -16,20 +16,14 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="del-auth-contact-number" method="post" class="form">
 
-      <!------------H1 LEGEND------------>
-        {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "joint" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Question?</h2>
-        {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Question?</h2>{% endif %}
-        {% endset %}
-      <!------------Legend--------------->
-
-      {{ govukRadios({
-        name: "",
-        fieldset: {
-          legend: {
-            html: dynamicH1,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+  {{ govukRadios({
+    idPrefix: "uk-national",
+    name: "uk-national",
+    fieldset: {
+      legend: {
+        text: "Question",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
           }
         },
         items: [
