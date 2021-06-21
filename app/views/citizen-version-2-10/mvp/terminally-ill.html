@@ -14,12 +14,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="final-cya" method="post" class="form">
+    <form action="del-auth-contact-number" method="post" class="form">
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "joint" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Question?</h2>
-        {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Question?</h2>{% endif %}
+        {% if data["single-joint-check"] == "joint" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Has the applicant or their partner been diagniosed with a terminal illness?</h2>
+        {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Has the applicant been diagniosed with a terminal illness?</h2>{% endif %}
         {% endset %}
       <!------------Legend--------------->
 
@@ -31,6 +31,9 @@
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
+        },
+        hint: {
+          text: "In cases of terminal illness, we will prioritise the application and process it within 2 weeks. "
         },
         items: [
           {
