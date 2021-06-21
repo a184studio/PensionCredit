@@ -18,7 +18,7 @@
 
          <!------------H1 LEGEND------------>
          {% set dynamicH1 %}
- {% if data["home-rent-housing-benefit"] == "Yes HeUC" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your housing payment from Universal Credit will stop if you get Pension Credit</h1>
+ {% if data["home-rent-housing-benefit"] == "Yes HeUC" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your housing payment from Universal Credit will stop soon</h1>
  {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you want to apply for Housing Benefit?</h1>{% endif %}
  {% endset %}
                 
@@ -27,9 +27,18 @@
       {% set legendHint %}
 
       {% if data["home-rent-housing-benefit"] == "Yes HeUC"%}
-      <p class="govuk-hint">If you choose to apply for Housing Benefit instead, we will pass the information you give us in your Pension Credit application to your local authority who will start your application.</p>
+      
+      <p class="govuk-hint">Your Universal Credit payments will stop if your Pension Credit claim is successful, or if anything else changes your eligibility for Universal Credit.</p>
+      
+      
+      <!-- <p class="govuk-hint">Your Universal Credit claim will stop when you reach State Pension age. This means your housing payment from Universal Credit will also stop.</p>
+
+      <p class="govuk-hint">When you (and your partner, if you have one) reach State Pension age your Universal Credit claim will stop. This means your housing payment from Universal Credit will stop also</p> -->
+
+
+      <p class="govuk-hint">You can choose to apply for Housing Benefit instead. We will pass the information you give us in your Pension Credit application to your local authority who will start your Housing Benefit application.</p>
       {% else %}
-        <p class="govuk-hint">If you choose to apply for Housing Benefit, we will pass the information you give us in your Pension Credit application to your local authority who will start your application.</p>
+      <p class="govuk-hint">If you choose to apply for Housing Benefit, we will pass the information you give us in your Pension Credit application to your local authority who will start your Housing Benefit application.</p>
       {% endif %}
 
       {% if data["home-rent-housing-benefit"] == "Yes HeUC"%}<p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Do you want to apply for Housing Benefit?</p>
