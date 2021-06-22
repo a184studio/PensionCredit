@@ -34,7 +34,7 @@
       {% endif %}
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      I'm just going to check our systems for your total weekly income from personal pensions
+      I'm just going to check our systems for your weekly personal pensions
     </h1>
 
 
@@ -104,7 +104,7 @@
        id: "pensions-howMuch-value",
        name: "pensions-howMuch-value",
        label: {
-         html: "Enter their total weekly pensions total from SearchLight",
+         html: "Enter their weekly pensions total from SearchLight",
          classes: "govuk-label--s",
          isPageHeading: true
        },
@@ -156,13 +156,11 @@
 
 
 {% else %}
-
-
 {{ govukInput({
   id: "pensions-value",
   name: "pensions-value",
   label: {
-    html: "Use SearchLight to enter their total weekly income from private pensions only",
+    html: "Enter each amount as shown in SearchLight",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -176,7 +174,29 @@
   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
   spellcheck: false
 }) }}
-<p class="govuk-body govuk-!-margin-top-0 govuk-!-margin-bottom-6"><a href="https://pensioncreditcalculator.dwp.gov.uk/weekly-calculator.php" target="_blank">Calculate weekly amount (Opens in new tab)</a></p>
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "changed-name",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "month",
+      text: "Monthly"
+    },
+    {
+      value: "year",
+      text: "Weekly"
+    }
+  ]
+}) }}
 
 
 

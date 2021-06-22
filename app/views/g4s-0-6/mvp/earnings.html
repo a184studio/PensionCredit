@@ -23,7 +23,7 @@
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        I'm just going to check our systems for your weekly earnings
+        And now I'm just going to check our systems for your weekly earnings
       </h1>
 
       <!------------------------------------------------------------A------------------------------------------------------------------------>
@@ -138,7 +138,7 @@
    id: "earnings-value",
    name: "earnings-value",
    label: {
-     html: "Enter their weekly earnings total from SearchLight",
+     html: "Use SearchLight to enter their total weekly income from earnings only",
      classes: "govuk-label--m",
      isPageHeading: true
    },
@@ -149,9 +149,10 @@
      text: "£"
    },
    value: data["earnings-value"],
-   classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
    spellcheck: false
  }) }}
+ <p class="govuk-body govuk-!-margin-top-0 govuk-!-margin-bottom-6"><a href="https://pensioncreditcalculator.dwp.gov.uk/weekly-calculator.php" target="_blank">Calculate weekly amount (Opens in new tab)</a></p>
 
 
   {% endif %}
