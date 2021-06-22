@@ -34,10 +34,10 @@
       {% endif %}
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      I'm just going to check our systems for your weekly income from personal pensions
+      I'm just going to check our systems for your income from personal pensions
     </h1>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Enter each amount and it will total it up correctly</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add each entry as show in SL</p>
 
 
 <!------------------------------------------------------------A------------------------------------------------------------------------>
@@ -166,7 +166,7 @@
   id: "pensions-value",
   name: "pensions-value",
   label: {
-    html: "",
+    text: "Pension 1",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -203,11 +203,54 @@
     }
   ]
 }) }}
-{% endset %}
-</div>
 
-<div class="amount2">
-{% set amount2 %}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+{{ govukInput({
+  id: "pensions-value",
+  name: "pensions-value",
+  label: {
+    text: "Pension 2",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter an amount in pounds and pence, for example, 100.00"
+  },
+  prefix: {
+    text: "£"
+  },
+  value: data["pensions-value"],
+  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+  spellcheck: false
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "changed-name",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "month",
+      text: "Monthly"
+    },
+    {
+      value: "year",
+      text: "Weekly"
+    }
+  ]
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 
 {{ govukInput({
   id: "pensions-value",
@@ -234,7 +277,7 @@
   name: "changed-name",
   fieldset: {
     legend: {
-      text: "",
+      text: "Pension 3",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -250,17 +293,62 @@
     }
   ]
 }) }}
-{% endset %}
-</div>
 
-<div class="amount3">
-{% set amount3 %}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 {{ govukInput({
   id: "pensions-value",
   name: "pensions-value",
   label: {
     html: "",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter an amount in pounds and pence, for example, 100.00"
+  },
+  prefix: {
+    text: "£"
+  },
+  value: data["pensions-value"],
+  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+  spellcheck: false
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "changed-name",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "Pension 4",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "month",
+      text: "Monthly"
+    },
+    {
+      value: "year",
+      text: "Weekly"
+    }
+  ]
+}) }}
+
+{% endset %}
+</div>
+
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+{{ govukInput({
+  id: "pensions-value",
+  name: "pensions-value",
+  label: {
+    text: "Pension 1",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -297,17 +385,16 @@
     }
   ]
 }) }}
-{% endset %}
-</div>
 
-<div class="amount4">
-{% set amount4 %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 
 {{ govukInput({
   id: "pensions-value",
   name: "pensions-value",
   label: {
-    html: "",
+    text: "Pension 2",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -344,53 +431,8 @@
     }
   ]
 }) }}
-{% endset %}
-</div>
 
-
-
-
-
-<!------------------------------------------------------------------------------------------------------------------------------------>
-
-
-{{ govukAccordion({
-  id: "accordion-default",
-  items: [
-    {
-      heading: {
-        text: "Add private pension [1]"
-      },
-      content: {
-        html: amount1
-      }
-    },
-    {
-      heading: {
-        text: "Add private pension [2]"
-      },
-      content: {
-        html: amount2
-      }
-    },
-      {
-      heading: {
-        text: "Add private pension [3]"
-      },
-      content: {
-        html: amount3
-      }
-    },
-      {
-      heading: {
-        text: "Add private pension [4]"
-      },
-      content: {
-        html: amount4
-      }
-    }
-  ]
-}) }}
+<p class="govuk-body govuk-!-padding-top-0"><a href="pensions-more-2-1">Add more pensions</a></p>
 
 
 
@@ -403,15 +445,6 @@
       }) }}
     </form>
 
-
-<!-- <br><br>
-    <br>[+CP]  £25.00 +£37.50]
-    <br>[+DB] £25.00 +£66.95]
-    <br>[CP+DB] £104.45
-
-    Use £5 if no benefits, use £10 for CP or DB -->
-
-    <!-- <p class="govuk-body govuk-!-padding-top-0"><a href="pensions-enter">Pensions enter amounts</a></p> -->
 
   </div>
 </div>

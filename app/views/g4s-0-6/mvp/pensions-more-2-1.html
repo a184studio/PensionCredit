@@ -34,10 +34,8 @@
       {% endif %}
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      I'm just going to check our systems for your weekly income from personal pensions
+      I'm just going to check our systems for your income from personal pensions
     </h1>
-
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Enter each amount and it will total it up correctly</p>
 
 
 <!------------------------------------------------------------A------------------------------------------------------------------------>
@@ -159,14 +157,13 @@
 
 {% else %}
 
-<div class="amount1">
-{% set amount1 %}
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 {{ govukInput({
   id: "pensions-value",
   name: "pensions-value",
   label: {
-    html: "",
+    text: "Pension 1",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -203,17 +200,16 @@
     }
   ]
 }) }}
-{% endset %}
-</div>
 
-<div class="amount2">
-{% set amount2 %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 
 {{ govukInput({
   id: "pensions-value",
   name: "pensions-value",
   label: {
-    html: "",
+    text: "Pension 2",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -250,17 +246,15 @@
     }
   ]
 }) }}
-{% endset %}
-</div>
 
-<div class="amount3">
-{% set amount3 %}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 
 {{ govukInput({
   id: "pensions-value",
   name: "pensions-value",
   label: {
-    html: "",
+    text: "Pension 3",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -297,17 +291,15 @@
     }
   ]
 }) }}
-{% endset %}
-</div>
 
-<div class="amount4">
-{% set amount4 %}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 
 {{ govukInput({
   id: "pensions-value",
   name: "pensions-value",
   label: {
-    html: "",
+    text: "Pension 4",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -344,53 +336,191 @@
     }
   ]
 }) }}
-{% endset %}
-</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
+{{ govukInput({
+  id: "pensions-value",
+  name: "pensions-value",
+  label: {
+    text: "Pension 5",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter an amount in pounds and pence, for example, 100.00"
+  },
+  prefix: {
+    text: "£"
+  },
+  value: data["pensions-value"],
+  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+  spellcheck: false
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "changed-name",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "month",
+      text: "Monthly"
+    },
+    {
+      value: "year",
+      text: "Weekly"
+    }
+  ]
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+{{ govukInput({
+  id: "pensions-value",
+  name: "pensions-value",
+  label: {
+    text: "Pension 6",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter an amount in pounds and pence, for example, 100.00"
+  },
+  prefix: {
+    text: "£"
+  },
+  value: data["pensions-value"],
+  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+  spellcheck: false
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "changed-name",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "month",
+      text: "Monthly"
+    },
+    {
+      value: "year",
+      text: "Weekly"
+    }
+  ]
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+{{ govukInput({
+  id: "pensions-value",
+  name: "pensions-value",
+  label: {
+    text: "Pension 7",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter an amount in pounds and pence, for example, 100.00"
+  },
+  prefix: {
+    text: "£"
+  },
+  value: data["pensions-value"],
+  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+  spellcheck: false
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "changed-name",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "month",
+      text: "Monthly"
+    },
+    {
+      value: "year",
+      text: "Weekly"
+    }
+  ]
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+{{ govukInput({
+  id: "pensions-value",
+  name: "pensions-value",
+  label: {
+    text: "Pension 8",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter an amount in pounds and pence, for example, 100.00"
+  },
+  prefix: {
+    text: "£"
+  },
+  value: data["pensions-value"],
+  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+  spellcheck: false
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "changed-name",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "month",
+      text: "Monthly"
+    },
+    {
+      value: "year",
+      text: "Weekly"
+    }
+  ]
+}) }}
 
 
 
 <!------------------------------------------------------------------------------------------------------------------------------------>
 
-
-{{ govukAccordion({
-  id: "accordion-default",
-  items: [
-    {
-      heading: {
-        text: "Add private pension [1]"
-      },
-      content: {
-        html: amount1
-      }
-    },
-    {
-      heading: {
-        text: "Add private pension [2]"
-      },
-      content: {
-        html: amount2
-      }
-    },
-      {
-      heading: {
-        text: "Add private pension [3]"
-      },
-      content: {
-        html: amount3
-      }
-    },
-      {
-      heading: {
-        text: "Add private pension [4]"
-      },
-      content: {
-        html: amount4
-      }
-    }
-  ]
-}) }}
 
 
 
