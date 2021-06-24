@@ -1105,13 +1105,31 @@ h2.govuk-heading-m {
 // SEARCH LIGHT —————————————————————————————————————
 
 
-.key-details-bar {
-  background-color: #005ea5;
+.govuk-grid-row-sl {
+ width: 100vw;
+ position: relative;
+ margin-left: -50vw;
+ height: 20vh;
+ left: 50%;
+ background-color: #005ea5;
+ margin-bottom:5vh;
 }
 
-.key-details-bar .key-details-bar__key-details {
-  margin: 0 auto;
-  max-width: 2000;
-  padding: 20px 30px;
-  position: relative;
+.sl-grey {
+
+}
+
+
+.sl-tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.sl-tags > li {
+    display: inline-block;
+    padding-right:15px;
 }
