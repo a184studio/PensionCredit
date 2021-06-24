@@ -16,103 +16,33 @@
   <div class="govuk-grid-column-full">
     <form action="find-a-claim" method="post" class="form">
 
-      <!-- {% include "citizen-version-1/work-list-1-2/admin-navigation.html" %} -->
+
+    <h1 class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-2">Kieran A Howells</h1>
+    <h1 class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-2">3 January 1952</h1>
+    <h1 class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-8">{{ data ["sl-find-a-claim"]}}</h1>
 
 
+                <nav class="navigation-secondary govuk-!-margin-bottom-8">
+                    <ul>
+                      <li>
+                        <a href="sl-claim-f" class="active" aria-current="section">Personal details</a>
+                        <!-- <a href="case-load">Pension Credit claims</a> -->
+                      </li>
+                      <li>
+                        <!-- <a href="find-a-claim" class="active" aria-current="section">Find a claim</a> -->
+                        <a href="sl-claim-f-benefits">Benefits</a>
+                      </li>
+                      <li>
+                        <!-- <a href="stats" class="active" aria-current="section">Hot hot stats</a> -->
+                        <a href="sl-claim-f-income">Income</a>
+                      </li>
 
 
-
-                <p class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-6"><strong>Results for: </strong>{{ data ["sl-find-a-claim"]}}</p>
-                <!-- <p class="govuk-body govuk-!-font-size-48 govuk-!-margin-top-2 govuk-!-margin-bottom-2">Claims found for: <strong>NA112233c</strong></p> -->
-
+                    </ul>
+                  </nav>
 
 
-                                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><table class="govuk-table">
-                                  <thead class="govuk-table__head">
-                                    <tr class="govuk-table__row">
-                                      <td class="govuk-!-font-size-19 govuk-table__cell govuk-20-percent">Name</td>
-                                      <td class="govuk-!-font-size-24 govuk-table__cell govuk-80-percent">Kieran A Howells</td>
-                                    </tr>
-                                    </thead>
-
-                                    <tr class="govuk-table__row">
-                                      <td class="govuk-!-font-size-19 govuk-table__cell govuk-20-percent">Date of birth</td>
-                                      <td class="govuk-!-font-size-24 govuk-table__cell govuk-80-percent">3 January 1952</td>
-                                    </tr>
-
-                                    </table>
-
-
-                                  <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4"><strong>Benefits</p>
-
-                                    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
-                                      <thead class="govuk-table__head">
-                                        <tr class="govuk-table__row">
-                                          <th class="govuk-table__cell govuk-20-percent">Start date</th>
-                                          <th class="govuk-table__cell govuk-40-percent">Benefit</th>
-                                          <th class="govuk-table__cell govuk-20-percent">Frequency</th>
-                                          <th class="govuk-table__cell govuk-20-percent">Amount</th>
-                                        </tr>
-                                        </thead>
-
-                                        <tr class="govuk-table__row">
-                                          <td class="govuk-table__cell table-spacer">April 2002</td>
-                                          <td scope="row" class="govuk-table__cell table-spacer">State Pension [SP]</td>
-                                          <td class="govuk-table__cell table-spacer">Weekly</td>
-                                          <td class="govuk-table__cell table-spacer">£150.00</td>
-                                        </tr>
-
-                                        <tr class="govuk-table__row">
-                                          <td class="govuk-table__cell table-spacer">April 2002</td>
-                                          <td scope="row" class="govuk-table__cell table-spacer">Disability living allowance [DLA]</td>
-                                          <td class="govuk-table__cell table-spacer">Weekly</td>
-                                          <td class="govuk-table__cell table-spacer">£66.95</td>
-                                        </tr>
-
-                                        </table>
-
-                                <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4"><strong>Private pensions</p>
-
-                                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
-                                    <thead class="govuk-table__head">
-                                      <tr class="govuk-table__row">
-                                        <th class="govuk-table__cell govuk-20-percent">Paid</th>
-                                        <th scope="row" class="govuk-table__cell table-spacer govuk-40-percent">Name</th>
-                                        <th class="govuk-table__cell govuk-20-percent">Frequency</th>
-                                        <th class="govuk-table__cell govuk-20-percent">Taxable pay</th>
-                                      </tr>
-                                      </thead>
-
-                                      <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell table-spacer">April 2021</td>
-                                        <td scope="row" class="govuk-table__cell table-spacer">British Rail</td>
-                                        <td class="govuk-table__cell table-spacer">Monthly</td>
-                                        <td class="govuk-table__cell table-spacer">£5.00</td>
-                                      </tr>
-
-                                      </table>
-
-                                <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4"><strong>Earnings</p>
-
-                                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><table class="govuk-table">
-                                    <thead class="govuk-table__head">
-                                      <tr class="govuk-table__row">
-                                        <th class="govuk-table__cell govuk-20-percent">Paid</th>
-                                        <th scope="row" class="govuk-table__cell table-spacer">Name</th>
-                                        <th class="govuk-table__cell govuk-20-percent">Frequency</th>
-                                        <th class="govuk-table__cell govuk-20-percent">Taxable pay</th>
-                                      </tr>
-                                      </thead>
-
-                                      <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell table-spacer">April 2021</td>
-                                        <td scope="row" class="govuk-table__cell table-spacer">Kevin Jones Piano tuning LTD</td>
-                                        <td class="govuk-table__cell table-spacer">Monthy</td>
-                                        <td class="govuk-table__cell table-spacer">£10.00</td>
-                                      </tr>
-
-
-                                      </table>
+                  {% include "searchlight/sl-1/sl-personal-details.html" %}
 
 
 
