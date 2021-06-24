@@ -16,12 +16,14 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="claimant-national-insurance-router" method="post" class="form">
 
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I'm going to see if I can find your details on our system using your name and date of birth </h1>
+
       <!-- Hidden input to set task to complete on task-list -->
       {% set dynamicH1 %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
-      Was a National Insurance number found?
-      </h1>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Did you find a National Insurance number?
+      
+      </h2>
 
       {% endset -%}
 
@@ -32,9 +34,9 @@
 
       {% set dynamicH2 %}
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
         Enter National Insurance number
-      </h1>
+      </h2>
 
       {% endset -%}
 
