@@ -18,17 +18,17 @@
     <form action="outcome" method="post" class="form">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        I'm just going to check our systems for your income from personal pensions
+        I'm just going to check our systems for your income from employment and workplace or personal pensions
       </h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Enter each amount and it will total it up correctly</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Enter each income and payment frequency separately.</p>
 
 
 {{ govukInput({
   id: "income-1-value",
   name: "income-1-value",
   label: {
-    text: "Income-1-value",
+    text: "Income 1",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -49,7 +49,7 @@
   name: "income-1-frequency",
   fieldset: {
     legend: {
-      text: "",
+      text: "Payment frequency",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -73,7 +73,7 @@
   id: "income-2-value",
   name: "income-2-value",
   label: {
-    text: "income-2-value",
+    text: "Income 2",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -94,7 +94,7 @@
   name: "income-2-frequency",
   fieldset: {
     legend: {
-      text: "",
+      text: "Payment frequency",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
