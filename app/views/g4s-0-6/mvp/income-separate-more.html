@@ -18,17 +18,18 @@
     <form action="outcome" method="post" class="form">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        I'm just going to check our systems for your income from personal pensions
+        I'm just going to check our systems for your income from employment and workplace or personal pensions
       </h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Enter each amount and it will total it up correctly</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Enter each income and payment frequency separately.</p>
+
 
 
 {{ govukInput({
   id: "income-1-value",
   name: "income-1-value",
   label: {
-    text: "Income-1-value",
+    text: "Income 1",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -49,7 +50,7 @@
   name: "income-1-frequency",
   fieldset: {
     legend: {
-      text: "",
+      text: "Payment frequency",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -73,7 +74,7 @@
   id: "income-2-value",
   name: "income-2-value",
   label: {
-    text: "income-2-value",
+    text: "Income 2",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -94,7 +95,7 @@
   name: "income-2-frequency",
   fieldset: {
     legend: {
-      text: "",
+      text: "Payment frequency",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -117,7 +118,7 @@
   id: "income-3-value",
   name: "income-3-value",
   label: {
-    text: "income-3-value",
+    text: "Income 3",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -138,7 +139,7 @@
   name: "income-3-frequency",
   fieldset: {
     legend: {
-      text: "",
+      text: "Payment frequency",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -161,7 +162,7 @@
   id: "income-4-value",
   name: "income-4-value",
   label: {
-    text: "income-4-value",
+    text: "Income 4",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -182,7 +183,7 @@
   name: "income-4-frequency",
   fieldset: {
     legend: {
-      text: "",
+      text: "Payment frequency",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -205,7 +206,7 @@
   id: "income-5-value",
   name: "income-5-value",
   label: {
-    text: "income-5-value",
+    text: "Income 5",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -226,7 +227,7 @@
   name: "income-5-frequency",
   fieldset: {
     legend: {
-      text: "",
+      text: "Payment frequency",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
