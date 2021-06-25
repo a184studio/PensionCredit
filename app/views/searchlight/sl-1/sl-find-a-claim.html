@@ -1,4 +1,4 @@
-{% extends "layout-fake-searchlight.html" %}
+{% extends "layout-fake-searchlight-find.html" %}
 
 {% block pageTitle %}
   SearchLight
@@ -43,6 +43,116 @@
                   classes: "govuk-!-margin-right-1"
                 }) }}
 
+              </div>
+            </div>
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+            <h1 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-4">Search for a customer</h1>
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter">
+
+                {{ govukInput({
+                  label: {
+                    html: "Full name"
+                  },
+                  hint: {
+                    text: ""
+                  },
+                  id: "sl-name",
+                  name: "sl-name",
+                  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+                  value: data["sl-name"]
+                }) }}
+
+              </div>
+
+              <div class="govuk-grid-column-one-quarter">
+
+                {{ govukDateInput({
+                  id: "sl-dob",
+                  namePrefix: "sl-dob",
+                  fieldset: {
+                    legend: {
+                      text: "What is your date of birth?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--xl"
+                    }
+                  },
+                  hint: {
+                    text: "For example, 31 3 1948."
+                  },
+                  items: [
+                    {
+                      name: "day",
+                      classes: "govuk-input--width-2",
+                      value: data["sl-dob-day"]
+                    },
+                    {
+                      name: "month",
+                      classes: "govuk-input--width-2",
+                      value: data["sl-dob-month"]
+                    },
+                    {
+                      name: "year",
+                      classes: "govuk-input--width-4",
+                      value: data["sl-dob-year"]
+                    }
+                  ]
+                }) }}
+
+              </div>
+
+              <div class="govuk-grid-column-one-quarter">
+
+                {{ govukInput({
+                  label: {
+                    html: "Post code"
+                  },
+                  hint: {
+                    text: ""
+                  },
+                  id: "sl-post-code",
+                  name: "sl-post-code",
+                  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+                  value: data["sl-post-code"]
+                }) }}
+
+              </div>
+
+              <div class="govuk-grid-column-one-quarter">
+                <p></p>
+              </div>
+            </div>
+
+
+            <button class="govuk-button govuk-button--secondary govuk-fake-button" data-module="govuk-button">
+              <a class="govuk-link" href="outcome">Add more incomes</a>
+            </button>
+
+            <Br>
+
+              <a href="sl-find-a-claim-found" class="govuk-button">Continue</a>
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
                 {% set legendNI %}
 
                 SS110000A<br>
@@ -52,14 +162,14 @@
                 SS550000E<br>
                 SS660000F
 
-                <!--
                 S1 11 22 33 A: Someone has MAX / OVER SP with no qualifying benefits<br><br>
                 S2 11 22 33 B: Someone has Low SP, Qualifying benefits, but too much income via Private pension<br><br>
                 S3 11 22 33 C: Someone has Low SP, Qualifying benefits, but too much income via Employment<br><br>
                 S4 11 22 33 D: Service charges = Fast tracked to DWP<br><br>
                 S5 11 22 33 E: Claimants scenario is massively complex, too much for G4s to handle = Handover to DWP<br><br>
                 S6 11 22 33 F: Low SP, Low Pensions, zero income = Classic PC. (edited)
-                -->
+
+
                 {% endset -%}
 
 
@@ -67,10 +177,8 @@
             summaryText: "NI scenarios",
             html: legendNI
             }) }}
+ -->
 
-
-                  </div>
-                </div>
 
 
 

@@ -4,67 +4,67 @@
 
 {% block beforeContent %}
 
-<!--
-{{ govukPhaseBanner({
-  tag: {
-    text: "Testing only [G4s]",
-    classes: "govuk-tag--g4s-user-reseach"
-  },
-  html: 'No information is stored or sent using this service.'
-}) }}
- -->
-
-<ul class="ul-id-bar govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-0">
-  {% if data["full-name"] %}<li class="li-id-bar govuk-!-font-size-16">Name:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['full-name'] }} </strong></li>{% endif %}
-  {% if data["nino"] %}<li class="li-id-bar govuk-!-font-size-16">NI:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['nino'] }}</strong></li>{% endif %}
-  {% if data["dob-day"] %}<li class="li-id-bar govuk-!-font-size-16">DOB:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year'] }}</strong></li>{% endif %}
-
-  {% if data["full-name"] %}<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break-id-bar">{% endif %}
 
 
+<!-- <h1 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-4">LowFi SearchLight</h1> -->
+
+
+<!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break-covid-id-bar"> -->
 
 {% endblock %}
 
-
-
 {% block footer %}
 
-<!-- <div class="govuk-width-container ">
+<footer class="govuk-footer govuk-!-margin-top-9" role="contentinfo">
+<div class="govuk-width-container ">
+  <div class="govuk-footer__navigation">
+    <div class="govuk-footer__section">
+      <h2 class="govuk-heading-s"></h2>
+      <ul class="govuk-footer__list govuk-footer__list--columns-2">
+        <li class="govuk-footer__list-item">
+          <a class="govuk-footer__link" href="eject-error-reason">
+            Save claim and exit
+          </a>
+        </li>
+        <li class="govuk-footer__list-item">
+          <a class="govuk-footer__link" href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter">
+            Personal Information Charter (opens in a new window or tab)
+          </a>
+        </li>
+        <li class="govuk-footer__list-item">
+          <a class="govuk-footer__link" href="this-is-housing-benefit">
+            Housing benefit claim
+          </a>
+        </li>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+        <li class="govuk-footer__list-item">
+          <a class="govuk-footer__link" href="#">
+            <br>
+          </a>
+        </li>
 
+        <li class="govuk-footer__list-item">
+          <a class="govuk-footer__link" href="#">
+             <br>
+          </a>
+        </li>
 
-{% if data["pensions"] == "S1 11 22 33 A" %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data["earnings"] == "S2 11 22 33 B" %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data['nino'] == 'S3 11 22 33 C' %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data['nino'] == 'S4 11 22 33 D' %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data['nino'] == 'S5 11 22 33 E' %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% elif data['nino'] == 'S6 11 22 33 F' %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% else %}
-<p class="govuk-body govuk-!-padding-bottom-6"><strong>Can't continue?</strong><br><a href="handover-early">Handover claim early</a></p>
-{% endif %}
+      </ul>
+    </div>
 
+  </div>
 
-</div>
-</div> -->
 
   {{ govukFooter({
     meta: {
       items: [
         {
-          href: "accessibility-statement",
-          text: "Accessibility"
+          href: "clear",
+          text: "Restart session"
         },
         {
-          href: "claim-filter",
-          text: "Claim filter"
+          href: "accessibility-statement",
+          text: "Accessibility"
         },
         {
           href: "national-insurance-call-B",
