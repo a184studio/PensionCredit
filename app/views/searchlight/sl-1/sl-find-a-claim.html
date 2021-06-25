@@ -74,36 +74,17 @@
 
               <div class="govuk-grid-column-one-quarter">
 
-                {{ govukDateInput({
-                  id: "sl-dob",
-                  namePrefix: "sl-dob",
-                  fieldset: {
-                    legend: {
-                      text: "What is your date of birth?",
-                      isPageHeading: true,
-                      classes: "govuk-fieldset__legend--xl"
-                    }
+                {{ govukInput({
+                  label: {
+                    html: "Date of birth"
                   },
                   hint: {
-                    text: "For example, 31 3 1948."
+                    text: ""
                   },
-                  items: [
-                    {
-                      name: "day",
-                      classes: "govuk-input--width-2",
-                      value: data["sl-dob-day"]
-                    },
-                    {
-                      name: "month",
-                      classes: "govuk-input--width-2",
-                      value: data["sl-dob-month"]
-                    },
-                    {
-                      name: "year",
-                      classes: "govuk-input--width-4",
-                      value: data["sl-dob-year"]
-                    }
-                  ]
+                  id: "sl-dob",
+                  name: "sl-dob",
+                  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+                  value: data["sl-dob"]
                 }) }}
 
               </div>
@@ -131,13 +112,7 @@
             </div>
 
 
-            <button class="govuk-button govuk-button--secondary govuk-fake-button" data-module="govuk-button">
-              <a class="govuk-link" href="outcome">Add more incomes</a>
-            </button>
-
-            <Br>
-
-              <a href="sl-find-a-claim-found" class="govuk-button">Continue</a>
+              <a href="sl-find-a-claim-found" class="govuk-button govuk-button--secondary">Start trace</a>
 
           </div>
         </div>
