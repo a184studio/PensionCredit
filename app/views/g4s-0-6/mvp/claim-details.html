@@ -129,7 +129,33 @@
           rows: [
         {
             key: {
-              text: "Do you pay any service charges or ground rent?"
+              text: "Do you pay any service charges?"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "housing-costs",
+                  text: "Change",
+                  visuallyHiddenText: "housing-costs"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+      {% endif %}
+
+      {% if data["housing-costs"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "Do you pay any ground rent?"
             },
             value: {
               html: data["housing-costs"]
