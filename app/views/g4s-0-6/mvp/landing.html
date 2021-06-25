@@ -49,25 +49,26 @@
         html: ""
       },
       items: [
-        {
-          value: "A",
-          text: "A",
-          checked: (data["ab-check"] == "A")
-        },
-        {
+      {
           value: "B",
-          text: "B",
+          text: "A",
           checked: (data["ab-check"] == "B")
         },
         {
           value: "C",
-          text: "C",
+          text: "B",
           checked: (data["ab-check"] == "C")
         }
       ]
     }) }}
 
-
+<!--
+    {
+      value: "A",
+      text: "A",
+      checked: (data["ab-check"] == "A")
+    },
+-->
 
       {{ govukButton({
        text: "Continue",
