@@ -17,48 +17,45 @@
 
     <h1 class="govuk-heading-xl">Hello, you have reached Pension Credit</h1>
 
-    <p class="govuk-heading-m govuk-!-margin-bottom-0">XXX</p>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">XXX</p>
-
 
     {{ govukRadios({
       idPrefix: "type-of-claim",
       name: "type-of-claim",
       fieldset: {
         legend: {
-          text: "Why are you calling today?",
+          text: "What is the reason for your call today?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
         }
       },
       classes: "govuk-radios",
       hint: {
-        html: "XXXX"
+        html: ""
       },
       items: [
       {
           value: "1",
-          text: "Check eligibility for Pension Credit [37%]",
+          text: "Check eligibility for Pension Credit",
           checked: (data["type-of-claim"] == "1")
         },
         {
           value: "2",
-          text: "Check progress of a claim [17%]",
+          text: "Check progress of a claim",
           checked: (data["type-of-claim"] == "2")
         },
         {
           value: "3",
-          text: "I was asked by DWP to call [10%]",
+          text: "I was asked by DWP to call",
           checked: (data["type-of-claim"] == "3")
         },
         {
           value: "4",
-          text: "General enquiry 5%",
+          text: "General enquiry",
           checked: (data["type-of-claim"] == "4")
         },
         {
           value: "5",
-          text: "Something else 27%",
+          text: "Something else",
           checked: (data["type-of-claim"] == "5")
         }
       ]
