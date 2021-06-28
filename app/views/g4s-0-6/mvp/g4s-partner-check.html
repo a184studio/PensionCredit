@@ -1,0 +1,65 @@
+{% extends "layout-g4s.html" %}
+
+{% block pageTitle %}
+  Apply for Pension Credit - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="g4s-partner-check-router" method="post" class="form">
+
+    <p class="govuk-body govuk--version-control">G4s version 0.6 / MVP</p>
+
+    {{ govukRadios({
+      idPrefix: "g4s-partner-check",
+      name: "g4s-partner-check",
+      fieldset: {
+        legend: {
+          text: "Before I get started I just need to check if this is about single persons application",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
+        }
+      },
+      classes: "govuk-radios",
+      hint: {
+        html: "This means you don't have a partner that you live with."
+      },
+      items: [
+      {
+          value: "Single",
+          text: "Single",
+          checked: (data["g4s-partner-check"] == "Single")
+        },
+        {
+          value: "Claim with partner",
+          text: "They live with a partner",
+          checked: (data["g4s-partner-check"] == "Claim with partner")
+        }
+      ]
+    }) }}
+
+<!--
+    {
+      value: "A",
+      text: "A",
+      checked: (data["ab-check"] == "A")
+    },
+-->
+
+      {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8"
+     }) }}
+
+
+
+
+
+</form>
+</div>
+{% endblock %}

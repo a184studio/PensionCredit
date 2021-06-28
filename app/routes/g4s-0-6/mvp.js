@@ -17,6 +17,20 @@ function makeAStay(data) {
   return {admission, discharge, totalDays}
 }
 
+
+
+
+
+router.post(`${baseUrl}/g4s-partner-check-router`, (req, res) => {
+  const g4sPartnerCheck = req.session.data['g4s-partner-check']
+
+  if (g4sPartnerCheck === 'Single') {
+    res.redirect(`${baseUrl}/type-of-claim`)
+  } else {
+    res.redirect(`${baseUrl}/done-g4s-partner`)
+  }
+})
+
 router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   const residesInUk = req.session.data['resides-in-uk']
 
