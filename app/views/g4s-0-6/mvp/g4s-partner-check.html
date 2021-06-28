@@ -20,25 +20,26 @@
       name: "g4s-partner-check",
       fieldset: {
         legend: {
-          text: "Before I get started I just need to check if this is about single persons application",
+          text: "Do you live with a partner?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }
       },
       classes: "govuk-radios",
       hint: {
-        html: "This means you don't have a partner that you live with."
+        html: "If you live with a partner, their details must be included as part of your application. A partner is a husband, wife, civil partner or someone that you are in a relationship with."
       },
       items: [
       {
-          value: "Single",
-          text: "Single",
-          checked: (data["g4s-partner-check"] == "Single")
+        value: "Claim with partner",
+          text: "Yes",
+          checked: (data["g4s-partner-check"] == "Claim with partner")
+          
         },
         {
-          value: "Claim with partner",
-          text: "They live with a partner",
-          checked: (data["g4s-partner-check"] == "Claim with partner")
+          value: "Single",
+          text: "No",
+          checked: (data["g4s-partner-check"] == "Single")
         }
       ]
     }) }}
