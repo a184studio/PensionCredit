@@ -18,7 +18,7 @@
 
          <!------------H1 LEGEND------------>
          {% set dynamicH1 %}
- {% if data["home-rent-housing-benefit"] == "Yes HeUC" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your housing payment from Universal Credit will stop soon</h1>
+ {% if data["home-rent-housing-benefit"] == "Yes HeUC" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your housing payment will stop when your Universal Credit stops</h1>
  {% else %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you want to apply for Housing Benefit?</h1>{% endif %}
  {% endset %}
                 
@@ -28,7 +28,7 @@
 
       {% if data["home-rent-housing-benefit"] == "Yes HeUC"%}
       
-      <p class="govuk-hint">Your Universal Credit payments will stop if your Pension Credit claim is successful, or if anything else changes your eligibility for Universal Credit.</p>
+      <p class="govuk-hint">You need to stop your Universal Credit claim if your Pension Credit claim is successful.</p>
       
       
       <!-- <p class="govuk-hint">Your Universal Credit claim will stop when you reach State Pension age. This means your housing payment from Universal Credit will also stop.</p>
