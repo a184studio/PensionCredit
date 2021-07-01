@@ -11,11 +11,9 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="start" method="post" class="form">
+    <form action="g4s-partner-check" method="post" class="form">
 
-    <p class="govuk-body govuk--version-control">G4s version 0.6 / MVP</p>
-
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Hello, you have reached Pension Credit</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4 govuk-!-padding-top-4">Hello, you have reached Pension Credit</h1>
 
 
     {{ govukRadios({
@@ -25,7 +23,7 @@
         legend: {
           text: "What is the reason for your call today?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+          classes: "govuk-fieldset__legend--m "
         }
       },
       classes: "govuk-radios",
@@ -76,7 +74,7 @@
 
       {{ govukButton({
        text: "Continue",
-       classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8"
+       classes: "govuk-!-margin-bottom-8"
      }) }}
 
 

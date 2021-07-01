@@ -13,8 +13,6 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="g4s-partner-check-router" method="post" class="form">
 
-    <p class="govuk-body govuk--version-control">G4s version 0.6 / MVP</p>
-
     {{ govukRadios({
       idPrefix: "g4s-partner-check",
       name: "g4s-partner-check",
@@ -34,7 +32,7 @@
         value: "Claim with partner",
           text: "Yes",
           checked: (data["g4s-partner-check"] == "Claim with partner")
-          
+
         },
         {
           value: "Single",
@@ -54,7 +52,7 @@
 
       {{ govukButton({
        text: "Continue",
-       classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8"
+       classes: "govuk-!-margin-bottom-8"
      }) }}
 
 
