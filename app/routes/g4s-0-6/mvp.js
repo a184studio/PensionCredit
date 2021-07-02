@@ -25,7 +25,7 @@ router.post(`${baseUrl}/g4s-partner-check-router`, (req, res) => {
   const g4sPartnerCheck = req.session.data['g4s-partner-check']
 
   if (g4sPartnerCheck === 'Single') {
-    res.redirect(`${baseUrl}/type-of-claim`)
+    res.redirect(`${baseUrl}/start`)
   } else {
     res.redirect(`${baseUrl}/done-g4s-partner`)
   }
