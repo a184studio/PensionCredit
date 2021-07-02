@@ -26,14 +26,25 @@
 
         <!------------Legend------------>
           {% set LegendList %}
-        <p class="govuk-heading-s govuk-!-margin-bottom-2">Checks done on this claim:</p>
+        <p class="govuk-heading-s govuk-!-margin-bottom-2">Check 1: Pension Credit in payment</p>
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
 
-        <li>... outlined test from Joes API</li>
-        <li>XXX</li>
-        <li>XXX</li>
-        <li>XXX</li>
-        </ul>
+          <li>matched using National Insurance number and Date of birth</li>
+          <li>pension credit already in payment / Single</li>
+
+          </ul>
+
+          <p class="govuk-heading-s govuk-!-margin-bottom-2">Check 2: Nil award</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+
+            <li>matched using National Insurance number and Date of birth</li>
+            <li>reached SPA on or after 6 April 2016 [Savings Credit not applicable]</li>
+            <li>Applicant does not live with partner</li>
+            <li>no housing costs (service charges and ground rent)</li>
+            <li>State Pension amount</li>
+            <li>no other affected benefits in payment</li>
+            <li>no open interest in affected benefits</li>
+            </ul>
 
           {% endset %}
         <!------------Legend------------>
