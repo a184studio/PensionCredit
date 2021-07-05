@@ -128,7 +128,12 @@
 
           {% include "citizen-version-2-10/mvp/callback-list.html" %}
 
-{% elif data["eu-filter"] == "Applied for settlement" %}
+          {% elif data["terminally-ill"] == "Yes" %}
+          <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
+          <p class="govuk-!-font-size-24">We will contact you by <strong>DD / Month / Year (Timescale TBC) </strong>. We will contact you by phone if you have provided a contact number, or letter if you have onlyprovided an address.</p>
+
+
+          {% elif data["eu-filter"] == "Applied for settlement" %}
 
           <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
           <p class="govuk-!-font-size-24">The EU Settlement Scheme will tell us once your status has been awarded. We will then contact you to check the details of your application.</p>
