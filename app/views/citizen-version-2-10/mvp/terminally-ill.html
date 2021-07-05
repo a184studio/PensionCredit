@@ -24,7 +24,8 @@
       <!------------Legend--------------->
 
       {{ govukRadios({
-        name: "",
+        idPrefix: "terminally-ill",
+        name: "terminally-ill",
         fieldset: {
           legend: {
             html: dynamicH1,
@@ -39,12 +40,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data[""] == "Yes")
+            checked: (data["terminally-ill"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data[""] == "No")
+            checked: (data["terminally-ill"] == "No")
           }
         ]
       }) }}
