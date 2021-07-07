@@ -1657,7 +1657,7 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
   const whoMadeClaim = req.session.data['del-auth-who-made-claim']  // name of data / id name
 
   if (whoMadeClaim === 'Yourself') { // name of data / + answer
-    res.redirect(`${baseUrl}/del-auth-contact-number`)
+    res.redirect(`${baseUrl}/claimant-contact-callback`)
   }
   else if (whoMadeClaim === 'Power of attorney') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
@@ -1678,10 +1678,10 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
     res.redirect(`${baseUrl}/del-auth-contact-ff-number-check`)
   }
   else if (whoMadeClaim === 'Someone else') { // name of data / + answer
-    res.redirect(`${baseUrl}/del-auth-contact-number`)
+    res.redirect(`${baseUrl}/claimant-contact-callback`)
   }
   else {
-    res.redirect(`${baseUrl}/del-auth-contact-number`)
+    res.redirect(`${baseUrl}/claimant-contact-callback`)
   }
 })
 
