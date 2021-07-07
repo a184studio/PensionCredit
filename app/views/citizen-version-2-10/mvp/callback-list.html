@@ -5,7 +5,6 @@
 {% endif %}
 <li class="govuk-!-margin-bottom-4"><strong>the immigration status of anyone included in the application. </strong>We will need to ask you some more questions about their right to live and work in the UK</li>
 
-
 {% if data["state-pension-status"] == "NoBank" %}
 {% endif %}
 <li class="govuk-!-margin-bottom-4"><strong>bank details. </strong>We will ask for the sort code and account number of an account to pay Pension credit into</li>
@@ -54,11 +53,11 @@
 {% endif %}
 <li class="govuk-!-margin-bottom-4"><strong>  money overseas. </strong> We will ask the amount and what currency it is in</li>
 
-{% if data["XX"] == "XX" %}
+{% if data["money-total-risk-check"] == "High" %}
 {% endif %}
 <li class="govuk-!-margin-bottom-4"><strong> other accounts or investments.</strong> We will ask for details of these including what the value is and whether they can be accessed</li>
 
-{% if data["XX"] == "XX" %}
+{% if data["money-total-risk-check"] == "nothing selected" %}
 {% endif %}
 <li class="govuk-!-margin-bottom-4"><strong> money.</strong> We will ask a few more questions about the money you have </li>
 
