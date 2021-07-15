@@ -18,27 +18,24 @@
 
 
       <!------------H1 LEGEND------------>
-        {% set dynamicH1 %}
-        {% if data["single-joint-check"] == "Joint" %}
+        {% set DynamicH1 %}
 
+        {% if data["single-joint-check"] == "Joint" %}
           {% if data["home-ownership"] == "You own it" or data["home-ownership"] == "Shared ownership" %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you or your partner own any property or land other than the home you live in?</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner own any property or land other than the home you live in?</h1>
           {% else %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner any property or land?</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you or your partner own any property or land?</h1>
           {% endif %}
 
         {% else %}
 
           {% if data["home-ownership"] == "You own it" or data["home-ownership"] == "Shared ownership" %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you own any property or land other than the home you live in?</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you own any property or land other than the home you live in?</h1>
           {% else %}
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you own any property or land?</h1>
           {% endif %}
 
         {% endif %}
-
-
-
 
         {% endset %}
       <!------------Legend--------------->
