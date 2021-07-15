@@ -24,8 +24,8 @@ Money you have now - Apply for Pension Credit - GOV.UK
       {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you and your partner have today</h1>
       {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you have today</h1>{% endif %}
 
-      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you have money in accounts shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
-      {% else %}  <p class="govuk-!-font-size-24">If you have money in accounts shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
+      {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you have money that is shared with someone other than your partner, only tell us about the amount of money that belongs to you and your partner.</p>
+      {% else %}  <p class="govuk-!-font-size-24">If you have money that is shared with someone else, only tell us about the amount of money that belongs to you.</p>{% endif %}
 
       <p class="govuk-heading-s govuk-!-margin-bottom-2">You should include the total you have in:</p>
 
@@ -35,10 +35,31 @@ Money you have now - Apply for Pension Credit - GOV.UK
             <li>National Savings and Investments products, such as Premium Bonds or Savings Certificates</li>
             <li>money invested in unit trusts</li>
             <li>income or capital bonds</li>
-            <li>money at home in cash</li>
+            <li>cash at home</li>
       </ul>
 
+      {% if data["single-joint-check"] == "Joint" %}
 
+{{ govukInput({
+  id: "money-3-total-now-value",
+  name: "money-3-total-now-value",
+  label: {
+    html: "What is the total amount of money you and your partner have today?",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter an amount in pounds and pence, for example, 100.00"
+  },
+  prefix: {
+    text: "£"
+  },
+  value: data["money-3-total-now-value"],
+  classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+  spellcheck: false
+}) }}
+
+{% else %}
 
 {{ govukInput({
   id: "money-3-total-now-value",
@@ -58,6 +79,8 @@ Money you have now - Apply for Pension Credit - GOV.UK
   classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
   spellcheck: false
 }) }}
+
+{% endif %}
 
       {{ govukButton({
         text: "Continue"
