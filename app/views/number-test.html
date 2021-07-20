@@ -1,0 +1,52 @@
+{% extends "layout-id-bar.html" %}
+
+{% block pageTitle %}
+  Benefits - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Test money
+      </h1>
+
+      <form method="get">
+        {{ govukInput({
+          label: {
+            text: "Number you want to test"
+          },
+          hint: {
+            text: "For example 150"
+          },
+          name: "numberToConvert",
+          value: numberToConvert
+        }) }}
+
+        <p class="govuk-body-l">{{ numberWords }}</p>
+
+        {{ govukInput({
+          label: {
+            text: "Money you want to test"
+          },
+          hint: {
+            text: "For example 100.50"
+          },
+          name: "moneyToConvert",
+          value: moneyToConvert
+        }) }}
+
+        <p class="govuk-body-l">{{ moneyWords }}</p>
+
+        {{ govukButton({
+          text: "Get words"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
