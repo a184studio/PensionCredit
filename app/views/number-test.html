@@ -23,7 +23,8 @@
           name: "numberLanguage",
           fieldset: {
             legend: {
-              text: "Language"
+              text: "Language",
+              classes: "govuk-fieldset__legend--m"
             }
           },
           items: [{
@@ -39,7 +40,8 @@
 
         {{ govukInput({
           label: {
-            text: "Number you want to test"
+            text: "Number you want to test",
+            classes: "govuk-label--m"
           },
           hint: {
             text: "For example 150"
@@ -48,11 +50,14 @@
           value: numberToConvert
         }) }}
 
-        <p class="govuk-body-l">{{ numberWords }}</p>
+        {% if numberWords %}
+          <p class="govuk-inset-text">{{ numberWords }}</p>
+        {% endif %}
 
         {{ govukInput({
           label: {
-            text: "Money you want to test"
+            text: "Money you want to test",
+            classes: "govuk-label--m"
           },
           hint: {
             text: "For example 100.50"
@@ -61,7 +66,9 @@
           value: moneyToConvert
         }) }}
 
-        <p class="govuk-body-l">{{ moneyWords }}</p>
+        {% if moneyWords %}
+          <p class="govuk-inset-text">{{ moneyWords }}</p>
+        {% endif %}
 
         {{ govukButton({
           text: "Get words"
