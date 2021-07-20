@@ -25,22 +25,25 @@ router.post('/session-clear-route', (req, res, next) => {
 const sanitse = (number) => String(number).replace(/[^0-9.]/g, '');
 
 router.get('/number-test', (req, res, next) => {
-  const { numberToConvert, moneyToConvert } = req.query
+  const { numberToConvert, moneyToConvert, numberLanguage } = req.query
 
-  res.locals.numberToConvert = numberToConvert;
-  res.locals.moneyToConvert = moneyToConvert;
+  res.locals.numberToConvert = numberToConvert
+  res.locals.moneyToConvert = moneyToConvert
+  res.locals.numberLanguage = numberLanguage
 
   const number = sanitse(numberToConvert)
   const money = sanitse(moneyToConvert)
 
+  const lang = { en: 'en', cy: 'cy'}[numberLanguage]
+
   if (number) {
     res.locals.numberWords = number.indexOf('.') > -1
       ? 'has to be a whole number'
-      : numbersToWords(number)
+      : numbersToWords(number, lang)
   }
 
   if (money) {
-    res.locals.moneyWords = moneyToWords(money)
+    res.locals.moneyWords = moneyToWords(money, lang)
   }
 
   next()

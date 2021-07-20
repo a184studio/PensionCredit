@@ -17,6 +17,26 @@
       </h1>
 
       <form method="get">
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "numberLanguage",
+          name: "numberLanguage",
+          fieldset: {
+            legend: {
+              text: "Language"
+            }
+          },
+          items: [{
+            value: "en",
+            text: "English",
+            checked: numberLanguage === "en"
+          }, {
+            value: "cy",
+            text: "Welsh",
+            checked: numberLanguage === "cy"
+          }]
+        }) }}
+
         {{ govukInput({
           label: {
             text: "Number you want to test"
