@@ -18,7 +18,15 @@ function makeAStay(data) {
 }
 
 
+router.post(`${baseUrl}/system-partner-check-router`, (req, res) => {
+  const singleJoint = req.session.data['system-partner-check']
 
+  if (singleJoint === 'Single') {
+    res.redirect(`${baseUrl}/outcome`)
+  } else {
+    res.redirect(`${baseUrl}/partner-state-pension-amount`)
+  }
+})
 
 
 router.post(`${baseUrl}/g4s-partner-check-router`, (req, res) => {
@@ -101,11 +109,44 @@ router.post(`${baseUrl}/claimant-national-insurance-router`, (req, res) => {
   if (claimantNationalInsurance === 'Yes') {
     res.redirect(`${baseUrl}/housing-service-charge`)
   } else if (claimantNationalInsurance === 'Lost') {
-    res.redirect(`${baseUrl}/search-ni`)
+    res.redirect(`${baseUrl}/claimant-search-ni`)
   } else {
     res.redirect(`${baseUrl}/handover-early-ni`)
   }
 })
+
+router.post(`${baseUrl}/partner-national-insurance-router`, (req, res) => {
+  const partnerNationalInsurance = req.session.data['partner-national-insurance']
+
+  if (partnerNationalInsurance === 'Yes') {
+    res.redirect(`${baseUrl}/XXX`)
+  } else if (partnerNationalInsurance === 'Lost') {
+    res.redirect(`${baseUrl}/partner-search-ni`)
+  } else {
+    res.redirect(`${baseUrl}/handover-early-ni`)
+  }
+})
+
+router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
+  const partnerCheck = req.session.data['partner-check-yn']
+
+  if (partnerCheck === 'Yes, we live together') {
+    res.redirect(`${baseUrl}/partner-name`)
+  } else {
+    res.redirect(`${baseUrl}/housing-service-charge`)
+  }
+})
+
+router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
+  const macPartnerCheck = req.session.data['partner-mac-yn']
+
+  if (macPartnerCheck === 'Yes') {
+    res.redirect(`${baseUrl}/partner-name`)
+  } else {
+    res.redirect(`${baseUrl}/done-partner`)
+  }
+})
+
 
 router.post(`${baseUrl}/housing-costs-router`, (req, res) => {
   const housingCosts = req.session.data['housing-costs']
@@ -124,9 +165,20 @@ router.post(`${baseUrl}/benefit-check-router`, (req, res) => {
   if (benefitCheck == 'SP') {
     res.redirect(`${baseUrl}/outcome`)
   } else {
-    res.redirect(`${baseUrl}/pensions`)
+    res.redirect(`${baseUrl}/income-separate`)
   }
 })
+
+router.post(`${baseUrl}/partner-benefit-check-router`, (req, res) => {
+  const benefitCheck = req.session.data['benefit-check']
+
+  if (benefitCheck == 'SP') {
+    res.redirect(`${baseUrl}/outcome`)
+  } else {
+    res.redirect(`${baseUrl}/partner-income-separate`)
+  }
+})
+
 
 
 

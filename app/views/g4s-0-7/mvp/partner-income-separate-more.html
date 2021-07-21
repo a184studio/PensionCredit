@@ -15,7 +15,7 @@ Income - Pension Credit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="system-partner-check" method="post" class="form">
+    <form action="outcome" method="post" class="form">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
         I'm just going to check our systems for your income from employment and workplace or personal pensions
@@ -24,10 +24,9 @@ Income - Pension Credit
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Enter each income and payment frequency separately.</p>
 
 
-
 {{ govukInput({
-  id: "income-1-value",
-  name: "income-1-value",
+  id: "partner-income-1-value",
+  name: "partner-income-1-value",
   label: {
     text: "Income 1",
     classes: "govuk-label--m",
@@ -39,15 +38,15 @@ Income - Pension Credit
   prefix: {
     text: "£"
   },
-  value: data["income-1-value"],
+  value: data["partner-income-1-value"],
   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
   spellcheck: false
 }) }}
 
 {{ govukRadios({
   classes: "govuk-radios--small",
-  idPrefix: "income-1-frequency",
-  name: "income-1-frequency",
+  idPrefix: "partner-income-1-frequency",
+  name: "partner-income-1-frequency",
   fieldset: {
     legend: {
       text: "Payment frequency",
@@ -71,8 +70,8 @@ Income - Pension Credit
 
 
 {{ govukInput({
-  id: "income-2-value",
-  name: "income-2-value",
+  id: "partner-income-2-value",
+  name: "partner-income-2-value",
   label: {
     text: "Income 2",
     classes: "govuk-label--m",
@@ -84,15 +83,15 @@ Income - Pension Credit
   prefix: {
     text: "£"
   },
-  value: data["income-2-value"],
+  value: data["partner-income-2-value"],
   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
   spellcheck: false
 }) }}
 
 {{ govukRadios({
   classes: "govuk-radios--small",
-  idPrefix: "income-2-frequency",
-  name: "income-2-frequency",
+  idPrefix: "partner-income-2-frequency",
+  name: "partner-income-2-frequency",
   fieldset: {
     legend: {
       text: "Payment frequency",
@@ -115,8 +114,8 @@ Income - Pension Credit
 
 
 {{ govukInput({
-  id: "income-3-value",
-  name: "income-3-value",
+  id: "partner-income-3-value",
+  name: "partner-income-3-value",
   label: {
     text: "Income 3",
     classes: "govuk-label--m",
@@ -128,15 +127,15 @@ Income - Pension Credit
   prefix: {
     text: "£"
   },
-  value: data["income-3-value"],
+  value: data["partner-income-3-value"],
   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
   spellcheck: false
 }) }}
 
 {{ govukRadios({
   classes: "govuk-radios--small",
-  idPrefix: "income-3-frequency",
-  name: "income-3-frequency",
+  idPrefix: "partner-income-3-frequency",
+  name: "partner-income-3-frequency",
   fieldset: {
     legend: {
       text: "Payment frequency",
@@ -159,8 +158,8 @@ Income - Pension Credit
 
 
 {{ govukInput({
-  id: "income-4-value",
-  name: "income-4-value",
+  id: "partner-income-4-value",
+  name: "partner-income-4-value",
   label: {
     text: "Income 4",
     classes: "govuk-label--m",
@@ -172,15 +171,15 @@ Income - Pension Credit
   prefix: {
     text: "£"
   },
-  value: data["income-4-value"],
+  value: data["partner-income-4-value"],
   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
   spellcheck: false
 }) }}
 
 {{ govukRadios({
   classes: "govuk-radios--small",
-  idPrefix: "income-4-frequency",
-  name: "income-4-frequency",
+  idPrefix: "partner-income-4-frequency",
+  name: "partner-income-4-frequency",
   fieldset: {
     legend: {
       text: "Payment frequency",
@@ -203,8 +202,8 @@ Income - Pension Credit
 
 
 {{ govukInput({
-  id: "income-5-value",
-  name: "income-5-value",
+  id: "partner-income-5-value",
+  name: "partner-income-5-value",
   label: {
     text: "Income 5",
     classes: "govuk-label--m",
@@ -216,15 +215,15 @@ Income - Pension Credit
   prefix: {
     text: "£"
   },
-  value: data["income-5-value"],
+  value: data["partner-income-5-value"],
   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
   spellcheck: false
 }) }}
 
 {{ govukRadios({
   classes: "govuk-radios--small",
-  idPrefix: "income-5-frequency",
-  name: "income-5-frequency",
+  idPrefix: "partner-income-5-frequency",
+  name: "partner-income-5-frequency",
   fieldset: {
     legend: {
       text: "Payment frequency",
@@ -247,8 +246,8 @@ Income - Pension Credit
 
 
 {{ govukInput({
-  id: "income-6-value",
-  name: "income-6-value",
+  id: "partner-income-6-value",
+  name: "partner-income-6-value",
   label: {
     text: "Income 6",
     classes: "govuk-label--m",
@@ -260,15 +259,15 @@ Income - Pension Credit
   prefix: {
     text: "£"
   },
-  value: data["income-6-value"],
+  value: data["partner-income-6-value"],
   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
   spellcheck: false
 }) }}
 
 {{ govukRadios({
   classes: "govuk-radios--small",
-  idPrefix: "income-6-frequency",
-  name: "income-6-frequency",
+  idPrefix: "partner-income-6-frequency",
+  name: "partner-income-6-frequency",
   fieldset: {
     legend: {
       text: "Payment frequency",
