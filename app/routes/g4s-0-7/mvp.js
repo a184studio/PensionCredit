@@ -93,15 +93,6 @@ router.post(`${baseUrl}/claimant-dob-router`, (req, res) => {
 //   }
 // })
 
-router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
-  const childrenCheck = req.session.data['children-check-yn']
-
-  if (childrenCheck === 'No') {
-    res.redirect(`${baseUrl}/claimant-national-insurance`)
-  } else {
-    res.redirect(`${baseUrl}/done-children`)
-  }
-})
 
 router.post(`${baseUrl}/claimant-national-insurance-router`, (req, res) => {
   const claimantNationalInsurance = req.session.data['claimant-national-insurance']
@@ -179,6 +170,25 @@ router.post(`${baseUrl}/partner-benefit-check-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
+  const childrenCheck = req.session.data['children-check-yn']
+
+  if (childrenCheck === 'Yes') {
+    res.redirect(`${baseUrl}/children-ctc`)
+  } else {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
+  }
+})
+
+router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
+  const childrenCTC = req.session.data['children-check-yn']
+
+  if (childrenCTC == 'Yes') {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
+  } else {
+    res.redirect(`${baseUrl}/done-children`)
+  }
+})
 
 
 
