@@ -1,4 +1,5 @@
 const express = require('express')
+const { numbersToWords, moneyToWords } = require('./numbers-to-words')
 const router = express.Router()
 
 router.use((req, res, next) => {
@@ -19,6 +20,33 @@ router.post('/session-clear-route', (req, res, next) => {
   const nextPage = req.session.data['session-clear-redirect-url']
   req.session.data = {}
   res.redirect(nextPage)
+})
+
+const sanitse = (number) => String(number).replace(/[^0-9.]/g, '');
+
+router.get('/number-test', (req, res, next) => {
+  const { numberToConvert, moneyToConvert, numberLanguage } = req.query
+
+  res.locals.numberToConvert = numberToConvert
+  res.locals.moneyToConvert = moneyToConvert
+  res.locals.numberLanguage = numberLanguage
+
+  const number = sanitse(numberToConvert)
+  const money = sanitse(moneyToConvert)
+
+  const lang = { en: 'en', cy: 'cy'}[numberLanguage]
+
+  if (number) {
+    res.locals.numberWords = number.indexOf('.') > -1
+      ? 'has to be a whole number'
+      : numbersToWords(number, lang)
+  }
+
+  if (money) {
+    res.locals.moneyWords = moneyToWords(money, lang)
+  }
+
+  next()
 })
 
 router.use(require('./routes/development/wf'))
