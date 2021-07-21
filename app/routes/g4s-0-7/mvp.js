@@ -190,6 +190,20 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
+  const typeOfClaim = req.session.data['type-of-claim']
+
+  if (typeOfClaim == 'More call options') {
+    res.redirect(`${baseUrl}/type-of-claim-more`)
+  }  else if (typeOfClaim == 'bau-exit') {
+      res.redirect(`${baseUrl}/bau-exit`)
+    } else {
+    res.redirect(`${baseUrl}/start`)
+  }
+})
+
+
+
 
 
 // AB ROUTER
