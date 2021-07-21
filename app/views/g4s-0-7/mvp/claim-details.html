@@ -47,7 +47,7 @@
         }) }}
          {% endif %}
 
-{% if data["dob"] %}
+{% if data["dob-day"] %}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-2',
           rows: [
@@ -97,6 +97,57 @@
         }) }}
          {% endif %}
 
+         {% if data["children-ctc"] %}
+                 {{ govukSummaryList({
+                   classes: 'govuk-!-margin-bottom-2',
+                   rows: [
+                 {
+                     key: {
+                       text: "CTC?"
+                     },
+                     value: {
+                       html: data["children-ctc"]
+                     },
+                     actions: {
+                       items: [
+                         {
+                           href: "children-ctc",
+                           text: "Change",
+                           visuallyHiddenText: "XXX"
+                         }
+                       ]
+                     }
+                   }
+                 ]
+                 }) }}
+                  {% endif %}
+
+
+          {% if data["claimant-national-insurance"] == "None" or data["claimant-national-insurance"] == "Lost"  %}
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-2',
+                    rows: [
+                  {
+                      key: {
+                        text: "Do you have a National Insurance Number?"
+                      },
+                      value: {
+                        html: data["claimant-national-insurance"]
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "claimant-national-insurance",
+                            text: "Change",
+                            visuallyHiddenText: "claimant-national-insurance"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }) }}
+                 {% endif %}
+
 {% if data["nino"] %}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-2',
@@ -121,6 +172,57 @@
         ]
         }) }}
        {% endif %}
+
+               {{ govukSummaryList({
+                 classes: 'govuk-!-margin-bottom-2',
+                 rows: [
+               {
+                   key: {
+                     text: "Do you have a partner"
+                   },
+                   value: {
+                     html: data["partner-check-yn"]
+                   },
+                   actions: {
+                     items: [
+                       {
+                         href: "claimant-national-insurance",
+                         text: "Change",
+                         visuallyHiddenText: "claimant-national-insurance"
+                       }
+                     ]
+                   }
+                 }
+               ]
+               }) }}
+
+         {% if data["partner-mac-yn"] %}
+
+                 {{ govukSummaryList({
+                   classes: 'govuk-!-margin-bottom-2',
+                   rows: [
+                 {
+                     key: {
+                       text: "Do you and your partner get pension age Housing Benefit?"
+                     },
+                     value: {
+                       html: data["partner-mac-yn"]
+                     },
+                     actions: {
+                       items: [
+                         {
+                           href: "partner-name",
+                           text: "Change",
+                           visuallyHiddenText: "X"
+                         }
+                       ]
+                     }
+                   }
+                 ]
+                 }) }}
+                 {% endif %}
+
+
 
       {% if data["housing-costs"] %}
 
@@ -199,7 +301,19 @@
         }) }}
       {% endif %}
 
-        {% if data["Benefits"] %}
+      {% set BenefitList %}
+
+        <ul class="govuk-list">
+              <li>Attendance Allowance (AA)</li>
+              <li>Disability living Allowance (DLA): Middle or highest rate</li>
+              <li>Personal Independence Payment (PIP)</li>
+              <li>Armed Forces Independence Payment (AFIP)</li>
+              <li>Carers Allowance (CA): Including an underlying entitlement</li>
+              <li>None of these</li>
+        </ul>
+
+      {% endset %}
+
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-2',
           rows: [
@@ -208,7 +322,7 @@
               text: "Benefits in payment"
             },
             value: {
-              html: data["Benefits"]
+              html: BenefitList
             },
             actions: {
               items: [
@@ -222,105 +336,170 @@
           }
         ]
         }) }}
-        {% endif %}
 
-        {% if data["pensions"] %}
-        {{ govukSummaryList({
-          classes: 'govuk-!-margin-bottom-2',
-          rows: [
-        {
-            key: {
-              text: "Pension"
-            },
-            value: {
-              html: data["pensions"] or data["pensions-value"]
-            },
-            actions: {
-              items: [
+
+        {% if data["partner-full-name"] %}
+
+        <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Partner details</h2>
+
+
+
+                {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-2',
+                  rows: [
                 {
-                  href: "pensions",
-                  text: "Change",
-                  visuallyHiddenText: "pensions"
-                }
-              ]
-            }
-          }
-        ]
-        }) }}
-        {% endif %}
-
-        {% if data["pensions-value"] %}
-        {{ govukSummaryList({
-          classes: 'govuk-!-margin-bottom-2',
-          rows: [
-        {
-            key: {
-              text: "Pension"
-            },
-            value: {
-              html: data["pensions-value"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "pensions",
-                  text: "Change",
-                  visuallyHiddenText: "pensions"
-                }
-              ]
-            }
-          }
-        ]
-        }) }}
-        {% endif %}
-
-{% if data["earnings"] %}
-        {{ govukSummaryList({
-          classes: 'govuk-!-margin-bottom-2',
-          rows: [
-        {
-            key: {
-              text: "Earnings"
-            },
-            value: {
-              html: data["earnings"] or data ["earnings-value"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "Earnings",
-                  text: "Change",
-                  visuallyHiddenText: "Earnings"
-                }
-              ]
-            }
-          }
-        ]
-        }) }}
-      {% endif %}
-
-
-      {% if data["earnings-value"] %}
-              {{ govukSummaryList({
-                classes: 'govuk-!-margin-bottom-2',
-                rows: [
-              {
-                  key: {
-                    text: "Earnings"
-                  },
-                  value: {
-                    html: data["earnings-value"]
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "Earnings",
-                        text: "Change",
-                        visuallyHiddenText: "Earnings"
-                      }
-                    ]
+                    key: {
+                      text: "What is your partners full name?"
+                    },
+                    value: {
+                      html: data["partner-full-name"]
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "partner-name",
+                          text: "Change",
+                          visuallyHiddenText: "X"
+                        }
+                      ]
+                    }
                   }
-                }
-              ]
-              }) }}
-            {% endif %}
+                ]
+                }) }}
+                 {% endif %}
+
+                 {% if data["partner-dob-day"] %}
+                         {{ govukSummaryList({
+                           classes: 'govuk-!-margin-bottom-2',
+                           rows: [
+                           {
+                             key: {
+                               text: "What is your partners date of birth"
+                             },
+                             value: {
+                               text: data['partner-dob-day'] + ' ' + (data['partner-dob-month'] | getMonth) + ' ' + data['partner-dob-year']
+                             },
+                             actions: {
+                               items: [
+                                 {
+                                   href: "partner-claimant-dob",
+                                   text: "Change",
+                                   visuallyHiddenText: "partner"
+                                 }
+                               ]
+                             }
+                           }
+                         ]
+                         }) }}
+                          {% endif %}
+
+                          {% if data["partner-national-insurance"] %}
+                                  {{ govukSummaryList({
+                                    classes: 'govuk-!-margin-bottom-2',
+                                    rows: [
+                                    {
+                                      key: {
+                                        text: "Does you partner have National Insurance number?"
+                                      },
+                                      value: {
+                                        text: data['partner-national-insurance']
+                                      },
+                                      actions: {
+                                        items: [
+                                          {
+                                            href: "partner-national-insurance",
+                                            text: "Change",
+                                            visuallyHiddenText: "partner-national-insurance"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                  }) }}
+                                   {% endif %}
+
+                                   {% if data["partner-nino"] %}
+                                           {{ govukSummaryList({
+                                             classes: 'govuk-!-margin-bottom-2',
+                                             rows: [
+                                             {
+                                               key: {
+                                                 text: "Parnters National Insurance number"
+                                               },
+                                               value: {
+                                                 text: data['partner-nino']
+                                               },
+                                               actions: {
+                                                 items: [
+                                                   {
+                                                     href: "partner-national-insurance",
+                                                     text: "Change",
+                                                     visuallyHiddenText: "partner-national-insurance"
+                                                   }
+                                                 ]
+                                               }
+                                             }
+                                           ]
+                                           }) }}
+                                            {% endif %}
+
+                                            {% if data["partner-state-pension-amount"] %}
+                                                  {{ govukSummaryList({
+                                                    classes: 'govuk-!-margin-bottom-2',
+                                                    rows: [
+                                                  {
+                                                      key: {
+                                                        text: "Partner State Pensions amount"
+                                                      },
+                                                      value: {
+                                                        html: data["partner-state-pension-amount"]
+                                                      },
+                                                      actions: {
+                                                        items: [
+                                                          {
+                                                            href: "partner-state-pension-amount",
+                                                            text: "Change",
+                                                            visuallyHiddenText: "partner-state-pension-amount"
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                  }) }}
+                                                {% endif %}
+
+                                                {% set PartnerBenefitList %}
+
+                                                  <ul class="govuk-list">
+                                                        <li>Attendance Allowance (AA)</li>
+                                                        <li>Disability living Allowance (DLA): Middle or highest rate</li>
+                                                        <li>Personal Independence Payment (PIP)</li>
+                                                        <li>Armed Forces Independence Payment (AFIP)</li>
+                                                        <li>Carers Allowance (CA): Including an underlying entitlement</li>
+                                                        <li>None of these</li>
+                                                  </ul>
+
+                                                {% endset %}
+
+                                                  {{ govukSummaryList({
+                                                    classes: 'govuk-!-margin-bottom-2',
+                                                    rows: [
+                                                  {
+                                                      key: {
+                                                        text: "Parnter benefits in payment"
+                                                      },
+                                                      value: {
+                                                        html: PartnerBenefitList
+                                                      },
+                                                      actions: {
+                                                        items: [
+                                                          {
+                                                            href: "Benefits",
+                                                            text: "Change",
+                                                            visuallyHiddenText: "Benefits"
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                  }) }}
