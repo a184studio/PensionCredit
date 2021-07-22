@@ -31,10 +31,12 @@ const words = {
     80: 'eighty',
     90: 'ninety',
 
+    particleLimit: 100,
+    particleString: ' and',
+
     hundred: 'hundred',
     thousand: 'thousand',
     million: 'million',
-    and: ' and',
     tensJoiner: '-',
   },
   cy: {
@@ -69,6 +71,9 @@ const words = {
     80: 'wyth deg',
     90: 'naw deg',
 
+    particleLimit: 1_000_000_000,
+    particleString: ' a',
+
     hundred: 'cant',
     thousand: 'mil',
     million: 'miliwn',
@@ -77,7 +82,8 @@ const words = {
 };
 
 function numbersToWords(number, lang = 'en') {
-  const result = words[lang][number];
+  const locale = words[lang];
+  const result = locale[number];
 
   if (result) {
     return result;
@@ -86,8 +92,8 @@ function numbersToWords(number, lang = 'en') {
   if (number < 100) {
     const remainder = number % 10;
     const tens = number - remainder;
-    const tensJoiner = words[lang].tensJoiner || '';
-    return `${words[lang][tens]}${tensJoiner}${words[lang][remainder]}`;
+    const tensJoiner = locale.tensJoiner || '';
+    return `${locale[tens]}${tensJoiner}${locale[remainder]}`;
   }
 
   let magnitude;
@@ -95,20 +101,20 @@ function numbersToWords(number, lang = 'en') {
 
   if (number < 1_000) {
     magnitude = 100;
-    bigNumber = words[lang].hundred;
+    bigNumber = locale.hundred;
   } else if (number < 1_000_000) {
     magnitude = 1_000;
-    bigNumber = words[lang].thousand;
+    bigNumber = locale.thousand;
   } else if (number < 1_000_000_000) {
     magnitude = 1_000_000;
-    bigNumber = words[lang].million;
+    bigNumber = locale.million;
   } else {
     throw RangeError('too big');
   }
 
   const remainder = number % magnitude;
   const thousands = (number - remainder) / magnitude;
-  const thousandsWord = words[lang][magnitude] || `${numbersToWords(thousands, lang)} ${bigNumber}`;
+  const thousandsWord = locale[magnitude] || `${numbersToWords(thousands, lang)} ${bigNumber}`;
 
   if (remainder === 0) {
     return thousandsWord;
@@ -116,8 +122,8 @@ function numbersToWords(number, lang = 'en') {
 
   const remainderWord = numbersToWords(remainder, lang);
 
-  if (remainder < 100) {
-    const and = words[lang].and || '';
+  if (remainder < locale.particleLimit) {
+    const and = locale.particleString || '';
 
     return `${thousandsWord}${and} ${remainderWord}`;
   }
