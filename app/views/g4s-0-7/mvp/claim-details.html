@@ -173,6 +173,9 @@
         }) }}
        {% endif %}
 
+
+
+       {% if data["partner-check-yn"] %}
                {{ govukSummaryList({
                  classes: 'govuk-!-margin-bottom-2',
                  rows: [
@@ -195,6 +198,7 @@
                  }
                ]
                }) }}
+            {% endif %}
 
          {% if data["partner-mac-yn"] %}
 
@@ -301,6 +305,8 @@
         }) }}
       {% endif %}
 
+      {% if data["state-pension-amount"] %}
+
       {% set BenefitList %}
 
         <ul class="govuk-list">
@@ -336,6 +342,313 @@
           }
         ]
         }) }}
+        {% endif %}
+
+
+      {% if data["income-1-value"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-1-value"
+            },
+            value: {
+              html: data["income-1-value"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-1-frequency"
+            },
+            value: {
+              html: data["income-1-frequency"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+      {% endif %}
+
+
+      {% if data["income-2-value"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-2-value"
+            },
+            value: {
+              html: data["income-2-value"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-2-frequency"
+            },
+            value: {
+              html: data["income-2-frequency"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {% endif %}
+
+
+        {% if data["income-3-value"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-3-value"
+            },
+            value: {
+              html: data["income-3-value"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-3-frequency"
+            },
+            value: {
+              html: data["income-3-frequency"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {% endif %}
+
+
+        {% if data["income-4-value"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-4-value"
+            },
+            value: {
+              html: data["income-4-value"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-4-frequency"
+            },
+            value: {
+              html: data["income-4-frequency"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {% endif %}
+
+
+        {% if data["income-5-value"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-5-value"
+            },
+            value: {
+              html: data["income-5-value"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-5-frequency"
+            },
+            value: {
+              html: data["income-5-frequency"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {% endif %}
+
+
+        {% if data["income-6-value"] %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-6-value"
+            },
+            value: {
+              html: data["income-6-value"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "income-6-frequency"
+            },
+            value: {
+              html: data["income-6-frequency"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {% endif %}
+
 
 
         {% if data["partner-full-name"] %}
@@ -468,6 +781,8 @@
                                                   }) }}
                                                 {% endif %}
 
+                                                {% if data["partner-state-pension-amount"] %}
+
                                                 {% set PartnerBenefitList %}
 
                                                   <ul class="govuk-list">
@@ -503,3 +818,314 @@
                                                     }
                                                   ]
                                                   }) }}
+                                                {% endif %}
+
+
+
+
+
+        {% if data["partner-income-1-value"] %}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-1-value"
+                  },
+                  value: {
+                    html: data["partner-income-1-value"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-1-frequency"
+                  },
+                  value: {
+                    html: data["partner-income-1-frequency"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {% endif %}
+
+
+              {% if data["partner-income-2-value"] %}
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-2-value"
+                  },
+                  value: {
+                    html: data["partner-income-2-value"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-2-frequency"
+                  },
+                  value: {
+                    html: data["partner-income-2-frequency"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {% endif %}
+
+
+              {% if data["partner-income-3-value"] %}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-3-value"
+                  },
+                  value: {
+                    html: data["partner-income-3-value"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-3-frequency"
+                  },
+                  value: {
+                    html: data["partner-income-3-frequency"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {% endif %}
+
+
+              {% if data["partner-income-4-value"] %}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-4-value"
+                  },
+                  value: {
+                    html: data["partner-income-4-value"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-4-frequency"
+                  },
+                  value: {
+                    html: data["partner-income-4-frequency"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {% endif %}
+
+
+              {% if data["partner-income-5-value"] %}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-5-value"
+                  },
+                  value: {
+                    html: data["partner-income-5-value"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-5-frequency"
+                  },
+                  value: {
+                    html: data["partner-income-5-frequency"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {% endif %}
+
+
+              {% if data["partner-income-6-value"] %}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-6-value"
+                  },
+                  value: {
+                    html: data["partner-income-6-value"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "partner-income-6-frequency"
+                  },
+                  value: {
+                    html: data["partner-income-6-frequency"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "partner-income-separate",
+                        text: "Change",
+                        visuallyHiddenText: "partner-income-separate"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+
+              {% endif %}
