@@ -21,8 +21,8 @@ Are you responsible for any children or qualifying young people who live with yo
       <input type="hidden" name="hospitals-complete" value="true"/>
 
       {{ govukRadios({
-        idPrefix: "children-check-yn",
-        name: "children-check-yn",
+        idPrefix: "children-ctc",
+        name: "children-ctc",
         fieldset: {
           legend: {
             text: "Do you get CTC?",
@@ -39,12 +39,12 @@ Are you responsible for any children or qualifying young people who live with yo
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["children-check-yn"] == "Yes")
+            checked: (data["children-ctc"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["children-check-yn"] == "No")
+            checked: (data["children-ctc"] == "No")
           }
         ]
       }) }}
