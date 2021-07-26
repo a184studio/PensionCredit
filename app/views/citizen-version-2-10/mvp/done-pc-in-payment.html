@@ -1,4 +1,4 @@
-{% extends "layout-assisted-digitalB.html" %}
+{% extends "layout-assisted-digital-removed.html" %}
 
 {% block pageTitle %}
   Application complete - Pension Credit
@@ -25,12 +25,8 @@
 
       <h2 class="govuk-heading-m govuk-!-margin-top-4">If you need to speak to us again, call the<br>Pension Credit claim line.</h2>
 
-      <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
-        <li>Telephone: 0800 99 1234</li>
-        <li>Textphone: 0800 169 0133</li>
-      </ul>
+      {% include "layout-assisted-digitalB-content.html" %}
 
-      <p>Monday to Friday, 9:30am to 6pm (closed on bank holidays).<br>Calls to 0800 numbers are free from landlines and mobiles.</p>
 
       {% include "citizen-version-2-4/mvp/survey.html" %}
 

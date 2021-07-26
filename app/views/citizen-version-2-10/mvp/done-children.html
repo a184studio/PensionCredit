@@ -1,4 +1,4 @@
-{% extends "layout-assisted-digitalB.html" %}
+{% extends "layout-assisted-digital-removed.html" %}
 
 {% block pageTitle %}
   Application complete - Pension Credit
@@ -38,12 +38,7 @@
 
         <!---- UK ---->{% else %}
 
-        <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
-          <li>Telephone: 0800 99 1234</li>
-          <li>Textphone: 0800 169 0133</li>
-        </ul>
-
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Monday to Friday, 9:30am to 6pm (closed on bank holidays).<br>Calls to 0800 numbers are free from landlines and mobiles.</p>
+        {% include "layout-assisted-digitalB-content.html" %}
 
         <!---- COUNTRY END ---->{% endif %}
 
