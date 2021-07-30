@@ -32,7 +32,7 @@
       {% set dynamicH2 %}
 
       <h1 class="govuk-heading-m govuk-!-margin-bottom-0">
-        Enter partners National Insurance number
+        Enter partner's National Insurance number
       </h1>
 
       {% endset -%}
@@ -66,7 +66,7 @@
                 }
               },
               hint: {
-                text: "It’s on your partners National Insurance card, benefit letter, payslip or P60."
+                text: "It’s on your partner's National Insurance card, benefit letter, payslip or P60."
               },
               classes: "govuk-radios",
               items: [
@@ -85,7 +85,7 @@
                 },
                 {
                   value: "None",
-                  text: "I do not have one",
+                  text: "They do not have one",
                   checked: (data["partner-national-insurance"] == "None")
                 }
               ]

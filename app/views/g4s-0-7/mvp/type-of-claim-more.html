@@ -20,10 +20,10 @@
       {{ govukTextarea({
         label: {
           classes: "govuk-label--s",
-          html: "Description of the type of call"
+          html: "Description of the reason for the call"
         },
         hint: {
-          text: "For example, XXX"
+          text: ""
         },
         id: "type-of-claim-details",
         name: "type-of-claim-details",
@@ -39,7 +39,7 @@
       name: "type-of-claim",
       fieldset: {
         legend: {
-          text: "Select a reasons for the call",
+          text: "Select a reason for the call",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
@@ -71,7 +71,7 @@
         },
         {
           value: "11",
-          text: "None Pension Credit related",
+          text: "Non-Pension Credit related",
           checked: (data["type-of-claim"] == "11")
         },
         {

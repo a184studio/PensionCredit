@@ -16,7 +16,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="housing-service-charge" method="post" class="form">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I'm going to see if I can find your partners details on our system using their name and date of birth </h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I'm going to see if I can find your partner's details on our system using their name and date of birth </h1>
 
       <p class="govuk-!-margin-bottom-2">Partner name: <strong>{{ data['partner-full-name'] }}</strong></p>
       <p class="govuk-!-margin-bottom-4">Partner date of birth: <strong>{{ data['partner-dob-day'] + ' ' + (data['partner-dob-month'] | getMonth) + ' ' + data['partner-dob-year']}}</strong></p>
@@ -24,7 +24,7 @@
 
 
       {% set dynamicH1 %}
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Did you find the partners National Insurance number?</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Did you find the partner's National Insurance number?</h2>
       {% endset -%}
 
 
@@ -35,7 +35,7 @@
       {% set dynamicH2 %}
 
       <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-        Enter partners National Insurance number
+        Enter partner's National Insurance number
       </h2>
 
       {% endset -%}
