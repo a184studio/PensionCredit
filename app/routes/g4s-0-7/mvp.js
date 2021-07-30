@@ -98,7 +98,7 @@ router.post(`${baseUrl}/claimant-national-insurance-router`, (req, res) => {
   const claimantNationalInsurance = req.session.data['claimant-national-insurance']
 
   if (claimantNationalInsurance === 'Yes') {
-    res.redirect(`${baseUrl}/housing-service-charge`)
+    res.redirect(`${baseUrl}/partner-check-yn`)
   } else if (claimantNationalInsurance === 'Lost') {
     res.redirect(`${baseUrl}/claimant-search-ni`)
   } else {
@@ -176,7 +176,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   if (childrenCheck === 'Yes') {
     res.redirect(`${baseUrl}/children-ctc`)
   } else {
-    res.redirect(`${baseUrl}/partner-check-yn`)
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   }
 })
 
@@ -184,7 +184,7 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
   const childrenCTC = req.session.data['children-check-yn']
 
   if (childrenCTC == 'Yes') {
-    res.redirect(`${baseUrl}/partner-check-yn`)
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
     res.redirect(`${baseUrl}/done-children`)
   }
