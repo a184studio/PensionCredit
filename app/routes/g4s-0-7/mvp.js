@@ -181,12 +181,12 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
-  const childrenCTC = req.session.data['children-check-yn']
+  const childrenCTC = req.session.data['children-ctc']
 
   if (childrenCTC == 'Yes') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
-    res.redirect(`${baseUrl}/done-children`)
+    res.redirect(`${baseUrl}/handover-children-note`)
   }
 })
 

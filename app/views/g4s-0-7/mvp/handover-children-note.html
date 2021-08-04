@@ -1,0 +1,38 @@
+{% extends "layout-g4s.html" %}
+
+{% block pageTitle %}
+  claimant-national-insurance - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="handover-early" method="post" class="form">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Use same NI and Trace process.
+      <BR>Will check for NI before handover to DWP
+      </h1>
+
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}
