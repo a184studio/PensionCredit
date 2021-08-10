@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="claimant-name" method="post" class="form">
+    <form action="del-auth-contact-numberb" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
@@ -26,7 +26,7 @@
       </h1>-->
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-        How can we contact you?
+        It's quicker if we can call you
       </h1>
 
 
@@ -41,24 +41,43 @@
           }
         },
         hint: {
-          text: "We will need to call or write to you in the near and longterm. Calling is faster and saves taxpayers money but we can also write if you would prefer"
+          text: "We will need to contact you for as long as you claim Pnesion credit. We can write to your home address but it makes things quicker if we can call. It also saves DWP/taxpayers money."
         },
         items: [
           {
             value: "Option-1",
-            text: "Contact me to process my application"
+            text: "Call me to process my application"
           },
           {
             value: "Option-2",
-            text: "Contact me about queries if my application is successful"
+            text: "Call me about queries if my application is successful"
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body govuk-!-font-weight-regular">or</p>
+
+      {{ govukCheckboxes({
+        idPrefix: "money-disregards-payments-options",
+        name: "money-disregards-payments-options",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "Option-1",
+            text: "I don't have a telephone number at the momment"
           },
           {
-            value: "Option-3",
-            text: "Allow DWP to contact me about other relevant news/queries/...?"
-          },
-          {
-            value: "Option-4",
-            text: "Used to improve security when I contact DWP"
+            value: "Option-1",
+            text: "Don't call me"
           }
         ]
       }) }}
