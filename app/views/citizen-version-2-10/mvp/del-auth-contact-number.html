@@ -52,7 +52,20 @@
 
       {% endset -%}
 
-      {% set LegendH1 %}
+      {% set legendh2 %}
+
+      {% if data["del-auth-who-made-claim"] == "Yourself"
+         or data["del-auth-who-made-claim"] == "Power of attorney"
+         or data["del-auth-who-made-claim"] == "Appointee"
+         or data["del-auth-who-made-claim"] == "Personal Acting Body"
+         or data["del-auth-who-made-claim"] == "Corporate Acting Body"
+       %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Do you have a contact telephone number?</h1>
+      {% else %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Does the applicant have a contact telephone number?</h1>
+      {% endif %}
+
+      {% endset -%}
 
       {% if data["del-auth-who-made-claim"] == "Yourself"
          or data["del-auth-who-made-claim"] == "Power of attorney"
@@ -60,25 +73,29 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate acting body"
        %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Can we call you about this application?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">The quickest way for DWP to contact you is by phone</h1>
+        <p></p>
+ <p>We might need to contact you about Pension Credit, either while we are processing your application or once it is in payment. We might also need to contact you about other benefits that you might get now or in the future.</p>
       {% else %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Can we call the applicant about this application?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">The quickest way for DWP to contact the applicant is by phone</h1>
+        <p></p>
+ <p>We might need to contact the applicant about Pension Credit, either while we are processing their application or once it is in payment. We might also need to contact them about other benefits that they might get now or in the future.</p>
       {% endif %}
 
-      {% endset -%}
+ 
 
       {{ govukRadios({
         idPrefix: "del-auth-contact-number-check",
         name: "del-auth-contact-number-check",
         fieldset: {
           legend: {
-            html: LegendH1,
+            html: legendh2,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
           }
         },
         hint: {
-          text: "A contact number helps us process an application faster if we need to ask for more information."
+          text: ""
         },
         classes: "govuk-radios govuk-!-margin-bottom-4",
         items: [
