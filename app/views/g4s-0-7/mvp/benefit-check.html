@@ -34,7 +34,7 @@
 -->
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
-        Do you get any of these benefits?
+        I'm just going to check any benefits you get
       </h1>
 
 {{ govukCheckboxes({
@@ -42,7 +42,7 @@
   name: "benefit-check",
   fieldset: {
     legend: {
-      text: "Benefits they have:",
+      text: "Select any benfits the caller gets",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -65,7 +65,8 @@
     },
     {
       value: "B",
-      text: "Personal Independence Payment (PIP)",
+      text: "The daily living component of Personal Independence Payment (PIP)
+      ",
       checked: (data["benefit-check"] == "B")
     },
     {
@@ -78,11 +79,7 @@
       text: "Carers Allowance (CA): Including an underlying entitlement",
       checked: (data["benefit-check"] == "CA")
     },
-    {
-      value: "None",
-      text: "None of these",
-      checked: (data["benefit-check"] == "None")
-    }
+
   ]
 }) }}
 
