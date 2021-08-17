@@ -202,7 +202,17 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
+  const statePensionStatus = req.session.data['state-pension-status']
 
+  if (statePensionStatus === 'Yes') {
+    res.redirect(`${baseUrl}/state-pension-amount`)
+  } else if (statePensionStatus === 'NoBank') {
+    res.redirect(`${baseUrl}/benefit-check`)
+  } else {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
+  }
+})
 
 
 
