@@ -145,7 +145,7 @@ router.post(`${baseUrl}/housing-costs-router`, (req, res) => {
   if (housingCosts === 'Yes') {
     res.redirect(`${baseUrl}/outcome`)
   } else {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/state-pension-status`)
   }
 })
 
@@ -206,7 +206,7 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   const statePensionStatus = req.session.data['state-pension-status']
 
   if (statePensionStatus === 'Yes') {
-    res.redirect(`${baseUrl}/state-pension-amount`)
+    res.redirect(`${baseUrl}/data-we-use`)
   } else if (statePensionStatus === 'NoBank') {
     res.redirect(`${baseUrl}/benefit-check`)
   } else {
