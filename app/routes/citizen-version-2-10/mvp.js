@@ -522,6 +522,8 @@ router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
     res.redirect(`${baseUrl}/doc-absence`)
   } else if (claimFilter === 'Today') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
+  } else if (claimFilter === 'BereavedB') {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
     res.redirect(`${baseUrl}/claim-notification`)
   }
