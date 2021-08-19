@@ -209,6 +209,8 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
     res.redirect(`${baseUrl}/data-we-use`)
   } else if (statePensionStatus === 'NoBank') {
     res.redirect(`${baseUrl}/benefit-check`)
+  } else if (statePensionStatus === 'amount-not-known') {
+    res.redirect(`${baseUrl}/handover-early-sp`)
   } else {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   }

@@ -53,7 +53,11 @@
             text: "I applied for a State Pension but I am not entitled to one",
             checked: (data["state-pension-status"] == "NoBank")
           },
-
+          {
+            value: "amount-not-known",
+            text: "[@pete] I have a applied but I don't know how much it will be",
+            checked: (data["state-pension-status"] == "amount-not-known")
+          },
           {
             value: "NoSP",
             text: "I have not applied for a State Pension",
