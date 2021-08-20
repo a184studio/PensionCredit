@@ -49,7 +49,7 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   } else if (residesInUk === 'Wales') {
     res.redirect(`${baseUrl}/claimant-dob`)
   } else if (residesInUk === 'Northern-Ireland') {
-    res.redirect(`${baseUrl}/handover-early-ni`)
+    res.redirect(`${baseUrl}/done-ni`)
   } else {
     res.redirect(`${baseUrl}/done-none-uk`)
   }
