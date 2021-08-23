@@ -16,46 +16,96 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="claimant-dob-router" method="post">
 
-        {{ govukDateInput({
-          id: "dob",
-          namePrefix: "dob",
-          fieldset: {
-            legend: {
-              text: "What is your date of birth?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            text: "For example, 31 3 1948"
-          },
-          items: [
-            {
-              name: "day",
-              classes: "govuk-input--width-2",
-              value: data["dob-day"]
+
+          {% if data['partner-check-yn'] == 'Yes, we live together' %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As you live with a partner we need to make the application using the oldest persons date of birth</h1>
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXX</p>
+
+
+          {{ govukDateInput({
+            id: "dob",
+            namePrefix: "dob",
+            fieldset: {
+              legend: {
+                text: "Enter oldest persons date of birth",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
             },
-            {
-              name: "month",
-              classes: "govuk-input--width-2",
-              value: data["dob-month"]
+            hint: {
+              text: "For example, 31 3 1948"
             },
-            {
-              name: "year",
-              classes: "govuk-input--width-4",
-              value: data["dob-year"]
-            }
-          ]
-        }) }}
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["dob-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["dob-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["dob-year"]
+              }
+            ]
+          }) }}
+
+            {% else %}
+
+
+
+            {{ govukDateInput({
+              id: "dob",
+              namePrefix: "dob",
+              fieldset: {
+                legend: {
+                  text: "What is your date of birth?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              hint: {
+                text: "For example, 31 3 1948"
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: data["dob-day"]
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: data["dob-month"]
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: data["dob-year"]
+                }
+              ]
+            }) }}
+
+            <p class="govuk-body"><a href="done-too-young">...</a></p>
+
+              {% endif %}
+
+
+
+
+
 
 
         {{ govukButton({
           text: "Continue"
         }) }}
 
-
-
-                <p class="govuk-body"><a href="done-too-young">...</a></p>
 
 
 

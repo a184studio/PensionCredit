@@ -24,7 +24,7 @@ router.post(`${baseUrl}/system-partner-check-router`, (req, res) => {
   if (singleJoint === 'Single') {
     res.redirect(`${baseUrl}/outcome`)
   } else {
-    res.redirect(`${baseUrl}/partner-state-pension-amount`)
+    res.redirect(`${baseUrl}/partner-name`)
   }
 })
 
@@ -43,11 +43,11 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   const residesInUk = req.session.data['resides-in-uk']
 
   if (residesInUk === 'England') {
-    res.redirect(`${baseUrl}/claimant-dob`)
+    res.redirect(`${baseUrl}/partner-check-yn`)
   } else if (residesInUk === 'Scotland') {
-    res.redirect(`${baseUrl}/claimant-dob`)
+    res.redirect(`${baseUrl}/cpartner-check-yn`)
   } else if (residesInUk === 'Wales') {
-    res.redirect(`${baseUrl}/claimant-dob`)
+    res.redirect(`${baseUrl}/partner-check-yn`)
   } else if (residesInUk === 'Northern-Ireland') {
     res.redirect(`${baseUrl}/done-ni`)
   } else {
@@ -55,50 +55,52 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   }
 })
 
+// router.post(`${baseUrl}/claimant-dob-router`, (req, res) => {
+//   try {
+//     const dob = req.session.data['dob-year'] + '-' +
+//       req.session.data['dob-month'].padStart(2, '0') + '-' +
+//       req.session.data['dob-day'].padStart(2, '0')
+//
+//     const today = startOfDay(new Date())
+//     const maleSpaDate = getStatePensionDate(dob, 'M')
+//     const femaleSpaDate = getStatePensionDate(dob, 'F')
+//     const daysSinceMaleSPA = differenceInDays(today, maleSpaDate)
+//     const daysSinceFemaleSPA = differenceInDays(today, femaleSpaDate)
+//
+//     if (daysSinceMaleSPA >= 0 && daysSinceFemaleSPA >= 0) {
+//       const threeMonthsAgo = subMonths(today, 3)
+//       req.session.data['back-dating-date'] = maleSpaDate < threeMonthsAgo ? threeMonthsAgo : maleSpaDate
+//       req.session.data['spa-date'] = maleSpaDate
+//
+//       res.redirect(`${baseUrl}/reside-in-uk`)
+//     } else if (daysSinceMaleSPA < 0 && daysSinceFemaleSPA < 0) {
+//       res.redirect(`${baseUrl}/reside-in-uk`)
+//     } else {
+//       res.redirect(`${baseUrl}/sex`)
+//     }
+//   } catch (err) {
+//     res.redirect(`${baseUrl}/children-check-yn`)
+//   }
+// })
+
+
+
 router.post(`${baseUrl}/claimant-dob-router`, (req, res) => {
-  try {
-    const dob = req.session.data['dob-year'] + '-' +
-      req.session.data['dob-month'].padStart(2, '0') + '-' +
-      req.session.data['dob-day'].padStart(2, '0')
+  const claimantDOB = req.session.data['partner-check-yn']
 
-    const today = startOfDay(new Date())
-    const maleSpaDate = getStatePensionDate(dob, 'M')
-    const femaleSpaDate = getStatePensionDate(dob, 'F')
-    const daysSinceMaleSPA = differenceInDays(today, maleSpaDate)
-    const daysSinceFemaleSPA = differenceInDays(today, femaleSpaDate)
-
-    if (daysSinceMaleSPA >= 0 && daysSinceFemaleSPA >= 0) {
-      const threeMonthsAgo = subMonths(today, 3)
-      req.session.data['back-dating-date'] = maleSpaDate < threeMonthsAgo ? threeMonthsAgo : maleSpaDate
-      req.session.data['spa-date'] = maleSpaDate
-
-      res.redirect(`${baseUrl}/reside-in-uk`)
-    } else if (daysSinceMaleSPA < 0 && daysSinceFemaleSPA < 0) {
-      res.redirect(`${baseUrl}/reside-in-uk`)
-    } else {
-      res.redirect(`${baseUrl}/sex`)
-    }
-  } catch (err) {
+  if (claimantDOB === 'Yes, we live together') {
+    res.redirect(`${baseUrl}/partner-dob`)
+  } else {
     res.redirect(`${baseUrl}/children-check-yn`)
   }
 })
-
-// router.post(`${baseUrl}/state-pension-check-yn-router`, (req, res) => {
-//   const statePensionCheck = req.session.data['state-pension-check-yn']
-//
-//   if (statePensionCheck === 'Yes') {
-//     res.redirect(`${baseUrl}/children-check-yn`)
-//   } else {
-//     res.redirect(`${baseUrl}/done-not-getting-sp`)
-//   }
-// })
 
 
 router.post(`${baseUrl}/claimant-national-insurance-router`, (req, res) => {
   const claimantNationalInsurance = req.session.data['claimant-national-insurance']
 
   if (claimantNationalInsurance === 'Yes') {
-    res.redirect(`${baseUrl}/partner-check-yn`)
+    res.redirect(`${baseUrl}/housing-service-charge`)
   } else if (claimantNationalInsurance === 'Lost') {
     res.redirect(`${baseUrl}/claimant-search-ni`)
   } else {
@@ -110,7 +112,7 @@ router.post(`${baseUrl}/partner-national-insurance-router`, (req, res) => {
   const partnerNationalInsurance = req.session.data['partner-national-insurance']
 
   if (partnerNationalInsurance === 'Yes') {
-    res.redirect(`${baseUrl}/XXX`)
+    res.redirect(`${baseUrl}/partner-state-pension-status`)
   } else if (partnerNationalInsurance === 'Lost') {
     res.redirect(`${baseUrl}/partner-search-ni`)
   } else {
@@ -122,9 +124,9 @@ router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   const partnerCheck = req.session.data['partner-check-yn']
 
   if (partnerCheck === 'Yes, we live together') {
-    res.redirect(`${baseUrl}/partner-name`)
+    res.redirect(`${baseUrl}/claimant-dob`)
   } else {
-    res.redirect(`${baseUrl}/housing-service-charge`)
+    res.redirect(`${baseUrl}/claimant-dob`)
   }
 })
 
@@ -132,7 +134,7 @@ router.post(`${baseUrl}/partner-mac-yn-router`, (req, res) => {
   const macPartnerCheck = req.session.data['partner-mac-yn']
 
   if (macPartnerCheck === 'Yes') {
-    res.redirect(`${baseUrl}/partner-name`)
+    res.redirect(`${baseUrl}/children-check-yn`)
   } else {
     res.redirect(`${baseUrl}/done-partner`)
   }
@@ -213,6 +215,20 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
     res.redirect(`${baseUrl}/handover-early-sp`)
   } else {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
+  }
+})
+
+router.post(`${baseUrl}/partner-state-pension-status-router`, (req, res) => {
+  const partnerStatePensionStatus = req.session.data['partner-state-pension-status']
+
+  if (partnerStatePensionStatus === 'Yes') {
+    res.redirect(`${baseUrl}/partner-state-pension-amount`)
+  } else if (partnerStatePensionStatus === 'NoBank') {
+    res.redirect(`${baseUrl}/partner-benefit-check`)
+  } else if (partnerStatePensionStatus === 'partner-amount-not-known') {
+    res.redirect(`${baseUrl}/handover-early-sp`)
+  } else {
+    res.redirect(`${baseUrl}/handover-early-sp`)
   }
 })
 
