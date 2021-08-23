@@ -22,7 +22,7 @@ router.post(`${baseUrl}/system-partner-check-router`, (req, res) => {
   const singleJoint = req.session.data['system-partner-check']
 
   if (singleJoint === 'Single') {
-    res.redirect(`${baseUrl}/outcome`)
+    res.redirect(`${baseUrl}/cya`)
   } else {
     res.redirect(`${baseUrl}/partner-name`)
   }
@@ -120,6 +120,17 @@ router.post(`${baseUrl}/partner-national-insurance-router`, (req, res) => {
   }
 })
 
+
+router.post(`${baseUrl}/claimant-sex-router`, (req, res) => {
+  const claimantSex = req.session.data['partner-check-yn']
+
+  if (claimantSex === 'Yes, we live together') {
+    res.redirect(`${baseUrl}/partner-dob`)
+  } else {
+    res.redirect(`${baseUrl}/children-check-yn`)
+  }
+})
+
 router.post(`${baseUrl}/partner-check-yn-router`, (req, res) => {
   const partnerCheck = req.session.data['partner-check-yn']
 
@@ -145,7 +156,7 @@ router.post(`${baseUrl}/housing-costs-router`, (req, res) => {
   const housingCosts = req.session.data['housing-costs']
 
   if (housingCosts === 'Yes') {
-    res.redirect(`${baseUrl}/outcome`)
+    res.redirect(`${baseUrl}/cya`)
   } else {
     res.redirect(`${baseUrl}/state-pension-status`)
   }

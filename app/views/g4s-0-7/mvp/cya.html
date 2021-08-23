@@ -21,14 +21,33 @@
       <form action="outcome" method="post" class="form">
 
 
+      {% if data['partner-check-yn'] == 'Yes, we live together' %}
+
+I am somethign A
+      <form action="outcome" method="post" class="form">
+
+
+        {% else %}
+
+I am partner status
+
+          {% endif %}
+<br>
+checked: (data["partner-state-pension-status"] == "NoBank")
+<br>
+checked: (data["partner-amount-not-known"] == "amount-not-known")
+<br>
+(data["partner-state-pension-status"] == "NoSP"
+
+
+
+
       <h1 class="govuk-heading-xl">Check your answers</h1>
 
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Applicant details</h2>
 
 
         {% include "g4s-0-7/mvp/claim-details.html" %}
-
-
 
     </div></div>
 

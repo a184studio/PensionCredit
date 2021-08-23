@@ -17,6 +17,7 @@
       <form action="claimant-dob-router" method="post">
 
 
+
           {% if data['partner-check-yn'] == 'Yes, we live together' %}
 
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As you live with a partner we need to make the application using the oldest persons date of birth</h1>
@@ -92,14 +93,7 @@
               ]
             }) }}
 
-            <p class="govuk-body"><a href="done-too-young">...</a></p>
-
               {% endif %}
-
-
-
-
-
 
 
         {{ govukButton({
@@ -107,6 +101,8 @@
         }) }}
 
 
+        <p class="govuk-body"><a href="claimant-sex">DOB is between 1951 and 1953</a></p>
+        <p class="govuk-body"><a href="done-too-young">Out too young</a></p>
 
 
       </form>
