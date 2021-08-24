@@ -47,6 +47,31 @@
         }) }}
          {% endif %}
 
+         {% if data["partner-check-yn"] %}
+                 {{ govukSummaryList({
+                   classes: 'govuk-!-margin-bottom-2',
+                   rows: [
+                 {
+                     key: {
+                       text: "Do you have a partner"
+                     },
+                     value: {
+                       html: data["partner-check-yn"]
+                     },
+                     actions: {
+                       items: [
+                         {
+                           href: "claimant-national-insurance",
+                           text: "Change",
+                           visuallyHiddenText: "claimant-national-insurance"
+                         }
+                       ]
+                     }
+                   }
+                 ]
+                 }) }}
+              {% endif %}
+
 {% if data["dob-day"] %}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-2',
@@ -71,6 +96,31 @@
         ]
         }) }}
          {% endif %}
+
+         {% if data["claimant-gender"] %}
+                 {{ govukSummaryList({
+                   classes: 'govuk-!-margin-bottom-2',
+                   rows: [
+                   {
+                     key: {
+                       text: "Gender"
+                     },
+                     value: {
+                       text: data['claimant-gender']
+                     },
+                     actions: {
+                       items: [
+                         {
+                           href: "claimant-dob",
+                           text: "Change",
+                           visuallyHiddenText: "claimant-dob"
+                         }
+                       ]
+                     }
+                   }
+                 ]
+                 }) }}
+                  {% endif %}
 
 {% if data["children-check-yn"] %}
         {{ govukSummaryList({
@@ -103,7 +153,7 @@
                    rows: [
                  {
                      key: {
-                       text: "CTC?"
+                       text: "Do you get Child Tax Credit for the children that live with you?"
                      },
                      value: {
                        html: data["children-ctc"]
@@ -173,60 +223,31 @@
         }) }}
        {% endif %}
 
+       {% if data["partner-mac-yn"] %}
 
-
-       {% if data["partner-check-yn"] %}
                {{ govukSummaryList({
                  classes: 'govuk-!-margin-bottom-2',
                  rows: [
                {
                    key: {
-                     text: "Do you have a partner"
+                     text: "Do you and your partner get pension age Housing Benefit?"
                    },
                    value: {
-                     html: data["partner-check-yn"]
+                     html: data["partner-mac-yn"]
                    },
                    actions: {
                      items: [
                        {
-                         href: "claimant-national-insurance",
+                         href: "partner-name",
                          text: "Change",
-                         visuallyHiddenText: "claimant-national-insurance"
+                         visuallyHiddenText: "X"
                        }
                      ]
                    }
                  }
                ]
                }) }}
-            {% endif %}
-
-         {% if data["partner-mac-yn"] %}
-
-                 {{ govukSummaryList({
-                   classes: 'govuk-!-margin-bottom-2',
-                   rows: [
-                 {
-                     key: {
-                       text: "Do you and your partner get pension age Housing Benefit?"
-                     },
-                     value: {
-                       html: data["partner-mac-yn"]
-                     },
-                     actions: {
-                       items: [
-                         {
-                           href: "partner-name",
-                           text: "Change",
-                           visuallyHiddenText: "X"
-                         }
-                       ]
-                     }
-                   }
-                 ]
-                 }) }}
-                 {% endif %}
-
-
+               {% endif %}
 
       {% if data["housing-costs"] %}
 
@@ -651,7 +672,8 @@
 
 
 
-        {% if data["partner-full-name"] %}
+        {% if data["partner-check-yn"] == "Yes, we live together" %}
+
 
         <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Partner details</h2>
 

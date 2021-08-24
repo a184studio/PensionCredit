@@ -18,13 +18,25 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <form action="outcome" method="post" class="form">
+
+
+{% if data['state-pension-status'] == 'amount-not-known' %}
+
+I am early exit for sp status
+<form action="handover-early-sp" method="post" class="form">
+
+{% else %}
+
+I am normal
+<form action="outcome" method="post" class="form">
+
+{% endif %}
+
 
 
       {% if data['partner-check-yn'] == 'Yes, we live together' %}
 
 I am somethign A
-      <form action="outcome" method="post" class="form">
 
 
         {% else %}
@@ -33,11 +45,11 @@ I am partner status
 
           {% endif %}
 <br>
-checked: (data["partner-state-pension-status"] == "NoBank")
+handover-early-sp
 <br>
-checked: (data["partner-amount-not-known"] == "amount-not-known")
+checked: (data["partner-amount-not-known"] == "amount-not-known") handover-early-sp
 <br>
-(data["partner-state-pension-status"] == "NoSP"
+(data["partner-state-pension-status"] == "NoSP" handover-early-sp
 
 
 

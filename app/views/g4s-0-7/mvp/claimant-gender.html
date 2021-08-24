@@ -16,15 +16,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="claimant-sex-router" method="post">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I'm just looking up some details around your date of birth</h1>
+
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXX</p>
+
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "claimant-sex",
-          name: "claimant-sex",
+          idPrefix: "claimant-gender",
+          name: "claimant-gender",
           fieldset: {
             legend: {
-              text: "@pete Sex",
+              text: "Applicants gender",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl "
+              classes: "govuk-fieldset__legend--m"
             }
           },
 
@@ -32,12 +37,12 @@
             {
               value: "Female",
               text: "Female",
-              checked: data['claimant-sex'] == "Female"
+              checked: data['claimant-gender'] == "Female"
             },
             {
               value: "Male",
               text: "Male",
-              checked: data['claimant-sex'] == "Male"
+              checked: data['claimant-gender'] == "Male"
             }
           ]
         }) }}

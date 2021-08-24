@@ -199,19 +199,19 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
   if (childrenCTC == 'Yes') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
-    res.redirect(`${baseUrl}/handover-children-note`)
+    res.redirect(`${baseUrl}/handover-early`)
   }
 })
 
 router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
   const typeOfClaim = req.session.data['type-of-claim']
 
-  if (typeOfClaim == 'More call options') {
-    res.redirect(`${baseUrl}/type-of-claim-more`)
+  if (typeOfClaim == 'eligibility') {
+    res.redirect(`${baseUrl}/start`)
   }  else if (typeOfClaim == 'bau-exit') {
       res.redirect(`${baseUrl}/bau-exit`)
     } else {
-    res.redirect(`${baseUrl}/start`)
+    res.redirect(`${baseUrl}/bau-exit`)
   }
 })
 
@@ -223,7 +223,7 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   } else if (statePensionStatus === 'NoBank') {
     res.redirect(`${baseUrl}/benefit-check`)
   } else if (statePensionStatus === 'amount-not-known') {
-    res.redirect(`${baseUrl}/handover-early-sp`)
+    res.redirect(`${baseUrl}/cya`)
   } else {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   }
