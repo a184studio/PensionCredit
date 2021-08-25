@@ -20,9 +20,9 @@
 
           {% if data['partner-check-yn'] == 'Yes, we live together' %}
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As you live with a partner we need to make the application using the oldest persons date of birth</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">As you live with a partner we need to use the oldest persons date of birth</h1>
 
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXX</p>
+          <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXX</p> -->
 
 
           {{ govukDateInput({
@@ -56,6 +56,29 @@
               }
             ]
           }) }}
+
+          {{ govukCheckboxes({
+  idPrefix: "organisation",
+  name: "organisation",
+  classes: "govuk-checkboxes--small ",
+  fieldset: {
+    legend: {
+      text: "Whose is this date of birth?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+    }
+  },
+  items: [
+    {
+      value: "Applicant",
+      text: "Applicant"
+    },
+    {
+      value: "Partner",
+      text: "Partner"
+    }
+  ]
+}) }}
 
             {% else %}
 
