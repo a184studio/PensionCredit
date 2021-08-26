@@ -520,6 +520,8 @@ router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
 
   if (claimFilter === 'Normal') {
     res.redirect(`${baseUrl}/doc-absence`)
+  } else if (claimFilter === 'Bereaved') {
+    res.redirect(`${baseUrl}/doc-draft-date-bereaved`)
   } else if (claimFilter === 'BereavedB') {
     res.redirect(`${baseUrl}/doc-absence`)
   } else if (claimFilter === 'Today') {
