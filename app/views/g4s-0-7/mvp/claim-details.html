@@ -717,7 +717,7 @@
                              actions: {
                                items: [
                                  {
-                                   href: "partner-claimant-dob",
+                                   href: "partner-dob",
                                    text: "Change",
                                    visuallyHiddenText: "partner"
                                  }
@@ -727,6 +727,31 @@
                          ]
                          }) }}
                           {% endif %}
+
+                          {% if data["partner-gender"] %}
+                                  {{ govukSummaryList({
+                                    classes: 'govuk-!-margin-bottom-2',
+                                    rows: [
+                                    {
+                                      key: {
+                                        text: "Gender"
+                                      },
+                                      value: {
+                                        text: data['partner-gender']
+                                      },
+                                      actions: {
+                                        items: [
+                                          {
+                                            href: "partner-gender",
+                                            text: "Change",
+                                            visuallyHiddenText: "partner-dob"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                  }) }}
+                                   {% endif %}
 
                           {% if data["partner-national-insurance"] %}
                                   {{ govukSummaryList({

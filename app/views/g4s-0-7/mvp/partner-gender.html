@@ -21,8 +21,8 @@
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "Partner-gender",
-          name: "Partner-gender",
+          idPrefix: "partner-gender",
+          name: "partner-gender",
           fieldset: {
             legend: {
               text: "Partner gender",
@@ -35,12 +35,12 @@
             {
               value: "Female",
               text: "Female",
-              checked: data['Partner-gender'] == "Female"
+              checked: data['partner-gender'] == "Female"
             },
             {
               value: "Male",
               text: "Male",
-              checked: data['Partner-gender'] == "Male"
+              checked: data['partner-gender'] == "Male"
             }
           ]
         }) }}
