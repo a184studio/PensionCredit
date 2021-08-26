@@ -22,7 +22,7 @@
               namePrefix: "partner-dob",
               fieldset: {
                 legend: {
-                  text: "@pete What is your partner's date of birth? [What is your date of birth?]",
+                  text: "What is your partner's date of birth?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--xl"
                 }
@@ -49,18 +49,14 @@
               ]
             }) }}
 
-            <p class="govuk-body govuk-!-margin-top-3"><a href="partner-mac-yn">Under SPA: MAC check</a></p>
-
-
-
-
-
-
-
-
         {{ govukButton({
           text: "Continue"
         }) }}
+
+        <p class="govuk-body"><a href="partner-gender">DOB is between 1951 and 1953</a></p>
+        <p class="govuk-body"><a href="done-too-young">Out too young</a></p>
+        <p class="govuk-body govuk-!-margin-top-3"><a href="partner-mac-yn">Under SPA: MAC check</a></p>
+
 
 
 

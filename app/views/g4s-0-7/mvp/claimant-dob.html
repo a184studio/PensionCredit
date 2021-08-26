@@ -18,70 +18,6 @@
 
 
 
-          {% if data['partner-check-yn'] == 'Yes, we live together' %}
-
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">As you live with a partner we need to use the oldest persons date of birth</h1>
-
-          <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXX</p> -->
-
-
-          {{ govukDateInput({
-            id: "dob",
-            namePrefix: "dob",
-            fieldset: {
-              legend: {
-                text: "Enter oldest persons date of birth",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            hint: {
-              text: "For example, 31 3 1948"
-            },
-            items: [
-              {
-                name: "day",
-                classes: "govuk-input--width-2",
-                value: data["dob-day"]
-              },
-              {
-                name: "month",
-                classes: "govuk-input--width-2",
-                value: data["dob-month"]
-              },
-              {
-                name: "year",
-                classes: "govuk-input--width-4",
-                value: data["dob-year"]
-              }
-            ]
-          }) }}
-
-          {{ govukCheckboxes({
-  idPrefix: "organisation",
-  name: "organisation",
-  classes: "govuk-checkboxes--small ",
-  fieldset: {
-    legend: {
-      text: "Whose is this date of birth?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
-    }
-  },
-  items: [
-    {
-      value: "Applicant",
-      text: "Applicant"
-    },
-    {
-      value: "Partner",
-      text: "Partner"
-    }
-  ]
-}) }}
-
-            {% else %}
-
 
 
             {{ govukDateInput({
@@ -116,7 +52,6 @@
               ]
             }) }}
 
-              {% endif %}
 
 
         {{ govukButton({
@@ -125,7 +60,7 @@
 
 
         <p class="govuk-body"><a href="claimant-gender">DOB is between 1951 and 1953</a></p>
-        <p class="govuk-body"><a href="done-too-young">Out too young</a></p>
+        <p class="govuk-body"><a href="done-too-young">[Singles only] Out too young</a></p>
         <!-- <p class="govuk-body"><a href="done-advanced">Advanced claim</a></p> -->
 
 

@@ -121,10 +121,20 @@ router.post(`${baseUrl}/partner-national-insurance-router`, (req, res) => {
 })
 
 
-router.post(`${baseUrl}/claimant-sex-router`, (req, res) => {
-  const claimantSex = req.session.data['partner-check-yn']
+router.post(`${baseUrl}/claimant-gender-router`, (req, res) => {
+  const claimantGender = req.session.data['partner-check-yn']
 
-  if (claimantSex === 'Yes, we live together') {
+  if (claimantGender === 'Yes, we live together') {
+    res.redirect(`${baseUrl}/partner-dob`)
+  } else {
+    res.redirect(`${baseUrl}/children-check-yn`)
+  }
+})
+
+router.post(`${baseUrl}/partner-gender-router`, (req, res) => {
+  const claimantGender = req.session.data['partner-check-yn']
+
+  if (claimantGender === 'Yes, we live together') {
     res.redirect(`${baseUrl}/partner-dob`)
   } else {
     res.redirect(`${baseUrl}/children-check-yn`)
@@ -260,7 +270,6 @@ router.post(`${baseUrl}/ab-check-pension-router`, (req, res) => {
   } else if (abRouter === 'SS330000C') {
     res.redirect(`${baseUrl}/outcome`)
 
-
   } else {
     res.redirect(`${baseUrl}/no-ni-selected`)
   }
@@ -367,6 +376,25 @@ router.post(`${baseUrl}/outcome-housing-costs-router`, (req, res) => {
 
   } else {
     res.redirect(`${baseUrl}/exit`)
+  }
+})
+
+
+router.post(`${baseUrl}/cya-outcome`, (req, res) => {
+  const abRouter = req.session.data['sl-find-a-claim']
+
+  if (abRouter === 'SS 22 00 00 B') {
+    res.redirect(`${baseUrl}/earnings`)
+  } else if (abRouter === 'SS220000B') {
+    res.redirect(`${baseUrl}/earnings`)
+
+  } else if (abRouter === 'SS 33 00 00 C') {
+    res.redirect(`${baseUrl}/outcome`)
+  } else if (abRouter === 'SS330000C') {
+    res.redirect(`${baseUrl}/outcome`)
+
+  } else {
+    res.redirect(`${baseUrl}/no-ni-selected`)
   }
 })
 
