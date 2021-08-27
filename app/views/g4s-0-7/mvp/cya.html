@@ -20,9 +20,9 @@
     <div class="govuk-grid-column-three-quarters">
 
 
-{% if data['state-pension-status'] == 'amount-not-known' %}
+{% if data['state-pension-status'] == 'sp-handover' or data['partner-state-pension-status'] == 'sp-handover' %}
 
-I am early exit for sp status
+Issues with SP / Partner
 <form action="handover-early-sp" method="post" class="form">
 
 {% else %}
