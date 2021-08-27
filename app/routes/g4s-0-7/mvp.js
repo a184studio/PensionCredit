@@ -209,7 +209,7 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
   if (childrenCTC == 'Yes') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
-    res.redirect(`${baseUrl}/handover-early`)
+    res.redirect(`${baseUrl}/handover-early-children`)
   }
 })
 
