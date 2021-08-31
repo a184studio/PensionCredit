@@ -25,6 +25,13 @@
 Issues with SP / Partner
 <form action="handover-early-sp" method="post" class="form">
 
+{% elif data['system-children-mac-check'] == 'mac'%}
+<form action="done-mac" method="post" class="form">
+I am too youung
+
+{% elif data['system-children-mac-check'] == 'children-mac'%}
+I have children and too young
+<form action="done-children" method="post" class="form">
 {% else %}
 
 I am normal
@@ -34,16 +41,6 @@ I am normal
 
 
 
-      {% if data['partner-check-yn'] == 'Yes, we live together' %}
-
-I am somethign A
-
-
-        {% else %}
-
-I am partner status
-
-          {% endif %}
 <br>
 handover-early-sp
 <br>

@@ -29,6 +29,7 @@ router.post(`${baseUrl}/system-partner-check-router`, (req, res) => {
 })
 
 
+
 router.post(`${baseUrl}/g4s-partner-check-router`, (req, res) => {
   const g4sPartnerCheck = req.session.data['g4s-partner-check']
 
@@ -209,7 +210,7 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
   if (childrenCTC == 'Yes') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
-    res.redirect(`${baseUrl}/handover-early-children`)
+    res.redirect(`${baseUrl}/system-children-mac-check`)
   }
 })
 
