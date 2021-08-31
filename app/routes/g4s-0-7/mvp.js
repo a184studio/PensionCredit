@@ -209,7 +209,7 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
   if (childrenCTC == 'Yes') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
-    res.redirect(`${baseUrl}/handover-early`)
+    res.redirect(`${baseUrl}/handover-early-children`)
   }
 })
 
@@ -232,10 +232,10 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
     res.redirect(`${baseUrl}/data-we-use`)
   } else if (statePensionStatus === 'NoBank') {
     res.redirect(`${baseUrl}/benefit-check`)
-  } else if (statePensionStatus === 'amount-not-known') {
+  } else if (statePensionStatus === 'sp-handover') {
     res.redirect(`${baseUrl}/cya`)
   } else {
-    res.redirect(`${baseUrl}/done-not-getting-sp`)
+    res.redirect(`${baseUrl}/cya`)
   }
 })
 
@@ -246,10 +246,10 @@ router.post(`${baseUrl}/partner-state-pension-status-router`, (req, res) => {
     res.redirect(`${baseUrl}/partner-state-pension-amount`)
   } else if (partnerStatePensionStatus === 'NoBank') {
     res.redirect(`${baseUrl}/partner-benefit-check`)
-  } else if (partnerStatePensionStatus === 'partner-amount-not-known') {
-    res.redirect(`${baseUrl}/handover-early-sp`)
+  } else if (partnerStatePensionStatus === 'sp-handover') {
+    res.redirect(`${baseUrl}/cya`)
   } else {
-    res.redirect(`${baseUrl}/handover-early-sp`)
+    res.redirect(`${baseUrl}/cya`)
   }
 })
 
