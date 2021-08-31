@@ -60,9 +60,9 @@
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
        %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Do you have a contact telephone number?</h1>
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Do you have a contact telephone number?</h1>
       {% else %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Does the applicant have a contact telephone number?</h1>
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Does the applicant have a contact telephone number?</h1>
       {% endif %}
 
       {% endset -%}
@@ -82,7 +82,7 @@
  <p>We might need to contact the applicant about Pension Credit, either while we are processing their application or once it is in payment. We might also need to contact them about other benefits that they might get now or in the future.</p>
       {% endif %}
 
- 
+
 
       {{ govukRadios({
         idPrefix: "del-auth-contact-number-check",
