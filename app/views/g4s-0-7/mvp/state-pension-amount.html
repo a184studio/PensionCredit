@@ -14,17 +14,9 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="benefit-check" method="post" class="form">
+    <form action="state-pension-amount-check-router" method="post" class="form">
 
       <input type="hidden" name="hospitals-complete" value="true"/>
-
-<!--
-      <div class="moj-banner">
-      <div class="moj-banner__message">
-      <h2 class="govuk-heading-m govuk-!-margin-top-0">Use SearchLight, do not ask caller.</h2>
-      </div>
-      </div>
--->
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
@@ -32,26 +24,62 @@
        </h1>
 
 
-      {{ govukInput({
-        id: "state-pension-amount",
-        name: "state-pension-amount",
-        label: {
-          html: "What is the weekly State Pension amount?",
-          classes: "govuk-label--m",
-          isPageHeading: true
+
+{% set statePensionAmount %}
+
+{{ govukInput({
+  id: "state-pension-amount",
+  name: "state-pension-amount",
+  label: {
+    html: "What is the weekly State Pension amount?",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter an amount in pounds and pence, for example 150.00"
+  },
+  prefix: {
+    text: "£"
+  },
+  value: data["state-pension-amount"],
+  classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+  spellcheck: false
+}) }}
+
+
+{% endset %}
+
+
+      {{ govukRadios({
+        idPrefix: "state-pension-amount-check",
+        name: "state-pension-amount-check",
+        fieldset: {
+          legend: {
+            html: "Is there an State Pension amount shown on SearchLight?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
         },
         hint: {
-          text: "Enter an amount in pounds and pence, for example 150.00"
+          text: "XXX"
         },
-        prefix: {
-          text: "£"
-        },
-        value: data["state-pension-amount"],
-        classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
-        spellcheck: false
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["state-pension-amount-check"] == "Yes"),
+            conditional: {
+              html: statePensionAmount
+            }
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["state-pension-amount-check"] == "No")
+          }
+        ]
       }) }}
-
-      <p class="govuk-body govuk-!-padding-bottom-2"><a href="handover-early-sp">No State Pension shown in SearchLight</a></p>
 
 
 
@@ -63,7 +91,7 @@
 
 <br>
 <br>
-<!-- Pretend max SP = 175.00 -->
+<p class="govuk-body govuk-!-padding-bottom-2"><a href="handover-early-sp">No State Pension shown in SearchLight</a></p>
 
   </div>
 </div>

@@ -169,7 +169,7 @@ router.post(`${baseUrl}/housing-costs-router`, (req, res) => {
   if (housingCosts === 'Yes') {
     res.redirect(`${baseUrl}/cya`)
   } else {
-    res.redirect(`${baseUrl}/state-pension-status`)
+    res.redirect(`${baseUrl}/data-we-use`)
   }
 })
 
