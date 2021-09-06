@@ -26,8 +26,30 @@
         <li>You were out of the country for more than 4 weeks</li>
           </ul>
 
-
-      <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
+          {{ govukRadios({
+            idPrefix: "doc-draft-date",
+            name: "doc-draft-date",
+            fieldset: {
+              legend: {
+              }
+            },
+            hint: {
+              html: claimdate
+            },
+            classes: "govuk-radios",
+            items: [
+              {
+                value: "Yes",
+                text: "Yes — consider my application from [date]",
+                checked: (data["doc-draft-date"] == "Yes")
+                        },
+              {
+                value: "No",
+                text: "No — consider my application from a different date",
+                checked: (data["doc-draft-date"] == "No")
+              }
+            ]
+          }) }}
 
 
       {{ govukButton({
