@@ -113,7 +113,7 @@ router.post(`${baseUrl}/partner-national-insurance-router`, (req, res) => {
   const partnerNationalInsurance = req.session.data['partner-national-insurance']
 
   if (partnerNationalInsurance === 'Yes') {
-    res.redirect(`${baseUrl}/partner-state-pension-status`)
+    res.redirect(`${baseUrl}/partner-state-pension-amount`)
   } else if (partnerNationalInsurance === 'Lost') {
     res.redirect(`${baseUrl}/partner-search-ni`)
   } else {
@@ -169,7 +169,7 @@ router.post(`${baseUrl}/housing-costs-router`, (req, res) => {
   if (housingCosts === 'Yes') {
     res.redirect(`${baseUrl}/cya`)
   } else {
-    res.redirect(`${baseUrl}/state-pension-status`)
+    res.redirect(`${baseUrl}/data-we-use`)
   }
 })
 
@@ -226,19 +226,21 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
-  const statePensionStatus = req.session.data['state-pension-status']
+// router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
+//   const statePensionStatus = req.session.data['state-pension-status']
+//
+//   if (statePensionStatus === 'Yes') {
+//     res.redirect(`${baseUrl}/data-we-use`)
+//   } else if (statePensionStatus === 'NoBank') {
+//     res.redirect(`${baseUrl}/benefit-check`)
+//   } else if (statePensionStatus === 'sp-handover') {
+//     res.redirect(`${baseUrl}/cya`)
+//   } else {
+//     res.redirect(`${baseUrl}/cya`)
+//   }
+// })
 
-  if (statePensionStatus === 'Yes') {
-    res.redirect(`${baseUrl}/data-we-use`)
-  } else if (statePensionStatus === 'NoBank') {
-    res.redirect(`${baseUrl}/benefit-check`)
-  } else if (statePensionStatus === 'sp-handover') {
-    res.redirect(`${baseUrl}/cya`)
-  } else {
-    res.redirect(`${baseUrl}/cya`)
-  }
-})
+
 
 router.post(`${baseUrl}/partner-state-pension-status-router`, (req, res) => {
   const partnerStatePensionStatus = req.session.data['partner-state-pension-status']
