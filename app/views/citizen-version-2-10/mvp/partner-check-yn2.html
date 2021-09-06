@@ -56,6 +56,41 @@
 
       {% endset -%}
 
+
+      {% set bereavedDate %}
+          {{ govukDateInput({
+            id: "partner-bereaved",
+            namePrefix: "partner-bereaved",
+            fieldset: {
+              legend: {
+                text: "When did your partner die?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 22 3 2021."
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["partner-bereaved-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["partner-bereaved-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["partner-bereaved-year"]
+              }
+            ]
+          }) }}
+      {% endset -%}
+
       {{ govukRadios({
         idPrefix: "partner-check-yn2",
         name: "partner-check-yn2",
@@ -87,7 +122,19 @@
        },
               checked: (data["partner-check-yn2"] == "partner-no")
 
-                              },
+                    },
+
+                    {
+                      value: "bereaved",
+                      text: "My partner who lived with me died within the last 3 months",
+                      hint: {
+                        text: "If you do not live together, we will not need to ask you about them."
+                      },
+                      checked: (data["partner-check-yn2"] == "Yes"),
+                      conditional: {
+                        html: bereavedDate
+                      }
+                    },
 
           {
             value: "No, I do not have a partner2",
