@@ -16,8 +16,11 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="partner-check-yn-router2" method="post" class="form">
 
-      <!-- Hidden input to set task to complete on task-list -->
-      <input type="hidden" name="hospitals-complete" value="true"/>
+
+      <h1 class="govuk-heading-xl">Your application can be backdated if your partner has died in the last 3 months</h1>
+      <p class="govuk-body govuk-!-font-size-24">If your partner has died in the last 3 months, your application can be backdated to their date of death. A partner is a husband, wife, civil partner or someone that you are in a relationship with. </p>
+
+
 
       {% set ageCheck %}
           {{ govukDateInput({
@@ -52,12 +55,10 @@
             ]
           }) }}
 
-          <p class="govuk-body govuk-!-margin-top-3"><a href="partner-mac-yn">Under SPA: MAC check</a></p>
-
       {% endset -%}
 
 
-      <!--< {% set bereavedDate %}
+      {% set bereavedDate %}
           {{ govukDateInput({
             id: "partner-bereaved",
             namePrefix: "partner-bereaved",
@@ -89,50 +90,34 @@
               }
             ]
           }) }}
-      {% endset -%}-->
+      {% endset -%}
 
       {{ govukRadios({
         idPrefix: "partner-check-yn2",
         name: "partner-check-yn2",
         fieldset: {
           legend: {
-            text: "Do you have a partner?",
+            text: "Do you want your application to be backdated to the date of your partner's death?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--m"
           }
         },
         classes: "govuk-radios",
         hint: {
-          text: "If you live with a partner, their details must be included as part of your application. A partner is a husband, wife, civil partner or someone that you are in a relationship with."
+          text: ""
         },
         items: [
           {
-            value: "Yes, we live together2",
-            text: "Yes, we live together",
+            value: "Yes",
+            text: "Yes",
             checked: (data["partner-check-yn2"] == "Yes"),
                   conditional: {
-                    html: ageCheck
+                    html: bereavedDate
                   }
                     },
-            {
-              value: "Yes, but we do not live together2",
-              text: "Yes, but we do not live together",
-              hint: {
-         text: "If you do not live together, we will not need to ask you about them."
-       },
-              checked: (data["partner-check-yn2"] == "partner-no")
-
-                    },
-
-            {
-              value: "bereaved",
-              text: "My partner, who lived with me died within the last 3 months",
-              checked: (data["partner-check-yn2"] == "Yes")
-                      },
-
           {
-            value: "No, I do not have a partner2",
-            text: "No, I do not have a partner",
+            value: "No",
+            text: "No",
             checked: (data["partner-check-yn2"] == "partner-no")
           }
         ]
