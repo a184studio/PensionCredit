@@ -57,7 +57,7 @@
       {% endset -%}
 
 
-      <!--< {% set bereavedDate %}
+      {% set bereavedDate %}
           {{ govukDateInput({
             id: "partner-bereaved",
             namePrefix: "partner-bereaved",
@@ -89,7 +89,7 @@
               }
             ]
           }) }}
-      {% endset -%}-->
+      {% endset -%}
 
       {{ govukRadios({
         idPrefix: "partner-check-yn2",
@@ -124,15 +124,14 @@
 
                     },
 
-            {
-              value: "bereaved",
-              text: "My partner who lived with me died within the last 3 months",
-              hint: {
-                text: "This can affect the date we consider your application from."
-              },
-              checked: (data["partner-check-yn2"] == "Yes")
-                      },
-
+              {
+                value: "bereaved",
+                text: "My partner who lived with me died within the last 3 months",
+                checked: (data["partner-check-yn2"] == "Yes"),
+                      conditional: {
+                        html: bereavedDate
+                      }
+                        },
           {
             value: "No, I do not have a partner2",
             text: "No, I do not have a partner",
@@ -144,6 +143,16 @@
       {{ govukButton({
         text: "Continue"
       }) }}
+
+
+      <!--  {
+          value: "bereaved",
+          text: "My partner who lived with me died within the last 3 months",
+          hint: {
+            text: "This can affect the date we consider your application from."
+          },
+          checked: (data["partner-check-yn2"] == "Yes")
+                  },-->
 
       <p class="govuk-body"><a href="done-residence-status">...</a></p>
 
