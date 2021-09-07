@@ -22,6 +22,9 @@
 
       {% if data["partner-check-yn2"] == "bereaved-yes"%}
       <h1 class="govuk-heading-xl">The earliest we can consider your application from is [DOD/OutsideUK]</h1>
+
+      {% elif data["claim-filter"] == "Bereaved-absence" and data["doc-absence"] == "Yes" %}
+      <h1 class="govuk-heading-xl">The earliest we can consider your application from is [OutsideUK]
       {% else %}
       <h1 class="govuk-heading-xl">Do you want us to consider backdating your application to [Calculated EED]?</h1>
       {% endif %}
@@ -30,7 +33,7 @@
       {% if data["claim-filter"] == "Bereaved" %}
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You told us that this is the date your partner died.</p>
 
-      {% elif data["claim-filter"] == "Bereaved-absence"  %}
+      {% elif data["claim-filter"] == "Bereaved-absence" and ["doc-absence"] == "Yes" %}
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-20">This is the date you returned from spending more than 4 weeks outside the UK.</p>
 
       {% else %}

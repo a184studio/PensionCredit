@@ -24,9 +24,8 @@
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">We will consider your application from today as you reach your State Pension age today</h1>
 
 
-        <!---- BEREAVED % elif data['claim-filter'] == 'Bereaved' %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">We will consider your application from the day of your partner's death</h1>---->{
-
+        {% elif data["partner-check-yn2"] == "bereaved-yes"%}
+        <h1 class="govuk-heading-xl">The earliest we can consider your application from is [DOD/OutsideUK]</h1>
 
 
         <!---- OWN ---->{% else %}
