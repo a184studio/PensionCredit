@@ -59,8 +59,8 @@
 
       {% set bereavedDate %}
           {{ govukDateInput({
-            id: "partner-bereaved",
-            namePrefix: "partner-bereaved",
+            id: "bereaved-date",
+            namePrefix: "bereaved-date",
             fieldset: {
               legend: {
                 text: "When did your partner die?",
@@ -75,17 +75,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["partner-bereaved-day"]
+                value: data["bereaved-date-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["partner-bereaved-month"]
+                value: data["bereaved-date-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["partner-bereaved-year"]
+                value: data["bereaved-date-year"]
               }
             ]
           }) }}
@@ -122,19 +122,19 @@
        },
               checked: (data["partner-check-yn2"] == "partner-no")
 
-                    },
+              },
 
-                    {
-                      value: "bereaved",
-                      text: "My partner who lived with me died within the last 3 months",
-                      hint: {
-                        text: "If you do not live together, we will not need to ask you about them."
-                      },
-                      checked: (data["partner-check-yn2"] == "Yes"),
-                      conditional: {
-                        html: bereavedDate
-                      }
-                    },
+            {
+              value: "bereaved-yes",
+              text: "My partner who lived with me died within the last 3 months",
+              hint: {
+                text: "This can affect the date we consider your application from."
+              },
+              checked: (data["partner-check-yn2"] == "bereaved-yes"),
+              conditional: {
+                html: bereavedDate
+              }
+            },
 
           {
             value: "No, I do not have a partner2",

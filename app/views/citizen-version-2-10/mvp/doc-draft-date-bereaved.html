@@ -19,17 +19,23 @@
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
-      <h1 class="govuk-heading-xl">The earliest we can consider your application from is [DOD/OutsideUK]  </h1>
-      
-      {% if data["claim-filter"] == "Bereaved" %}
-      
- <p class="govuk-body">You told us that this is the date your partner died.</p>
+
+      {% if data["partner-check-yn2"] == "bereaved-yes"%}
+      <h1 class="govuk-heading-xl">The earliest we can consider your application from is [DOD/OutsideUK]</h1>
       {% else %}
-        
- <p class="govuk-body">This is the date you returned from spending more than 4 weeks outside the UK.</p>
+      <h1 class="govuk-heading-xl">Do you want us to consider backdating your application to [Calculated EED]?</h1>
       {% endif %}
 
-     
+
+      {% if data["claim-filter"] == "Bereaved" %}
+
+        <p class="govuk-body">You told us that this is the date your partner died.</p>
+      {% else %}
+
+        <p class="govuk-body">This is the date you returned from spending more than 4 weeks outside the UK.</p>
+      {% endif %}
+
+
 
           {{ govukRadios({
             idPrefix: "doc-draft-date",
