@@ -17,8 +17,14 @@
       <form action="claimant-national-insurance" method="post">
 
 
-        <p class="govuk-heading-xl">When from [date] up to today would you like us to consider your application from?</p>
-        <p class="govuk-body govuk-!-font-size-24">Based on the date of your partner's died, this is the earliest date we can consider backdating your application to.</p>
+        <p class="govuk-heading-xl">What date do you want us to consider your application from?</p>
+        {% if data["claim-filter"] == "Bereaved" %}
+      
+        <p class="govuk-body">You can ask us to consider your application from a date after the date your partner died.</p>
+             {% else %}
+               
+        <p class="govuk-body">You can ask us to consider your application from a date after the date you returned to the UK.</p>
+             {% endif %}
 
 
 
