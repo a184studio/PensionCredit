@@ -19,14 +19,14 @@
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
-      <h1 class="govuk-heading-xl">Based on the information you provided, the earliest we can consider your application from is [DOD/OutsideUK]  </h1>
+      <h1 class="govuk-heading-xl">The earliest we can consider your application from is [DOD/OutsideUK]  </h1>
       
       {% if data["claim-filter"] == "Bereaved" %}
       
- <p class="govuk-body">This is your partner's date of death.</p>
+ <p class="govuk-body">You told us that this is the date your partner died.</p>
       {% else %}
         
- <p class="govuk-body">This is the date you returned from spending more than 4 weeks outside the UK</p>
+ <p class="govuk-body">This is the date you returned from spending more than 4 weeks outside the UK.</p>
       {% endif %}
 
      
