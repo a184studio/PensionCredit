@@ -486,12 +486,30 @@
               text: "Your name"
             },
             value: {
-              text: data["full-name"]
+              text: data["first-name"]
             },
             actions: {
               items: [
                 {
-                  href: "claimant-details",
+                  href: "claimant-name",
+                  text: "Change",
+                  visuallyHiddenText: "your name"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Your name"
+            },
+            value: {
+              text: data["second-name"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "claimant-name",
                   text: "Change",
                   visuallyHiddenText: "your name"
                 }

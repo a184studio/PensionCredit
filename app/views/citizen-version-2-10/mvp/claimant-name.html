@@ -19,22 +19,37 @@
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
-      {% set legendName %}
-      <h3 class="govuk-heading-xl govuk-!-margin-bottom-0">What is your full name?</h3>
-      {% endset -%}
+      <h3 class="govuk-heading-xl govuk-!-margin-bottom-4">We need to know your name</h3>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">XXX</p>
+
 
       {{ govukInput({
         label: {
-          html: legendName
+          html: "First name / given name"
         },
         hint: {
-          text: "Include any middle names."
+          text: "XXX"
         },
-        id: "full-name",
-        name: "full-name",
+        id: "first-name",
+        name: "First name",
         classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
-        value: data["full-name"]
+        value: data["first-name"]
       }) }}
+
+      {{ govukInput({
+        label: {
+          html: "Second name / Family name"
+        },
+        hint: {
+          text: "XXX"
+        },
+        id: "second-name",
+        name: "Second-name",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+        value: data["second-name"]
+      }) }}
+
 
 
 
