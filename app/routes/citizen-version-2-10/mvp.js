@@ -8,7 +8,7 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/citizen-version-2-10/mvp'
+const baseUrl = '/citizen-version-2-11/mvp'
 
 const path = require('path');
 
@@ -521,8 +521,8 @@ router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
   if (claimFilter === 'Normal') {
     res.redirect(`${baseUrl}/doc-absence`)
   } else if (claimFilter === 'Bereaved') {
-    res.redirect(`${baseUrl}/doc-draft-date-bereaved`)
-  } else if (claimFilter === 'BereavedB') {
+    res.redirect(`${baseUrl}/doc-draft-date`)
+  } else if (claimFilter === 'Bereaved-absence') {
     res.redirect(`${baseUrl}/doc-absence`)
   } else if (claimFilter === 'Today') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
