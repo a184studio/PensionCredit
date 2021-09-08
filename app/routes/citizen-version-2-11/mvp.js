@@ -8,7 +8,7 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/citizen-version-2-11/mvp'
+const baseUrl = '/citizen-version-2-10/mvp'
 
 const path = require('path');
 
