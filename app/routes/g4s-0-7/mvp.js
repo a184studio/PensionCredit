@@ -96,6 +96,20 @@ router.post(`${baseUrl}/claimant-dob-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/system-children-mac-check-router`, (req, res) => {
+  const systemChildrenMacCheck = req.session.data['system-children-mac-check']
+
+  if (systemChildrenMacCheck === 'single-claim') {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
+  } else if (systemChildrenMacCheck === 'children-mac') {
+    res.redirect(`${baseUrl}/cya`)
+  } else {
+    res.redirect(`${baseUrl}/cya`)
+  }
+})
+
+
+
 
 router.post(`${baseUrl}/claimant-national-insurance-router`, (req, res) => {
   const claimantNationalInsurance = req.session.data['claimant-national-insurance']

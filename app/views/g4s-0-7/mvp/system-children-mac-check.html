@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="cya" method="post" class="form">
+    <form action="system-children-mac-check-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
@@ -36,7 +36,12 @@
         },
         classes: "govuk-radios",
         items: [
-          {
+        {
+          value: "single-claim",
+          text: "Single claim",
+          checked: (data["system-partner-check"] == "single-claim")
+                  },
+        {
             value: "children-mac",
             text: "MAC and have children",
             checked: (data["system-partner-check"] == "children-mac")
