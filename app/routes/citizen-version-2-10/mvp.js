@@ -8,7 +8,7 @@ const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
 const router = new express.Router()
-const baseUrl = '/citizen-version-2-11/mvp'
+const baseUrl = '/citizen-version-2-10/mvp'
 
 const path = require('path');
 
@@ -521,9 +521,9 @@ router.post(`${baseUrl}/claim-filter-router`, (req, res) => {
   if (claimFilter === 'Normal') {
     res.redirect(`${baseUrl}/doc-absence`)
   } else if (claimFilter === 'Bereaved') {
-    res.redirect(`${baseUrl}/doc-draft-date`)
-  } else if (claimFilter === 'Bereaved-absence') {
-    res.redirect(`${baseUrl}/doc-absence`)
+    res.redirect(`${baseUrl}/doc-draft-date-bereaved`)
+  } else if (claimFilter === 'Bereaved-away') {
+    res.redirect(`${baseUrl}/doc-absence-bereaved`)
   } else if (claimFilter === 'Today') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
@@ -541,6 +541,16 @@ router.post(`${baseUrl}/doc-absence-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/doc-absence-bereaved-router`, (req, res) => {
+  const docAbsenceBereaved = req.session.data['doc-absence-bereaved']
+
+  if (docAbsenceBereaved === 'No') {
+    res.redirect(`${baseUrl}/doc-draft-date-bereaved`)
+  } else {
+    res.redirect(`${baseUrl}/doc-absence-plural-bereaved`)
+  }
+})
+
 router.post(`${baseUrl}/doc-absence-medical-single-router`, (req, res) => {
   const docAbsenceSingleMedical = req.session.data['doc-absence-medical']
 
@@ -555,9 +565,19 @@ router.post(`${baseUrl}/doc-absence-medical-plural-router`, (req, res) => {
   const docAbsencePluralMedical = req.session.data['doc-absence-medical']
 
   if (docAbsencePluralMedical === 'Yes') {
-    res.redirect(`${baseUrl}/claimant-national-insurance`)
+    res.redirect(`${baseUrl}/doc-draft-date-bereaved`)
   } else {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
+  }
+})
+
+router.post(`${baseUrl}/doc-absence-medical-plural-bereaved-router`, (req, res) => {
+  const docAbsencePluralMedicalBereaved = req.session.data['doc-absence-medical']
+
+  if (docAbsencePluralMedicalBereaved === 'Yes') {
+    res.redirect(`${baseUrl}/doc-draft-date-bereaved`)
+  } else {
+    res.redirect(`${baseUrl}/doc-absence-dates`)
   }
 })
 

@@ -14,47 +14,46 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="doc-draft-date-router" method="post" class="form">
+    <form action="doc-absence-medical-bereaved" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
+      <!------------Hint LEGEND------------>
+        {% set hintLegend %}
 
-      <h1 class="govuk-heading-xl">The earliest we can consider your application from is [DOD]</h1>
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-8">You told us that this is the date your partner died.</p>
+        {% endset %}
+      <!------------Legend--------------->
 
 
       {{ govukRadios({
-        idPrefix: "doc-draft-date",
-        name: "doc-draft-date",
+        idPrefix: "doc-absence-plural",
+        name: "doc-absence-plural",
         fieldset: {
           legend: {
-            text: "",
+            text: "How many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
         },
         hint: {
-          html: ""
+          html: hintLegend
         },
         classes: "govuk-radios",
         items: [
           {
-            value: "Yes",
-            text: "Yes — consider my application from [Date]",
-            checked: (data["doc-draft-date"] == "Yes")
-                    },
-          {
             value: "No",
-            text: "No — consider my application from a different date",
-            checked: (data["doc-draft-date"] == "No")
+            text: "One",
+            checked: (data["doc-absence-plural"] == "No")
+          },
+          {
+            value: "Yes",
+            text: "More than one",
+            checked: (data["doc-absence"] == "Yes")
           }
         ]
       }) }}
-
-
 
 
 
