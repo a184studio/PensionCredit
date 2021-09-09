@@ -100,7 +100,7 @@ router.post(`${baseUrl}/system-children-mac-check-router`, (req, res) => {
   const systemChildrenMacCheck = req.session.data['system-children-mac-check']
 
   if (systemChildrenMacCheck === 'single-claim') {
-    res.redirect(`${baseUrl}/claimant-national-insurance`)
+    res.redirect(`${baseUrl}/housing-service-charge`)
   } else if (systemChildrenMacCheck === 'children-mac') {
     res.redirect(`${baseUrl}/cya`)
   } else {
@@ -214,7 +214,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   if (childrenCheck === 'Yes') {
     res.redirect(`${baseUrl}/children-ctc`)
   } else {
-    res.redirect(`${baseUrl}/claimant-national-insurance`)
+    res.redirect(`${baseUrl}/housing-service-charge`)
   }
 })
 
