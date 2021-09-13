@@ -1,4 +1,26 @@
 
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "What is your full name?"
+            },
+            value: {
+              html: data["full-name"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "claimant-name",
+                  text: "Change",
+                  visuallyHiddenText: "claimant-name"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
 
 {% if data["resides-in-uk"] %}
         {{ govukSummaryList({
@@ -50,8 +72,6 @@
                  }) }}
               {% endif %}
 
-
-
 {% if data["dob-day"] %}
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-2',
@@ -83,7 +103,7 @@
                    rows: [
                    {
                      key: {
-                       text: "Applicant's gender"
+                       text: "Gender"
                      },
                      value: {
                        text: data['claimant-gender']
@@ -101,69 +121,6 @@
                  ]
                  }) }}
                   {% endif %}
-
-
-                  {% if data["partner-dob-day"] %}
-                          {{ govukSummaryList({
-                            classes: 'govuk-!-margin-bottom-2',
-                            rows: [
-                            {
-                              key: {
-                                text: "What is your partners date of birth"
-                              },
-                              value: {
-                                text: data['partner-dob-day'] + ' ' + (data['partner-dob-month'] | getMonth) + ' ' + data['partner-dob-year']
-                              },
-                              actions: {
-                                items: [
-                                  {
-                                    href: "partner-dob",
-                                    text: "Change",
-                                    visuallyHiddenText: "partner"
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                          }) }}
-                           {% endif %}
-
-
-                           {% if data["partner-gender"] %}
-                                   {{ govukSummaryList({
-                                     classes: 'govuk-!-margin-bottom-2',
-                                     rows: [
-                                     {
-                                       key: {
-                                         text: "Partner's gender"
-                                       },
-                                       value: {
-                                         text: data['partner-gender']
-                                       },
-                                       actions: {
-                                         items: [
-                                           {
-                                             href: "partner-gender",
-                                             text: "Change",
-                                             visuallyHiddenText: "partner-dob"
-                                           }
-                                         ]
-                                       }
-                                     }
-                                   ]
-                                   }) }}
-                                    {% endif %}
-
-
-
-
-
-
-
-
-
-
-
 
 {% if data["children-check-yn"] %}
         {{ govukSummaryList({
@@ -389,7 +346,7 @@
           rows: [
         {
             key: {
-              text: "Applicant benefits in payment"
+              text: "Benefits in payment"
             },
             value: {
               html: BenefitList
@@ -416,7 +373,7 @@
           rows: [
         {
             key: {
-              text: "Applicant income 1"
+              text: "income-1-value"
             },
             value: {
               html: data["income-1-value"]
@@ -439,7 +396,7 @@
           rows: [
         {
             key: {
-              text: "Applicant income 1 frequency"
+              text: "income-1-frequency"
             },
             value: {
               html: data["income-1-frequency"]
@@ -466,7 +423,7 @@
           rows: [
         {
             key: {
-              text: "Applicant income 2"
+              text: "income-2-value"
             },
             value: {
               html: data["income-2-value"]
@@ -489,7 +446,7 @@
           rows: [
         {
             key: {
-              text: "Applicant income frequency"
+              text: "income-2-frequency"
             },
             value: {
               html: data["income-2-frequency"]
@@ -517,7 +474,7 @@
           rows: [
         {
             key: {
-              text: "Applicant income 3"
+              text: "income-3-value"
             },
             value: {
               html: data["income-3-value"]
@@ -540,7 +497,7 @@
           rows: [
         {
             key: {
-              text: "Applicant income 3 frequency"
+              text: "income-3-frequency"
             },
             value: {
               html: data["income-3-frequency"]
@@ -568,7 +525,7 @@
           rows: [
         {
             key: {
-              text: "Applicant income 4"
+              text: "income-4-value"
             },
             value: {
               html: data["income-4-value"]
@@ -591,7 +548,7 @@
           rows: [
         {
             key: {
-              text: "Applicant income 4 frequency"
+              text: "income-4-frequency"
             },
             value: {
               html: data["income-4-frequency"]
@@ -715,33 +672,161 @@
 
 
 
+        {% if data["partner-check-yn"] == "Yes, we live together" %}
+
+
+        <h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Partner details</h2>
 
 
 
-          {% if data["partner-state-pension-amount"] %}
                 {{ govukSummaryList({
                   classes: 'govuk-!-margin-bottom-2',
                   rows: [
                 {
                     key: {
-                      text: "Partner State Pensions amount"
+                      text: "What is your partners full name?"
                     },
                     value: {
-                      html: data["partner-state-pension-amount"]
+                      html: data["partner-full-name"]
                     },
                     actions: {
                       items: [
                         {
-                          href: "partner-state-pension-amount",
+                          href: "partner-name",
                           text: "Change",
-                          visuallyHiddenText: "partner-state-pension-amount"
+                          visuallyHiddenText: "X"
                         }
                       ]
                     }
                   }
                 ]
                 }) }}
-              {% endif %}
+                 {% endif %}
+
+                 {% if data["partner-dob-day"] %}
+                         {{ govukSummaryList({
+                           classes: 'govuk-!-margin-bottom-2',
+                           rows: [
+                           {
+                             key: {
+                               text: "What is your partners date of birth"
+                             },
+                             value: {
+                               text: data['partner-dob-day'] + ' ' + (data['partner-dob-month'] | getMonth) + ' ' + data['partner-dob-year']
+                             },
+                             actions: {
+                               items: [
+                                 {
+                                   href: "partner-dob",
+                                   text: "Change",
+                                   visuallyHiddenText: "partner"
+                                 }
+                               ]
+                             }
+                           }
+                         ]
+                         }) }}
+                          {% endif %}
+
+                          {% if data["partner-gender"] %}
+                                  {{ govukSummaryList({
+                                    classes: 'govuk-!-margin-bottom-2',
+                                    rows: [
+                                    {
+                                      key: {
+                                        text: "Gender"
+                                      },
+                                      value: {
+                                        text: data['partner-gender']
+                                      },
+                                      actions: {
+                                        items: [
+                                          {
+                                            href: "partner-gender",
+                                            text: "Change",
+                                            visuallyHiddenText: "partner-dob"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                  }) }}
+                                   {% endif %}
+
+                          {% if data["partner-national-insurance"] %}
+                                  {{ govukSummaryList({
+                                    classes: 'govuk-!-margin-bottom-2',
+                                    rows: [
+                                    {
+                                      key: {
+                                        text: "Does you partner have National Insurance number?"
+                                      },
+                                      value: {
+                                        text: data['partner-national-insurance']
+                                      },
+                                      actions: {
+                                        items: [
+                                          {
+                                            href: "partner-national-insurance",
+                                            text: "Change",
+                                            visuallyHiddenText: "partner-national-insurance"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                  }) }}
+                                   {% endif %}
+
+                                   {% if data["partner-nino"] %}
+                                           {{ govukSummaryList({
+                                             classes: 'govuk-!-margin-bottom-2',
+                                             rows: [
+                                             {
+                                               key: {
+                                                 text: "Parnters National Insurance number"
+                                               },
+                                               value: {
+                                                 text: data['partner-nino']
+                                               },
+                                               actions: {
+                                                 items: [
+                                                   {
+                                                     href: "partner-national-insurance",
+                                                     text: "Change",
+                                                     visuallyHiddenText: "partner-national-insurance"
+                                                   }
+                                                 ]
+                                               }
+                                             }
+                                           ]
+                                           }) }}
+                                            {% endif %}
+
+                                            {% if data["partner-state-pension-amount"] %}
+                                                  {{ govukSummaryList({
+                                                    classes: 'govuk-!-margin-bottom-2',
+                                                    rows: [
+                                                  {
+                                                      key: {
+                                                        text: "Partner State Pensions amount"
+                                                      },
+                                                      value: {
+                                                        html: data["partner-state-pension-amount"]
+                                                      },
+                                                      actions: {
+                                                        items: [
+                                                          {
+                                                            href: "partner-state-pension-amount",
+                                                            text: "Change",
+                                                            visuallyHiddenText: "partner-state-pension-amount"
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                  }) }}
+                                                {% endif %}
 
                                                 {% if data["partner-state-pension-amount"] %}
 
@@ -763,7 +848,7 @@
                                                     rows: [
                                                   {
                                                       key: {
-                                                        text: "Partner benefits in payment"
+                                                        text: "Parnter benefits in payment"
                                                       },
                                                       value: {
                                                         html: PartnerBenefitList
@@ -793,7 +878,7 @@
                 rows: [
               {
                   key: {
-                    text: "Partner income 1"
+                    text: "partner-income-1-value"
                   },
                   value: {
                     html: data["partner-income-1-value"]
@@ -816,7 +901,7 @@
                 rows: [
               {
                   key: {
-                    text: "Partner income 1 frequency"
+                    text: "partner-income-1-frequency"
                   },
                   value: {
                     html: data["partner-income-1-frequency"]
@@ -845,7 +930,7 @@
                 rows: [
               {
                   key: {
-                    text: "Partner income 2"
+                    text: "partner-income-2-value"
                   },
                   value: {
                     html: data["partner-income-2-value"]
@@ -868,7 +953,7 @@
                 rows: [
               {
                   key: {
-                    text: "Partner income 2 frequency"
+                    text: "partner-income-2-frequency"
                   },
                   value: {
                     html: data["partner-income-2-frequency"]
@@ -896,7 +981,7 @@
                 rows: [
               {
                   key: {
-                    text: "Partner income 3"
+                    text: "partner-income-3-value"
                   },
                   value: {
                     html: data["partner-income-3-value"]
@@ -919,7 +1004,7 @@
                 rows: [
               {
                   key: {
-                    text: "Partner income 3 frequency"
+                    text: "partner-income-3-frequency"
                   },
                   value: {
                     html: data["partner-income-3-frequency"]
@@ -947,7 +1032,7 @@
                 rows: [
               {
                   key: {
-                    text: "Partner income 4"
+                    text: "partner-income-4-value"
                   },
                   value: {
                     html: data["partner-income-4-value"]
@@ -970,7 +1055,7 @@
                 rows: [
               {
                   key: {
-                    text: "Partner income 4 frequency"
+                    text: "partner-income-4-frequency"
                   },
                   value: {
                     html: data["partner-income-4-frequency"]

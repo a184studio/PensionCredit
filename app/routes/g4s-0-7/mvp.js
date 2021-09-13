@@ -24,7 +24,7 @@ router.post(`${baseUrl}/system-partner-check-router`, (req, res) => {
   if (singleJoint === 'Single') {
     res.redirect(`${baseUrl}/cya`)
   } else {
-    res.redirect(`${baseUrl}/partner-name`)
+    res.redirect(`${baseUrl}/partner-state-pension-amount`)
   }
 })
 
@@ -222,7 +222,7 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
   const childrenCTC = req.session.data['children-ctc']
 
   if (childrenCTC == 'Yes') {
-    res.redirect(`${baseUrl}/claimant-national-insurance`)
+    res.redirect(`${baseUrl}/system-children-mac-check`)
   } else {
     res.redirect(`${baseUrl}/system-children-mac-check`)
   }
