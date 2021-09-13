@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="doc-absence-medical-bereaved" method="post" class="form">
+    <form action="doc-absence-plural-bereaved-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
@@ -28,8 +28,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "doc-absence-plural",
-        name: "doc-absence-plural",
+        idPrefix: "doc-absence-plural-bereaved",
+        name: "doc-absence-plural-bereaved",
         fieldset: {
           legend: {
             text: "How many periods of more than 4 weeks have you spent outside the UK since [calculated EED]?",
@@ -45,12 +45,12 @@
           {
             value: "No",
             text: "One",
-            checked: (data["doc-absence-plural"] == "No")
+            checked: (data["doc-absence-plural-bereaved"] == "No")
           },
           {
             value: "Yes",
             text: "More than one",
-            checked: (data["doc-absence"] == "Yes")
+            checked: (data["doc-absence-plural-bereaved"] == "Yes")
           }
         ]
       }) }}
