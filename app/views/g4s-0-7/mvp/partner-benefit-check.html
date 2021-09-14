@@ -15,21 +15,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+<form action="partner-benefit-aa-dla-pip" method="post" class="form">
 
-<!--- NI ROUTER --->
-{% if data['nino'] == 'SS 11 00 00 A' or data['nino'] == 'SS110000A' %}
-<form action="outcome" method="post" class="form">
-{% else %}
-<form action="partner-benefit-check-router" method="post" class="form">
-{% endif %}
-
-<!--
-      <div class="moj-banner">
-      <div class="moj-banner__message">
-        <h2 class="govuk-heading-m govuk-!-margin-top-0">Use SearchLight, do not ask caller.</h2>
-      </div>
-      </div>
--->
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
         Does your partner get any of these benefits?

@@ -253,6 +253,18 @@ router.post(`${baseUrl}/state-pension-amount-check`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/partner-state-pension-amount-check`, (req, res) => {
+  const partnerStatePensionAmount = req.session.data['partner-state-pension-amount-check']
+
+  if (partnerStatePensionAmount == 'Yes') {
+    res.redirect(`${baseUrl}/partner-benefit-check`)
+  }  else if (partnerStatePensionAmount == 'No') {
+      res.redirect(`${baseUrl}/partner-state-pension-status`)
+    } else {
+    res.redirect(`${baseUrl}/xxx`)
+  }
+})
+
 
 router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   const statePensionStatus = req.session.data['state-pension-status']
@@ -260,7 +272,19 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   if (statePensionStatus === 'entitled-to-zero') {
     res.redirect(`${baseUrl}/benefit-check`)
   } else if (statePensionStatus === 'not-applied-sp') {
-    res.redirect(`${baseUrl}/done-not-getting-sp`)
+    res.redirect(`${baseUrl}/system-outcome-selector`)
+  } else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/partner-state-pension-status-router`, (req, res) => {
+  const partnerStatePensionStatus = req.session.data['partner-state-pension-status']
+
+  if (partnerStatePensionStatus === 'entitled-to-zero') {
+    res.redirect(`${baseUrl}/partner-benefit-check`)
+  } else if (partnerStatePensionStatus === 'not-applied-sp') {
+    res.redirect(`${baseUrl}/system-outcome-selector`)
   } else {
     res.redirect(`${baseUrl}/XXX`)
   }

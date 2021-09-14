@@ -20,6 +20,7 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
+
       {{ govukRadios({
         idPrefix: "partner-state-pension-status",
         name: "partner-state-pension-status",
@@ -34,33 +35,24 @@
         hint: {
           text: ""
 
+            },
+            classes: "govuk-radios",
+            items: [
+              {
+                value: "entitled-to-zero",
+                text: "I applied for a State Pension but I am not entitled to one",
+                checked: (data["partner-state-pension-status"] == "entitled-to-zero")
+              },
 
-        },
-        classes: "govuk-radios",
-        items: [
-          {
-            value: "Yes",
-            text: "@pete They // I am receiving my State Pension",
-            checked: (data["partner-state-pension-status"] == "Yes")
-          },
-          {
-            value: "Yes",
-            text: "@pete They //  have claimed my State Pension and I am waiting for the first payment",
-            checked: (data["partner-state-pension-status"] == "Yes")
-          },
-          {
-            value: "NoBank",
-            text: "@pete They //  applied for a State Pension but I am not entitled to one",
-            checked: (data["partner-state-pension-status"] == "NoBank")
-          },
-  
-          {
-            value: "sp-handover",
-            text: "@pete They //  have not applied for a State Pension",
-            checked: (data["partner-state-pension-status"] == "sp-handover")
-          }
-        ]
-      }) }}
+              {
+                value: "not-applied-sp",
+                text: "I have not applied for a State Pension",
+                checked: (data["partner-state-pension-status"] == "not-applied-sp")
+              }
+            ]
+          }) }}
+
+
 
 
       {{ govukButton({
