@@ -20,6 +20,9 @@
     <div class="govuk-grid-column-three-quarters">
 
 
+<form action="system-outcome-selector" method="post" class="form">
+
+
 {% if data['state-pension-status'] == 'sp-handover' or data['partner-state-pension-status'] == 'sp-handover' %}
 
 Issues with SP / Partner
@@ -38,6 +41,7 @@ I am normal
 <form action="outcome" method="post" class="form">
 
 {% endif %}
+
 
 
 

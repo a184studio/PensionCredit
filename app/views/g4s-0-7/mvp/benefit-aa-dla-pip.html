@@ -14,18 +14,18 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="state-pension-status-router" method="post" class="form">
+    <form action="benefit-ca" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
       {{ govukRadios({
-        idPrefix: "state-pension-status",
-        name: "state-pension-status",
+        idPrefix: "benefit-aa-dla-pip",
+        name: "benefit-aa-dla-pip",
         fieldset: {
           legend: {
-            text: "Tell us about your State Pension",
+            text: "Have you applied for AA, DLA PIP",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -39,15 +39,15 @@
         classes: "govuk-radios",
         items: [
           {
-            value: "entitled-to-zero",
-            text: "I applied for a State Pension but I am not entitled to one",
-            checked: (data["state-pension-status"] == "entitled-to-zero")
+            value: "Yes",
+            text: "Yes",
+            checked: (data["benefit-aa-dla-pip"] == "Yes")
           },
 
           {
-            value: "not-applied-sp",
-            text: "I have not applied for a State Pension",
-            checked: (data["state-pension-status"] == "not-applied-sp")
+            value: "No",
+            text: " No",
+            checked: (data["benefit-aa-dla-pip"] == "No")
           }
         ]
       }) }}
