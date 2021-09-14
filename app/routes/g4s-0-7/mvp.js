@@ -342,18 +342,18 @@ router.post(`${baseUrl}/sl-find-a-claim-router`, (req, res) => {
 router.post(`${baseUrl}/outcome-radios-router`, (req, res) => {
   const outcomeRadios = req.session.data['outcome-radios']
 
-  if (outcomeRadios === 'housing') {
-    res.redirect(`${baseUrl}/housing`)
+  if (outcomeRadios === 'housing-costs') {
+    res.redirect(`${baseUrl}/handover`)
   } else if (outcomeRadios === 'help') {
     res.redirect(`${baseUrl}/more-help`)
   } else if (outcomeRadios === 'exit') {
     res.redirect(`${baseUrl}/exit`)
-  } else if (outcomeRadios === 'dwp') {
-    res.redirect(`${baseUrl}/handover-user-request`)
-  } else if (outcomeRadios === 'manual-dwp') {
+  } else if (outcomeRadios === 'children') {
+    res.redirect(`${baseUrl}/handover-early-children`)
+  } else if (outcomeRadios === 'handover') {
     res.redirect(`${baseUrl}/handover-user-request`)
   } else if (outcomeRadios === 'end') {
-    res.redirect(`${baseUrl}/end`)
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
   } else if (outcomeRadios === 'challenge') {
     res.redirect(`${baseUrl}/challenge`)
   } else if (outcomeRadios === 'apply') {
@@ -408,15 +408,15 @@ router.post(`${baseUrl}/outcome-housing-costs-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/outcome-selector`, (req, res) => {
-  const outcomeSelector = req.session.data['benefit-check']
+router.post(`${baseUrl}/system-outcome-selector`, (req, res) => {
+  const outcomeSelector = req.session.data['system-outcome-selector']
 
   if (outcomeSelector == 'XXX') {
-    res.redirect(`${baseUrl}/cya`)
-  } else if (outcomeSelector === 'SS 33 00 00 C') {
+    res.redirect(`${baseUrl}/XXX`)
+  } else if (outcomeSelector === 'XXX') {
     res.redirect(`${baseUrl}/outcome`)
   } else {
-    res.redirect(`${baseUrl}/likley`)
+    res.redirect(`${baseUrl}/outcome`)
   }
 })
 
