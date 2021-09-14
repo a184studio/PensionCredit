@@ -1,4 +1,4 @@
-{% extends "layout-assisted-digital.html" %}
+{% extends "layout-g4s.html" %}
 
 {% block pageTitle %}
   Have you spent any time in hospital recently? - Pension Credit
@@ -76,12 +76,7 @@
         },
         {
             value: "children-handover",
-            text: "Single: Children",
-            checked: (data["system-outcome-selector"] == "children-handover")
-                    },
-          {
-            value: "children-handover",
-            text: "Joint: Children",
+            text: "Single & Joint: Children",
             checked: (data["system-outcome-selector"] == "children-handover")
           },
           {
