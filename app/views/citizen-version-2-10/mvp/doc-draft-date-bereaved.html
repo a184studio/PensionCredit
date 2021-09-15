@@ -27,8 +27,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "doc-draft-date",
-        name: "doc-draft-date",
+        idPrefix: "doc-draft-date-bereaved",
+        name: "doc-draft-date-bereaved",
         fieldset: {
           legend: {
             text: "",
@@ -44,12 +44,12 @@
           {
             value: "Yes",
             text: "Yes — consider my application from [Date]",
-            checked: (data["doc-draft-date"] == "Yes")
+            checked: (data["doc-draft-date-bereaved"] == "Yes")
                     },
           {
             value: "No",
             text: "No — consider my application from a different date",
-            checked: (data["doc-draft-date"] == "No")
+            checked: (data["doc-draft-date-bereaved"] == "No")
           }
         ]
       }) }}

@@ -37,8 +37,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "doc-absence-medical",
-        name: "doc-absence-medical",
+        idPrefix: "doc-absence-medical-bereaved",
+        name: "doc-absence-medical-bereaved",
         fieldset: {
           legend: {
             html: legendH1,
@@ -54,12 +54,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["doc-absence-medical"] == "Yes")
+            checked: (data["doc-absence-medical-bereaved"] == "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: (data["doc-absence-medical"] == "No")
+            checked: (data["doc-absence-medical-bereaved"] == "No")
           }
         ]
       }) }}
