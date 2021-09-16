@@ -21,8 +21,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "benefit-aa-dla-pip",
-        name: "benefit-aa-dla-pip",
+        idPrefix: "partner-benefit-aa-dla-pip",
+        name: "partner-benefit-aa-dla-pip",
         fieldset: {
           legend: {
             text: "Has your partner applied for Disability Living Allowance (DLA), Attendance Allowance (AA) or Personal Independence Payment (PIP)?",
@@ -41,13 +41,13 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["benefit-aa-dla-pip"] == "Yes")
+            checked: (data["partner-benefit-aa-dla-pip"] == "Yes")
           },
 
           {
             value: "No",
             text: " No",
-            checked: (data["benefit-aa-dla-pip"] == "No")
+            checked: (data["partner-benefit-aa-dla-pip"] == "No")
           }
         ]
       }) }}

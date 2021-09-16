@@ -266,6 +266,9 @@
         }) }}
        {% endif %}
 
+
+
+
        {% if data["partner-mac-yn"] %}
 
                {{ govukSummaryList({
@@ -369,7 +372,34 @@
         }) }}
       {% endif %}
 
-      {% if data["state-pension-amount"] %}
+
+        {% if data["state-pension-status"] %}
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-2',
+                rows: [
+              {
+                  key: {
+                    text: "Tell us about your State Pension"
+                  },
+                  value: {
+                    html: data["state-pension-status"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "state-pension-status",
+                        text: "Change",
+                        visuallyHiddenText: "state-pension-status"
+                      }
+                    ]
+                  }
+                }
+              ]
+              }) }}
+            {% endif %}
+
+
+
 
       {% set BenefitList %}
 
@@ -406,7 +436,54 @@
           }
         ]
         }) }}
-        {% endif %}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "Have you applied for Disability Living Allowance (DLA), Attendance Allowance (AA) or Personal Independence Payment (PIP)?"
+            },
+            value: {
+              html: data["benefit-aa-dla-pip"]
+
+            },
+            actions: {
+              items: [
+                {
+                  href: "benefit-aa-dla-pip",
+                  text: "Change",
+                  visuallyHiddenText: "Benefits"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "        Have you applied for, or been told you have an underlying entitlement to, Carer's Allowance (CA)?"
+            },
+            value: {
+              html: data["benefit-ca"]
+
+            },
+            actions: {
+              items: [
+                {
+                  href: "benefit-ca",
+                  text: "Change",
+                  visuallyHiddenText: "Benefits"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
 
 
       {% if data["income-1-value"] %}
@@ -743,7 +820,32 @@
                 }) }}
               {% endif %}
 
-                                                {% if data["partner-state-pension-amount"] %}
+
+                      {% if data["partner-state-pension-status"] %}
+                            {{ govukSummaryList({
+                              classes: 'govuk-!-margin-bottom-2',
+                              rows: [
+                            {
+                                key: {
+                                  text: "Tell us about your partner's State Pension"
+                                },
+                                value: {
+                                  html: data["partner-state-pension-status"]
+                                },
+                                actions: {
+                                  items: [
+                                    {
+                                      href: "partner-state-pension-status",
+                                      text: "Change",
+                                      visuallyHiddenText: "partner-state-pension-status"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                            }) }}
+                          {% endif %}
+
 
                                                 {% set PartnerBenefitList %}
 
@@ -758,20 +860,44 @@
 
                                                 {% endset %}
 
+                                                {{ govukSummaryList({
+                                                  classes: 'govuk-!-margin-bottom-2',
+                                                  rows: [
+                                                {
+                                                    key: {
+                                                      text: "Applicant benefits in payment"
+                                                    },
+                                                    value: {
+                                                      html: PartnerBenefitList
+                                                    },
+                                                    actions: {
+                                                      items: [
+                                                        {
+                                                          href: "partner-Benefits",
+                                                          text: "Change",
+                                                          visuallyHiddenText: "Benefits"
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                                }) }}
+
                                                   {{ govukSummaryList({
                                                     classes: 'govuk-!-margin-bottom-2',
                                                     rows: [
                                                   {
                                                       key: {
-                                                        text: "Partner benefits in payment"
+                                                        text: "Has your partner applied for Disability Living Allowance (DLA), Attendance Allowance (AA) or Personal Independence Payment (PIP)?"
                                                       },
                                                       value: {
-                                                        html: PartnerBenefitList
+                                                        html: data["partner-benefit-aa-dla-pip"]
+
                                                       },
                                                       actions: {
                                                         items: [
                                                           {
-                                                            href: "Benefits",
+                                                            href: "partner-benefit-aa-dla-pip",
                                                             text: "Change",
                                                             visuallyHiddenText: "Benefits"
                                                           }
@@ -780,8 +906,30 @@
                                                     }
                                                   ]
                                                   }) }}
-                                                {% endif %}
 
+                                                  {{ govukSummaryList({
+                                                    classes: 'govuk-!-margin-bottom-2',
+                                                    rows: [
+                                                  {
+                                                      key: {
+                                                        text: "Has your partner applied for, or been told they have an underlying entitlement to, Carer's Allowance (CA)?"
+                                                      },
+                                                      value: {
+                                                        html: data["partner-benefit-ca"]
+
+                                                      },
+                                                      actions: {
+                                                        items: [
+                                                          {
+                                                            href: "partner-benefit-ca",
+                                                            text: "Change",
+                                                            visuallyHiddenText: "Benefits"
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                  }) }}
 
 
 
