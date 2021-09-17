@@ -602,6 +602,16 @@ router.post(`${baseUrl}/doc-draft-date-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/doc-draft-date-bereaved-router`, (req, res) => {
+  const docDraftDateBereaved = req.session.data['doc-draft-date-bereaved']
+
+  if (docDraftDateBereaved === 'Yes') {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
+  } else {
+    res.redirect(`${baseUrl}/doc-alt-date`)
+  }
+})
+
 router.post(`${baseUrl}/doc-absence-plural-bereaved-router`, (req, res) => {
   const docAbsencePluralBereaved = req.session.data['doc-absence-plural-bereaved']
 
