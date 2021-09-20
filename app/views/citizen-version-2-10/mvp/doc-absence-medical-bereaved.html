@@ -15,8 +15,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-        {% if data['doc-absence-plural'] == 'Yes' %}
-        <form action="doc-absence-medical-plural-bereaved-router" method="post" class="form">
+        {% if data['doc-absence-plural-bereaved'] == 'Yes' %}
+        <form action="doc-absence-medical-single-bereaved-router" method="post" class="form">
         {% else %}
           <form action="doc-absence-medical-plural-bereaved-router" method="post" class="form">
         {% endif %}

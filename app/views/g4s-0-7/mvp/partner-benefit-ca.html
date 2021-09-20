@@ -21,11 +21,11 @@
 
 
       {{ govukRadios({
-        idPrefix: "benefit-ca",
-        name: "benefit-ca",
+        idPrefix: "partner-benefit-ca",
+        name: "partner-benefit-ca",
         fieldset: {
           legend: {
-            text: "Has your partner applied or been told that you have an underlying entitlement to CA?",
+            text: "Has your partner applied for, or been told they have an underlying entitlement to, Carer's Allowance (CA)?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,13 +41,13 @@
           {
             value: "benefit-ca",
             text: "Yes",
-            checked: (data["benefit-ca"] == "Yes")
+            checked: (data["partner-benefit-ca"] == "Yes")
           },
 
           {
             value: "not-applied-sp",
             text: "No",
-            checked: (data["benefit-ca"] == "No")
+            checked: (data["partner-benefit-ca"] == "No")
           }
         ]
       }) }}

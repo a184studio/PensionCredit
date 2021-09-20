@@ -571,8 +571,19 @@ router.post(`${baseUrl}/doc-absence-medical-plural-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/doc-absence-medical-single-bereaved-router`, (req, res) => {
+  const docAbsenceSingleMedicalBereaved = req.session.data['doc-absence-medical-bereaved']
+
+  if (docAbsenceSingleMedicalBereaved === 'No') {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
+  } else {
+    res.redirect(`${baseUrl}/doc-draft-date-bereaved`)
+  }
+})
+
+
 router.post(`${baseUrl}/doc-absence-medical-plural-bereaved-router`, (req, res) => {
-  const docAbsencePluralMedicalBereaved = req.session.data['doc-absence-medical']
+  const docAbsencePluralMedicalBereaved = req.session.data['doc-absence-medical-bereaved']
 
   if (docAbsencePluralMedicalBereaved === 'Yes') {
     res.redirect(`${baseUrl}/doc-draft-date-bereaved`)
@@ -585,6 +596,16 @@ router.post(`${baseUrl}/doc-draft-date-router`, (req, res) => {
   const docDraftDate = req.session.data['doc-draft-date']
 
   if (docDraftDate === 'Yes') {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
+  } else {
+    res.redirect(`${baseUrl}/doc-alt-date`)
+  }
+})
+
+router.post(`${baseUrl}/doc-draft-date-bereaved-router`, (req, res) => {
+  const docDraftDateBereaved = req.session.data['doc-draft-date-bereaved']
+
+  if (docDraftDateBereaved === 'Yes') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
     res.redirect(`${baseUrl}/doc-alt-date`)
