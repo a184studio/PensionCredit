@@ -19,17 +19,17 @@
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
-      <h3 class="govuk-heading-xl govuk-!-margin-bottom-4">We need to know your name</h3>
+      <h3 class="govuk-heading-xl govuk-!-margin-bottom-4">What is your name?</h3>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">XXX</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"></p>
 
 
       {{ govukInput({
         label: {
-          html: "First name / given name"
+          html: "First name"
         },
         hint: {
-          text: "XXX"
+          text: "This is your given name."
         },
         id: "first-name",
         name: "First name",
@@ -39,10 +39,10 @@
 
       {{ govukInput({
         label: {
-          html: "Second name / Family name"
+          html: "Second name"
         },
         hint: {
-          text: "XXX"
+          text: "This is your family name."
         },
         id: "second-name",
         name: "Second-name",
@@ -58,7 +58,7 @@
           html: "Middle name"
         },
         hint: {
-          text: "XXX"
+          text: ""
         },
         id: "middle-name",
         name: "Middle name",
@@ -80,7 +80,7 @@
         },
         classes: "govuk-radios",
         hint: {
-          text: "XXX"
+          text: ""
         },
         items: [
           {
