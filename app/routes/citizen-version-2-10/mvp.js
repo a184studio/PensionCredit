@@ -608,7 +608,7 @@ router.post(`${baseUrl}/doc-draft-date-bereaved-router`, (req, res) => {
   if (docDraftDateBereaved === 'Yes') {
     res.redirect(`${baseUrl}/claimant-national-insurance`)
   } else {
-    res.redirect(`${baseUrl}/doc-alt-date`)
+    res.redirect(`${baseUrl}/doc-alt-date-bereaved`)
   }
 })
 
@@ -623,7 +623,15 @@ router.post(`${baseUrl}/doc-absence-plural-bereaved-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/home-care-home-check-bereaved-router`, (req, res) => {
+  const homeCareHomeCheckBereaved = req.session.data['home-care-home-check']
 
+  if (homeCareHomeCheckBereaved === 'Yes') {
+    res.redirect(`${baseUrl}/claimant-national-insurance`)
+  } else {
+    res.redirect(`${baseUrl}/claim-filter`)
+  }
+})
 
 
 
