@@ -612,6 +612,18 @@ router.post(`${baseUrl}/doc-draft-date-bereaved-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/claimant-national-insurance-router`, (req, res) => {
+  const claimantNationalInsurance = req.session.data['claimant-national-insurance']
+
+  if (claimantNationalInsurance === 'Yes') {
+    res.redirect(`${baseUrl}/claimant-name`)
+  } else if (claimantNationalInsurance === 'Lost') {
+    res.redirect(`${baseUrl}/claimant-name`)
+  } else {
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
+  }
+})
+
 router.post(`${baseUrl}/doc-absence-plural-bereaved-router`, (req, res) => {
   const docAbsencePluralBereaved = req.session.data['doc-absence-plural-bereaved']
 
