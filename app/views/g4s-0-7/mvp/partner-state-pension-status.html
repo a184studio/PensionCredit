@@ -26,7 +26,7 @@
         name: "partner-state-pension-status",
         fieldset: {
           legend: {
-            text: "Tell us about your partners State Pension",
+            text: "Has your partner applied for a State Pension?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -40,13 +40,13 @@
             items: [
               {
                 value: "entitled-to-zero",
-                text: "I applied for a State Pension but I am not entitled to one",
+                text: "They applied for a State Pension but they are not entitled to one",
                 checked: (data["partner-state-pension-status"] == "entitled-to-zero")
               },
 
               {
                 value: "not-applied-sp",
-                text: "I have not applied for a State Pension",
+                text: "They have not applied for a State Pension",
                 checked: (data["partner-state-pension-status"] == "not-applied-sp")
               }
             ]

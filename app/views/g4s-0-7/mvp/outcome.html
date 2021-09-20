@@ -58,9 +58,9 @@
     }) }}
 
     {% elif data['system-outcome-selector'] == 'sp-not-claimed'%}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">[Single] You need to claim your state Pension</h1>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You need to <a href="https://www.gov.uk/get-state-pension">get your State Pension</a> before you can apply online for Pension Credit.</p>
-
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You should claim your State Pension</h1>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You need to get your State Pension before you apply for Pension Credit.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Go to GOV.UK and search for "get your State Pension".</p>
     {{ govukButton({
     text: "Finish and close",
     classes: "govuk-button dont-print govuk-!-margin-top-6"
@@ -68,8 +68,10 @@
 
 
     {% elif data['system-outcome-selector'] == 'joint-sp-not-claimed'%}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">[Partner] You both need to claim your state Pension</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-0">You need to <a href="https://www.nidirect.gov.uk/articles/ways-claim-state-pension">get your State Pension</a> before you can apply online for Pension Credit.</p>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You should both claim your State Pensions</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You need to get your State Pension before you can apply for Pension Credit.</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Go to GOV.UK and search for "get your State Pension".</p>
+
 
 
       {{ govukButton({
