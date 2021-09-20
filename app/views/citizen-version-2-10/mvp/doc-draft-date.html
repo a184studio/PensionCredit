@@ -14,7 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="doc-draft-date-router" method="post" class="form">
+
+      {% if data["claim-filter"] == "Bereaved-away"%}
+      <form action="doc-draft-date-router2" method="post" class="form">
+      {% else %}
+        <form action="doc-draft-date-router" method="post" class="form">
+      {% endif %}
+
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
