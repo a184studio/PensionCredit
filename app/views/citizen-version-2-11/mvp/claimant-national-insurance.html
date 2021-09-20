@@ -14,25 +14,40 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="claimant-name" method="post" class="form">
+    <form action="claimant-national-insurance-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
       {% set legendH1 %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">
         What is your National Insurance number?
       </h1>
 
       {% endset -%}
+
+
+      <!-- Hidden input to set task to complete on task-list -->
+      {% set dynamicH1 %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+      Do you have a National Insurance number?
+      </h1>
+
+      {% endset -%}
+
+
+
+      {% set pensionHowMuch %}
+
 
       {{ govukInput({
         label: {
           html: legendH1
         },
           hint: {
-            html: "It’s on your National Insurance card, benefit letter, payslip or P60. <br>For example, ‘QQ 12 34 56 C’."
+            html: "USE ALL CAPS, NO SPACES"
           },
         id: "nino",
         name: "nino",
@@ -40,7 +55,46 @@
         value: data["nino"]
       }) }}
 
-      <!-- <p class="govuk-body govuk-!-padding-bottom-6"><a href="XXX">@pete I need help?</a></p> -->
+
+      {% endset %}
+
+
+            {{ govukRadios({
+              idPrefix: "claimant-national-insurance",
+              name: "claimant-national-insurance",
+              fieldset: {
+                legend: {
+                  html: dynamicH1,
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "It’s on your National Insurance card, benefit letter, payslip or P60."
+              },
+              classes: "govuk-radios",
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: (data["claimant-national-insurance"] == "Yes"),
+                  conditional: {
+                    html: pensionHowMuch
+                  }
+                },
+                {
+                  value: "Lost",
+                  text: "Yes, but I do not know it",
+                  checked: (data["claimant-national-insurance"] == "Lost")
+                },
+                {
+                  value: "None",
+                  text: "I do not have one",
+                  checked: (data["claimant-national-insurance"] == "None")
+                }
+              ]
+            }) }}
+
 
 
 
