@@ -1299,7 +1299,7 @@ router.post(`${baseUrl}/money-carehome-route-check-router`, (req, res) => {
   if (moneyCareHomeRouteCheck === 'Yes') {
     res.redirect(`${baseUrl}/money-disregards-all`)
   } else {
-    res.redirect(`${baseUrl}/money-second-property`)
+    res.redirect(`${baseUrl}/hrt-claimant-immigration-restrictions`)
   }
 })
 
