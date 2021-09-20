@@ -48,6 +48,13 @@ Other regular income and payments - Pension Credit - GOV.UK
       {% endset %}
 
 
+      <p class="govuk-heading-s govuk-!-margin-bottom-2">We already know about benefits you get from DWP, so you do not tell us about things like:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+            <!-- <li>State Pension</li> -->
+            <li>Attendance Allowance</li>
+            <li>Personal Independence Payment</li>
+            <li>Carer's Allowance</li>
+      </ul>
 
 {% if data["single-joint-check"] == "Joint" %}
             <p class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about:</p>
@@ -72,13 +79,6 @@ Other regular income and payments - Pension Credit - GOV.UK
       </ul>
 {% endif %}
 
-            <p class="govuk-heading-s govuk-!-margin-bottom-2">Do not tell us about:</p>
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
-            <!-- <li>State Pension</li> -->
-            <li>Attendance Allowance</li>
-            <li>Personal Independence Payment</li>
-            <li>Carer's Allowance</li>
-      </ul>
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
