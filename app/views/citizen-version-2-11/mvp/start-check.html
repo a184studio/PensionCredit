@@ -20,25 +20,38 @@
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Information you will need to apply online</h1>
 
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You will need certain information about yourself and your partner (if you live with one) while you make your application. </p>
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If you do not enter anything for more than 30 minutes, your application will time out and you will have to start again. This is to keep your details secure. You cannot save your application and come back later.</p>
 
     <div class="govuk-inset-text govuk-!-margin-bottom-2">This service is for new Pension Credit applications only. If you are already getting Pension Credit you should call us to tell us about a <a href="gov-uk-coc">change of circumstances</a>.</div>
 
-    <!------------DYNAMIC HINT------------>
-    {% set DynamicHint %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If you do not enter anything for more than 30 minutes, your application will time out and you will have to start again. This is to keep your details secure. You cannot save your application and come back later.</p>
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-2 govuk-!-margin-bottom-3">You will need (for you and your partner, if you live with one):</p>
+    <h2 class="govuk-heading-l">How we will use your information</h2>
+
+    <p class="govuk-body">As well as the details you provide in your application, we will also use information that DWP and HMRC know about you (and your partner, if you live with one).</p>
+   
+    {% if data["resides-in-uk"] == "Northern-Ireland"%}
+    <p class="govuk-body">To find out more about how we use information and your information rights, read our <a href="https://www.communities-ni.gov.uk/sites/default/files/publications/communities/dfc-gdpr-privacy-notice-wig.pdf">Personal Information Charter (opens in a new tab)</a>.</p>
+   {% else %}
+   <p class="govuk-body">To find out more about how we use information and your information rights, read our <a href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter">Personal Information Charter (opens in a new tab)</a>.</p>
+   {% endif %}
+    <h3 class="govuk-heading-m">We will not need to ask you about things we already know, such as:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your State Pension and any benefits you receive from DWP</li>
+      <li>your income and earnings</li>
+    </ul>
+
+
+
+    <h3 class="govuk-heading-m">We will need to ask you about (for you and your partner, if you live with one):</h3>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>National Insurance number</li>
-      <li>details of income and pensions</li>
+      <li>information about UK personal pensions you have not taken yet</li>
+      <li>information about income and pensions from overseas</li>
       <li>details of money, savings and investments, usually for the last 3 months</li>
     </ul>
 
-    {% endset %}
-    <!------------DYNAMIC--------------->
 
 
     {{ govukRadios({
