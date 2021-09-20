@@ -51,6 +51,57 @@
       }) }}
 
 
+      {% set middleName %}
+
+      {{ govukInput({
+        label: {
+          html: "Middle name"
+        },
+        hint: {
+          text: "XXX"
+        },
+        id: "middle-name",
+        name: "Middle name",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+        value: data["first-name"]
+      }) }}
+
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "middle-name-yn",
+        name: "middle-name-yn",
+        fieldset: {
+          legend: {
+            text: "Do you have a middle name?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        classes: "govuk-radios",
+        hint: {
+          text: "XXX"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["middle-name-yn"] == "Yes"),
+                  conditional: {
+                    html: middleName
+                  }
+                    },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["middle-name-yn"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+
 
 
       {{ govukButton({
