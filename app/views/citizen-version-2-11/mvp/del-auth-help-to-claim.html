@@ -25,7 +25,7 @@
         name: "del-auth-who-check",
         fieldset: {
           legend: {
-            text: "Who is applying?",
+            text: "Who is completing this application?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -36,7 +36,7 @@
             value: "Yourself",
             text: "I am applying for myself",
               hint: {
-                text: "XXX"
+                text: ""
               },
             checked: (data["del-auth-who-check"] == "Yourself")
                     },
@@ -44,15 +44,15 @@
             value: "Delegated authority",
             text: "I am applying on behalf of someone else",
               hint: {
-                text: "XXX"
+                text: ""
               },
             checked: (data["del-auth-who-check"] == "Delegated authority")
           },
           {
-          value: "Delegated authority",
+          value: "Helper",
           text: "I am helping somone apply",
             hint: {
-              text: "XXX"
+              text: ""
             },
           checked: (data["del-auth-who-check"] == "Delegated authority")
           }

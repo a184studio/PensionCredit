@@ -19,7 +19,7 @@
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
-        Does your partner get any of these benefits?
+        I'm just going to check any benefits your partner gets
       </h1>
 
       {{ govukCheckboxes({
@@ -27,40 +27,40 @@
         name: "partner-benefit-check",
         fieldset: {
           legend: {
-            text: "Benefits they have:",
+            text: "Select any benefits the partner gets:",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "Select all that apply.",
+          text: "",
                 classes: "govuk-fieldset__legend--xl"
         },
         items: [
 
           {
             value: "B",
-            text: "Attendance Allowance (AA)",
+            text: "Attendance Allowance",
             checked: (data["partner-benefit-check"] == "B")
           },
           {
             value: "B",
-            text: "Disability living Allowance (DLA): Middle or highest rate",
+            text: "Disability living Allowance: Middle or highest rate",
             checked: (data["partner-benefit-check"] == "B")
           },
           {
             value: "B",
-            text: "Personal Independence Payment (PIP)",
+            text: "Personal Independence Payment",
             checked: (data["partner-benefit-check"] == "B")
           },
           {
             value: "B",
-            text: "Armed Forces Independence Payment (AFIP)",
+            text: "Armed Forces Independence Payment",
             checked: (data["partner-benefit-check"] == "B")
           },
           {
             value: "CA",
-            text: "Carers Allowance (CA): Including an underlying entitlement",
+            text: "Carers Allowance: Including an underlying entitlement",
             checked: (data["partner-benefit-check"] == "CA")
           },
           {
