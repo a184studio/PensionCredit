@@ -1225,11 +1225,11 @@ router.post(`${baseUrl}/money-total-risk-check-router`, (req, res) => {
   }
   // startCheckArr includes 'money'
   else if (riskCheckArr.includes('High')) {
-    res.redirect(`${baseUrl}/money-second-property`)
+    res.redirect(`${baseUrl}/money-carehome-route-check`)
   }
   // startCheckArr includes neither 'money' or 'ni'
   else {
-    res.redirect(`${baseUrl}/money-second-property`)
+    res.redirect(`${baseUrl}/money-carehome-route-check`)
   }
 })
 
@@ -1299,7 +1299,7 @@ router.post(`${baseUrl}/money-carehome-route-check-router`, (req, res) => {
   if (moneyCareHomeRouteCheck === 'Yes') {
     res.redirect(`${baseUrl}/money-disregards-all`)
   } else {
-    res.redirect(`${baseUrl}/hrt-claimant-immigration-restrictions`)
+    res.redirect(`${baseUrl}/del-auth-help-to-claim`)
   }
 })
 
