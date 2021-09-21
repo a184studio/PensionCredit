@@ -1695,17 +1695,15 @@ router.post(`${baseUrl}/hrt-partner-asylum-seeker-router`, (req, res) => { // ro
 
 // Help to make the claim
 
-router.post(`${baseUrl}/del-auth-who-check-router`, (req, res) => {
-  const singleJoint = req.session.data['del-auth-who-check']
+router.post(`${baseUrl}/del-auth-help-to-claim-router`, (req, res) => {
+  const singleJoint = req.session.data['del-auth-help-to-claim']
 
   if (singleJoint === 'Yourself') {
-    res.redirect(`${baseUrl}/del-auth-address-correspondence-yn`)
+    res.redirect(`${baseUrl}/claimant-contact-callback`)
   } else {
-    res.redirect(`${baseUrl}/del-auth-address-correspondence-post-code-lookup`)
+    res.redirect(`${baseUrl}/del-auth-who-made-claim`)
   }
 })
-
-
 
 
 
