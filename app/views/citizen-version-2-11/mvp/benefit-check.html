@@ -40,7 +40,7 @@
       {% endset %}
 
 
-
+Old h1
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
         {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you or your partner applied for any benefits that you are waiting to hear about?</h1>
@@ -48,7 +48,11 @@
         {% endset %}
       <!------------Legend--------------->
 
-      {{ govukRadios({
+Have you applied for any of the following benefits in the last X?
+
+
+      {{ govukCheckboxes({
+        idPrefix: "benefit-check",
         name: "benefit-check",
         fieldset: {
           legend: {
@@ -57,22 +61,100 @@
             classes: "govuk-fieldset__legend--m"
           }
         },
+        hint: {
+          text: "Select all that apply",
+                classes: "govuk-fieldset__legend--xl"
+        },
         items: [
+
           {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["benefit-check"] == "Yes"),
-                  conditional: {
-                    html: benefitDetails
-        }
+            value: "B",
+            text: "Attendance Allowance (AA)",
+            checked: (data["benefit-check"] == "B")
           },
           {
-            value: "No",
-            text: "No",
-            checked: (data["benefit-check"] == "No")
+            value: "B",
+            text: "Disability living Allowance (DLA): Middle or highest rate",
+            checked: (data["benefit-check"] == "B")
+          },
+          {
+            value: "B",
+            text: "The daily living component of Personal Independence Payment (PIP)
+            ",
+            checked: (data["benefit-check"] == "B")
+          },
+          {
+            value: "B",
+            text: "Armed Forces Independence Payment (AFIP)",
+            checked: (data["benefit-check"] == "B")
+          },
+          {
+            value: "CA",
+            text: "Carers Allowance (CA)",
+            checked: (data["benefit-check"] == "CA")
+          },
+          {
+            value: "CA",
+            text: "XX",
+            checked: (data["benefit-check"] == "CA")
+          },
+          {
+            value: "CA",
+            text: "XX",
+            checked: (data["benefit-check"] == "CA")
+          },
+          {
+            value: "CA",
+            text: "XX",
+            checked: (data["benefit-check"] == "CA")
+          },
+          {
+            value: "CA",
+            text: "XX",
+            checked: (data["benefit-check"] == "CA")
+          },
+          {
+            value: "CA",
+            text: "XX",
+            checked: (data["benefit-check"] == "CA")
+          },
+          {
+            value: "CA",
+            text: "XX",
+            checked: (data["benefit-check"] == "CA")
+          },
+          {
+            value: "None",
+            text: "None of these",
+            checked: (data["partner-benefit-check"] == "None")
           }
+
         ]
       }) }}
+
+
+From Debs
+
+Benefits that affect processing the amount of PC:
+1.  Industrial Injuries Disablement Benefit*
+2.  War Disablement Pension* (£10 disregard applied automatically in
+CAM)
+3.  War Widows / Widowers Pension*
+4.  Working Tax Credits
+5.  Incapacity Benefit
+6.  Severe Disablement Allowance
+Benefits that would bring someone into entitlement that might otherwise
+not be entitled e.g. as their state pension is already quite high + give an
+extra amount (SDP):
+1.  Attendance Allowance (AA)
+2.  Disability Living Allowance (DLA) – middle or high component
+3.  Personal Independence Payment (PIP)
+4.  Armed Forces Independence Payment
+Other benefits that would give someone an extra amount:
+1.  Carer’s Allowance
+2.  If you look after a child or young person that gets DLA or PIP
+
+
 
       {{ govukButton({
         text: "Continue"
