@@ -52,7 +52,7 @@ router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 
   if (startCheck === 'Yes') {
-    res.redirect(`${baseUrl}/reside-in-uk`)
+    res.redirect(`${baseUrl}/partner-check-yn2`)
   } else {
     res.redirect(`${baseUrl}/start-check-no`)
   }
@@ -330,13 +330,13 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   const residesInUk = req.session.data['resides-in-uk']
 
   if (residesInUk === 'England') {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/start-about-the-service`)
   } else if (residesInUk === 'Scotland') {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/start-about-the-service`)
   } else if (residesInUk === 'Wales') {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/start-about-the-service`)
   } else if (residesInUk === 'Northern-Ireland') {
-    res.redirect(`${baseUrl}/data-we-use`)
+    res.redirect(`${baseUrl}/start-about-the-service`)
   } else {
     res.redirect(`${baseUrl}/done-none-uk`)
   }
@@ -832,7 +832,7 @@ router.post(`${baseUrl}/home-rent-housing-benefit-router`, (req, res) => { // Wh
   const homeRentHousingBenefit = req.session.data['home-rent-housing-benefit'] // The router is looking for this ID.
 
   if (homeRentHousingBenefit === 'Yes HB') {
-    res.redirect(`${baseUrl}/non-deps-living-with-you`)
+    res.redirect(`${baseUrl}/money-second-property`)
   } else {
     res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
   }
@@ -856,7 +856,7 @@ router.post(`${baseUrl}/home-shared-housing-benefit-router`, (req, res) => { // 
   const homeSharedHousingBenefit = req.session.data['home-shared-housing-benefit'] // The router is looking for this ID.
 
   if (homeSharedHousingBenefit === 'Yes HB') {
-    res.redirect(`${baseUrl}/non-deps-living-with-you`)
+    res.redirect(`${baseUrl}/money-second-property`)
   } else {
     res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
   }
@@ -960,7 +960,7 @@ router.post(`${baseUrl}/home-other-housing-benefit-router`, (req, res) => { // W
   const homeOtherHousingBenefit = req.session.data['home-other-housing-benefit'] // The router is looking for this ID.
 
   if (homeOtherHousingBenefit === 'Yes HB') {
-    res.redirect(`${baseUrl}/non-deps-living-with-you`)
+    res.redirect(`${baseUrl}/money-second-property`)
   } else {
     res.redirect(`${baseUrl}/home-other-housing-benefit-apply`)
   }
