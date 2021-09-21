@@ -1,0 +1,76 @@
+{% extends "layout-assisted-digital.html" %}
+
+{% block pageTitle %}
+  Have you spent any time in hospital recently? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="del-auth-who-made-claim" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+
+      {{ govukRadios({
+        idPrefix: "del-auth-who-check",
+        name: "del-auth-who-check",
+        fieldset: {
+          legend: {
+            text: "Who is applying?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yourself",
+            text: "I am applying for myself",
+              hint: {
+                text: "XXX"
+              },
+            checked: (data["del-auth-who-check"] == "Yourself")
+                    },
+          {
+            value: "Delegated authority",
+            text: "I am applying on behalf of someone else",
+              hint: {
+                text: "XXX"
+              },
+            checked: (data["del-auth-who-check"] == "Delegated authority")
+          },
+          {
+          value: "Delegated authority",
+          text: "I am helping somone apply",
+            hint: {
+              text: "XXX"
+            },
+          checked: (data["del-auth-who-check"] == "Delegated authority")
+          }
+        ]
+      }) }}
+
+
+
+
+
+      <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}
