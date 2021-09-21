@@ -66,61 +66,60 @@ Have you applied for any of the following benefits in the last X?
                 classes: "govuk-fieldset__legend--xl"
         },
         items: [
-
+        {
+          value: "B",
+          text: "Armed Forces Independence Payment (AFIP)",
+          checked: (data["benefit-check"] == "B")
+        },
           {
             value: "B",
             text: "Attendance Allowance (AA)",
             checked: (data["benefit-check"] == "B")
           },
           {
-            value: "B",
-            text: "Disability living Allowance (DLA): Middle or highest rate",
-            checked: (data["benefit-check"] == "B")
+            value: "CA",
+            text: "Carer's Allowance",
+            checked: (data["benefit-check"] == "CA")
           },
           {
             value: "B",
-            text: "The daily living component of Personal Independence Payment (PIP)
+            text: "Disability living Allowance (DLA)",
+            checked: (data["benefit-check"] == "B")
+          },
+          {
+            value: "CA",
+            text: "Incapacity Benefit",
+            checked: (data["benefit-check"] == "CA")
+          },
+          {
+            value: "CA",
+            text: "Industrial Injuries Disablement Benefit",
+            checked: (data["benefit-check"] == "CA")
+          },
+          {
+            value: "B",
+            text: "Personal Independence Payment (PIP)
             ",
             checked: (data["benefit-check"] == "B")
           },
           {
-            value: "B",
-            text: "Armed Forces Independence Payment (AFIP)",
-            checked: (data["benefit-check"] == "B")
-          },
-          {
             value: "CA",
-            text: "Carers Allowance (CA)",
+            text: "Severe Diablement Allowance",
             checked: (data["benefit-check"] == "CA")
           },
           {
             value: "CA",
-            text: "XX",
+            text: "War disablement pension",
             checked: (data["benefit-check"] == "CA")
           },
           {
             value: "CA",
-            text: "XX",
+            text: "War Widow(er) Pension",
             checked: (data["benefit-check"] == "CA")
           },
           {
             value: "CA",
-            text: "XX",
-            checked: (data["benefit-check"] == "CA")
-          },
-          {
-            value: "CA",
-            text: "XX",
-            checked: (data["benefit-check"] == "CA")
-          },
-          {
-            value: "CA",
-            text: "XX",
-            checked: (data["benefit-check"] == "CA")
-          },
-          {
-            value: "CA",
-            text: "XX",
+            text: "Working Tax Credit",
             checked: (data["benefit-check"] == "CA")
           },
           {
@@ -133,26 +132,7 @@ Have you applied for any of the following benefits in the last X?
       }) }}
 
 
-From Debs
 
-Benefits that affect processing the amount of PC:
-1.  Industrial Injuries Disablement Benefit*
-2.  War Disablement Pension* (£10 disregard applied automatically in
-CAM)
-3.  War Widows / Widowers Pension*
-4.  Working Tax Credits
-5.  Incapacity Benefit
-6.  Severe Disablement Allowance
-Benefits that would bring someone into entitlement that might otherwise
-not be entitled e.g. as their state pension is already quite high + give an
-extra amount (SDP):
-1.  Attendance Allowance (AA)
-2.  Disability Living Allowance (DLA) – middle or high component
-3.  Personal Independence Payment (PIP)
-4.  Armed Forces Independence Payment
-Other benefits that would give someone an extra amount:
-1.  Carer’s Allowance
-2.  If you look after a child or young person that gets DLA or PIP
 
 
 
