@@ -14,15 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="del-auth-who-made-claim" method="post" class="form">
+    <form action="del-auth-help-to-claim-router" method="post" class="form">
 
-      <!-- Hidden input to set task to complete on task-list -->
-      <input type="hidden" name="hospitals-complete" value="true"/>
 
 
       {{ govukRadios({
-        idPrefix: "del-auth-who-check",
-        name: "del-auth-who-check",
+        idPrefix: "del-auth-help-to-claim",
+        name: "del-auth-help-to-claim",
         fieldset: {
           legend: {
             text: "Who is completing this application?",
@@ -38,7 +36,7 @@
               hint: {
                 text: ""
               },
-            checked: (data["del-auth-who-check"] == "Yourself")
+              checked: data['del-auth-who-made-claim'] == "Yourself"
                     },
           {
             value: "Delegated authority",
@@ -46,7 +44,7 @@
               hint: {
                 text: ""
               },
-            checked: (data["del-auth-who-check"] == "Delegated authority")
+            checked: (data["del-auth-help-to-claim"] == "Delegated authority")
           },
           {
           value: "Helper",
@@ -54,7 +52,7 @@
             hint: {
               text: ""
             },
-          checked: (data["del-auth-who-check"] == "Delegated authority")
+          checked: (data["del-auth-help-to-claim"] == "Delegated authority")
           }
         ]
       }) }}
