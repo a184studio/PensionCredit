@@ -40,7 +40,6 @@
       {% endset %}
 
 
-Old h1
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
         {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Have you or your partner applied for any benefits that you are waiting to hear about?</h1>
@@ -48,7 +47,6 @@ Old h1
         {% endset %}
       <!------------Legend--------------->
 
-Have you applied for any of the following benefits in the last X?
 
 
       {{ govukCheckboxes({
@@ -62,7 +60,7 @@ Have you applied for any of the following benefits in the last X?
           }
         },
         hint: {
-          text: "Select all that apply",
+          text: "Select any that apply",
                 classes: "govuk-fieldset__legend--xl"
         },
         items: [
