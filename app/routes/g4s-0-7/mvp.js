@@ -101,13 +101,14 @@ router.post(`${baseUrl}/system-children-mac-check-router`, (req, res) => {
 
   if (systemChildrenMacCheck === 'single-claim') {
     res.redirect(`${baseUrl}/housing-service-charge`)
+  } else if (systemChildrenMacCheck === 'too-young') {
+    res.redirect(`${baseUrl}/done-too-young`)
   } else if (systemChildrenMacCheck === 'children-mac') {
     res.redirect(`${baseUrl}/cya`)
   } else {
     res.redirect(`${baseUrl}/cya`)
   }
 })
-
 
 
 

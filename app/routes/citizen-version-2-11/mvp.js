@@ -1725,22 +1725,42 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
   if (whoMadeClaim === 'Yourself') { // name of data / + answer
     res.redirect(`${baseUrl}/claimant-contact-callback`)
   }
-  else if (whoMadeClaim === 'Power of attorney') { // name of data / + answer
+  else {
+    res.redirect(`${baseUrl}/del-auth-who-made-claim-2`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/del-auth-who-made-claim-2-router`, (req, res) => { // router name
+  const whoMadeClaim2 = req.session.data['del-auth-who-made-claim-2']  // name of data / id name
+
+  if (whoMadeClaim2 === 'Power of attorney') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
-  else if (whoMadeClaim === 'Appointee') { // name of data / + answer
+  else if (whoMadeClaim2 === 'Appointee') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
-  else if (whoMadeClaim === 'Personal Acting Body') { // name of data / + answer
+  else if (whoMadeClaim2 === 'Personal Acting Body') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
-  else if (whoMadeClaim === 'Corporate Acting Body') { // name of data / + answer
+  else if (whoMadeClaim2 === 'Corporate Acting Body') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-name`)
   }
-  else if (whoMadeClaim === 'Charity or organisation') { // name of data / + answer
+  else {
+    res.redirect(`${baseUrl}/del-auth-who-made-claim-3`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/del-auth-who-made-claim-3-router`, (req, res) => { // router name
+  const whoMadeClaim3 = req.session.data['del-auth-who-made-claim-3']  // name of data / id name
+
+  if (whoMadeClaim3 === 'Charity or organisation') { // name of data / + answer
     res.redirect(`${baseUrl}/terminally-ill`)
   }
-  else if (whoMadeClaim === 'Friend or family member') { // name of data / + answer
+  else if (whoMadeClaim3 === 'Friend or family member') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-ff-number-check`)
   }
   else if (whoMadeClaim === 'Someone else') { // name of data / + answer
@@ -1750,6 +1770,7 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
     res.redirect(`${baseUrl}/claimant-contact-callback`)
   }
 })
+
 
 
 router.post(`${baseUrl}/del-auth-contact-number-router`, (req, res) => { // router name
@@ -1845,6 +1866,17 @@ router.post(`${baseUrl}/del-auth-contact-letter-formats-check-router`, (req, res
     res.redirect(`${baseUrl}/del-auth-contact-letter-formats`)
   } else {
     res.redirect(`${baseUrl}/del-auth-who-check`)
+  }
+})
+
+
+router.post(`${baseUrl}/del-auth-who-check-router`, (req, res) => {
+  const delAuthWhoCheck = req.session.data['del-auth-who-check']
+
+  if (delAuthWhoCheck === 'Yourself') {
+    res.redirect(`${baseUrl}/del-auth-address-correspondence-yn`)
+  } else {
+    res.redirect(`${baseUrl}/del-auth-address-correspondence-post-code-lookup`)
   }
 })
 
