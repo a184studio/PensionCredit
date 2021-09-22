@@ -100,283 +100,83 @@
 
       <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Applicant details</h2>
 
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-0',
-        rows: [
-        {
-          key: {
-            text: "Information you will need to apply online"
-          },
-          value: {
-            text: data['start-check']
-          },
-          actions: {
-            items: [
-              {
-                href: "start-check",
-                text: "Change",
-                visuallyHiddenText: "your date of birth"
-              }
-            ]
-          }
-      }
-        ]
-      }) }}
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-0',
-        rows: [
-        {
-          key: {
-            text: "Have you applied for your State Pension?"
-          },
-          value: {
-            text: data["state-pension-status"]
-          },
-          actions: {
-            items: [
-              {
-                href: "",
-                text: "Change",
-                visuallyHiddenText: "whether you have a partner"
-              }
-            ]
-          }
-        }
-                  ]
-                }) }}
-
-        {{ govukSummaryList({
-          classes: 'govuk-!-margin-bottom-0',
-          rows: [
-          {
-            key: {
-              text: "Do you have a partner?"
-            },
-            value: {
-              text: data["partner-check-yn"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "Change",
-                  visuallyHiddenText: "whether you have a partner"
-                }
-              ]
-            }
-          }
-                    ]
-                  }) }}
-
-
-      </div>
-            <div>
-            <div>
-
-
-
-<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-      <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Money</h2>
-
-
-    {{ govukSummaryList({
-      classes: 'govuk-!-margin-bottom-9',
-      rows: [
-
-      {
-        key: {
-          text: "What accounts or investments do you have?"
-        },
-        value: {
-          text: "Example accounts"
-        },
-        actions: {
-          items: [
-            {
-              href: "xxx",
-              text: "Change",
-              visuallyHiddenText: "XXX"
-            }
-          ]
-        }
-      }
-    ]
-  }) }}
 
 
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
-
           {
             key: {
-              text: "How much money you have today"
+              text: "Your date of birth"
             },
             value: {
-              text: data['money-3-total-now-value']
+              text: data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year']
             },
             actions: {
               items: [
                 {
-                  href: "money-3-total-now",
+                  href: "over-spa",
                   text: "Change",
-                  visuallyHiddenText: "how much money you have today"
+                  visuallyHiddenText: "your date of birth"
                 }
               ]
             }
-          }
-        ]
-      }) }}
-
-{{ govukSummaryList({
-  classes: 'govuk-!-margin-bottom-9',
-  rows: [
-
-  {
-    key: {
-      text: "How much money you had on 29 January 2021"
-    },
-    value: {
-      text: data['money-3-total-eed-value']
-    },
-    actions: {
-      items: [
-        {
-          href: "money-total",
-          text: "Change",
-          visuallyHiddenText: "how much money you had on your claim start date"
-        }
-      ]
-    }
-  }
-]
-}) }}
-
-  {{ govukSummaryList({
-    classes: 'govuk-!-margin-bottom-9',
-    rows: [
-
-    {
-      key: {
-        text: "Do you own any property or land other than your home?"
-      },
-      value: {
-        text: data['money-second-property-check']
-      },
-      actions: {
-        items: [
+          },
           {
-            href: "money-second-property-check",
-            text: "Change",
-            visuallyHiddenText: "whether you own any property or land other than your home"
-          }
-        ]
-      }
-    }
-  ]
-}) }}
-
-
-        {{ govukSummaryList({
-                classes: 'govuk-!-margin-bottom-9',
-                rows: [
-
+            key: {
+              text: "Which country do you live in?"
+            },
+            value: {
+              text: data['resides-in-uk']
+            },
+            actions: {
+              items: [
                 {
-                  key: {
-                    text: "Do you plan to use any of your money to buy or carry out essential work on your main home?"
-                  },
-                  value: {
-                    text: data['money-disregards-all']
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "money-disregards-all",
-                        text: "Change",
-                        visuallyHiddenText: "@pensions"
-                      }
-                    ]
-                  }
+                  href: "reside-in-uk",
+                  text: "Change",
+                  visuallyHiddenText: "which country you live in"
                 }
               ]
-            }) }}
+            }
+          },
+          {
+            key: {
+              text: "Have you claimed your State Pension?"
+            },
+            value: {
+              text: data['state-pension-check-yn']
+            },
+            actions: {
+              items: [
+              {
+                href: "@ChangeURL",
+                text: "Change",
+                visuallyHiddenText: "whether you have claimed your State Pension"
 
-            {{ govukSummaryList({
-                    classes: 'govuk-!-margin-bottom-9',
-                    rows: [
+                }
+              ]
+            }
+          },
+          {
+              key: {
+                text: "Your name"
+              },
+              value: {
+                text: data["frist-name"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "claimant-name",
+                    text: "Change",
+                    visuallyHiddenText: "your name"
 
-                    {
-                      key: {
-                        text: "What money do you have from payments and payouts?"
-                      },
-                      value: {
-                        text: "Example selections"
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "money-disregards-payments",
-                            text: "Change",
-                            visuallyHiddenText: "@pensions"
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }) }}
-
-                <div><h2 class="govuk-heading-xm govuk-!-margin-bottom-3 govuk-!-margin-top-8">Contact</h2>
-
-
-                {{ govukSummaryList({
-                        classes: 'govuk-!-margin-bottom-9',
-                        rows: [
-
-                        {
-                          key: {
-                            text: "Can we call the applicant about this application?"
-                          },
-                          value: {
-                            text: data['del-auth-contact-number-check']
-                          },
-                          actions: {
-                            items: [
-                              {
-                                href: "del-auth-contact-number-check",
-                                text: "Change",
-                                visuallyHiddenText: "@pensions"
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }) }}
-
-                    {{ govukSummaryList({
-                            classes: 'govuk-!-margin-bottom-9',
-                            rows: [
-
-                            {
-                              key: {
-                                text: "What is the applicant's contact telephone number?"
-                              },
-                              value: {
-                                text: data['del-auth-contact-number']
-                              },
-                              actions: {
-                                items: [
-                                  {
-                                    href: "del-auth-contact-number",
-                                    text: "Change",
-                                    visuallyHiddenText: "@pensions"
+                                      }
+                                    ]
                                   }
-                                ]
-                              }
-                            }
-                          ]
-                        }) }}
+                                }
+                              ]
+                            }) }}
 
                         {{ govukSummaryList({
                                 classes: 'govuk-!-margin-bottom-9',
@@ -427,7 +227,7 @@
                       ]
                     }) }}
 
-
+                <div>
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
