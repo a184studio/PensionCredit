@@ -48,6 +48,22 @@ router.use(`${baseUrl}/claim.pdf`, express.static(path.resolve('app/views/citize
 // })
 
 
+
+
+router.post(`${baseUrl}/system-ur-setup-router`, (req, res) => {
+  const systemURsetup = req.session.data['system-ur-setup']
+
+  if (systemURsetup === 'full') {
+    res.redirect(`${baseUrl}/reside-in-uk`)
+  }
+  else if (systemURsetup === 'B') {
+    res.redirect(`${baseUrl}/start-about-bereavement`)
+  } else {
+    res.redirect(`${baseUrl}/start-about-bereavement-outside`)
+  }
+})
+
+
 router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 

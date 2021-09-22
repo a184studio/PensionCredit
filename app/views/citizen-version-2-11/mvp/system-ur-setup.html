@@ -1,7 +1,7 @@
-{% extends "layout-assisted-digitalB.html" %}
+{% extends "layout-g4s.html" %}
 
 {% block pageTitle %}
-  Do any children or qualifying young people live with you? - Pension Credit
+  Have you spent any time in hospital recently? - Pension Credit
 {% endblock %}
 
 {% block header %}
@@ -14,40 +14,52 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="doc-absence" method="post" class="form">
-
+    <form action="system-ur-setup-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
+      <div class="govuk-panel--agent">
+
       {{ govukRadios({
-        idPrefix: "children-check-yn",
-        name: "children-check-yn",
+        idPrefix: "system-ur-setup",
+        name: "system-ur-setup",
         fieldset: {
           legend: {
-            text: "Do any children or qualifying young people live with you?",
-            hint: " ",
+            text: "Select a scenario",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
-        classes: "govuk-radios",
         hint: {
-          html: "<p class=\"hint\">Children are under age 16. A qualifying young person is aged 16 to 19 and in non-advanced full-time education or training."
+          text: "This is for testing only, Carline and James will explain everything"
         },
+        classes: "govuk-radios",
         items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["children-check-yn"] == "Yes")
-          },
-          {
-            value: "No",
-            text: "No",
-            checked: (data["children-check-yn"] == "No")
-          }
+        {
+          value: "full",
+          text: "A [Full]",
+          checked: (data["system-ur-setup"] == "full")
+                  },
+        {
+          value: "B",
+          text: "B [Bereavment]",
+          checked: (data["system-ur-setup"] == "B")
+                  },
+        {
+            value: "C",
+            text: "C [Bereavment outside]",
+            checked: (data["system-ur-setup"] == "C")
+                    }
         ]
       }) }}
+
+
+</div>
+
+
+
+
       <!--text: "Have you spent any time in hospital since " + (data['back-dating-date'] | formatDate),--->
 
 
