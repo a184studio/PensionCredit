@@ -1302,7 +1302,7 @@ router.post(`${baseUrl}/money-3-total-eed-confirm-router`, (req, res) => {
   const money2TotalEEDConfirm = req.session.data['money-3-total-eed-confirm']
 
   if (money2TotalEEDConfirm === 'Yes') {
-    res.redirect(`${baseUrl}/money-carehome-route-check`)
+    res.redirect(`${baseUrl}/money-disregards-all`)
   } else {
     res.redirect(`${baseUrl}/money-3-total-eed`)
   }
