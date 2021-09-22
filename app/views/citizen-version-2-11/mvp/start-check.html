@@ -17,14 +17,15 @@
 
     <h2 class="govuk-heading-xl">How we will use your information</h2>
 
-    <p class="govuk-body">As well as the details you provide in your application, we will also use information that DWP and HMRC know about you (and your partner, if you live with one).</p>
+    <p class="govuk-body govuk-!-font-size-24">As well as the details you provide in your application, we will also use information that DWP and HMRC know about you (and your partner, if you live with one).</p>
 
     {% if data["resides-in-uk"] == "Northern-Ireland"%}
-    <p class="govuk-body">To find out more about how we use information and your information rights, read our <a href="https://www.communities-ni.gov.uk/sites/default/files/publications/communities/dfc-gdpr-privacy-notice-wig.pdf">Personal Information Charter (opens in a new tab)</a>.</p>
+    <p class="govuk-body ">To find out more about how we use information and your information rights, read our <a href="https://www.communities-ni.gov.uk/sites/default/files/publications/communities/dfc-gdpr-privacy-notice-wig.pdf">Personal Information Charter (opens in a new tab)</a>.</p>
    {% else %}
    <p class="govuk-body">To find out more about how we use information and your information rights, read our <a href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter">Personal Information Charter (opens in a new tab)</a>.</p>
    {% endif %}
-    <h3 class="govuk-heading-m">We will not need to ask you about things we already know, such as:</h3>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-8">We will not need to ask you about things we already know, such as:</h3>
     <ul class="govuk-list govuk-list--bullet">
       <li>your UK State Pension and any benefits you receive from DWP</li>
       <li>your UK income and earnings</li>
