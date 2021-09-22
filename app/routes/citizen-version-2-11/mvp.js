@@ -1763,7 +1763,7 @@ router.post(`${baseUrl}/del-auth-who-made-claim-3-router`, (req, res) => { // ro
   else if (whoMadeClaim3 === 'Friend or family member') { // name of data / + answer
     res.redirect(`${baseUrl}/del-auth-contact-ff-number-check`)
   }
-  else if (whoMadeClaim === 'Someone else') { // name of data / + answer
+  else if (whoMadeClaim3 === 'Someone else') { // name of data / + answer
     res.redirect(`${baseUrl}/claimant-contact-callback`)
   }
   else {
