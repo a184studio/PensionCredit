@@ -52,7 +52,7 @@ router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']
 
   if (startCheck === 'Yes') {
-    res.redirect(`${baseUrl}/partner-check-yn2`)
+    res.redirect(`${baseUrl}/over-spa`)
   } else {
     res.redirect(`${baseUrl}/start-check-no`)
   }
@@ -501,7 +501,7 @@ router.post(`${baseUrl}/partner-check-yn-router2`, (req, res) => {
   if (partnerCheck2 === 'Yes, we live together2') {
     res.redirect(`${baseUrl}/partner-app-check2`)
   } else {
-    res.redirect(`${baseUrl}/eu-filter`)
+    res.redirect(`${baseUrl}/state-pension-status`)
   }
 })
 
