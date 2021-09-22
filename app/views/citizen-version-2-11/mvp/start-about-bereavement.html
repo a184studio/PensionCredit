@@ -1,0 +1,39 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Apply for Pension Credit - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="doc-draft-date-bereaved" method="post" class="form">
+
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">About scenario B</h1>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">We have skipped parts of the service.</p>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Pretent that the death of a partner was 2 months ago from today [xx MM YYYY]</p>
+
+
+
+
+
+
+     {{ govukButton({
+       text: "Continue"
+     }) }}
+
+
+
+</form>
+</div>
+{% endblock %}

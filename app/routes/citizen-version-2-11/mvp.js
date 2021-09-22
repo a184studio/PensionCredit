@@ -57,9 +57,9 @@ router.post(`${baseUrl}/system-ur-setup-router`, (req, res) => {
     res.redirect(`${baseUrl}/reside-in-uk`)
   }
   else if (systemURsetup === 'B') {
-    res.redirect(`${baseUrl}/doc-draft-date-bereaved`)
+    res.redirect(`${baseUrl}/start-about-bereavement`)
   } else {
-    res.redirect(`${baseUrl}/doc-absence-bereaved`)
+    res.redirect(`${baseUrl}/start-about-bereavement-outside`)
   }
 })
 

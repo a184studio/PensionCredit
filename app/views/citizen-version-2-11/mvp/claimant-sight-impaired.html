@@ -14,10 +14,18 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="single-joint-check" method="post" class="form">
 
-      <!-- Hidden input to set task to complete on task-list -->
-      <input type="hidden" name="hospitals-complete" value="true"/>
+      <!------------ DIRTY ROUTER ------------>
+      {% if data["partner-check-yn2"] == "Yes" %}
+      <form action="partner-national-insurance" method="post" class="form">
+
+        {% elif data["partner-check-yn2"] == "bereaved-ye" %}
+      <form action="home-hospital-check" method="post" class="form">
+
+      {% else %}
+      <form action="home-hospital-check" method="post" class="form">
+        {% endif %}
+      <!------------Legend--------------->
 
 
       {% set legendH1 %}
