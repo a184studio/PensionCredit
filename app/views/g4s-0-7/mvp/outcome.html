@@ -58,9 +58,10 @@
     }) }}
 
     {% elif data['system-outcome-selector'] == 'sp-not-claimed'%}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You should claim your State Pension</h1>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You need to get your State Pension before you apply for Pension Credit.</p>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Go to GOV.UK and search for "get your State Pension".</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Because you have not claimed your State Pension, we will need to go through a full application</h1>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">I will transfer you to a colleague who will be able to do that.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You might be on hold for up to three minutes. If we can't get you through, you'll be transferred back to me.</p>
+
     {{ govukButton({
     text: "Finish and close",
     classes: "govuk-button dont-print govuk-!-margin-top-6"
@@ -68,9 +69,9 @@
 
 
     {% elif data['system-outcome-selector'] == 'joint-sp-not-claimed'%}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You should both claim your State Pensions</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You need to get your State Pension before you can apply for Pension Credit.</p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Go to GOV.UK and search for "get your State Pension".</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Because your partner has not claimed their State Pension, we will need to go through a full application</h1>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">I will transfer you to a colleague who will be able to do that.</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You might be on hold for up to three minutes. If we can't get you through, you'll be transferred back to me.</p>
 
 
 
