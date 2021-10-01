@@ -17,7 +17,9 @@
     <form action="del-auth-email-confirmation" method="post">
 
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
-      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
+      {% elif data["del-auth-who-made-claim-2"]%}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim-2"]}}</span>
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim-3"]}}</span>
+      {% endif %}
 
       {% set addressH1 %}
 

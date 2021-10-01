@@ -22,9 +22,11 @@
       <form action="del-auth-address-correspondence-post-code-lookup" method="post" class="form">
       {% endif %}
 
-
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
-      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim-2"]}}</span>{% endif %}
+      {% elif data["del-auth-who-made-claim-2"]%}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim-2"]}}</span>
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim-3"]}}</span>
+      {% endif %}
+
 
       <input type="hidden" name="del-auth-contact-formats-complete" value="in-progress"/>
 

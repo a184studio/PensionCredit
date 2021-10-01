@@ -15,8 +15,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="del-auth-who-check" method="post" class="form">
+
+
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
-      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
+      {% elif data["del-auth-who-made-claim-2"]%}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim-2"]}}</span>
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim-3"]}}</span>
+      {% endif %}
+
 
       <input type="hidden" name="del-auth-contact-formats-complete" value="in-progress"/>
 
