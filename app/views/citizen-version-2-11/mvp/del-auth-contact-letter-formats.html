@@ -24,7 +24,7 @@
 
 
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
-      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim-2"]}}</span>{% endif %}
 
       <input type="hidden" name="del-auth-contact-formats-complete" value="in-progress"/>
 
@@ -36,10 +36,10 @@
       {% set legendTextphone %}
 
       {% if data["del-auth-who-made-claim"] == "Yourself"
-         or data["del-auth-who-made-claim"] == "Power of attorney"
-         or data["del-auth-who-made-claim"] == "Appointee"
-         or data["del-auth-who-made-claim"] == "Personal Acting Body"
-         or data["del-auth-who-made-claim"] == "Corporate Acting Body"
+         or data["del-auth-who-made-claim-2"] == "Power of attorney"
+         or data["del-auth-who-made-claim-2"] == "Appointee"
+         or data["del-auth-who-made-claim-2"] == "Personal Acting Body"
+         or data["del-auth-who-made-claim-2"] == "Corporate Acting Body"
        %}
         <h4 class="govuk-heading-s govuk-!-margin-bottom-0">What is your textphone or Relay UK number?</h4>
       {% else %}
@@ -63,13 +63,13 @@
       {% set legendOtherDetails %}
 
       {% if data["del-auth-who-made-claim"] == "Yourself"
-         or data["del-auth-who-made-claim"] == "Power of attorney"
-         or data["del-auth-who-made-claim"] == "Appointee"
-         or data["del-auth-who-made-claim"] == "Personal Acting Body"
-         or data["del-auth-who-made-claim"] == "Corporate Acting Body"
+         or data["del-auth-who-made-claim-2"] == "Power of attorney"
+         or data["del-auth-who-made-claim-2"] == "Appointee"
+         or data["del-auth-who-made-claim-2"] == "Personal Acting Body"
+         or data["del-auth-who-made-claim-2"] == "Corporate Acting Body"
        %}
         <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we write to you?</h1>
-        {% elif data["del-auth-who-made-claim"] == "Friend or family member" %}
+        {% elif data["del-auth-who-made-claim-3"] == "Friend or family member" %}
         <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help the applicant when we write to them?</h1>
       {% else %}
         <h1 class="govuk-heading-s govuk-!-margin-bottom-0">How can we help when we write to the applicant?</h1>
@@ -80,10 +80,10 @@
       {% set legendOtherDetailsHint %}
 
       {% if data["del-auth-who-made-claim"] == "Yourself"
-         or data["del-auth-who-made-claim"] == "Power of attorney"
-         or data["del-auth-who-made-claim"] == "Appointee"
-         or data["del-auth-who-made-claim"] == "Personal Acting Body"
-         or data["del-auth-who-made-claim"] == "Corporate Acting Body"
+         or data["del-auth-who-made-claim-2"] == "Power of attorney"
+         or data["del-auth-who-made-claim-2"] == "Appointee"
+         or data["del-auth-who-made-claim-2"] == "Personal Acting Body"
+         or data["del-auth-who-made-claim-2"] == "Corporate Acting Body"
        %}
         <h4 class="govuk-hint govuk-!-margin-top-0"></h4>
 
@@ -113,10 +113,10 @@
       {% set legendH1 %}
 
       {% if data["del-auth-who-made-claim"] == "Yourself"
-         or data["del-auth-who-made-claim"] == "Power of attorney"
-         or data["del-auth-who-made-claim"] == "Appointee"
-         or data["del-auth-who-made-claim"] == "Personal Acting Body"
-         or data["del-auth-who-made-claim"] == "Corporate Acting Body"
+         or data["del-auth-who-made-claim-2"] == "Power of attorney"
+         or data["del-auth-who-made-claim-2"] == "Appointee"
+         or data["del-auth-who-made-claim-2"] == "Personal Acting Body"
+         or data["del-auth-who-made-claim-2"] == "Corporate Acting Body"
        %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What format should we use when we write to you?</h1>
       {% else %}
@@ -126,7 +126,7 @@
       {% endset -%}
 
 
-      {{ govukRadios({
+      {{ govukCheckboxes({
         classes: "govuk-!-margin-bottom-2",
         idPrefix: "del-auth-contact-formats",
         name: "del-auth-contact-formats",

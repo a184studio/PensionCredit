@@ -15,7 +15,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data["del-auth-who-made-claim"] == "Power of attorney" %}
+    {% if data["del-auth-who-made-claim-2"] == "Power of attorney" %}
     <form action="del-auth-secure-access-code" method="post" class="form">
     {% else %}
     <form action="claimant-contact-callback" method="post" class="form">
@@ -25,8 +25,8 @@
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
-      {% if data["del-auth-who-made-claim"] == "Yourself" %}
-      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
+      {% if data["del-auth-who-made-claim-2"] == "Yourself" %}
+      {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim-2"]}}</span>{% endif %}
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Your details</h1>
 
       {% set legendName %}
@@ -46,7 +46,7 @@
         value: data["del-auth-contact-name"]
       }) }}
 
-      <!---- CAB  ---->{% if data['del-auth-who-made-claim'] == "Corporate Acting Body" %}
+      <!---- CAB  ---->{% if data['del-auth-who-made-claim-2'] == "Corporate Acting Body" %}
 
 
       {% set legendCorporateID %}
@@ -68,7 +68,7 @@
 
       <!---- CAB  ---->{% endif %}
 
-      <!---- CAB  ---->{% if data['del-auth-who-made-claim'] !== "Corporate Acting Body" %}
+      <!---- CAB  ---->{% if data['del-auth-who-made-claim-2'] !== "Corporate Acting Body" %}
 
 
       {% set legendNI %}
