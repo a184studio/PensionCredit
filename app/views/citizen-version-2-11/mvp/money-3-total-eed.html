@@ -25,7 +25,7 @@
       {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Money you had on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}</h1>{% endif %} -->
 
       {% if data["single-joint-check"] == "Joint" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We now need to know about the money you and your partner had on [EED]</h1>
-      {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We now need to know about the money you had on 1 July 2021</h1>{% endif %}
+      {% else %}  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We now need to know about the money you had on 4 July 2021</h1>{% endif %}
 
       {% if data["single-joint-check"] == "Joint" %}<p class="govuk-!-font-size-24">If you had money that is shared with someone other than your partner, only tell us about the amount of money that belonged to you and your partner.</p>
       {% else %}  <p class="govuk-!-font-size-24">If you had money that is shared with someone else, only tell us about the amount of money that belonged to you.</p>{% endif %}
@@ -69,7 +69,7 @@
       {% else %}
 
       {% set LegendAmount %}
-      <strong>What is the total amount of money you had on 1 July 2021?<strong>
+      <strong>What is the total amount of money you had on 4 July 2021?<strong>
       {% endset -%}
 
     {{ govukInput({
