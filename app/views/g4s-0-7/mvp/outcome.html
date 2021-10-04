@@ -15,17 +15,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data["system-outcome-selector"] == "housing-costs" %}
-    <form action="outcome-housing-costs-router" method="post" class="form">
-
-      {% elif data["system-outcome-selector"] == "mac" or data["system-outcome-selector"] == "sp-not-claimed" or data["system-outcome-selector"] == "joint-sp-not-claimed" %}
-
-      <form action="exit" method="post" class="form">
-
-    {% else %}
-
     <form action="outcome-radios-router" method="post" class="form">
-    {% endif %}
 
 
     <!------------H1 LEGEND------------>
@@ -52,16 +42,9 @@
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@pete You are a mixed age couple</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">XXX</p>
 
-    {{ govukButton({
-    text: "Finish and close",
-    classes: "govuk-button dont-print govuk-!-margin-top-6"
-    }) }}
-
     {% elif data['system-outcome-selector'] == 'sp-not-claimed'%}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Because you have not claimed your State Pension, we will need to go through a full application</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">I will transfer you to a colleague who will be able to do that.</p>
-
-  
 
 
     {% elif data['system-outcome-selector'] == 'joint-sp-not-claimed'%}
@@ -70,7 +53,7 @@
 
 
 
-     
+
 
 
     {% else %}
@@ -80,7 +63,7 @@
 
 
 
-                
+
                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
@@ -98,7 +81,7 @@
 
 
 
-                        {% if data["system-outcome-selector"] == "Likley" or "sp-not-claimed" %}
+                        {% if data["system-outcome-selector"] == "Likley" or data["system-outcome-selector"] == "sp-not-claimed" %}
 
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="housing-costs">
@@ -118,7 +101,7 @@
                       </label>
                     </div>
 
-                     {% elif data["system-outcome-selector"] == "housing-costs" %}
+                     {% elif data["system-outcome-selector"] == "housing-costs" or data["system-outcome-selector"] == "mac" %}
 
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="housing-costs">
@@ -164,35 +147,29 @@
                       </div>
 
 
-               
 
-
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input"
-                      id="outcome-radios"
-                      name="outcome-radios"
-                      type="radio"
-                      value="exit">
-                      <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                        <!--[END CALL]--> Caller wants to end the call <!--- route to exit.html-->
-                      </label>
-                    </div>
-
-
-
-
-                    </fieldset>
-                  </div>
 
 
       {% endif %}
 
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+        id="outcome-radios"
+        name="outcome-radios"
+        type="radio"
+        value="exit">
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          <!--[END CALL]--> Caller wants to end the call <!--- route to exit.html-->
+        </label>
+      </div>
 
+    </fieldset>
+  </div>
 
 
       {{ govukButton({
         text: "Continue",
-        classes: "govuk-!-margin-top-6"
+        classes: "govuk-!-margin-top-4"
       }) }}
 
 

@@ -375,14 +375,13 @@ router.post(`${baseUrl}/outcome-radios-router`, (req, res) => {
     res.redirect(`${baseUrl}/exit`)
   } else if (outcomeRadios === 'children') {
     res.redirect(`${baseUrl}/handover-early-children`)
-  } else if (outcomeRadios === 'handover') {
-    res.redirect(`${baseUrl}/handover-user-request`)
-  } else if (outcomeRadios === 'end') {
-    res.redirect(`${baseUrl}/done-not-getting-sp`)
-  } else if (outcomeRadios === 'challenge') {
-    res.redirect(`${baseUrl}/challenge`)
-  } else if (outcomeRadios === 'apply') {
-    res.redirect(`${baseUrl}/handover`)
+  } else if (outcomeRadios === 'mac') {
+    res.redirect(`${baseUrl}/handover-early-mac`)
+  } else if (outcomeRadios === 'sp-not-claimed') {
+    res.redirect(`${baseUrl}/handover-early-sp`)
+  } else if (outcomeRadios === 'joint-sp-not-claimed') {
+    res.redirect(`${baseUrl}/handover-early-sp`)
+
   } else {
     res.redirect(`${baseUrl}/XXX`)
   }
@@ -410,29 +409,17 @@ router.post(`${baseUrl}/earnings-router`, (req, res) => {
 })
 
 
-router.post(`${baseUrl}/outcome-yn-router`, (req, res) => {
-  const outcomeYN = req.session.data['outcome-yn']
-
-  if (outcomeYN === 'Yes') {
-    res.redirect(`${baseUrl}/more-help`)
-  } else {
-    res.redirect(`${baseUrl}/exit`)
-  }
-})
-
-router.post(`${baseUrl}/outcome-housing-costs-router`, (req, res) => {
-  const outcomeRadios = req.session.data['outcome-radios']
-
-  if (outcomeRadios === 'help') {
-    res.redirect(`${baseUrl}/more-help`)
-  } else if (outcomeRadios === 'dwp') {
-    res.redirect(`${baseUrl}/handover-early`)
-
-  } else {
-    res.redirect(`${baseUrl}/exit`)
-  }
-})
-
+// router.post(`${baseUrl}/outcome-yn-router`, (req, res) => {
+//   const outcomeYN = req.session.data['outcome-yn']
+//
+//   if (outcomeYN === 'Yes') {
+//     res.redirect(`${baseUrl}/more-help`)
+//   } else {
+//     res.redirect(`${baseUrl}/exit`)
+//   }
+// })
+//
+//
 router.post(`${baseUrl}/system-outcome-selector`, (req, res) => {
   const outcomeSelector = req.session.data['system-outcome-selector']
 
