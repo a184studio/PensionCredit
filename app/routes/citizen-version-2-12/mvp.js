@@ -438,7 +438,17 @@ router.post(`${baseUrl}/eu-filter-router`, (req, res) => {
 router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   const childrenCheck = req.session.data['children-check-yn']
 
-  if (childrenCheck === 'No') {
+  if (childrenCheck === 'Yes') {
+    res.redirect(`${baseUrl}/children-ctc`)
+  } else {
+    res.redirect(`${baseUrl}/claim-filter`)
+  }
+})
+
+router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
+  const childrenCTC = req.session.data['children-ctc']
+
+  if (childrenCTC == 'Yes') {
     res.redirect(`${baseUrl}/claim-filter`)
   } else {
     res.redirect(`${baseUrl}/done-children`)
