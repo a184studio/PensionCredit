@@ -125,6 +125,7 @@ router.use(require('./routes/searchlight/sl-1'))
 router.use(require('./routes/g4s-0-6-5/mvp'))
 router.use(require('./routes/g4s-0-7/mvp'))
 router.use(require('./routes/citizen-version-2-11/mvp'))
+router.use(require('./routes/citizen-version-2-12/mvp'))
 
 
 module.exports = router
