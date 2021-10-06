@@ -257,7 +257,7 @@
         {
           classes: 'govuk-summary-list',
           key: {
-            text: "Do any children or qualifying young people live with you?"
+            text: "Are you responsible for any children or qualifying young people who live with you?"
           },
           value: {
             text: data['children-check-yn']
@@ -271,9 +271,29 @@
             }
           ]
         }
+      },
+
+      {
+        classes: 'govuk-summary-list',
+        key: {
+          text: "Do you get Child Tax Credit for the children that live with you?"
+        },
+        value: {
+          text: data['children-ctc']
+        },
+        actions: {
+          items: [
+            {
+              href: "@ChangeURL",
+              text: "Change",
+              visuallyHiddenText: "whether you get Child Tax Credit for the children that live with you"
+          }
+        ]
       }
+    }
         ]
       }) }}
+
 
 
       {{ govukSummaryList({
