@@ -450,6 +450,8 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
 
   if (childrenCTC == 'Yes') {
     res.redirect(`${baseUrl}/claim-filter`)
+  } else if (childrenCTC === 'dont-know') {
+    res.redirect(`${baseUrl}/claim-filter`)
   } else {
     res.redirect(`${baseUrl}/done-children`)
   }
