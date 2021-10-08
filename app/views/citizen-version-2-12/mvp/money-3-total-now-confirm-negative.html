@@ -21,6 +21,9 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
 
            <!------------Legend--------------->
 
+           <p class="govuk-body2">You told us that the total amount of money you have today is less than £0.00. When we calculate how much Pension Credit you could get, we do not consider overdrafts or other debts. We will use a total of £0.00. </p>
+
+
            <p class="govuk-heading-l govuk-!-margin-bottom-2">{{ data['money-3-total-now-value'] | formatMoney }}</p>
            <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">{{ data['money-3-total-now-value'] | formatMoneyToWords }}</p>
 
@@ -29,7 +32,7 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
              name: "money-3-total-now-confirm",
              fieldset: {
                legend: {
-                 text: "Have you entered the right amount?",
+                 text: "Is this the right amount?",
                  isPageHeading: true,
                  classes: "govuk-fieldset__legend--m"
                }
