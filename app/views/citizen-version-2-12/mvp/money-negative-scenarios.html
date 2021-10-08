@@ -15,13 +15,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="money-negative-scenarios" method="post" class="form">
+    <form action="money-total-risk-check" method="post" class="form">
 
       <div class="govuk-panel--agent govuk-!-margin-bottom-6">
 
            {{ govukRadios({
-             idPrefix: "money-3-claim-filter",
-             name: "money-3-claim-filter",
+             idPrefix: "money-negative-scenarios",
+             name: "money-negative-scenarios",
              fieldset: {
                legend: {
                  html: "Claim type?",
@@ -33,24 +33,19 @@
              classes: "govuk-radios",
              items: [
                {
-                 value: "Backdated",
-                 text: "Backdated",
-                 checked: (data["money-3-claim-filter"] == "Backdated")
+                 value: "Backdated-a",
+                 text: "Backdated A",
+                 checked: (data["money-negative-scenarios"] == "Backdated-a")
                },
                {
-                 value: "Today",
-                 text: "Today",
-                 checked: (data["money-3-claim-filter"] == "Today")
+                 value: "Backdated-b",
+                 text: "Backdated B",
+                 checked: (data["money-negative-scenarios"] == "Backdated-b")
                },
                {
-                 value: "Advanced",
-                 text: "Advanced",
-                 checked: (data["money-3-claim-filter"] == "Advanced")
-               },
-               {
-                 value: "no-doc",
-                 text: "no-doc",
-                 checked: (data["money-3-claim-filter"] == "no-doc")
+                 value: "Backdated-c",
+                 text: "Backdated C",
+                 checked: (data["money-negative-scenarios"] == "Backdated-c")
                }
              ]
            }) }}

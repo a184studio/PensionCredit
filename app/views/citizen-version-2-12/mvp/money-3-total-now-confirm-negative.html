@@ -16,42 +16,77 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
   <div class="govuk-grid-column-two-thirds">
     <form action="money-3-total-now-confirm-router" method="post" class="form">
 
-      <!------------H1 LEGEND------------>
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Total amount of money you have today</h1>
 
-           <!------------Legend--------------->
+      {% if data["money-negative-scenarios"] == "Backdated-a" %}
 
-           <p class="govuk-body2">You told us that the total amount of money you have today is less than £0.00. When we calculate how much Pension Credit you could get, we do not consider overdrafts or other debts. We will use a total of £0.00. </p>
+      I AM A
+            <!------------H1 LEGEND------------>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have told us you have a total of less than £0.00</h1>
+
+            <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Total amount of money you have today:</h1>
+
+            <p class="govuk-heading-l govuk-!-margin-bottom-2">{{ data['money-3-total-now-value'] | formatMoney }}</p>
+            <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">{{ data['money-3-total-now-value'] | formatMoneyToWords }}</p>
+
+                 <!------------Legend--------------->
+
+                 <p class="govuk-body2 govuk-!-margin-bottom-8">When we calculate how much Pension Credit you could get, we do not consider overdrafts or other debts. We will use a total of £0.00. </p>
 
 
-           <p class="govuk-heading-l govuk-!-margin-bottom-2">{{ data['money-3-total-now-value'] | formatMoney }}</p>
-           <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">{{ data['money-3-total-now-value'] | formatMoneyToWords }}</p>
 
-           {{ govukRadios({
-             idPrefix: "money-3-total-now-confirm",
-             name: "money-3-total-now-confirm",
-             fieldset: {
-               legend: {
-                 text: "Is this the right amount?",
-                 isPageHeading: true,
-                 classes: "govuk-fieldset__legend--m"
-               }
-             },
 
-             classes: "govuk-radios",
-             items: [
-               {
-                 value: "Yes",
-                 text: "Yes",
-                 checked: (data["money-3-total-now-confirm"] == "Yes")
-               },
-               {
-                 value: "No",
-                 text: "No - I want to go back and change the amount",
-                 checked: (data["money-3-total-now-confirm"] == "No")
-               }
-             ]
-           }) }}
+
+      {% elif data["money-negative-scenarios"] == "Backdated-b" %}
+      I AM B for Bates
+
+
+            <!------------H1 LEGEND------------>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Total amount of money you have today</h1>
+
+                 <!------------Legend--------------->
+
+                 <p class="govuk-body2">You told us that the total amount of money you have today is less than £0.00. When we calculate how much Pension Credit you could get, we do not consider overdrafts or other debts. We will use a total of £0.00. </p>
+
+
+                 <p class="govuk-heading-l govuk-!-margin-bottom-2">{{ data['money-3-total-now-value'] | formatMoney }}</p>
+                 <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">{{ data['money-3-total-now-value'] | formatMoneyToWords }}</p>
+
+                 {{ govukRadios({
+                   idPrefix: "money-3-total-now-confirm",
+                   name: "money-3-total-now-confirm",
+                   fieldset: {
+                     legend: {
+                       text: "Is this the right amount?",
+                       isPageHeading: true,
+                       classes: "govuk-fieldset__legend--m"
+                     }
+                   },
+
+                   classes: "govuk-radios",
+                   items: [
+                     {
+                       value: "Yes",
+                       text: "Yes",
+                       checked: (data["money-3-total-now-confirm"] == "Yes")
+                     },
+                     {
+                       value: "No",
+                       text: "No - I want to go back and change the amount",
+                       checked: (data["money-3-total-now-confirm"] == "No")
+                     }
+                   ]
+                 }) }}
+
+      {% else %}
+      I AM OTHER
+
+
+
+
+      {% endif %}
+
+
+
 
 
       {{ govukButton({
