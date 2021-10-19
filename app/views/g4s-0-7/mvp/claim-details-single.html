@@ -793,27 +793,4 @@
 
         {% else %}
 
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-2',
-            rows: [
-          {
-              key: {
-                text: "Do you have any income from employment or workplace or personal pensions?"
-              },
-              value: {
-                html: "None"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "separate",
-                    text: "Change",
-                    visuallyHiddenText: "separate"
-                  }
-                ]
-              }
-            }
-          ]
-          }) }}
-
         {% endif %}
