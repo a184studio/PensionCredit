@@ -18,14 +18,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+        <form action="system-outcome-selector" method="post">
 
-
-<form action="system-outcome-selector" method="post" class="form">
-
-
-
-
-      <h1 class="govuk-heading-xl">Check your answers</h1><div>
+      <h1 class="govuk-heading-xl">Check your answers</h1>
 
 
         {% if data['partner-check-yn'] == 'Yes, we live together' %}
@@ -38,16 +33,11 @@
         {% endif %}
 
 
-    </div></div>
-
-  </div>
-
-
 
 
 {{ govukButton({
   text: "Continue",
-  classes: "dont-print govuk-!-margin-top-8"
+  classes: "govuk-!-margin-top-8"
 }) }}
 
 </form>
