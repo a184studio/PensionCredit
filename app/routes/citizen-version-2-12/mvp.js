@@ -47,6 +47,25 @@ router.use(`${baseUrl}/claim.pdf`, express.static(path.resolve('app/views/citize
 //   }
 // })
 
+router.post(`${baseUrl}/applicant-blind-router`, (req, res) => {
+  const applicantBlind = req.session.data['contact-blind-check']
+
+  if (applicantBlind === 'Yes') {
+    res.redirect(`${baseUrl}/claimant-sight-impaired-date`)
+  } else {
+    res.redirect(`${baseUrl}/single-joint-check`)
+  }
+})
+
+router.post(`${baseUrl}/partner-blind-router`, (req, res) => {
+  const partnerBlind = req.session.data['partner-blind-check']
+
+  if (partnerBlind === 'Yes') {
+    res.redirect(`${baseUrl}/partner-sight-impaired-date`)
+  } else {
+    res.redirect(`${baseUrl}/home-hospital-check`)
+  }
+})
 
 router.post(`${baseUrl}/start-check-router`, (req, res) => {
   const startCheck = req.session.data['start-check']

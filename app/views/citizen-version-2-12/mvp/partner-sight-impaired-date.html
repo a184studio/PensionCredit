@@ -1,0 +1,97 @@
+{% extends "layout-assisted-digital.html" %}
+
+{% block pageTitle %}
+  claimant-sight-impaired - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="home-hospital-check" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+      {% set partnerBlindDate %}
+          {{ govukDateInput({
+            id: "partnerBlindDate",
+            namePrefix: "partnerBlindDate",
+            fieldset: {
+              legend: {
+                text: "What date was your partner registered blind or severely sight impaired?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 2020."
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["partnerBlindDateDay"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["partnerBlindDateMonth"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["partnerBlindDateYear"]
+              }
+            ]
+          }) }}
+
+          {% endset -%}
+          
+      {% set legendH1 %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you know the date your partner was registered blind or severely sight impaired?</h1>
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "partner-blind-date",
+        name: "partner-blind-date",
+        fieldset: {
+          legend: {
+            html: legendH1,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["partner-blind-date"] == "Yes"),
+            conditional: {
+              html: partnerBlindDate
+            }
+              },
+                    
+          {
+            value: "No",
+            text: "No",
+            checked: (data["partner-blind-date"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}

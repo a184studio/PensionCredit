@@ -1,0 +1,97 @@
+{% extends "layout-assisted-digital.html" %}
+
+{% block pageTitle %}
+  claimant-sight-impaired - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="single-joint-check" method="post" class="form">
+
+      <!-- Hidden input to set task to complete on task-list -->
+      <input type="hidden" name="hospitals-complete" value="true"/>
+
+      {% set blindDateCheck %}
+          {{ govukDateInput({
+            id: "blindDate",
+            namePrefix: "blindDate",
+            fieldset: {
+              legend: {
+                text: "What date were you registered blind or severely sight impaired?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 2020."
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["blindDateDay"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["blindDateMonth"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["blindDateYear"]
+              }
+            ]
+          }) }}
+
+          {% endset -%}
+          
+      {% set legendH1 %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you know the date you were registered blind or severely sight impaired?</h1>
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "contact-blind-date",
+        name: "contact-blind-date",
+        fieldset: {
+          legend: {
+            html: legendH1,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["contact-blind-date"] == "Yes"),
+            conditional: {
+              html: blindDateCheck
+            }
+              },
+                    
+          {
+            value: "No",
+            text: "No",
+            checked: (data["contact-blind-date"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}
