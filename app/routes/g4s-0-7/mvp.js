@@ -22,7 +22,7 @@ router.post(`${baseUrl}/system-partner-check-router`, (req, res) => {
   const singleJoint = req.session.data['system-partner-check']
 
   if (singleJoint === 'Single') {
-    res.redirect(`${baseUrl}/system-outcome-selector`)
+    res.redirect(`${baseUrl}/cya`)
   } else {
     res.redirect(`${baseUrl}/partner-state-pension-amount`)
   }

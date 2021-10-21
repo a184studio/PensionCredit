@@ -14,6 +14,14 @@
 }) }}
  -->
 
+<ul class="ul-id-bar govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-0">
+  {% if data["full-name"] %}<li class="li-id-bar govuk-!-font-size-16">Name:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['full-name'] }} </strong></li>{% endif %}
+  {% if data["nino"] %}<li class="li-id-bar govuk-!-font-size-16">NI:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['nino'] }}</strong></li>{% endif %}
+  {% if data["dob-day"] %}<li class="li-id-bar govuk-!-font-size-16">DOB:</li> <li class="li-id-bar-item govuk-!-font-size-19"><strong>{{ data['dob-day'] + ' ' + (data['dob-month'] | getMonth) + ' ' + data['dob-year'] }}</strong></li>{% endif %}
+
+  {% if data["full-name"] %}<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break-id-bar">{% endif %}
+
+
 
 {% endblock %}
 
