@@ -15,7 +15,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="money-total-risk-check" method="post" class="form">
+    <form action="claimant-name-a" method="post" class="form">
 
       <div class="govuk-panel--agent govuk-!-margin-bottom-6">
 
@@ -24,7 +24,7 @@
              name: "money-negative-scenarios",
              fieldset: {
                legend: {
-                 html: "Claim type?",
+                 html: "Which senario would you like to test?",
                  isPageHeading: true,
                  classes: "govuk-fieldset__legend--xl"
                }
@@ -34,17 +34,17 @@
              items: [
                {
                  value: "Backdated-a",
-                 text: "Backdated A",
+                 text: "A",
                  checked: (data["money-negative-scenarios"] == "Backdated-a")
                },
                {
                  value: "Backdated-b",
-                 text: "Backdated B",
+                 text: "B",
                  checked: (data["money-negative-scenarios"] == "Backdated-b")
                },
                {
                  value: "Backdated-c",
-                 text: "Backdated C",
+                 text: "C",
                  checked: (data["money-negative-scenarios"] == "Backdated-c")
                }
              ]
