@@ -791,4 +791,28 @@
 
         {% endif %}
 
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-2',
+          rows: [
+        {
+            key: {
+              text: "Is any of the applicant's income from employment?"
+            },
+            value: {
+              html: data["income-separate-check"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "income-separate-check",
+                  text: "Change",
+                  visuallyHiddenText: "income-separate-check"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+
         {% endif %}
