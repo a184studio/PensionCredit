@@ -1320,6 +1320,17 @@ router.post(`${baseUrl}/money-3-total-now-confirm-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/money-3-total-now-confirm-negative-router`, (req, res) => {
+  const money3TotalNowConfirmNegative = req.session.data['money-3-total-now-confirm-negative']
+
+  if (money3TotalNowConfirmNegative === 'Yes') {
+    res.redirect(`${baseUrl}/system-scenario-setup-12`)
+  } else {
+    res.redirect(`${baseUrl}/money-3-total-now`)
+  }
+})
+
+
 router.post(`${baseUrl}/money-3-total-eed-same-check-7-router`, (req, res) => {
   const money2TotalEEDSameCheck7 = req.session.data['money-3-total-eed-same-check']
 

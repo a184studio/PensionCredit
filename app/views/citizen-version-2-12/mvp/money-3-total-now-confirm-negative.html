@@ -14,7 +14,12 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="money-3-total-now-confirm-router" method="post" class="form">
+
+    {% if data["money-negative-scenarios"] == "Backdated-a" %}
+    <form action="system-scenario-setup-12" method="post" class="form">
+      {% else %}
+      <form action="money-3-total-now-confirm-negative-router" method="post" class="form">
+      {% endif %}
 
 
       {% if data["money-negative-scenarios"] == "Backdated-a" %}
@@ -52,8 +57,8 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
                  <p class="govuk-bold govuk-!-font-size-24 govuk-!-margin-bottom-6">Zero pounds</p>
 
                  {{ govukRadios({
-                   idPrefix: "money-3-total-now-confirm",
-                   name: "money-3-total-now-confirm",
+                   idPrefix: "money-3-total-now-confirm-negative",
+                   name: "money-3-total-now-confirm-negative",
                    fieldset: {
                      legend: {
                        text: "Is this the right amount?",
@@ -67,12 +72,12 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
                      {
                        value: "Yes",
                        text: "Yes",
-                       checked: (data["money-3-total-now-confirm"] == "Yes")
+                       checked: (data["money-3-total-now-confirm-negative"] == "Yes")
                      },
                      {
                        value: "No",
                        text: "No - I want to go back and change the amount",
-                       checked: (data["money-3-total-now-confirm"] == "No")
+                       checked: (data["money-3-total-now-confirm-negative"] == "No")
                      }
                    ]
                  }) }}
@@ -93,8 +98,8 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
 
 
       {{ govukRadios({
-        idPrefix: "money-3-total-now-confirm",
-        name: "money-3-total-now-confirm",
+        idPrefix: "money-3-total-now-confirm-negative",
+        name: "money-3-total-now-confirm-negative",
         fieldset: {
           legend: {
             text: "Is this the right amount?",
@@ -108,12 +113,12 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["money-3-total-now-confirm"] == "Yes")
+            checked: (data["money-3-total-now-confirm-negative"] == "Yes")
           },
           {
             value: "No",
             text: "No - I want to go back and change the amount",
-            checked: (data["money-3-total-now-confirm"] == "No")
+            checked: (data["money-3-total-now-confirm-negative"] == "No")
           }
         ]
       }) }}
