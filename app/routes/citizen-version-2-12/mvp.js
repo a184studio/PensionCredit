@@ -1324,7 +1324,7 @@ router.post(`${baseUrl}/money-3-total-now-confirm-negative-router`, (req, res) =
   const money3TotalNowConfirmNegative = req.session.data['money-3-total-now-confirm-negative']
 
   if (money3TotalNowConfirmNegative === 'Yes') {
-    res.redirect(`${baseUrl}https://pc-prototype.herokuapp.com/prototype-admin/clear-data`)
+    res.redirect(`/prototype-admin/clear-data`)
   } else {
     res.redirect(`${baseUrl}/money-3-total-now`)
   }
