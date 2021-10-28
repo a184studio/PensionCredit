@@ -24,7 +24,7 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
 
       {% if data["money-negative-scenarios"] == "Backdated-a" %}
 
-    
+
             <!------------H1 LEGEND------------>
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have told us you have a total of less than £0.00</h1>
 
@@ -42,7 +42,7 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
 
 
       {% elif data["money-negative-scenarios"] == "Backdated-b" %}
-   
+
 
 
             <!------------H1 LEGEND------------>
@@ -50,7 +50,7 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
 
                  <!------------Legend--------------->
 
-                 <p class="govuk-body2">You told us that the total amount of money you have today is -{{ data['money-3-total-now-value'] | formatMoney }}. When we calculate how much Pension Credit you could get, we do not consider overdrafts or other debts. We will use a total of £0.00. </p>
+                 <p class="govuk-body govuk-!-margin-bottom-2">You told us that the total amount of money you have today is -{{ data['money-3-total-now-value'] | formatMoney }}. When we calculate how much Pension Credit you could get, we do not consider overdrafts or other debts. We will use a total of £0.00. </p>
 
 
                  <p class="govuk-heading-l govuk-!-margin-bottom-2">– {{ data['money-3-total-now-value'] | formatMoney }}</p>
@@ -83,7 +83,7 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
                  }) }}
 
       {% else %}
-      
+
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have told us you have a total of less than £0.00</h1>
 
