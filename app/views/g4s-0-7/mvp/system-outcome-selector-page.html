@@ -86,8 +86,13 @@
           },
           {
             value: "waiting-for-first-payment",
-            text: "Joint: First SP not received",
+            text: "Single: First SP not received",
             checked: (data["system-outcome-selector"] == "waiting-for-first-payment")
+          },
+          {
+            value: "joint-waiting-for-first-payment",
+            text: "Joint: First SP not received",
+            checked: (data["system-outcome-selector"] == "joint-waiting-for-first-payment")
           },
           {
             value: "sp-not-claimed",
