@@ -43,7 +43,11 @@
                 text: "They applied for a State Pension but they are not entitled to one",
                 checked: (data["partner-state-pension-status"] == "entitled-to-zero")
               },
-
+              {
+                value: "waiting-for-first-payment",
+                text: "I have claimed my State Pension and I am waiting for the first payment",
+                checked: (data["partner-state-pension-status"] == "waiting-for-first-payment")
+              },
               {
                 value: "not-applied-sp",
                 text: "They have not applied for a State Pension",

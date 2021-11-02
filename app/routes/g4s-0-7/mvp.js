@@ -273,7 +273,9 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   if (statePensionStatus === 'entitled-to-zero') {
     res.redirect(`${baseUrl}/benefit-check`)
   } else if (statePensionStatus === 'not-applied-sp') {
-    res.redirect(`${baseUrl}/system-outcome-selector`)
+    res.redirect(`${baseUrl}/system-outcome-selector-page`)
+  } else if (statePensionStatus === 'waiting-for-first-payment') {
+    res.redirect(`${baseUrl}/system-outcome-selector-page`)
   } else {
     res.redirect(`${baseUrl}/XXX`)
   }
@@ -285,7 +287,9 @@ router.post(`${baseUrl}/partner-state-pension-status-router`, (req, res) => {
   if (partnerStatePensionStatus === 'entitled-to-zero') {
     res.redirect(`${baseUrl}/partner-benefit-check`)
   } else if (partnerStatePensionStatus === 'not-applied-sp') {
-    res.redirect(`${baseUrl}/system-outcome-selector`)
+    res.redirect(`${baseUrl}/system-outcome-selector-page`)
+  } else if (partnerStatePensionStatus === 'waiting-for-first-payment') {
+    res.redirect(`${baseUrl}/system-outcome-selector-page`)
   } else {
     res.redirect(`${baseUrl}/XXX`)
   }

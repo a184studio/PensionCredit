@@ -90,6 +90,11 @@
             checked: (data["system-outcome-selector"] == "sp-not-claimed")
           },
           {
+            value: "waiting-for-first-payment",
+            text: "Joint: First SP not received",
+            checked: (data["system-outcome-selector"] == "waiting-for-first-payment")
+          },
+          {
             value: "joint-sp-not-claimed",
             text: "Joint: 1/2 have not claimed SP",
             checked: (data["system-outcome-selector"] == "joint-sp-not-claimed")
