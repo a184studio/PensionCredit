@@ -88,7 +88,7 @@
 
 
 
-                        {% if data["system-outcome-selector"] == "Likley" or data["system-outcome-selector"] == "sp-not-claimed" %}
+                        {% if data["system-outcome-selector"] == "Likley" %}
 
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="housing-costs">
@@ -97,16 +97,15 @@
                           </label>
                         </div>
 
+                        {% elif data["system-outcome-selector"] == "sp-not-claimed" or data['system-outcome-selector'] == 'joint-sp-not-claimed' or data['system-outcome-selector'] == 'waiting-for-first-payment'%}
+
                         <div class="govuk-radios__item">
-                      <input class="govuk-radios__input"
-                      id="outcome-radios"
-                      name="outcome-radios"
-                      type="radio"
-                      value="exit">
-                      <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                        <!--[END CALL]--> Caller wants to end the call <!--- route to exit.html-->
-                      </label>
-                    </div>
+                          <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="housing-costs">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            <!--[HOUSING COSTS]--> Transfer to DWP <!-- - route to handover-early.html-->
+                          </label>
+                        </div>
+
 
                      {% elif data["system-outcome-selector"] == "housing-costs" or data["system-outcome-selector"] == "mac" %}
 
