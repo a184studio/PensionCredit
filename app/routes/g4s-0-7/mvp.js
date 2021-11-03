@@ -273,9 +273,9 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   if (statePensionStatus === 'entitled-to-zero') {
     res.redirect(`${baseUrl}/benefit-check`)
   } else if (statePensionStatus === 'not-applied-sp') {
-    res.redirect(`${baseUrl}/system-outcome-selector-page`)
+    res.redirect(`${baseUrl}/cya`)
   } else if (statePensionStatus === 'waiting-for-first-payment') {
-    res.redirect(`${baseUrl}/system-outcome-selector-page`)
+    res.redirect(`${baseUrl}/cya`)
   } else {
     res.redirect(`${baseUrl}/XXX`)
   }
