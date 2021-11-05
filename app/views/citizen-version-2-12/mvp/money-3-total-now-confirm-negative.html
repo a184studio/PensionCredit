@@ -16,7 +16,7 @@ Total amount of money you have today - Apply for Pension Credit - GOV.UK
   <div class="govuk-grid-column-two-thirds">
 
     {% if data["money-negative-scenarios"] == "Backdated-a" %}
-    <form action="system-scenario-setup-12" method="post" class="form">
+    <form action="/prototype-admin/clear-data" method="post" class="form">
       {% else %}
       <form action="money-3-total-now-confirm-negative-router" method="post" class="form">
       {% endif %}
