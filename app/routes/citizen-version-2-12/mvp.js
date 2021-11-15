@@ -1932,6 +1932,19 @@ router.post(`${baseUrl}/del-auth-email-confirmation-router`, (req, res) => { // 
 
 
 
+router.post(`${baseUrl}/system-scenarios-what-happens-next-router`, (req, res) => {
+  const whatHappenNextRouter = req.session.data['system-scenarios-what-happens-next']
+
+  if (whatHappenNextRouter === 'applicant') {
+    res.redirect(`${baseUrl}/what-happens-next-applicant`)
+  }
+  else if (whatHappenNextRouter === 'poa') {
+    res.redirect(`${baseUrl}/what-happens-next-poa`)
+  }
+   else {
+    res.redirect(`${baseUrl}/what-happens-next-someone-else`)
+  }
+})
 
 
 
