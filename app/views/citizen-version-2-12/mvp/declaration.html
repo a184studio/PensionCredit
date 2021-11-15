@@ -20,6 +20,8 @@
             <div class="govuk-grid-column-full">
 
               <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Submit your application</h2>
+              
+              {% if data["resides-in-uk"] == "Northern-Ireland"%}
               <p class="govuk-list govuk-!-font-size-24">By applying you agree that:</p>
 
                  <ul class="govuk-list govuk-list--bullet">
@@ -28,6 +30,19 @@
                  </ul>
 
                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><strong>You could be prosecuted or have to pay a financial penalty if you deliberately give the wrong or incomplete information or do&nbsp;not report changes.</strong></p>
+                 {% else %}
+                 <p class="govuk-list govuk-!-font-size-24">By submitting this application, you agree:
+
+                </p>
+
+                 <ul class="govuk-list govuk-list--bullet">
+                   <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-2">the information you have given is complete and correct</p></li>
+                   <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-6">to tell the Department for Communities (DfC) straight away if your circumstances change, such as your address, bank details or marital status</p></li>
+                   <li><p class="govuk-list govuk-!-font-size-19 govuk-!-margin-bottom-6">to pay back any Pension Credit if you are paid too much</p></li>
+                 </ul>
+
+                 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><strong>You may be prosecuted or have to pay a financial penalty if you give wrong or incomplete information, or if you don’t report any changes straight away.</strong></p>
+                 {% endif %}
 
             </div>
           </div>
