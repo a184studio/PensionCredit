@@ -461,7 +461,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   if (childrenCheck === 'Yes') {
     res.redirect(`${baseUrl}/children-ctc`)
   } else {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/non-deps-living-with-you`)
   }
 })
 
@@ -469,11 +469,11 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
   const childrenCTC = req.session.data['children-ctc']
 
   if (childrenCTC == 'Yes') {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/non-deps-living-with-you`)
   } else if (childrenCTC === 'dont-know') {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/non-deps-living-with-you`)
   } else {
-    res.redirect(`${baseUrl}/done-children`)
+    res.redirect(`${baseUrl}/non-deps-living-with-you`)
   }
 })
 
@@ -493,11 +493,11 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   const statePensionStatus = req.session.data['state-pension-status']
 
   if (statePensionStatus === 'Yes') {
-    res.redirect(`${baseUrl}/children-check-yn`)
+    res.redirect(`${baseUrl}/claim-filter`)
   } else if (statePensionStatus === 'NoSP') {
-    res.redirect(`${baseUrl}/done-not-getting-sp`)
+    res.redirect(`${baseUrl}/claim-filter`)
   } else if (statePensionStatus === 'NoBank') {
-    res.redirect(`${baseUrl}/children-check-yn`)
+    res.redirect(`${baseUrl}/claim-filter`)
   } else {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   }
@@ -870,7 +870,7 @@ router.post(`${baseUrl}/home-rent-housing-benefit-router`, (req, res) => { // Wh
   const homeRentHousingBenefit = req.session.data['home-rent-housing-benefit'] // The router is looking for this ID.
 
   if (homeRentHousingBenefit === 'Yes HB') {
-    res.redirect(`${baseUrl}/non-deps-living-with-you`)
+    res.redirect(`${baseUrl}/children-check-yn`)
   } else {
     res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
   }
@@ -894,7 +894,7 @@ router.post(`${baseUrl}/home-shared-housing-benefit-router`, (req, res) => { // 
   const homeSharedHousingBenefit = req.session.data['home-shared-housing-benefit'] // The router is looking for this ID.
 
   if (homeSharedHousingBenefit === 'Yes HB') {
-    res.redirect(`${baseUrl}/non-deps-living-with-you`)
+    res.redirect(`${baseUrl}/children-check-yn`)
   } else {
     res.redirect(`${baseUrl}/home-rent-housing-benefit-apply`)
   }
@@ -998,7 +998,7 @@ router.post(`${baseUrl}/home-other-housing-benefit-router`, (req, res) => { // W
   const homeOtherHousingBenefit = req.session.data['home-other-housing-benefit'] // The router is looking for this ID.
 
   if (homeOtherHousingBenefit === 'Yes HB') {
-    res.redirect(`${baseUrl}/non-deps-living-with-you`)
+    res.redirect(`${baseUrl}/children-check-yn`)
   } else {
     res.redirect(`${baseUrl}/home-other-housing-benefit-apply`)
   }

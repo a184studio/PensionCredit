@@ -20,15 +20,16 @@
 <form action="home-shared-housing-benefit" method="post" class="form">
 <!---- OTHER ---->{% elseif data['home-ownership'] == 'Other accommodation' %}
 <form action="home-other-housing-benefit" method="post" class="form">
-  <!---- OTHER ---->{% elseif data['home-ownership'] == 'You live in a caravan houseboat or mobile home' %}
-  <form action="home-other-housing-benefit" method="post" class="form">
+<!---- OTHER ---->{% elseif data['home-ownership'] == 'You live in a caravan houseboat or mobile home' %}
+<form action="home-other-housing-benefit" method="post" class="form">
+
 <!---- OWN ---->{% else %}
 
-    <!---- Mortgage Yes ---->{% if data['home-mortgage'] == '' %}
-    <form action="home-shared-payments" method="post" class="form">
-    <!---- Mortgage No ---->{% else %}
-    <form action="non-deps-living-with-you" method="post" class="form">
-    {% endif %}
+<!---- Mortgage Yes ---->{% if data['home-mortgage'] == '' %}
+<form action="home-shared-payments" method="post" class="form">
+<!---- Mortgage No ---->{% else %}
+<form action="non-deps-living-with-you" method="post" class="form">
+{% endif %}
 
 {% endif %}
 
