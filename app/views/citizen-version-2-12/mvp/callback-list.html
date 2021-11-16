@@ -3,7 +3,12 @@
 
 {% if data["eu-filter"] == "Call" %}
 {% endif %}
-<li class="govuk-!-margin-bottom-4"><strong>the immigration status of anyone included in the application. </strong>We will need to ask you some more questions about their right to live and work in the UK</li>
+<li class="govuk-!-margin-bottom-4"><strong>[applicant] the immigration status of anyone included in the application. </strong>We will need to ask you some more questions about their right to live and work in the UK</li>
+
+
+<li class="govuk-!-margin-bottom-4"><strong>[POA/Someone else]the immigration status of anyone included in the application. </strong>the applicant’s immigration status. We will need to ask you some more questions about their right to live and work in the UK</li>
+
+<li class="govuk-!-margin-bottom-4"><strong>[POA/Someone else] the applicant’s partner’s immigration status. We will need to ask you some more questions about their right to live and work in the UK</li>
 
 {% if data["state-pension-status"] == "NoBank" %}
 {% endif %}
@@ -67,10 +72,15 @@
 
 {% if data["money-disregards-all"] == "Yes" %}
 {% endif %}
-<li class="govuk-!-margin-bottom-4"><strong>the money that you plan to use to buy or carry out essential work on your main home</strong><br>Please have details of what you plan to use the money for to hand</li>
+<li class="govuk-!-margin-bottom-4"><strong>[Applicant] the money that you plan to use to buy or carry out essential work on your main home</strong><br>Please have details of what you plan to use the money for to hand</li>
+<li class="govuk-!-margin-bottom-4"><strong>[POA/Someone else] the money that the applicant plans to use to buy or carry out essential work on their main home</strong><br>Please have details of what they plan to use the money for to hand</li>
 
 
 {% if data["money-disregards-payments-options"] == "Option" %}
 {% endif %}
-<li class="govuk-!-margin-bottom-4"><strong>the money you have from payouts or payments</strong><br>Please have details of this to hand</li>
+<li class="govuk-!-margin-bottom-4"><strong>[Applicant]the money you have from payouts or payments</strong><br>Please have details of this to hand</li>
+<li class="govuk-!-margin-bottom-4"><strong>[POA/Someone else]the money the applicant has from payouts or payments</strong><br>Please have details of this to hand</li>
+
+
+
 </ul>
