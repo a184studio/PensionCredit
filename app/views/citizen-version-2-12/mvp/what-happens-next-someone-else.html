@@ -99,7 +99,7 @@
 <div>
       {{ govukPanel({
         titleText: "Application sent [Someone else]",
-          html: "Your reference number is your National Insurance number<br>",
+          html: "The applicant’s reference number is their National Insurance number",
           classes:"govuk-!-margin-top-8"
         }) }}
 </div>
@@ -124,7 +124,10 @@
   data["home-care-home-check-still-own"] == "Yes"%}
 
           <h3 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-          <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
+          <p class="govuk-!-font-size-24">
+            We need some more information for the application.
+            We will contact the applicant from {% if data['resides-in-uk'] == 'Northern-Ireland' %} 0800 012 1713 {% else %} 0800 023 2076 {% endif %} by <strong>DD / Month / Year (4 weeks) </strong>to ask them for more information about:</p>
+
 
           {% include "citizen-version-2-12/mvp/callback-list.html" %}
 
@@ -136,8 +139,8 @@
           {% elif data["eu-filter"] == "Applied for settlement" %}
 
           <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-          <p class="govuk-!-font-size-24">The EU Settlement Scheme will tell us once your status has been awarded. We will then contact you to check the details of your application.</p>
-          <p class="govuk-!-font-size-24">If you hear from the EU Settlement Scheme before we contact you, you can call the Pension Credit claim line.</p>
+          <p class="govuk-!-font-size-24">The EU Settlement Scheme will tell us once the applicant’s status has been awarded. We will then contact you to check the details of their application.</p>
+          <p class="govuk-!-font-size-24">If they hear from the EU Settlement Scheme before we contact them, they can call the Pension Credit claim line.</p>
           <h2 class="govuk-heading-m govuk-!-margin-top-4">Pension Credit claim line</h2>
 
 
@@ -151,8 +154,6 @@
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Monday to Friday, 10:00am to 4:00pm (closed on bank holidays).<br><a href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Contacting 08 and 03 numbers.</a></p>
 
 
-
-
           <!---- UK ---->{% else %}
             {% include "contact-deails-ni" %}
           <!---- COUNTRY END ---->{% endif %}
@@ -160,8 +161,8 @@
 {% else %}
 
           <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-          <p class="govuk-!-font-size-24">(Backdated or today) We are doing some final checks on your application. We will contact you by <strong>DD / Month / Year (4 weeks) </strong>. We will contact you by letter if we can award your Pension Credit. If we need more information, we will contact you by phone if you have provided a contact number, or letter if you have only provided an address.</p>
-          <p class="govuk-!-font-size-24">(Advance) We will need to ask you for some more information close to the date your claim is due to start. We will contact you by  <strong>DD / Month / Year (Claim start date if more than 4 weeks in advance, 4 weeks if less than 4 weeks in advance)</strong>. We will contact you by phone if you have provided a contact number, or letter if you have only provided an address.</p>
+          <p class="govuk-!-font-size-24">(Backdated or today) We are doing some final checks on the application. We will contact the applicant by <strong>DD / Month / Year (4 weeks) </strong>. We will contact them by letter if we can award their Pension Credit. If we need more information, we will contact them by phone if you have provided a contact number, or letter if you have only provided an address.</p>
+          <p class="govuk-!-font-size-24">(Advance) We will need to ask the applicant for some more information close to the date their claim is due to start. <strong>DD / Month / Year (Claim start date if more than 4 weeks in advance, 4 weeks if less than 4 weeks in advance)</strong>. We will contact them by  <strong>DD / Month / Year (Claim start date if more than 4 weeks in advance, 4 weeks if less than 4 weeks in advance)</strong>. We will contact them by phone if you have provided a contact number, or letter if you have only provided an address.</p>
 
 {% endif %}
 
@@ -216,7 +217,7 @@
                         data["home-own-service-charges"] == "Yes" and
                         data["home-own-ground-rent"] == "No"
                         %}
-                        <h3 class="govuk-heading-s">Send us information about your service charges</h3>
+                        <h3 class="govuk-heading-s">Send us information about the applicant’s service charges</h3>
                         <p class="govuk-body">Send us a copy of the most recent service charge invoice, with an itemised breakdown of charges.</p>
                       {% endif %}
 
@@ -229,7 +230,7 @@
                         data["home-other-ground-rent"] == "Yes" and
                         data["home-other-service-charges"] == "No"
                       %}
-                      <h3 class="govuk-heading-s">Send us information about your ground rent</h3>
+                      <h3 class="govuk-heading-s">Send us information about the applicant’s ground rent</h3>
                       <p class="govuk-body">Send us a copy of the most recent ground rent invoice.</p>
                       {% endif %}
 
@@ -240,7 +241,7 @@
                         data["home-other-service-charges"] == "Yes" and
                         data["home-other-ground-rent"] == "Yes"
                       %}
-                      <h3 class="govuk-heading-s">Send us information about your service charges and ground rent</h3>
+                      <h3 class="govuk-heading-s">Send us information about the applicant’s service charges and ground rent</h3>
                       <p class="govuk-body">Send us a copy of the most recent ground rent invoice and the most recent service charge invoice, with an itemised breakdown of charges.</p>
                       {% endif %}
 
@@ -285,8 +286,8 @@
 <div>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible dont-print">
 
-<p class="govuk-heading-m govuk-!-margin-bottom-4">If your application is successful we will pay your Pension Credit into the same account as your State Pension.</p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will be able to change this to a different account once your Pension Credit is in payment.</p>
+<p class="govuk-heading-m govuk-!-margin-bottom-4">If the application is successful we will pay the applicant’s Pension Credit into the same account as their State Pension.</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">They will be able to change this to a different account once their Pension Credit is in payment.</p>
 </div>
 {% endif %}
 <!-- -- -- -- -- -- -- HOUSING BENEFIT + NI -- -- -- -- -- -- -->
@@ -300,7 +301,7 @@
 
 <div class="govuk-!-margin-top-6">
 <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
-<p class="govuk-body">You told us you are currently getting Housing Benefit. If your application for Pension Credit is successful, you will continue to get Housing Benefit as long as you are eligible. Your local authority will get in touch if anything changes.</p>
+<p class="govuk-body">You told us the applicant is currently getting Housing Benefit. If their application for Pension Credit is successful, they will continue to get Housing Benefit as long as they are eligible. Their local authority will get in touch if anything changes.</p>
 </div>
 
 {% elif data["home-rent-housing-benefit-apply"] == "Yes" or
@@ -310,7 +311,7 @@ data["home-shared-housing-benefit-apply"] == "Yes"
 
 <div class="govuk-!-margin-top-6">
 <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Housing Benefit</h2>
-<p class="govuk-body">If you pay rent for the place where you live, you might qualify for Housing Benefit. We will make this application for you using the details from your Pension Credit application. Your local authority will contact you.</p>
+<p class="govuk-body">If the applicant pays rent for the place where they live, they might qualify for Housing Benefit. We will make this application for them using the details from their Pension Credit application. Their local authority will contact them.</p>
 </div>
 {% endif %}
 </div>
@@ -321,12 +322,12 @@ data["home-shared-housing-benefit-apply"] == "Yes"
 {% if data['resides-in-uk'] == 'Northern-Ireland' %}
   <div class="govuk-!-margin-top-6">
     <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Rate Relief</h2>
-    <p class="govuk-body">If your application is successful, you might be able to claim Rate Relief. You should contact your local authority to apply.</p>
+    <p class="govuk-body">If this application is successful, the applicant might be able to claim Rate Relief. They should contact their local authority to apply.</p>
   </div>
 {% else %}
   <div class="govuk-!-margin-top-6">
     <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Council Tax Reduction</h2>
-    <p class="govuk-body">If your application is successful, you might be able to claim Council Tax Reduction. You should contact your local authority to apply.</p>
+    <p class="govuk-body">If this application is successful, the applicant might be able to claim Council Tax Reduction. They should contact their local authority to apply.</p>
   </div>
 {% endif %}
 </div>
@@ -336,14 +337,13 @@ data["home-shared-housing-benefit-apply"] == "Yes"
 {% if data['resides-in-uk'] == 'Northern-Ireland' %}
   <div class="govuk-!-margin-top-6">
     <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
-    <p class="govuk-body">You might be able to claim <a href="https://www.nidirect.gov.uk/articles/carers-allowance">Carer's Allowance</a> if you care for someone for 35 hours or more a week.</p>
+    <p class="govuk-body">The applicant might be able to claim <a href="https://www.nidirect.gov.uk/articles/carers-allowance">Carer's Allowance</a> if they care for someone for 35 hours or more a week.</p>
   </div>
 
 {% else %}
   <div class="govuk-!-margin-top-6">
     <h2 class="govuk-heading-xm govuk-!-margin-bottom-3">Carer's Allowance</h2>
-    <p class="govuk-body">You might be able to claim
-      <a href="https://www.gov.uk/carers-allowance">Carer's Allowance</a>if you care for someone for 35 hours or more a week.</p>
+    <p class="govuk-body">The applicant might be able to claim <a href="https://www.gov.uk/carers-allowance">Carer's Allowance</a>if they care for someone for 35 hours or more a week.</p>
   </div>
 {% endif %}
 </div>
