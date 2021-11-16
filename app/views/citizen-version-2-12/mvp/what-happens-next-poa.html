@@ -124,7 +124,9 @@
   data["home-care-home-check-still-own"] == "Yes"%}
 
           <h3 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-          <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
+          <p class="govuk-!-font-size-24">
+            We need some more information for the application.
+            We will contact you from {% if data['resides-in-uk'] == 'Northern-Ireland' %} 0800 012 1713 {% else %} 0800 023 2076 {% endif %} by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
 
           {% include "citizen-version-2-12/mvp/callback-list.html" %}
 
@@ -136,8 +138,8 @@
           {% elif data["eu-filter"] == "Applied for settlement" %}
 
           <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
-          <p class="govuk-!-font-size-24">The EU Settlement Scheme will tell us once your status has been awarded. We will then contact you to check the details of your application.</p>
-          <p class="govuk-!-font-size-24">If you hear from the EU Settlement Scheme before we contact you, you can call the Pension Credit claim line.</p>
+          <p class="govuk-!-font-size-24">The EU Settlement Scheme will tell us once the applicant’s status has been awarded. We will then contact you to check the details of their application.</p>
+          <p class="govuk-!-font-size-24">If you or the applicant hear from the EU Settlement Scheme before we contact you, you can call the Pension Credit claim line.</p>
           <h2 class="govuk-heading-m govuk-!-margin-top-4">Pension Credit claim line</h2>
 
 
@@ -151,14 +153,9 @@
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Monday to Friday, 10:00am to 4:00pm (closed on bank holidays).<br><a href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Contacting 08 and 03 numbers.</a></p>
 
 
-
-
-            <!---- UK ---->{% else %}
-
-            {% include "layout-assisted-digitalB-content.html" %}
-
-
-            <!---- COUNTRY END ---->{% endif %}
+          <!---- UK ---->{% else %}
+            {% include "contact-deails-ni" %}
+          <!---- COUNTRY END ---->{% endif %}
 
 {% else %}
 
