@@ -26,6 +26,11 @@
 {% endif %}
 <li class="govuk-!-margin-bottom-4"><strong> equity release.</strong>  We will ask for information from an annual statement from the provider. We will also ask for details of any loan taken to buy the equity release product</li>
 
+{% if data["children-ctc"] == "No" %}
+{% endif %}
+<li class="govuk-!-margin-bottom-4"><strong>the children in the household. </strong>We will ask XXX</li>
+
+
 {% if data["non-deps-living-with-you"] == "Yes" %}
 {% endif %}
 <li class="govuk-!-margin-bottom-4"><strong>the other people that live in the household. </strong>We will ask their names, dates of birth and any earnings they have</li>
