@@ -140,11 +140,20 @@
               </li>
 
 
-
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="children-check-yn" aria-describedby="eligibility-completed">
+                Children in the household
+              </a>
+              {% if data["claim-date-complete"] %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
+              {% else %}
+                <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
+              {% endif %}
+            </li>
 
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="non-deps-living-with-you" aria-describedby="eligibility-completed">
-                  non-deps-living-with-you
+                  Over 18s living with you
               </a>
               {% if data["claim-date-complete"] %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
