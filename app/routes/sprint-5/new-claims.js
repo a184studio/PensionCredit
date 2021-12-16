@@ -1,7 +1,7 @@
 const express = require('express')
 const { getStatePensionDate } = require('get-state-pension-date')
-const differenceInDays = require('date-fns/difference_in_days')
-const startOfDay = require('date-fns/start_of_day')
+const differenceInDays = require('date-fns/differenceInDays')
+const startOfDay = require('date-fns/startOfDay')
 
 const router = new express.Router()
 const baseUrl = '/sprint-5/new-claims'

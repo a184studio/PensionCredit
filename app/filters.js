@@ -1,5 +1,5 @@
 const converter = require('number-to-words')
-const differenceInDays = require('date-fns/difference_in_days')
+const differenceInDays = require('date-fns/differenceInDays')
 
 const months = [
   'January',
