@@ -7,6 +7,13 @@
 
 <script src="/public/javascripts/pc-accordion.js"></script>
 <script src="/public/javascripts/application.js"></script>
+<script src="/public/javascripts/explore-header.js"></script>
+
+<script>
+  // Find first header module to enhance.
+  var $header = document.querySelector('[data-module="govuk-header"]');
+  new GOVUK.Modules.Header($header).init();
+</script>
 
 {% if useAutoStoreData %}
   <script src="/public/javascripts/auto-store-data.js"></script>
