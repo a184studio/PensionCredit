@@ -293,6 +293,8 @@ $search-icon-size: 20px;
   @include govuk-media-query($from: desktop) {
     display: block;
     float: right;
+    list-style-type:none
+
   }
 }
 
