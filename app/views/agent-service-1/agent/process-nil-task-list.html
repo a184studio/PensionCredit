@@ -54,8 +54,8 @@
         <a class="app-task-list__task-name" href="process-nil-idv" aria-describedby="task-1">
           Contact history or previous contact
         </a>
-        {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["nil-task-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["nil-task-2-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["nil-task-2-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
     </ul>
@@ -70,8 +70,8 @@
         <a class="app-task-list__task-name" href="process-nil-idv" aria-describedby="task-1">
           Contact information
         </a>
-        {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["nil-task-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["nil-task-3-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["nil-task-3-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
     </ul>
@@ -85,21 +85,34 @@
     </div>
   </div>
 
+  {% if data["nil-task-1-outcome"] %}
+
   <div class="govuk-grid-row govuk-!-margin-top-6">
     <div class="govuk-grid-column-three-quarters">
-      <form action="login-router" method="post" class="form">
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting an outcome</h1>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
-        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">or</p> -->
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Failed will push this claim back to BAU and an other agent will pick this up</p>
 
-        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Failed will push this claim back to BAU and an other agent will pick this up</p> -->
+        {{ govukButton({
+          text: "Submit failure"
+        }) }}
+
+  {% elif data["nil-task-1-passed"] %}
+
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting an outcome</h1>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
+
+  {{ govukButton({
+    text: "Confirm nil award"
+  }) }}
+
+
+        {% else %}
+
+        {% endif %}
       </div>
     </div>
 
-    {{ govukButton({
-      text: "Confirm nil award / Submit failure"
-    }) }}
   </form>
 
 {% endblock %}
