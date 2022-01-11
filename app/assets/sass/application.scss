@@ -249,6 +249,27 @@ $govuk-new-link-styles: true;
 
 }
 
+.app-task-list__nil-task-not-done {
+  text-transform: capitalize;
+  float: right;
+  color: #6f777b;
+  background-color: #dee0e2;
+}
+
+.app-task-list__nil-task-passed {
+  text-transform: capitalize;
+  float: right;
+  color: #fff;
+  background-color: #1d70b8;
+}
+
+.app-task-list__nil-task-failed {
+  text-transform: capitalize;
+  float: right;
+  color: #fff;
+  background-color: #d4351c;
+}
+
 .govuk-tag--current {
 background-color: #df3034;
 color: #ffffff;

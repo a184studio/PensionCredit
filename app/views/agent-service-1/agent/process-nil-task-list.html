@@ -15,7 +15,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["search"]}}</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
     </div>
   </div>
 
@@ -32,23 +32,70 @@
     </h2>
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="process-nil-idv" aria-describedby="task-1">
+        <a class="app-task-list__task-name" href="process-nil-task-1" aria-describedby="task-1">
           Check IDV
         </a>
-        {% if data["task-1-complete"] %}
-          <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Done</strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Not done</strong>
-        {% endif %}      </li>
+        {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["nil-task-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
+        {% endif %}
+
+      </li>
 
     </ul>
     </li>
+
+    <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">2.</span>IDOCs
+    </h2>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="process-nil-idv" aria-describedby="task-1">
+          Contact history or previous contact
+        </a>
+        {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["nil-task-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
+        {% endif %}
+    </ul>
+    </li>
+
+    <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">3.</span>Changes in data supplied
+    </h2>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="process-nil-idv" aria-describedby="task-1">
+          Contact information
+        </a>
+        {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["nil-task-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
+        {% endif %}
+    </ul>
+    </li>
     </ol>
+
+
 
         <!------------ ––– ------------>
 
     </div>
   </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-6">
+    <div class="govuk-grid-column-three-quarters">
+      <form action="login-router" method="post" class="form">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting an outcome</h1>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">or</p> -->
+
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Failed will push this claim back to BAU and an other agent will pick this up</p> -->
+      </div>
+    </div>
 
     {{ govukButton({
       text: "Confirm nil award / Submit failure"
