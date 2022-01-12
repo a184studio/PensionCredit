@@ -69,11 +69,21 @@ router.post(`${baseUrl}/applicant-blind-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/partner-blind-doc-router`, (req, res) => {
+  const applicantBlind = req.session.data['partner-blind-doc']
+
+  if (applicantBlind === 'Yes') {
+    res.redirect(`${baseUrl}/single-joint-check`)
+  } else {
+    res.redirect(`${baseUrl}/partner-sight-impaired-date`)
+  }
+})
+
 router.post(`${baseUrl}/partner-blind-router`, (req, res) => {
   const partnerBlind = req.session.data['partner-blind-check']
 
   if (partnerBlind === 'Yes') {
-    res.redirect(`${baseUrl}/partner-sight-impaired-date`)
+    res.redirect(`${baseUrl}/partner-sight-impaired-doc`)
   } else {
     res.redirect(`${baseUrl}/home-hospital-check`)
   }

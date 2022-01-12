@@ -19,19 +19,23 @@
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
-      {% set partnerBlindDate %}
+      {% set legendH1 %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What date was your partner registered blind or severely sight impaired?</h1>
+      {% endset -%}
+
+      
           {{ govukDateInput({
             id: "partnerBlindDate",
             namePrefix: "partnerBlindDate",
             fieldset: {
               legend: {
-                text: "What date was your partner registered blind or severely sight impaired?",
+                html: legendH1,
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--m"
               }
             },
             hint: {
-              text: "For example, 31 3 2020."
+              text: "For example, 31 3 2020"
             },
             items: [
               {
@@ -51,41 +55,6 @@
               }
             ]
           }) }}
-
-          {% endset -%}
-          
-      {% set legendH1 %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you know the date your partner was registered blind or severely sight impaired?</h1>
-      {% endset -%}
-
-      {{ govukRadios({
-        idPrefix: "partner-blind-date",
-        name: "partner-blind-date",
-        fieldset: {
-          legend: {
-            html: legendH1,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
-          }
-        },
-        classes: "govuk-radios",
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["partner-blind-date"] == "Yes"),
-            conditional: {
-              html: partnerBlindDate
-            }
-              },
-                    
-          {
-            value: "No",
-            text: "No",
-            checked: (data["partner-blind-date"] == "No")
-          }
-        ]
-      }) }}
 
       {{ govukButton({
         text: "Continue"
