@@ -38,19 +38,18 @@
 
                     <thead class="govuk-table__head">
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-33-percent">Calim ID</td>
-                        <td class="govuk-table__cell govuk-33-percent">Date?</td>
-                        <td class="govuk-table__cell govuk-33-percent">Nil award outcome</td>
+                        <td class="govuk-table__cell govuk-30-percent">Date?</td>
+                        <td class="govuk-table__cell govuk-40-percent">Calim ID</td>
+                        <td class="govuk-table__cell govuk-30-percent">Nil award outcome</td>
                       </tr>
                       </thead>
 
                       <tr class="govuk-table__row">
+                        <td class="govuk-table__cell table-spacer"> DD / MM / YY</td>
                         <td class="govuk-table__cell table-spacer"><a href="process-nil-outcome">0001</a></td>
                           <!-- {{data["api-claim-outcome-details"]}} -->
-                      </td>
 
-                        <td class="govuk-table__cell table-spacer"> DD / MM / YY</td>
-                        <td class="govuk-table__cell table-spacer">
+                      <td class="govuk-table__cell table-spacer">
 
                           {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-case-failed" id="eligibility-completed">Failed</strong>
                           {% elif data["nil-task-1-passed"] %}     <strong class="govuk-tag app-task-list__nil-case-passed" id="eligibility-completed">Passed</strong>
@@ -62,8 +61,8 @@
                         </tr>
 
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell table-spacer"><a href="#">0002</a></td>
                         <td class="govuk-table__cell table-spacer"> DD / MM / YY</td>
+                        <td class="govuk-table__cell table-spacer"><a href="#">0002</a></td>
 
                         <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__nil-case-passed" id="eligibility-completed">Passed</strong>
                         </tr>
@@ -71,10 +70,8 @@
 
 
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell table-spacer"><a href="#">0003</a></td>
-
                         <td class="govuk-table__cell table-spacer"> DD / MM / YY</td>
-
+                        <td class="govuk-table__cell table-spacer"><a href="#">0003</a></td>
                         <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__nil-case-passed" id="eligibility-completed">Passed</strong>
                         </tr>
 
