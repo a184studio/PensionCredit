@@ -19,13 +19,16 @@
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
 
-      {% set blindDateCheck %}
+      {% set legendH1 %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What date were you registered blind or severely sight impaired?</h1>
+      {% endset -%}
+      
           {{ govukDateInput({
             id: "blindDate",
             namePrefix: "blindDate",
             fieldset: {
               legend: {
-                text: "What date were you registered blind or severely sight impaired?",
+                html: legendH1,
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--m"
               }
@@ -52,40 +55,12 @@
             ]
           }) }}
 
-          {% endset -%}
-          
-      {% set legendH1 %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you know the date you were registered blind or severely sight impaired?</h1>
-      {% endset -%}
+        
 
-      {{ govukRadios({
-        idPrefix: "contact-blind-date",
-        name: "contact-blind-date",
-        fieldset: {
-          legend: {
-            html: legendH1,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
-          }
-        },
-        classes: "govuk-radios",
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: (data["contact-blind-date"] == "Yes"),
-            conditional: {
-              html: blindDateCheck
-            }
-              },
-                    
-          {
-            value: "No",
-            text: "No",
-            checked: (data["contact-blind-date"] == "No")
-          }
-        ]
-      }) }}
+          
+    
+
+
 
       {{ govukButton({
         text: "Continue"

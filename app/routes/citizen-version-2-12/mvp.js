@@ -49,11 +49,21 @@ router.use(`${baseUrl}/letter-17-nov.pdf`, express.static(path.resolve('app/view
 //   }
 // })
 
+router.post(`${baseUrl}/applicant-blind-doc-router`, (req, res) => {
+  const applicantBlind = req.session.data['contact-blind-doc']
+
+  if (applicantBlind === 'Yes') {
+    res.redirect(`${baseUrl}/single-joint-check`)
+  } else {
+    res.redirect(`${baseUrl}/claimant-sight-impaired-date`)
+  }
+})
+
 router.post(`${baseUrl}/applicant-blind-router`, (req, res) => {
   const applicantBlind = req.session.data['contact-blind-check']
 
   if (applicantBlind === 'Yes') {
-    res.redirect(`${baseUrl}/claimant-sight-impaired-date`)
+    res.redirect(`${baseUrl}/claimant-sight-impaired-doc`)
   } else {
     res.redirect(`${baseUrl}/single-joint-check`)
   }
