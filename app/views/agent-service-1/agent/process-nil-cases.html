@@ -15,7 +15,7 @@
     <form action="login-router" method="post" class="form">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Nil award cases</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Filed held for X months. Nil awards held for 14 months</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Nil awards held for 14 months, failed are held for X weeks</p>
 
     </div>
   </div>
@@ -31,39 +31,48 @@
 
                                 <thead class="govuk-table__head">
                                   <tr class="govuk-table__row">
-                                    <td class="govuk-table__cell govuk-26-percent">Award ID or NINO TBC</td>
-                                    <td class="govuk-table__cell govuk-50-percent">Adviser notes</td>
-                                    <td class="govuk-table__cell govuk-26-percent">Adviser check</td>
+                                    <td class="govuk-table__cell govuk-20-percent">Award ID / NINO</td>
+                                    <td class="govuk-table__cell govuk-40-percent">Name?</td>
+                                    <td class="govuk-table__cell govuk-20-percent">Date?</td>
+                                    <td class="govuk-table__cell govuk-30-percent">Nil award outcome</td>
                                   </tr>
                                   </thead>
 
                                   <tr class="govuk-table__row">
-                                    <td class="govuk-table__cell table-spacer"><a href="api-claim-review-pc">0001</a></td>
-                                    <td class="govuk-table__cell table-spacer">{{data["api-claim-outcome-details"]}}</td>
+                                    <td class="govuk-table__cell table-spacer"><a href="process-nil-task-list">0001</a></td>
+                                    <td class="govuk-table__cell table-spacer"> Jeff Bridges
+                                      <!-- {{data["api-claim-outcome-details"]}} -->
+                                    </td>
+                                    <td class="govuk-table__cell table-spacer"> DD / MM / YY</td>
                                     <td class="govuk-table__cell table-spacer">
 
-                                      {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-                                      {% elif data["nil-task-1-passed"] %}
+                                      {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-case-failed" id="eligibility-completed">Failed</strong>
+                                      {% elif data["nil-task-1-passed"] %}     <strong class="govuk-tag app-task-list__nil-case-passed" id="eligibility-completed">Passed</strong>
                                       {% endif %}
                                       <!-- <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong> -->
-                                      <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+                                      <!-- <strong class="govuk-tag app-task-list__nil-case-passed" id="eligibility-completed">Passed</strong> -->
 
                                     </td>
                                     </tr>
 
                                   <tr class="govuk-table__row">
                                     <td class="govuk-table__cell table-spacer"><a href="#">0002</a></td>
-                                    <td class="govuk-table__cell table-spacer">.</td>
-                                    <td class="govuk-table__cell table-spacer"><strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">Correct</strong> </tr>
+                                    <td class="govuk-table__cell table-spacer">John Goodman</td>
+                                    <td class="govuk-table__cell table-spacer"> DD / MM / YY</td>
+
+                                    <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__nil-case-passed" id="eligibility-completed">Passed</strong>
+                                    </tr>
 
 
 
                                   <tr class="govuk-table__row">
                                     <td class="govuk-table__cell table-spacer"><a href="#">0003</a></td>
 
-                                    <td class="govuk-table__cell table-spacer">.</td>
-                                    <td class="govuk-table__cell table-spacer"><strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">Correct</strong> </tr>
+                                    <td class="govuk-table__cell table-spacer">Steve Buscemi</td>
+                                    <td class="govuk-table__cell table-spacer"> DD / MM / YY</td>
 
+                                    <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__nil-case-passed" id="eligibility-completed">Passed</strong>
+                                    </tr>
 
                                   </table>
 
