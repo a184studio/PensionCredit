@@ -70,10 +70,10 @@ router.post(`${baseUrl}/applicant-blind-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/partner-blind-doc-router`, (req, res) => {
-  const applicantBlind = req.session.data['partner-blind-doc']
+  const partnerBlind = req.session.data['partner-blind-doc']
 
-  if (applicantBlind === 'Yes') {
-    res.redirect(`${baseUrl}/single-joint-check`)
+  if (partnerBlind === 'Yes') {
+    res.redirect(`${baseUrl}/home-hospital-check`)
   } else {
     res.redirect(`${baseUrl}/partner-sight-impaired-date`)
   }

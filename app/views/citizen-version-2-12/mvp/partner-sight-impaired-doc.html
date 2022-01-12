@@ -28,8 +28,8 @@
      
 
       {{ govukRadios({
-        idPrefix: "partner-blind-date",
-        name: "partner-blind-date",
+        idPrefix: "partner-blind-doc",
+        name: "partner-blind-doc",
         fieldset: {
           legend: {
             html: legendH1,
@@ -42,7 +42,7 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["partner-blind-date"] == "Yes"),
+            checked: (data["partner-blind-doc"] == "Yes"),
             conditional: {
               html: partnerBlindDate
             }
@@ -51,7 +51,7 @@
           {
             value: "No",
             text: "No",
-            checked: (data["partner-blind-date"] == "No")
+            checked: (data["partner-blind-doc"] == "No")
           }
         ]
       }) }}
