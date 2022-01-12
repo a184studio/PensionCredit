@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in - Pension Credit
+{% endblock %}
+
+{% block header %}
+{% include "explore-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Nil award cases</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Filed held for X months. Nil awards held for 14 months</p>
+
+    </div>
+  </div>
+
+
+
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2"><table class="govuk-table">
+
+                                <thead class="govuk-table__head">
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell govuk-26-percent">Award ID or NINO TBC</td>
+                                    <td class="govuk-table__cell govuk-50-percent">Adviser notes</td>
+                                    <td class="govuk-table__cell govuk-26-percent">Adviser check</td>
+                                  </tr>
+                                  </thead>
+
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer"><a href="api-claim-review-pc">0001</a></td>
+                                    <td class="govuk-table__cell table-spacer">{{data["api-claim-outcome-details"]}}</td>
+                                    <td class="govuk-table__cell table-spacer">
+
+                                      {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+                                      {% elif data["nil-task-1-passed"] %}
+                                      {% endif %}
+                                      <!-- <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong> -->
+                                      <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+
+                                    </td>
+                                    </tr>
+
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer"><a href="#">0002</a></td>
+                                    <td class="govuk-table__cell table-spacer">.</td>
+                                    <td class="govuk-table__cell table-spacer"><strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">Correct</strong> </tr>
+
+
+
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer"><a href="#">0003</a></td>
+
+                                    <td class="govuk-table__cell table-spacer">.</td>
+                                    <td class="govuk-table__cell table-spacer"><strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">Correct</strong> </tr>
+
+
+                                  </table>
+
+
+                                  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+                                  <nav class="moj-pagination" id="pagination-label">
+
+                                  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+                                  <ul class="moj-pagination__list">
+                                  <li class="moj-pagination__item  moj-pagination__item--prev">
+                                    <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+                                  </li>
+
+                                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1">1</a></li>
+
+                                  <li class="moj-pagination__item moj-pagination__item--active">2</li>
+
+                                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
+
+                                  <li class="moj-pagination__item  moj-pagination__item--next">
+                                    <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                                  </li>
+                                  </ul>
+                                  <p class="moj-pagination__results">Showing <b>1</b> to <b>3</b> of <b>3</b> results</p>
+                                  </nav>
+
+
+
+                    </div>
+                  </div>
+    </form>
+{% endblock %}
