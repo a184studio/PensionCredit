@@ -24,6 +24,7 @@ function makeAStay(data) {
 router.use(`${baseUrl}/claim.pdf`, express.static(path.resolve('app/views/citizen-version-2-8-ur/mvp/claim.pdf'))) // ../ back up a directory
 router.use(`${baseUrl}/abc.pdf`, express.static(path.resolve('app/views/citizen-version-2-12/mvp/abc.pdf'))) // ../ back up a directory
 router.use(`${baseUrl}/letter-17-nov.pdf`, express.static(path.resolve('app/views/citizen-version-2-12/mvp/letter-17-nov.pdf'))) // ../ back up a directory
+router.use(`${baseUrl}/letter-13-jan.pdf`, express.static(path.resolve('app/views/citizen-version-2-12/mvp/letter-13-jan.pdf'))) // ../ back up a directory
 
 // —————————————————————————————————
 
