@@ -32,7 +32,18 @@ router.post(`${baseUrl}/login-router`, (req, res) => {
   }
 })
 
-
+// router.post(`${baseUrl}/ur-search-router`, (req, res) => {
+//   const niRouter = req.session.data['ur-search']
+//
+//   if (niRouter === 'P1') {
+//     res.redirect(`${baseUrl}/ur-record`)
+//   } else if (niRouter === 'P2') {
+//     res.redirect(`${baseUrl}/ur-record`)
+//
+//   } else {
+//     res.redirect(`${baseUrl}/fail`)
+//   }
+// })
 
 
 module.exports = router

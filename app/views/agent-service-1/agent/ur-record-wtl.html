@@ -1,0 +1,81 @@
+{% extends "layout-nav.html" %}
+
+{% block pageTitle %}
+  PC: Name Name
+
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-ur.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["ur-search"]}}</p>
+
+    </div>
+  </div>
+
+
+  {% include "agent-service-1/agent/ur-navigation.html" %}
+
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-6">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-2">Where they live</h3>
+
+  </div>
+
+      <div class="govuk-grid-column-one-half">
+
+        {% if data["ur-search"] == "P1" %}
+
+            {% if data["ur-p1-record-wtl-address-post-code"] %}
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">New address line 1</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">New address line 2</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">New address line 3</p>
+
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">{{ data ["ur-p1-record-wtl-address-post-code"]}}</p>
+
+            {% else %}
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">221b Baker Street</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Marylebone</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">London</p>
+
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">NW1 6XE</p>
+            {% endif %}
+
+        {% else %}
+
+            {% if data["ur-p2-record-wtl-address-post-code"] %}
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">New address line 1</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">New address line 2</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">New address line 3</p>
+
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">{{ data ["ur-p2-record-wtl-address-post-code"]}}</p>
+
+            {% else %}
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">221b Baker Street</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Marylebone</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">London</p>
+
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">NW1 6XE</p>
+
+            </div>
+            {% endif %}
+
+        {% endif %}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="ur-record-wtl-address" class="govuk-link" rel="noreferrer noopener" target="">Change an address</a></p>
+
+
+      </div>
+
+    </form>
+{% endblock %}

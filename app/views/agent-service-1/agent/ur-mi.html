@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in - Pension Credit
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-ur.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Service statistics</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">All the cases that have been done by you</p>
+
+    </div>
+  </div>
+
+
+
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                </div>
+              </div>
+
+
+                <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-9">
+                  <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong>Total claims</strong></p>
+                </div>
+
+                <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-2 govuk-body-left-aligned">
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Received</strong></p>
+                  <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-margin-bottom-2">1,000</p>
+                </div>
+
+                <div class="govuk-grid-column-one-quarter govuk-body-left-aligned">
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Completed</strong></p>
+                  <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-margin-bottom-2">750</p>
+                </div>
+
+                <div class="govuk-grid-column-one-quarters govuk-body-left-aligned">
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Outstanding</strong></p>
+                  <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-margin-bottom-2">250</p>
+                </div>
+              </div>
+
+
+                    </div>
+                  </div>
+    </form>
+{% endblock %}
