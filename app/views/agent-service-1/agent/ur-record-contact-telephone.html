@@ -17,14 +17,14 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="ur-record-contact" method="post" class="form">
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Contact details</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Telephone numbers</h2>
 
       {% set legendName1 %}
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Landline telephone number</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Landline telephone</h3>
       {% endset %}
 
       {% set legendName2 %}
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Mobile telephone number</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Mobile telephone</h3>
       {% endset %}
 
         {% if data["ur-search"] == "P1" %}
@@ -89,7 +89,7 @@
 
 
       {{ govukButton({
-        text: "Continue"
+        text: "Confirm or save?"
       }) }}
     </div>
   </div>
