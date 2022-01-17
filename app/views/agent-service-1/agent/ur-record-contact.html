@@ -8,6 +8,7 @@
 {% block header %}
  {% include "explore-header-ur.html" %}
 {% endblock %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
 {% block content %}
 
@@ -17,7 +18,47 @@
     <form action="login-router" method="post" class="form">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
+      {% if data["ur-search"] == "P1" %}
+
+        {% if data["ur-p1-record-contact-telephone-LL"]  %}
+
+        {% set html %}
+          <p class="govuk-body">Contact telephone numbers have been chagned</p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'success'
+        }) }}
+
+        {% else %}
+        {% endif %}
+      {% else %}
+      {% endif %}
+
+      {% if data["ur-search"] == "P2" %}
+
+        {% if data["ur-p2-record-contact-telephone-LL"]  %}
+
+        {% set html %}
+          <p class="govuk-body">Contact telephone numbers have been chagned</p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'success'
+        }) }}
+
+        {% else %}
+        {% endif %}
+      {% else %}
+      {% endif %}
+
+
+
+      {% if data["ur-search"] == "P2" %}<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Julianne Moore</h1>
+      {% else %}                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
+      {% endif %}
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["ur-search"]}}</p>
 
     </div>
