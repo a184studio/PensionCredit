@@ -21,7 +21,7 @@
 
 
       {% set legendH1 %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Were you registered blind or severely sight impaired on {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}?</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Were you registered blind or severely sight impaired on or before {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}?</h1>
       {% endset -%}
 
       {{ govukRadios({
