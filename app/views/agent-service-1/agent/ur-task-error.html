@@ -12,9 +12,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
+
+    {% if data["ur-task-error"] %}
+
+    <form action="ur-task-done" method="post" class="form">
+
+
+    {% else %}
     <form action="ur-error" method="post" class="form">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This is a task</h1>
+    {% endif %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This is a task you need to do for Philip Seymour Hoffman</h1>
 
 
       {{ govukCheckboxes({
@@ -23,7 +33,7 @@
         classes: "govuk-checkboxes--small",
         fieldset: {
           legend: {
-            text: "Pretend you have things you need to check",
+            text: "Which of these are wrong?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
