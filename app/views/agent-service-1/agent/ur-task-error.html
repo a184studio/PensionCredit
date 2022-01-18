@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in - Pension Credit
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-ur.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="ur-error" method="post" class="form">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This is a task</h1>
+
+
+      {{ govukCheckboxes({
+        idPrefix: "ur-task-error",
+        name: "ur-task-error",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Pretend you have things you need to check",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+            },
+            hint: {
+              text: "Select all that apply"
+
+
+        },
+        items: [
+          {
+            value: "Name",
+            text: "Name",
+            checked: data['ur-task-error'] == "Name"
+          },
+          {
+            value: "Date of birth",
+            text: "Date of birth",
+            checked: data['ur-task-error'] == "Date of birth"
+          },
+          {
+            value: "X",
+            text: "X",
+            checked: data['ur-task-error'] == "X"
+          },
+          {
+            value: "Y",
+            text: "Y",
+            checked: data['ur-task-error'] == "Y"
+          },
+          {
+            value: "Z",
+            text: "Z",
+            checked: data['ur-task-error'] == "Z"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </div>
+    </form>
+{% endblock %}
