@@ -1,0 +1,78 @@
+{% extends "layout-nav.html" %}
+
+{% block pageTitle %}
+  PC: Name Name
+
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["search"]}}</p>
+
+    </div>
+  </div>
+
+
+  {% include "agent-service-1/agent/navigation-2.html" %}
+
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-6">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-2">Personal Details</h3>
+
+  </div>
+
+      <div class="govuk-grid-column-one-half">
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Name</h3>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Title: Mr</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">First name: Jeff</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Middle name:N/A </p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">First urname : Bridges</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Change</a></p>
+
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Address</h3>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">House number: 30 </p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Street name: Ender road</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Town/city: London</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">County : London</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Postcode : SE1 1AA</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Language phone preference: NEW</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Change</a></p>
+
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Contact</h3>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Landline: 02071231818</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Mobile: 07123456789</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Change</a></p>
+
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Language contact preferences</h3>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Calls: Polish</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">letters: Polish</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Change</a></p>
+
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Blind or site impaired</h3>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Blind or site impaired: No</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Registered date: N/A</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Change</a></p>
+
+
+
+
+      </div>
+
+    </form>
+{% endblock %}
