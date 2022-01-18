@@ -30,7 +30,33 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-Was it the same?
+        {{ govukRadios({
+          idPrefix: "process-nil-task-3-process",
+          name: "process-nil-task-3-process",
+          fieldset: {
+            legend: {
+              text: "Example task 3: Anything wrong?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-0"
+            }
+          },
+          hint: {
+            html: hintLegend
+          },
+          classes: "govuk-radios",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["process-nil-task-3-process"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["process-nil-task-3-process"] == "No")
+            }
+          ]
+        }) }}
 
 
 

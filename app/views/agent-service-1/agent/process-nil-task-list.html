@@ -19,6 +19,12 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
 
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8"><a href="">Open submitted claim [opens in new tab]</a></p>
+
+
+
+
     </div>
   </div>
 
@@ -49,6 +55,7 @@
     </li>
 
     {% if data["nil-task-1-outcome"] %}
+
     {% else %}
 
     <li>
@@ -60,10 +67,11 @@
         <a class="app-task-list__task-name" href="process-nil-task-2" aria-describedby="task-2">
           Contact history or previous contact
         </a>
-        {% if data["nil-task-2-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["nil-task-2-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["nil-process-task-2-idoc"] == "Yes" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["nil-process-task-2-idoc"] == "No" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
+
     </ul>
     </li>
     {% endif %}
@@ -78,10 +86,10 @@
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-nil-task-3" aria-describedby="task-3">
-          Contact information
+          Do a third thing
         </a>
-        {% if data["nil-task-3-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["nil-task-3-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["process-nil-task-3-process"] == "Yes" %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["process-nil-task-3-process"] == "No" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
     </ul>
@@ -95,7 +103,7 @@
     </div>
   </div>
 
-  {% if data["nil-task-1-outcome"] %}
+  {% if data["nil-task-1-outcome"] or data["nil-process-task-2-idoc"] == "Yes" or data["process-nil-task-3-process"] == "Yes" %}
 
   <div class="govuk-grid-row govuk-!-margin-top-6">
     <div class="govuk-grid-column-three-quarters">
@@ -108,12 +116,7 @@
           classes: "govuk-!-margin-right-2"
         }) }}
 
-        {{ govukButton({
-          text: "Exit process early",
-          classes: "govuk-button--secondary"
-        }) }}
-
-  {% elif data["nil-task-1-passed"] and data["nil-task-2-passed"] and data["nil-task-3-passed"] %}
+  {% elif data["nil-task-1-passed"] and data["nil-process-task-2-idoc"] == "No" and data["process-nil-task-3-process"] == "No" %}
 
   <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting an outcome</h1>
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
@@ -123,10 +126,10 @@
     classes: "govuk-!-margin-right-2"
   }) }}
 
-  {{ govukButton({
+  <!-- {{ govukButton({
     text: "Exit process early",
     classes: "govuk-button--secondary"
-  }) }}
+  }) }} -->
 
 
         {% else %}
@@ -135,7 +138,6 @@
           text: "Exit process early",
           classes: "govuk-button--secondary"
         }) }}
-
 
         {% endif %}
       </div>
