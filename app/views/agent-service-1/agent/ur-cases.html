@@ -38,10 +38,12 @@
                                   </tr>
                                   </thead>
 
+                                  {% if data["ur-task-error"] %}
+
                                   <tr class="govuk-table__row">
                                     <td class="govuk-table__cell table-spacer"> 25 / 01 / 2022</td>
-                                    <td class="govuk-table__cell table-spacer"><a href="ur-record-awards"></a>0001</td>
-                                    <td class="govuk-table__cell table-spacer"> Jeff Bridges
+                                    <td class="govuk-table__cell table-spacer"><a href="ur-task-error">0001</a></td>
+                                    <td class="govuk-table__cell table-spacer"> Task 3
                                       <!-- {{data["api-claim-outcome-details"]}} -->
                                     </td>
                                     <td class="govuk-table__cell table-spacer">
@@ -52,6 +54,10 @@
 
                                     </td>
                                     </tr>
+
+                                  {% else %}
+
+                                  {% endif %}
 
                                   <tr class="govuk-table__row">
                                     <td class="govuk-table__cell table-spacer"> 03 / 01 / 2022</td>
