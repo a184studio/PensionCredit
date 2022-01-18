@@ -104,7 +104,13 @@
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Failed will push this claim back to BAU and an other agent will pick this up</p>
 
         {{ govukButton({
-          text: "Submit failure"
+          text: "Submit",
+          classes: "govuk-button--secondary govuk-!-margin-right-2"
+        }) }}
+
+        {{ govukButton({
+          text: "Exit process early",
+          classes: "govuk-button--secondary"
         }) }}
 
   {% elif data["nil-task-1-passed"] and data["nil-task-2-passed"] and data["nil-task-3-passed"] %}
@@ -113,11 +119,23 @@
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
 
   {{ govukButton({
-    text: "Confirm nil award"
+    text: "Submit",
+    classes: "govuk-!-margin-right-2"
+  }) }}
+
+  {{ govukButton({
+    text: "Exit process early",
+    classes: "govuk-button--secondary"
   }) }}
 
 
         {% else %}
+
+        {{ govukButton({
+          text: "Exit process early",
+          classes: "govuk-button--secondary"
+        }) }}
+
 
         {% endif %}
       </div>
