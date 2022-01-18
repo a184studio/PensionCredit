@@ -21,16 +21,9 @@
     <!------------H1 LEGEND------------>
 
     {% if data["system-outcome-selector"] == "Unlikely" %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on your income, it doesn't look like you currently meet the criteria for Pension Credit</h1>
-    <p class="govuk-body">You should ask about Pension Credit again if anyone moves into your home or you start getting:</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on your income, it doesn't look like you meet the criteria for Pension Credit</h1>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Would you like to find out what other help might be available with your living or housing costs?</p>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Attendance Allowance</li>
-      <li>Carer's Allowance</li>
-      <li>the middle or highest rate from the care component of Disability Living Allowance (DLA)</li>
-      <li>  the daily living component of Personal Independence Payment (PIP)</li>
-      <li> Armed Forces Independence Payment</li>
-    </ul>
 
     {% elif data["system-outcome-selector"] == "housing-costs" %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Because you pay towards your housing costs, we will need to go through a full application</h1>
@@ -88,9 +81,9 @@
                   <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h2 class="govuk-fieldset__heading">
-                          Would you like to find out about other help you may be able to get?
-                        </h2>
+                        <h1 class="govuk-fieldset__heading">
+                          Select the next action
+                        </h1>
                       </legend>
                       <div id="outcome-radios" class="govuk-hint">
 
@@ -131,7 +124,7 @@
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="outcome-radios" name="outcome-radios" type="radio" value="help">
                           <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                             <!--[OTHER HELP]--> Yes, caller wants to know more <!-- - route to more-help.html-->
+                             <!--[OTHER HELP]--> Find out about other help that is available <!-- - route to more-help.html-->
                           </label>
                         </div>
 
@@ -149,7 +142,7 @@
                           type="radio"
                           value="challenge">
                           <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                            <!--[END CALL]--> Caller asked for the information we used <!--- route to exit.html-->
+                            <!--[END CALL]--> Caller asked for details of the information we used <!--- route to exit.html-->
                           </label>
                         </div>
 
