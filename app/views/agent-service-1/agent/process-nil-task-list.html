@@ -42,7 +42,7 @@
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-nil-task-1" aria-describedby="task-1">
-          Check IDV
+          Check against what we hold and supplied
         </a>
         {% if data["nil-task-1-outcome"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
         {% elif data["nil-task-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
@@ -60,12 +60,12 @@
 
     <li>
     <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">2.</span>IDOCs
+      <span class="app-task-list__section-number">2.</span>Previous contact
     </h2>
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-nil-task-2" aria-describedby="task-2">
-          Contact history or previous contact
+          They might have made another claim
         </a>
         {% if data["nil-process-task-2-idoc"] == "Yes" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
         {% elif data["nil-process-task-2-idoc"] == "No" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
@@ -81,15 +81,15 @@
 
     <li>
     <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">3.</span>Task 3
+      <span class="app-task-list__section-number">3.</span>Verifing rules outcome
     </h2>
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-nil-task-3" aria-describedby="task-3">
-          Do a third thing
+          Check for gaps in the rules we use
         </a>
-        {% if data["process-nil-task-3-process"] == "Yes" %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["process-nil-task-3-process"] == "No" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["nil-task-3-fail"] %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["nil-task-3-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
     </ul>
@@ -103,7 +103,7 @@
     </div>
   </div>
 
-  {% if data["nil-task-1-outcome"] or data["nil-process-task-2-idoc"] == "Yes" or data["process-nil-task-3-process"] == "Yes" %}
+  {% if data["nil-task-1-outcome"] or data["nil-process-task-2-idoc"] == "Yes" or data["nil-task-3-fail"] %}
 
   <div class="govuk-grid-row govuk-!-margin-top-6">
     <div class="govuk-grid-column-three-quarters">
@@ -116,7 +116,7 @@
           classes: "govuk-!-margin-right-2"
         }) }}
 
-  {% elif data["nil-task-1-passed"] and data["nil-process-task-2-idoc"] == "No" and data["process-nil-task-3-process"] == "No" %}
+  {% elif data["nil-task-1-passed"] and data["nil-process-task-2-idoc"] == "No" and data["nil-task-3-passed"] %}
 
   <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting a passed outcome</h1>
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
