@@ -108,7 +108,7 @@
   <div class="govuk-grid-row govuk-!-margin-top-6">
     <div class="govuk-grid-column-three-quarters">
 
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting an outcome</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting a failed outcome</h1>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Failed will push this claim back to BAU and an other agent will pick this up</p>
 
         {{ govukButton({
@@ -118,7 +118,7 @@
 
   {% elif data["nil-task-1-passed"] and data["nil-process-task-2-idoc"] == "No" and data["process-nil-task-3-process"] == "No" %}
 
-  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting an outcome</h1>
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting a passed outcome</h1>
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
 
   {{ govukButton({
