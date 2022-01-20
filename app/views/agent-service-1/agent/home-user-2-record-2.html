@@ -18,8 +18,12 @@
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
+      {% if data["search"]  %}
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["search"]}}</p>
-    </div>
+      {% else %}
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
+      {% endif %}
+      </div>
   </div>
 
   {% include "agent-service-1/agent/navigation-1.html" %}
