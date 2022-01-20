@@ -100,7 +100,7 @@ router.post(`${baseUrl}/system-children-mac-check-router`, (req, res) => {
   const systemChildrenMacCheck = req.session.data['system-children-mac-check']
 
   if (systemChildrenMacCheck === 'single-claim') {
-    res.redirect(`${baseUrl}/housing-service-charge`)
+    res.redirect(`${baseUrl}/housing-type`)
   } else if (systemChildrenMacCheck === 'too-young') {
     res.redirect(`${baseUrl}/done-too-young`)
   } else if (systemChildrenMacCheck === 'children-mac') {
@@ -123,6 +123,34 @@ router.post(`${baseUrl}/claimant-national-insurance-router`, (req, res) => {
     res.redirect(`${baseUrl}/handover-early-ni`)
   }
 })
+
+router.post(`${baseUrl}/housing-type-router`, (req, res) => {
+  const housingType = req.session.data['housing-type']
+
+  if (housingType === 'You own it') { // Looking for this checked data
+    res.redirect(`${baseUrl}/housing-service-charge`) // If it finds it it does here
+  }
+  else if (housingType === 'You rent it') {
+    res.redirect(`${baseUrl}/housing-ground-rent`)
+  }
+  else if (housingType === 'Shared ownership') {
+    res.redirect(`${baseUrl}/housing-ground-rent`)
+  }
+  else if (housingType === 'You live in a caravan houseboat or mobile home') {
+    res.redirect(`${baseUrl}/housing-service-charge`)
+  }
+  else if (housingType === 'Live in someone elses home') {
+    res.redirect(`${baseUrl}/data-we-use`)
+  }
+  else if (housingType === 'Other accommodation') {
+    res.redirect(`${baseUrl}/housing-service-charge`)
+  }
+  else {
+    res.redirect(`${baseUrl}/blank`) // If nothing is selected it will go here.
+  }
+})
+
+
 
 router.post(`${baseUrl}/partner-national-insurance-router`, (req, res) => {
   const partnerNationalInsurance = req.session.data['partner-national-insurance']
@@ -215,7 +243,7 @@ router.post(`${baseUrl}/children-check-yn-router`, (req, res) => {
   if (childrenCheck === 'Yes') {
     res.redirect(`${baseUrl}/children-ctc`)
   } else {
-    res.redirect(`${baseUrl}/housing-service-charge`)
+    res.redirect(`${baseUrl}/housing-type`)
   }
 })
 
