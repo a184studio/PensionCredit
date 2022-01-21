@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-ur-2022.html" %}
 
 {% block pageTitle %}
   Sign in - Pension Credit
@@ -27,7 +27,7 @@
     <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Processing</h3> -->
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Group 1</h3>
 
-    {% if data["ur-task-error"] %}
+    {% if data["ur-new-claim-1"] %}
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"><a href="ur-new-claim-2" class="govuk-link" rel="noreferrer noopener" target=>Process a claim</a></p>
     {% else %}
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"><a href="ur-new-claim-1" class="govuk-link" rel="noreferrer noopener" target=>Process a claim</a></p>
