@@ -63,15 +63,23 @@
 
                             <div class="govuk-grid-column-one-quarter-from-desktop govuk-!-margin-bottom-8">
                               <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Processing</h3> -->
-                              <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Group 1</h3>
+                              <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Group 1</h3> -->
 
-                              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="ur-search" class="govuk-link" rel="noreferrer noopener" target="">Find someone</a></p>
+                              {% if data["ur-new-claim-1"] %}
+                              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="ur-new-claim-2" class="govuk-link" rel="noreferrer noopener" target=>Process a claim</a></p>
+                              {% else %}
+                              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="ur-new-claim-1" class="govuk-link" rel="noreferrer noopener" target=>Process a claim</a></p>
+                              {% endif %}
+
+                              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="ur-search" class="govuk-link" rel="noreferrer noopener" target="">Find someone</a></p>
+                              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="ur-cases" class="govuk-link" rel="noreferrer noopener" target=>Cases</a></p>
+
+
+
                               <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="task-example" class="govuk-link" rel="noreferrer noopener" target=>Get next claim [AfPC]</a></p> -->
                               <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="task-example" class="govuk-link" rel="noreferrer noopener" target=>Find a downloaded claim</a></p> -->
                               <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="process-nil-start" class="govuk-link" rel="noreferrer noopener" target=>Process a nil award</a></p> -->
-                              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="ur-cases" class="govuk-link" rel="noreferrer noopener" target=>Cases</a></p>
                               <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="task-example" class="govuk-link" rel="noreferrer noopener" target=>Live proving</a></p> -->
-                              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="ur-task-error" class="govuk-link" rel="noreferrer noopener" target=>Task 3</a></p>
 
 
 
@@ -79,7 +87,7 @@
 
                             <div class="govuk-grid-column-one-quarter-from-desktop govuk-!-margin-bottom-8">
                               <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Telephone queries</h3> -->
-                              <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Group 2</h3>
+                              <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Group 2</h3> -->
 
                               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="ur-stub" class="govuk-link" rel="noreferrer noopener" target=>Take an inbound call</a></p>
                               <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="task-example" class="govuk-link" rel="noreferrer noopener" target=>.</a></p> -->
@@ -88,7 +96,7 @@
 
                             <div class="govuk-grid-column-one-quarter-from-desktop govuk-!-margin-bottom-8">
                               <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Statistics</h3> -->
-                              <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Group 3</h3>
+                              <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Group 3</h3> -->
 
                               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="ur-mi" class="govuk-link" rel="noreferrer noopener" target=>Case statistics</a></p>
                               <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="task-example" class="govuk-link" rel="noreferrer noopener" target=>Nil award MI</a></p> -->
@@ -98,7 +106,7 @@
 
                             <div class="govuk-grid-column-one-quarter-from-desktop govuk-!-margin-bottom-6">
                               <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Help</h3> -->
-                              <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Group 4</h3>
+                              <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Group 4</h3> -->
 
                               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="ur-stub" class="govuk-link" rel="noreferrer noopener" target=>Request access</a></p>
 
