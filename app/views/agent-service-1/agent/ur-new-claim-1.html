@@ -13,7 +13,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    {% if data["ur-new-claim-2"] %}
+    {% if data["ur-new-claim-1"] %}
     <form action="ur-task-done" method="post" class="form">
 
     {% else %}
@@ -34,7 +34,7 @@
           </div>
         </div>
 
-        {% if data["ur-new-claim-2"] %}
+        {% if data["ur-new-claim-1"] %}
 
       {{ govukRadios({
         idPrefix: "ur-new-claim-1-pass",
