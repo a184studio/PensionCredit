@@ -54,41 +54,6 @@
   {% block footer %}
 
 
-
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "accessibility-statement",
-            text: "Accessibility"
-          },
-          {
-            href: "claim-filter",
-            text: "Claim filter"
-          },
-          {
-            href: "national-insurance-call-B",
-            text: "Change National insurance number"
-          },
-          {
-            href: "task-list",
-            text: "Task list"
-          },
-          {
-            href: "/version-15/survey/start.html",
-            text: "Service survey"
-          },
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          },
-          {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "GOV.UK Prototype Kit " + releaseVersion
-          }
-        ]
-      }
-    }) }}
   {% endblock %}
 {% endif %}
 
