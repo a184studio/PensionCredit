@@ -18,6 +18,14 @@
 {% endif %}
 <li class="govuk-!-margin-bottom-4"><strong> time spent outside the UK. </strong>We might be able to backdate the application by up to 3 months, but we will need to ask about the dates and reasons for time spent outside the UK</li>
 
+% if data["contact-blind-check"] == "Yes" %}
+{% endif %}
+<li class="govuk-!-margin-bottom-4"><strong> the date anyone included in the application was registered blind or severely sight impaired. </strong>This could affect the amount of Pension Credit we can pay you</li>
+
+% if data["partner-blind-check"] == "Yes" %}
+{% endif %}
+<li class="govuk-!-margin-bottom-4"><strong> the date anyone included in the application was registered blind or severely sight impaired. </strong>This could affect the amount of Pension Credit we can pay you</li>
+
 {% if data["home-care-home-check"] == "Yes" %}
 {% endif %}
 <li class="govuk-!-margin-bottom-4"><strong>living in a care home. </strong>We will ask the moving-in date, how the stay there is funded and whether the stay is permanent</li>
