@@ -24,8 +24,8 @@
       {% endset -%}
 
           {{ govukDateInput({
-            id: "blindDate",
-            namePrefix: "blindDate",
+            id: "claimant-sight-impaired-date",
+            namePrefix: "claimant-sight-impaired-date",
             fieldset: {
               legend: {
                 html: legendH1,
@@ -40,25 +40,25 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["blindDateDay"]
+                value: data["claimant-sight-impaired-date-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["blindDateMonth"]
+                value: data["claimant-sight-impaired-date-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["blindDateYear"]
+                value: data["claimant-sight-impaired-date-year"]
               }
             ]
           }) }}
 
-        
 
-          
-    
+
+
+
 
 
 

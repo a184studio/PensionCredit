@@ -564,17 +564,17 @@
 
                   {
                     key: {
-                      text: "Are you registered blind or severely sight impaired?"
+                      text: "@PETE Are you registered blind or severely sight impaired?"
                     },
                     value: {
-                      text: data["contact-blind-check"]
+                      text: data["claimant-sight-impaired-check"]
                     },
                     actions: {
                       items: [
                         {
                           href: "",
                           text: "Change",
-                          visuallyHiddenText: "whether you are registered blind or severely sight impaired"
+                          visuallyHiddenText: "claimant-sight-impaired-check"
                         }
                       ]
                     }
@@ -582,6 +582,57 @@
 
                 ]
               }) }}
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+
+                {
+                  key: {
+                    text: "@PETE claimant-sight-impaired-doc"
+                  },
+                  value: {
+                    text: data["claimant-sight-impaired-doc"]
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "",
+                        text: "Change",
+                        visuallyHiddenText: "claimant-sight-impaired-doc"
+                      }
+                    ]
+                  }
+                }
+
+              ]
+            }) }}
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+
+              {
+                key: {
+                  text: "@PETE claimant-sight-impaired-date"
+                },
+                value: {
+                  text: data['claimant-sight-impaired-date-day'] + ' ' + (data['claimant-sight-impaired-date-month'] | getMonth) + ' ' + data['claimant-sight-impaired-date-year']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "claimant-sight-impaired-date",
+                      text: "Change",
+                      visuallyHiddenText: "claimant-sight-impaired-date"
+                    }
+                  ]
+                }
+              }
+              ]
+            }) }}
+
+
 
       </div>
 
@@ -750,30 +801,81 @@
                   }) }}
 
 
-                  {{ govukSummaryList({
-                    classes: 'govuk-!-margin-bottom-9',
-                    rows: [
 
-                    {
-                      key: {
-                        text: "Is your partner registered blind or severely sight impaired?"
-                      },
-                      value: {
-                        text: data["contact-partner-blind-check"]
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "",
-                            text: "Change",
-                            visuallyHiddenText: "whether your partner is registered blind or severely sight impaired"
-                          }
-                        ]
-                      }
-                    }
+                                  {{ govukSummaryList({
+                                    classes: 'govuk-!-margin-bottom-9',
+                                    rows: [
 
-                  ]
-                }) }}
+                                    {
+                                      key: {
+                                        text: "@PETE partner registered blind or severely sight impaired?"
+                                      },
+                                      value: {
+                                        text: data["partner-sight-impaired-check"]
+                                      },
+                                      actions: {
+                                        items: [
+                                          {
+                                            href: "",
+                                            text: "Change",
+                                            visuallyHiddenText: "partner-sight-impaired-check"
+                                          }
+                                        ]
+                                      }
+                                    }
+
+                                  ]
+                                }) }}
+
+                                {{ govukSummaryList({
+                                  classes: 'govuk-!-margin-bottom-9',
+                                  rows: [
+
+                                  {
+                                    key: {
+                                      text: "@PETE partner-sight-impaired-doc"
+                                    },
+                                    value: {
+                                      text: data["partner-sight-impaired-doc"]
+                                    },
+                                    actions: {
+                                      items: [
+                                        {
+                                          href: "",
+                                          text: "Change",
+                                          visuallyHiddenText: "partner-sight-impaired-doc"
+                                        }
+                                      ]
+                                    }
+                                  }
+
+                                ]
+                              }) }}
+
+                              {{ govukSummaryList({
+                                classes: 'govuk-!-margin-bottom-9',
+                                rows: [
+
+                                {
+                                  key: {
+                                    text: "@PETE partner-sight-impaired-date"
+                                  },
+                                  value: {
+                                    text: data['partner-sight-impaired-date-day'] + ' ' + (data['partner-sight-impaired-date-month'] | getMonth) + ' ' + data['partner-sight-impaired-date-year']
+                                  },
+                                  actions: {
+                                    items: [
+                                      {
+                                        href: "partner-sight-impaired-date",
+                                        text: "Change",
+                                        visuallyHiddenText: "partner-sight-impaired-date"
+                                      }
+                                    ]
+                                  }
+                                }
+                                ]
+                              }) }}
+
 
 
 

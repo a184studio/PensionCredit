@@ -110,6 +110,8 @@
   data["doc-absence"] == "Yes" or
   data["uk-residence-status"] == "Something else" or
   data["uk-residence-status-partner"] == "Something else" or
+  data["claimant-sight-impaired-check"] == "Yes" or
+  data["partner-sight-impaired-check"] == "Yes" or
   data["home-care-home-check"] == "Yes" or
   data["home-equity-release"] == "Yes" or
   data["non-deps-living-with-you"] == "Yes" or
@@ -121,12 +123,14 @@
   data["money-total-risk-check"] == "High" or
   data["money-total-risk-check"] == "High" or
   data["money-second-property-check"] == "Yes" or
-  data["home-care-home-check-still-own"] == "Yes"%}
+  data["home-care-home-check-still-own"] == "Yes
+  "%}
 
           <h3 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>
           <p class="govuk-!-font-size-24">We need some more information for your application. We will contact you from 0800 023 2076 by <strong>DD / Month / Year (4 weeks) </strong>to ask you for more information about:</p>
 
           {% include "citizen-version-2-12/mvp/callback-list.html" %}
+
 
           {% elif data["terminally-ill"] == "Yes" %}
           <h3 class="govuk-heading-xm govuk-!-margin-top-8 govuk-!-margin-bottom-3">What happens next</h3>

@@ -51,43 +51,43 @@ router.use(`${baseUrl}/letter-17-jan.pdf`, express.static(path.resolve('app/view
 //   }
 // })
 
-router.post(`${baseUrl}/applicant-blind-doc-router`, (req, res) => {
-  const applicantBlind = req.session.data['contact-blind-doc']
 
-  if (applicantBlind === 'Yes') {
+router.post(`${baseUrl}/claimant-sight-impaired-check-router`, (req, res) => {
+  const claimantBlind = req.session.data['claimant-sight-impaired-check']
+
+  if (claimantBlind === 'Yes') {
+    res.redirect(`${baseUrl}/claimant-sight-impaired-doc`)
+  } else {
+    res.redirect(`${baseUrl}/single-joint-check`)
+  }
+})
+router.post(`${baseUrl}/claimant-sight-impaired-doc-router`, (req, res) => {
+  const claimantBlindDOC = req.session.data['claimant-sight-impaired-doc']
+
+  if (claimantBlindDOC === 'Yes') {
     res.redirect(`${baseUrl}/single-joint-check`)
   } else {
     res.redirect(`${baseUrl}/claimant-sight-impaired-date`)
   }
 })
 
-router.post(`${baseUrl}/applicant-blind-router`, (req, res) => {
-  const applicantBlind = req.session.data['contact-blind-check']
-
-  if (applicantBlind === 'Yes') {
-    res.redirect(`${baseUrl}/claimant-sight-impaired-doc`)
-  } else {
-    res.redirect(`${baseUrl}/single-joint-check`)
-  }
-})
-
-router.post(`${baseUrl}/partner-blind-doc-router`, (req, res) => {
-  const partnerBlind = req.session.data['partner-blind-doc']
-
-  if (partnerBlind === 'Yes') {
-    res.redirect(`${baseUrl}/home-hospital-check`)
-  } else {
-    res.redirect(`${baseUrl}/partner-sight-impaired-date`)
-  }
-})
-
-router.post(`${baseUrl}/partner-blind-router`, (req, res) => {
-  const partnerBlind = req.session.data['partner-blind-check']
+router.post(`${baseUrl}/partner-sight-impaired-check-router`, (req, res) => {
+  const partnerBlind = req.session.data['partner-sight-impaired-check']
 
   if (partnerBlind === 'Yes') {
     res.redirect(`${baseUrl}/partner-sight-impaired-doc`)
   } else {
     res.redirect(`${baseUrl}/home-hospital-check`)
+  }
+})
+
+router.post(`${baseUrl}/partner-sight-impaired-doc-router`, (req, res) => {
+  const partnerBlindDOC = req.session.data['partner-sight-impaired-doc']
+
+  if (partnerBlindDOC === 'Yes') {
+    res.redirect(`${baseUrl}/home-hospital-check`)
+  } else {
+    res.redirect(`${baseUrl}/partner-sight-impaired-date`)
   }
 })
 

@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="partner-blind-doc-router" method="post" class="form">
+    <form action="partner-sight-impaired-doc-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
@@ -23,13 +23,13 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Was your partner registered blind or severely sight impaired on or before {{ data['claim-date-of-claim-day'] + ' ' + (data['claim-date-of-claim-month'] | getMonth) + ' ' + data['claim-date-of-claim-year']}}?</h1>
       {% endset -%}
 
-    
-          
-     
+
+
+
 
       {{ govukRadios({
-        idPrefix: "partner-blind-doc",
-        name: "partner-blind-doc",
+        idPrefix: "partner-sight-impaired-doc",
+        name: "partner-sight-impaired-doc",
         fieldset: {
           legend: {
             html: legendH1,
@@ -42,16 +42,16 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["partner-blind-doc"] == "Yes"),
+            checked: (data["partner-sight-impaired-doc"] == "Yes"),
             conditional: {
               html: partnerBlindDate
             }
               },
-                    
+
           {
             value: "No",
             text: "No",
-            checked: (data["partner-blind-doc"] == "No")
+            checked: (data["partner-sight-impaired-doc"] == "No")
           }
         ]
       }) }}

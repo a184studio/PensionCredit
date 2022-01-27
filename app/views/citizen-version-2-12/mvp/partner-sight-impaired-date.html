@@ -23,10 +23,10 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What date was your partner registered blind or severely sight impaired?</h1>
       {% endset -%}
 
-      
+
           {{ govukDateInput({
-            id: "partnerBlindDate",
-            namePrefix: "partnerBlindDate",
+            id: "partner-sight-impaired-date",
+            namePrefix: "partner-sight-impaired-date",
             fieldset: {
               legend: {
                 html: legendH1,
@@ -41,17 +41,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["partnerBlindDateDay"]
+                value: data["partner-sight-impaired-date-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["partnerBlindDateMonth"]
+                value: data["partner-sight-impaired-date-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["partnerBlindDateYear"]
+                value: data["partner-sight-impaired-date-year"]
               }
             ]
           }) }}

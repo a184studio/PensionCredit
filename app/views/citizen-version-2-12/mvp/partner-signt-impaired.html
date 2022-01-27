@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="partner-blind-router" method="post" class="form">
+    <form action="partner-sight-impaired-check-router" method="post" class="form">
 
       <!-- Hidden input to set task to complete on task-list -->
       <input type="hidden" name="hospitals-complete" value="true"/>
@@ -25,8 +25,8 @@
       {% endset -%}
 
       {{ govukRadios({
-        idPrefix: "partner-blind-check",
-        name: "partner-blind-check",
+        idPrefix: "partner-sight-impaired-check",
+        name: "partner-sight-impaired-check",
         fieldset: {
           legend: {
             html: legendH1,
@@ -39,12 +39,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["partner-blind-check"] == "Yes")
+            checked: (data["partner-sight-impaired-check"] == "Yes")
                     },
           {
             value: "No",
             text: "No",
-            checked: (data["partner-blind-check"] == "No")
+            checked: (data["partner-sight-impaired-check"] == "No")
           }
         ]
       }) }}
