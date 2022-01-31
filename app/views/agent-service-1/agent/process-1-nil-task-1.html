@@ -1,0 +1,228 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  WorkLlist - Pension Credit
+{% endblock %}
+
+{% block header %}
+  <!-- {% include "includes/internal-header.html" %} -->
+  {% include "explore-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="process-1-nil-task-list" method="post" class="form">
+        <input type="hidden" name="process-1-nil-task-1-passed" value="passed">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Jeff Bridges</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
+
+      <p class="govuk-heading-xl govuk-!-margin-bottom-4">Identity</p>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Cross referece citizens provided details using AfPC with what was found in CIZ</p>
+
+    </div>
+  </div>
+
+
+    <!------------ ––– ------------>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+        <!------------Legend------------>
+          {% set legendProcess %}
+
+        {{ govukCheckboxes({
+          idPrefix: "process-1-nil-task-1-fail",
+          name: "process-1-nil-task-1-fail",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+              },
+              hint: {
+                text: ""
+          },
+          items: [
+            {
+              value: "1",
+              text: " ",
+              checked: data['process-1-nil-task-1-fail'] == "1"
+            }
+          ]
+        }) }}
+
+        {% endset %}
+      <!------------Legend------------>
+
+        {{ govukTable({
+          caption: "",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "What to check",
+              classes: 'govuk-30-percent'
+            },
+            {
+              html: "Citizen supplied [AfPC]",
+              classes: 'govuk-30-percent'
+            },
+            {
+              html: "CIZ data",
+              classes: 'govuk-30-percent'
+            },
+            {
+              text: "Mark as incorrect",
+              classes: 'govuk-10-percent'
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Applicant Name"
+              },
+              {
+                text: "Name A"
+              },
+              {
+                text: "Name A"
+              },
+              {
+                html: legendProcess              }
+            ],
+            [
+              {
+                text: "Applicant DOB/age"
+              },
+              {
+                text: "DD/MM/YYYY [Age]"
+              },
+              {
+                text: "DD/MM/YYYY [Age]"
+              },
+              {
+                html: legendProcess              }
+            ],
+            [
+              {
+                text: "Telephone"
+              },
+              {
+                text: "07960 009 014"
+              },
+              {
+                text: "07960 009 014"
+              },
+              {
+                html: legendProcess              }
+                ],
+                [
+                  {
+                    text: "Applicant not in receipt of any qualifying benefits today"
+                  },
+                  {
+                    text: "Not asked in AfPC service"
+                  },
+                  {
+                    text: "No benefits shown found"
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "Address"
+                  },
+                  {
+                    text: "Address and post code"
+                  },
+                  {
+                    text: "Address and post code"
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "Bank details"
+                  },
+                  {
+                    text: "**** **** **** 0124"
+                  },
+                  {
+                    text: "Check systems manually"
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "Reg blind"
+                  },
+                  {
+                    text: "NA"
+                  },
+                  {
+                    text: "NA"
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "Commnication needs"
+                  },
+                  {
+                    text: "None"
+                  },
+                  {
+                    text: "None found"
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "Helper"
+                  },
+                  {
+                    text: "None"
+                  },
+                  {
+                    text: "None found"
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ]
+          ]
+        }) }}
+
+
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+
+
+    {{ govukButton({
+      text: "Contine"
+    }) }}
+  </form>
+
+{% endblock %}
