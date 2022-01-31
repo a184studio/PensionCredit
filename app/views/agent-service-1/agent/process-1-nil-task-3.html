@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="process-1-nil-task-list" method="post" class="form">
-        <input type="hidden" name="nil-task-3-passed" value="passed">
+        <input type="hidden" name="process-1-nil-task-3-passed" value="passed">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Jeff Bridges</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
@@ -37,8 +37,8 @@
           {% set legendProcess %}
 
         {{ govukCheckboxes({
-          idPrefix: "nil-task-3-fail",
-          name: "nil-task-3-fail",
+          idPrefix: "process-1-nil-task-3-fail",
+          name: "process-1-nil-task-3-fail",
           classes: "govuk-checkboxes--small",
           fieldset: {
             legend: {
@@ -54,7 +54,7 @@
             {
               value: "1",
               text: " ",
-              checked: data['nil-task-3-fail'] == "1"
+              checked: data['process-1-nil-task-3-fail'] == "1"
             }
           ]
         }) }}

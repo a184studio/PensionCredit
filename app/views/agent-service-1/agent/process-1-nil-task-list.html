@@ -88,8 +88,8 @@
         <a class="app-task-list__task-name" href="process-1-nil-task-3" aria-describedby="task-3">
           Check for gaps in the rules we use
         </a>
-        {% if data["nil-task-3-fail"] %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["nil-task-3-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["process-1-nil-task-3-fail"] %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["process-1-nil-task-3-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
     </ul>
@@ -103,7 +103,7 @@
     </div>
   </div>
 
-  {% if data["nil-task-1-outcome"] or data["nil-process-task-2-idoc"] == "Yes" or data["nil-task-3-fail"] %}
+  {% if data["process-1-nil-task-1-outcome"] or data["process-1-nil-task-2-idoc"] == "Yes" or data["process-1-nil-task-3-fail"] %}
 
   <div class="govuk-grid-row govuk-!-margin-top-6">
     <div class="govuk-grid-column-three-quarters">
@@ -116,7 +116,7 @@
           classes: "govuk-!-margin-right-2"
         }) }}
 
-  {% elif data["nil-task-1-passed"] and data["nil-process-task-2-idoc"] == "No" and data["nil-task-3-passed"] %}
+  {% elif data["process-1-nil-task-1-passed"] and data["process-1-nil-task-2-idoc"] == "No" and data["process-1-nil-task-3-passed"] %}
 
   <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting a passed outcome</h1>
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
