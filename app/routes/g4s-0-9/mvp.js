@@ -30,6 +30,51 @@ router.post(`${baseUrl}/system-partner-check-router`, (req, res) => {
 
 
 
+
+router.post(`${baseUrl}/system-where-you-like-ab-router`, (req, res) => {
+  const g4sWhereYouLikeAB = req.session.data['system-where-you-like-ab']
+
+  if (g4sWhereYouLikeAB === 'A') {
+    res.redirect(`${baseUrl}/housing-type`)
+  } else {
+    res.redirect(`${baseUrl}/housing-type-b`)
+  }
+})
+
+router.post(`${baseUrl}/housing-type-b-router`, (req, res) => {
+  const g4sWhereYouLikeB = req.session.data['housing-type-b']
+
+  if (g4sWhereYouLikeB === 'Yes') {
+    res.redirect(`${baseUrl}/housing-ground-rent`)
+
+  } else if (g4sWhereYouLikeB === 'No') {
+    res.redirect(`${baseUrl}/housing-type-b-type`)
+  } else {
+    res.redirect(`${baseUrl}/housing-ground-rent`)
+  }
+})
+
+
+  router.post(`${baseUrl}/housing-type-b-type-router`, (req, res) => {
+    const housingTypeBType = req.session.data['housing-type-b-type']
+
+    if (housingTypeBType === 'You own it') { // Looking for this checked data
+      res.redirect(`${baseUrl}/housing-service-charge`) // If it finds it it does here
+    }
+    else if (housingTypeBType === 'Live in someone elses home') {
+      res.redirect(`${baseUrl}/data-we-use`)
+    }
+    else if (housingTypeBType === 'Other accommodation') {
+      res.redirect(`${baseUrl}/housing-service-charge`)
+    }
+    else {
+      res.redirect(`${baseUrl}/housing-service-charge`) // If nothing is selected it will go here.
+    }
+  })
+
+
+
+
 router.post(`${baseUrl}/g4s-partner-check-router`, (req, res) => {
   const g4sPartnerCheck = req.session.data['g4s-partner-check']
 
