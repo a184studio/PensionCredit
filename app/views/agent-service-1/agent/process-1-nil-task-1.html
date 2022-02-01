@@ -81,6 +81,15 @@
          })}}
 
       {% endset %}
+
+      {% set tagCAM %}
+
+      {{govukTag({
+         text: "CAM",
+         classes: "govuk-tag--red"
+       })}}
+
+    {% endset %}
     <!------------Legend------------>
 
 
@@ -99,7 +108,7 @@
               classes: 'govuk-30-percent'
             },
             {
-              html: "CIZ data",
+              html: "Data source",
               classes: 'govuk-30-percent'
             },
             {
@@ -116,7 +125,7 @@
                 text: "Name A"
               },
               {
-                text: "Name A"
+                html: tagSL
               },
               {
                 html: legendProcess
@@ -130,7 +139,7 @@
                 text: "DD/MM/YYYY [Age]"
               },
               {
-                text: "DD/MM/YYYY [Age]"
+                html: tagCAM
               },
               {
                 html: legendProcess              }
@@ -143,7 +152,7 @@
                 text: "07960 009 014"
               },
               {
-                text: "07960 009 014"
+                html: tagSL
               },
               {
                 html: legendProcess              }
@@ -156,7 +165,7 @@
                     html: "Address one <br>Address one <br>Address one <br>POST CODE"
                   },
                   {
-                    html: "Address one <br>Address one <br>Address one <br>POST CODE"
+                    html: tagSL
                   },
                   {
                     html: legendProcess
@@ -184,7 +193,7 @@
                     text: "NA"
                   },
                   {
-                    text: "NA"
+                    html: tagSL
                   },
                   {
                     html: legendProcess
@@ -198,7 +207,7 @@
                     text: "None"
                   },
                   {
-                    text: "None found"
+                    html: tagSL
                   },
                   {
                     html: legendProcess
