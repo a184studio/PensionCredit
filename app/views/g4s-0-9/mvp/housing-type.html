@@ -28,25 +28,26 @@
           }
         },
         items: [
+
+        {
+          value: "You rent it",
+          text: "You rent it",
+          checked: (data["housing-type"] == "You rent it")
+        },
           {
             value: "You own it",
             text: "You own it",
             checked: (data["housing-type"] == "You own it")
           },
           {
-            value: "You rent it",
-            text: "You rent it",
-            checked: (data["housing-type"] == "You rent it")
+            value: "Live in someone elses home",
+            text: "You live in someone else’s home without paying towards the rent or mortgage",
+            checked: (data["housing-type"] == "Live in someone elses home")
           },
           {
             value: "Shared ownership",
             text: "You rent it and own it (Shared ownership)",
             checked: (data["housing-type"] == "Shared ownership")
-          },
-          {
-            value: "Live in someone elses home",
-            text: "You live in someone else’s home without paying towards the rent or mortgage",
-            checked: (data["housing-type"] == "Live in someone elses home")
           },
           {
             value: "Other accommodation",
