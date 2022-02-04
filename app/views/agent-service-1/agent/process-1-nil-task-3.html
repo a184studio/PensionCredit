@@ -46,9 +46,6 @@
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
-              },
-              hint: {
-                text: ""
           },
           items: [
             {
@@ -60,6 +57,37 @@
         }) }}
 
         {% endset %}
+
+
+        <!------------Legend------------>
+          {% set tagSL %}
+
+          {{govukTag({
+             text: "SEARCHLIGHT",
+             classes: "govuk-tag--blue"
+           })}}
+
+        {% endset %}
+
+          {% set tagCPS %}
+
+          {{govukTag({
+             text: "CPS",
+             classes: "govuk-tag--yellow"
+           })}}
+
+        {% endset %}
+
+        {% set tagCAM %}
+
+        {{govukTag({
+           text: "CAM",
+           classes: "govuk-tag--red"
+         })}}
+
+      {% endset %}
+      <!------------Legend------------>
+
       <!------------Legend------------>
 
         {{ govukTable({
@@ -119,7 +147,7 @@
                 text: "Not asked in AfPC service"
               },
               {
-                text: "£177.88"
+                html: tagSL
               },
               {
                 html: legendProcess              }
