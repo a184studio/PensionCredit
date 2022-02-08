@@ -130,6 +130,7 @@ router.use(require('./routes/g4s-0-8/mvp'))
 router.use(require('./routes/g4s-0-5/mvp'))
 router.use(require('./routes/agent-service-1/agent'))
 router.use(require('./routes/g4s-0-9/mvp'))
+router.use(require('./routes/agent-service-1-1/agent'))
 
 
 module.exports = router
