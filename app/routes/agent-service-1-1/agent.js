@@ -32,6 +32,18 @@ router.post(`${baseUrl}/login-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/system-ur-process-ab-router`, (req, res) => {
+  const processAB = req.session.data['system-ur-process-ab']
+
+  if (processAB === 'A') {
+    res.redirect(`${baseUrl}/a`)
+  } else {
+    res.redirect(`${baseUrl}/b`)
+  }
+})
+
+
+
 // router.post(`${baseUrl}/ur-search-router`, (req, res) => {
 //   const niRouter = req.session.data['ur-search']
 //
