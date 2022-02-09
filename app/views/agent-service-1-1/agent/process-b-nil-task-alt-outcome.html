@@ -17,7 +17,7 @@
       <form action="process-2-nil-task-3-more" method="post" class="form">
         <input type="hidden" name="nil-task-2-passed" value="passed">
 
-      <p class="govuk-heading-xl govuk-!-margin-bottom-8">You are about to exit the process early</p>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-8">You are about to exit the process early. @Pete, in or out. I'm not sure. Sould we wait for them to say, "What if I cant compete for some other reason?"</p>
 
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Supplied from CAM/SL:</p>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>data item to check</strong></p> -->
@@ -48,14 +48,9 @@
           classes: "govuk-radios",
           items: [
             {
-              value: "Couln't make contact, need to try again later",
-              text: "Couln't make contact, need to try again later",
-              checked: (data["process-2-nil-task-3-1"] == "Couln't make contact")
-            },
-            {
-              value: "I need to push this to BAU",
-              text: "I need to push this to BAU",
-              checked: (data["process-2-nil-task-3-1"] == "I need to push this to BAU")
+              value: "I could not complete",
+              text: "I could not complete",
+              checked: (data["process-2-nil-task-3-1"] == "I could not complete")
             },
             {
               value: "Something else",

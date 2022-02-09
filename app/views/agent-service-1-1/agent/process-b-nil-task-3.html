@@ -34,29 +34,55 @@
 
 
         <!------------Legend------------>
-          {% set legendProcess %}
+        {% set legendCheck1 %}
 
-        {{ govukCheckboxes({
-          idPrefix: "process-1-nil-task-3-fail",
-          name: "process-1-nil-task-3-fail",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          items: [
-            {
-              value: "1",
-              text: " ",
-              checked: data['process-1-nil-task-3-fail'] == "1"
-            }
-          ]
-        }) }}
+      {{ govukCheckboxes({
+        idPrefix: "process-b-nil-task-3-check-1",
+        name: "process-b-nil-task-3-check-1",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+          }
+        },
+        items: [
+          {
+            classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+            value: "Pass",
+            text: " ",
+            checked: data['process-b-nil-task-3-check-1'] == "Pass"
+          }
+        ]
+      }) }}
 
-        {% endset %}
+      {% endset %}
+
+      {% set legendCheck2 %}
+
+    {{ govukCheckboxes({
+      idPrefix: "process-b-nil-task-3-check-2",
+      name: "process-b-nil-task-3-check-2",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+        }
+      },
+      items: [
+        {
+          classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+          value: "Pass",
+          text: " ",
+          checked: data['process-b-nil-task-3-check-2'] == "Pass"
+        }
+      ]
+    }) }}
+
+    {% endset %}
 
 
         <!------------Legend------------>
@@ -90,9 +116,13 @@
 
       <!------------Legend------------>
 
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Personal detials</h1>
+
+
         {{ govukTable({
           caption: "",
           captionClasses: "govuk-table__caption--m",
+          classes: 'govuk-!-margin-bottom-8',
           firstCellIsHeader: true,
           head: [
             {
@@ -113,19 +143,21 @@
             }
           ],
           rows: [
-            [
-              {
-                text: "Applicant does not live with partner"
-              },
-              {
-                text: "No partner"
-              },
-              {
-                html: tagSL
-              },
-              {
-                html: legendProcess              }
-            ],
+
+          [
+            {
+              text: "Applicant is not deceased"
+            },
+            {
+              text: "N/A"
+            },
+            {
+              html: tagSL
+            },
+            {
+              html: legendCheck1
+            }
+          ],
             [
               {
                 text: "Reached SPA on or after 6 April 2016 [Savings Credit not applicable]"
@@ -134,11 +166,118 @@
                 text: "DD/MM/YY"
               },
               {
-                html: tagSL
+                html: tagCAM
               },
               {
-                html: legendProcess              }
+                html: legendCheck1
+              }
+            ]
+          ]
+        }) }}
+
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Interests</h1>
+
+
+          {{ govukTable({
+            caption: "",
+            captionClasses: "govuk-table__caption--m",
+            classes: 'govuk-!-margin-bottom-8',
+            firstCellIsHeader: true,
+            head: [
+              {
+                text: "Information to check",
+                classes: 'govuk-30-percent'
+              },
+              {
+                html: "Citizen supplied [AfPC]",
+                classes: 'govuk-30-percent'
+              },
+              {
+                html: "DWP data / Source",
+                classes: 'govuk-30-percent'
+              },
+              {
+                text: "Correct",
+                classes: 'govuk-20-percent'
+              }
             ],
+            rows: [
+
+                [
+                  {
+                    text: "Applicant is not waiting to hear about any other benefits"
+                  },
+                  {
+                    text: "No"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendCheck1
+                  }
+                ],
+                [
+                  {
+                    text: "No open interest in CIS for qualifying benefits during the backdating period"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendCheck1
+                  }
+                ],
+                [
+                  {
+                    text: "No open in interest in CIS for qualifying benefits today"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendCheck1
+                  }
+                ]
+            ]
+          }) }}
+
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Benefits</h1>
+
+
+          {{ govukTable({
+            caption: "",
+            captionClasses: "govuk-table__caption--m",
+            classes: 'govuk-!-margin-bottom-8',
+            firstCellIsHeader: true,
+            head: [
+              {
+                text: "Information to check",
+                classes: 'govuk-30-percent'
+              },
+              {
+                html: "Citizen supplied [AfPC]",
+                classes: 'govuk-30-percent'
+              },
+              {
+                html: "DWP data / Source",
+                classes: 'govuk-30-percent'
+              },
+              {
+                text: "Correct",
+                classes: 'govuk-20-percent'
+              }
+            ],
+            rows: [
+
             [
               {
                 text: "State Pension amount exceeded applicable amount today"
@@ -150,7 +289,8 @@
                 html: tagSL
               },
               {
-                html: legendProcess              }
+                html: legendCheck1
+              }
                 ],
                 [
                   {
@@ -163,9 +303,10 @@
                     html: tagSL
                   },
                   {
-                    html: legendProcess
+                    html: legendCheck1
                   }
                 ],
+
                 [
                   {
                     text: "Applicant not in receipt of any qualifying benefits today"
@@ -177,154 +318,160 @@
                     html: tagSL
                   },
                   {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "Applicant is not waiting to hear about any other benefits"
-                  },
-                  {
-                    text: "No"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "no open interest in CIS for qualifying benefits during the backdating period"
-                  },
-                  {
-                    text: "N/A"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "no open in interest in CIS for qualifying benefits today"
-                  },
-                  {
-                    text: "N/A"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "applicant not in receipt of any qualifying benefits today"
-                  },
-                  {
-                    text: "N/A"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "No housing costs (service charges and ground rent)"
-                  },
-                  {
-                    text: "N/A"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "Applicant does not want to apply for Housing Benefit"
-                  },
-                  {
-                    text: "N/A"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "applicant does not want info on SMI"
-                  },
-                  {
-                    text: "N/A"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "applicant is not waiting to hear about any other benefits"
-                  },
-                  {
-                    text: "No"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "date of claim is not in the future"
-                  },
-                  {
-                    text: "DD/MM/YYYY"
-                  },
-                  {
-                    text: "N/A"
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "Applicant is not deceased"
-                  },
-                  {
-                    text: "N/A"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
+                    html: legendCheck1
                   }
                 ]
+            ]
+          }) }}
 
-          ]
-        }) }}
 
 
+              <!------------ TAB 2 ------------>
+
+              <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Relationships</h1>
+
+                {{ govukTable({
+                  caption: "",
+                  captionClasses: "govuk-table__caption--m",
+                  classes: 'govuk-!-margin-bottom-8',
+                  firstCellIsHeader: true,
+                  head: [
+                    {
+                      text: "Information to check",
+                      classes: 'govuk-30-percent'
+                    },
+                    {
+                      html: "Citizen supplied [AfPC]",
+                      classes: 'govuk-30-percent'
+                    },
+                    {
+                      html: "DWP data / Source",
+                      classes: 'govuk-30-percent'
+                    },
+                    {
+                      text: "Correct",
+                      classes: 'govuk-20-percent'
+                    }
+                  ],
+                  rows: [
+                    [
+                      {
+                        text: "Applicant does not live with partner"
+                      },
+                      {
+                        text: "No partner"
+                      },
+                      {
+                        html: tagSL
+                      },
+                      {
+                        html: legendCheck1
+                      }
+                    ]
+
+                  ]
+                }) }}
+
+
+
+                              <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Other</h1>
+
+                                {{ govukTable({
+                                  caption: "",
+                                  captionClasses: "govuk-table__caption--m",
+                                  firstCellIsHeader: true,
+                                  head: [
+                                    {
+                                      text: "Information to check",
+                                      classes: 'govuk-30-percent'
+                                    },
+                                    {
+                                      html: "Citizen supplied [AfPC]",
+                                      classes: 'govuk-30-percent'
+                                    },
+                                    {
+                                      html: "DWP data / Source",
+                                      classes: 'govuk-30-percent'
+                                    },
+                                    {
+                                      text: "Correct",
+                                      classes: 'govuk-20-percent'
+                                    }
+                                  ],
+                                  rows: [
+                                  [
+                                    {
+                                      text: "Date of claim is not in the future"
+                                    },
+                                    {
+                                      text: "DD/MM/YYYY"
+                                    },
+                                    {
+                                      text: "N/A"
+                                    },
+                                    {
+                                      html: legendCheck1
+                                    }
+                                  ],
+                                      [
+                                          {
+                                            text: "No housing costs (service charges and ground rent)"
+                                          },
+                                          {
+                                            text: "No"
+                                          },
+                                          {
+                                            text: "N/A"
+                                          },
+                                          {
+                                            html: legendCheck1
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            text: "Applicant does not want to apply for Housing Benefit"
+                                          },
+                                          {
+                                            text: "No"
+                                          },
+                                          {
+                                            text: "N/A"
+                                          },
+                                          {
+                                            html: legendCheck1
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            text: "Applicant does not want info on SMI"
+                                          },
+                                          {
+                                            text: "No"
+                                          },
+                                          {
+                                            text: "N/A"
+                                          },
+                                          {
+                                            html: legendCheck1
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            text: "Applicant is not waiting to hear about any other benefits"
+                                          },
+                                          {
+                                            text: "No"
+                                          },
+                                          {
+                                            text: "N/A"
+                                          },
+                                          {
+                                            html: legendCheck1
+                                          }
+                                        ]
+
+                                  ]
+                                }) }}
 
         <!------------ ––– ------------>
 

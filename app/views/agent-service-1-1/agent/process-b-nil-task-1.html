@@ -13,8 +13,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="process-1-nil-task-list" method="post" class="form">
-        <input type="hidden" name="process-1-nil-task-1-passed" value="passed">
+      <form action="process-b-nil-task-list" method="post" class="form">
+        <input type="hidden" name="process-b-nil-task-1" value="Failed">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Jeff Bridges</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
@@ -34,11 +34,11 @@
 
 
         <!------------Legend------------>
-          {% set legendProcess %}
+          {% set legendCheck1 %}
 
         {{ govukCheckboxes({
-          idPrefix: "process-1-nil-task-1-fail",
-          name: "process-1-nil-task-1-fail",
+          idPrefix: "process-b-nil-task-1-check-1",
+          name: "process-b-nil-task-1-check-1",
           classes: "govuk-checkboxes--small",
           fieldset: {
             legend: {
@@ -50,14 +50,167 @@
           items: [
             {
               classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
-              value: "1",
+              value: "Pass",
               text: " ",
-              checked: data['process-1-nil-task-1-fail'] == "1"
+              checked: data['process-b-nil-task-1-check-1'] == "Pass"
             }
           ]
         }) }}
 
         {% endset %}
+
+        {% set legendCheck2 %}
+
+      {{ govukCheckboxes({
+        idPrefix: "process-b-nil-task-1-check-2",
+        name: "process-b-nil-task-1-check-2",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+          }
+        },
+        items: [
+          {
+            classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+            value: "Pass",
+            text: " ",
+            checked: data['process-b-nil-task-1-check-2'] == "Pass"
+          }
+        ]
+      }) }}
+
+      {% endset %}
+
+      {% set legendCheck3 %}
+
+    {{ govukCheckboxes({
+      idPrefix: "process-b-nil-task-1-check-3",
+      name: "process-b-nil-task-1-check-3",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+        }
+      },
+      items: [
+        {
+          classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+          value: "Pass",
+          text: " ",
+          checked: data['process-b-nil-task-1-check-3'] == "Pass"
+        }
+      ]
+    }) }}
+
+    {% endset %}
+
+    {% set legendCheck4 %}
+
+  {{ govukCheckboxes({
+    idPrefix: "process-b-nil-task-1-check-4",
+    name: "process-b-nil-task-1-check-4",
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: "",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+      }
+    },
+    items: [
+      {
+        classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+        value: "Pass",
+        text: " ",
+        checked: data['process-b-nil-task-1-check-4'] == "Pass"
+      }
+    ]
+  }) }}
+
+  {% endset %}
+
+  {% set legendCheck5 %}
+
+{{ govukCheckboxes({
+  idPrefix: "process-b-nil-task-1-check-5",
+  name: "process-b-nil-task-1-check-5",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+    }
+  },
+  items: [
+    {
+      classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+      value: "Pass",
+      text: " ",
+      checked: data['process-b-nil-task-1-check-5'] == "Pass"
+    }
+  ]
+}) }}
+
+{% endset %}
+
+{% set legendCheck6 %}
+
+      {% if data["process-b-nil-task-1-check-6"]%}
+
+            {{ govukCheckboxes({
+            idPrefix: "process-b-nil-task-1-check-6",
+            name: "process-b-nil-task-1-check-6",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+              }
+            },
+            items: [
+              {
+                classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+                value: "Pass",
+                text: " ",
+                checked: data['process-b-nil-task-1-check-6'] == "Pass"
+              }
+            ]
+            }) }}
+
+      {% else %}
+
+            {{ govukCheckboxes({
+            idPrefix: "process-b-nil-task-1-check-6",
+            name: "process-b-nil-task-1-check-6",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+              }
+            },
+            items: [
+              {
+                classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+                value: "Pass",
+                text: " ",
+                checked: data['process-b-nil-task-1-check-6'] == "Pass"
+              }
+            ]
+            }) }}
+
+      {% endif %}
+
+
+{% endset %}
       <!------------Legend------------>
 
         {% set legendAddress %}
@@ -134,7 +287,7 @@
                 html: "Name A"
               },
               {
-                html: legendProcess
+                html: legendCheck1
               }
             ],
             [
@@ -148,7 +301,7 @@
                 html: "DD/MM/YYYY [Age]"
               },
               {
-                html: legendProcess              }
+                html: legendCheck2             }
             ],
             [
               {
@@ -161,7 +314,7 @@
                 text: "07960 009 014"
               },
               {
-                html: legendProcess              }
+                html: legendCheck3             }
                 ],
                 [
                   {
@@ -174,7 +327,7 @@
                     html: tagSL
                   },
                   {
-                    html: legendProcess
+                    html: legendCheck4
                   }
                   ],
                   [
@@ -188,7 +341,7 @@
                       html: tagSL
                     },
                     {
-                      html: legendProcess
+                      html: legendCheck5
                     }
                   ],
                 [
@@ -202,7 +355,7 @@
                     html: tagCPS
                   },
                   {
-                    html: legendProcess
+                    html: legendCheck6
                   }
                 ]
           ]
