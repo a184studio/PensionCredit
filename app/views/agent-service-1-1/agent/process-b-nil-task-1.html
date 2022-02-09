@@ -19,9 +19,9 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Jeff Bridges</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
 
-      <p class="govuk-heading-xl govuk-!-margin-bottom-4">[Task 1] Identity</p>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-8">[Task 1] Identity</p>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Cross referece citizens provided details using AfPC with what was found in CIZ</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Cross referece citizens provided details using AfPC with what was found in CIZ</p> -->
 
     </div>
   </div>
@@ -96,23 +96,23 @@
           captionClasses: "govuk-table__caption--m",
           firstCellIsHeader: true,
           head: [
-            {
-              text: "What to check",
-              classes: 'govuk-30-percent'
-            },
-            {
-              html: "Citizen supplied [AfPC]",
-              classes: 'govuk-30-percent'
-            },
-            {
-              html: "System data or where to find it",
-              classes: 'govuk-30-percent'
-            },
-            {
-              text: "Mark as incorrect",
-              classes: 'govuk-10-percent'
-            }
-          ],
+          {
+            text: "Information to check",
+            classes: 'govuk-30-percent'
+          },
+          {
+            html: "Citizen supplied [AfPC]",
+            classes: 'govuk-30-percent'
+          },
+          {
+            html: "DWP data / Source",
+            classes: 'govuk-30-percent'
+          },
+          {
+            text: "Correct",
+            classes: 'govuk-20-percent'
+          }
+        ],
           rows: [
             [
               {
@@ -173,52 +173,10 @@
                     text: "Bank details"
                   },
                   {
-                    text: "**** **** **** 0124"
+                    text: "Bank name"
                   },
                   {
                     html: tagCPS
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "Reg blind"
-                  },
-                  {
-                    text: "NA"
-                  },
-                  {
-                    html: tagCAM
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "Commnication needs"
-                  },
-                  {
-                    text: "None"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendProcess
-                  }
-                ],
-                [
-                  {
-                    text: "Helper"
-                  },
-                  {
-                    text: "None"
-                  },
-                  {
-                    html: tagSL
                   },
                   {
                     html: legendProcess
