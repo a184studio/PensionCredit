@@ -1,0 +1,341 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  WorkLlist - Pension Credit
+{% endblock %}
+
+{% block header %}
+  <!-- {% include "includes/internal-header.html" %} -->
+  {% include "explore-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="process-1-nil-task-list" method="post" class="form">
+        <input type="hidden" name="process-1-nil-task-3-passed" value="passed">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Jeff Bridges</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
+
+      <p class="govuk-heading-xl govuk-!-margin-bottom-8">[Task 3] Verifiy award</p>
+
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Cross referece citizens provided details using AfPC with what was found in CIZ, CAM, SL</p> -->
+
+    </div>
+  </div>
+
+
+    <!------------ ––– ------------>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+        <!------------Legend------------>
+          {% set legendProcess %}
+
+        {{ govukCheckboxes({
+          idPrefix: "process-1-nil-task-3-fail",
+          name: "process-1-nil-task-3-fail",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "1",
+              text: " ",
+              checked: data['process-1-nil-task-3-fail'] == "1"
+            }
+          ]
+        }) }}
+
+        {% endset %}
+
+
+        <!------------Legend------------>
+          {% set tagSL %}
+
+          {{govukTag({
+             text: "SEARCHLIGHT",
+             classes: "govuk-tag--blue"
+           })}}
+
+        {% endset %}
+
+          {% set tagCPS %}
+
+          {{govukTag({
+             text: "CPS",
+             classes: "govuk-tag--yellow"
+           })}}
+
+        {% endset %}
+
+        {% set tagCAM %}
+
+        {{govukTag({
+           text: "CAM",
+           classes: "govuk-tag--red"
+         })}}
+
+      {% endset %}
+      <!------------Legend------------>
+
+      <!------------Legend------------>
+
+        {{ govukTable({
+          caption: "",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "Information to check",
+              classes: 'govuk-30-percent'
+            },
+            {
+              html: "Citizen supplied [AfPC]",
+              classes: 'govuk-30-percent'
+            },
+            {
+              html: "DWP data / Source",
+              classes: 'govuk-30-percent'
+            },
+            {
+              text: "Correct",
+              classes: 'govuk-20-percent'
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Applicant does not live with partner"
+              },
+              {
+                text: "No partner"
+              },
+              {
+                html: tagSL
+              },
+              {
+                html: legendProcess              }
+            ],
+            [
+              {
+                text: "Reached SPA on or after 6 April 2016 [Savings Credit not applicable]"
+              },
+              {
+                text: "DD/MM/YY"
+              },
+              {
+                html: tagSL
+              },
+              {
+                html: legendProcess              }
+            ],
+            [
+              {
+                text: "State Pension amount exceeded applicable amount today"
+              },
+              {
+                text: "N/A"
+              },
+              {
+                html: tagSL
+              },
+              {
+                html: legendProcess              }
+                ],
+                [
+                  {
+                    text: "State Pension amount exceeded applicable amount for the whole backdating period"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "Applicant not in receipt of any qualifying benefits today"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "Applicant is not waiting to hear about any other benefits"
+                  },
+                  {
+                    text: "No"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "no open interest in CIS for qualifying benefits during the backdating period"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "no open in interest in CIS for qualifying benefits today"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "applicant not in receipt of any qualifying benefits today"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "No housing costs (service charges and ground rent)"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "Applicant does not want to apply for Housing Benefit"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "applicant does not want info on SMI"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "applicant is not waiting to hear about any other benefits"
+                  },
+                  {
+                    text: "No"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "date of claim is not in the future"
+                  },
+                  {
+                    text: "DD/MM/YYYY"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ],
+                [
+                  {
+                    text: "Applicant is not deceased"
+                  },
+                  {
+                    text: "N/A"
+                  },
+                  {
+                    html: tagSL
+                  },
+                  {
+                    html: legendProcess
+                  }
+                ]
+
+          ]
+        }) }}
+
+
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+
+
+    {{ govukButton({
+      text: "Contine"
+    }) }}
+  </form>
+
+{% endblock %}

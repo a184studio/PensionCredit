@@ -60,6 +60,15 @@
         {% endset %}
       <!------------Legend------------>
 
+        {% set legendAddress %}
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Address line one</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Address line one</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Address line one</p>
+        <p class="govuk-body govuk-!-font-size-19">POST CODE</p>
+
+      {% endset %}
+
       <!------------Legend------------>
         {% set tagSL %}
 
@@ -159,7 +168,7 @@
                     text: "Address"
                   },
                   {
-                    html: "Address one <br>Address one <br>Address one <br>POST CODE"
+                    html: legendAddress
                   },
                   {
                     html: tagSL
@@ -167,7 +176,21 @@
                   {
                     html: legendProcess
                   }
-                ],
+                  ],
+                  [
+                    {
+                      text: "Marital status"
+                    },
+                    {
+                      html: "Single"
+                    },
+                    {
+                      html: tagSL
+                    },
+                    {
+                      html: legendProcess
+                    }
+                  ],
                 [
                   {
                     text: "Bank details"

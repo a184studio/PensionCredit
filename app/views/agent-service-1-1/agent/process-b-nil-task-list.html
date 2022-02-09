@@ -78,8 +78,8 @@
         <a class="app-task-list__task-name" href="process-1-nil-task-2" aria-describedby="task-2">
           @pete Check against our records
         </a>
-        {% if data["process-1-nil-task-2-idoc"] == "Yes" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["process-1-nil-task-2-idoc"] == "No" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["process-b-nil-task-2-idoc"] == "Yes" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["process-b-nil-task-2-idoc"] == "No" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
 
@@ -96,11 +96,11 @@
     </h2>
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="process-1-nil-task-3" aria-describedby="task-3">
+        <a class="app-task-list__task-name" href="process-b-nil-task-3" aria-describedby="task-3">
           @pete Check against our records
         </a>
-        {% if data["process-1-nil-task-3-fail"] %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["process-1-nil-task-3-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["process-b-nil-task-3-fail"] %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["process-b-nil-task-3-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
     </ul>
