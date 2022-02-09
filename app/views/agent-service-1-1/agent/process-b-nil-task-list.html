@@ -105,7 +105,7 @@
                     <a class="app-task-list__task-name" href="process-b-nil-task-3" aria-describedby="task-3">
                       @pete Check against our records
                     </a>
-                    {% if data["process-b-nil-task-3-fail"] %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+                    {% if data["process-b-nil-task-3"]  == "Failed" %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
                     {% elif data["process-b-nil-task-3-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
                     {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
                     {% endif %}
@@ -122,8 +122,8 @@
                     <a class="app-task-list__task-name" href="process-b-nil-task-4" aria-describedby="task-4">
                       @pete Check contact methods
                     </a>
-                    {% if data["process-b-nil-task-1-1-fail"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-                    {% elif data["process-b-nil-task-1-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+                    {% if data["process-b-nil-task-4"]  == "Failed" %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+                    {% elif data["process-b-nil-task-4-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
                     {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
                     {% endif %}
 
@@ -152,7 +152,7 @@
 <!------------ SHOW ALL OF THIS WHEN THEY IS AN OUTCOME ------------>
 
 
-{% if data["process-b-nil-task-1-check-1"]  == "Pass" and data["process-b-nil-task-1-check-2"]  == "Pass" and data["process-b-nil-task-1-check-3"]  == "Pass" and data["process-b-nil-task-1-check-4"] == "Pass" and data["process-b-nil-task-1-check-5"]  == "Pass" and data["process-b-nil-task-1-check-6"]  == "Pass" and data["process-b-nil-task-2-idoc"] == "No"%}
+{% if data["process-b-nil-task-1-check-1"]  == "Pass" and data["process-b-nil-task-1-check-2"]  == "Pass" and data["process-b-nil-task-1-check-3"]  == "Pass" and data["process-b-nil-task-1-check-4"] == "Pass" and data["process-b-nil-task-1-check-5"]  == "Pass" and data["process-b-nil-task-1-check-6"]  == "Pass" and data["process-b-nil-task-2-idoc"] == "No"  and data["process-b-nil-task-3"]  == "X" and data["process-b-nil-task-4"]  == "X"%}
 
           <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting a passed outcome</h1>
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
@@ -162,8 +162,21 @@
           classes: "govuk-!-margin-right-2"
           }) }}
 
+          {% elif data["process-b-nil-task-1"]  == "Failed"  %}
 
-          {% elif data["process-b-nil-task-1"]  == "Failed" and data["process-b-nil-task-2-idoc"] == "Yes" %}
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+    <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting a failed outcome</h1>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Failed will push this claim back to BAU and an other agent will pick this up</p>
+
+    {{ govukButton({
+    text: "Submit",
+    classes: "govuk-!-margin-right-2"
+    }) }}
+
+
+          {% elif data["process-b-nil-task-4"] == "Failed"  %}
 
     <div class="govuk-grid-row govuk-!-margin-top-6">
     <div class="govuk-grid-column-three-quarters">
