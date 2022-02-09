@@ -12,15 +12,26 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <form action="process-nil-start" method="post" class="form">
+
+    <form action="ur-home" method="post" class="form">
+
+
+      <!-- {% if data["process-1-nil-task-1-outcome"] or data["process-1-nil-task-2-idoc"] == "Yes" or data["process-1-nil-task-3-fail"] %}
+        <form action="process-nil-start" method="post" class="form">
+      {% elif data["process-1-nil-task-1-passed"] and data["process-1-nil-task-2-idoc"] == "No" and data["process-1-nil-task-3-passed"] %}
+        <form action="process-nil-start" method="post" class="form">
+      {% else %}
+        <form action="process-nil-start" method="post" class="form">
+      {% endif %} -->
+
 
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Jeff Bridges</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Check outcome</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">@pete Do a thing</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
 
 
 
@@ -37,15 +48,15 @@
     <ol class="app-task-list">
     <li>
     <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">1.</span>Identity and contact
+      <span class="app-task-list__section-number">1.</span>Identity
     </h2>
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="process-1-nil-task-1" aria-describedby="task-1">
-          Check against what we hold and supplied
+        <a class="app-task-list__task-name" href="process-b-nil-task-1" aria-describedby="task-1">
+          @pete Check against our records
         </a>
-        {% if data["process-1-nil-task-1-fail"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["process-1-nil-task-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["process-b-nil-task-1-fail"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["process-b-nil-task-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
 
@@ -54,7 +65,7 @@
     </ul>
     </li>
 
-    {% if data["nil-task-1-outcome"] %}
+    {% if data["process-b-nil-task-1-1-passed"] %}
 
     {% else %}
 
@@ -65,7 +76,7 @@
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-1-nil-task-2" aria-describedby="task-2">
-          They might have made another claim
+          @pete Check against our records
         </a>
         {% if data["process-1-nil-task-2-idoc"] == "Yes" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
         {% elif data["process-1-nil-task-2-idoc"] == "No" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
@@ -86,7 +97,7 @@
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-1-nil-task-3" aria-describedby="task-3">
-          Check for gaps in the rules we use
+          @pete Check against our records
         </a>
         {% if data["process-1-nil-task-3-fail"] %}       <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
         {% elif data["process-1-nil-task-3-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
@@ -94,6 +105,27 @@
         {% endif %}
     </ul>
     </li>
+
+    <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">4.</span>Future contact
+    </h2>
+    <ul class="app-task-list__items">
+
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="process-b-nil-task-4" aria-describedby="task-4">
+          @pete Check contact methods
+        </a>
+        {% if data["process-b-nil-task-1-1-fail"] %}      <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["process-b-nil-task-1-1-passed"] %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
+        {% endif %}
+
+      </li>
+
+    </ul>
+    </li>
+
     </ol>
     {% endif %}
 
@@ -126,10 +158,6 @@
     classes: "govuk-!-margin-right-2"
   }) }}
 
-  <!-- {{ govukButton({
-    text: "Exit process early",
-    classes: "govuk-button--secondary"
-  }) }} -->
 
 
         {% else %}
@@ -137,7 +165,7 @@
         {{ govukButton({
           text: "Exit process early",
           classes: "govuk-button--secondary",
-          href: "home-user-0"
+          href: "system-ur-process-ab"
         }) }}
 
         {% endif %}

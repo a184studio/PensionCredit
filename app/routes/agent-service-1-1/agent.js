@@ -36,9 +36,9 @@ router.post(`${baseUrl}/system-ur-process-ab-router`, (req, res) => {
   const processAB = req.session.data['system-ur-process-ab']
 
   if (processAB === 'A') {
-    res.redirect(`${baseUrl}/a`)
+    res.redirect(`${baseUrl}/process-b-nil-task-list`)
   } else {
-    res.redirect(`${baseUrl}/b`)
+    res.redirect(`${baseUrl}/process-c-nil-task-list`)
   }
 })
 
