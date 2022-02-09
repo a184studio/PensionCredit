@@ -66,7 +66,7 @@
 
       {% set legendCheck2 %}
 
-    {{ govukCheckboxes({
+      {{ govukCheckboxes({
       idPrefix: "process-b-nil-task-3-check-2",
       name: "process-b-nil-task-3-check-2",
       classes: "govuk-checkboxes--small",
@@ -85,9 +85,84 @@
           checked: data['process-b-nil-task-3-check-2'] == "Pass"
         }
       ]
-    }) }}
+      }) }}
 
-    {% endset %}
+      {% endset %}
+
+      {% set legendCheck3 %}
+
+      {{ govukCheckboxes({
+      idPrefix: "process-b-nil-task-3-check-3",
+      name: "process-b-nil-task-3-check-3",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+        }
+      },
+      items: [
+        {
+          classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+          value: "Pass",
+          text: " ",
+          checked: data['process-b-nil-task-3-check-3'] == "Pass"
+        }
+      ]
+      }) }}
+
+      {% endset %}
+
+      {% set legendCheck4 %}
+
+      {{ govukCheckboxes({
+      idPrefix: "process-b-nil-task-3-check-4",
+      name: "process-b-nil-task-3-check-4",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+        }
+      },
+      items: [
+        {
+          classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+          value: "Pass",
+          text: " ",
+          checked: data['process-b-nil-task-3-check-4'] == "Pass"
+        }
+      ]
+      }) }}
+
+      {% endset %}
+
+      {% set legendCheck5 %}
+
+      {{ govukCheckboxes({
+      idPrefix: "process-b-nil-task-3-check-5",
+      name: "process-b-nil-task-3-check-5",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+        }
+      },
+      items: [
+        {
+          classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+          value: "Pass",
+          text: " ",
+          checked: data['process-b-nil-task-3-check-5'] == "Pass"
+        }
+      ]
+      }) }}
+
+      {% endset %}
 
 
         <!------------Legend------------>
@@ -220,7 +295,7 @@
                     html: tagSL
                   },
                   {
-                    html: legendCheck1
+                    html: legendCheck2
                   }
                 ],
                 [
@@ -234,7 +309,7 @@
                     html: tagSL
                   },
                   {
-                    html: legendCheck1
+                    html: legendCheck2
                   }
                 ],
                 [
@@ -248,7 +323,7 @@
                     html: tagSL
                   },
                   {
-                    html: legendCheck1
+                    html: legendCheck2
                   }
                 ]
             ]
@@ -294,7 +369,7 @@
                 html: tagSL
               },
               {
-                html: legendCheck1
+                html: legendCheck3
               }
                 ],
                 [
@@ -308,7 +383,7 @@
                     html: tagSL
                   },
                   {
-                    html: legendCheck1
+                    html: legendCheck3
                   }
                 ],
 
@@ -323,7 +398,7 @@
                     html: tagSL
                   },
                   {
-                    html: legendCheck1
+                    html: legendCheck3
                   }
                 ]
             ]
@@ -370,7 +445,7 @@
                         html: tagSL
                       },
                       {
-                        html: legendCheck1
+                        html: legendCheck4
                       }
                     ]
 
@@ -415,7 +490,7 @@
                                       text: "N/A"
                                     },
                                     {
-                                      html: legendCheck1
+                                      html: legendCheck5
                                     }
                                   ],
                                       [
@@ -429,7 +504,7 @@
                                             text: "N/A"
                                           },
                                           {
-                                            html: legendCheck1
+                                            html: legendCheck5
                                           }
                                         ],
                                         [
@@ -443,7 +518,7 @@
                                             text: "N/A"
                                           },
                                           {
-                                            html: legendCheck1
+                                            html: legendCheck5
                                           }
                                         ],
                                         [
@@ -457,7 +532,7 @@
                                             text: "N/A"
                                           },
                                           {
-                                            html: legendCheck1
+                                            html: legendCheck5
                                           }
                                         ],
                                         [
@@ -471,7 +546,7 @@
                                             text: "N/A"
                                           },
                                           {
-                                            html: legendCheck1
+                                            html: legendCheck5
                                           }
                                         ]
 

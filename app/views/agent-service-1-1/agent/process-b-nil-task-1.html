@@ -15,7 +15,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="process-b-nil-task-list" method="post" class="form">
 
-        {% if data["process-b-nil-task-1-check-1"] %}
+        {% if data["process-b-nil-task-1-check-6"] == "pass" %}
         <input type="hidden" name="process-b-nil-task-1" value="Passed">
         {% else %}
         <input type="hidden" name="process-b-nil-task-1" value="Failed">
