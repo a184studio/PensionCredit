@@ -15,12 +15,6 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="process-b-nil-task-list" method="post" class="form">
 
-        {% if data["process-b-nil-task-4-check-1"] %}
-        <input type="hidden" name="process-b-nil-task-4" value="Passed">
-        {% else %}
-        <input type="hidden" name="process-b-nil-task-4" value="Failed">
-        {% endif %}
-
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Jeff Bridges</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
 
@@ -221,10 +215,41 @@ items: [
     </div>
   </div>
 
-
+  {{ govukRadios({
+    idPrefix: "process-b-nil-task-4",
+    name: "process-b-nil-task-4",
+    fieldset: {
+      legend: {
+        text: "What happened?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+      }
+    },
+    hint: {
+      html: hintLegend
+    },
+    classes: "govuk-radios govuk-!-padding-bottom-0",
+    items: [
+    {
+      value: "Passed",
+      text: "Passed",
+      checked: (data["process-b-nil-task-4"] == "Passed")
+    },
+      {
+        value: "Failed",
+        text: "Failed",
+        checked: (data["process-b-nil-task-4"] == "Failed")
+      },
+      {
+        value: "unfinished",
+        text: "I can't complete",
+        checked: (data["process-b-nil-task-4"] == "unfinished")
+      }
+    ]
+  }) }}
 
     {{ govukButton({
-      text: "Contine"
+      text: "Submit"
     }) }}
   </form>
 
