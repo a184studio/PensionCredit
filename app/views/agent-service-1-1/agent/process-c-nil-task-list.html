@@ -149,9 +149,8 @@
     </ul>
     </li>
 
-    {% if data["process-c-nil-task-1"]  == "Passed" or data["process-c-nil-task-1"]  == "unfinished" %}
+    {% if data["process-c-nil-task-1-1"]  == "Passed" and  data["process-c-nil-task-1-2"]  == "Passed" and  data["process-c-nil-task-1-3"]  == "Passed" and  data["process-c-nil-task-1-4"]  == "Passed" and data["process-c-nil-task-1-5"]  == "Passed" and   data["process-c-nil-task-1-6"]  == "Passed" %}
 
-    {% else %}
 
     <li>
     <h2 class="app-task-list__section">
@@ -176,11 +175,10 @@
 
     </ul>
     </li>
-    {% endif %}
 
 
-    {% if data["process-2-nil-task-1-more"] == "No"  %}
-    {% else %}
+
+
 
     <li>
     <h2 class="app-task-list__section">
@@ -192,8 +190,8 @@
           Task #1
         </a>
 
-        {% if data["process-2-nil-task-3-1"] == "No" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["process-2-nil-task-3-1"] == "Yes" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["process-c-nil-task-3-1"] == "No" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["process-c-nil-task-3-1"] == "Yes" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
       </li>
@@ -203,12 +201,16 @@
           Task #2 — #18
         </a>
 
-        {% if data["process-2-nil-task-3-more"] == "No" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
-        {% elif data["process-2-nil-task-3-more"] == "Yes" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
+        {% if data["process-c-nil-task-3-more"] == "No" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Failed</strong>
+        {% elif data["process-c-nil-task-3-more"] == "Yes" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Passed</strong>
         {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
       </li>
     </ol>
+
+
+    {% else %}
+
     {% endif %}
 
 
@@ -217,7 +219,7 @@
     </div>
   </div>
 
-  {% if data["process-c-nil-task-1-1"]  == "Passed" and  data["process-c-nil-task-1-2"]  == "Passed" and  data["process-c-nil-task-1-3"]  == "Passed" and  data["process-c-nil-task-1-4"]  == "Passed" and data["process-c-nil-task-1-5"]  == "Passed" and   data["process-c-nil-task-1-6"]  == "Passed" %}
+  {% if data["process-c-nil-task-1-1"]  == "Passed" and  data["process-c-nil-task-1-2"]  == "Passed" and  data["process-c-nil-task-1-3"]  == "Passed" and  data["process-c-nil-task-1-4"]  == "Passed" and data["process-c-nil-task-1-5"]  == "Passed" and data["process-c-nil-task-1-6"]  == "Passed" and data["process-c-nil-task-2-idoc"] == "Passed" and data["process-c-nil-task-3-1"] == "Passed"  %}
 
   <div class="govuk-grid-row govuk-!-margin-top-4">
   <div class="govuk-grid-column-three-quarters">
@@ -230,8 +232,8 @@
             classes: "govuk-!-margin-right-2"
             }) }}
 
-            {% elif data["process-c-nil-task-1"]  == "Failed" or data["process-c-nil-task-2-idoc"] == "Failed" and data["process-c-nil-task-3"]  == "Failed" and data["process-c-nil-task-4"] == "Failed"%}
 
+      {% elif data["process-c-nil-task-1-6"]  == "Failed" %}
 
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting a failed outcome</h1>
@@ -243,8 +245,8 @@
       }) }}
 
 
-      {% elif data["process-c-nil-task-1"]  === "unfinished" %}
 
+      {% elif data["process-c-nil-task-1-6"]  == "Unfinished" %}
 
         <h1 class="govuk-heading-m govuk-!-margin-bottom-4">You have unfinished tasks</h1>
 
