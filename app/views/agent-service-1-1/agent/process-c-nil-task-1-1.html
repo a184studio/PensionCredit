@@ -13,14 +13,19 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="process-b-nil-task-list" method="post" class="form">
+      <form action="process-2-nil-task-1-more" method="post" class="form">
+        <input type="hidden" name="nil-task-2-passed" value="passed">
 
         {% include "agent-service-1-1/agent/record-id.html" %}
 
+      <p class="govuk-heading-xl govuk-!-margin-bottom-4">[Task 1 #1]</p>
 
-      <p class="govuk-heading-xl govuk-!-margin-bottom-8">[Task 2] Previous contact [@pete, Task 2 is a bit different. We could make the question can be the H1]</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Supplied by in AfPC applicant:</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>Name Second name</strong></p>
 
-      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Check against CAM, CIZ and SL to to XYZ for an idoc<br> This is appropriate dummy text </p> -->
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Supplied from CAM/SL:</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>data item to check</strong></p>
+
 
     </div>
   </div>
@@ -32,11 +37,11 @@
       <div class="govuk-grid-column-two-thirds">
 
         {{ govukRadios({
-          idPrefix: "process-b-nil-task-2-idoc",
-          name: "process-b-nil-task-2-idoc",
+          idPrefix: "process-2-nil-task-1-1",
+          name: "process-2-nil-task-1-1",
           fieldset: {
             legend: {
-              text: "Is there an IDOC or previous AfPC CAM?",
+              text: "Was this correct in CAM/SL?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-0"
             }
@@ -47,14 +52,14 @@
           classes: "govuk-radios",
           items: [
             {
-              value: "Failed",
+              value: "Yes",
               text: "Yes",
-              checked: (data["process-b-nil-task-2-idoc"] == "Failed")
+              checked: (data["process-2-nil-task-1-1"] == "Yes")
             },
             {
-              value: "Passed",
+              value: "No",
               text: "No",
-              checked: (data["process-b-nil-task-2-idoc"] == "Passed")
+              checked: (data["process-2-nil-task-1-1"] == "No")
             }
           ]
         }) }}
