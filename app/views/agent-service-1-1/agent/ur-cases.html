@@ -38,44 +38,59 @@
                                   </tr>
                                   </thead>
 
-                                  {% if data["ur-new-claim-2"] %}
-
-                                  <tr class="govuk-table__row">
-                                    <td class="govuk-table__cell table-spacer"> 25 / 01 / 2022</td>
-                                    <td class="govuk-table__cell table-spacer"><a href=""></a>0010</td>
-                                    <td class="govuk-table__cell table-spacer">Harrison ford<a href=""></a>
-                                      <!-- {{data["api-claim-outcome-details"]}} -->
-                                    </td>
-                                    <td class="govuk-table__cell table-spacer">
-
-                                      <strong class="govuk-tag app-task-list__nil-case-passed" id="eligibility-completed">Passed</strong>
-
-                                    </td>
-                                    </tr>
-
-                                  {% else %}
-
-                                  {% endif %}
+                                  {% if data["process-b-nil-task-X"] %}
 
                                   <tr class="govuk-table__row">
                                     <td class="govuk-table__cell table-spacer"> 25 / 01 / 2022</td>
                                     <td class="govuk-table__cell table-spacer"><a href=""></a>0009</td>
-                                    <td class="govuk-table__cell table-spacer"><a href="ur-start-process-3">Matt Leblanc</a>
+                                    <td class="govuk-table__cell table-spacer"><a href="case">Julianne Moore</a>
                                       <!-- {{data["api-claim-outcome-details"]}} -->
                                     </td>
                                     <td class="govuk-table__cell table-spacer">
 
-
-                                      {% if data["ur-start-process-3"] %}
-                                      <strong class="govuk-tag app-task-list__nil-case-passed" id="eligibility-completed">Passed</strong>
-
+                                    {% if data["process-b-nil-task-1"]  === "Passed" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-passed">Passed</strong>
+                                    {% elif data["process-b-nil-task-1"]  === "Failed" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-failed">Failed</strong>
+                                    {% elif data["process-b-nil-task-1"]  === "unfinished" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-not-done">Unfinished</strong>
                                     {% else %}
-                                    <strong class="govuk-tag app-task-list__nil-case-not-done" id="eligibility-completed">Unfinished</strong>
-
+                                      <strong class="govuk-tag app-task-list__nil-case-not-done" id="eligibility-completed">Not done</strong>
                                     {% endif %}
 
                                     </td>
                                     </tr>
+
+                                    {% else %}
+
+                                    {% endif %}
+
+                                  {% if data["process-b-nil-task-1"] %}
+
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer"> 25 / 01 / 2022</td>
+                                    <td class="govuk-table__cell table-spacer"><a href=""></a>0009</td>
+                                    <td class="govuk-table__cell table-spacer"><a href="case">Jeff Bridges</a>
+                                      <!-- {{data["api-claim-outcome-details"]}} -->
+                                    </td>
+                                    <td class="govuk-table__cell table-spacer">
+
+                                    {% if data["process-b-nil-task-1"]  === "Passed" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-passed">Passed</strong>
+                                    {% elif data["process-b-nil-task-1"]  === "Failed" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-failed">Failed</strong>
+                                    {% elif data["process-b-nil-task-1"]  === "unfinished" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-not-done">Unfinished</strong>
+                                    {% else %}
+                                      <strong class="govuk-tag app-task-list__nil-case-not-done" id="eligibility-completed">Not done</strong>
+                                    {% endif %}
+
+                                    </td>
+                                    </tr>
+
+                                    {% else %}
+
+                                    {% endif %}
 
 
 
