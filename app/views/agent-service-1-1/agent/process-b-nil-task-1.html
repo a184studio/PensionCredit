@@ -56,6 +56,8 @@
           ]
         }) }}
 
+
+
         {% endset %}
 
         {% set legendCheck2 %}
@@ -267,11 +269,11 @@
           },
           {
             html: "DWP data / Source",
-            classes: 'govuk-30-percent'
+            classes: 'govuk-25-percent'
           },
           {
-            text: "Correct",
-            classes: 'govuk-20-percent'
+            text: "Unmatched",
+            classes: 'govuk-15-percent'
           }
         ],
           rows: [
@@ -283,7 +285,7 @@
                 text: "Name A"
               },
               {
-                html: tagSL
+                html: "SearchLight"
               },
               {
                 html: legendCheck1
@@ -297,10 +299,11 @@
                 text: "DD/MM/YYYY [Age]"
               },
               {
-                html: tagSL
+                html: "SearchLight"
               },
               {
-                html: legendCheck2             }
+                html: legendCheck2
+              }
             ],
             [
               {
@@ -310,7 +313,7 @@
                 text: "07960 009 014"
               },
               {
-                html: tagSL
+                html: "SearchLight"
               },
               {
                 html: legendCheck3             }
@@ -323,7 +326,7 @@
                     html: legendAddress
                   },
                   {
-                    html: tagSL
+                    html: "SearchLight"
                   },
                   {
                     html: legendCheck4
@@ -337,7 +340,7 @@
                       html: "Single"
                     },
                     {
-                      html: tagSL
+                      html: "SearchLight"
                     },
                     {
                       html: legendCheck5
@@ -351,7 +354,7 @@
                     text: "Bank name"
                   },
                   {
-                    html: tagCPS
+                    html: "CPS"
                   },
                   {
                     html: legendCheck6
@@ -385,17 +388,17 @@
     items: [
     {
       value: "Passed",
-      text: "Passed",
+      text: "All matched",
       checked: (data["process-b-nil-task-1"] == "Passed")
     },
       {
         value: "Failed",
-        text: "Failed",
+        text: "Some did not match",
         checked: (data["process-b-nil-task-1"] == "Failed")
       },
       {
         value: "unfinished",
-        text: "I can't complete",
+        text: "Can't complete",
         checked: (data["process-b-nil-task-1"] == "unfinished")
       }
     ]

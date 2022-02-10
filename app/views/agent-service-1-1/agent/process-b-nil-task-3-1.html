@@ -196,23 +196,23 @@
           classes: 'govuk-!-margin-bottom-8',
           firstCellIsHeader: true,
           head: [
-            {
-              text: "Information to check",
-              classes: 'govuk-30-percent'
-            },
-            {
-              html: "Citizen supplied [AfPC]",
-              classes: 'govuk-30-percent'
-            },
-            {
-              html: "DWP data / Source",
-              classes: 'govuk-30-percent'
-            },
-            {
-              text: "Correct",
-              classes: 'govuk-20-percent'
-            }
-          ],
+          {
+            text: "Information to check",
+            classes: 'govuk-30-percent'
+          },
+          {
+            html: "Citizen supplied [AfPC]",
+            classes: 'govuk-30-percent'
+          },
+          {
+            html: "DWP data / Source",
+            classes: 'govuk-25-percent'
+          },
+          {
+            text: "Unmatched",
+            classes: 'govuk-15-percent'
+          }
+        ],
           rows: [
 
           [
@@ -268,12 +268,12 @@
     items: [
     {
       value: "Passed",
-      text: "Passed",
+      text: "All matched",
       checked: (data["process-b-nil-task-3"] == "Passed")
     },
       {
         value: "Failed",
-        text: "Failed",
+        text: "Some did not match",
         checked: (data["process-b-nil-task-3"] == "Failed")
       },
       {
