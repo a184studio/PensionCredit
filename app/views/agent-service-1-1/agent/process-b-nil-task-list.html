@@ -56,14 +56,15 @@
           @pete Check against our records
         </a>
 
-        {% if data["process-b-nil-task-1-check-1"]  == "Pass" and data["process-b-nil-task-1-check-2"]  == "Pass" and data["process-b-nil-task-1-check-3"]  == "Pass" and data["process-b-nil-task-1-check-4"] == "Pass" and data["process-b-nil-task-1-check-5"]  == "Pass" and data["process-b-nil-task-1-check-6"]  == "Pass" %}
-            <strong class="govuk-tag app-task-list__nil-task-passed">Passed</strong>
-        {% elif data["process-b-nil-task-1"]  == "Failed" %}
-            <strong class="govuk-tag app-task-list__nil-task-failed">Failed</strong>
+        {% if data["process-b-nil-task-1"]  === "Passed" %}
+          <strong class="govuk-tag app-task-list__nil-task-passed">Passed</strong>
+        {% elif data["process-b-nil-task-1"]  === "Failed" %}
+          <strong class="govuk-tag app-task-list__nil-task-failed">Failed</strong>
+        {% elif data["process-b-nil-task-1"]  === "unfinished" %}
+          <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
         {% else %}
-            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
+          <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
         {% endif %}
-
 
       </li>
 
@@ -163,11 +164,7 @@
 <!------------ SHOW ALL OF THIS WHEN THEY IS AN OUTCOME ------------>
 
 
-{% if
-data["process-b-nil-task-1-check-1"]  == "Pass" and data["process-b-nil-task-1-check-2"]  == "Pass" and data["process-b-nil-task-1-check-3"]  == "Pass" and data["process-b-nil-task-1-check-4"] == "Pass" and data["process-b-nil-task-1-check-5"]  == "Pass" and data["process-b-nil-task-1-check-6"]  == "Pass" and
-data["process-b-nil-task-2-idoc"] == "No" and
-data["process-b-nil-task-3-check-1"]  == "Pass" and data["process-b-nil-task-3-check-2"]  == "Pass" and data["process-b-nil-task-3-check-3"]  == "Pass" and
-data["process-b-nil-task-4-check-1"]  == "Pass" and data["process-b-nil-task-4-check-2"]  == "Pass" and data["process-b-nil-task-4-check-3"]  == "Pass"  %}
+{% if data["process-b-nil-task-1"]  === "Passed" %}
 
           <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting a passed outcome</h1>
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Confirming a claim meets a nil award will issue a notification to the citizen</p>
@@ -177,7 +174,7 @@ data["process-b-nil-task-4-check-1"]  == "Pass" and data["process-b-nil-task-4-c
           classes: "govuk-!-margin-right-2"
           }) }}
 
-          {% elif data["process-b-nil-task-1"]  == "Failed" and data["process-b-nil-task-4"] === "Failed"  %}
+          {% elif data["process-b-nil-task-1"]  === "Failed" %}
 
     <div class="govuk-grid-row govuk-!-margin-top-6">
     <div class="govuk-grid-column-three-quarters">
@@ -191,24 +188,23 @@ data["process-b-nil-task-4-check-1"]  == "Pass" and data["process-b-nil-task-4-c
     }) }}
 
 
-          {% elif data["process-b-nil-task-4"] == "Failed"  %}
+    {% elif data["process-b-nil-task-1"]  === "unfinished" %}
 
     <div class="govuk-grid-row govuk-!-margin-top-6">
     <div class="govuk-grid-column-three-quarters">
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submitting a failed outcome</h1>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Failed will push this claim back to BAU and an other agent will pick this up</p>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Leaving the process early</h1>
 
-    {{ govukButton({
-    text: "Submit",
-    classes: "govuk-!-margin-right-2"
-    }) }}
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="home-user-1" class="govuk-link" rel="noreferrer noopener">Exit process and return to home</a></p>
 
 
+    <!-- {{ govukButton({
+    text: "Exit process early",
+    classes: "govuk-button--secondary",
+    href: "process-b-nil-task-alt-outcome"
+    }) }} -->
 
     {% else %}
-
-
 
           <div class="govuk-grid-row govuk-!-margin-top-6">
           <div class="govuk-grid-column-three-quarters">
@@ -218,13 +214,15 @@ data["process-b-nil-task-4-check-1"]  == "Pass" and data["process-b-nil-task-4-c
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="home-user-1" class="govuk-link" rel="noreferrer noopener">Exit process and return to home</a></p>
 
 
-          {{ govukButton({
+          <!-- {{ govukButton({
           text: "Exit process early",
           classes: "govuk-button--secondary",
           href: "process-b-nil-task-alt-outcome"
-          }) }}
+          }) }} -->
 
     {% endif %}
+
+
 
 
       </div>

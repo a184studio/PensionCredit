@@ -15,13 +15,6 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="process-b-nil-task-list" method="post" class="form">
 
-        {% if data["process-b-nil-task-1-check-6"] == "pass" %}
-        <input type="hidden" name="process-b-nil-task-1" value="Passed">
-        {% else %}
-        <input type="hidden" name="process-b-nil-task-1" value="Failed">
-        {% endif %}
-
-
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Jeff Bridges</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">NA 11 22 33 c</p>
 
@@ -290,7 +283,7 @@
                 text: "Name A"
               },
               {
-                html: "Name A"
+                html: tagSL
               },
               {
                 html: legendCheck1
@@ -304,7 +297,7 @@
                 text: "DD/MM/YYYY [Age]"
               },
               {
-                html: "DD/MM/YYYY [Age]"
+                html: tagSL
               },
               {
                 html: legendCheck2             }
@@ -317,7 +310,7 @@
                 text: "07960 009 014"
               },
               {
-                text: "07960 009 014"
+                html: tagSL
               },
               {
                 html: legendCheck3             }
@@ -375,10 +368,45 @@
   </div>
 
 
+  {{ govukRadios({
+    idPrefix: "process-b-nil-task-1",
+    name: "process-b-nil-task-1",
+    fieldset: {
+      legend: {
+        text: "What happened?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+      }
+    },
+    hint: {
+      html: hintLegend
+    },
+    classes: "govuk-radios govuk-!-padding-bottom-0",
+    items: [
+    {
+      value: "Passed",
+      text: "Passed",
+      checked: (data["process-b-nil-task-1"] == "Passed")
+    },
+      {
+        value: "Failed",
+        text: "Failed",
+        checked: (data["process-b-nil-task-1"] == "Failed")
+      },
+      {
+        value: "unfinished",
+        text: "I can't complete",
+        checked: (data["process-b-nil-task-1"] == "unfinished")
+      }
+    ]
+  }) }}
 
+
+  <div class="govuk-button-group">
     {{ govukButton({
-      text: "Contine"
+      text: "Confirm"
     }) }}
-  </form>
+
+  </div>
 
 {% endblock %}
