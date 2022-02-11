@@ -26,7 +26,7 @@
 
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
 
-          {% include "agent-service-1-1/agent/mi-stats.html" %}
+    {% include "agent-service-1-1/agent/mi-stats.html" %}
 
   </div>
   <hr class="govuk-section-break govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-8">
@@ -44,8 +44,6 @@
 
   <div class="govuk-grid-row govuk-!-margin-bottom-8">
 
-
-
     <div class="govuk-grid-column-one-quarter">
 
 
@@ -54,56 +52,10 @@
 
 
       <div class="govuk-grid-column-three-quarters">
-        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Identity</h3>
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Previous application</h3>
 
-        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Top five identity failures from 200 claims</h3>
+        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><strong>5</strong> out of <strong>200</strong> claims had an located an IDOC<br>or AfPC claim when processing</h3>
 
-
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-          text: "Rule"
-        },
-        value: {
-          html: "<strong>Number of failures</strong>"
-        }
-      },
-      {
-        key: {
-          text: "Applicant name"
-        },
-        value: {
-          text: "50"
-        }
-      },
-      {
-        key: {
-          text: "Applicant date of birth"
-        },
-        value: {
-          html: "50"
-        }
-      },
-      {
-        key: {
-          text: "Bank details"
-        },
-        value: {
-          html: "25"
-        }
-      },
-      {
-        classes: 'govuk-summary-list--no-border',
-        key: {
-          text: "Address"
-        },
-        value: {
-          html: "10"
-        }
-      }
-    ]
-    }) }}
 
       </div>
       </div>

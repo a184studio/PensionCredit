@@ -26,9 +26,11 @@
 
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
 
-          {% include "agent-service-1-1/agent/mi-stats.html" %}
+    {% include "agent-service-1-1/agent/mi-stats.html" %}
 
   </div>
+
+
   <hr class="govuk-section-break govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-8">
 
 
@@ -54,7 +56,9 @@
 
 
       <div class="govuk-grid-column-three-quarters">
-        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Identity</h3>
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Changes in contact</h3>
+
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">Summary</h3>
 
         <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Top five identity failures from 200 claims</h3>
 
@@ -68,46 +72,38 @@
         value: {
           html: "<strong>Number of failures</strong>"
         }
-      },
-      {
+        },
+        {
         key: {
-          text: "Applicant name"
+          text: "Registered blind or severely sight impaired"
         },
         value: {
-          text: "50"
+          text: "2"
         }
-      },
-      {
+        },
+        {
         key: {
-          text: "Applicant date of birth"
+          text: "Changes to commnication needs"
         },
         value: {
-          html: "50"
+          html: "1"
         }
-      },
-      {
+        },
+        {
         key: {
-          text: "Bank details"
+          text: "Delegated authorities was not declaired"
         },
         value: {
-          html: "25"
+          html: "1"
         }
-      },
-      {
-        classes: 'govuk-summary-list--no-border',
-        key: {
-          text: "Address"
-        },
-        value: {
-          html: "10"
         }
-      }
-    ]
-    }) }}
+        ]
+        }) }}
 
       </div>
       </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 {% endblock %}
