@@ -51,10 +51,21 @@
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
 {% if useAutoStoreData %}
-  {% block footer %}
+{% block footer %}
 
 
-  {% endblock %}
+
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
 {% endif %}
 
 {% block bodyEnd %}

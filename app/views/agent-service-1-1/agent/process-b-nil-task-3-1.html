@@ -1,12 +1,12 @@
-{% extends "layout.html" %}
+{% extends "layout-ur-2022.html" %}
 
 {% block pageTitle %}
-  WorkLlist - Pension Credit
+  PC: Name Name
+
 {% endblock %}
 
 {% block header %}
-  <!-- {% include "includes/internal-header.html" %} -->
-  {% include "explore-header.html" %}
+ {% include "explore-header-ur.html" %}
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
         {% include "agent-service-1-1/agent/record-id.html" %}
 
         <span class="govuk-caption-m">[Task 3-1]</span>
-      <p class="govuk-heading-xl govuk-!-margin-bottom-8">Personal details</p>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-8">Application details</p>
 
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Cross referece citizens provided details using AfPC with what was found in CIZ, CAM, SL</p> -->
 
@@ -241,6 +241,20 @@
               },
               {
                 html: legendCheck1
+              }
+            ],
+            [
+              {
+                text: "Date of claim is not in the future"
+              },
+              {
+                text: "DD/MM/YYYY"
+              },
+              {
+                text: "N/A"
+              },
+              {
+                html: legendCheck5
               }
             ]
           ]

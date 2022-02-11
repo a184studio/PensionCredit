@@ -1,12 +1,12 @@
-  {% extends "layout.html" %}
+{% extends "layout-ur-2022.html" %}
 
 {% block pageTitle %}
-  WorkLlist - Pension Credit
+  PC: Name Name
+
 {% endblock %}
 
 {% block header %}
-  <!-- {% include "includes/internal-header.html" %} -->
-  {% include "explore-header.html" %}
+ {% include "explore-header-ur.html" %}
 {% endblock %}
 
 {% block content %}
@@ -75,7 +75,7 @@
 <!-- SHOW ALL OF THIS IF THEY PASS ID -->
 
 
-{% if data["process-b-nil-task-1"]  == "Passed" or data["process-b-nil-task-1"]  == "unfinished" %}
+{% if data["process-b-nil-task-1"]  == "Passed"%}
 
 
                 <li>
@@ -225,8 +225,6 @@
                 </div>
                 </div>
 
-{% elif data["process-b-nil-task-1"]  == "Failed" %}
-
 {% else %}
 
 {% endif %}
@@ -270,7 +268,7 @@
     {{ govukButton({
     text: "Exit process early",
     classes: "govuk-button--secondary",
-    href: "process-b-nil-task-alt-outcome"
+    href: "process-nil-task-alt-outcome"
     }) }}
 
     {% else %}
@@ -283,7 +281,7 @@
           {{ govukButton({
           text: "Exit process early",
           classes: "govuk-button--secondary",
-          href: "process-b-nil-task-alt-outcome"
+          href: "process-nil-task-alt-outcome"
           }) }}
 
     {% endif %}
