@@ -43,6 +43,7 @@ $govuk-new-link-styles: true;
   padding-top: 0px !important;
 }
 
+
 .ul-id-bar{
   list-style-type: none;
   text-align: left;
@@ -1199,4 +1200,8 @@ h2.govuk-heading-m {
   padding-left:10px;
   padding-right:10px;
   width: 980px;
+}
+
+.pc-padding-left-15 {
+  padding-left: 15px !important;
 }
