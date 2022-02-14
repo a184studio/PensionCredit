@@ -48,11 +48,11 @@
                                     </td>
                                     <td class="govuk-table__cell table-spacer">
 
-                                    {% if data["process-c-nil-task-1-6"]  === "Passed" %}
-                                      <strong class="govuk-tag app-task-list__nil-case-passed">Passed</strong>
-                                    {% elif data["process-c-nil-task-1-6"]  === "Failed" %}
-                                      <strong class="govuk-tag app-task-list__nil-case-failed">Failed</strong>
-                                    {% elif data["process-c-nil-task-1-6"]  === "unfinished" %}
+                                    {% if data["process-c-nil-task-1-6"]  === "Matched" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-passed">Matched</strong>
+                                    {% elif data["process-c-nil-task-1-6"]  === "Not matched" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-failed">Not matched</strong>
+                                    {% elif data["process-c-nil-task-1-6"]  === "Unfinished" %}
                                       <strong class="govuk-tag app-task-list__nil-case-not-done">Unfinished</strong>
                                     {% else %}
                                       <strong class="govuk-tag app-task-list__nil-case-not-done" id="eligibility-completed">Not done</strong>
@@ -75,11 +75,11 @@
                                     </td>
                                     <td class="govuk-table__cell table-spacer">
 
-                                    {% if data["process-b-nil-task-1"]  === "Passed" %}
-                                      <strong class="govuk-tag app-task-list__nil-case-passed">Passed</strong>
-                                    {% elif data["process-b-nil-task-1"]  === "Failed" %}
-                                      <strong class="govuk-tag app-task-list__nil-case-failed">Failed</strong>
-                                    {% elif data["process-b-nil-task-1"]  === "unfinished" %}
+                                    {% if data["process-b-nil-task-1"]  === "Matched" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-passed">Matched</strong>
+                                    {% elif data["process-b-nil-task-1"]  === "Not matched" %}
+                                      <strong class="govuk-tag app-task-list__nil-case-failed">Not matched</strong>
+                                    {% elif data["process-b-nil-task-1"]  === "Unfinished" %}
                                       <strong class="govuk-tag app-task-list__nil-case-not-done">Unfinished</strong>
                                     {% else %}
                                       <strong class="govuk-tag app-task-list__nil-case-not-done" id="eligibility-completed">Not done</strong>
@@ -91,7 +91,6 @@
                                     {% else %}
 
                                     {% endif %}
-
 
 
 
