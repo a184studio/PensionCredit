@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="process-b-nil-task-list" method="post" class="form">
-        <input type="hidden" name="process-b-nil-task-1" value="Unmatched">
+        <!-- <input type="hidden" name="process-b-nil-task-1" value="Matched"> -->
 
         {% include "agent-service-1-1/agent/record-id.html" %}
 
@@ -282,6 +282,20 @@
             ],
             [
               {
+                text: "Delegated authorities"
+              },
+              {
+                text: "None"
+              },
+              {
+                html: "SearchLight"
+              },
+              {
+                html: legendCheck3
+              }
+            ],
+            [
+              {
                 text: "Telephone"
               },
               {
@@ -385,20 +399,30 @@
     {{ govukButton({
       name: "process-b-nil-task-1",
       value: "Matched",
-      text: "Submit",
-      checked: (data["process-b-nil-task-1"] == "Matched")
+      checked: (data["process-b-nil-task-1"] == "Matched"),
+      text: "Submit"
     }) }}
-
 
     {{ govukButton({
         name: "process-b-nil-task-1",
         value: "Unfinished",
         checked: (data["process-b-nil-task-1"] == "Unfinished"),
       text: "I cannot complete",
-      classes: "govuk-button--secondary"
+      classes: "govuk-button--secondary "
     }) }}
 
+
+
   </div>
+
+  <br>
+  {{ govukButton({
+      name: "process-b-nil-task-1",
+      value: "Not matched",
+      checked: (data["process-b-nil-task-1"] == "Not matched"),
+    text: "Example of what a failure looks like",
+    classes: "govuk-button--secondary govuk-fake-button"
+  }) }}
 
 
 

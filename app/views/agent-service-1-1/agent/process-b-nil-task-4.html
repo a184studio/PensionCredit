@@ -145,66 +145,27 @@ items: [
           captionClasses: "govuk-table__caption--m",
           firstCellIsHeader: true,
           head: [
-            {
-              text: "Information to check",
-              classes: 'govuk-30-percent'
-            },
-            {
-              html: "Citizen supplied [AfPC]",
-              classes: 'govuk-30-percent'
-            },
-            {
-              html: "DWP data / Source",
-              classes: 'govuk-30-percent'
-            },
-            {
-              text: "Correct",
-              classes: 'govuk-20-percent'
-            }
+          {
+            text: "Information to check",
+            classes: 'govuk-30-percent'
+          },
+          {
+            html: "Given by applicant [AfPC]",
+            classes: 'govuk-30-percent'
+          },
+          {
+            html: "Data source",
+            classes: 'govuk-25-percent'
+          },
+          {
+            text: "Matched",
+            classes: 'govuk-15-percent'
+          }
           ],
           rows: [
-                [
-                  {
-                    text: "Registered blind or severely sight impaired"
-                  },
-                  {
-                    text: "No"
-                  },
-                  {
-                    html: tagCAM
-                  },
-                  {
-                    html: legendCheck1
-                  }
-                ],
-                [
-                  {
-                    text: "Commnication needs"
-                  },
-                  {
-                    text: "None"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendCheck2
-                  }
-                ],
-                [
-                  {
-                    text: "Delegated authorities"
-                  },
-                  {
-                    text: "None"
-                  },
-                  {
-                    html: tagSL
-                  },
-                  {
-                    html: legendCheck3
-                  }
-                ]
+
+                ,
+
           ]
         }) }}
 
@@ -215,42 +176,36 @@ items: [
     </div>
   </div>
 
-  {{ govukRadios({
-    idPrefix: "process-b-nil-task-4",
-    name: "process-b-nil-task-4",
-    fieldset: {
-      legend: {
-        text: "What happened?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
-      }
-    },
-    hint: {
-      html: hintLegend
-    },
-    classes: "govuk-radios govuk-!-padding-bottom-0",
-    items: [
-    {
-      value: "Passed",
-      text: "Passed",
-      checked: (data["process-b-nil-task-4"] == "Passed")
-    },
-      {
-        value: "Failed",
-        text: "Failed",
-        checked: (data["process-b-nil-task-4"] == "Failed")
-      },
-      {
-        value: "unfinished",
-        text: "I can't complete",
-        checked: (data["process-b-nil-task-4"] == "unfinished")
-      }
-    ]
-  }) }}
+  <div class="govuk-button-group">
+
 
     {{ govukButton({
+      name: "process-b-nil-task-4",
+      value: "Matched",
+      checked: (data["process-b-nil-task-4"] == "Matched"),
       text: "Submit"
     }) }}
+
+    {{ govukButton({
+        name: "process-b-nil-task-4",
+        value: "Unfinished",
+        checked: (data["process-b-nil-task-4"] == "Unfinished"),
+      text: "I cannot complete",
+      classes: "govuk-button--secondary "
+    }) }}
+
+
+  </div>
+  <br>
+  {{ govukButton({
+      name: "process-b-nil-task-4",
+      value: "Not matched",
+      checked: (data["process-b-nil-task-4"] == "Not matched"),
+    text: "Example of what a failure looks like",
+    classes: "govuk-button--secondary govuk-fake-button"
+  }) }}
+
+
   </form>
 
 {% endblock %}

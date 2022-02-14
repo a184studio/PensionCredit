@@ -173,7 +173,7 @@
               text: "N/A"
             },
             {
-              html: tagSL
+              html: "SearchLight"
             },
             {
               html: legendCheck1
@@ -187,7 +187,7 @@
                 text: "DD/MM/YY"
               },
               {
-                html: tagCAM
+                html: "CAM"
               },
               {
                 html: legendCheck2
@@ -206,6 +206,34 @@
               {
                 html: legendCheck3
               }
+            ],
+            [
+              {
+                text: "Commnication needs"
+              },
+              {
+                text: "None"
+              },
+              {
+                html: "SearchLight"
+              },
+              {
+                html: legendCheck2
+              }
+            ],
+            [
+              {
+                text: "Registered blind or severely sight impaired"
+              },
+              {
+                text: "No"
+              },
+              {
+                html: "CAM"
+              },
+              {
+                html: legendCheck4
+              }
             ]
           ]
         }) }}
@@ -217,36 +245,26 @@
 
   <div class="govuk-button-group">
 
-    {% if data["process-b-nil-task-3-1-1"] and data["process-b-nil-task-3-1-2"] and data["process-b-nil-task-3-1-3"] %}
 
     {{ govukButton({
       name: "process-b-nil-task-3-1",
       value: "Matched",
-      text: "Submit",
-      checked: (data["process-b-nil-task-3-1"] == "Matched")
+      checked: (data["process-b-nil-task-3-1"] == "Matched"),
+      text: "Submit"
     }) }}
-
-    {% else %}
-
-    {{ govukButton({
-      name: "process-b-nil-task-3-1",
-      value: "Unmatched",
-      text: "Submit",
-      checked: (data["process-b-nil-task-3-1"] == "Unmatched")
-    }) }}
-
-    {% endif %}
-
 
     {{ govukButton({
         name: "process-b-nil-task-3-1",
         value: "Unfinished",
         checked: (data["process-b-nil-task-3-1"] == "Unfinished"),
       text: "I cannot complete",
-      classes: "govuk-button--secondary"
+      classes: "govuk-button--secondary "
     }) }}
 
+
+
   </div>
+
   </form>
 
 {% endblock %}

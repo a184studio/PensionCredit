@@ -202,15 +202,15 @@
                     classes: 'govuk-30-percent'
                   },
                   {
-                    html: "Citizen supplied [AfPC]",
+                    html: "Given by applicant [AfPC]",
                     classes: 'govuk-30-percent'
                   },
                   {
-                    html: "DWP data / Source",
+                    html: "Data source",
                     classes: 'govuk-25-percent'
                   },
                   {
-                    text: "Unmatched",
+                    text: "Matched",
                     classes: 'govuk-15-percent'
                   }
                 ],
@@ -223,7 +223,7 @@
                         text: "No partner"
                       },
                       {
-                        html: tagSL
+                        html: "SearchLight"
                       },
                       {
                         html: legendCheck4
@@ -238,42 +238,25 @@
     </div>
   </div>
 
-  {{ govukRadios({
-    idPrefix: "process-b-nil-task-3-4",
-    name: "process-b-nil-task-3-4",
-    fieldset: {
-      legend: {
-        text: "What happened?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
-      }
-    },
-    hint: {
-      html: hintLegend
-    },
-    classes: "govuk-radios govuk-!-padding-bottom-0",
-    items: [
-    {
-      value: "Passed",
-      text: "Passed",
-      checked: (data["process-b-nil-task-3-4"] == "Passed")
-    },
-      {
-        value: "Failed",
-        text: "Failed",
-        checked: (data["process-b-nil-task-3-4"] == "Failed")
-      },
-      {
-        value: "unfinished",
-        text: "I can't complete",
-        checked: (data["process-b-nil-task-3-4"] == "unfinished")
-      }
-    ]
-  }) }}
+  <div class="govuk-button-group">
+
 
     {{ govukButton({
+      name: "process-b-nil-task-3-4",
+      value: "Matched",
+      checked: (data["process-b-nil-task-3-4"] == "Matched"),
       text: "Submit"
     }) }}
+
+    {{ govukButton({
+        name: "process-b-nil-task-3-4",
+        value: "Unfinished",
+        checked: (data["process-b-nil-task-3-4"] == "Unfinished"),
+      text: "I cannot complete",
+      classes: "govuk-button--secondary "
+    }) }}
+
+  </div>
   </form>
 
 {% endblock %}
