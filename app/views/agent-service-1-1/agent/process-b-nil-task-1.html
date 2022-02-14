@@ -14,6 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="process-b-nil-task-list" method="post" class="form">
+        <input type="hidden" name="process-b-nil-task-1" value="Unmatched">
 
         {% include "agent-service-1-1/agent/record-id.html" %}
 
@@ -36,8 +37,8 @@
           {% set legendCheck1 %}
 
         {{ govukCheckboxes({
-          idPrefix: "process-b-nil-task-1-check-1",
-          name: "process-b-nil-task-1-check-1",
+          idPrefix: "process-b-nil-task-1-1",
+          name: "process-b-nil-task-1-1",
           classes: "govuk-checkboxes--small",
           fieldset: {
             legend: {
@@ -49,9 +50,9 @@
           items: [
             {
               classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
-              value: "Pass",
+              value: "Matched",
               text: " ",
-              checked: data['process-b-nil-task-1-check-1'] == "Pass"
+              checked: data['process-b-nil-task-1-1'] == "Matched"
             }
           ]
         }) }}
@@ -63,8 +64,8 @@
         {% set legendCheck2 %}
 
       {{ govukCheckboxes({
-        idPrefix: "process-b-nil-task-1-check-2",
-        name: "process-b-nil-task-1-check-2",
+        idPrefix: "process-b-nil-task-1-2",
+        name: "process-b-nil-task-1-2",
         classes: "govuk-checkboxes--small",
         fieldset: {
           legend: {
@@ -76,9 +77,9 @@
         items: [
           {
             classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
-            value: "Pass",
+            value: "Matched",
             text: " ",
-            checked: data['process-b-nil-task-1-check-2'] == "Pass"
+            checked: data['process-b-nil-task-1-2'] == "Matched"
           }
         ]
       }) }}
@@ -88,8 +89,8 @@
       {% set legendCheck3 %}
 
     {{ govukCheckboxes({
-      idPrefix: "process-b-nil-task-1-check-3",
-      name: "process-b-nil-task-1-check-3",
+      idPrefix: "process-b-nil-task-1-3",
+      name: "process-b-nil-task-1-3",
       classes: "govuk-checkboxes--small",
       fieldset: {
         legend: {
@@ -101,9 +102,9 @@
       items: [
         {
           classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
-          value: "Pass",
+          value: "Matched",
           text: " ",
-          checked: data['process-b-nil-task-1-check-3'] == "Pass"
+          checked: data['process-b-nil-task-1-3'] == "Matched"
         }
       ]
     }) }}
@@ -113,8 +114,8 @@
     {% set legendCheck4 %}
 
   {{ govukCheckboxes({
-    idPrefix: "process-b-nil-task-1-check-4",
-    name: "process-b-nil-task-1-check-4",
+    idPrefix: "process-b-nil-task-1-4",
+    name: "process-b-nil-task-1-4",
     classes: "govuk-checkboxes--small",
     fieldset: {
       legend: {
@@ -126,9 +127,9 @@
     items: [
       {
         classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
-        value: "Pass",
+        value: "Matched",
         text: " ",
-        checked: data['process-b-nil-task-1-check-4'] == "Pass"
+        checked: data['process-b-nil-task-1-4'] == "Matched"
       }
     ]
   }) }}
@@ -138,8 +139,8 @@
   {% set legendCheck5 %}
 
 {{ govukCheckboxes({
-  idPrefix: "process-b-nil-task-1-check-5",
-  name: "process-b-nil-task-1-check-5",
+  idPrefix: "process-b-nil-task-1-5",
+  name: "process-b-nil-task-1-5",
   classes: "govuk-checkboxes--small",
   fieldset: {
     legend: {
@@ -151,9 +152,9 @@
   items: [
     {
       classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
-      value: "Pass",
+      value: "Matched",
       text: " ",
-      checked: data['process-b-nil-task-1-check-5'] == "Pass"
+      checked: data['process-b-nil-task-1-5'] == "Matched"
     }
   ]
 }) }}
@@ -162,11 +163,9 @@
 
 {% set legendCheck6 %}
 
-      {% if data["process-b-nil-task-1-check-6"]%}
-
             {{ govukCheckboxes({
-            idPrefix: "process-b-nil-task-1-check-6",
-            name: "process-b-nil-task-1-check-6",
+            idPrefix: "process-b-nil-task-1-6",
+            name: "process-b-nil-task-1-6",
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
@@ -178,37 +177,13 @@
             items: [
               {
                 classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
-                value: "Pass",
+                value: "Matched",
                 text: " ",
-                checked: data['process-b-nil-task-1-check-6'] == "Pass"
+                checked: data['process-b-nil-task-1-6'] == "Matched"
               }
             ]
             }) }}
 
-      {% else %}
-
-            {{ govukCheckboxes({
-            idPrefix: "process-b-nil-task-1-check-6",
-            name: "process-b-nil-task-1-check-6",
-            classes: "govuk-checkboxes--small",
-            fieldset: {
-              legend: {
-                text: "",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
-              }
-            },
-            items: [
-              {
-                classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
-                value: "Pass",
-                text: " ",
-                checked: data['process-b-nil-task-1-check-6'] == "Pass"
-              }
-            ]
-            }) }}
-
-      {% endif %}
 
 
 {% endset %}
@@ -264,15 +239,15 @@
             classes: 'govuk-30-percent'
           },
           {
-            html: "Citizen supplied [AfPC]",
+            html: "Given by applicant [AfPC]",
             classes: 'govuk-30-percent'
           },
           {
-            html: "DWP data / Source",
+            html: "Data source",
             classes: 'govuk-25-percent'
           },
           {
-            text: "Unmatched",
+            text: "Matched",
             classes: 'govuk-15-percent'
           }
         ],
@@ -371,7 +346,7 @@
   </div>
 
 
-  {{ govukRadios({
+  <!-- {{ govukRadios({
     idPrefix: "process-b-nil-task-1",
     name: "process-b-nil-task-1",
     fieldset: {
@@ -387,7 +362,7 @@
     classes: "govuk-radios govuk-!-padding-bottom-0",
     items: [
     {
-      value: "Passed",
+      value: "Matched",
       text: "All matched",
       checked: (data["process-b-nil-task-1"] == "Passed")
     },
@@ -402,14 +377,29 @@
         checked: (data["process-b-nil-task-1"] == "unfinished")
       }
     ]
-  }) }}
-
+  }) }} -->
 
   <div class="govuk-button-group">
+
+
     {{ govukButton({
-      text: "Confirm"
+      name: "process-b-nil-task-1",
+      value: "Matched",
+      text: "Submit",
+      checked: (data["process-b-nil-task-1"] == "Matched")
+    }) }}
+
+
+    {{ govukButton({
+        name: "process-b-nil-task-1",
+        value: "Unfinished",
+        checked: (data["process-b-nil-task-1"] == "Unfinished"),
+      text: "I cannot complete",
+      classes: "govuk-button--secondary"
     }) }}
 
   </div>
+
+
 
 {% endblock %}

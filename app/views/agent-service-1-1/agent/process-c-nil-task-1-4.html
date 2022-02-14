@@ -56,19 +56,19 @@
           classes: "govuk-radios",
           items: [
           {
-            value: "Passed",
-            text: "Correct",
-            checked: (data["process-c-nil-task-1-4"] == "Passed")
+            value: "Matched",
+            text: "Matched",
+            checked: (data["process-c-nil-task-1-4"] == "Matched")
           },
             {
-              value: "Failed",
+              value: "Not matched",
               text: "Incorrect",
-              checked: (data["process-c-nil-task-1-4"] == "Failed")
+              checked: (data["process-c-nil-task-1-4"] == "Not matched")
             },
             {
-              value: "unfinished",
+              value: "Unfinished",
               text: "I can't complete",
-              checked: (data["process-c-nil-task-1-4"] == "unfinished")
+              checked: (data["process-c-nil-task-1-4"] == "Unfinished")
             }
           ]
         }) }}
