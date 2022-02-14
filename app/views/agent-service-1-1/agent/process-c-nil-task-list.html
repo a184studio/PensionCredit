@@ -179,10 +179,10 @@
           Check previous contact
         </a>
 
-        {% if data["process-c-nil-task-2-idoc"]  === "Matched" %}
-          <strong class="govuk-tag app-task-list__nil-task-passed">Matched</strong>
-        {% elif data["process-c-nil-task-2-idoc"]  === "Not matched" %}
-          <strong class="govuk-tag app-task-list__nil-task-failed">Not matched</strong>
+        {% if data["process-c-nil-task-2-idoc"]  === "None found" %}
+          <strong class="govuk-tag app-task-list__nil-task-passed">None found</strong>
+        {% elif data["process-c-nil-task-2-idoc"]  === "Found" %}
+          <strong class="govuk-tag app-task-list__nil-task-failed">Found</strong>
         {% elif data["process-c-nil-task-2-idoc"]  === "Unfinished" %}
           <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
         {% else %}
