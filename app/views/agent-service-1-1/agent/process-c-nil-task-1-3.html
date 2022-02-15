@@ -20,12 +20,12 @@
         <span class="govuk-caption-m">[Task 1-3]</span>
         <p class="govuk-heading-xl govuk-!-margin-bottom-6">Telephone</p>
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Citizen supplied [AfPC]</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Given by applicant [AfPC]</p>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>0796009 3658</strong></p>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">DWP data / Source:</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">DWP source:</p>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>Check in SearchLight</strong></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -44,7 +44,7 @@
           name: "process-c-nil-task-1-3",
           fieldset: {
             legend: {
-              text: "What happened?",
+              text: "Does the information match?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -53,12 +53,12 @@
           items: [
           {
             value: "Matched",
-            text: "Matched",
+            text: "Yes",
             checked: (data["process-c-nil-task-1-3"] == "Matched")
           },
             {
               value: "Not matched",
-              text: "Incorrect",
+              text: "No",
               checked: (data["process-c-nil-task-1-3"] == "Not matched")
             },
             {
