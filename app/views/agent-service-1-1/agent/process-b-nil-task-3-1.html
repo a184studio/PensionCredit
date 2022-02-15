@@ -109,6 +109,32 @@
       {% endset %}
 
 
+            {% set legendCheck4 %}
+
+            {{ govukCheckboxes({
+            idPrefix: "process-b-nil-task-3-1-4",
+            name: "process-b-nil-task-3-1-4",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s govuk-!-padding-top-0 govuk-!-margin-top-0"
+              }
+            },
+            items: [
+              {
+                classes: "govuk-!-padding-top-0 govuk-!-margin-top-0",
+                value: "Matched",
+                text: " ",
+                checked: data['process-b-nil-task-3-1-4'] == "Matched"
+              }
+            ]
+            }) }}
+
+            {% endset %}
+
+
         <!------------Legend------------>
           {% set tagSL %}
 
@@ -159,7 +185,7 @@
             classes: 'govuk-25-percent'
           },
           {
-            text: "Matched",
+            text: "Matched / Confim",
             classes: 'govuk-15-percent'
           }
         ],
@@ -184,7 +210,7 @@
                 text: "Reached SPA on or after 6 April 2016 [Savings Credit not applicable]"
               },
               {
-                text: "DD/MM/YY"
+                text: "01/01/1954 [68]"
               },
               {
                 html: "CAM"
@@ -198,7 +224,7 @@
                 text: "Date of claim is not in the future"
               },
               {
-                text: "DD/MM/YYYY"
+                text: "01/01/1954 [68]"
               },
               {
                 text: "N/A"
