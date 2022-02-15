@@ -60,7 +60,7 @@
 
         <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">Summary</h3>
 
-        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Top five identity failures from 200 claims</h3>
+        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Top five unmatched rules from 200 claims</h3>
 
 
         {{ govukSummaryList({
@@ -71,14 +71,6 @@
         },
         value: {
           html: "<strong>Number of failures</strong>"
-        }
-        },
-        {
-        key: {
-          text: "Registered blind or severely sight impaired"
-        },
-        value: {
-          text: "2"
         }
         },
         {
