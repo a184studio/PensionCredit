@@ -121,7 +121,6 @@ router.use(require('./routes/citizen-version-2-9-ur/mvp'))
 router.use(require('./routes/citizen-version-2-10/mvp'))
 router.use(require('./routes/g4s-0-5/mvp'))
 router.use(require('./routes/g4s-0-6/mvp'))
-router.use(require('./routes/searchlight/sl-1'))
 router.use(require('./routes/g4s-0-6-5/mvp'))
 router.use(require('./routes/g4s-0-7/mvp'))
 router.use(require('./routes/citizen-version-2-11/mvp'))
@@ -131,6 +130,9 @@ router.use(require('./routes/g4s-0-5/mvp'))
 router.use(require('./routes/agent-service-1/agent'))
 router.use(require('./routes/g4s-0-9/mvp'))
 router.use(require('./routes/agent-service-1-1/agent'))
+router.use(require('./routes/third-party/sl-1'))
+router.use(require('./routes/third-party/sl-2'))
+router.use(require('./routes/third-party/cam-1'))
 
 
 module.exports = router
