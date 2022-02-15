@@ -88,7 +88,7 @@
                       Check previous contact
                     </a>
                     {% if data["process-b-nil-task-2-idoc"] == "Found" %}     <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Found</strong>
-                    {% elif data["process-b-nil-task-2-idoc"] == "None found" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Not found</strong>
+                    {% elif data["process-b-nil-task-2-idoc"] == "Not found" %}    <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Not found</strong>
                     {% else %}                            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
                     {% endif %}
 
