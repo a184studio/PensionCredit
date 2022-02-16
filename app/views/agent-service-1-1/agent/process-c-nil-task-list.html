@@ -204,7 +204,7 @@
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-1" aria-describedby="task-1">
-          [3-1] Applicant is not deceased
+          [3-1] Applicant alive
         </a>
 
         {% if data["process-c-nil-task-3-1"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -215,7 +215,7 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-2" aria-describedby="task-1">
-        [3-2] Reached SPA on or after 6 April 2016 [Savings Credit not applicable]
+        [3-2] Claim is not savings credit applicable
         </a>
 
         {% if data["process-c-nil-task-3-2"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -259,7 +259,7 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-6" aria-describedby="task-1">
-          [3-6] Applicant is not waiting to hear about any other benefits
+          [3-6] Applicant waiting to hear about benefits
         </a>
 
         {% if data["process-c-nil-task-3-6"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -270,7 +270,7 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-7" aria-describedby="task-1">
-          [3-7] No open interest in CIS for qualif...during the backdating period
+          [3-7] Open interest for qualifying benefits [Backdating]
         </a>
 
         {% if data["process-c-nil-task-3-7"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -281,7 +281,7 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-8" aria-describedby="task-1">
-          [3-8] No open in interest in CIS for qualifying benefits today
+          [3-8] Open interest for qualifying benefits [Today]
         </a>
 
         {% if data["process-c-nil-task-3-8"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -292,7 +292,8 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-9" aria-describedby="task-1">
-        [3-9] State Pension amount exceeded applicable amount today
+        [3-9] State pension amount [Backdating]
+
         </a>
 
         {% if data["process-c-nil-task-3-9"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -303,7 +304,7 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-10" aria-describedby="task-1">
-          [3-10] State Pension amount exceeded ... whole backdating period
+          [3-10] State pension amount [Today]
         </a>
 
         {% if data["process-c-nil-task-3-10"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -314,9 +315,8 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-10" aria-describedby="task-1">
-          [3-11] Applicant not in receipt of any qualifying benefits today
+          [3-11] Qualifying benefits
         </a>
-
         {% if data["process-c-nil-task-3-11"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
         {% elif data["process-c-nil-task-3-11"] == "Matched" %}  <strong class="govuk-tag app-task-list__nil-task-passed" id="eligibility-completed">Matched</strong>
         {% else %}                                             <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
@@ -325,7 +325,7 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-12" aria-describedby="task-1">
-          [3-12] Applicant does not live with partner
+          [3-12] Relationships
         </a>
 
         {% if data["process-c-nil-task-3-12"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -336,7 +336,7 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-13" aria-describedby="task-1">
-          [3-13] No housing costs (service charges and ground rent)
+          [3-13] Housing costs
         </a>
 
         {% if data["process-c-nil-task-3-13"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -347,7 +347,7 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-14" aria-describedby="task-1">
-          [3-14] Applicant does not want to apply for Housing Benefit
+          [3-14] Housing benefit
         </a>
 
         {% if data["process-c-nil-task-3-14"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
@@ -358,7 +358,7 @@
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-15" aria-describedby="task-1">
-          [3-15] Applicant does not want info on SMI
+          [3-15] Support for mortgage interest
         </a>
 
         {% if data["process-c-nil-task-3-15"] == "Not matched" %}    <strong class="govuk-tag app-task-list__nil-task-failed" id="eligibility-completed">Not matched</strong>
