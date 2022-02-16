@@ -133,6 +133,7 @@ router.use(require('./routes/agent-service-1-1/agent'))
 router.use(require('./routes/third-party/sl-1'))
 router.use(require('./routes/third-party/sl-2'))
 router.use(require('./routes/third-party/cam-1'))
+router.use(require('./routes/g4s-0-10/mvp'))
 
 
 module.exports = router
