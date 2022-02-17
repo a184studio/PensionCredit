@@ -36,8 +36,8 @@
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-3-8",
-          name: "process-c-nil-task-3-8",
+          idPrefix: "process-c-nil-task-3-10",
+          name: "process-c-nil-task-3-10",
           fieldset: {
             legend: {
               text: "Does the information match?",
@@ -50,17 +50,17 @@
           {
             value: "Matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-8"] == "Matched")
+            checked: (data["process-c-nil-task-3-10"] == "Matched")
           },
             {
               value: "Not matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-8"] == "Not matched")
+              checked: (data["process-c-nil-task-3-10"] == "Not matched")
             },
             {
               value: "Unfinished",
               text: "I cannot complete",
-              checked: (data["process-c-nil-task-3-8"] == "Unfinished")
+              checked: (data["process-c-nil-task-3-10"] == "Unfinished")
             }
           ]
         }) }}
