@@ -25,17 +25,23 @@
 <form action="benefit-check-router" method="post" class="form">
 {% endif %}
 
-<!--
-      <div class="moj-banner">
-      <div class="moj-banner__message">
-        <h2 class="govuk-heading-m govuk-!-margin-top-0">Use SearchLight, do not ask caller.</h2>
-      </div>
-      </div>
--->
+
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
         I'm just going to check any benefits you get
       </h1>
+
+<!-- Dynamic ADP and Scoland  -->
+
+{% set legendScotland %}
+
+{% if data['resides-in-uk'] == 'Scotland' %}
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">The daily living component of Personal Independence Payment or ADP</p>
+{% else %}
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">The daily living component of Personal Independence Payment</p>
+{% endif %}
+
+{% endset -%}
 
 {{ govukCheckboxes({
   idPrefix: "benefit-check",
@@ -65,8 +71,7 @@
     },
     {
       value: "B",
-      text: "The daily living component of Personal Independence Payment
-      ",
+      html: legendScotland,
       checked: (data["benefit-check"] == "B")
     },
     {

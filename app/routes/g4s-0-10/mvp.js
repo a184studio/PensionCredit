@@ -91,7 +91,7 @@ router.post(`${baseUrl}/reside-in-uk-router`, (req, res) => {
   if (residesInUk === 'England') {
     res.redirect(`${baseUrl}/partner-check-yn`)
   } else if (residesInUk === 'Scotland') {
-    res.redirect(`${baseUrl}/cpartner-check-yn`)
+    res.redirect(`${baseUrl}/partner-check-yn`)
   } else if (residesInUk === 'Wales') {
     res.redirect(`${baseUrl}/partner-check-yn`)
   } else if (residesInUk === 'Northern-Ireland') {

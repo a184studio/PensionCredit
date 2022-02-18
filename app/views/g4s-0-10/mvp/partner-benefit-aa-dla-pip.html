@@ -20,12 +20,24 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
+      <!------------------------------------>
+            {% set legendScotland %}
+
+            {% if data['resides-in-uk'] == 'Scotland' %}
+            <p class="govuk-heading-xl govuk-!-margin-bottom-0">Has your partner applied for Disability Living Allowance (DLA), Attendance Allowance (AA) or Personal Independence Payment (PIP) or ADP</p>
+            {% else %}
+            <p class="govuk-heading-xl govuk-!-margin-bottom-0">Has your partner applied for Disability Living Allowance (DLA), Attendance Allowance (AA) or Personal Independence Payment (PIP)?</p>
+            {% endif %}
+
+            {% endset -%}
+      <!------------------------------------>
+
       {{ govukRadios({
         idPrefix: "partner-benefit-aa-dla-pip",
         name: "partner-benefit-aa-dla-pip",
         fieldset: {
           legend: {
-            text: "Has your partner applied for Disability Living Allowance (DLA), Attendance Allowance (AA) or Personal Independence Payment (PIP)?",
+            html: legendScotland,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }

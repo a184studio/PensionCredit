@@ -22,6 +22,18 @@
         I'm just going to check any benefits your partner gets
       </h1>
 
+<!------------------------------------>
+      {% set legendScotland %}
+
+      {% if data['resides-in-uk'] == 'Scotland' %}
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">The daily living component of Personal Independence Payment or ADP</p>
+      {% else %}
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">The daily living component of Personal Independence Payment</p>
+      {% endif %}
+
+      {% endset -%}
+<!------------------------------------>
+
       {{ govukCheckboxes({
         idPrefix: "partner-benefit-check",
         name: "partner-benefit-check",
@@ -50,7 +62,7 @@
           },
           {
             value: "B",
-            text: "The daily living component of Personal Independence Payment",
+            html: legendScotland,
             checked: (data["partner-benefit-check"] == "B")
           },
           {
