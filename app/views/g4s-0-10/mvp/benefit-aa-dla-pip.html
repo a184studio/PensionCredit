@@ -24,9 +24,20 @@
             {% set legendScotland %}
 
             {% if data['resides-in-uk'] == 'Scotland' %}
-            <p class="govuk-heading-xl govuk-!-margin-bottom-0">Have you applied for Disability Living Allowance (DLA), Attendance Allowance (AA) or Personal Independence Payment (PIP)?or ADP</p>
+            <h1 class="govuk-heading-xl">Have you applied for any of these benefits?</h1>
+              <ul class="govuk-list govuk-list--bullet">
+               <li>Disability Living Allowance</li>
+               <li>Attendance Allowance</li>
+               <li>Personal Independence Payment</li>
+               <li>Adult Disability Payment</li>
+              </ul>
             {% else %}
-            <p class="govuk-heading-xl govuk-!-margin-bottom-0">Have you applied for Disability Living Allowance (DLA), Attendance Allowance (AA) or Personal Independence Payment (PIP)?</p>
+            <h1 class="govuk-heading-xl">Have you applied for any of these benefits?</h1>
+              <ul class="govuk-list govuk-list--bullet">
+               <li>Disability Living Allowance</li>
+               <li>Attendance Allowance</li>
+               <li>Personal Independence Payment</li>
+              </ul>            
             {% endif %}
 
             {% endset -%}
