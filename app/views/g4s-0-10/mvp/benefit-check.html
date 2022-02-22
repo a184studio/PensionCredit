@@ -42,6 +42,8 @@
 {% endif %}
 
 {% endset -%}
+<!-- html: legendScotland -->
+
 
 {{ govukCheckboxes({
   idPrefix: "benefit-check",
@@ -71,7 +73,12 @@
     },
     {
       value: "B",
-      html: legendScotland,
+      text: "The daily living component of Personal Independence Payment",
+      checked: (data["benefit-check"] == "B")
+    },
+    {
+      value: "B",
+      html: "Adult Disabilty Payment",
       checked: (data["benefit-check"] == "B")
     },
     {
