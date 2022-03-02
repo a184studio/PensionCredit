@@ -11,12 +11,8 @@
  {% include "explore-header.html" %}
 {% endblock %}
 
-
-
 {% block bodyStart %}
 {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
-
-
 <form method="POST">
   {{ govukCookieBanner({
     ariaLabel: "Cookies on [name of service]",
@@ -26,6 +22,7 @@
         actions: [
         {
           text: "End call",
+          classes: "govuk-button--warning",
           href: "#",
           type: "button"
         }
@@ -34,7 +31,6 @@
     ]
   }) }}
 </form>
-
 {% endblock %}
 
 
@@ -53,23 +49,48 @@
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Find someone</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-0">Enter a National Insurance number</p>
-      <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-top-0 govuk-!-margin-bottom-4">For example, QQ 12 34 56 C</p>
 
 
 
 
                 {{ govukInput({
                   label: {
-                    html: legendName
+                    text: "Enter a National Insurance number"
                   },
                   hint: {
-                    text: ""
+                    text: "For example, QQ 12 34 56 C"
                   },
                   id: "search-query",
-                  name: "search",
+                  name: "search-query",
                   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
                   value: data["search-query"]
+                }) }}
+
+                {{ govukInput({
+                  label: {
+                    text: "Enter name"
+                  },
+                  hint: {
+                    text: "Lynn Lisa Smith"
+                  },
+                  id: "search-name",
+                  name: "search-name",
+                  classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
+                  value: data["search-name"]
+                }) }}
+
+
+                {{ govukDateInput({
+                  id: "dob",
+                  namePrefix: "dob",
+                  fieldset: {
+                    legend: {
+                      text: "Enter date of birth?"
+                    }
+                  },
+                  hint: {
+                    text: "For example, 27 3 1950"
+                  }
                 }) }}
 
                 {{ govukButton({

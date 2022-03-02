@@ -11,8 +11,6 @@
 
 {% block bodyStart %}
 {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
-
-
 <form method="POST">
   {{ govukCookieBanner({
     ariaLabel: "Cookies on [name of service]",
@@ -22,6 +20,7 @@
         actions: [
         {
           text: "End call",
+          classes: "govuk-button--warning",
           href: "#",
           type: "button"
         }
@@ -30,7 +29,6 @@
     ]
   }) }}
 </form>
-
 {% endblock %}
 
 {% block content %}
@@ -42,7 +40,7 @@
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["search"]}}</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["search-query"]}}</p>
 
 
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-top-8">DWP help</p>
