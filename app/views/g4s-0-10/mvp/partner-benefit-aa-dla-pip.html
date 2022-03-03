@@ -20,27 +20,24 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
-      <!------------------------------------>
-            {% set legendScotland %}
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Has your partner applied for any of these benefits?</h1>
-            <ul class="govuk-list govuk-!-padding-margin-0 govuk-list--bullet">
-               <li>Disability Living Allowance</li>
-               <li>Attendance Allowance</li>
-               <li>Personal Independence Payment</li>
-               <li>Adult Disability Payment</li>
-              </ul>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Your partner's disability benefit applications</h1>
+      <p class="govuk-body">We need to know about applications for:</p>
+      <ul class="govuk-list govuk-!-padding-margin-0 govuk-list--bullet">
+         <li>Disability Living Allowance</li>
+         <li>Attendance Allowance</li>
+         <li>Personal Independence Payment</li>
+         <li>Adult Disability Payment</li>
+        </ul>
 
-            {% endset -%}
-      <!------------------------------------>
 
       {{ govukRadios({
         idPrefix: "partner-benefit-aa-dla-pip",
         name: "partner-benefit-aa-dla-pip",
         fieldset: {
           legend: {
-            html: legendScotland,
+            text: "Has your partner applied for any of these benefits?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--m"
           }
 
         },

@@ -20,11 +20,11 @@
       <input type="hidden" name="hospitals-complete" value="true"/>
 
 
-      <!------------------------------------>
-            {% set legendScotland %}
+
 
           
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Have you applied for any of these benefits?</h1>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Your disability benefit applications</h1>
+            <p class="govuk-body">We need to know about applications for:</p>
             <ul class="govuk-list govuk-!-padding-margin-0 govuk-list--bullet">
                <li>Disability Living Allowance</li>
                <li>Attendance Allowance</li>
@@ -33,17 +33,15 @@
               </ul>
            
 
-            {% endset -%}
-      <!------------------------------------>
 
       {{ govukRadios({
         idPrefix: "benefit-aa-dla-pip",
         name: "benefit-aa-dla-pip",
         fieldset: {
           legend: {
-            html: legendScotland,
+            text: "Have you applied for any of these disability benefits?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--m"
           }
         },
         classes: "govuk-radios",
