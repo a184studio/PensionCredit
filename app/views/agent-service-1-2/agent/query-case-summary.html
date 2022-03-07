@@ -9,7 +9,6 @@
  {% include "explore-header.html" %}
 {% endblock %}
 
-{% block bodyStart %}
 
 {% block content %}
 
@@ -22,7 +21,23 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["search-query"]}}</p>
 
-      
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
+              <li>State Pension Ammount</li>
+              <li>Backdating Period</li>
+              <li>Timeline</li>
+            </ul>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
+              <li>£182</li>
+              <li>10/01/2022 - 28/02/2022</li>
+              <li>Letter sent on 01/03/2022 <br><a href="query-types">View more</a> </li>
+            </ul>
+          </div>
+        </div>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -30,26 +45,46 @@
       <ol class="app-task-list">
       <li>
       <h2 class="app-task-list__section">
-        <span class="app-task-list__section-number">1.</span>Benefits
+        <span class="app-task-list__section-number">1.</span>Check nil award
       </h2>
       <ul class="app-task-list__items">
         <li class="app-task-list__item">
           <a class="app-task-list__task-name" href="process-b-nil-task-1" aria-describedby="task-1">
-            View benefits
+            Benefits
           </a>
-          <!--
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="process-b-nil-task-1" aria-describedby="task-1">
+              Household composition
+            </a>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="process-b-nil-task-1" aria-describedby="task-1">
+                Housing
+              </a>
+        </li>
 
-          {% if data["process-b-nil-task-1"]  == "Matched" %}
-            <strong class="govuk-tag app-task-list__nil-task-passed">Matched</strong>
-            {% elif data["process-b-nil-task-1"]  == "Not matched" %}
-            <strong class="govuk-tag app-task-list__nil-task-failed">Not matched</strong>
-          {% elif data["process-b-nil-task-1"]  == "Unfinished" %}
-            <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
-          {% else %}
-            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">Not done</strong>
-          {% endif %}
-        -->
+      </ul>
+      </li>
 
+      </ol>
+
+      <ol class="app-task-list">
+      <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">2.</span>Check more
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="process-b-nil-task-1" aria-describedby="task-1">
+            Application
+          </a>
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="process-b-nil-task-1" aria-describedby="task-1">
+            Award letter
+          </a>
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="process-b-nil-task-1" aria-describedby="task-1">
+            Emails and letters from customer
+          </a>
         </li>
 
       </ul>
