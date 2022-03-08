@@ -60,11 +60,6 @@
               value: "Not matched",
               text: "No",
               checked: (data["process-c-nil-task-1-2"] == "Not matched")
-            },
-            {
-              value: "Unfinished",
-              text: "I cannot complete",
-              checked: (data["process-c-nil-task-1-2"] == "Unfinished")
             }
           ]
         }) }}
@@ -76,11 +71,26 @@
     </div>
   </div>
 
-
-
+  <div class="govuk-button-group">
     {{ govukButton({
+      name: "process-b-nil-task-3-2",
+      value: "Matched",
+      checked: (data["process-b-nil-task-3-2"] == "Matched"),
       text: "Save and continue"
     }) }}
+
+    {{ govukButton({
+        name: "process-b-nil-task-3-2",
+        value: "Unfinished",
+        checked: (data["process-b-nil-task-3-2"] == "Unfinished"),
+      text: "Save and exit",
+      classes: "govuk-button--secondary "
+    }) }}
+    </div>
+
+
+
+
   </form>
 
 {% endblock %}
