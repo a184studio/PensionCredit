@@ -18,32 +18,59 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="query-phone-log" method="post" class="form">
+    <form action="query-case-summary" method="post" class="form">
 
       <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-half">
-            <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
-              <li>Applied online</li>
-              <li>Award</li>
-              <li>State Pension Ammount</li>
-              <li>Backdating Period</li>
-              <li>Timeline</li>
+          <div class="govuk-grid-column-three-quarters">
+            <ul class="govuk-list class="">
+              <li class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Application answers </li>
+              <li class="govuk-body govuk-!-font-weight-bold">Does anyone get Carer’s Allowance or the Carer’s Element of Universal Credit for looking after you?</li>
+              <li class="govuk-!-margin-bottom-4">No</li>
+              <li class="govuk-body govuk-!-font-weight-bold"> Have you applied for any benefits that you are waiting to hear about?</li>
+              <li class="govuk-!-margin-bottom-4">No</li>
             </ul>
           </div>
-
-          <div class="govuk-grid-column-two-third">
-            <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
-              <li>28/02/2022</li>
-              <li>Nil</li>
-              <li>£182</li>
-              <li>10/01/2022 - 28/02/2022</li>
-              <li>Award letter sent on 01/03/2022 <br><a href="case-timeline">View more</a> </li>
-            </ul>
-          </div>
-        </div>
+      </div>
 
 
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <ul class="govuk-list class="">
+          <li class="govuk-body govuk-!-font-size-24 govuk-!-margin-top-4">Check DWP systems</li>
+          <li class="govuk-!-margin-bottom-7">Check [legacy system] for relevant benefits that may be in payment.</li>
+        </ul>
+      </div>
   </div>
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Notes",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Include any new or corrected information within the backdating period"
+          }
+        }) }}
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+        {{ govukButton({
+          text: "Done"
+        }) }}
+        <br> <a href="case-summary">...</a>
+
+      </div>
+
+
 
 
 

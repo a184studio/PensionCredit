@@ -14,7 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="del-auth-contact-number-router" method="post" class="form">
+
+      {% if data["del-auth-who-made-claim"] == "Community" %}
+      <form action="del-auth-contact-call-formats-check" method="post" class="form">
+      {% else %}
+      <form action="del-auth-contact-number-router" method="post" class="form">
+      {% endif %}
+
 
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
@@ -26,6 +32,8 @@
          or data["del-auth-who-made-claim"] == "Appointee"
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
+         or data["del-auth-who-made-claim"] == "Community"
+
        %}
         <h1 class="govuk-heading-s govuk-!-margin-bottom-0">What is your contact telephone number?</h1>
       {% else %}
@@ -59,6 +67,8 @@
          or data["del-auth-who-made-claim"] == "Appointee"
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
+         or data["del-auth-who-made-claim"] == "Community"
+
        %}
         <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Do you have a contact telephone number?</h1>
       {% else %}
@@ -72,6 +82,8 @@
          or data["del-auth-who-made-claim"] == "Appointee"
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate acting body"
+         or data["del-auth-who-made-claim"] == "Community"
+
        %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">The quickest way for DWP to contact you is by phone</h1>
         <p></p>
