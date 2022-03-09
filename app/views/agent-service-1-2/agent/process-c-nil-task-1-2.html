@@ -21,11 +21,11 @@
       <p class="govuk-heading-xl govuk-!-margin-bottom-6">Date of birth</p>
 
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Given by applicant [AfPC]</p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>2 February 1954</strong></p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>2 February 1954 (66)</strong></p>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Data source:</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Systems to check:</p>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>SearchLight</strong></p>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -60,11 +60,6 @@
               value: "Not matched",
               text: "No",
               checked: (data["process-c-nil-task-1-2"] == "Not matched")
-            },
-            {
-              value: "Unfinished",
-              text: "I cannot complete",
-              checked: (data["process-c-nil-task-1-2"] == "Unfinished")
             }
           ]
         }) }}
@@ -76,11 +71,26 @@
     </div>
   </div>
 
-
-
+  <div class="govuk-button-group">
     {{ govukButton({
+      name: "process-b-nil-task-3-2",
+      value: "Matched",
+      checked: (data["process-b-nil-task-3-2"] == "Matched"),
       text: "Save and continue"
     }) }}
+
+    {{ govukButton({
+        name: "process-b-nil-task-3-2",
+        value: "Unfinished",
+        checked: (data["process-b-nil-task-3-2"] == "Unfinished"),
+      text: "Save and exit",
+      classes: "govuk-button--secondary "
+    }) }}
+    </div>
+
+
+
+
   </form>
 
 {% endblock %}

@@ -44,6 +44,11 @@
         html: "You are applying for Pension Credit for yourself",
         checked: data['del-auth-who-made-claim'] == "Yourself"
       },
+        {
+          value: "Community",
+          html: "Community session: Yourself",
+          checked: data['del-auth-who-made-claim'] == "Community"
+        },
       {
         value: "Friend or family member",
         html: "You are a friend or family member who is helping the applicant make their application",
@@ -82,6 +87,7 @@
             html: helpIDSomeoneElse
           }
         }
+
         ]
       }) }}
 
