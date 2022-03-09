@@ -1841,6 +1841,9 @@ router.post(`${baseUrl}/del-auth-who-made-claim-router`, (req, res) => { // rout
   else if (whoMadeClaim === 'Someone else') { // name of data / + answer
     res.redirect(`${baseUrl}/claimant-contact-callback`)
   }
+  else if (whoMadeClaim === 'Community') { // name of data / + answer
+    res.redirect(`${baseUrl}/del-auth-contact-number`)
+  }
   else {
     res.redirect(`${baseUrl}/claimant-contact-callback`)
   }

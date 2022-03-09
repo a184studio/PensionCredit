@@ -16,6 +16,13 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="del-auth-contact-call-formats-check" method="post" class="form">
 
+      {% if data["del-auth-who-made-claim"] == "Community" %}
+      <form action="del-auth-contact-language" method="post" class="form">
+      {% else %}
+      <form action="del-auth-contact-number-router" method="post" class="form">
+      {% endif %}
+
+
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
 
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
@@ -27,6 +34,8 @@
          or data["del-auth-who-made-claim"] == "Appointee"
          or data["del-auth-who-made-claim"] == "Personal Acting Body"
          or data["del-auth-who-made-claim"] == "Corporate Acting Body"
+         or data["del-auth-who-made-claim"] == "Community"
+
        %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What language do you want us to speak to you in?</h1>
 
