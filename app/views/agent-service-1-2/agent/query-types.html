@@ -9,34 +9,13 @@
  {% include "explore-header.html" %}
 {% endblock %}
 
-{% block bodyStart %}
-{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
-<form method="POST">
-  {{ govukCookieBanner({
-    ariaLabel: "Cookies on [name of service]",
-    messages: [
-      {
-        html: acceptHtml,
-        actions: [
-        {
-          text: "End call",
-          classes: "govuk-button--warning",
-          href: "#",
-          type: "button"
-        }
-        ]
-      }
-    ]
-  }) }}
-</form>
-{% endblock %}
 
 {% block content %}
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="query-phone-help" method="post" class="form">
+    <form action="query-search" method="post" class="form">
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
