@@ -13,9 +13,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="process-c-nil-task-1-5" method="post" class="form">
 
-        {% include "agent-service-1-1/agent/record-id.html" %}
+      {% if data["process-c-nil-task-1-4"] %}
+      <form action="process-c-nil-task-list" method="post" class="form">
+      {% else %}
+      <form action="process-c-nil-task-1-4-router" method="post" class="form">
+      {% endif %}
+
+        {% include "agent-service-1-2/agent/record-id.html" %}
 
         <!-- <span class="govuk-caption-m">[Task 1-4]</span> -->
         <p class="govuk-heading-xl govuk-!-margin-bottom-6">Address</p>
@@ -66,7 +71,7 @@
             },
             {
               value: "Unfinished",
-              text: "I cannot complete",
+              text: "Exit and resume later",
               checked: (data["process-c-nil-task-1-4"] == "Unfinished")
             }
           ]

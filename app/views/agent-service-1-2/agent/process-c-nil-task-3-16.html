@@ -13,23 +13,17 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="process-c-nil-task-3-6" method="post" class="form">
+      <form action="process-c-nil-task-list" method="post" class="form">
 
         {% include "agent-service-1-1/agent/record-id.html" %}
 
-        <!-- <span class="govuk-caption-m">Task 3-5</span> -->
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Registered blind or severely sight impaired</p>
+        <!-- <span class="govuk-caption-m">Task 3-15</span> -->
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Applicant said <strong>no</strong> to wanting more information on Support for Mortgage Interest (SMI)</p>
 
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Given by applicant [AfPC]</p>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>No</strong></p>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Systems to check:</p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>CAM or SearchLight</strong></p>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-
     </div>
   </div>
 
@@ -40,8 +34,8 @@
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-3-5",
-          name: "process-c-nil-task-3-5",
+          idPrefix: "process-c-nil-task-3-15",
+          name: "process-c-nil-task-3-15",
           fieldset: {
             legend: {
               text: "Does the information match?",
@@ -54,17 +48,17 @@
           {
             value: "Matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-5"] == "Matched")
+            checked: (data["process-c-nil-task-3-15"] == "Matched")
           },
             {
               value: "Not matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-5"] == "Not matched")
+              checked: (data["process-c-nil-task-3-15"] == "Not matched")
             },
             {
               value: "Unfinished",
               text: "I cannot complete",
-              checked: (data["process-c-nil-task-3-5"] == "Unfinished")
+              checked: (data["process-c-nil-task-3-15"] == "Unfinished")
             }
           ]
         }) }}
