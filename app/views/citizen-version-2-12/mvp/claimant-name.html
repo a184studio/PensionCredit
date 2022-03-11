@@ -22,14 +22,16 @@
       <h3 class="govuk-heading-xl govuk-!-margin-bottom-4">What is your name?</h3>
 
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"></p>
-
+      <div class="form-hint">Use your full name that is shown on official documents. Do not use abbreviations or nicknames. 
+      
+            </div>
 
       {{ govukInput({
         label: {
           html: "First name"
         },
         hint: {
-          text: "This is your first or given name as shown on any official documents."
+          text: ""
         },
         id: "first-name",
         name: "First name",
@@ -39,7 +41,7 @@
 
       {{ govukInput({
         label: {
-          html: "Middle name"
+          html: "Middle names"
         },
         hint: {
           text: "Enter any middle names."
@@ -52,10 +54,10 @@
 
       {{ govukInput({
         label: {
-          html: "Second name"
+          html: "Last name"
         },
         hint: {
-          text: "This is your second or family name as shown on any official documents."
+          text: "
         },
         id: "second-name",
         name: "Second-name",
