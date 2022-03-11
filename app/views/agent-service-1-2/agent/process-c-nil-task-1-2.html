@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="process-c-nil-task-1-2-router" method="post" class="form">
-        <input type="hidden" name="process-c-nil-task-1-2" value="Unfinished">
+        <input type="hidden" name="process-c-nil-task-1-2-unfinished" value="Unfinished">
 
         {% include "agent-service-1-2/agent/record-id.html" %}
 
@@ -74,20 +74,17 @@
 
   <div class="govuk-button-group">
     {{ govukButton({
-      name: "process-c-nil-task-1-2",
-      value: "Submit",
-      checked: (data["process-c-nil-task-1-2"] == "Submit"),
       text: "Save and continue"
     }) }}
 
     {{ govukButton({
-        name: "process-c-nil-task-1-2",
-        value: "Unfinished",
-        checked: (data["process-c-nil-task-1-2"] == "Unfinished"),
-      text: "Save and exit",
+      name: "process-c-nil-task-1-2",
+      value: "Unfinished",
+      checked: (data["process-c-nil-task-1-2"] == "Unfinished"),
       classes: "govuk-button--secondary",
-      href: "process-c-nil-task-list"
+      text: "Save and exit"
     }) }}
+
     </div>
 
 
