@@ -13,7 +13,12 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      {% if data["process-c-nil-task-1-6"] %}
+      <form action="process-c-nil-task-list" method="post" class="form">
+      {% else %}
       <form action="process-c-nil-task-1-6-router" method="post" class="form">
+      {% endif %}
 
         {% include "agent-service-1-2/agent/record-id.html" %}
 
