@@ -13,9 +13,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="process-c-nil-task-1-3" method="post" class="form">
+      <form action="process-c-nil-task-1-2-router" method="post" class="form">
+        <input type="hidden" name="process-c-nil-task-1-2" value="Unfinished">
 
-        {% include "agent-service-1-1/agent/record-id.html" %}
+        {% include "agent-service-1-2/agent/record-id.html" %}
 
       <!-- <span class="govuk-caption-m">[Task 1-2]</span> -->
       <p class="govuk-heading-xl govuk-!-margin-bottom-6">Date of birth</p>
@@ -73,18 +74,19 @@
 
   <div class="govuk-button-group">
     {{ govukButton({
-      name: "process-b-nil-task-3-2",
-      value: "Matched",
-      checked: (data["process-b-nil-task-3-2"] == "Matched"),
+      name: "process-c-nil-task-1-2",
+      value: "Submit",
+      checked: (data["process-c-nil-task-1-2"] == "Submit"),
       text: "Save and continue"
     }) }}
 
     {{ govukButton({
-        name: "process-b-nil-task-3-2",
+        name: "process-c-nil-task-1-2",
         value: "Unfinished",
-        checked: (data["process-b-nil-task-3-2"] == "Unfinished"),
+        checked: (data["process-c-nil-task-1-2"] == "Unfinished"),
       text: "Save and exit",
-      classes: "govuk-button--secondary "
+      classes: "govuk-button--secondary",
+      href: "process-c-nil-task-list"
     }) }}
     </div>
 
