@@ -42,6 +42,9 @@ router.post(`${baseUrl}/system-ur-process-ab-router`, (req, res) => {
   }
 })
 
+// TASK 1 / SUBTASK ROUTER<!>
+
+
 router.post(`${baseUrl}/process-c-nil-task-1-1-router`, (req, res) => {
   const processTask_1_1 = req.session.data['process-c-nil-task-1-1']
 
@@ -134,6 +137,37 @@ router.post(`${baseUrl}/process-c-nil-task-1-7-router`, (req, res) => {
   }
   else if (processTask_1_7 == 'Not matched') {
     res.redirect(`${baseUrl}/process-c-nil-task-list`)
+  }
+   else {
+    res.redirect(`${baseUrl}/process-c-nil-task-list`)
+  }
+})
+
+// TASK 3 / SUBTASK ROUTER<!>
+
+
+router.post(`${baseUrl}/process-c-nil-task-3-1-router`, (req, res) => {
+  const processTask_3_1 = req.session.data['process-c-nil-task-3-1']
+
+  if (processTask_3_1 == 'Matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-2`)
+  }
+  else if (processTask_3_1 == 'Not matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-2`)
+  }
+   else {
+    res.redirect(`${baseUrl}/process-c-nil-task-list`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-3-2-router`, (req, res) => {
+  const processTask_3_2 = req.session.data['process-c-nil-task-3-2']
+
+  if (processTask_3_2 == 'Matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-3`)
+  }
+  else if (processTask_3_2 == 'Not matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-3`)
   }
    else {
     res.redirect(`${baseUrl}/process-c-nil-task-list`)
