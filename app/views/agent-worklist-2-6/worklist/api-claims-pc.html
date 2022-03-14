@@ -18,10 +18,7 @@
 
       <!-- {% include "citizen-version-1/work-list-1-2/admin-navigation.html" %} -->
 
-<style>
-#accordion-default > div.govuk-accordion__controls > button {display: none}
-/* #accordion-default-heading-1 > span {display: none} */
-</style>
+
 
 
                 <p class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-6"><strong>Check a claim outcome</strong></p>
@@ -49,6 +46,45 @@
                   <p class="govuk-!-font-weight-bold govuk-!-font-size-48">1</p>
                 </div>
                 </div>
+
+
+                {{ govukAccordion({
+                  id: "accordion-default",
+                  items: [
+                    {
+                      heading: {
+                        text: "Writing well for the web"
+                      },
+                      content: {
+                        html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
+                      }
+                    },
+                    {
+                      heading: {
+                        text: "Writing well for specialists"
+                      },
+                      content: {
+                        html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
+                      }
+                    },
+                      {
+                      heading: {
+                        text: "Know your audience"
+                      },
+                      content: {
+                        html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
+                      }
+                    },
+                      {
+                      heading: {
+                        text: "How people read"
+                      },
+                      content: {
+                        html: "<p class='govuk-body'>This is the content for How people read.</p>"
+                      }
+                    }
+                  ]
+                }) }}
 
 
 <div class="pc-accordion govuk-!-margin-top-4" data-module="pc-accordion" id="accordion-default">
