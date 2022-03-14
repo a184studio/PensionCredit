@@ -13,11 +13,16 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="process-c-nil-task-3-6" method="post" class="form">
 
-        {% include "agent-service-1-1/agent/record-id.html" %}
+      {% if data["process-c-nil-task-3-6"] %}
+      <form action="process-c-nil-task-list" method="post" class="form">
+      {% else %}
+      <form action="process-c-nil-task-3-6-router" method="post" class="form">
+      {% endif %}
 
-        <!-- <span class="govuk-caption-m">Task 3-5</span> -->
+        {% include "agent-service-1-2/agent/record-id.html" %}
+
+        <!-- <span class="govuk-caption-m">Task 3-6</span> -->
         <p class="govuk-heading-xl govuk-!-margin-bottom-6">Registered blind or severely sight impaired</p>
 
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Given by applicant [AfPC]</p>
@@ -40,8 +45,8 @@
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-3-5",
-          name: "process-c-nil-task-3-5",
+          idPrefix: "process-c-nil-task-3-6",
+          name: "process-c-nil-task-3-6",
           fieldset: {
             legend: {
               text: "Does the information match?",
@@ -54,17 +59,17 @@
           {
             value: "Matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-5"] == "Matched")
+            checked: (data["process-c-nil-task-3-6"] == "Matched")
           },
             {
               value: "Not matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-5"] == "Not matched")
+              checked: (data["process-c-nil-task-3-6"] == "Not matched")
             },
             {
               value: "Unfinished",
-              text: "I cannot complete",
-              checked: (data["process-c-nil-task-3-5"] == "Unfinished")
+              text: "Exit and resume later",
+              checked: (data["process-c-nil-task-3-6"] == "Unfinished")
             }
           ]
         }) }}
