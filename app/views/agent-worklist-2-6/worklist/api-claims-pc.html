@@ -18,7 +18,10 @@
 
       <!-- {% include "citizen-version-1/work-list-1-2/admin-navigation.html" %} -->
 
-
+<style>
+#accordion-default > div.govuk-accordion__controls > button {display: none}
+/* #accordion-default-heading-1 > span {display: none} */
+</style>
 
 
                 <p class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-6"><strong>Check a claim outcome</strong></p>
@@ -48,130 +51,91 @@
                 </div>
 
 
-                {{ govukAccordion({
-                  id: "accordion-default",
-                  items: [
-                    {
-                      heading: {
-                        text: "Writing well for the web"
-                      },
-                      content: {
-                        html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
-                      }
-                    },
-                    {
-                      heading: {
-                        text: "Writing well for specialists"
-                      },
-                      content: {
-                        html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
-                      }
-                    },
-                      {
-                      heading: {
-                        text: "Know your audience"
-                      },
-                      content: {
-                        html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
-                      }
-                    },
-                      {
-                      heading: {
-                        text: "How people read"
-                      },
-                      content: {
-                        html: "<p class='govuk-body'>This is the content for How people read.</p>"
-                      }
-                    }
-                  ]
-                }) }}
 
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+<div class="govuk-accordion__section ">
+<div class="govuk-accordion__section-header">
+<h2 class="govuk-accordion__section-heading">
+<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+<a href>Filter claims</a>
+</span>
+</h2>
+</div>
 
-<div class="pc-accordion govuk-!-margin-top-4" data-module="pc-accordion" id="accordion-default">
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          <a href>Filter claims</a>
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+<div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
 
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        {{ govukCheckboxes({
-          idPrefix: "organisation",
-          name: "organisation",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Check outcome",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s "
-            }
-          },
-          items: [
-            {
-              value: "Correct",
-              text: "Correct"
-            },
-            {
-              value: "Incorrect",
-              text: "Incorrect"
-            },
-            {
-              value: "XX",
-              text: "To do"
-            }
-          ]
-        }) }}
-      </div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-half">
+{{ govukCheckboxes({
+idPrefix: "organisation",
+name: "organisation",
+classes: "govuk-checkboxes--small",
+fieldset: {
+legend: {
+text: "Check outcome",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--s "
+}
+},
+items: [
+{
+value: "Correct",
+text: "Correct"
+},
+{
+value: "Incorrect",
+text: "Incorrect"
+},
+{
+value: "XX",
+text: "To do"
+}
+]
+}) }}
+</div>
 
-      <div class="govuk-grid-column-one-half">
-        {{ govukCheckboxes({
-          idPrefix: "organisation",
-          name: "organisation",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Assessment type",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s "
-            }
-          },
-          items: [
-          {
-              value: "Future filter",
-              text: "Nil award"
-            },
-            {
-              value: "Future filter, Pensions",
-              text: "Pension Credit already in payment - applicant"
-            },
-            {
-              value: "Pension Credit already in payment - with partner",
-              text: ""
-            },
-            {
-              value: "Live proving: Two [0]",
-              text: ""
-            }
-          ]
-        }) }}
-      </div>
+<div class="govuk-grid-column-one-half">
+{{ govukCheckboxes({
+idPrefix: "organisation",
+name: "organisation",
+classes: "govuk-checkboxes--small",
+fieldset: {
+legend: {
+text: "Assessment type",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--s "
+}
+},
+items: [
+{
+value: "Future filter",
+text: "Nil award"
+},
+{
+value: "Future filter, Pensions",
+text: "Pension Credit already in payment - applicant"
+},
+{
+value: "Pension Credit already in payment - with partner",
+text: ""
+},
+{
+value: "Live proving: Two [0]",
+text: ""
+}
+]
+}) }}
+</div>
 
+</div>
 
-      </div>
-      {{ govukButton({
-  text: "Apply",
-  classes: "govuk-button--secondary govuk-!-margin-bottom-4"
+{{ govukButton({
+text: "Apply",
+classes: "govuk-button--secondary govuk-!-margin-bottom-4"
 }) }}
 
-
-    </div>
-  </div>
-
+</div>
+</div>
 </div>
 
 
