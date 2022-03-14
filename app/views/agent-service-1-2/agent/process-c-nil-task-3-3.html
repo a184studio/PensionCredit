@@ -13,11 +13,16 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="process-c-nil-task-3-3" method="post" class="form">
 
-        {% include "agent-service-1-1/agent/record-id.html" %}
+      {% if data["process-c-nil-task-3-3"] %}
+      <form action="process-c-nil-task-list" method="post" class="form">
+      {% else %}
+      <form action="process-c-nil-task-3-3-router" method="post" class="form">
+      {% endif %}
 
-        <!-- <span class="govuk-caption-m">Task 3-2</span> -->
+        {% include "agent-service-1-2/agent/record-id.html" %}
+
+        <!-- <span class="govuk-caption-m">Task 3-3</span> -->
         <p class="govuk-heading-xl govuk-!-margin-bottom-2">Not entitled to Savings Credit</p>
         <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-6">Reached State Pension age (SPA) on or after 6 April 2016</p>
 
@@ -42,8 +47,8 @@
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-3-2",
-          name: "process-c-nil-task-3-2",
+          idPrefix: "process-c-nil-task-3-3",
+          name: "process-c-nil-task-3-3",
           fieldset: {
             legend: {
               text: "Does the information match?",
@@ -56,17 +61,17 @@
           {
             value: "Matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-2"] == "Matched")
+            checked: (data["process-c-nil-task-3-3"] == "Matched")
           },
             {
               value: "Not matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-2"] == "Not matched")
+              checked: (data["process-c-nil-task-3-3"] == "Not matched")
             },
             {
               value: "Unfinished",
-              text: "I cannot complete",
-              checked: (data["process-c-nil-task-3-2"] == "Unfinished")
+              text: "Exit and resume later",
+              checked: (data["process-c-nil-task-3-3"] == "Unfinished")
             }
           ]
         }) }}

@@ -13,11 +13,16 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="process-c-nil-task-3-12" method="post" class="form">
 
-        {% include "agent-service-1-1/agent/record-id.html" %}
+      {% if data["process-c-nil-task-3-12"] %}
+      <form action="process-c-nil-task-list" method="post" class="form">
+      {% else %}
+      <form action="process-c-nil-task-3-12-router" method="post" class="form">
+      {% endif %}
 
-        <!-- <span class="govuk-caption-m">Task 3-11</span> -->
+        {% include "agent-service-1-2/agent/record-id.html" %}
+
+        <!-- <span class="govuk-caption-m">Task 3-12</span> -->
         <p class="govuk-heading-xl govuk-!-margin-bottom-2">Applicant not in receipt of any qualifying benefits today</p>
         <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-6">Qualifying benefits examples</p>
 
@@ -36,8 +41,8 @@
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-3-11",
-          name: "process-c-nil-task-3-11",
+          idPrefix: "process-c-nil-task-3-12",
+          name: "process-c-nil-task-3-12",
           fieldset: {
             legend: {
               text: "Does the information match?",
@@ -50,17 +55,17 @@
           {
             value: "Matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-11"] == "Matched")
+            checked: (data["process-c-nil-task-3-12"] == "Matched")
           },
             {
               value: "Not matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-11"] == "Not matched")
+              checked: (data["process-c-nil-task-3-12"] == "Not matched")
             },
             {
               value: "Unfinished",
-              text: "I cannot complete",
-              checked: (data["process-c-nil-task-3-11"] == "Unfinished")
+              text: "Exit and resume later",
+              checked: (data["process-c-nil-task-3-12"] == "Unfinished")
             }
           ]
         }) }}

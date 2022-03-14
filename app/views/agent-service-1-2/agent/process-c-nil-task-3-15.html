@@ -13,9 +13,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="process-c-nil-task-3-15" method="post" class="form">
 
-        {% include "agent-service-1-1/agent/record-id.html" %}
+      {% if data["process-c-nil-task-3-15"] %}
+      <form action="process-c-nil-task-list" method="post" class="form">
+      {% else %}
+      <form action="process-c-nil-task-3-15-router" method="post" class="form">
+      {% endif %}
+
+        {% include "agent-service-1-2/agent/record-id.html" %}
 
         <!-- <span class="govuk-caption-m">Task 3-14</span> -->
         <p class="govuk-heading-xl govuk-!-margin-bottom-6">Applicant said <strong>no</strong> to applying for Housing Benefit</p>
@@ -37,8 +42,8 @@
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-3-14",
-          name: "process-c-nil-task-3-14",
+          idPrefix: "process-c-nil-task-3-15",
+          name: "process-c-nil-task-3-15",
           fieldset: {
             legend: {
               text: "Does the information match?",
@@ -51,17 +56,17 @@
           {
             value: "Matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-14"] == "Matched")
+            checked: (data["process-c-nil-task-3-15"] == "Matched")
           },
             {
               value: "Not matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-14"] == "Not matched")
+              checked: (data["process-c-nil-task-3-15"] == "Not matched")
             },
             {
               value: "Unfinished",
-              text: "I cannot complete",
-              checked: (data["process-c-nil-task-3-14"] == "Unfinished")
+              text: "Exit and resume later",
+              checked: (data["process-c-nil-task-3-15"] == "Unfinished")
             }
           ]
         }) }}
