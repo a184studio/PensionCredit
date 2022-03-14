@@ -14,7 +14,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    {% if data["del-auth-who-made-claim"] == "Community" %}
+    <form action="del-auth-contact-letter-formats" method="post" class="form">
+    {% else %}
     <form action="del-auth-contact-letter-formats-check-router" method="post" class="form">
+    {% endif %}
+
 
       {% if data["del-auth-who-made-claim"] == "Yourself" %}
       {% else %}  <span class="govuk-caption-l">{{data["del-auth-who-made-claim"]}}</span>{% endif %}
