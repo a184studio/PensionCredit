@@ -54,6 +54,9 @@ router.post(`${baseUrl}/process-c-nil-task-1-1-router`, (req, res) => {
   else if (processTask_1_1 == 'Not matched') {
     res.redirect(`${baseUrl}/process-c-nil-task-1-2`)
   }
+  else if (processTask_1_1 == 'Skip') {
+    res.redirect(`${baseUrl}/process-c-nil-task-1-2`)
+  }
    else {
     res.redirect(`${baseUrl}/process-c-nil-task-list`)
   }

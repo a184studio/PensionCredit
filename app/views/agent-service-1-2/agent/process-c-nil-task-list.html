@@ -50,7 +50,7 @@
           <strong class="govuk-tag app-task-list__nil-task-passed">Matched</strong>
         {% elif data["process-c-nil-task-1-1"]  === "Not matched" %}
           <strong class="govuk-tag app-task-list__nil-task-failed">Not matched</strong>
-        {% elif data["process-c-nil-task-1-1"]  === "Unfinished" %}
+        {% elif data["process-c-nil-task-1-1"]  === "Unfinished" or data["process-c-nil-task-1-1"]  === "Skip" %}
           <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
         {% else %}
           <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
