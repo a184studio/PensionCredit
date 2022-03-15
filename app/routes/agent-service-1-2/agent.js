@@ -359,5 +359,16 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/query-types-router`, (req, res) => {
+  const query_types = req.session.data['query-types']
+
+  if (query_types == 'Language') {
+    res.redirect(`${baseUrl}/query-phone-help`)
+  }
+  else if (query_types == 'Review') {
+    res.redirect(`${baseUrl}/query-search`)
+  }
+})
+
 
 module.exports = router

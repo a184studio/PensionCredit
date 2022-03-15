@@ -15,14 +15,14 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="query-search" method="post" class="form">
+    <form action="query-types-router" method="post" class="form">
 
 
 
 
     {{ govukCheckboxes({
-      idPrefix: "waste",
-      name: "waste",
+      idPrefix: "query_types",
+      name: "query-types",
       fieldset: {
         legend: {
           text: "Select query types",
