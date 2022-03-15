@@ -18,8 +18,6 @@
     <form action="query-search" method="post" class="form">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["query-search-nino"]}}</p>
 
 
     {{ govukCheckboxes({
@@ -29,7 +27,7 @@
         legend: {
           text: "Select query types",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--xl"
         }
       },
       hint: {
@@ -59,7 +57,7 @@
       text: "Continue"
     }) }}
 
-    <br> <a href="query-phone-security">...</a>
+    <br> <a href="query-phone-help">...</a>
   </div>
 
 

@@ -21,10 +21,9 @@
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["search-query"]}}</p>
 
 
-      {% from "govuk/components/table/macro.njk" import govukTable %}
 
       {{ govukTable({
-        caption: "Dates and amounts",
+        caption: "Case history",
         captionClasses: "govuk-table__caption--m",
         firstCellIsHeader: true,
         head: [
