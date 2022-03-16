@@ -27,15 +27,16 @@
       <div class="govuk-grid-column-two-thirds">
 
         {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
+          name: "notes",
+          id: "notes",
+          rows: "10",
           label: {
             text: "Notes",
-            classes: "govuk-label--xl",
+            classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "..."
+            text: "Follow guidance on what to include."
           }
         }) }}
       </div>
