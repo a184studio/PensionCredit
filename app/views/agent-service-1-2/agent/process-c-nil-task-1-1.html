@@ -132,9 +132,17 @@
 
 
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+
+  {{ govukButton({
+    name: "process-c-nil-task-1-2",
+    value: "Unfinished",
+    checked: (data["process-c-nil-task-1-2"] == "Unfinished"),
+    classes: "govuk-button--secondary",
+    text: "Save and exit"
+  }) }}
   </form>
 
 {% endblock %}

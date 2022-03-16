@@ -27,35 +27,19 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        {{ govukRadios({
-          idPrefix: "process-c-nil-task-2-idoc",
-          name: "process-c-nil-task-2-idoc",
-          fieldset: {
-            legend: {
-              text: "The applicant has no IDOC or previous online application for Pension Credit",
-              isPageHeading: true,
+              <p class="govuk-heading-xl govuk-!-margin-bottom-6">The applicant has no IDOC or previous online application for Pension Credit</p>
 
-              <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Given by applicant [AfPC]</p>
-              <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>None</strong></p>
-      
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      
-              <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Systems to check:</p>
-              <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>SearchLight</strong></p>
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      
-      
           </div>
         </div>
-      
+
           <!------------ ––– ------------>
-      
+
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
-      
+
               {{ govukRadios({
-                idPrefix: "process-c-nil-task-1-7",
-                name: "process-c-nil-task-1-7",
+                idPrefix: "process-c-nil-task-2-idoc",
+                name: "process-c-nil-task-2-idoc",
                 fieldset: {
                   legend: {
                     text: "Does the information match?",
@@ -68,17 +52,17 @@
                 {
                   value: "Matched",
                   text: "Yes",
-                  checked: (data["process-c-nil-task-1-7"] == "Matched")
+                  checked: (data["process-c-nil-task-2-idoc"] == "Matched")
                 },
                   {
                     value: "Not matched",
                     text: "No",
-                    checked: (data["process-c-nil-task-1-7"] == "Not matched")
+                    checked: (data["process-c-nil-task-2-idoc"] == "Not matched")
                   },
                   {
                     value: "Unfinished",
                     text: "Exit and resume later",
-                    checked: (data["process-c-nil-task-1-7"] == "Unfinished")
+                    checked: (data["process-c-nil-task-2-idoc"] == "Unfinished")
                   }
                 ]
               }) }}
