@@ -23,6 +23,7 @@
   </div>
 
 
+  <!--
 
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter">
@@ -46,20 +47,23 @@
         </ul>
       </div>
     </div>
+    -->
+
 
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
         {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
+          name: "notes-xl",
+          id: "notes-xl",
+          rows: "10",
           label: {
             text: "Notes",
-            classes: "govuk-label--m",
+            classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "..."
+            text: "Follow guidance on what to include"
           }
         }) }}
       </div>
