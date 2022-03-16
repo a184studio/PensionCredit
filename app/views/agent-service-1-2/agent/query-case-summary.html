@@ -25,7 +25,7 @@
           <div class="govuk-grid-column-one-third">
             <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
               <li>Claim reference</li>
-              <li>Applied online</li>
+              <li>Application date</li>
               <li>Award</li>
               <li>State Pension ammount</li>
               <li>Backdating period</li>
@@ -35,14 +35,14 @@
             </ul>
           </div>
 
-          <div class="govuk-grid-column-one-third">
+          <div class="govuk-grid-column-two-quarters">
             <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
               <li>20220110</li>
               <li>28 February 2022</li>
               <li>Ineligible</li>
-              <li>£182</li>
+              <li>£182 (£177 threshold when processed) </li>
               <li>10 January 2022 to 28 February 2022</li>
-              <li>Award letter sent on 01 March 2022</li>
+              <li>Award letter sent on 1 March 2022</li>
             </ul>
           </div>
         </div>
@@ -71,7 +71,7 @@
           <strong class="govuk-tag app-task-list__nil-task-passed">1 Unread</strong>
 
         <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="case-sp" aria-describedby="task-1">
+          <a class="app-task-list__task-name" href="case-contact-templates" aria-describedby="task-1">
             Send a letter or email
           </a>
         </li>
@@ -147,7 +147,7 @@
             Phone number
           </a>
         <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="#" aria-describedby="task-1">
+          <a class="app-task-list__task-name" href="case-contact-email" aria-describedby="task-1">
             Email
           </a>
         </li>
@@ -182,9 +182,8 @@
   </div>
 
     {{ govukButton({
-      text: "Done",
-      classes: "govuk-button--primary",
-      href: "home-user-0"
+      text: "Save and answer next query",
+      classes: "govuk-button--primary"
     }) }}
 
     </form>
