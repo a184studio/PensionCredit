@@ -365,7 +365,7 @@ router.post(`${baseUrl}/query-types-router`, (req, res) => {
   if (query_types == 'Language') {
     res.redirect(`${baseUrl}/query-phone-help`)
   }
-  else if (query_types == 'Review') {
+  else {
     res.redirect(`${baseUrl}/query-search`)
   }
 })
