@@ -36,22 +36,26 @@
       items: [
         {
           value: "Language",
-          text: "Query regarding language in letter"
+          text: "Query regarding language in letter",
+          checked: (data["query-types"] == "Language")
 
         },
         {
           value: "Review",
-          text: "New information or customer error"
+          text: "New information or customer error",
+          checked: (data["query-types"] == "Review")
 
         },
         {
           value: "Automated processing",
-          text: "Automated processing"
+          text: "Automated processing",
+          checked: (data["query-types"] == "Automated processing")
 
         },
         {
           value: "Contest",
-          text: "Contest"
+          text: "Contest",
+          checked: (data["query-types"] == "Contest")
 
         }
       ]
