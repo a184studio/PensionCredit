@@ -45,20 +45,6 @@
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
 
-
-        <!-- {% set legendRouter %}
-
-          {% if data["process-c-nil-task-1-1"] %}
-          (data["process-c-nil-task-1-1"] == "Unfinished")
-          {% else %}
-          (data["process-c-nil-task-1-1"] == "Skip")
-          {% endif %}
-
-        {% endset %} -->
-
-      {% if data["process-c-nil-task-1-1"] %}
-
-
         {{ govukRadios({
           idPrefix: "process-c-nil-task-1-1",
           name: "process-c-nil-task-1-1",
@@ -83,49 +69,14 @@
             },
             {
               value: "Unfinished",
-              text: "Resume later [Return]",
+              text: "Exit and resume later",
               checked: (data["process-c-nil-task-1-1"] == "Unfinished")
             }
           ]
         }) }}
 
-      {% else %}
 
 
-        {{ govukRadios({
-          idPrefix: "process-c-nil-task-1-1",
-          name: "process-c-nil-task-1-1",
-          fieldset: {
-            legend: {
-              text: "Does the information match?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          classes: "govuk-radios",
-          items: [
-          {
-            value: "Matched",
-            text: "Yes",
-            checked: (data["process-c-nil-task-1-1"] == "Matched")
-          },
-            {
-              value: "Not matched",
-              text: "No",
-              checked: (data["process-c-nil-task-1-1"] == "Not matched")
-            },
-            {
-              value: "Skip",
-              text: "Resume later [Skip]",
-              checked: (data["process-c-nil-task-1-1"] == "Skip")
-            }
-          ]
-        }) }}
-
-      {% endif %}
-
-
-        <!------------ ––– ------------>
 
     </div>
   </div>
@@ -136,13 +87,6 @@
     text: "Save and continue"
   }) }}
 
-  {{ govukButton({
-    name: "process-c-nil-task-1-2",
-    value: "Unfinished",
-    checked: (data["process-c-nil-task-1-2"] == "Unfinished"),
-    classes: "govuk-button--secondary",
-    text: "Save and exit"
-  }) }}
   </form>
 
 {% endblock %}
