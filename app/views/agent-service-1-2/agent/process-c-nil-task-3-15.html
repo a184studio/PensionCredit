@@ -23,7 +23,7 @@
         {% include "agent-service-1-2/agent/record-id.html" %}
 
         <!-- <span class="govuk-caption-m">Task 3-14</span> -->
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Applicant said <strong>no</strong> to applying for Housing Benefit</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Housing Benefit</p>
 
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Given in the application [AfPC]</p>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6"><strong>No</strong></p>
@@ -46,7 +46,7 @@
           name: "process-c-nil-task-3-15",
           fieldset: {
             legend: {
-              text: "Does the information match?",
+              text: "Does applicant want to apply to Housing Benefit?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -54,14 +54,14 @@
           classes: "govuk-radios",
           items: [
           {
-            value: "Matched",
+            value: "Not matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-15"] == "Matched")
+            checked: (data["process-c-nil-task-3-15"] == "Not matched")
           },
             {
-              value: "Not matched",
+              value: "Matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-15"] == "Not matched")
+              checked: (data["process-c-nil-task-3-15"] == "Matched")
             },
             {
               value: "Unfinished",

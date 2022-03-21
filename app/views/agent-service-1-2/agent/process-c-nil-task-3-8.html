@@ -44,7 +44,7 @@
           name: "process-c-nil-task-3-8",
           fieldset: {
             legend: {
-              text: "Does SearchLight or ISCS show open interest for qualifying benefits today?",
+              text: "Is there an open interest for qualifying benefits today?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -52,14 +52,14 @@
           classes: "govuk-radios",
           items: [
           {
-            value: "Matched",
+            value: "Not matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-8"] == "Matched")
+            checked: (data["process-c-nil-task-3-8"] == "Not matched")
           },
             {
-              value: "Not matched",
+              value: "Matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-8"] == "Not matched")
+              checked: (data["process-c-nil-task-3-8"] == "Matched")
             },
             {
               value: "Unfinished",

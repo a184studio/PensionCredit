@@ -43,7 +43,7 @@
           name: "process-c-nil-task-3-16",
           fieldset: {
             legend: {
-              text: "Does the information given in application indicate they want information about Support for Mortgage Interest (SMI)?",
+              text: "Does applicnat want information for Support for Mortgage Interest (SMI)?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -51,14 +51,14 @@
           classes: "govuk-radios",
           items: [
           {
-            value: "Matched",
+            value: "Not matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-16"] == "Matched")
+            checked: (data["process-c-nil-task-3-16"] == "Not matched")
           },
             {
-              value: "Not matched",
+              value: "Matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-16"] == "Not matched")
+              checked: (data["process-c-nil-task-3-16"] == "Matched")
             },
             {
               value: "Unfinished",
