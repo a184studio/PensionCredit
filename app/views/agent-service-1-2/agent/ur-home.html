@@ -17,10 +17,21 @@
 
 
 
-      {% if data["process-c-nil-task-1-1"]  == "Matched" and  data["process-c-nil-task-1-2"]  == "Matched" and  data["process-c-nil-task-1-3"]  == "Matched" and  data["process-c-nil-task-1-4"]  == "Matched" and data["process-c-nil-task-1-5"]  == "Matched" and data["process-c-nil-task-1-6"]  == "Matched" and data["process-c-nil-task-1-7"]  == "Matched" and data["process-c-nil-task-2-idoc"] == "Not found" and data["process-c-nil-task-3-15"] == "Matched" %}
+      {% if data["process-c-nil-task-list"]  == "NIL"%}
 
       {% set html %}
       <p class="govuk-body govuk-!-font-size-19">This has been successfully processed. The applicant has been notified that they are not currently entitled for Pension Credit.</p>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: 'success'
+      }) }}
+
+      {% elif data["process-c-nil-task-list"]  == "BAU"%}
+
+      {% set html %}
+      <p class="govuk-body govuk-!-font-size-19">Application was sent back to business as usual</p>
       {% endset %}
 
       {{ govukNotificationBanner({

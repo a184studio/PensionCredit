@@ -49,7 +49,7 @@
           name: "process-c-nil-task-3-5",
           fieldset: {
             legend: {
-              text: "Does applicant want help?",
+              text: "Does applicant want help with formats [Proxy]?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -57,14 +57,14 @@
           classes: "govuk-radios",
           items: [
           {
-            value: "Matched",
+            value: "Not matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-3-5"] == "Matched")
+            checked: (data["process-c-nil-task-3-5"] == "Not matched")
           },
             {
-              value: "Not matched",
+              value: "Matched",
               text: "No",
-              checked: (data["process-c-nil-task-3-5"] == "Not matched")
+              checked: (data["process-c-nil-task-3-5"] == "Matched")
             },
             {
               value: "Unfinished",

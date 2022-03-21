@@ -112,24 +112,6 @@
 
       </li>
 
-
-      <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="process-c-nil-task-1-5" aria-describedby="task-1">
-          <!-- [1-5]  --> Marital status
-        </a>
-
-        {% if data["process-c-nil-task-1-5"]  === "Matched" %}
-          <strong class="govuk-tag app-task-list__nil-task-passed">Matched</strong>
-        {% elif data["process-c-nil-task-1-5"]  === "Not matched" %}
-          <strong class="govuk-tag app-task-list__nil-task-failed">Not matched</strong>
-        {% elif data["process-c-nil-task-1-5"]  === "Unfinished" %}
-          <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
-        {% else %}
-          <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
-        {% endif %}
-
-      </li>
-
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-1-6" aria-describedby="task-1">
           <!-- [1-6]  -->Bank details
@@ -170,7 +152,7 @@
     </ul>
     </li>
 
-    {% if data["process-c-nil-task-1-1"]  == "Matched" and  data["process-c-nil-task-1-2"]  == "Matched" and  data["process-c-nil-task-1-3"]  == "Matched" and  data["process-c-nil-task-1-4"]  == "Matched" and data["process-c-nil-task-1-5"]  == "Matched" and   data["process-c-nil-task-1-6"]  == "Matched" %}
+    {% if data["process-c-nil-task-1-1"]  == "Matched" and  data["process-c-nil-task-1-2"]  == "Matched" and  data["process-c-nil-task-1-3"]  == "Matched" and  data["process-c-nil-task-1-4"]  == "Matched" and data["process-c-nil-task-1-6"]  == "Matched" %}
 
 
     <li>
@@ -509,28 +491,35 @@
     </div>
   </div>
 
-  {% if data["process-c-nil-task-1-1"]  == "Matched" and  data["process-c-nil-task-1-2"]  == "Matched" and  data["process-c-nil-task-1-3"]  == "Matched" and  data["process-c-nil-task-1-4"]  == "Matched" and data["process-c-nil-task-1-5"]  == "Matched" and data["process-c-nil-task-1-6"]  == "Matched" and data["process-c-nil-task-1-7"]  == "Matched" and data["process-c-nil-task-2-idoc"] == "Matched" and data["process-c-nil-task-3-15"] == "Matched" %}
+  {% if data["process-c-nil-task-1-1"]  == "Matched" and  data["process-c-nil-task-1-2"]  == "Matched" and  data["process-c-nil-task-1-3"]  == "Matched" and  data["process-c-nil-task-1-4"]  == "Matched" and data["process-c-nil-task-1-6"]  == "Matched" and data["process-c-nil-task-1-7"]  == "Matched" and data["process-c-nil-task-2-idoc"] == "Matched" and data["process-c-nil-task-3-16"] == "Matched" %}
 
   <div class="govuk-grid-row govuk-!-margin-top-4">
   <div class="govuk-grid-column-three-quarters">
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application is a nil award</h1>
+    <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Notify the applicant that they are not currently entitled to Pension Credit.</p>
 
 
             {{ govukButton({
+            name: "process-c-nil-task-list",
+            value: "NIL",
+            checked: (data["process-c-nil-task-list"] == "NIL"),
             text: "Confirm and notify",
             classes: "govuk-!-margin-right-2"
             }) }}
 
 
-      {% elif data["process-c-nil-task-1-7"]  == "Not matched" or data["process-c-nil-task-3-15"]  == "Not matched" %}
+      {% elif data["process-c-nil-task-1-7"]  == "Not matched" or data["process-c-nil-task-3-16"]  == "Not matched" %}
 
-
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application does not match [Bad Outcome]</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application needs further action</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application does not match [Bad Outcome]</h1> -->
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Reject and send this application back to business as usual. Another agent will pick this up.  </p>
 
       {{ govukButton({
+      name: "process-c-nil-task-list",
+      value: "BAU",
+      checked: (data["process-c-nil-task-list"] == "BAU"),
       text: "Confirm and reject",
       classes: "govuk-!-margin-right-2"
       }) }}

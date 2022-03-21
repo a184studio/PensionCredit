@@ -94,10 +94,10 @@ router.post(`${baseUrl}/process-c-nil-task-1-4-router`, (req, res) => {
   const processTask_1_4 = req.session.data['process-c-nil-task-1-4']
 
   if (processTask_1_4 == 'Matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-1-5`)
+    res.redirect(`${baseUrl}/process-c-nil-task-1-6`)
   }
   else if (processTask_1_4 == 'Not matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-1-5`)
+    res.redirect(`${baseUrl}/process-c-nil-task-1-6`)
   }
    else {
     res.redirect(`${baseUrl}/process-c-nil-task-list`)
@@ -195,51 +195,9 @@ router.post(`${baseUrl}/process-c-nil-task-3-4-router`, (req, res) => {
   const processTask_3_4 = req.session.data['process-c-nil-task-3-4']
 
   if (processTask_3_4 == 'Matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-5`)
-  }
-  else if (processTask_3_4 == 'Not matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-5`)
-  }
-   else {
-    res.redirect(`${baseUrl}/process-c-nil-task-list`)
-  }
-})
-
-router.post(`${baseUrl}/process-c-nil-task-3-5-router`, (req, res) => {
-  const processTask_3_5 = req.session.data['process-c-nil-task-3-5']
-
-  if (processTask_3_5 == 'Matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-6`)
-  }
-  else if (processTask_3_5 == 'Not matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-6`)
-  }
-   else {
-    res.redirect(`${baseUrl}/process-c-nil-task-list`)
-  }
-})
-
-router.post(`${baseUrl}/process-c-nil-task-3-6-router`, (req, res) => {
-  const processTask_3_6 = req.session.data['process-c-nil-task-3-6']
-
-  if (processTask_3_6 == 'Matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-7`)
-  }
-  else if (processTask_3_6 == 'Not matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-7`)
-  }
-   else {
-    res.redirect(`${baseUrl}/process-c-nil-task-list`)
-  }
-})
-
-router.post(`${baseUrl}/process-c-nil-task-3-7-router`, (req, res) => {
-  const processTask_3_7 = req.session.data['process-c-nil-task-3-7']
-
-  if (processTask_3_7 == 'Matched') {
     res.redirect(`${baseUrl}/process-c-nil-task-3-8`)
   }
-  else if (processTask_3_7 == 'Not matched') {
+  else if (processTask_3_4 == 'Not matched') {
     res.redirect(`${baseUrl}/process-c-nil-task-3-8`)
   }
    else {
@@ -321,15 +279,62 @@ router.post(`${baseUrl}/process-c-nil-task-3-13-router`, (req, res) => {
   const processTask_3_13 = req.session.data['process-c-nil-task-3-13']
 
   if (processTask_3_13 == 'Matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-12`)
+    res.redirect(`${baseUrl}/process-c-nil-task-list`)
   }
   else if (processTask_3_13 == 'Not matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-12`)
+    res.redirect(`${baseUrl}/process-c-nil-task-list`)
   }
    else {
     res.redirect(`${baseUrl}/process-c-nil-task-list`)
   }
 })
+
+
+// ——————— FOUR
+
+
+router.post(`${baseUrl}/process-c-nil-task-3-5-router`, (req, res) => {
+  const processTask_3_5 = req.session.data['process-c-nil-task-3-5']
+
+  if (processTask_3_5 == 'Matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-6`)
+  }
+  else if (processTask_3_5 == 'Not matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-6`)
+  }
+   else {
+    res.redirect(`${baseUrl}/process-c-nil-task-list`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-3-6-router`, (req, res) => {
+  const processTask_3_6 = req.session.data['process-c-nil-task-3-6']
+
+  if (processTask_3_6 == 'Matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-7`)
+  }
+  else if (processTask_3_6 == 'Not matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-7`)
+  }
+   else {
+    res.redirect(`${baseUrl}/process-c-nil-task-list`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-3-7-router`, (req, res) => {
+  const processTask_3_7 = req.session.data['process-c-nil-task-3-7']
+
+  if (processTask_3_7 == 'Matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-14`)
+  }
+  else if (processTask_3_7 == 'Not matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-14`)
+  }
+   else {
+    res.redirect(`${baseUrl}/process-c-nil-task-list`)
+  }
+})
+
 
 router.post(`${baseUrl}/process-c-nil-task-3-14-router`, (req, res) => {
   const processTask_3_14 = req.session.data['process-c-nil-task-3-14']
@@ -369,6 +374,8 @@ router.post(`${baseUrl}/query-types-router`, (req, res) => {
     res.redirect(`${baseUrl}/query-search`)
   }
 })
+
+
 
 
 module.exports = router
