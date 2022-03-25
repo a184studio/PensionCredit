@@ -48,14 +48,14 @@
                                     </td>
                                     <td class="govuk-table__cell table-spacer">
 
-                                    {% if data["process-c-nil-task-3-15"]  === "Matched" %}
+                                    {% if data["process-c-nil-task-list"]  == "NIL" %}
                                       <strong class="govuk-tag app-task-list__nil-case-passed">Matched</strong>
-                                    {% elif data["process-c-nil-task-3-15"]  === "Not matched" %}
+                                    {% elif data["process-c-nil-task-list"]  == "BAU" %}
                                       <strong class="govuk-tag app-task-list__nil-case-failed">Not matched</strong>
-                                    {% elif data["process-c-nil-task-3-15"]  === "Unfinished" %}
+                                    {% elif data["process-c-nil-task-list"]  == "UF" %}
                                       <strong class="govuk-tag app-task-list__nil-case-not-done">Unfinished</strong>
                                     {% else %}
-                                      <strong class="govuk-tag app-task-list__nil-case-not-done" id="eligibility-completed">To do</strong>
+                                      <strong class="govuk-tag app-task-list__nil-case-not-done" id="eligibility-completed">Unfinished</strong>
                                     {% endif %}
 
                                     </td>
