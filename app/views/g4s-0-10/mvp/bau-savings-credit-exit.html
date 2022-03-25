@@ -18,12 +18,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-6/mvp/landing">
+        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/type-of-claim">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Savings Credit applicant</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Continue this call using the <a href="www.gov.uk/pension-credit-calculator">Pension Credit calculator</a></p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Because of your age,<br>I just need to check some additional details for you</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">To continue this application, use the<br><a href="www.gov.uk/pension-credit-calculator"> Pension Credit calculator (opens in new tab)</a></p>
 
-
+      {{ govukButton({
+      text: "Finish and close",
+      classes: "govuk-button dont-print govuk-!-margin-top-6"
+      }) }}
 
   </form>
     </div>
