@@ -23,7 +23,7 @@
         {% include "agent-service-1-2/agent/record-id.html" %}
 
         <!-- <span class="govuk-caption-m">Task 3-9</span> -->
-        <p class="govuk-heading-xl govuk-!-margin-bottom-4">Interest for qualifying benefits since date X [backdating period]</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-4">Interest for qualifying benefits since {{ threeMonthsAgo | formatDate }}</p>
 
 
         {% set LegendQualifingBenefits %}
@@ -46,7 +46,7 @@
 
 
         {{ govukDetails({
-          summaryText: "Qulifying benefts for EASD",
+          summaryText: "Qulifying benefts in the backdating period for EASD",
           html: LegendQualifingBenefits
         }) }}
 
@@ -69,12 +69,13 @@
     <div class="govuk-grid-row ">
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
+
         {{ govukRadios({
           idPrefix: "process-c-nil-task-3-9",
           name: "process-c-nil-task-3-9",
           fieldset: {
             legend: {
-              text: "Are any interests shown for qualifying benefits since X [backdating period]?",
+              html: "Are any interests shown for qualifying benefits since " + (threeMonthsAgo | formatDate) + "?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
