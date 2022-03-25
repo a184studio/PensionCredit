@@ -44,12 +44,14 @@
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
+Talk to debs about exprired IDOCs outwide of 31 days
+
               {{ govukRadios({
                 idPrefix: "process-c-nil-task-2-1",
                 name: "process-c-nil-task-2-1",
                 fieldset: {
                   legend: {
-                    html: "Is there an IDOC shown in CAM beteen today and " + (thirtyOneDaysIDOC | formatDate) + "?",
+                    html: "Is there an IDOC shown in CAM between " + (thirtyOneDaysIDOC | formatDate) + " and today?",
 
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--m"

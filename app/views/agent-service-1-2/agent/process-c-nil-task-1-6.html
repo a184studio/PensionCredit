@@ -43,15 +43,19 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
+
         {{ govukRadios({
           idPrefix: "process-c-nil-task-1-6",
           name: "process-c-nil-task-1-6",
           fieldset: {
             legend: {
-              text: "Does the bank name given in the application match what is in ISCS?",
+              text: "Does the bank name given in the application match what is in the Bank Wizard 🧙?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
+          },
+          hint: {
+            text: "Sort code account number from CPS, then use bank wizard to get bank name"
           },
           classes: "govuk-radios",
           items: [
