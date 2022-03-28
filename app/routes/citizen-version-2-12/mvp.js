@@ -516,15 +516,20 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   const statePensionStatus = req.session.data['state-pension-status']
 
   if (statePensionStatus === 'Yes') {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/state-pension-payment-account`)
+  } else if (statePensionStatus === 'FirstPayment') {
+    res.redirect(`${baseUrl}/state-pension-payment-account`)
   } else if (statePensionStatus === 'NoSP') {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/state-pension-payment-account`)
   } else if (statePensionStatus === 'NoBank') {
-    res.redirect(`${baseUrl}/claim-filter`)
+    res.redirect(`${baseUrl}/state-pension-payment-account`)
   } else {
     res.redirect(`${baseUrl}/done-not-getting-sp`)
   }
 })
+
+
+
 
 router.post(`${baseUrl}/state-pension-14-months-router`, (req, res) => {
   const statePension14Months = req.session.data['state-pension-14-months']

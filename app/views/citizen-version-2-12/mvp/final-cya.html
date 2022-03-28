@@ -257,6 +257,25 @@
         {
           classes: 'govuk-summary-list',
           key: {
+            text: "Bank name where SP is paid into"
+          },
+          value: {
+            text: data['state-pension-payment-account']
+          },
+          actions: {
+            items: [
+              {
+                href: "state-pension-payment-account",
+                text: "Change",
+                visuallyHiddenText: "state-pension-payment-account"
+            }
+          ]
+        }
+      },
+
+        {
+          classes: 'govuk-summary-list',
+          key: {
             text: "Are you responsible for any children or qualifying young people who live with you?"
           },
           value: {
