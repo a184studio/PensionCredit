@@ -22,7 +22,73 @@
 
         {% include "agent-service-1-2/agent/record-id.html" %}
 
-        {% if data["system-ur-process-ab"]  == "A" %}
+        {% if data["system-ur-process-ab"]  == "C" %}
+
+
+
+        {% set legendHint %}
+
+        {% set LegendQualifingBenefits %}
+        <p class=" govuk-!-margin-bottom-2">Qualifying benefits include:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+
+          <li>Adult Disability Payment daily living component</li>
+          <li>Armed Forces Independence Payment</li>
+          <li>Attendance Allowance</li>
+          <li>Carer's Allowance, including an underlying entitlement</li>
+          <li>Constant Attendance Allowance</li>
+          <li>Disability Living Allowance care component (middle or highest rate)</li>
+          <li>Personal Independence Payment daily living component</li>
+
+        </ul>
+
+        {% endset -%}
+
+        {{ govukDetails({
+          summaryText: "Qualifying benefits for premiums",
+          html: LegendQualifingBenefits
+        }) }}
+
+        {% endset -%}
+
+            {{ govukRadios({
+              idPrefix: "process-c-nil-task-3-9",
+              name: "process-c-nil-task-3-9",
+              fieldset: {
+                legend: {
+                  html: "Are there any open interests shown for qualifying benefits in SearchLight since " + (threeMonthsAgo | formatDate) + "?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-4"
+                }
+              },
+                hint: {
+                  html: legendHint
+                },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "Not matched",
+                text: "Yes",
+                checked: (data["process-c-nil-task-3-9"] == "Not matched")
+              },
+                {
+                  value: "Matched",
+                  text: "No",
+                  checked: (data["process-c-nil-task-3-9"] == "Matched")
+                },
+                {
+                  value: "Unfinished",
+                  text: "Exit and resume later",
+                  checked: (data["process-c-nil-task-3-9"] == "Unfinished")
+                }
+              ]
+            }) }}
+
+
+
+
+{% else %}
+
 
 
         <!-- <span class="govuk-caption-m">Task 3-9</span> -->
@@ -104,69 +170,6 @@
 
     </div>
   </div>
-
-
-
-{% else %}
-
-{% set legendHint %}
-
-{% set LegendQualifingBenefits %}
-<p class=" govuk-!-margin-bottom-2">Qualifying benefits include:</p>
-<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
-
-  <li>Adult Disability Payment daily living component</li>
-  <li>Armed Forces Independence Payment</li>
-  <li>Attendance Allowance</li>
-  <li>Carer's Allowance, including an underlying entitlement</li>
-  <li>Constant Attendance Allowance</li>
-  <li>Disability Living Allowance care component (middle or highest rate)</li>
-  <li>Personal Independence Payment daily living component</li>
-
-</ul>
-
-{% endset -%}
-
-{{ govukDetails({
-  summaryText: "Qualifying benefits for premiums",
-  html: LegendQualifingBenefits
-}) }}
-
-{% endset -%}
-
-    {{ govukRadios({
-      idPrefix: "process-c-nil-task-3-9",
-      name: "process-c-nil-task-3-9",
-      fieldset: {
-        legend: {
-          html: "Are there any open interests shown for qualifying benefits in SearchLight since " + (threeMonthsAgo | formatDate) + "?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-4"
-        }
-      },
-        hint: {
-          html: legendHint
-        },
-      classes: "govuk-radios",
-      items: [
-      {
-        value: "Not matched",
-        text: "Yes",
-        checked: (data["process-c-nil-task-3-9"] == "Not matched")
-      },
-        {
-          value: "Matched",
-          text: "No",
-          checked: (data["process-c-nil-task-3-9"] == "Matched")
-        },
-        {
-          value: "Unfinished",
-          text: "Exit and resume later",
-          checked: (data["process-c-nil-task-3-9"] == "Unfinished")
-        }
-      ]
-    }) }}
-
 
 
 
