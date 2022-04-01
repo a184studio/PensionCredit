@@ -307,12 +307,18 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
 
   if (typeOfClaim == 'eligibility') {
     res.redirect(`${baseUrl}/start`)
-  }  else if (typeOfClaim == 'bau-exit') {
-      res.redirect(`${baseUrl}/bau-exit`)
+
+  }  else if (typeOfClaim == 'bau-exit-1') {
+      res.redirect(`${baseUrl}/bau-exit-1`)
+
+  }  else if (typeOfClaim == 'bau-exit-2') {
+        res.redirect(`${baseUrl}/bau-exit-2`)
+
     } else {
     res.redirect(`${baseUrl}/bau-exit`)
   }
 })
+
 
 
 router.post(`${baseUrl}/state-pension-amount-check`, (req, res) => {
