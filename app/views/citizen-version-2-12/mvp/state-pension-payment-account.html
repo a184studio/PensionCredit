@@ -23,10 +23,9 @@
 
             <!------------H1 LEGEND------------>
               {% set dynamicH1 %}
-              {% if data["state-pension-status"] == "Yes" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Bank you get your SP in</h2>
-              {% elif data["state-pension-status"] == "FirstPayment" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Bank you are due to get your SP in</h2>
-              {% elif data["state-pension-status"] == "NoBank" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Bank you have requested to get your SP paid into</h2>
-
+              {% if data["state-pension-status"] == "Yes" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Bank you get your SP in</h2>
+              {% elif data["state-pension-status"] == "FirstPayment" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Bank you are due to get your SP in</h2>
+              {% elif data["state-pension-status"] == "NoBank" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Bank you have requested to get your SP paid into</h2>
 
               {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Bank name defalt</h2>{% endif %}
               {% endset %}
@@ -34,12 +33,46 @@
 
             {% endset -%}
 
+
+            {% set dynamicHintBreakdown %}
+
+<!-- Add something in here -->
+            <p class=" govuk-!-margin-bottom-2">Qualifying benefits for premiums include:</p>
+
+
+            <p class=" govuk-!-margin-bottom-2">None bullet</p>
+
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+
+
+              <li>XXXX</li>
+              <li>XXXX</li>
+              <li>XXXX</li>
+              <li>XXXX</li>
+              <li>XXXX</li>
+
+            </ul>
+            <!-- Stop here -->
+
+
+            {% endset -%}
+
+            {% set dynamicHint %}
+
+            {{ govukDetails({
+              summaryText: "XXX",
+              html: dynamicHintBreakdown
+            }) }}
+
+            {% endset -%}
+
+
             {{ govukInput({
               label: {
                 html: dynamicH1
               },
                 hint: {
-                  text: "We are using this because"
+                  html: dynamicHint
                 },
               id: "state-pension-payment-account",
               name: "state-pension-payment-account",
