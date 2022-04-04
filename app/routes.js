@@ -11,7 +11,7 @@ router.use((req, res, next) => {
 
 router.use((req, res, next) => {
   const today = new Date()
-  const thirtyOneDaysIDOC = new Date(today.getFullYear(), today.getMonth(), today.getDate()-31)
+  const thirtyOneDaysIDOC = new Date(today.getFullYear(), today.getMonth(), today.getDate()-30)
   res.locals.thirtyOneDaysIDOC = thirtyOneDaysIDOC
   next()
 })
