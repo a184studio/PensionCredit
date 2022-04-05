@@ -20,11 +20,21 @@
       <form method="post" action="/session-clear-route">
         <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/type-of-claim">
 
-        <span class="govuk-caption-m">[2]</span>
+        <span class="govuk-caption-m">[7]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Becauses you have been given an IDOC, I am going to pass you to the new claims department who will help you further</h1>
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">XXX</p>
+        {% if data['bau-exit-1'] == 'NewClaim' %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Looks like its not been processed yet.</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Usually it can take us up to X</p>
+        {% else %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Because the application has been processed and an outcome should be with you soon</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">I can hand you over to the changes line if you would like to make a change.</p>
+        {% endif %}
+
+
+
 
 
 

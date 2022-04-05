@@ -17,19 +17,20 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="bau-exit-1-outcome">
+      <form method="post" action="bau-exit-4-outcome">
 
-        <span class="govuk-caption-m">[1]</span>
+        <span class="govuk-caption-m">[4]</span>
 
-This is all noise. Just about the function
+        This is all noise. Just about the function
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">I need to check to see what status your claim is at on our systems</h1>
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Because you are trying to make a change, I need to check to see what status your claim is at</h1>
 
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "bau-exit-1",
-          name: "bau-exit-1",
+          idPrefix: "bau-exit-4",
+          name: "bau-exit-4",
           fieldset: {
             legend: {
               text: "Check in CAM for to see if Pension Credit is in payment",
@@ -42,12 +43,12 @@ This is all noise. Just about the function
             {
               value: "NewClaim",
               text: "Application is still to be processed",
-              checked: data['bau-exit-1'] == "NewClaim"
+              checked: data['bau-exit-4'] == "NewClaim"
             },
             {
               value: "Changes",
               text: "The application is in payment",
-              checked: data['bau-exit-1'] == "Changes"
+              checked: data['bau-exit-4'] == "Changes"
             }
           ]
         }) }}

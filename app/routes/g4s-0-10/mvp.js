@@ -311,8 +311,29 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
   }  else if (typeOfClaim == 'bau-exit-1') {
       res.redirect(`${baseUrl}/bau-exit-1`)
 
-  }  else if (typeOfClaim == 'bau-exit-2') {
-        res.redirect(`${baseUrl}/bau-exit-2`)
+}  else if (typeOfClaim == 'bau-exit-2') {
+    res.redirect(`${baseUrl}/bau-exit-2`)
+
+}  else if (typeOfClaim == 'bau-exit-3') {
+      res.redirect(`${baseUrl}/bau-exit-3`)
+
+}  else if (typeOfClaim == 'bau-exit-4') {
+    res.redirect(`${baseUrl}/bau-exit-4`)
+
+}  else if (typeOfClaim == 'bau-exit-5') {
+      res.redirect(`${baseUrl}/bau-exit-5`)
+
+}  else if (typeOfClaim == 'bau-exit-6') {
+    res.redirect(`${baseUrl}/bau-exit-6`)
+
+}  else if (typeOfClaim == 'bau-exit-7') {
+      res.redirect(`${baseUrl}/bau-exit-7`)
+
+}  else if (typeOfClaim == 'bau-exit-8') {
+    res.redirect(`${baseUrl}/bau-exit-8`)
+
+}  else if (typeOfClaim == 'bau-exit-9') {
+      res.redirect(`${baseUrl}/bau-exit-9`)
 
     } else {
     res.redirect(`${baseUrl}/bau-exit`)
