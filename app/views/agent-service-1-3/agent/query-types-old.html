@@ -1,0 +1,146 @@
+{% extends "layout-nav.html" %}
+
+{% block pageTitle %}
+  PC: Name Name
+
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="query-types-router" method="post" class="form">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Record queries</h1>
+
+      {{ govukCheckboxes({
+        idPrefix: "general-queries",
+        name: "general-queries",
+        fieldset: {
+          legend: {
+            text: "General queries",
+            isPageHeading: true,
+            classes: "govuk-body-l govuk-!-font-weight-bold"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "A1",
+            text: "I do not understand the calculation",
+            checked: (data["general-queries"] == "A1")
+
+          },
+          {
+            value: "A2",
+            text: "Explain minimum income guarantee",
+            checked: (data["general-queries"] == "A2")
+          },
+          {
+            value: "A3",
+            text: "Explain automated processing",
+            checked: (data["general-queries"] == "A3")
+
+          },
+          {
+            value: "A4",
+            text: "Explain mandatory reconsideration",
+            checked: (data["general-queries"] == "A4")
+          },
+          {
+            value: "A5",
+            text: "I'd like to know what other help is available to me",
+            checked: (data["general-queries"] == "A5")
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "case-queries",
+        name: "case-queries",
+        fieldset: {
+          legend: {
+            text: "Case queries",
+            isPageHeading: true,
+            classes: "govuk-body-l govuk-!-font-weight-bold"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "B1",
+            text: "I do not understand why I'm not entitled",
+            checked: (data["case-queries"] == "B1")
+
+          },
+          {
+            value: "B2",
+            text: "I'd like a progress report on my application",
+            checked: (data["case-queries"] == "B2")
+
+          },
+          {
+            value: "B3",
+            text: "Something has changed that I need to tell you about",
+            checked: (data["case-queries"] == "B3")
+
+
+          }
+
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "disputes",
+        name: "disputes",
+        fieldset: {
+          legend: {
+            text: "Appeals",
+            isPageHeading: true,
+            classes: "govuk-body-l govuk-!-font-weight-bold"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "C1",
+            text: "I'd like to request a Mandatory Reconsideration",
+            checked: (data["disputes"] == "C1")
+
+          },
+          {
+            value: "C2",
+            text: "I'd like my case to be looked at again",
+            checked: (data["disputes"] == "C1")
+
+          }
+
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Done"
+      }) }}
+
+  </div>
+
+
+
+
+    </form>
+{% endblock %}

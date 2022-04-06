@@ -397,6 +397,13 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
   }
 })
 
+
+
+
+// Queries and Disputes ------------------------------------------------<!>
+
+// Primary Nav A / Selected State ROUTER<!>
+
 router.post(`${baseUrl}/query-types-router`, (req, res) => {
   const query_types = req.session.data['query-types']
 
@@ -407,15 +414,6 @@ router.post(`${baseUrl}/query-types-router`, (req, res) => {
     res.redirect(`${baseUrl}/query-search`)
   }
 })
-
-
-// Queries and Disputes ------------------------------------------------<!>
-
-// Primary Nav A / Selected State ROUTER<!>
-
-
-
-
 
 
 
