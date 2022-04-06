@@ -27,39 +27,20 @@
               {% elif data["state-pension-status"] == "FirstPayment" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">What is the name of the bank or building society that your State Pension is going to be paid into?</h2>
               {% elif data["state-pension-status"] == "NoBank" %}  <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">What is the name of the bank or building society that you requested your State Pension be paid into?</h2>
 
-              {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Bank name default</h2>{% endif %}
+              {% else %}<h2 class="govuk-heading-xl govuk-!-margin-bottom-2">Bank name defalt</h2>{% endif %}
               {% endset %}
             <!------------Legend--------------->
 
             {% endset -%}
 
 
-            {% set dynamicHintBreakdown %}
 
-<!-- Add something in here -->
-            <p class=" govuk-!-margin-bottom-2">We use this information to confirm your identity.</p>
-            </ul>
-            <!-- Stop here -->
-
-            {% endset -%}
-
-            {% set dynamicHint %}
-
-            {{ govukDetails({
-              summaryText: "Why we ask for the name of your bank or building society",
-              html: dynamicHintBreakdown
-            }) }}
-
-            {% endset -%}
 
 
             {{ govukInput({
               label: {
                 html: dynamicH1
               },
-                hint: {
-                  html: dynamicHint
-                },
               id: "state-pension-payment-account",
               name: "state-pension-payment-account",
               classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
