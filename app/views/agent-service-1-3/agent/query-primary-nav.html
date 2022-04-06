@@ -1,5 +1,5 @@
 <div class="govuk-grid-row govuk-!-margin-bottom-6">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-two-thirds">
     <!--
     <p><span class="govuk-!-font-size-24 govuk-!-font-weight-bold">Jeff Jones Mc Cormick Edward Bridges</span>&nbsp;&nbsp;<span class="govuk-!-font-size-19 govuk-!-margin-bottom-2">{{ data ["query-search-nino"]}}</span></p>
  -->
@@ -8,47 +8,43 @@
     <p class="govuk-!-font-size-19 govuk-!-margin-bottom-2">{{ data ["query-search-nino"]}}</p>
 
 
+    {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 
-
-    <div class="moj-primary-navigation">
-
-      <div class="moj-primary-navigation__container">
-
-        <div class="moj-primary-navigation__nav">
-
-          <nav class="moj-primary-navigation govuk-!-margin-left-2" aria-label="Primary navigation">
-
-            <ul class="moj-primary-navigation__list">
-              <li class="moj-primary-navigation__item">
-                <a class="moj-primary-navigation__link" href="query-overview">Overview</a>
-              </li>
-
-              <li class="moj-primary-navigation__item">
-                <a class="moj-primary-navigation__link" href="query-history">History</a>
-              </li>
-
-              <li class="moj-primary-navigation__item">
-                <a class="moj-primary-navigation__link" aria-current="page" href="query-tasks">Tasks</a>
-              </li>
-
-              <li class="moj-primary-navigation__item">
-                <a class="moj-primary-navigation__link" href="query-correspondence">Correspondence</a>
-              </li>
-
-              <li class="moj-primary-navigation__item">
-                <a class="moj-primary-navigation__link" href="query-help">Help</a>
-              </li>
-            </ul>
-
-          </nav>
-
-        </div>
-      </div>
-
-    </div>
-
-
-
+    {{ mojPrimaryNavigation({
+      label: 'Primary navigation',
+      items: [
+        {
+          text: 'Overview',
+          href: 'query-overview',
+          active: nav == 'overview'
+        },
+        {
+          text: 'History',
+          href: 'query-history',
+          active: nav == 'history'
+        },
+        {
+          text: 'Tasks',
+          href: 'query-tasks',
+          active: nav == 'tasks'
+        },
+        {
+          text: 'Correspondence',
+          href: 'query-correspondence',
+          active: nav == 'correspondence'
+        },
+        {
+          text: 'Help',
+          href: 'query-help',
+          active: nav == 'help'
+        },
+        {
+          text: 'Queries',
+          href: 'query-types',
+          active: nav == 'queries'
+        }
+      ]
+    }) }}
 
 
   </div>
