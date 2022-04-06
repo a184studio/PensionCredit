@@ -402,16 +402,35 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
 
 // Queries and Disputes ------------------------------------------------<!>
 
-// Primary Nav A / Selected State ROUTER<!>
+// Query Router /<!>
 
 router.post(`${baseUrl}/query-types-router`, (req, res) => {
   const query_types = req.session.data['query-types']
 
-  if (query_types == 'Language') {
-    res.redirect(`${baseUrl}/query-phone-help`)
+  if (query_types == 'general') {
+    res.redirect(`${baseUrl}/query-explain`)
+  }
+  else if (query_types == 'help') {
+    res.redirect(`${baseUrl}/query-help-start`)
+  }
+   else {
+    res.redirect(`${baseUrl}/query-search`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/query-tasks-end-router`, (req, res) => {
+  const query_end = req.session.data['query-types']
+
+  if (query_end == 'mr') {
+    res.redirect(`${baseUrl}/query-tasks-mr-bau`)
+  }
+  else if (query_end == 'change') {
+    res.redirect(`${baseUrl}/#`)
   }
   else {
-    res.redirect(`${baseUrl}/query-search`)
+    res.redirect(`${baseUrl}/home-user-0`)
   }
 })
 

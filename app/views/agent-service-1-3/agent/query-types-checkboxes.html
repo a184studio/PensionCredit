@@ -1,0 +1,112 @@
+{{ govukCheckboxes({
+  idPrefix: "query-types",
+  name: "query-types",
+  fieldset: {
+    legend: {
+      text: "General queries",
+      isPageHeading: true,
+      classes: "govuk-body-l govuk-!-font-weight-bold"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "general",
+      text: "I do not understand the calculation",
+      checked: (data["query-types"] == "general")
+
+    },
+    {
+      value: "general",
+      text: "Explain minimum income guarantee",
+      checked: (data["query-types"] == "general")
+    },
+    {
+      value: "general",
+      text: "Explain automated processing",
+      checked: (data["query-types"] == "general")
+
+    },
+    {
+      value: "general",
+      text: "Explain mandatory reconsideration",
+      checked: (data["query-types"] == "general")
+    },
+    {
+      value: "help",
+      text: "I'd like to know what other help is available to me",
+      checked: (data["query-types"] == "help")
+    }
+  ]
+}) }}
+
+
+{{ govukCheckboxes({
+  idPrefix: "query-types",
+  name: "query-types",
+  fieldset: {
+    legend: {
+      text: "Case queries",
+      isPageHeading: true,
+      classes: "govuk-body-l govuk-!-font-weight-bold"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "case",
+      text: "I do not understand why I'm not entitled",
+      checked: (data["query-types"] == "case")
+
+    },
+    {
+      value: "case",
+      text: "I'd like a progress report on my application",
+      checked: (data["query-types"] == "case")
+
+    },
+    {
+      value: "case",
+      text: "Something has changed that I need to tell you about",
+      checked: (data["query-types"] == "case")
+
+
+    }
+
+  ]
+}) }}
+
+
+{{ govukCheckboxes({
+  idPrefix: "query-types",
+  name: "query-types",
+  fieldset: {
+    legend: {
+      text: "Appeals",
+      isPageHeading: true,
+      classes: "govuk-body-l govuk-!-font-weight-bold"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "case",
+      text: "I'd like to request a Mandatory Reconsideration",
+      checked: (data["query-types"] == "case")
+
+    },
+    {
+      value: "case",
+      text: "I'd like my case to be looked at again",
+      checked: (data["query-types"] == "case")
+
+    }
+
+  ]
+}) }}

@@ -13,21 +13,139 @@
 
 {% block content %}
 
+{% set query = 'start' %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="query-overview-b" method="post" class="form">
+    <form action="query-overview" method="post" class="form">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Jeff Bridges</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">{{ data ["query-search-nino"]}}</p>
+      <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">Jeff Jones Bridges</p>
+      <p class="govuk-!-font-size-19 govuk-!-margin-bottom-2">{{ data ["query-search-nino"]}}</p>
 
-      <h2 class="govuk-heading-l">Security</h2>
 
+    <div class="govuk-!-margin-bottom-8">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Security</h1>
+
+      <p class="govuk-caption-l govuk-!-margin-bottom-8">Ask up to customer must answer correctly two from three of the KBV questions listed below, based on information held in the following systems</p>
+
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Question 1</p>
+      <p class="govuk-body govuk-!-margin-bottom-4">What is the name of your bank?</p>
+
+      {{ govukCheckboxes({
+        idPrefix: "kbv1",
+        name: "kbv1",
+        fieldset: {
+          legend: {
+            text: "Has the caller failed to answer?",
+            isPageHeading: true,
+            classes: "govuk-body govuk-!-font-size-19 "
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "kbv1",
+            text: "Yes",
+            checked: (data["kbv1"] == "fail")
+
+          }
+        ]
+      }) }}
+    </div>
+
+    <div class="govuk-!-margin-bottom-8">
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Question 2</p>
+      <p class="govuk-body govuk-!-margin-bottom-4">What is your bank sort code? </p>
+
+      {{ govukCheckboxes({
+        idPrefix: "kbv2",
+        name: "kbv2",
+        fieldset: {
+          legend: {
+            text: "Has the caller failed to answer?",
+            isPageHeading: true,
+            classes: "govuk-body govuk-!-font-size-19"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "kbv1",
+            text: "Caller failed to answer",
+            checked: (data["kbv2"] == "fail")
+
+          }
+        ]
+      }) }}
+    </div>
+
+    <div class="govuk-!-margin-bottom-8">
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Question 3</p>
+      <p class="govuk-body govuk-!-margin-bottom-4">What are the last 4 digits of your bank account number? </p>
+
+      {{ govukCheckboxes({
+        idPrefix: "kbv3",
+        name: "kbv3",
+        fieldset: {
+          legend: {
+            text: "Has the caller failed to answer?",
+            isPageHeading: true,
+            classes: "govuk-body govuk-!-font-size-19"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "kbv3",
+            text: "Yes",
+            checked: (data["kbv3"] == "fail")
+
+          }
+        ]
+      }) }}
+    </div>
+
+
+    <div class="govuk-!-margin-bottom-8">
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Question 4</p>
+      <p class="govuk-body govuk-!-margin-bottom-4">What was your previous address(es)?  </p>
+
+      {{ govukCheckboxes({
+        idPrefix: "kbv4",
+        name: "kbv3",
+        fieldset: {
+          legend: {
+            text: "Has the caller failed to answer?",
+            isPageHeading: true,
+            classes: "govuk-body govuk-!-font-size-19"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "kbv4",
+            text: "Yes",
+            checked: (data["kbv4"] == "fail")
+
+          }
+        ]
+      }) }}
+    </div>
 
 
     {{ govukButton({
-      text: "Continue"
+      text: "Caller passed security"
     }) }}
   </div>
 
