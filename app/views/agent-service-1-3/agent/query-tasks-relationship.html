@@ -27,17 +27,6 @@
 
           <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Relationship</h3>
 
-
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-
-                  <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Application processing</p>
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Applicant does not live with a partner</p>
-                  <p class="govuk-body govuk-!-margin-bottom-8">Processor matched answer with SearchLight on 28th of February 2022</p>
-
-                </div>
-            </div>
-
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
 
@@ -51,37 +40,6 @@
             </div>
 
 
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-
-                  <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Update checks</p>
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2"></p>
-
-                  {{ govukRadios({
-                    classes: "govuk-radios--inline",
-                    idPrefix: "change-relationship",
-                    name: "change-relationship",
-                    fieldset: {
-                      legend: {
-                        text: "Applicant does not live with a partner",
-                        isPageHeading: true,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    hint: {
-                      text: "Check SearchLight"
-                    },
-                    items: [
-                      {
-                        value: "NotChanged",
-                        text: "Not changed"
-                      },
-                      {
-                        value: "Changed",
-                        text: "Changed"
-                      }
-                    ]
-                  }) }}
 
                   <div class="govuk-grid-row">
                       <div class="govuk-grid-column-full">

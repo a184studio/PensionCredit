@@ -12,21 +12,23 @@
 
     {{ mojPrimaryNavigation({
       label: 'Primary navigation',
+      classes: 'govuk-!-margin-left-5',
       items: [
         {
           text: 'Overview',
           href: 'query-overview',
           active: nav == 'overview'
         },
-        {
-          text: 'History',
-          href: 'query-history',
-          active: nav == 'history'
-        },
+
         {
           text: 'Tasks',
           href: 'query-tasks-review',
           active: nav == 'tasks'
+        },
+        {
+          text: 'History',
+          href: 'query-history',
+          active: nav == 'history'
         },
         {
           text: 'Correspondence',
