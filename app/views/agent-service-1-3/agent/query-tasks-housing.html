@@ -28,6 +28,8 @@
 
           <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Housing costs</h3>
 
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Let me check some details for you.</p>
+
 
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
@@ -35,10 +37,66 @@
                   <ul class="govuk-list class="">
                     <li class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Application answers </li>
                     <li class="govuk-body govuk-!-font-weight-bold">Do you pay any service charges?</li>
-                    <li class="govuk-!-margin-bottom-4">No</li>
+                    <li class="govuk-!-margin-bottom-0">No</li>
+
+                    {{ govukRadios({
+                      classes: "govuk-radios--inline govuk-!-margin-bottom-4",
+                      idPrefix: "change-housing1",
+                      name: "change-housing1",
+                      fieldset: {
+                        legend: {
+                          text: "",
+                          isPageHeading: true,
+                          classes: "govuk-fieldset__legend--s"
+                        }
+                      },
+                      hint: {
+                        text: ""
+                      },
+                      items: [
+                        {
+                          value: "Unchanged1",
+                          text: "Unchanged",
+                          checked: (data["change-housing1"] == "Unchanged1")
+                        },
+                        {
+                          value: "Change",
+                          text: "Changed",
+                          checked: (data["change-housing1"] == "Changed1")
+                        }
+                      ]
+                    }) }}
 
                     <li class="govuk-body govuk-!-font-weight-bold">Do you pay ground rent?</li>
-                    <li class="govuk-!-margin-bottom-8">No</li>
+                    <li class="govuk-!-margin-bottom-0">No</li>
+
+                    {{ govukRadios({
+                      classes: "govuk-radios--inline govuk-!-margin-bottom-4",
+                      idPrefix: "change-housing2",
+                      name: "change-housing2",
+                      fieldset: {
+                        legend: {
+                          text: "",
+                          isPageHeading: true,
+                          classes: "govuk-fieldset__legend--s"
+                        }
+                      },
+                      hint: {
+                        text: ""
+                      },
+                      items: [
+                        {
+                          value: "Unchanged1",
+                          text: "Unchanged",
+                          checked: (data["change-housing2"] == "Unchanged1")
+                        },
+                        {
+                          value: "Change",
+                          text: "Changed",
+                          checked: (data["change-housing2"] == "Changed1")
+                        }
+                      ]
+                    }) }}
                   </ul>
                 </div>
             </div>

@@ -435,5 +435,19 @@ router.post(`${baseUrl}/query-tasks-end-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/query-end-router`, (req, res) => {
+  const review_end = req.session.data['query-tasks-sp']
+
+  if (review_end == 'bau') {
+    res.redirect(`${baseUrl}/query-tasks-review-bau`)
+  }
+  else if (review_end == 'test') {
+    res.redirect(`${baseUrl}/query-overview`)
+  }
+   else {
+    res.redirect(`${baseUrl}/query-tasks`)
+  }
+})
+
 
 module.exports = router

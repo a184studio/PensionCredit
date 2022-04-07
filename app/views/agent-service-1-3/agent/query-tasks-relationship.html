@@ -27,13 +27,44 @@
 
           <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Relationship</h3>
 
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Let me check some details for you.</p>
+
+
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
 
                   <ul class="govuk-list class="">
                     <li class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Application answers </li>
                     <li class="govuk-body govuk-!-font-weight-bold">Do you have a partner?</li>
-                    <li class="govuk-!-margin-bottom-8">No, I do not have a partner</li>
+                    <li class="govuk-!-margin-bottom-0">No, I do not have a partner</li>
+
+                    {{ govukRadios({
+                      classes: "govuk-radios--inline",
+                      idPrefix: "change-relationship",
+                      name: "change-relationship",
+                      fieldset: {
+                        legend: {
+                          text: "",
+                          isPageHeading: true,
+                          classes: "govuk-fieldset__legend--s"
+                        }
+                      },
+                      hint: {
+                        text: ""
+                      },
+                      items: [
+                        {
+                          value: "Unchanged1",
+                          text: "Unchanged",
+                          checked: (data["change-relationship"] == "Unchanged1")
+                        },
+                        {
+                          value: "Change",
+                          text: "Changed",
+                          checked: (data["change-relationship"] == "Changed1")
+                        }
+                      ]
+                    }) }}
                   </ul>
 
                 </div>
