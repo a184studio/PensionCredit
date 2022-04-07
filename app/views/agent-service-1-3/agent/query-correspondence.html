@@ -29,21 +29,38 @@
             <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Correspondence</h3>
 
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-half">
-                  <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
-                    <li><a href="#1">Outbound</a></li>
-                    <li><a href="#2">Inbound</a></li>
-                  </ul>
+                <div class="govuk-grid-column-full">
+                  {{ govukTable({
+                    caption: "",
+                    captionClasses: "govuk-table__caption--m",
+                    firstCellIsHeader: true,
+                    head: [
+                      {
+                        text: "Date",
+                              classes: 'govuk-!-width-one-third'
+
+                      },
+                      {
+                        text: "Correspondence",
+                          classes: 'govuk-!-width-two-thirds'
+
+                      }
+                    ],
+                    rows: [
+                      [
+                        {
+                          text: "01 March 2022"
+                        },
+                        {
+                          text: "Outbound - Entitlement letter"
+
+                        }
+                      ]
+                    ]
+                  }) }}
                 </div>
 
-                <div class="govuk-grid-column-two-third">
-                  <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
-                    <li>Award letter sent on 01 Mar 2022</li>
-                    <li>None</li>
-                    <li></li>
-                  </ul>
-                </div>
-              </div>
+
 
           </div>
 
