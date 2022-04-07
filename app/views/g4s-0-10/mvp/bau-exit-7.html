@@ -17,22 +17,50 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/type-of-claim">
+        <form method="post" action="bau-exit-7-outcome">
 
         <span class="govuk-caption-m">[7]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Try and help</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">There might be more something here for you <br><a href="more-help"> More help</a></p>
+
+        {% set legendHint %}
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">There is other help, such as help with your heating, benefits or pensions for example <a href="bau-exit-7-outcome">View other help</a></p> -->
+        {% endset -%}
+
 
         <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Continue with the enquiry using standard working instructions</p> -->
 
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "bau-exit-7",
+          name: "bau-exit-7",
+          fieldset: {
+            legend: {
+              text: "We have a few other help options, would you like to know more?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: legendHint
+          },
 
-
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: data['bau-exit-7'] == "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: data['bau-exit-7'] == "No"
+            }
+          ]
+        }) }}
 
       {{ govukButton({
-      text: "Finish and close",
-      classes: "govuk-button dont-print govuk-!-margin-top-6"
+      text: "Contine",
+      classes: "govuk-button dont-print"
       }) }}
 
   </form>
