@@ -20,16 +20,16 @@
     <form action="query-overview" method="post" class="form">
 
 
-      <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">Jeff Jones Bridges</p>
+      <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">Jen Jones Bridges</p>
       <p class="govuk-!-font-size-19 govuk-!-margin-bottom-2">{{ data ["query-search-nino"]}}</p>
 
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Security</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Verify applicant</h1>
 
       {{ govukInsetText({
-        text: "Ask the caller three security questions. They must answer at least two correctly, for you to continue into their case. You will need to use either Searchlight or CAM to verify their answers."
+        text: "Follow BAU KBV process. Record questions they fail to answer"
       }) }}
 
       <!--
@@ -37,122 +37,49 @@
     -->
 
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Question 1</p>
-      <p class="govuk-body govuk-!-margin-bottom-4">What is the name of your bank?</p>
-
-      {{ govukCheckboxes({
-        idPrefix: "kbv1",
-        name: "kbv1",
-        fieldset: {
-          legend: {
-            text: "Has the caller failed to answer?",
-            isPageHeading: true,
-            classes: "govuk-body govuk-!-font-size-19 "
-          }
+      {{ govukInput({
+        label: {
+          text: "Question 1"
         },
         hint: {
-          text: ""
+          text: "Record the question as per KBV document"
         },
-        items: [
-          {
-            value: "kbv1",
-            text: "Yes",
-            checked: (data["kbv1"] == "fail")
+        id: "kbv-q1",
+        name: "kbv-q1"
+      }) }}
 
-          }
-        ]
+
+      {{ govukInput({
+        label: {
+          text: "Question 2"
+        },
+        hint: {
+          text: "Record the question as per KBV document"
+        },
+        id: "kbv-q2",
+        name: "kbv-q2"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Question 3"
+        },
+        hint: {
+          text: "Record the question as per KBV document"
+        },
+        id: "kbv-q3",
+        name: "kbv-q3"
+      }) }}
+
+      {{ govukButton({
+        text: "Caller passed security"
       }) }}
     </div>
 
-    <div class="govuk-!-margin-bottom-8">
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Question 2</p>
-      <p class="govuk-body govuk-!-margin-bottom-4">What is your bank sort code? </p>
-
-      {{ govukCheckboxes({
-        idPrefix: "kbv2",
-        name: "kbv2",
-        fieldset: {
-          legend: {
-            text: "Has the caller failed to answer?",
-            isPageHeading: true,
-            classes: "govuk-body govuk-!-font-size-19"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-          {
-            value: "kbv1",
-            text: "Yes",
-            checked: (data["kbv2"] == "fail")
-
-          }
-        ]
-      }) }}
-    </div>
-
-    <div class="govuk-!-margin-bottom-8">
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Question 3</p>
-      <p class="govuk-body govuk-!-margin-bottom-4">What are the last 4 digits of your bank account number? </p>
-
-      {{ govukCheckboxes({
-        idPrefix: "kbv3",
-        name: "kbv3",
-        fieldset: {
-          legend: {
-            text: "Has the caller failed to answer?",
-            isPageHeading: true,
-            classes: "govuk-body govuk-!-font-size-19"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-          {
-            value: "kbv3",
-            text: "Yes",
-            checked: (data["kbv3"] == "fail")
-
-          }
-        ]
-      }) }}
     </div>
 
 
-    <div class="govuk-!-margin-bottom-8">
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Question 4</p>
-      <p class="govuk-body govuk-!-margin-bottom-4">What was your previous address(es)?  </p>
 
-      {{ govukCheckboxes({
-        idPrefix: "kbv4",
-        name: "kbv3",
-        fieldset: {
-          legend: {
-            text: "Has the caller failed to answer?",
-            isPageHeading: true,
-            classes: "govuk-body govuk-!-font-size-19"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-          {
-            value: "kbv4",
-            text: "Yes",
-            checked: (data["kbv4"] == "fail")
-
-          }
-        ]
-      }) }}
-    </div>
-
-
-    {{ govukButton({
-      text: "Caller passed security"
-    }) }}
   </div>
 
 
