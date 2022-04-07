@@ -20,11 +20,21 @@
       <form method="post" action="/session-clear-route">
         <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/type-of-claim">
 
-        <span class="govuk-caption-m">[3]</span>
+        <span class="govuk-caption-m">[5]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As you need to provide more information, I'm going to transfer you through to one of my colleagues</h1>
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Transfer call to DWP New Claims line.</p>
+        {% if data['bau-exit-5'] == 'Yes' %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Before I can go any further, I need to ask you some security questions first </h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Continue with the enquiry using standard working instructions.</p>
+        {% else %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">To get you the right help, I'm going to transfer you through to one of my colleagues</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Transfer call to G4s enquiry line.</p>
+        {% endif %}
+
+
+
 
 
 

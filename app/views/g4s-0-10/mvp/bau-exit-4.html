@@ -21,10 +21,7 @@
 
         <span class="govuk-caption-m">[4]</span>
 
-        This is all noise. Just about the function
-
-
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Because you are trying to make a change, I need to check to see what status your claim is at</h1>
+        <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Have you received a Pension Credit payment?</h1> -->
 
 
         {{ govukRadios({
@@ -33,22 +30,22 @@
           name: "bau-exit-4",
           fieldset: {
             legend: {
-              text: "Check in CAM for to see if Pension Credit is in payment",
+              text: "Have you received a Pension Credit payment?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
+              classes: "govuk-fieldset__legend--xl"
             }
           },
 
           items: [
             {
-              value: "NewClaim",
-              text: "Application is still to be processed",
-              checked: data['bau-exit-4'] == "NewClaim"
+              value: "Yes",
+              text: "Yes",
+              checked: data['bau-exit-4'] == "Yes"
             },
             {
-              value: "Changes",
-              text: "The application is in payment",
-              checked: data['bau-exit-4'] == "Changes"
+              value: "No",
+              text: "No",
+              checked: data['bau-exit-4'] == "No"
             }
           ]
         }) }}
