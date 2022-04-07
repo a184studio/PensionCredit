@@ -29,7 +29,7 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Verify applicant</h1>
 
       {{ govukInsetText({
-        text: "Follow BAU KBV process. Record questions they fail to answer"
+        text: "Go through the answers that the caller gave on their application. Ask if they are still correct and check in Searchlight for verification."
       }) }}
 
       <!--
@@ -42,7 +42,7 @@
           text: "Question 1"
         },
         hint: {
-          text: "Record the question as per KBV document"
+          text: "Record the question from  KBV document"
         },
         id: "kbv-q1",
         name: "kbv-q1"
@@ -54,7 +54,7 @@
           text: "Question 2"
         },
         hint: {
-          text: "Record the question as per KBV document"
+          text: "Record the question from KBV document"
         },
         id: "kbv-q2",
         name: "kbv-q2"
@@ -65,15 +65,26 @@
           text: "Question 3"
         },
         hint: {
-          text: "Record the question as per KBV document"
+          text: "Record the question from KBV document"
         },
         id: "kbv-q3",
         name: "kbv-q3"
       }) }}
 
-      {{ govukButton({
-        text: "Caller passed security"
-      }) }}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Caller passed security",
+          href: "query-overview"
+        }) }}
+
+        {{ govukButton({
+          text: "Caller failed security",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
+      </div>
+
+
     </div>
 
     </div>

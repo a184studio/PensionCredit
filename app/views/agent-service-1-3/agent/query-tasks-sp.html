@@ -18,7 +18,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="query-tasks-end" method="post" class="form">
+    <form action="query-tasks-review" method="post" class="form">
 
 
       <div class="govuk-grid-row">
@@ -27,7 +27,14 @@
 
           <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">State pension</h3>
 
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Let me check some details for you.</p>
 
+          {{ govukInsetText({
+            text: "Go through the answers that the caller gave on their application. Ask if they are still correct and check in Searchlight for verification."
+          }) }}
+
+
+          <!--
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
 
@@ -38,7 +45,8 @@
                   <p class="govuk-body govuk-!-margin-bottom-8">State Pension checked against SearchLight on 28th of February 2022</p>
 
                 </div>
-            </div>
+            </div>-->
+
 
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
@@ -49,15 +57,6 @@
                     <li class="govuk-!-margin-bottom-8">I am receiving my UK State Pension</li>
                   </ul>
 
-                </div>
-            </div>
-
-
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-
-                  <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Update checks</p>
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2"></p>
 
                   {{ govukRadios({
                     classes: "govuk-radios--inline",
@@ -76,13 +75,17 @@
                     items: [
                       {
                         value: "SpNotChanged",
-                        text: "Not changed"
+                        text: "Unchanged"
                       },
                       {
                         value: "SpChanged",
                         text: "Changed"
                       }
                     ]
+                  }) }}
+                  {{ govukDetails({
+                    summaryText: "Application processing",
+                    text: "State Pension amount exceeded applicable amount for the whole backdating period: 10 January 2022 to 28 February 2022. Checked against SearchLight and ISCS on 28th of February 2022."
                   }) }}
 
                   {{ govukRadios({
@@ -97,18 +100,23 @@
                       }
                     },
                     hint: {
-                      text: "Check SearchLight"
+                      text: "No"
                     },
                     items: [
                       {
                         value: "SpNotChanged",
-                        text: "Not changed"
+                        text: "Unchanged"
                       },
                       {
                         value: "SpChanged",
                         text: "Changed"
                       }
                     ]
+                  }) }}
+
+                  {{ govukDetails({
+                    summaryText: "Application processing",
+                    text: "State Pension amount exceeded applicable amount when processed. Checked against SearchLight and ISCS on 28th of February 2022."
                   }) }}
 
                   <div class="govuk-grid-row">
@@ -126,9 +134,13 @@
                             text: "Include any new or corrected information within the backdating period"
                           }
                         }) }}
+                </div>
+            </div>
 
-                      </div>
-                  </div>
+
+
+
+
 
 
                 </div>
