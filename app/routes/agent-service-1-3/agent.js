@@ -413,8 +413,11 @@ router.post(`${baseUrl}/query-types-router`, (req, res) => {
   else if (query_types == 'help') {
     res.redirect(`${baseUrl}/query-help-start`)
   }
-   else {
+  else if (query_types == 'case') {
     res.redirect(`${baseUrl}/query-search`)
+  }
+   else {
+    res.redirect(`${baseUrl}/query-explain`)
   }
 })
 

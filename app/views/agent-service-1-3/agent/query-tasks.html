@@ -1,4 +1,4 @@
-{% extends "layout-nav.html" %}
+{% extends "layout-ur-2022.html" %}
 
 {% block pageTitle %}
   PC: Name Name
@@ -6,9 +6,8 @@
 {% endblock %}
 
 {% block header %}
- {% include "explore-header.html" %}
+ {% include "explore-header-ur.html" %}
 {% endblock %}
-
 
 {% block content %}
 
@@ -43,9 +42,7 @@
                   <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
 
                     <li>{{ data['change-benefits3'] | default("Not started") }}</li>
-
-
-                    <li>Not requested</li>
+                    <li>{{ data['dr6'] | default("Not requested") }}</li>
                     <li>Not requested</li>
 
                   </ul>
