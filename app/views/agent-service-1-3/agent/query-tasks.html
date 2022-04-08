@@ -9,7 +9,6 @@
  {% include "explore-header-ur.html" %}
 {% endblock %}
 
-
 {% block content %}
 
 {% set nav = 'tasks' %}
@@ -43,9 +42,7 @@
                   <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
 
                     <li>{{ data['change-benefits3'] | default("Not started") }}</li>
-
-
-                    <li>Not requested</li>
+                    <li>{{ data['dr6'] | default("Not requested") }}</li>
                     <li>Not requested</li>
 
                   </ul>

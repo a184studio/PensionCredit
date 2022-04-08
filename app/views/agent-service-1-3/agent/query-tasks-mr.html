@@ -1,4 +1,4 @@
-{% extends "layout-nav.html" %}
+{% extends "layout-ur-2022.html" %}
 
 {% block pageTitle %}
   PC: Name Name
@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block header %}
- {% include "explore-header.html" %}
+ {% include "explore-header-ur.html" %}
 {% endblock %}
 
 
@@ -34,7 +34,7 @@
 
                   {{ govukCheckboxes({
                     idPrefix: "dr6",
-                    name: "Dr6",
+                    name: "dr6",
                     fieldset: {
                       legend: {
                         text: "",
@@ -47,7 +47,7 @@
                     },
                     items: [
                       {
-                        value: "submited",
+                        value: "Submited",
                         text: "DR6 submited"
                       }
                     ]
