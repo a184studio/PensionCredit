@@ -417,7 +417,7 @@ router.post(`${baseUrl}/query-types-router`, (req, res) => {
     res.redirect(`${baseUrl}/query-search`)
   }
    else {
-    res.redirect(`${baseUrl}/#`)
+    res.redirect(`${baseUrl}/query-explain`)
   }
 })
 
