@@ -520,7 +520,7 @@ router.post(`${baseUrl}/state-pension-status-router`, (req, res) => {
   } else if (statePensionStatus === 'FirstPayment') {
     res.redirect(`${baseUrl}/state-pension-payment-account`)
   } else if (statePensionStatus === 'NoSP') {
-    res.redirect(`${baseUrl}/state-pension-payment-account`)
+    res.redirect(`${baseUrl}/done-not-getting-sp`)
   } else if (statePensionStatus === 'NoBank') {
     res.redirect(`${baseUrl}/state-pension-payment-account`)
   } else {
