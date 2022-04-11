@@ -10,12 +10,16 @@ const {getMonth} = require('../../filters')()
 const router = new express.Router()
 const baseUrl = '/agent-service-1-3/agent'
 
+
 function makeAStay(data) {
   const admission = new Date(`${data['admission-year']}-${data['admission-month']}-${data['admission-day']}`)
   const discharge = new Date(`${data['discharge-year']}-${data['discharge-month']}-${data['discharge-day']}`)
   const totalDays = Math.max(differenceInDays(discharge, admission) - 1, 0)
   return {admission, discharge, totalDays}
 }
+
+// PDF DOWNLOADER
+// router.use(`${baseUrl}/dr6.doc`, express.static(path.resolve('app/views/agent-service-1-3/agent/dr6.doc'))) // ../ back up a directory
 
 
 router.post(`${baseUrl}/login-router`, (req, res) => {
