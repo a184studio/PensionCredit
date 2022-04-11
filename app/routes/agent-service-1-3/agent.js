@@ -416,6 +416,9 @@ router.post(`${baseUrl}/query-types-router`, (req, res) => {
   else if (query_types == 'case1') {
     res.redirect(`${baseUrl}/query-search`)
   }
+  else if (query_types == 'dispute1') {
+    res.redirect(`${baseUrl}/query-search`)
+  }
    else {
     res.redirect(`${baseUrl}/query-explain`)
   }
