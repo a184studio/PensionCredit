@@ -13,26 +13,26 @@
   },
   items: [
     {
-      value: "general",
+      value: "general1a",
       text: "I do not understand the calculation",
-      checked: (data["query-types"] == "general")
+      checked: (data["query-types"] == "general1a")
 
     },
     {
-      value: "general",
+      value: "general2a",
       text: "Explain minimum income guarantee",
-      checked: (data["query-types"] == "general")
+      checked: (data["query-types"] == "general2a")
     },
     {
-      value: "general",
+      value: "general3",
       text: "Explain automated processing",
-      checked: (data["query-types"] == "general")
+      checked: (data["query-types"] == "general3")
 
     },
     {
-      value: "general",
+      value: "general4",
       text: "Explain mandatory reconsideration",
-      checked: (data["query-types"] == "general")
+      checked: (data["query-types"] == "general4")
     },
     {
       value: "help",
@@ -44,7 +44,7 @@
 
 
 {{ govukCheckboxes({
-  idPrefix: "query-types",
+  idPrefix: "query-types-case",
   name: "query-types",
   fieldset: {
     legend: {
@@ -58,15 +58,15 @@
   },
   items: [
     {
-      value: "case",
+      value: "case1",
       text: "I do not understand why I'm not entitled",
-      checked: (data["query-types"] == "case")
+      checked: (data["query-types"] == "case1")
 
     },
     {
-      value: "case",
+      value: "case2",
       text: "Something has changed that I need to tell you about",
-      checked: (data["query-types"] == "case")
+      checked: (data["query-types"] == "case2")
 
 
     }
@@ -76,8 +76,8 @@
 
 
 {{ govukCheckboxes({
-  idPrefix: "query-types",
-  name: "query-types",
+  idPrefix: "query-types-disputes",
+  name: "query-types-disputes",
   fieldset: {
     legend: {
       text: "Disputes",
@@ -90,15 +90,15 @@
   },
   items: [
     {
-      value: "case",
+      value: "dispute1",
       text: "I'd like to request a Mandatory Reconsideration",
-      checked: (data["query-types"] == "case")
+      checked: (data["query-types"] == "dispute1")
 
     },
     {
-      value: "case",
+      value: "dispute2",
       text: "I'd like a progress report on my dispute",
-      checked: (data["query-types"] == "case")
+      checked: (data["query-types"] == "dispute2")
     }
 
   ]

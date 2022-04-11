@@ -402,18 +402,18 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
 
 // Queries and Disputes ------------------------------------------------<!>
 
-// Query Router /<!>
+// Query Types Router /<!>
 
 router.post(`${baseUrl}/query-types-router`, (req, res) => {
   const query_types = req.session.data['query-types']
 
-  if (query_types == 'general') {
+  if (query_types == 'general2') {
     res.redirect(`${baseUrl}/query-explain`)
   }
   else if (query_types == 'help') {
     res.redirect(`${baseUrl}/query-help-start`)
   }
-  else if (query_types == 'case') {
+  else if (query_types == 'case1') {
     res.redirect(`${baseUrl}/query-search`)
   }
    else {
@@ -421,6 +421,10 @@ router.post(`${baseUrl}/query-types-router`, (req, res) => {
   }
 })
 
+
+
+
+// OLD /<!>
 
 
 router.post(`${baseUrl}/query-tasks-end-router`, (req, res) => {
