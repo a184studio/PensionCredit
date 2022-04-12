@@ -14,7 +14,7 @@
     <form action="type-of-claim-router" method="post" class="form">
       <p class="govuk-body govuk--version-control govuk-!-padding-top-4">G4s version 0.10 / MVP</p>
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6 govuk-!-padding-top-4">Thanks for that...</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6 govuk-!-padding-top-4">Thanks for that. How can I help you today?</h1>
 
 
     {{ govukRadios({
@@ -22,7 +22,7 @@
       name: "type-of-claim",
       fieldset: {
         legend: {
-          text: "What is the reason for your call today?",
+          text: "Only ask for National Insurance number when needed.",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m "
         }
@@ -54,7 +54,7 @@
         },
         {
           value: "bau-exit-4",
-          text: "Applicant needs to make changes to their new or exisiting claim",
+          text: "Applicant needs to make changes to their new or existing claim",
           checked: (data["type-of-claim"] == "bau-exit-4")
         },
         {
