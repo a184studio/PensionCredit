@@ -145,6 +145,7 @@ router.use(require('./routes/third-party/cam-1'))
 router.use(require('./routes/g4s-0-10/mvp'))
 router.use(require('./routes/agent-service-1-2/agent'))
 router.use(require('./routes/agent-service-1-3/agent'))
+router.use(require('./routes/agent-service-1-4/agent'))
 
 
 module.exports = router
