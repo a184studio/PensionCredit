@@ -5,17 +5,16 @@
 {% endblock %}
 
 {% block header %}
- {% include "explore-header-ur-home.html" %}
+{% include "explore-header-ur.html" %}
 {% endblock %}
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-two-thirds">
     <form action="login-router" method="post" class="form">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Sorry you have no access to Manage Pension Credit Applications</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Sorry you have no access to Manage Pension Credit Applications</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Contact Neil Fulford, Graham Smith, Debs or Hazel at<br><a href="ur-no-access" class="govuk-link" rel="noreferrer noopener" target="">give-me-that-sweet-access@PC.GOV.UK</a> </p>
 
     </div>
