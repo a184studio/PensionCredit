@@ -44,11 +44,6 @@
     </div>
   </div>
 
-
-<!-- AB interaction -->
-
-  {% if data["system-ur-process-ab"]  == "A" %}
-
     <!------------ ––– ------------>
 
     <div class="govuk-grid-row">
@@ -60,7 +55,7 @@
           name: "process-c-nil-task-1-6",
           fieldset: {
             legend: {
-              html: "Does the bank name given in the application match what is in Check Payment Account Details?",
+              html: "Does the bank name given in the application<br>match what is in Check Payment Account Details?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -91,69 +86,6 @@
             {{ govukButton({
               text: "Save and continue"
             }) }}
-
-    {% else %}
-
-        <!------------ ––– ------------>
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
-
-            {{ govukRadios({
-              idPrefix: "process-c-nil-task-1-6",
-              name: "process-c-nil-task-1-6",
-              fieldset: {
-                legend: {
-                  html: "Does the bank name given in the application<br>match what is in Check Payment Account Details?",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              hint: {
-                text: ""
-              },
-              classes: "govuk-radios",
-              items: [
-              {
-                value: "Matched",
-                text: "Yes",
-                checked: (data["process-c-nil-task-1-6"] == "Matched")
-              },
-                {
-                  value: "Not matched",
-                  text: "No",
-                  checked: (data["process-c-nil-task-1-6"] == "Not matched")
-                }
-              ]
-            }) }}
-
-
-
-            <!------------ ––– ------------>
-
-        </div>
-      </div>
-
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Save and continue"
-        }) }}
-
-        {{ govukButton({
-          name: "process-c-nil-task-1-6",
-          value: "Unfinished",
-          checked: (data["process-c-nil-task-1-6"] == "Unfinished"),
-          classes: "govuk-button--secondary",
-          text: "Save and exit"
-        }) }}
-
-
-
-        </div>
-        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><a href="process-c-nil-task-list" class="govuk-link" rel="noreferrer noopener">☒</a></p> -->
-
-        <!------------ ––– ------------>
-        {% endif %}
 
     </div>
   </div>
