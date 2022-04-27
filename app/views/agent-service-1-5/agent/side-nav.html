@@ -6,11 +6,13 @@
       label: 'Side navigation',
       items: [{
         text: 'Summary',
-        href: 'query-summary',
-        active: true
+        href: 'qd-summary',
+        active: nav == 'summary'
       }, {
         text: 'History',
-        href: 'query-history-b'
+        href: 'qd-history',
+        active: nav == 'history'
+
       }, {
         text: 'Tasks',
         href: 'query-tasks-b'
@@ -19,6 +21,7 @@
         href: 'query-correspondence-b'
       }, {
         text: 'Help',
-        href: 'query-help-b'
+        href: 'qd-help',
+        active: nav == 'history'
       }]
     }) }}
