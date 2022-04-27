@@ -2,6 +2,7 @@
 
 {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
 
+
     {{ mojSideNavigation({
       label: 'Side navigation',
       items: [{
@@ -9,19 +10,29 @@
         href: 'qd-summary',
         active: nav == 'summary'
       }, {
+        text: 'Record change',
+        href: 'qd-changes',
+        active: nav == 'changes'
+
+      }, {
         text: 'History',
         href: 'qd-history',
         active: nav == 'history'
-
       }, {
-        text: 'Tasks',
-        href: 'query-tasks-b'
-      }, {
-        text: 'Correspondence',
-        href: 'query-correspondence-b'
-      }, {
-        text: 'Help',
+        text: 'Other help',
         href: 'qd-help',
-        active: nav == 'history'
+        active: nav == 'help'
+      }, {
+        text: 'Past applications',
+        href: 'qd-help',
+        active: nav == 'claims'
+      }, {
+        text: 'Request MR',
+        href: 'qd-mr',
+        active: nav == 'mr'
+      }, {
+        text: 'Query automated processing',
+        href: 'qd-query-ap',
+        active: nav == 'ap'
       }]
     }) }}
