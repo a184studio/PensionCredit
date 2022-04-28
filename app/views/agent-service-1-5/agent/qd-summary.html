@@ -32,14 +32,16 @@
             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Summary</h1>
         </div>
 
+
         <div class="govuk-grid-column-one-quarter">
               <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
-                <li>Overview</li>
-                <li>State pension amount</li>
+                <li> Date of claim</li>
                 <li>Backdating period</li>
+                <li>Award status</li>
+                <li>State pension amount</li>
                 <li>Benefits</li>
+                <li>Single</li>
                 <li>Housing costs</li>
-                <li>Relationship</li>
                 <li>Latest history update</li>
               </ul>
 
@@ -47,18 +49,20 @@
 
         <div class="govuk-grid-column-two-quarters">
               <ul class="govuk-list govuk-list govuk-!-margin-bottom-4">
-                <li>Not eligible</li>
-                <li>£182</li>
+                <li>28 February 2022</li>
                 <li>10 January 2022 to 28 February 2022</li>
-                <li>None</li>
-                <li>None</li>
-                <li>None</li>
-                <li>Contact with customer - security passed to view record </li>
+                <li>Not entitled</li>
+                <li>£182</li>
+                <li>No</li>
+                <li>Yes</li>
+                <li>No</li>
+                <li>Entitlement letter sent 01 March 2022</li>
               </ul>
         </div>
-        <div class="govuk-grid-column-two-quarters">
+        <div class="govuk-grid-column-two-quarters govuk-!-margin-left-2">
           {{ govukButton({
-            text: "Exit record"
+            text: "Exit record",
+            href: "home-user-0"
           }) }}
         </div>
 
