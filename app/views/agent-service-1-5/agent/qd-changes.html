@@ -1,0 +1,140 @@
+{% extends "layout-ur-2022.html" %}
+
+{% block pageTitle %}
+  PC: Name Name
+
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-ur.html" %}
+{% endblock %}
+
+
+{% block content %}
+{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+{% set nav = 'changes' %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="query-case-summary" method="post" class="form">
+      {% include "agent-service-1-5/agent/qd-name-nino.html" %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter ">
+        {% include "agent-service-1-5/agent/side-nav.html" %}
+      </div>
+
+
+        <div class="govuk-grid-column-three-quarters">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Record change</h1>
+
+            {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+                      {
+                        key: {
+                          text: "No open interest for qualifying benefits between 10 January 2022 to 28 February 2022"
+                        },
+                        value: {
+                          text: "Change recorded"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "qd-benefits",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Benefits notes"
+                        },
+                        value: {
+                          text: "Customer in receipt of AA 20th of January 2022"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "qd-benefits",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "State Pension amount exceeded applicable amount from 10 January 2022 to 28 February 2022"
+                        },
+                        value: {
+                          text: "Not changed"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "qd-sp",
+                              text: "Change",
+                              visuallyHiddenText: "date of birth"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "No partner"
+                        },
+                        value: {
+                          html: "Not changed"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "qd-sp",
+                              text: "Change",
+                              visuallyHiddenText: "address"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "No housing costs"
+                        },
+                        value: {
+                          html: "Not changed"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "qd-housing",
+                              text: "Change",
+                              visuallyHiddenText: "contact details"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }) }}
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+      </div>
+
+
+    </form>
+
+
+
+{% endblock %}

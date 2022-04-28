@@ -1,0 +1,91 @@
+{% extends "layout-ur-2022.html" %}
+
+{% block pageTitle %}
+  PC: Name Name
+
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-ur.html" %}
+{% endblock %}
+
+
+{% block content %}
+{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+{% set nav = 'changes' %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="query-case-summary" method="post" class="form">
+      {% include "agent-service-1-5/agent/qd-name-nino.html" %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter ">
+        {% include "agent-service-1-5/agent/side-nav.html" %}
+      </div>
+
+
+        <div class="govuk-grid-column-three-quarters">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Qualifying benefits</h1>
+
+            {{ govukRadios({
+              idPrefix: "qualifying-benefits",
+              name: "qualifying-benefits",
+              fieldset: {
+                legend: {
+                  text: "Are they now receiving any qualifying benefits?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "Backdating period: 10 January 2022 to 28 February 2022"
+              },
+              items: [
+                {
+                  value: "no",
+                  text: "No"
+                },
+                {
+                  value: "yes-in",
+                  text: "Yes, within the backdating period"
+                },
+                {
+                  value: "yes-out",
+                  text: "Yes, outside of the backdating period"
+                }
+              ]
+            }) }}
+
+            {{ govukTextarea({
+              name: "benefits-notes",
+              id: "benefits-notes",
+              rows: "3",
+              label: {
+                text: "Notes",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              hint: {
+                text: "Include any new or corrected information within the backdating period"
+              }
+            }) }}
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+      </div>
+
+
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
