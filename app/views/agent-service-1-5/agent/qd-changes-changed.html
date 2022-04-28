@@ -19,7 +19,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="#" method="post" class="form">
+    <form action="changes-router" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
@@ -39,7 +39,7 @@
                           text: "No open interest for qualifying benefits between 10 January 2022 to 28 February 2022"
                         },
                         value: {
-                          text: "Not changed"
+                          text: (data["benefits"])
                         },
                         actions: {
                           items: [

@@ -18,7 +18,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="query-case-summary" method="post" class="form">
+    <form action="qd-summary" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
@@ -57,22 +57,33 @@
                     <label class="govuk-label govuk-checkboxes__label" for="waste-2">
                       Statement copied and pasted into 'call log' on CAM
                     </label>
-                    <div class="govuk-inset-text">
-                      Inbound call on [Date] [Time]<br>
+                    <div class="govuk-inset-text govuk-!-margin-left-4">
+                      Inbound call on [Date] [Time].<br>
                       Call taken by Deborah Gibson.<br>
-                      Customer called to tell us of a change to their benefits.  
+                      Customer called to tell us of a change to their benefits.
                     </div>
                   </div>
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
                     <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                      Farm or agricultural waste
+                      Statement copied and pasted into claim 'notes' on CAM
                     </label>
+                    <div class="govuk-inset-text govuk-!-margin-left-4">
+                      Claim submitted on [Date].<br>
+                      Claim processed [Date].<br>
+                      Processed by Hazel Littlefair.<br>
+                      Original information used to assess entitlement.<br>
+                      Inbound call from customer (KBV passed) on [Date].<br>
+                      Changes recorded:'Customer received AA 20th of January 2022'<br>
+                    </div>
                   </div>
                 </div>
-
               </fieldset>
             </div>
+
+            {{ govukButton({
+              text: "Done"
+            }) }}
 
         </div>
       </div>
