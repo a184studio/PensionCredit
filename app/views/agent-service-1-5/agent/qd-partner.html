@@ -18,7 +18,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="qd-sp" method="post" class="form">
+    <form action="qd-partner" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
@@ -28,36 +28,36 @@
 
 
         <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Qualifying benefits</h1>
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Relationship status</h1>
 
             {{ govukRadios({
-              idPrefix: "qualifying-benefits",
-              name: "qualifying-benefits",
+              idPrefix: "partner",
+              name: "partner",
               fieldset: {
                 legend: {
-                  text: "Are they now receiving any qualifying benefits?",
+                  text: "Do they now have a partner?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--s"
                 }
               },
               hint: {
-                text: "Backdating period: 10 January 2022 to 28 February 2022"
+                text: ""
               },
               items: [
                 {
                   value: "no",
                   text: "No",
-                  checked: (data["benefits"] == "no")
+                  checked: (data["partner"] == "no")
                 },
                 {
                   value: "yes-in",
                   text: "Yes, within the backdating period",
-                  checked: (data["benefits"] == "yes-in")
+                  checked: (data["partner"] == "yes-in")
                 },
                 {
                   value: "yes-out",
                   text: "Yes, outside of the backdating period",
-                  checked: (data["benefits"] == "yes-out")
+                  checked: (data["partner"] == "yes-out")
                 }
               ]
             }) }}
