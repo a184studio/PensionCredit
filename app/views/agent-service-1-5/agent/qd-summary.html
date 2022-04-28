@@ -22,9 +22,10 @@
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter ">
-        {% include "agent-service-1-5/agent/side-nav.html" %}
-      </div>
+        <div class="govuk-grid-column-one-quarter">
+
+          {% include "agent-service-1-5/agent/side-nav.html" %}
+        </div>
 
 
         <div class="govuk-grid-column-three-quarters">
@@ -39,7 +40,7 @@
                 <li>Benefits</li>
                 <li>Housing costs</li>
                 <li>Relationship</li>
-                <li><a href="query-case-history">Claim history</a></li>
+                <li>Latest history update</li>
               </ul>
 
         </div>
@@ -52,8 +53,13 @@
                 <li>None</li>
                 <li>None</li>
                 <li>None</li>
-                <li>Entitlement letter sent 01 March 2022</li>
+                <li>Contact with customer - security passed to view record </li>
               </ul>
+        </div>
+        <div class="govuk-grid-column-two-quarters">
+          {{ govukButton({
+            text: "Exit record"
+          }) }}
         </div>
 
       </div>
