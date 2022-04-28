@@ -50,7 +50,12 @@
         },
         {
           value: "bau-exit-4",
-          text: "Applicant needs to make changes to their new or existing claim",
+          text: "Applicant needs to edit a new claim [Abigail]",
+          checked: (data["type-of-claim"] == "bau-exit-4")
+        },
+        {
+          value: "bau-exit-9",
+          text: "Applicant needs to make changes to their existing claim",
           checked: (data["type-of-claim"] == "bau-exit-4")
         },
         {
@@ -64,9 +69,9 @@
           checked: (data["type-of-claim"] == "bau-exit-5")
         },
         {
-          value: "bau-exit-7",
+          value: "bau-exit-9",
           text: "Something else",
-          checked: (data["type-of-claim"] == "bau-exit-7")
+          checked: (data["type-of-claim"] == "bau-exit-9")
         }
       ]
     }) }}

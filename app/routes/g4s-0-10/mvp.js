@@ -326,14 +326,14 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
 }  else if (typeOfClaim == 'bau-exit-6') {
     res.redirect(`${baseUrl}/bau-exit-6`)
 
-}  else if (typeOfClaim == 'bau-exit-7') {
-      res.redirect(`${baseUrl}/bau-exit-7`)
+}  else if (typeOfClaim == 'bau-exit-9') {
+      res.redirect(`${baseUrl}/bau-exit-4`)
 
 }  else if (typeOfClaim == 'bau-exit-8') {
     res.redirect(`${baseUrl}/bau-exit-8-outcome`)
 
-}  else if (typeOfClaim == 'bau-exit-9') {
-      res.redirect(`${baseUrl}/bau-exit-9`)
+}  else if (typeOfClaim == 'bau-exit-7') {
+      res.redirect(`${baseUrl}/bau-exit-7`)
 
     } else {
     res.redirect(`${baseUrl}/bau-exit`)
