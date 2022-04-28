@@ -1,0 +1,89 @@
+{% extends "layout-ur-2022.html" %}
+
+{% block pageTitle %}
+  PC: Name Name
+
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-ur.html" %}
+{% endblock %}
+
+
+{% block content %}
+{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+{% set nav = 'summary' %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="query-case-summary" method="post" class="form">
+      {% include "agent-service-1-5/agent/qd-name-nino.html" %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter ">
+        {% include "agent-service-1-5/agent/side-nav.html" %}
+      </div>
+
+
+        <div class="govuk-grid-column-three-quarters">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Create claim on CAM</h1>
+
+            <div class="govuk-inset-text">
+              Using their full application, build the claim in CAM, including the changes the customer has mentioned. For more guidance use your Standard Working Instructions. <br> Ask the customer if they need other help.
+            </div>
+
+            <p><a href=“qd-application”>View full application</a></p>
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="create-claim-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    Check the following tasks once complete
+                  </h3>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="create-claim" name="create-claim" type="checkbox" value="carcasses">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                      Claim built in CAM
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                      Statement copied and pasted into 'call log' on CAM
+                    </label>
+                    <div class="govuk-inset-text">
+                      Inbound call on [Date] [Time]<br>
+                      Call taken by Deborah Gibson.<br>
+                      Customer called to tell us of a change to their benefits.  
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      Farm or agricultural waste
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+        </div>
+      </div>
+  </div>
+
+</div>
+
+
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

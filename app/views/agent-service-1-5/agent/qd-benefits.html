@@ -12,13 +12,11 @@
 
 {% block content %}
 {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
-{% set nav = 'changes' %}
-
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="qd-sp" method="post" class="form">
+    <form action="qd-changes" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
@@ -30,9 +28,13 @@
         <div class="govuk-grid-column-three-quarters">
             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Qualifying benefits</h1>
 
+            {{ govukInsetText({
+              text: "Ask the customer if they're in receipt of any qualifying benefits. Check searchlight to match the information given. Record any changes and date of when it happened."
+            }) }}
+
             {{ govukRadios({
-              idPrefix: "qualifying-benefits",
-              name: "qualifying-benefits",
+              idPrefix: "benefits",
+              name: "benefits",
               fieldset: {
                 legend: {
                   text: "Are they now receiving any qualifying benefits?",
@@ -50,9 +52,9 @@
                   checked: (data["benefits"] == "no")
                 },
                 {
-                  value: "yes-in",
+                  value: "Changes recorded",
                   text: "Yes, within the backdating period",
-                  checked: (data["benefits"] == "yes-in")
+                  checked: (data["benefits"] == "Changes recorded")
                 },
                 {
                   value: "yes-out",

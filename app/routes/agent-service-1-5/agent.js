@@ -408,23 +408,14 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
 
 // Query Types Router /<!>
 
-router.post(`${baseUrl}/query-types-router`, (req, res) => {
-  const query_types = req.session.data['query-types']
+router.post(`${baseUrl}/changes-router`, (req, res) => {
+  const changes = req.session.data['qd-changes']
 
-  if (query_types == 'general2') {
-    res.redirect(`${baseUrl}/query-explain`)
-  }
-  else if (query_types == 'help') {
-    res.redirect(`${baseUrl}/query-help-start`)
-  }
-  else if (query_types == 'case1') {
-    res.redirect(`${baseUrl}/query-search`)
-  }
-  else if (query_types == 'dispute1') {
-    res.redirect(`${baseUrl}/query-search`)
+  if (changes == "no change") {
+    res.redirect(`${baseUrl}/qd-create-claim`)
   }
    else {
-    res.redirect(`${baseUrl}/query-explain`)
+    res.redirect(`${baseUrl}/qd-create-claim`)
   }
 })
 

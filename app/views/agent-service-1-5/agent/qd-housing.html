@@ -28,18 +28,18 @@
 
 
         <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">State Pension</h1>
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Housing costs</h1>
 
             {{ govukInsetText({
-              text: "Ask the customer if they're still receiving their State Pension. Check searchlight to match the information given. Record any changes and date of when it happened."
+              text: "Ask the customer if they have any housing costs. Record any changes and date of when it happened."
             }) }}
 
             {{ govukRadios({
-              idPrefix: "state-pension",
-              name: "state-pension",
+              idPrefix: "housing",
+              name: "housing",
               fieldset: {
                 legend: {
-                  text: "Has their State Pension amount changed?",
+                  text: "Are they paying any housing costs?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--s"
                 }
@@ -51,17 +51,17 @@
                 {
                   value: "no",
                   text: "No",
-                  checked: (data["state-pension"] == "no")
+                  checked: (data["housing"] == "no")
                 },
                 {
                   value: "yes-in",
                   text: "Yes, within the backdating period",
-                  checked: (data["state-pension"] == "yes-in")
+                  checked: (data["housing"] == "yes-in")
                 },
                 {
                   value: "yes-out",
                   text: "Yes, outside of the backdating period",
-                  checked: (data["state-pension"] == "yes-out")
+                  checked: (data["housing"] == "yes-out")
                 }
               ]
             }) }}

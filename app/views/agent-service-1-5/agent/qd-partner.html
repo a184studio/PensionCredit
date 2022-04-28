@@ -18,7 +18,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="qd-partner" method="post" class="form">
+    <form action="qd-changes" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
@@ -29,6 +29,10 @@
 
         <div class="govuk-grid-column-three-quarters">
             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Relationship status</h1>
+
+            {{ govukInsetText({
+              text: "Ask the customer if they're still single. Record any changes and date of when it happened."
+            }) }}
 
             {{ govukRadios({
               idPrefix: "partner",
