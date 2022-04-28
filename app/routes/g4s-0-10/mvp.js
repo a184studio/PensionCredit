@@ -309,7 +309,7 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
     res.redirect(`${baseUrl}/start`)
 
   }  else if (typeOfClaim == 'bau-exit-1') {
-      res.redirect(`${baseUrl}/bau-exit-1`)
+      res.redirect(`${baseUrl}/bau-exit-1-outcome`)
 
 }  else if (typeOfClaim == 'bau-exit-2') {
     res.redirect(`${baseUrl}/bau-exit-2`)
@@ -321,7 +321,7 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
     res.redirect(`${baseUrl}/bau-exit-4`)
 
 }  else if (typeOfClaim == 'bau-exit-5') {
-      res.redirect(`${baseUrl}/bau-exit-5`)
+      res.redirect(`${baseUrl}/bau-exit-5-outcome`)
 
 }  else if (typeOfClaim == 'bau-exit-6') {
     res.redirect(`${baseUrl}/bau-exit-6`)
@@ -330,7 +330,7 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
       res.redirect(`${baseUrl}/bau-exit-7`)
 
 }  else if (typeOfClaim == 'bau-exit-8') {
-    res.redirect(`${baseUrl}/bau-exit-8`)
+    res.redirect(`${baseUrl}/bau-exit-8-outcome`)
 
 }  else if (typeOfClaim == 'bau-exit-9') {
       res.redirect(`${baseUrl}/bau-exit-9`)
