@@ -26,13 +26,15 @@
 
 
         <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Qualifying benefits</h1>
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Qualifying benefits</h1>
 
             {{ govukInsetText({
-              text: "Ask the customer if they're in receipt of any qualifying benefits. Check searchlight to match the information given. Record any changes and date of when it happened."
+              classes : "govuk-!-margin-bottom-8",
+              text: "Ask the customer if they're in receipt of any qualifying benefits. You must check searchlight to match the information given."
             }) }}
 
             {{ govukRadios({
+              classes : "govuk-!-margin-bottom-4",
               idPrefix: "benefits",
               name: "benefits",
               fieldset: {
@@ -64,17 +66,28 @@
               ]
             }) }}
 
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Answer given on application</p>
+
+            <p class="govuk-body ">No open interest for qualifying benefits.</p>
+
+            {{ govukDetails({
+              classes : "govuk-!-margin-bottom-8",
+              summaryText: "Check calculation details",
+              text: "Checked against SearchLight on 28th of February 2022."
+            }) }}
+
+
             {{ govukTextarea({
               name: "benefits-notes",
               id: "benefits-notes",
               rows: "3",
               label: {
-                text: "",
-                classes: "govuk-label--m",
+                text: "Record any changes and date of when it happened",
+                classes: "govuk-label--s",
                 isPageHeading: true
               },
               hint: {
-                text: "Enter changes here"
+                text: "For example, Received personal independent payment 20 Jan 22."
               }
             }) }}
 

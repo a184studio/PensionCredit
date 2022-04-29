@@ -31,7 +31,7 @@
             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Housing costs</h1>
 
             {{ govukInsetText({
-              text: "Ask the customer if they have any housing costs. Record any changes and date of when it happened."
+              text: "Ask the customer if they have any housing costs."
             }) }}
 
             {{ govukRadios({
@@ -45,7 +45,7 @@
                 }
               },
               hint: {
-                text: ""
+                text: "Backdating period: 10 January 2022 to 28 February 2022."
               },
               items: [
                 {
@@ -66,17 +66,22 @@
               ]
             }) }}
 
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Answer given on application</p>
+
+            <p class="govuk-body ">No service charges or ground rent.</p>
+
+
             {{ govukTextarea({
-              name: "benefits-notes",
-              id: "benefits-notes",
+              name: "housing-notes",
+              id: "housing-notes",
               rows: "3",
               label: {
-                text: "",
-                classes: "govuk-label--m",
+                text: "Record any changes and date of when it happened",
+                classes: "govuk-label--s",
                 isPageHeading: true
               },
               hint: {
-                text: "Enter changes here"
+                text: " For example, Payed ground-rent from 10 Jan 22."
               }
             }) }}
 

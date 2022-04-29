@@ -29,7 +29,7 @@
 
 
         <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Record change</h1>
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Make a change</h1>
 
             {{ govukSummaryList({
                     classes: 'govuk-!-margin-bottom-9',
@@ -37,7 +37,7 @@
                       {
                         classes: "govuk-summary-list__row--no-border",
                         key: {
-                          text: "No open interest for qualifying benefits between 10 January 2022 to 28 February 2022"
+                          text: "No open interest for qualifying benefits"
                         },
                         value: {
                           text: (data["benefits"])
@@ -62,7 +62,7 @@
                       },
                       {
                         key: {
-                          text: "State Pension amount exceeded applicable amount from 10 January 2022 to 28 February 2022"
+                          text: "State Pension amount exceeded £177.10"
                         },
                         value: {
                           text: "Not changed"
