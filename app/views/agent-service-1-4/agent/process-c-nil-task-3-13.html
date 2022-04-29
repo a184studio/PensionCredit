@@ -23,7 +23,7 @@
         {% include "agent-service-1-4/agent/record-id.html" %}
 
         <!-- <span class="govuk-caption-m">Task 3-13</span> -->
-        <p class="govuk-heading-xl govuk-!-margin-bottom-4">Qualifying benefits for premiums since {{threeMonthsAgo | formatDate}}</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-4">Qualifying benefits for premiums</p>
 
         {% set LegendQualifingBenefits %}
 
@@ -68,7 +68,7 @@
           name: "process-c-nil-task-3-13",
           fieldset: {
             legend: {
-              text: "Has the applicant received any qualifying benefits for premiums since " + (threeMonthsAgo | formatDate) + "?",
+              text: "Has the applicant received any qualifying benefits for premiums today or since " + (threeMonthsAgo | formatDate) + "?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }

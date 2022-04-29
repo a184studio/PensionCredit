@@ -20,7 +20,7 @@
 
 
         <!-- <span class="govuk-caption-m">Task 3-9</span> -->
-        <p class="govuk-heading-xl govuk-!-margin-bottom-4">[B1] Open interests for qualifying benefits for premiums since {{ threeMonthsAgo | formatDate }}</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-4">Open interests for qualifying benefits for premiums</p>
 
 
         {% set LegendQualifingBenefits %}
@@ -67,7 +67,7 @@
           name: "process-c-nil-task-3-9",
           fieldset: {
             legend: {
-              html: "Are there any open interests shown for qualifying benefits for premiums since " + (threeMonthsAgo | formatDate) + "?",
+              html: "Are there any open interests shown for qualifying benefits for premiums today or since " + (threeMonthsAgo | formatDate) + "?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
