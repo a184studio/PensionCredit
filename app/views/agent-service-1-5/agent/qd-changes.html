@@ -22,11 +22,16 @@
     <form action="#" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter ">
-        {% include "agent-service-1-5/agent/side-nav.html" %}
-      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter ">
+          {% include "agent-service-1-5/agent/side-nav.html" %}
+        </div>
 
+
+      {% if data["benefits"]  == "changes recorded"%}
+
+
+      {% else %}
 
         <div class="govuk-grid-column-three-quarters">
             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Make a change</h1>
@@ -39,7 +44,7 @@
                           text: "No open interest for qualifying benefits"
                         },
                         value: {
-                          text: "No change"
+                          text: "Not changed"
                         },
                         actions: {
                           items: [
@@ -112,12 +117,14 @@
                   </div>
 
         </div>
+      {% endif %}
     </div>
   </div>
 
 
 
-      </div>
+</div>
+</div>
 
 
     </form>

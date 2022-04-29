@@ -66,6 +66,17 @@
               ]
             }) }}
 
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Answers given on application</p>
+
+            <p class="govuk-body govuk-!-margin-bottom-2">State Pension amount exceeded £177.10</p>
+
+
+            {{ govukDetails({
+              classes : "govuk-!-margin-bottom-8",
+              summaryText: "Check calculation details",
+              text: "Checked against SearchLight on 28th of February 2022."
+            }) }}
+
             {{ govukTextarea({
               name: "sp-notes",
               id: "sp-notes",

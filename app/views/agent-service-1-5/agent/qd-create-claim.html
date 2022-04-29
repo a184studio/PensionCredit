@@ -12,17 +12,17 @@
 
 {% block content %}
 {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
-{% set nav = 'summary' %}
+{% set nav = 'changes' %}
 
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="qd-summary" method="post" class="form">
+    <form action="qd-summary-b" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter ">
+      <div class="govuk-grid-column-one-quarter">
         {% include "agent-service-1-5/agent/side-nav.html" %}
       </div>
 
@@ -34,7 +34,9 @@
               Using their full application, build the claim in CAM, including the changes the customer has mentioned. For more guidance use your Standard Working Instructions.<br> <br> Ask the customer if they need other help.
             </div>
 
-            <p><a href=“qd-application”>View full application [opens in new tab]</a></p>
+            <p class="govuk-body govuk-!-margin-bottom-6">
+              <a href="qd-application" target="_blank">View full application [opens in new tab]</a><p>
+
 
             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
@@ -47,14 +49,14 @@
                 </legend>
                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="create-claim" name="create-claim" type="checkbox" value="carcasses">
-                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                    <input class="govuk-checkboxes__input" id="create-claim-1" name="create-claim-a" type="checkbox" value="built" >
+                    <label class="govuk-label govuk-checkboxes__label" for="create-claim-1">
                       Claim built in CAM
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                    <input class="govuk-checkboxes__input" id="create-claim-2" name="create-claim-b" type="checkbox" value="contact" >
+                    <label class="govuk-label govuk-checkboxes__label" for="create-claim-2">
                       Statement copied and pasted into 'call log' on CAM
                     </label>
                     <div class="govuk-inset-text govuk-!-margin-left-4">
@@ -64,8 +66,8 @@
                     </div>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                    <input class="govuk-checkboxes__input" id="create-claim-c" name="create-claim-c" type="checkbox" value="notes" {{ checked("create-claim-c", "notes") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="create-claim-c">
                       Statement copied and pasted into claim 'notes' on CAM
                     </label>
                     <div class="govuk-inset-text govuk-!-margin-left-4">
@@ -82,10 +84,14 @@
             </div>
 
             {{ govukButton({
-              text: "Done"
+              text: "Done",
+              href: "qd-summary-b"
             }) }}
 
         </div>
+
+
+
       </div>
   </div>
 
