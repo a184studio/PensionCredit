@@ -14,7 +14,9 @@
 {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
 {% set nav = 'history' %}
 
-
+{% block date %}
+<p>test</p>
+{% endblock %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -50,7 +52,7 @@
               rows: [
               [
                 {
-                  text: "28 April 2022"
+                  text: "3 May 2022"
                 },
                 {
                   text: "Contact with customer - security passed to view record"
