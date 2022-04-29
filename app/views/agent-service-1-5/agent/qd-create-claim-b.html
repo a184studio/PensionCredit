@@ -23,7 +23,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter">
-        {% include "agent-service-1-5/agent/side-nav.html" %}
+        {% include "agent-service-1-5/agent/side-nav-b.html" %}
       </div>
 
 
@@ -57,7 +57,7 @@
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="create-claim-b" name="create-claim-b" type="checkbox" value="contact" {{ checked("create-claim-b", "contact") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="create-claim-b">
-                      Statement copied and pasted into 'contact hisotry' on CAM
+                      Statement copied and pasted into 'call log' on CAM
                     </label>
                     <div class="govuk-inset-text govuk-!-margin-left-4">
                       Inbound call on [Date] [Time].<br>
@@ -68,7 +68,7 @@
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="create-claim-c" name="create-claim-c" type="checkbox" value="notes" {{ checked("create-claim-c", "notes") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="create-claim-c">
-                      Statement copied and pasted into claim 'case notes' on CAM
+                      Statement copied and pasted into claim 'notes' on CAM
                     </label>
                     <div class="govuk-inset-text govuk-!-margin-left-4">
                       Claim submitted on [Date].<br>
