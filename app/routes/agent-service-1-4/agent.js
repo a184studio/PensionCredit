@@ -39,6 +39,8 @@ router.post(`${baseUrl}/system-ur-process-ab-router`, (req, res) => {
     res.redirect(`${baseUrl}/process-c-nil-task-3-9`)
   }  else if (processAB == 'B') {
     res.redirect(`${baseUrl}/process-c-nil-task-3-9-b1`)
+  }  else if (processAB == 'C') {
+    res.redirect(`${baseUrl}/process-c-nil-task-3-13`)
   } else {
     res.redirect(`${baseUrl}/process-c-nil-task-list`)
   }
