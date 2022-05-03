@@ -17,31 +17,50 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/type-of-claim">
+        <form method="post" action="claim-submission-router">
 
         <span class="govuk-caption-m">[1]</span>
 
 
-        {% if data['bau-exit-1'] == 'Yes' %}
-
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Before I can take a look at the progress of your application, I will need to ask you some security questions</h1>
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Continue with the enquiry using your Standard Work Instructions.</p>
-
-        {% else %}
-
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">To get you the right help, I need to transfer you through to one of my colleagues</h1>
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Transfer call to G4S enquiry line.</p>
-        {% endif %}
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions to identify date submitterd.</p>
 
 
+          <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">To get you the right help, I need to transfer you through to one of my colleagues</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Transfer call to G4S enquiry line.</p> -->
 
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "claim-submission",
+            name: "claim-submission",
+            fieldset: {
+              legend: {
+                text: "What date is shown in CAM for their application?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+
+            items: [
+              {
+                value: "Female",
+                text: "35 days or more ago",
+                checked: data['claim-submission'] == "more-than-35"
+              },
+              {
+                value: "Male",
+                text: "Less than 35 days",
+                checked: data['claim-submission'] == "less-than-35"
+              }
+            ]
+          }) }}
 
 
 
       {{ govukButton({
-      text: "Finish and close",
-      classes: "govuk-button dont-print govuk-!-margin-top-6"
+      text: "Continue",
+      classes: "govuk-button dont-print"
       }) }}
 
   </form>
