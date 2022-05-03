@@ -19,7 +19,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="#" method="post" class="form">
+    <form action="qd-create-claim" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
       <div class="govuk-grid-row">
@@ -28,10 +28,47 @@
         </div>
 
 
-      {% if data["benefits"]  == "changes recorded"%}
 
+{% set LegendBenefitNotes %}
 
-      {% else %}
+  {% if data["benefits-notes"] %}
+  {{ data["benefits-notes"] }}
+  {% else %}
+  No change
+  {% endif %}
+
+{% endset -%}
+
+{% set LegendStatePensionNotes %}
+
+  {% if data["sp-notes"] %}
+  {{ data["sp-notes"] }}
+  {% else %}
+  No change
+  {% endif %}
+
+{% endset -%}
+
+{% set LegendHousingNotes %}
+
+  {% if data["housing-notes"] %}
+  {{ data["housing-notes"] }}
+  {% else %}
+  No change
+  {% endif %}
+
+{% endset -%}
+
+{% set LegendPartnerNotes %}
+
+  {% if data["partner-notes"] %}
+  {{ data["partner-notes"] }}
+  {% else %}
+  No change
+  {% endif %}
+
+{% endset -%}
+
 
         <div class="govuk-grid-column-three-quarters">
             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Make a change</h1>
@@ -44,7 +81,7 @@
                           text: "No qualifying benefits"
                         },
                         value: {
-                          text: "No change"
+                          html: LegendBenefitNotes
                         },
                         actions: {
                           items: [
@@ -61,7 +98,7 @@
                           text: "Weekly State Pension is £182"
                         },
                         value: {
-                          text: "No change"
+                          html: LegendStatePensionNotes
                         },
                         actions: {
                           items: [
@@ -75,10 +112,11 @@
                       },
                       {
                         key: {
-                          text: "No partner"
+                          text: "Partner"
+
                         },
                         value: {
-                          html: "No change"
+                          html: LegendPartnerNotes
                         },
                         actions: {
                           items: [
@@ -95,7 +133,7 @@
                           text: "No housing costs"
                         },
                         value: {
-                          html: "No change"
+                          html: LegendHousingNotes
                         },
                         actions: {
                           items: [
@@ -117,13 +155,12 @@
                   </div>
 
         </div>
-      {% endif %}
+
     </div>
   </div>
 
 
 
-</div>
 </div>
 
 
