@@ -330,17 +330,30 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
       res.redirect(`${baseUrl}/bau-exit-4`)
 
 }  else if (typeOfClaim == 'bau-exit-8') {
-    res.redirect(`${baseUrl}/bau-exit-8-outcome`)
+    res.redirect(`${baseUrl}/bau-exit-8`)
 
 }  else if (typeOfClaim == 'bau-exit-7') {
       res.redirect(`${baseUrl}/bau-exit-7`)
+
+    }  else if (typeOfClaim == 'bau-exit-10') {
+          res.redirect(`${baseUrl}/bau-exit-10`)
 
     } else {
     res.redirect(`${baseUrl}/bau-exit`)
   }
 })
 
+router.post(`${baseUrl}/bau-exit-8-router`, (req, res) => {
+  const editOutcome8 = req.session.data['bau-exit-8']
 
+  if (editOutcome8 == 'Yes') {
+    res.redirect(`${baseUrl}/bau-exit-8-outcome`)
+  }  else if (editOutcome8 == 'No') {
+      res.redirect(`${baseUrl}/bau-exit-7-outcome`)
+    } else {
+    res.redirect(`${baseUrl}/xxx`)
+  }
+})
 
 router.post(`${baseUrl}/state-pension-amount-check`, (req, res) => {
   const statePensionAmount = req.session.data['state-pension-amount-check']
@@ -353,6 +366,8 @@ router.post(`${baseUrl}/state-pension-amount-check`, (req, res) => {
     res.redirect(`${baseUrl}/xxx`)
   }
 })
+
+
 
 router.post(`${baseUrl}/partner-state-pension-amount-check`, (req, res) => {
   const partnerStatePensionAmount = req.session.data['partner-state-pension-amount-check']
