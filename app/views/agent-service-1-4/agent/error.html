@@ -12,7 +12,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="ur-home" method="post" class="form">
+    <form action="error" method="post" class="form">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">500 / Something has gone wrong with the service</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">PB: DEV: f something goes wrong is it game over? can you do something else in the mean time? Do something else</p>
@@ -21,9 +21,22 @@
 
       <br>
 
-      {{ govukButton({
-        text: "Return to My Home Page"
-      }) }}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Refresh"
+        }) }}
+
+        {{ govukButton({
+          name: "process-c-nil-task-1-6",
+          value: "return",
+          checked: (data["ur-home"] == "ur-home"),
+          classes: "govuk-button--secondary",
+          text: "Return to My Home Page",
+          href: "ur-home"
+
+        }) }}
+
+        </div>
 
 
     </div>
