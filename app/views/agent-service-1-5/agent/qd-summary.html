@@ -18,7 +18,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="query-case-summary" method="post" class="form">
+    <form action="qd-call-reason" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
@@ -32,7 +32,7 @@
             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Summary</h1>
 
             <div class="govuk-inset-text govuk-!-margin-bottom-0">
-              Check the information we have on the customer is correct. Record a change if something is wrong.
+              Check the information we have on the customer is correct. Make a change if something is wrong.
             </div>
 
             {{ govukTable({
@@ -62,6 +62,17 @@
                   }
                 ],
                 [
+                  {
+                    text: "Date processed",
+                    classes: 'govuk-table--no-border'
+
+                  },
+                  {
+                    text: "1 March 2022",
+                    classes: 'govuk-table--no-border'
+                  }
+                ],
+                [
                 {
                   text: "Backdating period",
                   classes: 'govuk-table--no-border'
@@ -85,18 +96,18 @@
                 ],
                 [
                 {
-                  text: "State pension amount",
+                  text: "Weekly State Pension amount",
                   classes: 'govuk-table--no-border'
 
                 },
                 {
-                  text: "182",
+                  text: "£182",
                   classes: 'govuk-table--no-border'
                 }
                 ],
                 [
                 {
-                  text: "Benefits",
+                  text: "Qualifying benefits",
                   classes: 'govuk-table--no-border'
 
                 },
@@ -131,8 +142,7 @@
             }) }}
 
             {{ govukButton({
-              text: "Exit record",
-              href: "home-user-0"
+              text: "Exit record"
             }) }}
 
         </div>

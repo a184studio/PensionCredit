@@ -13,10 +13,14 @@
 
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "qd-start"
+}) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-summary" method="post" class="form">
+    <form action="home-user-0" method="post" class="form">
 
 
       <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">Jen Bridges</p>
@@ -25,37 +29,30 @@
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Verify applicant</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Record reason for call</h1>
 
-      {{ govukInsetText({
-        text: "Use the current process for security. If a caller fails a question record it in the notes box."
-      }) }}
+
 
       {{ govukTextarea({
-        name: "security-failed",
-        id: "security-failed",
+        name: "call-reason",
+        id: "call-reason",
         rows: "3",
         label: {
-          text: "Record any failed questions",
+          text: "",
           classes: "govuk-label--m",
           isPageHeading: true
         },
         hint: {
-          text: "For example, what is the name of your bank?"
+          text: "For example, customer called and queried what information we used to assess their entitlement."
         }
       }) }}
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Caller passed security",
-          href: "qd-summary"
+          text: "Save and exit"
         }) }}
 
-        {{ govukButton({
-          text: "Caller failed security",
-          classes: "govuk-button--secondary",
-          href: "#"
-        }) }}
+
       </div>
 
 

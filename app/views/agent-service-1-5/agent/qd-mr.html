@@ -12,13 +12,13 @@
 
 {% block content %}
 {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
-{% set nav = 'summary' %}
+{% set nav = 'mr' %}
 
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="query-case-summary" method="post" class="form">
+    <form action="qd-summary" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
@@ -50,13 +50,16 @@
                       },
                       {
                         value: "Submitted",
-                        text: "Mandatory reconsideration has been requested according to SWI's"
+                        text: "Mandatory reconsideration has been requested according to Standard Working Instructions"
                       }
                     ]
                   }) }}
                   <p class="govuk-body ">
-                    <a href="#"">Get DR6 from the intranet</a><p>
+                    <a href="#"">Get DR6 from the intranet [opens in a new tab]</a><p>
 
+                      {{ govukButton({
+                        text: "Save"
+                      }) }}
 
                 </div>
               </div>

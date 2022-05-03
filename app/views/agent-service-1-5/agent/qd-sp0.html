@@ -12,6 +12,8 @@
 
 {% block content %}
 {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+{% set nav = 'changes' %}
+
 
 
 <div class="govuk-grid-row">
@@ -26,20 +28,18 @@
 
 
         <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Qualifying benefits</h1>
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">State Pension</h1>
 
             {{ govukInsetText({
-              classes : "govuk-!-margin-bottom-8",
-              text: "Ask the customer if they're in receipt of any qualifying benefits. You must check searchlight to match the information given."
+              text: "Ask the customer if they're still receiving their State Pension. Check searchlight to match the information given. Record any changes and date of when it happened."
             }) }}
 
             {{ govukRadios({
-              classes : "govuk-!-margin-bottom-4",
-              idPrefix: "benefits",
-              name: "benefits",
+              idPrefix: "state-pension",
+              name: "state-pension",
               fieldset: {
                 legend: {
-                  text: "Are they now receiving any qualifying benefits?",
+                  text: "Has their State Pension amount changed?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--s"
                 }
@@ -49,26 +49,27 @@
               },
               items: [
                 {
-                  value: "No change",
+                  value: "no",
                   text: "No",
-                  checked: (data["benefits"] == "No change")
+                  checked: (data["state-pension"] == "no")
                 },
                 {
-                  value: "Changes recorded",
+                  value: "yes-in",
                   text: "Yes, within the backdating period",
-                  checked: (data["benefits"] == "Changes recorded")
+                  checked: (data["state-pension"] == "yes-in")
                 },
                 {
                   value: "yes-out",
                   text: "Yes, outside of the backdating period",
-                  checked: (data["benefits"] == "yes-out")
+                  checked: (data["state-pension"] == "yes-out")
                 }
               ]
             }) }}
 
             <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Answers given on application</p>
 
-            <p class="govuk-body govuk-!-margin-bottom-2">No open interest for qualifying benefits.</p>
+            <p class="govuk-body govuk-!-margin-bottom-2">State Pension amount exceeded £177.10</p>
+
 
             {{ govukDetails({
               classes : "govuk-!-margin-bottom-8",
@@ -76,10 +77,9 @@
               text: "Checked against SearchLight on 28th of February 2022."
             }) }}
 
-
             {{ govukTextarea({
-              name: "benefits-notes",
-              id: "benefits-notes",
+              name: "sp-notes",
+              id: "sp-notes",
               rows: "3",
               label: {
                 text: "Record any changes and date of when it happened",
@@ -87,7 +87,7 @@
                 isPageHeading: true
               },
               hint: {
-                text: "For example, received personal independent payment 20 Jan 22."
+                text: "For example, Received £122.15 from 1 to 20 Jan 22."
               }
             }) }}
 
