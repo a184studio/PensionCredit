@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="qd-changes" method="post" class="form">
+    <form action="qd-changes-changed" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
@@ -49,19 +49,20 @@
               },
               items: [
                 {
-                  value: "No change",
+                  value: "No-change",
                   text: "No",
-                  checked: (data["benefits"] == "No change")
+                  checked: (data["benefits"] == "No-change")
+
                 },
                 {
                   value: "Changes recorded",
                   text: "Yes, within the backdating period",
-                  checked: (data["benefits"] == "Changes recorded")
+                  checked: (data["benefits"] == "Change recorded")
                 },
                 {
-                  value: "yes-out",
+                  value: "Change recorded outside backdating period",
                   text: "Yes, outside of the backdating period",
-                  checked: (data["benefits"] == "yes-out")
+                  checked: (data["benefits"] == "Change recorded outside backdating period")
                 }
               ]
             }) }}
