@@ -49,20 +49,20 @@
               },
               items: [
                 {
-                  value: "No-change",
+                  value: "no-change",
                   text: "No",
-                  checked: (data["benefits"] == "No-change")
+                  checked: (data["benefits"] == "no-change")
 
                 },
                 {
-                  value: "Changes recorded",
+                  value: "changed",
                   text: "Yes, within the backdating period",
-                  checked: (data["benefits"] == "Change recorded")
+                  checked: (data["benefits"] == "changed")
                 },
                 {
-                  value: "Change recorded outside backdating period",
+                  value: "changed-out",
                   text: "Yes, outside of the backdating period",
-                  checked: (data["benefits"] == "Change recorded outside backdating period")
+                  checked: (data["benefits"] == "changed-out")
                 }
               ]
             }) }}
@@ -79,9 +79,6 @@
 
 
             {{ govukTextarea({
-              name: "benefits-notes",
-              id: "benefits-notes",
-              rows: "3",
               label: {
                 text: "Record any changes and date of when it happened",
                 classes: "govuk-label--s",
@@ -89,7 +86,11 @@
               },
               hint: {
                 text: "For example, received personal independent payment 20 Jan 22."
-              }
+              },
+              name: "benefits-notes",
+              id: "benefits-notes",
+              rows: "3",
+              value: data["benefits-notes"]
             }) }}
 
             {{ govukButton({

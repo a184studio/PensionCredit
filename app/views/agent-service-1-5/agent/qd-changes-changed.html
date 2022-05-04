@@ -19,13 +19,61 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="changes-router" method="post" class="form">
+    <form action="qd-create-claim" method="post" class="form">
       {% include "agent-service-1-5/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter ">
         {% include "agent-service-1-5/agent/side-nav.html" %}
       </div>
+
+
+      {% set LegendBenefits %}
+
+        {% if data["benefits"] == "changed" %}
+        Changes recorded
+        {% elif data["benefits"] == "changed-out" %}
+        Changes recorded outside of the backdating period
+        {% else %}
+        No change
+        {% endif %}
+
+      {% endset -%}
+
+      {% set LegendStatePension %}
+
+        {% if data["state-pension"] == "changed" %}
+        Changes recorded
+        {% elif data["state-pension"] == "changed-out" %}
+        Changes recorded outside of the backdating period
+        {% else %}
+        No change
+        {% endif %}
+
+      {% endset -%}
+
+      {% set LegendHousing %}
+
+        {% if data["housing"] == "changed" %}
+        Changes recorded
+        {% elif data["housing"] == "changed-out" %}
+        Changes recorded outside of the backdating period
+        {% else %}
+        No change
+        {% endif %}
+      {% endset -%}
+
+      {% set LegendPartner %}
+
+        {% if data["partner"] == "changed" %}
+        Changes recorded
+        {% elif data["partner"] == "changed-out" %}
+        Changes recorded outside of the backdating period
+        {% else %}
+        No change
+        {% endif %}
+
+      {% endset -%}
 
 
         <div class="govuk-grid-column-three-quarters">
@@ -40,7 +88,7 @@
                           text: "No qualifying benefits"
                         },
                         value: {
-                          text: (data["benefits"])
+                          html: LegendBenefits
                         },
                         actions: {
                           items: [
@@ -65,7 +113,7 @@
                           text: "Weekly State Pension is £182"
                         },
                         value: {
-                          text: "No change"
+                          html: LegendStatePension
                         },
                         actions: {
                           items: [
@@ -79,10 +127,10 @@
                       },
                       {
                         key: {
-                          text: "No partner"
+                          text: "No change"
                         },
                         value: {
-                          html: "No change"
+                          html: LegendPartner
                         },
                         actions: {
                           items: [
@@ -99,7 +147,7 @@
                           text: "No housing costs"
                         },
                         value: {
-                          html: "No change"
+                          html: LegendHousing
                         },
                         actions: {
                           items: [
