@@ -17,7 +17,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form method="post" action="claim-submission-router">
+      <form method="post" action="bau-exit-1-outcome-router">
 
         <span class="govuk-caption-m">[1]</span>
 
@@ -32,8 +32,8 @@
 
           {{ govukRadios({
             classes: "govuk-radios",
-            idPrefix: "claim-submission",
-            name: "claim-submission",
+            idPrefix: "bau-exit-1-outcome",
+            name: "bau-exit-1-outcome",
             fieldset: {
               legend: {
                 text: "What date is shown in CAM for their application?",
@@ -44,14 +44,14 @@
 
             items: [
               {
-                value: "Female",
+                value: "more-than-35",
                 text: "35 days or more ago",
-                checked: data['claim-submission'] == "more-than-35"
+                checked: data['bau-exit-1-outcome'] == "more-than-35"
               },
               {
-                value: "Male",
+                value: "less-than-35",
                 text: "Less than 35 days",
-                checked: data['claim-submission'] == "less-than-35"
+                checked: data['bau-exit-1-outcome'] == "less-than-35"
               }
             ]
           }) }}

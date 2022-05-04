@@ -1,0 +1,41 @@
+{% extends "layout-g4s.html" %}
+
+{% block pageTitle %}
+  Application complete - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="claim-submission-router">
+
+        <span class="govuk-caption-m">[1B]</span>
+
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You will need to wait till after the 35 days before you call back</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">XXX</p>
+
+
+          <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">To get you the right help, I need to transfer you through to one of my colleagues</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Transfer call to G4S enquiry line.</p> -->
+
+          {{ govukButton({
+          text: "Finish and close",
+          classes: "govuk-button dont-print govuk-!-margin-top-6"
+          }) }}
+
+  </form>
+    </div>
+  </div>
+
+{% endblock %}

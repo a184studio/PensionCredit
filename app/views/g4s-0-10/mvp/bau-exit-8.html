@@ -23,14 +23,14 @@
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">I will need to ask you some security questions and I will see if I can help</h1>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions</p>
-
+<!--
         {{ govukRadios({
           classes: "govuk-radios",
           idPrefix: "bau-exit-8",
           name: "bau-exit-8",
           fieldset: {
             legend: {
-              text: "Next steps",
+              text: "Possible next steps",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -53,14 +53,15 @@
           ]
         }) }}
 
-
-
       {{ govukButton({
       text: "Continue",
       classes: "govuk-button dont-print"
+      }) }} -->
+
+      {{ govukButton({
+      text: "Finish and close",
+      classes: "govuk-button dont-print govuk-!-margin-top-0"
       }) }}
-
-
 
 
   </form>

@@ -31,8 +31,10 @@
 
         {% else %}
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As you have not received your first Pension Credit payment yet,  I need to transfer you through to one of my colleagues</h1>
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Transfer call to DWP New Claims line.</p>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">As you have not received your first Pension Credit payment yet,  I need to transfer you through to one of my colleagues</h1>
+
+          {% include "g4s-0-10/mvp/handover-process.html" %}
+
         {% endif %}
 
 
