@@ -1,108 +1,80 @@
-{% extends "layout-ur-2022.html" %}
-
-{% block pageTitle %}
-  PC: Name Name
-
-{% endblock %}
-
-{% block header %}
- {% include "explore-header-ur.html" %}
-{% endblock %}
-
-{% block content %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <form action="login-router" method="post" class="form">
-
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Service statistics</h1>
-      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXX</p> -->
-
-    </div>
-  </div>
-
-
-  <!---------------------------------------->
-
-  <div class="govuk-grid-row govuk-!-margin-bottom-6">
-
-    {% include "agent-service-1-4/agent/mi-stats.html" %}
-
-  </div>
-
-
-  <hr class="govuk-section-break govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-8">
-
-
-  <div class="govuk-grid-row govuk-!-margin-bottom-6">
-
-          <div class="govuk-grid-column-one-half">
-            <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Statistics by area</h3>
-          </div>
-
-  </div>
-
-  <!---------------------------------------->
-
-  <div class="govuk-grid-row govuk-!-margin-bottom-8">
 
 
 
-    <div class="govuk-grid-column-one-quarter">
+
+            {% extends "layout-ur-2022.html" %}
+
+            {% block pageTitle %}
+              PC: Name Name
+
+            {% endblock %}
+
+            {% block header %}
+             {% include "explore-header-ur.html" %}
+            {% endblock %}
+
+            {% block content %}
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+                <form action="login-router" method="post" class="form">
+
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Service statistics</h1>
+                  <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXX</p> -->
+
+                </div>
+              </div>
 
 
-      {% include "agent-service-1-4/agent/mi-menu.html" %}
-    </div>
+              <!---------------------------------------->
+
+              <div class="govuk-grid-row govuk-!-margin-bottom-6">
+
+                <!-- {% include "agent-service-1-4/agent/mi-stats.html" %} -->
+
+              </div>
 
 
-      <div class="govuk-grid-column-three-quarters">
-        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-2">Call outcomes</h3>
 
-        <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">Summary</h3> -->
+              <!---------------------------------------->
 
-        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">200 calls taken</h3>
+              <div class="govuk-grid-row govuk-!-margin-bottom-8">
 
 
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-          text: "Outcome"
-        },
-        value: {
-          html: "<strong>Number</strong>"
-        }
-      },
-      {
-        key: {
-          text: "Once and done"
-        },
-        value: {
-          text: "2"
-        }
-      },
-      {
-        key: {
-          text: "Esculation"
-        },
-        value: {
-          html: "1"
-        }
-      },
-      {
-        key: {
-          text: "MR"
-        },
-        value: {
-          html: "1"
-        }
-      }
-    ]
-    }) }}
 
-      </div>
-      </div>
+                <div class="govuk-grid-column-one-third">
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-{% endblock %}
+                  {% include "agent-service-1-4/agent/mi-menu.html" %}
+                </div>
+
+
+                  <div class="govuk-grid-column-two-thrids">
+                    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-2">Call outcomes</h3>
+                    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">15 calls taken since June 2022</p>
+
+
+
+                      <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-3">Once and done</h3>
+                      <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">10</h3>
+                    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-3">Esculation</h3>
+                    <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">2</h3>
+                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                  <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-3">Requested mandatory reconsideration</h3>
+                  <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">3</h3>
+                <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+
+
+
+                    </div>
+
+
+                  </div>
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            {% endblock %}

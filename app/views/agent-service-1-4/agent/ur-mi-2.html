@@ -1,132 +1,96 @@
-{% extends "layout-ur-2022.html" %}
+        {% extends "layout-ur-2022.html" %}
 
-{% block pageTitle %}
-  PC: Name Name
+        {% block pageTitle %}
+          PC: Name Name
 
-{% endblock %}
+        {% endblock %}
 
-{% block header %}
- {% include "explore-header-ur.html" %}
-{% endblock %}
+        {% block header %}
+         {% include "explore-header-ur.html" %}
+        {% endblock %}
 
-{% block content %}
+        {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <form action="login-router" method="post" class="form">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+            <form action="login-router" method="post" class="form">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Service statistics</h1>
-      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXX</p> -->
+              <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Service statistics</h1>
+              <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXX</p> -->
 
-    </div>
-  </div>
-
-
-  <!---------------------------------------->
-
-  <div class="govuk-grid-row govuk-!-margin-bottom-6">
-
-    {% include "agent-service-1-4/agent/mi-stats.html" %}
-
-  </div>
-
-
-  <hr class="govuk-section-break govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-8">
-
-
-  <div class="govuk-grid-row govuk-!-margin-bottom-6">
-
-          <div class="govuk-grid-column-one-half">
-            <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Statistics by area</h3>
+            </div>
           </div>
 
-  </div>
 
-  <!---------------------------------------->
+          <!---------------------------------------->
 
-  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+          <div class="govuk-grid-row govuk-!-margin-bottom-6">
 
+            <!-- {% include "agent-service-1-4/agent/mi-stats.html" %} -->
 
-
-    <div class="govuk-grid-column-one-quarter">
-
-
-      {% include "agent-service-1-4/agent/mi-menu.html" %}
-    </div>
+          </div>
 
 
-      <div class="govuk-grid-column-three-quarters">
-        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-2">Verify data used</h3>
 
-        <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">Summary</h3> -->
+          <!---------------------------------------->
 
-        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">From 1,000 claims processed</h3>
+          <div class="govuk-grid-row govuk-!-margin-bottom-8">
 
 
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-          text: "Rule"
-        },
-        value: {
-          html: "<strong>Unmatched</strong>"
-        }
-      },
-      {
-        key: {
-          text: "Applicant had died"
-        },
-        value: {
-          text: "2"
-        }
-      },
-      {
-        key: {
-          text: "Open interests for qualifying benefits [Today and backdating]"
-        },
-        value: {
-          html: "1"
-        }
-      },
-      {
-        key: {
-          text: "Closed interests for qualifying benefits [Today and backdating]"
-        },
-        value: {
-          html: "1"
-        }
-      },
-      {
-        key: {
-          text: "State Pension award (today)"
-        },
-        value: {
-          html: "1"
-        }
-      },
-      {
-        key: {
-          text: "State Pension award (backdating)"
-        },
-        value: {
-          html: "1"
-        }
-      },
-      {
-        key: {
-          text: "Qualifying benefits in payment [Today and backdating]"
-        },
-        value: {
-          html: "1"
-        }
-      }
-    ]
-    }) }}
 
-      </div>
-      </div>
+            <div class="govuk-grid-column-one-third">
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-{% endblock %}
+              {% include "agent-service-1-4/agent/mi-menu.html" %}
+            </div>
+
+
+              <div class="govuk-grid-column-two-thrids">
+                <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-2">Verify data used</h3>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Reason why claims were pushed back to BAU by Sub-tasks<br>12,000 claims processed</p>
+
+
+
+                  <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-3">Applicant had died</h3>
+                  <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">1</h3>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-1">Open interests for qualifying benefits</h3>
+                <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">(Today and backdating)</h3>
+
+                <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">15</h3>
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+              <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-1">Closed interests for qualifying benefits</h3>
+              <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">(Today and backdating)</h3>
+
+              <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">12</h3>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-1">State Pension award</h3>
+            <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">(Today)</h3>
+
+            <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">18</h3>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+              <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-1">Qualifying benefits in payment</h3>
+              <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">(Today and backdating)</h3>
+              <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">66</h3>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-1">State Pension award</h3>
+            <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">(Backdating)</h3>
+            <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">20</h3>
+          <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+
+
+
+                </div>
+
+
+              </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        {% endblock %}
