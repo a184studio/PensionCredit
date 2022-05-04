@@ -29,6 +29,8 @@
     {% include "agent-service-1-4/agent/mi-stats.html" %}
 
   </div>
+
+
   <hr class="govuk-section-break govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-8">
 
 
@@ -44,6 +46,8 @@
 
   <div class="govuk-grid-row govuk-!-margin-bottom-8">
 
+
+
     <div class="govuk-grid-column-one-quarter">
 
 
@@ -51,53 +55,53 @@
     </div>
 
 
-          <div class="govuk-grid-column-three-quarters">
-            <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-2">Check previous applications</h3>
+      <div class="govuk-grid-column-three-quarters">
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-2">Call outcomes</h3>
 
-            <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">Summary</h3> -->
+        <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">Summary</h3> -->
 
-            <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">From 1,000 claims processed</h3>
+        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">200 calls taken</h3>
 
 
-            {{ govukSummaryList({
-              rows: [
-                {
-                  key: {
-              text: "Rule"
-            },
-            value: {
-              html: "<strong>Number</strong>"
-            }
-          },
-          {
-            key: {
-              text: "Initial date of contact (IDOC)"
-            },
-            value: {
-              text: "2"
-            }
-          },
-          {
-            key: {
-              text: "Online application"
-            },
-            value: {
-              html: "1"
-            }
-          },
-          {
-            key: {
-              text: "PC1 application"
-            },
-            value: {
-              html: "1"
-            }
-          }
-        ]
-        }) }}
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+          text: "Outcome"
+        },
+        value: {
+          html: "<strong>Number</strong>"
+        }
+      },
+      {
+        key: {
+          text: "Once and done"
+        },
+        value: {
+          text: "2"
+        }
+      },
+      {
+        key: {
+          text: "Esculation"
+        },
+        value: {
+          html: "1"
+        }
+      },
+      {
+        key: {
+          text: "MR"
+        },
+        value: {
+          html: "1"
+        }
+      }
+    ]
+    }) }}
 
-          </div>
-          </div>
+      </div>
+      </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 

@@ -34,8 +34,8 @@
 
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
 
-          <div class="govuk-grid-column-one-half">
-            <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Processing outcome</h3>
+          <div class="govuk-grid-column-full">
+            <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Breakdown</h3> -->
           </div>
 
   </div>
@@ -53,61 +53,5 @@
     </div>
 
 
-      <div class="govuk-grid-column-three-quarters">
-        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Match and verify identity</h3>
-
-        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Unmatched applicant details from 200 claims</h3>
-
-
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-          text: "Rule"
-        },
-        value: {
-          html: "<strong>Unmatched</strong>"
-        }
-      },
-      {
-        key: {
-          text: "Name"
-        },
-        value: {
-          text: "50"
-        }
-      },
-      {
-        key: {
-          text: "Date of birth"
-        },
-        value: {
-          html: "50"
-        }
-      },
-      {
-        key: {
-          text: "Bank details"
-        },
-        value: {
-          html: "25"
-        }
-      },
-      {
-        classes: 'govuk-summary-list--no-border',
-        key: {
-          text: "Address"
-        },
-        value: {
-          html: "10"
-        }
-      }
-    ]
-    }) }}
-
-      </div>
-      </div>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 {% endblock %}

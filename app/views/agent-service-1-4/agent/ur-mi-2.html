@@ -37,7 +37,7 @@
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
 
           <div class="govuk-grid-column-one-half">
-            <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Unmatched summary</h3>
+            <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Statistics by area</h3>
           </div>
 
   </div>
@@ -56,11 +56,11 @@
 
 
       <div class="govuk-grid-column-three-quarters">
-        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">Verify rules</h3>
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-2">Verify data used</h3>
 
         <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">Summary</h3> -->
 
-        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Unmatched rules from 200 claims</h3>
+        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">From 1,000 claims processed</h3>
 
 
         {{ govukSummaryList({
@@ -83,7 +83,7 @@
       },
       {
         key: {
-          text: "Applicant not single"
+          text: "Open interests for qualifying benefits [Today and backdating]"
         },
         value: {
           html: "1"
@@ -91,7 +91,7 @@
       },
       {
         key: {
-          text: "Change to benefit in payment"
+          text: "Closed interests for qualifying benefits [Today and backdating]"
         },
         value: {
           html: "1"
@@ -99,7 +99,7 @@
       },
       {
         key: {
-          text: "Open interest for Pension Credit"
+          text: "State Pension award (today)"
         },
         value: {
           html: "1"
@@ -107,7 +107,15 @@
       },
       {
         key: {
-          text: "Open interest for Pension Credit [Backdating]"
+          text: "State Pension award (backdating)"
+        },
+        value: {
+          html: "1"
+        }
+      },
+      {
+        key: {
+          text: "Qualifying benefits in payment [Today and backdating]"
         },
         value: {
           html: "1"
