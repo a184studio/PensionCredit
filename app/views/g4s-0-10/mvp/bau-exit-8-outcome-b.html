@@ -17,20 +17,18 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="bau-exit-5-router">
+      <form method="post" action="bau-exit-8-outcome-b-router">
 
-        <span class="govuk-caption-m">[5]</span>
+        <span class="govuk-caption-m">[8B]</span>
 
-
-
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Before I can go any further, I will need to ask you some security questions</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions to send them a new letter</p>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Before I can take a look at your application, I will need to ask you some security questions</h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions to try and help.</p>
 
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "bau-exit-5",
-          name: "bau-exit-5",
+          idPrefix: "bau-exit-8-outcome-b",
+          name: "bau-exit-8-outcome-b",
           fieldset: {
             legend: {
               text: "Did they pass security?",
@@ -43,12 +41,12 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: data['bau-exit-5'] == "Yes"
+              checked: data['bau-exit-8-outcome-b'] == "Yes"
             },
             {
               value: "No",
               text: "No",
-              checked: data['bau-exit-5'] == "No"
+              checked: data['bau-exit-8-outcome-b'] == "No"
             }
           ]
         }) }}
@@ -57,9 +55,6 @@
         text: "Continue",
         classes: "govuk-button dont-print"
         }) }}
-
-
-
 
   </form>
     </div>

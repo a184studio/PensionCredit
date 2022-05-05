@@ -21,10 +21,8 @@
 
         <span class="govuk-caption-m">[8]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Help them without going through security if it is a general query about there award, or take them through secutity if they need more bespoke help.
-
-          I will need to ask you some security questions and I will see if I can help</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions.</p>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">I need to know about your query so that I can understand how to help</h1>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions.</p> -->
 
         {{ govukRadios({
           classes: "govuk-radios",
@@ -32,7 +30,7 @@
           name: "bau-exit-8",
           fieldset: {
             legend: {
-              text: "Possible next steps",
+              text: "Next steps",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -44,13 +42,18 @@
           items: [
             {
               value: "Yes",
-              text: "I need to take them through security",
+              text: "I need to take them through security to help more",
               checked: data['bau-exit-8'] == "Yes"
             },
             {
               value: "No",
-              text: "Transfer to DWP",
+              text: "Transfer to DWP as its complex",
               checked: data['bau-exit-8'] == "No"
+            },
+            {
+              value: "Exit",
+              text: "Resolved",
+              checked: data['bau-exit-8'] == "Exit"
             }
           ]
         }) }}

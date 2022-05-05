@@ -17,23 +17,49 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction">
+      <form method="post" action="bau-exit-10-router">
 
         <span class="govuk-caption-m">[10]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">I will need to ask you some security questions and I will see if I can help</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions</p>
-
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">X</p>
 
 
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Before I can go any further, I will need to ask you some security questions</h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions to check the Pension Credit amount</p>
 
 
-      {{ govukButton({
-      text: "Finish and close",
-      classes: "govuk-button dont-print govuk-!-margin-top-6"
-      }) }}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "bau-exit-10",
+          name: "bau-exit-10",
+          fieldset: {
+            legend: {
+              text: "Did they pass security?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: data['bau-exit-10'] == "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: data['bau-exit-10'] == "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue",
+        classes: "govuk-button dont-print"
+        }) }}
+
+
+
 
   </form>
     </div>

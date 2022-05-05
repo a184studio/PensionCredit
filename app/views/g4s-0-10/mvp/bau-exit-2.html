@@ -17,19 +17,50 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction">
+      <form method="post" action="bau-exit-2-router">
 
-        <span class="govuk-caption-m">[2]</span>
+        <span class="govuk-caption-m">[1]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">As you have an IDOC, I need to transfer you through to one of my colleagues</h1>
 
-        {% include "g4s-0-10/mvp/handover-process.html" %}
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">So I can see if I can find your IDOC, I will need to ask you some security questions</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions.</p>
+
+
+          <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">To get you the right help, I need to transfer you through to one of my colleagues</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Transfer call to G4S enquiry line.</p> -->
+
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "bau-exit-2",
+            name: "bau-exit-2",
+            fieldset: {
+              legend: {
+                text: "Did they pass security?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: data['bau-exit-2'] == "Yes"
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: data['bau-exit-2'] == "No"
+              }
+            ]
+          }) }}
+
 
 
       {{ govukButton({
-      text: "Finish and close",
-      classes: "govuk-button dont-print govuk-!-margin-top-6"
+      text: "Continue",
+      classes: "govuk-button dont-print"
       }) }}
 
   </form>
