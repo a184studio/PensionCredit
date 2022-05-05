@@ -17,41 +17,44 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="bau-exit-1-outcome">
+      <form method="post" action="bau-exit-1-router">
 
         <span class="govuk-caption-m">[1]</span>
 
-        <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">I'll need to ask a few security questions first.</h1> -->
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Before I can take a look at the progress of your application, I will need to ask you some security questions</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions to identify date submitterd.</p>
 
 
-        {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "bau-exit-1",
-          name: "bau-exit-1",
-          fieldset: {
-            legend: {
-              text: "Can you take the applicant through security?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            text: ""
-          },
+          <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">To get you the right help, I need to transfer you through to one of my colleagues</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Transfer call to G4S enquiry line.</p> -->
 
-          items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: data['bau-exit-1'] == "Yes"
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "bau-exit-1",
+            name: "bau-exit-1",
+            fieldset: {
+              legend: {
+                text: "Did they pass security",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
             },
-            {
-              value: "No",
-              text: "No",
-              checked: data['bau-exit-1'] == "No"
-            }
-          ]
-        }) }}
+
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: data['bau-exit-1'] == "Yes"
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: data['bau-exit-1'] == "No"
+              }
+            ]
+          }) }}
 
 
 
@@ -59,9 +62,6 @@
       text: "Continue",
       classes: "govuk-button dont-print"
       }) }}
-
-
-
 
   </form>
     </div>
