@@ -18,6 +18,9 @@ function makeAStay(data) {
 }
 
 
+
+
+
 router.post(`${baseUrl}/system-partner-check-router`, (req, res) => {
   const singleJoint = req.session.data['system-partner-check']
 
@@ -40,6 +43,105 @@ router.post(`${baseUrl}/system-where-you-like-ab-router`, (req, res) => {
     res.redirect(`${baseUrl}/housing-type-b`)
   }
 })
+
+// ———————————————
+
+
+router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
+  const typeOfClaim = req.session.data['type-of-claim']
+
+  if (typeOfClaim == 'eligibility') {
+    res.redirect(`${baseUrl}/start`)
+
+  }  else if (typeOfClaim == 'bau-exit-1') {
+      res.redirect(`${baseUrl}/bau-exit-1`)
+
+}  else if (typeOfClaim == 'bau-exit-2') {
+    res.redirect(`${baseUrl}/bau-exit-2`)
+
+}  else if (typeOfClaim == 'bau-exit-3') {
+      res.redirect(`${baseUrl}/bau-exit-3`)
+
+}  else if (typeOfClaim == 'bau-exit-4') {
+    res.redirect(`${baseUrl}/bau-exit-4`)
+
+}  else if (typeOfClaim == 'bau-exit-5') {
+      res.redirect(`${baseUrl}/bau-exit-5-outcome`)
+
+}  else if (typeOfClaim == 'bau-exit-6') {
+    res.redirect(`${baseUrl}/bau-exit-6`)
+
+}  else if (typeOfClaim == 'bau-exit-9') {
+      res.redirect(`${baseUrl}/bau-exit-4`)
+
+}  else if (typeOfClaim == 'bau-exit-8') {
+    res.redirect(`${baseUrl}/bau-exit-8`)
+
+}  else if (typeOfClaim == 'bau-exit-7') {
+      res.redirect(`${baseUrl}/bau-exit-7`)
+
+    }  else if (typeOfClaim == 'bau-exit-10') {
+          res.redirect(`${baseUrl}/bau-exit-10`)
+
+    } else {
+    res.redirect(`${baseUrl}/bau-exit`)
+  }
+})
+
+
+router.post(`${baseUrl}/bau-exit-1-router`, (req, res) => {
+  const outcome1 = req.session.data['bau-exit-1']
+
+  if (outcome1 == 'Yes') {
+    res.redirect(`${baseUrl}/bau-exit-1-pass`)
+  }  else if (outcome1 == 'No') {
+      res.redirect(`${baseUrl}/bau-exit-1-fail`)
+    } else {
+    res.redirect(`${baseUrl}/xxx`)
+  }
+})
+
+router.post(`${baseUrl}/bau-exit-7-router`, (req, res) => {
+  const outcome7 = req.session.data['bau-exit-7']
+
+  if (outcome7 == 'Yes') {
+    res.redirect(`${baseUrl}/bau-more-help`)
+  }  else if (outcome7 == 'No') {
+      res.redirect(`${baseUrl}/exit`)
+    } else {
+    res.redirect(`${baseUrl}/xxx`)
+  }
+})
+
+router.post(`${baseUrl}/bau-exit-8-router`, (req, res) => {
+  const editOutcome8 = req.session.data['bau-exit-8']
+
+  if (editOutcome8 == 'Yes') {
+    res.redirect(`${baseUrl}/bau-exit-8-outcome`)
+  }  else if (editOutcome8 == 'No') {
+      res.redirect(`${baseUrl}/bau-more-help`)
+    } else {
+    res.redirect(`${baseUrl}/xxx`)
+  }
+})
+
+router.post(`${baseUrl}/bau-exit-1-outcome-router`, (req, res) => {
+  const outcome1Time = req.session.data['bau-exit-1-outcome']
+
+  if (outcome1Time == 'more-than-35') {
+    res.redirect(`${baseUrl}/bau-exit-1-outcome-a`)
+  }  else if (outcome1Time == 'less-than-35') {
+      res.redirect(`${baseUrl}/bau-exit-1-outcome-b`)
+    } else {
+    res.redirect(`${baseUrl}/xxx`)
+  }
+})
+
+
+
+
+// ————————————————
+
 
 router.post(`${baseUrl}/housing-type-b-router`, (req, res) => {
   const g4sWhereYouLikeB = req.session.data['housing-type-b']
@@ -302,84 +404,6 @@ router.post(`${baseUrl}/children-ctc-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
-  const typeOfClaim = req.session.data['type-of-claim']
-
-  if (typeOfClaim == 'eligibility') {
-    res.redirect(`${baseUrl}/start`)
-
-  }  else if (typeOfClaim == 'bau-exit-1') {
-      res.redirect(`${baseUrl}/bau-exit-1-outcome`)
-
-}  else if (typeOfClaim == 'bau-exit-2') {
-    res.redirect(`${baseUrl}/bau-exit-2`)
-
-}  else if (typeOfClaim == 'bau-exit-3') {
-      res.redirect(`${baseUrl}/bau-exit-3`)
-
-}  else if (typeOfClaim == 'bau-exit-4') {
-    res.redirect(`${baseUrl}/bau-exit-4`)
-
-}  else if (typeOfClaim == 'bau-exit-5') {
-      res.redirect(`${baseUrl}/bau-exit-5-outcome`)
-
-}  else if (typeOfClaim == 'bau-exit-6') {
-    res.redirect(`${baseUrl}/bau-exit-6`)
-
-}  else if (typeOfClaim == 'bau-exit-9') {
-      res.redirect(`${baseUrl}/bau-exit-4`)
-
-}  else if (typeOfClaim == 'bau-exit-8') {
-    res.redirect(`${baseUrl}/bau-exit-8`)
-
-}  else if (typeOfClaim == 'bau-exit-7') {
-      res.redirect(`${baseUrl}/bau-exit-7`)
-
-    }  else if (typeOfClaim == 'bau-exit-10') {
-          res.redirect(`${baseUrl}/bau-exit-10`)
-
-    } else {
-    res.redirect(`${baseUrl}/bau-exit`)
-  }
-})
-
-
-
-router.post(`${baseUrl}/bau-exit-7-router`, (req, res) => {
-  const outcome7 = req.session.data['bau-exit-7']
-
-  if (outcome7 == 'Yes') {
-    res.redirect(`${baseUrl}/bau-more-help`)
-  }  else if (outcome7 == 'No') {
-      res.redirect(`${baseUrl}/exit`)
-    } else {
-    res.redirect(`${baseUrl}/xxx`)
-  }
-})
-
-router.post(`${baseUrl}/bau-exit-8-router`, (req, res) => {
-  const editOutcome8 = req.session.data['bau-exit-8']
-
-  if (editOutcome8 == 'Yes') {
-    res.redirect(`${baseUrl}/bau-exit-8-outcome`)
-  }  else if (editOutcome8 == 'No') {
-      res.redirect(`${baseUrl}/bau-more-help`)
-    } else {
-    res.redirect(`${baseUrl}/xxx`)
-  }
-})
-
-router.post(`${baseUrl}/bau-exit-1-outcome-router`, (req, res) => {
-  const outcome1Time = req.session.data['bau-exit-1-outcome']
-
-  if (outcome1Time == 'more-than-35') {
-    res.redirect(`${baseUrl}/bau-exit-1-outcome-a`)
-  }  else if (outcome1Time == 'less-than-35') {
-      res.redirect(`${baseUrl}/bau-exit-1-outcome-b`)
-    } else {
-    res.redirect(`${baseUrl}/xxx`)
-  }
-})
 
 
 router.post(`${baseUrl}/state-pension-amount-check`, (req, res) => {
