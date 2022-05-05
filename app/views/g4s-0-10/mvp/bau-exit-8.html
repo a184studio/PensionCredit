@@ -21,9 +21,11 @@
 
         <span class="govuk-caption-m">[8]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">I will need to ask you some security questions and I will see if I can help</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Help them without going through security if it is a general query about there award, or take them through secutity if they need more bespoke help.
+
+          I will need to ask you some security questions and I will see if I can help</h1>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions.</p>
-<!--
+
         {{ govukRadios({
           classes: "govuk-radios",
           idPrefix: "bau-exit-8",
@@ -42,12 +44,12 @@
           items: [
             {
               value: "Yes",
-              text: "Transfer to DWP",
+              text: "I need to take them through security",
               checked: data['bau-exit-8'] == "Yes"
             },
             {
               value: "No",
-              text: "Offer other help",
+              text: "Transfer to DWP",
               checked: data['bau-exit-8'] == "No"
             }
           ]
@@ -56,11 +58,6 @@
       {{ govukButton({
       text: "Continue",
       classes: "govuk-button dont-print"
-      }) }} -->
-
-      {{ govukButton({
-      text: "Finish and close",
-      classes: "govuk-button dont-print govuk-!-margin-top-0"
       }) }}
 
 
