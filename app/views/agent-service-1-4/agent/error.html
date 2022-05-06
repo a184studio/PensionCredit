@@ -15,10 +15,15 @@
     <form action="error" method="post" class="form">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Sorry, there is a problem with the service</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Try again later. </p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Your progress has been saved.</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Your progress has been saved. </p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Refresh the page and try again or contact the Pension Credit digital team.</p>
 
       <br>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Refresh"
+        }) }}
 
         {{ govukButton({
           name: "process-c-nil-task-1-6",
