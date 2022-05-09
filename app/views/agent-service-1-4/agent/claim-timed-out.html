@@ -14,7 +14,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="process-c-nil-task-list" method="post" class="form">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">The claim you were working on has been put back into the queue</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">The claim you were working on has been put back into<br>the queue</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Your progress was saved. Another agent will now pick this up.</p>
 
 <br>
@@ -29,19 +29,12 @@
     value: "return",
     checked: (data["ur-home"] == "ur-home"),
     classes: "govuk-button--secondary",
-    text: "Return to My home page",
+    text: "Return to My Home Page",
     href: "ur-home"
   }) }}
 
   </div>
 
-  <div class="govuk-button-group">
-  {{ govukButton({
-    text: "Process next claim"
-  }) }}
-
-  <a class="govuk-link" href="ur-home">Return to My home page</a>
-</div>
 
 
     </div>
