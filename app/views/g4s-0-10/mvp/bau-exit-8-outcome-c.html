@@ -17,13 +17,40 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction">
+      <form method="post" action="bau-exit-8-outcome-c-router">
+
         <span class="govuk-caption-m">[8C]</span>
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Try and help with the enquiry, handover to DWP if you can't resolve the query</h1>
 
-        {% include "g4s-0-10/mvp/handover-process.html" %}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "bau-exit-8-outcome-c",
+          name: "bau-exit-8-outcome-c",
+          fieldset: {
+            legend: {
+              text: "Did you resolve it?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: ""
+          },
+
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: data['bau-exit-8-outcome-c'] == "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: data['bau-exit-8-outcome-c'] == "No"
+            }
+          ]
+        }) }}
 
         {{ govukButton({
         text: "Finish and close",

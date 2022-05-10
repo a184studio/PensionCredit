@@ -78,10 +78,13 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
     res.redirect(`${baseUrl}/bau-exit-8`)
 
 }  else if (typeOfClaim == 'bau-exit-7') {
-      res.redirect(`${baseUrl}/bau-exit-7`)
+      res.redirect(`${baseUrl}/bau-exit-7-outcome`)
 
     }  else if (typeOfClaim == 'bau-exit-10') {
           res.redirect(`${baseUrl}/bau-exit-10`)
+
+        }  else if (typeOfClaim == 'bau-exit-11') {
+          res.redirect(`${baseUrl}/bau-more-help`)
 
     } else {
     res.redirect(`${baseUrl}/bau-exit`)
@@ -209,6 +212,20 @@ router.post(`${baseUrl}/bau-exit-8-outcome-b-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/bau-exit-8-outcome-c-router`, (req, res) => {
+  const editOutcome8c = req.session.data['bau-exit-8-outcome-c']
+
+  if (editOutcome8c == 'Yes') {
+    res.redirect(`${baseUrl}/exit`)
+  }  else if (editOutcome8c == 'No') {
+      res.redirect(`${baseUrl}/bau-exit-handover`)
+    } else {
+    res.redirect(`${baseUrl}/exit`)
+  }
+})
+
+
+
 
 router.post(`${baseUrl}/bau-exit-10-router`, (req, res) => {
   const outcome10 = req.session.data['bau-exit-10']
@@ -219,6 +236,18 @@ router.post(`${baseUrl}/bau-exit-10-router`, (req, res) => {
       res.redirect(`${baseUrl}/bau-exit-fail-secuirty`)
     } else {
     res.redirect(`${baseUrl}/xxx`)
+  }
+})
+
+router.post(`${baseUrl}/bau-exit-10-outcome-a-router`, (req, res) => {
+  const editOutcome10a = req.session.data['bau-exit-10-outcome-a']
+
+  if (editOutcome10a == 'Yes') {
+    res.redirect(`${baseUrl}/exit`)
+  }  else if (editOutcome10a == 'No') {
+      res.redirect(`${baseUrl}/bau-exit-handover`)
+    } else {
+    res.redirect(`${baseUrl}/exit`)
   }
 })
 
