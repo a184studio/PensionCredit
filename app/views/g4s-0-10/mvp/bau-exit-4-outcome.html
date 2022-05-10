@@ -18,42 +18,48 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if data['bau-exit-4'] == 'Yes' %}
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/exit">
-        {% else %}
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction">
-        {% endif %}
+      <form method="post" action="bau-exit-4-handover">
 
 
         <span class="govuk-caption-m">[4]</span>
 
 
-        {% if data['bau-exit-4'] == 'Yes' %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Look in CAM and see if Pension Credit has been processed</h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">XXX</p>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">[MM: Might have to be a number]</p> -->
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As you are already getting Pension Credit, I need to transfer you through to one of my colleagues</h1>
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Change of circumstances telephone number 0800 7310469</p>
-          <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">[MM: Might have to be a number]</p> -->
 
-          {{ govukButton({
-          text: "Continue",
-          classes: "govuk-button dont-print govuk-!-margin-top-6"
-          }) }}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "bau-exit-4-outcome",
+          name: "bau-exit-4-outcome",
+          fieldset: {
+            legend: {
+              text: "The is the claim in payment?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
 
-        {% else %}
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: data['bau-exit-4-outcome'] == "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: data['bau-exit-4-outcome'] == "No"
+            }
+          ]
+        }) }}
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">As you have not received your first Pension Credit payment yet,  I need to transfer you through to one of my colleagues</h1>
 
-          {% include "g4s-0-10/mvp/handover-process.html" %}
-
-          {{ govukButton({
-          text: "Finish and close",
-          classes: "govuk-button dont-print govuk-!-margin-top-6"
-          }) }}
-
-        {% endif %}
-
+        {{ govukButton({
+        text: "Continue",
+        classes: "govuk-button dont-print govuk-!-margin-top-6"
+        }) }}
 
 
 

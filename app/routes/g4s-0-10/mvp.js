@@ -137,7 +137,29 @@ router.post(`${baseUrl}/bau-exit-2-pass-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/bau-exit-4-router`, (req, res) => {
+  const outcome4 = req.session.data['bau-exit-4']
 
+  if (outcome4 == 'Yes') {
+    res.redirect(`${baseUrl}/bau-exit-4-outcome`)
+  }  else if (outcome4 == 'No') {
+      res.redirect(`${baseUrl}/bau-exit-fail-secuirty`)
+    } else {
+    res.redirect(`${baseUrl}/xxx`)
+  }
+})
+
+router.post(`${baseUrl}/bau-exit-4-outcome-router`, (req, res) => {
+  const outcome4outcome = req.session.data['bau-exit-4-outcome']
+
+  if (outcome4outcome == 'Yes') {
+    res.redirect(`${baseUrl}/bau-exit-4-outcome`)
+  }  else if (outcome4outcome == 'No') {
+      res.redirect(`${baseUrl}/bau-exit-fail-secuirty`)
+    } else {
+    res.redirect(`${baseUrl}/xxx`)
+  }
+})
 
 router.post(`${baseUrl}/bau-exit-5-router`, (req, res) => {
   const outcome5 = req.session.data['bau-exit-5']
