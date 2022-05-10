@@ -72,7 +72,7 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
     res.redirect(`${baseUrl}/bau-exit-6`)
 
 }  else if (typeOfClaim == 'bau-exit-9') {
-      res.redirect(`${baseUrl}/bau-exit-4`)
+      res.redirect(`${baseUrl}/bau-exit-9`)
 
 }  else if (typeOfClaim == 'bau-exit-8') {
     res.redirect(`${baseUrl}/bau-exit-8`)
