@@ -18,20 +18,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/exit">
+        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction">
 
-        <span class="govuk-caption-m">[Fail secuirty]</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Because you couldn't get through, we will call you back within X days</h1>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As you didn't pass secutiy you will need todo X</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">XXXX</p>
-
-
+      {% include "g4s-0-10/mvp/process-proforma-failed-handover.html" %}
 
 
       {{ govukButton({
-        text: "Continue",
-      classes: "govuk-button dont-print"
+        text: "Finish and close",
+        classes: "govuk-button dont-print govuk-!-margin-top-6"
       }) }}
+
 
   </form>
     </div>

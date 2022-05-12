@@ -17,19 +17,15 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction">
+        <form method="post" action="start">
 
-        <span class="govuk-caption-m">[1A]</span>
+        <span class="govuk-caption-m">[2-3]</span>
 
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">To get you the right help, I need to transfer you through to one of my colleagues</h1>
-
-        {% include "g4s-0-10/mvp/handover-process.html" %}
-
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">I can't see an IDOC on our system and so I will need to quickly check your eligibility for Pension Credit</h1>
 
         {{ govukButton({
-        text: "Finish and close",
+        text: "Continue",
         classes: "govuk-button dont-print"
         }) }}
 

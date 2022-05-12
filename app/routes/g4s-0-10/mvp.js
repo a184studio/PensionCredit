@@ -54,10 +54,10 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
     res.redirect(`${baseUrl}/start`)
 
   }  else if (typeOfClaim == 'bau-exit-1') {
-      res.redirect(`${baseUrl}/bau-exit-1`)
+      res.redirect(`${baseUrl}/bau-exit-1-security`)
 
 }  else if (typeOfClaim == 'bau-exit-2') {
-    res.redirect(`${baseUrl}/bau-exit-2`)
+    res.redirect(`${baseUrl}/bau-exit-2-security`)
 
 }  else if (typeOfClaim == 'bau-exit-3') {
       res.redirect(`${baseUrl}/bau-exit-3`)
@@ -96,9 +96,9 @@ router.post(`${baseUrl}/bau-exit-1-router`, (req, res) => {
   const outcome1 = req.session.data['bau-exit-1']
 
   if (outcome1 == 'Yes') {
-    res.redirect(`${baseUrl}/bau-exit-1-pass`)
+    res.redirect(`${baseUrl}/bau-exit-1-1`)
   }  else if (outcome1 == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-1-fail`)
+      res.redirect(`${baseUrl}/bau-security-fail`)
     } else {
     res.redirect(`${baseUrl}/xxx`)
   }
@@ -108,9 +108,9 @@ router.post(`${baseUrl}/bau-exit-1-outcome-router`, (req, res) => {
   const outcome1Time = req.session.data['bau-exit-1-outcome']
 
   if (outcome1Time == 'more-than-35') {
-    res.redirect(`${baseUrl}/bau-exit-1-outcome-a`)
+    res.redirect(`${baseUrl}/bau-exit-1-2`)
   }  else if (outcome1Time == 'less-than-35') {
-      res.redirect(`${baseUrl}/bau-exit-1-outcome-b`)
+      res.redirect(`${baseUrl}/bau-exit-1-3`)
     } else {
     res.redirect(`${baseUrl}/xxx`)
   }
@@ -120,21 +120,21 @@ router.post(`${baseUrl}/bau-exit-2-router`, (req, res) => {
   const outcome2 = req.session.data['bau-exit-2']
 
   if (outcome2 == 'Yes') {
-    res.redirect(`${baseUrl}/bau-exit-2-pass`)
+    res.redirect(`${baseUrl}/bau-exit-2-1`)
   }  else if (outcome2 == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-fail-secuirty`)
+      res.redirect(`${baseUrl}/bau-security-fail`)
     } else {
     res.redirect(`${baseUrl}/xxx`)
   }
 })
 
-router.post(`${baseUrl}/bau-exit-2-pass-router`, (req, res) => {
-  const outcomePass2 = req.session.data['bau-exit-2-pass']
+router.post(`${baseUrl}/bau-exit-2-1-router`, (req, res) => {
+  const outcome2x1 = req.session.data['bau-exit-2-1']
 
-  if (outcomePass2 == 'Yes') {
-    res.redirect(`${baseUrl}/bau-exit-2-outcome-a`)
-  }  else if (outcomePass2 == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-2-outcome-b`)
+  if (outcome2x1 == 'Yes') {
+    res.redirect(`${baseUrl}/bau-exit-2-2`)
+  }  else if (outcome2x1 == 'No') {
+      res.redirect(`${baseUrl}/bau-exit-2-3`)
     } else {
     res.redirect(`${baseUrl}/xxx`)
   }
