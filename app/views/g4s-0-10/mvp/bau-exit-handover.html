@@ -17,36 +17,31 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {% if data['bau-exit-4'] == 'Yes' %}
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/exit">
-        {% else %}
       <form method="post" action="/session-clear-route">
         <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction">
-        {% endif %}
-
 
         <span class="govuk-caption-m">[Default handover]</span>
 
 
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">To get you the right help, I need to transfer you through to one of my colleagues</h1>
+
+        {% include "g4s-0-10/mvp/process-handover-default.html" %}
 
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Default I need to transfer you through to one of my colleagues</h1>
+        <div class="govuk-button-group govuk-!-margin-top-8">
 
-          {% include "g4s-0-10/mvp/handover-process.html" %}
+        {{ govukButton({
+        text: "Finish and close",
+        classes: "govuk-button dont-print"
+        }) }}
 
           {{ govukButton({
-          text: "Continue",
-          classes: "govuk-button dont-print govuk-!-margin-top-6"
+            value: "Other enquiry",
+            text: "Could not transfer call",
+            href: "bau-proforma-failed-handover.html",
+            classes: "govuk-button--secondary"
           }) }}
-
-
-
-
-
-
-
+          </div>
 
   </form>
     </div>

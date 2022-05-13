@@ -170,7 +170,7 @@ router.post(`${baseUrl}/bau-exit-5-router`, (req, res) => {
   if (outcome5 == 'Yes') {
     res.redirect(`${baseUrl}/bau-exit-5-outcome-a`)
   }  else if (outcome5 == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-fail-secuirty`)
+    res.redirect(`${baseUrl}/bau-security-fail`)
     } else {
     res.redirect(`${baseUrl}/xxx`)
   }
@@ -188,19 +188,19 @@ router.post(`${baseUrl}/bau-exit-7-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/bau-exit-8-router`, (req, res) => {
-  const editOutcome8 = req.session.data['bau-exit-8']
+router.post(`${baseUrl}/bau-exit-8-2-router`, (req, res) => {
+  const outcome8x2 = req.session.data['bau-exit-8-2']
 
-  if (editOutcome8 == 'Yes') {
-    res.redirect(`${baseUrl}/bau-exit-8-outcome-b`)
-  }  else if (editOutcome8 == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-8-1`)
+  if (outcome8x2 == 'Yes') {
+    res.redirect(`${baseUrl}/bau-exit-8-4`)
+  }  else if (outcome8x2 == 'No') {
+    res.redirect(`${baseUrl}/bau-security-fail`)
     } else {
     res.redirect(`${baseUrl}/exit`)
   }
 })
 
-router.post(`${baseUrl}/bau-exit-8-outcome-b-router`, (req, res) => {
+router.post(`${baseUrl}/bau-exit-8-2-router`, (req, res) => {
   const editOutcome8b = req.session.data['bau-exit-8-outcome-b']
 
   if (editOutcome8b == 'Yes') {
@@ -231,20 +231,20 @@ router.post(`${baseUrl}/bau-exit-10-router`, (req, res) => {
   const outcome10 = req.session.data['bau-exit-10']
 
   if (outcome10 == 'Yes') {
-    res.redirect(`${baseUrl}/bau-exit-10-outcome-a`)
+    res.redirect(`${baseUrl}/bau-exit-10-1`)
   }  else if (outcome10 == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-fail-secuirty`)
+      res.redirect(`${baseUrl}/bau-security-fail`)
     } else {
     res.redirect(`${baseUrl}/xxx`)
   }
 })
 
-router.post(`${baseUrl}/bau-exit-10-outcome-a-router`, (req, res) => {
-  const editOutcome10a = req.session.data['bau-exit-10-outcome-a']
+router.post(`${baseUrl}/bau-exit-10-1-router`, (req, res) => {
+  const outcome10x1 = req.session.data['bau-exit-10-1']
 
-  if (editOutcome10a == 'Yes') {
+  if (outcome10x1 == 'Yes') {
     res.redirect(`${baseUrl}/exit`)
-  }  else if (editOutcome10a == 'No') {
+  }  else if (outcome10x1 == 'No') {
       res.redirect(`${baseUrl}/bau-exit-handover`)
     } else {
     res.redirect(`${baseUrl}/exit`)

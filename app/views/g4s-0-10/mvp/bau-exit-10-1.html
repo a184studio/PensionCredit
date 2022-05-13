@@ -17,16 +17,16 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="bau-exit-8-outcome-c-router">
+      <form method="post" action="bau-exit-10-1-router">
 
-        <span class="govuk-caption-m">[8C]</span>
+        <span class="govuk-caption-m">[10A]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Try and help with the enquiry, handover to DWP if you can't resolve the query</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Try and help with the enquiry, handover to DWP if you can't help</h1>
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "bau-exit-8-outcome-c",
-          name: "bau-exit-8-outcome-c",
+          idPrefix: "bau-exit-10-1",
+          name: "bau-exit-10-1",
           fieldset: {
             legend: {
               text: "Did you resolve it?",
@@ -42,19 +42,19 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: data['bau-exit-8-outcome-c'] == "Yes"
+              checked: data['bau-exit-10-1'] == "Yes"
             },
             {
               value: "No",
               text: "No",
-              checked: data['bau-exit-8-outcome-c'] == "No"
+              checked: data['bau-exit-10-1'] == "No"
             }
           ]
         }) }}
 
         {{ govukButton({
-        text: "Finish and close",
-        classes: "govuk-button dont-print govuk-!-margin-top-6"
+        text: "Continue",
+        classes: "govuk-button dont-print"
         }) }}
 
   </form>
