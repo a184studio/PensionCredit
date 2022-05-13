@@ -27,32 +27,16 @@
         {% endif %}
 
 
-        <span class="govuk-caption-m">[4]</span>
+        <span class="govuk-caption-m">[4-3 &9]</span>
 
-
-        {% if data['bau-exit-4-outcome'] == 'Yes' %}
-
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As you are already getting Pension Credit you will need to contact the changes line</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As you are already getting Pension Credit, I need to transfer you through to one of my colleagues</h1>
           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Change of circumstances telephone number 0800 7310469</p>
           <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">[MM: Might have to be a number]</p> -->
 
           {{ govukButton({
-          text: "Finish and close",
+          text: "Continue",
           classes: "govuk-button dont-print govuk-!-margin-top-6"
           }) }}
-
-        {% else %}
-
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">As you have not received your first Pension Credit payment yet,  I need to transfer you through to one of my colleagues</h1>
-
-          {% include "g4s-0-10/mvp/handover-process.html" %}
-
-          {{ govukButton({
-          text: "Finish and close",
-          classes: "govuk-button dont-print govuk-!-margin-top-6"
-          }) }}
-
-        {% endif %}
 
 
 

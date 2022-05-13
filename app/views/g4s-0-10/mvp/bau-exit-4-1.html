@@ -17,11 +17,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="bau-exit-4-1-router">
 
-      <form method="post" action="bau-exit-4-handover">
 
-
-        <span class="govuk-caption-m">[4]</span>
+        <span class="govuk-caption-m">[4-1 &9]</span>
 
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Look in CAM and see if Pension Credit has been processed</h1>
@@ -31,8 +30,8 @@
 
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "bau-exit-4-outcome",
-          name: "bau-exit-4-outcome",
+          idPrefix: "bau-exit-4-1",
+          name: "bau-exit-4-1",
           fieldset: {
             legend: {
               text: "The is the claim in payment?",
@@ -45,12 +44,12 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: data['bau-exit-4-outcome'] == "Yes"
+              checked: data['bau-exit-4-1'] == "Yes"
             },
             {
               value: "No",
               text: "No",
-              checked: data['bau-exit-4-outcome'] == "No"
+              checked: data['bau-exit-4-1'] == "No"
             }
           ]
         }) }}
