@@ -78,7 +78,7 @@ router.post(`${baseUrl}/type-of-claim-router`, (req, res) => {
     res.redirect(`${baseUrl}/bau-exit-8`)
 
 }  else if (typeOfClaim == 'bau-exit-7') {
-      res.redirect(`${baseUrl}/bau-exit-7-outcome`)
+      res.redirect(`${baseUrl}/bau-exit-7`)
 
     }  else if (typeOfClaim == 'bau-exit-10') {
           res.redirect(`${baseUrl}/bau-exit-10`)
@@ -168,7 +168,7 @@ router.post(`${baseUrl}/bau-exit-5-router`, (req, res) => {
   const outcome5 = req.session.data['bau-exit-5']
 
   if (outcome5 == 'Yes') {
-    res.redirect(`${baseUrl}/bau-exit-5-outcome-a`)
+    res.redirect(`${baseUrl}/bau-exit-5-1`)
   }  else if (outcome5 == 'No') {
     res.redirect(`${baseUrl}/bau-security-fail`)
     } else {

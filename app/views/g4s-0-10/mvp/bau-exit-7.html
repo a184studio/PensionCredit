@@ -15,56 +15,50 @@
 {% include "includes/js-back-link.html" %}
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <form method="post" action="bau-exit-7-router">
-
-        <span class="govuk-caption-m">[7]</span>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="exit">
 
 
-        {% set legendHint %}
-        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">There is other help, such as help with your heating, benefits or pensions for example <a href="bau-exit-7-outcome">View other help</a></p> -->
-        {% endset -%}
+          <span class="govuk-caption-m">[7]</span>
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Other places that might help</h1>
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Something along these lines</p>
 
 
-        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Continue with the enquiry using standard working instructions</p> -->
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong>Gov.uk</strong></p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Why</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">How: telephone</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">How: URL</p>
 
-        {{ govukRadios({
-          classes: "govuk-radios",
-          idPrefix: "bau-exit-7",
-          name: "bau-exit-7",
-          fieldset: {
-            legend: {
-              text: "You may be entitled to extra help. Would you like to know more about what is available?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            html: legendHint
-          },
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong>Age UK</strong></p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Why</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">How: telephone</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">How: URL</p>
 
-          items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: data['bau-exit-7'] == "Yes"
-            },
-            {
-              value: "No",
-              text: "No",
-              checked: data['bau-exit-7'] == "No"
-            }
-          ]
-        }) }}
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong>Citizens advice</strong></p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Why</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">How: telephone</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">How: URL</p>
 
-      {{ govukButton({
-      text: "Continue",
-      classes: "govuk-button dont-print"
-      }) }}
 
-  </form>
+
+
+            {{ govukButton({
+            text: "Finish and close",
+            classes: "govuk-button dont-print govuk-!-margin-top-6"
+            }) }}
+
+
+
+
+
+
+    </form>
+      </div>
     </div>
-  </div>
+
+
+
 
 {% endblock %}
