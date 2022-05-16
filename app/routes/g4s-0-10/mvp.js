@@ -158,7 +158,7 @@ router.post(`${baseUrl}/bau-exit-4-1-router`, (req, res) => {
   if (outcome4x1 == 'Yes') {
     res.redirect(`${baseUrl}/bau-exit-4-3`)
   }  else if (outcome4x1 == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-4-2`)
+      res.redirect(`${baseUrl}/bau-proforma-default`)
     } else {
     res.redirect(`${baseUrl}/xxx`)
   }
@@ -188,11 +188,24 @@ router.post(`${baseUrl}/bau-exit-7-router`, (req, res) => {
   }
 })
 
+
+router.post(`${baseUrl}/bau-exit-8-router`, (req, res) => {
+  const outcome8 = req.session.data['bau-exit-8']
+
+  if (outcome8 == 'Yes') {
+    res.redirect(`${baseUrl}/bau-exit-8-2`)
+  }  else if (outcome8 == 'No') {
+    res.redirect(`${baseUrl}/bau-proforma-default`)
+    } else {
+    res.redirect(`${baseUrl}/exit`)
+  }
+})
+
 router.post(`${baseUrl}/bau-exit-8-2-router`, (req, res) => {
   const outcome8x2 = req.session.data['bau-exit-8-2']
 
   if (outcome8x2 == 'Yes') {
-    res.redirect(`${baseUrl}/bau-exit-8-4`)
+    res.redirect(`${baseUrl}/bau-exit-8-3`)
   }  else if (outcome8x2 == 'No') {
     res.redirect(`${baseUrl}/bau-security-fail`)
     } else {
@@ -200,25 +213,13 @@ router.post(`${baseUrl}/bau-exit-8-2-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/bau-exit-8-2-router`, (req, res) => {
-  const editOutcome8b = req.session.data['bau-exit-8-outcome-b']
+router.post(`${baseUrl}/bau-exit-8-3-router`, (req, res) => {
+  const outcome8x3 = req.session.data['bau-exit-8-3']
 
-  if (editOutcome8b == 'Yes') {
-    res.redirect(`${baseUrl}/bau-exit-8-outcome-c`)
-  }  else if (editOutcome8b == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-fail-secuirty`)
-    } else {
+  if (outcome8x3 == 'Yes') {
     res.redirect(`${baseUrl}/exit`)
-  }
-})
-
-router.post(`${baseUrl}/bau-exit-8-outcome-c-router`, (req, res) => {
-  const editOutcome8c = req.session.data['bau-exit-8-outcome-c']
-
-  if (editOutcome8c == 'Yes') {
-    res.redirect(`${baseUrl}/exit`)
-  }  else if (editOutcome8c == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-handover`)
+  }  else if (outcome8x3 == 'No') {
+      res.redirect(`${baseUrl}/bau-proforma-default`)
     } else {
     res.redirect(`${baseUrl}/exit`)
   }
@@ -245,7 +246,7 @@ router.post(`${baseUrl}/bau-exit-10-1-router`, (req, res) => {
   if (outcome10x1 == 'Yes') {
     res.redirect(`${baseUrl}/exit`)
   }  else if (outcome10x1 == 'No') {
-      res.redirect(`${baseUrl}/bau-exit-handover`)
+      res.redirect(`${baseUrl}/bau-proforma-default`)
     } else {
     res.redirect(`${baseUrl}/exit`)
   }

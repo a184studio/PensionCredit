@@ -17,31 +17,43 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction">
+      <form method="post" action="bau-exit-8-3-router">
 
-        <span class="govuk-caption-m">[2-3 / Default handover]</span>
-
-
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">To get you the right help, I need to transfer you through to one of my colleagues</h1>
-
-        {% include "g4s-0-10/mvp/process-handover-default.html" %}
+        <span class="govuk-caption-m">[8-3]</span>
 
 
-        <div class="govuk-button-group govuk-!-margin-top-8">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Try and help with the enquiry, handover to DWP if you can't help</h1>
 
-        {{ govukButton({
-        text: "Finish and close",
-        classes: "govuk-button dont-print"
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "bau-exit-8-3",
+          name: "bau-exit-8-3",
+          fieldset: {
+            legend: {
+              text: "Did you help?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: data['bau-exit-8-3'] == "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: data['bau-exit-8-3'] == "No"
+            }
+          ]
         }) }}
 
-          {{ govukButton({
-            value: "Other enquiry",
-            text: "Could not transfer call",
-            href: "bau-proforma-failed-handover.html",
-            classes: "govuk-button--secondary"
-          }) }}
-          </div>
+        {{ govukButton({
+        text: "Continue",
+        classes: "govuk-button dont-print"
+        }) }}
 
   </form>
     </div>
