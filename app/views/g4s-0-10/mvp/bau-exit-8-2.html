@@ -21,8 +21,10 @@
 
         <span class="govuk-caption-m">[8-2]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Before I can take a look at your application, I will need to ask you some security questions</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions to try and help.</p>
+        {% include "g4s-0-10/mvp/process-default-security.html" %}
+
+        <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Before I can take a look at your application, I will need to ask you some security questions</h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions to try and help.</p> -->
 
 
         {{ govukRadios({
