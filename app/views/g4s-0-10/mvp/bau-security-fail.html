@@ -22,17 +22,17 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have not passed security today, so you will need to call back another time</h1>
 
-      {% include "g4s-0-10/mvp/process-security-fail.html" %}
-
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Once the call has ended, complete a pro forma to record this security failure.</p>
 
       {{ govukButton({
         text: "Finish and close",
-        classes: "govuk-button dont-print govuk-!-margin-top-6"
+        classes: "govuk-button govuk-!-margin-top-6"
       }) }}
 
 
-  </form>
-    </div>
-  </div>
 
+
+    </form>
+  </div>
+</div>
 {% endblock %}

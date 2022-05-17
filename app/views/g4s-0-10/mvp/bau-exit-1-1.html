@@ -21,7 +21,7 @@
 
         <span class="govuk-caption-m">[1-1]</span>
 
-        <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Establsh status of application, you may need to concider when it was submitted</h1> -->
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Thank you for that, I am just going to take a look</h1>
 
 
           {{ govukRadios({
@@ -30,13 +30,13 @@
             name: "bau-exit-1-outcome",
             fieldset: {
               legend: {
-                text: "Thank you for that, I am just going to take a look",
+                text: "In CAM, how long ago did the caller submit their application?",
                 isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
+                classes: "govuk-fieldset__legend--m"
               }
             },
             hint: {
-              text: "In CAM, how long ago did the caller submit their application?"
+              text: ""
             },
             items: [
               {
@@ -55,7 +55,7 @@
           {{ govukButton({
             text: "Continue"
           }) }}
-          
+
 
           <!-- <div class="govuk-button-group">
 
