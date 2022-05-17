@@ -252,6 +252,20 @@ router.post(`${baseUrl}/bau-exit-10-1-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/wrap-up-router`, (req, res) => {
+  const wrapUp = req.session.data['wrap-up']
+
+  if (wrapUp == 'No') {
+    res.redirect(`${baseUrl}/exit`)
+  }  else if (wrapUp == 'Yes') {
+      res.redirect(`${baseUrl}/type-of-claim`)
+    } else {
+    res.redirect(`${baseUrl}/exit`)
+  }
+})
+
+
+
 
 
 // ————————————————

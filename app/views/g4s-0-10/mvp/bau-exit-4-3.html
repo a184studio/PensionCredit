@@ -19,8 +19,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% if data['bau-exit-4'] == 'Yes' %}
-      <form method="post" action="/session-clear-route">
-        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/exit">
+      <!-- <form method="post" action="/session-clear-route">
+        <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction"> -->
+        <form method="post" action="wrap-up">
         {% else %}
       <form method="post" action="/session-clear-route">
         <input type="hidden" name="session-clear-redirect-url" value="/g4s-0-10/mvp/introduction">
