@@ -21,8 +21,7 @@
 
         <span class="govuk-caption-m">[8]</span>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Specifically, what is it about your Pension Credit that you would like to discuss?</h1>
-        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Continue with the enquiry using your Standard Work Instructions.</p> -->
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What is it about your Pension Credit that you would like to discuss?</h1>
 
         {{ govukRadios({
           classes: "govuk-radios",
@@ -30,7 +29,7 @@
           name: "bau-exit-8",
           fieldset: {
             legend: {
-              text: "Next steps",
+              text: "Can you help answer the query?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -42,12 +41,12 @@
           items: [
             {
               value: "Yes",
-              text: "I need to take them through security to help more",
+              text: "Yes - take them through security",
               checked: data['bau-exit-8'] == "Yes"
             },
             {
               value: "No",
-              text: "Complex, DWP need to make an outbound call",
+              text: "No - request a DWP call back",
               checked: data['bau-exit-8'] == "No"
             }
           ]
