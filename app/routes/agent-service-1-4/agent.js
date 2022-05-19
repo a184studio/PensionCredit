@@ -18,6 +18,12 @@ function makeAStay(data) {
 }
 
 
+// PDF DOWNLOADER
+// router.use(`${baseUrl}/processing-screens.pdf`, express.static(path.resolve('app/views/agent-service-1-4/agent/processing-screens.pdf')))
+
+// —————————————————————————————————
+
+
 router.post(`${baseUrl}/login-router`, (req, res) => {
   const loginCheck = req.session.data['user-full-name']
 

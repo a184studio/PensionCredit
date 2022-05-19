@@ -3,7 +3,7 @@ const differenceInDays = require('date-fns/differenceInDays')
 
 const months = [
   'January',
-  'Feburary',
+  'February',
   'March',
   'April',
   'May',
