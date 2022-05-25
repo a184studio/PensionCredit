@@ -204,7 +204,19 @@ router.post(`${baseUrl}/process-c-nil-task-2-3-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/process-c-nil-task-2-4-router`, (req, res) => {
+  const processTask_2_4 = req.session.data['process-c-nil-task-2-4']
 
+  if (processTask_2_4 == 'Matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-2-2`)
+  }
+  else if (processTask_2_4 == 'Not matched') {
+    res.redirect(`${baseUrl}/process-c-nil-task-2-2`)
+  }
+   else {
+    res.redirect(`${baseUrl}/process-c-nil-task-list`)
+  }
+})
 
 // TASK 3 / SUBTASK ROUTER<!>
 
