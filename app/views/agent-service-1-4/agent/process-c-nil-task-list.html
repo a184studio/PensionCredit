@@ -136,6 +136,22 @@
           <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
         {% endif %}
 
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="process-c-nil-task-2-4" aria-describedby="task-1">
+            <!-- [1-6]  -->Telephony applications
+          </a>
+
+          {% if data["process-c-nil-task-1-6"]  === "Matched" %}
+            <strong class="govuk-tag app-task-list__nil-task-passed">Done</strong>
+          {% elif data["process-c-nil-task-1-6"]  === "Not matched" %}
+            <strong class="govuk-tag app-task-list__nil-task-passed">Done*</strong>
+          {% elif data["process-c-nil-task-1-6"]  === "Unfinished" %}
+            <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
+          {% else %}
+            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
+          {% endif %}
+
+        </li>
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-2-2" aria-describedby="task-2">
@@ -166,9 +182,12 @@
           {% else %}
             <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
           {% endif %}
+        </li>
+
 
 
     </ul>
+
 
     </li>
 
