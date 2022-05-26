@@ -121,6 +121,24 @@
       <span class="app-task-list__section-number">2.</span>Check previous applications
     </h2>
     <ul class="app-task-list__items">
+
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="process-c-nil-task-2-4" aria-describedby="task-1">
+          <!-- [1-6]  -->Telephone application
+        </a>
+
+        {% if data["process-c-nil-task-2-4"]  === "Matched" %}
+          <strong class="govuk-tag app-task-list__nil-task-passed">Done</strong>
+        {% elif data["process-c-nil-task-2-4"]  === "Not matched" %}
+          <strong class="govuk-tag app-task-list__nil-task-passed">Done*</strong>
+        {% elif data["process-c-nil-task-2-4"]  === "Unfinished" %}
+          <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
+        {% else %}
+          <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
+        {% endif %}
+
+      </li>
+
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-2-1" aria-describedby="task-2">
           Initial date of contact (IDOC)
@@ -136,22 +154,7 @@
           <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
         {% endif %}
 
-        <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="process-c-nil-task-2-4" aria-describedby="task-1">
-            <!-- [1-6]  -->Telephone application
-          </a>
 
-          {% if data["process-c-nil-task-2-4"]  === "Matched" %}
-            <strong class="govuk-tag app-task-list__nil-task-passed">Done</strong>
-          {% elif data["process-c-nil-task-2-4"]  === "Not matched" %}
-            <strong class="govuk-tag app-task-list__nil-task-passed">Done*</strong>
-          {% elif data["process-c-nil-task-2-4"]  === "Unfinished" %}
-            <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
-          {% else %}
-            <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
-          {% endif %}
-
-        </li>
 
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-2-2" aria-describedby="task-2">
