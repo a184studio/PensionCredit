@@ -62,6 +62,17 @@
                   }
                 ],
                 [
+                {
+                  text: "Backdating period start date",
+                  classes: 'govuk-table--no-border'
+
+                },
+                {
+                  text: "10 January 2022",
+                  classes: 'govuk-table--no-border'
+                }
+                ],
+                [
                   {
                     text: "Date processed",
                     classes: 'govuk-table--no-border'
@@ -71,17 +82,6 @@
                     text: "1 March 2022",
                     classes: 'govuk-table--no-border'
                   }
-                ],
-                [
-                {
-                  text: "Backdating period",
-                  classes: 'govuk-table--no-border'
-
-                },
-                {
-                  text: "10 January 2022 to 28 February 2022",
-                  classes: 'govuk-table--no-border'
-                }
                 ],
                 [
                 {
@@ -112,7 +112,7 @@
 
                 },
                 {
-                  text: "No",
+                  text: "Yes: 'Received AA on 02/05/2022'",
                   classes: 'govuk-table--no-border'
                 }
                 ],
@@ -141,8 +141,11 @@
               ]
             }) }}
 
+            <p> <a class="govuk-!-margin-bottom-8" href=“#”>Make a change</a></p>
+
+
             {{ govukButton({
-              text: "Exit record"
+              text: "Done"
             }) }}
 
         </div>
