@@ -268,9 +268,9 @@ router.post(`${baseUrl}/wrap-up-router`, (req, res) => {
 router.post(`${baseUrl}/bau-process-measure-1-router`, (req, res) => {
   const processMeasure1 = req.session.data['bau-process-measure-1']
 
-  if (processMeasure1 == 'No') {
+  if (processMeasure1 == 'Yes') {
     res.redirect(`${baseUrl}/bau-process-measure-2`)
-  }  else if (processMeasure1 == 'Yes') {
+  }  else if (processMeasure1 == 'No') {
       res.redirect(`${baseUrl}/introduction`)
     } else {
     res.redirect(`${baseUrl}/exit`)
