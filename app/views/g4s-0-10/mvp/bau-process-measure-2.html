@@ -26,7 +26,7 @@
         name: "bau-process-measure-2",
         fieldset: {
           legend: {
-            text: "Method?",
+            text: "Which action did you take?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -38,12 +38,12 @@
         items: [
           {
             value: "Yes",
-            text: "Call transfer",
+            text: "Transferred call to DWP",
             checked: data['bau-process-measure-2'] == "Yes"
           },
           {
             value: "No",
-            text: "ProFoma",
+            text: "Completed a pro forma",
             checked: data['bau-process-measure-2'] == "No"
           }
         ]
