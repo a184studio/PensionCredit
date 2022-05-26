@@ -26,6 +26,8 @@ router.use(`${baseUrl}/abc.pdf`, express.static(path.resolve('app/views/citizen-
 router.use(`${baseUrl}/letter-17-nov.pdf`, express.static(path.resolve('app/views/citizen-version-2-12/mvp/letter-17-nov.pdf'))) // ../ back up a directory
 router.use(`${baseUrl}/letter-13-jan.pdf`, express.static(path.resolve('app/views/citizen-version-2-12/mvp/letter-13-jan.pdf'))) // ../ back up a directory
 router.use(`${baseUrl}/letter-17-jan.pdf`, express.static(path.resolve('app/views/citizen-version-2-12/mvp/letter-17-jan.pdf'))) // ../ back up a directory
+router.use(`${baseUrl}/letter-26-may.pdf`, express.static(path.resolve('app/views/citizen-version-2-12/mvp/letter-26-may.pdf'))) // ../ back up a directory
+
 
 // —————————————————————————————————
 
