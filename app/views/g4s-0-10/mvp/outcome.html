@@ -39,8 +39,8 @@
 
 
     {% elif data["system-outcome-selector"] == "Likley" %}
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Based on what we know, it looks like you meet the criteria for Pension Credit</h1>
-    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">I will transfer you to a colleague who will be able to take a full application.</p> -->
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Based on what we know, it looks like you meet the criteria for Pension Credit</h1>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">I will transfer you to a colleague who will be able to take a full application.</p>
 
     {% elif data['system-outcome-selector'] == 'children-handover'%}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Because you are responsible for children, we will need to go through a full application</h1>
@@ -68,6 +68,13 @@
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">I will transfer you to a colleague who will be able to do that.</p>
 
 
+
+
+
+
+
+
+
     {% else %}
     No scenario selected
     {% endif %}
@@ -76,7 +83,7 @@
 
 
 
-                <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
                   <div class="govuk-form-group">
@@ -89,6 +96,7 @@
                           {% else %}
                           Would you like to find out about other help you may be able to get?
                           {% endif %}
+
                         </h2>
                       </legend>
                       <div id="outcome-radios" class="govuk-hint">
