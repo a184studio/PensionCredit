@@ -25,7 +25,7 @@
         name: "bau-process-measure-1",
         fieldset: {
           legend: {
-            text: "Did you sort the claim or have to tranfer it??",
+            text: "Did you transfer the call to DWP or complete a pro forma?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -37,12 +37,12 @@
         items: [
           {
             value: "Yes",
-            text: "Yes - All good",
+            text: "Yes",
             checked: data['bau-process-measure-1'] == "Yes"
           },
           {
             value: "No",
-            text: "No - transfer to DWP",
+            text: "No",
             checked: data['bau-process-measure-1'] == "No"
           }
         ]
