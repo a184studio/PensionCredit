@@ -434,6 +434,32 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/qd-actions-router`, (req, res) => {
+  const qdActions = req.session.data['qd-actions']
+
+  if (qdActions == "other-help") {
+    res.redirect(`${baseUrl}/qd-help-start`)
+  }
+  else if (qdActions == 'end') {
+    res.redirect(`${baseUrl}/home-user-0`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-changes-start`)
+  }
+})
+
+router.post(`${baseUrl}/qd-changes-start-router`, (req, res) => {
+  const changesStart = req.session.data['qd-changes-start']
+
+  if (changesStart == "no") {
+    res.redirect(`${baseUrl}/qd-teleclaim`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-changes-type`)
+  }
+})
+
+
 
 
 // OLD /<!>

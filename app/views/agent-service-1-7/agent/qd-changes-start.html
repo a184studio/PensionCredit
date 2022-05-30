@@ -1,0 +1,74 @@
+{% extends "layout-ur-2022.html" %}
+
+{% block pageTitle %}
+  PC: Name Name
+
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-ur.html" %}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="qd-changes-start-router" method="post" class="form">
+
+
+
+    <div class="govuk-!-margin-bottom-8">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Did the changes happen between 28 Nov 2021 and 28 Feb 2022</h1>
+
+
+
+      {{ govukRadios({
+        idPrefix: "qd-changes-start",
+        name: "qd-changes-start",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes:""
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: (data["qd-changes-start"] == "other-help")
+
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: (data["qd-changes-start"] == "no")
+          }
+        ]
+      }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+
+
+
+    </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+    </form>
+{% endblock %}
