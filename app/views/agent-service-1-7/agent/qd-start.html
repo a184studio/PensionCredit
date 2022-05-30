@@ -22,22 +22,55 @@
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">How can I help?</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Hello, you've reached Pension Credit,
+        how can I help?</h1>
 
       <div class="govuk-inset-text">
-        <p class="govuk-body">Answer the customer's query using either:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>your knowledge</li>
-          <li><a href=qd-help-start>other help</a></li>
-        </ul>
-        <p class="govuk-body">If the customer is wanting to discuss their claim, you must go into their record.</p>
-
+        <p class="govuk-body">Only go into a citizen's claim if you need to talk about their details.</p>
       </div>
 
-      {{ govukButton({
-        text: "Go into record",
-        classes: "govuk-!-margin-right-1"
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes:""
+          }
+        },
+        items: [
+          {
+            value: "other-help",
+            text: "Give more information on help in other government areas"
+          },
+          {
+            value: "explain",
+            text: "Explain a citizen's decision/entitlement"
+          },
+          {
+            value: "changes",
+            text: "Record a change to a claim"
+          },
+          {
+            value: "update",
+            text: "View progress on a claim"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "end",
+            text: "End call"
+          }
+        ]
       }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
 
 
 
