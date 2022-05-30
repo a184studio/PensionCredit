@@ -25,11 +25,9 @@
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm going to go through some security questions with you.</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Ask a second security question. Use the current process.</h1>
 
-      {{ govukInsetText({
-        text: "Ask a security question. Use the current process."
-      }) }}
+
 
 
       <div class="govuk-button-group">
@@ -39,9 +37,9 @@
         }) }}
 
         {{ govukButton({
-          text: "Failed first question",
+          text: "Failed second question",
           classes: "govuk-button--secondary",
-          href: "qd-security-fail-1"
+          href: "#"
         }) }}
       </div>
 
