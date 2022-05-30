@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-search" method="post" class="form">
+    <form action="qd-start-router" method="post" class="form">
 
 
 
@@ -30,8 +30,8 @@
       </div>
 
       {{ govukRadios({
-        idPrefix: "where-do-you-live",
-        name: "where-do-you-live",
+        idPrefix: "qd-start",
+        name: "qd-start",
         fieldset: {
           legend: {
             text: "",
@@ -42,26 +42,33 @@
         items: [
           {
             value: "other-help",
-            text: "Give more information on help in other government areas"
+            text: "Give more information on help in other government areas",
+            checked: (data["qd-start"] == "other-help")
+
           },
           {
             value: "explain",
-            text: "Explain a citizen's decision/entitlement"
+            text: "Explain a citizen's decision/entitlement",
+            checked: (data["qd-start"] == "explain")
+
           },
           {
             value: "changes",
-            text: "Record a change to a claim"
+            text: "Record a change to a claim",
+            checked: (data["qd-start"] == "changes")
           },
           {
             value: "update",
-            text: "View progress on a claim"
+            text: "View progress on a claim",
+            checked: (data["qd-start"] == "update")
           },
           {
             divider: "or"
           },
           {
             value: "end",
-            text: "End call"
+            text: "End call",
+            checked: (data["qd-start"] == "end")
           }
         ]
       }) }}
