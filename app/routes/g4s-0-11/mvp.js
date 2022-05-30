@@ -684,7 +684,7 @@ router.post(`${baseUrl}/outcome-radios-router`, (req, res) => {
   } else if (outcomeRadios === 'exit') {
     res.redirect(`${baseUrl}/exit`)
   } else if (outcomeRadios === 'children') {
-    res.redirect(`${baseUrl}/handover-early-children`)
+    res.redirect(`${baseUrl}/handover`)
   } else if (outcomeRadios === 'mac') {
     res.redirect(`${baseUrl}/handover-early-mac`)
   } else if (outcomeRadios === 'sp-not-claimed') {
