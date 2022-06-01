@@ -21,27 +21,53 @@
 
 
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">What is your full name?</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">What is your name?</h1>
+
+
+        {{ govukInput({
+          label: {
+            html: "<strong>First name</strong>"
+          },
+          hint: {
+            text: ""
+          },
+          id: "first-name",
+          name: "First name",
+          classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+          value: data["first-name"]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            html: "<strong>Middle names</strong>"
+          },
+          hint: {
+            text: ""
+          },
+          id: "second-name",
+          name: "Second-name",
+          classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+          value: data["second-name"]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            html: "<strong>Last name</strong>"
+          },
+          hint: {
+            text: ""
+          },
+          id: "second-name",
+          name: "Second-name",
+          classes: "govuk-input--width-20 govuk-!-margin-bottom-2",
+          value: data["second-name"]
+        }) }}
 
 
 
-                {{ govukInput({
-                  label: {
-                    text: ""
-                  },
-                  hint: {
-                    text: "For example, Lynn Lisa Smith"
-                  },
-                  id: "search-name",
-                  name: "search-name",
-                  classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
-                  value: data["search-name"]
-                }) }}
-
-
-                  {{ govukButton({
-                    text: "Continue"
-                  }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
 
 
 

@@ -11,24 +11,24 @@
 
 
 {% block content %}
-{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
-{% set nav = 'changes' %}
 
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="query-case-summary" method="post" class="form">
+    <form action="qd-case-notes-check" method="post" class="form">
       {% include "agent-service-1-7/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter ">
-        {% include "agent-service-1-7/agent/side-nav.html" %}
-      </div>
+
 
 
         <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Full application </h1>
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Build the claim on CAM using Jeff's information from this application</h1>
+
+            {{ govukInsetText({
+              text: "Ask any additional information that is needed on CAM."
+            }) }}
 
             {{ govukTable({
               caption: "Applicant details",
@@ -58,7 +58,7 @@
                     text: "Your date of birth"
                   },
                   {
-                    text: "[date]"
+                    text: "10 August 1960"
                   }
                 ],
                 [
@@ -67,14 +67,6 @@
                   },
                   {
                     text: "British"
-                  }
-                ],
-                [
-                  {
-                    text: "..."
-                  },
-                  {
-                    text: "..."
                   }
                 ]
               ]
@@ -117,15 +109,7 @@
                     text: "Do you own the property you used to live in? "
                   },
                   {
-                    text: "Yes"
-                  }
-                ],
-                [
-                  {
-                    text: "..."
-                  },
-                  {
-                    text: "..."
+                    text: "No"
                   }
                 ]
               ]
@@ -149,72 +133,15 @@
               rows: [
                 [
                   {
-                    text: "... "
+                    text: "Do you pay for any housing costs?"
                   },
                   {
-                    text: "..."
-                  }
-                ],
-                [
-                  {
-                    text: "..."
-                  },
-                  {
-                    text: "..."
-                  }
-                ],
-                [
-                  {
-                    text: "..."
-                  },
-                  {
-                    text: "..."
-                  }
-                ],
-                [
-                  {
-                    text: "..."
-                  },
-                  {
-                    text: "..."
+                    text: "No"
                   }
                 ]
               ]
             }) }}
 
-            {{ govukTable({
-              caption: "People who live with you",
-              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
-              firstCellIsHeader: true,
-              head: [
-                {
-                  text: "Question",
-                  classes: 'govuk-!-width-one-half'
-                },
-                {
-                  text: "Answer",
-                  classes: 'govuk-!-width-one-half'
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "... "
-                  },
-                  {
-                    text: "..."
-                  }
-                ],
-                [
-                  {
-                    text: "..."
-                  },
-                  {
-                    text: "..."
-                  }
-                ]
-              ]
-            }) }}
 
             {{ govukTable({
               caption: "Benefits",
@@ -233,125 +160,31 @@
               rows: [
                 [
                   {
-                    text: "... "
+                    text: "Do you have any relevant benefits?"
                   },
                   {
-                    text: "..."
+                    text: "Yes"
                   }
                 ],
                 [
                   {
-                    text: "..."
+                    text: "What benefit do you receive "
                   },
                   {
-                    text: "..."
+                    text: "Attendance allowance"
+                  }
+                ],
+                [
+                  {
+                    text: "When did this benefit start"
+                  },
+                  {
+                    text: "29 November 2021"
                   }
                 ]
               ]
             }) }}
 
-
-            {{ govukTable({
-              caption: "Employment",
-              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
-              firstCellIsHeader: true,
-              head: [
-                {
-                  text: "Question",
-                  classes: 'govuk-!-width-one-half'
-                },
-                {
-                  text: "Answer",
-                  classes: 'govuk-!-width-one-half'
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "... "
-                  },
-                  {
-                    text: "..."
-                  }
-                ],
-                [
-                  {
-                    text: "..."
-                  },
-                  {
-                    text: "..."
-                  }
-                ]
-              ]
-            }) }}
-
-            {{ govukTable({
-              caption: "Self-employment",
-              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
-              firstCellIsHeader: true,
-              head: [
-                {
-                  text: "Question",
-                  classes: 'govuk-!-width-one-half'
-                },
-                {
-                  text: "Answer",
-                  classes: 'govuk-!-width-one-half'
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "... "
-                  },
-                  {
-                    text: "..."
-                  }
-                ],
-                [
-                  {
-                    text: "..."
-                  },
-                  {
-                    text: "..."
-                  }
-                ]
-              ]
-            }) }}
-
-            {{ govukTable({
-              caption: "Pensions",
-              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
-              firstCellIsHeader: true,
-              head: [
-                {
-                  text: "Question",
-                  classes: 'govuk-!-width-one-half'
-                },
-                {
-                  text: "Answer",
-                  classes: 'govuk-!-width-one-half'
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "... "
-                  },
-                  {
-                    text: "..."
-                  }
-                ],
-                [
-                  {
-                    text: "..."
-                  },
-                  {
-                    text: "..."
-                  }
-                ]
-              ]
-            }) }}
 
             {{ govukTable({
               caption: "Application continued",
@@ -385,6 +218,10 @@
                   }
                 ]
               ]
+            }) }}
+
+            {{ govukButton({
+              text: "Continue"
             }) }}
 
 

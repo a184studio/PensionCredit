@@ -11,25 +11,24 @@
 
 
 {% block content %}
-{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
-{% set nav = 'help' %}
+
 
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="query-case-summary" method="post" class="form">
+    <form action="home-user-0" method="post" class="form">
       {% include "agent-service-1-7/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter ">
-        {% include "agent-service-1-7/agent/side-nav.html" %}
-      </div>
+
 
 
         <div class="govuk-grid-column-three-quarters">
             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Other help</h1>
         </div>
+
+
 
         <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
 
@@ -129,7 +128,12 @@
             </div>
           </div>
         </div>
+
+        {{ govukButton({
+          text: "End call"
+        }) }}
       </div>
+
 
 
 

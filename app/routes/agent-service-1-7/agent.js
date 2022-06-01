@@ -428,6 +428,9 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
   else if (qdStart == 'end') {
     res.redirect(`${baseUrl}/home-user-0`)
   }
+  else if (qdStart == 'changes') {
+    res.redirect(`${baseUrl}/qd-changes-start`)
+  }
    else {
     res.redirect(`${baseUrl}/qd-search`)
   }
@@ -438,13 +441,28 @@ router.post(`${baseUrl}/qd-actions-router`, (req, res) => {
   const qdActions = req.session.data['qd-actions']
 
   if (qdActions == "other-help") {
-    res.redirect(`${baseUrl}/qd-help-start`)
+    res.redirect(`${baseUrl}/qd-help`)
   }
   else if (qdActions == 'end') {
     res.redirect(`${baseUrl}/home-user-0`)
   }
+  else if (qdActions == 'mr') {
+    res.redirect(`${baseUrl}/qd-mr-start`)
+  }
    else {
     res.redirect(`${baseUrl}/qd-changes-start`)
+  }
+})
+
+
+router.post(`${baseUrl}/qd-benefits-router`, (req, res) => {
+  const newBenefits = req.session.data['qd-changes-benefits']
+
+  if (newBenefits == "aa") {
+    res.redirect(`${baseUrl}/qd-check-changes`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-check-changes`)
   }
 })
 
@@ -470,6 +488,18 @@ router.post(`${baseUrl}/qd-changes-type-router`, (req, res) => {
   }
 })
 
+
+
+router.post(`${baseUrl}/cam-end-router`, (req, res) => {
+  const helpEnd = req.session.data['qd-cam-end']
+
+  if (helpEnd == "no") {
+    res.redirect(`${baseUrl}/home-user-0`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-help`)
+  }
+})
 
 
 

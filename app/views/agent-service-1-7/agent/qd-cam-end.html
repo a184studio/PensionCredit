@@ -1,0 +1,102 @@
+{% extends "layout-ur-2022.html" %}
+
+{% block pageTitle %}
+  PC: Name Name
+
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-ur.html" %}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="cam-end-router" method="post" class="form">
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {% set html %}
+        <h3 class="govuk-notification-banner__heading">
+          You have recorded that you created the claim on CAM
+        </h3>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: 'success'
+      }) }}
+
+      {% include "agent-service-1-7/agent/qd-name-nino.html" %}
+
+
+    <div class="govuk-!-margin-bottom-8">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Would you like to know about other help?</h1>
+
+
+      <p class="govuk-body"> This could be more information about:</p>
+      <ul class="govuk-list govuk-list govuk-list--bullet">
+        <li>local tax discounts</li>
+        <li>heating your home</li>
+        <li>pensions</li>
+        <li>health</li>
+        <li>free bus passes</li>
+      </ul>
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline ",
+        idPrefix: "end-help",
+        name: "end-help",
+        fieldset: {
+          legend: {
+            text: "Would Jeff like to know about other help?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "yes",
+            text: "yes",
+            checked: (data["end-help"] == "yes")
+
+          },
+          {
+            value: "no",
+            text: "no",
+            checked: (data["end-help"] == "no")
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+    </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+    </form>
+{% endblock %}

@@ -43,7 +43,8 @@
           text: "£"
         },
         classes: "govuk-input--width-5",
-        spellcheck: false
+        spellcheck: false,
+        value: data["qd-sp-amount"]
       }) }}
       {% endset -%}
 
@@ -63,22 +64,26 @@
         items: [
           {
             value: "benefits",
-            text: "Qualifying benefits"
+            text: "Qualifying benefits",
+            checked: (data["type"] == "benefits")
           },
           {
             value: "sp",
             text: "State Pension",
+            checked: (data["type"] == "sp"),
             conditional: {
               html: qdSp
             }
           },
           {
             value: "partner",
-            text: "Living with a partner"
+            text: "Living with a partner",
+            checked: (data["type"] == "partner")
           },
           {
-            value: "housing costs",
-            text: "Housing costs"
+            value: "housing-costs",
+            text: "Housing costs",
+            checked: (data["type"] == "housing-costs")
           }
         ]
       }) }}
