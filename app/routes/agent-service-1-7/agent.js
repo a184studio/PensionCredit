@@ -459,6 +459,17 @@ router.post(`${baseUrl}/qd-changes-start-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/qd-changes-type-router`, (req, res) => {
+  const changesType = req.session.data['qd-changes-type']
+
+  if (changesType == "benefits") {
+    res.redirect(`${baseUrl}/qd-changes-benefits`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-changes-benefits`)
+  }
+})
+
 
 
 

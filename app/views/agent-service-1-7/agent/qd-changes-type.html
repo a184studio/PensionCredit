@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-actions-router" method="post" class="form">
+    <form action="qd-changes-type-router" method="post" class="form">
 
 
 
@@ -28,98 +28,60 @@
         <p class="govuk-body">Open Searchlight and check the information on qualifying benefits and State Pension match. Ask the citizen to confirm if they live with a partner and if they have any housing costs.</p>
       </div>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="change-type-hint">
-
-          <div id="change-type-hint" class="govuk-hint">
-            Select all options that apply.
-          </div>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="change-types" name="change-types" type="checkbox" value="benefits" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-checkboxes__label" for="change-types-benefits">
-                Qualifying benefits
-              </label>
-
-            </div>
 
 
-            <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  What are the qualifying benefits?
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>Attendance Allowance</li>
-                  <li>the middle or highest rate from the care component of Disability Living Allowance (DLA)</li>
-                  <li>the daily living component of Personal Independence Payment (PIP)</li>
-                  <li>Armed Forces Independence Payment</li>
-                  <li>the daily living component of Adult Disability Payment (ADP)</li>
-                </ul>
-              </div>
-            </details>
-            
+      {% set qdSp %}
+      {{ govukInput({
+        id: "qd-sp-amount",
+        name: "qd-sp-amount",
+        label: {
+          text: "How much State Pension is Jeff getting?",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        prefix: {
+          text: "£"
+        },
+        classes: "govuk-input--width-5",
+        spellcheck: false
+      }) }}
+      {% endset -%}
 
-
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input " id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
-              <label class="govuk-label govuk-checkboxes__label" for="contact-2">
-                State Pension
-              </label>
-            </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="contact-by-phone">
-                  Phone number
-                </label>
-                <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel" autocomplete="tel">
-              </div>
-
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
-              <label class="govuk-label govuk-checkboxes__label" for="contact-3">
-                Relationship status
-              </label>
-            </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="contact-by-text">
-                  Mobile phone number
-                </label>
-                <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel" autocomplete="tel">
-              </div>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
-              <label class="govuk-label govuk-checkboxes__label" for="contact-3">
-                Housing Costs
-              </label>
-            </div>
-
-            <details class="govuk-details govuk-!-margin-top-2" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Provide an example of housing costs
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <ul class="govuk-list govuk-list--bullet">
-                  <p class="govuk-body">Service charges can be things like:</p>
-                  <li>warden or caretaker services</li>
-                  <li>maintenance and cleaning of the building, communal areas and gardens</li>
-                  <li>use of communal areas like a lounge or TV area</li>
-                </ul>
-              </div>
-            </details>
-
-          </div>
-
-        </fieldset>
-      </div>
+      {{ govukCheckboxes({
+        idPrefix: "type",
+        name: "type",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-label-s"
+          }
+        },
+        hint: {
+          text: "Select all that have changed."
+        },
+        items: [
+          {
+            value: "benefits",
+            text: "Qualifying benefits"
+          },
+          {
+            value: "sp",
+            text: "State Pension",
+            conditional: {
+              html: qdSp
+            }
+          },
+          {
+            value: "partner",
+            text: "Living with a partner"
+          },
+          {
+            value: "housing costs",
+            text: "Housing costs"
+          }
+        ]
+      }) }}
 
         {{ govukButton({
           text: "Continue"
