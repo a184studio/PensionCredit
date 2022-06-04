@@ -449,6 +449,9 @@ router.post(`${baseUrl}/qd-actions-router`, (req, res) => {
   else if (qdActions == 'mr') {
     res.redirect(`${baseUrl}/qd-mr-start`)
   }
+  else if (qdActions == 'ap') {
+    res.redirect(`${baseUrl}/qd-ap-start`)
+  }
    else {
     res.redirect(`${baseUrl}/qd-changes-start`)
   }
