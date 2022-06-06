@@ -22,7 +22,7 @@
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">What would you like to do?</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">What else can I help you with?</h1>
 
 
       {{ govukRadios({
@@ -38,7 +38,7 @@
         items: [
           {
             value: "other-help",
-            text: "Know more information on help in other government areas",
+            text: "Find out more information on help in other areas",
             checked: (data["qd-actions"] == "other-help")
 
           },
@@ -49,12 +49,12 @@
           },
           {
             value: "mr",
-            text: "Wants to dispute claim",
+            text: "Dispute a claim",
             checked: (data["qd-actions"] == "mr")
           },
           {
             value: "ap",
-            text: "Asking or unhappy about automated processing ",
+            text: "Citizen is unhappy about automated processing",
             checked: (data["qd-actions"] == "ap")
           },
           {
