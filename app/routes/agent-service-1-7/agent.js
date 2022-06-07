@@ -428,7 +428,22 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
   else if (qdStart == 'end') {
     res.redirect(`${baseUrl}/home-user-0`)
   }
-  else if (qdStart == 'changes') {
+   else {
+    res.redirect(`${baseUrl}/qd-search`)
+  }
+})
+
+
+router.post(`${baseUrl}/qd-security-router`, (req, res) => {
+  const qdSecurity = req.session.data['qd-start']
+
+  if (qdSecurity == "other-help") {
+    res.redirect(`${baseUrl}/qd-help-start`)
+  }
+  else if (qdSecurity == 'end') {
+    res.redirect(`${baseUrl}/home-user-0`)
+  }
+  else if (qdSecurity == 'changes') {
     res.redirect(`${baseUrl}/qd-changes-start`)
   }
    else {
@@ -437,11 +452,13 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
 })
 
 
+
+
 router.post(`${baseUrl}/qd-actions-router`, (req, res) => {
   const qdActions = req.session.data['qd-actions']
 
   if (qdActions == "other-help") {
-    res.redirect(`${baseUrl}/qd-help`)
+    res.redirect(`${baseUrl}/qd-helpB`)
   }
   else if (qdActions == 'end') {
     res.redirect(`${baseUrl}/home-user-0`)

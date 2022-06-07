@@ -11,49 +11,22 @@
 
 
 {% block content %}
-{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
-{% set nav = 'summary' %}
+
 
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
-    {% if data["create-claim-c"]  == "notes"%}
-          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-            <div class="govuk-notification-banner__header">
-              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                Saved
-              </h2>
-            </div>
-            <div class="govuk-notification-banner__content">
-              <h3 class="govuk-notification-banner__heading">
-                You have recorded on this system that the claim has been created on CAM according to SWI.
-              </h3>
-            </div>
-          </div>
-    {% else %}
-
-    {% endif %}
-
-
-
-
-    <form action="query-case-summary" method="post" class="form">
+    <form action="qd-actions" method="post" class="form">
       {% include "agent-service-1-7/agent/qd-name-nino.html" %}
 
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-quarter">
-
-          {% include "agent-service-1-7/agent/side-nav.html" %}
-        </div>
-
 
         <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Summary</h1>
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm just going to check some details with you and explain your decision</h1>
 
             <div class="govuk-inset-text govuk-!-margin-bottom-0">
-              Check the information we have on the customer is correct. Make a change if something is wrong.
+              Open Searchlight and check the information on qualifying benefits and State Pension match. Ask the citizen to confirm if they live with a partner and if they have any housing costs.
             </div>
 
             {{ govukTable({
@@ -83,6 +56,17 @@
                   }
                 ],
                 [
+                {
+                  text: "Backdating period start date",
+                  classes: 'govuk-table--no-border'
+
+                },
+                {
+                  text: "10 January 2022",
+                  classes: 'govuk-table--no-border'
+                }
+                ],
+                [
                   {
                     text: "Date processed",
                     classes: 'govuk-table--no-border'
@@ -92,17 +76,6 @@
                     text: "1 March 2022",
                     classes: 'govuk-table--no-border'
                   }
-                ],
-                [
-                {
-                  text: "Backdating period",
-                  classes: 'govuk-table--no-border'
-
-                },
-                {
-                  text: "10 January 2022 to 28 February 2022",
-                  classes: 'govuk-table--no-border'
-                }
                 ],
                 [
                 {
@@ -128,7 +101,7 @@
                 ],
                 [
                 {
-                  text: "Benefits",
+                  text: "Qualifying benefits",
                   classes: 'govuk-table--no-border'
 
                 },
@@ -162,9 +135,9 @@
               ]
             }) }}
 
+
             {{ govukButton({
-              text: "Exit record",
-              href: "qd-call-reason"
+              text: "Citizen has another query"
             }) }}
 
         </div>

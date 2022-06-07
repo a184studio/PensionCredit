@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="" method="post" class="form">
+    <form action="qd-security-router" method="post" class="form">
 
 
       {% include "agent-service-1-7/agent/qd-name-nino.html" %}
@@ -32,18 +32,35 @@
       }) }}
 
 
+
       <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Security passed",
-          href: "qd-summary"
-        }) }}
+
+
+        {% if data[‘qd-start] === 'changes' %}
+
+          {{ govukButton({
+            text: "Security passed",
+            href: "qd-changes-start"
+          }) }}
+
+
+        {% else %}
+          {{ govukButton({
+            text: "Security passed",
+            href: "qd-summary"
+          }) }}
+
+        {% endif %}
 
         {{ govukButton({
           text: "Failed first question",
           classes: "govuk-button--secondary",
           href: "qd-security-fail-1"
         }) }}
+
       </div>
+
+      <p><a href=qd-changes-start>...</a></p>
 
 
     </div>
