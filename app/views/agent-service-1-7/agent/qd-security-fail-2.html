@@ -25,19 +25,32 @@
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Enter the question they have failed on</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Enter the questions they have failed on</h1>
 
       {{ govukInput({
         label: {
-          text: ""
+          text: "Enter 1st failed question"
         },
         hint: {
           text: "For example, bank name"
         },
-        id: "security-fail-1",
-        name: "security-fail-1",
+        id: "security-fail-2",
+        name: "security-fail-2",
         classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
-        value: data["secuirty-fail-1"]
+        value: data["security-fail-2"]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Enter 2nd failed question"
+        },
+        hint: {
+          text: "For example, bank name"
+        },
+        id: "security-fail-2b",
+        name: "security-fail-2b",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
+        value: data["security-fail-1"]
       }) }}
 
 

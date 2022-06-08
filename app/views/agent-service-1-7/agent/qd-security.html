@@ -10,6 +10,12 @@
 {% endblock %}
 
 
+{% if data['qd-start'] === 'changes' %}
+  {% set securityRoute = 'changes' %}
+{% else %}
+  {% set securityRoute = 'explain' %}
+{% endif %}
+
 
 {% block content %}
 
@@ -32,35 +38,43 @@
       }) }}
 
 
+      {{ govukRadios({
+        idPrefix: "qd-security",
+        name: "qd-security",
+        fieldset: {
+          legend: {
+            text: "Did the citizen pass security?",
+            isPageHeading: true,
+            classes:"govuk-!-font-size-19 govuk-!-font-weight-bold"
+          }
+        },
+        items: [
 
-      <div class="govuk-button-group">
+          {
+            value: "pass",
+            text: "Yes, they passed security",
+            checked: (data["qd-security"] == "pass")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "wrong",
+            text: "They answered 1 question incorrectly",
+            checked: (data["qd-security"] == "update")
+          },
+          {
+            value: "wrong2",
+            text: "They answered 2 questions incorrectly",
+            checked: (data["qd-security"] == "wrong2")
+          }
+        ]
+      }) }}
 
 
-        {% if data[‘qd-start] === 'changes' %}
-
-          {{ govukButton({
-            text: "Security passed",
-            href: "qd-changes-start"
-          }) }}
-
-
-        {% else %}
-          {{ govukButton({
-            text: "Security passed",
-            href: "qd-summary"
-          }) }}
-
-        {% endif %}
-
-        {{ govukButton({
-          text: "Failed first question",
-          classes: "govuk-button--secondary",
-          href: "qd-security-fail-1"
-        }) }}
-
-      </div>
-
-      <p><a href=qd-changes-start>...</a></p>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
 
     </div>

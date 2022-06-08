@@ -435,15 +435,36 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
 
 
 router.post(`${baseUrl}/qd-security-router`, (req, res) => {
-  const qdSecurity = req.session.data['qd-start']
+  const qdSecurity = req.session.data['qd-security']
 
-  if (qdSecurity == "other-help") {
+  if (qdSecurity == "pass" && "changes") {
+    res.redirect(`${baseUrl}/qd-changes-start`)
+  }
+  else if (qdSecurity == 'pass' && "explain") {
+    res.redirect(`${baseUrl}/qd-summary`)
+  }
+  else if (qdSecurity == 'wrong') {
+    res.redirect(`${baseUrl}/qd-security-fail-1`)
+  }
+  else if (qdSecurity == 'wrong2') {
+    res.redirect(`${baseUrl}/qd-security-fail-2`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-search`)
+  }
+})
+
+
+router.post(`${baseUrl}/qd-security-router-old`, (req, res) => {
+  const qdSecurityold = req.session.data['qd-start']
+
+  if (qdSecurityold == "other-help") {
     res.redirect(`${baseUrl}/qd-help-start`)
   }
-  else if (qdSecurity == 'end') {
+  else if (qdSecurityold == 'end') {
     res.redirect(`${baseUrl}/home-user-0`)
   }
-  else if (qdSecurity == 'changes') {
+  else if (qdSecurityold == 'changes') {
     res.redirect(`${baseUrl}/qd-changes-start`)
   }
    else {
