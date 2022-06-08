@@ -450,7 +450,7 @@ router.post(`${baseUrl}/qd-security-router`, (req, res) => {
     res.redirect(`${baseUrl}/qd-security-fail-2`)
   }
    else {
-    res.redirect(`${baseUrl}/qd-search`)
+    res.redirect(`${baseUrl}/qd-summary`)
   }
 })
 
