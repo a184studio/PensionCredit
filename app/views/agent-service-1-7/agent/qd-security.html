@@ -43,7 +43,7 @@
         name: "qd-security",
         fieldset: {
           legend: {
-            text: "Did the citizen pass security?",
+            text: "Did the citizen answer 2 out of 3 questions correctly?",
             isPageHeading: true,
             classes:"govuk-!-font-size-19 govuk-!-font-weight-bold"
           }
@@ -52,7 +52,7 @@
 
           {
             value: "pass",
-            text: "Yes, they passed security",
+            text: "Yes",
             checked: (data["qd-security"] == "pass")
           },
           {
