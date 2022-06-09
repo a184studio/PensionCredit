@@ -437,10 +437,10 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
 router.post(`${baseUrl}/qd-security-router`, (req, res) => {
   const qdSecurity = req.session.data['qd-security']
 
-  if (qdSecurity == "pass" && "changes") {
+  if (qdSecurity == 'pass' && 'changes') {
     res.redirect(`${baseUrl}/qd-summary`)
   }
-  else if (qdSecurity == 'pass' && "explain") {
+  else if (qdSecurity == 'pass' && 'explain') {
     res.redirect(`${baseUrl}/qd-changes-start`)
   }
   else if (qdSecurity == 'wrong') {
@@ -453,6 +453,7 @@ router.post(`${baseUrl}/qd-security-router`, (req, res) => {
     res.redirect(`${baseUrl}/qd-summary`)
   }
 })
+
 
 router.post(`${baseUrl}/kbv-fail-1-router`, (req, res) => {
   const kbvFail1 = req.session.data['qd-security-fail-1']
