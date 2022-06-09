@@ -34,7 +34,7 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm going to go through some security questions with you</h1>
 
       {{ govukInsetText({
-        text: "Ask a security question. Use the current process."
+        text: "Use Searchlight to ask security questions."
       }) }}
 
 
@@ -60,12 +60,12 @@
           },
           {
             value: "wrong",
-            text: "They answered 1 question incorrectly",
+            text: "Citizen failed on 1 question",
             checked: (data["qd-security"] == "wrong")
           },
           {
             value: "wrong2",
-            text: "They answered 2 questions incorrectly",
+            text: "Citizen failed on 2 questions",
             checked: (data["qd-security"] == "wrong2")
           }
         ]
