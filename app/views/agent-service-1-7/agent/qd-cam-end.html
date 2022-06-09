@@ -42,8 +42,8 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Would you like to know about other help?</h1>
 
 
-      <p class="govuk-body"> This could be more information about:</p>
-      <ul class="govuk-list govuk-list govuk-list--bullet">
+      <p class="govuk-body "> This could be more information about:</p>
+      <ul class="govuk-list govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
         <li>local tax discounts</li>
         <li>heating your home</li>
         <li>pensions</li>
@@ -52,35 +52,30 @@
       </ul>
 
 
-      {{ govukRadios({
-        classes: "govuk-radios--inline ",
-        idPrefix: "end-help",
-        name: "end-help",
-        fieldset: {
-          legend: {
-            text: "Would Jeff like to know about other help?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-          {
-            value: "yes",
-            text: "yes",
-            checked: (data["end-help"] == "yes")
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="end-help-hint">
+            <legend class="govuk-fieldset__legend">
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                Would Jeff like to know about other help?
+              </p>
+            </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="end-help" name="end-help" type="radio" value="yes" {{ checked("end-help", "yes") }}>
+              <label class="govuk-label govuk-radios__label" for="end-help">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="end-help-2" name="end-help" type="radio" value="no" {{ checked("end-help", "no") }}>
+              <label class="govuk-label govuk-radios__label" for="end-help-2">
+                No
+              </label>
+            </div>
+          </div>
 
-          },
-          {
-            value: "no",
-            text: "no",
-            checked: (data["end-help"] == "no")
-          }
-        ]
-      }) }}
-
+        </fieldset>
+      </div>
 
       {{ govukButton({
         text: "Continue"
