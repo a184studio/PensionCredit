@@ -436,8 +436,10 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
 
 router.post(`${baseUrl}/qd-security-router`, (req, res) => {
   const qdSecurity = req.session.data['qd-security']
+  const qdSecurity2 = req.session.data['qd-start']
 
-  if (qdSecurity == 'pass' && 'changes') {
+
+  if (qdSecurity == 'pass') {
     res.redirect(`${baseUrl}/qd-summary`)
   }
   else if (qdSecurity == 'pass' && 'explain') {
@@ -544,7 +546,7 @@ router.post(`${baseUrl}/qd-changes-type-router`, (req, res) => {
 
 
 router.post(`${baseUrl}/cam-end-router`, (req, res) => {
-  const helpEnd = req.session.data['qd-cam-end']
+  const helpEnd = req.session.data['end-help']
 
   if (helpEnd == "no") {
     res.redirect(`${baseUrl}/home-user-0`)
