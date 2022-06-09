@@ -88,7 +88,7 @@
             }) }}
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0">Open Searchlight and check the information on qualifying benefits and State Pension match.</p>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Open Searchlight and check the information on qualifying benefits and State Pension match.</h2>
 
 
             {{ govukTable({
@@ -133,7 +133,7 @@
 
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0">Ask the citizen to confirm if they live with a partner and if they have any housing costs.</p>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Ask the citizen to confirm if they live with a partner and if they have any housing costs.</h2>
 
             {{ govukTable({
               caption: "",
@@ -176,9 +176,18 @@
             }) }}
 
 
-            {{ govukButton({
-              text: "Citizen has another query"
-            }) }}
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Citizen has another query",
+                href: "qd-actions"
+              }) }}
+
+              {{ govukButton({
+                text: "End call",
+                classes: "govuk-button--secondary",
+                href: "#"
+              }) }}
+            </div>
 
         </div>
 
