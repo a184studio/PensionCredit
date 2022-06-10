@@ -29,6 +29,21 @@
       }) }}
 
 
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Call has ended"
+        }) }}
+
+        {{ govukButton({
+          name: "process-c-nil-task-1-6",
+          value: "Other enquiry",
+          checked: (data["process-c-nil-task-1-6"] == "Unfinished"),
+          classes: "govuk-button--secondary",
+          text: "Other enquiry"
+        }) }}
+        </div>
+
+
   </form>
     </div>
   </div>
