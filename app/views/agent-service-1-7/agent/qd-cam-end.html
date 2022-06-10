@@ -19,7 +19,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="cam-end-router" method="post" class="form">
+    <form action="help-cam-router" method="post" class="form">
 
       {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
@@ -52,30 +52,31 @@
       </ul>
 
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="end-help-hint">
-            <legend class="govuk-fieldset__legend">
-              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
-                Would Jeff like to know about other help?
-              </p>
-            </legend>
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="end-help" name="end-help" type="radio" value="yes" {{ checked("end-help", "yes") }}>
-              <label class="govuk-label govuk-radios__label" for="end-help">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="end-help-2" name="end-help" type="radio" value="no" {{ checked("end-help", "no") }}>
-              <label class="govuk-label govuk-radios__label" for="end-help-2">
-                No
-              </label>
-            </div>
-          </div>
+      {{ govukRadios({
+        idPrefix: "help-cam",
+        name: "help-cam",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes:""
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: (data["help-cam"] == "yes")
 
-        </fieldset>
-      </div>
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: (data["help-cam"] == "no")
+          }
+        ]
+      }) }}
+
 
       {{ govukButton({
         text: "Continue"

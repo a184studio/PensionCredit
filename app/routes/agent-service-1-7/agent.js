@@ -552,14 +552,64 @@ router.post(`${baseUrl}/qd-changes-type-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/cam-end-router`, (req, res) => {
-  const helpEnd = req.session.data['end-help']
+router.post(`${baseUrl}/help-cam-router`, (req, res) => {
+  const helpCam = req.session.data['help-cam']
 
-  if (helpEnd == "no") {
+  if (helpCam == "no") {
     res.redirect(`${baseUrl}/home-user-0`)
   }
    else {
     res.redirect(`${baseUrl}/qd-help`)
+  }
+})
+
+router.post(`${baseUrl}/help-teleclaim-router`, (req, res) => {
+  const helpTeleclaim = req.session.data['help-teleclaim']
+
+  if (helpTeleclaim == "no") {
+    res.redirect(`${baseUrl}/qd-case-notes-check-teleclaim`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-help`)
+  }
+})
+
+router.post(`${baseUrl}/help-explain-router`, (req, res) => {
+  const helpExplain = req.session.data['help-explain']
+
+  if (helpExplain == "no") {
+    res.redirect(`${baseUrl}/qd-case-notes-checkA`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-help`)
+  }
+})
+
+router.post(`${baseUrl}/qd-teleclaim-router`, (req, res) => {
+  const teleclaimRoute = req.session.data['teleclaim']
+
+  if (teleclaimRoute == "no") {
+    res.redirect(`${baseUrl}/qd-help-teleclaim`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-help`)
+  }
+})
+
+
+router.post(`${baseUrl}/help-router`, (req, res) => {
+  const helpExplain = req.session.data['help-explain']
+  const changesStart = req.session.data['qd-changes-start']
+
+
+  if (changesStart == 'no') {
+    res.redirect(`${baseUrl}/qd-case-notes-check-teleclaim`)
+  }
+  else if (helpExplain == 'yes') {
+    res.redirect(`${baseUrl}/qd-case-notes-checkA`)
+  }
+   else {
+    res.redirect(`${baseUrl}/home-user-0`)
   }
 })
 

@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-case-notes-check-teleclaim" method="post" class="form">
+    <form action="help-explain-router" method="post" class="form">
 
       {% include "agent-service-1-7/agent/qd-name-nino.html" %}
 
@@ -36,8 +36,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "qd-changes-start",
-        name: "qd-changes-start",
+        idPrefix: "help-explain",
+        name: "help-explain",
         fieldset: {
           legend: {
             text: "",
@@ -49,13 +49,13 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["qd-changes-start"] == "other-help")
+            checked: (data["help-explain"] == "yes")
 
           },
           {
             value: "no",
             text: "No",
-            checked: (data["qd-changes-start"] == "no")
+            checked: (data["help-explain"] == "no")
           }
         ]
       }) }}
