@@ -31,13 +31,13 @@
       </div>
 
         {{ govukButton({
-          idPrefix:telclaim-exit,
-          name:telclaim-exit,
-          value:"exit",
           text: "Exit claim"
         }) }}
 
 
+        {% block telclaimExit %}
+         {% set telclaimExit = 'exit' %}
+        {% endblock %}
 
 
 
