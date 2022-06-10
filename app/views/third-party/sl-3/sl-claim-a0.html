@@ -1,5 +1,5 @@
 {% extends "layout-fake-searchlight.html" %}
-{% from "nav-component/macro-b.html" import nav %}
+{% from "nav-component/macro.html" import nav %}
 
 {% block pageTitle %}
   SearchLight
@@ -18,14 +18,14 @@
     <form action="find-a-claim" method="post" class="form">
 
 
-      <h1 class="govuk-heading-xl govuk-!-font-size-36 govuk-!-margin-bottom-2">OLIVER Stone</h1>
+      <h1 class="govuk-heading-xl govuk-!-font-size-36 govuk-!-margin-bottom-2">Jeff Bridges</h1>
       <h1 class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-2">{{ data ["sl-find-a-claim"]}}</h1>
-      <h1 class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-8">21 February 1952</h1>
+      <h1 class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-8">10 August 1955</h1>
 
 
       {{ nav({ active: "personalDetails" }) }}
 
-      {% include "third-party/sl-3/sl-personal-details-b.html" %}
+      {% include "third-party/sl-3/sl-personal-details.html" %}
 
 
 
