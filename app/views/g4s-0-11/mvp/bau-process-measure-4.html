@@ -20,23 +20,17 @@
       <form action="bau-process-measure-3" method="post" class="form">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Continue with the call using your Standard Work Instructions</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">After the call is complete, continue and record the call outcome.</p>
-
-
-      {{ govukButton({
-        text: "Continue",
-        classes: "govuk-button"
-      }) }}
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Record the call outcome if the call has ended or help with another enquiry. </p>
 
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Call has ended"
+          text: "Record call outcome"
         }) }}
 
         {{ govukButton({
-          value: "Other enquiry",
-          text: "Other enquiry",
+          value: "Another enquiry",
+          text: "Another enquiry",
           href: "type-of-claim.html",
           classes: "govuk-button--secondary"
         }) }}
