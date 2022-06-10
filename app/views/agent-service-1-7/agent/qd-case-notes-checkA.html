@@ -27,6 +27,21 @@
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Record what has happened on the call</h1>
 
+      {% if data['help-explain'] === 'yes' %}
+
+
+            <div class="govuk-inset-text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>inbound call from customer on 7 June 2022</li>
+                <li>security passed</li>
+                <li>called asking for an explanation about why they are not entitled</li>
+                <li>citizen was satisfied with explanation</li>
+                <li>citizen signposted to other help</li>
+              </ul>
+            </div>
+
+
+      {% else %}
 
       <div class="govuk-inset-text">
         <ul class="govuk-list govuk-list--bullet">
@@ -37,6 +52,10 @@
           <li>citizen did not want to know about other help</li>
         </ul>
       </div>
+
+      {% endif %}
+
+
 
 
       {{ govukRadios({

@@ -592,7 +592,7 @@ router.post(`${baseUrl}/qd-teleclaim-router`, (req, res) => {
     res.redirect(`${baseUrl}/qd-help-teleclaim`)
   }
    else {
-    res.redirect(`${baseUrl}/qd-help`)
+    res.redirect(`${baseUrl}/qd-teleclaim-now`)
   }
 })
 
