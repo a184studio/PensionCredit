@@ -1,7 +1,18 @@
+{% if data['qd-search-nino'] === 'true' %}
 
-<p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">Jeff Bridges</p>
-<p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">10 August 1960</p>
-<p class="govuk-!-font-size-19 govuk-!-margin-bottom-4">QQ 12 34 56 C</p>
+  <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">Jeff Bridges</p>
+  <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">10 August 1955</p>
+  <p class="govuk-!-font-size-19 govuk-!-margin-bottom-4">QQ 12 34 56 C</p>
+
+{% else %}
+
+  <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">Oliver Stone</p>
+  <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">21 February 1952</p>
+  <p class="govuk-!-font-size-19 govuk-!-margin-bottom-4">QQ 12 34 56 A</p>
+
+{% endif %}
+
+
 
 
 <!--
