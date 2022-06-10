@@ -17,7 +17,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="" method="post" class="form">
+    <form action="qd-nino-router" method="post" class="form">
 
       <!-- {% include "citizen-version-1/work-list-1-2/admin-navigation.html" %} -->
 
@@ -42,21 +42,23 @@
                   id: "qd-search-nino",
                   name: "qd-search-nino",
                   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
-                  value: data["qd-search-nino" === 'true']
+                  value: data["qd-search-nino"]
                 }) }}
 
 
                 <div class="govuk-button-group">
                   {{ govukButton({
-                    text: "Continue",
-                    href: "qd-security"
-                  }) }}
+                     text: "Continue",
+                     name: "nino-known",
+                     value: "yes"
+                   }) }}
 
-                  {{ govukButton({
-                    text: "Not known",
-                    classes: "govuk-button--secondary",
-                    href: "qd-name"
-                  }) }}
+                   {{ govukButton({
+                     text: "Not known",
+                     classes: "govuk-button--secondary",
+                     name: "nino-known",
+                     value: "no"
+                   }) }}
                 </div>
 
 

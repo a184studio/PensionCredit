@@ -614,6 +614,20 @@ router.post(`${baseUrl}/help-router`, (req, res) => {
 })
 
 
+
+
+router.post(`${baseUrl}/qd-nino-router`, (req, res) => {
+  const qdNino2 = req.session.data['nino-known']
+
+  if (qdNino2 == "no") {
+    res.redirect(`${baseUrl}/qd-name`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-security`)
+  }
+})
+
+
 // OLD /<!>
 
 
