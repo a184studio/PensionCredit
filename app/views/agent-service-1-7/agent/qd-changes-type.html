@@ -31,23 +31,50 @@
 
 
 
-      {% set qdSp %}
-      {{ govukInput({
-        id: "qd-sp-amount",
-        name: "qd-sp-amount",
-        label: {
-          text: "How much State Pension is Jeff getting?",
-          classes: "govuk-label--s",
-          isPageHeading: true
-        },
-        prefix: {
-          text: "£"
-        },
-        classes: "govuk-input--width-5",
-        spellcheck: false,
-        value: data["qd-sp-amount"]
-      }) }}
-      {% endset -%}
+      {% if data['nino-known'] === 'yes' %}
+
+          {% set qdSp %}
+          {{ govukInput({
+            id: "qd-sp-amount",
+            name: "qd-sp-amount",
+            label: {
+              text: "How much State Pension is Jeff getting?",
+              classes: "govuk-label--s",
+              isPageHeading: true
+            },
+            prefix: {
+              text: "£"
+            },
+            classes: "govuk-input--width-5",
+            spellcheck: false,
+            value: data["qd-sp-amount"]
+          }) }}
+          {% endset -%}
+
+        {% else %}
+
+          {% set qdSp %}
+          {{ govukInput({
+            id: "qd-sp-amount",
+            name: "qd-sp-amount",
+            label: {
+              text: "How much State Pension is Oliver getting?",
+              classes: "govuk-label--s",
+              isPageHeading: true
+            },
+            prefix: {
+              text: "£"
+            },
+            classes: "govuk-input--width-5",
+            spellcheck: false,
+            value: data["qd-sp-amount"]
+          }) }}
+          {% endset -%}
+
+      {% endif %}
+
+
+
 
       {{ govukCheckboxes({
         idPrefix: "type",

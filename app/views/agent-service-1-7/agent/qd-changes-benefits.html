@@ -11,6 +11,7 @@
 
 
 
+
 {% block content %}
 
 
@@ -23,7 +24,18 @@
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which qualifying benefit is Jeff getting?</h1>
+      {% if data['nino-known'] === 'yes' %}
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which qualifying benefit is Jeff Bridges getting?</h1>
+
+        {% else %}
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which qualifying benefit is Jeff Bridges getting?</h1>
+
+      {% endif %}
+
+
+
 
       <!-- <div class="govuk-inset-text">
         <p class="govuk-body">Check Searchlight to see if the citizen is now receiving any qualifying benefits.</p>

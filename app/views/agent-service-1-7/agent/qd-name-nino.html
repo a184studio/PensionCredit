@@ -1,17 +1,20 @@
 {% if data['nino-known'] === 'yes' %}
 
-  <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">Jeff Bridges</p>
+  {{ qdNameTemplate }}
+  {% set qdNameTemplate = "Jeff Bridges" %}
+  <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">{{ qdNameTemplate }}</p>
   <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">10 August 1955</p>
   <p class="govuk-!-font-size-19 govuk-!-margin-bottom-4">QQ 12 34 56 C</</p>
 
 {% else %}
 
-  <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">Oliver Stone</p>
+{{ qdNameTemplate }}
+{% set qdNameTemplate = "Oliver Stone" %}
+  <p class="govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-0">{{ qdNameTemplate }}</p>
   <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">21 February 1952</p>
   <p class="govuk-!-font-size-19 govuk-!-margin-bottom-4">QQ 45 77 41 A</p>
 
 {% endif %}
-
 
 
 
