@@ -34,38 +34,16 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">You have not passed security</h1>
 
       {{ govukInsetText({
-        text: "..."
+        text: "Advise the citizen"
       }) }}
 
 
-——————————
-<br>
-MM test
-<br>
-
-
-            {% if data["qd-start"] == 'changes' and data["qd-security"] == 'pass' %}
-            Some one has selected both changes and security pass
-
-            {% elif data["qd-security"] == 'wrong' %}
-            This is only failed 1
-
-            {% elif data["qd-security"] == 'wrong2' %}
-            This is only failed 2
-
-            {% elif data["qd-start"] == 'changes' %}
-            This is the security one
-
-            {% else %}
-            This is nothing
-
-            {% endif %}
 
 <br><br>
 
 
       {{ govukButton({
-        text: "Continue"
+        text: "End call"
       }) }}
 
 
