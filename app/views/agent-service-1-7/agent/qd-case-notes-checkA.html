@@ -32,7 +32,7 @@
 
             <div class="govuk-inset-text">
               <ul class="govuk-list govuk-list--bullet">
-                <li>inbound call from customer on 7 June 2022</li>
+                <li>inbound call from customer on 15 June 2022</li>
                 <li>security passed</li>
                 <li>called asking for an explanation about why they are not entitled</li>
                 <li>citizen was satisfied with explanation</li>
@@ -41,11 +41,25 @@
             </div>
 
 
+      {% elif data['ap-start'] === 'happy' %}
+
+      <div class="govuk-inset-text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>inbound call from customer on 15 June 2022</li>
+          <li>security passed</li>
+          <li>called asking for an explanation about why they are not entitled</li>
+          <li>citizen was asked about Automated Processing.</li>
+          <li>Automated Processing explained and citizen accepted response</li>
+          <li>citizen did not want to know about other help</li>
+        </ul>
+      </div>
+
+
       {% else %}
 
       <div class="govuk-inset-text">
         <ul class="govuk-list govuk-list--bullet">
-          <li>inbound call from customer on 7 June 2022</li>
+          <li>inbound call from customer on 15 June 2022</li>
           <li>security passed</li>
           <li>called asking for an explanation about why they are not entitled</li>
           <li>citizen was satisfied with explanation</li>
@@ -56,10 +70,25 @@
       {% endif %}
 
 
+      {% set notesCheckABlock %}
+      {{ govukTextarea({
+        label: {
+          text: "Add notes"
+        },
+        hint: {
+          text: "For example, Automated Processing explanation provided and accepted"
+        },
+        id: "notes-checkA",
+        name: "notes-checkA",
+        classes: "",
+        value: data["notes-checkA"]
+
+      }) }}
+      {% endset -%}
 
 
       {{ govukRadios({
-        classes: "govuk-radios--inline ",
+        classes: " ",
         idPrefix: "call-summary",
         name: "call-summary",
         fieldset: {
@@ -75,7 +104,10 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            conditional: {
+              html: notesCheckABlock
+            }
           },
           {
             value: "no",

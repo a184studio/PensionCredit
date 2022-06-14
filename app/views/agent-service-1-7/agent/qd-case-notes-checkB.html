@@ -39,8 +39,25 @@
       </div>
 
 
+      {% set notesCheckBBlock %}
+      {{ govukTextarea({
+        label: {
+          text: "Add notes"
+        },
+        hint: {
+          text: "For example, Automated Processing explanation provided and accepted"
+        },
+        id: "notes-checkB",
+        name: "notes-checkB",
+        classes: "",
+        value: data["notes-checkB"]
+
+      }) }}
+      {% endset -%}
+
+
       {{ govukRadios({
-        classes: "govuk-radios--inline ",
+        classes: "",
         idPrefix: "call-summary",
         name: "call-summary",
         fieldset: {
@@ -56,7 +73,10 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            conditional: {
+              html: notesCheckBBlock
+            }
           },
           {
             value: "no",
