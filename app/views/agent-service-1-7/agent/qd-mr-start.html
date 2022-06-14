@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="#" method="post" class="form">
+    <form action="qd-mr-router" method="post" class="form">
 
 
 
@@ -32,7 +32,12 @@
             <li>A senior member of staff will then look at your information and the DR6 form.</li>
           </ol>
 
+<<<<<<< HEAD
+        <p class="govuk-body">If you’re unhappy with our decision we will:
+          You will receive another decision letter within 30 days.
+=======
         <p class="govuk-body">You will receive another decision letter within 30 days.
+>>>>>>> 830d14a64900bda40455c91150fee124564f347d
         </p>
   </div>
 
@@ -58,13 +63,13 @@
           {
             value: "help",
             text: "No - citizen would like to know about other help",
-            checked: (data["qd-mr-start"] == "cab")
+            checked: (data["qd-mr-start"] == "help")
 
           },
           {
             value: "exit",
             text: "No - exit record",
-            checked: (data["qd-mr-start"] == "cab")
+            checked: (data["qd-mr-start"] == "exit")
 
           }
           ]
