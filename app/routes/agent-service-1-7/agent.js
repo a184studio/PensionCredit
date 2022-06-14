@@ -677,5 +677,19 @@ router.post(`${baseUrl}/qd-ap-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/qd-mr-router`, (req, res) => {
+  const mrRouter = req.session.data['qd-mr-start']
+
+  if (mrRouter == 'help') {
+    res.redirect(`${baseUrl}/qd-mr-start`)
+  }
+  else if (mrRouter == 'exit') {
+    res.redirect(`${baseUrl}/qd-mr-start`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-mr-dr6`)
+  }
+})
+
 
 module.exports = router
