@@ -664,7 +664,7 @@ router.post(`${baseUrl}/qd-ap-router`, (req, res) => {
   const apStart = req.session.data['ap-start']
 
   if (apStart == 'happy') {
-    res.redirect(`${baseUrl}/ap-start`)
+    res.redirect(`${baseUrl}/qd-ap-start`)
   }
   else if (apStart == 'more-ap') {
     res.redirect(`${baseUrl}/qd-ap-explain`)
