@@ -25,9 +25,19 @@
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Did the changes happen within the backdating period?</h1>
 
-      <div class="govuk-inset-text">
-        <p class="govuk-body">Backdating period: 28 November 2021 to 28 February 2022.</p>
-      </div>
+
+      {% if data['nino-known'] === 'no' %}
+        <div class="govuk-inset-text">
+          <p class="govuk-body">Backdating period: 11 January 2021 to 11 April 2022.</p>
+        </div>
+
+      {% else %}
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body">Backdating period: 28 November 2021 to 28 February 2022.</p>
+        </div>
+      {% endif %}
+
 
 
       {{ govukRadios({
