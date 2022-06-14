@@ -16,33 +16,29 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-changes-start-router" method="post" class="form">
-
+    <form action="qd-ap-review-router" method="post" class="form">
       {% include "agent-service-1-7/agent/qd-name-nino.html" %}
+
 
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Did the changes happen within the backdating period?</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Confirm that you have checked their decision today</h1>
 
+      <div class="govuk-inset-text">
+        <p class="govuk-body"> Checks include:
+          <ol class="govuk-list govuk-list--bullet">
+            <li>State Pension and benefits using Searchlight</li>
+            <li>Asking the citizen if they live with a partner or have housing costs</li>
+          </ol>
+      </div>
 
-      {% if data['nino-known'] === 'no' %}
-        <div class="govuk-inset-text">
-          <p class="govuk-body">Backdating period: 11 January 2022 to 11 April 2022.</p>
-        </div>
-
-      {% else %}
-
-        <div class="govuk-inset-text">
-          <p class="govuk-body">Backdating period: 28 November 2021 to 28 February 2022.</p>
-        </div>
-      {% endif %}
 
 
 
       {{ govukRadios({
-        idPrefix: "qd-changes-start",
-        name: "qd-changes-start",
+        idPrefix: "ap-review-checks",
+        name: "ap-review-checks",
         fieldset: {
           legend: {
             text: "",
@@ -54,16 +50,16 @@
           {
             value: "yes",
             text: "Yes",
-            checked: (data["qd-changes-start"] == "yes")
-
+            checked: (data["ap-review-checks"] == "yes")
           },
           {
             value: "no",
             text: "No",
-            checked: (data["qd-changes-start"] == "no")
+            checked: (data["ap-review-checks"] == "no")
           }
         ]
       }) }}
+
 
         {{ govukButton({
           text: "Continue"

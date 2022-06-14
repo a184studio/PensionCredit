@@ -17,18 +17,18 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     <form action="qd-ap-router" method="post" class="form">
-      {% include "agent-service-1-7/agent/qd-name-nino.html" %}
 
 
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Select the statement that reflects what the citizen said</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which best reflects the caller's words/intention/feelings? </h1>
+
 
 
       {{ govukRadios({
-        idPrefix: "ap-start",
-        name: "ap-start",
+        idPrefix: "ap-path",
+        name: "ap-path",
         fieldset: {
           legend: {
             text: "",
@@ -39,27 +39,32 @@
         items: [
           {
             value: "happy",
-            text: "Automated processing explained and citizen accepted response ",
-            checked: (data["ap-start"] == "happy")
+            text: "They're satisfied with the explanation and that automated processing was used",
+            checked: (data["ap-path"] == "happy")
+          },
+          {
+            divider: "or"
           },
           {
             value: "more-ap",
             text: "They want to know more about how automated processing was used to make a decision",
-            checked: (data["ap-start"] == "more-ap")
+            checked: (data["ap-path"] == "more-ap")
           },
           {
             value: "unhappy",
-            text: "Asked for a human to review the decision",
-            checked: (data["ap-start"] == "unhappy")
+            text: "They asked for a human to review their decision",
+            checked: (data["ap-path"] == "unhappy")
           },
           {
             value: "mr",
-            text: "Automated processing explained and citizen wants to dispute  decision",
-            checked: (data["ap-start"] == "mr")
+            text: "They want to dispute the decision",
+            checked: (data["ap-path"] == "mr")
           }
 
         ]
       }) }}
+
+
 
 
         {{ govukButton({

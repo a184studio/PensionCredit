@@ -615,7 +615,6 @@ router.post(`${baseUrl}/help-router`, (req, res) => {
 
 
 
-
 router.post(`${baseUrl}/qd-nino-router`, (req, res) => {
   const qdNino2 = req.session.data['nino-known']
 
@@ -628,7 +627,68 @@ router.post(`${baseUrl}/qd-nino-router`, (req, res) => {
 })
 
 
-// OLD /<!>
+
+router.post(`${baseUrl}/qd-ap-router`, (req, res) => {
+  const apStart = req.session.data['ap-start']
+
+  if (apStart == 'happy') {
+    res.redirect(`${baseUrl}/qd-helpB`)
+  }
+  else if (apStart == 'more-ap') {
+    res.redirect(`${baseUrl}/qd-ap-explain`)
+  }
+  else if (apStart == 'mr') {
+    res.redirect(`${baseUrl}/qd-mr-start`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-ap-review`)
+  }
+})
+
+router.post(`${baseUrl}/qd-mr-router`, (req, res) => {
+  const mrRouter = req.session.data['qd-mr-start']
+
+  if (mrRouter == 'help') {
+    res.redirect(`${baseUrl}/qd-mr-start`)
+  }
+  else if (mrRouter == 'exit') {
+    res.redirect(`${baseUrl}/qd-mr-start`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-mr-dr6`)
+  }
+})
+
+
+
+router.post(`${baseUrl}/qd-ap-changes-router`, (req, res) => {
+  const apChagnges = req.session.data['ap-changes']
+
+  if (apChagnges == "yes") {
+    res.redirect(`${baseUrl}/qd-changes-type`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-ap-letter`)
+  }
+})
+
+router.post(`${baseUrl}/qd-ap-review-router`, (req, res) => {
+  const apReview = req.session.data['ap-review-checks']
+
+  if (apReview == "no") {
+    res.redirect(`${baseUrl}/qd-ap-check-again`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-ap-letter`)
+  }
+})
+
+
+
+
+
+
+// OLD /<!> ---------------------------------------------
 
 
 router.post(`${baseUrl}/query-tasks-end-router`, (req, res) => {
@@ -659,6 +719,8 @@ router.post(`${baseUrl}/query-end-router`, (req, res) => {
     res.redirect(`${baseUrl}/query-tasks`)
   }
 })
+
+
 
 
 module.exports = router
