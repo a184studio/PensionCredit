@@ -16,24 +16,50 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="#" method="post" class="form">
+    <form action="qd-ap-router" method="post" class="form">
+      {% include "agent-service-1-7/agent/qd-name-nino.html" %}
 
 
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I can give you more information on automated processing</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Select the statement that reflects what the citizen said</h1>
 
 
-      <div class="govuk-inset-text">
-        <p class="govuk-body">Automated processing is when a system looks at both:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>the information on your application</li>
-  <li>the eligibility critera for Pension Credit</li>
-</ul>
+      {{ govukRadios({
+        idPrefix: "ap-start",
+        name: "ap-start",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes:""
+          }
+        },
+        items: [
+          {
+            value: "happy",
+            text: "Automated processing explained and citizen accepted response ",
+            checked: (data["ap-start"] == "happy")
+          },
+          {
+            value: "more-ap",
+            text: "They want to know more about how automated processing was used to make a decision",
+            checked: (data["ap-start"] == "more-ap")
+          },
+          {
+            value: "unhappy",
+            text: "Asked for a human to review the decision",
+            checked: (data["ap-start"] == "unhappy")
+          },
+          {
+            value: "mr",
+            text: "Automated processing explained and citizen wants to dispute  decision",
+            checked: (data["ap-start"] == "mr")
+          }
 
-It then decides whether you're able to get this benefit.</p>
-      </div>
+        ]
+      }) }}
 
 
         {{ govukButton({

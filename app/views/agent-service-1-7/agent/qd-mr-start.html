@@ -17,13 +17,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     <form action="qd-mr-router" method="post" class="form">
+      {% include "agent-service-1-7/agent/qd-name-nino.html" %}
 
 
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Would you like to know the process for requesting a Mandatory Reconsideration?
-</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      </h1>
 
       <div class="govuk-inset-text">
         <p class="govuk-body">If you’re unhappy with our decision we will:
@@ -32,16 +33,11 @@
             <li>A senior member of staff will then look at your information and the DR6 form.</li>
           </ol>
 
-<<<<<<< HEAD
-        <p class="govuk-body">If you’re unhappy with our decision we will:
-          You will receive another decision letter within 30 days.
-=======
         <p class="govuk-body">You will receive another decision letter within 30 days.
->>>>>>> 830d14a64900bda40455c91150fee124564f347d
         </p>
-  </div>
+      </div>
 
-<p class="govuk-body govuk-!-font-weight-bold">Would you like to continue with the Mandatory Reconsideration?</p>
+      <p class="govuk-body govuk-!-font-weight-bold">Would you like to continue with the Mandatory Reconsideration?</p>
 
       {{ govukRadios({
         idPrefix: "qd-mr-start",

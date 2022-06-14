@@ -17,43 +17,39 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     <form action="#" method="post" class="form">
+      {% include "agent-service-1-7/agent/qd-name-nino.html" %}
 
 
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">How would they like to receive the notification?</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">I have to send a letter confirming that you have asked for us to check the decision again and that the decison has not changed</h1>
 
 
-      <div class="govuk-inset-text">
-        <p class="govuk-body">...</p>
-      </div>
+
+
 
       {{ govukCheckboxes({
         idPrefix: "qd-ap-letter",
         name: "qd-ap-letter",
         fieldset: {
           legend: {
-            text: "Which types of waste do you transport?",
+            text: "How does the citizen want to receive the notification?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+            classes: "govuk-fieldset__legend--s"
           }
         },
         hint: {
-          text: "Select all that apply."
+          text: "Select all that apply"
         },
         items: [
           {
-            value: "carcasses",
-            text: "Waste from animal carcasses"
+            value: "Email",
+            text: "Email"
           },
           {
-            value: "mines",
-            text: "Waste from mines or quarries"
-          },
-          {
-            value: "farm",
-            text: "Farm or agricultural waste"
+            value: "Post",
+            text: "Post"
           }
         ]
       }) }}
