@@ -660,5 +660,22 @@ router.post(`${baseUrl}/query-end-router`, (req, res) => {
   }
 })
 
+router.post(`${baseUrl}/qd-ap-router`, (req, res) => {
+  const apStart = req.session.data['ap-start']
+
+  if (apStart == 'happy') {
+    res.redirect(`${baseUrl}/ap-start`)
+  }
+  else if (apStart == 'more-ap') {
+    res.redirect(`${baseUrl}/qd-ap-explain`)
+  }
+  else if (apStart == 'mr') {
+    res.redirect(`${baseUrl}/qd-mr-start`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-ap-explain`)
+  }
+})
+
 
 module.exports = router
