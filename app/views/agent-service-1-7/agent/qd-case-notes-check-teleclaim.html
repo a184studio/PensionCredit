@@ -28,91 +28,66 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Record what has happened on the call</h1>
 
 
+
       {% if (data['teleclaim'] === 'pass' and data['teleclaim'] === 'no' and data['help-teleclaim'] === 'yes') %}
 
-
-        <div class="govuk-inset-text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>inbound call from customer on 15 June 2022</li>
-            <li>security passed</li>
-            <li>called asking for an explanation about why they are not entitled</li>
-            <li>change identified outside backdating period - teleclaim offered </li>
-            <li>citizen did not want to do a teleclaim</li>
-            <li>citizen signposted to other help</li>
-          </ul>
-        </div>
-
-        {% elif (data['teleclaim'] === 'pass' and data['teleclaim'] === 'yes' and data['help-teleclaim'] === 'yes') %}
-
-
-          <div class="govuk-inset-text">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>inbound call from customer on 15 June 2022</li>
-              <li>security passed</li>
-              <li>called asking for an explanation about why they are not entitled</li>
-              <li>change identified outside backdating period - teleclaim offered </li>
-              <li>citizen accepted to do a teleclaim</li>
-              <li>citizen signposted to other help</li>
-            </ul>
-          </div>
+      <div class="govuk-inset-text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>inbound call from customer on 15 June 2022</li>
+          <li>security passed</li>
+          <li>called asking for an explanation about why they are not entitled</li>
+          <li>change identified outside backdating period - teleclaim offered </li>
+          <li>citizen did not want to do a teleclaim</li>
+          <li>citizen signposted to other help</li>
+        </ul>
+      </div>
 
 
 
-        {% elif (data['qd-security'] === "pass" and data['teleclaim'] === 'yes' and data['help-teleclaim'] === 'no') %}
+      {% elif (data['teleclaim'] === 'pass' and data['teleclaim'] === 'no' and data['help-teleclaim'] === 'no') %}
 
-        <div class="govuk-inset-text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>inbound call from customer on 15 June 2022</li>
-            <li>security passed</li>
-            <li>called asking for an explanation about why they are not entitled</li>
-            <li>change identified outside backdating period - teleclaim offered </li>
-            <li>citizen accepted to do a teleclaim</li>
-            <li>citizen did not want to know about other help</li>
-          </ul>
-        </div>
-
-
-                {% elif (data['qd-security'] === "fail1" and data['teleclaim'] === 'yes' and data['help-teleclaim'] === 'no') %}
-
-                <div class="govuk-inset-text">
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>inbound call from customer on 15 June 2022</li>
-                    <li>Failed security question: {{ data["security-fail-q1"] }}</li>
-                    <li>called asking for an explanation about why they are not entitled</li>
-                    <li>change identified outside backdating period - teleclaim offered </li>
-                    <li>citizen accepted to do a teleclaim</li>
-                    <li>citizen did not want to know about other help</li>
-                  </ul>
-                </div>
+      <div class="govuk-inset-text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>inbound call from customer on 15 June 2022</li>
+          <li>security passed</li>
+          <li>called asking for an explanation about why they are not entitled</li>
+          <li>change identified outside backdating period - teleclaim offered </li>
+          <li>citizen did not want to do a teleclaim</li>
+          <li>citizen did not want to know about other help</li>
+        </ul>
+      </div>
 
 
-        {% elif (data['qd-security'] === "fail1" and data['teleclaim'] === 'no' and data['help-teleclaim'] === 'yes') %}
 
 
-          <div class="govuk-inset-text">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>inbound call from customer on 15 June 2022</li>
-              <li>Failed security question: {{ data["security-fail-q1"] }}</li>
-              <li>called asking for an explanation about why they are not entitled</li>
-              <li>change identified outside backdating period - teleclaim offered </li>
-              <li>citizen did not want to do a teleclaim</li>
-              <li>citizen signposted to other help</li>
-            </ul>
-          </div>
+      {% elif (data['teleclaim'] === 'pass' and data['teleclaim'] === 'yes' and data['help-teleclaim'] === 'yes') %}
+      <div class="govuk-inset-text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>inbound call from customer on 15 June 2022</li>
+          <li>security passed</li>
+          <li>called asking for an explanation about why they are not entitled</li>
+          <li>change identified outside backdating period - teleclaim offered </li>
+          <li>citizen accepted to do a teleclaim</li>
+          <li>citizen signposted to other help</li>
+        </ul>
+      </div>
 
-        {% elif (data['qd-security'] === "fail1" and data['teleclaim'] === 'yes' and data['help-teleclaim'] === 'yes') %}
 
 
-          <div class="govuk-inset-text">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>inbound call from customer on 15 June 2022</li>
-              <li>Failed security question: {{ data["security-fail-q1"] }}</li>
-              <li>called asking for an explanation about why they are not entitled</li>
-              <li>change identified outside backdating period - teleclaim offered </li>
-              <li>citizen did not want to do a teleclaim</li>
-              <li>citizen signposted to other help</li>
-            </ul>
-          </div>
+
+      {% elif (data['qd-security'] === "pass" and data['teleclaim'] === 'yes' and data['help-teleclaim'] === 'no') %}
+
+      <div class="govuk-inset-text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>inbound call from customer on 15 June 2022</li>
+          <li>security passed</li>
+          <li>called asking for an explanation about why they are not entitled</li>
+          <li>change identified outside backdating period - teleclaim offered </li>
+          <li>citizen accepted to do a teleclaim</li>
+          <li>citizen did not want to know about other help</li>
+        </ul>
+      </div>
+
 
 
 
@@ -129,6 +104,34 @@
           <li>citizen signposted to other help</li>
         </ul>
       </div>
+
+      {% elif (data['qd-security'] === "fail1" and data['teleclaim'] === 'yes' and data['help-teleclaim'] === 'no') %}
+      <div class="govuk-inset-text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>inbound call from customer on 15 June 2022</li>
+          <li>Failed security question: {{ data["security-fail-q1"] }}</li>
+          <li>called asking for an explanation about why they are not entitled</li>
+          <li>change identified outside backdating period - teleclaim offered </li>
+          <li>citizen accepted to do a teleclaim</li>
+          <li>citizen did not want to know about other help</li>
+        </ul>
+      </div>
+
+      {% elif (data['qd-security'] === "fail1" and data['teleclaim'] === 'no' and data['help-teleclaim'] === 'yes') %}
+
+      <div class="govuk-inset-text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>inbound call from customer on 15 June 2022</li>
+          <li>Failed security question: {{ data["security-fail-q1"] }}</li>
+          <li>called asking for an explanation about why they are not entitled</li>
+          <li>change identified outside backdating period - teleclaim offered </li>
+          <li>citizen did not want to do a teleclaim</li>
+          <li>citizen signposted to other help</li>
+        </ul>
+      </div>
+
+
+
 
 
       {% else %}
