@@ -22,7 +22,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-security-router" method="post" class="form">
+    <form action="qd-summary" method="post" class="form">
 
 
       {% include "agent-service-1-8/agent/qd-name-nino.html" %}
@@ -38,43 +38,32 @@
       }) }}
 
 
-      {{ govukRadios({
-        idPrefix: "qd-security",
-        name: "qd-security",
-        fieldset: {
-          legend: {
-            text: "Did the citizen answer 2 out of 3 questions correctly?",
-            isPageHeading: true,
-            classes:"govuk-!-font-size-19 govuk-!-font-weight-bold"
-          }
+      {{ govukTextarea({
+        name: "security-fail",
+        id: "security-fail",
+        label: {
+          text: "Enter failed security questions",
+          classes: "govuk-label--s",
+          isPageHeading: true
         },
-        items: [
-
-          {
-            value: "pass",
-            text: "Yes",
-            checked: (data["qd-security"] == "pass")
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "fail1",
-            text: "Citizen failed 1 question",
-            checked: (data["qd-security"] == "fail1")
-          },
-          {
-            value: "fail2",
-            text: "Citizen failed 2 questions",
-            checked: (data["qd-security"] == "fail2")
-          }
-        ]
+        hint: {
+          text: "What is your bank name?"
+        }
       }) }}
 
 
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Security passed",
+          href: "qd-summary"
+        }) }}
+
+        {{ govukButton({
+          text: "Failed security",
+          classes: "govuk-button--secondary",
+          href: "qd-security-fail"
+        }) }}
+      </div>
 
 
     </div>

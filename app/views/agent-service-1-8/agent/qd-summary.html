@@ -175,19 +175,29 @@
               ]
             }) }}
 
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            
 
-            <div class="govuk-button-group">
-              {{ govukButton({
-                text: "Citizen has another query",
-                href: "qd-actions"
-              }) }}
+            {{ govukTextarea({
+              name: "summary-notes",
+              id: "summary-notes",
+              label: {
+                text: "Enter notes",
+                classes: "govuk-label--s",
+                isPageHeading: true
+              },
+              hint: {
+                text: ""
+              }
+            }) }}
+
+
 
               {{ govukButton({
                 text: "Exit claim",
-                classes: "govuk-button--secondary",
-                href: "qd-help-explain"
+                href: "home-user-0"
               }) }}
-            </div>
+
 
         </div>
 
