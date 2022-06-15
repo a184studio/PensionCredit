@@ -679,6 +679,10 @@ router.post(`${baseUrl}/outcome-radios-router`, (req, res) => {
 
   if (outcomeRadios === 'housing-costs') {
     res.redirect(`${baseUrl}/handover`)
+  } else if (outcomeRadios === 'handover-challenge') {
+    res.redirect(`${baseUrl}/handover-challenge`)
+  } else if (outcomeRadios === 'handover-user-request') {
+    res.redirect(`${baseUrl}/handover-user-request`)
   } else if (outcomeRadios === 'help') {
     res.redirect(`${baseUrl}/more-help`)
   } else if (outcomeRadios === 'exit') {
