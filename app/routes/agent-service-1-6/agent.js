@@ -20,7 +20,8 @@ function makeAStay(data) {
 
 
 // PDF DOWNLOADER
-router.use(`${baseUrl}/processing-screens.pdf`, express.static(path.resolve('app/views/agent-service-1-4/agent/processing-screens.pdf')))
+router.use(`${baseUrl}/processing-screens.pdf`, express.static(path.resolve('app/views/agent-service-1-6/agent/processing-screens.pdf')))
+router.use(`${baseUrl}/pc-claims-may-2022.xlsx`, express.static(path.resolve('app/views/agent-service-1-6/agent/pc-claims-may-2022.xlsx')))
 
 // —————————————————————————————————
 
