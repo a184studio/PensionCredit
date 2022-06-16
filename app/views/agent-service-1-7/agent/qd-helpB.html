@@ -19,13 +19,17 @@
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+   <div class="govuk-grid-column-full">
+     <form action="qd-case-notes-checkB" method="post" class="form">
+       {% include "agent-service-1-7/agent/qd-name-nino.html" %}
 
-    <form action="query-case-summary" method="post" class="form">
+     <div class="govuk-grid-row">
 
-        <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Other help</h1>
-        </div>
+
+
+         <div class="govuk-grid-column-three-quarters">
+             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Other help</h1>
+         </div>
 
         <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
 
@@ -130,6 +134,9 @@
             </div>
           </div>
         </div>
+        {{ govukButton({
+         text: "End call"
+       }) }}
       </div>
 
 
