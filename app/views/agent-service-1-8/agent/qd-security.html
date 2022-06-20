@@ -22,7 +22,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-summary" method="post" class="form">
+    <form action="qd-security-router" method="post" class="form">
 
 
       {% include "agent-service-1-8/agent/qd-name-nino.html" %}
@@ -33,7 +33,7 @@
 
       {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-      {% set kbvNotification %}
+      {% set html %}
         <p class="govuk-notification-banner__heading">
           Citizen previously failed security</p>
         <p class="govuk-body govuk-!-font-weight-bold">
@@ -46,44 +46,91 @@
       {% endset %}
 
       {{ govukNotificationBanner({
-        html: kbvNotification
+        html: html
       }) }}
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm going to go through some security questions with you</h1>
 
-      {{ govukInsetText({
-        text: "Use Searchlight to ask security questions."
-      }) }}
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Use searchlight to ask relvant security questions.</p>
 
 
+
+      {% set failedKbv %}
       {{ govukTextarea({
-        name: "security-fail",
-        id: "security-fail",
-        rows: "2",
         label: {
-          text: "Enter failed security questions",
-          classes: "govuk-label--s",
-          isPageHeading: true
+          text: "Enter failed security question"
+        },
+        hint: {
+          text: "For example, name of bak"
+        },
+        id: "failed-kbv",
+        rows: "3",
+        name: "failed-kbv",
+        classes: "",
+        value: data["failed-kbv"]
+
+      }) }}
+      {% endset -%}
+
+      {% set failedSecurity %}
+      {{ govukTextarea({
+        label: {
+          text: "Enter failed security question"
+        },
+        hint: {
+          text: "For example, name of bak"
+        },
+        id: "security-failed",
+        rows: "3",
+        name: "security-failed",
+        classes: "",
+        value: data["security-failed"]
+
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        classes: "",
+        idPrefix: "kbv-fail",
+        name: "kbv-fail",
+        fieldset: {
+          legend: {
+            text: "Did the citizen fail any security questions?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
         },
         hint: {
           text: ""
-        }
+        },
+        items: [
+          {
+            value: "no",
+            text: "No",
+            checked: (data["kbv-fail"] == "no")
+          },
+          {
+            value: "yes",
+            text: "Yes, failed 1 question",
+            conditional: {
+              html: failedKbv
+            }
+          },
+          {
+            value: "fail",
+            text: "Yes, failed 2 questions",
+            checked: (data["kbv-fail"] == "fail"),
+            conditional: {
+              html: failedSecurity
+            }
+          }
+        ]
       }) }}
 
-
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Security passed",
-          href: "qd-summary"
-        }) }}
-
-        {{ govukButton({
-          text: "Failed security",
-          classes: "govuk-button--secondary",
-          href: "qd-security-fail"
-        }) }}
-      </div>
-
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
     </div>
 

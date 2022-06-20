@@ -84,11 +84,24 @@
                   text: "Not entitled",
                   classes: 'govuk-table--no-border'
                 }
+                ],
+                [
+                  {
+                    text: "Last notes",
+                    classes: 'govuk-table--no-border'
+
+                  },
+                  {
+                    text: " 20 June 2022 at 10am: Failed security",
+                    classes: 'govuk-table--no-border'
+                  }
                 ]
               ]
             }) }}
 
-            <p> <a href="qd-application" class="govuk-link ">View application</a> </p>
+
+              <p> <a href="qd-claim-notes" class="govuk-link">View all notes</a> </p>
+
 
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-8">
@@ -198,10 +211,10 @@
             }) }}
 
 
-            <p> <a href="qd-claim-notes" class="govuk-link">View past claim notes</a> </p>
+            <p> <a href="qd-application" class="govuk-link ">View application</a> </p>
 
             {{ govukButton({
-              text: "Exit claim",
+              text: "Save and exit claim",
               href: "home-user-0"
             }) }}
 

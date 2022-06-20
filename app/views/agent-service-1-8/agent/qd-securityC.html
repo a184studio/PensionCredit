@@ -22,7 +22,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-summary" method="post" class="form">
+    <form action="qd-security-router" method="post" class="form">
 
 
       {% include "agent-service-1-8/agent/qd-name-nino.html" %}
@@ -33,7 +33,7 @@
 
       {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-      {% set html %}
+      {% set kbvNotification %}
         <p class="govuk-notification-banner__heading">
           Citizen previously failed security</p>
         <p class="govuk-body govuk-!-font-weight-bold">
@@ -46,61 +46,33 @@
       {% endset %}
 
       {{ govukNotificationBanner({
-        html: html
+        html: kbvNotification
       }) }}
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">I'm going to go through some security questions with you</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm going to go through some security questions with you</h1>
 
-      {% set failedKbv %}
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Use searchlight to ask relvant security questions.</h1>
+
+
+
+
       {{ govukTextarea({
+        name: "security-fail",
+        id: "security-fail",
+        rows: "2",
         label: {
-          text: "Enter failed security question"
-        },
-        hint: {
-          text: "For example, name of bak"
-        },
-        id: "failed-kbv",
-        rows: "3",
-        name: "failed-kbv",
-        classes: "",
-        value: data["failed-kbv"]
-
-      }) }}
-      {% endset -%}
-
-
-      {{ govukRadios({
-        classes: "",
-        idPrefix: "kbv-fail",
-        name: "kbv-fail",
-        fieldset: {
-          legend: {
-            text: "Did the citizen fail any security questions?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
+          text: "If they failed on any questions, what were they?",
+          classes: "govuk-label--s",
+          isPageHeading: true
         },
         hint: {
           text: ""
-        },
-        items: [
-          {
-            value: "no",
-            text: "No"
-          },
-          {
-            value: "yes",
-            text: "Yes",
-            conditional: {
-              html: failedKbv
-            }
-          }
-        ]
+        }
       }) }}
 
-
-
-
+      {{ govukInsetText({
+        text: "Select security passed if the citizen answers 2/3 security correctly."
+      }) }}
 
       <div class="govuk-button-group">
         {{ govukButton({
