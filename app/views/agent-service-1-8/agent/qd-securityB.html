@@ -49,26 +49,57 @@
         html: html
       }) }}
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm going to go through some security questions with you</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">I'm going to go through some security questions with you</h1>
 
-      {{ govukInsetText({
-        text: "Use Searchlight to ask security questions."
-      }) }}
-
-
+      {% set failedKbv %}
       {{ govukTextarea({
-        name: "security-fail",
-        id: "security-fail",
-        rows: "2",
         label: {
-          text: "Enter failed security questions",
-          classes: "govuk-label--s",
-          isPageHeading: true
+          text: "Enter failed security question"
+        },
+        hint: {
+          text: "For example, name of bak"
+        },
+        id: "failed-kbv",
+        rows: "3",
+        name: "failed-kbv",
+        classes: "",
+        value: data["failed-kbv"]
+
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        classes: "",
+        idPrefix: "kbv-fail",
+        name: "kbv-fail",
+        fieldset: {
+          legend: {
+            text: "Did the citizen fail any security questions?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
         },
         hint: {
           text: ""
-        }
+        },
+        items: [
+          {
+            value: "no",
+            text: "No"
+          },
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: failedKbv
+            }
+          }
+        ]
       }) }}
+
+
+
 
 
       <div class="govuk-button-group">
