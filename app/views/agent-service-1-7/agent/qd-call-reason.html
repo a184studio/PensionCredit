@@ -29,6 +29,12 @@
 
     <div class="govuk-!-margin-bottom-8">
 
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {{ govukNotificationBanner({
+        text: 'There may be a delay in processing your application because of the coronavirus outbreak.'
+      }) }}
+
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Record reason for call</h1>
 
 
