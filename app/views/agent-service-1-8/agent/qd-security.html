@@ -33,7 +33,7 @@
 
       {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-      {% set html %}
+      {% set kbvNotification %}
         <p class="govuk-notification-banner__heading">
           Citizen previously failed security</p>
         <p class="govuk-body govuk-!-font-weight-bold">
@@ -46,7 +46,7 @@
       {% endset %}
 
       {{ govukNotificationBanner({
-        html: html
+        html: kbvNotification
       }) }}
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm going to go through some security questions with you</h1>
