@@ -35,7 +35,7 @@
 
       {% set html %}
         <p class="govuk-notification-banner__heading">
-          Citizen previously failed security</p>
+          In the  past, this citizen has failed security</p>
         <p class="govuk-body govuk-!-font-weight-bold">
           Do not ask these questions again:</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -51,7 +51,7 @@
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm going to go through some security questions with you</h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Use searchlight to ask relvant security questions.</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Use searchlight to ask security questions.</p>
 
 
 
@@ -61,7 +61,7 @@
           text: "Enter failed security question"
         },
         hint: {
-          text: "For example, name of bak"
+          text: "For example, what is the name of your bank?"
         },
         id: "failed-kbv",
         rows: "3",
@@ -75,10 +75,10 @@
       {% set failedSecurity %}
       {{ govukTextarea({
         label: {
-          text: "Enter failed security question"
+          text: "Enter failed security questions"
         },
         hint: {
-          text: "For example, name of bak"
+          text: "For example, what is the name of your bank?"
         },
         id: "security-failed",
         rows: "3",
