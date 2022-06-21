@@ -65,7 +65,47 @@
                   }
                 ],
                 rows: [
-                  [
+                [
+                  {
+                    text: "Date claim submitted"
+                  },
+                  {
+                    text: "28 February 2022"
+                  }
+                ],
+                [
+                  {
+                    text: "Have you been outside of the UK for a period of more than four weeks since 28 November 2021?"
+                  },
+                  {
+                    text: "No"
+                  }
+                ],
+                [
+                  {
+                    text: "Do you want us to consider backdating your application to 28 November 2021?"
+                  },
+                  {
+                    text: "Yes"
+                  }
+                ],
+                [
+                  {
+                    text: "Date of claim"
+                  },
+                  {
+                    text: "28 February 2022"
+                  }
+                ],
+                [
+                  {
+                    text: "Language in which application was submitted"
+                  },
+                  {
+                    text: "English"
+                  }
+                ],
+                [
                     {
                       text: "Which country do you live in?"
                     },
@@ -83,10 +123,18 @@
                   ],
                   [
                     {
-                      text: "What is your nationality as shown on your passport or travel document? "
+                      text: "Do you have a partner?"
                     },
                     {
-                      text: "British"
+                      text: "No"
+                    }
+                  ],
+                  [
+                    {
+                      text: "Are you registered blind or severly sight impaired?"
+                    },
+                    {
+                      text: "No"
                     }
                   ]
                 ]
@@ -143,6 +191,91 @@
 
 
             {{ govukTable({
+              caption: "Contact details",
+              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
+              firstCellIsHeader: true,
+              head: [
+                {
+                  text: "Question",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "Answer",
+                  classes: 'govuk-!-width-one-half'
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "Do you have a contact telephone number? "
+                  },
+                  {
+                    text: "Yes"
+                  }
+                ],
+                [
+                  {
+                    text: "What is your contact telephone number? "
+                  },
+                  {
+                    text: "07036 003 880"
+                  }
+                ],
+                [
+                  {
+                    text: "Do you need to use any different formats when we contact you by letter or phone? "
+                  },
+                  {
+                    text: "No"
+                  }
+                ],
+                [
+                  {
+                    text: "Do you want us to send you an email confirmation that we have received the application? "
+                  },
+                  {
+                    text: "No"
+                  }
+                ],
+                [
+                  {
+                    text: "What address should we send letters to? "
+                  },
+                  {
+                    text: "Home address"
+                  }
+                ]
+              ]
+            }) }}
+
+            {{ govukTable({
+              caption: "Time spent in hospital",
+              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
+              firstCellIsHeader: true,
+              head: [
+                {
+                  text: "Question",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "Answer",
+                  classes: 'govuk-!-width-one-half'
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "Overnight stays in hospital? "
+                  },
+                  {
+                    text: "No"
+                  }
+                ]
+              ]
+            }) }}
+
+
+            {{ govukTable({
               caption: "Housing details",
               captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
               firstCellIsHeader: true,
@@ -167,15 +300,15 @@
                 ],
                 [
                   {
-                    text: "Is any part of your care home funding provided by the local authority? "
+                    text: "Your home address? "
                   },
                   {
-                    text: "No"
+                    text: "221b Baker Street, Marylebone, London, England, N16 6QG"
                   }
                 ],
                 [
                   {
-                    text: "Do you own the property you used to live in? "
+                    text: "Do you live with your partner? "
                   },
                   {
                     text: "No"
@@ -202,7 +335,208 @@
               rows: [
                 [
                   {
-                    text: "Do you pay for any housing costs?"
+                    text: "Are you responsible for paying the rent, Council Tax or both for the place where you live?"
+                  },
+                  {
+                    text: "No"
+                  }
+                ],
+                [
+                    {
+                      text: "Which best describes the place where you live?"
+                    },
+                    {
+                      text: "Rent"
+                    }
+                  ],
+                  [
+                    {
+                      text: "Do you pay ground rent?"
+                    },
+                    {
+                      text: "No"
+                    }
+                  ]
+              ]
+            }) }}
+
+            {{ govukTable({
+              caption: "Applicant's residency in the UK",
+              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
+              firstCellIsHeader: true,
+              head: [
+                {
+                  text: "Question",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "Answer",
+                  classes: 'govuk-!-width-one-half'
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "Have you lived permanently in the UK for the last 2 years?"
+                  },
+                  {
+                    text: "Yes"
+                  }
+                ],
+                [
+                    {
+                      text: "What is your nationality as shown on your passport or travel document?"
+                    },
+                    {
+                      text: "British"
+                    }
+                  ],
+                  [
+                    {
+                      text: "Do you have the right to live or work in the UK without any immigration restrictions?"
+                    },
+                    {
+                      text: "Yes"
+                    }
+                  ]
+              ]
+            }) }}
+
+            {{ govukTable({
+              caption: "Other people that live with you",
+              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
+              firstCellIsHeader: true,
+              head: [
+                {
+                  text: "Question",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "Answer",
+                  classes: 'govuk-!-width-one-half'
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "Are you responsible for any children or qualifying young people who live with you?"
+                  },
+                  {
+                    text: "No"
+                  }
+                ],
+                [
+                    {
+                      text: "Does anyone else who is over 18 live with you?"
+                    },
+                    {
+                      text: "No"
+                    }
+                  ]
+              ]
+            }) }}
+
+
+            {{ govukTable({
+              caption: "Benefits you have applied for",
+              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
+              firstCellIsHeader: true,
+              head: [
+                {
+                  text: "Question",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "Answer",
+                  classes: 'govuk-!-width-one-half'
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "Do you currently get Housing Benefit or a housing payment from Universal Credit?"
+                  },
+                  {
+                    text: "No"
+                  }
+                ],
+                [
+                  {
+                    text: "Tell us about your UK State Pension?"
+                  },
+                  {
+                    text: "I am receiving my UK State Pension"
+                  }
+                ],
+                [
+                  {
+                    text: "Name of your bank or building society"
+                  },
+                  {
+                    text: "Lloyds Bank"
+                  }
+                ],
+                [
+                  {
+                    text: "Does anyone get Carer's Allowance or Carer's Element of Universal Credit for looking after you?"
+                  },
+                  {
+                    text: "No"
+                  }
+                ],
+                [
+                  {
+                    text: "Have you applied for any benefits that you are waiting to hear about?"
+                  },
+                  {
+                    text: "No"
+                  }
+                ]
+              ]
+            }) }}
+
+            {{ govukTable({
+              caption: "Money",
+              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
+              firstCellIsHeader: true,
+              head: [
+                {
+                  text: "Question",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "Answer",
+                  classes: 'govuk-!-width-one-half'
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "Tell us what accounts or investments you have?"
+                  },
+                  {
+                    text: "None"
+                  }
+                ],
+                [
+                  {
+                    text: "How much money you had on 28 February 2022"
+                  },
+                  {
+                    text: "£0.00"
+                  }
+                ],
+                [
+                  {
+                    text: "How much money you have today"
+                  },
+                  {
+                    text: "£200.00"
+                  }
+                ],
+                [
+                  {
+                    text: "Do you own any property or land other than the home you live in?"
                   },
                   {
                     text: "No"
@@ -213,7 +547,7 @@
 
 
             {{ govukTable({
-              caption: "Benefits",
+              caption: "Employment and income",
               captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
               firstCellIsHeader: true,
               head: [
@@ -229,63 +563,44 @@
               rows: [
                 [
                   {
-                    text: "Do you have any relevant benefits?"
+                    text: "Do you have any income from employment?"
                   },
                   {
-                    text: "Yes"
+                    text: "No"
                   }
                 ],
                 [
                   {
-                    text: "What benefit do you receive "
+                    text: "Have you had any income from self-employment since 28 November 2021?"
                   },
                   {
-                    text: "Attendance allowance"
+                    text: "No"
                   }
                 ],
                 [
                   {
-                    text: "When did this benefit start"
+                    text: "Have you paid into any non-UK pensions?"
                   },
                   {
-                    text: "29 November 2021"
-                  }
-                ]
-              ]
-            }) }}
-
-
-            {{ govukTable({
-              caption: "Application continued",
-              captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-1",
-              firstCellIsHeader: true,
-              head: [
-                {
-                  text: "Question",
-                  classes: 'govuk-!-width-one-half'
-                },
-                {
-                  text: "Answer",
-                  classes: 'govuk-!-width-one-half'
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "... "
-                  },
-                  {
-                    text: "..."
+                    text: "No"
                   }
                 ],
                 [
                   {
-                    text: "..."
+                    text: "Have you paid into any UK personal pensions that you have not taken yet?"
                   },
                   {
-                    text: "..."
+                    text: "No"
                   }
-                ]
+                ],
+                [
+                  {
+                    text: "Do you receive any other regular income or payments?"
+                  },
+                  {
+                    text: "No"
+                  }
+                ],
               ]
             }) }}
 
