@@ -594,7 +594,10 @@ padding-bottom:0;
 .govuk-heading-st {
   font-family: 'GDS Transport';
   font-weight: 300;
-  font-size: 56px !important;
+  font-size: 60px !important;
+  padding-top: none !important;
+  margin-top: none !important;
+
 }
 
 .govuk-radio-table-select{
