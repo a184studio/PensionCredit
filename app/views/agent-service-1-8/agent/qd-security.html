@@ -35,7 +35,7 @@
 
       {% set html %}
         <p class="govuk-notification-banner__heading">
-          In the past, this citizen has failed certain security questions</p>
+          In the past, this citizen failed certain security questions</p>
         <p class="govuk-body govuk-!-font-weight-bold">
           Do not ask these questions again:</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -112,18 +112,12 @@
           },
           {
             value: "yes",
-            text: "Yes, failed 1 question",
-            conditional: {
-              html: failedKbv
-            }
+            text: "Yes, failed 1 question"
           },
           {
             value: "fail",
             text: "Yes, failed 2 questions",
-            checked: (data["kbv-fail"] == "fail"),
-            conditional: {
-              html: failedSecurity
-            }
+            checked: (data["kbv-fail"] == "fail")
           }
         ]
       }) }}
