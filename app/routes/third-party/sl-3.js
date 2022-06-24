@@ -58,31 +58,15 @@ router.post(`${baseUrl}/ab-check-pension-router`, (req, res) => {
 // NINO ROUTER
 
 router.post(`${baseUrl}/sl-find-a-claim-router`, (req, res) => {
-  const slFindAClaim = req.session.data['sl-find-a-claim']
+  const slFindClaims = req.session.data['sl-find-claims']
 
-  if (slFindAClaim === 'SS 11 00 00 A') {
-    res.redirect(`${baseUrl}/sl-claim-a`)
-  } else if (slFindAClaim === 'SS110000A') {
-    res.redirect(`${baseUrl}/sl-claim-a`)
-  } else if (slFindAClaim === 'SS 22 00 00 B') {
-    res.redirect(`${baseUrl}/sl-claim-b`)
-  } else if (slFindAClaim === 'SS220000B') {
-    res.redirect(`${baseUrl}/sl-claim-b`)
-  } else if (slFindAClaim === 'SS 33 00 00 C') {
-    res.redirect(`${baseUrl}/sl-claim-c`)
-  } else if (slFindAClaim === 'SS330000C') {
-    res.redirect(`${baseUrl}/sl-claim-c`)
-  } else if (slFindAClaim === 'SS 44 00 00 D') {
+  if (slFindClaims === '') {
+    res.redirect(`${baseUrl}/`)
+  } else if (slFindClaims === 'ZZ439386T') {
     res.redirect(`${baseUrl}/sl-claim-d`)
-  } else if (slFindAClaim === 'SS440000D') {
-    res.redirect(`${baseUrl}/sl-claim-d`)
-  } else if (slFindAClaim === 'SS 55 00 00 E') {
-    res.redirect(`${baseUrl}/sl-claim-e`)
-  } else if (slFindAClaim === 'SS550000E') {
-    res.redirect(`${baseUrl}/sl-claim-e`)
-  } else if (slFindAClaim === 'BB668734F') {
+  } else if (slFindClaims === 'AB987654C') {
     res.redirect(`${baseUrl}/sl-claim-c`)
-  } else if (slFindAClaim === 'QQ457741A') {
+  } else if (slFindClaims === 'QQ457741A') {
     res.redirect(`${baseUrl}/sl-claim-B`)
   } else {
     res.redirect(`${baseUrl}/sl-claim-a`)
