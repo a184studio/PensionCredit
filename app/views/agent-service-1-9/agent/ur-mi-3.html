@@ -1,95 +1,104 @@
+{% extends "layout-ur-2022.html" %}
+
+{% block pageTitle %}
+  PC: Name Name
+
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-ur.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">Service statistics</h1>
+    <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-9">Updated today at 11:30:00</p>
+
+
+    <div class="govuk-grid-row govuk-!-padding-top-2">
+      <div class="govuk-grid-column-one-third ">
+        {% include "agent-service-1-9/agent/mi-menu.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-2">Overview of call outcomes</h3>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">From 9 May 2022 to today (24 June 2022).</p>
 
 
 
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-3">Total calls received</h3>
 
-            {% extends "layout-ur-2022.html" %}
+                        </div>
+                        <div class="govuk-grid-column-one-half">
 
-            {% block pageTitle %}
-              PC: Name Name
+                          <h3 class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">200</h3>
 
-            {% endblock %}
+                        </div>
 
-            {% block header %}
-             {% include "explore-header-ur.html" %}
-            {% endblock %}
+                        </div>
 
-            {% block content %}
-
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-three-quarters">
-                <form action="login-router" method="post" class="form">
-
-                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">Service statistics</h1>
-                  <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-8">Updated today at 11:30:00</p>
-
-                </div>
-              </div>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
-              <!---------------------------------------->
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
 
-              <div class="govuk-grid-row govuk-!-margin-bottom-6">
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">[Old sub header: Breakdown of the <strong>200</strong> calls received between 9 May 2022 and today<br>after sending <strong>10,000</strong> letters.] <br><br><br>Breakdown of the 200 calls received between 9 May 2022</p>
+                        <p class="govuk-hint govuk-!-margin-bottom-6">XXX</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
 
-                <!-- {% include "agent-service-1-9/agent/mi-stats.html" %} -->
+                      <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Query was resolved on the call and no further action needed</h3>
+                      <h3 class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">170</h3>
 
-              </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+                      <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Claims created in CAM due to caller saying they provided incorrect information on their application</h3>
+                      <h3 class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">19</h3>
+                      <!-- <h3 class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-0">14,000</h3> -->
 
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-              <!---------------------------------------->
+                      <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Claims created in CAM due to incorrect DWP records</h3>
+                      <h3 class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">1</h3>
+                      <!-- <h3 class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-0">14,000</h3> -->
 
-              <div class="govuk-grid-row govuk-!-margin-bottom-8">
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-
-
-                <div class="govuk-grid-column-one-third">
-
-
-                  {% include "agent-service-1-9/agent/mi-menu.html" %}
-                </div>
-
-
-                  <div class="govuk-grid-column-two-thrids">
-                    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-2">Overview of call outcomes</h3>
-                    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Breakdown of the <strong>200</strong> calls received between 9 May 2022 and today<br>after sending <strong>10,000</strong> letters.
-</p>
-                      <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">Query was resolved on the call and<br>no further action needed</h3>
-                      <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">170</h3>
-                    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-                    <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">No further action needed [Not accessed record]</h3>
-                    <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">XX</h3>
-                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
-<!--
-                    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">Total claims created in CAM due to<br>incorrect data used whilst processing</h3>
-                    <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">20</h3>
-                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
-
-                  <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">Claims created in CAM due to caller saying <br>they provided incorrect information on their <br> application</h3>
-                  <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">19</h3>
-                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-                <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">Claims created in CAM due to incorrect DWP records</h3>
-                    <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">1</h3>
-                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-                <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">Asked about automated processing</h3>
-                    <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">1</h3>
-                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+                      <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Caller requested a mandatory reconsideration</h3>
+                      <h3 class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">10</h3>
+                      <!-- <h3 class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-0">14,000</h3> -->
 
 
-                  <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">Caller requested a mandatory reconsideration</h3>
-                  <h3 class="govuk-body govuk-!-font-size-80 govuk-!-margin-bottom-0">10</h3>
-                <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
-
-
-
-
+                      </div>
                     </div>
-
-
                   </div>
+                </div>
 
-            <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-            {% endblock %}
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
