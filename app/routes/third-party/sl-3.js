@@ -68,8 +68,10 @@ router.post(`${baseUrl}/sl-find-a-claim-router`, (req, res) => {
     res.redirect(`${baseUrl}/sl-claim-c`)
   } else if (slFindClaims === 'QQ457741A') {
     res.redirect(`${baseUrl}/sl-claim-B`)
-  } else {
+  } else if (slFindClaims === 'QQ123456C') {
     res.redirect(`${baseUrl}/sl-claim-a`)
+  } else {
+    res.redirect(`${baseUrl}/xxx`)
   }
 })
 
