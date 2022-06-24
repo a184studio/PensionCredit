@@ -62,9 +62,9 @@ router.post(`${baseUrl}/sl-find-a-claim-router`, (req, res) => {
 
   if (slFindClaims === '') {
     res.redirect(`${baseUrl}/`)
-  } else if (slFindClaims === 'ZZ439386T') {
-    res.redirect(`${baseUrl}/sl-claim-d`)
   } else if (slFindClaims === 'AB987654C') {
+    res.redirect(`${baseUrl}/sl-claim-d`)
+  } else if (slFindClaims === 'BB668734F') {
     res.redirect(`${baseUrl}/sl-claim-c`)
   } else if (slFindClaims === 'QQ457741A') {
     res.redirect(`${baseUrl}/sl-claim-B`)
