@@ -55,6 +55,25 @@ router.post(`${baseUrl}/ab-check-pension-router`, (req, res) => {
 // })
 
 
+// NINO ROUTER
+
+router.post(`${baseUrl}/sl-find-a-claim-router`, (req, res) => {
+  const slFindClaims = req.session.data['sl-find-claims']
+
+  if (slFindClaims === 'EO972577M') {
+    res.redirect(`${baseUrl}/sl-claim-f`)
+  } else if (slFindClaims === 'AB987654C') {
+    res.redirect(`${baseUrl}/sl-claim-d`)
+  } else if (slFindClaims === 'BB668734F') {
+    res.redirect(`${baseUrl}/sl-claim-c`)
+  } else if (slFindClaims === 'QQ457741A') {
+    res.redirect(`${baseUrl}/sl-claim-B`)
+  } else {
+    res.redirect(`${baseUrl}/sl-claim-a`)
+  }
+})
+
+
 
 
 module.exports = router

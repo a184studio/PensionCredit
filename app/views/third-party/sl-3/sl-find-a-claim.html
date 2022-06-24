@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="" method="post" class="form">
+    <form action="sl-find-a-claim-router" method="post" class="form">
 
       <!-- {% include "citizen-version-1/work-list-1-2/admin-navigation.html" %} -->
 
@@ -32,17 +32,15 @@
                   hint: {
                     text: ""
                   },
-                  id: "sl-find-a-claim",
-                  name: "sl-find-a-claim",
+                  id: "sl-find-claims",
+                  name: "sl-find-claims",
                   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
-                  value: data["sl-find-a-claim"]
+                  value: data["sl-find-claims"]
                 }) }}
 
                 {{ govukButton({
                   text: "Find",
-                  classes: "govuk-!-margin-right-1",
-                  href: "sl-claim-a"
-                }) }}
+                  classes: "govuk-!-margin-right-1"                }) }}
 
               </div>
             </div>
@@ -113,7 +111,7 @@
             </div>
 
 
-              <a href="sl-claim-B" class="govuk-button govuk-button--secondary">Search customers</a>
+              <a href="sl-claim-c" class="govuk-button govuk-button--secondary">Search customers</a>
 
           </div>
         </div>
