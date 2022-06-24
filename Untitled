@@ -1,0 +1,20 @@
+<h1 class="govuk-heading-l govuk-!-margin-bottom-6">If you need to build the claim on CAM, use the information from this application</h1>
+
+
+
+
+
+{{ govukInsetText({
+  text: "Ask any additional information that is needed on CAM."
+}) }}
+
+
+{% if data['qd-search-nino'] === 'QQ457741A' %}
+
+
+
+  {% else %}
+
+
+
+{% endif %}
