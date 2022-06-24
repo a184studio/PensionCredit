@@ -412,8 +412,6 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
 router.post(`${baseUrl}/qd-security-router`, (req, res) => {
   const qdSecurity = req.session.data['kbv-fail']
 
-
-
   if (qdSecurity == 'fail') {
     res.redirect(`${baseUrl}/qd-security-fail-2`)
   }
@@ -425,6 +423,18 @@ router.post(`${baseUrl}/qd-security-router`, (req, res) => {
   }
 })
 
+
+router.post(`${baseUrl}/qd-letter-summary-router`, (req, res) => {
+  const letterActions = req.session.data['qd-letter-summary']
+
+  if (letterActions == 'notes') {
+    res.redirect(`${baseUrl}/home-user-0`)
+
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-summary`)
+  }
+})
 
 
 
