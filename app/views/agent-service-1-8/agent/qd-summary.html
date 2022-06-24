@@ -25,83 +25,318 @@
         <div class="govuk-grid-column-three-quarters">
             <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm just going to check some details with you and explain your decision</h1>
 
-            {{ govukTable({
-              caption: "",
-              classes: "govuk-!-margin-bottom-2",
-              captionClasses: "govuk-table__caption--m",
-              firstCellIsHeader: true,
-              head: [
-                {
-                  text: "",
-                  classes: 'govuk-!-width-one-quarter govuk-table--no-border'
-                },
-                {
-                  text: "",
-                  classes: 'govuk-!-width-one-half govuk-table--no-border'
-                }
-              ],
-              rows: [
-                [
+
+
+
+              {% if data['qd-search-nino'] === 'AB987654C' %}
+
+              {{ govukTable({
+                caption: "",
+                classes: "govuk-!-margin-bottom-2",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
                   {
-                    text: "Date of claim",
+                    text: "",
+                    classes: 'govuk-!-width-one-quarter govuk-table--no-border'
+                  },
+                  {
+                    text: "",
+                    classes: 'govuk-!-width-one-half govuk-table--no-border'
+                  }
+                ],
+                rows: [
+                  [
+                    {
+                      text: "Date of claim",
+                      classes: 'govuk-table--no-border'
+
+                    },
+                    {
+                      text: "16 April 2022",
+                      classes: 'govuk-table--no-border'
+                    }
+                  ],
+                  [
+                  {
+                    text: "Backdating period start date",
                     classes: 'govuk-table--no-border'
 
                   },
                   {
-                    text: "28 February 2022",
+                    text: "16 February 2022",
                     classes: 'govuk-table--no-border'
                   }
-                ],
-                [
-                {
-                  text: "Backdating period start date",
-                  classes: 'govuk-table--no-border'
+                  ],
+                  [
+                    {
+                      text: "Date processed",
+                      classes: 'govuk-table--no-border'
 
-                },
-                {
-                  text: "28 November 2021",
-                  classes: 'govuk-table--no-border'
-                }
-                ],
-                [
+                    },
+                    {
+                      text: "16 April 2022",
+                      classes: 'govuk-table--no-border'
+                    }
+                  ],
+                  [
                   {
-                    text: "Date processed",
+                    text: "Entitlement status",
                     classes: 'govuk-table--no-border'
 
                   },
                   {
-                    text: "1 March 2022",
+                    text: "Not entitled",
                     classes: 'govuk-table--no-border'
                   }
-                ],
-                [
-                {
-                  text: "Entitlement status",
-                  classes: 'govuk-table--no-border'
+                  ],
+                  [
+                    {
+                      text: "Recent notes",
+                      classes: 'govuk-table--no-border'
 
-                },
-                {
-                  text: "Not entitled",
-                  classes: 'govuk-table--no-border'
-                }
-                ],
-                [
-                  {
-                    text: "Recent notes",
-                    classes: 'govuk-table--no-border'
-
-                  },
-                  {
-                    text: " 20 June 2022 at 10am: Failed security",
-                    classes: 'govuk-table--no-border'
-                  }
+                    },
+                    {
+                      text: " 20 June 2022 at 10am: Failed security",
+                      classes: 'govuk-table--no-border'
+                    }
+                  ]
                 ]
-              ]
-            }) }}
+              }) }}
 
+
+              {% elif data['qd-search-nino'] === 'BB668734F' %}
+
+              {{ govukTable({
+                caption: "",
+                classes: "govuk-!-margin-bottom-2",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                  {
+                    text: "",
+                    classes: 'govuk-!-width-one-quarter govuk-table--no-border'
+                  },
+                  {
+                    text: "",
+                    classes: 'govuk-!-width-one-half govuk-table--no-border'
+                  }
+                ],
+                rows: [
+                  [
+                    {
+                      text: "Date of claim",
+                      classes: 'govuk-table--no-border'
+
+                    },
+                    {
+                      text: "1 May 2022",
+                      classes: 'govuk-table--no-border'
+                    }
+                  ],
+                  [
+                  {
+                    text: "Backdating period start date",
+                    classes: 'govuk-table--no-border'
+
+                  },
+                  {
+                    text: "none",
+                    classes: 'govuk-table--no-border'
+                  }
+                  ],
+                  [
+                    {
+                      text: "Date processed",
+                      classes: 'govuk-table--no-border'
+
+                    },
+                    {
+                      text: "1 May 2022",
+                      classes: 'govuk-table--no-border'
+                    }
+                  ],
+                  [
+                  {
+                    text: "Entitlement status",
+                    classes: 'govuk-table--no-border'
+
+                  },
+                  {
+                    text: "Not entitled",
+                    classes: 'govuk-table--no-border'
+                  }
+                  ],
+                  [
+                    {
+                      text: "Recent notes",
+                      classes: 'govuk-table--no-border'
+
+                    },
+                    {
+                      text: " 20 June 2022 at 10am: Failed security",
+                      classes: 'govuk-table--no-border'
+                    }
+                  ]
+                ]
+              }) }}
+
+
+              {% elif data['qd-search-nino'] === 'QQ457741A' %}
+
+              {{ govukTable({
+                caption: "",
+                classes: "govuk-!-margin-bottom-2",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                  {
+                    text: "",
+                    classes: 'govuk-!-width-one-quarter govuk-table--no-border'
+                  },
+                  {
+                    text: "",
+                    classes: 'govuk-!-width-one-half govuk-table--no-border'
+                  }
+                ],
+                rows: [
+                  [
+                    {
+                      text: "Date of claim",
+                      classes: 'govuk-table--no-border'
+
+                    },
+                    {
+                      text: "11 April 2022",
+                      classes: 'govuk-table--no-border'
+                    }
+                  ],
+                  [
+                  {
+                    text: "Backdating period start date",
+                    classes: 'govuk-table--no-border'
+
+                  },
+                  {
+                    text: "11 Jan 2022",
+                    classes: 'govuk-table--no-border'
+                  }
+                  ],
+                  [
+                    {
+                      text: "Date processed",
+                      classes: 'govuk-table--no-border'
+
+                    },
+                    {
+                      text: "11 April 2022",
+                      classes: 'govuk-table--no-border'
+                    }
+                  ],
+                  [
+                  {
+                    text: "Entitlement status",
+                    classes: 'govuk-table--no-border'
+
+                  },
+                  {
+                    text: "Not entitled",
+                    classes: 'govuk-table--no-border'
+                  }
+                  ],
+                  [
+                    {
+                      text: "Recent notes",
+                      classes: 'govuk-table--no-border'
+
+                    },
+                    {
+                      text: " 20 June 2022 at 10am: Failed security",
+                      classes: 'govuk-table--no-border'
+                    }
+                  ]
+                ]
+              }) }}
+
+              {% else %}
+
+                {{ govukTable({
+                  caption: "",
+                  classes: "govuk-!-margin-bottom-2",
+                  captionClasses: "govuk-table__caption--m",
+                  firstCellIsHeader: true,
+                  head: [
+                    {
+                      text: "",
+                      classes: 'govuk-!-width-one-quarter govuk-table--no-border'
+                    },
+                    {
+                      text: "",
+                      classes: 'govuk-!-width-one-half govuk-table--no-border'
+                    }
+                  ],
+                  rows: [
+                    [
+                      {
+                        text: "Date of claim",
+                        classes: 'govuk-table--no-border'
+
+                      },
+                      {
+                        text: "28 February 2022",
+                        classes: 'govuk-table--no-border'
+                      }
+                    ],
+                    [
+                    {
+                      text: "Backdating period start date",
+                      classes: 'govuk-table--no-border'
+
+                    },
+                    {
+                      text: "28 November 2021",
+                      classes: 'govuk-table--no-border'
+                    }
+                    ],
+                    [
+                      {
+                        text: "Date processed",
+                        classes: 'govuk-table--no-border'
+
+                      },
+                      {
+                        text: "1 March 2022",
+                        classes: 'govuk-table--no-border'
+                      }
+                    ],
+                    [
+                    {
+                      text: "Entitlement status",
+                      classes: 'govuk-table--no-border'
+
+                    },
+                    {
+                      text: "Not entitled",
+                      classes: 'govuk-table--no-border'
+                    }
+                    ],
+                    [
+                      {
+                        text: "Recent notes",
+                        classes: 'govuk-table--no-border'
+
+                      },
+                      {
+                        text: " 20 June 2022 at 10am: Failed security",
+                        classes: 'govuk-table--no-border'
+                      }
+                    ]
+                  ]
+                }) }}
+
+              {% endif %}
 
               <p> <a href="qd-claim-notes" class="govuk-link">View all notes</a> </p>
-
 
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-8">

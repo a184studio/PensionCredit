@@ -427,26 +427,6 @@ router.post(`${baseUrl}/qd-security-router`, (req, res) => {
 
 
 
-router.post(`${baseUrl}/qd-search-router`, (req, res) => {
-  const qdSearch = req.session.data['qd-search-nino']
-
-  if (qdSearch === 'QQ123456C') {
-    res.redirect(`${baseUrl}/sl-claim-a`)
-  } else if (qdSearch === 'SS110000A') {
-    res.redirect(`${baseUrl}/sl-claim-a`)
-  } else if (qdSearch === 'SS 22 00 00 B') {
-    res.redirect(`${baseUrl}/sl-claim-b`)
-  } else if (qdSearch === 'SS220000B') {
-    res.redirect(`${baseUrl}/sl-claim-b`)
-  } else if (slFindAClaim === 'SS 33 00 00 C') {
-    res.redirect(`${baseUrl}/sl-claim-c`)
-  } else {
-    res.redirect(`${baseUrl}/XXX`)
-  }
-})
-
-
-
 
 
 
