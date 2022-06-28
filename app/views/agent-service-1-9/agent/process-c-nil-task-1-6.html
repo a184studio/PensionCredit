@@ -14,10 +14,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if data["process-c-nil-task-1-9"] %}
+      {% if data["process-c-nil-task-1-6"] %}
       <form action="process-c-nil-task-list" method="post" class="form">
       {% else %}
-      <form action="process-c-nil-task-1-9-router" method="post" class="form">
+      <form action="process-c-nil-task-1-6-router" method="post" class="form">
       {% endif %}
 
         {% include "agent-service-1-9/agent/record-id.html" %}
@@ -51,8 +51,8 @@
 
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-1-9",
-          name: "process-c-nil-task-1-9",
+          idPrefix: "process-c-nil-task-1-6",
+          name: "process-c-nil-task-1-6",
           fieldset: {
             legend: {
               html: "Does the bank name given in the application<br>match what is in Check Payment Account Details?",
@@ -68,12 +68,12 @@
           {
             value: "Matched",
             text: "Yes",
-            checked: (data["process-c-nil-task-1-9"] == "Matched")
+            checked: (data["process-c-nil-task-1-6"] == "Matched")
           },
             {
               value: "Not matched",
               text: "No",
-              checked: (data["process-c-nil-task-1-9"] == "Not matched")
+              checked: (data["process-c-nil-task-1-6"] == "Not matched")
             }
           ]
         }) }}
