@@ -93,15 +93,15 @@
       </li>
 
       <li class="app-task-list__item">
-        <a class="app-task-list__task-name" href="process-c-nil-task-1-9" aria-describedby="task-1">
+        <a class="app-task-list__task-name" href="process-c-nil-task-1-6" aria-describedby="task-1">
           <!-- [1-9]  -->Bank name
         </a>
 
-        {% if data["process-c-nil-task-1-9"]  === "Matched" %}
+        {% if data["process-c-nil-task-1-6"]  === "Matched" %}
           <strong class="govuk-tag app-task-list__nil-task-passed">Done</strong>
-        {% elif data["process-c-nil-task-1-9"]  === "Not matched" %}
+        {% elif data["process-c-nil-task-1-6"]  === "Not matched" %}
           <strong class="govuk-tag app-task-list__nil-task-passed">Done*</strong>
-        {% elif data["process-c-nil-task-1-9"]  === "Unfinished" %}
+        {% elif data["process-c-nil-task-1-6"]  === "Unfinished" %}
           <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
         {% else %}
           <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
@@ -113,7 +113,7 @@
     </ul>
     </li>
 
-    {% if data["process-c-nil-task-1-1"]  == "Matched" and data["process-c-nil-task-1-3"]  == "Matched" and  data["process-c-nil-task-1-4"]  == "Matched" and data["process-c-nil-task-1-9"]  == "Matched" %}
+    {% if data["process-c-nil-task-1-1"]  == "Matched" and data["process-c-nil-task-1-3"]  == "Matched" and  data["process-c-nil-task-1-4"]  == "Matched" and data["process-c-nil-task-1-6"]  == "Matched" %}
 
 
     <li>
@@ -314,7 +314,7 @@
     </div>
   </div>
 
-  {% if data["process-c-nil-task-1-9"]  == "Matched" and data["process-c-nil-task-2-2"] == "Matched" and data["process-c-nil-task-3-13"] == "Matched" %}
+  {% if data["process-c-nil-task-1-6"]  == "Matched" and data["process-c-nil-task-2-2"] == "Matched" and data["process-c-nil-task-3-13"] == "Matched" %}
 
   <div class="govuk-grid-row govuk-!-margin-top-2">
   <div class="govuk-grid-column-two-thirds">
@@ -333,7 +333,7 @@
             }) }}
 
 
-      {% elif data["process-c-nil-task-1-9"]  == "Not matched" or data["process-c-nil-task-3-13"]  == "Not matched" %}
+      {% elif data["process-c-nil-task-1-6"]  == "Not matched" or data["process-c-nil-task-3-13"]  == "Not matched" %}
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application needs further action</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application does not match [Bad Outcome]</h1> -->
@@ -349,7 +349,7 @@
 
 
 
-      {% elif data["process-c-nil-task-1-9"]  == "Unfinished" %}
+      {% elif data["process-c-nil-task-1-6"]  == "Unfinished" %}
 
         <h1 class="govuk-heading-m govuk-!-margin-bottom-4">You have unfinished tasks</h1>
 
