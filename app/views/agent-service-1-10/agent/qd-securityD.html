@@ -100,7 +100,7 @@
         name: "kbv-fail-D",
         fieldset: {
           legend: {
-            text: "How many questions did you ask?",
+            text: "How many security questions did you ask?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -111,18 +111,13 @@
         items: [
           {
             value: "two",
-            text: "Failed the first question",
+            text: "Two",
             checked: (data["kbv-fail-D"] == "two")
 
           },
           {
             value: "three",
-            text: "Failed the second question",
-            checked: (data["kbv-fail-D"] == "three")
-          },
-          {
-            value: "three",
-            text: "Failed the second question",
+            text: "Three",
             checked: (data["kbv-fail-D"] == "three")
           }
         ]
@@ -132,9 +127,6 @@
         text: "Continue"
       }) }}
 
-      <div class="">
-        <a href="qd-letter-summary" class="govuk-link govuk-link--no-visited-state">...</a>
-      </div>
 
     </div>
 

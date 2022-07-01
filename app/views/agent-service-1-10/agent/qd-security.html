@@ -58,42 +58,6 @@
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Use searchlight to ask security questions.</p>
 
 
-
-      {% set failedKbv %}
-      {{ govukTextarea({
-        label: {
-          text: "Enter failed security question"
-        },
-        hint: {
-          text: "For example, what is the name of your bank?"
-        },
-        id: "failed-kbv",
-        rows: "1",
-        name: "failed-kbv",
-        classes: "",
-        value: data["failed-kbv"]
-
-      }) }}
-      {% endset -%}
-
-      {% set failedSecurity %}
-      {{ govukTextarea({
-        label: {
-          text: "Enter failed security questions"
-        },
-        hint: {
-          text: "For example, what is the name of your bank?"
-        },
-        id: "security-failed",
-        rows: "2",
-        name: "security-failed",
-        classes: "",
-        value: data["security-failed"]
-
-      }) }}
-      {% endset -%}
-
-
       {{ govukRadios({
         classes: "",
         idPrefix: "kbv-fail",
@@ -110,18 +74,21 @@
         },
         items: [
           {
-            value: "no",
-            text: "No",
-            checked: (data["kbv-fail"] == "no")
-          },
-          {
             value: "yes",
-            text: "Yes, failed 1 question"
+            text: "Yes, failed one question"
           },
           {
             value: "fail",
-            text: "Yes, failed 2 questions",
+            text: "Yes, failed two questions",
             checked: (data["kbv-fail"] == "fail")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "no",
+            text: "No, answered two questions correctly",
+            checked: (data["kbv-fail"] == "no")
           }
         ]
       }) }}
@@ -130,9 +97,7 @@
         text: "Continue"
       }) }}
 
-      <div class="">
-        <a href="qd-letter-summary" class="govuk-link govuk-link--no-visited-state">...</a>
-      </div>
+
 
     </div>
 
