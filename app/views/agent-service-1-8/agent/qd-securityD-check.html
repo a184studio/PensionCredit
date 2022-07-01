@@ -53,30 +53,10 @@
 
       {% endif %}
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm going to go through some security questions with you</h1>
-
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Use searchlight to ask security questions.</p>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Did the citizen fail any questions?</h1>
 
 
-
-      {% set failedKbv %}
-      {{ govukTextarea({
-        label: {
-          text: "Enter failed security question"
-        },
-        hint: {
-          text: "For example, what is the name of your bank?"
-        },
-        id: "failed-kbv",
-        rows: "1",
-        name: "failed-kbv",
-        classes: "",
-        value: data["failed-kbv"]
-
-      }) }}
-      {% endset -%}
-
-      {% set failedSecurity %}
+      {% set failedSecurityOne %}
       {{ govukTextarea({
         label: {
           text: "Enter failed security questions"
@@ -84,23 +64,61 @@
         hint: {
           text: "For example, what is the name of your bank?"
         },
-        id: "security-failed",
+        id: "kbv-fail-one",
         rows: "2",
         name: "security-failed",
         classes: "",
-        value: data["security-failed"]
+        value: data["kbv-fail-one"]
 
       }) }}
       {% endset -%}
 
 
-      {{ govukRadios({
+
+      {% set failedSecurityTwo %}
+      {{ govukTextarea({
+        label: {
+          text: "Enter failed security questions"
+        },
+        hint: {
+          text: "For example, what is the name of your bank?"
+        },
+        id: "kbv-fail-two",
+        rows: "2",
+        name: "kbv-fail-two",
         classes: "",
-        idPrefix: "kbv-fail",
-        name: "kbv-fail",
+        value: data["kbv-fail-two"]
+
+      }) }}
+      {% endset -%}
+
+
+      {% set failedSecurityThree %}
+      {{ govukTextarea({
+        label: {
+          text: "Enter failed security question"
+        },
+        hint: {
+          text: "For example, what is the name of your bank?"
+        },
+        id: "kbv-fail-three",
+        rows: "2",
+        name: "kbv-fail-three",
+        classes: "",
+        value: data["kbv-fail-three"]
+
+      }) }}
+      {% endset -%}
+
+
+
+      {{ govukCheckboxes({
+        classes: "",
+        idPrefix: "kbv-fail-D-check",
+        name: "kbv-fail-D-check",
         fieldset: {
           legend: {
-            text: "Did the citizen fail any security questions?",
+            text: "",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -110,21 +128,42 @@
         },
         items: [
           {
-            value: "yes",
-            text: "Yes, failed 1 question"
+            value: "one",
+            text: "Failed first question",
+            conditional: {
+              html: failedSecurityOne
+            },
+            checked: (data["kbv-fail-D-check"] == "one")
+
           },
           {
-            value: "fail",
-            text: "Yes, failed 2 questions",
-            checked: (data["kbv-fail"] == "fail")
+            value: "two",
+            text: "Failed second question",
+            conditional: {
+              html: failedSecurityOne
+            },
+            checked: (data["kbv-fail-D-check"] == "two")
           },
           {
-            value: "no",
-            text: "No",
-            checked: (data["kbv-fail"] == "no")
+            value: "three",
+            text: "Failed third question",
+            conditional: {
+              html: failedSecurityOne
+            },
+            checked: (data["kbv-fail-D-check"] == "three")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "pass",
+            text: "No, they answered all questions correctly",
+            checked: (data["kbv-fail-D-check"] == "pass")
           }
         ]
       }) }}
+
+
 
       {{ govukButton({
         text: "Continue"
