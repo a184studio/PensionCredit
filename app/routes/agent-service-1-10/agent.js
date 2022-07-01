@@ -429,10 +429,20 @@ router.post(`${baseUrl}/qd-letter-summary-router`, (req, res) => {
 
   if (letterActions == 'notes') {
     res.redirect(`${baseUrl}/home-user-0`)
-
   }
    else {
     res.redirect(`${baseUrl}/qd-summary`)
+  }
+})
+
+router.post(`${baseUrl}/qd-securityD-router`, (req, res) => {
+  const kbvFailD = req.session.data['kbv-fail-D-check']
+
+  if (kbvFailD == 'pass' || kbvFailD == 'one' || kbvFailD == 'two' || kbvFailD == 'three') {
+    res.redirect(`${baseUrl}/qd-summary`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-security-fail`)
   }
 })
 
