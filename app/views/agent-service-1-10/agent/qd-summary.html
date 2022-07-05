@@ -94,7 +94,8 @@
 
                   },
                   {
-                    text: "20 June 2022 at 9am: Inbound letter uploaded.",
+                    text: "",
+                    html: '20 June 2022 at 9am: Inbound letter uploaded. <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
                     classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                   }
                 ]
@@ -761,7 +762,7 @@
 
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-6">
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Would you like to know about other help you could get?</h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Would you like to know about other help you could get?</h2>
             <p> <a href="qd-help-summary" class="govuk-link govuk-!-margin-bottom-4">View other help</a></p>
 
             <!--
@@ -801,7 +802,7 @@
               rows: 4,
               label: {
                 text: "Enter notes",
-                classes: "govuk-label--l",
+                classes: "govuk-label--m",
                 isPageHeading: true
               },
               hint: {
@@ -812,7 +813,7 @@
 
 
             {{ govukButton({
-              text: "Exit claim",
+              text: "Exit record",
               href: "home-user-0"
             }) }}
 

@@ -13,12 +13,14 @@
 {% block content %}
 
 
-
+{{ govukBackLink({
+  text: "Back",
+  href: "qd-start"
+}) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="help-router" method="post" class="form">
-      {% include "agent-service-1-10/agent/qd-name-nino.html" %}
+    <form action="home-user-0" method="post" class="form">
 
     <div class="govuk-grid-row">
 
@@ -130,7 +132,7 @@
         </div>
 
         {{ govukButton({
-          text: "End call"
+          text: "Exit"
         }) }}
       </div>
 
