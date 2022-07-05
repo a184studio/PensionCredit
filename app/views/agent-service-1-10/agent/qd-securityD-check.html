@@ -59,7 +59,7 @@
       {% set failedSecurityOne %}
       {{ govukTextarea({
         label: {
-          text: "Enter failed security questions"
+          text: "Enter failed security question"
         },
         hint: {
           text: "For example, what is the name of your bank?"
@@ -96,7 +96,7 @@
       {% set failedSecurityThree %}
       {{ govukTextarea({
         label: {
-          text: "Enter failed security question"
+          text: "Enter failed security questions"
         },
         hint: {
           text: "For example, what is the name of your bank?"
@@ -129,7 +129,7 @@
         items: [
           {
             value: "one",
-            text: "Failed first question",
+            text: "First question",
             conditional: {
               html: failedSecurityOne
             },
@@ -138,7 +138,7 @@
           },
           {
             value: "two",
-            text: "Failed second question",
+            text: "Second question",
             conditional: {
               html: failedSecurityOne
             },
@@ -146,7 +146,7 @@
           },
           {
             value: "three",
-            text: "Failed third question",
+            text: "Third question",
             conditional: {
               html: failedSecurityOne
             },
