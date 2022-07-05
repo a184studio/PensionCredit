@@ -447,6 +447,20 @@ router.post(`${baseUrl}/qd-securityD-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/qd-start-router`, (req, res) => {
+  const qdStart = req.session.data['qd-start']
+
+  if (qdStart == 'help') {
+    res.redirect(`${baseUrl}/qd-help`)
+  }
+  else if (qdStart == 'exit') {
+    res.redirect(`${baseUrl}/home-user-0`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-search`)
+  }
+})
+
 
 
 
