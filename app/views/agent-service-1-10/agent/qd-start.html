@@ -29,7 +29,7 @@
           <li>your knowledge</li>
           <li><a href=qd-help-start>other help</a></li>
         </ul>
-        <p class="govuk-body">If the customer is wanting to discuss their claim, you must go into their record.</p>
+        <p class="govuk-body">Do not access a citizen's record unless you need to discuss personal details.</p>
 
 
         {{ govukRadios({
@@ -38,7 +38,7 @@
           name: "qd-start",
           fieldset: {
             legend: {
-              text: "Heading",
+              text: "What is the reason for the call?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -49,17 +49,17 @@
           items: [
             {
               value: "help",
-              text: "help",
+              text: "Find out more information about other help available",
               checked: (data["qd-start"] == "help")
             },
             {
               value: "record",
-              text: "record",
+              text: "Access citizen's record",
               checked: (data["qd-start"] == "record")
             },
             {
               value: "exit",
-              text: "exit",
+              text: "Exit",
               checked: (data["qd-start"] == "exit")
             }
           ]
