@@ -32,17 +32,46 @@
         <p class="govuk-body">If the customer is wanting to discuss their claim, you must go into their record.</p>
 
 
-      <div class="govuk-button-group">
-      {{ govukButton({
-      text: "record",
-      href: "qd-search"
-      }) }}
-      {{ govukButton({
-      text: "exit",
-      classes: "govuk-button--secondary",
-      href: "home-user-0"
-      }) }}
-      </div>
+        {{ govukRadios({
+          classes: "",
+          idPrefix: "qd-start",
+          name: "qd-start",
+          fieldset: {
+            legend: {
+              text: "Heading",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+            {
+              value: "help",
+              text: "help",
+              checked: (data["qd-start"] == "help")
+            },
+            {
+              value: "record",
+              text: "record",
+              checked: (data["qd-start"] == "record")
+            },
+            {
+              value: "exit",
+              text: "exit",
+              checked: (data["qd-start"] == "exit")
+            }
+          ]
+        }) }}
+
+
+
+        {{ govukButton({
+        text: "...",
+        href: "qd-search"
+        }) }}
+
 
 
     </div>
