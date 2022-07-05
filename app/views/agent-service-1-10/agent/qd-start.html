@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-search" method="post" class="form">
+    <form action="" method="post" class="form">
 
 
 
@@ -24,7 +24,6 @@
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">How can I help?</h1>
 
-      <div class="govuk-inset-text">
         <p class="govuk-body">Answer the customer's query using either:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>your knowledge</li>
@@ -32,13 +31,18 @@
         </ul>
         <p class="govuk-body">If the customer is wanting to discuss their claim, you must go into their record.</p>
 
-      </div>
 
+      <div class="govuk-button-group">
       {{ govukButton({
-        text: "Go into record",
-        classes: "govuk-!-margin-right-1"
+      text: "record",
+      href: "qd-search"
       }) }}
-
+      {{ govukButton({
+      text: "exit",
+      classes: "govuk-button--secondary",
+      href: "home-user-0"
+      }) }}
+      </div>
 
 
     </div>
