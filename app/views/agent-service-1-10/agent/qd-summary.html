@@ -14,7 +14,6 @@
 
 
 
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <form action="qd-actions" method="post" class="form">
@@ -23,7 +22,7 @@
     <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">I'm just going to check some details with you and explain your decision</h1>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I'm just going to check some details with you and explain your decision</h1>
 
 
             {% if data['qd-search-nino'] === 'EO972577M' %}
@@ -96,7 +95,7 @@
                   },
                   {
                     text: "20 June 2022 at 9am: Inbound letter uploaded.",
-                    classes: 'govuk-table--no-border'
+                    classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                   }
                 ]
               ]
@@ -173,7 +172,7 @@
                   },
                   {
                     text: "16 April 2022: Award letter sent",
-                    classes: 'govuk-table--no-border'
+                    classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                   }
                 ]
               ]
@@ -250,7 +249,7 @@
                     },
                     {
                       text: "16 April 2022: Award letter sent",
-                      classes: 'govuk-table--no-border'
+                      classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                     }
                   ]
                 ]
@@ -327,7 +326,7 @@
                     },
                     {
                       text: "1 May 2022 at 10am: Award letter sent",
-                      classes: 'govuk-table--no-border'
+                      classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                     }
                   ]
                 ]
@@ -404,7 +403,7 @@
                     },
                     {
                       text: "11 April 2022: Award letter sent",
-                      classes: 'govuk-table--no-border'
+                      classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                     }
                   ]
                 ]
@@ -480,7 +479,7 @@
                       },
                       {
                         text: "28 February 2022: Award letter sent",
-                        classes: 'govuk-table--no-border'
+                        classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                       }
                     ]
                   ]
@@ -488,11 +487,12 @@
 
               {% endif %}
 
-              <p> <a href="qd-claim-notes" class="govuk-link">View all notes</a> </p>
+              <p> <a href="qd-claim-notes" class="govuk-link govuk-!-margin-top-8">View all notes</a> </p>
 
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-8">
-            <h2 class="govuk-heading-m ">Open Searchlight and check the information on qualifying benefits and State Pension match.</h2>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-7">Check the information is correct</h2>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Open Searchlight and check the information on qualifying benefits and State Pension match</h3>
 
 
 
@@ -715,8 +715,7 @@
             {% endif %}
 
 
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Ask the citizen to confirm if they live with a partner and if they have any housing costs.</h2>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Ask the citizen to confirm if they live with a partner and if they have any housing costs</h3>
 
             {{ govukTable({
               caption: "",
@@ -752,15 +751,49 @@
                 },
                 {
                   text: "None",
-                  classes: 'govuk-table--no-border'
+                  classes: 'govuk-table--no-border govuk-!-padding-bottom-0'
                 }
                 ]
               ]
             }) }}
+            <p> <a href="qd-application" class="govuk-link">View full application</a> </p>
 
 
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-6">
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Would you like to know about other help you could get?</h2>
+            <p> <a href="qd-help-summary" class="govuk-link govuk-!-margin-bottom-4">Offer other help</a></p>
+
+            <!--
+            {{ govukRadios({
+              classes: "",
+              idPrefix: "summary-help",
+              name: "summary-help",
+              fieldset: {
+                legend: {
+                  text: "Would you like to know aout other help you could get?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  checked: (data["summary-help"] == "yes")
+                },
+                {
+                  value: "no",
+                  text: "No",
+                  checked: (data["summary-help"] == "no")
+                }
+              ]
+            }) }}  -->
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-6">
 
             {{ govukTextarea({
               name: "summary-notes",
@@ -768,19 +801,18 @@
               rows: 4,
               label: {
                 text: "Enter notes",
-                classes: "govuk-label--s",
+                classes: "govuk-label--l",
                 isPageHeading: true
               },
               hint: {
-                text: ""
+                text: "For example, why they called and any relevant information"
               }
             }) }}
 
 
-            <p> <a href="qd-application" class="govuk-link ">View full application</a> </p>
 
             {{ govukButton({
-              text: "Save and exit claim",
+              text: "Exit claim",
               href: "home-user-0"
             }) }}
 
