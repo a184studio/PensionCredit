@@ -4,6 +4,7 @@ const differenceInDays = require('date-fns/differenceInDays')
 const startOfDay = require('date-fns/startOfDay')
 const subMonths = require('date-fns/subMonths')
 const got = require('got')
+const path = require('path')
 const fs = require('fs')
 const {getMonth} = require('../../filters')()
 
@@ -20,6 +21,7 @@ function makeAStay(data) {
 
 // PDF DOWNLOADER
 // router.use(`${baseUrl}/dr6.doc`, express.static(path.resolve('app/views/agent-service-1-3/agent/dr6.doc'))) // ../ back up a directory
+router.use(`${baseUrl}/jennifer-claim.pdf`, express.static(path.resolve('app/views/agent-service-1-10/agent/jennifer-claim.pdf')))
 
 
 router.post(`${baseUrl}/login-router`, (req, res) => {
