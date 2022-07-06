@@ -103,82 +103,6 @@
             }) }}
 
 
-            {% elif data['qd-search-nino'] === 'AB987654C' %}
-
-            {{ govukTable({
-              caption: "",
-              classes: "govuk-!-margin-bottom-2",
-              captionClasses: "govuk-table__caption--m",
-              firstCellIsHeader: true,
-              head: [
-                {
-                  text: "",
-                  classes: 'govuk-!-width-one-quarter govuk-table--no-border'
-                },
-                {
-                  text: "",
-                  classes: 'govuk-!-width-one-half govuk-table--no-border'
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "Date of claim",
-                    classes: 'govuk-table--no-border'
-
-                  },
-                  {
-                    text: "16 April 2022",
-                    classes: 'govuk-table--no-border'
-                  }
-                ],
-                [
-                {
-                  text: "Backdating period start date",
-                  classes: 'govuk-table--no-border'
-
-                },
-                {
-                  text: "16 February 2022",
-                  classes: 'govuk-table--no-border'
-                }
-                ],
-                [
-                  {
-                    text: "Date processed",
-                    classes: 'govuk-table--no-border'
-
-                  },
-                  {
-                    text: "16 April 2022",
-                    classes: 'govuk-table--no-border'
-                  }
-                ],
-                [
-                {
-                  text: "Entitlement status",
-                  classes: 'govuk-table--no-border'
-
-                },
-                {
-                  text: "Not entitled",
-                  classes: 'govuk-table--no-border'
-                }
-                ],
-                [
-                  {
-                    text: "Recent notes",
-                    classes: 'govuk-table--no-border'
-
-                  },
-                  {
-                    html: '28 February 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
-                    classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
-                  }
-                ]
-              ]
-            }) }}
-
 
               {% elif data['qd-search-nino'] === 'AB987654C' %}
 
@@ -249,7 +173,7 @@
 
                     },
                     {
-                      html: '28 February 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
+                      html: '16 April 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
                       classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                     }
                   ]
@@ -293,7 +217,7 @@
 
                   },
                   {
-                    text: "None",
+                    text: "1 February 2022",
                     classes: 'govuk-table--no-border'
                   }
                   ],
@@ -326,7 +250,7 @@
 
                     },
                     {
-                      html: '28 February 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
+                      html: '1 May 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
                       classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                     }
                   ]
@@ -403,7 +327,7 @@
 
                     },
                     {
-                      html: '28 February 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
+                      html: '12 April 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
                       classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
                     }
                   ]
@@ -488,6 +412,10 @@
                 }) }}
 
               {% endif %}
+
+
+
+
 
 
 
@@ -663,7 +591,7 @@
 
                     },
                     {
-                      text: "£184",
+                      text: "£182",
                       classes: 'govuk-table--no-border'
                     }
                   ]
