@@ -39,7 +39,7 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Claim notes</h1>
 
 
-      {% if data['qd-search-nino'] === 'EO972577M' %}
+      {% if data['qd-search-nino'] === 'ZZ439386T' %}
       {{ govukTable({
         caption: "",
         captionClasses: "govuk-table__caption--m",
@@ -59,12 +59,43 @@
         rows: [
           [
             {
-              text: "20 June 2022 - 9am"
+              text: "29 May 2022"
             },
             {
               text: "Inbound letter uploaded."
             }
           ],
+          [
+            {
+              text: "2 January 2022"
+            },
+            {
+              text: "Award letter sent"
+            }
+          ]
+        ]
+      }) }}
+
+
+      {% elif data['qd-search-nino'] === 'EO972577M' %}
+      {{ govukTable({
+        caption: "",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Date and time",
+                  classes: 'govuk-!-width-one-quarter'
+
+          },
+          {
+            text: "Notes",
+              classes: 'govuk-!-width-three-quarters'
+
+          }
+        ],
+        rows: [
+
           [
             {
               text: "10 June 2022"
@@ -160,7 +191,7 @@
         rows: [
           [
             {
-              text: "11 April 2022"
+              text: "12 April 2022"
             },
             {
               text: "Award letter sent"
