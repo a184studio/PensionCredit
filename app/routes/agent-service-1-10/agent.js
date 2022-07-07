@@ -464,6 +464,17 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/qd-search-router`, (req, res) => {
+  const ninoSecurity = req.session.data['qd-search-nino']
+
+  if (ninoSecurity === 'QQ457741A' || ninoSecurity === 'EO972577M' || ninoSecurity === 'ZZ439386T') {
+    res.redirect(`${baseUrl}/qd-security`)
+  } else {
+    res.redirect(`${baseUrl}/qd-securityD`)
+  }
+})
+
+
 // PDF DOWNLOADER
 
 
