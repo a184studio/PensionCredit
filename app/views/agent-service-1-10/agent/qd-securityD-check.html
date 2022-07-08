@@ -110,7 +110,52 @@
       }) }}
       {% endset -%}
 
+      {% if data["kbv-fail-D"] == "two" %}
 
+      {{ govukCheckboxes({
+        classes: "",
+        idPrefix: "kbv-fail-D-check",
+        name: "kbv-fail-D-check",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "one",
+            text: "First question",
+            conditional: {
+              html: failedSecurityOne
+            },
+            checked: (data["kbv-fail-D-check"] == "one")
+
+          },
+          {
+            value: "two",
+            text: "Second question",
+            conditional: {
+              html: failedSecurityOne
+            },
+            checked: (data["kbv-fail-D-check"] == "two")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "pass",
+            text: "No, they answered all questions correctly",
+            checked: (data["kbv-fail-D-check"] == "pass")
+          }
+        ]
+      }) }}
+
+      {% else %}
 
       {{ govukCheckboxes({
         classes: "",
@@ -162,6 +207,11 @@
           }
         ]
       }) }}
+
+
+      {% endif %}
+
+
 
 
 
