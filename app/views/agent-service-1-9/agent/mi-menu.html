@@ -10,8 +10,7 @@
 
     <form action="process-c-nil-task-list" method="post" class="form">
 
-      {% if data["system-ur-process-ab"] == "A"%}
-
+    {% if data["system-ur-process-ab"] == "A"%}
 
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-padding-top-4 govuk-!-margin-bottom-3">Why applications required <br> further action </h3>
 
@@ -22,12 +21,13 @@
 
 
     {% else %}
-
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3"><a href="ur-mi-7" class="govuk-link" rel="noreferrer noopener">Why applications required<br>further action</a></p>
-
     {% endif %}
 
+    {% if data["system-ur-process-ab"] == "A"%}
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-padding-top-4 govuk-!-margin-bottom-2 ">Queries and disputes</h3>
+    {% else %}
+    {% endif %}
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="ur-mi-3" class="govuk-link" rel="noreferrer noopener" target="">Overview of call outcomes</a></p>
 
