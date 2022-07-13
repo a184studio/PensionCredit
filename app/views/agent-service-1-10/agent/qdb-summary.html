@@ -764,7 +764,7 @@
             {% endif %}
 
 
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Check with the citizen to confirm if they live with a partner and if they have any housing costs</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Ask the citizen to confirm if they live with a partner and if they pay ground rent or service charges</h3>
 
             {{ govukTable({
               caption: "",
@@ -794,7 +794,18 @@
                 ],
                 [
                 {
-                  text: "Housing costs",
+                  text: "Ground rent",
+                  classes: 'govuk-table--no-border'
+
+                },
+                {
+                  text: "None",
+                  classes: 'govuk-table--no-border govuk-!-padding-bottom-0'
+                }
+                ],
+                [
+                {
+                  text: "Service charges",
                   classes: 'govuk-table--no-border'
 
                 },
