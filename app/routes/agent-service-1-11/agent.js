@@ -441,7 +441,7 @@ router.post(`${baseUrl}/qd-securityD-router`, (req, res) => {
   const kbvFailD = req.session.data['kbv-fail-D-check']
 
   if (kbvFailD == 'pass' || kbvFailD == 'one' || kbvFailD == 'two' || kbvFailD == 'three') {
-    res.redirect(`${baseUrl}/qd-summary`)
+    res.redirect(`${baseUrl}/qd-claims`)
   }
    else {
     res.redirect(`${baseUrl}/qd-security-fail`)
