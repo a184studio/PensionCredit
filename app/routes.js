@@ -155,6 +155,7 @@ router.use(require('./routes/agent-service-1-8/agent'))
 router.use(require('./routes/agent-service-1-9/agent'))
 router.use(require('./routes/agent-service-1-10/agent'))
 router.use(require('./routes/agent-service-1-11/agent'))
+router.use(require('./routes/agent-service-1-12/agent'))
 
 
 module.exports = router
