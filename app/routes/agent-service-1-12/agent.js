@@ -439,6 +439,36 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
   }
 })
 
+
+
+router.post(`${baseUrl}/process-c-nil-task-4-1-router`, (req, res) => {
+  const processTask_4_1 = req.session.data['process-c-nil-task-4-1']
+
+  if (processTask_4_1 == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-1-review`)
+  }
+  else if (processTask_4_1 == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-1-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-2-router`, (req, res) => {
+  const processTask_4_2 = req.session.data['process-c-nil-task-4-2']
+
+  if (processTask_4_2 == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-2`)
+  }
+  else if (processTask_4_2 == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-2-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
 router.post(`${baseUrl}/query-types-router`, (req, res) => {
   const query_types = req.session.data['query-types']
 
