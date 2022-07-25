@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="process-c-nil-task-4-1-router" method="post" class="form">
+      <form action="system-ur-task-done" method="post" class="form">
 
 
         {% include "agent-service-1-12/agent/record-id.html" %}
@@ -28,19 +28,23 @@
           head: [
             {
               text: "Income",
-              classes: 'govuk-!-width-one-quarter'
+              classes: 'govuk-20-percent'
             },
             {
               text: "Frequency",
-              classes: 'govuk-!-width-one-quarter'
+              classes: 'govuk-20-percent'
             },
             {
-              text: "Amount",
-              classes: 'govuk-!-width-one-quarter'
+              text: "Payment type",
+              classes: 'govuk-20-percent'
+            },
+            {
+              text: "Amounts used",
+              classes: 'govuk-20-percent'
             },
             {
               text: "Tax",
-              classes: 'govuk-!-width-one-quarter'
+              classes: 'govuk-20-percent'
             }
           ],
           rows: [
@@ -52,24 +56,30 @@
                 text: "Weekly"
               },
               {
+                text: "Actual"
+              },
+              {
                 text: "£150.00"
               },
               {
-                text: "—"
+                text: "X"
               }
             ],
             [
               {
-                text: "Occupational pension 1"
+                text: "Occ pension 1"
               },
               {
                 text: "Weekly"
               },
               {
+                text: "Averaged"
+              },
+              {
                 text: "£69.10"
               },
               {
-                text: "£0.90"
+                text: "X"
               }
             ]
           ]
@@ -77,7 +87,7 @@
 
         <p class="govuk-body govuk-!-font-size-24 govuk-!-padding-top-2 govuk-!-margin-bottom-2"><strong>Calculation</strong></p>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-0">Applicable amount for this person is <strong>£182.15</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Their weekly income is <strong>£219.1</strong></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Their weekly income is <strong>£219.10</strong></p>
 
 
 
@@ -129,12 +139,12 @@
           items: [
           {
             value: "Yes",
-            text: "Yes",
+            text: "Yes — issue a letter",
             checked: (data["process-c-nil-task-4-1"] == "Yes")
           },
             {
               value: "No",
-              text: "No",
+              text: "No — Send to Opps (BAU)",
               checked: (data["process-c-nil-task-4-1"] == "No")
             }
           ]
