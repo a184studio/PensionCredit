@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="process-c-nil-task-4-1-review" method="post" class="form">
+      <form action="process-c-nil-task-4-1-edit-review" method="post" class="form">
 
 
         {% include "agent-service-1-12/agent/record-id.html" %}
@@ -219,41 +219,12 @@
           html: LegendQualifingBenefits
         }) }} -->
 
-        {{ govukRadios({
-          idPrefix: "process-c-nil-task-4-1-edit",
-          name: "process-c-nil-task-4-1-edit",
-          fieldset: {
-            legend: {
-              text: "Confim selection",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "By selecting you will be using this figure to work out an average weekly amount"
-          },
-          classes: "govuk-radios",
-          items: [
-          {
-            value: "Not matched",
-            text: "Yes",
-            checked: (data["process-c-nil-task-4-1-edit"] == "Not matched")
-          },
-            {
-              value: "Matched",
-              text: "No",
-              checked: (data["process-c-nil-task-4-1-edit"] == "Matched")
-            }
-          ]
-        }) }}
+        <p class="govuk-heading-l govuk-!-margin-bottom-2">Confim selection</p>
+        <p class="govuk-hint govuk-!-margin-bottom-6">By selecting you will be using this figure to work out an average weekly amount</p>
 
-
-
-        <!------------ ––– ------------>
 
     </div>
   </div>
-
 
 
     {{ govukButton({
