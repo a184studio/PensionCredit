@@ -19,7 +19,22 @@
 
         {% include "agent-service-1-12/agent/record-id.html" %}
 
-        <span class="govuk-caption-m">Occupational pension one</span>
+
+        {% set USED %}
+        {{govukTag({
+          text: "Selected",
+          classes: "govuk-tag--green"
+        })}}
+        {% endset -%}
+
+        {% set NOTUSED %}
+        {{govukTag({
+          text: "Not selected",
+          classes: "govuk-tag--grey"
+        })}}
+        {% endset -%}
+
+        <span class="govuk-caption-m">Occupational pension one [Week]</span>
         <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments to be used</p>
 
         {{ govukTable({
@@ -29,19 +44,23 @@
           head: [
             {
               text: "Payment date",
-              classes: 'govuk-!-width-one-quarter'
+              classes: 'govuk-20-percent'
             },
             {
-              text: "Days between previous payment",
-              classes: 'govuk-!-width-one-quarter'
+              text: "Frquency (Days between payment)",
+              classes: 'govuk-20-percent'
             },
             {
               text: "Payment amount",
-              classes: 'govuk-!-width-one-quarter'
+              classes: 'govuk-20-percent'
             },
             {
               text: "Tax",
-              classes: 'govuk-!-width-one-quarter'
+              classes: 'govuk-20-percent'
+            },
+            {
+              html: "Calculation<br>selection",
+              classes: 'govuk-20-percent'
             }
           ],
           rows: [
@@ -50,13 +69,16 @@
                 text: "14 April 2022"
               },
               {
-                text: "6"
+                text: "Weekly (6)"
               },
               {
                 text: "£69.10"
               },
               {
-                text: "£0.90"
+                html: "£0.90"
+              },
+              {
+                html: USED
               }
             ],
             [
@@ -64,13 +86,16 @@
                 text: "8 April 2022"
               },
               {
-                text: "7"
+                text: "Weekly (7)"
               },
               {
                 text: "£69.10"
               },
               {
                 text: "£0.90"
+              },
+              {
+                html: USED
               }
             ],
             [
@@ -78,13 +103,16 @@
                 text: "1 April 2022"
               },
               {
-                text: "7"
+                text: "Weekly (7)"
               },
               {
                 text: "£59.10"
               },
               {
                 text: "£0.90"
+              },
+              {
+                html: USED
               }
             ],
             [
@@ -92,13 +120,16 @@
                 text: "24 March 2022"
               },
               {
-                text: "6"
+                text: "Weekly (6)"
               },
               {
                 text: "£59.10"
               },
               {
                 text: "£0.90"
+              },
+              {
+                html: USED
               }
               ],
               [
@@ -106,13 +137,16 @@
                   text: "18 March 2022"
                 },
                 {
-                  text: "—"
+                  text: "Weekly (6)"
                 },
                 {
                   text: "£59.10"
                 },
                 {
                   text: "£0.90"
+                },
+                {
+                  html: NOTUSED
                 }
               ]
           ]
@@ -155,13 +189,13 @@
           name: "process-c-nil-task-4-1",
           fieldset: {
             legend: {
-              text: "The avergage payment for this occupational pension is worked out as £X.00 and will go into a calculation, are you happy with that?",
+              text: "Four payments have been selected these payments will be used to get a weekly amount",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "£69.10 multiplied by 12 (Months) divided by 52 (Weeks) equals and average payment per week of £X.00"
+            text: "Selection will be multiplied by 12 (Months) divided by 52 (Weeks) equals and average payment per week"
           },
           classes: "govuk-radios",
           items: [
@@ -190,7 +224,10 @@
     {{ govukButton({
       text: "Continue"
     }) }}
-  <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><a href="process-c-nil-task-list" class="govuk-link" rel="noreferrer noopener">☒</a></p> -->
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p>
+
 </form>
 
 {% endblock %}

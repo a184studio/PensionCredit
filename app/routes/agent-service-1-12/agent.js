@@ -459,10 +459,24 @@ router.post(`${baseUrl}/process-c-nil-task-4-2-router`, (req, res) => {
   const processTask_4_2 = req.session.data['process-c-nil-task-4-2']
 
   if (processTask_4_2 == 'Yes') {
-    res.redirect(`${baseUrl}/process-c-nil-task-4-2`)
+    res.redirect(`${baseUrl}/process-c-nil-task-4-x-review`)
   }
   else if (processTask_4_2 == 'No') {
-    res.redirect(`${baseUrl}/process-c-nil-task-4-2-edit`)
+    res.redirect(`${baseUrl}/process-c-nil-task-4-x-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-3-router`, (req, res) => {
+  const processTask_4_3 = req.session.data['process-c-nil-task-4-3']
+
+  if (processTask_4_3 == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-x-review`)
+  }
+  else if (processTask_4_3 == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-x-edit`)
   }
    else {
     res.redirect(`${baseUrl}/XXX`)
