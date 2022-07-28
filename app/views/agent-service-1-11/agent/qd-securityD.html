@@ -22,7 +22,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-securityD-check" method="post" class="form">
+    <form action="qd-securityD-router" method="post" class="form">
 
 
       {% include "agent-service-1-11/agent/qd-name-nino.html" %}
@@ -53,9 +53,8 @@
 
       {% endif %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I'm going to go through some security questions with you</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Use searchlight to ask security questions</h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Use searchlight to ask security questions.</p>
 
 
       {{ govukRadios({
@@ -64,7 +63,7 @@
         name: "kbv-fail-D",
         fieldset: {
           legend: {
-            text: "How many security questions did you ask?",
+            text: "Did the caller answer all security questions correctly?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -73,16 +72,22 @@
           text: ""
         },
         items: [
+        {
+          value: "none",
+          text: "Yes",
+          checked: (data["kbv-fail-D"] == "none")
+
+        },
           {
-            value: "two",
-            text: "2",
-            checked: (data["kbv-fail-D"] == "two")
+            value: "one",
+            text: "No, they answered one question incorrectly",
+            checked: (data["kbv-fail-D"] == "one")
 
           },
           {
-            value: "three",
-            text: "3",
-            checked: (data["kbv-fail-D"] == "three")
+            value: "two",
+            text: "No, they answered 2 questions incorrectly",
+            checked: (data["kbv-fail-D"] == "two")
           }
         ]
       }) }}
@@ -91,7 +96,7 @@
         text: "Continue"
       }) }}
 
-
+      
     </div>
 
     </div>

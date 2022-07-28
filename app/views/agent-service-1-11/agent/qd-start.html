@@ -20,12 +20,8 @@
 
 
 
-    <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You've reached Pension Credit, how can I help?</h1>
-
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Do not access a citizen's record unless you need to discuss personal details.</p>
-
+    
 
         {{ govukRadios({
           classes: "",
@@ -33,29 +29,35 @@
           name: "qd-start",
           fieldset: {
             legend: {
-              text: "What is the reason for the call?",
+              text: "Type of enquiry",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
+              classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
             text: ""
           },
           items: [
-            {
-              value: "help",
-              text: "Find out more information about other help available",
-              checked: (data["qd-start"] == "help")
-            },
+   
             {
               value: "record",
-              text: "Access citizen's record",
+              text: "Answer a call about an award decision",
               checked: (data["qd-start"] == "record")
             },
             {
+              value: "help",
+              text: "Answer a call about other help available",
+              checked: (data["qd-start"] == "help")
+            },
+            {
               value: "exit",
-              text: "Exit",
+              text: "Answer a call without accessing a claim",
               checked: (data["qd-start"] == "exit")
+            },
+            {
+              value: "admin",
+              text: "Access a claim without taking a call",
+              checked: (data["qd-start"] == "admin")
             }
           ]
         }) }}

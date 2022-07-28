@@ -22,7 +22,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="qd-securityD-router" method="post" class="form">
+    <form action="qd-security-router" method="post" class="form">
 
 
       {% include "agent-service-1-11/agent/qd-name-nino.html" %}
@@ -53,13 +53,16 @@
 
       {% endif %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Did the citizen fail any questions?</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Security questions answered incorrectly</h1>
 
 
-      {% set failedSecurityOne %}
+      
+
+      {% if data["kbv-fail-D"] == "one" %}
+
       {{ govukTextarea({
         label: {
-          text: "Enter failed security question"
+          text: "Enter first question"
         },
         hint: {
           text: "For example, what is the name of your bank?"
@@ -71,14 +74,28 @@
         value: data["kbv-fail-one"]
 
       }) }}
-      {% endset -%}
 
+      {% else %}
 
-
-      {% set failedSecurityTwo %}
       {{ govukTextarea({
         label: {
-          text: "Enter failed security questions"
+          text: "Enter first question"
+        },
+        hint: {
+          text: "For example, what is the name of your bank?"
+        },
+        id: "kbv-fail-one",
+        rows: "2",
+        name: "security-failed",
+        classes: "",
+        value: data["kbv-fail-one"]
+
+      }) }}
+
+
+      {{ govukTextarea({
+        label: {
+          text: "Enter second questions"
         },
         hint: {
           text: "For example, what is the name of your bank?"
@@ -89,123 +106,6 @@
         classes: "",
         value: data["kbv-fail-two"]
 
-      }) }}
-      {% endset -%}
-
-
-      {% set failedSecurityThree %}
-      {{ govukTextarea({
-        label: {
-          text: "Enter failed security questions"
-        },
-        hint: {
-          text: "For example, what is the name of your bank?"
-        },
-        id: "kbv-fail-three",
-        rows: "2",
-        name: "kbv-fail-three",
-        classes: "",
-        value: data["kbv-fail-three"]
-
-      }) }}
-      {% endset -%}
-
-      {% if data["kbv-fail-D"] == "two" %}
-
-      {{ govukCheckboxes({
-        classes: "",
-        idPrefix: "kbv-fail-D-check",
-        name: "kbv-fail-D-check",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-          {
-            value: "one",
-            text: "Answered first question wrong",
-            conditional: {
-              html: failedSecurityOne
-            },
-            checked: (data["kbv-fail-D-check"] == "one")
-
-          },
-          {
-            value: "two",
-            text: "Answered second question wrong",
-            conditional: {
-              html: failedSecurityOne
-            },
-            checked: (data["kbv-fail-D-check"] == "two")
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "pass",
-            text: "No, they answered all questions correctly",
-            checked: (data["kbv-fail-D-check"] == "pass")
-          }
-        ]
-      }) }}
-
-      {% else %}
-
-      {{ govukCheckboxes({
-        classes: "",
-        idPrefix: "kbv-fail-D-check",
-        name: "kbv-fail-D-check",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-          {
-            value: "one",
-            text: "Answered first question wrong",
-            conditional: {
-              html: failedSecurityOne
-            },
-            checked: (data["kbv-fail-D-check"] == "one")
-
-          },
-          {
-            value: "two",
-            text: "Answered second question wrong",
-            conditional: {
-              html: failedSecurityOne
-            },
-            checked: (data["kbv-fail-D-check"] == "two")
-          },
-          {
-            value: "three",
-            text: "Answered third question wrong",
-            conditional: {
-              html: failedSecurityOne
-            },
-            checked: (data["kbv-fail-D-check"] == "three")
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "pass",
-            text: "No, they answered all questions correctly",
-            checked: (data["kbv-fail-D-check"] == "pass")
-          }
-        ]
       }) }}
 
 

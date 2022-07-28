@@ -16,13 +16,33 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="qd-end" method="post" class="form">
+    <form action="home-user-0" method="post" class="form">
       {% include "agent-service-1-11/agent/qd-name-nino.html" %}
+
+      {% if data['qd-start'] === 'admin' %}
+
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          You have not asked security questions for this claim</p>
+        <p class="govuk-body govuk-!-font-weight-bold">
+          If you make a phone call, take the caller through security questions before disclosing any information.</p>
+
+
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
+
+      {% endif %}
 
     <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-three-quarters">
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I'm just going to check some details with you and explain your decision</h1>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Claim summary</h1>
 
 
             {% if data['qd-search-nino'] === 'ZZ439386T' %}
@@ -498,8 +518,8 @@
 
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-8">
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-7">Check the information is correct</h2>
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Open Searchlight and check the information on qualifying benefits and State Pension match</h3>
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-7">Information the claimant might ask you to check</h2>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Qualifying benefit and State Pension details you can check in Searchlight</h3>
 
 
 
@@ -764,7 +784,7 @@
             {% endif %}
 
 
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Ask the citizen to confirm if they live with a partner and if they pay ground rent or service charges</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Details you can check with the claimant</h3>
 
             {{ govukTable({
               caption: "",
@@ -823,7 +843,7 @@
 
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-6">
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Would you like to know about other help you could get?</h2>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Other help</h2>
             <p> <a href="qd-help-summary" class="govuk-link govuk-!-margin-bottom-4">View other help</a></p>
 
             <!--
@@ -863,18 +883,18 @@
               rows: 4,
               label: {
                 text: "Enter notes",
-                classes: "govuk-label--m",
+                classes: "govuk-label--l",
                 isPageHeading: true
               },
               hint: {
-                text: "For example, why they called and any relevant information"
+                text: "For example, the call reason, any action you took and any other relevant information."
               }
             }) }}
 
 
 
             {{ govukButton({
-              text: "Exit record"
+              text: "Save and exit"
             }) }}
 
 

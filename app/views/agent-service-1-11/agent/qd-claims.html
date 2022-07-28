@@ -23,9 +23,8 @@
 
     <div class="govuk-!-margin-bottom-8">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I can see that you have more than one claim, which claim is your question for?</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">More than one claim found</h1>
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-0">Use the details below to identify the claim you need to access</p>
 
 
         {{ govukRadios({
@@ -34,7 +33,7 @@
           name: "qd-claims",
           fieldset: {
             legend: {
-              text: "",
+              text: "Select the claim you need to access",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -45,25 +44,25 @@
           items: [
             {
               value: "one",
-              text: "Application submitted on 28 January 2022 at 2:11pm",
+              text: "Application to be considered from 28 November 2022 ",
               hint: {
-                html: "Asked for application to be considered from 28 November 2022 "
+                html: "Submitted on 28 January 2022 at 2:11pm."
               },
               checked: (data["qd-claims"] == "record")
             },
             {
               value: "two",
-              text: "Application submitted on 28 January 2022 at 8:00am",
+              text: "Application to be considered from 28 November 2022",
               hint: {
-                html: "Asked for application to be considered from 28 November 2022 "
+                html: "Submitted on 28 January 2022 at 8:00am."
               },
               checked: (data["qd-claims"] == "record")
             },
             {
               value: "three",
-              text: "Application submitted on 05 December 2022 at 11:35am",
+              text: "Application to be considered from 05 September 2022",
               hint: {
-                html: "Asked for application to be considered from 05 September 2022 "
+                html: "Submitted on 05 December 2022 at 11:35am."
               },
               checked: (data["qd-claims"] == "exit")
             }

@@ -412,18 +412,16 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
 
 
 router.post(`${baseUrl}/qd-security-router`, (req, res) => {
-  const qdSecurity = req.session.data['kbv-fail']
+  const kbvFailD = req.session.data['kbv-fail-D']
 
-  if (qdSecurity == 'fail') {
-    res.redirect(`${baseUrl}/qd-security-fail-2`)
-  }
-  else if (qdSecurity == 'yes') {
-    res.redirect(`${baseUrl}/qd-security-fail-1`)
+  if (kbvFailD == 'two') {
+    res.redirect(`${baseUrl}/qd-security-fail`)
   }
    else {
-    res.redirect(`${baseUrl}/qd-summary`)
+    res.redirect(`${baseUrl}/qd-claims`)
   }
 })
+
 
 
 router.post(`${baseUrl}/qd-letter-summary-router`, (req, res) => {
@@ -438,13 +436,13 @@ router.post(`${baseUrl}/qd-letter-summary-router`, (req, res) => {
 })
 
 router.post(`${baseUrl}/qd-securityD-router`, (req, res) => {
-  const kbvFailD = req.session.data['kbv-fail-D-check']
+  const kbvFailD = req.session.data['kbv-fail-D']
 
-  if (kbvFailD == 'pass' || kbvFailD == 'one' || kbvFailD == 'two' || kbvFailD == 'three') {
+  if (kbvFailD == 'none') {
     res.redirect(`${baseUrl}/qd-claims`)
   }
    else {
-    res.redirect(`${baseUrl}/qd-security-fail`)
+    res.redirect(`${baseUrl}/qd-securityD-check`)
   }
 })
 
@@ -455,11 +453,15 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
   if (qdStart == 'help') {
     res.redirect(`${baseUrl}/qd-help`)
   }
-  else if (qdStart == 'exit') {
-    res.redirect(`${baseUrl}/home-user-0`)
+  else if (qdStart == 'record') {
+    res.redirect(`${baseUrl}/qd-search`)
+  }
+  else if (qdStart === 'admin') {
+    res.redirect(`${baseUrl}/qdb-search`)
   }
    else {
-    res.redirect(`${baseUrl}/qd-search`)
+    res.redirect(`${baseUrl}/home-user-0`)
+    
   }
 })
 
@@ -467,9 +469,13 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
 router.post(`${baseUrl}/qd-search-router`, (req, res) => {
   const ninoSecurity = req.session.data['qd-search-nino']
 
-  if (ninoSecurity === 'QQ457741A' || ninoSecurity === 'EO972577M' || ninoSecurity === 'ZZ439386T') {
-    res.redirect(`${baseUrl}/qd-security`)
-  } else {
+  if (ninoSecurity === 'QQ457741A' || ninoSecurity === 'EO972577M') {
+    res.redirect(`${baseUrl}/qd-securityD`)
+  } 
+  else if (ninoSecurity === 'ZZ439386T') {
+    res.redirect(`${baseUrl}/qd-securityD`)
+  }
+  else {
     res.redirect(`${baseUrl}/qd-securityD`)
   }
 })
