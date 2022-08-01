@@ -38,23 +38,21 @@
             text: ""
           },
           items: [
-   
+          {
+            value: "exit",
+            text: "Answer a call without accessing a claim",
+            checked: (data["qd-start"] == "exit")
+          },
             {
               value: "record",
               text: "Answer a call about an award decision",
               checked: (data["qd-start"] == "record")
             },
             {
-              value: "exit",
-              text: "Answer a call without accessing a claim",
-              checked: (data["qd-start"] == "exit")
-            },
-            {
               value: "help",
               text: "Answer a call about other help available",
               checked: (data["qd-start"] == "help")
             },
-        
             {
               divider: "or"
             },
