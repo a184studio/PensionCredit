@@ -45,14 +45,18 @@
               checked: (data["qd-start"] == "record")
             },
             {
+              value: "exit",
+              text: "Answer a call without accessing a claim",
+              checked: (data["qd-start"] == "exit")
+            },
+            {
               value: "help",
               text: "Answer a call about other help available",
               checked: (data["qd-start"] == "help")
             },
+        
             {
-              value: "exit",
-              text: "Answer a call without accessing a claim",
-              checked: (data["qd-start"] == "exit")
+              divider: "or"
             },
             {
               value: "admin",
