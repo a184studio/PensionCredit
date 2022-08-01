@@ -1,0 +1,33 @@
+{% extends "layout-g4s.html" %}
+
+{% block pageTitle %}
+  Have you spent any time in hospital recently? - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="ur-mi" method="post" class="form">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-top-4">Backdating scenarios</h1>
+
+      <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Working out backdating amounts</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-backdater-a" class="govuk-link" rel="noreferrer noopener">Stable backdating with no payments needed, nil claim</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-backdater-b" class="govuk-link" rel="noreferrer noopener">Unstable backdating with no payments needed, nil claim</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-backdater-c" class="govuk-link" rel="noreferrer noopener">Unstable backdating with payments needed, nil claim</a></p>
+
+
+
+
+
+    </form>
+    <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+  </div>
+</div>
+{% endblock %}
