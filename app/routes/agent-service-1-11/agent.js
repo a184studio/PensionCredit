@@ -482,13 +482,13 @@ router.post(`${baseUrl}/qd-search-router`, (req, res) => {
   const ninoSecurity = req.session.data['qd-search-nino']
 
   if (ninoSecurity === 'QQ457741A' || ninoSecurity === 'EO972577M') {
-    res.redirect(`${baseUrl}/qd-securityD`)
+    res.redirect(`${baseUrl}/qd-securityE`)
   }
   else if (ninoSecurity === 'ZZ439386T') {
-    res.redirect(`${baseUrl}/qd-securityD`)
+    res.redirect(`${baseUrl}/qd-securityE`)
   }
   else {
-    res.redirect(`${baseUrl}/qd-securityD`)
+    res.redirect(`${baseUrl}/qd-securityE`)
   }
 })
 
