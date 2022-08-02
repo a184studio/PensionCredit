@@ -877,19 +877,58 @@
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-6">
 
-            {{ govukTextarea({
-              name: "summary-notes",
-              id: "summary-notes",
-              rows: 4,
-              label: {
-                text: "Enter notes",
-                classes: "govuk-label--l",
-                isPageHeading: true
-              },
-              hint: {
-                text: "For example, the call reason, any action you took and any other relevant information."
-              }
-            }) }}
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set notesHtml %}
+{{ govukTextarea({
+  name: "summary-notes",
+  id: "summary-notes",
+  rows: 4,
+  label: {
+    text: "Notes about the call",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: ""
+  }
+}) }}
+{% endset -%}
+
+
+
+{{ govukRadios({
+  idPrefix: "notes",
+  name: "notes",
+  fieldset: {
+    legend: {
+      text: "Do you need to leave notes about the claim?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, the call reason, any action you took and any other relevant information."
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: notesHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+  ]
+}) }}
+         
 
 
             <div class="govuk-button-group">
