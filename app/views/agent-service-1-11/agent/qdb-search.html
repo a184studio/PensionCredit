@@ -13,7 +13,10 @@
 
 {% block content %}
 
-
+{{ govukBackLink({
+  text: "Back",
+  href: "qd-start"
+}) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -35,7 +38,7 @@
                     text: ""
                   },
                   hint: {
-                    text: "It’s on your Pension Credit letter, National Insurance card, payslip or P60. For example, 'QQ 12 34 56 C'."                  },
+                    text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'."                  },
                   id: "qd-search-nino",
                   name: "qd-search-nino",
                   classes: "govuk-input--width-10 govuk-!-margin-bottom-0",

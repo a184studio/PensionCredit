@@ -28,7 +28,7 @@
         <p class="govuk-notification-banner__heading">
           You have not asked security questions for this claim</p>
         <p class="govuk-body govuk-!-font-weight-bold">
-          If you make a phone call, take the caller through security questions before disclosing any information.</p>
+          If you make a phone call, <a href="qd-start">take the claimant through security questions</a> before disclosing any information.</p>
 
 
       {% endset %}
@@ -65,7 +65,7 @@
               rows: [
                 [
                   {
-                    text: "Date of claim",
+                    text: "Date claim submitted",
                     classes: 'govuk-table--no-border'
 
                   },
@@ -143,7 +143,7 @@
               rows: [
                 [
                   {
-                    text: "Date of claim",
+                    text: "Date claim submitted",
                     classes: 'govuk-table--no-border'
 
                   },
@@ -222,7 +222,7 @@
                 rows: [
                   [
                     {
-                      text: "Date of claim",
+                      text: "Date claim sumbitted",
                       classes: 'govuk-table--no-border'
 
                     },
@@ -299,7 +299,7 @@
                 rows: [
                   [
                     {
-                      text: "Date of claim",
+                      text: "Date claim submitted",
                       classes: 'govuk-table--no-border'
 
                     },
@@ -376,7 +376,7 @@
                 rows: [
                   [
                     {
-                      text: "Date of claim",
+                      text: "Date claim submitted",
                       classes: 'govuk-table--no-border'
 
                     },
@@ -453,7 +453,7 @@
                   rows: [
                     [
                       {
-                        text: "Date of claim",
+                        text: "Date claim submitted",
                         classes: 'govuk-table--no-border'
 
                       },
@@ -877,27 +877,66 @@
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-6">
 
-            {{ govukTextarea({
-              name: "summary-notes",
-              id: "summary-notes",
-              rows: 4,
-              label: {
-                text: "Enter notes",
-                classes: "govuk-label--l",
-                isPageHeading: true
-              },
-              hint: {
-                text: "For example, the call reason, any action you took and any other relevant information."
-              }
-            }) }}
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set notesHtml %}
+{{ govukTextarea({
+  name: "summary-notes",
+  id: "summary-notes",
+  rows: 4,
+  label: {
+    text: "Notes about the claim",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: ""
+  }
+}) }}
+{% endset -%}
 
 
 
+{{ govukRadios({
+  idPrefix: "notes",
+  name: "notes",
+  fieldset: {
+    legend: {
+      text: "Do you need to leave notes about the claim?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, the call reason, any action you took and any other relevant information."
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: notesHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+  ]
+}) }}
+         
+
+
+            <div class="govuk-button-group">
             {{ govukButton({
               text: "Save and exit"
             }) }}
-
-
+            <a class="govuk-link" href="qd-start">Take a claimant through security</a>
+            </div>
         </div>
 
       </div>

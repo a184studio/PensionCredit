@@ -447,6 +447,18 @@ router.post(`${baseUrl}/qd-securityD-router`, (req, res) => {
 })
 
 
+router.post(`${baseUrl}/qd-securityE-router`, (req, res) => {
+  const securityE = req.session.data['qd-securityE']
+
+  if (securityE == 'fail') {
+    res.redirect(`${baseUrl}/qd-securityE-fail`)
+  }
+   else {
+    res.redirect(`${baseUrl}/qd-securityE-check`)
+  }
+})
+
+
 router.post(`${baseUrl}/qd-start-router`, (req, res) => {
   const qdStart = req.session.data['qd-start']
 
@@ -461,7 +473,7 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
   }
    else {
     res.redirect(`${baseUrl}/home-user-0`)
-    
+
   }
 })
 
@@ -470,13 +482,13 @@ router.post(`${baseUrl}/qd-search-router`, (req, res) => {
   const ninoSecurity = req.session.data['qd-search-nino']
 
   if (ninoSecurity === 'QQ457741A' || ninoSecurity === 'EO972577M') {
-    res.redirect(`${baseUrl}/qd-securityD`)
-  } 
+    res.redirect(`${baseUrl}/qd-securityE`)
+  }
   else if (ninoSecurity === 'ZZ439386T') {
-    res.redirect(`${baseUrl}/qd-securityD`)
+    res.redirect(`${baseUrl}/qd-securityE`)
   }
   else {
-    res.redirect(`${baseUrl}/qd-securityD`)
+    res.redirect(`${baseUrl}/qd-securityE`)
   }
 })
 

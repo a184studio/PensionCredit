@@ -21,7 +21,7 @@
 
 
 
-    
+
 
         {{ govukRadios({
           classes: "",
@@ -38,7 +38,6 @@
             text: ""
           },
           items: [
-   
             {
               value: "record",
               text: "Answer a call about an award decision",
@@ -50,9 +49,7 @@
               checked: (data["qd-start"] == "help")
             },
             {
-              value: "exit",
-              text: "Answer a call without accessing a claim",
-              checked: (data["qd-start"] == "exit")
+              divider: "or"
             },
             {
               value: "admin",
@@ -64,11 +61,13 @@
 
 
 
-        {{ govukButton({
-        text: "Continue"
-        }) }}
 
-
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Continue"
+          }) }}
+        <a class="govuk-link" href="home-user-0">Exit</a>
+        </div>
 
     </div>
 
