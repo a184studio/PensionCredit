@@ -38,11 +38,7 @@
             text: ""
           },
           items: [
-          {
-            value: "exit",
-            text: "Answer a call without accessing a claim",
-            checked: (data["qd-start"] == "exit")
-          },
+
             {
               value: "record",
               text: "Answer a call about an award decision",
@@ -66,11 +62,13 @@
 
 
 
-        {{ govukButton({
-        text: "Continue"
-        }) }}
 
-
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Continue"
+          }) }}
+        <a class="govuk-link" href="home-user-0">Exit</a>
+        </div>
 
     </div>
 

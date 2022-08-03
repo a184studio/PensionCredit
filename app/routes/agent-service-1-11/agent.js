@@ -469,7 +469,7 @@ router.post(`${baseUrl}/qd-start-router`, (req, res) => {
     res.redirect(`${baseUrl}/qd-search`)
   }
   else if (qdStart === 'admin') {
-    res.redirect(`${baseUrl}/qd-search`)
+    res.redirect(`${baseUrl}/qdb-search`)
   }
    else {
     res.redirect(`${baseUrl}/home-user-0`)
