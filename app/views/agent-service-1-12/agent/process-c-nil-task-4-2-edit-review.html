@@ -14,9 +14,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="process-c-nil-task-4-2-router" method="post" class="form">
+      <form action="process-c-nil-task-4-2-review-router" method="post" class="form">
+
 
         {% include "agent-service-1-12/agent/record-id.html" %}
+
 
         {% set USED %}
         {{govukTag({
@@ -33,9 +35,10 @@
         {% endset -%}
 
         <span class="govuk-caption-m">Occupational pension one</span>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Review selection for<br>MetroLand LTD</p>
 
         {{ govukTable({
-          caption: "Check pension payments for Pension provider A [Month]",
+          caption: "",
           captionClasses: "govuk-table__caption--xl govuk-!-margin-bottom-6",
           firstCellIsHeader: false,
           head: [
@@ -66,69 +69,52 @@
                 text: "1 June 2022"
               },
               {
-                text: "Monthly (31)"
+                text: "Cal month"
               },
               {
                 text: "£590.10"
               },
               {
-                text: "£90.00"
+                html: "£0.90"
               },
               {
                 html: USED
               }
-              ],
-              [
-                {
-                  text: "1 May 2022"
-                },
-                {
-                  text: "Monthly (30)"
-                },
-                {
-                  text: "£590.10"
-                },
-                {
-                  text: "£90.00"
-                },
-                {
-                  html: NOTUSED
-                }
-              ],
+            ],
+            [
+              {
+                text: "1 May 2022"
+              },
+              {
+                text: "Cal month"
+              },
+              {
+                text: "£590.10"
+              },
+              {
+                text: "£0.90"
+              },
+              {
+                html:   USED
+              }
+            ],
             [
               {
                 text: "1 April 2022"
               },
               {
-                text: "Monthly (31)"
+                text: "Cal month"
               },
               {
                 text: "£590.10"
               },
               {
-                text: "£90.00"
+                text: "£0.90"
               },
               {
-                html: NOTUSED
+                html:   USED
               }
-            ],
-              [
-                {
-                  text: "1 March 2022"
-                },
-                {
-                  text: "Monthly (28)"
-                },
-                {
-                  text: "£490.10"
-                },
-                {
-                  text: "£90.00"
-                },
-                {
-                  html: NOTUSED
-                }
-              ]
+            ]
           ]
         }) }}
 
@@ -165,29 +151,29 @@
         }) }} -->
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-4-2",
-          name: "process-c-nil-task-4-2",
+          idPrefix: "process-c-nil-task-4-1",
+          name: "process-c-nil-task-4-1",
           fieldset: {
             legend: {
-              text: "Single payment is selected these payments will be used to get a weekly amount",
+              text: "Three payments have been selected these payments will be used to get a weekly amount of £136.15",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "Selection will be multiplied by 12 (Months) divided by 52 (Weeks) equals and average payment per week"
+            text: "X"
           },
           classes: "govuk-radios",
           items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["process-c-nil-task-4-2"] == "Yes")
+            checked: (data["process-c-nil-task-4-1"] == "Yes")
           },
             {
               value: "No",
               text: "No",
-              checked: (data["process-c-nil-task-4-2"] == "No")
+              checked: (data["process-c-nil-task-4-1"] == "No")
             }
           ]
         }) }}
@@ -204,9 +190,10 @@
     {{ govukButton({
       text: "Continue"
     }) }}
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p>
+
 </form>
 
 {% endblock %}
