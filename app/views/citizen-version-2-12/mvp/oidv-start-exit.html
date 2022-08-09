@@ -1,0 +1,41 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Apply for Pension Credit - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="gov-uk-overview" method="post" class="form">
+
+    <p class="govuk-body govuk--version-control">oidv</p>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Thank you</h1>
+
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">XXX</p>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p>
+
+    {{ govukButton({
+      text: "Exit"
+    }) }}
+
+    {{ govukButton({
+    name: "process-c-nil-task-list",
+    value: "UF",
+    checked: (data["process-c-nil-task-list"] == "UF"),
+    text: "Return to X",
+    classes: "govuk-button--secondary",
+    href: "process-nil-task-alt-outcome"
+    }) }}
+
+
+</form>
+</div>
+{% endblock %}

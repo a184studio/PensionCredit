@@ -1,0 +1,118 @@
+{% extends "layout-covid19.html" %}
+
+{% block pageTitle %}
+  Apply for Pension Credit - Pension Credit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="oidv-start-check-router" method="post" class="form">
+
+    <p class="govuk-body govuk--version-control">oidv</p>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We need to know if you have access to documents</h1>
+
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You will need certain information about yourself and your partner (if you live with one) while you make your application. </p>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">If you do not enter anything for more than 30 minutes, your application will time out and you will have to start again. This is to keep your details secure. You cannot save your application and come back later.</p>
+
+    <div class="govuk-inset-text govuk-!-margin-bottom-2">This service is for new Pension Credit applications only. If you are already getting Pension Credit you should call us to tell us about a <a href="gov-uk-coc">change of circumstances</a>.</div>
+
+    <!------------DYNAMIC HINT------------>
+    {% set DynamicHint %}
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-2 govuk-!-margin-bottom-3">You will need (for you and your partner, if you live with one):</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>National Insurance number</li>
+      <li>details of income and pensions</li>
+      <li>details of money, savings and investments, usually for the last 3 months</li>
+    </ul>
+
+    {% endset %}
+    <!------------DYNAMIC--------------->
+
+
+    {{ govukRadios({
+      idPrefix: "oidv-start-check",
+      name: "oidv-start-check",
+      fieldset: {
+        legend: {
+          text: "XXX",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+        }
+      },
+      hint: {
+        html: DynamicHint
+      },
+      classes: "govuk-radios",
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["oidv-start-check"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["oidv-start-check"] == "No")
+        }
+      ]
+    }) }}
+
+
+<!-- {{ govukCheckboxes({
+  idPrefix: "start-check",
+  name: "start-check",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-padding-top-2"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+
+    {
+      value: "confirm",
+      text: "I confirm I have this information ready",
+      checked: (data["start-check"] == "confirm")
+
+    }
+  ]
+}) }} -->
+
+
+
+     <!--  {{ govukButton({
+       text: "Continue",
+       classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8",
+       isStartButton: true
+     }) }} -->
+
+
+     <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+
+
+<!--
+     {{ govukButton({
+       text: "Continue"
+     }) }} -->
+
+
+
+</form>
+</div>
+{% endblock %}
