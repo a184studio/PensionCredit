@@ -59,39 +59,11 @@
 
       {% endif %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Use searchlight to ask security questions</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"></h1>
 
 
 
-      {{ govukRadios({
-        classes: "",
-        idPrefix: "qd-securityE",
-        name: "qd-securityE",
-        fieldset: {
-          legend: {
-            text: "Did the claimant pass security?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-        {
-          value: "pass",
-          text: "Yes",
-          checked: (data["qd-securityE"] == "pass")
 
-        },
-          {
-            value: "fail",
-            text: "No",
-            checked: (data["qd-securityE"] == "fail")
-
-          }
-        ]
-      }) }}
 
       {{ govukButton({
         text: "Continue"
