@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="process-c-nil-task-4-2-router" method="post" class="form">
+      <form action="process-c-nil-task-4-q-router" method="post" class="form">
 
         {% include "agent-service-1-12/agent/record-id.html" %}
 
@@ -32,9 +32,9 @@
         })}}
         {% endset -%}
 
-        <span class="govuk-caption-m">Occupational pension one [Month]</span>
+        <span class="govuk-caption-m">Occupational pension one [Quarterly]</span>
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments for<br>MetroLand LTD</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments for<br>Magaluf Ringo LTD</p>
 
 
         {{ govukTable({
@@ -68,13 +68,13 @@
                 text: "1 June 2022"
               },
               {
-                text: "Monthly (31)"
+                text: "Quarterly (91)"
               },
               {
-                text: "£1,100.00"
+                text: "£1,015.36"
               },
               {
-                text: "£220.00"
+                text: "£203.72"
               },
               {
                 html: USED
@@ -82,16 +82,16 @@
               ],
               [
                 {
-                  text: "1 May 2022"
+                  text: "2 March 2022"
                 },
                 {
-                  text: "Monthly (30)"
+                  text: "Quarterly (91)"
                 },
                 {
-                  text: "£1,100.00"
+                  text: "£1,015.36"
                 },
                 {
-                  text: "£220.00"
+                  text: "£203.72"
                 },
                 {
                   html: NOTUSED
@@ -99,16 +99,16 @@
               ],
             [
               {
-                text: "1 April 2022"
+                text: "1 December 2021"
               },
               {
-                text: "Monthly (31)"
+                text: "Quarterly (91)"
               },
               {
-                text: "£1,100.00"
+                text: "£923.04"
               },
               {
-                text: "£220.00"
+                text: "£184.608"
               },
               {
                 html: NOTUSED
@@ -116,21 +116,38 @@
             ],
               [
                 {
-                  text: "1 March 2022"
+                  text: "21 September 2021"
                 },
                 {
-                  text: "Monthly (28)"
+                  text: "Quarterly (91)"
                 },
                 {
-                  text: "£1,000.00"
+                  text: "£923.04"
                 },
                 {
-                  text: "£200.00"
+                  text: "£184.608"
                 },
                 {
                   html: NOTUSED
                 }
-              ]
+              ],
+                [
+                  {
+                    text: "22 June 2021"
+                  },
+                  {
+                    text: "Quarterly (91)"
+                  },
+                  {
+                    text: "£923.04"
+                  },
+                  {
+                    text: "£184.608"
+                  },
+                  {
+                    html: NOTUSED
+                  }
+                ]
           ]
         }) }}
 
@@ -167,11 +184,11 @@
         }) }} -->
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-4-2",
-          name: "process-c-nil-task-4-2",
+          idPrefix: "process-c-nil-task-4-q",
+          name: "process-c-nil-task-4-q",
           fieldset: {
             legend: {
-              text: "One payment have been selected these payments will be used to get a weekly amount of £XXX",
+              text: "One payment have been selected these payments will be used to get a weekly amount of £253.84",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -184,12 +201,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["process-c-nil-task-4-2"] == "Yes")
+            checked: (data["process-c-nil-task-4-q"] == "Yes")
           },
             {
               value: "No",
               text: "No",
-              checked: (data["process-c-nil-task-4-2"] == "No")
+              checked: (data["process-c-nil-task-4-q"] == "No")
             }
           ]
         }) }}

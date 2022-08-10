@@ -441,6 +441,119 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
 
 
 
+// Weekly
+
+router.post(`${baseUrl}/process-c-nil-task-4-w-router`, (req, res) => {
+  const processTask_4_w = req.session.data['process-c-nil-task-4-w']
+
+  if (processTask_4_w == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_w == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-w-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-w-edit-router`, (req, res) => {
+  const processTask_4_w_edit = req.session.data['process-c-nil-task-4-w-edit']
+
+  if (processTask_4_w_edit == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-w-edit-review`)
+  }
+  else if (processTask_4_w_edit == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-w`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-w-edit-review-router`, (req, res) => {
+  const processTask_4_w_edit_review = req.session.data['process-c-nil-task-4-w-edit-review']
+
+  if (processTask_4_w_edit_review == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_w_edit_review == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-w-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+
+
+// Four weekly
+
+router.post(`${baseUrl}/process-c-nil-task-4-fw-router`, (req, res) => {
+  const processTask_4_fw = req.session.data['process-c-nil-task-4-fw']
+
+  if (processTask_4_fw == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_fw == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-fw-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-fw-edit-router`, (req, res) => {
+  const processTask_4_fw_edit = req.session.data['process-c-nil-task-4-fw-edit']
+
+  if (processTask_4_fw_edit == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-fw-edit-review`)
+  }
+  else if (processTask_4_fw_edit == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-fw`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-fw-edit-review-router`, (req, res) => {
+  const processTask_4_fw_edit_review = req.session.data['process-c-nil-task-4-fw-edit-review']
+
+  if (processTask_4_fw_edit_review == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_fw_edit_review == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-fw-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.post(`${baseUrl}/process-c-nil-task-4-1-router`, (req, res) => {
   const processTask_4_1 = req.session.data['process-c-nil-task-4-1']
 
@@ -454,6 +567,8 @@ router.post(`${baseUrl}/process-c-nil-task-4-1-router`, (req, res) => {
     res.redirect(`${baseUrl}/XXX`)
   }
 })
+
+
 
 router.post(`${baseUrl}/process-c-nil-task-4-2-router`, (req, res) => {
   const processTask_4_2 = req.session.data['process-c-nil-task-4-2']
