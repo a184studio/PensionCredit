@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="process-c-nil-task-4-q-edit-review-router" method="post" class="form">
+      <form action="process-c-nil-task-4-t-edit-review-router" method="post" class="form">
 
 
         {% include "agent-service-1-12/agent/record-id.html" %}
@@ -35,7 +35,7 @@
         {% endset -%}
 
         <span class="govuk-caption-m">Occupational pension one [Quarterly]</span>
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Review selection for<br>Magaluf Ringo LTD</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Review selection for<br>Lebowski LTD</p>
 
         {{ govukTable({
           caption: "",
@@ -69,13 +69,13 @@
               text: "1 June 2022"
             },
             {
-              text: "Quarterly (91)"
+              text: "Twice a year (183)"
             },
             {
-              text: "£3,299.92"
+              text: "£6,599.84"
             },
             {
-              text: "£659.98"
+              text: "£1,319.97"
             },
             {
               html: USED
@@ -117,29 +117,29 @@
         }) }} -->
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-4-q-edit-review",
-          name: "process-c-nil-task-4-q-edit-review",
+          idPrefix: "process-c-nil-task-4-t-edit-review",
+          name: "process-c-nil-task-4-t-edit-review",
           fieldset: {
             legend: {
-              text: "Four payments have been selected these payments will be used to get a weekly amount of £253.84",
+              text: "One payments have been selected these payments will be used to get a weekly amount of £253.84",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "Calculation: Multiplied by 4 (quarters) and divided by 52 (weeks) to achieve weekly amount"
+            text: "Calculation: Multiplied by 2 (6 months) divided by 52 (Weeks) equals and average payment per week"
           },
           classes: "govuk-radios",
           items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["process-c-nil-task-4-q-edit-review"] == "Yes")
+            checked: (data["process-c-nil-task-4-t-edit-review"] == "Yes")
           },
             {
               value: "No",
               text: "No",
-              checked: (data["process-c-nil-task-4-q-edit-review"] == "No")
+              checked: (data["process-c-nil-task-4-t-edit-review"] == "No")
             }
           ]
         }) }}

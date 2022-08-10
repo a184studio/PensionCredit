@@ -14,11 +14,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="process-c-nil-task-4-q-edit-review-router" method="post" class="form">
-
+      <form action="process-c-nil-task-4-t-router" method="post" class="form">
 
         {% include "agent-service-1-12/agent/record-id.html" %}
-
 
         {% set USED %}
         {{govukTag({
@@ -34,11 +32,12 @@
         })}}
         {% endset -%}
 
-        <span class="govuk-caption-m">Occupational pension one [Quarterly]</span>
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Review selection for<br>Magaluf Ringo LTD</p>
+        <span class="govuk-caption-m">Occupational pension one [Twice a year]</span>
+
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments for<br>Lebowski LTD</p>
+
 
         {{ govukTable({
-          caption: "",
           captionClasses: "govuk-table__caption--xl govuk-!-margin-bottom-6",
           firstCellIsHeader: false,
           head: [
@@ -51,36 +50,87 @@
               classes: 'govuk-20-percent'
             },
             {
-              text: "Payment amount",
+              text: "Net payment amount",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Tax",
+              text: "Tax (20%)",
               classes: 'govuk-20-percent'
             },
             {
-              html: "Calculation<br>selection",
+              html: "Nil system<br>selection",
               classes: 'govuk-20-percent'
             }
           ],
           rows: [
+            [
+              {
+                text: "1 June 2022"
+              },
+              {
+                text: "Twice a year (183)"
+              },
+              {
+                text: "£6,599.84"
+              },
+              {
+                text: "£1,319.97"
+              },
+              {
+                html: USED
+              }
+              ],
+              [
+                {
+                  text: "1 December 2021"
+                },
+                {
+                  text: "Twice a year (183)"
+                },
+                {
+                  text: "£5,279.87"
+                },
+                {
+                  text: "£1,055.97"
+                },
+                {
+                  html: NOTUSED
+                }
+              ],
+            [
+              {
+                text: "1 June 2021"
+              },
+              {
+                text: "Twice a year (183)"
+              },
+              {
+                text: "£5,279.87"
+              },
+              {
+                text: "£1,055.97"
+              },
+              {
+                html: NOTUSED
+              }
+            ],
           [
             {
-              text: "1 June 2022"
+              text: "1 December 2020"
             },
             {
-              text: "Quarterly (91)"
+              text: "Twice a year (183)"
             },
             {
-              text: "£3,299.92"
+              text: "£4,223.90"
             },
             {
-              text: "£659.98"
+              text: "£844.78"
             },
             {
-              html: USED
+              html: NOTUSED
             }
-            ]
+          ]
           ]
         }) }}
 
@@ -117,29 +167,29 @@
         }) }} -->
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-4-q-edit-review",
-          name: "process-c-nil-task-4-q-edit-review",
+          idPrefix: "process-c-nil-task-4-t",
+          name: "process-c-nil-task-4-t",
           fieldset: {
             legend: {
-              text: "Four payments have been selected these payments will be used to get a weekly amount of £253.84",
+              text: "One payment have been selected these payments will be used to get a weekly amount of £253.84",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "Calculation: Multiplied by 4 (quarters) and divided by 52 (weeks) to achieve weekly amount"
+            text: "Selection will be multiplied by 2 (6 months) divided by 52 (Weeks) equals and average payment per week"
           },
           classes: "govuk-radios",
           items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["process-c-nil-task-4-q-edit-review"] == "Yes")
+            checked: (data["process-c-nil-task-4-t"] == "Yes")
           },
             {
               value: "No",
               text: "No",
-              checked: (data["process-c-nil-task-4-q-edit-review"] == "No")
+              checked: (data["process-c-nil-task-4-t"] == "No")
             }
           ]
         }) }}
@@ -156,7 +206,6 @@
     {{ govukButton({
       text: "Continue"
     }) }}
-
 </form>
 
 {% endblock %}
