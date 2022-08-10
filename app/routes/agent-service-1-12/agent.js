@@ -473,7 +473,7 @@ router.post(`${baseUrl}/process-c-nil-task-4-2-edit-router`, (req, res) => {
   const processTask_4_2_edit = req.session.data['process-c-nil-task-4-2-edit']
 
   if (processTask_4_2_edit == 'Yes') {
-    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+    res.redirect(`${baseUrl}/process-c-nil-task-4-2-edit-review`)
   }
   else if (processTask_4_2_edit == 'No') {
     res.redirect(`${baseUrl}/process-c-nil-task-4-2`)
@@ -483,13 +483,13 @@ router.post(`${baseUrl}/process-c-nil-task-4-2-edit-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/process-c-nil-task-4-2-review-router`, (req, res) => {
-  const processTask_4_2_review = req.session.data['process-c-nil-task-4-2-review']
+router.post(`${baseUrl}/process-c-nil-task-4-2-edit-review-router`, (req, res) => {
+  const processTask_4_2_edit_review = req.session.data['process-c-nil-task-4-2-edit-review']
 
-  if (processTask_4_2_review == 'Yes') {
+  if (processTask_4_2_edit_review == 'Yes') {
     res.redirect(`${baseUrl}/process-nil-task-list-s4`)
   }
-  else if (processTask_4_2_review == 'No') {
+  else if (processTask_4_2_edit_review == 'No') {
     res.redirect(`${baseUrl}/process-c-nil-task-4-2-edit`)
   }
    else {

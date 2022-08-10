@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="process-c-nil-task-4-2-review-router" method="post" class="form">
+      <form action="process-c-nil-task-4-2-edit-review-router" method="post" class="form">
 
 
         {% include "agent-service-1-12/agent/record-id.html" %}
@@ -72,10 +72,10 @@
                 text: "Cal month"
               },
               {
-                text: "£590.10"
+                text: "£1,100.00"
               },
               {
-                html: "£0.90"
+                html: "£220.00"
               },
               {
                 html: USED
@@ -89,10 +89,10 @@
                 text: "Cal month"
               },
               {
-                text: "£590.10"
+                text: "£1,100.00"
               },
               {
-                text: "£0.90"
+                text: "£220.00"
               },
               {
                 html:   USED
@@ -106,10 +106,10 @@
                 text: "Cal month"
               },
               {
-                text: "£590.10"
+                text: "£1,100.00"
               },
               {
-                text: "£0.90"
+                text: "£220.00"
               },
               {
                 html:   USED
@@ -151,11 +151,11 @@
         }) }} -->
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-4-1",
-          name: "process-c-nil-task-4-1",
+          idPrefix: "process-c-nil-task-4-2-edit-review",
+          name: "process-c-nil-task-4-2-edit-review",
           fieldset: {
             legend: {
-              text: "Three payments have been selected these payments will be used to get a weekly amount of £136.15",
+              text: "Three payments have been selected these payments will be used to get a weekly amount of £253.84",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -168,12 +168,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["process-c-nil-task-4-1"] == "Yes")
+            checked: (data["process-c-nil-task-4-2-edit-review"] == "Yes")
           },
             {
               value: "No",
               text: "No",
-              checked: (data["process-c-nil-task-4-1"] == "No")
+              checked: (data["process-c-nil-task-4-2-edit-review"] == "No")
             }
           ]
         }) }}
