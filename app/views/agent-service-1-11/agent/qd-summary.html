@@ -18,7 +18,7 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="home-user-0" method="post" class="form">
       {% include "agent-service-1-11/agent/qd-name-nino.html" %}
-
+<!--
       {% if data['qd-start'] === 'admin' %}
 
 
@@ -38,7 +38,7 @@
       }) }}
 
       {% endif %}
-
+-->
     <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-full">
@@ -106,16 +106,11 @@
                   text: "Not entitled",
                   classes: 'govuk-table--no-border'
                 }
-                ],
-                [
-                  {
-                    html: '<a href="qd-claim-notes" class="govuk-link">View all notes</a>',
-                    classes: 'govuk-table--no-border govuk-!-padding-bottom-2'
-                  }
                 ]
               ]
             }) }}
 
+            <p><a href="qd-claim-notes" class="govuk-link">View all notes</a></p>
 
             {% elif data['qd-search-nino'] === 'EO972577M' %}
 
@@ -838,7 +833,7 @@
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-6">
             <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Other help</h2>
-            <p> <a href="qd-help-summary" class="govuk-link govuk-!-margin-bottom-4">View other help</a></p>
+            <p> <a href="qd-help-summary" class="govuk-link govuk-!-margin-bottom-4">Find out what other help is available</a></p>
 
             <!--
             {{ govukRadios({
