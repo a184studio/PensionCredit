@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="process-c-nil-task-4-w-router" method="post" class="form">
+      <form action="process-c-nil-task-4-y-router" method="post" class="form">
 
         {% include "agent-service-1-12/agent/record-id.html" %}
 
@@ -32,9 +32,9 @@
         })}}
         {% endset -%}
 
-        <span class="govuk-caption-m">Occupational pension one [Weekly]</span>
+        <span class="govuk-caption-m">Occupational pension one [Once a year]</span>
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments for<br>Woolworths INC</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments for<br>PeterBates Marquees Limited</p>
 
 
         {{ govukTable({
@@ -68,13 +68,13 @@
                 text: "1 June 2022"
               },
               {
-                text: "Weekly (7)"
+                text: "Once a year (365)"
               },
               {
-                text: "£253.84"
+                text: "£13,199.68"
               },
               {
-                text: "£50.76"
+                text: "£2,639.94"
               },
               {
                 html: USED
@@ -82,16 +82,16 @@
               ],
               [
                 {
-                  text: "25 May 2022"
+                  text: "1 June 2021"
                 },
                 {
-                  text: "Weekly (7)"
+                  text: "Once a year (365)"
                 },
                 {
-                  text: "£253.84"
+                  text: "£10,559.74"
                 },
                 {
-                  text: "£50.76"
+                  text: "£2,111.95"
                 },
                 {
                   html: NOTUSED
@@ -99,55 +99,21 @@
               ],
             [
               {
-                text: "18 May 2022"
+                text: "1 June 2020"
               },
               {
-                text: "Weekly (7)"
+                text: "Once a year (365)"
               },
               {
-                text: "£253.84"
+                text: "£8,447.79"
               },
               {
-                text: "£50.76"
+                text: "£1,689.56"
               },
               {
                 html: NOTUSED
               }
-            ],
-              [
-                {
-                  text: "11 May 2022"
-                },
-                {
-                  text: "Weekly (7)"
-                },
-                {
-                  text: "£253.84"
-                },
-                {
-                  text: "£50.76"
-                },
-                {
-                  html: NOTUSED
-                }
-              ],
-                [
-                  {
-                    text: "4 May 2022"
-                  },
-                  {
-                    text: "Weekly (7)"
-                  },
-                  {
-                    text: "£253.84"
-                  },
-                  {
-                    text: "£50.76"
-                  },
-                  {
-                    html: NOTUSED
-                  }
-                ]
+            ]
           ]
         }) }}
 
@@ -184,8 +150,8 @@
         }) }} -->
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-4-w",
-          name: "process-c-nil-task-4-w",
+          idPrefix: "process-c-nil-task-4-y",
+          name: "process-c-nil-task-4-y",
           fieldset: {
             legend: {
               text: "One payment have been selected these payments will be used to get a weekly amount of £253.84",
@@ -194,19 +160,19 @@
             }
           },
           hint: {
-            text: "Selection will be multiplied by 12 (Months) divided by 52 (Weeks) equals and average payment per week"
+            text: "Selection will be divided by 52 (Weeks) equals and average payment per week"
           },
           classes: "govuk-radios",
           items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["process-c-nil-task-4-w"] == "Yes")
+            checked: (data["process-c-nil-task-4-y"] == "Yes")
           },
             {
               value: "No",
               text: "No",
-              checked: (data["process-c-nil-task-4-w"] == "No")
+              checked: (data["process-c-nil-task-4-y"] == "No")
             }
           ]
         }) }}

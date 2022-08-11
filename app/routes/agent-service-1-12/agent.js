@@ -531,7 +531,139 @@ router.post(`${baseUrl}/process-c-nil-task-4-fw-edit-review-router`, (req, res) 
   }
 })
 
+// Quarterly
 
+router.post(`${baseUrl}/process-c-nil-task-4-q-router`, (req, res) => {
+  const processTask_4_q = req.session.data['process-c-nil-task-4-q']
+
+  if (processTask_4_q == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_q == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-q-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-q-edit-router`, (req, res) => {
+  const processTask_4_q_edit = req.session.data['process-c-nil-task-4-q-edit']
+
+  if (processTask_4_q_edit == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-q-edit-review`)
+  }
+  else if (processTask_4_q_edit == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-q`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-q-edit-review-router`, (req, res) => {
+  const processTask_4_q_edit_review = req.session.data['process-c-nil-task-4-q-edit-review']
+
+  if (processTask_4_q_edit_review == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_q_edit_review == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-q-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+
+// Twice a year
+
+router.post(`${baseUrl}/process-c-nil-task-4-t-router`, (req, res) => {
+  const processTask_4_t = req.session.data['process-c-nil-task-4-t']
+
+  if (processTask_4_t == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_t == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-t-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-t-edit-router`, (req, res) => {
+  const processTask_4_t_edit = req.session.data['process-c-nil-task-4-t-edit']
+
+  if (processTask_4_t_edit == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-t-edit-review`)
+  }
+  else if (processTask_4_t_edit == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-t`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-t-edit-review-router`, (req, res) => {
+  const processTask_4_t_edit_review = req.session.data['process-c-nil-task-4-t-edit-review']
+
+  if (processTask_4_t_edit_review == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_t_edit_review == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-t-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+
+// Once a year
+
+router.post(`${baseUrl}/process-c-nil-task-4-y-router`, (req, res) => {
+  const processTask_4_y = req.session.data['process-c-nil-task-4-y']
+
+  if (processTask_4_y == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_y == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-y-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-y-edit-router`, (req, res) => {
+  const processTask_4_y_edit = req.session.data['process-c-nil-task-4-y-edit']
+
+  if (processTask_4_y_edit == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-y-edit-review`)
+  }
+  else if (processTask_4_y_edit == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-y`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-y-edit-review-router`, (req, res) => {
+  const processTask_4_y_edit_review = req.session.data['process-c-nil-task-4-y-edit-review']
+
+  if (processTask_4_y_edit_review == 'Yes') {
+    res.redirect(`${baseUrl}/process-nil-task-list-s4`)
+  }
+  else if (processTask_4_y_edit_review == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-y-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
 
 
 
