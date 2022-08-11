@@ -20,13 +20,13 @@
       name: "oidv-payslips",
       fieldset: {
         legend: {
-          text: "Pay slips from the last three months?",
+          text: "Do you have any payslips from the past 3 months?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }
       },
       hint: {
-        html: "XXX"
+        html: ""
       },
       classes: "govuk-radios",
       items: [
@@ -39,6 +39,11 @@
           value: "No",
           text: "No",
           checked: (data["oidv-payslips"] == "No")
+        },
+        {
+          value: "No",
+          text: "I'm not sure",
+          checked: (data["oidv-p60"] == "No")
         }
       ]
     }) }}
@@ -80,7 +85,7 @@
      {{ govukButton({
        text: "Continue"
      }) }}
-     <p class="govuk-body govuk-!-padding-top-2"><a href="oidv-end">I dont what to do this</a></p>
+     <p class="govuk-body govuk-!-padding-top-2"><a href="oidv-end"></a></p>
 
 
 

@@ -15,26 +15,25 @@
 
       <p class="govuk-body govuk--version-control">OIDV</p>
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">We need to know if you have access to documents</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Help us improve our service</h1>
 
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">This is the why</p>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">To help us improve this service, we would like to ask you some other questions.  These questions are optional but should only take around 3 minutes to complete.</p>
 
-
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Your answers will be anonymous and will not affect your application in any way.</p>
 
     {{ govukRadios({
       idPrefix: "oidv-start-check",
       name: "oidv-start-check",
       fieldset: {
         legend: {
-          text: "XXX",
+          text: "Would you like to continue?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
         }
       },
-      hint: {
-        html: "XXX"
-      },
+      
+      
       classes: "govuk-radios",
       items: [
         {
@@ -88,7 +87,7 @@
      {{ govukButton({
        text: "Continue"
      }) }}
-     <p class="govuk-body govuk-!-padding-top-2"><a href="oidv-end">I dont what to do this</a></p>
+    
 
 
 

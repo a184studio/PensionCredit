@@ -20,13 +20,13 @@
       name: "oidv-p60",
       fieldset: {
         legend: {
-          text: "Do you have a P60?",
+          text: "Do you have a P60 from the tax year 2021 to 2022?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }
       },
       hint: {
-        html: "XXX"
+        html: ""
       },
       classes: "govuk-radios",
       items: [
@@ -38,6 +38,11 @@
         {
           value: "No",
           text: "No",
+          checked: (data["oidv-p60"] == "No")
+        },
+        {
+          value: "No",
+          text: "I'm not sure",
           checked: (data["oidv-p60"] == "No")
         }
       ]
@@ -80,7 +85,7 @@
      {{ govukButton({
        text: "Continue"
      }) }}
-     <p class="govuk-body govuk-!-padding-top-2"><a href="oidv-end">I dont what to do this</a></p>
+     <p class="govuk-body govuk-!-padding-top-2"><a href="oidv-end"></a></p>
 
 
 

@@ -20,24 +20,24 @@
       name: "oidv-driving-type",
       fieldset: {
         legend: {
-          text: "Type of licence?",
+          text: "Is it a full or provisional driving licence?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }
       },
       hint: {
-        html: "XXX"
+        html: ""
       },
       classes: "govuk-radios",
       items: [
         {
           value: "Yes",
-          text: "F",
+          text: "Full driving licence",
           checked: (data["oidv-driving-type"] == "Yes")
         },
         {
           value: "No",
-          text: "P",
+          text: "Provisional driving licence",
           checked: (data["oidv-driving-type"] == "No")
         }
       ]
