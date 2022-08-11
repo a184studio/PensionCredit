@@ -255,6 +255,23 @@
       </li>
 
       <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="process-c-nil-task-3-10-a" aria-describedby="task-1">
+          <!-- [3-10]  -->Most recent State Pension award [A]
+        </a>
+
+        {% if data["process-c-nil-task-3-10-a"]  === "Matched" %}
+          <strong class="govuk-tag app-task-list__nil-task-passed">Done</strong>
+        {% elif data["process-c-nil-task-3-10-a"]  === "Not matched" %}
+          <strong class="govuk-tag app-task-list__nil-task-passed">Done*</strong>
+        {% elif data["process-c-nil-task-3-10-a"]  === "Unfinished" %}
+          <strong class="govuk-tag app-task-list__nil-task-not-done">Unfinished</strong>
+        {% else %}
+          <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
+        {% endif %}
+
+      </li>
+
+      <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="process-c-nil-task-3-11" aria-describedby="task-1">
         <!-- [3-11]  -->Backdated State Pension awards
 
