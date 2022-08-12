@@ -40,6 +40,9 @@ router.post(`${baseUrl}/login-router`, (req, res) => {
   }
 })
 
+// SYSTEM ROUTER
+
+
 router.post(`${baseUrl}/system-ur-process-ab-router`, (req, res) => {
   const processAB = req.session.data['system-ur-process-ab']
 
@@ -53,6 +56,37 @@ router.post(`${baseUrl}/system-ur-process-ab-router`, (req, res) => {
     res.redirect(`${baseUrl}/process-c-nil-task-list`)
   }
 })
+
+
+// SYSTEM ROUTER OCC
+
+
+router.post(`${baseUrl}/system-ur-process-frequency-router`, (req, res) => {
+  const processProcessFrequency = req.session.data['system-ur-process-frequency']
+
+  if (processProcessFrequency === 'A') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-w`)
+
+  }  else if (processProcessFrequency == 'B') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-fw`)
+
+  }  else if (processProcessFrequency == 'C') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-2`)
+
+  }  else if (processProcessFrequency == 'D') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-q`)
+
+  }  else if (processProcessFrequency == 'E') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-t`)
+
+  }  else if (processProcessFrequency == 'F') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-y`)
+
+  } else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
 
 // TASK 1 / SUBTASK ROUTER<!>
 
@@ -441,6 +475,7 @@ router.post(`${baseUrl}/process-c-nil-task-3-15-router`, (req, res) => {
 
 
 
+
 // Weekly
 
 router.post(`${baseUrl}/process-c-nil-task-4-w-router`, (req, res) => {
@@ -666,25 +701,7 @@ router.post(`${baseUrl}/process-c-nil-task-4-y-edit-review-router`, (req, res) =
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// —————————————
 
 router.post(`${baseUrl}/process-c-nil-task-4-1-router`, (req, res) => {
   const processTask_4_1 = req.session.data['process-c-nil-task-4-1']
