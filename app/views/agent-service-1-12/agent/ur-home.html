@@ -16,8 +16,7 @@
     <form action="login-router" method="post" class="form">
 
 
-
-      {% if data["process-c-nil-task-list"]  == "NIL"%}
+      {% if data["process-c-nil-task-list"]  == "NIL" or data["outcome-nil"]  == "true"%}
 
       {% set html %}
       <p class="govuk-body govuk-!-font-size-19">This has been successfully processed. The applicant has been notified by letter that they are not currently entitled for Pension Credit.</p>
@@ -28,7 +27,7 @@
         type: 'success'
       }) }}
 
-      {% elif data["process-c-nil-task-list"]  == "BAU"%}
+      {% elif data["process-c-nil-task-list"]  == "BAU" or data["outcome-nil"]  == "false"%}
 
       {% set html %}
       <p class="govuk-body govuk-!-font-size-19">Application was sent back to business as usual</p>
