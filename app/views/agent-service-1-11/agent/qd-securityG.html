@@ -37,16 +37,19 @@
 
 
 
-      {% if data['qd-search-nino'] === 'ZZ439386T' %}
-
+      {% if data['qd-search-nino'] === 'ZZ439386A' %}
 
       {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
       {% set html %}
-        <p class="govuk-notification-banner__heading">
+        <p class="govuk-notification-banner__heading ">
           In the past, this claimant failed certain security questions</p>
         <p class="govuk-body govuk-!-font-weight-bold">
           If you can, avoid the following questions:</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-1">
+            Recorded 11 June 2022 at 10am</p>
+
         <ul class="govuk-list govuk-list--bullet">
           <li>What is the name of your bank</li>
           <li>What is your mobile telephone number</li>
@@ -57,6 +60,9 @@
       {{ govukNotificationBanner({
         html: html
       }) }}
+
+
+      {% else %}
 
       {% endif %}
 

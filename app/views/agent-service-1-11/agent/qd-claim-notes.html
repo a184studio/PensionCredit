@@ -39,7 +39,7 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Claim notes</h1>
 
 
-      {% if data['qd-search-nino'] === 'ZZ439386T' %}
+      {% if data['qd-search-nino'] === 'ZZ439386A' %}
       {{ govukTable({
         caption: "",
         captionClasses: "govuk-table__caption--m",
@@ -69,7 +69,7 @@
       }) }}
 
 
-      {% elif data['qd-search-nino'] === 'EO972577M' %}
+      {% elif data['qd-search-nino'] === 'EO972577A' %}
       {{ govukTable({
         caption: "",
         captionClasses: "govuk-table__caption--m",
@@ -93,14 +93,14 @@
               text: "10 June 2022"
             },
             {
-              text: "Award letter sent"
+              text: "Called for an explanation of award."
             }
           ]
         ]
       }) }}
 
 
-      {% elif data['qd-search-nino'] === 'AB987654C' %}
+      {% elif data['qd-search-nino'] === 'AB987654A' %}
 
       {{ govukTable({
         caption: "",
@@ -124,14 +124,14 @@
               text: "16 April 2022"
             },
             {
-              text: "Award letter sent"
+              text: "Called for an explanation of award."
             }
           ]
         ]
       }) }}
 
 
-      {% elif data['qd-search-nino'] === 'BB668734F' %}
+      {% elif data['qd-search-nino'] === 'BB668734A' %}
 
       {{ govukTable({
         caption: "",
@@ -155,7 +155,7 @@
               text: "1 May 2022"
             },
             {
-              text: "Award letter sent"
+              text: "Called for an explanation of award."
             }
           ]
         ]
@@ -183,17 +183,17 @@
         rows: [
           [
             {
-              text: "12 April 2022"
+              html: "&nbsp"
             },
             {
-              text: "Award letter sent"
+              hmtl: ""
             }
           ]
         ]
       }) }}
 
 
-      {% elif data['qd-search-nino'] === 'EO972577M' %}
+      {% elif data['qd-search-nino'] === 'EO972577A' %}
 
       {{ govukTable({
         caption: "",
@@ -214,25 +214,11 @@
         rows: [
         [
           {
-            text: "20 June 2022 - 10am"
+            html: "&nbsp"
           },
           {
-            text: "Failed security"
+            text: ""
           }
-        ],
-          [
-            {
-              text: "10 June 2022 - 2pm"
-            },
-            {
-              text: "Failed to answer "
-            },
-            {
-              text: "1 May 2022"
-            },
-            {
-              text: "Award letter sent"
-            }
           ]
         ]
       }) }}
@@ -259,10 +245,10 @@
         rows: [
           [
             {
-              text: "28 February 2022 at 3pm"
+              html: "&nbsp"
             },
             {
-              text: "Called for an explanation of award."
+              text: ""
             }
           ]
         ]
