@@ -18,34 +18,14 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="home-user-0" method="post" class="form">
       {% include "agent-service-1-11/agent/qd-name-nino.html" %}
-<!--
-      {% if data['qd-start'] === 'admin' %}
 
-
-      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-
-      {% set html %}
-        <p class="govuk-notification-banner__heading">
-          You have not asked security questions for this claim</p>
-        <p class="govuk-body govuk-!-font-weight-bold">
-          If you make a phone call, <a href="qd-start">take the claimant through security questions</a> before disclosing any information.</p>
-
-
-      {% endset %}
-
-      {{ govukNotificationBanner({
-        html: html
-      }) }}
-
-      {% endif %}
--->
     <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-full">
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Claim summary</h1>
 
 
-            {% if data['qd-search-nino'] === 'ZZ439386T' %}
+            {% if data['qd-search-nino'] === 'ZZ439386A' %}
 
             {{ govukTable({
               caption: "",
@@ -110,9 +90,8 @@
               ]
             }) }}
 
-            <p><a href="qd-claim-notes" class="govuk-link">View claim notes</a></p>
 
-            {% elif data['qd-search-nino'] === 'EO972577M' %}
+            {% elif data['qd-search-nino'] === 'EO972577A' %}
 
             {{ govukTable({
               caption: "",
@@ -173,18 +152,6 @@
                   text: "Not entitled",
                   classes: 'govuk-table--no-border'
                 }
-                ],
-                [
-                  {
-                    text: "Recent notes",
-                    classes: 'govuk-table--no-border'
-
-                  },
-                  {
-                    text: "",
-                    html: '10 June 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
-                    classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
-                  }
                 ]
               ]
             }) }}
@@ -252,17 +219,6 @@
                     text: "Not entitled",
                     classes: 'govuk-table--no-border'
                   }
-                  ],
-                  [
-                    {
-                      text: "Recent notes",
-                      classes: 'govuk-table--no-border'
-
-                    },
-                    {
-                      html: '16 April 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
-                      classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
-                    }
                   ]
                 ]
               }) }}
@@ -329,17 +285,6 @@
                     text: "Not entitled",
                     classes: 'govuk-table--no-border'
                   }
-                  ],
-                  [
-                    {
-                      text: "Recent notes",
-                      classes: 'govuk-table--no-border'
-
-                    },
-                    {
-                      html: '1 May 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
-                      classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
-                    }
                   ]
                 ]
               }) }}
@@ -406,17 +351,6 @@
                     text: "Not entitled",
                     classes: 'govuk-table--no-border'
                   }
-                  ],
-                  [
-                    {
-                      text: "Recent notes",
-                      classes: 'govuk-table--no-border'
-
-                    },
-                    {
-                      html: '12 April 2022: Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
-                      classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
-                    }
                   ]
                 ]
               }) }}
@@ -483,17 +417,6 @@
                       text: "Not entitled",
                       classes: 'govuk-table--no-border'
                     }
-                    ],
-                    [
-                      {
-                        text: "Recent notes",
-                        classes: 'govuk-table--no-border'
-
-                      },
-                      {
-                        html: '28 February 2022 at 3pm:   Award letter sent <br> <a href="qd-claim-notes" class="govuk-link">View all notes</a>',
-                        classes: 'govuk-table--no-border govuk-!-padding-bottom-4'
-                      }
                     ]
                   ]
                 }) }}
@@ -502,6 +425,7 @@
 
 
 
+              <p><a href="qd-claim-notes" class="govuk-link">View claim notes</a></p>
 
 
 
@@ -771,6 +695,7 @@
               }) }}
 
             {% endif %}
+
 
 
             <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Details you can check with the claimant</h3>
