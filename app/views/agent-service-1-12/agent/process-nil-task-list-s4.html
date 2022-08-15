@@ -332,13 +332,12 @@
     <h2 class="app-task-list__section">
       <span class="app-task-list__section-number">4.</span>Income [C2 only]
     </h2>
+
     <ul class="app-task-list__items">
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="system-ur-process-frequency" aria-describedby="task-1">
           <!-- [4-1]  -->Occupational pension
         </a>
-
-
 
         {% if data["system-ur-process-frequency"]  %}
           <strong class="govuk-tag app-task-list__nil-task-passed">Done</strong>
@@ -347,6 +346,20 @@
         {% endif %}
 
       </li>
+
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="process-c-nil-task-4-occ-multi" aria-describedby="task-1">
+          <!-- [4-1]  -->Occupational pension [Review/return When more than one]
+        </a>
+
+        {% if data["system-ur-process-frequency"]  %}
+          <strong class="govuk-tag app-task-list__nil-task-passed">Done</strong>
+        {% else %}
+          <strong class="govuk-tag app-task-list__nil-task-not-done" id="eligibility-completed">To do</strong>
+        {% endif %}
+
+      </li>
+
       </ul>
     </li>
 
