@@ -14,9 +14,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="process-c-nil-task-4-c-router" method="post" class="form">
+      <form action="process-c-nil-task-4-c-edit-review-router" method="post" class="form">
+
 
         {% include "agent-service-1-12/agent/record-id.html" %}
+
 
         {% set USED %}
         {{govukTag({
@@ -32,28 +34,27 @@
         })}}
         {% endset -%}
 
-
-
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check the pension payments <br> from Metroland LTD</p>
-
+        <span class="govuk-caption-m">Calendar Month</span>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Review selection for<br>MetroLand LTD</p>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-three-quarters">
 
         {{ govukTable({
+          caption: "",
           captionClasses: "govuk-table__caption--xl govuk-!-margin-bottom-6",
           firstCellIsHeader: false,
           head: [
             {
-              text: "Payment date (Monthly)",
-              classes: 'govuk-30-percent'
-            },
-            {
-              text: "Net pay",
+              text: "Payment date",
               classes: 'govuk-20-percent'
             },
             {
-              html: "Payment selected<br>by the system",
+              text: "Payment amount",
+              classes: 'govuk-20-percent'
+            },
+            {
+              html: "Payment(s)<br>selected by you",
               classes: 'govuk-20-percent'
             }
           ],
@@ -68,42 +69,21 @@
               {
                 html: USED
               }
-              ],
-              [
-                {
-                  text: "1 May 2022"
-                },
-                {
-                  text: "£1,100.00"
-                },
-                {
-                  html: NOTUSED
-                }
-              ],
+            ],
             [
               {
-                text: "1 April 2022"
+                text: "1 May 2022"
               },
               {
-                text: "£1,101.22"
+                text: "£1,100.00"
               },
               {
-                html: NOTUSED
+                html:   USED
               }
-            ],
-              [
-                {
-                  text: "1 March 2022"
-                },
-                {
-                  text: "£880.00"
-                },
-                {
-                  html: NOTUSED
-                }
-              ]
+            ]
           ]
         }) }}
+
       </div>
     </div>
 
@@ -139,29 +119,29 @@
         }) }} -->
 
         {{ govukRadios({
-          idPrefix: "process-c-nil-task-4-c",
-          name: "process-c-nil-task-4-c",
+          idPrefix: "process-c-nil-task-4-c-edit-review",
+          name: "process-c-nil-task-4-c-edit-review",
           fieldset: {
             legend: {
-              text: "The payment selected by the system converts to £253.85 a week. Do you want to continue with this amount?",
+              text: "Two payments have been selected these payments will be used to get a weekly amount of £253.84",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: ""
+            text: "Calculation: Selection was added together, devided by the number of selection, Multiplied by 12 (months) and divided by 52 (weeks) to achieve weekly amount"
           },
           classes: "govuk-radios",
           items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: (data["process-c-nil-task-4-c"] == "Yes")
+            checked: (data["process-c-nil-task-4-c-edit-review"] == "Yes")
           },
             {
               value: "No",
               text: "No",
-              checked: (data["process-c-nil-task-4-c"] == "No")
+              checked: (data["process-c-nil-task-4-c-edit-review"] == "No")
             }
           ]
         }) }}
@@ -178,6 +158,7 @@
     {{ govukButton({
       text: "Continue"
     }) }}
+
 </form>
 
 {% endblock %}
