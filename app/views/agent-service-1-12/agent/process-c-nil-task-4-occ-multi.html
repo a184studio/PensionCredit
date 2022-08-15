@@ -20,7 +20,7 @@
 
         {% include "agent-service-1-12/agent/record-id.html" %}
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">All occupational pensions</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Occupational pension[s]</p>
 
         {% set USED %}
         {{govukTag({
@@ -53,11 +53,11 @@
           firstCellIsHeader: false,
           head: [
             {
-              text: "Type of income",
+              text: "Pension provider",
               classes: 'govuk-10-percent'
             },
             {
-              text: "Income payment frequency",
+              text: "Payment frequency",
               classes: 'govuk-10-percent'
             },
             {
@@ -65,18 +65,18 @@
               classes: 'govuk-10-percent'
             },
             {
-              html: "Weekly amount used for calculation",
+              html: "Weekly net pay",
               classes: 'govuk-10-percent'
             },
             {
-              html: "Review / change",
+              html: "",
               classes: 'govuk-10-percent'
             }
           ],
           rows: [
             [
               {
-                text: "Occ pension 1"
+                text: "Woolworths INC"
               },
               {
                 text: "Weekly"
@@ -93,7 +93,7 @@
             ],
             [
               {
-                text: "Occ pension 2"
+                text: "Metroland LTD"
               },
               {
                 text: "Monthly"

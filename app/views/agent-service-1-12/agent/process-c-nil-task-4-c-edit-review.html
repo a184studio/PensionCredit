@@ -29,7 +29,7 @@
 
         {% set MANUAL %}
         {{govukTag({
-          text: "Manual selection",
+          text: "Manual",
           classes: "govuk-tag--blue"
         })}}
         {% endset -%}
@@ -41,8 +41,9 @@
         })}}
         {% endset -%}
 
-        <span class="govuk-caption-m">Calendar Month</span>
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Review selection for<br>MetroLand LTD</p>
+        
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check the pension payments
+          from Metroland LTD</p>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-three-quarters">
@@ -53,15 +54,15 @@
           firstCellIsHeader: false,
           head: [
             {
-              text: "Payment date",
+              text: "Payment date (monthly)",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Payment amount",
+              text: "Net pay",
               classes: 'govuk-20-percent'
             },
             {
-              html: "Payment(s)<br>selected by you",
+              html: "Selection method",
               classes: 'govuk-20-percent'
             }
           ],
@@ -141,13 +142,13 @@
           name: "process-c-nil-task-4-c-edit-review",
           fieldset: {
             legend: {
-              text: "Two payments have been selected these payments will be used to get a weekly amount of £253.84",
+              text: "These payments convert to £253.85 a week. Do you want to continue with this amount?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "Calculation: Selection was added together, devided by the number of selection, Multiplied by 12 (months) and divided by 52 (weeks) to achieve weekly amount"
+            
           },
           classes: "govuk-radios",
           items: [
