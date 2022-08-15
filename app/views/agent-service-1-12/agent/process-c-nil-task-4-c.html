@@ -20,8 +20,15 @@
 
         {% set USED %}
         {{govukTag({
-          text: "Selected",
+          text: "System selected",
           classes: "govuk-tag--green"
+        })}}
+        {% endset -%}
+
+        {% set MANUAL %}
+        {{govukTag({
+          text: "Manual selection",
+          classes: "govuk-tag--blue"
         })}}
         {% endset -%}
 
@@ -73,7 +80,7 @@
                   text: "£1,100.00"
                 },
                 {
-                  html: NOTUSED
+                  html: USED
                 }
               ],
             [

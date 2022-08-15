@@ -22,8 +22,15 @@
 
         {% set USED %}
         {{govukTag({
-          text: "Selected",
+          text: "System selected",
           classes: "govuk-tag--green"
+        })}}
+        {% endset -%}
+
+        {% set MANUAL %}
+        {{govukTag({
+          text: "Manual selection",
+          classes: "govuk-tag--blue"
         })}}
         {% endset -%}
 
@@ -67,7 +74,7 @@
                 text: "£1,100.00"
               },
               {
-                html: USED
+                html: MANUAL
               }
             ],
             [
@@ -78,7 +85,18 @@
                 text: "£1,100.00"
               },
               {
-                html:   USED
+                html:   MANUAL
+              }
+            ],
+            [
+              {
+                text: "1 April 2022"
+              },
+              {
+                text: "£1,101.22"
+              },
+              {
+                html:   MANUAL
               }
             ]
           ]

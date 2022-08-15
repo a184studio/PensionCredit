@@ -22,7 +22,26 @@
 
         <p class="govuk-heading-xl govuk-!-margin-bottom-6">All occupational pensions</p>
 
+        {% set USED %}
+        {{govukTag({
+          text: "System selected",
+          classes: "govuk-tag--green"
+        })}}
+        {% endset -%}
 
+        {% set MANUAL %}
+        {{govukTag({
+          text: "Manual selection",
+          classes: "govuk-tag--blue"
+        })}}
+        {% endset -%}
+
+        {% set NOTUSED %}
+        {{govukTag({
+          text: "Not selected",
+          classes: "govuk-tag--grey"
+        })}}
+        {% endset -%}
 
 {% set legendChange %}
 <a href="process-c-nil-task-4-c" class="govuk-link" rel="noreferrer noopener">Change</a>
@@ -35,23 +54,23 @@
           head: [
             {
               text: "Type of income",
-              classes: 'govuk-20-percent'
+              classes: 'govuk-10-percent'
             },
             {
               text: "Income payment frequency",
-              classes: 'govuk-20-percent'
+              classes: 'govuk-10-percent'
             },
             {
               text: "Payment selection method",
-              classes: 'govuk-20-percent'
+              classes: 'govuk-10-percent'
             },
             {
               html: "Weekly amount used for calculation",
-              classes: 'govuk-20-percent'
+              classes: 'govuk-10-percent'
             },
             {
               html: "Review / change",
-              classes: 'govuk-20-percent'
+              classes: 'govuk-10-percent'
             }
           ],
           rows: [
@@ -63,7 +82,7 @@
                 text: "Weekly"
               },
               {
-                text: "System"
+                html: USED
               },
               {
                 text: "£50.25"
@@ -80,7 +99,7 @@
                 text: "Monthly"
               },
               {
-                html: "Manual"
+                html: MANUAL
               },
               {
                 text: "£253.84"
