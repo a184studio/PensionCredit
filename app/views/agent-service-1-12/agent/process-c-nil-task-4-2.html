@@ -32,9 +32,8 @@
         })}}
         {% endset -%}
 
-        <span class="govuk-caption-m">Calendar Month</span>
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments for<br>MetroLand LTD</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check the pension payments <br> from Metroland Ltd</p>
 
 
         {{ govukTable({
@@ -42,23 +41,22 @@
           firstCellIsHeader: false,
           head: [
             {
-              text: "Payment date",
+              text: "Monthly payment date",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Frquency (Days between payment)",
+             
+            },
+            {
+              text: "Net pay",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Net payment amount",
+              text: "Tax",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Tax (20%)",
-              classes: 'govuk-20-percent'
-            },
-            {
-              html: "Nil system<br>selection",
+              html: "Payment selected <br> by the system",
               classes: 'govuk-20-percent'
             }
           ],
@@ -68,7 +66,7 @@
                 text: "1 June 2022"
               },
               {
-                text: "Monthly (31)"
+                
               },
               {
                 text: "£1,100.00"
@@ -85,7 +83,7 @@
                   text: "1 May 2022"
                 },
                 {
-                  text: "Monthly (30)"
+                  
                 },
                 {
                   text: "£1,100.00"
@@ -102,7 +100,7 @@
                 text: "1 April 2022"
               },
               {
-                text: "Monthly (31)"
+                
               },
               {
                 text: "£1,100.00"
@@ -119,7 +117,7 @@
                   text: "1 March 2022"
                 },
                 {
-                  text: "Monthly (28)"
+                 
                 },
                 {
                   text: "£1,000.00"
@@ -171,13 +169,13 @@
           name: "process-c-nil-task-4-2",
           fieldset: {
             legend: {
-              text: "One payment have been selected these payments will be used to get a weekly amount of £253.84",
+              text: "The payment selected by the system converts to £X a week. Do you want to continue with this amount?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "Selection will be multiplied by 12 (Months) divided by 52 (Weeks) equals and average payment per week"
+           
           },
           classes: "govuk-radios",
           items: [

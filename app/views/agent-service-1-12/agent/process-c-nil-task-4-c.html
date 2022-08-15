@@ -32,9 +32,9 @@
         })}}
         {% endset -%}
 
-        <span class="govuk-caption-m">Calendar Month</span>
+        
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments formm<br>MetroLand LTD</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check the pension payments <br> from Metroland LTD</p>
 
 
         {{ govukTable({
@@ -42,19 +42,19 @@
           firstCellIsHeader: false,
           head: [
             {
-              text: "Payment date",
+              text: "Monthly payment date",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Frquency (Days between payment)",
+              text: "",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Net payment amount",
+              text: "Net pay",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Tax (20%)",
+              text: "Tax",
               classes: 'govuk-20-percent'
             },
             {
@@ -171,13 +171,13 @@
           name: "process-c-nil-task-4-c",
           fieldset: {
             legend: {
-              text: "One payment have been selected these payments will be used to get a weekly amount of £253.84. You happy with that yeah?",
+              text: "The payment selected by the system converts to £253.85 a week. Do you want to continue with this amount?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "Selection will be multiplied by 12 (Months) divided by 52 (Weeks) equals and average payment per week"
+            text: ""
           },
           classes: "govuk-radios",
           items: [
