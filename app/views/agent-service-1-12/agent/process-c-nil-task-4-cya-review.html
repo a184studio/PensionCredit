@@ -20,6 +20,28 @@
 
         {% include "agent-service-1-12/agent/record-id.html" %}
 
+        {% set USED %}
+        {{govukTag({
+          text: "System selected",
+          classes: "govuk-tag--green"
+        })}}
+        {% endset -%}
+
+        {% set MANUAL %}
+        {{govukTag({
+          text: "Manual selection",
+          classes: "govuk-tag--blue"
+        })}}
+        {% endset -%}
+
+        {% set NOTUSED %}
+        {{govukTag({
+          text: "Not selected",
+          classes: "govuk-tag--grey"
+        })}}
+        {% endset -%}
+
+
         <p class="govuk-heading-xl govuk-!-margin-bottom-6">Income over applicable amount [X].<br>This will be a nil claim, no entitlment in the backdating period.</p>
 
         {{ govukTable({
@@ -53,7 +75,7 @@
                 text: "Weekly"
               },
               {
-                text: "Automatic"
+                html: USED
               },
               {
                 text: "£150.00"
@@ -67,7 +89,7 @@
                 text: "Monthly"
               },
               {
-                html: "Manual / Automatic"
+                html: MANUAL
               },
               {
                 text: "£253.84"
