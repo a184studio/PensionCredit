@@ -73,6 +73,9 @@ router.post(`${baseUrl}/system-ur-process-frequency-router`, (req, res) => {
   }  else if (processProcessFrequency == 'C') {
     res.redirect(`${baseUrl}/process-c-nil-task-4-c`)
 
+  }  else if (processProcessFrequency == 'C1') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-c1-edit`)
+
   }  else if (processProcessFrequency == 'D') {
     res.redirect(`${baseUrl}/process-c-nil-task-4-q`)
 
