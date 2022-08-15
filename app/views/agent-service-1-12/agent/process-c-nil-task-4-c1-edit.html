@@ -33,17 +33,14 @@
 
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-10-percent"><strong>Select</strong></td>
               <td class="govuk-table__cell govuk-50-percent"><strong>Payment date (Monthly)</strong></td>
-              <td class="govuk-table__cell govuk-30-percent"><strong>Net pay</strong></td>
-              <td class="govuk-table__cell govuk-20-percent"><strong>Select</strong></td>
+              <td class="govuk-table__cell govuk-50-percent"><strong>Net pay</strong></td>
 
             </tr>
             </thead>
 
             <tr class="govuk-table__row">
-
-              <td class="govuk-table__cell table-spacer">1 June 2022</td>
-              <td class="govuk-table__cell table-spacer">£1,100.00</td>
 
               <td class="govuk-table__cell table-spacer">
 
@@ -68,12 +65,11 @@
 
               </td>
 
+              <td class="govuk-table__cell table-spacer">1 June 2022</td>
+              <td class="govuk-table__cell table-spacer">£1,100.00</td>
               </tr>
 
               <tr class="govuk-table__row">
-
-                <td class="govuk-table__cell table-spacer">1 May 2022</td>
-                <td class="govuk-table__cell table-spacer">£1,100.00</td>
 
                 <td class="govuk-table__cell table-spacer">
 
@@ -98,13 +94,11 @@
 
                 </td>
 
+                <td class="govuk-table__cell table-spacer">1 May 2022</td>
+                <td class="govuk-table__cell table-spacer">£1,100.00</td>
                 </tr>
 
                 <tr class="govuk-table__row">
-
-                  <td class="govuk-table__cell table-spacer">1 April 2022</td>
-                  <td class="govuk-table__cell table-spacer">£1,101.22</td>
-
                   <td class="govuk-table__cell table-spacer">
 
                     {{ govukCheckboxes({
@@ -128,13 +122,12 @@
 
                   </td>
 
+                  <td class="govuk-table__cell table-spacer">1 April 2022</td>
+                  <td class="govuk-table__cell table-spacer">£1,101.22</td>
                   </tr>
 
                   <tr class="govuk-table__row">
 
-                    <td class="govuk-table__cell table-spacer">1 March 2022</td>
-                    <td class="govuk-table__cell table-spacer">£1,000.00</td>
-
                     <td class="govuk-table__cell table-spacer">
 
                       {{ govukCheckboxes({
@@ -158,12 +151,11 @@
 
                     </td>
 
+                    <td class="govuk-table__cell table-spacer">1 March 2022</td>
+                    <td class="govuk-table__cell table-spacer">£1,000.00</td>
                     </tr>
 
                     <tr class="govuk-table__row">
-
-                      <td class="govuk-table__cell table-spacer">1 February 2022</td>
-                      <td class="govuk-table__cell table-spacer">£1,000.00</td>
 
                       <td class="govuk-table__cell table-spacer">
 
@@ -188,14 +180,13 @@
 
                       </td>
 
+                      <td class="govuk-table__cell table-spacer">1 February 2022</td>
+                      <td class="govuk-table__cell table-spacer">£1,000.00</td>
                       </tr>
 
 
                   <tr class="govuk-table__row">
 
-                    <td class="govuk-table__cell table-spacer">1 January 2022</td>
-                    <td class="govuk-table__cell table-spacer">£1,000.00</td>
-
                     <td class="govuk-table__cell table-spacer">
 
                       {{ govukCheckboxes({
@@ -219,13 +210,12 @@
 
                     </td>
 
+                    <td class="govuk-table__cell table-spacer">1 January 2022</td>
+                    <td class="govuk-table__cell table-spacer">£1,000.00</td>
                     </tr>
 
                     <tr class="govuk-table__row">
 
-                      <td class="govuk-table__cell table-spacer">1 December 2021</td>
-                      <td class="govuk-table__cell table-spacer">£1,000.00</td>
-
                       <td class="govuk-table__cell table-spacer">
 
                         {{ govukCheckboxes({
@@ -249,12 +239,41 @@
 
                       </td>
 
+                      <td class="govuk-table__cell table-spacer">1 December 2021</td>
+                      <td class="govuk-table__cell table-spacer">£1,000.00</td>
                       </tr>
 
                     <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell table-spacer">
+
+                        {{ govukCheckboxes({
+                          idPrefix: "",
+                          name: "",
+                          classes: "govuk-checkboxes--small govuk-!-margin-0 govuk-!-margin-0",
+                          fieldset: {
+                            legend: {
+                              text: "",
+                              isPageHeading: true,
+                              classes: "govuk-fieldset__legend--m"
+                            }
+                          },
+                          items: [
+                            {
+                              value: " ",
+                              text: " "
+                            }
+                          ]
+                        }) }}
+
+                      </td>
 
                       <td class="govuk-table__cell table-spacer">1 November 2021</td>
                       <td class="govuk-table__cell table-spacer">£1,000.00</td>
+                      </tr>
+
+
+                    <tr class="govuk-table__row">
 
                       <td class="govuk-table__cell table-spacer">
 
@@ -278,15 +297,15 @@
                         }) }}
 
                       </td>
-
-                      </tr>
-
-
-                    <tr class="govuk-table__row">
 
                       <td class="govuk-table__cell table-spacer">1 October 2021</td>
                       <td class="govuk-table__cell table-spacer">£1,000.00</td>
 
+                      </tr>
+
+
+                    <tr class="govuk-table__row">
+
                       <td class="govuk-table__cell table-spacer">
 
                         {{ govukCheckboxes({
@@ -309,14 +328,13 @@
                         }) }}
 
                       </td>
-
-                      </tr>
-
-
-                    <tr class="govuk-table__row">
 
                       <td class="govuk-table__cell table-spacer">1 September 2021</td>
                       <td class="govuk-table__cell table-spacer">£1,000.00</td>
+                      </tr>
+
+
+                    <tr class="govuk-table__row">
 
                       <td class="govuk-table__cell table-spacer">
 
@@ -340,46 +358,14 @@
                         }) }}
 
                       </td>
-
-                      </tr>
-
-
-                    <tr class="govuk-table__row">
 
                       <td class="govuk-table__cell table-spacer">August 2021</td>
                       <td class="govuk-table__cell table-spacer">£1,000.00</td>
-
-                      <td class="govuk-table__cell table-spacer">
-
-                        {{ govukCheckboxes({
-                          idPrefix: "",
-                          name: "",
-                          classes: "govuk-checkboxes--small govuk-!-margin-0 govuk-!-margin-0",
-                          fieldset: {
-                            legend: {
-                              text: "",
-                              isPageHeading: true,
-                              classes: "govuk-fieldset__legend--m"
-                            }
-                          },
-                          items: [
-                            {
-                              value: " ",
-                              text: " "
-                            }
-                          ]
-                        }) }}
-
-                      </td>
-
                       </tr>
 
 
                     <tr class="govuk-table__row">
 
-                      <td class="govuk-table__cell table-spacer">July 2021</td>
-                      <td class="govuk-table__cell table-spacer">£1,000.00</td>
-
                       <td class="govuk-table__cell table-spacer">
 
                         {{ govukCheckboxes({
@@ -403,6 +389,8 @@
 
                       </td>
 
+                      <td class="govuk-table__cell table-spacer">July 2021</td>
+                      <td class="govuk-table__cell table-spacer">£1,000.00</td>
                       </tr>
 
 
