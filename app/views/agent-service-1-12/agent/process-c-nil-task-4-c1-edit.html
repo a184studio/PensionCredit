@@ -24,7 +24,7 @@
 
           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You can select one or more payments.</p>
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6 "><strong>Submission date:</strong> 29 May 2022</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6 ">This application was submitted on Saturday 29 May 2022 [Lets say todays date is the 1st June].</p>
 
 
 
@@ -69,7 +69,6 @@
               </tr>
 
               <tr class="govuk-table__row">
-
                 <td class="govuk-table__cell table-spacer">
 
                   {{ govukCheckboxes({
@@ -92,10 +91,36 @@
                   }) }}
 
                 </td>
-
-                <td class="govuk-table__cell table-spacer">1 May 2022</td>
-                <td class="govuk-table__cell table-spacer">£1,100.00</td>
+                <td class="govuk-table__cell table-spacer">5 May 2022</td>
+                <td class="govuk-table__cell table-spacer">£5,000.00</td>
                 </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell table-spacer">
+
+                    {{ govukCheckboxes({
+                      idPrefix: "",
+                      name: "",
+                      classes: "govuk-checkboxes--small govuk-!-margin-0 govuk-!-margin-0",
+                      fieldset: {
+                        legend: {
+                          text: "",
+                          isPageHeading: true,
+                          classes: "govuk-fieldset__legend--m"
+                        }
+                      },
+                      items: [
+                        {
+                          value: " ",
+                          text: " "
+                        }
+                      ]
+                    }) }}
+
+                  </td>
+                  <td class="govuk-table__cell table-spacer">1 May 2022</td>
+                  <td class="govuk-table__cell table-spacer">£1,100.00</td>
+                  </tr>
 
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell table-spacer">
@@ -440,6 +465,10 @@
     {{ govukButton({
       text: "Continue"
     }) }}
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-cya-unexpected" class="govuk-link" rel="noreferrer noopener">I can't process this</a></p>
+
+
   <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><a href="process-c-nil-task-list" class="govuk-link" rel="noreferrer noopener">☒</a></p> -->
 </form>
 
