@@ -22,7 +22,7 @@
       <div class="govuk-grid-row">
 
           <div class="govuk-grid-column-full">
-              <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Claim summary</h1>
+              <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Claim summary</h1>
           </div>
       </div>
 
@@ -165,15 +165,76 @@
 
 
 
-      {% elif data['qd-search-nino'] === 'AB987654C' %}
+      {% elif data['qd-search-nino'] === 'AB987654A' %}
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+
+            <p class="govuk-body govuk-!-font-weight-bold"> Date claim submitted</p>
+
+          </div>
+
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <p>2 April 2022</p>
+
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+
+              <p class="govuk-body govuk-!-font-weight-bold"> Backdating period start date</p>
+
+            </div>
+
+
+            <div class="govuk-grid-column-two-thirds">
+
+              <p>2 January 2022</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+
+              <p class="govuk-body govuk-!-font-weight-bold">Date processed</p>
+
+            </div>
+
+
+            <div class="govuk-grid-column-two-thirds">
+
+              <p>3 April 2022</p>
+
+            </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+
+              <p class="govuk-body govuk-!-font-weight-bold">Entitlement status</p>
+
+            </div>
+
+
+            <div class="govuk-grid-column-two-thirds">
+
+              <p>Not entitled</p>
+
+            </div>
+        </div>
 
 
 
-      {% elif data['qd-search-nino'] === 'BB668734F' %}
 
 
-
-      {% elif data['qd-search-nino'] === 'QQ457741A' %}
 
 
       {% else %}
@@ -330,11 +391,6 @@
             </div>
         </div>
 
-
-      {% elif data['qd-search-nino'] === 'BB668734A' %}
-
-
-      {% elif data['qd-search-nino'] === 'QQ457741A' %}
 
 
       {% else %}
