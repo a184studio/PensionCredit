@@ -11,16 +11,16 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="oidv-p60" method="post" class="form">
+    <form action="oidv-driving-origin-router" method="post" class="form">
 
-      <p class="govuk-body govuk--version-control">OIDV</p>
+    <p class="govuk-body govuk--version-control">OIDV</p>
 
     {{ govukRadios({
-      idPrefix: "oidv-driving",
-      name: "oidv-driving",
+      idPrefix: "oidv-driving-origin",
+      name: "oidv-driving-origin",
       fieldset: {
         legend: {
-          text: "Is it a UK passport?",
+          text: "Where dis from yo?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }
@@ -32,13 +32,13 @@
       items: [
         {
           value: "Yes",
-          text: "Yes",
-          checked: (data["oidv-driving"] == "Yes")
+          text: "UK",
+          checked: (data["oidv-driving-origin"] == "Yes")
         },
         {
           value: "No",
-          text: "No",
-          checked: (data["oidv-driving"] == "No")
+          text: "Not UK",
+          checked: (data["oidv-driving-origin"] == "No")
         }
       ]
     }) }}
@@ -77,11 +77,15 @@
      }) }} -->
 
 
+     <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+
+
+<!--
      {{ govukButton({
        text: "Continue"
-     }) }}
-     <p class="govuk-body govuk-!-padding-top-2"><a href="oidv-end"></a></p>
-
+     }) }} -->
 
 
 
