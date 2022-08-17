@@ -2001,9 +2001,23 @@ router.post(`${baseUrl}/oidv-driving-router`, (req, res) => {
   const oidv_driving = req.session.data['oidv-driving']
 
   if (oidv_driving === 'Yes') {
-    res.redirect(`${baseUrl}/oidv-driving-type`)
+    res.redirect(`${baseUrl}/oidv-driving-origin`)
   }
   else if (oidv_driving === 'No') {
+    res.redirect(`${baseUrl}/oidv-passport`)
+  }
+   else {
+    res.redirect(`${baseUrl}/fail`)
+  }
+})
+
+router.post(`${baseUrl}/oidv-driving-origin-router`, (req, res) => {
+  const oidv_driving_origin = req.session.data['oidv-driving-origin']
+
+  if (oidv_driving_origin === 'Yes') {
+    res.redirect(`${baseUrl}/oidv-driving-type`)
+  }
+  else if (oidv_driving_origin === 'No') {
     res.redirect(`${baseUrl}/oidv-passport`)
   }
    else {
@@ -2018,7 +2032,7 @@ router.post(`${baseUrl}/oidv-passport-router`, (req, res) => {
     res.redirect(`${baseUrl}/oidv-passport-type`)
   }
   else if (oidv_passport === 'No') {
-    res.redirect(`${baseUrl}/oidv-working`)
+    res.redirect(`${baseUrl}/oidv-p60`)
   }
    else {
     res.redirect(`${baseUrl}/fail`)
