@@ -20,7 +20,7 @@
       name: "oidv-driving-origin",
       fieldset: {
         legend: {
-          text: "Where dis from yo?",
+          text: "Is it a UK driving licence?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }
@@ -32,12 +32,12 @@
       items: [
         {
           value: "Yes",
-          text: "UK",
+          text: "Yes",
           checked: (data["oidv-driving-origin"] == "Yes")
         },
         {
           value: "No",
-          text: "Not UK",
+          text: "No",
           checked: (data["oidv-driving-origin"] == "No")
         }
       ]
