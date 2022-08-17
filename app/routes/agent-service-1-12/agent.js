@@ -141,10 +141,10 @@ router.post(`${baseUrl}/process-c-nil-task-1-6-router`, (req, res) => {
   const processTask_1_6 = req.session.data['process-c-nil-task-1-6']
 
   if (processTask_1_6 == 'Matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-list`)
+    res.redirect(`${baseUrl}/process-c-nil-task-list-at`)
   }
   else if (processTask_1_6 == 'Not matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-list`)
+    res.redirect(`${baseUrl}/process-c-nil-task-list-at`)
   }
    else {
     res.redirect(`${baseUrl}/process-c-nil-task-list-at`)
