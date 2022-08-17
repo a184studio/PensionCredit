@@ -11,6 +11,7 @@
 
 
 
+
 {% block content %}
 
 
@@ -100,96 +101,106 @@
     </div>
 
 
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-8">
+
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-7">Information the claimant might ask you to check</h2>
+
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Qualifying benefit and State Pension details you can check in Searchlight</h3>
+
+
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
+        <div class="govuk-grid-column-one-third">
 
-          <div class="">
-            <style>
-            p {
-              border-bottom: 6px solid red;
-              background-color: lightgrey;
-            }
-            </style>
+          <p class="govuk-body govuk-!-font-weight-bold"> Qualifying benefits</p>
 
-          </div>
+        </div>
+
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <p>No</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          <p class="govuk-body govuk-!-font-weight-bold">Weekly State Pension amount</p>
+
+        </div>
+
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <p>£188</p>
+
         </div>
     </div>
 
 
 
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-8">
 
-    <h2 class="govuk-heading-xl govuk-!-margin-bottom-7">Information the claimant might ask you to check</h2>
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Qualifying benefit and State Pension details you can check in Searchlight</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Details you can check with the claimant</h3>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          <p class="govuk-body govuk-!-font-weight-bold">Living with partner</p>
+
+        </div>
 
 
+        <div class="govuk-grid-column-two-thirds">
+
+          <p>No</p>
+
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          <p class="govuk-body govuk-!-font-weight-bold">Ground rent</p>
+
+        </div>
 
 
+        <div class="govuk-grid-column-two-thirds">
+
+          <p>None</p>
+
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          <p class="govuk-body govuk-!-font-weight-bold">Service charges</p>
+
+        </div>
 
 
+        <div class="govuk-grid-column-two-thirds">
 
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Details you can check with the claimant</h3>
+          <p>None</p>
 
-            {{ govukTable({
-              caption: "",
-              captionClasses: "govuk-table__caption--m",
-              firstCellIsHeader: true,
-              head: [
-                {
-                  text: "",
-                  classes: 'govuk-!-width-one-quarter govuk-table--no-border'
-                },
-                {
-                  text: "",
-                  classes: 'govuk-!-width-one-half govuk-table--no-border'
-                }
-              ],
-              rows: [
-                [
-                {
-                  text: "Living with partner",
-                  classes: 'govuk-table--no-border'
+        </div>
+    </div>
 
-                },
-                {
-                  text: "No",
-                  classes: 'govuk-table--no-border'
-                }
-                ],
-                [
-                {
-                  text: "Ground rent",
-                  classes: 'govuk-table--no-border'
 
-                },
-                {
-                  text: "None",
-                  classes: 'govuk-table--no-border govuk-!-padding-bottom-0'
-                }
-                ],
-                [
-                {
-                  text: "Service charges",
-                  classes: 'govuk-table--no-border'
-
-                },
-                {
-                  text: "None",
-                  classes: 'govuk-table--no-border govuk-!-padding-bottom-0'
-                }
-                ]
-              ]
-            }) }}
-
-            <p class="govuk-body govuk-!-margin-bottom-2"><a href="/agent-service-1-10/agent/jennifer-claim.pdf" target="_blank">View full application (PDF)</a></p>
+    <p class="govuk-body govuk-!-margin-bottom-2"><a href="/agent-service-1-10/agent/jennifer-claim.pdf" target="_blank">View full application (PDF)</a></p>
 
 
 
 
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-6">
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Other help</h2>
-            <p> <a href="qd-help-summary" class="govuk-link govuk-!-margin-bottom-4">Find out what other help is available</a></p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-6">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Other help</h2>
+    <p> <a href="qd-help-summary" class="govuk-link govuk-!-margin-bottom-4">Find out what other help is available</a></p>
 
             <!--
             {{ govukRadios({
