@@ -12,18 +12,25 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-three-quarters">
 
-      <form action="process-c-nil-task-4-y-edit-review-router" method="post" class="form">
-
+      <form action="ur-home" method="post" class="form">
+        <input type="hidden" name="outcome-nil" value="true"/>
 
         {% include "agent-service-1-12/agent/record-id.html" %}
 
 
         {% set USED %}
         {{govukTag({
-          text: "Selected",
+          text: "System",
           classes: "govuk-tag--green"
+        })}}
+        {% endset -%}
+
+        {% set MANUAL %}
+        {{govukTag({
+          text: "Manual",
+          classes: "govuk-tag--blue"
         })}}
         {% endset -%}
 
@@ -35,7 +42,7 @@
         {% endset -%}
 
         <span class="govuk-caption-m">Once a year</span>
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Review selection for<br>PeterBates Marquees Limited</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check the pension payments from PeterBates Marquees Limited</p>
 
         {{ govukTable({
           caption: "",
@@ -47,19 +54,11 @@
               classes: 'govuk-20-percent'
             },
             {
-              text: "Frquency (Days between payment)",
-              classes: 'govuk-20-percent'
-            },
-            {
               text: "Payment amount",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Tax",
-              classes: 'govuk-20-percent'
-            },
-            {
-              html: "Payment(s)<br>selected by you",
+              html: "Selection method",
               classes: 'govuk-20-percent'
             }
           ],
@@ -69,13 +68,7 @@
               text: "1 June 2022"
             },
             {
-              text: "Once a year (183)"
-            },
-            {
               text: "£13,199.68"
-            },
-            {
-              text: "£2,639.94"
             },
             {
               html: USED
@@ -121,13 +114,13 @@
           name: "process-c-nil-task-4-y-edit-review",
           fieldset: {
             legend: {
-              text: "One payments have been selected these payments will be used to get a weekly amount of £253.84",
+              text: "These payments convert to £253.85 a week. Do you agree with this weekly income?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "Calculation: Divided by 52 (Weeks) equals and average payment per week"
+            text: ""
           },
           classes: "govuk-radios",
           items: [

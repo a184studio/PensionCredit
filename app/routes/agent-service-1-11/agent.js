@@ -461,9 +461,13 @@ router.post(`${baseUrl}/qd-securityE-router`, (req, res) => {
 
 router.post(`${baseUrl}/qd-securityG-router`, (req, res) => {
   const securityG = req.session.data['qd-securityG']
+  const claimsTwo = req.session.data['qd-search-nino']
 
   if (securityG == 'fail') {
     res.redirect(`${baseUrl}/qd-securityG-fail`)
+  }
+  else if (claimsTwo == 'ZZ158538A') {
+    res.redirect(`${baseUrl}/qd-claims`)
   }
    else {
     res.redirect(`${baseUrl}/qd-summary`)

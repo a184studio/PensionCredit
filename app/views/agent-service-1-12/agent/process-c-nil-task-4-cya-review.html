@@ -22,14 +22,14 @@
 
         {% set USED %}
         {{govukTag({
-          text: "System selected",
+          text: "System",
           classes: "govuk-tag--green"
         })}}
         {% endset -%}
 
         {% set MANUAL %}
         {{govukTag({
-          text: "Manual selection",
+          text: "Manual",
           classes: "govuk-tag--blue"
         })}}
         {% endset -%}
@@ -42,7 +42,7 @@
         {% endset -%}
 
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Income over applicable amount [X].<br>This will be a nil claim, no entitlment in the backdating period.</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Income over applicable amount.<br>This will be a nil claim, no entitlment<br>in the backdating period.</p>
 
         {{ govukTable({
           caption: "",
@@ -54,15 +54,15 @@
               classes: 'govuk-20-percent'
             },
             {
-              text: "Income payment frequency",
+              text: "Payment frequency",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Payment selection method",
+              text: "Selection method",
               classes: 'govuk-20-percent'
             },
             {
-              html: "Weekly amount used<br>for calculation",
+              html: "Weekly net income",
               classes: 'govuk-20-percent'
             }
           ],

@@ -12,7 +12,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-full">
 
       <form action="process-c-nil-task-4-y-router" method="post" class="form">
 
@@ -36,26 +36,29 @@
 
         <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments form<br>PeterBates Marquees Limited</p>
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4 govuk-!-margin-top-2">The payments selected are used to work out the applicant's weekly income from this pension.</p>
-
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-0">This application was submitted on Saturday 29 May 2022.</p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-6">[Lets say todays date is the 1st June]</p>
-
 
         {{ govukTable({
           captionClasses: "govuk-table__caption--xl govuk-!-margin-bottom-6",
           firstCellIsHeader: false,
           head: [
             {
-              text: "Payment date (once a year)",
+              text: "Payment date",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Net pay",
+              text: "Frquency (Days between payment)",
               classes: 'govuk-20-percent'
             },
             {
-              html: "Selection method",
+              text: "Net payment amount",
+              classes: 'govuk-20-percent'
+            },
+            {
+              text: "Tax (20%)",
+              classes: 'govuk-20-percent'
+            },
+            {
+              html: "Payment selected<br>by the system",
               classes: 'govuk-20-percent'
             }
           ],
@@ -65,7 +68,13 @@
                 text: "1 June 2022"
               },
               {
+                text: "Once a year (365)"
+              },
+              {
                 text: "£13,199.68"
+              },
+              {
+                text: "£2,639.94"
               },
               {
                 html: USED
@@ -76,7 +85,13 @@
                   text: "1 June 2021"
                 },
                 {
+                  text: "Once a year (365)"
+                },
+                {
                   text: "£10,559.74"
+                },
+                {
+                  text: "£2,111.95"
                 },
                 {
                   html: NOTUSED
@@ -87,7 +102,13 @@
                 text: "1 June 2020"
               },
               {
+                text: "Once a year (365)"
+              },
+              {
                 text: "£8,447.79"
+              },
+              {
+                text: "£1,689.56"
               },
               {
                 html: NOTUSED
@@ -133,13 +154,13 @@
           name: "process-c-nil-task-4-y",
           fieldset: {
             legend: {
-              text: "These payments convert to £253.85 a week. Do you agree with this weekly income?",
+              text: "One payment have been selected these payments will be used to get a weekly amount of £253.84",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: ""
+            text: "Selection will be divided by 52 (Weeks) equals and average payment per week"
           },
           classes: "govuk-radios",
           items: [
