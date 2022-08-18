@@ -466,7 +466,7 @@ router.post(`${baseUrl}/qd-securityG-router`, (req, res) => {
   if (securityG == 'fail') {
     res.redirect(`${baseUrl}/qd-securityG-fail`)
   }
-  else if (claimsTwo == 'ZZ158538A') {
+  else if (claimsTwo == 'ZZ439386A') {
     res.redirect(`${baseUrl}/qd-claims`)
   }
    else {
