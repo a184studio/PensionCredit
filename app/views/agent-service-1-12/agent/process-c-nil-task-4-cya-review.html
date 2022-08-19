@@ -42,72 +42,14 @@
         {% endset -%}
 
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Income over applicable amount.<br>This will be a nil claim, no entitlment<br>in the backdating period.</p>
-
-        {{ govukTable({
-          caption: "",
-          captionClasses: "govuk-table__caption--xl govuk-!-margin-bottom-8",
-          firstCellIsHeader: false,
-          head: [
-            {
-              text: "Type of income",
-              classes: 'govuk-20-percent'
-            },
-            {
-              text: "Payment frequency",
-              classes: 'govuk-20-percent'
-            },
-            {
-              text: "Selection method",
-              classes: 'govuk-20-percent'
-            },
-            {
-              html: "Weekly net income",
-              classes: 'govuk-20-percent'
-            }
-          ],
-          rows: [
-            [
-              {
-                text: "State Pension"
-              },
-              {
-                text: "Weekly"
-              },
-              {
-                html: USED
-              },
-              {
-                text: "£150.00"
-              }
-            ],
-            [
-              {
-                text: "Occ pension 1"
-              },
-              {
-                text: "Monthly"
-              },
-              {
-                html: MANUAL
-              },
-              {
-                text: "£253.84"
-              }
-            ]
-          ]
-        }) }}
-
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-padding-top-2 govuk-!-margin-bottom-2"><strong>Calculation</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-0">Applicable amount for this person is <strong>£182.15</strong></p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Their total weekly income is <strong>£403.84</strong></p>
-
-
-
-
-    </div>
-  </div>
-
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Not currently entitled </p>
+        <p class="govuk-body-l">This is because the applicant has:</p>
+        <ul class="govuk-body-l govuk-list govuk-list--bullet">
+  <li>a weekly net income of <strong>£403.84</strong> which is over their applicable amount of <strong>£182.15</strong></li>
+  <li>no entitlement in the backdating period</li>
+  
+</ul>
+        
 
     <!------------ ––– ------------>
 
@@ -169,10 +111,7 @@
 
     </div>
   </div>
-
-
-  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This is what is going to happen</h1>
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something here</p>
+  <p class="govuk-body-l">A letter will be automatically sent to the applicant. This will notify them that they're not currently entitled to Pension Credit.</p>
 
     {{ govukButton({
       text: "Confirm and notify"

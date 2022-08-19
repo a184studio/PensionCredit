@@ -20,7 +20,7 @@
 
         {% set USED %}
         {{govukTag({
-          text: "Selected",
+          text: "System",
           classes: "govuk-tag--green"
         })}}
         {% endset -%}
@@ -32,9 +32,13 @@
         })}}
         {% endset -%}
 
-        <span class="govuk-caption-m">Four weekly</span>
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check pension payments form<br>Pret a manger</p>
+
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check the pension payments from<br>Pret A Manger</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4 govuk-!-margin-top-2">Make sure the selected payment represents the applicant's current <br> income from this pension.</p>
+
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This application was submitted on Saturday 29 May 2022.</p>
+
 
 
         {{ govukTable({
@@ -42,23 +46,15 @@
           firstCellIsHeader: false,
           head: [
             {
-              text: "Payment date",
+              text: "Payment date (every 4 weeks)",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Frquency (Days between payment)",
+              text: "Net pay",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Net payment amount",
-              classes: 'govuk-20-percent'
-            },
-            {
-              text: "Tax (20%)",
-              classes: 'govuk-20-percent'
-            },
-            {
-              html: "Payment selected<br>by the system",
+              html: "Selection method",
               classes: 'govuk-20-percent'
             }
           ],
@@ -68,13 +64,7 @@
                 text: "1 June 2022"
               },
               {
-                text: "Four weekly (28)"
-              },
-              {
                 text: "£1,015.36"
-              },
-              {
-                text: "£203.72"
               },
               {
                 html: USED
@@ -85,13 +75,7 @@
                   text: "5 April 2022"
                 },
                 {
-                  text: "Four weekly (28)"
-                },
-                {
                   text: "£1,015.36"
-                },
-                {
-                  text: "£203.72"
                 },
                 {
                   html: NOTUSED
@@ -102,13 +86,7 @@
                 text: "28 March 2022"
               },
               {
-                text: "Four weekly (28)"
-              },
-              {
                 text: "£923.04"
-              },
-              {
-                text: "£184.608"
               },
               {
                 html: NOTUSED
@@ -119,13 +97,7 @@
                   text: "28 Feburary 2022"
                 },
                 {
-                  text: "Four weekly (28)"
-                },
-                {
                   text: "£923.04"
-                },
-                {
-                  text: "£184.608"
                 },
                 {
                   html: NOTUSED
@@ -134,12 +106,6 @@
                 [
                   {
                     text: "31 January 2022"
-                  },
-                  {
-                    text: "Four weekly (28)"
-                  },
-                  {
-                    text: "£923.04"
                   },
                   {
                     text: "£184.608"
@@ -153,13 +119,7 @@
                       text: "3 January 2022"
                     },
                     {
-                      text: "Four weekly (28)"
-                    },
-                    {
                       text: "£923.04"
-                    },
-                    {
-                      text: "£184.608"
                     },
                     {
                       html: NOTUSED
@@ -205,13 +165,13 @@
           name: "process-c-nil-task-4-fw",
           fieldset: {
             legend: {
-              text: "One payment have been selected these payments will be used to get a weekly amount of £253.84",
+              text: "The payment selected converts to £253.84 a week. Do you agree with this?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "Selection will be multiplied by 12 (Months) divided by 52 (Weeks) equals and average payment per week"
+
           },
           classes: "govuk-radios",
           items: [
