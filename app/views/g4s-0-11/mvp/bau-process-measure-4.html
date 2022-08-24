@@ -22,8 +22,11 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Continue with the call using your Standard Work Instructions</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Record the call outcome if the call has ended or help with another enquiry. </p>
 
+      {{ govukButton({
+        text: "Another enquiry"
+      }) }}
 
-      <div class="govuk-button-group">
+      <!-- <div class="govuk-button-group">
         {{ govukButton({
           text: "Record call outcome"
         }) }}
@@ -34,7 +37,7 @@
           href: "type-of-claim.html",
           classes: "govuk-button--secondary"
         }) }}
-        </div>
+        </div> -->
 
 
   </form>
