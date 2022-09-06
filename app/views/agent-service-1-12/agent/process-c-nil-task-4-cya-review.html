@@ -103,76 +103,23 @@
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Their total weekly income is <strong>£403.84</strong></p>
 
 
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-    </div>
-  </div>
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This is what will happen</h1>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">A letter will be sent XXX</p>
+
+  <p class="govuk-body govuk-!-font-size-24 govuk-!-padding-top-2 govuk-!-margin-bottom-2"><strong>You ned to do some clerical tasks</strong></p>
+  <ul class="govuk-list govuk-list--bullet govuk-!-font-size-19 govuk-!-margin-bottom-8">
+    <li>Update their name <strong>Name Secondname</strong></li>
+    <li>Update their telephone number <strong>07960 096 XXX</strong></li>
+    <li>Update their address <strong>Building name, Address, Address, Post Code</strong></li>
+  </ul>
 
 
-    <!------------ ––– ------------>
+</div>
+</div>
 
-    <div class="govuk-grid-row ">
-      <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
-
-        {% set LegendQualifingBenefits %}
-        <p class=" govuk-!-margin-bottom-2">Qualifying benefits for premiums include:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
-
-          <li>Adult Disability Payment daily living component</li>
-          <li>Armed Forces Independence Payment</li>
-          <li>Attendance Allowance</li>
-          <li>Carer's Allowance, including an underlying entitlement</li>
-          <li>Constant Attendance Allowance</li>
-          <li>Disability Living Allowance care component (middle or highest rate)</li>
-          <li>Personal Independence Payment daily living component</li>
-
-        </ul>
-
-        {% endset -%}
-
-        <!-- {{ govukDetails({
-          summaryText: "Qualifying benefits for premiums",
-          html: LegendQualifingBenefits
-        }) }} -->
-
-        <!-- {{ govukRadios({
-          idPrefix: "process-c-nil-task-4-1",
-          name: "process-c-nil-task-4-1",
-          fieldset: {
-            legend: {
-              html: "Are you happy you want to nil this claim<br>due to excicess income?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          hint: {
-            text: "XX"
-          },
-          classes: "govuk-radios",
-          items: [
-          {
-            value: "Yes",
-            text: "Yes — issue a letter",
-            checked: (data["process-c-nil-task-4-1"] == "Yes")
-          },
-            {
-              value: "No",
-              text: "No — Send to Opps (BAU)",
-              checked: (data["process-c-nil-task-4-1"] == "No")
-            }
-          ]
-        }) }} -->
-
-
-
-        <!------------ ––– ------------>
-
-    </div>
-  </div>
-
-
-  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This is what is going to happen</h1>
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something here</p>
 
     {{ govukButton({
       text: "Confirm and notify"
