@@ -211,6 +211,15 @@ $govuk-new-link-styles: true;
   background-color: #dee0e2;
 }
 
+.govuk-tag--date {
+  color: #000;
+  background-color: #dee0e2;
+}
+.govuk-tag--date-lead {
+  color: #000;
+  background-color: #fff;
+}
+
 // COVID tags
 
 .govuk-tag--covid19-todo {

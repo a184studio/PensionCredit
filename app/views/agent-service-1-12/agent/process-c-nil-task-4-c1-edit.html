@@ -17,13 +17,18 @@
       <form action="process-c-nil-task-4-c-edit-review" method="post" class="form">
 
 
+
         {% include "agent-service-1-12/agent/record-id.html" %}
 
+<div>
+  <strong class="govuk-tag govuk-tag--date govuk-!-margin-bottom-2 govuk-!-margin-bottom-4" id="company-information-completed">Application submitted: 2 June 2022</strong>
 
+        <!-- <strong class="govuk-tag govuk-tag--date-lead govuk-!-margin-bottom-2" id="company-information-completed">Application submitted:</strong> -->
+        <!-- <strong class="govuk-tag govuk-tag--date govuk-!-margin-bottom-2" id="company-information-completed">2 June 2022</strong> -->
 
+</div>
           <p class="govuk-heading-xl govuk-!-margin-bottom-6">What pension payments from Metroland LTD do you want to use to work out the applicant's curent income?</p>
 
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This application was submitted on Saturday 29 May 2022.</p>
 
           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">You can select one or more payments.</p>
 
@@ -76,9 +81,28 @@
               </td>
 
               <td class="govuk-table__cell table-spacer">1 June 2022</td>
-              <td class="govuk-table__cell table-spacer">30</td>
+              <td class="govuk-table__cell table-spacer">15</td>
               <td class="govuk-table__cell table-spacer">£1,100.00</td>
               </tr>
+
+              <tr class="govuk-table__row">
+
+                <td class="govuk-table__cell table-spacer">
+
+                  <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      </label>
+                    </div>
+                  </div>
+
+                </td>
+
+                <td class="govuk-table__cell table-spacer">15 May 2022</td>
+                <td class="govuk-table__cell table-spacer">15</td>
+                <td class="govuk-table__cell table-spacer">£20,000.00</td>
+                </tr>
 
 
                 <tr class="govuk-table__row">
@@ -95,7 +119,7 @@
                   </td>
                   <td class="govuk-table__cell table-spacer">1 May 2022</td>
                   <td class="govuk-table__cell table-spacer">30</td>
-                  <td class="govuk-table__cell table-spacer">£1,110.00</td>
+                  <td class="govuk-table__cell table-spacer">£1,100.00</td>
                   </tr>
 
                 <tr class="govuk-table__row">
@@ -106,7 +130,7 @@
 
                   <td class="govuk-table__cell table-spacer">1 April 2021</td>
                   <td class="govuk-table__cell table-spacer">360</td>
-                  <td class="govuk-table__cell table-spacer">£1,101.22</td>
+                  <td class="govuk-table__cell table-spacer">£1,100.00</td>
                   </tr>
 
                   <tr class="govuk-table__row">
@@ -117,7 +141,7 @@
 
                     <td class="govuk-table__cell table-spacer">1 March 2021</td>
                     <td class="govuk-table__cell table-spacer">—</td>
-                    <td class="govuk-table__cell table-spacer">£1,101.22</td>
+                    <td class="govuk-table__cell table-spacer">£900.00</td>
                     </tr>
 
 
@@ -131,7 +155,33 @@
     </div>
   </div>
 
-
+  {{ govukRadios({
+    idPrefix: "process-c-nil-task-4-c",
+    name: "process-c-nil-task-4-c",
+    fieldset: {
+      legend: {
+        text: "What do you want to do next?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l govuk-!-padding-top-4"
+      }
+    },
+    hint: {
+      text: "If you cant process this, let Debs know"
+    },
+    classes: "govuk-radios",
+    items: [
+    {
+      value: "Yes",
+      text: "I'm happy with my selection, looks about right",
+      checked: (data["process-c-nil-task-4-c"] == "Yes")
+    },
+      {
+        value: "No",
+        text: "I want nothing to do with this, This needs to go to BAU",
+        checked: (data["process-c-nil-task-4-c"] == "No")
+      }
+    ]
+  }) }}
 
 
 
@@ -142,9 +192,6 @@
     }) }}
 
 
-
-
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-cya-unexpected" class="govuk-link" rel="noreferrer noopener">I can't process this</a></p>
 </form>
 
 {% endblock %}
