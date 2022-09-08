@@ -811,6 +811,7 @@ router.post(`${baseUrl}/process-c-nil-task-4-c-edit-router`, (req, res) => {
   }
 })
 
+
 router.post(`${baseUrl}/process-c-nil-task-4-c-edit-review-router`, (req, res) => {
   const processTask_4_c_edit_review = req.session.data['process-c-nil-task-4-c-edit-review']
 
@@ -819,6 +820,20 @@ router.post(`${baseUrl}/process-c-nil-task-4-c-edit-review-router`, (req, res) =
   }
   else if (processTask_4_c_edit_review == 'No') {
     res.redirect(`${baseUrl}/process-c-nil-task-4-c-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+router.post(`${baseUrl}/process-c-nil-task-4-c1-edit-router`, (req, res) => {
+  const processTask_4_c1_edit = req.session.data['process-c-nil-task-4-c1-edit']
+
+  if (processTask_4_c1_edit == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-c-edit-review`)
+  }
+  else if (processTask_4_c1_edit == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-cya-unexpected`)
   }
    else {
     res.redirect(`${baseUrl}/XXX`)
