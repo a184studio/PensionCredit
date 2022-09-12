@@ -67,6 +67,9 @@ router.post(`${baseUrl}/system-ur-process-frequency-router`, (req, res) => {
   if (processProcessFrequency === 'A') {
     res.redirect(`${baseUrl}/process-c-nil-task-4-w`)
 
+  }  else if (processProcessFrequency == 'A1') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-w1-edit`)
+
   }  else if (processProcessFrequency == 'B') {
     res.redirect(`${baseUrl}/process-c-nil-task-4-fw`)
 
@@ -578,6 +581,21 @@ router.post(`${baseUrl}/process-c-nil-task-4-w-edit-review-router`, (req, res) =
   }
   else if (processTask_4_w_edit_review == 'No') {
     res.redirect(`${baseUrl}/process-c-nil-task-4-w-edit`)
+  }
+   else {
+    res.redirect(`${baseUrl}/XXX`)
+  }
+})
+
+
+router.post(`${baseUrl}/process-c-nil-task-4-w1-edit-review-router`, (req, res) => {
+  const processTask_4_w1_edit = req.session.data['process-c-nil-task-4-w1-edit']
+
+  if (processTask_4_w1_edit == 'Yes') {
+    res.redirect(`${baseUrl}/process-c-nil-task-4-w1-edit-review`)
+  }
+  else if (processTask_4_w1_edit == 'No') {
+    res.redirect(`${baseUrl}/process-c-nil-task-w1-cya-unexpected`)
   }
    else {
     res.redirect(`${baseUrl}/XXX`)

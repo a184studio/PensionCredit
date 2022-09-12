@@ -12,7 +12,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-three-quarters">
 
       <form action="process-c-nil-task-4-w-router" method="post" class="form">
 
@@ -32,12 +32,10 @@
         })}}
         {% endset -%}
 
+        <strong class="govuk-tag govuk-tag--date govuk-!-margin-bottom-2 govuk-!-margin-bottom-4" id="company-information-completed">Application submitted or Date of cliam: 2 June 2022</strong>
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check the pension payments from<br>Woolworths INC</p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4 govuk-!-margin-top-2">Make sure the selected payment represents the applicant's current <br> income from this pension.</p>
-
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This application was submitted on Saturday 29 May 2022.</p>
-
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check the pension payments from Woolworths INC</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4 govuk-!-margin-top-2">X</p>
 
 
         {{ govukTable({
@@ -45,11 +43,15 @@
           firstCellIsHeader: false,
           head: [
             {
-              text: "Payment date (weekly)",
+              text: "Date amount changed",
               classes: 'govuk-20-percent'
             },
             {
-              text: "Net pay",
+              text: "Date paid",
+              classes: 'govuk-20-percent'
+            },
+            {
+              text: "Payment frequency",
               classes: 'govuk-20-percent'
             },
             {
@@ -66,6 +68,9 @@
                 text: "£253.84"
               },
               {
+                text: "Weekly"
+              },
+              {
                 html: USED
               }
               ],
@@ -77,7 +82,10 @@
                   text: "£253.84"
                 },
                 {
-                  html: NOTUSED
+                  text: "Weekly"
+                },
+                {
+                  html: USED
                 }
               ],
             [
@@ -88,7 +96,10 @@
                 text: "£253.84"
               },
               {
-                html: NOTUSED
+                text: "Weekly"
+              },
+              {
+                html: USED
               }
             ],
               [
@@ -99,16 +110,67 @@
                   text: "£253.84"
                 },
                 {
-                  html: NOTUSED
+                  text: "Weekly"
+                },
+                {
+                  html: USED
                 }
               ],
                 [
                   {
                     text: "4 May 2022"
                   },
-                 
+
                   {
                     text: "£253.84"
+                  },
+                  {
+                    text: "Weekly"
+                  },
+                  {
+                    html: NOTUSED
+                  }
+                ],
+                  [
+                    {
+                      text: "27 April 2022"
+                    },
+
+                    {
+                      text: "£253.84"
+                    },
+                    {
+                      text: "Weekly"
+                    },
+                    {
+                      html: NOTUSED
+                    }
+                  ],
+                [
+                  {
+                    text: "20 April 2022"
+                  },
+
+                  {
+                    text: "£200.00"
+                  },
+                  {
+                    text: "Weekly"
+                  },
+                  {
+                    html: NOTUSED
+                  }
+                ],
+                [
+                  {
+                    text: "13 April 2022"
+                  },
+
+                  {
+                    text: "£200.00"
+                  },
+                  {
+                    text: "Weekly"
                   },
                   {
                     html: NOTUSED
@@ -160,7 +222,7 @@
             }
           },
           hint: {
-            
+
           },
           classes: "govuk-radios",
           items: [
