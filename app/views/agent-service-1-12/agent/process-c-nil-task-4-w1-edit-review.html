@@ -47,52 +47,90 @@
           from MetroLand LTD</p>
           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4 govuk-!-margin-top-2"></p>
 
+
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-three-quarters">
 
-        {{ govukTable({
-          caption: "",
-          captionClasses: "govuk-table__caption--xl govuk-!-margin-bottom-6",
-          firstCellIsHeader: false,
-          head: [
-            {
-              text: "Payment date (monthly)",
-              classes: 'govuk-20-percent'
-            },
-            {
-              text: "Net pay",
-              classes: 'govuk-20-percent'
-            },
-            {
-              html: "Selection method",
-              classes: 'govuk-20-percent'
-            }
-          ],
-          rows: [
-            [
-              {
-                text: "1 June 2022"
-              },
-              {
-                text: "£1,100.00"
-              },
-              {
-                html: MANUAL
-              }
-            ],
-            [
-              {
-                text: "1 May 2022"
-              },
-              {
-                text: "£1,100.00"
-              },
-              {
-                html:   MANUAL
-              }
-            ]
-          ]
-        }) }}
+            {{ govukTable({
+              captionClasses: "govuk-table__caption--xl govuk-!-margin-bottom-6",
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Date amount changed",
+                  classes: 'govuk-20-percent'
+                },
+                {
+                  text: "Date paid",
+                  classes: 'govuk-20-percent'
+                },
+                {
+                  text: "Payment frequency",
+                  classes: 'govuk-20-percent'
+                },
+                {
+                  html: "Selection method",
+                  classes: 'govuk-20-percent'
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "1 June 2022"
+                  },
+                  {
+                    text: "£253.84"
+                  },
+                  {
+                    text: "Weekly"
+                  },
+                  {
+                    html: MANUAL
+                  }
+                  ],
+                  [
+                    {
+                      text: "25 May 2022"
+                    },
+                    {
+                      text: "£253.84"
+                    },
+                    {
+                      text: "Weekly"
+                    },
+                    {
+                      html: MANUAL
+                    }
+                  ],
+                [
+                  {
+                    text: "18 May 2022"
+                  },
+                  {
+                    text: "£253.84"
+                  },
+                  {
+                    text: "Weekly"
+                  },
+                  {
+                    html: MANUAL
+                  }
+                ],
+                  [
+                    {
+                      text: "11 May 2022"
+                    },
+                    {
+                      text: "£253.84"
+                    },
+                    {
+                      text: "Weekly"
+                    },
+                    {
+                      html: MANUAL
+                    }
+                  ]
+              ]
+            }) }}
 
       </div>
     </div>

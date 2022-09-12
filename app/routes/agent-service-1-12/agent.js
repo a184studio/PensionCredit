@@ -413,10 +413,10 @@ router.post(`${baseUrl}/process-c-nil-task-3-10-router`, (req, res) => {
   const processTask_3_10 = req.session.data['process-c-nil-task-3-10']
 
   if (processTask_3_10 == 'Matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-12`)
+    res.redirect(`${baseUrl}/process-c-nil-task-3-11`)
   }
   else if (processTask_3_10 == 'Not matched') {
-    res.redirect(`${baseUrl}/process-c-nil-task-3-12`)
+    res.redirect(`${baseUrl}/process-c-nil-task-3-11`)
   }
    else {
     res.redirect(`${baseUrl}/process-c-nil-task-list`)
@@ -588,14 +588,14 @@ router.post(`${baseUrl}/process-c-nil-task-4-w-edit-review-router`, (req, res) =
 })
 
 
-router.post(`${baseUrl}/process-c-nil-task-4-w1-edit-review-router`, (req, res) => {
+router.post(`${baseUrl}/process-c-nil-task-4-w1-edit-router`, (req, res) => {
   const processTask_4_w1_edit = req.session.data['process-c-nil-task-4-w1-edit']
 
   if (processTask_4_w1_edit == 'Yes') {
     res.redirect(`${baseUrl}/process-c-nil-task-4-w1-edit-review`)
   }
   else if (processTask_4_w1_edit == 'No') {
-    res.redirect(`${baseUrl}/process-c-nil-task-w1-cya-unexpected`)
+    res.redirect(`${baseUrl}/process-c-nil-task-4-cya-unexpected`)
   }
    else {
     res.redirect(`${baseUrl}/XXX`)
