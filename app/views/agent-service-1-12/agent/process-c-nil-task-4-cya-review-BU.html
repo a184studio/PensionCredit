@@ -12,7 +12,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-three-quarters">
 
       <form action="ur-home" method="post" class="form">
         <input type="hidden" name="outcome-nil" value="true"/>
@@ -42,7 +42,7 @@
         {% endset -%}
 
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Income over applicable amount.<br>This will be a nil claim, no entitlment<br>in the backdating period.</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">Income over applicable amount. This will be a nil claim, no entitlment in the backdating period.</p>
 
         {{ govukTable({
           caption: "",
@@ -51,7 +51,7 @@
           head: [
             {
               text: "Type of income",
-              classes: 'govuk-20-percent'
+              classes: 'govuk-40-percent'
             },
             {
               text: "Payment frequency",
@@ -83,7 +83,21 @@
             ],
             [
               {
-                text: "Occ pension 1"
+                text: "OCC1: Woolworths INC"
+              },
+              {
+                text: "Weekly"
+              },
+              {
+                html: USED
+              },
+              {
+                text: "£253.84"
+              }
+            ],
+            [
+              {
+                text: "OCC2: MetroLand LTD"
               },
               {
                 text: "Monthly"
