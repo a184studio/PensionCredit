@@ -16,14 +16,23 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="oidv-payslips" method="post" class="form">
 
-      <!-- <p class="govuk-body govuk--version-control">OIDV</p> -->
+      <!------------DYNAMIC HEADER------------>
+        {% set dynamicHead %}
+          {% if data["oidv-who"] == "Someone else" %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Does the applicant have a P60 from the tax year 2021 to 2022?</h2>
+        {% else %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Do you have a P60 from the tax year 2021 to 2022?</h2>
+          {% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
 
     {{ govukRadios({
       idPrefix: "oidv-p60",
       name: "oidv-p60",
       fieldset: {
         legend: {
-          text: "Do you have a P60 from the tax year 2021 to 2022?",
+          html: dynamicHead,
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }

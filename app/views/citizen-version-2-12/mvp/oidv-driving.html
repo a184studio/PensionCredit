@@ -18,12 +18,23 @@
 
       <!-- <p class="govuk-body govuk--version-control">OIDV</p> -->
 
+
+      <!------------DYNAMIC HEADER------------>
+        {% set dynamicHead %}
+          {% if data["oidv-who"] == "Someone else" %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Does the applicant have a valid UK driving licence?</h2>
+        {% else %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Do you have a valid UK driving licence?</h2>
+          {% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
     {{ govukRadios({
       idPrefix: "oidv-driving",
       name: "oidv-driving",
       fieldset: {
         legend: {
-          text: "Do you have a valid UK driving licence?",
+          html: dynamicHead,
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }

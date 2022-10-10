@@ -16,14 +16,23 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="oidv-p60" method="post" class="form">
 
-      <!-- <p class="govuk-body govuk--version-control">OIDV</p> -->
+      <!------------DYNAMIC HEADER------------>
+        {% set dynamicHead %}
+          {% if data["oidv-who"] == "Someone else" %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Does the applicant have a valid UK passport?</h2>
+        {% else %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Do you have a valid UK passport?</h2>
+          {% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
 
     {{ govukRadios({
       idPrefix: "oidv-passport",
       name: "oidv-passport",
       fieldset: {
         legend: {
-          text: "Do you have a valid UK passport?",
+          html: dynamicHead,
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }

@@ -29,19 +29,19 @@
         }
       },
       hint: {
-        html: "For your driving licence to be valid it must not have passed the expiry date."
+        html: "XXX."
       },
       classes: "govuk-radios",
       items: [
         {
-          value: "Yes",
-          text: "Me",
-          checked: (data["oidv-who"] == "Yes")
+          value: "Myself",
+          text: "Myself",
+          checked: (data["oidv-who"] == "Myself")
         },
         {
-          value: "No",
-          text: "Thee",
-          checked: (data["oidv-who"] == "No")
+          value: "Someone else",
+          text: "Someone else",
+          checked: (data["oidv-who"] == "Someone else")
         }
       ]
     }) }}
