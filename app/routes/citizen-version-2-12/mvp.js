@@ -1987,7 +1987,7 @@ router.post(`${baseUrl}/oidv-start-check-router`, (req, res) => {
   const oidv_Check = req.session.data['oidv-start-check']
 
   if (oidv_Check === 'Yes') {
-    res.redirect(`${baseUrl}/oidv-driving`)
+    res.redirect(`${baseUrl}/oidv-who`)
   }
   else if (oidv_Check === 'No') {
     res.redirect(`${baseUrl}/oidv-start-exit`)
