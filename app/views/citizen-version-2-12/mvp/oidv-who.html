@@ -23,24 +23,24 @@
       name: "oidv-who",
       fieldset: {
         legend: {
-          text: "Who dat?",
+          text: "Did you apply for Pension Credit for yourself or someone else?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }
       },
       hint: {
-        html: "XXX."
+        html: ""
       },
       classes: "govuk-radios",
       items: [
         {
           value: "Myself",
-          text: "Myself",
+          text: "I applied for myself",
           checked: (data["oidv-who"] == "Myself")
         },
         {
           value: "Someone else",
-          text: "Someone else",
+          text: "I applied for someone else",
           checked: (data["oidv-who"] == "Someone else")
         }
       ]
