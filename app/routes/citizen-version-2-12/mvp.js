@@ -1987,7 +1987,7 @@ router.post(`${baseUrl}/oidv-start-check-router`, (req, res) => {
   const oidv_Check = req.session.data['oidv-start-check']
 
   if (oidv_Check === 'Yes') {
-    res.redirect(`${baseUrl}/oidv-driving`)
+    res.redirect(`${baseUrl}/oidv-who`)
   }
   else if (oidv_Check === 'No') {
     res.redirect(`${baseUrl}/oidv-start-exit`)
@@ -2001,7 +2001,7 @@ router.post(`${baseUrl}/oidv-driving-router`, (req, res) => {
   const oidv_driving = req.session.data['oidv-driving']
 
   if (oidv_driving === 'Yes') {
-    res.redirect(`${baseUrl}/oidv-driving-origin`)
+    res.redirect(`${baseUrl}/oidv-driving-type`)
   }
   else if (oidv_driving === 'No') {
     res.redirect(`${baseUrl}/oidv-passport`)
@@ -2025,19 +2025,19 @@ router.post(`${baseUrl}/oidv-driving-origin-router`, (req, res) => {
   }
 })
 
-router.post(`${baseUrl}/oidv-passport-router`, (req, res) => {
-  const oidv_passport = req.session.data['oidv-passport']
-
-  if (oidv_passport === 'Yes') {
-    res.redirect(`${baseUrl}/oidv-passport-type`)
-  }
-  else if (oidv_passport === 'No') {
-    res.redirect(`${baseUrl}/oidv-p60`)
-  }
-   else {
-    res.redirect(`${baseUrl}/fail`)
-  }
-})
+// router.post(`${baseUrl}/oidv-passport-router`, (req, res) => {
+//   const oidv_passport = req.session.data['oidv-passport']
+//
+//   if (oidv_passport === 'Yes') {
+//     res.redirect(`${baseUrl}/oidv-p60`)
+//   }
+//   else if (oidv_passport === 'No') {
+//     res.redirect(`${baseUrl}/oidv-p60`)
+//   }
+//    else {
+//     res.redirect(`${baseUrl}/fail`)
+//   }
+// })
 
 router.post(`${baseUrl}/oidv-working-router`, (req, res) => {
   const oidv_working = req.session.data['oidv-working']

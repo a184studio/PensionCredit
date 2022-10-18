@@ -16,14 +16,23 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="oidv-end" method="post" class="form">
 
-      <!-- <p class="govuk-body govuk--version-control">OIDV</p> -->
+      <!------------DYNAMIC HEADER------------>
+        {% set dynamicHead %}
+          {% if data["oidv-who"] == "Someone else" %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Does the applicant have any payslips from the past 3 months?</h2>
+        {% else %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Do you have any payslips from the past 3 months?</h2>
+          {% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
 
     {{ govukRadios({
       idPrefix: "oidv-payslips",
       name: "oidv-payslips",
       fieldset: {
         legend: {
-          text: "Do you have any payslips from the past 3 months?",
+          html: dynamicHead,
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
         }
