@@ -16,30 +16,36 @@
 
 
       <!------------HEADLINE------------>
+        {% set GetNext %}
+        <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">Next oldest application [Get next]</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">What the distributor does now</p>
+        {% endset %}
+      <!------------HEADLINE------------>
+        {% set GetNextNoFlag %}
+        <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">Next oldest application [Get next no flags]</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">Applications with no flags</p>
+
+        {% endset %}
+        <!------------HEADLINE------------>
         {% set cohort1 %}
-        <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">Not entitled: Cohort 1</p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">State Pension is over the applipale amount</p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">X</p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">Y</p>
-        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">Z</p>
+        <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">Potentially not entitled</p>
+        <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">State Pension</p>
 
         {% endset %}
         <!------------HEADLINE------------>
           {% set cohort2 %}
-          <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">Not entitled: Cohort 2</p>
-          <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">State Pension is lower than X</p>
-          <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">Pensions ar</p>
-          <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">Y</p>
-          <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">Z</p>
+          <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">Potentially not entitled</p>
+          <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">State Pension</p>
+          <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">Pensions</p>
 
           {% endset %}
           <!------------HEADLINE------------>
             {% set Returns %}
             <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">Not entitled: Returns</p>
             <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">Claims returned to queue from Nil award process</p>
-            <p class="govuk-hint govuk-!-font-size-19 govuk-!-margin-bottom-0">Still potentially not entitled</p>
             {% endset %}
-          <!------------HEADLINE------------>
+            <!------------HEADLINE------------>
+
 
       {{ govukRadios({
         idPrefix: "system-ur-process-ab",
@@ -57,18 +63,18 @@
         classes: "govuk-radios",
         items: [
         {
+          value: "B",
+          html: GetNext,
+          checked: (data["system-ur-process-ab"] == "B")
+        },
+        {
           value: "A",
-          text: "Applications with no flags",
+          html: GetNextNoFlag,
           checked: (data["system-ur-process-ab"] == "A")
           },
           {
             value: "B",
             html: cohort1,
-            checked: (data["system-ur-process-ab"] == "B")
-          },
-          {
-            value: "B",
-            html: cohort2,
             checked: (data["system-ur-process-ab"] == "B")
           },
           {
@@ -89,11 +95,6 @@
           {
             value: "B",
             html: "UC to PC application",
-            checked: (data["system-ur-process-ab"] == "B")
-          },
-          {
-            value: "B",
-            html: "Lucky dip",
             checked: (data["system-ur-process-ab"] == "B")
           }
         ]
