@@ -20,13 +20,12 @@
 
         {% include "agent-service-1-12/agent/record-id.html" %}
 
-        <p class="govuk-heading-xl govuk-!-margin-bottom-6">This application is a nil award but do a CIS500</p>
+        <p class="govuk-heading-xl govuk-!-margin-bottom-6">You must update this applicant’s information with a CIS500</p>
 
-        <p class="govuk-body-m govuk-!-margin-bottom-2">XXX</p>
+        <p class="govuk-body-m govuk-!-margin-bottom-2">Before you confirm and notify the applicant that they're not currently entitled to Pension Credit, you must complete a CIS500 to update this applicant's:</p>
         <ul class="govuk-body-m govuk-list govuk-list--bullet">
-          <li>Change the name to <strong>X</strong></li>
-          <li>Change address to <strong>X</strong></li>
-          <li>Change the telehpone to <strong>X</strong></li>
+          <li>address to [address applicant has provided] <strong></strong></li>
+          <li>telephone number to [telephone number applicant has provided]<strong></strong></li>
         </ul>
 
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="mr-cis-500" class="govuk-link" rel="noreferrer noopener">I am a CIS500</a></p>
@@ -36,10 +35,10 @@
   </div>
 
 
-  <p class="govuk-heading-m govuk-!-margin-top-6">You done all that stuff aye?</p>
+  
 
     {{ govukButton({
-      text: "Confirm and reject",
+      text: "Confirm and notify",
       classes: "govuk-!-margin-top-4"
     }) }}
   <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><a href="process-c-nil-task-list" class="govuk-link" rel="noreferrer noopener">☒</a></p> -->

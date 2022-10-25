@@ -23,16 +23,16 @@
         {% include "agent-service-1-12/agent/record-id.html" %}
 
         <!-- <span class="govuk-caption-m">[Task 1-1]</span> -->
-          <p class="govuk-heading-xl govuk-!-margin-bottom-6">This application is a nil award but do a CIS500</p>
+          <p class="govuk-heading-xl govuk-!-margin-bottom-6">You must update this applicant’s information with a CIS500</p>
 
-          <p class="govuk-body-m govuk-!-margin-bottom-2">XXX</p>
+          <p class="govuk-body-m govuk-!-margin-bottom-2">Before you continue you must <a href="mr-cis-500" class="govuk-link" rel="noreferrer noopener">complete a CIS500</a> to update this applicant's:</p>
           <ul class="govuk-body-m govuk-list govuk-list--bullet">
-            <li>Change the name to <strong>X</strong></li>
-            <li>Change address to <strong>X</strong></li>
-            <li>Change the telehpone to <strong>X</strong></li>
+            <li>address to [address applicant has provided] <strong></strong></li>
+            <li>telephone number to [telephone number applicant has provided] <strong></strong></li>
+           
           </ul>
 
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="mr-cis-500" class="govuk-link" rel="noreferrer noopener">I am a CIS500</a></p>
+          
 
     </div>
   </div>
@@ -44,30 +44,7 @@
       <div class="govuk-grid-column-two-thirds govuk-!-padding-top-2">
 
 
-        {{ govukRadios({
-          idPrefix: "process-c-nil-task-1-1",
-          name: "process-c-nil-task-1-1",
-          fieldset: {
-            legend: {
-              text: "Confirm CIS500 sent?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          classes: "govuk-radios",
-          items: [
-          {
-            value: "Matched",
-            text: "Done",
-            checked: (data["process-c-nil-task-1-1"] == "Matched")
-          },
-            {
-              value: "Not matched",
-              text: "Not done",
-              checked: (data["process-c-nil-task-1-1"] == "Not matched")
-            }
-          ]
-        }) }}
+      
 
 
 
@@ -78,7 +55,7 @@
 
 
   {{ govukButton({
-    text: "Save and continue"
+    text: "Continue"
   }) }}
 
 <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><a href="process-c-nil-task-list" class="govuk-link" rel="noreferrer noopener">☒</a></p> -->
