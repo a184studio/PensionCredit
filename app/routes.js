@@ -56,6 +56,17 @@ router.get('/number-test', (req, res, next) => {
   next()
 })
 
+// GENERIC NEXT PAGE ELEMENT
+router.post('*', function (req, res, next) {
+  console.log(req.body);
+
+  if (req.body['next-page']) {
+    res.redirect(req.body['next-page']);
+  } else {
+    next();
+  }
+});
+
 router.use(require('./routes/development/wf'))
 router.use(require('./routes/sprint-1/new-claims'))
 router.use(require('./routes/sprint-2/new-claims'))
@@ -156,6 +167,7 @@ router.use(require('./routes/agent-service-1-9/agent'))
 router.use(require('./routes/agent-service-1-10/agent'))
 router.use(require('./routes/agent-service-1-11/agent'))
 router.use(require('./routes/agent-service-1-12/agent'))
+router.use(require('./routes/agent-service-1-13/agent'))
 
 
 module.exports = router
