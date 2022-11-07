@@ -26,6 +26,16 @@
         {% endset %}
       <!------------Legend--------------->
 
+      <!------------DYNAMIC HINT------------>
+        {% set dynamicHint %}
+          {% if data["oidv-who"] == "Someone else" %}
+            <p class="govuk-hint">XXX</p>
+        {% else %}
+            <p class="govuk-hint">XXX</p>
+          {% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
 
     {{ govukRadios({
       idPrefix: "oidv-payslips",
@@ -38,7 +48,7 @@
         }
       },
       hint: {
-        html: ""
+        html: dynamicHint
       },
       classes: "govuk-radios",
       items: [

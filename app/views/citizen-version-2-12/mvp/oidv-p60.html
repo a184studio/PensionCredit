@@ -26,6 +26,16 @@
         {% endset %}
       <!------------Legend--------------->
 
+      <!------------DYNAMIC HINT------------>
+        {% set dynamicHint %}
+          {% if data["oidv-who"] == "Someone else" %}
+            <p class="govuk-hint">The applicants P60 shows the tax you have paid on your pension or earnings (if you still work).</p>
+        {% else %}
+            <p class="govuk-hint">A P60 shows the tax you have paid on your pension or earnings (if you still work).</p>
+          {% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
 
     {{ govukRadios({
       idPrefix: "oidv-p60",
@@ -38,7 +48,7 @@
         }
       },
       hint: {
-        html: "A P60 shows the tax you have paid on your pension or earnings (if you still work)."
+        html: dynamicHint
       },
       classes: "govuk-radios",
       items: [

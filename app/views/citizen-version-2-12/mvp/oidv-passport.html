@@ -26,6 +26,15 @@
         {% endset %}
       <!------------Legend--------------->
 
+      <!------------DYNAMIC HINT------------>
+        {% set dynamicHint %}
+          {% if data["oidv-who"] == "Someone else" %}
+            <p class="govuk-hint">The applicants passport to be valid it must not have passed the expiry date.</p>
+        {% else %}
+            <p class="govuk-hint">For your passport to be valid it must not have passed the expiry date.</p>
+          {% endif %}
+        {% endset %}
+      <!------------Legend--------------->
 
     {{ govukRadios({
       idPrefix: "oidv-passport",
@@ -38,7 +47,7 @@
         }
       },
       hint: {
-        html: "For your passport to be valid it must not have passed the expiry date."
+        html: dynamicHint
       },
       classes: "govuk-radios",
       items: [
