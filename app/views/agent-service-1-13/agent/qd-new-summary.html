@@ -1,0 +1,242 @@
+{% extends "layout-full-width.html" %}
+
+{% block pageTitle %}
+  PC: Phil Collins
+
+{% endblock %}
+
+{% block header %}
+ {% include "global-nav-full-width.html" %}
+ <div class="moj-primary-navigation">
+
+   <div class="moj-primary-navigation__container">
+
+     <div class="moj-primary-navigation__nav">
+
+       <nav class="moj-primary-navigation" aria-label="Primary navigation">
+
+         <ul class="moj-primary-navigation__list">
+           <li class="moj-primary-navigation__item">
+             <a class="moj-primary-navigation__link"  href="new-process-c-nil-task-list">Processing</a>
+           </li>
+
+           <li class="moj-primary-navigation__item">
+             <a class="moj-primary-navigation__link"  aria-current="page" href="qd-new-summary">Queries and disputes</a>
+           </li>
+
+           <li class="moj-primary-navigation__item">
+             <a class="moj-primary-navigation__link" href="ur-mi">Overview</a>
+           </li>
+         </ul>
+
+       </nav>
+
+     </div>
+     <div class="moj-primary-navigation__search">
+       <div class="moj-search-toggle" data-module="moj-search-toggle" data-moj-search-toggle-text="Find case">
+         <div class="moj-search-toggle__toggle"></div>
+         <div class="moj-search-toggle__search">
+
+           <div class="moj-search moj-search--ondark moj-search--toggle moj-js-hidden">
+
+             <form action="" method="get">
+
+               <div class="govuk-form-group">
+                 <label class="govuk-label moj-search__label govuk-visually-hidden" for="search2">
+                   Search
+                 </label>
+
+                 <div id="search2-hint" class="govuk-hint moj-search__hint ">
+                 National Insurance number, For example, 'QQ 12 34 56 C'.
+                 </div>
+
+                 <input class="govuk-input moj-search__input " id="search2" name="search2" type="search" aria-describedby="search2-hint">
+
+               </div>
+
+               <button class="govuk-button moj-search__button " data-module="govuk-button">
+                 Search
+               </button>
+
+             </form>
+           </div>
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+ </div>
+ <section class="dwp-key-details-bar" aria-label="Key details">
+ <div class="dwp-key-details-bar__key-details">
+ <dl class="dwp-key-details-bar__top-block">
+     <dt class="govuk-visually-hidden">Name:</dt>
+     <dd class="dwp-key-details-bar__primary">Phil Collins</dd>
+     <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+     <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 X</dd>
+
+ </dl>
+ <dl class="dwp-key-details-bar__bottom-block">
+     <dt>Entitlement status:</dt>
+     <dd>Not entitled</dd>
+     <dt>Weekly State Pension amount:</dt>
+     <dd>£172</dd>
+
+ </dl>
+ </div>
+ </section>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="#1" aria-current="location">Claim summary</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="#2">State pension</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="#3">Non-State Pension</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="#3">Claim notes</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+
+
+<div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Claim summary</h1>
+
+
+
+
+
+
+                  <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+
+
+            <p class="govuk-body govuk-!-font-weight-bold"> Date claim submitted</p>
+
+          </div>
+
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <p>28 February 2022</p>
+
+          </div>
+
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+
+              <p class="govuk-body govuk-!-font-weight-bold"> Backdating period start date</p>
+
+            </div>
+
+
+            <div class="govuk-grid-column-two-thirds">
+
+              <p>28 November 2021</p>
+
+            </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+
+              <p class="govuk-body govuk-!-font-weight-bold">Applicable amount</p>
+
+            </div>
+
+
+            <div class="govuk-grid-column-two-thirds">
+
+              <p>£182.60</p>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+
+              <p class="govuk-body govuk-!-font-weight-bold">Non-State Pension</p>
+
+            </div>
+
+
+            <div class="govuk-grid-column-two-thirds">
+
+              <p>Yes</p>
+
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+
+              <p class="govuk-body govuk-!-font-weight-bold">Income</p>
+
+            </div>
+
+
+            <div class="govuk-grid-column-two-thirds">
+
+              <p>No</p>
+
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+
+              <p class="govuk-body govuk-!-font-weight-bold">Qualifying benefits</p>
+
+            </div>
+
+
+            <div class="govuk-grid-column-two-thirds">
+
+              <p>No</p>
+
+            </div>
+        </div>
+
+
+
+              <p class="govuk-body govuk-!-margin-bottom-7"><a href="/agent-service-1-10/agent/jennifer-claim.pdf" target="_blank">View full application (PDF)</a></p>
+
+
+</div>
+
+
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
