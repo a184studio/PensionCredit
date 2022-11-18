@@ -1,0 +1,234 @@
+{% extends "layout-ur-2022.html" %}
+
+{% block pageTitle %}
+  PC: Phil Collins
+
+{% endblock %}
+
+{% block header %}
+ {% include "global-nav-full-width.html" %}
+ <div class="moj-primary-navigation">
+
+   <div class="moj-primary-navigation__container">
+
+     <div class="moj-primary-navigation__nav">
+
+       <nav class="moj-primary-navigation" aria-label="Primary navigation">
+
+         <ul class="moj-primary-navigation__list">
+           <li class="moj-primary-navigation__item">
+             <a class="moj-primary-navigation__link"  href="new-process-c-nil-task-list">Processing</a>
+           </li>
+
+           <li class="moj-primary-navigation__item">
+             <a class="moj-primary-navigation__link"  aria-current="page" href="qd-new-summary">Queries and disputes</a>
+           </li>
+
+           <li class="moj-primary-navigation__item">
+             <a class="moj-primary-navigation__link" href="ur-mi">Overview</a>
+           </li>
+         </ul>
+
+       </nav>
+
+     </div>
+     <div class="moj-primary-navigation__search">
+       <div class="moj-search-toggle" data-module="moj-search-toggle" data-moj-search-toggle-text="Find case">
+         <div class="moj-search-toggle__toggle"></div>
+         <div class="moj-search-toggle__search">
+
+           <div class="moj-search moj-search--ondark moj-search--toggle moj-js-hidden">
+
+             <form action="" method="get">
+
+               <div class="govuk-form-group">
+                 <label class="govuk-label moj-search__label govuk-visually-hidden" for="search2">
+                   Search
+                 </label>
+
+                 <div id="search2-hint" class="govuk-hint moj-search__hint ">
+                 National Insurance number, For example, 'QQ 12 34 56 C'.
+                 </div>
+
+                 <input class="govuk-input moj-search__input " id="search2" name="search2" type="search" aria-describedby="search2-hint">
+
+               </div>
+
+               <button class="govuk-button moj-search__button " data-module="govuk-button">
+                 Search
+               </button>
+
+             </form>
+           </div>
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+ </div>
+ <section class="dwp-key-details-bar" aria-label="Key details">
+ <div class="dwp-key-details-bar__key-details">
+ <dl class="dwp-key-details-bar__top-block">
+     <dt class="govuk-visually-hidden">Name:</dt>
+     <dd class="dwp-key-details-bar__primary">Phil Collins</dd>
+     <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+     <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 X</dd>
+
+ </dl>
+ <dl class="dwp-key-details-bar__bottom-block">
+     <dt>Entitlement status:</dt>
+     <dd>Not entitled</dd>
+     <dt>Weekly State Pension amount:</dt>
+     <dd>£172</dd>
+
+ </dl>
+ </div>
+ </section>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item ">
+            <a href="qd-new-summary">Claim summary</a>
+          </li>
+
+          <li class="moj-side-navigation__item ">
+            <a href="qd-new-summary-state-pension" >State Pension</a>
+          </li>
+
+          <li class="moj-side-navigation__item moj-side-navigation__item--active"">
+            <a href="qd-new-summary-non-sate-pension" aria-current="location">Non-State Pension</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="qd-new-summary-income">Income</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="qd-new-summary-benefits">Qualifying benefits</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="qd-new-summary-claim-notes">Claim notes</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+ <div class="govuk-grid-column-two-thirds">
+   <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Boots</h1>
+
+   <div class="govuk-grid-row">
+             <div class="govuk-grid-column-one-third">
+
+             <h2 class="govuk-heading-l">£60 <p class="govuk-hint">Weekly amount</p></h2>
+
+
+
+             </div>
+
+
+
+
+             </div>
+
+             <table class="govuk-table">
+       <!-- <caption class="govuk-table__caption govuk-table__caption--m">How was this calculated</caption> -->
+       <thead class="govuk-table__head">
+         <tr class="govuk-table__row">
+           <th scope="col" class="govuk-table__header">Date</th>
+           <th scope="col" class="govuk-table__header">Monthly amount</th>
+           <th scope="col" class="govuk-table__header">Weekly amount</th>
+         </tr>
+       </thead>
+       <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+           <th scope="row" class="govuk-table__header">October</th>
+           <td class="govuk-table__cell">£240</td>
+            <td class="govuk-table__cell">£60</td>
+         </tr>
+         <tr class="govuk-table__row">
+           <th scope="row" class="govuk-table__header">September</th>
+           <td class="govuk-table__cell">£240</td>
+                    <td class="govuk-table__cell">£60</td>
+         </tr>
+         <tr class="govuk-table__row">
+           <th scope="row" class="govuk-table__header">August</th>
+           <td class="govuk-table__cell">£240</td>
+                    <td class="govuk-table__cell">£60</td>
+         </tr>
+       </tbody>
+     </table>
+
+
+</div>
+<div class="govuk-grid-column-full">
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+</div>
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">NHS Pension</h1>
+
+  <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+
+            <h2 class="govuk-heading-l">£43.30 <p class="govuk-hint">Weekly amount</p></h2>
+
+
+
+            </div>
+
+
+
+
+            </div>
+
+            <table class="govuk-table">
+      <!-- <caption class="govuk-table__caption govuk-table__caption--m">How was this calculated</caption> -->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Monthly amount</th>
+          <th scope="col" class="govuk-table__header">Weekly amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">October</th>
+          <td class="govuk-table__cell">£173.20</td>
+            <td class="govuk-table__cell">£43.30</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">September</th>
+            <td class="govuk-table__cell">£173.20</td>
+                <td class="govuk-table__cell">£43.30</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">August</th>
+    <td class="govuk-table__cell">£173.20</td>
+                <td class="govuk-table__cell">£43.30</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+</div>
+
+
+  </div>
+
+
+
+{% endblock %}
