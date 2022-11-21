@@ -470,7 +470,7 @@ router.post(`${baseUrl}/qd-securityG-router`, (req, res) => {
     res.redirect(`${baseUrl}/qd-claims`)
   }
    else {
-    res.redirect(`${baseUrl}/qd-summary`)
+    res.redirect(`${baseUrl}/qd-new-summary`)
   }
 })
 
