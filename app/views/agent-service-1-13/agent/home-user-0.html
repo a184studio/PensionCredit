@@ -5,8 +5,42 @@
 {% endblock %}
 
 {% block header %}
-  <!-- {% include "includes/internal-header.html" %} -->
-  {% include "global-nav-a.html" %}
+
+  {% include "global-nav-full-width.html" %}
+  <div class="moj-primary-navigation">
+
+    <div class="moj-primary-navigation__container">
+
+      <div class="moj-primary-navigation__nav">
+
+        <nav class="moj-primary-navigation" aria-label="Primary navigation">
+
+          <ul class="moj-primary-navigation__list">
+            <li class="moj-primary-navigation__item" >
+              <a class="moj-primary-navigation__link" aria-current="page"  href="home-user-0">My homepage</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link"  href="new-process-c-nil-task-list">Processing</a>
+            </li>
+
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link"   href="qd-start">Queries and disputes</a>
+            </li>
+
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" href="ur-mi">Overview</a>
+            </li>
+
+
+          </ul>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  </div>
 {% endblock %}
 
 {% block content %}
@@ -26,10 +60,10 @@
 
   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-8">
   <!-- <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Header #1</h3> -->
-  <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Not entitled claims</h3>
+  <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Processing</h3>
 
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-list" class="govuk-link" rel="noreferrer noopener" target="">Process a claim</a></p>
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="ur-cases" class="govuk-link" rel="noreferrer noopener" target=>My cases</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="new-process-c-nil-task-list" class="govuk-link" rel="noreferrer noopener" target="">Process a claim</a></p>
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="ur-cases" class="govuk-link" rel="noreferrer noopener" target=>My cases</a></p> -->
   <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-5"><a href="" class="govuk-link" rel="noreferrer noopener" target="">Live proving</a></p>
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="ur-mi" class="govuk-link" rel="noreferrer noopener" target="">Service statistics</a></p>-->
 
@@ -70,9 +104,10 @@
   </div> -->
 
   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-8">
-    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Enquiries</h3>
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-4">Queries and disputes</h3>
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="qd-start" class="govuk-link" rel="noreferrer noopener" target="">Start enquiry</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="qd-search" class="govuk-link" rel="noreferrer noopener" target="">Find someone</a></p>
 
 
 

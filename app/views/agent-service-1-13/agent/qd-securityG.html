@@ -6,7 +6,58 @@
 {% endblock %}
 
 {% block header %}
- {% include "global-nav-a.html" %}
+{% include "global-nav-full-width.html" %}
+<div class="moj-primary-navigation">
+
+  <div class="moj-primary-navigation__container">
+
+    <div class="moj-primary-navigation__nav">
+
+      <nav class="moj-primary-navigation" aria-label="Primary navigation">
+
+        <ul class="moj-primary-navigation__list">
+          <li class="moj-primary-navigation__item" >
+            <a class="moj-primary-navigation__link" href="home-user-0">My homepage</a>
+          </li>
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link"  href="new-process-c-nil-task-list">Processing</a>
+          </li>
+
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link"  aria-current="page" href="qd-start">Queries and disputes</a>
+          </li>
+
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" href="ur-mi">Overview</a>
+          </li>
+
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+</div>
+<section class="dwp-key-details-bar" aria-label="Key details">
+<div class="dwp-key-details-bar__key-details">
+<dl class="dwp-key-details-bar__top-block">
+    <dt class="govuk-visually-hidden">Name:</dt>
+    <dd class="dwp-key-details-bar__primary">Phil Collins</dd>
+    <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+    <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 X</dd>
+
+</dl>
+<dl class="dwp-key-details-bar__bottom-block">
+    <dt>Entitlement status:</dt>
+    <dd>Not entitled</dd>
+
+
+</dl>
+</div>
+</section>
 {% endblock %}
 
 
@@ -29,7 +80,7 @@
     <form action="qd-securityG-router" method="post" class="form">
 
 
-      {% include "agent-service-1-11/agent/qd-name-nino.html" %}
+
 
 
     <div class="govuk-!-margin-bottom-8">
