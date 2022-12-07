@@ -10,6 +10,7 @@ checkFiles()
 const { buildWatchAndServe } = require('./lib/build/tasks')
 const { projectDir } = require('./lib/utils')
 
+
 async function collectDataUsage () {
 // Local dependencies
   const usageData = require('./lib/usage_data')
